@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-27T21:23:33-03:00       *-->
+<!--*       on 2021-01-29T14:41:41-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -344,7 +344,7 @@ KC(7, 3)
 <p id="p-431"><dfn class="terminology">(Generalização do 1º Lema de Kaplansky)</dfn> O número de subconjuntos com \(p\) elementos de \(\{1,2,3,\cdots,n\}\) de modo que entre cada dois elementos escolhidos para o subconjunto haja, no conjunto, pelo menos \(r\) elementos não escolhidos para o subconjunto é:</p>
 <div class="displaymath">
 \begin{equation*}
-KG(n,p,r)=C_{n-(p-1)r}^p.
+gK(n,p,r)=C_{n-(p-1)r}^p.
 \end{equation*}
 </div></article><article class="hiddenproof" id="proof-20"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-432">Representamos com o símbolo \((+)\) os \(p\) elementos que figuram nos subconjuntos e com o símbolo \((-)\) os \(n-p\) elementos que não figuram. Os símbolos \((+)\) e \((-)\) serão organizados de forma que entre dois símbolos \((+)\) haja pelo menos \(r\) símbolos \((-)\) e antes do primeiro símbolo \((+)\text{,}\) assim como depois do último símbolo \((+)\text{,}\) podem figurar qualquer quantidade de símbolos \((-)\text{.}\)  Formando uma fila com os símbolos \((+)\) ficamos com \(p+1\) espaços para colocar os símbolos \((-)\text{,}\) veja a <a class="xref" data-knowl="./knowl/fig-kaplansky1-geral.html" title="Figura 3.3.17">Figura 3.3.17</a>.</p>
 <figure class="figure figure-like" id="fig-kaplansky1-geral"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/kaplanskydiagram-geral.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
@@ -381,8 +381,8 @@ CR_{p+1}^{n-p-(p-1)r} = C_{n-(p-1)r}^p.
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.3.18</span><span class="period">.</span>
 </h6>
 <p id="p-435">Calculando \(KG(15, 5, 2)\) no Sage:</p>
-<div class="sagecell-sage" id="sage-33"><script type="text/x-sage">KG(n, p, r) = binomial(n-(p-1)*r, p) 
-KG(15, 5, 2)
+<div class="sagecell-sage" id="sage-33"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+gK(15, 5, 2)
 </script></div></article><article class="example example-like" id="example-37"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.3.19</span><span class="period">.</span>
 </h6>
@@ -391,11 +391,11 @@ KG(15, 5, 2)
 <p id="p-437">Utilizando a Generalização do 1º Lema de Kaplansky, onde \(n = 20, p = 4\) e \(r = 3\text{,}\) o número de maneiras de escolher os quatro dias para a realização das provas será dado por</p>
 <div class="displaymath">
 \begin{equation*}
-4!\times KG(20, 4, 3) = 7920.
+4!\times gK(20, 4, 3) = 7920.
 \end{equation*}
 </div>
-<div class="hidden-sagecell-sage" id="sage-34"><script type="text/x-sage">KG(n, p, r) = binomial(n-(p-1)*r, p) 
-factorial(4)*KG(20, 4, 3)
+<div class="hidden-sagecell-sage" id="sage-34"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+factorial(4)*gK(20, 4, 3)
 </script></div>
 </div></div></article><article class="theorem theorem-like" id="theorem-20"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.3.20</span><span class="period">.</span>
@@ -403,41 +403,41 @@ factorial(4)*KG(20, 4, 3)
 <p id="p-438"><dfn class="terminology">(Generalização do 2º Lema de Kaplansky)</dfn> O número de subconjuntos com \(p\) elementos de \(\{1,2,3,\cdots,n\}\) onde \(1\) e \(n\) são "adjacentes" e de modo que entre cada dois elementos escolhidos para o subconjunto haja, no conjunto, pelo menos \(r\) elementos não escolhidos para o subconjunto é:</p>
 <div class="displaymath">
 \begin{equation*}
-KGC(n,p,r)=\frac{n}{n-pr}\cdot C_{n-pr}^p.
+gKC(n,p,r)=\frac{n}{n-pr}\cdot C_{n-pr}^p.
 \end{equation*}
 </div></article><article class="hiddenproof" id="proof-21"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><p id="p-439">Vamos separar em dois casos. Observe que um subconjunto satisfazendo as condições do enunciado vai possuir ou não algum dos elementos: \(1, 2, \ldots, r\text{.}\)</p>
 <p id="p-440"><dfn class="terminology">1º caso:</dfn> O número de subconjuntos que não possui nenhum dos elementos supracitados é</p>
 <div class="displaymath">
 \begin{equation*}
-KG(n-r, p, r),
+gK(n-r, p, r),
 \end{equation*}
 </div>
 <p data-braille="continuation">pois restam \(n-r\) elementos, tais que, o primeiro e o último não são adjacentes e os subconjuntos serão formados por \(p\) elementos satisfazendo as mesmas condição da Generalização do 1º Lema de Kaplansky.</p>
 <p id="p-441"><dfn class="terminology">2º caso:</dfn> O número de subconjuntos que possui um dos elementos supracitados é</p>
 <div class="displaymath">
 \begin{equation*}
-r\times KG(n-2r-1, p-1, r),
+r\times gK(n-2r-1, p-1, r),
 \end{equation*}
 </div>
 <p data-braille="continuation">pois para cada uns dos elementos: \(1, 2, \ldots, r\) será feito o seguinte. Coloque o elemento \(i\text{,}\) então \(r\) elementos antes do \(i\) e \(r\) elementos depois do \(i\) não podem aparecer. Portanto, do total de \(n\) elementos, precisamos subtrair \(2r+1\) elementos, restando \(n-2r-1\text{,}\) agora precisamos escolher \(p-1\) elementos satisfazendo as mesmas condição da Generalização do 1º Lema de Kaplansky.</p>
 <p id="p-442">Calculando a soma</p>
 <div class="displaymath">
 \begin{equation*}
-KG(n-r, p, r)+r\times KG(n-2r-1, p-1, r),
+gK(n-r, p, r)+r\times gK(n-2r-1, p-1, r),
 \end{equation*}
 </div>
 <p data-braille="continuation">obtemos:</p>
 <div class="displaymath">
 \begin{equation*}
-KGC(n,p,r)=\frac{n}{n-pr}\cdot C_{n-pr}^p.
+gKC(n,p,r)=\frac{n}{n-pr}\cdot C_{n-pr}^p.
 \end{equation*}
 </div></article></div>
 <article class="technology computation-like" id="technology-23"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.3.21</span><span class="period">.</span>
 </h6>
-<p id="p-443">Calculando \(KCG(15, 5, 2)\) no Sage:</p>
-<div class="sagecell-sage" id="sage-35"><script type="text/x-sage">KCG(n, p, r) = (n/(n-p*r))*binomial(n-p*r, p) 
-KCG(15, 5, 2)
+<p id="p-443">Calculando \(gKC(15, 5, 2)\) no Sage:</p>
+<div class="sagecell-sage" id="sage-35"><script type="text/x-sage">gKC(n, p, r) = (n/(n-p*r))*binomial(n-p*r, p) 
+gKC(15, 5, 2)
 </script></div></article><article class="example example-like" id="example-38"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.3.22</span><span class="period">.</span>
 </h6>
@@ -446,7 +446,7 @@ KCG(15, 5, 2)
 <p id="p-445">Como a escolha dos meses será mantida pelos anos seguintes, aplicando a Generalização do 2º Lema de Kaplansky obtemos:</p>
 <div class="displaymath">
 \begin{equation*}
-KCG(12, 2, 4) = 18.
+gKC(12, 2, 4) = 18.
 \end{equation*}
 </div>
 </div></div></article></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
