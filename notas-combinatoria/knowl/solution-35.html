@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-10T17:05:40-03:00       *-->
+<!--*       on 2021-03-17T14:03:26-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,76 +12,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.4.7.1</span><span class="period">.</span>
 </h6>
-<p>Sejam</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item a)</dfn> Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de \(C_{11}^9=55 \) maneiras.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item b)</dfn> Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.</p>
+<p>Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bullet A_1 \text{o conjunto dos anagramas de COMPLEXA que tem C em 1º lugar}
+C_4^2\times C_7^4 + C_4^3\times C_7^3 + C_4^4\times C_7^2 = 371. 
 \end{equation*}
 </div>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bullet A_2 \text{o conjunto dos anagramas de COMPLEXA que tem O em 2º lugar}
-\end{equation*}
+<p xmlns:svg="http://www.w3.org/2000/svg">No Sage, esse cálculo pode ser feito da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-12"><script type="text/x-sage">C(n, p) = binomial(n, p)
+C(4,2)*C(7,4) + C(4,3)*C(7,3) + C(4,4)*C(7,2)
+</script></div>
 </div>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bullet A_3 \text{o conjunto dos anagramas de COMPLEXA que tem M em 3º lugar}
-\end{equation*}
-</div>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bullet A_4 \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}
-\end{equation*}
-</div>
-<p data-braille="continuation">Assim, \(\#A_i = 7!,\) para  \(i\in \{1, 2, 3, 4\}\text{.}\)</p>
-<p>Observe que \(\#(A_i\cap A_j), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#(A_i\cap A_j) = 6!
-\end{equation*}
-</div>
-<p>Observe que \(\#(A_i\cap A_j\cap A_k), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#(A_i\cap A_j\cap A_k) = 5!
-\end{equation*}
-</div>
-<p>Observe que \(\#(A_1\cap A_2\cap A_3\cap A_4)\) é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P  nas posições \(1, 2, 3, 4\) fixas, logo</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#(A_1\cap A_2\cap A_3\cap A_4) = 4!
-\end{equation*}
-</div>
-<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 3.1.6">Teorema 3.1.6</a>),</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~\sum_{i=1}^{4} \#A_i - \sum_{1\leq i\lt j\leq 4} \#(A_i\cap A_j) \\
-\amp ~ +\sum_{1\leq i\lt j\lt k \leq 4} \#(A_i\cap A_j\cap A_k) \\
-\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
-\end{align*}
-</div>
-<p data-braille="continuation">Organizando, temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times\#A_1 - C_4^2\times\#(A_1\cap A_2) \\
-\amp ~ +C_4^3\times\#(A_1\cap A_2\cap A_3) \\
-\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
-\end{align*}
-</div>
-<p data-braille="continuation">Substituindo, temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times 7! - C_4^2\times 6! +C_4^3\times 5! -4! \\
-=\amp ~ 16296. 
-\end{align*}
-</div>
-</div>
-<span class="incontext"><a href="section-inclusao-exclusao.html#solution-35">[incontext]</a></span>
+<span class="incontext"><a href="section-combinacoes-simples.html#solution-35">[incontext]</a></span>
 </body>
 </html>

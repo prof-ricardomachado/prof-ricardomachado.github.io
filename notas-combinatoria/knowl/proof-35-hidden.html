@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-10T17:05:44-03:00       *-->
+<!--*       on 2021-03-17T14:03:30-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,25 +13,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Para dois conjuntos a fórmula é verdadeira, pois coincide com a definição de probabilidade condicional. Vamos usar o Princípio de Indução Completa para mostrar que o resultado é verdadeiro. Suponha o resultado válido para \(n-1\) eventos. Então</p>
+<body><article class="hiddenproof"><p>Temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\overbrace{P(A_1\cap A_2\cap \cdots \cap A_{n-1})}^{(\blacklozenge)} = \amp ~  P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
-\amp ~~~~ ~ \cdots P(A_{n-1}|(A_1\cap A_2\cap \cdots \cap A_{n-2})). 
-\end{align*}
+\begin{equation*}
+(x_1+x_2+\cdots + x_p)^n  = (x_1+x_2++\cdots + x_p)\cdots(x_1+x_2++\cdots + x_p)
+\end{equation*}
 </div>
-<p data-braille="continuation">Defina \(B = A_1\cap A_2\cap \cdots \cap A_{n-1}\text{.}\) Queremos a probabilidade \(P(B\cap A_n)\) e vamos usar que o resultado é válido para \(B\cap A_n\) e para \(n-1\) eventos. Logo</p>
+<p data-braille="continuation">Um termo genérico do produto é obtido escolhendo um \(x_i\) em cada parênteses e multiplicando os escolhidos. Se em \(\alpha_1\) dos parênteses escolhermos \(x_1\text{,}\) em \(\alpha_2\) dos parênteses escolhermos \(x_2\text{,}\) \(\ldots\text{,}\) obteremos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-P(B\cap A_n) = \amp ~  P(B)\cdot P(A_n|B) \\
-= \amp  ~ \underbrace{P(A_1\cap A_2\cap \cdots \cap A_{n-1})}_{(\blacklozenge)}\cdot P(A_n|B). 
-\end{align*}
+\begin{equation*}
+x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}, \text{ satisfazendo } \alpha_1 + \alpha_2 +\cdots + \alpha_p = n. 
+\end{equation*}
 </div>
-<p data-braille="continuation">Substituindo \((\blacklozenge)\) e \(B\) chegamos no resultado:</p>
+<p data-braille="continuation">Agora falta responder quantas vezes o termo \(x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}\) aparece no desenvolvimento.</p>
+<p>O termo \(x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}\) aparece tantas vezes, quantas são as formas de escolher, nos \(n\) parênteses, \(\alpha_1\) deles para escolher o \(x_1\text{,}\) \(\alpha_2\) deles para escolher o \(x_2\text{,}\) \(\ldots\text{.}\) Isto pode ser feito de</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-P(A_1\cap A_2\cap \cdots \cap A_n) = \amp ~ P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
-\amp ~~~~ \cdots P(A_n|(A_1\cap A_2\cap \cdots \cap A_{n-1})). 
-\end{align*}
-</div></article></body>
+\begin{equation*}
+C_n^{\alpha_1}\cdot C_{n-\alpha_1}^{\alpha_2}\cdots C_{n-\alpha_1-\alpha_2-\cdots -\alpha_{p-1}}^{\alpha_p} = \frac{n!}{\alpha_1!\alpha_2!\cdots\alpha_p!} 
+\end{equation*}
+</div>
+<p data-braille="continuation">maneiras, o que mostra o resultado.</p></article></body>
 </html>
