@@ -56,33 +56,13 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:780px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
-passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:"), vetores=False):
-            
-    t = var('t')
-    x=function('x')(t)
-    y=function('y')(t)
-    edo = [diff(x, t) == edox[0][0]*x+edox[0][1]*y, diff(y, t) == edox[1][0]*x+edox[1][1]*y]
-
-    G = Graphics()
-    for i in srange(imin, imax, passo):
-        sol = desolve_system(edo, [x, y], [0,i,0])
-        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax))
-
-    for i in srange(imin, imax, passo):
-        sol = desolve_system(edo, [x, y], [0,0,i])
-        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4, frame=True)
-
-    if vetores==False:
-        return (G).show(xmin=-4, xmax=4, figsize=[4,4])
-    elif vetores==True:
-        u, v = var('u v')
-        x0 = edo[0].rhs().subs(x==u, y==v)
-        x1 = edo[1].rhs().subs(x==u, y==v)
-        
-        P = plot_vector_field(vector((x0, x1))/norm(vector((x0, x1))), (u, -4, 4), (v, -4, 4))
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), passo=input_box(0.4 , width=10,  label="passo:")):
+    t, x, y = polygens(RR, 't, x, y')
     
-        return (P+G).show(xmin=-4, xmax=4, figsize=[4,4])
+    G = Graphics()
+    for j in srange(-3, 3, passo):
+        G = G + eulers_method_2x2_plot(edox[0][0]*x+edox[0][1]*y, edox[1][0]*x+edox[1][1]*y, 0, j, 1.5, 0.01, 1)[0]
+    return G.show(figsize=4.2)
 </script></div></div></body>
 </html>

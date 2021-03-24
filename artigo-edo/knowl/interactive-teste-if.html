@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-02T17:30:08-03:00       *-->
+<!--*       on 2021-03-24T16:12:07-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="pt-BR">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/x-mathjax-config">
@@ -56,9 +56,9 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(edox=input_box([[1,1],[4,1]] , width=25,  label="edox:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
-passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:")):
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:780px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
+passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:"), vetores=False):
             
     t = var('t')
     x=function('x')(t)
@@ -72,8 +72,17 @@ passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10
 
     for i in srange(imin, imax, passo):
         sol = desolve_system(edo, [x, y], [0,0,i])
-        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4)
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4, frame=True)
 
-    return G.show(xmin=-3.5, xmax=3.5)
+    if vetores==False:
+        return (G).show(xmin=-4, xmax=4, figsize=[4,4])
+    elif vetores==True:
+        u, v = var('u v')
+        x0 = edo[0].rhs().subs(x==u, y==v)
+        x1 = edo[1].rhs().subs(x==u, y==v)
+        
+        P = plot_vector_field(vector((x0, x1))/norm(vector((x0, x1))), (u, -4, 4), (v, -4, 4))
+    
+        return (P+G).show(xmin=-4, xmax=4, figsize=[4,4])
 </script></div></div></body>
 </html>
