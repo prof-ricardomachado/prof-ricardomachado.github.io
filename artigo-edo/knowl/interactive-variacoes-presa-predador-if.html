@@ -56,13 +56,12 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), passo=input_box(0.4 , width=10,  label="passo:")):
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:840px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(a=input_box(-0.75 , width=10,  label="a:"), b=input_box(0.25 , width=10,  label="b:"), c=input_box(1 , width=10,  label="c:"),
+d=input_box(-0.5 , width=10,  label="d:"), t0=input_box(0 , width=10,  label="t0:"), xt0=input_box(2 , width=10,  label="x(t0):"), yt0=input_box(1 , width=10,  label="y(t0):"), p=input_box(0.0005 , width=10,  label="passo:"), t1=input_box(30 , width=10,  label="t1:")):
+            
     t, x, y = polygens(RR, 't, x, y')
-    
-    G = Graphics()
-    for j in srange(-3, 3, passo):
-        G = G + eulers_method_2x2_plot(edox[0][0]*x+edox[0][1]*y, edox[1][0]*x+edox[1][1]*y, 0, j, 1.5, 0.01, 1)[0]
-    return G.show(figsize=4.2)
+    P=eulers_method_2x2_plot(c*x+d*x*y, a*y+b*x*y, t0, xt0, yt0, p, t1)
+    (P[0]+P[1]).show(gridlines=True, axes_labels=['t', 'x, y'], figsize=5)
 </script></div></div></body>
 </html>

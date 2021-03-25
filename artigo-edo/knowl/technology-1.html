@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-24T16:12:07-03:00       *-->
+<!--*       on 2021-03-24T22:18:56-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,6 +12,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
@@ -26,6 +35,19 @@ x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
 \end{array}\right)x. 
 \end{equation*}
 </div>
-<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-teste" width="600" height="780" src="interactive-teste-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.2<span class="period">.</span></span><span class="space"> </span>Teste</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">A matriz pode ser trocada, os valores dentro dos colchete: [[1, 1],[4, 1]] são as linhas da matriz.</p></article><span class="incontext"><a href="section-sage-cells.html#technology-1">[incontext]</a></span>
+<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-teste" width="600" height="780" src="interactive-teste-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.2<span class="period">.</span></span><span class="space"> </span>Teste</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Os códigos no Sage são os seguintes:</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">t = var('t')
+x=function('x')(t)
+y=function('y')(t)
+G = Graphics()
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,i,0])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5))
+    
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,0,i])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5), color='green', ymin=-4, ymax=4)
+(G).show(xmin=-4, xmax=4, figsize=5)
+</script></div></article><span class="incontext"><a href="section-sage-cells.html#technology-1">[incontext]</a></span>
 </body>
 </html>
