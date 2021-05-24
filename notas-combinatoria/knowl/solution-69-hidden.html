@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-23T16:14:21-03:00       *-->
+<!--*       on 2021-04-26T17:58:27-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,23 +14,64 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">Definimos \(A_i\text{,}\) para \(i = 2, 3, 4\text{,}\) como o conjunto das permutações em que \(a_i\) está no \(i\)-ésima posição, para \(i = 2, 3, 4\text{.}\) Queremos encontrar o número de elementos no complementar de \(A_2\cup A_3\cup A_4\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">As cardinalidade dos conjuntos \(A_i's\) e das interseções dos \(A_i's\text{,}\) dois a dois e três a três são:</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\#(A_2) = \#(A_3) = \#(A_4) = (n-1)!;\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\#(A_2\cap A_3) = \#(A_2\cap A_4) = \#(A_3\cap A_4) = (n-2)!;\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\#(A_2\cap A_3\cap A_4) = (n-3)!.\)</p>
-<p>Sabendo que o número total de permutações é \(n!\text{,}\) a solução para o questionamento é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{gather*}
-n!-\#(A_2)-\#(A_3)-\#(A_4)+\#(A_2\cap A_3)+  \\
-~~~~~~~~~~~~~ +\#(A_2\cap A_4)+\#(A_3\cap A_4)-\#(A_2\cap A_3\cap A_4)
-\end{gather*}
-</div>
-<p data-braille="continuation">Que é igual a:</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Sejam</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-n!-3\times (n-1)!+3 \times (n-2)!-(n-3)! 
+\bullet A_2=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 2}\}
 \end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bullet A_3=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 3}\}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bullet A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 5}\}
+\end{equation*}
+</div>
+<p data-braille="continuation">A resposta do item a) é a cardinalidade do conjunto:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A_2\cup A_3\cup A_5. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>):</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_2\cup A_3\cup A_5) = \amp ~  \#A_2+\#A_3+\#A_5 \\
+\amp ~ - \#(A_2\cap A_3) - \#(A_2\cap A_5) - \#(A_3\cap A_5) \\
+\amp ~ +\#(A_2\cap A_3\cap A_5). 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de cada um dos conjuntos \(A_i's\text{,}\) vamos dividir 10000 por \(i\text{,}\) pois se obtermos \(10000 = p\times i + r\text{,}\) na divisão Euclideana, significa que \(1\times i, 2\times i, \ldots, p\times i \) são todos múltiplos de \(i\) e são menores que 10000. Fazendo as divisões obtemos:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 2000\times 5 + 0 \Rightarrow \#A_5 = 2000. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de cada uma das interseções \(A_i\cap A_j\text{,}\) vamos dividir 10000 por \(i\times j\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 1000\times 10 + 0 \Rightarrow \#(A_2\cap A_5) = 1000 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_5) = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de \(A_2\cap A_3\cap A_5\text{,}\) vamos dividir 10000 por \(2\times 3\times 5\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_5) = 333. 
+\end{align*}
+</div>
+<p data-braille="continuation">Portanto, pelo Princípio Inclusão-Exclusão temos:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_2\cup A_3\cup A_5) \amp =  5000+3333+2000-1666-1000-666+333 \\
+\amp =  ~ 7334 
+\end{align*}
 </div>
 </div></body>
 </html>
