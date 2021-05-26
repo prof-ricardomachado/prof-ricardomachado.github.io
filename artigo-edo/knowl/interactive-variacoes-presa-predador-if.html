@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-24T22:18:56-03:00       *-->
+<!--*       on 2021-05-26T16:08:38-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,12 +56,27 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:840px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a=input_box(-0.75 , width=10,  label="a:"), b=input_box(0.25 , width=10,  label="b:"), c=input_box(1 , width=10,  label="c:"),
-d=input_box(-0.5 , width=10,  label="d:"), t0=input_box(0 , width=10,  label="t0:"), xt0=input_box(2 , width=10,  label="x(t0):"), yt0=input_box(1 , width=10,  label="y(t0):"), p=input_box(0.0005 , width=10,  label="passo:"), t1=input_box(30 , width=10,  label="t1:")):
-            
-    t, x, y = polygens(RR, 't, x, y')
-    P=eulers_method_2x2_plot(c*x+d*x*y, a*y+b*x*y, t0, xt0, yt0, p, t1)
-    (P[0]+P[1]).show(gridlines=True, axes_labels=['t', 'x, y'], figsize=5)
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:720px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(a=input_box(1 , width=10,  label="a:"), alpha=input_box(0.5 , width=10,  label="alpha:"), c=input_box(0.75 , width=10,  label="c:"),
+gamma=input_box(0.25 , width=10,  label="gamma:")):
+    
+    
+    def solucao_numerica_rk4(f, g, ini):
+        x, y, t = var('x, y, t')
+        return desolve_system_rk4([f, g], [x, y], ics=ini, ivar=t, end_points=30)
+
+    y = var('y')
+    sn = solucao_numerica_rk4((x*(1 - 0.5*y)), (y*(-0.75 + 0.25*x)), [0, 2, 1])
+
+    l = []
+    for i in sn:
+        l.append([i[0], i[1]])
+
+    l2 = []    
+    for i in sn:
+        l2.append([i[0], i[2]])    
+    P = (line(l, thickness=1.5, gridlines=True, axes_labels=['$t$', '$x$, $y$']),  line(l2, color='red', thickness=1.5))
+
+    (P[0]+P[1]).show(figsize=[5,4])
 </script></div></div></body>
 </html>
