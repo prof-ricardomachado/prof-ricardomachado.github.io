@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-26T16:04:26-03:00       *-->
+<!--*       on 2021-05-27T09:50:09-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,33 +56,33 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:780px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
-passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:"), vetores=False):
-            
-    t = var('t')
-    x=function('x')(t)
-    y=function('y')(t)
-    edo = [diff(x, t) == edox[0][0]*x+edox[0][1]*y, diff(y, t) == edox[1][0]*x+edox[1][1]*y]
-
-    G = Graphics()
-    for i in srange(imin, imax, passo):
-        sol = desolve_system(edo, [x, y], [0,i,0])
-        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax))
-
-    for i in srange(imin, imax, passo):
-        sol = desolve_system(edo, [x, y], [0,0,i])
-        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4, frame=True)
-
-    if vetores==False:
-        return (G).show(xmin=-4, xmax=4, figsize=[4,4])
-    elif vetores==True:
-        u, v = var('u v')
-        x0 = edo[0].rhs().subs(x==u, y==v)
-        x1 = edo[1].rhs().subs(x==u, y==v)
-        
-        P = plot_vector_field(vector((x0, x1))/norm(vector((x0, x1))), (u, -4, 4), (v, -4, 4))
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:840px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _( var=input_box(var('x, y, c, gamma, r, k, alpha, a, D') , width=40,  label="var:"), f=input_box(x*r*(1-x/k) - alpha*x*y , width=30,  label="f:"), g=input_box(-c*y + (k*x*y)/(x+D) , width=30,  label="g:")):
     
-        return (P+G).show(xmin=-4, xmax=4, figsize=[4,4])
+    
+    def linearizacao(f, g):
+        
+        J = jacobian((f, g), (x, y))
+        s = solve([f == 0, g == 0], x, y)
+        
+        tam = len(s)
+        
+        M=[]
+        for i in range(tam):
+            M.append([])
+            M[i].append([s[i][0].rhs(), s[i][1].rhs()])
+            M[i].append(J(x=s[i][0].rhs(), y=s[i][1].rhs()))
+            M[i].append(M[i][1].eigenvectors_right())
+        return M
+
+    li = linearizacao(f, g)
+
+    for i in li:
+        show('Ponto crítico:'), show(i[0])
+
+        show('Matriz:'), show(i[1])
+
+        for j in i[2]:
+            show('autovalor:'), show(j[0])
 </script></div></div></body>
 </html>
