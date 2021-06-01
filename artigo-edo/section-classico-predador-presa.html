@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-01T15:01:59-03:00       *-->
+<!--*       on 2021-06-01T16:45:09-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -145,15 +145,12 @@ retrato_fase(1, 0.5, 0.75, 0.25, x0=0, x1=8.5, y0=0, y1=5.5, vetor=False)
 y = var('y')
 sn = solucao_numerica_rk4((x*(1 - 0.5*y)), (y*(-0.75 + 0.25*x)), [0, 2, 1])
 
-l = []
+l1 = []; l2 = []
 for i in sn:
-    l.append([i[0], i[1]])
-
-l2 = []    
-for i in sn:
-    l2.append([i[0], i[2]])    
-P = (line(l, thickness=1.5, gridlines=True, axes_labels=['$t$', '$x$, $y$']),  line(l2, color='red', thickness=1.5))
-
+    l1.append([i[0], i[1]])
+    l2.append([i[0], i[2]])
+        
+P = (line(l1, thickness=1.5, gridlines=True, axes_labels=['$t$', '$x$, $y$']),  line(l2, color='red', thickness=1.5))
 (P[0]+P[1])
 </script></div></article></section></div></main>
 </div>
