@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-27T09:50:09-03:00       *-->
+<!--*       on 2021-06-01T15:01:59-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -111,7 +111,20 @@ MathJax.Hub.Config({
 \end{equation}
 </div>
 <iframe id="interactive-linearizacao" width="600" height="840" src="interactive-linearizacao-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.2<span class="period">.</span></span><span class="space"> </span>Teste</figcaption></figure><p id="p-14">Os códigos no Sage são os seguintes:</p>
-<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">Falta código
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def linearizacao(f, g):
+    J = jacobian((f, g), (x, y))
+    s = solve([f == 0, g == 0], x, y)
+    M=[]
+    for i in range(len(s)):
+        M.append([])
+        M[i].append([s[i][0].rhs(), s[i][1].rhs()])
+        M[i].append(J(x=s[i][0].rhs(), y=s[i][1].rhs()))
+        M[i].append(M[i][1].eigenvectors_right())
+    return M    
+
+y, t, r, k, alpha, c, D = var('y, t, r, k, alpha, c, D')
+li = linearizacao(x*r*(1-x/k) - alpha*x*y, -c*y + (k*x*y)/(x+D))
+show(li)
 </script></div></article></section></div></main>
 </div>
 </body>
