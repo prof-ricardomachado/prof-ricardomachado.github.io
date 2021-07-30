@@ -11,7 +11,7 @@
 <html lang="pt-BR">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>REVISTA Complemento do Artigo</title>
+<title>REVISTA Período do sistema linear e do não linear.</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -83,10 +83,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><span id="previousbutton" class="previous-button button toolbar-item disabled">Anterior</span><span id="upbutton" class="up-button button disabled toolbar-item">Acima</span><a id="nextbutton" class="next-button button toolbar-item" href="frontmatter.html" title="Próximo">Próximo</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-classico-predador-presa.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="eq-lotka-volterra.html" title="Acima">Acima</a><span id="nextbutton" class="next-button button toolbar-item disabled">Próximo</span></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><span class="previous-button button toolbar-item disabled">Anterior</span><span class="up-button button disabled toolbar-item">Acima</span><a class="next-button button toolbar-item" href="frontmatter.html" title="Próximo">Próximo</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-classico-predador-presa.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="eq-lotka-volterra.html" title="Acima">Acima</a><span class="next-button button toolbar-item disabled">Próximo</span>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -94,15 +94,56 @@ MathJax.Hub.Config({
 <li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a></li>
 <li class="link"><a href="section-solucoes.html" data-scroll="section-solucoes"><span class="codenumber">1</span> <span class="title">Pontos críticos e soluções.</span></a></li>
 <li class="link"><a href="section-classico-predador-presa.html" data-scroll="section-classico-predador-presa"><span class="codenumber">2</span> <span class="title">Retrato de fase e variação nas populações de presas e de predadores.</span></a></li>
-<li class="link"><a href="section-periodo.html" data-scroll="section-periodo"><span class="codenumber">3</span> <span class="title">Período do sistema linear e do não linear.</span></a></li>
+<li class="link active"><a href="section-periodo.html" data-scroll="section-periodo"><span class="codenumber">3</span> <span class="title">Período do sistema linear e do não linear.</span></a></li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Comentário</a><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="article" id="eq-lotka-volterra"><nav class="summary-links"><ul>
-<li><a href="frontmatter.html"><span class="title">Pré-textual</span></a></li>
-<li><a href="section-solucoes.html"><span class="codenumber">1</span> <span class="title">Pontos críticos e soluções.</span></a></li>
-<li><a href="section-classico-predador-presa.html"><span class="codenumber">2</span> <span class="title">Retrato de fase e variação nas populações de presas e de predadores.</span></a></li>
-<li><a href="section-periodo.html"><span class="codenumber">3</span> <span class="title">Período do sistema linear e do não linear.</span></a></li>
-</ul></nav></section></div></main>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-periodo"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3</span> <span class="title">Período do sistema linear e do não linear.</span>
+</h2>
+<article class="technology computation-like" id="technology-5"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Cálculo das tabelas e gráficos dos períodos das trajetórias \((x\times y)\).</span>
+</h6>
+<p id="p-10">Deixando as linhas 7 e 8 comentadas (com # no início) e tirando # das linhas 10 e 11 nós trocamos do sistema não linear para o sistema linear.</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">y = var('y')
+a=1
+alpha=0.5
+c=0.75
+gamma=0.25
+
+f=x*(a - alpha*y)
+g=y*(-c + gamma*x)
+
+#f = (-alpha*c/gamma)*(y-2)
+#g = (gamma*a/alpha)*(x-3)
+
+x, y, t = var('x, y, t')
+G=Graphics()
+tabela=[]
+
+for j in srange(0.2, c/gamma-0.1, c/gamma/10):
+    l = []
+    tf=7.25519745693687
+    #tf=7
+    sn = desolve_system_rk4([f,g],[x,y],ics=[0,j,a/alpha],ivar=t,end_points=tf,step=0.01)
+    
+    p0=[(n(sn[0][1], digits=3),n(sn[0][2], digits=2))]
+    pf=[(n(sn[-1][1], digits=5), n(sn[-1][2], digits=5))]
+    d =[n(((sn[0][1]-sn[-1][1])^2+(sn[0][2]-sn[-1][2])^2)^(1/2), digits=5)]
+    
+    v1 = vector((sn[0][1],sn[0][2] )) - vector((3,2))
+    v2 = vector((sn[-1][1],sn[-1][2])) - vector((3,2))
+    teta = acos( v1*(v2)/(norm(v1)*norm(v2))  )
+    tabela.append(p0 + pf + d+ [teta])
+
+    for i in sn:
+        l.append([i[1], i[2]])    
+    G = G + line(l, axes_labels=['$x$', '$y$'])
+
+l=[ '$p_0$', '$p_f$', '$||p_f-p_0||$', 'teta']
+c=['', '$C_1$', '$C_2$', '$C_3$', '$C_4$', '$C_5$', '$C_6$', '$C_7$', '$C_8$', '$C_9$']
+show(table(rows=tabela, header_row=l, header_column=c, frame=True))
+G.show(figsize=5)
+</script></div></article></section></div></main>
 </div>
 </body>
 </html>

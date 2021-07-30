@@ -56,27 +56,15 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a=(1,(0,5,0.05)), alpha=(0.5,(0,5,0.05)), c=(0.75,(0,5,0.05)),
-gamma=(0.25,(0,1.5,0.05)), vetores=False):
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:360px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(variaveis=input_box(var('x, y, a, alpha, c, gamma') , width=30,  label="aux:"), F=input_box(x*a-alpha*x*y , width=20,  label="F="), G=input_box(-c*y+gamma*x*y , width=20,  label="G=")):
 
             
-    x,y = var('x,y')
+    x,y,a,alpha,c,gamma = var('x,y, a, alpha, c, gamma')
 
-    l=[]
-    for i in srange(0.2, c/gamma-0.1, c/gamma/10):
-        l.append([i, a/alpha])
+    s = solve([F == 0, G == 0], x, y)
 
-    f1 = x*(a - alpha*y)        # não linear
-    g1 = y*(-c + gamma*x)   # não linear
-    sp1=streamline_plot((f1, g1), (x,0, 9), (y,0,6), start_points=l, density=50, aspect_ratio=1)
-
-    if vetores==True:
-        v = vector([f1, g1])
-        v = v/v.norm()
-        P = plot_vector_field(v, (x, 0, 8.5), (y, 0, 5.5), color='gray', frame=False, axes=True, axes_labels=['$x$', '$y$'])
-        (sp1+P).show(figsize=5)
-    else:
-        sp1.show(figsize=5)
+    show('Pontos críticos:')
+    show(s)
 </script></div></div></body>
 </html>

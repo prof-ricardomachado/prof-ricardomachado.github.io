@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-30T16:22:41-03:00       *-->
+<!--*       on 2021-07-30T15:48:33-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,27 +56,17 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a=(1,(0,5,0.05)), alpha=(0.5,(0,5,0.05)), c=(0.75,(0,5,0.05)),
-gamma=(0.25,(0,1.5,0.05)), vetores=False):
-
-            
-    x,y = var('x,y')
-
-    l=[]
-    for i in srange(0.2, c/gamma-0.1, c/gamma/10):
-        l.append([i, a/alpha])
-
-    f1 = x*(a - alpha*y)        # não linear
-    g1 = y*(-c + gamma*x)   # não linear
-    sp1=streamline_plot((f1, g1), (x,0, 9), (y,0,6), start_points=l, density=50, aspect_ratio=1)
-
-    if vetores==True:
-        v = vector([f1, g1])
-        v = v/v.norm()
-        P = plot_vector_field(v, (x, 0, 8.5), (y, 0, 5.5), color='gray', frame=False, axes=True, axes_labels=['$x$', '$y$'])
-        (sp1+P).show(figsize=5)
-    else:
-        sp1.show(figsize=5)
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:720px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(var:=input_box(var('t') , width=30,  label="aux:"), u:=input_box(u = function('u')(t) , width=30,  label="u:"), v:=input_box(v = function('v')(t) , width=30,  label="v:"), S=input_box([-(0.5*0.75/0.25)*v, (1*0.25/0.5)*u] , width=30,  label="S="), Ini=input_box([2-0.75/0.25, 0.8-1/0.5] , width=30,  label="(x0,y0)=") ):
+    
+    
+    t= var('t')
+    u = function('u')(t); v = function('v')(t)
+    
+    
+    
+    sedo=[diff(u, t)==S[0], diff(v, t)==S[1]]
+    sol = desolve_system(sedo, [u,v], [0, Ini[0], Ini[1]])
+    show(sol)
 </script></div></div></body>
 </html>
