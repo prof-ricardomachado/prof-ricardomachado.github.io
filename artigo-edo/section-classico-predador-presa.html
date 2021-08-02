@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-02T16:13:44-03:00       *-->
+<!--*       on 2021-08-02T18:54:10-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -77,7 +77,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="eq-lotka-volterra.html"><span class="title">Complemento do Artigo:</span> <span class="subtitle">EQUAÇÕES DE LOTKA-VOLTERRA:</span></a></h1>
+<h1 class="heading"><a href="eq-lotka-volterra.html"><span class="title">O Sistema Lotka-Volterra: Modelagem Ecológica de Predadores e Presas e implementações com o SageMath (Complemento)</span></a></h1>
 <p class="byline">Pedro Victor S. Freitas, José Arthur de Lima Azevedo, Thiago Yukio Tanaka, Ricardo Nunes Machado Junior</p>
 </div>
 </div></div>
@@ -100,10 +100,11 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-classico-predador-presa"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">2</span> <span class="title">Retrato de fase e variação nas populações de presas e de predadores.</span>
 </h2>
-<article class="technology computation-like" id="technology-5"><h6 class="heading">
+<section class="introduction" id="introduction-2"><p id="p-10">Nesta seção é possível usar o SageMath para plotar gráficos dos sistemas de EDOs <a class="xref" data-knowl="./knowl/sistema_pvp-2.html" title="[men] 2.1">(2.1)</a> e <a class="xref" data-knowl="./knowl/sistema_pvp-22.html" title="[men] 2.2">(2.2)</a> (usando o método <dfn class="terminology">streamline_plot</dfn>) e plotar o gráfico da variação nas populações de presas e de predadores em relação ao tempo, referente ao sistema <a class="xref" data-knowl="./knowl/sistema_pvp-2.html" title="[men] 2.1">(2.1)</a>.</p>
+<p id="p-11">Os códigos que estão disponíveis podem ser modificados e executados (apertando o botão "Evaluate (Sage)"). Estes códigos são enviados a um servidor e dentro de poucos segundos o resultado é retornado.</p></section><article class="technology computation-like" id="technology-5"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
 </h6>
-<p id="p-8">Retrato de fase do sistema de EDOs, não linear:</p>
+<p id="p-12">Retrato de fase do sistema de EDOs, não linear:</p>
 <div class="displaymath">
 \begin{equation}
 \begin{cases} \displaystyle\dfrac{dx}{dt} \amp \displaystyle=  xa - \alpha xy = x(a-\alpha y)\\
@@ -113,10 +114,10 @@ MathJax.Hub.Config({
 <p data-braille="continuation">ou do sistema linear:</p>
 <div class="displaymath">
 \begin{equation}
-\frac{d}{dt} \left( \begin{array}{c} x \\ y  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} x-\frac{c}{\gamma} \\ y-\frac{a}{\alpha}  \end{array}\right).\tag{2.2}
+\frac{d}{dt} \left( \begin{array}{c} x \\ y  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} x-\frac{c}{\gamma} \\ y-\frac{a}{\alpha}  \end{array}\right).\label{sistema_pvp-22}\tag{2.2}
 \end{equation}
 </div>
-<iframe id="interactive-presa-predador-111" width="600" height="660" src="interactive-presa-predador-111-if.html"></iframe><p id="p-9">Os códigos no Sage, para o retrato de fase do sistema não linear, são os seguintes:</p>
+<iframe id="interactive-presa-predador-111" width="600" height="660" src="interactive-presa-predador-111-if.html"></iframe><p id="p-13">Os códigos no Sage, para o retrato de fase do sistema não linear, são os seguintes:</p>
 <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">x,y = var('x,y')
 a=1; alpha=0.5; c=0.75; gamma=0.25
 l=[]
@@ -126,7 +127,7 @@ f1 = x*(a - alpha*y)    # não linear
 g1 = y*(-c + gamma*x)   # não linear
 streamline_plot((f1, g1), (x,0, 8.5), (y,0,5.5), start_points=l, density=50, aspect_ratio=1)
 </script></div>
-<p id="p-10">Os códigos no Sage, para o retrato de fase do sistema linear, são os seguintes:</p>
+<p id="p-14">Os códigos no Sage, para o retrato de fase do sistema linear, são os seguintes:</p>
 <div class="sagecell-sage" id="sage-6"><script type="text/x-sage">x,y = var('x,y')
 a=1; alpha=0.5; c=0.75; gamma=0.25
 l=[]
@@ -138,8 +139,8 @@ streamline_plot((f2, g2), (x,0, 6), (y,0,4), start_points=l, density=50, aspect_
 </script></div></article><article class="technology computation-like" id="technology-6"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span>
 </h6>
-<p id="p-11">Variações nas populações de presas e de predadores em relação ao tempo, usando o sistema <a class="xref" data-knowl="./knowl/sistema_pvp-2.html" title="[men] 2.1">(2.1)</a>:</p>
-<iframe id="interactive-variacoes-presa-predador" width="600" height="720" src="interactive-variacoes-presa-predador-if.html"></iframe><p id="p-12">Os códigos no Sage são os seguintes:</p>
+<p id="p-15">Variações nas populações de presas e de predadores em relação ao tempo, usando o sistema <a class="xref" data-knowl="./knowl/sistema_pvp-2.html" title="[men] 2.1">(2.1)</a>:</p>
+<iframe id="interactive-variacoes-presa-predador" width="600" height="720" src="interactive-variacoes-presa-predador-if.html"></iframe><p id="p-16">Os códigos no Sage são os seguintes:</p>
 <div class="sagecell-sage" id="sage-7"><script type="text/x-sage">y, t = var('y, t')
 f = x*(1 - 0.5*y)
 g = y*(-0.75 + 0.25*x)
