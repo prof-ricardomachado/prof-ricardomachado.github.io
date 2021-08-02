@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-30T16:22:41-03:00       *-->
+<!--*       on 2021-08-02T16:13:44-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -101,9 +101,10 @@ MathJax.Hub.Config({
 <span class="type">Seção</span> <span class="codenumber">1</span> <span class="title">Pontos críticos e soluções.</span>
 </h2>
 <article class="technology computation-like" id="technology-1"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Pontos críticos para o sistema de EDOs.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
 </h6>
-<div class="displaymath" id="p-2">
+<p id="p-2">Pontos críticos para o sistema de EDOs:</p>
+<div class="displaymath">
 \begin{equation}
 \begin{cases} \displaystyle\dfrac{dx}{dt} \amp \displaystyle=  xa - \alpha xy = x(a-\alpha y)\\
 \dfrac{dy}{dt} \amp  \displaystyle = -cy + \gamma xy = y(-c+\gamma x) \end{cases}\label{sistema_pvp}\tag{1.1}
@@ -123,15 +124,44 @@ show(s)
 <p id="p-5">Obtendo a solução da equação:</p>
 <div class="displaymath">
 \begin{equation*}
+\frac{d}{dt} \left( \begin{array}{c} u \\ v  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} u \\ v  \end{array}\right). 
+\end{equation*}
+</div>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">a, alpha, c, gamma = var('a, alpha, c, gamma')
+assume(a>0, 'RR'); assume(c>0, 'RR')
+t= var('t')
+u = function('u')(t); v = function('v')(t)
+sedo=[diff(u,t)==(-(alpha*c)/(gamma))*v, diff(v,t)==((a*gamma)/(alpha))*u]
+sol = desolve_system(sedo, [u,v], ivar=t)
+show(sol)
+</script></div></article><article class="technology computation-like" id="technology-3"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span>
+</h6>
+<p id="p-6">Obtendo a solução da equação:</p>
+<div class="displaymath">
+\begin{equation*}
 \frac{d}{dt} \left( \begin{array}{c} u \\ v  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} u \\ v  \end{array}\right), 
 \end{equation*}
 </div>
 <p data-braille="continuation">com \(a = 1, \alpha = 0.5, c= 0.75, \gamma = 0.25\) e as condições iniciais \((x,y) = (2, 0.8)\text{.}\)</p>
-<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">a = 1; alpha = 0.5; c= 0.75; gamma = 0.25
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">a = 1; alpha = 0.5; c= 0.75; gamma = 0.25
 t= var('t')
 u = function('u')(t); v = function('v')(t)
 sedo=[diff(u, t)==-(alpha*c)/(gamma)*v, diff(v, t)==(a*gamma)/(alpha)*u]
 sol = desolve_system(sedo, [u,v], [0, 2-0.75/0.25, 0.8-1/0.5])
+show(sol)
+</script></div></article><article class="technology computation-like" id="technology-4"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h6>
+<p id="p-7">Obtendo a solução da equação:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dy/dt}{dx/dt} = \frac{dy}{dx} = \frac{y(-c+ \gamma x )}{x (a - \alpha y )} 
+\end{equation*}
+</div>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">a, alpha, c, gamma = var('a, alpha, c, gamma')
+y = function('y')(x)
+sol=desolve(diff(y,x)==(y*(-c+gamma*x))/(x*(a-alpha*y)), y, ivar=x)
 show(sol)
 </script></div></article></section></div></main>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-02T15:52:06-03:00       *-->
+<!--*       on 2021-08-02T15:53:00-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,37 +56,27 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(Sistema=(['não linear', 'linear']), a=(1,(0,5,0.05)), alpha=(0.5,(0,5,0.05)), c=(0.75,(0,5,0.05)),
-gamma=(0.25,(0,1.5,0.05)), vetores=False):
-
-            
-    x,y = var('x,y')
-
-    l=[]
-    for i in srange(0.2, c/gamma-0.1, c/gamma/10):
-        l.append([i, a/alpha])
-
-    if Sistema=='não linear':
-        f1 = x*(a - alpha*y)        # não linear
-        g1 = y*(-c + gamma*x)   # não linear
-        sp1=streamline_plot((f1, g1), (x,0, 9), (y,0,6), start_points=l, density=30, aspect_ratio=1)
-        if vetores==True:
-            v = vector([f1, g1])
-            v = v/v.norm()
-            P = plot_vector_field(v, (x, 0, 8.5), (y, 0, 5.5), color='gray', frame=False, axes=True, axes_labels=['$x$', '$y$'])
-            sp1=sp1+P
-    else:
-        f2 = -(0.5*0.75)/(0.25)*(y-2) # linear
-        g2 = +(1*0.25)/(0.5)*(x-3)    # linear
-        sp1=streamline_plot((f2, g2), (x,0, 6), (y,0,4), start_points=l, density=30, aspect_ratio=1)
-        if vetores==True:
-            v = vector([f2, g2])
-            v = v/v.norm()
-            P = plot_vector_field(v, (x, 0, 6), (y, 0, 4), color='gray', frame=False, axes=True, axes_labels=['$x$', '$y$'])
-            sp1=sp1+P
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:720px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(a=(1,(0.1,5,0.05)), alpha=(0.5,(0.1,5,0.05)), c=(0.75,(0.1,5,0.05)),
+gamma=(0.25,(0.1,1.5,0.05))):
     
+    
+    def solucao_numerica_rk4(f, g, ini):
+        x, y, t = var('x, y, t')
+        return desolve_system_rk4([f, g], [x, y], ics=ini, ivar=t, end_points=30)
 
-    sp1.show(figsize=5)
+    y = var('y')
+    sn = solucao_numerica_rk4((x*(a - alpha*y)), (y*(-c + gamma*x)), [0, 2, 0.8])
+
+    l1 = []; l2 = []
+    for i in sn:
+        l1.append([i[0], i[1]])
+        l2.append([i[0], i[2]])
+
+    
+    p1_classic = line(l1, thickness=1.2, gridlines=True, 
+                  axes_labels=['$t$', '$x$, $y$'], legend_label='Presa')
+    p2_classic = line(l2, color='red', thickness=1.2, legend_label='Predador')
+    (p1_classic + p2_classic).show(figsize=[5,4])
 </script></div></div></body>
 </html>

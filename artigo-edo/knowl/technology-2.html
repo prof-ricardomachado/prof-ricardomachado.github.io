@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-30T16:22:41-03:00       *-->
+<!--*       on 2021-08-02T16:13:44-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -29,15 +29,15 @@
 <p>Obtendo a solução da equação:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{d}{dt} \left( \begin{array}{c} u \\ v  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} u \\ v  \end{array}\right), 
+\frac{d}{dt} \left( \begin{array}{c} u \\ v  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} u \\ v  \end{array}\right). 
 \end{equation*}
 </div>
-<p data-braille="continuation">com \(a = 1, \alpha = 0.5, c= 0.75, \gamma = 0.25\) e as condições iniciais \((x,y) = (2, 0.8)\text{.}\)</p>
-<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">a = 1; alpha = 0.5; c= 0.75; gamma = 0.25
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">a, alpha, c, gamma = var('a, alpha, c, gamma')
+assume(a>0, 'RR'); assume(c>0, 'RR')
 t= var('t')
 u = function('u')(t); v = function('v')(t)
-sedo=[diff(u, t)==-(alpha*c)/(gamma)*v, diff(v, t)==(a*gamma)/(alpha)*u]
-sol = desolve_system(sedo, [u,v], [0, 2-0.75/0.25, 0.8-1/0.5])
+sedo=[diff(u,t)==(-(alpha*c)/(gamma))*v, diff(v,t)==((a*gamma)/(alpha))*u]
+sol = desolve_system(sedo, [u,v], ivar=t)
 show(sol)
 </script></div></article><span class="incontext"><a href="section-solucoes.html#technology-2">[incontext]</a></span>
 </body>
