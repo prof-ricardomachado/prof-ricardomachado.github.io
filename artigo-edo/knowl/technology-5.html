@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-02T18:54:10-03:00       *-->
+<!--*       on 2021-08-02T22:10:13-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -39,6 +39,7 @@
 \frac{d}{dt} \left( \begin{array}{c} x \\ y  \end{array}\right) = \left( \begin{array}{cc} 0 \amp \frac{-\alpha c }{\gamma}  \\ \frac{\gamma a}{\alpha} \amp 0   \end{array}\right) \left( \begin{array}{c} x-\frac{c}{\gamma} \\ y-\frac{a}{\alpha}  \end{array}\right).\tag{2.2}
 \end{equation}
 </div>
+<p data-braille="continuation">Abaixo, disponibilizamos uma calculadora automática de trajetórias no plano de fase associadas aos sistemas linear e não linear. Se desejar ver as trajetórias em conjunto dos campos de vetores, marque a opção "vetores".</p>
 <iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-presa-predador-111" width="600" height="660" src="interactive-presa-predador-111-if.html"></iframe><p xmlns:svg="http://www.w3.org/2000/svg">Os códigos no Sage, para o retrato de fase do sistema não linear, são os seguintes:</p>
 <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">x,y = var('x,y')
 a=1; alpha=0.5; c=0.75; gamma=0.25
@@ -58,6 +59,14 @@ for i in srange(0.2, c/gamma-0.1, c/gamma/10):
 f2 = -(alpha*c)/(gamma)*(y-a/alpha)   # linear
 g2 = +(a*gamma)/(alpha)*(x-c/gamma)   # linear
 streamline_plot((f2, g2), (x,0, 6), (y,0,4), start_points=l, density=50, aspect_ratio=1)
+</script></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Os códigos no Sage, para o campo de vetores, são os seguintes:</p>
+<div class="sagecell-sage" id="sage-7"><script type="text/x-sage">y=var('y'); a=1; alpha=0.5; c=0.75; gamma=0.25
+f1 = x*(a - alpha*y)    # não linear
+g1 = y*(-c + gamma*x)   # não linear
+v = vector([f1, g1])
+v = v/v.norm()
+plot_vector_field(v, (x, 0, 8.5), (y, 0, 5.5), color='gray', frame=False, axes=True, axes_labels=['$x$', '$y$'])
 </script></div></article><span class="incontext"><a href="section-classico-predador-presa.html#technology-5">[incontext]</a></span>
 </body>
 </html>
