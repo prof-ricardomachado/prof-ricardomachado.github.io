@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-02T22:10:12-03:00       *-->
+<!--*       on 2021-08-09T15:58:34-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -149,7 +149,7 @@ plot_vector_field(v, (x, 0, 8.5), (y, 0, 5.5), color='gray', frame=False, axes=T
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span>
 </h6>
 <p id="p-18">Variações nas populações de presas e de predadores em relação ao tempo, usando o sistema <a class="xref" data-knowl="./knowl/sistema_pvp-2.html" title="[men] 2.1">(2.1)</a>:</p>
-<iframe id="interactive-variacoes-presa-predador" width="600" height="720" src="interactive-variacoes-presa-predador-if.html"></iframe><p id="p-19">Os códigos no Sage são os seguintes:</p>
+<iframe id="interactive-variacoes-presa-predador" width="600" height="780" src="interactive-variacoes-presa-predador-if.html"></iframe><p id="p-19">Os códigos no Sage, para o caso não linear, são os seguintes:</p>
 <div class="sagecell-sage" id="sage-8"><script type="text/x-sage">y, t = var('y, t')
 f = x*(1 - 0.5*y)
 g = y*(-0.75 + 0.25*x)
@@ -165,6 +165,20 @@ p1_classic = line(l1, thickness=1.2, gridlines=True,
                   axes_labels=['$t$', '$x$, $y$'], legend_label='Presa')
 p2_classic = line(l2, color='red', thickness=1.2, legend_label='Predador')
 p1_classic + p2_classic
+</script></div>
+<p id="p-20">Os códigos no Sage, para o caso linear, são os seguintes:</p>
+<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">a = 1; alpha = 0.5; c= 0.75; gamma = 0.25
+t= var('t')
+u = function('u')(t); v = function('v')(t)
+sedo=[diff(u, t)==-(alpha*c)/(gamma)*v, diff(v, t)==(a*gamma)/(alpha)*u]
+sol = desolve_system(sedo, [u,v], [0, 2-0.75/0.25, 0.8-1/0.5])
+F = 0.75/0.25 + sol[0].rhs()
+G = 1/0.5 + sol[1].rhs()
+p1l = plot(F, (0, 30), color='black', axes_labels=['$t$', '$x,y$'],
+           legend_label='Presa') 
+p2l = plot(G, (0, 30), color='purple', gridlines=True, 
+           legend_label='Predador')
+p1l+p2l
 </script></div></article></section></div></main>
 </div>
 </body>
