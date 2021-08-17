@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-26T17:58:22-03:00       *-->
+<!--*       on 2021-08-17T16:38:15-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -251,13 +251,10 @@ R(x, T^3)= \amp ~ 6x^3 + 18x^2 + 9x +1.
 </div></article><article class="technology computation-like" id="tech-politorre01"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
 </h6>
-<p id="p-514">A seguir, temos uma implementação de uma função no Sage que gera o polinômio de torre de um tabuleiro \(n\times n\text{.}\) Na linha 6, a função está sendo "chamada" para gerar o polinômio de torre de um tabuleiro \(4\times 4\text{.}\) Para obter o polinômio de torre de um tabuleiro quadrado diferente, troque o número 4 da linha 6 pelo valor desejado e clique em "Evaluate (Sage)".</p>
-<div class="sagecell-sage" id="sage-32"><script type="text/x-sage">def polinomio_torre(n):
-    s = 0
-    for k in range(n+1):
-        s = s + binomial(n, k)^2*factorial(k)*x^k
-    return show(s)
-polinomio_torre(4)
+<p id="p-514">A seguir, temos os códigos para gerar o polinômio de torre de um tabuleiro \(n\times n\text{.}\) Na linha 1, definimos uma matriz \(4\times 4\) de uns e guardamos na variável <dfn class="terminology">B</dfn>. Para obter o polinômio de torre de um tabuleiro quadrado diferente, troque o número 4 da linha 1 pelo valor desejado e clique em "Evaluate (Sage)".</p>
+<div class="sagecell-sage" id="sage-32"><script type="text/x-sage">B = matrix.ones(4)
+R = PolynomialRing(ZZ, 'x')
+show(R(B.rook_vector()))
 </script></div>
 <p id="p-515">Para entender melhor as implementações das funções escritas em Sage, veja a referência <a class="xref" data-knowl="./knowl/sage.html" title="[biblio] 5.5">[5.5]</a></p></article><article class="definition definition-like" id="definition-18"><h6 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
@@ -304,17 +301,13 @@ R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
 <article class="technology computation-like" id="technology-19"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
 </h6>
-<p id="p-523">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a implementação apresentada na <a class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função \(\verb|produto_polinomios_torre|\) que multiplica cada um dos polinômios gerados na função anterior. As entradas da função \(\verb|produto_polinomios_torre|\) são os tamanhos dos tabuleiros. Na linha 12 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro \(3\times 3\) e 4 tabuleiros \(1\times 1\text{.}\)</p>
-<div class="sagecell-sage" id="sage-33"><script type="text/x-sage">def polinomio_torre(n):
-    s = 0
-    for k in range(n+1):
-        s = s + binomial(n, k)^2*factorial(k)*x^k
-    return s
-def produto_polinomios_torre(*lista):
-    p = 1
-    for i in lista:
-        p = p*polinomio_torre(i)
-    p = p.expand()
+<p id="p-523">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função \(\verb|produto_polinomios_torre|\) que multiplica cada um dos polinômios de torre. As entradas da função \(\verb|produto_polinomios_torre|\) são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro \(3\times 3\) e 4 tabuleiros \(1\times 1\text{.}\)</p>
+<div class="sagecell-sage" id="sage-33"><script type="text/x-sage">def produto_polinomios_torre(*lista):
+    R = PolynomialRing(ZZ, 'x')
+    p = R(1)
+    for n in lista:
+        B = matrix.ones(n)
+        p = p*R(B.rook_vector())
     return show(p)
 produto_polinomios_torre(3, 1, 1, 1, 1)
 </script></div></article><p id="p-524">Voltando a solução do <a class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>. Pela <a class="xref" data-knowl="./knowl/prop-uniaodis.html" title="Proposição 2.3.13">Proposição 2.3.13</a> o polinômio de torre do tabuleiro da palavra AAAMREL é dado por</p>
@@ -346,18 +339,12 @@ R(x, T) =  6x^{7} + 42x^{6} + 117x^{5} + 169x^{4} + 136x^{3} + 60x^{2} + 13x^1 +
 </h6>
 <p id="p-525">A implementação de uma função que substitui \(x^k\) por \((-1)^k\cdot(n-k)!\) em um polinômio de grau \(n\text{.}\) Na linha 14 a função está sendo "chamada" com o polinômio: \(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</p>
 <div class="sagecell-sage" id="sage-34"><script type="text/x-sage">def substituicao(p):
-    c = p.coefficients()
-    lista=[]
-    for i in c:
-        lista.append(i[1])
-    lista.reverse()
-    total = lista[0]
+    c = p.coefficients()   # lista de coeficientes
+    d = p.degree(x)        # grau máximo
     s = 0
     for i in c:
-        if i[1] > 0:
-            s = s + i[0]*factorial(total-i[1])*(-1)^i[1]
-    resp = (factorial(total) + s)
-    return resp
+        s = s + i[0]*(-1)^i[1]*factorial(d-i[1])
+    return s
 substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 </script></div></article><article class="example example-like" id="exem-perguntainternet"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span>
@@ -391,9 +378,9 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 </div></div></article><article class="technology computation-like" id="tec-caotica-r"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Faça você mesmo.</span>
 </h6>
-<figure class="figure figure-like" id="interactive-caotica-r"><p id="p-529">A resposta do <a class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a> junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.</p>
+<p id="p-529">A resposta do <a class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a> junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.</p>
 <p id="p-530">Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.</p>
-<iframe id="interactive-caotica-r" width="600" height="240" src="interactive-caotica-r-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.18<span class="period">.</span></span><span class="space"> </span>Número de Permutações Caóticas podendo ter elementos repetidos.</figcaption></figure></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<iframe id="interactive-caotica-r" width="600" height="420" src="interactive-caotica-r-if.html"></iframe></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span>
 </h3>
 <p id="p-531">Na matemática, os polinômios de Laguerre, nomeados em homenagem a Edmond Laguerre (1834-1886), são soluções da equação de Laguerre:</p>
@@ -406,7 +393,7 @@ xy''+ (1-x)y' + ny = 0
 <p id="p-532">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Laguerre_polynomials" target="_blank"><dfn class="terminology">en.wikipedia.org/wiki/Laguerre_polynomials</dfn></a></p>
 <p id="p-533">Os polinômios de torre, em combinatória, são mais ou menos os mesmos que os polinômios de Laguerre, a menos de mudanças elementares de variáveis. Usaremos os polinômios de Laguerre para enunciar um Teorema com uma fórmula para calcular permutações caóticas com repetições usando integrais.</p>
 <article class="definition definition-like" id="definition-19"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.19</span><span class="period">.</span>
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.18</span><span class="period">.</span>
 </h6>
 <p id="p-534">Usando recursividade é possível chegar na seguinte forma fechada para os polinômios de Laguerre:</p>
 <div class="displaymath">
@@ -414,12 +401,12 @@ xy''+ (1-x)y' + ny = 0
 L_n(x) = \sum_{k=0}^nC_n^k \frac{(-1)^k}{k!}x^k
 \end{equation*}
 </div></article><article class="technology computation-like" id="technology-22"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.20</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.19</span><span class="period">.</span>
 </h6>
 <p id="p-535">Obtendo o polinômio de Laguerre \(L_3(x)\) no Sage.</p>
 <div class="sagecell-sage" id="sage-35"><script type="text/x-sage">laguerre(3,x).show()
 </script></div></article><article class="theorem theorem-like" id="teo-permutacao-caotica-repet"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.21</span><span class="period">.</span>
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.20</span><span class="period">.</span>
 </h6>
 <p id="p-536">O número de permutações caóticas, \(DR_n^{r_1, r_2, \ldots, r_k}\text{,}\) de uma lista com \(n\) objetos, com um objeto repetido \(r_1\) vezes, outro objeto repetido \(r_2\) vezes, até o "último" objeto repetido \(r_k\) vezes, tal que \(r_1+r_2+\cdots +r_k = n\text{,}\) pode ser calculado da seguinte maneira:</p>
 <div class="displaymath">
@@ -435,14 +422,14 @@ DR_n^{r_1, r_2, \ldots, r_k} = \left|\int_0^\infty e^{-x} L_{r_1}(x)L_{r_2}(x)\c
 <p data-braille="continuation">o resultado segue.</p>
 <p id="p-538">Mais detalhes em breve.</p></article></div>
 <article class="technology computation-like" id="technology-23"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.22</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.21</span><span class="period">.</span>
 </h6>
-<p id="p-539">Usando o <a class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a> para calcular o número de soluções do <a class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a>. Foram usados os métodos <em class="emphasis">abs</em> e <em class="emphasis">integral</em> que calculam o valor absoluto e a integral, respectivamente.</p>
+<p id="p-539">Usando o <a class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.20">Teorema 2.3.20</a> para calcular o número de soluções do <a class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a>. Foram usados os métodos <em class="emphasis">abs</em> e <em class="emphasis">integral</em> que calculam o valor absoluto e a integral, respectivamente.</p>
 <div class="sagecell-sage" id="sage-36"><script type="text/x-sage">abs(integral(exp(-x)*laguerre(3,x)*laguerre(2,x)^2*laguerre(1, x)^3, (x, 0, +oo)))
 </script></div></article><article class="technology computation-like" id="technology-24"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.23</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.22</span><span class="period">.</span>
 </h6>
-<p id="p-540">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</p>
+<p id="p-540">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.20">Teorema 2.3.20</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</p>
 <div class="sagecell-sage" id="sage-37"><script type="text/x-sage">def DR(*lista):
     n = sum(lista)
     p = exp(-x)
