@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-17T16:38:21-03:00       *-->
+<!--*       on 2021-08-18T11:26:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,35 +12,75 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.8.2</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.7.1</span><span class="period">.</span>
 </h6>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item b)</dfn> Não é viável fazer as contas "na mão" para calcular a cardinalidade da união de 8 conjuntos, vamos usar o SageMath para contar a quantidade de elementos da união:</p>
+<p>Sejam</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A_2\cup A_3\cup A_5\cup A_7\cup A_{11}\cup A_{13}\cup A_{17}\cup A_{19}.
+\bullet A_1 \text{o conjunto dos anagramas de COMPLEXA que tem C em 1º lugar}
 \end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Clique em "Evaluate (Sage)" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).</p>
-<div class="sagecell-sage" id="sage-24"><script type="text/x-sage">def numeros_de_multiplos(lista, num):
-    l=[]
-    for i in lista:
-        l = l+[x for x in [1..num] if x%i == 0]   
-    return len(set(l))
-numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
-</script></div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bullet A_2 \text{o conjunto dos anagramas de COMPLEXA que tem O em 2º lugar}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bullet A_3 \text{o conjunto dos anagramas de COMPLEXA que tem M em 3º lugar}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bullet A_4 \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}
+\end{equation*}
+</div>
+<p data-braille="continuation">Assim, \(\#A_i = 7!,\) para  \(i\in \{1, 2, 3, 4\}\text{.}\)</p>
+<p>Observe que \(\#(A_i\cap A_j), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_i\cap A_j) = 6!
+\end{equation*}
+</div>
+<p>Observe que \(\#(A_i\cap A_j\cap A_k), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_i\cap A_j\cap A_k) = 5!
+\end{equation*}
+</div>
+<p>Observe que \(\#(A_1\cap A_2\cap A_3\cap A_4)\) é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P  nas posições \(1, 2, 3, 4\) fixas, logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_1\cap A_2\cap A_3\cap A_4) = 4!
+\end{equation*}
+</div>
+<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~\sum_{i=1}^{4} \#A_i - \sum_{1\leq i\lt j\leq 4} \#(A_i\cap A_j) \\
+\amp ~ +\sum_{1\leq i\lt j\lt k \leq 4} \#(A_i\cap A_j\cap A_k) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<p data-braille="continuation">Organizando, temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times\#A_1 - C_4^2\times\#(A_1\cap A_2) \\
+\amp ~ +C_4^3\times\#(A_1\cap A_2\cap A_3) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<p data-braille="continuation">Substituindo, temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times 7! - C_4^2\times 6! +C_4^3\times 5! -4! \\
+=\amp ~ 16296. 
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="section-inclusao-exclusao.html#solution-70">[incontext]</a></span>
 </body>
