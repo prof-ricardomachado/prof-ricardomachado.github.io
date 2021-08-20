@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-18T11:26:48-03:00       *-->
+<!--*       on 2021-08-19T21:35:27-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,25 +12,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body><div class="solution solution-like">
 <p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Sejam</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bullet A_2=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 2}\}
-\end{equation*}
+\begin{gather*}
+A_2=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 2}\}; \\
+A_3=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 3}\}; \\
+A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 5}\}. 
+\end{gather*}
 </div>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bullet A_3=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 3}\}
-\end{equation*}
-</div>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bullet A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 5}\}
-\end{equation*}
-</div>
-<p data-braille="continuation">A resposta do item a) é a cardinalidade do conjunto:</p>
+<p data-braille="continuation"> A resposta do item a) é a cardinalidade do conjunto:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 A_2\cup A_3\cup A_5. 
@@ -73,5 +74,19 @@ A_2\cup A_3\cup A_5.
 \amp =  ~ 7334 
 \end{align*}
 </div>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item b)</dfn> Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A_2\cup A_3\cup A_5\cup A_7\cup A_{11}\cup A_{13}\cup A_{17}\cup A_{19}.
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Clique em "Evaluate (Sage)" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).</p>
+<div class="sagecell-sage" id="sage-24"><script type="text/x-sage">def numeros_de_multiplos(lista, num):
+    l=[]
+    for i in lista:
+        l = l+[x for x in [1..num] if x%i == 0]   
+    return len(set(l))
+numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
+</script></div>
 </div></body>
 </html>
