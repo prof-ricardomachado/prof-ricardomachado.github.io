@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-19T21:35:28-03:00       *-->
+<!--*       on 2021-08-25T22:38:03-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,17 +24,17 @@
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">A implementação de uma função que substitui \(x^k\) por \((-1)^k\cdot(n-k)!\) em um polinômio de grau \(n\text{.}\) Na linha 14 a função está sendo "chamada" com o polinômio: \(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</p>
-<div class="sagecell-sage" id="sage-34"><script type="text/x-sage">def substituicao(p):
-    c = p.coefficients()   # lista de coeficientes
-    d = p.degree(x)        # grau máximo
-    s = 0
-    for i in c:
-        s = s + i[0]*(-1)^i[1]*factorial(d-i[1])
-    return s
-substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
+<p xmlns:svg="http://www.w3.org/2000/svg">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função \(\verb|produto_polinomios_torre|\) que multiplica cada um dos polinômios de torre. As entradas da função \(\verb|produto_polinomios_torre|\) são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro \(3\times 3\) e 4 tabuleiros \(1\times 1\text{.}\)</p>
+<div class="sagecell-sage" id="sage-33"><script type="text/x-sage">def produto_polinomios_torre(*lista):
+    R = PolynomialRing(ZZ, 'x')
+    p = R(1)
+    for n in lista:
+        B = matrix.ones(n)
+        p = p*R(B.rook_vector())
+    return show(p)
+produto_polinomios_torre(3, 1, 1, 1, 1)
 </script></div></article><span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#technology-20">[incontext]</a></span>
 </body>
 </html>

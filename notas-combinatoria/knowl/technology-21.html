@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-04T15:05:31-03:00       *-->
+<!--*       on 2021-08-25T22:38:03-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,11 +24,17 @@
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Calculando \(K(8, 4)\) no Sage:</p>
-<div class="sagecell-sage" id="sage-35"><script type="text/x-sage">K(n, p) = binomial(n-p+1, p) 
-K(8, 4)
-</script></div></article><span class="incontext"><a href="section-lemas-kaplansky.html#technology-21">[incontext]</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">A implementação de uma função que substitui \(x^k\) por \((-1)^k\cdot(n-k)!\) em um polinômio de grau \(n\text{.}\) Na linha 14 a função está sendo "chamada" com o polinômio: \(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</p>
+<div class="sagecell-sage" id="sage-34"><script type="text/x-sage">def substituicao(p):
+    c = p.coefficients()   # lista de coeficientes
+    d = p.degree(x)        # grau máximo
+    s = 0
+    for i in c:
+        s = s + i[0]*(-1)^i[1]*factorial(d-i[1])
+    return s
+substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
+</script></div></article><span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#technology-21">[incontext]</a></span>
 </body>
 </html>
