@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-16T22:23:59-03:00       *-->
+<!--*       on 2021-09-17T09:06:02-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,25 +57,27 @@ MathJax.Hub.Config({
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="pretext-content"><div style="width:600px; height:210px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(digitos=input_box(235689 , width=30,  label="Dígitos:"), numero=input_box(653289 , width=30,  label="Posição:") ):
+def _(digitos=input_box(235689 , width=30,  label="Dígitos:"), numero=input_box(653289 , width=30,  label="Número:") ):
 
-    
-    d = digitos.digits()
-    d.sort()
+    try:    
+        d = digitos.digits()
+        d.sort()
 
-    permut = Permutations(d).list()
+        permut = Permutations(d).list()
 
-    l=[]
-    for p in permut:
-        p = list(p)
-        p.reverse()
-        n10 = 0
-        for i in range(len(p)):
-            n10 = n10 + p[i]*10^i
-        l.append(n10)
-    #print(l)
-    pos = l.index(numero)+1
+        l=[]
+        for p in permut:
+            p = list(p)
+            p.reverse()
+            n10 = 0
+            for i in range(len(p)):
+                n10 = n10 + p[i]*10^i
+            l.append(n10)
+        #print(l)
+        pos = l.index(numero)+1
 
-    print('A posição de %d é %d' %(numero, pos))
+        print('A posição de %d é %d' %(numero, pos))
+    except ValueError:
+        print('Digite um número válido')
 </script></div></div></body>
 </html>

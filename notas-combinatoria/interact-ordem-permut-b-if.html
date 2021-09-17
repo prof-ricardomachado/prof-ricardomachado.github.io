@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-16T22:23:59-03:00       *-->
+<!--*       on 2021-09-17T09:06:02-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -59,18 +59,25 @@ MathJax.Hub.Config({
 <body class="pretext-content"><div style="width:600px; height:240px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
 def _(digitos=input_box(235689 , width=30,  label="Dígitos:"), posicao=input_box(500 , width=30,  label="Posição:") ):
 
-    
-    d = digitos.digits()
-    d.sort()
-    numero = Permutations(d).list()[posicao-1]
-    
-    numero = list(numero)
-    numero.reverse()
 
-    n10 = 0
-    for i in range(len(numero)):
-        n10 = n10 + numero[i]*10^i
+    try:
+        d = digitos.digits()
+        d.sort()
+        numero = Permutations(d).list()[posicao-1]
+        
+        numero = list(numero)
+        numero.reverse()
 
-    print('O número na posição %d é %d' %(posicao, n10))
+        n10 = 0
+        for i in range(len(numero)):
+            n10 = n10 + numero[i]*10^i
+        if 1 > posicao:
+            print('Digite uma posição entre %d e %d' %(1, fim))
+        else:
+            print('O número na posição %d é %d' %(posicao, n10))
+    except:
+        d = digitos.digits()
+        fim = factorial(len(d))
+        print('Digite uma posição entre %d e %d' %(1, fim))
 </script></div></div></body>
 </html>
