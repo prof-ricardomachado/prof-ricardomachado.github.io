@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-17T09:06:11-03:00       *-->
+<!--*       on 2021-09-20T08:42:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Parágrafo</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função \(\verb|produto_polinomios_torre|\) que multiplica cada um dos polinômios de torre. As entradas da função \(\verb|produto_polinomios_torre|\) são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro \(3\times 3\) e 4 tabuleiros \(1\times 1\text{.}\)</p>
+<p>Para colocar \(k\) torres em \(T\text{,}\) de forma que uma torre não possa atacar a outra, podemos colocar \(r_{k-i}(T_1)\text{,}\) \(0\leq i \leq k\text{,}\) torres em \(T_1\text{,}\) de forma que uma não possa atacar a outra, e \(r_{i}(T_2)\) torres em \(T_2\text{,}\) de forma que uma não possa atacar a outra. Dessa forma, dados duas torres quaisquer em \(T\text{,}\) na configuração obtida anteriormente, uma não pode atacar a outra. Portanto, o número de maneiras de colocarmos \(k\) torres em \(T\) é dado por</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+r_k(T) = \sum_{i=0}^k r_{k-i}(T_1)r_i(T_2).
+\end{equation*}
+</div>
+<p data-braille="continuation">Logo,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
+= \amp ~ \sum_{k=0}^n\sum_{i=0}^kr_{k-i}(T_1)r_i(T_2)x^k  \\
+= \amp ~ \left( \sum_{s=0}^pr_s(T_1)x^s \right)\left( \sum_{t=0}^qr_t(T_2)x^t \right) \\
+= \amp ~ R(x, T_1)\cdot R(x, T_2).
+\end{align*}
+</div>
 <span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#p-552">[incontext]</a></span>
 </body>
 </html>
