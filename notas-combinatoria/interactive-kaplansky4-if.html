@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-22T08:50:36-03:00       *-->
+<!--*       on 2021-09-23T14:56:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -59,34 +59,38 @@ MathJax.Hub.Config({
 <body class="pretext-content"><div style="width:600px; height:360px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
 def _(lista=input_box(['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'] , width=40,  label="lista:"), p=input_box(3 , width=10,  
         label="p:"), ):
-        
-    n = len(lista)
+    
+    try:    
+        n = len(lista)
 
-    comb = Combinations(range(1, n+1), p)
-    lcombx = comb.list()
+        comb = Combinations(range(1, n+1), p)
+        lcombx = comb.list()
 
-    for c in comb:
-        for i in range(len(c)):
-            if len(c)-1> i:
-                if c[i]+1 == c[i+1]:
-                    lcombx.remove(c)
-                    break
-            else:
-                if c[i] == n and c[0] == 1:
-                    lcombx.remove(c)
-                    break
+        for c in comb:
+            for i in range(len(c)):
+                if len(c)-1> i:
+                    if c[i]+1 == c[i+1]:
+                        lcombx.remove(c)
+                        break
+                else:
+                    if c[i] == n and c[0] == 1:
+                        lcombx.remove(c)
+                        break
 
-    k = lcombx
-    k2 = []
+        k = lcombx
+        k2 = []
 
-    for i in k:
-        laux = []
-        for j in i:
-            laux.append(SR(lista[j-1]))
-        k2.append(laux)
-    print('o número de soluções é:', len(k2))
-    print('As soluções são:')
-    for i in k2:
-        print(i)
+        for i in k:
+            laux = []
+            for j in i:
+                laux.append(SR(lista[j-1]))
+            k2.append(laux)
+        print('o número de soluções é:', len(k2))
+        print('As soluções são:')
+        for i in k2:
+            print(i)
+
+    except:
+        print('Escreva uma lista, por exemplo: [1, 2, 3, 4]')
 </script></div></div></body>
 </html>
