@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-23T14:56:38-03:00       *-->
+<!--*       on 2021-09-28T15:13:21-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,8 +56,8 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content"><div style="width:600px; height:420px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(palavra=input_box(default=['MATEMATICA'] , width=50,  label="palavra:")):    
+<body class="pretext-content"><div style="width:600px; height:690px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(palavra=input_box(default=['MATEMATICA'] , width=50,  label="Palavra:")):    
 
      
 
@@ -86,13 +86,17 @@ def _(palavra=input_box(default=['MATEMATICA'] , width=50,  label="palavra:")):
             p = p*pt(i)
         
 
-        show('Polinômio de torre:')
-        show(p)
+        #show('Polinômio de torre:')
+        #show(p)
 
-        p = p.expand()
+        #p = p.expand()
 
-        show('Polinômio de torre expandido:')
-        show(p)
+        ##show('Polinômio de torre expandido:')
+        ##show(p)
+        #print('Coeficientes da expansão')
+        #c = p.coefficients()
+        #for x in c:
+        #    print(x , end="\n")
 
         return p
 
@@ -113,9 +117,9 @@ def _(palavra=input_box(default=['MATEMATICA'] , width=50,  label="palavra:")):
         for k in lista:
             d = d*factorial(k)
             
-        resp = (factorial(total) + s)/d
+        resp = (factorial(total) + s)
         
-        return resp
+        return resp, d, p
 
     lista = list(lista)
     lista.sort()
@@ -129,9 +133,29 @@ def _(palavra=input_box(default=['MATEMATICA'] , width=50,  label="palavra:")):
             l.append(c)
             anterior = i
         
-    num = dr(*l)
+    num , permut, p = dr(*l)
     
+    #show('O número de permutações caóticas é:')
+    #show('%d/%d = %d' %(num, permut, num/permut))
     show('O número de permutações caóticas é:')
-    show(num)
+    show('%d/%d = %d' %(num, permut, num/permut))
+
+    show('Polinômio de torre:')
+    show(p)
+
+    p = p.expand()
+
+    #show('Polinômio de torre expandido:')
+    #show(p)
+    show('Coeficientes da expansão do polinômio:')
+    coef = p.coefficients()
+    lista_coef=[]
+    for i in coef:
+        lista_coef.append([x^(i[1]), i[0]])
+
+
+    l=['$x^i$', 'Coeficiente de $x^i$']
+    
+    show(table(lista_coef, header_row=l))
 </script></div></div></body>
 </html>
