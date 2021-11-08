@@ -69,47 +69,26 @@ MathJax.Hub.Config({
                 return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
             
     return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+
+
+def i_discordante(i, n):
+    A = matrix.ones(n,n)        # matriz com entradas 1
+    for j in range(n):          # variando em n
+        for k in range(i):      # variando em i
+            A[j,(k+j)%n] = 0    # colocando 0 nas posições necessárias
+    
+    s = A.rook_vector()         # cálculo do polinômio de torre
+    if len(s)==n+1:             # verificando coeficiente de x^n
+        return A, s[n]
+    else:
+        return A, 0
 @interact
-def _(texto=input_box(['POLINOMIO'] , width=35,  label="texto:"),  Complementar=False ):
+def _(i=input_box(2 , width=5,  label="i:"), n=input_box(7 , width=5,  label="n:")):
 
-    lista = list(texto[0])
-    lista.sort()
-    quantidades=[]
-    anterior = []
-    
-    for i in lista:                    # conta 
-        c = lista.count(i)             # quantas vezes                
-        if i != anterior:              # cada letra            
-            quantidades.append(c)      # aparece              
-            anterior = i               #                          
-    denominador = prod(factorial(i) for i in quantidades)
-    
-    bloco=[]                ### contrução dos blocos de matrizes
-    for i in quantidades:                                        
-        bloco.append(matrix.ones(i))                   
-    mat = block_diagonal_matrix(bloco, subdivide=false)  
-    
-    #vetor = m.rook_vector(complement=True)
-    #return vetor[-1]/denominador
+    A, p = i_discordante(i, n)
 
-    if Complementar==False:
-        nlinha = mat.nrows()
-        ncol = mat.ncols()
-        for i in range(nlinha):
-            for j in range(ncol):
-                if mat[i,j]==0:
-                    mat[i,j]=1
-                else:
-                    mat[i,j]=0
-
+    show('O número de permutações %d discordantes com %d elementos é %d ' %(i,n,p))
     
-    R = PolynomialRing(ZZ, 'x')
-    v=mat.rook_vector()
-    pol = R(v)
-    #show('Coeficientes: ', v)
-    show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
-    
-    show('Nova ordem:', lista)
-    tabuleiro(mat).show(figsize=5)
+    tabuleiro(A).show(figsize=5)
 </script></div></div></body>
 </html>
