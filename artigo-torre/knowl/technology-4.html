@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-08T11:01:09-03:00       *-->
+<!--*       on 2021-11-12T15:16:02-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -27,8 +27,23 @@
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
 </h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Calculando o número de permutações caóticas através de polinômios de torre.</p>
-<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-permutacoes-caoticas" width="600" height="660" src="interactive-permutacoes-caoticas-if.html"></iframe><p xmlns:svg="http://www.w3.org/2000/svg">Os códigos no Sage, para o caso não linear, são os seguintes:</p>
-<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">
+<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-permutacoes-caoticas" width="600" height="660" src="interactive-permutacoes-caoticas-if.html"></iframe><p xmlns:svg="http://www.w3.org/2000/svg">Função \(\verb|D(n)|\text{,}\) para obter o número de permutações caóticas, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def D(n):
+    B = matrix.identity(n)
+    v = B.rook_vector(complement=True)
+    return v[n]
+D(5)
+</script></div>
+<p>Função \(\verb|D(n)|\text{,}\) para obter o número de permutações caóticas, usando a expressão:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+D_n=\sum_{k=0}^{n}(-1)^k\dfrac{n!}{k!}.
+\end{equation*}
+</div>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def D(n):
+    P(i) = factorial(i)
+    return P(n)*sum(((-1)^x)/P(x), x, 0, n)
+D(5)
 </script></div></article><span class="incontext"><a href="sec-permutacao-restricao.html#technology-4">[incontext]</a></span>
 </body>
 </html>

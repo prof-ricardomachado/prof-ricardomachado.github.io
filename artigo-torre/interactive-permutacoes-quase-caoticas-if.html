@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-08T11:01:09-03:00       *-->
+<!--*       on 2021-11-12T15:16:02-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -70,22 +70,13 @@ MathJax.Hub.Config({
             
     return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
 @interact
-def _(n=input_box(6 , width=10,  label="n:"), m=input_box(4 , width=10,  label="m:"),  Complementar=False ):
+def _(n=input_box(6 , width=10,  label="n:"), m=input_box(4 , width=10,  label="m:") ):
 
     mat = matrix.ones(n)
     for i in range(m):
         mat[i,i] = 0
 
-    if Complementar==True:
-        nlinha = mat.nrows()
-        ncol = mat.ncols()
-        for i in range(nlinha):
-            for j in range(ncol):
-                if mat[i,j]==0:
-                    mat[i,j]=1
-                else:
-                    mat[i,j]=0
-
+    
 
     R = PolynomialRing(ZZ, 'x')
     v = R(mat.rook_vector())

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-08T11:01:09-03:00       *-->
+<!--*       on 2021-11-12T15:16:02-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -45,7 +45,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -89,13 +97,14 @@ MathJax.Hub.Config({
 <a href="sec-permutacao-restricao.html" data-scroll="sec-permutacao-restricao"><span class="codenumber">2</span> <span class="title">Permutações com restrições</span></a><ul>
 <li><a href="sec-permutacao-restricao.html#subsection-1" data-scroll="subsection-1">Caso Geral</a></li>
 <li><a href="sec-permutacao-restricao.html#subsection-2" data-scroll="subsection-2">Permutações Caóticas</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-3" data-scroll="subsection-3">Permutação Caótica com elementos repetidos</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-3" data-scroll="subsection-3">Permutações Quase Caóticas</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-4" data-scroll="subsection-4">Permutação Caótica com elementos repetidos</a></li>
 </ul>
 </li>
 <li class="link active">
 <a href="sec-problema-menages.html" data-scroll="sec-problema-menages"><span class="codenumber">3</span> <span class="title">Outras Aplicações</span></a><ul>
-<li><a href="sec-problema-menages.html#subsection-4" data-scroll="subsection-4">Permutações Discordantes</a></li>
-<li><a href="sec-problema-menages.html#subsection-5" data-scroll="subsection-5">Problème des Ménages</a></li>
+<li><a href="sec-problema-menages.html#subsection-5" data-scroll="subsection-5">Permutações Discordantes</a></li>
+<li><a href="sec-problema-menages.html#subsection-6" data-scroll="subsection-6">Problème des Ménages</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Comentário</a><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -103,21 +112,47 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-problema-menages"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">3</span> <span class="title">Outras Aplicações</span>
 </h2>
-<section class="introduction" id="introduction-3"><p id="p-16">Nesta seção, através de uma matriz, o tabuleiro e o respectivo polinômio de torre pode ser obtido.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-3"><p id="p-20">Nesta seção, estão disponíveis tanto na versão interativa, como os códigos Sage, para Permutações Discordanes e o Problème des Ménages.</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">3.1</span> <span class="title">Permutações Discordantes</span>
 </h3>
 <article class="technology computation-like" id="technology-7"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span>
 </h6>
-<p id="p-17">Calculando o número de permutações \(i\)-discordante com \(n\) elementos.</p>
-<iframe id="interactive-permutacoes-i-discordante" width="600" height="660" src="interactive-permutacoes-i-discordante-if.html"></iframe></article></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<p id="p-21">Calculando o número de permutações \(i\)-discordante com \(n\) elementos.</p>
+<iframe id="interactive-permutacoes-i-discordante" width="600" height="660" src="interactive-permutacoes-i-discordante-if.html"></iframe><p id="p-22">Função \(\verb|i_discordante|\text{,}\) para obter o número de permutações i-discordantes, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
+<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">def i_discordante(i, n):
+    A = matrix.ones(n,n)        # matriz com entradas 1
+    for j in range(n):          # variando em n
+        for k in range(i):      # variando em i
+            A[j,(k+j)%n] = 0    # colocando 0 nas posições necessárias
+    
+    s = A.rook_vector()         # cálculo do polinômio de torre
+    if len(s)==n+1:             # verificando coeficiente de x^n
+        return s[n]
+    else:
+        return 0
+i_discordante(2,7)
+</script></div></article></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">3.2</span> <span class="title">Problème des Ménages</span>
 </h3>
 <article class="technology computation-like" id="technology-8"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
 </h6>
-<p id="p-18">Calculando o número permutações caóticas com elementos repetidos.</p>
-<iframe id="interactive-probleme-menages" width="600" height="660" src="interactive-probleme-menages-if.html"></iframe></article></section></section></div></main>
+<p id="p-23">Calculando o número permutações caóticas com elementos repetidos.</p>
+<iframe id="interactive-probleme-menages" width="600" height="240" src="interactive-probleme-menages-if.html"></iframe><p id="p-24">Função \(\verb|menages2|\text{,}\) para obter o número de soluções para o Problème des Ménages, usando a expressão:</p>
+<div class="displaymath">
+\begin{equation*}
+M_n=2\cdot n!\cdot \sum_{k=0}^{n}(-1)^k\cdot(n-k)!\cdot \dfrac{2n}{2n-k}\binom{2n-k}{k}
+\end{equation*}
+</div>
+<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">def menages2(n):
+    var('k')
+    P(i) = factorial(i)
+    C(i,p) = binomial(i,p)
+    m = sum((-1)^k*((2*n)/(2*n-k))*C(2*n-k, k)*(P(n-k)), k, 0, n)
+    return 2*P(n)*m
+menages2(5)
+</script></div></article></section></section></div></main>
 </div>
 </body>
 </html>
