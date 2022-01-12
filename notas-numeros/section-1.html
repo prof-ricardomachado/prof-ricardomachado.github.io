@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-01-12T11:00:02-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Axiomas de Peano e Operações</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Números:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Clessius Silva, Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="axiomas.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="axiomas.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-2.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="axiomas.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="axiomas.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-2.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="prof-clessius-silva.html" data-scroll="prof-clessius-silva">Sobre Clessus Silva</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="axiomas.html" data-scroll="axiomas"><span class="codenumber">1</span> <span class="title">Axiomas de Peano</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1" class="active">Axiomas de Peano e Operações</a></li>
+<li><a href="section-2.html" data-scroll="section-2">A relação de ordem e o Princípio da Boa Ordem</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Mais sobre o Princípio de Indução</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="corporeais.html" data-scroll="corporeais"><span class="codenumber">2</span> <span class="title">O corpo dos números Reais</span></a><ul><li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Definições Básicas</a></li></ul>
+</li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">3</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-1"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">1.1</span> <span class="title">Axiomas de Peano e Operações</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-10">A teoria dos números naturais pode ser deduzida a partir de três axiomas chamados de <em class="emphasis">Axiomas de Peano</em>. Abaixo enunciamos tais axiomas.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">1.1.1</span> <span class="title">Axiomas de Peano</span>
+</h3>
+<article class="axiom theorem-like" id="ax-peano"><h6 class="heading">
+<span class="type">Axioma</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-11"><dfn class="terminology">(Axiomas de Peano)</dfn> O conjunto \(\mathbb{N}\text{,}\) dos números naturais, é caracterizado pelos seguintes fatos:</p>
+<ol class="decimal ">
+<li id="li-1"><p id="p-12">Existe uma função injetiva \(s:\mathbb{N}\rightarrow\mathbb{N}\text{.}\) A imagem \(s(n)\) de um número natural \(n\in\mathbb{N}\) é chamada <em class="emphasis">sucessor de \(n\)</em>.</p></li>
+<li id="li-2"><p id="p-13">Existe um único número natural \(1\in\mathbb{N}\) tal que \(1\neq s(n)\) para todo \(n\in\mathbb{N}\text{.}\)</p></li>
+<li id="li-3"><p id="p-14">Se um subconjunto \(M\subset \mathbb{N}\) é tal que \(1\in M\) e \(s(n)\in M\) sempre que \(n\in M\text{,}\) então \(M=\mathbb{N}\text{.}\)</p></li>
+</ol></article><p id="p-15">Em outras palavras, as sentenças \(1, 2\) e \(3\) do <a class="xref" data-knowl="./knowl/ax-peano.html" title="Axioma 1.1.1">Axioma 1.1.1</a>, podem ser reescritas como:</p>
+<ol class="lower-roman ">
+<li id="li-4"><p id="p-16">Todo número natural tem um sucessor que é também um número natural; números diferentes têm sucessores diferentes.</p></li>
+<li id="li-5"><p id="p-17">Existe um único número natural \(1\in\mathbb{N}\) que não é sucessor de nenhum outro.</p></li>
+<li id="li-6"><p id="p-18">Se um subconjunto de \(\mathbb{N}\) contém o número \(1\) e contém também o sucessor de cada um de seus elementos, então esse conjunto contém todos os números naturais.</p></li>
+</ol>
+<p id="p-19">O item \(3\) do <a class="xref" data-knowl="./knowl/ax-peano.html" title="Axioma 1.1.1">Axioma 1.1.1</a> é conhecido como <em class="emphasis">Axioma de Indução</em>. Intuitivamente, ele significa que todo número natural \(n\) pode ser obtido a partir de \(1\text{,}\) tomando-se seu sucessor \(s(1)\text{,}\) o sucessor deste, \(s(s(1))\text{,}\) e assim por diante, com um "número finito" de etapas (ainda não sabemos o que significa um "número finito"). Adotaremos a notação indo-arábica (de base 10) para representar os números naturais, isto é, representaremos <em class="emphasis">todos</em> os números naturais por: \[1, ~ 2=s(1), ~ 3=s(2), ~ 4=s(3), ~ 5=s(4),\] e assim por diante.</p>
+<p id="p-20">A grande importância do axioma de indução é que ele serve de base para um método de demonstração de teoremas sobre números naturais, conhecido como <em class="emphasis">Princípio de Indução</em>, o qual funciona como segue:</p>
+<article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-21"><dfn class="terminology">(Princípio de Indução)</dfn> Se uma propriedade P é válida para o número 1 e se, supondo P válida para o número \(n\) daí resultar que P é válida também para seu sucessor \(s(n)\text{,}\) então P é válida para todos os números naturais.</p></article><p id="p-22">Entre os axiomas de Peano não existe nenhuma afirmação que nos diga que qualquer número natural é diferente de seu sucessor, demonstraremos isso agora utilizando o Princípio de Indução.</p>
+<article class="proposition theorem-like" id="proposition-1"><h6 class="heading">
+<span class="type">Proposição</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-23">Para qualquer \(n\in\mathbb{N}\text{,}\) \(s(n)\neq n.\)</p></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-24">Falta escrever</p></article></div></section><section class="subsection" id="subsec-operacoes-naturais"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">1.1.2</span> <span class="title">Operações entre números naturais</span>
+</h3>
+<section class="introduction" id="introduction-3"><p id="p-25">No conjunto \(\mathbb{N}\text{,}\) dos números naturais, temos duas operações fundamentais, a soma, denotada por \((+)\text{,}\) e o produto, denotado por \((\cdot)\text{.}\)</p></section><p id="p-26">De maneira formal, essas operações são caracterizadas pelas seguintes igualdades, que são suas definições: para quaisquer \(m,n \in\mathbb{N}\text{:}\)</p>
+<ol class="lower-roman ">
+<li id="li-7"><p id="p-27">\(m+1=s(m)\text{;}\)</p></li>
+<li id="li-8"><p id="p-28">\(m+s(n)=s(m+n)\text{,}\) ou seja, \(m+(n+1)=(m+n)+1\text{;}\)</p></li>
+<li id="li-9"><p id="p-29">\(m\cdot 1=m\text{;}\)</p></li>
+<li id="li-10"><p id="p-30">\(m\cdot(n+1)=m\cdot n+m\text{.}\)</p></li>
+</ol>
+<p id="p-31">Em outras palavras, somar \(1\) a \(m\) significa tomar o sucessor de \(m\text{.}\) Além disso, se já conhecemos a soma \(m+n\text{,}\) então saberemos calcular \(m+(n+1)\text{,}\) que é o sucessor de \(m+n\text{.}\) Quanto à multiplicação, quando multiplicamos um número \(m\) por \(1\text{,}\) o resultado é \(m\text{.}\) Ademais, se conhecemos \(m\cdot n\text{,}\) saberemos calcular \(m\cdot(n+1)\text{,}\) que é \(m\cdot n +m\text{.}\)</p>
+<p id="p-32">A demonstração da existência das operações \(+\) e \(\cdot\) com as propriedades acima se faz por indução e podem ser encontradas em <a class="xref" data-knowl="./knowl/LIMAv1.html" title="[biblio] 3.1">[3.1]</a>. Em <a class="xref" data-knowl="./knowl/LIMAv1.html" title="[biblio] 3.1">[3.1]</a> também são demonstradas por indução as seguintes propriedades: para quaisquer \(m,n,p\in\mathbb{N}\)</p>
+<ol class="lower-roman ">
+<li id="li-11">Associatividade: \((m+n)+p=m+(n+p),\, \,(m\cdot n)\cdot p=m\cdot(n\cdot p)\text{;}\)</li>
+<li id="li-12">Comutatividade: \(m+n=n+m, \, \, \cdot n=n\cdot m\text{;}\)</li>
+<li id="li-13">Distributividade: \(m\cdot(n+p)=m\cdot n +m\cdot p\text{;}\)</li>
+<li id="li-14">Lei do corte: \(n+m=p+m \Rightarrow n=p, \, \, n\cdot m=p\cdot m \Rightarrow n=p\text{.}\)</li>
+</ol>
+<p id="p-33">Lembremos que no capítulo anterior assumimos como verdadeiras, em \(\mathbb{R}\text{,}\) as propriedades de associatividade, comutatividade e distributividade, e que provamos a lei do corte, em \(\mathbb{R}\text{,}\) assumindo como verdade que \(\mathbb{R}\) é um corpo.</p>
+<p id="p-34"><dfn class="terminology">Notação.</dfn> Dados \(m,n,p\in \mathbb{N}\text{,}\) se \(m+n=p\text{,}\) então escrevemos que \(m=p-n\text{.}\)</p></section></section></div></main>
+</div>
+</body>
+</html>

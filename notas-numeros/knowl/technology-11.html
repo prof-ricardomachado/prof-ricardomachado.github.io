@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-01-12T10:55:27-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">A implementação de uma função que substitui \(x^k\) por \((-1)^k\cdot(n-k)!\) em um polinômio de grau \(n\text{.}\) Na linha 14 a função está sendo "chamada" com o polinômio: \(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</p>
+<div class="sagecell-sage" id="sage-11"><script type="text/x-sage">def substituicao(p):
+    c = p.coefficients()   # lista de coeficientes
+    d = p.degree(x)        # grau máximo
+    s = 0
+    for i in c:
+        s = s + i[0]*(-1)^i[1]*factorial(d-i[1])
+    return s
+substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
+</script></div></article><span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#technology-11">[incontext]</a></span>
+</body>
+</html>
