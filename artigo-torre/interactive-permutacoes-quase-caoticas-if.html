@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-11-17T15:10:52-03:00       *-->
+<!--*       on 2022-03-24T13:45:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -70,18 +70,28 @@ MathJax.Hub.Config({
             
     return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
 @interact
-def _(n=input_box(6 , width=10,  label="n:"), m=input_box(4 , width=10,  label="m:") ):
-
-    mat = matrix.ones(n)
-    for i in range(m):
-        mat[i,i] = 0
+def _(n=input_box(6 , width=10,  label="n:"), k=input_box(4 , width=10,  label="k:") ):
 
     
+    if n>=k:
+        mat = matrix.ones(n-1)
+        for i in range(k-1):
+            mat[i,i] = 0
 
-    R = PolynomialRing(ZZ, 'x')
-    v = R(mat.rook_vector())
-    show('R(x,T) = ', v)
-    show('QDn,m=', v[n])
-    tabuleiro(mat).show(figsize=5)
+        R = PolynomialRing(ZZ, 'x')
+        v = R(mat.rook_vector())
+
+        show('R(x,S) = ', v)
+        show('Rn,k=', v[n-1])
+        tabuleiro(mat).show(figsize=5)
+    elif k==n+1:
+        mat = matrix.identity(n)
+        R = PolynomialRing(ZZ, 'x')
+        v = R(mat.rook_vector(complement=True))
+        show('R(x,S) = ', v)
+        show('Rn,k=', v[n])
+        tabuleiro(mat).show(figsize=5)
+    else:
+        show('Dados inválidos')
 </script></div></div></body>
 </html>
