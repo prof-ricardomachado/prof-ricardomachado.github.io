@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-18T10:57:18-03:00       *-->
+<!--*       on 2022-04-18T14:07:34-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,77 +24,21 @@
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.10</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Calculando o número permutações caóticas com elementos repetidos.</p>
-<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-permutacoes-caoticas-repeticao" width="600" height="660" src="interactive-permutacoes-caoticas-repeticao-if.html"></iframe><p xmlns:svg="http://www.w3.org/2000/svg">Função \(\verb|permutacao_caotica_toriginal|\text{,}\) para obter o número de permutações caóticas com ou sem elementos repetidos, construindo o tabuleiro referente ao texto inserido.</p>
-<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">def tabuleiro(mat):
-    
-    linhas = list(range(mat.nrows()+1))
-    colunas = list(range(mat.ncols()+1))
-    
-    vlinhas = mat.rows()
-    
-    for i in vlinhas:
-        for j in i:
-            if j==0:
-                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
-            
-    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
-def permutacao_caotica_toriginal(texto):
-    
-    l=[]
-    for i in range(len(texto)):
-        for j in range(len(texto)):
-            if texto[i]==texto[j]:
-                l.append((i,j))
-    
-    tamanho=len(texto)
-    T = matrix.ones(tamanho, tamanho)
-    
-    for i in l:
-        T[i[0], i[1]] = 0
-    
-    
-    quantidades=[]
-    anterior = []
-
-    for i in texto:                    
-        c = texto.count(i)                          
-        if i not in anterior:                      
-            quantidades.append(c)                 
-            anterior.append(i)                  
-
-    denominador = prod(factorial(i) for i in quantidades)    
-    
-    v = T.rook_vector()
-    
-    show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
-    
-    return tabuleiro(T)
-permutacao_caotica_toriginal('POLINOMIO')
-</script></div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Função \(\verb|permutacao_caotica_r|\text{,}\) para obter o número de permutações caóticas com ou sem elementos repetidos, construindo o tabuleiro referente ao texto reordenado.</p>
-<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">def permutacao_caotica_r(texto):
-    lista = list(texto)
-    lista.sort()
-    quantidades=[]
-    anterior = []
-    for i in lista:                    # conta 
-        c = lista.count(i)             # quantas vezes                
-        if i != anterior:              # cada letra            
-            quantidades.append(c)      # aparece              
-            anterior = i                           
-    denominador = prod(factorial(i) for i in quantidades)
-    
-    bloco=[]                ### contrução dos blocos de matrizes
-    for i in quantidades:                                        
-        bloco.append(matrix.ones(i))                   
-    m = block_diagonal_matrix(bloco, subdivide=false)  
-    vetor = m.rook_vector(complement=True)
-    return vetor[-1]/denominador
-    
-permutacao_caotica_r('POLINOMIO')
+<p xmlns:svg="http://www.w3.org/2000/svg">Função \(\verb|D(n)|\) para obter o número de permutações caóticas, usando o teorema:</p>
+<article class="theorem theorem-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span>
+</h6>
+<p>A quantidade de permutações caóticas de \(n\) elementos é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+D_n=\sum_{k=0}^{n}(-1)^k\dfrac{n!}{k!}.
+\end{equation*}
+</div></article><div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def D(n):
+    P(i) = factorial(i)
+    return P(n)*sum(((-1)^x)/P(x), x, 0, n)
+D(5)
 </script></div></article><span class="incontext"><a href="sec-permutacao-restricao.html#technology-7">[incontext]</a></span>
 </body>
 </html>
