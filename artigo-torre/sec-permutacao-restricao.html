@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-24T13:45:31-03:00       *-->
+<!--*       on 2022-04-18T10:57:18-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -92,19 +92,24 @@ MathJax.Hub.Config({
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a></li>
-<li class="link"><a href="sec-polinomios-torre.html" data-scroll="sec-polinomios-torre"><span class="codenumber">1</span> <span class="title">Polinômios de torre.</span></a></li>
+<li class="link">
+<a href="sec-polinomios-torre.html" data-scroll="sec-polinomios-torre"><span class="codenumber">1</span> <span class="title">Polinômios de torre.</span></a><ul>
+<li><a href="sec-polinomios-torre.html#subsection-1" data-scroll="subsection-1">Caso Geral</a></li>
+<li><a href="sec-polinomios-torre.html#subsection-2" data-scroll="subsection-2">Posições Proibidas</a></li>
+</ul>
+</li>
 <li class="link active">
 <a href="sec-permutacao-restricao.html" data-scroll="sec-permutacao-restricao"><span class="codenumber">2</span> <span class="title">Permutações com restrições</span></a><ul>
-<li><a href="sec-permutacao-restricao.html#subsection-1" data-scroll="subsection-1">Caso Geral</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-2" data-scroll="subsection-2">Permutações Caóticas</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-3" data-scroll="subsection-3">Permutações \(k\) Enfileiradas</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-4" data-scroll="subsection-4">Permutação Caótica com elementos repetidos</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-3" data-scroll="subsection-3">Permutações Caóticas</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-4" data-scroll="subsection-4">Permutações com \(k\) Pontos Fixos</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-5" data-scroll="subsection-5">Permutações \(k\)-Posicionadas</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-6" data-scroll="subsection-6">Permutações Caóticas com Elementos Repetidos</a></li>
 </ul>
 </li>
 <li class="link">
 <a href="sec-problema-menages.html" data-scroll="sec-problema-menages"><span class="codenumber">3</span> <span class="title">Outras Aplicações</span></a><ul>
-<li><a href="sec-problema-menages.html#subsection-5" data-scroll="subsection-5">Permutações Discordantes</a></li>
-<li><a href="sec-problema-menages.html#subsection-6" data-scroll="subsection-6">O Problema dos Encontros</a></li>
+<li><a href="sec-problema-menages.html#subsection-7" data-scroll="subsection-7">Permutações Discordantes</a></li>
+<li><a href="sec-problema-menages.html#subsection-8" data-scroll="subsection-8">O Problema dos Encontros</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Comentário</a><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -112,94 +117,71 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-permutacao-restricao"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">2</span> <span class="title">Permutações com restrições</span>
 </h2>
-<section class="introduction" id="introduction-2"><p id="p-7">Nesta seção é possível usar o SageMath para calcular o número de permutações com diversos tipos de restições.</p>
-<p id="p-8">Os códigos que estão disponíveis podem ser modificados e executados (apertando o botão "Evaluate (Sage)"). Estes códigos são enviados a um servidor e dentro de poucos segundos o resultado é retornado.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">2.1</span> <span class="title">Caso Geral</span>
+<section class="introduction" id="introduction-2"><p id="p-9">Nesta seção é possível usar o SageMath para calcular o número de permutações com diversos tipos de restições.</p>
+<p id="p-10">Os códigos que estão disponíveis podem ser modificados e executados (apertando o botão "Evaluate (Sage)"). Estes códigos são enviados a um servidor e dentro de poucos segundos o resultado é retornado.</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.1</span> <span class="title">Permutações Caóticas</span>
 </h3>
-<article class="technology computation-like" id="technology-2"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
+<article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
 </h6>
-<p id="p-9">Polinômios de torre para tabuleiros \(m \times n\) especificando \(m, n\) e as posições proibidas.</p>
-<iframe id="interactive-restricoes" width="600" height="720" src="interactive-restricoes-if.html"></iframe></article><article class="technology computation-like" id="technology-3"><h6 class="heading">
+<p id="p-11">Uma <em class="emphasis">permutação caótica</em>, ou <em class="emphasis">desarranjo</em>, envolvendo \(n\) elementos, é uma permutação, na qual, o elemento \(1\) não pode ocupar a \(1\)ª posição, o elemento \(2\) não pode ocupar a \(2\)ª posição e assim por diante, até que o elemento \(n\) não possa ocupar a \(n\)ª posição. Por exemplo, para \(n=5\text{,}\) \((2,1,4,5,3)\) e \((5,4,1,2,3)\) são permutações caóticas.</p></article><article class="technology computation-like" id="technology-4"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span>
 </h6>
-<p id="p-10">Os códigos no Sage são os seguintes:</p>
-<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">def tabuleiro(mat):
-    linhas = list(range(mat.nrows()+1))
-    colunas = list(range(mat.ncols()+1))
-    vlinhas = mat.rows()
-    for i in vlinhas:
-        for j in i:
-            if j==0:
-                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
-            
-    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
-
-def rook_forbiden(m, n, lpos, invert=False):
-    lista = lpos
-    if invert == False:
-        mat = matrix.zero(m, n)
-        for i in lista:
-            mat[i[0]-1, i[1]-1] = 1
-    else:
-        mat = matrix.ones(m, n)
-        for i in lista:
-            mat[i[0]-1, i[1]-1] = 0
-        
-    vetor = mat.rook_vector()                            ### coeficientes do polinômio de torre
-    
-    total = len(vetor) - 1                             ### a é o numerador da contagem
-    cont = 0                                           ###
-    a = 0                                              ###
-    for i in vetor:                                    ###
-        a = a + i*((-1)^cont)*factorial(total-cont)    ###
-        cont = cont+1                                  ###
-    
-    print(lista)
-    print('coeficientes do polinômio de torre:')
-    print(vetor)
-    print('o número de permutações caóticas é:')
-    print(a)
-    
-    return tabuleiro(mat)
-
-rook_forbiden(9, 9, [(1,1),(3,3), (5, 5), (7, 7), (9,9)])
-</script></div></article></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span>
-</h3>
-<article class="technology computation-like" id="technology-4"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
-</h6>
-<p id="p-11">Calculando o número de permutações caóticas através de polinômios de torre.</p>
-<iframe id="interactive-permutacoes-caoticas" width="600" height="660" src="interactive-permutacoes-caoticas-if.html"></iframe><p id="p-12">Função \(\verb|D(n)|\text{,}\) para obter o número de permutações caóticas, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
+<p id="p-12">Calculando o número de permutações caóticas através de polinômios de torre.</p>
+<iframe id="interactive-permutacoes-caoticas" width="600" height="660" src="interactive-permutacoes-caoticas-if.html"></iframe><p id="p-13">Função \(\verb|D(n)|\text{,}\) para obter o número de permutações caóticas, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
 <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def D(n):
     B = matrix.identity(n)
     v = B.rook_vector(complement=True)
     return v[n]
 D(5)
 </script></div>
-<p id="p-13">Função \(\verb|D(n)|\text{,}\) para obter o número de permutações caóticas, usando a expressão:</p>
+<p id="p-14">Função \(\verb|D(n)|\text{,}\) para obter o número de permutações caóticas, usando o teorema:</p>
+<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
+</h6>
+<p id="p-15">A quantidade de permutações caóticas de \(n\) elementos é</p>
 <div class="displaymath">
 \begin{equation*}
 D_n=\sum_{k=0}^{n}(-1)^k\dfrac{n!}{k!}.
 \end{equation*}
-</div>
-<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def D(n):
+</div></article><div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def D(n):
     P(i) = factorial(i)
     return P(n)*sum(((-1)^x)/P(x), x, 0, n)
 D(5)
-</script></div></article></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">2.3</span> <span class="title">Permutações \(k\) Enfileiradas</span>
+</script></div></article></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2</span> <span class="title">Permutações com \(k\) Pontos Fixos</span>
 </h3>
-<article class="definition definition-like" id="definition-1"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span>
+<article class="corollary theorem-like" id="corollary-1"><h6 class="heading">
+<span class="type">Corolário</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span>
 </h6>
-<p id="p-14">Uma permutação do conjunto \(\{1,2,\ldots, n\}\) é chamada de <em class="emphasis">permutação \(k\) enfileirada</em> se o \(k\)-ésimo elemento está na posição \(k\text{,}\) os elementos anteriores não estão em suas posições originais e os demais elementos podem ocupar qualquer posição. O número de permutações  \(k\) enfileiradas é denotado por \(R_{n,k}\text{.}\) Por convenção, chamamos de permutação \(n+1\) enfileirada quando nenhum elemento está em sua posição original.</p></article><article class="technology computation-like" id="technology-5"><h6 class="heading">
+<p id="p-16">As permutações dos elementos \(1, 2, \ldots, n\text{,}\) na qual, \(k\) elementos estão em suas posições originais são chamadas de <em class="emphasis">permutações com \(k\) pontos fixos</em>. O número de permutações com \(k\) pontos fixos é denotado por \(D_{n,k}\) e pode ser calculado usando a expressão de \(D_n\) da seguinte maneira:</p>
+<div class="displaymath">
+\begin{equation*}
+D_{n,k} = \binom{n}{k}\cdot D_{n-k}. 
+\end{equation*}
+</div></article><article class="technology computation-like" id="technology-5"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
 </h6>
-<p id="p-15">Calculando o número de permutações \(k\) enfileiradas.</p>
-<iframe id="interactive-permutacoes-quase-caoticas" width="600" height="720" src="interactive-permutacoes-quase-caoticas-if.html"></iframe><p id="p-16">Função \(\verb|R(n,k)|\text{,}\) para obter o número de permutações \(k\) enfileiradas, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
-<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def R(n,k):
+<p id="p-17">Calculando o número de permutações \(k\)-posicionadas.</p>
+<p id="p-18">Função \(\verb|D(n,k)|\text{,}\) a função está predefinida com \(k=0\text{,}\) ou seja, se o valor de \(k\) não for informado, \(D_n\) será calculado.</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def D(n, k=0):
+    P(i) = factorial(i)
+    C(i,j) = binomial(i,j)
+    s = sum(((-1)^x)/P(x), x, 0, n-k)
+    return C(n,k)*P(n-k)*s
+D(7,3)
+</script></div></article></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.3</span> <span class="title">Permutações \(k\)-Posicionadas</span>
+</h3>
+<article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span>
+</h6>
+<p id="p-19">Uma permutação do conjunto \(\{1,2,\ldots, n\}\) é chamada de <em class="emphasis">permutação \(k\)-posicionada</em> se o \(k\)-ésimo elemento está na posição \(k\text{,}\) os elementos anteriores não estão em suas posições originais e os demais elementos podem ocupar qualquer posição. O número de permutações  \(k\)-posicionadas é denotado por \(R_{n,k}\text{.}\) Por convenção, chamamos de permutação \(n+1\)-posicionada quando nenhum elemento está em sua posição original.</p></article><article class="technology computation-like" id="technology-6"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.7</span><span class="period">.</span>
+</h6>
+<p id="p-20">Calculando o número de permutações \(k\)-posicionadas.</p>
+<iframe id="interactive-permutacoes-quase-caoticas" width="600" height="720" src="interactive-permutacoes-quase-caoticas-if.html"></iframe><p id="p-21">Função \(\verb|R(n,k)|\text{,}\) para obter o número de permutações \(k\)-posicionadas, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
+<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">def R(n,k):
     if n>=k:
         B = matrix.ones(n-1)
         for i in range(k-1):
@@ -214,7 +196,11 @@ D(5)
         return 0
 R(10,6)
 </script></div>
-<p id="p-17">Função \(\verb|R(n,k)|\text{,}\) para obter o número de permutações quase caóticas, usando a expressão:</p>
+<p id="p-22">Função \(\verb|R(n,k)|\text{,}\) para obter o número de permutações \(k\)-posicionadas, usando o teorema:</p>
+<article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.8</span><span class="period">.</span>
+</h6>
+<p id="p-23">O número de permutações \(k\)-posicionadas de \(n\) elementos é dado por</p>
 <div class="displaymath">
 \begin{equation*}
 R_{n,k} = 
@@ -223,8 +209,7 @@ R_{n,k} =
 D_{n},       \amp\text{ se k=n+1}.
 \end{cases}
 \end{equation*}
-</div>
-<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">def R(n,k):
+</div></article><div class="sagecell-sage" id="sage-7"><script type="text/x-sage">def R(n,k):
     P(m) = factorial(m)
     C(j,l) = binomial(j,l)
     var('i')
@@ -235,15 +220,65 @@ D_{n},       \amp\text{ se k=n+1}.
     else:
         return 0
 R(10,6)
-</script></div></article></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">2.4</span> <span class="title">Permutação Caótica com elementos repetidos</span>
+</script></div></article></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.4</span> <span class="title">Permutações Caóticas com Elementos Repetidos</span>
 </h3>
-<article class="technology computation-like" id="technology-6"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span>
+<article class="definition definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.9</span><span class="period">.</span>
 </h6>
-<p id="p-18">Calculando o número permutações caóticas com elementos repetidos.</p>
-<iframe id="interactive-permutacoes-caoticas-repeticao" width="600" height="660" src="interactive-permutacoes-caoticas-repeticao-if.html"></iframe><p id="p-19">Função \(\verb|permutacao_caotica_r|\text{,}\) para obter o número de permutações caóticas com ou sem elementos repetidos, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
-<div class="sagecell-sage" id="sage-7"><script type="text/x-sage">def permutacao_caotica_r(texto):
+<p id="p-24">Uma <em class="emphasis">permutação caótica com elementos repetidos</em> é uma permutação na qual, os elementos nem podem ocupar suas posições originais, nem as posições dos seus elementos repetidos.</p></article><article class="technology computation-like" id="technology-7"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.10</span><span class="period">.</span>
+</h6>
+<p id="p-25">Calculando o número permutações caóticas com elementos repetidos.</p>
+<iframe id="interactive-permutacoes-caoticas-repeticao" width="600" height="660" src="interactive-permutacoes-caoticas-repeticao-if.html"></iframe><p id="p-26">Função \(\verb|permutacao_caotica_toriginal|\text{,}\) para obter o número de permutações caóticas com ou sem elementos repetidos, construindo o tabuleiro referente ao texto inserido.</p>
+<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">def tabuleiro(mat):
+    
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    
+    vlinhas = mat.rows()
+    
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+def permutacao_caotica_toriginal(texto):
+    
+    l=[]
+    for i in range(len(texto)):
+        for j in range(len(texto)):
+            if texto[i]==texto[j]:
+                l.append((i,j))
+    
+    tamanho=len(texto)
+    T = matrix.ones(tamanho, tamanho)
+    
+    for i in l:
+        T[i[0], i[1]] = 0
+    
+    
+    quantidades=[]
+    anterior = []
+
+    for i in texto:                    
+        c = texto.count(i)                          
+        if i not in anterior:                      
+            quantidades.append(c)                 
+            anterior.append(i)                  
+
+    denominador = prod(factorial(i) for i in quantidades)    
+    
+    v = T.rook_vector()
+    
+    show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
+    
+    return tabuleiro(T)
+permutacao_caotica_toriginal('POLINOMIO')
+</script></div>
+<p id="p-27">Função \(\verb|permutacao_caotica_r|\text{,}\) para obter o número de permutações caóticas com ou sem elementos repetidos, construindo o tabuleiro referente ao texto reordenado.</p>
+<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">def permutacao_caotica_r(texto):
     lista = list(texto)
     lista.sort()
     quantidades=[]

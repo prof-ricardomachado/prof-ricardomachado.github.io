@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-24T13:45:31-03:00       *-->
+<!--*       on 2022-04-18T10:57:18-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -92,19 +92,24 @@ MathJax.Hub.Config({
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a></li>
-<li class="link active"><a href="sec-polinomios-torre.html" data-scroll="sec-polinomios-torre"><span class="codenumber">1</span> <span class="title">Polinômios de torre.</span></a></li>
+<li class="link active">
+<a href="sec-polinomios-torre.html" data-scroll="sec-polinomios-torre"><span class="codenumber">1</span> <span class="title">Polinômios de torre.</span></a><ul>
+<li><a href="sec-polinomios-torre.html#subsection-1" data-scroll="subsection-1">Caso Geral</a></li>
+<li><a href="sec-polinomios-torre.html#subsection-2" data-scroll="subsection-2">Posições Proibidas</a></li>
+</ul>
+</li>
 <li class="link">
 <a href="sec-permutacao-restricao.html" data-scroll="sec-permutacao-restricao"><span class="codenumber">2</span> <span class="title">Permutações com restrições</span></a><ul>
-<li><a href="sec-permutacao-restricao.html#subsection-1" data-scroll="subsection-1">Caso Geral</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-2" data-scroll="subsection-2">Permutações Caóticas</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-3" data-scroll="subsection-3">Permutações \(k\) Enfileiradas</a></li>
-<li><a href="sec-permutacao-restricao.html#subsection-4" data-scroll="subsection-4">Permutação Caótica com elementos repetidos</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-3" data-scroll="subsection-3">Permutações Caóticas</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-4" data-scroll="subsection-4">Permutações com \(k\) Pontos Fixos</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-5" data-scroll="subsection-5">Permutações \(k\)-Posicionadas</a></li>
+<li><a href="sec-permutacao-restricao.html#subsection-6" data-scroll="subsection-6">Permutações Caóticas com Elementos Repetidos</a></li>
 </ul>
 </li>
 <li class="link">
 <a href="sec-problema-menages.html" data-scroll="sec-problema-menages"><span class="codenumber">3</span> <span class="title">Outras Aplicações</span></a><ul>
-<li><a href="sec-problema-menages.html#subsection-5" data-scroll="subsection-5">Permutações Discordantes</a></li>
-<li><a href="sec-problema-menages.html#subsection-6" data-scroll="subsection-6">O Problema dos Encontros</a></li>
+<li><a href="sec-problema-menages.html#subsection-7" data-scroll="subsection-7">Permutações Discordantes</a></li>
+<li><a href="sec-problema-menages.html#subsection-8" data-scroll="subsection-8">O Problema dos Encontros</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Comentário</a><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -112,24 +117,27 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-polinomios-torre"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1</span> <span class="title">Polinômios de torre.</span>
 </h2>
-<section class="introduction" id="introduction-1"><p id="p-4">Nesta seção, usando matrizes, podemos obter os respectivos tabuleiros e polinômios de torre.</p></section><article class="technology computation-like" id="technology-1"><h6 class="heading">
+<section class="introduction" id="introduction-1"><p id="p-4">Usando matrizes, podemos obter os respectivos tabuleiros e polinômios de torre.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">1.1</span> <span class="title">Caso Geral</span>
+</h3>
+<article class="technology computation-like" id="technology-1"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
 </h6>
 <p id="p-5">Escolha uma matriz \(m\times n\) do tipo</p>
 <div class="displaymath">
 \begin{equation}
 T_{m\times n} = \begin{pmatrix}
-a_{11} \amp  a_{12} \amp \cdots \amp a_{1n}\\
-a_{21} \amp  a_{22} \amp \cdots \amp a_{2n}\\
+q_{11} \amp  q_{12} \amp \cdots \amp q_{1n}\\
+q_{21} \amp  q_{22} \amp \cdots \amp q_{2n}\\
 \vdots \amp  \vdots \amp  \amp \vdots\\
-a_{m1} \amp  a_{m2} \amp \cdots \amp a_{mn}
+q_{m1} \amp  q_{m2} \amp \cdots \amp q_{mn}
 \end{pmatrix}\label{sistema_pvp}\tag{1.1}
 \end{equation}
 </div>
-<p data-braille="continuation">com \(a_{ij}\in \{0, 1\}\) e escreva no campo T: dentro de colchetes, cada linha, também dentro de colchetes, da seguinte forma:</p>
+<p data-braille="continuation">com \(q_{ij}\in \{0, 1\}\) e escreva no campo T: dentro de colchetes, cada linha, também dentro de colchetes, da seguinte forma:</p>
 <div class="displaymath">
 \begin{equation*}
-[[a_{11},a_{12},...,a_{1n}],\ldots,[a_{m1},a_{m2},...,a_{mn}]] 
+[[q_{11},q_{12},...,q_{1n}],\ldots,[q_{m1},q_{m2},...,q_{mn}]] 
 \end{equation*}
 </div>
 <p data-braille="continuation">as entradas devem ser iguais a 0 ou 1.</p>
@@ -148,7 +156,44 @@ A = matrix([[1, 0, 1, 1], [1, 1, 1, 0], [0, 1, 1, 0], [1, 1, 1, 1]])
 R = PolynomialRing(ZZ, 'x')
 show(R(A.rook_vector()))
 tabuleiro(A)
-</script></div></article></section></div></main>
+</script></div></article></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">1.2</span> <span class="title">Posições Proibidas</span>
+</h3>
+<article class="technology computation-like" id="technology-2"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span>
+</h6>
+<p id="p-7">Podemos definir uma matriz apenas informando as dimensões \(m\times n\) e uma lista \(\mathcal{F}:\text{,}\) contendo as posições proibidas. Com isto, obtemos automaticamente o polinômio de torre do respectivo tabuleiro.</p>
+<iframe id="interactive-restricoes" width="600" height="600" src="interactive-restricoes-if.html"></iframe></article><article class="technology computation-like" id="technology-3"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h6>
+<p id="p-8">Os códigos no Sage são os seguintes:</p>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">def tabuleiro(mat):
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    vlinhas = mat.rows()
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')],  figsize=5 )          
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')], figsize=5)
+
+def rook_forbiden(m, n, forbiden, invert=False):
+    lista = forbiden
+    if invert == False:
+        mat = matrix.ones(m, n)
+        for i in lista:
+            mat[i[0]-1, i[1]-1] = 0
+    else:
+        mat = matrix.zero(m, n)
+        for i in lista:
+            mat[i[0]-1, i[1]-1] = 1
+    
+    R = PolynomialRing(ZZ, 'x')
+    show('R(x,T) = ', R(mat.rook_vector()))
+    return tabuleiro(mat)
+
+rook_forbiden(2, 4, [(2, 3), (2,4)])
+</script></div></article></section></section></div></main>
 </div>
 </body>
 </html>

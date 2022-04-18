@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-04-18T09:38:24-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Calculando o número de soluções do problema dos encontros de \(n\) casais.</p>
+<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-probleme-menages" width="600" height="240" src="interactive-probleme-menages-if.html"></iframe><p>Função \(\verb|menages2|\text{,}\) para obter o número de soluções para o Problème des Ménages, usando a expressão:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M_n=2\cdot n!\cdot \sum_{k=0}^{n}(-1)^k\cdot(n-k)!\cdot \dfrac{2n}{2n-k}\binom{2n-k}{k}
+\end{equation*}
+</div>
+<div class="sagecell-sage" id="sage-11"><script type="text/x-sage">def menages2(n):
+    var('k')
+    P(i) = factorial(i)
+    C(i,p) = binomial(i,p)
+    m = sum((-1)^k*((2*n)/(2*n-k))*C(2*n-k, k)*(P(n-k)), k, 0, n)
+    return 2*P(n)*m
+menages2(5)
+</script></div></article><span class="incontext"><a href="sec-problema-menages.html#technology-11">[incontext]</a></span>
+</body>
+</html>

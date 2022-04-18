@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-24T13:45:31-03:00       *-->
+<!--*       on 2022-04-18T10:57:19-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -26,20 +26,20 @@
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Calculando o número de soluções do problema dos encontros de \(n\) casais.</p>
-<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-probleme-menages" width="600" height="240" src="interactive-probleme-menages-if.html"></iframe><p>Função \(\verb|menages2|\text{,}\) para obter o número de soluções para o Problème des Ménages, usando a expressão:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-M_n=2\cdot n!\cdot \sum_{k=0}^{n}(-1)^k\cdot(n-k)!\cdot \dfrac{2n}{2n-k}\binom{2n-k}{k}
-\end{equation*}
-</div>
-<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">def menages2(n):
-    var('k')
-    P(i) = factorial(i)
-    C(i,p) = binomial(i,p)
-    m = sum((-1)^k*((2*n)/(2*n-k))*C(2*n-k, k)*(P(n-k)), k, 0, n)
-    return 2*P(n)*m
-menages2(5)
+<p xmlns:svg="http://www.w3.org/2000/svg">Calculando o número de permutações \(i\)-discordantes com \(n\) elementos.</p>
+<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-permutacoes-i-discordante" width="600" height="660" src="interactive-permutacoes-i-discordante-if.html"></iframe><p xmlns:svg="http://www.w3.org/2000/svg">Função \(\verb|i_discordante|\text{,}\) para obter o número de permutações i-discordantes, usando o método \(\verb|rook_vector|\) para calcular os coeficientes dos polinômios de torre.</p>
+<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">def i_discordante(i, n):
+    A = matrix.ones(n,n)        # matriz com entradas 1
+    for j in range(n):          # variando em n
+        for k in range(i):      # variando em i
+            A[j,(k+j)%n] = 0    # colocando 0 nas posições necessárias
+    
+    s = A.rook_vector()         # cálculo do polinômio de torre
+    if len(s)==n+1:             # verificando coeficiente de x^n
+        return s[n]
+    else:
+        return 0
+i_discordante(2,7)
 </script></div></article><span class="incontext"><a href="sec-problema-menages.html#technology-8">[incontext]</a></span>
 </body>
 </html>

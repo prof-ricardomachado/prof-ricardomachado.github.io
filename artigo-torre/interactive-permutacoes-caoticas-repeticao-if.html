@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-24T13:45:31-03:00       *-->
+<!--*       on 2022-04-18T10:57:18-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -70,29 +70,31 @@ MathJax.Hub.Config({
             
     return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
 @interact
-def _(texto=input_box(['POLINOMIO'] , width=35,  label="texto:"),  Complementar=False ):
+def _(texto=input_box(['POLINOMIO'] , width=35,  label="texto:"), Tipos = ['Tabuleiro Original','Tabuleiro Reordenado']):
 
-    lista = list(texto[0])
-    lista.sort()
-    quantidades=[]
-    anterior = []
-    
-    for i in lista:                    # conta 
-        c = lista.count(i)             # quantas vezes                
-        if i != anterior:              # cada letra            
-            quantidades.append(c)      # aparece              
-            anterior = i               #                          
-    denominador = prod(factorial(i) for i in quantidades)
-    
-    bloco=[]                ### contrução dos blocos de matrizes
-    for i in quantidades:                                        
-        bloco.append(matrix.ones(i))                   
-    mat = block_diagonal_matrix(bloco, subdivide=false)  
-    
-    #vetor = m.rook_vector(complement=True)
-    #return vetor[-1]/denominador
+    if Tipos == 'Tabuleiro Reordenado':
+        lista = list(texto[0])
+        lista.sort()
+        quantidades=[]
+        anterior = []
+        
+        for i in lista:                    # conta 
+            c = lista.count(i)             # quantas vezes                
+            if i != anterior:              # cada letra            
+                quantidades.append(c)      # aparece              
+                anterior = i               #               
+        #print(quantidades)           
+        denominador = prod(factorial(i) for i in quantidades)
+        
+        bloco=[]                ### contrução dos blocos de matrizes
+        for i in quantidades:                                        
+            bloco.append(matrix.ones(i))                   
+        mat = block_diagonal_matrix(bloco, subdivide=false)  
+        
+        #vetor = m.rook_vector(complement=True)
+        #return vetor[-1]/denominador
 
-    if Complementar==False:
+        #if Complementar==False:
         nlinha = mat.nrows()
         ncol = mat.ncols()
         for i in range(nlinha):
@@ -102,14 +104,49 @@ def _(texto=input_box(['POLINOMIO'] , width=35,  label="texto:"),  Complementar=
                 else:
                     mat[i,j]=0
 
-    
-    R = PolynomialRing(ZZ, 'x')
-    v=mat.rook_vector()
-    pol = R(v)
-    #show('Coeficientes: ', v)
-    show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
-    
-    show('Nova ordem:', lista)
-    tabuleiro(mat).show(figsize=5)
+        
+        R = PolynomialRing(ZZ, 'x')
+        v=mat.rook_vector()
+        pol = R(v)
+        #show('Coeficientes: ', v)
+        show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
+        
+        show('Nova ordem:', lista)
+        tabuleiro(mat).show(figsize=5)
+    elif Tipos == 'Tabuleiro Original':
+        lista = list(texto[0])
+        #texto=texto[0]
+        l=[]
+        for i in range(len(lista)):
+            for j in range(len(lista)):
+                if lista[i]==lista[j]:
+                    l.append((i,j))
+        
+        tamanho=len(lista)
+        T = matrix.ones(tamanho, tamanho)
+        
+        for i in l:
+            T[i[0], i[1]] = 0
+        ##################################
+        quantidades=[]
+        anterior = []
+        
+        for i in lista:                    
+            c = lista.count(i)                          
+            if i not in anterior:                      
+                quantidades.append(c)                 
+                anterior.append(i)                  
+
+        #print(anterior)                     
+        denominador = prod(factorial(i) for i in quantidades)
+
+        ###########################
+        v = T.rook_vector()
+        R = PolynomialRing(ZZ, 'x')
+        #print(v)
+        #show(R(v))
+        show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
+        
+        tabuleiro(T).show(figsize=5)
 </script></div></div></body>
 </html>
