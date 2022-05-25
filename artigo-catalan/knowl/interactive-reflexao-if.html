@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-05-24T10:27:38-03:00       *-->
+<!--*       on 2022-05-24T22:40:11-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,26 +56,31 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">def reticulado(lcoord, rcoord, coord_proib=False):
-    
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:720px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
     xr = range(lcoord[0], rcoord[0]+1)
     yr = range(lcoord[1], rcoord[1]+1)
-    tamanho = (rcoord[0]-lcoord[0])
-    R = Graphics()
-    for xi in xr:
-        for yi in yr:
-            if coord_proib == False:
-                R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
-            elif coord_proib != (xi, yi):
-                R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
             
-    return R  
+    return R
 
 
 
 
 @interact
-def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:")):
+def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, auto_update=False):
 
     
 
@@ -103,8 +108,10 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:")):
             
     
 
-    def reflexao(texto):
+    def reflexao(texto, Pontos):
         
+
+
         nc = texto.count('C')
         nd = texto.count('D')
         xFinal = max(nd+1, nc+1)
@@ -137,7 +144,7 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:")):
         
         
         
-        ret = reticulado((-1,-1), (xFinal, xFinal))
+        ret = reticulado((-1,-1), (xFinal, xFinal), pontos=Pontos)
         
         cam = Graphics()
         p0 = vector((0,0))
@@ -175,7 +182,7 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:")):
         return (ret+cam+cam2+retaxy+retaxy1)
     
     if ok ==1:
-        cam = reflexao(lista2)
+        cam = reflexao(lista2, Pontos)
     
         show(cam, figsize=6.2)
     else:

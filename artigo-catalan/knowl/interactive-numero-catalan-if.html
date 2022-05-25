@@ -56,45 +56,11 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(lista=input_box('AMAR' , width=45,  label="Palavra:"), opcao = ['Todas as Permutações', 'Cardinalidade','Elemento Aleatório']):
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:240px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(n=input_box(7 , width=5,  label="n:"), auto_update=False):
 
-
-    lista2=[]
-    if lista not in ZZ and 'invalid' not in str(lista):
-        #print('invalid' in str(lista))
-        
-        lista = str(lista)
-        k=0
-        for i in lista:
-            k += 1
-            if k>6 :
-                if i == "'":
-                    break
-                lista2.append(i)
-        p = Permutations(lista2)
-        if opcao == 'Todas as Permutações':
-            for i in p:
-                print(i)
-        elif opcao == 'Cardinalidade':
-            print(p.cardinality())
-        elif opcao == 'Elemento Aleatório':
-            print(p.random_element())
-
-    elif lista in ZZ:
-        lista = str(lista)
-        for i in lista:
-            lista2.append(i)
-        p = Permutations(lista2)
-        if opcao == 'Todas as Permutações':
-            for i in p:
-                print(i)
-        elif opcao == 'Cardinalidade':
-            print(p.cardinality())
-        elif opcao == 'Elemento Aleatório':
-            print(p.random_element())        
     
-    else:
-        show('Digite uma palavra ou número.')
+    
+    show(catalan_number(n))
 </script></div></div></body>
 </html>
