@@ -79,34 +79,42 @@ MathJax.Hub.Config({
 
 
 @interact
-def _(destino=input_box((5,3) , width=45,  label="Destino:"), Pontos=True, auto_update=False):
+def _(destino=input_box(5 , width=45,  label="Destino:"), Pontos=True, auto_update=False):
 
     
     
     
+    lista = DyckWords(destino).random_element()
 
-
-    nD = destino[0]
-    nC = destino[1]
-    lista3=[]
     
-    for i in range(nC):
-        lista3.append('C')
-    for i in range(nD):
-        lista3.append('D')
 
-    lista3 = Permutations(lista3).random_element()
-    lista3 = Permutations(lista3).random_element()
+    nD = 0
+    nC = 0
+    lista3 = []
+    for i in lista:
+        #print(i)
+        if i == 1:
+            nD = nD + 1
+            lista3.append('D')
+        else:
+            nC = nC + 1
+            lista3.append('C')
+
+
+    
+    
+
+    
     #print(lista3)
     n = lista3.count('D')
     k = lista3.count('C')
-    ruins = binomial(n+k, n+1)
+    #ruins = binomial(n+k, n+1)
     reflex = ((n-k+1)/(n+1))*binomial(n+k, n)
-    total = Permutations(lista3).cardinality()
+    #total = Permutations(lista3).cardinality()
     
-    print('Existem %s caminhos no total.'  %total)
-    print('Existem %s caminhos ruins.'  %ruins)
-    print('Existem %s caminhos bons.'  %reflex)
+    #print('Existem %s caminhos no total.'  %total)
+    #print('Existem %s caminhos ruins.'  %ruins)
+    print('Cn = %s.'  %reflex)
 
 
     lista2=lista3
@@ -117,7 +125,7 @@ def _(destino=input_box((5,3) , width=45,  label="Destino:"), Pontos=True, auto_
         nd = texto.count('D')
         xFinal = max(nd+1, nc+1)
         retaxy = plot(x, (-1, xFinal), color='gray', thickness=2.5)
-        retaxy1 = plot(x+1, (-1, xFinal-1), color='red', thickness=2.5)
+        #retaxy1 = plot(x+1, (-1, xFinal-1), color='red', thickness=2.5)
         
 
         ruim = ''
@@ -142,13 +150,8 @@ def _(destino=input_box((5,3) , width=45,  label="Destino:"), Pontos=True, auto_
                 ruim = ruim + 'D'
             
         #print(ruim)
-        bom=''
-        for i in lista3:
-            bom += i
-        if ruim == bom:
-            print('O caminho da figura abaixo é bom.')
-        else:
-            print('O caminho da figura abaixo é ruim.')
+        
+        print('Um caminho ...')
             
 
         
@@ -188,7 +191,7 @@ def _(destino=input_box((5,3) , width=45,  label="Destino:"), Pontos=True, auto_
                 cam2 = cam2+arrow(p0, p0+vector((0,1)), color=cor, arrowsize=3)
                 p0 = p0+vector((0,1))
                 
-        return (ret+cam+cam2+retaxy+retaxy1)
+        return (ret+cam+cam2+retaxy)
     
     
     cam = reflexao(lista2, Pontos)
