@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-05-30T10:48:56-03:00       *-->
+<!--*       on 2022-05-31T15:27:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -80,7 +80,7 @@ MathJax.Hub.Config({
 
 
 @interact
-def _(lista=input_box('DDCC' , width=45,  label="Palavra:"), Pontos=True, auto_update=False):
+def _(lista=input_box('DDCCDCDCC' , width=45,  label="Palavra:"), Pontos=True, auto_update=False):
 
     
     lista = str(lista)
@@ -93,6 +93,8 @@ def _(lista=input_box('DDCC' , width=45,  label="Palavra:"), Pontos=True, auto_u
             if i == "'":
                 break
             lista2.append(i)
+
+
 
     def caminho(texto):
         
@@ -115,10 +117,23 @@ def _(lista=input_box('DDCC' , width=45,  label="Palavra:"), Pontos=True, auto_u
             
             
     
-        return (ret+cam)
+        return (ret+cam, p0)
    
-    cam = caminho(lista2)
     
-    show(cam, figsize=6.2)
+    ok = 0
+    for i in lista2:
+        if i not in ['C', 'D']:
+            ok = 0
+            break
+        else:
+            ok = 1
+
+    if ok == 1:
+        cam = caminho(lista2)
+        nPerm = Permutations(lista2).cardinality()
+        print('Existem %s caminhos da origem até o ponto %s.' %(nPerm, cam[1]))
+        show(cam[0], figsize=6.2)
+    else:
+        print('Digite um caminho válido.')
 </script></div></div></body>
 </html>
