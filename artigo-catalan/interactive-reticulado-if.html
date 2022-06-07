@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-05-31T15:27:30-03:00       *-->
+<!--*       on 2022-06-07T10:57:12-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -80,7 +80,7 @@ MathJax.Hub.Config({
 
 
 @interact
-def _(lista=input_box('DDCCDCDCC' , width=45,  label="Palavra:"), Pontos=True, auto_update=False):
+def _(lista=input_box('LLNNLNLNN' , width=45,  label="Caminho:"), Pontos=True, auto_update=False):
 
     
     lista = str(lista)
@@ -98,8 +98,8 @@ def _(lista=input_box('DDCCDCDCC' , width=45,  label="Palavra:"), Pontos=True, a
 
     def caminho(texto):
         
-        nc = texto.count('C')
-        nd = texto.count('D')
+        nc = texto.count('N')
+        nd = texto.count('L')
         
         
         ret = reticulado((-1,-1), (nd+1, nc+1), pontos=Pontos)
@@ -107,11 +107,11 @@ def _(lista=input_box('DDCCDCDCC' , width=45,  label="Palavra:"), Pontos=True, a
         cam = Graphics()
         p0 = vector((0,0))
         for i in texto:
-            if i=='D':
+            if i=='L':
                 cam = cam+arrow(p0, p0+vector((1,0)), color='red', arrowsize=3)
                 p0 = p0+vector((1,0))
                 
-            elif i=='C':
+            elif i=='N':
                 cam = cam+arrow(p0, p0+vector((0,1)), color='red', arrowsize=3)
                 p0 = p0+vector((0,1))
             
@@ -122,7 +122,7 @@ def _(lista=input_box('DDCCDCDCC' , width=45,  label="Palavra:"), Pontos=True, a
     
     ok = 0
     for i in lista2:
-        if i not in ['C', 'D']:
+        if i not in ['N', 'L']:
             ok = 0
             break
         else:
