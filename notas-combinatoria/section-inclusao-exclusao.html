@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-11T15:15:30-03:00       *-->
+<!--*       on 2022-07-25T22:42:05-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -339,8 +339,9 @@ A_4, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}.
 </h6>
 <p id="p-458">Determine o número de elementos dos conjuntos:</p>
 <ol class="lower-alpha">
-<li id="li-88">\(\displaystyle A = \{ a\in \mathbb{N}~|~ a \text{ é múltiplo de } 2, 3 \text{ ou } 5 \text{ menor que } 10000\}; \)</li>
-<li id="li-89">\(\displaystyle B = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, 3, 5, 7, 11, 13, 17 \text{ ou } 19 \text{ menor que } 10000\}. \)</li>
+<li id="li-88">\(\displaystyle A = \{ a\in \mathbb{N}~|~ a \text{ é múltiplo de } 2, 3 \text{ ou } 5 \text{ e } a \leq 10000\}; \)</li>
+<li id="li-89">\(\displaystyle B = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, 3 \text{ ou } 15 \text{ e } b\leq 10000\}. \)</li>
+<li id="li-90">\(\displaystyle C = \{ c\in \mathbb{N}~|~ c \text{ é múltiplo de } 2, 3, 5, 7, 11, 13, 17 \text{ ou } 19 \text{ e } c\leq 10000\}. \)</li>
 </ol>
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like">
 <p id="p-459"><dfn class="terminology">item a)</dfn> Sejam</p>
@@ -394,13 +395,47 @@ A_2\cup A_3\cup A_5.
 \amp =  ~ 7334 
 \end{align*}
 </div>
-<p id="p-460"><dfn class="terminology">item b)</dfn> Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:</p>
+<p id="p-460"><dfn class="terminology">item b)</dfn> Usando a ideia do item a), queremos calcular a cardinalidade do conjunto:</p>
+<div class="displaymath">
+\begin{equation*}
+A_2\cup A_3\cup A_{15}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Vamos começar calculando a cardinalidade de cada conjunto:</p>
+<div class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#A_{15} = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Calculando a cardinalidade de cada uma das interseções \(A_i\cap A_j\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_{15}) = 333 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_{15}) = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de \(A_2\cap A_3\cap A_{15}\text{,}\) dividimos \(10000\) pelo \(mmc(2, 3, 15)\text{,}\) logo:</p>
+<div class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_{15}) = 333. 
+\end{align*}
+</div>
+<p data-braille="continuation">Portanto, pelo Princípio da Inclusão-Exclusão:</p>
+<div class="displaymath">
+\begin{equation*}
+\#(A_2\cap A_3\cap A_{15}) = 5000+3333+666-1666-333-666+333 = 6667.
+\end{equation*}
+</div>
+<p id="p-461"><dfn class="terminology">item c)</dfn> Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:</p>
 <div class="displaymath">
 \begin{equation*}
 A_2\cup A_3\cup A_5\cup A_7\cup A_{11}\cup A_{13}\cup A_{17}\cup A_{19}.
 \end{equation*}
 </div>
-<p id="p-461">Clique em "Evaluate (Sage)" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).</p>
+<p id="p-462">Clique em "Evaluate (Sage)" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).</p>
 <div class="hidden-sagecell-sage" id="sage-22"><script type="text/x-sage">def numeros_de_multiplos(lista, num):
     l=[]
     for i in lista:
@@ -412,21 +447,21 @@ numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
 <span class="type">Exercícios</span> <span class="codenumber">2.1.3</span> <span class="title">Exercícios</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-462">(OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?</p>
+<p id="p-463">(OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-463">Sendo \(A_k\) a quantidade de pontos do polı́gono de \(k\) vértices, queremos calcular \(\#(A_8 \cup A_{12} \cup A_{18})\text{.}\) Note que \(\#(A_{i_1} \cap A_{i_2} \cap\ldots \cap A_{i_n}) = mdc(i_1 , i_2 , \ldots , i_n)\text{.}\)</p></div></div>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-59" id="answer-59"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-59"><div class="answer solution-like"><p id="p-464">28</p></div></div>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-464">Sendo \(A_k\) a quantidade de pontos do polı́gono de \(k\) vértices, queremos calcular \(\#(A_8 \cup A_{12} \cup A_{18})\text{.}\) Note que \(\#(A_{i_1} \cap A_{i_2} \cap\ldots \cap A_{i_n}) = mdc(i_1 , i_2 , \ldots , i_n)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-59" id="answer-59"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-59"><div class="answer solution-like"><p id="p-465">28</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-465">Determine o número de permutações de \((1, 2, 3, 4, 5, 6, 7, 8)\) nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?</p>
+<p id="p-466">Determine o número de permutações de \((1, 2, 3, 4, 5, 6, 7, 8)\) nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-60" id="answer-60"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-60"><div class="answer solution-like"><p id="p-466">27240</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-60" id="answer-60"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-60"><div class="answer solution-like"><p id="p-467">27240</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-467">Quantos são os inteiros de \(n\) dígitos, que têm todos os dígitos pertencentes ao conjunto \(\{1, 2, 3\}\text{?}\) Em quantos deles os inteiros \(1, 2\) e \(3\) figuram todos?</p>
+<p id="p-468">Quantos são os inteiros de \(n\) dígitos, que têm todos os dígitos pertencentes ao conjunto \(\{1, 2, 3\}\text{?}\) Em quantos deles os inteiros \(1, 2\) e \(3\) figuram todos?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-61" id="answer-61"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><p id="p-468">a) \(3^n\) , b) \(3^n-3\cdot 2^n+3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-61" id="answer-61"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><p id="p-469">a) \(3^n\) , b) \(3^n-3\cdot 2^n+3\text{.}\)</p></div></div>
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like">
-<p id="p-469"><dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o \(n\)-ésimo dígito que também temos 3 opções. Portanto a resposta é \(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</p>
-<p id="p-470"><dfn class="terminology">item b)</dfn> Agora precisamos subtrair de \(3^n\) a quantidade de números de \(n\) dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina \(A_1\) como o subconjunto dos números de \(n\) dígitos formados pelos dígitos \(1, 2\) e \(3\) tal que o dígito \(1\) não aparece. De maneira análoga defina os subconjuntos \(A_2\) e \(A_3\text{.}\) Desta forma, queremos calcular</p>
+<p id="p-470"><dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o \(n\)-ésimo dígito que também temos 3 opções. Portanto a resposta é \(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</p>
+<p id="p-471"><dfn class="terminology">item b)</dfn> Agora precisamos subtrair de \(3^n\) a quantidade de números de \(n\) dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina \(A_1\) como o subconjunto dos números de \(n\) dígitos formados pelos dígitos \(1, 2\) e \(3\) tal que o dígito \(1\) não aparece. De maneira análoga defina os subconjuntos \(A_2\) e \(A_3\text{.}\) Desta forma, queremos calcular</p>
 <div class="displaymath">
 \begin{equation*}
 3^n - \#(A_1\cup A_2 \cup A_3)\text{.}
@@ -441,8 +476,8 @@ numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
 \end{align*}
 </div>
 <p data-braille="continuation">\(A_1\) possui \(2^n\) elementos, pois o dígito \(1\) não pode figurar no número de \(n\) dígitos, sobrando apenas os dígitos \(2\) e \(3\text{.}\) Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos \(A_2\) e \(A_3\) possuem a mesma quantidade de elementos.</p>
-<p id="p-471">\(A_1\cap A_2\) possui apenas \(1\) elemento, pois os dígitos \(1\) e \(2\) não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que \(A_1\cap A_2\) e \(A_2\cap A_3\) também possuem apenas um elemento.</p>
-<p id="p-472">Finalmente, \(A_1\cap A_2\cap A_3\)  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</p>
+<p id="p-472">\(A_1\cap A_2\) possui apenas \(1\) elemento, pois os dígitos \(1\) e \(2\) não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que \(A_1\cap A_2\) e \(A_2\cap A_3\) também possuem apenas um elemento.</p>
+<p id="p-473">Finalmente, \(A_1\cap A_2\cap A_3\)  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.
@@ -450,23 +485,21 @@ numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-473">Considere o conjunto \(A=\{1, 2, 3, 4, 5\}\text{,}\) determine o número de funções bijetoras \(f:A\rightarrow A\text{,}\) nas quais \(f(i)\neq i\text{,}\) para \(i=1, 2, \ldots, 5\text{.}\)</p>
+<p id="p-474">Considere o conjunto \(A=\{1, 2, 3, 4, 5\}\text{,}\) determine o número de funções bijetoras \(f:A\rightarrow A\text{,}\) nas quais \(f(i)\neq i\text{,}\) para \(i=1, 2, \ldots, 5\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-62" id="answer-62"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><p id="p-474">44</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-62" id="answer-62"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><p id="p-475">44</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-475">(IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.</p>
+<p id="p-476">(IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like">
-<p id="p-476">Seja \(A_k, k\in\{1, 2, \ldots, 5\} \text{,}\) o conjunto das possibilidades, na qual, temos no mínimo \(k\) equipes com pilotos ocupando a mesma linha. Queremos calcular o seguinte:</p>
-<div class="displaymath">
-\begin{equation*}
-10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5).
-\end{equation*}
-</div>
-<p id="p-477">Pelo Princípio da Inclusão-Exclusão temos</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><p id="p-477">2088960</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
+<p id="p-478">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem \(C_5^1\) maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada \((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\) Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos \(C_5^1\times 5\times 2!\times 8!\) formas distintas de organizarmos esses carros.</p>
+<p id="p-479">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</p>
+<p id="p-480">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos \(C_5^2\) formas de escolhermos essas 2 equipes e podemos colocá-las de \(5\times4\) maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado \(2!\times2\) e das demais \(6\) equipes \(6!\text{.}\)</p>
+<p id="p-481">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</p>
 <div class="displaymath">
 \begin{align*}
-10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - 5\times 5\times 2\times 8!   \\
+10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
 \amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
 \amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
 \amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
@@ -475,43 +508,42 @@ numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
 \end{align*}
 </div>
 </div></div>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><p id="p-478">2088960</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-479">(ITA 2010) Sejam \(A, B\) e \(C\) conjuntos tais que \(C\subset B\text{,}\) \(\#(B\setminus C) = 3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\) \(\#(A\cup B) = 22\) e \((\#C, \#A, \#B)\) é uma progressão geométrica de razão \(r&gt;0\text{.}\)</p>
+<p id="p-482">(ITA 2010) Sejam \(A, B\) e \(C\) conjuntos tais que \(C\subset B\text{,}\) \(\#(B\setminus C) = 3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\) \(\#(A\cup B) = 22\) e \((\#C, \#A, \#B)\) é uma progressão geométrica de razão \(r&gt;0\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-90">Determine \(\#C\)</li>
-<li id="li-91">Determine \(\#(\mathcal{P}(B\setminus C)).\)</li>
+<li id="li-91">Determine \(\#C\)</li>
+<li id="li-92">Determine \(\#(\mathcal{P}(B\setminus C)).\)</li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><p id="p-480">a) \(\#C = 4~~~~\) b) \(\#(\mathcal{P}(B\setminus C)) = 4096\text{.}\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
-<p id="p-481"><dfn class="terminology">item a)</dfn> Como \(C\subset B\text{,}\) temos \(B\cap C = C\text{,}\) logo \(\#(B\cap C) = \#C\) e \(\#(B\setminus C) = \#B - \#C\text{.}\) Logo</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><p id="p-483">a) \(\#C = 4~~~~\) b) \(\#(\mathcal{P}(B\setminus C)) = 4096\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like">
+<p id="p-484"><dfn class="terminology">item a)</dfn> Como \(C\subset B\text{,}\) temos \(B\cap C = C\text{,}\) logo \(\#(B\cap C) = \#C\) e \(\#(B\setminus C) = \#B - \#C\text{.}\) Logo</p>
 <div class="displaymath">
 \begin{equation*}
 \#B - \#C = \overbrace{\#(B\setminus C) = 3\times \#(B\cap C)}^{\text{por hipótese}} = 3\times\#C. 
 \end{equation*}
 </div>
 <p data-braille="continuation">Ou seja, \(\#B = 4\times\#C.\)</p>
-<p id="p-482">\(\bullet\) Usando que \((\#C, \#A, \#B)\) é uma PG, obtemos</p>
+<p id="p-485">\(\bullet\) Usando que \((\#C, \#A, \#B)\) é uma PG, obtemos</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \#A \right)^2 = \#C\times \#B = \#C\times 4\times\#C \Rightarrow \#A = 2\times \#C.
 \end{equation*}
 </div>
-<p id="p-483">\(\bullet\) Por hipótese, \(3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\) mas \(\#(B\cap C) = \#C\text{,}\) logo</p>
+<p id="p-486">\(\bullet\) Por hipótese, \(3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\) mas \(\#(B\cap C) = \#C\text{,}\) logo</p>
 <div class="displaymath">
 \begin{equation*}
 \#C = 2\#(A\cap B) \Rightarrow \#(A\cap B) = \frac{\#C}{2}. 
 \end{equation*}
 </div>
-<p id="p-484">\(\bullet\) Finalmente, usando o  (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.1">Teorema 2.1.1</a>) obtemos</p>
+<p id="p-487">\(\bullet\) Finalmente, usando o  (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.1">Teorema 2.1.1</a>) obtemos</p>
 <div class="displaymath">
 \begin{equation*}
 \underbrace{\#(A\cup B)}_{22} = \underbrace{\#A}_{2\times \#C} + \underbrace{\#B}_{4\times \#C} -\underbrace{\#(A\cap B)}_{\#C/2}.
 \end{equation*}
 </div>
 <p data-braille="continuation">Efetuando o calculo obtemos \(\#C = 4\text{.}\)</p>
-<p id="p-485"><dfn class="terminology">item b)</dfn>  Como \(\#(B\setminus C) = 3\times \#C = 12\text{,}\) temos</p>
+<p id="p-488"><dfn class="terminology">item b)</dfn>  Como \(\#(B\setminus C) = 3\times \#C = 12\text{,}\) temos</p>
 <div class="displaymath">
 \begin{equation*}
 \#\mathcal{P}(B\setminus C) = 2^{\#(B\setminus C)} = 2^{12} = 4096.

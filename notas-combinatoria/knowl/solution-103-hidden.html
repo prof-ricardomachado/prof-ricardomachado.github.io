@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-11T15:15:38-03:00       *-->
+<!--*       on 2022-07-25T22:42:14-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,29 +13,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>O \(k\)-ésimo termo do desenvolvimento é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like">Note que<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-T_k = \amp ~ C_{11}^{k-1}(x^4)^{k-1}\left(-\frac{1}{x^2}\right)^{11-k+1}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{4(k-1)}x^{-2(12-k)}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{6k-28}  
+S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
+= \amp \sum_{k=1}^{n} k^3+k^2  
+\end{align*}
+</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
+\end{equation*}
+</div>Então, vamos procurar valores para \(A, B, C\) e \(D\text{,}\) para os quais, vale a igualdade<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
+= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D  
+\end{align*}
+</div>igualando os coeficientes, obtemos<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{cases} 
+A = ~ 1 \\
+3A+B  = ~ 1 \\
+2A+B+C  = ~ 0 \\
+D = ~ 0 \\
+\end{cases}
+\end{equation*}
+</div>Portanto,  \(A= 1\) e  \(B = -2\text{.}\) Agora podemos terminar o cálculo da soma<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
+= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
+= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
+= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
+= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
 \end{align*}
 </div>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Para que \(6k-28 = 2\text{,}\) temos \(k=5\text{,}\) logo estamos procurando o 5º termo:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-T_5 = (-1)^{7}C_{11}^4x^2.
-\end{equation*}
-</div>
-<p data-braille="continuation">E portanto o coeficiente é \((-1)^{7}C_{11}^4 = -330\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item b)</dfn> \(6k-28 = 5\) não possui solução em \(\mathbb{Z}\text{,}\) portanto o coeficiente de \(x^5\) é zero.</p>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item c)</dfn>Para que \(6k-28 = 8\text{,}\) temos \(k=6\text{,}\) logo estamos procurando o 6º termo:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-T_6 = (-1)^{6}C_{11}^5x^8.
-\end{equation*}
-</div>
-<p data-braille="continuation">E portanto o coeficiente é \((-1)^{6}C_{11}^5 = 462\text{.}\)</p>
 </div></body>
 </html>

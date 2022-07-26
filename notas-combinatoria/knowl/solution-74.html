@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-11T15:15:36-03:00       *-->
+<!--*       on 2022-07-25T22:42:12-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,39 +16,21 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.3.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.3.5.1</span><span class="period">.</span>
 </h6>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Como \(C\subset B\text{,}\) temos \(B\cap C = C\text{,}\) logo \(\#(B\cap C) = \#C\) e \(\#(B\setminus C) = \#B - \#C\text{.}\) Logo</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem \(C_5^1\) maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada \((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\) Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos \(C_5^1\times 5\times 2!\times 8!\) formas distintas de organizarmos esses carros.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos \(C_5^2\) formas de escolhermos essas 2 equipes e podemos colocá-las de \(5\times4\) maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado \(2!\times2\) e das demais \(6\) equipes \(6!\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#B - \#C = \overbrace{\#(B\setminus C) = 3\times \#(B\cap C)}^{\text{por hipótese}} = 3\times\#C. 
-\end{equation*}
-</div>
-<p data-braille="continuation">Ou seja, \(\#B = 4\times\#C.\)</p>
-<p>\(\bullet\) Usando que \((\#C, \#A, \#B)\) é uma PG, obtemos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\left( \#A \right)^2 = \#C\times \#B = \#C\times 4\times\#C \Rightarrow \#A = 2\times \#C.
-\end{equation*}
-</div>
-<p>\(\bullet\) Por hipótese, \(3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\) mas \(\#(B\cap C) = \#C\text{,}\) logo</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#C = 2\#(A\cap B) \Rightarrow \#(A\cap B) = \frac{\#C}{2}. 
-\end{equation*}
-</div>
-<p>\(\bullet\) Finalmente, usando o  (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.1">Teorema 2.1.1</a>) obtemos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\underbrace{\#(A\cup B)}_{22} = \underbrace{\#A}_{2\times \#C} + \underbrace{\#B}_{4\times \#C} -\underbrace{\#(A\cap B)}_{\#C/2}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Efetuando o calculo obtemos \(\#C = 4\text{.}\)</p>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item b)</dfn>  Como \(\#(B\setminus C) = 3\times \#C = 12\text{,}\) temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#\mathcal{P}(B\setminus C) = 2^{\#(B\setminus C)} = 2^{12} = 4096.
-\end{equation*}
+\begin{align*}
+10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
+\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
+\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
+\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
+\amp   ~~~~~~ - 5!\times 2^5\\
+\amp ~ = 2088960. 
+\end{align*}
 </div>
 </div>
 <span class="incontext"><a href="section-inclusao-exclusao.html#solution-74">[incontext]</a></span>
