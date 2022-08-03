@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-05-31T15:27:31-03:00       *-->
+<!--*       on 2022-08-03T08:36:30-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -80,7 +80,7 @@ MathJax.Hub.Config({
 
 
 @interact
-def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, auto_update=False):
+def _(lista=input_box('LNNLLNLL' , width=45,  label="Caminho:"), Pontos=True, auto_update=False):
 
     
 
@@ -96,8 +96,8 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
                 break
             lista2.append(i)
     
-    n = lista2.count('D')
-    k = lista2.count('C')
+    n = lista2.count('L')
+    k = lista2.count('N')
     ruins = binomial(n+k, n+1)
     reflex = ((n-k+1)/(n+1))*binomial(n+k, n)
     total = Permutations(lista2).cardinality()
@@ -106,7 +106,7 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
 
     ok = 0
     for i in lista2:
-        if i not in ['C', 'D']:
+        if i not in ['N', 'L']:
             ok = 0
             break
         else:
@@ -118,8 +118,8 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
         
 
 
-        nc = texto.count('C')
-        nd = texto.count('D')
+        nc = texto.count('N')
+        nd = texto.count('L')
         xFinal = max(nd+1, nc+1)
         retaxy = plot(x, (-1, xFinal), color='gray', thickness=2.5)
         retaxy1 = plot(x+1, (-1, xFinal-1), color='red', thickness=2.5)
@@ -129,7 +129,7 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
         diferenca=0
         lista=[]
         for l in texto:
-            if l == 'D' and diferenca > -1:
+            if l == 'L' and diferenca > -1:
                 diferenca = diferenca + 1
                 lista.append(diferenca)
                 
@@ -141,10 +141,10 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
         for i in range(len(lista)):
             if lista[i]>-2:
                 ruim = ruim+texto[i]
-            elif texto[i]=='D':
-                ruim = ruim + 'C'
+            elif texto[i]=='L':
+                ruim = ruim + 'N'
             else:
-                ruim = ruim + 'D'
+                ruim = ruim + 'L'
             
 
         
@@ -155,11 +155,11 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
         cam = Graphics()
         p0 = vector((0,0))
         for i in texto:
-            if i=='D':
+            if i=='L':
                 cam = cam+arrow(p0, p0+vector((1,0)), color='#ff6600', arrowsize=3)
                 p0 = p0+vector((1,0))
                     
-            elif i=='C':
+            elif i=='N':
                 cam = cam+arrow(p0, p0+vector((0,1)), color='#ff6600', arrowsize=3)
                 p0 = p0+vector((0,1))
         
@@ -167,7 +167,7 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
         cam2 = Graphics()
         p0 = vector((0,0))
         for i in range(len(ruim)):
-            if ruim[i]=='D':
+            if ruim[i]=='L':
                 if lista[i]>-2:
                     cor='#ff6600'
                 else:
@@ -177,7 +177,7 @@ def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, au
                 
                 
                 
-            elif ruim[i]=='C':
+            elif ruim[i]=='N':
                 if lista[i]>-2:
                     cor='#ff6600'
                 else:
