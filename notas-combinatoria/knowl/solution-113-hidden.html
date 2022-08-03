@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-07-25T22:42:15-03:00       *-->
+<!--*       on 2022-08-03T16:48:27-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,21 +13,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like">Note que<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
+= \amp \sum_{k=1}^{n} k^3+k^2  
+\end{align*}
+</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\#\Omega = 8^8, 
+k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
 \end{equation*}
-</div>
-<p data-braille="continuation">pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é \(C_8^2\text{.}\) A quantidade de formas de arrumar o restante das bolas é \((8-2)!\text{.}\)</p>
-<p>Portanto o número de casos favoráveis é \(8\cdot 7 \cdot C_8^2\cdot 6! = 8!C_8^2\text{.}\) A resposta do problema é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+</div>Então, vamos procurar valores para \(A, B, C\) e \(D\text{,}\) para os quais, vale a igualdade<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
+= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D  
+\end{align*}
+</div>igualando os coeficientes, obtemos<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{8!C_8^2}{8^8} \approx 0.0672912597656250 \approx 6,7\%. 
+\begin{cases} 
+A = ~ 1 \\
+3A+B  = ~ 1 \\
+2A+B+C  = ~ 0 \\
+D = ~ 0 \\
+\end{cases}
 \end{equation*}
+</div>Portanto,  \(A= 1\) e  \(B = -2\text{.}\) Agora podemos terminar o cálculo da soma<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
+= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
+= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
+= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
+= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
+\end{align*}
 </div>
 </div></body>
 </html>
