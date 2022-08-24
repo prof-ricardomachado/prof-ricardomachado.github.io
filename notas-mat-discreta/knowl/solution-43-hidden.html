@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-08-22T17:35:02-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body><div class="solution solution-like">
+<p>Temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Delta 3^k = 3^{k+1}-3^k = 3^k(3-1) = 2\times 3^k.
+\end{equation*}
+</div>
+<p data-braille="continuation">Logo, \(3^k = \frac{1}{2}\Delta 3^k\) e</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{n}k3^k = \frac{1}{2}\sum_{k=1}^n k\Delta 3^k.
+\end{equation*}
+</div>
+<p data-braille="continuation">Aplicando a fórmula da somação por partes, com \(a_{k+1}=k\) e \(b_k=3^k\text{,}\) temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{n}k3^k = \frac{1}{2}\sum_{k=1}^n k\Delta 3^k = \frac{1}{2}\left( n\cdot3^{n+1}-0-\sum_{k=1}^n3^k\cdot 1 \right).
+\end{equation*}
+</div>
+<p data-braille="continuation">Mas</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^n3^k = 3\frac{1-3^n}{1-3}=\frac{3^{n+1}}{2}-\frac{3}{2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Daí, resulta</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{n}k3^k = \frac{n}{2}3^{n+1}-\frac{3^{n+1}}{4}+\frac{3}{4}=\frac{2n-1}{4}3^{n+1}+\frac{3}{4}.
+\end{equation*}
+</div>
+<p data-braille="continuation">No Sage, podemos fazer este cálculo da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">n, k = var('n, k')
+sum(k*3^k, k, 1, n).show()
+</script></div>
+</div></body>
+</html>

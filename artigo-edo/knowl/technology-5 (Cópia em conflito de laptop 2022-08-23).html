@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-01T16:45:09-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Faça você mesmo.</span>
+</h6>
+<figure class="figure figure-like"><p>Linearização para o sistema de EDOs:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+\begin{cases} \displaystyle\dfrac{dx}{dt} \amp \displaystyle=  xr\left( 1-\frac{x}{k}\right) -\alpha xy \\
+\dfrac{dy}{dt} \amp  \displaystyle = -cy + \frac{kxy}{x+D} \end{cases}\tag{3.1}
+\end{equation}
+</div>
+<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-linearizacao" width="600" height="840" src="interactive-linearizacao-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.2<span class="period">.</span></span><span class="space"> </span>Teste</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Os códigos no Sage são os seguintes:</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def linearizacao(f, g):
+    J = jacobian((f, g), (x, y))
+    s = solve([f == 0, g == 0], x, y)
+    M=[]
+    for i in range(len(s)):
+        M.append([])
+        M[i].append([s[i][0].rhs(), s[i][1].rhs()])
+        M[i].append(J(x=s[i][0].rhs(), y=s[i][1].rhs()))
+        M[i].append(M[i][1].eigenvectors_right())
+    return M    
+
+y, t, r, k, alpha, c, D = var('y, t, r, k, alpha, c, D')
+li = linearizacao(x*r*(1-x/k) - alpha*x*y, -c*y + (k*x*y)/(x+D))
+show(li)
+</script></div></article><span class="incontext"><a href="section-linearizacao.html#technology-5">[incontext]</a></span>
+</body>
+</html>

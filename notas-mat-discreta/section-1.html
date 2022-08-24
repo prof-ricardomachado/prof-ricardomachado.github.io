@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-18T15:45:27-03:00       *-->
+<!--*       on 2022-08-23T21:30:45-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -98,6 +98,13 @@ MathJax.Hub.Config({
 <a href="pa.html" data-scroll="pa"><span class="codenumber">1</span> <span class="title">Progressões</span></a><ul>
 <li><a href="section-1.html" data-scroll="section-1" class="active">Progressões Aritméticas</a></li>
 <li><a href="section-2.html" data-scroll="section-2">Progressões Geométricas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="recorrencias.html" data-scroll="recorrencias"><span class="codenumber">2</span> <span class="title">Recorrências</span></a><ul>
+<li><a href="section-3.html" data-scroll="section-3">Introdução</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Recorrências Lineares de Primeira Ordem</a></li>
+<li><a href="section-5.html" data-scroll="section-5">Recorrências Lineares de Segunda Ordem</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -217,7 +224,7 @@ a_n=a_1+(n-1)r = r\cdot n+(a_1-r).
 <span class="type">Subseção</span> <span class="codenumber">1.1.4</span> <span class="title">Soma dos Termos de uma Progressão Aritmética</span>
 </h3>
 <p id="p-25">Baseado na ideia de Gauss, usada para calcular a soma \(1+2+3+\cdots+100\text{,}\) podemos calcular a soma dos \(n\) primeiros termos de uma progressão aritmética qualquer.</p>
-<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<article class="theorem theorem-like" id="teo-soma-pa"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
 </h6>
 <p id="p-26">A soma dos \(n\) primeiros termos da progressão aritmética \((a_1, a_2, a_3, \ldots)\) é</p>
@@ -345,15 +352,47 @@ a_{n+1}-a_1.
 (b_n)=(\Delta a_n)=(a_{n+1}-a_n)=(2,3,4,5,6,\ldots)
 \end{equation*}
 </div>
-<p data-braille="continuation">é uma progressão aritmética não-estacionária.</p></article><article class="definition definition-like" id="definition-4"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span>
-</h6>De modo geral, uma <em class="emphasis">progressão aritmética de ordem \(k\)</em>\((k &gt; 2)\) é uma sequência na qual as diferenças entre cada termo e o termo anterior formam uma progressão aritmética de ordem \(k - 1\text{.}\)</article><article class="example example-like" id="example-11"><h6 class="heading">
+<p data-braille="continuation">é uma progressão aritmética não-estacionária.</p></article><article class="theorem theorem-like" id="teo-termo-pa-segundaordem"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span>
+</h6>
+<p id="p-43">Dada uma progressão aritmética de segunda ordem, o termo \(a_n\) pode ser determinado da seguinte maneira</p>
+<div class="displaymath">
+\begin{equation*}
+a_n = a_1 + \sum_{k=1}^{n-1} \Delta a_k = a_1+\frac{(\Delta a_{n-1}+\Delta a_1)(n-1)}{2}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-44">Calculando o somatório,</p>
+<div class="displaymath">
+\begin{equation*}
+a_1 + \sum_{k=1}^{n-1} \Delta a_k = a_1+(a_2-a_1)+(a_3-a_2)+\cdots+(a_n-a_{n-1}),
+\end{equation*}
+</div>
+<p data-braille="continuation">obtemos \(a_n\text{.}\) A última igualdade segue diretamente do <a class="xref" data-knowl="./knowl/teo-soma-pa.html" title="Teorema 1.1.9">Teorema 1.1.9</a></p></article></div>
+<article class="example example-like" id="example-11"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.19</span><span class="period">.</span>
 </h6>
-<p id="p-43">Moste que \((a_n) = (n^3 - n)\) é uma progressão aritmética de terceira ordem.</p>
+<p id="p-45">Determine o termo \(a_{20}\text{,}\) da progressão aritmética de segunda ordem \((a_n)=(1,3,6,10,15,21,\ldots)\text{.}\)</p>
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
-<p id="p-44">A tabela abaixo mostra as sequências \(a_n, (\Delta a_n), (\Delta^2 a_n), (\Delta^3 a_n)\text{.}\)</p>
-<figure class="table table-like" id="table-1"><figcaption><span class="type">Tabela</span><span class="space"> </span><span class="codenumber">1.1.20<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p id="p-46">Já conhecemos \(a_1\) e \(\Delta a_1\text{.}\) Para usar o <a class="xref" data-knowl="./knowl/teo-termo-pa-segundaordem.html" title="Teorema 1.1.18">Teorema 1.1.18</a>, precisamos calcular \(\Delta a_{19}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta a_{19} = \Delta a_1 + 18\cdot 1 = 2+18 = 20.
+\end{equation*}
+</div>
+<p data-braille="continuation">Substituindo os valores na última igualdade do <a class="xref" data-knowl="./knowl/teo-termo-pa-segundaordem.html" title="Teorema 1.1.18">Teorema 1.1.18</a>, obtemos</p>
+<div class="displaymath">
+\begin{equation*}
+a_{20} = a_1+\frac{(\Delta a_{19}+\Delta a_1)19}{2} = 1+\frac{(20+2)19}{2}=210.
+\end{equation*}
+</div>
+</div></div></article><article class="definition definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.20</span><span class="period">.</span>
+</h6>De modo geral, uma <em class="emphasis">progressão aritmética de ordem \(k\)</em>\((k &gt; 2)\) é uma sequência na qual as diferenças entre cada termo e o termo anterior formam uma progressão aritmética de ordem \(k - 1\text{.}\)</article><article class="example example-like" id="example-12"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.21</span><span class="period">.</span>
+</h6>
+<p id="p-47">Moste que \((a_n) = (n^3 - n)\) é uma progressão aritmética de terceira ordem.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-48">A tabela abaixo mostra as sequências \(a_n, (\Delta a_n), (\Delta^2 a_n), (\Delta^3 a_n)\text{.}\)</p>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Tabela</span><span class="space"> </span><span class="codenumber">1.1.22<span class="period">.</span></span><span class="space"> </span></figcaption><table>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">\(n\)</td>
 <td class="c m b1 r0 l0 t0 lines">\(a_n\)</td>
@@ -411,7 +450,7 @@ a_{n+1}-a_1.
 <td class="c m b0 r0 l0 t0 lines">7</td>
 <td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\square\)</td>
 </tr>
-</table></figure><p id="p-45">Se \((\Delta^3 a_n)\text{,}\) como parece, for constante, \((\Delta^2 a_n)\) será uma progressão aritmética, \((\Delta a_n)\) será uma progressão aritmética de segunda ordem e \((a_n)\) será uma progressão aritmética de terceira ordem. Isso é verdade, pois</p>
+</table></figure><p id="p-49">Se \((\Delta^3 a_n)\text{,}\) como parece, for constante, \((\Delta^2 a_n)\) será uma progressão aritmética, \((\Delta a_n)\) será uma progressão aritmética de segunda ordem e \((a_n)\) será uma progressão aritmética de terceira ordem. Isso é verdade, pois</p>
 <div class="displaymath">
 \begin{align*}
 a_n = \amp ~n^3-n \\
@@ -421,14 +460,14 @@ a_n = \amp ~n^3-n \\
 \end{align*}
 </div>
 <p data-braille="continuation">e \(\Delta^3 a_n\) realmente é constante.</p>
-<p id="p-46">Observe que, nesse quadro, a soma de dois elementos lado a lado é igual ao elemento que está embaixo do primeiro desses elementos. Isso nos permite calcular os elementos que estão assinalados por \(\square\) na tabela acima. Da direita para a esquerda, eles são iguais a 6 , 30 + 6 = 36 , 90 + 36 = 126 e 210 + 126 = 336. Portanto, \(a_7 = 336\) e este foi o processo mais exótico que você já viu para calcular \(a_7 = 7^3 - 7\text{.}\)</p>
+<p id="p-50">Observe que, nesse quadro, a soma de dois elementos lado a lado é igual ao elemento que está embaixo do primeiro desses elementos. Isso nos permite calcular os elementos que estão assinalados por \(\square\) na tabela acima. Da direita para a esquerda, eles são iguais a 6 , 30 + 6 = 36 , 90 + 36 = 126 e 210 + 126 = 336. Portanto, \(a_7 = 336\) e este foi o processo mais exótico que você já viu para calcular \(a_7 = 7^3 - 7\text{.}\)</p>
 </div></div></article><article class="remark remark-like" id="remark-4"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.1.21</span><span class="period">.</span>
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.1.23</span><span class="period">.</span>
 </h6>
-<p id="p-47">A sequência cujo termo de ordem \(n\) é a soma \(S_n=a_1+a_2+\cdots+a_n\) dos \(n\) primeiros termos de uma progressão aritmética de ordem \(p\) é uma progressão aritmética de ordem \(p+1\text{.}\) Basta observar que o operador diferença, aplicado a \((S_n)\text{,}\) fornece \(\Delta S_n=S_{n+1}-S_n=a_{n+1}\) e define, portanto, uma progressão aritmética de ordem \(p\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.22</span><span class="period">.</span>
+<p id="p-51">A sequência cujo termo de ordem \(n\) é a soma \(S_n=a_1+a_2+\cdots+a_n\) dos \(n\) primeiros termos de uma progressão aritmética de ordem \(p\) é uma progressão aritmética de ordem \(p+1\text{.}\) Basta observar que o operador diferença, aplicado a \((S_n)\text{,}\) fornece \(\Delta S_n=S_{n+1}-S_n=a_{n+1}\) e define, portanto, uma progressão aritmética de ordem \(p\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-3"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.24</span><span class="period">.</span>
 </h6>
-<p id="p-48">Toda sequência na qual o termo de ordem \(n\) é um polinômio do segundo grau, é uma progressão aritmética de segunda ordem e, reciprocamente, se \((a_n)\) é uma progressão aritmética de segunda ordem então \((a_n)\) é um polinômio de segundo grau em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-49">Com efeito, se \(a_n=an^2+bn+c\text{,}\) com \(a\neq 0\text{,}\) temos</p>
+<p id="p-52">Toda sequência na qual o termo de ordem \(n\) é um polinômio do segundo grau, é uma progressão aritmética de segunda ordem e, reciprocamente, se \((a_n)\) é uma progressão aritmética de segunda ordem então \((a_n)\) é um polinômio de segundo grau em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-53">Com efeito, se \(a_n=an^2+bn+c\text{,}\) com \(a\neq 0\text{,}\) temos</p>
 <div class="displaymath">
 \begin{align*}
 \Delta a_n = \amp ~a_{n+1}-a_n \\
@@ -437,7 +476,7 @@ a_n = \amp ~n^3-n \\
 \end{align*}
 </div>
 <p data-braille="continuation"> que é do primeiro grau em n. Pela <a class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Observação 1.1.8">Observação 1.1.8</a>, \((\Delta a_n)\) é uma progressão aritmética não-estacionária.</p>
-<p id="p-50">Por outro lado, se \((a_n)\) é uma progressão aritmética de segunda ordem, \(b_n = \Delta a_n = a_{n+1} - a_n\) é uma progressão aritmética com razão diferente de zero e</p>
+<p id="p-54">Por outro lado, se \((a_n)\) é uma progressão aritmética de segunda ordem, \(b_n = \Delta a_n = a_{n+1} - a_n\) é uma progressão aritmética com razão diferente de zero e</p>
 <div class="displaymath">
 \begin{align*}
 S_n= \amp~b_1+b_2+b_3+\cdots+b_{n-1}+b_{n}\\
@@ -447,20 +486,20 @@ S_n= \amp~b_1+b_2+b_3+\cdots+b_{n-1}+b_{n}\\
 </div>
 <p data-braille="continuation"> Pela <a class="xref" data-knowl="./knowl/ex-soma-poli-grau2.html" title="Observação 1.1.13">Observação 1.1.13</a>, como \(b_n\) é uma progressão aritmética, \(S_n=a_{n+1}-a_1\) é um polinômio do segundo grau em \(n\text{.}\)  Em consequência, \(a_n\) também é um polinômio do segundo grau em \(n\text{.}\)</p></article></div>
 <article class="theorem theorem-like" id="teo-seqPoliOrdem"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.23</span><span class="period">.</span>
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.25</span><span class="period">.</span>
 </h6>
-<p id="p-51">Toda sequência na qual o termo de ordem \(n\) é um polinômio em \(n\text{,}\) de grau \(p\text{,}\) é uma progressão aritmética de ordem \(p\) e, reciprocamente, se \((a_n)\) é uma progressão aritmética de ordem \(p\text{,}\) então \((a_n)\) é um polinômio de grau \(p\) em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-52">A demonstração está no final da seção e encontra-se no <a class="xref" data-knowl="./knowl/teo-seqPoliOrdemP.html" title="Teorema 1.1.28">Teorema 1.1.28</a>.</p></article></div>
-<article class="example example-like" id="example-12"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.24</span><span class="period">.</span>
+<p id="p-55">Toda sequência na qual o termo de ordem \(n\) é um polinômio em \(n\text{,}\) de grau \(p\text{,}\) é uma progressão aritmética de ordem \(p\) e, reciprocamente, se \((a_n)\) é uma progressão aritmética de ordem \(p\text{,}\) então \((a_n)\) é um polinômio de grau \(p\) em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-56">A demonstração está no final da seção e encontra-se no <a class="xref" data-knowl="./knowl/teo-seqPoliOrdemP.html" title="Teorema 1.1.30">Teorema 1.1.30</a>.</p></article></div>
+<article class="example example-like" id="example-13"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.26</span><span class="period">.</span>
 </h6>
-<p id="p-53">Calcule</p>
+<p id="p-57">Calcule</p>
 <div class="displaymath">
 \begin{equation*}
 S_n = \sum_{k=1}^n k(k+2).
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
-<p id="p-54">Pelo <a class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 1.1.23">Teorema 1.1.23</a>, a sequência definida por \(a_n=n(n+2)\) é uma progressão aritmética de ordem \(2\text{,}\) já que seu termo geral é um polinômio de grau 2. Logo, a soma \(S_n\) de seus \(n\) primeiros termos define uma progressão aritmética de ordem \(2+1=3\text{.}\) Portanto, usando agora a volta do <a class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 1.1.23">Teorema 1.1.23</a>, o termo geral de \(S_n\) é dado por um polinômios de grau 3 em \(n\text{.}\) Isto é, podemos escrever \(S_n=an^3+bn^2+cn+d\text{.}\) Atribuindo valores 1, 2, 3 e 4, obtemos as equações</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<p id="p-58">Pelo <a class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 1.1.25">Teorema 1.1.25</a>, a sequência definida por \(a_n=n(n+2)\) é uma progressão aritmética de ordem \(2\text{,}\) já que seu termo geral é um polinômio de grau 2. Logo, a soma \(S_n\) de seus \(n\) primeiros termos define uma progressão aritmética de ordem \(2+1=3\text{.}\) Portanto, usando agora a volta do <a class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 1.1.25">Teorema 1.1.25</a>, o termo geral de \(S_n\) é dado por um polinômios de grau 3 em \(n\text{.}\) Isto é, podemos escrever \(S_n=an^3+bn^2+cn+d\text{.}\) Atribuindo valores 1, 2, 3 e 4, obtemos as equações</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases} 
@@ -486,14 +525,14 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 </div></div></article></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">1.1.6</span> <span class="title">Somas Polinomiais</span>
 </h3>
-<p id="p-55">A pergunta que nos colocamos é como calcular somas do tipo</p>
+<p id="p-59">A pergunta que nos colocamos é como calcular somas do tipo</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^n P(k),
 \end{equation*}
 </div>
 <p data-braille="continuation">onde \(P(k)\) é um polinômio em \(k\text{.}\)</p>
-<p id="p-56">Se o polinômio é \(P(k) = a_0 + a_1k + a_2k^2 +\cdots+ a_mk^m\text{,}\) temos</p>
+<p id="p-60">Se o polinômio é \(P(k) = a_0 + a_1k + a_2k^2 +\cdots+ a_mk^m\text{,}\) temos</p>
 <div class="displaymath">
 \begin{align*}
 \sum_{k=1}^n P(k) = \amp ~\sum_{k=1}^n a_0 +\sum_{k=1}^n a_1k+\cdots +\sum_{k=1}^n a_mk^m \\
@@ -506,17 +545,17 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 \sum_{k=1}^n k^p = 1^p+2^p+\cdots+n^p. 
 \end{equation*}
 </div>
-<article class="example example-like" id="example-13"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.25</span><span class="period">.</span>
+<article class="example example-like" id="example-14"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.27</span><span class="period">.</span>
 </h6>
-<p id="p-57">Determine o valor de</p>
+<p id="p-61">Determine o valor de</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^n k^2 = 1^2+2^2+\cdots+n^2. 
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
-<p id="p-58">Observe que</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<p id="p-62">Observe que</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^n (k+1)^3 = \sum_{k=1}^n k^3+3\sum_{k=1}^n k^2+3\sum_{k=1}^n k +\sum_{k=1}^n 1.
@@ -549,16 +588,16 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 \end{align*}
 </div>
 <p data-braille="continuation"> Observe que \(\sum_{k=1}^n k^2\) é um polinômio do terceiro grau.</p>
-</div></div></article><article class="theorem theorem-like" id="theorem-4"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.26</span><span class="period">.</span>
+</div></div></article><article class="theorem theorem-like" id="theorem-5"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.28</span><span class="period">.</span>
 </h6>
-<div class="displaymath" id="p-59">
+<div class="displaymath" id="p-63">
 \begin{equation*}
 \sum_{k=1}^n k^p = 1^p+2^p+\cdots+n^p. 
 \end{equation*}
 </div>
-<p data-braille="continuation">é um polinômio de grau \(p+1\) em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-60">Vamos proceder por indução sobre \(p\text{.}\) Para \(p=1\text{,}\) o teorema já foi provado no <a class="xref" data-knowl="./knowl/ex-soma-inteiros.html" title="Exemplo 1.1.11">Exemplo 1.1.11</a>.</p>
-<p id="p-61">Suponhamos agora que \(\sum_{k=1}^n k^p\) seja um polinômio de grau \(p+1\) em \(n\text{,}\) para todo \(p\in \{1, 2, \ldots, s\}\text{,}\) Mostraremos que essa afirmação é verdadeira para \(p=s+1\text{,}\) isto é, mostraremos que \(\sum_{k=1}^n k^{s+1}\) é um polinômio de grau \(s+2\) em \(n\text{.}\) Observe que</p>
+<p data-braille="continuation">é um polinômio de grau \(p+1\) em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-64">Vamos proceder por indução sobre \(p\text{.}\) Para \(p=1\text{,}\) o teorema já foi provado no <a class="xref" data-knowl="./knowl/ex-soma-inteiros.html" title="Exemplo 1.1.11">Exemplo 1.1.11</a>.</p>
+<p id="p-65">Suponhamos agora que \(\sum_{k=1}^n k^p\) seja um polinômio de grau \(p+1\) em \(n\text{,}\) para todo \(p\in \{1, 2, \ldots, s\}\text{,}\) Mostraremos que essa afirmação é verdadeira para \(p=s+1\text{,}\) isto é, mostraremos que \(\sum_{k=1}^n k^{s+1}\) é um polinômio de grau \(s+2\) em \(n\text{.}\) Observe que</p>
 <div class="displaymath">
 \begin{equation*}
 (k+1)^{s+2}=k^{s+2}+(s+2)k^{s+1}+\cdots,
@@ -584,16 +623,16 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 </div>
 <p data-braille="continuation">que é um polinômio de grau \(s+2\) em \(n\text{.}\)</p></article></div>
 <article class="corollary theorem-like" id="cor-poligraupmais1"><h6 class="heading">
-<span class="type">Corolário</span><span class="space"> </span><span class="codenumber">1.1.27</span><span class="period">.</span>
+<span class="type">Corolário</span><span class="space"> </span><span class="codenumber">1.1.29</span><span class="period">.</span>
 </h6>
-<p id="p-62">Se \(F\) é um polinômio de grau \(p\) então \(\sum_{k=1}^n F(k)\) é um polinômio de grau \(p + 1\) em \(n\text{.}\)</p></article><article class="theorem theorem-like" id="teo-seqPoliOrdemP"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.28</span><span class="period">.</span>
+<p id="p-66">Se \(F\) é um polinômio de grau \(p\) então \(\sum_{k=1}^n F(k)\) é um polinômio de grau \(p + 1\) em \(n\text{.}\)</p></article><article class="theorem theorem-like" id="teo-seqPoliOrdemP"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.30</span><span class="period">.</span>
 </h6>
-<p id="p-63">Toda sequência na qual o termo de ordem \(n\) é um polinômio em \(n\text{,}\) de grau \(p\text{,}\) é uma progressão aritmética de ordem \(p\) e, reciprocamente, se \((a_n)\) é uma progressão aritmética de ordem \(p\text{,}\) então \((a_n)\) é um polinômio de grau \(p\) em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-64">Vamos proceder por indução sobre \(p\text{.}\)</p>
-<p id="p-65">Para \(p=1\text{,}\) o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária (<a class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Observação 1.1.8">Observação 1.1.8</a>).</p>
-<p id="p-66">Suponhamos que o teorema seja verdadeiro para todo \(p\in \{1, 2, \ldots, s\}\text{.}\) Mostraremos que essa afirmação é verdadeira para \(p=s+1\text{.}\)</p>
-<p id="p-67">Se \((a_n)\) é uma progressão aritmética de ordem \(s+1\text{,}\) \(b_n=\Delta a_n=a_{n+1}-a_n\) é uma progressão aritmética de ordem \(s\) e, pela hipótese de indução, \(b_n\) é um polinômio de grau \(s\) em \(n\text{.}\) Então \(\sum_{k=1}^n b_k = a_{n+1}-a_1\) é, pelo <a class="xref" data-knowl="./knowl/cor-poligraupmais1.html" title="Corolário 1.1.27">Corolário 1.1.27</a>, um polinômio de grau \(s+1\) em \(n\text{.}\)</p>
-<p id="p-68">Reciprocamente, se \(a_n\) é um polinômio de grau \(s+1\) em \(n\text{,}\) \(\Delta a_n\) é um polinômio de grau \(s\) em \(n\text{,}\) pois \(c_{s+1}(n+1)^{s+1} - c_{s+1}(n)^{s+1}\) é um polinômio de grau \(s\text{.}\) Assim, pela hipótese de indução, \((\Delta a_n)\) é uma progressão aritmética de ordem \(s\text{,}\) ou seja, \((a_n)\) é uma progressão aritmética de ordem \(s+1\text{.}\)</p></article></div></section></section></div></main>
+<p id="p-67">Toda sequência na qual o termo de ordem \(n\) é um polinômio em \(n\text{,}\) de grau \(p\text{,}\) é uma progressão aritmética de ordem \(p\) e, reciprocamente, se \((a_n)\) é uma progressão aritmética de ordem \(p\text{,}\) então \((a_n)\) é um polinômio de grau \(p\) em \(n\text{.}\)</p></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-68">Vamos proceder por indução sobre \(p\text{.}\)</p>
+<p id="p-69">Para \(p=1\text{,}\) o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária (<a class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Observação 1.1.8">Observação 1.1.8</a>).</p>
+<p id="p-70">Suponhamos que o teorema seja verdadeiro para todo \(p\in \{1, 2, \ldots, s\}\text{.}\) Mostraremos que essa afirmação é verdadeira para \(p=s+1\text{.}\)</p>
+<p id="p-71">Se \((a_n)\) é uma progressão aritmética de ordem \(s+1\text{,}\) \(b_n=\Delta a_n=a_{n+1}-a_n\) é uma progressão aritmética de ordem \(s\) e, pela hipótese de indução, \(b_n\) é um polinômio de grau \(s\) em \(n\text{.}\) Então \(\sum_{k=1}^n b_k = a_{n+1}-a_1\) é, pelo <a class="xref" data-knowl="./knowl/cor-poligraupmais1.html" title="Corolário 1.1.29">Corolário 1.1.29</a>, um polinômio de grau \(s+1\) em \(n\text{.}\)</p>
+<p id="p-72">Reciprocamente, se \(a_n\) é um polinômio de grau \(s+1\) em \(n\text{,}\) \(\Delta a_n\) é um polinômio de grau \(s\) em \(n\text{,}\) pois \(c_{s+1}(n+1)^{s+1} - c_{s+1}(n)^{s+1}\) é um polinômio de grau \(s\text{.}\) Assim, pela hipótese de indução, \((\Delta a_n)\) é uma progressão aritmética de ordem \(s\text{,}\) ou seja, \((a_n)\) é uma progressão aritmética de ordem \(s+1\text{.}\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

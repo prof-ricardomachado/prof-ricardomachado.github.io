@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-01T16:45:09-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Faça você mesmo.</span>
+</h6>
+<figure class="figure figure-like"><p xmlns:svg="http://www.w3.org/2000/svg">Variações nas populações de presas e de predadores em relação ao tempo, usando o sistema <a class="xref" data-knowl="./knowl/sistema-pielou-holling.html" title="[men] 2.1">(2.1)</a>:</p>
+<iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-variacoes-pielou-holling" width="600" height="720" src="interactive-variacoes-pielou-holling-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span>Variações nas populações de presas e de predadores em relação ao tempo</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Os códigos no Sage são os seguintes:</p>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">y, t = var('y, t'); r = 0.8; k = 2.5; alpha = 0.5; 
+c = 0.75; D = 2
+sn = desolve_system_rk4([x*r*(1-x/k) - alpha*x*y, -c*y + (k*x*y)/(x+D)], [x, y], ics=[0, 6, 5], ivar=t, end_points=40)        
+
+l1 = []
+l2 = []  
+for i in sn:
+    l1.append([i[0], i[1]])
+    l2.append([i[0], i[2]])
+
+P = (line(l1, thickness=1.5),  line(l2, color='red', thickness=1.5))#+graf_predador_presa_l(1, 0.5, 0.75, 0.25, tracejado=True)
+P[0]+P[1]
+</script></div></article><span class="incontext"><a href="section-pielou-holling.html#technology-4">[incontext]</a></span>
+</body>
+</html>
