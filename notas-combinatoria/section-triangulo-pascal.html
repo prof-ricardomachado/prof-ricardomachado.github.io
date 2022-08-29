@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-24T14:31:21-03:00       *-->
+<!--*       on 2022-08-29T15:12:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -175,7 +175,7 @@ C_n^p + C_n^{p+1}= \amp ~\frac{n!}{p!\times (n-p)!} + \frac{n!}{(p+1)!\times (n-
 = \amp ~ C_{n+1}^{p+1}  
 \end{align*}
 </div></article></div>
-<article class="theorem theorem-like" id="theorem-26"><h6 class="heading">
+<article class="theorem theorem-like" id="teo-reolacoes-complementares"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
 </h6>
 <dfn class="terminology">(Relação das Combinações Complementares)</dfn><div class="displaymath">
@@ -245,7 +245,7 @@ S = \sum_{k=1}^n \frac{1}{k+1}C_n^k.
 <div class="sagecell-sage" id="sage-43"><script type="text/x-sage">n, k = var('n, k')
 C(n, p) = binomial(n, p)
 sum((1/(k+1))*C(n, k), k, 1, n).show()
-</script></div></article><article class="theorem theorem-like" id="theorem-28"><h6 class="heading">
+</script></div></article><article class="theorem theorem-like" id="teo-colunas"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
 </h6>
 <dfn class="terminology">(Teorema das Colunas)</dfn><div class="displaymath">
@@ -361,25 +361,15 @@ sum((k^2)*(k+1), k, 1, n).show()
 \begin{equation*}
 C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = C_{n+p+1}^p
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-31"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-31"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><p id="p-714">Aplicando o Teorema 2 (Relação das Combinações Complementares), em cada \(C_{n+i}^i\) obtemos</p>
+</div></article><article class="hiddenproof" id="proof-31"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-31"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><p id="p-714">Aplicando o <a class="xref" data-knowl="./knowl/teo-reolacoes-complementares.html" title="Teorema 3.1.6">Teorema 3.1.6</a>, em cada \(C_{n+i}^i\) obtemos</p>
 <div class="displaymath">
-\begin{equation*}
-C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = \underbrace{C_{n}^n+C_{n+1}^n+C_{n+2}^n+\cdots+C_{n+p}^n}_{(*)}. 
-\end{equation*}
+\begin{align*}
+C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = \amp ~ C_{n}^n+C_{n+1}^n+C_{n+2}^n+\cdots+C_{n+p}^n\\
+= \amp~C_{n+p+1}^{n+1}\quad (\text{pelo } \knowl{./knowl/teo-colunas.html}{\text{Teorema 3.1.10}})\\
+= \amp~C_{n+p+1}^{p} \quad(\text{pelo } \knowl{./knowl/teo-reolacoes-complementares.html}{\text{Teorema 3.1.6}}).
+\end{align*}
 </div>
-<p data-braille="continuation">Aplicando o Teorema 4 (Teorema das Colunas), no lado direito da igualdade anterior, obtemos</p>
-<div class="displaymath">
-\begin{equation*}
-\overbrace{C_{n}^n+C_{n+1}^n+C_{n+2}^n+\cdots+C_{n+p}^n}^{(*)} = \underbrace{C_{n+p+1}^{n+1}}_{(**)}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Aplicando novamente o Teorema 2, obtemos</p>
-<div class="displaymath">
-\begin{equation*}
-\overbrace{C_{n+p+1}^{n+1}}^{(**)} =  C_{n+p+1}^{p}. 
-\end{equation*}
-</div>
-<p data-braille="continuation">O que mostra o resultado.</p></article></div>
+<p data-braille="continuation"> O que mostra o resultado.</p></article></div>
 <article class="theorem theorem-like" id="theorem-30"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
 </h6>
@@ -398,7 +388,7 @@ C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = \underbrace{C_{n}^n+C_{n+1}
 C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
 = \amp ~ \frac{n!}{(p+1) p!(n-p-1)!} - \frac{n!}{p!(n-p)(n-p-1)!}  \\
 = \amp ~ \frac{n!(n-p) - n!(p+1)}{(p+1)!(n-p)!}  \\
-= \amp ~ \frac{n!(n-2p-1))}{(p+1)! (n-p)!}  
+= \amp ~ \frac{n!(n-2p-1)}{(p+1)! (n-p)!}  
 \end{align*}
 </div>
 <p data-braille="continuation">Oberve que \(n!, (p+1)!\) e \((n-p)!\) são positivos, portanto o sinal de \(C_n^{p+1}-C_n^p\text{,}\) será determinado pelo sinal de</p>
