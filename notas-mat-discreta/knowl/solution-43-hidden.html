@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-22T17:35:02-03:00       *-->
+<!--*       on 2022-08-30T19:09:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,50 +12,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body><div class="solution solution-like">
-<p>Temos</p>
+<p>A recorrência tem equação característica \(r^2-6r+8=0\text{,}\) cujas raízes são \(r_1=2\) e \(r_2=4\text{.}\) Portanto, a solução da homogênea, isto é, de \(x_{n-2}-6x_{n+1}+8x_n=0\) é \(h_n=C_12^n+C_24^n\text{.}\) Tentaremos agora descobrir uma solução particular, \(t_n\text{,}\) da recorrência</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Delta 3^k = 3^{k+1}-3^k = 3^k(3-1) = 2\times 3^k.
+x_{n+2}-6x_{n+1}+8x_n=n+3^n.
 \end{equation*}
 </div>
-<p data-braille="continuation">Logo, \(3^k = \frac{1}{2}\Delta 3^k\) e</p>
+<p data-braille="continuation">Ora, se substituirmos \(t_n\) em \(x_{n+2}-6x_{n+1}+8x_n\) devemos encontrar \(n+3^n\text{.}\) Que tipo de função deve ter \(t_n\text{?}\) É bastante razoável imaginar que \(t_n\) seja a soma  de um polinômio do primeiro grau com uma exponencial de base 3. Tentaremos \(t_n=An+B+C3^n\text{.}\) Substituindo em</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^{n}k3^k = \frac{1}{2}\sum_{k=1}^n k\Delta 3^k.
+x_{n+2}-6x_{n+1}+8x_n=n+3^n,
 \end{equation*}
 </div>
-<p data-braille="continuation">Aplicando a fórmula da somação por partes, com \(a_{k+1}=k\) e \(b_k=3^k\text{,}\) temos</p>
+<p data-braille="continuation">obtemos \(3An+3B-4A-C3^n=n+3\text{.}\) Logo, \(t_n\) será solução se \(3A=1, 3B-4A=0\) e \(-C=1\text{.}\) Logo,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^{n}k3^k = \frac{1}{2}\sum_{k=1}^n k\Delta 3^k = \frac{1}{2}\left( n\cdot3^{n+1}-0-\sum_{k=1}^n3^k\cdot 1 \right).
+A=\frac{1}{3}, B=\frac{4}{9}, \text{ e } C=-1.
 \end{equation*}
 </div>
-<p data-braille="continuation">Mas</p>
+<p data-braille="continuation">Daí,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^n3^k = 3\frac{1-3^n}{1-3}=\frac{3^{n+1}}{2}-\frac{3}{2}.
+t_n=\frac{1}{3}n+\frac{4}{9}-3^n.
 \end{equation*}
 </div>
-<p data-braille="continuation">Daí, resulta</p>
+<p data-braille="continuation">Portanto, a solução da recorrência não homogênea é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^{n}k3^k = \frac{n}{2}3^{n+1}-\frac{3^{n+1}}{4}+\frac{3}{4}=\frac{2n-1}{4}3^{n+1}+\frac{3}{4}.
+x_n=C_12^n+C_24^n+\frac{1}{3}n+\frac{4}{9}-3^n.
 \end{equation*}
 </div>
-<p data-braille="continuation">No Sage, podemos fazer este cálculo da seguinte maneira:</p>
-<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">n, k = var('n, k')
-sum(k*3^k, k, 1, n).show()
-</script></div>
 </div></body>
 </html>
