@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-29T15:12:59-03:00       *-->
+<!--*       on 2022-08-31T15:52:51-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,46 +12,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.2.2.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.1.1</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
-2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
-3º: \amp ~ \text{6 conseguem.} 
-\end{align*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Aplicando o <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é \(p=\frac{1}{2}\text{.}\)</p>
+<p>Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é </p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
+\left(\frac{1}{2}\right)^7 \times \left(1 - \frac{1}{2}\right)^{8},
 \end{equation*}
 </div>
+<p data-braille="continuation">mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de \(C_{15}^{7}\) maneiras.</p>
+<p>Portanto a resposta para nosso problema é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
+C_{15}^{7}\times \left(\frac{1}{2}\right)^7 \times \left(\frac{1}{2}\right)^{8}=0.1963 \approx 20\%. 
 \end{equation*}
 </div>
-<div class="sagecell-sage" id="sage-51"><script type="text/x-sage">C(n, p) = binomial(n,p)
-a = C(6, 4)*(2/10)^4*(8/10)^2
-b = C(6, 5)*(2/10)^5*(8/10)
-c = C(6, 6)*(2/10)^6
-a+b+c
-</script></div>
 </div>
 <span class="incontext"><a href="section-distribuicao-binomial.html#solution-144">[incontext]</a></span>
 </body>
