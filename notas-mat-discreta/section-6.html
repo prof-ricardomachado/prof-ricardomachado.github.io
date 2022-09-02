@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-31T19:02:53-03:00       *-->
+<!--*       on 2022-09-01T10:59:17-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -118,7 +118,9 @@ MathJax.Hub.Config({
 <li class="link">
 <a href="matfinanceira.html" data-scroll="matfinanceira"><span class="codenumber">3</span> <span class="title">Matemática Financeira</span></a><ul>
 <li><a href="section-6.html" data-scroll="section-6" class="active">Juros Compostos</a></li>
-<li><a href="section-7.html" data-scroll="section-7">Sistemas de Amortização</a></li>
+<li><a href="section-7.html" data-scroll="section-7">A Fórmula das Taxas Equivalentes</a></li>
+<li><a href="section-8.html" data-scroll="section-8">Renda Perpétua (Séries Uniformes)</a></li>
+<li><a href="section-9.html" data-scroll="section-9">Sistemas de Amortização</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -135,7 +137,7 @@ MathJax.Hub.Config({
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h6>
 <p id="p-188">Lúcia tomou um empréstimo de R$ 100,00. Dois meses após, pagou R$ 140,00. Quais foram os juros pagos, a taxa de juros e o montante pago por Lúcia?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><p id="p-189">Os juros pagos por Lúcia são de R$ 40,00 e a taxa de juros é de \(\frac{40}{100}=0,40=40\%\) ao bimestre. O montante, que é a dívida na época do pagamento, é de R$ 140,00.</p></div></div></article><article class="theorem theorem-like" id="theorem-14"><h6 class="heading">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><p id="p-189">Os juros pagos por Lúcia são de R$ 40,00 e a taxa de juros é de \(\frac{40}{100}=0,40=40\%\) ao bimestre. O montante, que é a dívida na época do pagamento, é de R$ 140,00.</p></div></div></article><article class="theorem theorem-like" id="teo-5.1"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h6>
 <p id="p-190">No regime de juros compostos de taxa \(i\text{,}\) um principal \(C_0\) transforma-se, depois de \(n\) períodos de tempo, em um montante \(C_n=C_0(1+i)^n\text{.}\)</p></article><article class="hiddenproof" id="proof-17"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><p id="p-191">Basta observar que os valores do capital crescem a uma taxa constante \(i\) e, portanto, formam uma progressão geométrica de razão \(1+i\text{.}\)</p></article></div>
@@ -150,6 +152,118 @@ MathJax.Hub.Config({
 </ol>
 <div class="hidden-sagecell-sage" id="sage-6"><script type="text/x-sage">150*(1+0.01)^120
 </script></div>
+</div></div></article><p id="p-194">É importante perceber que o valor de uma quantia depende da época à qual ela está referida. Se eu consigo fazer com que meu dinheiro renda 10% ao mês, me é indiferente pagar agora R$ 100,00 ou pagar R$ 110,00 daqui a um mês. É mais vantajoso pagar R$ 105,00 daqui a um mês do que pagar R$ 100,00 agora. é mais vantajoso pagar R$ 100,00 agora do que pagar R$ 120,00 daqui a um mês.</p>
+<article class="remark remark-like" id="remark-14"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-195">No fundo, só há um único problema de Matemática Financeira: deslocar quantias no tempo.</p>
+<p id="p-196">Outro modo de ler o <a class="xref" data-knowl="./knowl/teo-5.1.html" title="Teorema 3.1.3">Teorema 3.1.3</a>, é que uma quantia, hoje igual a \(C_0\text{,}\) transforma-se-á, depois de \(n\) períodos de tempo, em uma quantia igual a \(C_0(1+i)^n\text{.}\) Isto é, uma quantia, cujo valor atual é \(A\text{,}\) equivalerá no futuro, depois de \(n\) períodos de tempo, a \(F=A(1+i)^n\text{.}\)</p>
+<p id="p-197">Essa é a fórmula fundamental da equivalência de capitais, para obter o valor futuro, basta multiplicar o atual por \((1+i)^n\text{,}\) e para obter o valor atual, sabendo o valor futuro, basta dividir o valor futuro por \((1+i)^n\text{,}\) ou seja:</p>
+<ol class="lower-alpha">
+<li id="li-22">\(F = A(1+i)^n\text{,}\)</li>
+<li id="li-23">\(\displaystyle A = \frac{F}{(1+i)^n}.\)</li>
+</ol></article><article class="example example-like" id="example-51"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-198">Pedro tomou um emprétimo de \(300\) reais, a juros de \(15\%\) ao mês. Dois meses após, Pedro pagou \(150\) reais e, um mês após esse pagamento, Pedro liquidou seu débito. Qual o valor desse último pagamento?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like">
+<p id="p-199">Os esquemas de pagamento abaixo são equivalentes. Logo, 300 reais, na data 0, têm o mesmo valor de 150 reais dois meses após, mais um pagamento igual a \(P\text{,}\) na data 3. <figure class="figure figure-like" id="fig-fin01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan01.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Portanto, trazendo todos os valores para o valor atual, ficamos com</p>
+<div class="displaymath">
+\begin{equation*}
+300 = \frac{150}{(1+0,15)^2}+\frac{P}{(1+0,15)^3}.
+\end{equation*}
+</div>
+<p data-braille="continuation">E resolvendo a equação, obtemos \(P=283,76\text{.}\)</p>
+<div class="hidden-sagecell-sage" id="sage-7"><script type="text/x-sage">p = var('p')
+solve(300 == 150/(1+0.15)^2+p/(1+0.15)^3, p)[0].rhs().n()
+</script></div>
+</div></div></article><article class="example example-like" id="example-52"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-200">Pedro tem duas opções de pagamento na compra de um televisor:</p>
+<ol class="lower-roman">
+<li id="li-24">três prestações mensais de R$ 160,00 cada;</li>
+<li id="li-25">sete prestações mensais de R$ 70,00 cada.</li>
+</ol>
+<p data-braille="continuation">Em ambos os casos, a primeira prestação é paga no ato da compra. Se o dinheiro vale 2% ao mês para Pedro, qual a melhor opção que Pedro possui?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">
+<p id="p-201">Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época, por exemplo na época 2. Os  esquemas de pagamentos são: <figure class="figure figure-like" id="fig-fin02"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan02.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época. Por exemplo, na época 0, temos,</p>
+<div class="displaymath">
+\begin{align*}
+a = \amp~ 160+\frac{160}{(1,02)}+\frac{160}{(1,02)^2}=470,65\\
+b = \amp~ 70+\frac{70}{(1,02)}+\frac{70}{(1,02)^2}+\frac{70}{(1,02)^3}+\frac{70}{(1,02)^4}+\frac{70}{(1,02)^5}\\
+\amp~\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad+\frac{70}{(1,02)^6}=462,10
+\end{align*}
+</div>
+<p data-braille="continuation">Pedro deve preferir o pagamento em sete prestações.</p>
+<p id="p-202">É um absurdo que muitas pessoas razoavelmente instruídas achem que o primeiro esquema é melhor pois o total pago é de R$ 480,00 ao passo que no segundo esquema o total pago é de R$ 490,00.</p>
+<p id="p-203">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
+<div class="hidden-sagecell-sage" id="sage-8"><script type="text/x-sage">a = sum(160*(1/(1.02)^x), x, 0, 2)
+b = sum(70*(1/(1.02)^x), x, 0, 6)
+a,b
+</script></div>
+</div></div></article><article class="example example-like" id="example-53"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-204">Pedro tem três opções de pagamento na compra de vestuário.</p>
+<ol class="lower-roman">
+<li id="li-26">à vista, com 30% de desconto;</li>
+<li id="li-27">em duas pretações mensais iguais, sem desconto, vencendo a primeira um mês após a compra;</li>
+<li id="li-28">em três prestações mensais iguais, sem desconto, vencendo a primeira no ato da compra.</li>
+</ol>
+<p data-braille="continuation">Qual a melhor opção para Pedro, se o dinheiro vale, para ele, 25% ao mês?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
+<p id="p-205">Fixando o preço do bem em 30, temos os três esquemas abaixo <figure class="figure figure-like" id="fig-fin03"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan03.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.11<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Comparando os valores, por exemplo, na época 0, obtemos:</p>
+<div class="displaymath">
+\begin{align*}
+a = \amp~ 21\\
+b = \amp~ \frac{15}{(1,25)}+\frac{15}{(1,25)^2} = 21,60\\
+c = \amp~ 10+\frac{10}{(1,25)}+\frac{10}{(1,25)^2}=24,40. 
+\end{align*}
+</div>
+<p data-braille="continuation">A melhor alternativa é a primeira e a pior é a tercera.</p>
+<p id="p-206">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
+<div class="hidden-sagecell-sage" id="sage-9"><script type="text/x-sage">a = 21
+b = sum(15*(1/(1.25)^x), x, 1, 2)
+c = sum(10*(1/(1.25)^x), x, 0, 2)
+a,b,c
+</script></div>
+</div></div></article><article class="example example-like" id="example-54"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+</h6>
+<p id="p-207">Uma loja oferece duas opções de pagamento:</p>
+<ol class="lower-roman">
+<li id="li-29">à vista, com 30% de desconto;</li>
+<li id="li-30">em duas prestações mensais iguais, sem desconto, a primeira prestação sendo paga no ato da compra.</li>
+</ol>
+<p data-braille="continuation">Qual a taxa mensal dos juros embutidos nas vendas a prazo?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-208">Fixando o valor do bem em 100, temos os esquemas de pagamentos abaixo: <figure class="figure figure-like" id="fig-fin04"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/finan04.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.13<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Igualando os valores, por exemplo, na época 0 (a data usada nessas comparações é chamada de <em class="emphasis">data focal</em>), obtemos</p>
+<div class="displaymath">
+\begin{equation*}
+70 = 50+\frac{50}{1+i}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Daí, \(i = 1,5 = 150\%\text{.}\) A loja cobra 150% ao mês nas vendas a prazo.</p>
+<p id="p-209">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
+<div class="hidden-sagecell-sage" id="sage-10"><script type="text/x-sage">i = var('i')
+solve(70 == 50+50/(1+i), i)[0].rhs().n()
+</script></div>
+</div></div></article><article class="example example-like" id="example-55"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+</h6>
+<p id="p-210">Investindo seu capital a juros mensais de 8%, em quanto tempo você dobrará o seu capital inicial?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<p id="p-211">Temos \(C_0(1+0,08)^n = 2C_0\text{.}\) Daí</p>
+<div class="displaymath">
+\begin{equation*}
+(1,08)^n = 2\quad \text{ e }\quad n = \frac{\log(2)}{\log(1,08)}\approx 9.
+\end{equation*}
+</div>
 </div></div></article></section></div></main>
 </div>
 </body>

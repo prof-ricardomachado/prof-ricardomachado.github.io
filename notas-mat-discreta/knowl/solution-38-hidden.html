@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-30T19:09:31-03:00       *-->
+<!--*       on 2022-09-01T10:59:18-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,25 +12,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body><div class="solution solution-like">
-<p>Temos</p>
+<p>Fixando o preço do bem em 30, temos os três esquemas abaixo <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan03.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.11<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Comparando os valores, por exemplo, na época 0, obtemos:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-x_2 = \amp ~ x_1 + 1\\
-x_3 = \amp ~ x_2 + 2\\
-x_4 = \amp ~ x_3 + 3\\
-\vdots~~ = \amp ~~~~ \vdots\\
-x_n = \amp ~ x_{n-1} + (n-1).
+a = \amp~ 21\\
+b = \amp~ \frac{15}{(1,25)}+\frac{15}{(1,25)^2} = 21,60\\
+c = \amp~ 10+\frac{10}{(1,25)}+\frac{10}{(1,25)^2}=24,40. 
 \end{align*}
 </div>
-<p data-braille="continuation">Somando, resulta</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-x_n = \amp~ x_1+1+2+3+\cdots+(n-1)\\
-= \amp~ 1+2+3+\cdots+(n-1)\\
-= \amp~ \frac{n(n-1)}{2}.
-\end{align*}
-</div>
+<p data-braille="continuation">A melhor alternativa é a primeira e a pior é a tercera.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">a = 21
+b = sum(15*(1/(1.25)^x), x, 1, 2)
+c = sum(10*(1/(1.25)^x), x, 0, 2)
+a,b,c
+</script></div>
 </div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-08-30T19:09:31-03:00       *-->
+<!--*       on 2022-09-01T10:59:18-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -23,40 +23,17 @@
 </script>
 </head>
 <body><div class="solution solution-like">
-<p>Uma solução não nula de \(x_{n+1}=2x_n\) é, por exemplo, \(x_n=2^{n-1}\text{,}\) conforme vimos no <a class="xref" data-knowl="./knowl/ex-7.html" title="Exemplo 2.2.4">Exemplo 2.2.4</a>. Fazendo a substituição \(x_n=2^{n-1}y_n\text{,}\) obtemos</p>
+<p>Fixando o valor do bem em 100, temos os esquemas de pagamentos abaixo: <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/finan04.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.13<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Igualando os valores, por exemplo, na época 0 (a data usada nessas comparações é chamada de <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">data focal</em>), obtemos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-2^ny_{n+1}=2^ny_n+1,
+70 = 50+\frac{50}{1+i}.
 \end{equation*}
 </div>
-<p data-braille="continuation">ou seja,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-y_{n+1}=y_n+2^{-n}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Daí, se tem</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-y_2 = \amp ~ y_1 + 2^{-1}\\
-y_3 = \amp ~ y_2 + 2^{-2}\\
-y_4 = \amp ~ y_3 + 2^{-3}\\
-\vdots~~ = \amp ~~~~ \vdots\\
-y_n = \amp ~ y_{n-1} + 2^{-(n-1)}.
-\end{align*}
-</div>
-<p data-braille="continuation">Somando, resulta</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-y_n = \amp~ y_1+2^{-1}+2^{-2}+2^{-3}+\cdots+2^{-(n-1)}\\
-= \amp~ y_1+2^{-1}\frac{(2^{-1})^{n-1}-1}{2^{-1}-1}\\
-= \amp~ y_1-2^{1-n}+1.
-\end{align*}
-</div>
-<p data-braille="continuation">Como \(x_n=2^{n-1}y_n\) e \(x_1=2\text{,}\) temos \(y_1=2\) e \(y_n=3-2^{1-n}\text{.}\) Daí, \(x_n=3\cdot 2^{n-1}-1.\)</p>
-<div class="sagecell-sage" id="sage-7"><script type="text/x-sage">maxima('load("solve_rec")')
-sol=maxima('solve_rec(x[n+1]=2*x[n]+1,x[n],x[1]=2)')
-show(sol)
+<p data-braille="continuation">Daí, \(i = 1,5 = 150\%\text{.}\) A loja cobra 150% ao mês nas vendas a prazo.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">i = var('i')
+solve(70 == 50+50/(1+i), i)[0].rhs().n()
 </script></div>
 </div></body>
 </html>
