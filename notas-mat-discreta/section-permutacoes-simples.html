@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-09-07T15:32:47-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Permutações Simples</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-note-on-proofs.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-combinacoes-simples.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-note-on-proofs.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-combinacoes-simples.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pa.html" data-scroll="pa"><span class="codenumber">1</span> <span class="title">Progressões</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Progressões Aritméticas</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Progressões Geométricas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="recorrencias.html" data-scroll="recorrencias"><span class="codenumber">2</span> <span class="title">Recorrências</span></a><ul>
+<li><a href="section-3.html" data-scroll="section-3">Introdução</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Recorrências Lineares de Primeira Ordem</a></li>
+<li><a href="section-5.html" data-scroll="section-5">Recorrências Lineares de Segunda Ordem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="matfinanceira.html" data-scroll="matfinanceira"><span class="codenumber">3</span> <span class="title">Matemática Financeira</span></a><ul>
+<li><a href="section-6.html" data-scroll="section-6">Juros Compostos</a></li>
+<li><a href="section-7.html" data-scroll="section-7">A Fórmula das Taxas Equivalentes</a></li>
+<li><a href="section-8.html" data-scroll="section-8">Renda Perpétua (Séries Uniformes)</a></li>
+<li><a href="section-9.html" data-scroll="section-9">Sistemas de Amortização</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">4</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-10.html" data-scroll="section-10">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">5</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-20.html" data-scroll="section-20">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples" class="active">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+</ul>
+</li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">7</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-permutacoes-simples"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">6.3</span> <span class="title">Permutações Simples</span>
+</h2>
+<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
+<ol class="decimal">
+<li id="li-160">Nota histórica</li>
+<li id="li-161">Definir Permutação Simples.</li>
+<li id="li-162">Mostrar como obter a lista com todas as permutações de \(n\) elementos distintos no Sage.</li>
+<li id="li-163">Mostrar como calcular o número de permutações com \(n\) elementos distintos.</li>
+<li id="li-164">Exemplificar.</li>
+</ol></article><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">6.3.1</span> <span class="title">Nota Histórica</span>
+</h3>
+<p id="p-815">Al-Khalil (717-786), um matemático e criptógrafo árabe, escreveu o Livro de Mensagens Criptográficas. Ele contém o primeiro uso de permutações e combinações, para listar todas as palavras árabes possíveis com e sem vogais.</p>
+<p id="p-816">A regra para determinar o número de permutações de \(n\) objetos era conhecida na cultura indiana por volta de 1150. O Līlāvatī, do matemático indiano Bhāskarācārya (Bhaskara II), contém uma passagem que se traduz em:</p>
+<blockquote class="blockquote" id="blockquote-3"><em class="emphasis">O produto da multiplicação da série aritmética começando e aumentando pela unidade e continuando até o número de casas, serão as variações do número com algarismos específicos.</em></blockquote>
+<p id="p-817">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Permutation" target="_blank"><dfn class="terminology">en.wikipedia.org/wiki/Permutation</dfn></a>.</p></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">6.3.2</span> <span class="title">Permutações Simples</span>
+</h3>
+<article class="definition definition-like" id="def-permutacao"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-818">Permutar uma lista de objetos é mudar a ordem em que eles estavam. O <em class="emphasis">número de permutações de \(n\) objetos distintos</em>, é o número total de maneiras de ordenar estes \(n\) objetos.</p>
+<p id="p-819">Para descrever, o número de permutações de \(n\) objetos distintos, usamos as notações:</p>
+<div class="displaymath">
+\begin{equation*}
+P_n  ~~\text{ ou } ~~ P(n).
+\end{equation*}
+</div></article><article class="example example-like" id="example-97"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-820">Todas as permutações dos elementos \(1, 2, 3\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1).
+\end{equation*}
+</div>
+<p id="p-821">Observe que \((1, 2, 3)\) é uma das permutações possíveis, pois essa é uma das formas de ordenar os elementos \(1, 2, 3\text{.}\) Portanto,</p>
+<div class="displaymath">
+\begin{equation*}
+P_3 = 6.
+\end{equation*}
+</div></article><article class="technology computation-like" id="technology-21"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-822">Abaixo, clique em "Evaluate (Sage)" para obter a lista com todas as permutações dos elementos: 1, 2, 3, 4.</p>
+<div class="sagecell-sage" id="sage-41"><script type="text/x-sage">Permutations([1, 2, 3, 4]).list()
+</script></div>
+<p id="p-823">Os números podem ser alterados, ao executar o código, a lista das permutações será atualizada.</p></article><article class="theorem theorem-like" id="teo-permutacao"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
+</h6>O número de permutações de \(n \) objetos distintos é<div class="displaymath">
+\begin{equation*}
+P_n = P(n) = n\times (n-1) \times (n-2)\times \cdots \times 1. 
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-41"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><p id="p-824">Pelo princípio multiplicativo, temos \(n\) modos de escolher o elemento que ocupará o primeiro lugar, uma vez tomada essa decisão, teremos \(n-1\) modos de  escolher o elemento que ocupará o segundo lugar, e assim por diante, até que haja apenas um único modo de escolher o elemento que ocupará o último lugar. Portanto</p>
+<div class="displaymath">
+\begin{equation*}
+P(n) = n\times (n-1) \times \cdots \times 1. 
+\end{equation*}
+</div></article></div>
+<article class="remark remark-like" id="remark-20"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span>
+</h6>O <em class="emphasis">fatorial</em> de um número natural \(n\) é denotado por \(n!\) e consiste na multiplicação desse número por seus antecessores, com exceção do zero. Ou seja<div class="displaymath">
+\begin{equation*}
+n!=P_n = n\times (n-1) \times \cdots \times 1.
+\end{equation*}
+</div></article><article class="technology computation-like" id="tec-permutacao"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">6.3.6</span><span class="period">.</span>
+</h6>
+<p id="p-825">Para calcular \(P_n\) no Sage, usamos a função fatorial: \(\verb|factorial|\text{.}\) Definimos \(\verb|P(n)=factorial(n)|\) apenas para abreviar, confira o cálculo de \(\verb|P(5)|\) apertando no botão "Evaluate (Sage)".</p>
+<div class="sagecell-sage" id="sage-42"><script type="text/x-sage">P(n) = factorial(n)
+P(5)
+</script></div>
+<p id="p-826">Uma vez definida a função \(\verb|P(n)=factorial(n)|\text{,}\) podemos combiná-la com outras operações já definidas no Sage. Veja na próxima célula o cálculo de \(2\times P_5 + 3\times P_4\text{:}\)</p>
+<div class="sagecell-sage" id="sage-43"><script type="text/x-sage">P(n) = factorial(n)
+2*P(5) + 3*P(4)
+</script></div></article><article class="definition definition-like" id="definition-33"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">6.3.7</span><span class="period">.</span>
+</h6>
+<p id="p-827">Um <em class="emphasis">anagrama</em> é uma palavra ou expressão elaborada usando exatamente as mesmas letras que a palavra ou expressão original. Por exemplo, a palavra ROMA é um anagrama da palavra AMOR e vice-versa.</p>
+<p id="p-828">Nos dicionários, um anagrama é a transposição das letras de uma palavra (ou frase) para formar outra palavra (ou frase). Observe que pela definição do dicionário, só seria contado os casos em que a permutação das letras formassem outra palavra (ou frase). No entanto, em matemática, qualquer permutação das letras de uma palavra é considerado como anagrama.</p></article><article class="example example-like" id="example-98"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.3.8</span><span class="period">.</span>
+</h6>
+<p id="p-829">Quantos são os anagramas da palavra SAGE?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-138" id="solution-138"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-138"><div class="solution solution-like">
+<p id="p-830">A palavra SAGE possui quatro letras distintas, logo, o número de anagramas da palavra SAGE é</p>
+<div class="displaymath">
+\begin{equation*}
+P_4 = 24. 
+\end{equation*}
+</div>
+</div></div></article><article class="example example-like" id="example-99"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.3.9</span><span class="period">.</span>
+</h6>
+<p id="p-831">Quantos são os anagramas da palavra XADREZ que começam e terminam por consoante?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-139" id="solution-139"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-139"><div class="solution solution-like">
+<p id="p-832">A consoante inicial pode ser escolhida de \(4\) maneiras, uma vez feita essa escolha, a consoante final pode ser escolhida de \(3\) maneiras. Restam quatro letras que podem ser ordenadas de \(P_4\) maneiras. Pelo Princípio Multiplicativo, a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+4\times 3\times P_4 = 288. 
+\end{equation*}
+</div>
+</div></div></article><article class="example example-like" id="example-100"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.3.10</span><span class="period">.</span>
+</h6>
+<p id="p-833">De quantos modos podemos dividir \(12\) pessoas em três grupos de quatro pessoas cada?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-140" id="solution-140"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-140"><div class="solution solution-like">
+<p id="p-834">Podemos ordenar as \(12\) pessoas em uma fila. O primeiro grupo será formado pelas \(4\) primeiras pessoas, o segundo grupo, pelas \(4\) pessoas seguintes e o terceiro grupo pelas quatro últimas pessoas. O número de maneiras de ordenar as \(12\) pessoas é \(P_{12}\text{.}\) Dessa forma, cada grupo esta sendo contado \(P_4\) vezes, por exemplo,</p>
+<div class="displaymath">
+\begin{equation*}
+[1, 2, 3, 4], [1, 2, 4, 3], \ldots, [4, 3, 2, 1]
+\end{equation*}
+</div>
+<p data-braille="continuation">representam o mesmo grupo. Logo, precisamos dividir \(P_{12}\) por \((P_4)^3\text{,}\) já que são \(3\) grupos.</p>
+<p id="p-835">Por fim, note que a ordem dos grupos não importa, como são \(P_3\) maneiras de ordenar os grupos, dividindo por \(P_3\text{,}\) obtemos a resposta</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{P(12)}{P(3)\times P(4)\times P(4)\times P(4)} = 5775.
+\end{equation*}
+</div>
+<div class="hidden-sagecell-sage" id="sage-44"><script type="text/x-sage">P(n) = factorial(n)
+P(12)/(P(3)*P(4)*P(4)*P(4))
+</script></div>
+</div></div></article><article class="example example-like" id="exem-permutacao-pos"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
+</h6>
+<p id="p-836">Permutam-se de todos os modos possíveis os algarismos \(2, 3, 5, 6, 8, 9\) e escrevem-se os números assim formados em ordem crescente.</p>
+<ol class="lower-alpha">
+<li id="li-165">Que lugar ocupa o número \(653289\text{?}\)</li>
+<li id="li-166">Qual o número que ocupa o \(500º\) lugar?</li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-141" id="solution-141"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-141"><div class="solution solution-like">
+<p id="p-837"><dfn class="terminology">item a.</dfn></p>
+<p id="p-838">Como os números foram escritos em ordem crescente, os que começam com \(2, 3\) e \(5\) aparecem antes do número \(653289\text{.}\) Existem \(5!\) números que começam com cada um destes algarismos, ou seja \(3\times 5!\) números.</p>
+<p id="p-839">Existem \(4!\) números que começam com \(62\text{,}\) e a mesma quantidade que começam com \(63\text{,}\) ou seja \(2\times 4!\) números.</p>
+<p id="p-840">Existem \(3!\) números que começam com \(652\text{.}\)</p>
+<p id="p-841">O próximo número já que o que queremos. Portanto, a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+3\times 5! + 2\times 4! +3! +1 = 415.
+\end{equation*}
+</div>
+<p id="p-842"><dfn class="terminology">item b.</dfn></p>
+<p id="p-843">Começando com \(2, 3, 5\) e \(6\) temos um total de \(4\times 5! = 480\) números. Se considerarmos também, todos que começam com \(8\text{,}\) teremos mais \(120\) números, ultrapassando a posição \(500\text{.}\)</p>
+<p id="p-844">Já sabemos que o número que ocupa a posição \(500\) começa com o algarismo \(8\) e que o primeiro número com o algarismo \(8\) ocupa a posição \(481\text{.}\) Precisamos encontrar o número que começa com o algarismo \(8\) e está na posição \(20\text{,}\) dentre estes números que começam com \(8\text{.}\)</p>
+<p id="p-845">Começando com \(823, 825\) e \(826\text{,}\) são \(3\times 3! = 18\) números. Dessa forma, o número seguinte está na posição \(19\text{,}\) dentre os que começam com o algarismo \(8\text{.}\) Assim, o número \(829356\) está na posição \(499\) e o número \(829365\) está na posição \(500\text{.}\)</p>
+<p id="p-846"><dfn class="terminology">(Usando o Sage)</dfn></p>
+<p id="p-847">Quando calculamos todas as permutações no Sage, a saída é exibida em ordem crescente. Como as listas no Sage começam a ser contadas a partir do <dfn class="terminology">zero</dfn>, podemos consultar a permutação de posição 500 com o comando abaixo:</p>
+<div class="hidden-sagecell-sage" id="sage-45"><script type="text/x-sage">Permutations([2, 3, 5, 6, 8, 9]).list()[499]
+</script></div>
+</div></div></article><article class="technology computation-like" id="technology-23"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span>
+</h6>
+<p id="p-848">Implementação em Sage para verificar respostas de problemas como o <a class="xref" data-knowl="./knowl/exem-permutacao-pos.html" title="Exemplo 4.3.11">Exemplo 4.3.11</a>.</p>
+<p id="p-849">Escolha os dígitos que serão permutados e escreva como um número, em seguida, escolha outro número para obter o lugar ocupado por ele.</p>
+<figure class="figure figure-like" id="figure-23"><iframe id="interact-ordem-permut-a" width="600" height="210" src="interact-ordem-permut-a-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">6.3.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-850">Escolha os dígitos que serão permutados e escreva como um número, em seguida, escolha a posição para obter o número que a ocupa.</p>
+<figure class="figure figure-like" id="figure-24"><iframe id="interact-ordem-permut-b" width="600" height="240" src="interact-ordem-permut-b-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">6.3.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="definition definition-like" id="definition-34"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">6.3.15</span><span class="period">.</span>
+</h6>
+<p id="p-851">Um <dfn class="terminology">palíndromo</dfn> (ou <dfn class="terminology">capicua</dfn>) é uma sequência de caracteres que pode ser lido da esquerda para a direita ou da direita para a esquerda, mantendo seu sentido. Esses caracteres podem ser número, palavra ou frase.</p>
+<p id="p-852">Por exemplo, \(12321\text{,}\) "osso" e "Socorram-me, subi no ônibus em Marrocos", são palíndromos.</p></article><article class="example example-like" id="example-102"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.3.16</span><span class="period">.</span>
+</h6>
+<ol class="lower-alpha">
+<li id="li-167">Quantos números palíndromos de \(3\) algarismos há em nosso sistema de numeração?</li>
+<li id="li-168">Com os algarismos \(1,3,5,7,9\text{,}\) quantos palíndromos de \(4\) algarismos conseguimos formar?</li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like">
+<p id="p-853"><dfn class="terminology">item a.</dfn></p>
+<p id="p-854">Para formar um número palíndromo com três algarismos, quando o primeiro algarismo for escolhido, o terceiro já está definido como sendo igual ao primeiro. Depois desta escolha, resta apenas o segundo algarismo para ser definido.</p>
+<p id="p-855">Para escolher o primeiro algarismo temos \(9\) opções, pois o zero não é permitido, para o segundo algarismo, temos \(10\) opções. Portanto, a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+9\times 10 = 90.
+\end{equation*}
+</div>
+<p id="p-856"><dfn class="terminology">item b.</dfn></p>
+<p id="p-857">Observe que, usando \(3, 4\) ou \(5\) algarismos distintos não é possível formar um palíndromo de \(4\) algarismos.</p>
+<p id="p-858">Usando apenas um dos cinco algarismos distintos, só temos um número que é um palíndromo, por exemplo \(1111\text{.}\) Como temos \(5\) possibilidades de escolha de algarismo, existem \(5\) palíndromos deste tipo.</p>
+<p id="p-859">Usando dois algarismos distintos, só temos \(2\) palíndromos, por exemplo \(1331\) e \(3113\text{.}\) Com os cinco algarismos disponíveis, podemos escolher dois deles de \(10\) maneiras, pois o primeiro pode ser escolhido de \(5\) maneiras e o segundo de \(4\) maneiras, como a ordem da escolha não importa, precisamos dividir por \(2\text{.}\) Portanto, neste caso temos \(2\times 10 = 20\) palíndromos. Pelo Princípio Aditivo, a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+5+20 = 25.
+\end{equation*}
+</div>
+</div></div></article><article class="fact theorem-like" id="fact-2"><h6 class="heading">
+<span class="type">Curiosidade</span><span class="space"> </span><span class="codenumber">6.3.17</span><span class="period">.</span>
+</h6>
+<p id="p-860"><dfn class="terminology">O palíndromo do Chico.</dfn></p>
+<blockquote class="blockquote" id="blockquote-4">
+<p id="p-861">Quando Chico era nosso homem na Itália toda semana a gente publicava matéria dele. Era um correspondente aplicado. Me lembro de umas fotos que mandou, posando ao lado de nosso ancestral, o temível Pasquino.</p>
+<p id="p-862">Agora... Liguei para ele pedindo para escrever alguma coisa para o primeiro número do Pasquim paulista. "Minha agenda estourou. Tô enlouquecido, ensaiando o show com Bethânia para o dia 2 em Paris." "Pô, Chico, tremenda sacanagem nos deixar na mão!" "Fazer matéria nem pensar, mas se vocês quiserem um palíndromo..." Palíndromo, como talvez só o Houaiss saiba, é uma frase que significa literalmente o mesmo, seja lida de cá pra lá, como de lá pra cá, da direita para a esquerda. "Levei 5 horas fazendo", disse Chico. "Insônia." Era pegar ou largar. Peguei. E, outra vez por acaso, eis o Pasquim inovando ao publicar o primeiro palíndromo ilustrado. Por outro Chico. (Jaguar)</p>
+<p id="p-863">Pasquim São Paulo Ano XVIII número 13 a 10 de julho de 1986</p>
+<p id="p-864">O palíndromo que Chico Buarque fez: <dfn class="terminology">"Até reagan sibarita tira bisnaga ereta"</dfn></p>
+</blockquote>
+<p id="p-865">Fonte: <a class="external" href="http://www.chicobuarque.com.br/sanatorio/palindromo.htm" target="_blank"><dfn class="terminology">http://www.chicobuarque.com.br/sanatorio/palindromo.htm</dfn></a>.</p></article></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">6.3.3</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-866">Quantos são os anagramas da palavra SINGULAR:</p>
+<ol class="lower-alpha ">
+<li id="li-169"><p id="p-867">Que começam por consoante e terminam por vogal?</p></li>
+<li id="li-170"><p id="p-868">Que têm as letras S,I,N juntas em qualquer ordem?</p></li>
+<li id="li-171"><p id="p-869">Que têm as vogais e as consoantes intercaladas?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-80" id="answer-80"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-80"><div class="answer solution-like"><p id="p-870">a) 5×3×6!=10800, b) \(3!\times 6!=4320\text{,}\) c) 0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like"><ol class="lower-alpha ">
+<li id="li-172">
+<p id="p-871">Temos 5 consoantes e 3 vogais, então são 5 opções para escolher a primeira letra e 3 opções para escolher a última letra. Depois de fazer essas escolhas sobram 6 letras que podem ocupar as outras 6 posições. Portanto a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+5\times 3\times 6! = 10800.
+\end{equation*}
+</div>
+</li>
+<li id="li-173">
+<p id="p-872">Temos \(3!\) modos de ordenar as letras S,I,N. Considerando cada permutação das letras S,I,N como um elemento, ficamos com 6 elementos no total para serem ordenados, o que pode ser feito de \(6!\) modos. A resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+3!\times 6! = 4320.
+\end{equation*}
+</div>
+</li>
+<li id="li-174">
+<p id="p-873">Como temos 5 consoantes e 3 vogais, não é possível deixar as vogais e as consoantes intercaladas, portanto a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+0.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-874">De quantos modos é possível fazer uma fila com \(12\) pessoas de modo que três determinadas pessoas dessas \(12\) não fiquem juntas?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-81" id="answer-81"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-81"><div class="answer solution-like"><p id="p-875">457228800</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-144" id="solution-144"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-144"><div class="solution solution-like">
+<p id="p-876">O número total de modos de ordenar as \(12\) pessoas é \(12!\text{.}\) Vamos contar o número de maneiras de ordenar as \(12\) pessoas de modo que \(3\) determinadas pessoas fiquem juntas, para subtrair de \(12!\) e obter a resposta.</p>
+<p id="p-877">Temos \(3!\) modos de ordenar as \(3\) pessoas que vão ficar juntas. Considerando essas \(3\) pessoas como apenas um elemento, ficamos com \(10\) elementos no total e podemos ordenar esses \(10\) elementos de \(10!\) maneiras.</p>
+<p id="p-878">Juntando as ideias obtemos a resposta:</p>
+<div class="displaymath">
+\begin{equation*}
+12! - 3!\times 10! = 457228800.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-879">Quantos dados diferentes podemos formar gravando números de \(1\) a \(6\) sobre as faces indistinguíveis de um cubo</p>
+<ol class="lower-alpha">
+<li id="li-175">se os número podem ser gravados em qualquer ordem?</li>
+<li id="li-176">se o valor da soma das faces opostas precisam ser iguais a \(7\text{?}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-82" id="answer-82"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-82"><div class="answer solution-like"><p id="p-880">a. \(30 ~~~~\) b. \(2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-145" id="solution-145"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-145"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-177">
+<p id="p-881">A princípio, temos \(6!\) maneiras de gravar os números nas faces dos cubos. Dessa forma ficaremos com vários cubos repetidos, pois existem várias maneiras de posicionar um cubo, observe que figura que os dois cubos são iguais.</p>
+<figure class="figure figure-like" id="fig-dados"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/dados.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">6.3.18<span class="period">.</span></span><span class="space"> </span>Dois dados equivalentes.</figcaption></figure><p id="p-882">Para posicionar um cubo, temos 6 maneiras de escolher qual a face que ficará para cima, uma vez feita essa escolha, sobram 4 faces para escolher uma que ficará de frente. Portanto existem \(6\times 4 = 24\) maneiras de posicionar um cubo. A resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{6!}{6\times 4} = 30.
+\end{equation*}
+</div>
+</li>
+<li id="li-178">
+<p id="p-883">Podemos escolher a face do 1 de 6 maneiras, a face do 6 estará automaticamente determinada. Uma vez que as faces do 1 e do 6 estão definidas, temos 4 maneiras de escolher a face do 2. A face do 5 estará automaticamente definida. Agora temos duas maneiras de escolher a face do 3. A face do 4 também estará automaticamente determinada.</p>
+<p id="p-884">Assim como no item a. precisamos dividir pelo número de maneiras de posicionar os dados. Fazendo a divisão, obtemos o resultado</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{6\times 4\times 2}{6\times 4} = 2.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-885">(UPE 2013 tradicional) Oito amigos entraram em um restaurante para jantar e sentaram-se numa mesa retangular, com oito lugares, como mostra a figura a seguir:</p>
+<div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/upe_2013trad.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-886">Dentre todas as configurações possíveis, quantas são as possibilidades de dois desses amigos, Amaro e Danilo, ficarem sentados em frente um do outro?</p>
+<p id="p-887">a) 1440  \(~~~\) b) 1920 \(~~~\)  c) 2016 \(~~~\)  d) 4032  \(~~~\) e) 5760</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-83" id="answer-83"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-83"><div class="answer solution-like"><p id="p-888">e)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-146" id="solution-146"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-146"><div class="solution solution-like">
+<p id="p-889">Uma vez que Amaro escolha um lugar, Danilo já está com seu lugar definido. Amaro pode escolher um lugar de 8 modos. Depois que Amaro e Danilo definiram seus lugares, os outros 6 amigos podem escolher quaisquer lugares, portanto restam \(6!\) possibilidades. A resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+8\times 6! = 5760.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-890">(UPE 2013 tradicional) Seguindo a etiqueta japonesa, um restaurante tipicamente oriental solicita aos seus clientes que retirem seus calçados na entrada do estabelecimento. Em certa noite, 6 pares de sapatos e 2 pares de sandálias, todos distintos, estavam dispostos na entrada do restaurante, em duas fileiras com quatro pares de calçados cada uma. Se esses pares de calçados forem organizados nessas fileiras de tal forma que as sandálias devam ocupar as extremidades da primeira fila, de quantas formas diferentes podem-se organizar esses calçados nas duas fileiras?</p>
+<p id="p-891">a) \(6!\)  \(~~~\) b) \(2\cdot 6!\) \(~~~\)  c) \(4\cdot 6!\) \(~~~\)  d) \(6\cdot 6!\)  \(~~~\) e) \(8!\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-84" id="answer-84"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-84"><div class="answer solution-like"><p id="p-892">b)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like">
+<p id="p-893">Como as sandálias devem ocupar as extremidades da primeira fileira, temos duas maneiras de escolher onde colocá-las. Uma vez escolhido os lugares das sandálias, temos 6 pares de sapatos e 6 lugares, portanto a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+2\times 6!
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-894">Considere um tabuleiro de xadrez \(8\times 8\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-179">De quantos modos podemos colocar 8 torres iguais, de modo que haja uma única em cada linha e em cada coluna?</li>
+<li id="li-180">De quantos modos podemos colocar 8 torres diferentes, de modo que haja uma única em cada linha e em cada coluna?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-85" id="answer-85"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-85"><div class="answer solution-like"><p id="p-895">a) \(8!~~~~\) b) \((8!)^2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-181">Na primeira linha, temos 8 opções para colocar a primeira torre, na segunda linha temos \(8-1\) opções para colocar a segunda torre, pois ela não pode ficar na mesma coluna que a primeira torre. Seguindo esse raciocínio, na \(i\)-ésima linha, temos \(8-i\) opções para colocar a \(i\)-ésima torre. Logo, a resposta é<div class="displaymath">
+\begin{equation*}
+8!
+\end{equation*}
+</div>
+</li>
+<li id="li-182">Seguindo com a ideia do item a, temos \(8!\) modos de escolher os lugares onde as torres podem ocupar, depois disso podemos ordenar as torres de \(8!\) modos, portanto a resposta é<div class="displaymath">
+\begin{equation*}
+8!\times 8!
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-896">Um grupo formado por quatro rapazes e uma senhorita vão visitar uma exposição de arte. À entrada, passa uma pessoa de cada vez pela porta da sala de exposições. Um dos rapazes dando-se ares de perfeito cavalheiro, não passa pela porta sem que a senhorita já o tenha feito. Qual o número de modos, isto é, de quantas maneiras diferentes eles podem entrar no recinto?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-86" id="answer-86"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-86"><div class="answer solution-like"><p id="p-897">\(60\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-149" id="solution-149"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like">
+<p id="p-898">Vamos separar em quatro casos.</p>
+<p id="p-899">1º caso: a senhorita será a primeira pessoa a entrar. Nesse caso, os quatro rapazes podem entrar em qualquer ordem, ou seja, \(4!\) possibilidades.</p>
+<p id="p-900">2º caso: a senhorita será a segunda pessoa a entrar. Nesse caso temos 3 possibilidades de escolha o primeiro rapaz, depois temos \(3!\) possíveis ordem para os outros rapazes.</p>
+<p id="p-901">3º caso: a senhorita será a terceira pessoa a entrar. Nesse caso temos \(3\times 2\) possibilidades para os dois primeiros rapazes e \(2\) ordens possíveis para os dois últimos rapazes.</p>
+<p id="p-902">4º caso: a senhorita será a quarta pessoa a entrar. Nesse caso temos \(3!\) ordens para os três primeiros rapazes.</p>
+<p id="p-903">Portanto, pelo Princípio Aditivo, a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+4! + 3! + 3\times 2\times 2 + 3! = 60.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-904">(UPE 2011 seriado) Uma bibliotecária tenta organizar 4 livros diferentes de matemática, 4 livros diferentes de geografia e 2 livros diferentes de inglês em uma estante. O número de modos distintos de organização deve ser de tal forma que os livros da mesma disciplina estejam sempre juntos e que os de geografia apareçam sempre na mesma ordem. Assim, o número de possibilidades dessa arrumação é de</p>
+<p id="p-905">a) \(48\)  \(~~~\) b) \(50\) \(~~~\)  c) \(96\) \(~~~\)  d) \(288\)  \(~~~\) e) \(1152\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-87" id="answer-87"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-87"><div class="answer solution-like"><p id="p-906">d)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-150" id="solution-150"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like">
+<p id="p-907">O número de modos de ordenar as disciplinas é \(3!\text{.}\) Os livros de matemática podem ser ordenados de \(4!\) maneiras e os livros de inglês podem ser ordenados de \(2\) maneiras. Dessa forma, o número de possibilidades dessa arrumação é</p>
+<div class="displaymath">
+\begin{equation*}
+3!\times 4!\times 2 = 288.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-908">Quantas são as permutações das letras A, B, C, D, E, F, G, H, nas quais, a letra B está situada à direita da letra A e à esquerda da letra F, embora, não necessariamente, em lugares consecutivos?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-88" id="answer-88"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-88"><div class="answer solution-like"><p id="p-909">\(6720\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-151" id="solution-151"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like">
+<p id="p-910">Inicialmente contamos o número de maneiras de ordenar as oito letras que é \(8!\text{.}\) Dividindo esse valor pelo número de maneiras de ordenar as letras B, A, F, obtemos o resultado, pois em apenas uma das \(3!\) formas de ordenar as três letras teremos a ordem exigida. A resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{8!}{3!} = 6720.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-911">(UFPE - UFRPE 2003) Seja <dfn class="terminology">S</dfn> a soma dos números formados pelas permutações dos algarismos \(1, 3, 5, 7\) e \(9\text{.}\) Indique a soma dos dígitos de <dfn class="terminology">S</dfn>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-89" id="answer-89"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-89"><div class="answer solution-like"><p id="p-912">\(30\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-152" id="solution-152"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like">
+<p id="p-913">Observe que para cada permutação existe exatamente uma que está na ordem inversa, por exemplo</p>
+<div class="displaymath">
+\begin{equation*}
+1, 3, 5, 7, 9 \text{ e } 9, 7, 5, 3, 1. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Em cada um desses casos a o valor da soma é \(111110\text{.}\) Podemos organizar as \(5! = 120\) permutações de duas em duas, de modo que a soma de cada par seja \(111110\text{.}\) Portanto o valor da soma de todas as permutações é \(60 \times 111110 = 666660\text{.}\) Somando os dígitos chegamos na resposta que é \(30\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-914">(UFF-RJ) Um garçom anotou os pedidos de três fregueses. Cada freguês pediu um prato principal, um acompanhamento e uma bebida. Posteriormente, o garçom não sabia identificar o autor de cada pedido. Lembrava-se, porém, de que não havia qualquer coincidência entre os pedidos: os pratos principais eram diferentes entre si, o mesmo ocorrendo com os acompanhamentos e as bebidas. O número de maneiras diferentes que o garçom poderia distribuir os pedidos entre os três fregueses é:</p>
+<p id="p-915">a) \((3!)^3\)  \(~~~\) b) \((3^3)!\) \(~~~\)  c) \(3!\) \(~~~\)  d) \(3^{3!}\)  \(~~~\) e) \((3!)^{3!}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-90" id="answer-90"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-90"><div class="answer solution-like"><p id="p-916">a)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-153" id="solution-153"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-153"><div class="solution solution-like">
+<p id="p-917">O garçom poderia distribuir os pratos principais de \(3!\) maneiras, os acompanhamentos também poderiam ser distribuídos de \(3!\text{,}\) assim como as bebidas que também poderiam ser distribuídas de \(3!\) maneiras. Portanto a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+(3!)^3.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-918">(OPEMAT 2019 - nível 1) Em uma viagem a Recife, o grupo formado pelos números 1, 2, 3, 4 e 5, resolveu tirar fotos próximo ao monumento do Parque das Esculturas do artista Pernambucano Francisco Brennand. Indecisos pela escolha da disposição na foto, eles concordaram em tirar várias fotos em todas as disposições possíveis, permutando os lugares entre si conforme as imagens abaixo:</p>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/Brennand.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-919">Por fim, eles colocaram as fotos em ordem crescente de numeração formando a seguinte lista:</p>
+<div class="displaymath">
+\begin{equation*}
+1 2 3 4 5 , 1 2 3 5 4 , 1 2 4 3 5 , \ldots , 5 4 3 1 2 , 5 4 3 2 1
+\end{equation*}
+</div>
+<p id="p-920">Julgue as afirmações a seguir atribuindo (V) se a afirmação for verdadeira e (F) se a afirmação for falsa.</p>
+<ol class="upper-alpha">
+<li id="li-183">(V) (F) Quem ocupa a última posição da vigésima foto é o 3.</li>
+<li id="li-184">(V) (F) A foto em que os números aparecem na disposição 32541, ocupa o 59º lugar desta lista.</li>
+<li id="li-185">(V) (F) A quantidade de fotos em que os números 1 e 2 aparecem separados é 96.</li>
+<li id="li-186">(V) (F) A quantidade de fotos em que a disposição dos números é maior do que a foto com disposição 25413 é 73.</li>
+<li id="li-187">(V) (F) A soma de todos os números de cinco dígitos representados pelas fotos é 3999960.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-91" id="answer-91"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-91"><div class="answer solution-like"><p id="p-921">A) V, B) F, C) F, D) V, E) V</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>(OBM 2008 - 2ª fase do nível 3) <p id="p-922">Quantas permutações de \(1, 2, 3,\ldots, 9\) há com a propriedade de que, para todo \(1 \leq i \lt 9\text{,}\) os números que aparecem entre \(i\) e \(i+1\) (onde \(i\) pode aparecer tanto antes como depois de \(i+1\)) são todos menores do que \(i\text{?}\) Por exemplo, \(976412358\) é uma permutação com esta propriedade.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-92" id="answer-92"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-92"><div class="answer solution-like"><p id="p-923">256</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-154" id="solution-154"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-154"><div class="solution solution-like">Da propriedade, decorre que \(9\) só pode aparecer ou como primeiro ou como último elemento da permutação e que os elementos de \(1\) a \(8\) formam uma permutação com a mesma propriedade. Assim, o número pedido é o dobro do número de permutações de \(1, 2,\ldots,8\) com a mesma propriedade. Da mesma forma, o número de permutações de \(1, 2,\ldots,8\) com a propriedade é o dobro do número de permutações de \(1, 2,\ldots,7\) com a propriedade. Repetindo o raciocínio, concluímos que o número pedido é portanto \(2^8 = 256\text{.}\)</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-93"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>(UPE - SSA 2 - 2014) <p id="p-924">Depois de explicar à turma do \(9º\) ano o que é um número palíndromo ou capicua, o professor Barreto pediu que os alunos se organizassem em duplas e entregou algumas cartelas numeradas para que formassem capicuas de três, quatro e cinco algarismos, fazendo o registro de cada resultado possível e podendo reutilizar as cartelas.</p>
+<p id="p-925"><em class="emphasis">Números palíndromos ou capicuas são aqueles que são iguais quando lidos nos dois sentidos, isto é, da direita para a esquerda e da esquerda para a direita. Exemplo: \(232\text{;}\) \(1661\text{;}\) \(45854\text{.}\)</em></p>
+<p id="p-926">A dupla Ian e Júlia recebeu as cartelas seguintes:</p>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/cartelas.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-927">No máximo, quantos capicuas de quatro algarismos essa dupla conseguiu formar?</p>
+<p id="p-928">a) \(21\)  \(~~~\) b) \(44\) \(~~~\)  c) \(42\) \(~~~\)  d) \(36\)  \(~~~\) e) \(74\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-93" id="answer-93"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-93"><div class="answer solution-like"><p id="p-929">b)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-155" id="solution-155"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-155"><div class="solution solution-like">
+<p id="p-930">Para uma melhor visualização, ordenando as cartelas disponíveis, ficamos com os seguintes dígitos: \(1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 6, 7, 7, 8, 9, 9\text{.}\)</p>
+<p id="p-931">Para as capicuas com os quatro algarismos iguais, temos apenas \(2222\) e \(6666\text{.}\)</p>
+<p id="p-932">Para as capicuas com dois algarismos distintos, nem podemos usar o 5, nem o 8, pois só temos uma cartela de cada. Sobraram os algarismos</p>
+<div class="displaymath">
+\begin{equation*}
+1, 2, 3, 4, 6, 7 \text{ e } 9,
+\end{equation*}
+</div>
+<p data-braille="continuation">que estão disponíveis em pelo menos duas cartelas. Usando dois algarismos distintos, podemos formar duas capicuas, por exemplo \(1221\) e \(2112\text{.}\) Como são sete opções para escolher estes dois algarismos, temos 21 possibilidades, pois são 7 opções para a primeira escolha e 6 opções para a segunda escolha, dividindo por 2, pois a ordem não importa, ficamos com 21. Portando, temos \(2\times 21 = 42\) capicuas com dois algarismos distintos.</p>
+<p id="p-933">Observe que usando três ou mais algarismos distintos, não é possível formar uma capicua de 4 algarismos. A resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+2+42 = 44.
+\end{equation*}
+</div>
+</div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

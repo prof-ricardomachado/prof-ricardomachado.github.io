@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-09-07T15:32:45-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Polinômio de Leibniz</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-binomio-newton.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="pcontagem.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-binomio-newton.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="pcontagem.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pa.html" data-scroll="pa"><span class="codenumber">1</span> <span class="title">Progressões</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Progressões Aritméticas</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Progressões Geométricas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="recorrencias.html" data-scroll="recorrencias"><span class="codenumber">2</span> <span class="title">Recorrências</span></a><ul>
+<li><a href="section-3.html" data-scroll="section-3">Introdução</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Recorrências Lineares de Primeira Ordem</a></li>
+<li><a href="section-5.html" data-scroll="section-5">Recorrências Lineares de Segunda Ordem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="matfinanceira.html" data-scroll="matfinanceira"><span class="codenumber">3</span> <span class="title">Matemática Financeira</span></a><ul>
+<li><a href="section-6.html" data-scroll="section-6">Juros Compostos</a></li>
+<li><a href="section-7.html" data-scroll="section-7">A Fórmula das Taxas Equivalentes</a></li>
+<li><a href="section-8.html" data-scroll="section-8">Renda Perpétua (Séries Uniformes)</a></li>
+<li><a href="section-9.html" data-scroll="section-9">Sistemas de Amortização</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">4</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-10.html" data-scroll="section-10">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">5</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz" class="active">Polinômio de Leibniz</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-20.html" data-scroll="section-20">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+</ul>
+</li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">7</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-polinomio-leibniz"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">5.3</span> <span class="title">Polinômio de Leibniz</span>
+</h2>
+<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
+<ol class="decimal">
+<li id="li-129">Enunciar e demonstrar o Teorema do Polinômio de Leibniz</li>
+<li id="li-130">Exemplificar.</li>
+<li id="li-131">Resolver um exemplo no Sage.</li>
+</ol></article><article class="theorem theorem-like" id="theorem-32"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-706">
+\begin{equation*}
+(x_1+x_2+\cdots + x_p)^n   = \sum_{\alpha_1 + \alpha_2 +\cdots + \alpha_p = n} \frac{n!}{\alpha_1!\alpha_2!\cdots\alpha_p!}x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}\\
+\end{equation*}
+</div>
+<p data-braille="continuation">Na qual, para cada \(i\in\{1, 2, \ldots, p\}\text{,}\) \(\alpha_i\in \{j ~|~ j\in \mathbb{Z}\geq 0\}\text{,}\) ou seja \(\alpha_i\) é um inteiro não negativo.</p></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-707">Temos</p>
+<div class="displaymath">
+\begin{equation*}
+(x_1+x_2+\cdots + x_p)^n  = (x_1+x_2++\cdots + x_p)\cdots(x_1+x_2++\cdots + x_p)
+\end{equation*}
+</div>
+<p data-braille="continuation">Um termo genérico do produto é obtido escolhendo um \(x_i\) em cada parênteses e multiplicando os escolhidos. Se em \(\alpha_1\) dos parênteses escolhermos \(x_1\text{,}\) em \(\alpha_2\) dos parênteses escolhermos \(x_2\text{,}\) \(\ldots\text{,}\) obteremos</p>
+<div class="displaymath">
+\begin{equation*}
+x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}, \text{ satisfazendo } \alpha_1 + \alpha_2 +\cdots + \alpha_p = n. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Agora falta responder quantas vezes o termo \(x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}\) aparece no desenvolvimento.</p>
+<p id="p-708">O termo \(x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_p^{\alpha_p}\) aparece tantas vezes, quantas são as formas de escolher, nos \(n\) parênteses, \(\alpha_1\) deles para escolher o \(x_1\text{,}\) \(\alpha_2\) deles para escolher o \(x_2\text{,}\) \(\ldots\text{.}\) Isto pode ser feito de</p>
+<div class="displaymath">
+\begin{equation*}
+C_n^{\alpha_1}\cdot C_{n-\alpha_1}^{\alpha_2}\cdots C_{n-\alpha_1-\alpha_2-\cdots -\alpha_{p-1}}^{\alpha_p} = \frac{n!}{\alpha_1!\alpha_2!\cdots\alpha_p!} 
+\end{equation*}
+</div>
+<p data-braille="continuation">maneiras, o que mostra o resultado.</p></article></div>
+<article class="example example-like" id="example-91"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-709">Considere o polinômio:</p>
+<div class="displaymath">
+\begin{equation*}
+(x^3-x+5)^8 
+\end{equation*}
+</div>
+<p data-braille="continuation">Determine os coeficientes de</p>
+<ol class="lower-alpha">
+<li id="li-132">\(x^2\) no desenvolvimento;</li>
+<li id="li-133">\(x^4\) no desenvolvimento.</li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like">
+<div class="displaymath" id="p-710">
+\begin{equation*}
+(x^3-x+5)^8   = \sum_{\alpha_1 + \alpha_2 + \alpha_3 = 8} \frac{8!}{\alpha_1!\alpha_2!\alpha_3!}(x^3)^{\alpha_1}(-x)^{\alpha_2}5^{\alpha_3}\\
+\end{equation*}
+</div>
+<p id="p-711"><dfn class="terminology">item a)</dfn> Para que o expoente de \(x\) seja 2, devemos ter \(x^{3\alpha_1}x^{\alpha_2} = x^2\text{,}\) juntando com a condição \(\alpha_1+\alpha_2+\alpha_3 = 8\text{,}\) temos</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases} 
+\alpha_1 + \alpha_2 +\alpha_3    =  8 \\
+~~~~ ~~~~ 3\alpha_1 + \alpha_2  =  2 \end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Assim, \(\alpha_1 = 0, \alpha_2 = 2\) e \(\alpha_3 = 6.\) E a soma dos termos que possuem \(x^2\) é:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{8!}{0!\times 2! \times 6!} 5^6x^2 = 437500x^2.
+\end{equation*}
+</div>
+<p id="p-712"><dfn class="terminology">item b)</dfn> Para que o expoente de \(x\) seja 4, devemos ter \(x^{3\alpha_1}x^{\alpha_2} = x^4\text{,}\) juntando com a condição \(\alpha_1+\alpha_2+\alpha_3 = 8\text{,}\) temos</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases} 
+\alpha_1 + \alpha_2 +\alpha_3    =  8 \\
+~~~~ ~~~~ 3\alpha_1 + \alpha_2  =  4 \end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Temos duas soluções:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases} 
+\alpha_1 = 0, \alpha_2 = 4 \text{ e }\alpha_3 = 4 \\
+\alpha_1 = 1, \alpha_2 = 1 \text{ e } \alpha_3 = 6 \end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">E a soma dos termos que possuem \(x^4\) é:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{8!}{0!\times 4! \times 4!} 5^4x^2 - \frac{8!}{1!\times 1! \times 6!} 5^6x^2 = -831250x^2.
+\end{equation*}
+</div>
+</div></div></article><article class="technology computation-like" id="technology-18"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-713">No Sage, podemos obter a expanção do polinômio da seguinte forma:</p>
+<div class="sagecell-sage" id="sage-37"><script type="text/x-sage">((x^3-x+5)^8).expand()
+</script></div>
+<p id="p-714">Os coeficientes do polinômio, podem ser obtidos da seguinte forma:</p>
+<div class="sagecell-sage" id="sage-38"><script type="text/x-sage">((x^3-x+5)^8).coefficients()
+</script></div></article><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">5.3.1</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-715">Determine o coeficiente de \(x^{12}\) no desenvolvimento de</p>
+<div class="displaymath">
+\begin{equation*}
+\left( 1+x^4+x^8 \right)^{12}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-68" id="answer-68"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><p id="p-716">336</p></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>
