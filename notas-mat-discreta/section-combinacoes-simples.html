@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-09-07T15:32:47-03:00       *-->
+<!--*       on 2022-09-07T15:41:02-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -128,7 +128,7 @@ MathJax.Hub.Config({
 <li><a href="section-10.html" data-scroll="section-10">Conjuntos</a></li>
 <li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
 <li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples" class="active">Combinações Simples</a></li>
 <li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
 <li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
 <li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
@@ -142,213 +142,209 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a><ul>
-<li><a href="section-20.html" data-scroll="section-20">Conjuntos</a></li>
-<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
-<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples" class="active">Combinações Simples</a></li>
-<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
-<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
-<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">6</span> <span class="title">Probabilidade</span></a><ul>
+<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
+<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
+<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
 </ul>
 </li>
 <li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">7</span> <span class="title">Referências Bibliográficas</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-combinacoes-simples"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">6.4</span> <span class="title">Combinações Simples</span>
+<span class="type">Seção</span> <span class="codenumber">4.4</span> <span class="title">Combinações Simples</span>
 </h2>
 <article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
 <ol class="decimal">
-<li id="li-188">Definir combinação simples.</li>
-<li id="li-189">Mostrar como obter a lista com todas as combinações simples de \(n\) elementos distintos, tomados \(p\) a \(p\) no Sage.</li>
-<li id="li-190">Mostrar como calcular o número de combinações simples de \(n\) elementos distintos, tomados \(p\) a \(p\text{.}\)</li>
-<li id="li-191">Exemplificar.</li>
-</ol></article><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">6.4.1</span> <span class="title">Nota Histórica</span>
+<li id="li-85">Definir combinação simples.</li>
+<li id="li-86">Mostrar como obter a lista com todas as combinações simples de \(n\) elementos distintos, tomados \(p\) a \(p\) no Sage.</li>
+<li id="li-87">Mostrar como calcular o número de combinações simples de \(n\) elementos distintos, tomados \(p\) a \(p\text{.}\)</li>
+<li id="li-88">Exemplificar.</li>
+</ol></article><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">4.4.1</span> <span class="title">Nota Histórica</span>
 </h3>
-<p id="p-934">A primeira descrição conhecida sobre coeficientes binomiais (equivalente a combinações simples) está em um dos livros do matemático indiano do século X, Halayudha. O livro possui o título Mṛta-Sañjīvanī e é conhecido como um comentário do livro Chandaḥśāstra do poeta e matemático indiano, Pingala (dos séculos III/II A.C.). O comentário de Halayudha inclui uma apresentação do triângulo de Pascal (chamado meruprastāra).</p>
-<p id="p-935">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Binomial_coefficient" target="_blank"><dfn class="terminology">https://en.wikipedia.org/wiki/Binomial_coefficient</dfn></a>.</p>
-<p id="p-936">Por volta de 1150, o matemático indiano Bhāskarācārya (Bhaskara II) fez uma exposição dos coeficientes binomiais em seu livro Līlāvatī.</p>
+<p id="p-438">A primeira descrição conhecida sobre coeficientes binomiais (equivalente a combinações simples) está em um dos livros do matemático indiano do século X, Halayudha. O livro possui o título Mṛta-Sañjīvanī e é conhecido como um comentário do livro Chandaḥśāstra do poeta e matemático indiano, Pingala (dos séculos III/II A.C.). O comentário de Halayudha inclui uma apresentação do triângulo de Pascal (chamado meruprastāra).</p>
+<p id="p-439">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Binomial_coefficient" target="_blank"><dfn class="terminology">https://en.wikipedia.org/wiki/Binomial_coefficient</dfn></a>.</p>
+<p id="p-440">Por volta de 1150, o matemático indiano Bhāskarācārya (Bhaskara II) fez uma exposição dos coeficientes binomiais em seu livro Līlāvatī.</p>
 <figure class="figure figure-like" id="figura-lilavati"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/lilavati.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">6.4.1<span class="period">.</span></span><span class="space"> </span>Līlāvatī de Bhāskarācārya, traduzido para inglês por  Patwardhan, Naimpally e Shyam Lal Singh.</figcaption></figure></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">6.4.2</span> <span class="title">Combinações Simples</span>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span>Līlāvatī de Bhāskarācārya, traduzido para inglês por  Patwardhan, Naimpally e Shyam Lal Singh.</figcaption></figure></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">4.4.2</span> <span class="title">Combinações Simples</span>
 </h3>
-<p id="p-937">Em determinadas situações, precisamos escolher algumas opções, sem que a ordem seja importante. Confira o exemplo a seguir.</p>
-<article class="example example-like" id="example-103"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span>
+<p id="p-441">Em determinadas situações, precisamos escolher algumas opções, sem que a ordem seja importante. Confira o exemplo a seguir.</p>
+<article class="example example-like" id="example-69"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span>
 </h6>
-<p id="p-938">De quantas maneiras é possível fazer uma salada de frutas, usando quatro frutas distintas, se temos disponíveis as frutas: abacaxi, banana, maçã, mamão, manga e uva?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-156" id="solution-156"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-156"><div class="solution solution-like">
-<p id="p-939">São 6 opções para a primeira fruta, 5 opções para a segunda fruta,  4 opções para a terceira fruta, e finalmente, 3 opções para a última fruta.</p>
-<p id="p-940">Note que, dessa maneira a ordem está sendo levada em consideração. Como cada escolha de \(4\) frutas pode ser ordenada de \(P_4\) maneiras, dividindo \(6\times 5\times 4\times 3\) por \(P_4\) passamos a contar cada salada exatamente uma vez. A resposta é dada por</p>
+<p id="p-442">De quantas maneiras é possível fazer uma salada de frutas, usando quatro frutas distintas, se temos disponíveis as frutas: abacaxi, banana, maçã, mamão, manga e uva?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<p id="p-443">São 6 opções para a primeira fruta, 5 opções para a segunda fruta,  4 opções para a terceira fruta, e finalmente, 3 opções para a última fruta.</p>
+<p id="p-444">Note que, dessa maneira a ordem está sendo levada em consideração. Como cada escolha de \(4\) frutas pode ser ordenada de \(P_4\) maneiras, dividindo \(6\times 5\times 4\times 3\) por \(P_4\) passamos a contar cada salada exatamente uma vez. A resposta é dada por</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{6\times 5\times 4\times 3}{P_4} = 15.
 \end{equation*}
 </div>
-</div></div></article><article class="technology computation-like" id="technology-24"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
+</div></div></article><article class="technology computation-like" id="technology-6"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
 </h6>
-<p id="p-941">No Sage, podemos obter uma lista com todos os subconjuntos de {1, 2, 3, 4, 5, 6}, tomados 4 a 4. Basta usar o seguinte código:</p>
-<div class="sagecell-sage" id="sage-46"><script type="text/x-sage">Combinations([1, 2, 3, 4, 5, 6], 4).list()
+<p id="p-445">No Sage, podemos obter uma lista com todos os subconjuntos de {1, 2, 3, 4, 5, 6}, tomados 4 a 4. Basta usar o seguinte código:</p>
+<div class="sagecell-sage" id="sage-18"><script type="text/x-sage">Combinations([1, 2, 3, 4, 5, 6], 4).list()
 </script></div></article><article class="definition definition-like" id="def-combinacao"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span>
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span>
 </h6>
-<p id="p-942">O número de formas de escolher \(p\) elementos, dentre \(n\) elementos disponíveis, sem que a ordem importe, é chamado de <em class="emphasis">número de combinações de \(n\) elementos, tomados \(p\) a \(p\)</em>.</p>
-<p id="p-943">Observe que, o número de subconjuntos com \(p\) elementos, de um conjunto com \(n\) elementos é exatamente o número de combinações de \(n\text{,}\) tomados \(p\) a \(p\text{.}\) As notações para o número de combinações de \(n\text{,}\) \(p\) a \(p\) são dadas por:</p>
+<p id="p-446">O número de formas de escolher \(p\) elementos, dentre \(n\) elementos disponíveis, sem que a ordem importe, é chamado de <em class="emphasis">número de combinações de \(n\) elementos, tomados \(p\) a \(p\)</em>.</p>
+<p id="p-447">Observe que, o número de subconjuntos com \(p\) elementos, de um conjunto com \(n\) elementos é exatamente o número de combinações de \(n\text{,}\) tomados \(p\) a \(p\text{.}\) As notações para o número de combinações de \(n\text{,}\) \(p\) a \(p\) são dadas por:</p>
 <div class="displaymath">
 \begin{equation*}
 C_n^p, ~~ C_{n, p}, ~~ C(n, p) ~~\text{ ou }~~\binom{n}{p}.
 \end{equation*}
 </div></article><article class="theorem theorem-like" id="teo-combinacao"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span>
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.4.5</span><span class="period">.</span>
 </h6>O número de combinações de \(n\) objetos distintos, tomados \(p \) a \(p \) é<div class="displaymath">
 \begin{equation*}
 C_n^p = \frac{n!}{p!\times(n-p)!}. 
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-42"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-42"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><p id="p-944">Temos \(n\) modos de escolher o primeiro elemento, \(n-1\) modos de escolher o segundo elemento, e assim sucessivamente, até \(n-p+1\) modos de escolher o \(p\)-ésimo elemento.</p>
-<p id="p-945">Agora observe que contamos muito mais agrupamentos do que deveríamos, pois para conjuntos, a ordem não importa, portanto precisamos dividir pelo número de formas de ordenar estes \(p\) elementos que escolhemos de forma ordenada, ou seja, por \(p!\text{.}\) Assim:</p>
-<div class="displaymath" id="p-946">
+</div></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-448">Temos \(n\) modos de escolher o primeiro elemento, \(n-1\) modos de escolher o segundo elemento, e assim sucessivamente, até \(n-p+1\) modos de escolher o \(p\)-ésimo elemento.</p>
+<p id="p-449">Agora observe que contamos muito mais agrupamentos do que deveríamos, pois para conjuntos, a ordem não importa, portanto precisamos dividir pelo número de formas de ordenar estes \(p\) elementos que escolhemos de forma ordenada, ou seja, por \(p!\text{.}\) Assim:</p>
+<div class="displaymath" id="p-450">
 \begin{equation*}
 C(n,p)  = \frac{n(n-1)\cdots(n-p+1)}{p!} = \frac{n(n-1)\cdots(n-p+1)}{p!} \cdot \frac{(n-p)!}{(n-p)!}
 \end{equation*}
 </div>
-<p id="p-947">Fazendo as contas concluímos que</p>
+<p id="p-451">Fazendo as contas concluímos que</p>
 <div class="displaymath">
 \begin{equation*}
 C(n,p) = \frac{n!}{p!(n-p)!}.
 \end{equation*}
 </div></article></div>
 <article class="technology computation-like" id="tec-combinacao"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">6.4.6</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">4.4.6</span><span class="period">.</span>
 </h6>
-<p id="p-948">\(C_n^p\) pode ser calculado no Sage com o código binomial(n, p). Para abreviar vamos usar C(n, p) = binomial(n, p). Teste o código abaixo, para o caso \(n=8\text{,}\) \(p=3\text{.}\)</p>
-<div class="sagecell-sage" id="sage-47"><script type="text/x-sage">C(n, p) = binomial(n, p)
+<p id="p-452">\(C_n^p\) pode ser calculado no Sage com o código binomial(n, p). Para abreviar vamos usar C(n, p) = binomial(n, p). Teste o código abaixo, para o caso \(n=8\text{,}\) \(p=3\text{.}\)</p>
+<div class="sagecell-sage" id="sage-19"><script type="text/x-sage">C(n, p) = binomial(n, p)
 C(8, 3)
-</script></div></article><article class="example example-like" id="example-104"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.4.7</span><span class="period">.</span>
+</script></div></article><article class="example example-like" id="example-70"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.4.7</span><span class="period">.</span>
 </h6>
-<p id="p-949">Uma criança possui 5 figurinhas distintas e outra criança possui 7 figurinhas distintas. Se as figurinhas da primeira criança são todas diferentes das figurinhas da segunda criança, de quantas maneiras é possível trocar 4 figurinhas pertencentes a primeira criança com 4 pertencentes a segunda?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-157" id="solution-157"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-157"><div class="solution solution-like">
-<p id="p-950">A primeira criança pode escolher suas 4 figurinhas de \(C_5^4\) maneiras e a segunda criança pode escolher suas 4 figurinhas de \(C_7^4\) maneiras. Portanto, o número de maneiras de realizar a troca é</p>
+<p id="p-453">Uma criança possui 5 figurinhas distintas e outra criança possui 7 figurinhas distintas. Se as figurinhas da primeira criança são todas diferentes das figurinhas da segunda criança, de quantas maneiras é possível trocar 4 figurinhas pertencentes a primeira criança com 4 pertencentes a segunda?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<p id="p-454">A primeira criança pode escolher suas 4 figurinhas de \(C_5^4\) maneiras e a segunda criança pode escolher suas 4 figurinhas de \(C_7^4\) maneiras. Portanto, o número de maneiras de realizar a troca é</p>
 <div class="displaymath">
 \begin{equation*}
 C_5^4 \times C_7^4 = 175.
 \end{equation*}
 </div>
-</div></div></article><article class="example example-like" id="example-105"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.4.8</span><span class="period">.</span>
+</div></div></article><article class="example example-like" id="example-71"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.4.8</span><span class="period">.</span>
 </h6>
-<p id="p-951">Um Juiz dispõe de 11 mulheres, das quais somente 4 são advogadas.</p>
+<p id="p-455">Um Juiz dispõe de 11 mulheres, das quais somente 4 são advogadas.</p>
 <ol class="lower-alpha ">
-<li id="li-192"><p id="p-952">Para formar um único júri com 9 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?</p></li>
-<li id="li-193"><p id="p-953">Para formar um único júri com 6 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?</p></li>
+<li id="li-89"><p id="p-456">Para formar um único júri com 9 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?</p></li>
+<li id="li-90"><p id="p-457">Para formar um único júri com 6 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?</p></li>
 </ol>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-158" id="solution-158"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-158"><div class="solution solution-like">
-<p id="p-954"><dfn class="terminology">item a)</dfn> Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de \(C_{11}^9=55 \) maneiras.</p>
-<p id="p-955"><dfn class="terminology">item b)</dfn> Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.</p>
-<p id="p-956">Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
+<p id="p-458"><dfn class="terminology">item a)</dfn> Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de \(C_{11}^9=55 \) maneiras.</p>
+<p id="p-459"><dfn class="terminology">item b)</dfn> Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.</p>
+<p id="p-460">Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^2\times C_7^4 + C_4^3\times C_7^3 + C_4^4\times C_7^2 = 371. 
 \end{equation*}
 </div>
-<p id="p-957">No Sage, esse cálculo pode ser feito da seguinte maneira:</p>
-<div class="hidden-sagecell-sage" id="sage-48"><script type="text/x-sage">C(n, p) = binomial(n, p)
+<p id="p-461">No Sage, esse cálculo pode ser feito da seguinte maneira:</p>
+<div class="hidden-sagecell-sage" id="sage-20"><script type="text/x-sage">C(n, p) = binomial(n, p)
 C(4,2)*C(7,4) + C(4,3)*C(7,3) + C(4,4)*C(7,2)
 </script></div>
-</div></div></article><article class="example example-like" id="example-106"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">6.4.9</span><span class="period">.</span>
+</div></div></article><article class="example example-like" id="example-72"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.4.9</span><span class="period">.</span>
 </h6>
-<p id="p-958">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-159" id="solution-159"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-159"><div class="solution solution-like">
-<p id="p-959">Para o primeiro grupo, temos um total de \(C_{12}^4 \) maneiras de selecionar as 4 pessoas.</p>
-<p id="p-960">Para o segundo grupo temos um total de \(C_8^4 \) maneiras de selecionar as 4 pessoas.</p>
-<p id="p-961">Para o terceiro grupo temos um total de \(C_4^4 \) maneiras de selecionar as 4 pessoas.</p>
-<p id="p-962">Como a ordem dos grupos não importa, precisamos dividir por \(3!\) Portanto a resposta é</p>
+<p id="p-462">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
+<p id="p-463">Para o primeiro grupo, temos um total de \(C_{12}^4 \) maneiras de selecionar as 4 pessoas.</p>
+<p id="p-464">Para o segundo grupo temos um total de \(C_8^4 \) maneiras de selecionar as 4 pessoas.</p>
+<p id="p-465">Para o terceiro grupo temos um total de \(C_4^4 \) maneiras de selecionar as 4 pessoas.</p>
+<p id="p-466">Como a ordem dos grupos não importa, precisamos dividir por \(3!\) Portanto a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{C_{12}^4\times C_8^4\times C_4^4}{3!} = 5775.
 \end{equation*}
 </div>
-<div class="hidden-sagecell-sage" id="sage-49"><script type="text/x-sage">C(n, p) = binomial(n, p)
+<div class="hidden-sagecell-sage" id="sage-21"><script type="text/x-sage">C(n, p) = binomial(n, p)
 P(n) = factorial(n)
 C(12, 4)*C(8,4)*C(4, 4)/P(3)
 </script></div>
-</div></div></article></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber">6.4.3</span> <span class="title">Exercícios</span>
+</div></div></article></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">4.4.3</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-94"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-963">Quantas diagonais possuem um polígono de \(n\) lados?</p>
+<article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-467">Quantas diagonais possuem um polígono de \(n\) lados?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-94" id="answer-94"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-94"><div class="answer solution-like"><p id="p-964">\(\dfrac{n(n-3)}{2} \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-160" id="solution-160"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-160"><div class="solution solution-like">
-<p id="p-965">Cada vértice pode ser ligado a \(n-3\) outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são \(n\) vértices ficamos com \(n(n-3)\) diagonais, mas elas foram contadas duas vezes, portanto a resposta é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-26" id="answer-26"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-26"><div class="answer solution-like"><p id="p-468">\(\dfrac{n(n-3)}{2} \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
+<p id="p-469">Cada vértice pode ser ligado a \(n-3\) outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são \(n\) vértices ficamos com \(n(n-3)\) diagonais, mas elas foram contadas duas vezes, portanto a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{n(n-3)}{2}.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-95"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-966">Quantas são as pedras de um dominó comum?</p>
+</div></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-470">Quantas são as pedras de um dominó comum?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-95" id="answer-95"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-95"><div class="answer solution-like"><p id="p-967">28</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-161" id="solution-161"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-161"><div class="solution solution-like">
-<p id="p-968">As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_7^2\) modos de escolher os números. Portanto o número de pedras de um dominó comum é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-27" id="answer-27"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-27"><div class="answer solution-like"><p id="p-471">28</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
+<p id="p-472">As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_7^2\) modos de escolher os números. Portanto o número de pedras de um dominó comum é</p>
 <div class="displaymath">
 \begin{equation*}
 7 + C_7^2 = 28.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-969">(UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.</p>
+</div></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-473">(UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.</p>
 <div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/domino.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-96" id="answer-96"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-96"><div class="answer solution-like"><p id="p-970">55</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-162" id="solution-162"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-162"><div class="solution solution-like">
-<p id="p-971">As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_{10}^2\) modos de escolher os números. Portanto o número de pedros desse dominó é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-28" id="answer-28"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-28"><div class="answer solution-like"><p id="p-474">55</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
+<p id="p-475">As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_{10}^2\) modos de escolher os números. Portanto o número de pedros desse dominó é</p>
 <div class="displaymath">
 \begin{equation*}
 10 + C_{10}^2 = 55.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-972">(UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.</p>
+</div></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-476">(UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.</p>
 <div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/paralelogramos.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-97" id="answer-97"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-97"><div class="answer solution-like"><p id="p-973">90</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-163" id="solution-163"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-163"><div class="solution solution-like">
-<p id="p-974">Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-29" id="answer-29"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-29"><div class="answer solution-like"><p id="p-477">90</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like">
+<p id="p-478">Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:</p>
 <figure class="figure figure-like" id="fig-paralelogramos2"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/paralelogramos2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">6.4.10<span class="period">.</span></span><span class="space"> </span>Paralelogramos com prolongamento de segmentos.</figcaption></figure><p id="p-975">Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:</p>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.4.10<span class="period">.</span></span><span class="space"> </span>Paralelogramos com prolongamento de segmentos.</figcaption></figure><p id="p-479">Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:</p>
 <div class="displaymath">
 \begin{equation*}
 C_6^2\times C_4^2 = 90.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-98"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-976">(PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?</p>
+</div></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-480">(PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-98" id="answer-98"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-98"><div class="answer solution-like"><p id="p-977">\(736\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-164" id="solution-164"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-164"><div class="solution solution-like">
-<p id="p-978">Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-30" id="answer-30"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-30"><div class="answer solution-like"><p id="p-481">\(736\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like">
+<p id="p-482">Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{12}^5 - C_8^5 = 736.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-99"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-979">(UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.</p>
+</div></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-483">(UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-99" id="answer-99"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-99"><div class="answer solution-like"><p id="p-980">8</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-165" id="solution-165"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-165"><div class="solution solution-like">
-<p id="p-981">Seja \(n\) a quantidade de pessoas na reunião. No primeiro caso temos \(n\times(n-1)\times (n-2)\) modos de escolher a comissão. No segundo caso temos \(C_n^3\) modos de escolher a comissão. Como a primeira alternativa oferece \(280\) possibilidades de escolha a mais que a segunda, temos</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-31" id="answer-31"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-31"><div class="answer solution-like"><p id="p-484">8</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like">
+<p id="p-485">Seja \(n\) a quantidade de pessoas na reunião. No primeiro caso temos \(n\times(n-1)\times (n-2)\) modos de escolher a comissão. No segundo caso temos \(C_n^3\) modos de escolher a comissão. Como a primeira alternativa oferece \(280\) possibilidades de escolha a mais que a segunda, temos</p>
 <div class="displaymath">
 \begin{equation*}
 n\times(n-1)\times (n-2) = C_n^3+280.
@@ -363,7 +359,7 @@ n\times(n-1)\times (n-2) = \frac{n\times(n-1)\times (n-2)}{6}+280
 <p data-braille="continuation">e</p>
 <div class="displaymath">
 \begin{equation}
-n\times(n-1)\times (n-2) = \frac{6\times 280}{5} = 336.\label{eq-ufba2006}\tag{6.4.1}
+n\times(n-1)\times (n-2) = \frac{6\times 280}{5} = 336.\label{eq-ufba2006}\tag{4.4.1}
 \end{equation}
 </div>
 <p data-braille="continuation">Observe que no lado esquerdo da equação <a class="xref" data-knowl="./knowl/eq-ufba2006.html" title="[men] 4.4.1">(4.4.1)</a> temos o produto de três números naturais consecutivos, e do outro lado, temos o número \(336\text{.}\) Fatorando e reescrevendo como produto de três números naturais consecutivos obtemos:</p>
@@ -374,39 +370,39 @@ n\times(n-1)\times (n-2) = \frac{6\times 280}{5} = 336.\label{eq-ufba2006}\tag{6
 </div>
 <p data-braille="continuation">Portanto, \(n-2 = 6, n-1 = 7\) e \(n=8\text{.}\)</p>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-100"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>(OBM 2004 - 2ª fase do nível 3) <p id="p-982">Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?</p>
+</div></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>(OBM 2004 - 2ª fase do nível 3) <p id="p-486">Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><p id="p-983">Temos \(C_{12}^6\) maneiras de escolher 6 dentre 12 alunos. Note que para cada 5 alunos fixados, temos 7 times possíveis.</p></div></div>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-100" id="answer-100"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-100"><div class="answer solution-like"><p id="p-984">\(132 \)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>(OBM 2006 - 2ª fase do nível 3) <p id="p-985">Seja \(n\) inteiro positivo. De quantas maneiras podemos distribuir \(n+1\) brinquedos distintos para \(n\) crianças de modo que toda criança receba pelo menos um brinquedo?</p>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-487">Temos \(C_{12}^6\) maneiras de escolher 6 dentre 12 alunos. Note que para cada 5 alunos fixados, temos 7 times possíveis.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-32" id="answer-32"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-32"><div class="answer solution-like"><p id="p-488">\(132 \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>(OBM 2006 - 2ª fase do nível 3) <p id="p-489">Seja \(n\) inteiro positivo. De quantas maneiras podemos distribuir \(n+1\) brinquedos distintos para \(n\) crianças de modo que toda criança receba pelo menos um brinquedo?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><p id="p-986">Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.</p></div></div>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-101" id="answer-101"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-101"><div class="answer solution-like"><p id="p-987">\(n\times \dfrac{(n+1)!}{2}. \)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-102"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>(OBM 2013 - 2ª fase do nível 3) <p id="p-988">Para cobrir um tabuleiro de dimensões \(1\times112\text{,}\) podemos utilizar heptaminós amarelos, de dimensões \(1\times7\text{,}\) e octaminós vermelhos, de dimensões \(1\times8\text{.}\) De quantos modos podemos cobrir completamente o tabuleiro?</p>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-490">Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-33" id="answer-33"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-33"><div class="answer solution-like"><p id="p-491">\(n\times \dfrac{(n+1)!}{2}. \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>(OBM 2013 - 2ª fase do nível 3) <p id="p-492">Para cobrir um tabuleiro de dimensões \(1\times112\text{,}\) podemos utilizar heptaminós amarelos, de dimensões \(1\times7\text{,}\) e octaminós vermelhos, de dimensões \(1\times8\text{.}\) De quantos modos podemos cobrir completamente o tabuleiro?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-102" id="answer-102"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-102"><div class="answer solution-like"><p id="p-989">\(6437 \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-166" id="solution-166"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-166"><div class="solution solution-like">
-<p id="p-990">Suponha que vamos usar \(x\) heptaminós e \(y\) octaminós. Para cobrir tudo, temos \(7x + 8y = 112\text{.}\)</p>
-<p id="p-991">Observe que \(112 = 2\times7\times8\) é múltiplo de \(7\) e de \(8\text{.}\) Assim, \(7x\) é múltiplo de 8, pois \(7x = 112 - 8y = 8(14 - y)\text{.}\) Analogamente, \(8y\) é múltiplo de 7, pois \(8y = 112 – 7x = 7(16 – x)\text{.}\) Como \(7\) e \(8\) são primos entre si, \(x\) é múltiplo de \(8\) e \(y\) é múltiplo de \(7\text{.}\)</p>
-<p id="p-992">Sendo \(x = 8t\) e \(y = 7u\text{,}\) temos \(7\times8t + 8\times7u = 112 \Leftrightarrow  t + u = 2\text{.}\) Assim, os valores de \((t,u)\) são \((0,2), (1,1)\) e \((2,0)\text{,}\) que correspondem a \((x,y)\) sendo \((0,14), (8,7)\) e \((16,0)\text{.}\)</p>
-<p id="p-993">Analisando os três casos:</p>
-<p id="p-994">1º: \((x, y) = (0, 14)\text{,}\) apenas uma maneira de cobrir, pois todas as peças são octaminós.</p>
-<p id="p-995">2º: \((x, y) = (8, 7)\text{,}\) temos no total \(8+7=15\) peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-34" id="answer-34"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-34"><div class="answer solution-like"><p id="p-493">\(6437 \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like">
+<p id="p-494">Suponha que vamos usar \(x\) heptaminós e \(y\) octaminós. Para cobrir tudo, temos \(7x + 8y = 112\text{.}\)</p>
+<p id="p-495">Observe que \(112 = 2\times7\times8\) é múltiplo de \(7\) e de \(8\text{.}\) Assim, \(7x\) é múltiplo de 8, pois \(7x = 112 - 8y = 8(14 - y)\text{.}\) Analogamente, \(8y\) é múltiplo de 7, pois \(8y = 112 – 7x = 7(16 – x)\text{.}\) Como \(7\) e \(8\) são primos entre si, \(x\) é múltiplo de \(8\) e \(y\) é múltiplo de \(7\text{.}\)</p>
+<p id="p-496">Sendo \(x = 8t\) e \(y = 7u\text{,}\) temos \(7\times8t + 8\times7u = 112 \Leftrightarrow  t + u = 2\text{.}\) Assim, os valores de \((t,u)\) são \((0,2), (1,1)\) e \((2,0)\text{,}\) que correspondem a \((x,y)\) sendo \((0,14), (8,7)\) e \((16,0)\text{.}\)</p>
+<p id="p-497">Analisando os três casos:</p>
+<p id="p-498">1º: \((x, y) = (0, 14)\text{,}\) apenas uma maneira de cobrir, pois todas as peças são octaminós.</p>
+<p id="p-499">2º: \((x, y) = (8, 7)\text{,}\) temos no total \(8+7=15\) peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{15}^{7} = C_{15}^{8} = 6435.
 \end{equation*}
 </div>
-<p id="p-996">3º: \((x, y) = (16, 0)\text{,}\) análogo ao primeiro caso, apenas uma maneira.</p>
-<p id="p-997">No total temos \(1+C_{15}^{7}+1 = 1+6435+1 = 6437\) maneiras de cobrir completamente o tabuleiro.</p>
+<p id="p-500">3º: \((x, y) = (16, 0)\text{,}\) análogo ao primeiro caso, apenas uma maneira.</p>
+<p id="p-501">No total temos \(1+C_{15}^{7}+1 = 1+6435+1 = 6437\) maneiras de cobrir completamente o tabuleiro.</p>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>(OBM 2015 - 2ª fase do nível 3) <p id="p-998">Um subconjunto de \(5\) elementos do conjunto \(\{1,2,3, ... , 20\}\) é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que \(1\text{,}\) do terceiro para o segundo é maior que \(2\text{,}\) do quarto para o terceiro é maior que \(3\) e do quinto para o quarto é maior que \(4\text{.}\) Existem quantos subconjuntos largos?</p>
+</div></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>(OBM 2015 - 2ª fase do nível 3) <p id="p-502">Um subconjunto de \(5\) elementos do conjunto \(\{1,2,3, ... , 20\}\) é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que \(1\text{,}\) do terceiro para o segundo é maior que \(2\text{,}\) do quarto para o terceiro é maior que \(3\) e do quinto para o quarto é maior que \(4\text{.}\) Existem quantos subconjuntos largos?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-103" id="answer-103"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-103"><div class="answer solution-like"><p id="p-999">\(252 \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-167" id="solution-167"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-167"><div class="solution solution-like">
-<p id="p-1000">Sejam \(a \lt b \lt c \lt d \lt e\) os elementos de um conjunto largo. Assim, \(b &gt; a + 1, c &gt; b + 2, d &gt; c + 3\) e \(e &gt; d + 4\text{,}\) ou seja, \(1 ≤ a \lt b − 1 \lt c - 3 \lt d - 6 \lt e - 10 ≤ 10\text{.}\)</p>
-<p id="p-1001">Desta forma, \(\{a, b - 1, c - 3, d - 6, e - 10\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\text{.}\) Reciprocamente, se \(\{x, y, z, w, t\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\) com \(x \lt y \lt z \lt w \lt t\) então \(\{x, y + 1, z + 3, w + 6, t + 10\}\) é um conjunto largo, pois \(y + 1 - x &gt; 1, z + 3 - (y + 1) &gt; 2, w + 6 - (z + 3) &gt; 3\) e \(t + 10 - (w + 6) &gt; 4\text{.}\)</p>
-<p id="p-1002">Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de \(5\) elementos de \(\{1,2,3,\ldots,10\}\text{,}\) que é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-35" id="answer-35"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-35"><div class="answer solution-like"><p id="p-503">\(252 \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
+<p id="p-504">Sejam \(a \lt b \lt c \lt d \lt e\) os elementos de um conjunto largo. Assim, \(b &gt; a + 1, c &gt; b + 2, d &gt; c + 3\) e \(e &gt; d + 4\text{,}\) ou seja, \(1 ≤ a \lt b − 1 \lt c - 3 \lt d - 6 \lt e - 10 ≤ 10\text{.}\)</p>
+<p id="p-505">Desta forma, \(\{a, b - 1, c - 3, d - 6, e - 10\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\text{.}\) Reciprocamente, se \(\{x, y, z, w, t\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\) com \(x \lt y \lt z \lt w \lt t\) então \(\{x, y + 1, z + 3, w + 6, t + 10\}\) é um conjunto largo, pois \(y + 1 - x &gt; 1, z + 3 - (y + 1) &gt; 2, w + 6 - (z + 3) &gt; 3\) e \(t + 10 - (w + 6) &gt; 4\text{.}\)</p>
+<p id="p-506">Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de \(5\) elementos de \(\{1,2,3,\ldots,10\}\text{,}\) que é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{10}^5 = \frac{10!}{5!5!} = 252.
@@ -414,46 +410,46 @@ C_{10}^5 = \frac{10!}{5!5!} = 252.
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="quest-fuvest2020comb"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<p id="p-1003">(FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.</p>
+<p id="p-507">(FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.</p>
 <ol class="lower-alpha">
-<li id="li-194">Quantas são as possíveis coleções que um jogador pode receber?</li>
-<li id="li-195">A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?</li>
+<li id="li-91">Quantas são as possíveis coleções que um jogador pode receber?</li>
+<li id="li-92">A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?</li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-104" id="answer-104"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-104"><div class="answer solution-like"><p id="p-1004">a) \(12870 ~~~~\) b) \(85\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-168" id="solution-168"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-168"><div class="solution solution-like">
-<p id="p-1005"><dfn class="terminology">item a)</dfn> O número de possíveis coleções é dado por:</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-36" id="answer-36"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-36"><div class="answer solution-like"><p id="p-508">a) \(12870 ~~~~\) b) \(85\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like">
+<p id="p-509"><dfn class="terminology">item a)</dfn> O número de possíveis coleções é dado por:</p>
 <div class="displaymath">
 \begin{equation*}
 C_{16}^8 = 12870. 
 \end{equation*}
 </div>
-<p id="p-1006"><dfn class="terminology">item b)</dfn> As coleções possíveis são:</p>
-<p id="p-1007">1) 4 estrelas e 4 quadrados totalizando 28 pontos:</p>
+<p id="p-510"><dfn class="terminology">item b)</dfn> As coleções possíveis são:</p>
+<p id="p-511">1) 4 estrelas e 4 quadrados totalizando 28 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^4 = 1
 \end{equation*}
 </div>
-<p id="p-1008">2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:</p>
+<p id="p-512">2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^3\times C_4^1 = 1\times 4\times 4 = 16
 \end{equation*}
 </div>
-<p id="p-1009">3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:</p>
+<p id="p-513">3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^3\times C_4^1 = 1\times 4\times 4 = 16
 \end{equation*}
 </div>
-<p id="p-1010">4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:</p>
+<p id="p-514">4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^2\times C_4^2 = 1\times 6\times 4 = 36
 \end{equation*}
 </div>
-<p id="p-1011">5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos:</p>
+<p id="p-515">5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^3\times C_4^4\times C_4^1 = 4\times 1\times 4 = 16
@@ -462,12 +458,12 @@ C_4^3\times C_4^4\times C_4^1 = 4\times 1\times 4 = 16
 <p data-braille="continuation">Portanto existem \(1+16+16+36+16 = 85\) coleções possíveis.</p>
 </div></div>
 </div></article><article class="exercise exercise-like" id="quest-fuvest2018comb"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
-<p id="p-1012">(FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há \(2n\) participantes. Na primeira rodada, há \(n\) jogos. Calcule, em função de \(n\text{,}\) o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.</p>
+<p id="p-516">(FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há \(2n\) participantes. Na primeira rodada, há \(n\) jogos. Calcule, em função de \(n\text{,}\) o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-105" id="answer-105"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-105"><div class="answer solution-like"><p id="p-1013">\(\dfrac{(2n)!}{2^n\times n!} \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-169" id="solution-169"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-169"><div class="solution solution-like">
-<p id="p-1014">Para o primeiro jogo, temos um total de \(C_{2n}^2\) maneiras de escolher os participantes. Para o segundo jogo, temos um total de \(C_{2n-2}^2\) maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com \(C_2^2\) maneiras de escolher os participantes.</p>
-<p id="p-1015">Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-37" id="answer-37"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-37"><div class="answer solution-like"><p id="p-517">\(\dfrac{(2n)!}{2^n\times n!} \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like">
+<p id="p-518">Para o primeiro jogo, temos um total de \(C_{2n}^2\) maneiras de escolher os participantes. Para o segundo jogo, temos um total de \(C_{2n-2}^2\) maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com \(C_2^2\) maneiras de escolher os participantes.</p>
+<p id="p-519">Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{C_{2n}^2\times C_{2n-2}^2\times \cdots \times C_{2}^2}{n!} = \frac{(2n)!}{2^n\times n!}.
