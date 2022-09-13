@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-09-07T15:32:56-03:00       *-->
+<!--*       on 2022-09-13T08:35:04-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,28 +14,37 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>O \(k\)-ésimo termo do desenvolvimento é</p>
+<p>Observe que uma possibilidade seria calcular o número de soluções de cada um dos casos:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-T_k = \amp ~ C_{11}^{k-1}(x^4)^{k-1}\left(-\frac{1}{x^2}\right)^{11-k+1}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{4(k-1)}x^{-2(12-k)}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{6k-28}  
-\end{align*}
+\begin{equation}
+\begin{cases} x_1 + x_2 + x_3 + x_4  = 0,\\
+x_1 + x_2 + x_3 + x_4  = 1\\
+\vdots \\
+x_1 + x_2 + x_3 + x_4  = 50.\end{cases}\tag{4.7.4}
+\end{equation}
 </div>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Para que \(6k-28 = 2\text{,}\) temos \(k=5\text{,}\) logo estamos procurando o 5º termo:</p>
+<p data-braille="continuation">A soma do número de soluções de cada um dos casos é a resposta, no entanto, é inviável fazer tal cálculo. Felizmente temos outra forma de resolver este problema.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Observe que existe uma bijeção entre o conjunto das soluções de <a class="xref" data-knowl="./knowl/sol-desi.html" title="[men] 4.7.3">(4.7.3)</a> com o conjunto das soluções da equação <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 4.7.5">(4.7.5)</a>:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+x_1 + x_2 + x_3 + x_4 + y  = 50.\tag{4.7.5}
+\end{equation}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Para entender a bijeção, observe o seguinte. Somando \(50-i, i\in \{0, 1, 2, \ldots, 50\}\text{,}\) nos dois lados da igualdade, na linha \(i, i\in \{0, 1, 2, \ldots, 50\}\) de <a class="xref" data-knowl="./knowl/sol-igual.html" title="[men] 4.7.4">(4.7.4)</a>, não mudamos absolutamente nada e ficamos com:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+\begin{cases} x_1 + x_2 + x_3 + x_4 + 50 = 0 + 50,\\
+x_1 + x_2 + x_3 + x_4 + 49  = 1 +49 \\
+\vdots \\
+x_1 + x_2 + x_3 + x_4 + 0  = 50+0.\end{cases}\tag{4.7.6}
+\end{equation}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Cada solução da linha \(i\text{,}\) é uma solução de <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 4.7.5">(4.7.5)</a> com o valor de \(y\) igual a \(50-i\text{.}\) E para cada \(y\in \{0, 1, 2, \ldots, 50\}\) a solução de <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 4.7.5">(4.7.5)</a> vai ser a solução da linha \(y\) de <a class="xref" data-knowl="./knowl/sol-igual.html" title="[men] 4.7.4">(4.7.4)</a> .</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Portanto a resposta é o número de solução da equação <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 4.7.5">(4.7.5)</a> que é dado por:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-T_5 = (-1)^{7}C_{11}^4x^2.
+CR_5^{50} = 316251. 
 \end{equation*}
 </div>
-<p data-braille="continuation">E portanto o coeficiente é \((-1)^{7}C_{11}^4 = -330\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item b)</dfn> \(6k-28 = 5\) não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de \(x^5\) é zero.</p>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item c)</dfn> Para que \(6k-28 = 8\text{,}\) temos \(k=6\text{,}\) logo estamos procurando o 6º termo:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-T_6 = (-1)^{6}C_{11}^5x^8.
-\end{equation*}
-</div>
-<p data-braille="continuation">E portanto, o coeficiente é \((-1)^{6}C_{11}^5 = 462\text{.}\)</p>
 </div></body>
 </html>

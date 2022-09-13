@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-09-07T15:32:59-03:00       *-->
+<!--*       on 2022-09-13T08:35:07-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,17 +13,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Temos \(n\) modos de escolher o primeiro elemento, \(n-1\) modos de escolher o segundo elemento, e assim sucessivamente, até \(n-p+1\) modos de escolher o \(p\)-ésimo elemento.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Agora observe que contamos muito mais agrupamentos do que deveríamos, pois para conjuntos, a ordem não importa, portanto precisamos dividir pelo número de formas de ordenar estes \(p\) elementos que escolhemos de forma ordenada, ou seja, por \(p!\text{.}\) Assim:</p>
+<body><article class="hiddenproof"><p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">a)</dfn> Como \(0\leq P(A\cap B)\leq P(A)\) temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C(n,p)  = \frac{n(n-1)\cdots(n-p+1)}{p!} = \frac{n(n-1)\cdots(n-p+1)}{p!} \cdot \frac{(n-p)!}{(n-p)!}
+0\leq \frac{P(A\cap B)}{P(A)}\leq 1, ~~ \text{ ou seja }~~ 0\leq P(B|A)\leq 1. 
 \end{equation*}
 </div>
-<p>Fazendo as contas concluímos que</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">b)</dfn></p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C(n,p) = \frac{n!}{p!(n-p)!}.
+P(\varnothing|A) = \frac{P(\varnothing\cap A)}{P(A)} = \frac{P(\varnothing)}{P(A)} = \frac{0}{P(A)} = 0
 \end{equation*}
+</div>
+<p data-braille="continuation">e</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P(\Omega|A) = \frac{P(\Omega\cap A)}{P(A)} = \frac{P(A)}{P(A)} = 1. 
+\end{equation*}
+</div>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">c)</dfn></p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+P((B\cup C)|A) = \amp ~ \frac{P((B\cup C)\cap A)}{P(A)} \\
+\amp ~ \frac{P((B\cap A)\cup (C\cap A))}{P(A)} \\
+\amp ~ \frac{P(B\cap A)}{P(A)} + \frac{P(C\cap A)}{P(A)} \\
+\amp ~ P(B|A) + P(C|A). 
+\end{align*}
 </div></article></body>
 </html>

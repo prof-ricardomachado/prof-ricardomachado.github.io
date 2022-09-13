@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-09-07T15:32:54-03:00       *-->
+<!--*       on 2022-09-13T08:35:03-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,34 +12,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.6.1.11.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.6.8.1</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.6.10<span class="period">.</span></span><span class="space"> </span>Mapa da solução.</figcaption></figure><p>1º tipo: De A para X e de X para B. Nesse caso temos \(PR_7^{4, 3}\) caminhos de A para X e \(PR_5^{4, 1}\) caminhos de X para B. No total temos</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</p>
+<p>Começando com A, temos um total de \(PR_9^{2, 2, 2}\) anagramas, começando com E, temos um total de \(PR_9^{3, 2, 2}\) anagramas e começando com I, temos um total de \(PR_9^{3, 2, 2}\) anagramas. Portanto a resposta é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-PR_7^{4, 3} \times PR_5^{4, 1}
+PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600. 
 \end{equation*}
 </div>
-<p data-braille="continuation">caminhos do 1º tipo.</p>
-<p>2º tipo: De A para Y e de Y para B. Nesse caso temos \(PR_8^{5, 3}\) caminhos de A para Y e \(PR_5^{3, 2}\) caminhos de Y para B. No total temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-PR_8^{5, 3} \times PR_5^{3, 2}
-\end{equation*}
-</div>
-<p data-braille="continuation">caminhos do 2º tipo.</p>
-<p>Como os caminhos do 1º e 2º tipos são disjuntos a resposta é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-PR_7^{4, 3}\times PR_5^{4, 1} + PR_8^{5, 3}\times PR_5^{3, 2} = 735.
-\end{equation*}
-</div>
+<p data-braille="continuation">Este cálculo pode ser efetuado no Sage da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-28"><script type="text/x-sage">def PR(*lista):
+    p = factorial(lista[0])
+    for i in lista[1:]:
+        p = p/factorial(i)
+    return p
+PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
+</script></div>
 </div>
 <span class="incontext"><a href="section-permutacoes-com-repeticoes.html#solution-103">[incontext]</a></span>
 </body>
