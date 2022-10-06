@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-09-26T10:29:19-03:00       *-->
+<!--*       on 2022-10-06T09:04:55-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,25 +12,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body><div class="solution solution-like">
-<p>O número de soluções desta equação, com \(x_i\in \mathbb{Z} \text{ e } x_i\geq 0, i\in\{1, 2, \ldots, 10\}\)  é o  número de combinações completas de 10 elementos, tomados 20 a 20:</p>
+<p>Denote cada sabor por um número entre \(1\) e \(6\text{.}\) Note que este problema é equivalente ao de encontrar o número de soluções inteiras da equação:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+x_1 + x_2 + x_3 + x_4 + x_5 + x_6  = 3, ~~~ \text{ com }  x_i \geq 0, \tag{4.7.1}
+\end{equation}
+</div>
+<p data-braille="continuation">na qual, cada \(x_i, i\in\{1, 2, 3, 4, 5, 6\}\) representa a quantidade de bolas de sorvete com sabor \(i\text{.}\) Claramente, temos a restrição \(x_i\geq 0\text{,}\) pois não podemos pegar uma quantidade negativa de bolas de sorvete.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Vamos mostrar que o problema de encontrar o número de soluções <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 4.7.1">(4.7.1)</a> é equivalente a encontrar o número de permutações com repetições de uma sequência com \(3\) elementos de um tipo e \(5\) elementos de outro tipo.</p>
+<p>Escreva de \(x_1\) até \(x_6\text{,}\) entre uma incógnita e outra coloque na linha de baixo um traço vertical. Para representar a quantidade bolas de sorvete com sabor \(1\) ou \(6\text{,}\) coloque a respectiva quantidade de bolas antes do primeiro traço ou depois do último traço, respectivamente. Para representar a quantidade de bolas de sorvete com sabor \(i\text{,}\) com \(i\in \{2, 3, 4, 5\}\text{,}\) coloque a quantidade de bolas abaixo de \(x_i\text{,}\) entre dois traços consecutivos. Assim, a solução</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-CR_{10}^{20}
+x_1=1, ~ x_5=2, ~ x_i=0, ~~ i\in \{2, 3, 4, 6\} 
 \end{equation*}
 </div>
-<div class="sagecell-sage" id="sage-32"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p) 
-CR(10, 20)
-</script></div>
+<p data-braille="continuation">é representada por:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/combinacaocompleta.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Observe que cada permutação dessa representação de traços e bolas é uma solução da Equação <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 4.7.1">(4.7.1)</a> e que cada solução da Equação <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 4.7.1">(4.7.1)</a> pode ser representada com traços de bolas (Existe uma bijeção entre as duas coisas).</p>
+<p>Portanto, para encontrar o número de soluções da Equação <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 4.7.1">(4.7.1)</a>, basta calcular</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR_8^{5, 3} = 56, 
+\end{equation*}
+</div>
+<p data-braille="continuation">pois, temos 5 traços e 3 bolas, então estamos permutando um total de 8 elementos, sendo 5 de um tipo e 3 de outro tipo.</p>
 </div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-09-26T10:29:18-03:00       *-->
+<!--*       on 2022-10-06T09:03:37-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,41 +12,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body><div class="solution solution-like">
-<p>Observe que para cada permutação existe exatamente outra que a soma delas é  \(111110\text{.}\) Por exemplo:</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Note que cada número formado possui 5 dígitos. Podemos contar o valor de \(S\) da seguinte maneira.</p>
+<p>Sejam \(a_i\) os números formados pelos algarismos disponíveis. Como são 5 algarismos, temos um total de \(P(5)=5!=120\) números, então</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+a_1 =\amp~ a_{1,4}\cdot 10^4+a_{1,3}\cdot 10^3+a_{1,2}\cdot 10^2+a_{1,1}\cdot 10^1+a_{1,0}\cdot 10^0,\\
+a_2 =\amp~ a_{2,4}\cdot 10^4+a_{2,3}\cdot 10^3+a_{2,2}\cdot 10^2+a_{2,1}\cdot 10^1+a_{2,0}\cdot 10^0,\\
+\vdots\\
+a_j =\amp~ a_{j,4}\cdot 10^4+a_{j,3}\cdot 10^3+a_{j,2}\cdot 10^2+a_{j,1}\cdot 10^1+a_{j,0}\cdot 10^0,\\
+\vdots\\
+a_{120} =\amp~ a_{120,4}\cdot 10^4+a_{120,3}\cdot 10^3+a_{120,2}\cdot 10^2+a_{120,1}\cdot 10^1+a_{120,0}\cdot 10^0
+\end{align*}
+</div>
+<p data-braille="continuation">Observe que para cada \(j=0,1,2,3,4\text{,}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-1, 3, 5, 7, 9 ~~\text{ e }~~ 9, 7, 5, 3, 1. 
+\sum_{0\leq i\leq 120}a_{i,j} = 4!\cdot1+4!\cdot3+4!\cdot5+4!\cdot7+4!\cdot9=4!\cdot 25,
 \end{equation*}
 </div>
+<p data-braille="continuation">pois, cada algarismo estará presente em \(\frac{120}{5}=24=4!\) dos \(a_{i,j}\text{,}\) para cada \(j\) fixado.</p>
+<p>Logo,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-3, 9, 7, 1, 5 ~~\text{ e }~~ 7, 1 ,3, 9, 5. 
-\end{equation*}
+\begin{align*}
+S=\amp ~(10^4+10^3+10^2+10^1+10^0)\cdot4!\cdot 25\\
+=\amp~ 11111\cdot 600\\
+=\amp~ 6666600.
+\end{align*}
 </div>
-<p data-braille="continuation">Podemos organizar as \(5! = 120\) permutações de duas em duas, de modo que a soma de cada par seja \(111110\text{.}\) Portanto, o valor da soma de todas as permutações é \(60 \times 111110 = 6666600\text{.}\) Somando os dígitos chegamos na resposta que é \(30\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.</p>
-<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">def soma(lista):
-    l = lista
-    l2=[]
-    for k in Permutations(l):
-        list(k).reverse()
-        n=0
-        for i in range(len(k)):
-            n = n + k[i]*10^i
-        l2.append(n)
-    return sum(l2)
-soma([1,3,5,7,9])
-</script></div>
 </div></body>
 </html>
