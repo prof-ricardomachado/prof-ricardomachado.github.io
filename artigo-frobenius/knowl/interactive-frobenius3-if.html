@@ -57,34 +57,38 @@ MathJax.Hub.Config({
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="pretext-content" id="pretext-SA"><div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label="b:")):
+def _(a=input_box(6 , width=10,  label="a:"), b=input_box(9 , width=10,  label="b:"), c=input_box(20 , width=10,  label="b:")):
 
-    if gcd(a1, b1)!=1:
-        print('Insira valores tais que o mdc seja igual a 1.')
-    else:
-        frob = a1*b1-a1-b1
-
-        print('g = %d*%d-%d-%d=%d' %(a1, b1, a1, b1, frob))
-        
-        print('a partir de %d todos os valores \npodem ser obtidos da expressão %dx+%dy.' %(frob+1, a1, b1))
-        print('\n')
-        m = min([a1,b1])
-        M = max([a1,b1])
-        l=[]
+    def sol_frob_3(a,b,c):
+        x,y,z = var('x,y,z')
+        l = [a,b,c]
+        l.sort()
         dic={}
-        temp=0
+        lista_min=[]
+        i=0
+        while l[0]>len(dic):
+            for y in range(l[0]):
+                for z in range(l[0]):
+                    temp  = solve_diophantine(l[0]*x+l[1]*y+l[2]*z == i, x)
+                    if temp in ZZ and temp>=0 and ((i) not in dic.keys()):
+                        if len(dic)==0:
+                            dic.update({(i):[temp, y, z]})
+                        elif i==max(dic.keys())+1:
+                            dic.update({(i):[temp, y, z]})
+                        else:
+                            dic={}
+                        
+            i=i+1
         
-        print('Abaixo, sendo t inteiro não negativo, temos uma \nparametrização para obter qualquer valor inteiro, \nmaior ou igual a %d, que pode ser obtido pela \nexpressão: %dx+%dy.' %(frob+1, m, M))
+        frob = min(dic.keys())-1
+        print('O último valor sem solução é %d.' %frob)
         print('\n')
-
-        for j in range(m):
-            for i in range(m):
-                temp = solve(m*x + M*j==frob+i+1, x)[0].rhs()
-                if temp in ZZ:
-                    l.append([temp, j, frob+i+1])
-                    dic.update({(frob+i+1):[temp, j]})
-            
-        for j in range(frob+1, frob+m+1):
-            print('%d*(%d+t) + %d*%d = %d + t' %(m, dic[j][0], M, dic[j][1], j))
+        print('Abaixo, sendo t inteiro não negativo, temos uma \nparametrização para obter qualquer valor inteiro, \nmaior ou igual a %d, que pode ser obtido pela \nexpressão: %dx+%dy+%dz.' %(frob+1, l[0], l[1], l[2]))
+        print('\n')
+        for k in dic.keys():
+            print('%d*(%d+t)+%d*%d+%d*%d = %d+t' %(l[0], dic[k][0], l[1], dic[k][1], l[2], dic[k][2], k))
+        
+        #return dic
+    sol_frob_3(a,b,c)
 </script></div></div></body>
 </html>

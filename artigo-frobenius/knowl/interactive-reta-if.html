@@ -56,35 +56,49 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label="b:")):
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label="b:"), c1=input_box(31 , width=10,  label="c:")):
 
     if gcd(a1, b1)!=1:
         print('Insira valores tais que o mdc seja igual a 1.')
     else:
-        frob = a1*b1-a1-b1
-
-        print('g = %d*%d-%d-%d=%d' %(a1, b1, a1, b1, frob))
         
-        print('a partir de %d todos os valores \npodem ser obtidos da expressão %dx+%dy.' %(frob+1, a1, b1))
-        print('\n')
         m = min([a1,b1])
         M = max([a1,b1])
-        l=[]
-        dic={}
-        temp=0
-        
-        print('Abaixo, sendo t inteiro não negativo, temos uma \nparametrização para obter qualquer valor inteiro, \nmaior ou igual a %d, que pode ser obtido pela \nexpressão: %dx+%dy.' %(frob+1, m, M))
-        print('\n')
 
-        for j in range(m):
-            for i in range(m):
-                temp = solve(m*x + M*j==frob+i+1, x)[0].rhs()
-                if temp in ZZ:
-                    l.append([temp, j, frob+i+1])
-                    dic.update({(frob+i+1):[temp, j]})
+        l=[]
+        j=-2
+        while 6>len(l):
             
-        for j in range(frob+1, frob+m+1):
-            print('%d*(%d+t) + %d*%d = %d + t' %(m, dic[j][0], M, dic[j][1], j))
+            temp = solve_diophantine(m*x+M*j==c1, x)
+            if temp in ZZ:
+                l.append((temp, j))
+            j=(abs(j)+1)*(-1)*(j/abs(j))
+                
+            
+            
+        es=0
+        di=0
+        pe=0
+        pd=0
+        for p in l:
+            if es>p[0]:
+                es=p[0]
+                pe=p
+            if p[0]>di:
+                di=p[0]
+                pd=p
+        
+        p2=line((pe, pd))
+
+        p1=list_plot(l, size=30, color='red')
+        
+        (p2+p1).show(figsize=4)
+
+        print('As soluções destacadas no gráfico são:')
+
+        l.sort()
+        for i in l:
+            print(i)
 </script></div></div></body>
 </html>
