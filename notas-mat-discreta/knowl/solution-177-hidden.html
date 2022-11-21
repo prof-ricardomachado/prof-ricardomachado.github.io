@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-10-03T09:34:25-03:00       *-->
+<!--*       on 2022-11-21T10:56:59-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item a)</dfn> Ora, \(A=F(1-dt)=100(1-0,12\cdot 2)=76.\) Logo, Pedro receberá agora 76, para pagar 100 em 60 dias.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item b)</dfn> Se \(i\) é a taxa mensal de juros à qual cresce a dívida de Pedro, temos \(100=76(1+i)^2\text{.}\) Daí, \(i=0,1471=14,71\%\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Observe que anunciar a taxa de desconto e não a taxa de juros é um modo sutil de fazer crer aos mais ingênuos estarem eles pagando juros menores que os que realmente lhes estão sendo cobrados.</p>
+<div class="sagecell-sage" id="sage-43"><script type="text/x-sage">f=(27-x^2)/9
+p1 = plot(f, (-6,6))
+c0 = circle((0,0), 0.08, fill=True, color='black')
+c1 = circle((3,f.subs(x=3)), 0.08, fill=True, color='black')
+t1 = text('(x,y)', ((3+0.3,f.subs(x=3)+0.4)))
+c2 = circle((-3,f.subs(x=-3)), 0.08, fill=True, color='black')
+t2 = text('(-x,y)', ((-3-0.3,f.subs(x=-3)+0.4)))
+l1 = line([(0,0), (3,f.subs(x=3)), (-3,f.subs(x=-3)), (0,0)], color='red')
+(p1+c0+c1+c2+l1+t1+t2).show(figsize=5.5)
+</script></div>
+<p>A área do triângulo é dada por \(A = \frac{2xy}{2}, A=xy\text{.}\) Pela desigualdade das médias, como \(G(x_1,x_2,x_3)\leq  A(x_1,x_2,x_3)\text{,}\) defina \(x_1 = x^2, x_2 = \frac{9y}{2}, x_3 = \frac{9y}{2}\text{,}\) logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sqrt[3]{A^2\left(\frac{9}{2}\right)^2} = \sqrt[3]{x^2\left(\frac{9y}{2}\right)\left(\frac{9y}{2}\right)} \leq \dfrac{x^2+\dfrac{9y}{2}+\dfrac{9y}{2}}{3}=\frac{x^2+9y}{3}=\frac{27}{3}=9. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Portanto,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sqrt[3]{A^2\left(\frac{9}{2}\right)^2} \leq 9 \amp \Rightarrow A^2\cdot9^2\cdot\frac{1}{4}\leq 9^3\\
+\amp \Rightarrow A^2\leq 3^2\cdot 2^2\\
+\amp\Rightarrow A\leq 6.
+\end{align*}
+</div>
+<p data-braille="continuation">E a igualdade será obtida quando \(x^2=\dfrac{9y}{2}\text{.}\) Como \(x^2+9y=27\text{,}\) substituindo o valor de \(x^2\text{,}\) ficamos com \(\dfrac{9y}{2}+9y=27\text{,}\) portanto \(y=2\) e \(x=3\text{.}\)</p>
 </div></body>
 </html>

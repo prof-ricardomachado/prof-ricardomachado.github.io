@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-17T16:05:06-03:00       *-->
+<!--*       on 2022-11-21T10:56:49-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -43,7 +43,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -271,8 +279,81 @@ A\leq \frac{p^2}{4}
 </div></div></article><article class="remark remark-like" id="remark-23"><h6 class="heading">
 <span class="type">Observação</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
 </h6>
-<p id="p-1036">A desigualdade das médias pode ser generalizada como segue:</p>
-<p id="p-1037">Se \(x_1,x_2,\ldots,x_n\) são números positivos e \(Q, A, G\) e \(H\) são suas médias quadrática, aritmética, geométrica e harmônica, respectivamente, então \(Q\geq A\geq G\geq H\text{.}\) Além disso, duas quaisquer dessas médias são iguais se, e somente se, \(x_1=x_2=\cdots=x_n\text{.}\)</p></article></section></div></main>
+<p id="p-1036"><dfn class="terminology">(Desigualdade das Médias)</dfn> A desigualdade das médias pode ser generalizada como segue: Dados \(x_1, x_2,\ldots,x_n\) números reais positivos. Então,</p>
+<div class="displaymath">
+\begin{align*}
+\min(x_1,\ldots,x_n)\amp\leq  H(x_1,\ldots,x_n)\\
+\amp \leq  G(x_1,\ldots,x_n)\\
+\amp \leq  A(x_1,\ldots,x_n)\\
+\amp \leq  Q(x_1,\ldots,x_n) \leq \max(x_1,\ldots,x_n).
+\end{align*}
+</div>
+<p data-braille="continuation">Além disso, em cada caso, a igualdade vale se, e somente se, \(x_1=x_2=\cdots=x_n\text{.}\)</p></article><article class="example example-like" id="example-135"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-1037">Qual o maior valor possível para \(S = \sin{x} + \cos{x}\text{,}\) com \(x\in \mathbb{R}\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-175" id="solution-175"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-175"><div class="solution solution-like">
+<p id="p-1038">Pela desigualdade das médias, como \(A(x_1,\ldots,x_n)\leq  Q(x_1,\ldots,x_n)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{sen(x)+cos(x)}{2}\leq \sqrt{\frac{sen^2(x)+cos^2(x)}{2}} = \sqrt{\frac{1}{2}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Portanto,</p>
+<div class="displaymath">
+\begin{equation*}
+sen(x)+cos(x)\leq 2\cdot \frac{1}{\sqrt{2}}=\sqrt{2},
+\end{equation*}
+</div>
+<p data-braille="continuation">e a igualdade só é atingida quando \(sen(x)=cos(x)\text{,}\) ou seja, quando \(x = \frac{\pi}{4}+2k\pi,~ k\in\mathbb{Z}\text{.}\)</p>
+</div></div></article><article class="example example-like" id="example-136"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-1039">Suponha que \(x^2+y^2 = R^2\text{,}\) com \(R&gt;0\text{.}\) Determine reais positivos \(x\) e \(y\) tais que \(S = x+y\) seja máximo.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-176" id="solution-176"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-176"><div class="solution solution-like">
+<p id="p-1040">Pela desigualdade das médias, como \(A(x_1,\ldots,x_n)\leq  Q(x_1,\ldots,x_n)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{S}{2}=\frac{x+y}{2}\leq \sqrt{\frac{x^2+y^2}{2}}\leq \sqrt{\frac{R^2}{2}}=\frac{R\sqrt{2}}{2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">A igualdada é obtida apenas quando \(x=y\text{,}\) portanto</p>
+<div class="displaymath">
+\begin{equation*}
+x=y=\frac{R\sqrt{2}}{2}.
+\end{equation*}
+</div>
+</div></div></article><article class="example example-like" id="example-137"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span>
+</h6>
+<p id="p-1041">Um triângulo isósceles tem seu vértice na origem, sua base é paralela ao eixo \(x\) acima dele e os vértices da base estão na parábola \(9y=27-x^2\text{.}\) Calcule a maior área de um triângulo nessas condições.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-177" id="solution-177"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-177"><div class="solution solution-like">
+<div class="hidden-sagecell-sage" id="sage-43"><script type="text/x-sage">f=(27-x^2)/9
+p1 = plot(f, (-6,6))
+c0 = circle((0,0), 0.08, fill=True, color='black')
+c1 = circle((3,f.subs(x=3)), 0.08, fill=True, color='black')
+t1 = text('(x,y)', ((3+0.3,f.subs(x=3)+0.4)))
+c2 = circle((-3,f.subs(x=-3)), 0.08, fill=True, color='black')
+t2 = text('(-x,y)', ((-3-0.3,f.subs(x=-3)+0.4)))
+l1 = line([(0,0), (3,f.subs(x=3)), (-3,f.subs(x=-3)), (0,0)], color='red')
+(p1+c0+c1+c2+l1+t1+t2).show(figsize=5.5)
+</script></div>
+<p id="p-1042">A área do triângulo é dada por \(A = \frac{2xy}{2}, A=xy\text{.}\) Pela desigualdade das médias, como \(G(x_1,x_2,x_3)\leq  A(x_1,x_2,x_3)\text{,}\) defina \(x_1 = x^2, x_2 = \frac{9y}{2}, x_3 = \frac{9y}{2}\text{,}\) logo</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt[3]{A^2\left(\frac{9}{2}\right)^2} = \sqrt[3]{x^2\left(\frac{9y}{2}\right)\left(\frac{9y}{2}\right)} \leq \dfrac{x^2+\dfrac{9y}{2}+\dfrac{9y}{2}}{3}=\frac{x^2+9y}{3}=\frac{27}{3}=9. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Portanto,</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt[3]{A^2\left(\frac{9}{2}\right)^2} \leq 9 \amp \Rightarrow A^2\cdot9^2\cdot\frac{1}{4}\leq 9^3\\
+\amp \Rightarrow A^2\leq 3^2\cdot 2^2\\
+\amp\Rightarrow A\leq 6.
+\end{align*}
+</div>
+<p data-braille="continuation">E a igualdade será obtida quando \(x^2=\dfrac{9y}{2}\text{.}\) Como \(x^2+9y=27\text{,}\) substituindo o valor de \(x^2\text{,}\) ficamos com \(\dfrac{9y}{2}+9y=27\text{,}\) portanto \(y=2\) e \(x=3\text{.}\)</p>
+</div></div></article></section></div></main>
 </div>
 </body>
 </html>
