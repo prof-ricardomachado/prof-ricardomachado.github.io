@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-16T09:06:48-03:00       *-->
+<!--*       on 2022-11-24T10:07:58-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -63,41 +63,48 @@ def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label
         print('A equação %dx+%dy=%d não possui solução.\nO mcd(%d, %d) não divide %d' %(a1, b1, c1, a1, b1, c1))
     else:
         
-        m = min([a1,b1])
-        M = max([a1,b1])
+        #m = min([a1,b1])
+        #M = max([a1,b1])
+        m=a1
+        M=b1
 
         l=[]
-        j=-2
-        while 6>len(l):
-            
+        j=0
+        
+        m1 = min([a1,b1])
+        m1 = ceil(m1/2)
+        #print(m1)
+
+        while m1>len(l):    
             temp = solve_diophantine(m*x+M*j==c1, x)
             if temp in ZZ:
                 l.append((temp, j))
-            j=(abs(j)+1)*(-1)*(j/abs(j))
+            #j=(abs(j)+1)*(-1)*(j/abs(j))
+            j=j+1
                 
+        j=-1
+        while 2*m1>len(l):    
+            temp = solve_diophantine(m*x+M*j==c1, x)
+            if temp in ZZ:
+                l.append((temp, j))
+            #j=(abs(j)+1)*(-1)*(j/abs(j))
+            j=j-1
+
             
-            
-        es=0
-        di=0
-        pe=0
-        pd=0
-        for p in l:
-            if es>p[0]:
-                es=p[0]
-                pe=p
-            if p[0]>di:
-                di=p[0]
-                pd=p
         
+        
+        l.sort()
+        pe = l[0]
+        pd = l[-1]
         p2=line((pe, pd))
 
         p1=list_plot(l, size=30, color='red')
         
         (p2+p1).show(figsize=4)
 
-        print('As soluções destacadas no gráfico são:')
+        print('As soluções da equação %dx + %dy= %d, \ndestacadas no gráfico são:' %(a1, b1, c1))
 
-        l.sort()
+        
         for i in l:
             print(i)
 </script></div></div></body>
