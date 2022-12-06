@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-30T10:01:53-03:00       *-->
+<!--*       on 2022-12-06T15:46:32-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,22 +15,34 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Parágrafo</span></h6>
-<p>Com \(x\to +\infty\) ambos os termos, \(\sqrt{x^2+1}\) e \(x\text{,}\)  se tornam arbitrariamente grandes. Logo, é difícil afirmar o que acontece com a diferença; nesta caso, vamos fazer algumas manipulações algébricas para reescrever a função. Iniciamos multiplicando o numerador e o denominador pelo conjugado radical: <aside class="aside aside-like"><p xmlns:svg="http://www.w3.org/2000/svg">Alguns chamas esta estratégia de multiplicação do conjugado radical tanto no numerado quanto no denominador de <dfn class="terminology">Multiplicação da expressão por 1</dfn></p></aside></p>
+<p>Note que quando \(x\) for muito grande, \(x^{7/5} = x\cdot x^{2/5}\) será muito maior que \(x\text{,}\) então o termo \(x^{7/5}\) dominará o termo \(x\text{.}\) Então fatore \(x^{7/5}\) e reescreva como</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\lim\limits_{x\to +\infty}\left(\sqrt{x^2+1}-x\right)\amp = \lim\limits_{x\to +\infty}\left[\left(\sqrt{x^2+1}-x\right)\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}\right] \\
-\amp = \lim\limits_{x\to +\infty}\frac{(x^2+1)-x^2}{\sqrt{x^2+1}+x} \quad  \ct{depois da multiplicação dos numeradores.}\\
-\amp = \lim\limits_{x\to +\infty}\frac{1}{\sqrt{x^2+1}+x}  \quad \ct{Simplificando o numerador}.
+x^{7/5}-x \amp= x^{7/5} \left(1 - \frac{1}{x^{2/5}} \right).
 \end{align*}
 </div>
-<p data-braille="continuation">Agora note que o denominador da ultima expressão acima é positivamente grande à medida que \(x\to+\infty\text{.}\) Logo,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lim\limits_{x\to +\infty}\left(\sqrt{x^2+1}-x\right) = \lim\limits_{x\to +\infty}\frac{1}{\sqrt{x^2+1}+x} =0
-\end{equation*}
+<p data-braille="continuation">Considere o que acontece com cada um dos fatores com \(x \to \infty\text{:}\)</p>
+<ul class="disc">
+<li>Para \(x\) grande, \(x^{7/5} \gt x\) (isso é verdade para qualquer \(x \gt 1\)). No limite com \(x \to +\infty\text{,}\) \(x\) se torna arbitrariamente grande e positivo, e \(x^{7/5}\) deve ser maior ainda assim, segue que<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} x^{7/5} \amp= + \infty.
+\end{align*}
 </div>
-<p data-braille="continuation">A <a class="xref" data-knowl="./knowl/fig-4a.html" title="Figura 2.4.18">Figura 2.4.18</a> ilustra este resultado. <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image-sage4a.svg" role="img" style="width: 100%; height: auto;" alt="" onerror="this.src='images/image-sage4a.png';this.onerror=null;"></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure></p>
+</li>
+<li>Por outro lado, \((1-x^{-2/5})\) se aproxima cada vez mais de \(1\) — podemos usar a aritmética dos limites para escrever isso como<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} (1-x^{-2/5}) \amp= \lim_{x \to \infty} 1 - \lim_{x \to
+\infty} x^{-2/5} = 1-0 = 1
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Assim, o produto desses dois fatores será cada vez maior (e positivo) à medida que \(x\) se move para o infinito. Daí temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} x^{7/5} \left(1 - 1/x^{2/5} \right) \amp= + \infty\text{.}
+\end{align*}
+</div>
 <span class="incontext"><a href="section-12.html#p-540">[incontext]</a></span>
 </body>
 </html>
