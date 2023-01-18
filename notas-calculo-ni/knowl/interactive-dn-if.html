@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-12T10:55:27-03:00       *-->
+<!--*       on 2023-01-18T15:46:51-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,22 +56,23 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(n = range_slider(1, 50, 1, default=(1,10), label='Intervalo:')):
+<body class="pretext-content"><div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+def _(f=input_box(3*x-1 , width=25,  label="f:"), 
+p=input_box(2 , width=10,  label="p:"),
+delta=input_box(0.2 , width=10,  label="delta:"), passos=input_box(10 , width=10,  label="passos:")):
 
-    def D(m):
-        P(i) = factorial(i)
-        return P(m)*sum(((-1)^x)/P(x), x, 0, m)
-
-    P(i) = factorial(i)
-    p=[]
-    
-    for j in range(n[0], n[1]+1):
+    #f = 3*x-1
+    lista=[]
+    t=(p-delta-(1/passos)*delta).n(digits=5)
+    t2=(p+delta+(1/passos)*delta).n(digits=5)
+    for i in range(passos):
+        t=t+(1/passos)*delta
+        t2 = t2-(1/passos)*delta
+        lista.append([t, f.subs(x=t), t2, f.subs(x=t2)])
         
-        p.append((j, D(j)))
     
-    l=['$n$', '$D_n$']
+    l=['$2>x$', '$f(x)$', '$x > 2$', '$f(x)$']
     
-    show(table(p, header_row=l))
+    show(table(lista, header_row=l))
 </script></div></div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-12-06T15:46:31-03:00       *-->
+<!--*       on 2023-01-18T15:46:52-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,29 +14,35 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Para aplicar  o limite do quociente (ver <a class="xref" data-knowl="./knowl/th-prop-limt.html" title="Teorema 2.2.1: Propriedades de limites">Propriedade 5</a>), precisamos examinar o numerador e o denominador separadamente e garantir que o limite do denominador seja diferente de zero.</p>
+<p>Como \(\text{arcsen}(x)\) é contínua e é a inversa de \(f(x) = \text{sen}(x)\) em \(x\in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]\text{,}\) temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lim\limits_{x \to 2} x\amp = 2\amp \knowl{./knowl/th-triviais.html}{\text{Limites essenciais}}
-\end{align*}
+\begin{equation}
+\text{arcsen}'(x) = \frac{1}{f'(\text{arcsen}(x))} = \frac{1}{\cos(\text{arcsen}(x))}\tag{3.4.1}
+\end{equation}
 </div>
+<p data-braille="continuation">pois, \(f'(x) = \cos(x)\text{.}\) Sabemos que</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lim\limits_{x \to 2} x-1
-\amp = \left( \lim\limits_{x \to 2} x \right) - \left(   \lim\limits_{x \to 2} 1 \right)
-\amp \ct{diferença de limites}\\
-\amp = 2 - 1
-\amp \ct{limite de   e limite de uma constante}
-\end{align*}
+\begin{equation*}
+\cos(a)^2 + \text{sen}(a)^2 = 1
+\end{equation*}
 </div>
-<p data-braille="continuation">Como o limite do denominador é diferente de zero, usamos as propriedades para obter</p>
+<p data-braille="continuation">Para \(a = \text{arcsen}(x)\text{,}\) temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lim\limits_{x\to 2} \frac{x}{x-1}\amp= \frac{\lim\limits_{x\to 2} x}{\lim\limits_{x \to
-2}(x-1)}\\
-\amp= \frac{2}{1}\\
-\amp= 2
-\end{align*}
+\begin{equation*}
+\cos^2(\text{arcsen}(x)) + \underbrace{\text{sen}^2(\text{arcsen}(x))}_{x^2} = 1
+\end{equation*}
+</div>
+<p data-braille="continuation">segue</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+\cos^2(\text{arcsen}(x)) = 1 -x^2 \Rightarrow \cos(\text{arcsen}(x)) = \sqrt{1 -x^2} \tag{3.4.2}
+\end{equation}
+</div>
+<p data-braille="continuation">pois \(\text{arcsen}(x)\in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]\text{.}\) Substituindo <a class="xref" data-knowl="./knowl/eq-arcsen2.html" title="[men] 3.4.2">(3.4.2)</a> em <a class="xref" data-knowl="./knowl/eq-arcsen.html" title="[men] 3.4.1">(3.4.1)</a> temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{arcsen}'(x) = \frac{1}{\cos(\text{arcsen}(x))} = \frac{1}{\sqrt{1-x^2}}, ~~~ -1\lt x\lt1.
+\end{equation*}
 </div>
 </div></body>
 </html>
