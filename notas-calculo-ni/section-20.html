@@ -1,63 +1,206 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:46:49-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UFRPE-DM Regra de L’Hôpital no Cálculo de Limites</title>
+<title>UFRPE-DM Teorema de Rolle e do Valor Médio</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo NI">
+<meta property="book:author" content="Clessius Silva">
+<meta property="book:author" content="Leon Silva">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NI:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Clessius Silva, Leon Silva, Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-19.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="04derivadas2.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-21.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -71,75 +214,529 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NI:</span> <span class="subtitle">notas de aula</span></a></h1>
-<p class="byline">Clessius Silva, Leon Silva, Ricardo Machado</p>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-clessius-silva.html" class="internal"><span class="title">Sobre Clessus Silva</span></a></div></li>
+<li><div class="toc-item"><a href="prof-leon-silva.html" class="internal"><span class="title">Sobre Leon Silva</span></a></div></li>
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01funcoes.html" class="internal"><span class="codenumber">1</span> <span class="title">Funções Reais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Números Reais e Propriedades</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Números Reais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Desigualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-3" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Valor Absoluto</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Intervalos</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Conceito de Funções</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Funções Elementares e Gráficos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsection-5" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Gráfico de uma função real</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-6" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Função Constante e Função Definida por Partes</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-7" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Função Afim</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-8" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Função Polinomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-9" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Função Racional</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-10" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Função Algébrica</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-11" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Função Modular</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercises-1" class="internal"><span class="codenumber">1.3.8</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Funções Injetoras, Sobrejetoras e Bijetoras</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-4.html#exercises-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Funções Exponenciais e Funções Logarítmicas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsection-12" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Funções Exponenciais</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-5.html#subsection-13" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Funções Logarítmicas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-5.html#exercises-3" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Funções Trigonométricas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-14" class="internal"><span class="codenumber">1.6.1</span> <span class="title">A função Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-15" class="internal"><span class="codenumber">1.6.2</span> <span class="title">A função Cotangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-16" class="internal"><span class="codenumber">1.6.3</span> <span class="title">A função Secante</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-6.html#subsection-17" class="internal"><span class="codenumber">1.6.4</span> <span class="title">A função Cossecante</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-6.html#exercises-4" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Identidades Trigonométricas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-7.html#exercises-5" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Funções Trigonométricas Inversas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-8.html#subsection-18" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Função Arco-Seno</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-19" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Função Arco-Cosseno</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-20" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Função Arco-Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-21" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Função Arco-Cotangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-22" class="internal"><span class="codenumber">1.8.5</span> <span class="title">Funções Arco-Secante e Arco-Cossecante</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#exercises-6" class="internal"><span class="codenumber">1.8.6</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02limites.html" class="internal"><span class="codenumber">2</span> <span class="title">Limites e Continuidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Limite: Conceito e Noção Intuitiva</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-9.html#subsec-fun_cont" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Função Contínua</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html#ididid" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Limite</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html#exercises-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Limites Laterais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-10.html#subsec-limites-laterais" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Limites Laterais</span></a></div></li>
+<li><div class="toc-item"><a href="section-10.html#subsection-26" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Limite de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="section-10.html#exercises-8" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">2.3</span> <span class="title">O Teorema do Confronto</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-11.html#subsec-confronto" class="internal"><span class="codenumber">2.3.1</span> <span class="title">O Teorema do Confronto</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html#subsection-28" class="internal"><span class="codenumber">2.3.2</span> <span class="title">O limite fundamental <span class="process-math">\(\displaystyle\lim_{x\rightarrow 0} \frac{sen~{x}}{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html#exercises-9" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Limites no Infinito</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-12.html#subsection-29" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Limites no Infinito</span></a></div></li>
+<li><div class="toc-item"><a href="section-12.html#exercises-10" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">2.5</span> <span class="title">O número <span class="process-math">\(e\)</span></span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-13.html#exercises-11" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="03derivadas.html" class="internal"><span class="codenumber">3</span> <span class="title">Derivadas</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivadas: Conceito e Interpretação Geométrica</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-14.html#subsection-30" class="internal"><span class="codenumber">3.1.1</span> <span class="title">A Derivada como uma Função</span></a></div></li>
+<li><div class="toc-item"><a href="section-14.html#exercises-12" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-15.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Derivadas das Funções Elementares</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-15.html#subsection-31" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Derivadas das Funções <span class="process-math">\(x^n\)</span> e <span class="process-math">\(\sqrt[n]{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html#subsection-32" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Derivadas das Funções <span class="process-math">\(e^x\)</span> e <span class="process-math">\(\ln{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html#subsection-33" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Derivadas das Funções Trigonométricas</span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html#exercises-13" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-16.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Derivabilidade e Continuidade, Regras de Derivação</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-16.html#subsection-34" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Derivabilidade e Continuidade</span></a></div></li>
+<li><div class="toc-item"><a href="section-16.html#subsection-35" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Regras de Derivação</span></a></div></li>
+<li><div class="toc-item"><a href="section-16.html#exercises-14" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-17.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Derivada da Função Composta, Derivada de Função Implícita e Inversa</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-17.html#subsection-36" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Notação de Leibniz</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsection-37" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Derivada da Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsection-38" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Derivada de Função Dada Implicitamente</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsection-39" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Derivada da Função Inversa</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#exercises-15" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="04derivadas2.html" class="internal"><span class="codenumber">4</span> <span class="title">Derivadas: Aplicações</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-18.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Problemas de Taxa de Variação</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-18.html#exercises-16" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Regras de L'Hospital</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-19.html#exercises-17" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-20.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Teorema de Rolle e do Valor Médio</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-20.html#subsection-40" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Teorema do Valor Médio</span></a></div></li>
+<li><div class="toc-item"><a href="section-20.html#subsection-41" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Aplicações do Teorema do Valor Médio</span></a></div></li>
+<li><div class="toc-item"><a href="section-20.html#exercises-18" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-21.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Esboço de Gráficos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-21.html#subsection-42" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Roteiro Base para Esboço de Gráficos</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html#subsec-assintotas" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Assíntotas</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html#subsec-maxmin" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Máximos e Mínimos</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html#exercises-19" class="internal"><span class="codenumber">4.4.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">5</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-20"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">4.3</span> <span class="title">Teorema de Rolle e do Valor Médio</span>
+</h2>
+<section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">4.3.1</span> <span class="title">Teorema do Valor Médio</span>
+</h3>
+<article class="theorem theorem-like" id="teo-weie"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-458"><dfn class="terminology">(Teorema de Weierstrass)</dfn></div>
+<div class="para logical" id="p-459">
+<div class="para">Seja <span class="process-math">\(f\)</span> uma função contínua no intervalo <span class="process-math">\([a, b]\text{,}\)</span> então existem <span class="process-math">\(x_1\)</span> e <span class="process-math">\(x_2\)</span> em <span class="process-math">\([a, b]\)</span> tais que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x_1)\leq f(x)\leq f(x_2) \quad \forall ~~ x\in [a, b].
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-20"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><div class="para" id="p-460">Veja págino 81 do livro <a href="" class="xref" data-knowl="./knowl/LIMAv1.html" title="Referência bibliográfica 5.2">[5.2]</a>.</div></article></div>
+<article class="example example-like" id="example-94"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-461">Seja <span class="process-math">\(f=(x^3-10x^2+50)/15\text{.}\)</span>
+</div> <figure class="figure figure-like" id="fig-wie"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/wie.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="theorem theorem-like" id="teo-rolle"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-462"><dfn class="terminology">(Teorema de Rolle)</dfn></div>
+<div class="para" id="p-463">Seja <span class="process-math">\(f\)</span> uma função contínua no intervalo <span class="process-math">\([a, b]\text{,}\)</span> derivável em <span class="process-math">\((a, b)\)</span> com <span class="process-math">\(f(a)=f(b)\text{,}\)</span> então existirá pelo menos um <span class="process-math">\(c\in (a, b)\)</span> tal que <span class="process-math">\(f'(c)=0\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig-rolle"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-teo-rolle.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.3.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="hiddenproof" id="proof-21"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><div class="para" id="p-464">
+<dfn class="terminology">Caso 1:</dfn> <span class="process-math">\(f\)</span> é constante em <span class="process-math">\([a, b]\text{.}\)</span> Neste caso <span class="process-math">\(f'(x)=0\)</span> em <span class="process-math">\((a, b)\text{,}\)</span> logo, para qualquer <span class="process-math">\(c\in (a, b)\text{,}\)</span> temos <span class="process-math">\(f'(c)=0\text{.}\)</span>
+</div> <div class="para" id="p-465">
+<dfn class="terminology">Caso 2:</dfn> <span class="process-math">\(f\)</span> não é constante em <span class="process-math">\([a, b]\text{.}\)</span> Como <span class="process-math">\(f\)</span> é contínua em <span class="process-math">\([a, b]\text{,}\)</span> pelo Teorema de Weierstrass (<a href="" class="xref" data-knowl="./knowl/teo-weie.html" title="Teorema 4.3.1">Teorema 4.3.1</a>), existem <span class="process-math">\(x_1\)</span> e <span class="process-math">\(x_2\)</span> em <span class="process-math">\([a, b]\text{,}\)</span> tais que <span class="process-math">\(f(x_1)\)</span> e <span class="process-math">\(f(x_2)\)</span> são, respectivamente, os valores mínimo e máximo de <span class="process-math">\(f\)</span> em <span class="process-math">\([a, b]\text{.}\)</span> Como <span class="process-math">\(f\)</span> não é constante, temos <span class="process-math">\(f(x_1)\neq f(x_2)\)</span> e como <span class="process-math">\(f(a) = f(b)\text{,}\)</span> necessariamente <span class="process-math">\(x_1\)</span> ou <span class="process-math">\(x_2\)</span> pertence a <span class="process-math">\((a, b)\text{.}\)</span> Daí, como a derivada nos pontos de mínimo e máximo são iguais a zero, temos <span class="process-math">\(f'(x_1)=0\)</span> ou <span class="process-math">\(f'(x_2)=0\text{.}\)</span> Portanto, existe <span class="process-math">\(c\)</span> em <span class="process-math">\((a, b)\)</span> tal que <span class="process-math">\(f'(c)=0\text{.}\)</span>
+</div></article></div>
+<article class="theorem theorem-like" id="theorem-29"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-466"><dfn class="terminology">Teorema do Valor Médio (TVM).</dfn></div>
+<div class="para logical" id="p-467">
+<div class="para">Se <span class="process-math">\(f\)</span> for contínua no intervalo <span class="process-math">\([a, b]\)</span> e derivável em <span class="process-math">\((a, b)\text{,}\)</span> então existirá pelo menos um <span class="process-math">\(c\)</span> em <span class="process-math">\((a, b)\)</span> tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(c) = \frac{f(b)-f(a)}{b-a}.
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-22"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><div class="para logical" id="p-468">
+<div class="para">Considere a função <span class="process-math">\(g(x)\text{,}\)</span> com <span class="process-math">\(x\in[a, b]\text{,}\)</span> dada por</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-rolle.html">
+\begin{equation*}
+g(x) = f(x) -\left(f(a) +  \frac{f(b)-f(a)}{b-a}(x-a)\right)
+\end{equation*}
+</div>
+<div class="para">Observe que <span class="process-math">\(g(a)=g(b)\)</span> e que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-rolle.html">
+\begin{equation*}
+g'(x) = f'(x) - \frac{f(b)-f(a)}{b-a}.
+\end{equation*}
+</div>
+<div class="para">Pelo Teorema de Rolle (<a href="" class="xref" data-knowl="./knowl/teo-rolle.html" title="Teorema 4.3.4">Teorema 4.3.4</a>), existe <span class="process-math">\(c\in(a, b)\)</span> tal que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-rolle.html">
+\begin{equation*}
+g'(c)=0
+\end{equation*}
+</div>
+<div class="para">Ou seja,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-rolle.html">
+\begin{equation*}
+0 = f'(c) - \frac{f(b)-f(a)}{b-a} \Rightarrow f'(c) = \frac{f(b)-f(a)}{b-a}. 
+\end{equation*}
+</div>
+</div></article></div>
+<article class="example example-like" id="example-95"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-469">
+<div class="para">Seja <span class="process-math">\(f=x^3-x^2\text{.}\)</span> No intervalo <span class="process-math">\([-7/10, 14/10]\text{,}\)</span> existem dois pontos <span class="process-math">\(c_1\)</span> e <span class="process-math">\(c_2\text{,}\)</span> nos quais,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(c_i) = \frac{f(1.4)-f(-0.7)}{1.4-(-0.7)},\quad i\in\{1,2\}.
+\end{equation*}
+</div>
+</div> <figure class="figure figure-like" id="fig-anim-tvm"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/ex-tvm.gif" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">4.3.2</span> <span class="title">Aplicações do Teorema do Valor Médio</span>
+</h3>
+<div class="para" id="p-470">Como consequência do Teorema do Valor Médio (TVM), temos o seguinte teorema:</div>
+<article class="theorem theorem-like" id="teo-aplica-tvm"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-471">
+<div class="para">Seja <span class="process-math">\(f\)</span> contínua no intervalo <span class="process-math">\((a,b)\text{.}\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="li-605"><div class="para" id="p-derived-li-605">Se <span class="process-math">\(f'(x)&gt;0\)</span> para todo <span class="process-math">\(x \in (a,b)\text{,}\)</span> então <span class="process-math">\(f\)</span> será estritamente crescente em <span class="process-math">\((a,b)\text{.}\)</span>
+</div></li>
+<li id="li-606"><div class="para" id="p-derived-li-606">Se <span class="process-math">\(f'(x)\lt 0 \)</span> para todo <span class="process-math">\(x \in (a,b)\text{,}\)</span> então <span class="process-math">\(f\)</span> será estritamente decrescente em <span class="process-math">\((a,b)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="hiddenproof" id="proof-23"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><div class="para logical" id="p-472">
+<div class="para">
+<dfn class="terminology">item a)</dfn> Já que <span class="process-math">\(f'(x)&gt;0\text{,}\)</span> <span class="process-math">\(\forall x \in (a, b)\text{,}\)</span> sejam, <span class="process-math">\(c, d \in (a, b)\text{,}\)</span> com <span class="process-math">\(c\lt d\text{.}\)</span> Vamos mostrar que <span class="process-math">\(f(c)\lt f(d).\)</span> Como <span class="process-math">\(f\)</span> satisfaz as hipóteses do TVM, existe <span class="process-math">\(\tilde{x}\in (c, d)\)</span> tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(d)-f(c) = f'(\tilde{x})(d-c). 
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(f'(\tilde{x})&gt;0\text{,}\)</span> pois <span class="process-math">\(\tilde{x}\in (a,b)\)</span> e <span class="process-math">\(d-c&gt;0,\)</span> segue</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(d) - f(c) &gt; 0 \Rightarrow f(c)\lt f(d). 
+\end{equation*}
+</div>
+<div class="para">Portando, como a escolha de <span class="process-math">\(c \lt d\text{,}\)</span> foi arbitrária, o resultado segue.</div>
+</div> <div class="para" id="p-473">
+<dfn class="terminology">item b)</dfn> Este item é análogo ao anterior.</div></article></div>
+<article class="example example-like" id="example-96"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-474">Determine os intervalos de crescimento e de decrescimento de <span class="process-math">\(f(x) = x^3-5x^2+3x+1\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><div class="para logical" id="p-475">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+f'(x) = 3x^2-10x+3 
+\end{equation*}
+</div>
+<div class="para">e</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+3x^2-10x+3 = 0 \Leftrightarrow x = \frac{1}{3} \text{ ou } x = 3. 
+\end{equation*}
+</div>
+<div class="para">Como o gráfico de <span class="process-math">\(f'(x)\)</span> é uma parábola, sabemos que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+\begin{cases} f'(x)&gt;0 \amp \text{ em } \left(-\infty, \frac{1}{3}\right)\cup \left( 3, +\infty \right) \\ 
+f'(x)\lt 0 \amp \text{ em } \left(\frac{1}{3}, 3 \right) \end{cases}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(f\)</span> é contínua, pelo <a href="" class="xref" data-knowl="./knowl/teo-aplica-tvm.html" title="Teorema 4.3.9">Teorema 4.3.9</a>, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+\begin{cases} f  \text{ é estritamente crescente em } \left(-\infty, \frac{1}{3}\right)\cup \left( 3, +\infty \right)  \\ 
+f  \text{ é estritamente decrescente em } \left(\frac{1}{3}, 3 \right) \end{cases}
+\end{equation*}
+</div>
+</div></div></div></article><article class="example example-like" id="example-97"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-476">
+<div class="para">Determine os intervalos de crescimento e de decrescimento de</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x) = \dfrac{x^2-x}{1+3x^2}.
+\end{equation*}
+</div>
+</div> <a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-33" id="answer-33"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-33"><div class="answer solution-like"><div class="para logical" id="p-477"><div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} f  \text{ é estritamente crescente em } \left(-\infty, -1\right)\cup \left( \frac{1}{3}, +\infty \right)  \\ 
+f  \text{ é estritamente decrescente em } \left(-1, \frac{1}{3} \right) \end{cases}
+\end{equation*}
+</div></div></div></div></article><article class="definition definition-like" id="definition-44"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-478">
+<div class="para">Sejam <span class="process-math">\(f\)</span> uma função derivável no intervalo <span class="process-math">\((a,b)\)</span> e <span class="process-math">\(T_p(x)\)</span> a reta tangente em <span class="process-math">\((p, f(p))\)</span> ao gráfico de <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(p\in (a, b)\text{.}\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="li-607"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:60%;"><div class="para logical" id="p-479">
+<div class="para">Dizemos que <span class="process-math">\(f\)</span> tem <em class="emphasis">concavidade para cima</em> em <span class="process-math">\((a, b)\)</span> se</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)&gt;T_p(x)
+\end{equation*}
+</div>
+<div class="para">para quaisquer <span class="process-math">\(x\)</span> e <span class="process-math">\(p\)</span> em <span class="process-math">\((a, b)\text{,}\)</span> com <span class="process-math">\(x\neq p\text{.}\)</span>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-19.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="04derivadas2.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-21.html" title="Próximo">Próximo</a></span></div>
+<div class="sbspanel middle" style="width:40%;"><img src="images/conc_up.svg" role="img" class="contained"></div>
+</div></div></li>
+<li id="li-608"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:60%;"><div class="para logical" id="p-480">
+<div class="para">Dizemos que <span class="process-math">\(f\)</span> tem <em class="emphasis">concavidade para baixo</em> em <span class="process-math">\((a, b)\)</span> se</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)\lt T_p(x) 
+\end{equation*}
 </div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-19.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="04derivadas2.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-21.html" title="Próximo">Próximo</a>
+<div class="para">para quaisquer <span class="process-math">\(x\)</span> e <span class="process-math">\(p\)</span> em <span class="process-math">\((a, b)\text{,}\)</span> com <span class="process-math">\(x\neq p.\)</span>
 </div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-clessius-silva.html" data-scroll="prof-clessius-silva">Sobre Clessus Silva</a></li>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="01funcoes.html" data-scroll="01funcoes"><span class="codenumber">1</span> <span class="title">Funções Reais</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Números Reais e Propriedades</a></li>
-<li><a href="section-2.html" data-scroll="section-2">Conceito de Funções</a></li>
-<li><a href="section-3.html" data-scroll="section-3">Funções Elementares e Gráficos</a></li>
-<li><a href="section-4.html" data-scroll="section-4">Funções Injetoras, Sobrejetoras e Bijetoras</a></li>
-<li><a href="section-5.html" data-scroll="section-5">Funções Exponenciais e Funções Logarítmicas</a></li>
-<li><a href="section-6.html" data-scroll="section-6">Funções Trigonométricas</a></li>
-<li><a href="section-7.html" data-scroll="section-7">Identidades Trigonométricas</a></li>
-<li><a href="section-8.html" data-scroll="section-8">Funções Trigonométricas Inversas</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="02limites.html" data-scroll="02limites"><span class="codenumber">2</span> <span class="title">Limites e Continuidade</span></a><ul>
-<li><a href="section-9.html" data-scroll="section-9">Limite: Conceito e Noção Intuitiva</a></li>
-<li><a href="section-10.html" data-scroll="section-10">Limites Laterais</a></li>
-<li><a href="section-11.html" data-scroll="section-11">O Teorema do Confronto</a></li>
-<li><a href="section-12.html" data-scroll="section-12">Limites no Infinito</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="03derivadas.html" data-scroll="03derivadas"><span class="codenumber">3</span> <span class="title">Derivadas</span></a><ul>
-<li><a href="section-13.html" data-scroll="section-13">Derivadas: Conceito e Interpretação Geométrica</a></li>
-<li><a href="section-14.html" data-scroll="section-14">Derivadas das Funções Elementares</a></li>
-<li><a href="section-15.html" data-scroll="section-15">Derivabilidade e Continuidade, Regras de Derivação</a></li>
-<li><a href="section-16.html" data-scroll="section-16">Derivada da Função Composta. Derivada da Função Inversa.</a></li>
-<li><a href="section-17.html" data-scroll="section-17">Problemas de Taxa de Variação</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="04derivadas2.html" data-scroll="04derivadas2"><span class="codenumber">4</span> <span class="title">Derivadas: Aplicações</span></a><ul>
-<li><a href="section-18.html" data-scroll="section-18">Máximos e Mínimos</a></li>
-<li><a href="section-19.html" data-scroll="section-19">Teorema de Rolle e do Valor Médio</a></li>
-<li><a href="section-20.html" data-scroll="section-20" class="active">Regra de L’Hôpital no Cálculo de Limites</a></li>
-<li><a href="section-21.html" data-scroll="section-21">Região de Crescimento e Concavidade. Esboço de Gráficos</a></li>
-<li><a href="section-22.html" data-scroll="section-22">Resoluções de Problemas Pertinentes</a></li>
-<li><a href="exercises-16.html" data-scroll="exercises-16">Exercícios</a></li>
-</ul>
-</li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">5</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-20"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">4.3</span> <span class="title">Regra de L’Hôpital no Cálculo de Limites</span>
-</h2></section></div></main>
+<div class="sbspanel middle" style="width:40%;"><img src="images/conc_down.svg" role="img" class="contained"></div>
+</div></div></li>
+</ol>
+</div></article><article class="definition definition-like" id="definition-45"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.3.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-481">Sejam <span class="process-math">\(f\)</span> uma função e <span class="process-math">\(p\in D_f\text{,}\)</span> com <span class="process-math">\(f\)</span> contínua em <span class="process-math">\(p\text{.}\)</span> Dizemos que <span class="process-math">\(p\)</span> é <em class="emphasis">ponto de inflexão</em> de <span class="process-math">\(f\)</span> se existem <span class="process-math">\(a, b \in D_f\text{,}\)</span> com <span class="process-math">\(p\in (a, b)\text{,}\)</span> tal que as concavidades de <span class="process-math">\(f\)</span> em <span class="process-math">\((a, p)\)</span> e em <span class="process-math">\((p, b)\)</span> sejam opostas.</div></article><article class="theorem theorem-like" id="theorem-31"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.14</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-482">
+<div class="para">Seja <span class="process-math">\(f\)</span> uma função que admite derivada até 2ª ordem no intervalo <span class="process-math">\((a, b)\text{.}\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="li-609"><div class="para" id="p-derived-li-609">Se <span class="process-math">\(f''(x)&gt;0\)</span> para <span class="process-math">\(x \in (a,b)\text{,}\)</span> então <span class="process-math">\(f\)</span> terá <em class="emphasis">concavidade para cima</em> em <span class="process-math">\((a, b)\text{.}\)</span>
+</div></li>
+<li id="li-610"><div class="para" id="p-derived-li-610">Se <span class="process-math">\(f''(x)\lt 0\)</span> para <span class="process-math">\(x \in (a,b)\text{,}\)</span> então <span class="process-math">\(f\)</span> terá <em class="emphasis">concavidade para baixo</em> em <span class="process-math">\((a, b)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="hiddenproof" id="proof-24"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-24"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><div class="para logical" id="p-483">
+<div class="para">
+<dfn class="terminology">item a)</dfn> Sejam <span class="process-math">\(f''(x)&gt;0\)</span> para <span class="process-math">\(x \in (a,b)\)</span> e <span class="process-math">\(p \in (a, b)\)</span> arbitrário. Vamos mostrar que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html ./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+f(x)&gt;T_p(x),
+\end{equation*}
+</div>
+<div class="para">para todo <span class="process-math">\(x\in (a, b)\text{,}\)</span> com <span class="process-math">\(x\neq p\text{,}\)</span> na qual, <span class="process-math">\(T_p(x) = f'(p)(x-p)+f(p)\text{.}\)</span> Considere <span class="process-math">\(g(x) = f(x)-T_p(x)\text{,}\)</span> logo</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html ./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+g'(x) = f'(x)-f'(p), ~~ x\in(a,b), 
+\end{equation*}
+</div>
+<div class="para">pois <span class="process-math">\(T_p'(x) = f'(p)\text{.}\)</span> Como <span class="process-math">\(f''(x)&gt;0\)</span> em <span class="process-math">\((a, b)\text{,}\)</span> pelo <a href="" class="xref" data-knowl="./knowl/teo-aplica-tvm.html" title="Teorema 4.3.9">Teorema 4.3.9</a>, <span class="process-math">\(f'\)</span> é estritamente crescente em <span class="process-math">\((a, b)\text{.}\)</span> Então,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html ./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+\begin{cases} 
+g'(x)&gt;0, \amp \text{para } x&gt;p \\
+g'(x)\lt 0, \amp \text{para } x\lt p. \end{cases}
+\end{equation*}
+</div>
+<div class="para">Mais uma vez pelo <a href="" class="xref" data-knowl="./knowl/teo-aplica-tvm.html" title="Teorema 4.3.9">Teorema 4.3.9</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html ./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+\begin{cases} 
+g(x) \text{ é estritamente decrescente para } x\lt p, \text{ com } x\in (a, b)\\
+g(x) \text{ é estritamente crescente para } x&gt;p, \text{ com } x\in (a, b). \end{cases}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(g(p)=0\text{,}\)</span> temos <span class="process-math">\(g(x)&gt;0\)</span> para todo <span class="process-math">\(x\in(a, b)\text{,}\)</span> <span class="process-math">\(x\neq p\text{.}\)</span> E como <span class="process-math">\(g(x) = f(x) - T_p(x)\text{,}\)</span> temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-aplica-tvm.html ./knowl/teo-aplica-tvm.html">
+\begin{equation*}
+f(x)&gt;T_p(x) \text{ para todo } x\in(a, b), x\neq p.
+\end{equation*}
+</div>
+</div></article></div>
+<article class="example example-like" id="example-98"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-484">
+<div class="para">Estude a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x) = x^3-3x^2-9x,
+\end{equation*}
+</div>
+<div class="para">com relação à concavidade e pontos de inflexão.</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><div class="para logical" id="p-485">
+<div class="displaymath process-math">
+\begin{equation*}
+f''(x) = 6x-6
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+6x-6 = 0 \Leftrightarrow x = 1
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} 
+6x-6&gt;0, \amp \text{para } x&gt;1\text{. Concavidade para cima em } (1, +\infty) \\
+6x-6\lt 0, \amp \text{para } x\lt 1\text{. Concavidade para baixo em } (-\infty, 1) \\
+6x-6=0, \amp \text{Ponto de inflexão em } x=1.
+\end{cases}
+\end{equation*}
+</div>
+</div></div></div></article><article class="example example-like" id="example-99"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.16</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-486">
+<div class="para">Estude a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x) = x^2+\frac{1}{x},
+\end{equation*}
+</div>
+<div class="para">com relação à concavidade e pontos de inflexão.</div>
+</div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><pre class="ptx-sagecell hidden-sagecell-sage" id="sage-53"><script type="text/x-sage">f=x^2+1/x
+plot(f, (-3, 3), ymin=-6, ymax=6, detect_poles='show', figsize=5)
+</script></pre></div></div></article></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">4.3.3</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-54"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-487">Determine os intervalos de crescimento e de decrescimento das funções e esboce o gráfico das funções:</div>
+<ol class="lower-alpha cols2">
+<li id="li-611"><div class="para" id="p-derived-li-611"><span class="process-math">\(\displaystyle f(x) = x^3-3x^2+1\)</span></div></li>
+<li id="li-612"><div class="para" id="p-derived-li-612"><span class="process-math">\(\displaystyle f(x) = x^3+2x^2+x+1\)</span></div></li>
+<li id="li-613"><div class="para" id="p-derived-li-613"><span class="process-math">\(\displaystyle f(x) = x+\frac{1}{x}\)</span></div></li>
+<li id="li-614"><div class="para" id="p-derived-li-614"><span class="process-math">\(\displaystyle f(x) = 3x^5-5x^3\)</span></div></li>
+<li id="li-615"><div class="para" id="p-derived-li-615"><span class="process-math">\(\displaystyle f(x) = e^{2x}-e^x\)</span></div></li>
+<li id="li-616"><div class="para" id="p-derived-li-616"><span class="process-math">\(\displaystyle f(x) = \frac{x^3-x^2+1}{x}\)</span></div></li>
+<li id="li-617"><div class="para" id="p-derived-li-617"><span class="process-math">\(\displaystyle f(x) = xe^x\)</span></div></li>
+<li id="li-618"><div class="para" id="p-derived-li-618"><span class="process-math">\(\displaystyle f(x) = \frac{\ln{x}}{x}\)</span></div></li>
+<li id="li-619"><div class="para" id="p-derived-li-619"><span class="process-math">\(\displaystyle f(x) = \frac{x^2-x+1}{2x-2}\)</span></div></li>
+<li id="li-620"><div class="para" id="p-derived-li-620"><span class="process-math">\(\displaystyle f(x) = x-e^x\)</span></div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-55"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-488">Estude a função dada com relação à concavidade e pontos de inflexão.</div>
+<ol class="lower-alpha cols2">
+<li id="li-621"><div class="para" id="p-derived-li-621"><span class="process-math">\(\displaystyle f(x) = x^3-3x^2+1\)</span></div></li>
+<li id="li-622"><div class="para" id="p-derived-li-622"><span class="process-math">\(\displaystyle f(x) = x^3+2x^2+x+1\)</span></div></li>
+<li id="li-623"><div class="para" id="p-derived-li-623"><span class="process-math">\(\displaystyle f(x) = x+\frac{1}{x}\)</span></div></li>
+<li id="li-624"><div class="para" id="p-derived-li-624"><span class="process-math">\(\displaystyle f(x) = 3x^5-5x^3\)</span></div></li>
+<li id="li-625"><div class="para" id="p-derived-li-625"><span class="process-math">\(\displaystyle f(x) = e^{2x}-e^x\)</span></div></li>
+<li id="li-626"><div class="para" id="p-derived-li-626"><span class="process-math">\(\displaystyle f(x) = \frac{x^3-x^2+1}{x}\)</span></div></li>
+<li id="li-627"><div class="para" id="p-derived-li-627"><span class="process-math">\(\displaystyle f(x) = xe^x\)</span></div></li>
+<li id="li-628"><div class="para" id="p-derived-li-628"><span class="process-math">\(\displaystyle f(x) = \frac{\ln{x}}{x}\)</span></div></li>
+<li id="li-629"><div class="para" id="p-derived-li-629"><span class="process-math">\(\displaystyle f(x) = \frac{x^2-x+1}{2x-2}\)</span></div></li>
+<li id="li-630"><div class="para" id="p-derived-li-630"><span class="process-math">\(\displaystyle f(x) = x-e^x\)</span></div></li>
+</ol></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-19.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-21.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

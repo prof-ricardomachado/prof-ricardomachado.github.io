@@ -1,71 +1,206 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:46:48-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Funções Exponenciais e Funções Logarítmicas</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo NI">
+<meta property="book:author" content="Clessius Silva">
+<meta property="book:author" content="Leon Silva">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NI:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Clessius Silva, Leon Silva, Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-4.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="01funcoes.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-6.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -79,240 +214,410 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NI:</span> <span class="subtitle">notas de aula</span></a></h1>
-<p class="byline">Clessius Silva, Leon Silva, Ricardo Machado</p>
-</div>
-</div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-4.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="01funcoes.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-6.html" title="Próximo">Próximo</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-4.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="01funcoes.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-6.html" title="Próximo">Próximo</a>
-</div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-clessius-silva.html" data-scroll="prof-clessius-silva">Sobre Clessus Silva</a></li>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-clessius-silva.html" class="internal"><span class="title">Sobre Clessus Silva</span></a></div></li>
+<li><div class="toc-item"><a href="prof-leon-silva.html" class="internal"><span class="title">Sobre Leon Silva</span></a></div></li>
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="01funcoes.html" data-scroll="01funcoes"><span class="codenumber">1</span> <span class="title">Funções Reais</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Números Reais e Propriedades</a></li>
-<li><a href="section-2.html" data-scroll="section-2">Conceito de Funções</a></li>
-<li><a href="section-3.html" data-scroll="section-3">Funções Elementares e Gráficos</a></li>
-<li><a href="section-4.html" data-scroll="section-4">Funções Injetoras, Sobrejetoras e Bijetoras</a></li>
-<li><a href="section-5.html" data-scroll="section-5" class="active">Funções Exponenciais e Funções Logarítmicas</a></li>
-<li><a href="section-6.html" data-scroll="section-6">Funções Trigonométricas</a></li>
-<li><a href="section-7.html" data-scroll="section-7">Identidades Trigonométricas</a></li>
-<li><a href="section-8.html" data-scroll="section-8">Funções Trigonométricas Inversas</a></li>
+<li>
+<div class="toc-item"><a href="01funcoes.html" class="internal"><span class="codenumber">1</span> <span class="title">Funções Reais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Números Reais e Propriedades</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Números Reais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Desigualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-3" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Valor Absoluto</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-4" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Intervalos</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="02limites.html" data-scroll="02limites"><span class="codenumber">2</span> <span class="title">Limites e Continuidade</span></a><ul>
-<li><a href="section-9.html" data-scroll="section-9">Limite: Conceito e Noção Intuitiva</a></li>
-<li><a href="section-10.html" data-scroll="section-10">Limites Laterais</a></li>
-<li><a href="section-11.html" data-scroll="section-11">O Teorema do Confronto</a></li>
-<li><a href="section-12.html" data-scroll="section-12">Limites no Infinito</a></li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Conceito de Funções</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Funções Elementares e Gráficos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsection-5" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Gráfico de uma função real</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-6" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Função Constante e Função Definida por Partes</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-7" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Função Afim</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-8" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Função Polinomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-9" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Função Racional</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-10" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Função Algébrica</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-11" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Função Modular</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercises-1" class="internal"><span class="codenumber">1.3.8</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="03derivadas.html" data-scroll="03derivadas"><span class="codenumber">3</span> <span class="title">Derivadas</span></a><ul>
-<li><a href="section-13.html" data-scroll="section-13">Derivadas: Conceito e Interpretação Geométrica</a></li>
-<li><a href="section-14.html" data-scroll="section-14">Derivadas das Funções Elementares</a></li>
-<li><a href="section-15.html" data-scroll="section-15">Derivabilidade e Continuidade, Regras de Derivação</a></li>
-<li><a href="section-16.html" data-scroll="section-16">Derivada da Função Composta. Derivada da Função Inversa.</a></li>
-<li><a href="section-17.html" data-scroll="section-17">Problemas de Taxa de Variação</a></li>
+<li>
+<div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Funções Injetoras, Sobrejetoras e Bijetoras</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-4.html#exercises-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Funções Exponenciais e Funções Logarítmicas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsection-12" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Funções Exponenciais</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-5.html#subsection-13" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Funções Logarítmicas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-5.html#exercises-3" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link">
-<a href="04derivadas2.html" data-scroll="04derivadas2"><span class="codenumber">4</span> <span class="title">Derivadas: Aplicações</span></a><ul>
-<li><a href="section-18.html" data-scroll="section-18">Máximos e Mínimos</a></li>
-<li><a href="section-19.html" data-scroll="section-19">Teorema de Rolle e do Valor Médio</a></li>
-<li><a href="section-20.html" data-scroll="section-20">Regra de L’Hôpital no Cálculo de Limites</a></li>
-<li><a href="section-21.html" data-scroll="section-21">Região de Crescimento e Concavidade. Esboço de Gráficos</a></li>
-<li><a href="section-22.html" data-scroll="section-22">Resoluções de Problemas Pertinentes</a></li>
-<li><a href="exercises-16.html" data-scroll="exercises-16">Exercícios</a></li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Funções Trigonométricas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-14" class="internal"><span class="codenumber">1.6.1</span> <span class="title">A função Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-15" class="internal"><span class="codenumber">1.6.2</span> <span class="title">A função Cotangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-16" class="internal"><span class="codenumber">1.6.3</span> <span class="title">A função Secante</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-6.html#subsection-17" class="internal"><span class="codenumber">1.6.4</span> <span class="title">A função Cossecante</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-6.html#exercises-4" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">5</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-5"><h2 class="heading hide-type">
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Identidades Trigonométricas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-7.html#exercises-5" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Funções Trigonométricas Inversas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-8.html#subsection-18" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Função Arco-Seno</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-19" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Função Arco-Cosseno</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-20" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Função Arco-Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-21" class="internal"><span class="codenumber">1.8.4</span> <span class="title">Função Arco-Cotangente</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#subsection-22" class="internal"><span class="codenumber">1.8.5</span> <span class="title">Funções Arco-Secante e Arco-Cossecante</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#exercises-6" class="internal"><span class="codenumber">1.8.6</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02limites.html" class="internal"><span class="codenumber">2</span> <span class="title">Limites e Continuidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Limite: Conceito e Noção Intuitiva</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-9.html#subsec-fun_cont" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Função Contínua</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html#ididid" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Limite</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html#exercises-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Limites Laterais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-10.html#subsec-limites-laterais" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Limites Laterais</span></a></div></li>
+<li><div class="toc-item"><a href="section-10.html#subsection-26" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Limite de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="section-10.html#exercises-8" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">2.3</span> <span class="title">O Teorema do Confronto</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-11.html#subsec-confronto" class="internal"><span class="codenumber">2.3.1</span> <span class="title">O Teorema do Confronto</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html#subsection-28" class="internal"><span class="codenumber">2.3.2</span> <span class="title">O limite fundamental <span class="process-math">\(\displaystyle\lim_{x\rightarrow 0} \frac{sen~{x}}{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html#exercises-9" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Limites no Infinito</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-12.html#subsection-29" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Limites no Infinito</span></a></div></li>
+<li><div class="toc-item"><a href="section-12.html#exercises-10" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">2.5</span> <span class="title">O número <span class="process-math">\(e\)</span></span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-13.html#exercises-11" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="03derivadas.html" class="internal"><span class="codenumber">3</span> <span class="title">Derivadas</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivadas: Conceito e Interpretação Geométrica</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-14.html#subsection-30" class="internal"><span class="codenumber">3.1.1</span> <span class="title">A Derivada como uma Função</span></a></div></li>
+<li><div class="toc-item"><a href="section-14.html#exercises-12" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-15.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Derivadas das Funções Elementares</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-15.html#subsection-31" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Derivadas das Funções <span class="process-math">\(x^n\)</span> e <span class="process-math">\(\sqrt[n]{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html#subsection-32" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Derivadas das Funções <span class="process-math">\(e^x\)</span> e <span class="process-math">\(\ln{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html#subsection-33" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Derivadas das Funções Trigonométricas</span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html#exercises-13" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-16.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Derivabilidade e Continuidade, Regras de Derivação</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-16.html#subsection-34" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Derivabilidade e Continuidade</span></a></div></li>
+<li><div class="toc-item"><a href="section-16.html#subsection-35" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Regras de Derivação</span></a></div></li>
+<li><div class="toc-item"><a href="section-16.html#exercises-14" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-17.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Derivada da Função Composta, Derivada de Função Implícita e Inversa</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-17.html#subsection-36" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Notação de Leibniz</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsection-37" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Derivada da Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsection-38" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Derivada de Função Dada Implicitamente</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#subsection-39" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Derivada da Função Inversa</span></a></div></li>
+<li><div class="toc-item"><a href="section-17.html#exercises-15" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="04derivadas2.html" class="internal"><span class="codenumber">4</span> <span class="title">Derivadas: Aplicações</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-18.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Problemas de Taxa de Variação</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-18.html#exercises-16" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Regras de L'Hospital</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-19.html#exercises-17" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-20.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Teorema de Rolle e do Valor Médio</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-20.html#subsection-40" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Teorema do Valor Médio</span></a></div></li>
+<li><div class="toc-item"><a href="section-20.html#subsection-41" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Aplicações do Teorema do Valor Médio</span></a></div></li>
+<li><div class="toc-item"><a href="section-20.html#exercises-18" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-21.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Esboço de Gráficos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-21.html#subsection-42" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Roteiro Base para Esboço de Gráficos</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html#subsec-assintotas" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Assíntotas</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html#subsec-maxmin" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Máximos e Mínimos</span></a></div></li>
+<li><div class="toc-item"><a href="section-21.html#exercises-19" class="internal"><span class="codenumber">4.4.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">5</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-5"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1.5</span> <span class="title">Funções Exponenciais e Funções Logarítmicas</span>
 </h2>
 <section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">1.5.1</span> <span class="title">Funções Exponenciais</span>
 </h3>
-<article class="definition definition-like" id="definition-21"><h6 class="heading">
+<article class="definition definition-like" id="definition-21"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
-</h6>
-<p id="p-129">Uma função exponencial é uma função da forma</p>
-<div class="displaymath">
+</h4>
+<div class="para logical" id="p-132">
+<div class="para">Uma função exponencial é uma função da forma</div>
+<div class="displaymath process-math">
 \begin{equation*}
 f(x) = a^x,
 \end{equation*}
 </div>
-<p data-braille="continuation">em que \(a&gt;0\) e \(a\neq 1\text{.}\)</p></article><article class="remark remark-like" id="remark-9"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
-</h6>
-<p id="p-130">Lembre que: sendo \(a&gt;0\text{,}\) se \(n\in \mathbb{N}\) e \(m\in \mathbb{Z}\text{,}\) então</p>
+<div class="para">em que <span class="process-math">\(a&gt;0\)</span> e <span class="process-math">\(a\neq 1\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="remark-9"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-133">
+<div class="para">Lembre que: sendo <span class="process-math">\(a&gt;0\text{,}\)</span> se <span class="process-math">\(n\in \mathbb{N}\)</span> e <span class="process-math">\(m\in \mathbb{Z}\text{,}\)</span> então</div>
 <ul class="disc">
-<li id="li-140">\(\displaystyle a^n = \underbrace{a\cdot a \cdot a\cdots a}_{n fatores}\)</li>
-<li id="li-141">\(\displaystyle a^{-n}=\frac{1}{a^n}\)</li>
-<li id="li-142">\(\displaystyle a^0=1\)</li>
-<li id="li-143">\(\displaystyle a^\frac{m}{n} = \sqrt[n]{a^m}\)</li>
-</ul></article><article class="remark remark-like" id="remark-10"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
-</h6>
-<p id="p-131">A função exponencial \(f(x)=a^x\text{,}\) em que \(a&gt;0\) e \(a\neq 1\text{,}\) tem domínio \(\mathbb{R}\) e imagem \((0, +\infty)\text{.}\) O gráfico de \(f\) tem uma das seguintes formas: <div class="sagecell-sage" id="sage-15"><script type="text/x-sage">f=2^x
+<li id="li-140"><div class="para" id="p-derived-li-140"><span class="process-math">\(\displaystyle a^n = \underbrace{a\cdot a \cdot a\cdots a}_{n fatores}\)</span></div></li>
+<li id="li-141"><div class="para" id="p-derived-li-141"><span class="process-math">\(\displaystyle a^{-n}=\frac{1}{a^n}\)</span></div></li>
+<li id="li-142"><div class="para" id="p-derived-li-142"><span class="process-math">\(\displaystyle a^0=1\)</span></div></li>
+<li id="li-143"><div class="para" id="p-derived-li-143"><span class="process-math">\(\displaystyle a^\frac{m}{n} = \sqrt[n]{a^m}\)</span></div></li>
+</ul>
+</div></article><article class="remark remark-like" id="remark-10"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-134">A função exponencial <span class="process-math">\(f(x)=a^x\text{,}\)</span> em que <span class="process-math">\(a&gt;0\)</span> e <span class="process-math">\(a\neq 1\text{,}\)</span> tem domínio <span class="process-math">\(\mathbb{R}\)</span> e imagem <span class="process-math">\((0, +\infty)\text{.}\)</span> O gráfico de <span class="process-math">\(f\)</span> tem uma das seguintes formas: <pre class="ptx-sagecell sagecell-sage" id="sage-15"><script type="text/x-sage">f=2^x
 plot(f, (x,-3,3), figsize=4)
-</script></div> <div class="sagecell-sage" id="sage-16"><script type="text/x-sage">f=(1/2)^x
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-16"><script type="text/x-sage">f=(1/2)^x
 plot(f, (x,-3,3), figsize=4)
-</script></div></p></article><article class="remark remark-like" id="remark-11"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
-</h6>
-<p id="p-132">(Propriedades dos expoentes) Sejam \(a\) e \(b\) numeros positivos e \(x,y\) números reais quaisquer, então:</p>
+</script></pre>
+</div></article><article class="remark remark-like" id="remark-11"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-135">
+<div class="para">(Propriedades dos expoentes) Sejam <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> numeros positivos e <span class="process-math">\(x,y\)</span> números reais quaisquer, então:</div>
 <ol class="decimal">
-<li id="li-144">\(\displaystyle a^{x+y}=a^xa^y\)</li>
-<li id="li-145">\(\displaystyle (a^x)^y=a^{xy}\)</li>
-<li id="li-146">\(\displaystyle a^{x-y}=\frac{a^x}{a^y}\)</li>
-<li id="li-147">\(\displaystyle (ab)^x=a^xb^x\)</li>
-<li id="li-148">\(\left(\frac{a}{b} \right)^x=\frac{a^x}{b^x}\text{,}\) se \(b\neq 0.\)</li>
-</ol></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<li id="li-144"><div class="para" id="p-derived-li-144"><span class="process-math">\(\displaystyle a^{x+y}=a^xa^y\)</span></div></li>
+<li id="li-145"><div class="para" id="p-derived-li-145"><span class="process-math">\(\displaystyle (a^x)^y=a^{xy}\)</span></div></li>
+<li id="li-146"><div class="para" id="p-derived-li-146"><span class="process-math">\(\displaystyle a^{x-y}=\frac{a^x}{a^y}\)</span></div></li>
+<li id="li-147"><div class="para" id="p-derived-li-147"><span class="process-math">\(\displaystyle (ab)^x=a^xb^x\)</span></div></li>
+<li id="li-148"><div class="para" id="p-derived-li-148">
+<span class="process-math">\(\left(\frac{a}{b} \right)^x=\frac{a^x}{b^x}\text{,}\)</span> se <span class="process-math">\(b\neq 0.\)</span>
+</div></li>
+</ol>
+</div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">1.5.2</span> <span class="title">Funções Logarítmicas</span>
 </h3>
-<p id="p-133">Toda função exponencial \(f(x)=a^x\text{,}\) com \(a&gt;0\) e \(a\neq 1\text{,}\) é uma função injetiva, portanto possui uma função inversa. A função inversa \(f^{-1}\) é chamada de <em class="emphasis">função logarítmica</em> com base \(a\) e é denotada por \(\log_a\text{.}\)</p>
-<article class="definition definition-like" id="definition-22"><h6 class="heading">
+<div class="para" id="p-136">Toda função exponencial <span class="process-math">\(f(x)=a^x\text{,}\)</span> com <span class="process-math">\(a&gt;0\)</span> e <span class="process-math">\(a\neq 1\text{,}\)</span> é uma função injetiva, portanto possui uma função inversa. A função inversa <span class="process-math">\(f^{-1}\)</span> é chamada de <em class="emphasis">função logarítmica</em> com base <span class="process-math">\(a\)</span> e é denotada por <span class="process-math">\(\log_a\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="definition-22"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
-</h6>
-<p id="p-134">Seja \(a\) um número real positivo com \(a\neq 1\text{.}\) A <em class="emphasis">função logarítmica com base \(a\)</em>, é definida por</p>
-<div class="displaymath">
+</h4>
+<div class="para logical" id="p-137">
+<div class="para">Seja <span class="process-math">\(a\)</span> um número real positivo com <span class="process-math">\(a\neq 1\text{.}\)</span> A <em class="emphasis">função logarítmica com base <span class="process-math">\(a\)</span></em>, é definida por</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \log_ax=y \Leftrightarrow a^y=x.
 \end{equation*}
-</div></article><article class="example example-like" id="example-22"><h6 class="heading">
+</div>
+</div></article><article class="example example-like" id="example-22"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
-</h6>
-<p id="p-135">Calcule:</p>
+</h4>
+<div class="para logical" id="p-138">
+<div class="para">Calcule:</div>
 <ol class="decimal">
-<li id="li-149">\(\displaystyle \log_3 27\)</li>
-<li id="li-150">\(\displaystyle \log_{\frac{1}{2}}16\)</li>
-<li id="li-151">\(\displaystyle \log_{16}4\)</li>
-</ol></article><article class="proposition theorem-like" id="proposition-7"><h6 class="heading">
-<span class="type">Proposição</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span>
-</h6>
-<p id="p-136">Propriedades básicas dos logarítmos</p>
-<ol class="decimal">
-<li id="li-152">\(\displaystyle \log_a1=0\)</li>
-<li id="li-153">\(\displaystyle \log_aa=1\)</li>
-<li id="li-154">\(\displaystyle \log_a a^x=x, ~ \forall~x\in\mathbb{R}\)</li>
-<li id="li-155">\(\displaystyle a^{\log_ax}=x, ~ \forall~x&gt;0\)</li>
-</ol></article><article class="example example-like" id="example-23"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
-</h6>
-<p id="p-137">Determine o valor de \(x\text{:}\)</p>
-<ol class="decimal cols2">
-<li id="li-156">\(\displaystyle \log_2 x=5\)</li>
-<li id="li-157">\(\displaystyle \log_3 243 =x\)</li>
-<li id="li-158">\(\displaystyle \log_5 x=2\)</li>
-<li id="li-159">\(\displaystyle \log_{10}0,01 =x\)</li>
-<li id="li-160">\(\displaystyle \log_3 x=3\)</li>
-<li id="li-161">\(\displaystyle \log_4 2=x\)</li>
-</ol></article><article class="remark remark-like" id="remark-12"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span>
-</h6>
-<p id="p-138">A função exponencial \(f(x)=a^x\text{,}\) em que \(a&gt;0\) e \(a\neq 1\text{,}\) tem domínio \(\mathbb{R}\) e imagem \((0, +\infty)\text{,}\) logo sua função inversa, \(f^{-1}(x)=\log_ax\) é obtido refletindo o gráfico de \(a^x\) em relação a reta \(y=x\text{.}\) O gráfico da função logarítmica tem uma das seguintes formas: <div class="sagecell-sage" id="sage-17"><script type="text/x-sage">f=log(x,2)
-plot(f, (x,0,5), figsize=4)
-</script></div> <div class="sagecell-sage" id="sage-18"><script type="text/x-sage">f=log(x,1/2)
-plot(f, (x,0,5), figsize=4)
-</script></div></p></article><article class="example example-like" id="example-24"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>
-</h6>
-<p id="p-139">Esboce o gráfico, determine o domínio e a assíntota de \(f(x)=\log_2(x-4)\)</p></article><article class="example example-like" id="example-25"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span>
-</h6>
-<p id="p-140">Determine o domínio das seguintes funções</p>
-<ol class="lower-alpha">
-<li id="li-162">\(\displaystyle f(x)=\log_3(x^2-1)\)</li>
-<li id="li-163">\(\displaystyle f(x)=\log_5(8-2x)\)</li>
+<li id="li-149"><div class="para" id="p-derived-li-149"><span class="process-math">\(\displaystyle \log_3 27\)</span></div></li>
+<li id="li-150"><div class="para" id="p-derived-li-150"><span class="process-math">\(\displaystyle \log_{\frac{1}{2}}16\)</span></div></li>
+<li id="li-151"><div class="para" id="p-derived-li-151"><span class="process-math">\(\displaystyle \log_{16}4\)</span></div></li>
 </ol>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
-<p id="p-141"><dfn class="terminology">item a)</dfn> Como o domínio de \(\log_3x\) é o conjunto \(\{x\in\mathbb{R} ~|~ x&gt;0\}\text{.}\) O domínio de \(\log_3(x^2-1)\) é dado pelo conjunto</p>
-<div class="displaymath">
+</div></article><article class="proposition theorem-like" id="proposition-7"><h4 class="heading">
+<span class="type">Proposição</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-139">
+<div class="para">Propriedades básicas dos logarítmos</div>
+<ol class="decimal">
+<li id="li-152"><div class="para" id="p-derived-li-152"><span class="process-math">\(\displaystyle \log_a1=0\)</span></div></li>
+<li id="li-153"><div class="para" id="p-derived-li-153"><span class="process-math">\(\displaystyle \log_aa=1\)</span></div></li>
+<li id="li-154"><div class="para" id="p-derived-li-154"><span class="process-math">\(\displaystyle \log_a a^x=x, ~ \forall~x\in\mathbb{R}\)</span></div></li>
+<li id="li-155"><div class="para" id="p-derived-li-155"><span class="process-math">\(\displaystyle a^{\log_ax}=x, ~ \forall~x&gt;0\)</span></div></li>
+</ol>
+</div></article><article class="example example-like" id="example-23"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-140">
+<div class="para">Determine o valor de <span class="process-math">\(x\text{:}\)</span>
+</div>
+<ol class="decimal cols2">
+<li id="li-156"><div class="para" id="p-derived-li-156"><span class="process-math">\(\displaystyle \log_2 x=5\)</span></div></li>
+<li id="li-157"><div class="para" id="p-derived-li-157"><span class="process-math">\(\displaystyle \log_3 243 =x\)</span></div></li>
+<li id="li-158"><div class="para" id="p-derived-li-158"><span class="process-math">\(\displaystyle \log_5 x=2\)</span></div></li>
+<li id="li-159"><div class="para" id="p-derived-li-159"><span class="process-math">\(\displaystyle \log_{10}0,01 =x\)</span></div></li>
+<li id="li-160"><div class="para" id="p-derived-li-160"><span class="process-math">\(\displaystyle \log_3 x=3\)</span></div></li>
+<li id="li-161"><div class="para" id="p-derived-li-161"><span class="process-math">\(\displaystyle \log_4 2=x\)</span></div></li>
+</ol>
+</div></article><article class="remark remark-like" id="remark-12"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-141">A função exponencial <span class="process-math">\(f(x)=a^x\text{,}\)</span> em que <span class="process-math">\(a&gt;0\)</span> e <span class="process-math">\(a\neq 1\text{,}\)</span> tem domínio <span class="process-math">\(\mathbb{R}\)</span> e imagem <span class="process-math">\((0, +\infty)\text{,}\)</span> logo sua função inversa, <span class="process-math">\(f^{-1}(x)=\log_ax\)</span> é obtido refletindo o gráfico de <span class="process-math">\(a^x\)</span> em relação a reta <span class="process-math">\(y=x\text{.}\)</span> O gráfico da função logarítmica tem uma das seguintes formas: <pre class="ptx-sagecell sagecell-sage" id="sage-17"><script type="text/x-sage">f=log(x,2)
+plot(f, (x,0,5), figsize=4)
+</script></pre> <pre class="ptx-sagecell sagecell-sage" id="sage-18"><script type="text/x-sage">f=log(x,1/2)
+plot(f, (x,0,5), figsize=4)
+</script></pre>
+</div></article><article class="example example-like" id="example-24"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-142">Esboce o gráfico, determine o domínio e a assíntota de <span class="process-math">\(f(x)=\log_2(x-4)\)</span>
+</div></article><article class="example example-like" id="example-25"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-143">
+<div class="para">Determine o domínio das seguintes funções</div>
+<ol class="lower-alpha">
+<li id="li-162"><div class="para" id="p-derived-li-162"><span class="process-math">\(\displaystyle f(x)=\log_3(x^2-1)\)</span></div></li>
+<li id="li-163"><div class="para" id="p-derived-li-163"><span class="process-math">\(\displaystyle f(x)=\log_5(8-2x)\)</span></div></li>
+</ol>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<div class="para logical" id="p-144">
+<div class="para">
+<dfn class="terminology">item a)</dfn> Como o domínio de <span class="process-math">\(\log_3x\)</span> é o conjunto <span class="process-math">\(\{x\in\mathbb{R} ~|~ x&gt;0\}\text{.}\)</span> O domínio de <span class="process-math">\(\log_3(x^2-1)\)</span> é dado pelo conjunto</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \{ x\in \mathbb{R}~|~x^2-1&gt;0\}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Fazendo o estudo do sinal para a função \(x^2-1\text{,}\) obtemos</p>
-<div class="displaymath">
+<div class="para">Fazendo o estudo do sinal para a função <span class="process-math">\(x^2-1\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x^2-1&gt;0, \text{ se } x\lt-1 \text{ ou } x&gt;1\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Portanto, o domínio solicitado é dado pelo conjunto</p>
-<div class="displaymath">
+<div class="para">Portanto, o domínio solicitado é dado pelo conjunto</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \{ x\in \mathbb{R}~|~ x\lt-1 \text{ ou } x&gt;1 \}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">que também pode ser expresso pela união dos intervalos: \((-\infty, -1)\cup (1, \infty)\text{.}\)</p>
-<p id="p-142">De fato, podemos plotar o gráfico da função \(f(x)=\log_3(x^2-1)\) na união de intervalos dos tipos \((-a, -1)\cup (1, a)\text{,}\) como pode ser verificado a seguir:</p>
-<div class="hidden-sagecell-sage" id="sage-19"><script type="text/x-sage">f=log(x^2-1,3)
+<div class="para">que também pode ser expresso pela união dos intervalos: <span class="process-math">\((-\infty, -1)\cup (1, \infty)\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-145">De fato, podemos plotar o gráfico da função <span class="process-math">\(f(x)=\log_3(x^2-1)\)</span> na união de intervalos dos tipos <span class="process-math">\((-a, -1)\cup (1, a)\text{,}\)</span> como pode ser verificado a seguir:</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-19"><script type="text/x-sage">f=log(x^2-1,3)
 p1 = plot(f, (x,-5,-1), figsize=4)
 a1 = line([(-1, 3),(-1, -3)], linestyle='--', color='gray')
 p2 = plot(f, (x,1, 5), figsize=4)
 a2 = line([(1, 3),(1, -3)], linestyle='--', color='gray')
 p1+p2+a1+a2
-</script></div>
-</div></div></article><article class="remark remark-like" id="remark-13"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.5.12</span><span class="period">.</span>
-</h6>
-<p id="p-143"><dfn class="terminology">(Leis dos Logarítmos)</dfn></p>
-<ol class="decimal">
-<li id="li-164">\(\displaystyle \log_a(x\cdot y) = \log_ax + \log_ay\)</li>
-<li id="li-165">\(\displaystyle \log_a(x/y) = \log_ax - \log_ay\)</li>
-<li id="li-166">\(\displaystyle \log_a x^r = r\log_ax\)</li>
-<li id="li-167">\(\log_bx = \frac{\log_ax}{\log_ab}\text{,}\) para \(b&gt;0, b\neq 1\)</li>
-</ol></article><section class="exercises" id="exercises-3"><h4 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber">1.5.2.1</span> <span class="title">Exercícios</span>
+</script></pre>
+</div></div></article><article class="remark remark-like" id="remark-13"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.5.12</span><span class="period">.</span>
 </h4>
-<article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-144">Encontre o valor exato de cada expressão.</p>
-<ol class="lower-alpha cols2">
-<li id="li-168">\(\displaystyle \log_5 125\)</li>
-<li id="li-169">\(\displaystyle \ln \dfrac{1}{e}\)</li>
-<li id="li-170">\(\displaystyle \log_3\dfrac{1}{27}\)</li>
-<li id="li-171">\(\displaystyle \log_{10}\sqrt{10}\)</li>
-<li id="li-172">\(\displaystyle \log_2 6-\log_2 15+\log_2 20\)</li>
-<li id="li-173">\(\displaystyle \log_3 100-\log_3 18-\log_3 50\)</li>
-<li id="li-174">\(\displaystyle e^{-2\ln 5}\)</li>
-<li id="li-175">\(\displaystyle \ln(\ln e^{e^{3}})\)</li>
-</ol></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-145">Resolva cada equação em \(x\text{.}\)</p>
-<ol class="lower-alpha cols2">
-<li id="li-176">\(\displaystyle 2\log_2 x=1\)</li>
-<li id="li-177">\(\displaystyle 3^{2x-2}-9=0\)</li>
-<li id="li-178">\(\displaystyle \log_3(5-2x)=2\)</li>
-<li id="li-179">\(\displaystyle 2^{x-5}=32\)</li>
-<li id="li-180">\(\displaystyle 2^x=64\)</li>
-<li id="li-181">\(\displaystyle 3^{x-2}=9\)</li>
-<li id="li-182">\(\displaystyle 2^{4x-x^2}=8\)</li>
-<li id="li-183">\(\displaystyle 3^{x-5}=27^{1-x}\)</li>
-<li id="li-184">\(\displaystyle 2^{x+3}+2^{x+1}+2^x=88\)</li>
-<li id="li-185">\(\displaystyle 7^x+7^{x-1}=8\)</li>
-<li id="li-186">\(\displaystyle 5^x+5^{-x}=6\)</li>
+<div class="para logical" id="p-146">
+<div class="para"><dfn class="terminology">(Leis dos Logarítmos)</dfn></div>
+<ol class="decimal">
+<li id="li-164"><div class="para" id="p-derived-li-164"><span class="process-math">\(\displaystyle \log_a(x\cdot y) = \log_ax + \log_ay\)</span></div></li>
+<li id="li-165"><div class="para" id="p-derived-li-165"><span class="process-math">\(\displaystyle \log_a(x/y) = \log_ax - \log_ay\)</span></div></li>
+<li id="li-166"><div class="para" id="p-derived-li-166"><span class="process-math">\(\displaystyle \log_a x^r = r\log_ax\)</span></div></li>
+<li id="li-167"><div class="para" id="p-derived-li-167">
+<span class="process-math">\(\log_bx = \frac{\log_ax}{\log_ab}\text{,}\)</span> para <span class="process-math">\(b&gt;0, b\neq 1\)</span>
+</div></li>
 </ol>
-<div class="sagecell-sage" id="sage-20"><script type="text/x-sage">igualdade = 2*log(x,2)==1
+</div></article><section class="exercises" id="exercises-3"><h4 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
+</h4>
+<article class="exercise exercise-like" id="exercise-11"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para logical" id="p-147">
+<div class="para">Encontre o valor exato de cada expressão.</div>
+<ol class="lower-alpha cols2">
+<li id="li-168"><div class="para" id="p-derived-li-168"><span class="process-math">\(\displaystyle \log_5 125\)</span></div></li>
+<li id="li-169"><div class="para" id="p-derived-li-169"><span class="process-math">\(\displaystyle \ln \dfrac{1}{e}\)</span></div></li>
+<li id="li-170"><div class="para" id="p-derived-li-170"><span class="process-math">\(\displaystyle \log_3\dfrac{1}{27}\)</span></div></li>
+<li id="li-171"><div class="para" id="p-derived-li-171"><span class="process-math">\(\displaystyle \log_{10}\sqrt{10}\)</span></div></li>
+<li id="li-172"><div class="para" id="p-derived-li-172"><span class="process-math">\(\displaystyle \log_2 6-\log_2 15+\log_2 20\)</span></div></li>
+<li id="li-173"><div class="para" id="p-derived-li-173"><span class="process-math">\(\displaystyle \log_3 100-\log_3 18-\log_3 50\)</span></div></li>
+<li id="li-174"><div class="para" id="p-derived-li-174"><span class="process-math">\(\displaystyle e^{-2\ln 5}\)</span></div></li>
+<li id="li-175"><div class="para" id="p-derived-li-175"><span class="process-math">\(\displaystyle \ln(\ln e^{e^{3}})\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-12"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para logical" id="p-148">
+<div class="para">Resolva cada equação em <span class="process-math">\(x\text{.}\)</span>
+</div>
+<ol class="lower-alpha cols2">
+<li id="li-176"><div class="para" id="p-derived-li-176"><span class="process-math">\(\displaystyle 2\log_2 x=1\)</span></div></li>
+<li id="li-177"><div class="para" id="p-derived-li-177"><span class="process-math">\(\displaystyle 3^{2x-2}-9=0\)</span></div></li>
+<li id="li-178"><div class="para" id="p-derived-li-178"><span class="process-math">\(\displaystyle \log_3(5-2x)=2\)</span></div></li>
+<li id="li-179"><div class="para" id="p-derived-li-179"><span class="process-math">\(\displaystyle 2^{x-5}=32\)</span></div></li>
+<li id="li-180"><div class="para" id="p-derived-li-180"><span class="process-math">\(\displaystyle 2^x=64\)</span></div></li>
+<li id="li-181"><div class="para" id="p-derived-li-181"><span class="process-math">\(\displaystyle 3^{x-2}=9\)</span></div></li>
+<li id="li-182"><div class="para" id="p-derived-li-182"><span class="process-math">\(\displaystyle 2^{4x-x^2}=8\)</span></div></li>
+<li id="li-183"><div class="para" id="p-derived-li-183"><span class="process-math">\(\displaystyle 3^{x-5}=27^{1-x}\)</span></div></li>
+<li id="li-184"><div class="para" id="p-derived-li-184"><span class="process-math">\(\displaystyle 2^{x+3}+2^{x+1}+2^x=88\)</span></div></li>
+<li id="li-185"><div class="para" id="p-derived-li-185"><span class="process-math">\(\displaystyle 7^x+7^{x-1}=8\)</span></div></li>
+<li id="li-186"><div class="para" id="p-derived-li-186"><span class="process-math">\(\displaystyle 5^x+5^{-x}=6\)</span></div></li>
+</ol>
+</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-20"><script type="text/x-sage">igualdade = 2*log(x,2)==1
 show(solve(igualdade, x))
-</script></div></article></section></section></section></div></main>
+</script></pre></article></section></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-4.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-6.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-11T18:07:00-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,6 +9,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body><div class="hint solution-like"><p xmlns:svg="http://www.w3.org/2000/svg">Calcule os limites laterais.</p></div></body>
+<body class="ignore-math"><div class="hint solution-like">
+<div class="para logical">
+<div class="para">Basta calcular os limites</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow +\infty}(\sqrt{x^2+1}-x)
+\end{equation*}
+</div>
+<div class="para">e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow -\infty}(\sqrt{x^2+1}-(-x)).
+\end{equation*}
+</div>
+<div class="para">Veja o gráfico usando o código a seguir.</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-55"><script type="text/x-sage">p1 = plot(sqrt(x^2+1), (-5, 5), aspect_ratio=1)
+p2 = plot(x, (-5, 5), aspect_ratio=1, ymin=0, linestyle='--', color='gray')
+p3 = plot(-x, (-5, 5), aspect_ratio=1, ymin=0, linestyle='--', color='gray')
+(p1+p2+p3).show(figsize=[5,5])
+</script></pre>
+</div></body>
 </html>
