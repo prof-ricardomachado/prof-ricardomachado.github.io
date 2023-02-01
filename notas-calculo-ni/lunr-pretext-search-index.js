@@ -1267,7 +1267,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.1",
   "title": "Limite: Conceito e Noção Intuitiva",
-  "body": " Limite: Conceito e Noção Intuitiva   Função Contínua  Intuitivamente, uma função contínua em um ponto de seu domínio é uma função cujo gráfico não apresenta \"salto\" em .      Observe que à medida que se aproxima de , seja pela direita ou pela esquerda, os valores de se aproximam do valor de . Diferente da função , isso não acontece para a função em , pois neste ponto a função apresenta um \"salto\", não é contínua em .   Sejam uma função real e . Dizemos que é contínua em se, e somente se, para todo dado, existe tal que, para todo em ,         Dizemos que é contínua em se for contínua em cada ponto de . Dizemos que é uma função contínua, se for contínua em cada ponto de seu domínio.     Limite  Intuitivamente, dizer que o limite de , quando tende a , é igual a que, simbolicamente, se escreve significa que quando tende a , f(x) tende a .  Utilizando a idéia intuitiva de limite, calcule .     Utilizando a idéia intuitiva de limite, calcule .   Sejam uma função e um ponto do domínio de ou extremidade de um dos intervalos que compõem o domínio de . Dizemos que tem limite , em , se, para todo dado, existir um tal que, para todo , Tal número , quando existe é único e será indicado por     Sejam uma funçaõ real e um ponto do domínio de . Então, é contínua em se, e somente se,     Calcule     Calcule     Calcule , na qual     Sejam e funções reais tais que, e uma constante, então      , desde que     Calcule          Esboce o gráfico da função Considerando o gráfico de , determine o valor de cada quantidade indicada, se ela existir. Se não existir, explique por quê.        Dado que determine, usando as propriedades de limites, o limite.         Calcule o limite, se existir.                      "
+  "body": " Limite: Conceito e Noção Intuitiva   Função Contínua  Intuitivamente, uma função contínua em um ponto de seu domínio é uma função cujo gráfico não apresenta \"salto\" em .      Observe que à medida que se aproxima de , seja pela direita ou pela esquerda, os valores de se aproximam do valor de . Diferente da função , isso não acontece para a função em , pois neste ponto a função apresenta um \"salto\", não é contínua em .   Sejam uma função real e . Dizemos que é contínua em se, e somente se, para todo dado, existe tal que, para todo em ,         Dizemos que é contínua em se for contínua em cada ponto de . Dizemos que é uma função contínua, se for contínua em cada ponto de seu domínio.     Limite  Intuitivamente, dizer que o limite de , quando tende a , é igual a que, simbolicamente, se escreve significa que quando tende a , f(x) tende a .  Utilizando a idéia intuitiva de limite, calcule .     Utilizando a idéia intuitiva de limite, calcule .   Sejam uma função e um ponto do domínio de ou extremidade de um dos intervalos que compõem o domínio de . Dizemos que tem limite , em , se, para todo dado, existir um tal que, para todo , Tal número , quando existe é único e será indicado por     Sejam uma funçaõ real e um ponto do domínio de . Então, é contínua em se, e somente se,     Calcule     Calcule     Calcule , na qual     Sejam e funções reais tais que, e uma constante, então      , desde que     Calcule          Esboce o gráfico da função Considerando o gráfico de , determine o valor de cada quantidade indicada, se ela existir. Se não existir, explique por quê.       Dado que determine, usando as propriedades de limites, o limite.        Calcule o limite, se existir.                     "
 },
 {
   "id": "fig-fun-cont",
@@ -1393,7 +1393,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.1.3.1",
   "title": "",
-  "body": "Esboce o gráfico da função Considerando o gráfico de , determine o valor de cada quantidade indicada, se ela existir. Se não existir, explique por quê.       "
+  "body": "Esboce o gráfico da função Considerando o gráfico de , determine o valor de cada quantidade indicada, se ela existir. Se não existir, explique por quê.      "
 },
 {
   "id": "exercise-26",
@@ -1402,7 +1402,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.1.3.2",
   "title": "",
-  "body": "Dado que determine, usando as propriedades de limites, o limite.        "
+  "body": "Dado que determine, usando as propriedades de limites, o limite.       "
 },
 {
   "id": "exercise-27",
@@ -1411,7 +1411,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.1.3.3",
   "title": "",
-  "body": "Calcule o limite, se existir.                    "
+  "body": "Calcule o limite, se existir.                   "
 },
 {
   "id": "section-10",
