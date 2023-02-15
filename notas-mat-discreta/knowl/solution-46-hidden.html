@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:01-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,18 +9,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">Vamos tomar receitas como positivas e despesas como negativas. O fluxo de caixa de Helena na segunda alternativa é representado na <a class="xref" data-knowl="./knowl/fig-fin07.html" title="Figura 3.3.9">Figura 3.3.9</a>.</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan07.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Fluxo de caixa na segunda alternativa.</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Vamos determinar o fluxo de caixa equivalente, representado na <a class="xref" data-knowl="./knowl/fig-fin08.html" title="Figura 3.3.10">Figura 3.3.10</a>.</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan08.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>Fluxo uniforme equivalente.</figcaption></figure><p>Igualando os valores na época \(0\text{,}\) obtemos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
--150-\frac{5}{1,07}-\frac{5}{1,07^2}-\frac{8}{1,07^3}-\frac{8}{1,07^4}+\frac{12}{1,07^5}=P\frac{1-1,07^{-5}}{0,07}.
-\end{equation*}
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Fixando o preço do bem em 30, temos os três esquemas abaixo <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan03.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.11<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Comparando os valores, por exemplo, na época 0, obtemos:</div>
+<div class="displaymath process-math">
+\begin{align*}
+a = \amp~ 21\\
+b = \amp~ \frac{15}{(1,25)}+\frac{15}{(1,25)^2} = 21,60\\
+c = \amp~ 10+\frac{10}{(1,25)}+\frac{10}{(1,25)^2}=24,40. 
+\end{align*}
 </div>
-<p data-braille="continuation">Daí, \(P=-39,78\text{.}\) Comprar a copiadora é equivalente a ter um custo anual de 39,78 reais. Como o aluguel corresponde a um custo anual de 35 reais, a melhor alternativa para Helena é alugar.</p>
+<div class="para">A melhor alternativa é a primeira e a pior é a terceira.</div>
+</div> <div class="para">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-10"><script type="text/x-sage">a = 21
+b = sum(15*(1/(1.25)^x), x, 1, 2)
+c = sum(10*(1/(1.25)^x), x, 0, 2)
+a,b,c
+</script></pre>
 </div></body>
 </html>

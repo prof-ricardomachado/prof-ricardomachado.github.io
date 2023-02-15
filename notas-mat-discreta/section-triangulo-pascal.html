@@ -1,71 +1,204 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:54:55-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Triângulo de Pascal</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Matemática Discreta">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="binomiais.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="binomiais.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-binomio-newton.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -79,110 +212,203 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
-<p class="byline">Ricardo Machado</p>
-</div>
-</div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="binomiais.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-binomio-newton.html" title="Próximo">Próximo</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="binomiais.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-binomio-newton.html" title="Próximo">Próximo</a>
-</div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pa.html" data-scroll="pa"><span class="codenumber">1</span> <span class="title">Progressões</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Progressões Aritméticas</a></li>
-<li><a href="section-2.html" data-scroll="section-2">Progressões Geométricas</a></li>
+<li>
+<div class="toc-item"><a href="numeros_naturais.html" class="internal"><span class="codenumber">1</span> <span class="title">Números Naturais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Números Ordinais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Números Ordinais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsec-ad-mul-ord" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Adição, multiplicação e Ordem</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="recorrencias.html" data-scroll="recorrencias"><span class="codenumber">2</span> <span class="title">Recorrências</span></a><ul>
-<li><a href="section-3.html" data-scroll="section-3">Introdução</a></li>
-<li><a href="section-4.html" data-scroll="section-4">Recorrências Lineares de Primeira Ordem</a></li>
-<li><a href="section-5.html" data-scroll="section-5">Recorrências Lineares de Segunda Ordem</a></li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Números Naturais e Contagem</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="matfinanceira.html" data-scroll="matfinanceira"><span class="codenumber">3</span> <span class="title">Matemática Financeira</span></a><ul>
-<li><a href="section-6.html" data-scroll="section-6">Juros Compostos</a></li>
-<li><a href="section-7.html" data-scroll="section-7">A Fórmula das Taxas Equivalentes</a></li>
-<li><a href="section-8.html" data-scroll="section-8">Renda Perpétua (Séries Uniformes)</a></li>
-<li><a href="section-9.html" data-scroll="section-9">Sistemas de Amortização</a></li>
+<li>
+<div class="toc-item"><a href="metodo_inducao.html" class="internal"><span class="codenumber">2</span> <span class="title">O Método da Indução</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsection-4" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-5" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Demonstrando Igualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-6" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Demonstrando Desigualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-7" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Aplicações em Aritmética</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">4</span> <span class="title">Princípios de Contagem</span></a><ul>
-<li><a href="section-10.html" data-scroll="section-10">Conjuntos</a></li>
-<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
-<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
-<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
-<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
-<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Outras Formas do Princípio da Indução</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">5</span> <span class="title">Números Binomiais</span></a><ul>
-<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal" class="active">Triângulo de Pascal</a></li>
-<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
-<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+<li>
+<div class="toc-item"><a href="pa.html" class="internal"><span class="codenumber">3</span> <span class="title">Progressões</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Progressões Aritméticas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsection-8" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Sequências Numéricas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-9" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Progressões Aritméticas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-10" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Progressões Aritméticas e Funções Afins</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-11" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Soma dos Termos de uma Progressão Aritmética</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-12" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Progressões Aritméticas de Ordem Superior</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-13" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Somas Polinomiais</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">6</span> <span class="title">Probabilidade</span></a><ul>
-<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
-<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
-<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
-<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Progressões Geométricas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-14" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Termo geral de uma Progressão Geométrica</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-15" class="internal"><span class="codenumber">3.2.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-16" class="internal"><span class="codenumber">3.2.3</span> <span class="title">A Soma dos Termos de uma Progressão Geométrica</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="media_gavetas.html" data-scroll="media_gavetas"><span class="codenumber">7</span> <span class="title">Médias e Princípio das Gavetas</span></a><ul>
-<li><a href="section-24.html" data-scroll="section-24">Médias</a></li>
-<li><a href="section-25.html" data-scroll="section-25">A Desigualdade das Médias</a></li>
 </ul>
 </li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">8</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-triangulo-pascal"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">5.1</span> <span class="title">Triângulo de Pascal</span>
+<li>
+<div class="toc-item"><a href="recorrencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Recorrências</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Recorrências Lineares de Primeira Ordem</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Recorrências Lineares de Segunda Ordem</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="matfinanceira.html" class="internal"><span class="codenumber">5</span> <span class="title">Matemática Financeira</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Juros Compostos</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">5.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Renda Perpétua (Séries Uniformes)</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Sistemas de Amortização</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Princípio Aditivo e Princípio Multiplicativo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-17" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-18" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-19" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-20" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-21" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-22" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">6.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">6.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">7</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-7" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-8" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-9" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">8</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-10" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-23" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-11" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-24" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-12" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="media_gavetas.html" class="internal"><span class="codenumber">9</span> <span class="title">Médias e Princípio das Gavetas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-28.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Médias</span></a></div></li>
+<li><div class="toc-item"><a href="section-29.html" class="internal"><span class="codenumber">9.2</span> <span class="title">A Desigualdade das Médias</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">10</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-triangulo-pascal"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">7.1</span> <span class="title">Triângulo de Pascal</span>
 </h2>
-<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
+<article class="objectives goal-like" id="dEf"><h3 class="heading"><span class="type">Objetivos</span></h3>
 <ol class="decimal">
-<li id="li-121">Definir o Triângulo de Pascal.</li>
-<li id="li-122">Mostrar várias propriedades do Triângulo de Pascal.</li>
-<li id="li-123">Exemplificar.</li>
-</ol></article><article class="definition definition-like" id="definition-24"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
-</h6>
-<p id="p-694">O <em class="emphasis">Triângulo de Pascal</em> é um triângulo numérico infinito formado por números binomiais \(C_n^p\text{,}\) na qual, \(n\) representa a linha, e \(p\) representa a coluna, com \(n,p \geq 0\text{.}\) Abaixo temos duas representações do mesmo triângulo, com \(0\leq n \leq 5\text{.}\) </p>
-<figure class="figure figure-like" id="inclusao-triangulopascal"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/triangulopascal.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span>O Triângulo de Pascal.</figcaption></figure></article><article class="technology computation-like" id="technology-14"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-695">Obtenha o Triângulo de Pascal referente ao intervalo escolhido.</p>
-<figure class="figure figure-like" id="figure-26"><iframe id="interact-pascal" width="600" height="360" src="interact-pascal-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="theorem theorem-like" id="theorem-27"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
-</h6>
-<dfn class="terminology">(Relação de Stifel)</dfn><div class="displaymath">
+<li id="li-174"><div class="para" id="p-derived-li-174">Definir o Triângulo de Pascal.</div></li>
+<li id="li-175"><div class="para" id="p-derived-li-175">Mostrar várias propriedades do Triângulo de Pascal.</div></li>
+<li id="li-176"><div class="para" id="p-derived-li-176">Exemplificar.</div></li>
+</ol></article><article class="definition definition-like" id="definition-31"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-780">O <em class="emphasis">Triângulo de Pascal</em> é um triângulo numérico infinito formado por números binomiais <span class="process-math">\(C_n^p\text{,}\)</span> na qual, <span class="process-math">\(n\)</span> representa a linha, e <span class="process-math">\(p\)</span> representa a coluna, com <span class="process-math">\(n,p \geq 0\text{.}\)</span> Abaixo temos duas representações do mesmo triângulo, com <span class="process-math">\(0\leq n \leq 5\text{.}\)</span> </div> <figure class="figure figure-like" id="inclusao-triangulopascal"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/triangulopascal.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">7.1.2<span class="period">.</span></span><span class="space"> </span>O Triângulo de Pascal.</figcaption></figure></article><article class="technology computation-like" id="technology-14"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-781">Obtenha o Triângulo de Pascal referente ao intervalo escolhido.</div> <figure class="figure figure-like" id="figure-26"><iframe id="interact-pascal" width="600" height="360" src="interact-pascal-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">7.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="theorem theorem-like" id="theorem-35"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
+</h3>
+<dfn class="terminology">(Relação de Stifel)</dfn><div class="displaymath process-math">
 \begin{equation*}
 C_n^p + C_n^{p+1} = C_{n+1}^{p+1}. 
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-36"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><div class="displaymath process-math" id="md-33">
 \begin{align*}
 C_n^p + C_n^{p+1}= \amp ~\frac{n!}{p!\times (n-p)!} + \frac{n!}{(p+1)!\times (n-p-1)!}   \\
 = \amp ~ \frac{(p+1)\times n!}{(p+1)\times p!\times (n-p)!} + \frac{(n-p)\times n!}{(n-p)\times(p+1)!\times (n-p-1)!}  \\
@@ -192,54 +418,58 @@ C_n^p + C_n^{p+1}= \amp ~\frac{n!}{p!\times (n-p)!} + \frac{n!}{(p+1)!\times (n-
 = \amp ~ C_{n+1}^{p+1}  
 \end{align*}
 </div></article></div>
-<article class="theorem theorem-like" id="teo-reolacoes-complementares"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
-</h6>
-<dfn class="terminology">(Relação das Combinações Complementares)</dfn><div class="displaymath">
+<article class="theorem theorem-like" id="teo-reolacoes-complementares"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
+</h3>
+<dfn class="terminology">(Relação das Combinações Complementares)</dfn><div class="displaymath process-math">
 \begin{equation*}
 C_n^p = C_n^{n-p}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-37"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><div class="displaymath process-math">
 \begin{equation*}
 C_n^p= \frac{n!}{p!\times (n-p)!} = \frac{n!}{(n-p)!\times p!} = C_n^{n-p}.
 \end{equation*}
 </div></article></div>
-<article class="theorem theorem-like" id="theorem-29"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
-</h6>
-<dfn class="terminology">(Teorema das Linhas)</dfn><div class="displaymath">
+<article class="theorem theorem-like" id="theorem-37"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span>
+</h3>
+<dfn class="terminology">(Teorema das Linhas)</dfn><div class="displaymath process-math">
 \begin{equation*}
 C_n^0 + C_n^1 +C_n^2 + \cdots + C_n^n = 2^n.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-696">Observe que</p>
-<div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="para" id="p-782">Observe que</div>
+<div class="displaymath process-math">
 \begin{equation*}
 C_n^i \text{ é número de subconjuntos com}~ i ~\text{elementos, de } \{1, 2, \ldots, n\}. 
 \end{equation*}
 </div>
-<p id="p-697">Ou seja, a soma</p>
-<div class="displaymath">
+<div class="para logical" id="p-783">
+<div class="para">Ou seja, a soma</div>
+<div class="displaymath process-math">
 \begin{equation*}
 C_n^0 + C_n^1 +C_n^2 + \cdots + C_n^n
 \end{equation*}
 </div>
-<p data-braille="continuation">conta o número de todos os subconjuntos, de um conjunto com n elementos.</p>
-<p id="p-698">Essa quantidade é \(2^n\text{,}\) pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é</p>
-<div class="displaymath">
+<div class="para">conta o número de todos os subconjuntos, de um conjunto com n elementos.</div>
+</div> <div class="para logical" id="p-784">
+<div class="para">Essa quantidade é <span class="process-math">\(2^n\text{,}\)</span> pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 2^n. 
 \end{equation*}
+</div>
 </div></article></div>
-<article class="example example-like" id="exem-soma1"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
-</h6>
-<p id="p-699">Qual o valor da soma</p>
-<div class="displaymath">
+<article class="example example-like" id="exem-soma1"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">7.1.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-785">
+<div class="para">Qual o valor da soma</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = \frac{1}{2}C_n^1 + \frac{1}{3}C_n^2 + \cdots + \frac{1}{n+1}C_n^n? 
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like"><div class="displaymath">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-128" id="solution-128"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-128"><div class="solution solution-like"><div class="displaymath process-math" id="md-34">
 \begin{align*}
 S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
 = \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}  \\
@@ -249,27 +479,28 @@ S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
 = \amp \frac{1}{n+1}\left( -C_{n+1}^0 - C_{n+1}^1 +\underbrace{C_{n+1}^0 + C_{n+1}^1 + \cdots+C_{n+1}^{n+1}}_{=2^{n+1}} \right)  \\
 = \amp \frac{1}{n+1}\left( 2^{n+1} - n -2 \right).  
 \end{align*}
-</div></div></div></article><article class="technology computation-like" id="technology-15"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
-</h6>
-<p id="p-700">Vamos resolver o <a class="xref" data-knowl="./knowl/exem-soma1.html" title="Exemplo 5.1.8">Exemplo 5.1.8</a> usando o Sage. Primeiramente note que</p>
-<div class="displaymath">
+</div></div></div></article><article class="technology computation-like" id="technology-15"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">7.1.9</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-786">
+<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/exem-soma1.html" title="Exemplo 7.1.8">Exemplo 7.1.8</a> usando o Sage. Primeiramente note que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-soma1.html">
 \begin{equation*}
 S = \sum_{k=1}^n \frac{1}{k+1}C_n^k.
 \end{equation*}
 </div>
-<p data-braille="continuation">Definimos as variáveis \(\verb|n|\) e \(\verb|k|\text{,}\) definimos a função \(\verb|C(n,p)=binomial(n,p)|\) e usamos o método \(\verb|sum|\) com a expressão do somatório. No final do código do método \(\verb|sum|\) foi acrescentado o comando \(\verb|.show()|\) apenas para o resultado ser exibido no formato compilado pelo \(\LaTeX\text{,}\) ou seja, visualmente mais elegante.</p>
-<div class="sagecell-sage" id="sage-33"><script type="text/x-sage">n, k = var('n, k')
+<div class="para">Definimos as variáveis <span class="process-math">\(\verb|n|\)</span> e <span class="process-math">\(\verb|k|\text{,}\)</span> definimos a função <span class="process-math">\(\verb|C(n,p)=binomial(n,p)|\)</span> e usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório. No final do código do método <span class="process-math">\(\verb|sum|\)</span> foi acrescentado o comando <span class="process-math">\(\verb|.show()|\)</span> apenas para o resultado ser exibido no formato compilado pelo <span class="process-math">\(\LaTeX\text{,}\)</span> ou seja, visualmente mais elegante.</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-34"><script type="text/x-sage">n, k = var('n, k')
 C(n, p) = binomial(n, p)
 sum((1/(k+1))*C(n, k), k, 1, n).show()
-</script></div></article><article class="theorem theorem-like" id="teo-colunas"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
-</h6>
-<dfn class="terminology">(Teorema das Colunas)</dfn><div class="displaymath">
+</script></pre></article><article class="theorem theorem-like" id="teo-colunas"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">7.1.10</span><span class="period">.</span>
+</h3>
+<dfn class="terminology">(Teorema das Colunas)</dfn><div class="displaymath process-math">
 \begin{equation*}
 C_p^p + C_{p+1}^p + C_{p+2}^p + \cdots + C_{p+n}^p = C_{p+n+1}^{p+1}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-35"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-35"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof">Vamos aplicar a relação de Stifel aos elementos da coluna \(p+1\text{:}\)<div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-39"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof">Vamos aplicar a relação de Stifel aos elementos da coluna <span class="process-math">\(p+1\text{:}\)</span><div class="displaymath process-math" id="md-35">
 \begin{align*}
 C_{p+1}^{p+1} = \amp C_p^{p+1} + C_p^p  \\
 C_{p+2}^{p+1} = \amp C_{p+1}^{p+1} + C_{p+1}^p  \\
@@ -278,25 +509,26 @@ C_{p+3}^{p+1} = \amp C_{p+2}^{p+1} + C_{p+2}^p   \\
 C_{p+n}^{p+1} = \amp C_{p+n-1}^{p+1} + C_{p+n-1}^p  \\
 C_{p+n+1}^{p+1} = \amp C_{p+n}^{p+1} + C_{p+n}^p  
 \end{align*}
-</div>Somando tudo, ficamos com<div class="displaymath">
+</div>Somando tudo, ficamos com<div class="displaymath process-math">
 \begin{equation*}
 C_{p+n+1}^{p+1} = C_p^{p+1} + C_p^p + C_{p+1}^p + C_{p+2}^p +\cdots + C_{p+n-1}^p + C_{p+n}^p.
 \end{equation*}
-</div>Como \(C_p^{p+1} = 0\text{,}\) obtemos o resultado:<div class="displaymath">
+</div>Como <span class="process-math">\(C_p^{p+1} = 0\text{,}\)</span> obtemos o resultado:<div class="displaymath process-math">
 \begin{equation*}
 C_{p+n+1}^{p+1} = C_p^p + C_{p+1}^p + C_{p+2}^p +\cdots + C_{p+n-1}^p + C_{p+n}^p.
 \end{equation*}
 </div></article></div>
-<article class="example example-like" id="exem-soma2"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.11</span><span class="period">.</span>
-</h6>
-<p id="p-701">Qual o valor da soma</p>
-<div class="displaymath">
+<article class="example example-like" id="exem-soma2"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">7.1.11</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-787">
+<div class="para">Qual o valor da soma</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = 10\cdot 11 + 11\cdot 12+ \cdots + 98\cdot 99? 
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like"><div class="displaymath">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-129" id="solution-129"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-129"><div class="solution solution-like"><div class="displaymath process-math" id="md-36">
 \begin{align*}
 S = \amp \sum_{k=10}^{98} k(k+1)  \\
 = \amp \sum_{k=1}^{98} k(k+1) - \sum_{k=1}^9 k(k+1)  \\
@@ -306,42 +538,44 @@ S = \amp \sum_{k=10}^{98} k(k+1)  \\
 = \amp  323400 - 330\\
 = \amp 323070  
 \end{align*}
-</div></div></div></article><article class="technology computation-like" id="technology-16"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
-</h6>
-<p id="p-702">Vamos resolver o <a class="xref" data-knowl="./knowl/exem-soma2.html" title="Exemplo 5.1.11">Exemplo 5.1.11</a> usando o Sage. Primeiramente note que</p>
-<div class="displaymath">
+</div></div></div></article><article class="technology computation-like" id="technology-16"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">7.1.12</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-788">
+<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/exem-soma2.html" title="Exemplo 7.1.11">Exemplo 7.1.11</a> usando o Sage. Primeiramente note que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-soma2.html">
 \begin{equation*}
 S = \sum_{k=10}^{98} k(k+1).
 \end{equation*}
 </div>
-<p data-braille="continuation">Definimos a variável \(\verb|n|\text{,}\) usamos o método \(\verb|sum|\) com a expressão do somatório.</p>
-<div class="sagecell-sage" id="sage-34"><script type="text/x-sage">k = var('k')
+<div class="para">Definimos a variável <span class="process-math">\(\verb|n|\text{,}\)</span> usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório.</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-35"><script type="text/x-sage">k = var('k')
 sum(k*(k+1), k, 10, 98)
-</script></div></article><article class="example example-like" id="exem-soma3"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
-</h6>
-<p id="p-703">Qual o valor da soma</p>
-<div class="displaymath">
+</script></pre></article><article class="example example-like" id="exem-soma3"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">7.1.13</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-789">
+<div class="para">Qual o valor da soma</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = 1^2\cdot2 + 2^2\cdot3+  3^2\cdot4+\cdots+n^2\cdot(n+1)? 
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-122" id="solution-122"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-122"><div class="solution solution-like">Note que<div class="displaymath">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-130" id="solution-130"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-130"><div class="solution solution-like">Note que<div class="displaymath process-math" id="md-37">
 \begin{align*}
 S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
 = \amp \sum_{k=1}^{n} k^3+k^2  
 \end{align*}
-</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div class="displaymath">
+</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div class="displaymath process-math">
 \begin{equation*}
 k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
 \end{equation*}
-</div>Então, vamos procurar valores para \(A, B, C\) e \(D\text{,}\) para os quais, vale a igualdade<div class="displaymath">
+</div>Então, vamos procurar valores para <span class="process-math">\(A, B, C\)</span> e <span class="process-math">\(D\text{,}\)</span> para os quais, vale a igualdade<div class="displaymath process-math" id="md-38">
 \begin{align*}
 k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
 = \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D  
 \end{align*}
-</div>igualando os coeficientes, obtemos<div class="displaymath">
+</div>igualando os coeficientes, obtemos<div class="displaymath process-math">
 \begin{equation*}
 \begin{cases} 
 A = ~ 1 \\
@@ -350,7 +584,7 @@ A = ~ 1 \\
 D = ~ 0 \\
 \end{cases}
 \end{equation*}
-</div>Portanto,  \(A= 1\) e  \(B = -2\text{.}\) Agora podemos terminar o cálculo da soma<div class="displaymath">
+</div>Portanto,  <span class="process-math">\(A= 1\)</span> e  <span class="process-math">\(B = -2\text{.}\)</span> Agora podemos terminar o cálculo da soma<div class="displaymath process-math" id="md-39">
 \begin{align*}
 S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
 = \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
@@ -359,48 +593,53 @@ S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
 = \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
 \end{align*}
 </div>
-</div></div></article><article class="technology computation-like" id="technology-17"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
-</h6>
-<p id="p-704">Vamos resolver o <a class="xref" data-knowl="./knowl/exem-soma3.html" title="Exemplo 5.1.13">Exemplo 5.1.13</a> usando o Sage. Primeiramente note que</p>
-<div class="displaymath">
+</div></div></article><article class="technology computation-like" id="technology-17"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">7.1.14</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-790">
+<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/exem-soma3.html" title="Exemplo 7.1.13">Exemplo 7.1.13</a> usando o Sage. Primeiramente note que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-soma3.html">
 \begin{equation*}
 S = \sum_{k=1}^n k^2(k+1).
 \end{equation*}
 </div>
-<p data-braille="continuation">Definimos as variáveis \(\verb|n|\) e \(\verb|k|\text{,}\) usamos o método \(\verb|sum|\) com a expressão do somatório. No final do código do método \(\verb|sum|\) foi acrescentado o comando \(\verb|.show()|\) apenas para o resultado ser exibido no formato compilado pelo \(\LaTeX\text{,}\) ou seja, visualmente mais elegante.</p>
-<div class="sagecell-sage" id="sage-35"><script type="text/x-sage">n, k = var('n, k')
+<div class="para">Definimos as variáveis <span class="process-math">\(\verb|n|\)</span> e <span class="process-math">\(\verb|k|\text{,}\)</span> usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório. No final do código do método <span class="process-math">\(\verb|sum|\)</span> foi acrescentado o comando <span class="process-math">\(\verb|.show()|\)</span> apenas para o resultado ser exibido no formato compilado pelo <span class="process-math">\(\LaTeX\text{,}\)</span> ou seja, visualmente mais elegante.</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-36"><script type="text/x-sage">n, k = var('n, k')
 sum((k^2)*(k+1), k, 1, n).show()
-</script></div></article><article class="theorem theorem-like" id="theorem-31"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span>
-</h6>
-<dfn class="terminology">(Teorema das Diagonais)</dfn><div class="displaymath">
+</script></pre></article><article class="theorem theorem-like" id="theorem-39"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">7.1.15</span><span class="period">.</span>
+</h3>
+<dfn class="terminology">(Teorema das Diagonais)</dfn><div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-reolacoes-complementares.html ./knowl/teo-colunas.html ./knowl/teo-reolacoes-complementares.html">
 \begin{equation*}
 C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = C_{n+p+1}^p
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-705">Aplicando o <a class="xref" data-knowl="./knowl/teo-reolacoes-complementares.html" title="Teorema 5.1.6">Teorema 5.1.6</a>, em cada \(C_{n+i}^i\) obtemos</p>
-<div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><div class="para logical" id="p-791">
+<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-reolacoes-complementares.html" title="Teorema 7.1.6">Teorema 7.1.6</a>, em cada <span class="process-math">\(C_{n+i}^i\)</span> obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-reolacoes-complementares.html ./knowl/teo-colunas.html ./knowl/teo-reolacoes-complementares.html" id="md-40">
 \begin{align*}
 C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = \amp ~ C_{n}^n+C_{n+1}^n+C_{n+2}^n+\cdots+C_{n+p}^n\\
-= \amp~C_{n+p+1}^{n+1}\quad (\text{pelo } \knowl{./knowl/teo-colunas.html}{\text{Teorema 5.1.10}})\\
-= \amp~C_{n+p+1}^{p} \quad(\text{pelo } \knowl{./knowl/teo-reolacoes-complementares.html}{\text{Teorema 5.1.6}}).
+= \amp~C_{n+p+1}^{n+1}\quad (\text{pelo } \knowl{./knowl/teo-colunas.html}{\text{Teorema 7.1.10}})\\
+= \amp~C_{n+p+1}^{p} \quad(\text{pelo } \knowl{./knowl/teo-reolacoes-complementares.html}{\text{Teorema 7.1.6}}).
 \end{align*}
 </div>
-<p data-braille="continuation"> O que mostra o resultado.</p></article></div>
-<article class="theorem theorem-like" id="theorem-32"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.16</span><span class="period">.</span>
-</h6>
-<div class="displaymath">
+<div class="para"> O que mostra o resultado.</div>
+</div></article></div>
+<article class="theorem theorem-like" id="theorem-40"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">7.1.16</span><span class="period">.</span>
+</h3>
+<div class="displaymath process-math">
 \begin{equation*}
 \text{a) Se } p\lt \frac{n-1}{2}, \text{ então }  C_n^p\lt C_n^{p+1}. 
 \end{equation*}
 </div>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \text{b) Se } p&gt; \frac{n-1}{2}, \text{ então }  C_n^p&gt;C_n^{p+1}. 
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-37"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><p id="p-706">Vamos analisar a diferença \(C_n^{p+1}-C_n^p\text{:}\)</p>
-<div class="displaymath">
+</div></article><article class="hiddenproof" id="proof-41"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><div class="para logical" id="p-792">
+<div class="para">Vamos analisar a diferença <span class="process-math">\(C_n^{p+1}-C_n^p\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-41">
 \begin{align*}
 C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
 = \amp ~ \frac{n!}{(p+1) p!(n-p-1)!} - \frac{n!}{p!(n-p)(n-p-1)!}  \\
@@ -408,58 +647,73 @@ C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
 = \amp ~ \frac{n!(n-2p-1)}{(p+1)! (n-p)!}  
 \end{align*}
 </div>
-<p data-braille="continuation">Oberve que \(n!, (p+1)!\) e \((n-p)!\) são positivos, portanto o sinal de \(C_n^{p+1}-C_n^p\text{,}\) será determinado pelo sinal de</p>
-<div class="displaymath">
+<div class="para">Oberve que <span class="process-math">\(n!, (p+1)!\)</span> e <span class="process-math">\((n-p)!\)</span> são positivos, portanto o sinal de <span class="process-math">\(C_n^{p+1}-C_n^p\text{,}\)</span> será determinado pelo sinal de</div>
+<div class="displaymath process-math">
 \begin{equation*}
 n-2p-1.
 \end{equation*}
 </div>
-<p data-braille="continuation">Logo,</p>
-<div class="displaymath">
+<div class="para">Logo,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \text{Se } n-2p-1&gt;0, \text{ então } p\lt\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}&gt;0 \Rightarrow C_n^{p}\lt C_n^{p+1}. 
 \end{equation*}
 </div>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 \text{Se } n-2p-1\lt 0, \text{ então } p&gt;\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}\lt 0 \Rightarrow C_n^{p}&gt;C_n^{p+1}.   
 \end{equation*}
+</div>
 </div></article></div>
 <section class="exercises" id="exercises-7"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber">5.1.1</span> <span class="title">Exercícios</span>
+<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-707">Tem-se \(n\) comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?</p>
+<article class="exercise exercise-like" id="exercise-59"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-793">Tem-se <span class="process-math">\(n\)</span> comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-59" id="answer-59"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-59"><div class="answer solution-like"><p id="p-708">\(2^n-1\)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-709">Calcule o valor da soma</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-59" id="answer-59"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-59"><div class="answer solution-like"><div class="para" id="p-794"><span class="process-math">\(2^n-1\)</span></div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-795">
+<div class="para">Calcule o valor da soma</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = 20\cdot21 + 21\cdot 22 +\cdots + 130\cdot 131.
 \end{equation*}
 </div>
+</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-60" id="answer-60"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-60"><div class="answer solution-like"><p id="p-710">746660</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-711">Calcule o valor de</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-60" id="answer-60"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-60"><div class="answer solution-like"><div class="para" id="p-796">746660</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-61"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-797">
+<div class="para">Calcule o valor de</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = \sum_{k=1}^{n}k(3k+1).
 \end{equation*}
 </div>
+</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-61" id="answer-61"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><p id="p-712">\(n^{3} + 2 \, n^{2} + n\)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-713">Calcule</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-61" id="answer-61"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><div class="para" id="p-798"><span class="process-math">\(n^{3} + 2 \, n^{2} + n\)</span></div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="p-799">
+<div class="para">Calcule</div>
+<div class="displaymath process-math">
 \begin{equation*}
 CR_n^0 + CR_n^1+\cdots+ CR_n^p.
 \end{equation*}
 </div>
+</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-62" id="answer-62"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><p id="p-714">\(C_{n+p}^p\)</p></div></div>
-</div></article></section></section></div></main>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-62" id="answer-62"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><div class="para" id="p-800"><span class="process-math">\(C_{n+p}^p\)</span></div></div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="binomiais.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-binomio-newton.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

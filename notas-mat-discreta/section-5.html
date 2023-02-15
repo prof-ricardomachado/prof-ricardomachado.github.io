@@ -1,71 +1,198 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:54:52-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UFRPE-DM Recorrências Lineares de Segunda Ordem</title>
+<title>UFRPE-DM Progressões Aritméticas</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Matemática Discreta">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="pa.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="pa.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-6.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -79,422 +206,749 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
-<p class="byline">Ricardo Machado</p>
-</div>
-</div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-4.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="recorrencias.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="matfinanceira.html" title="Próximo">Próximo</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-4.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="recorrencias.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="matfinanceira.html" title="Próximo">Próximo</a>
-</div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pa.html" data-scroll="pa"><span class="codenumber">1</span> <span class="title">Progressões</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Progressões Aritméticas</a></li>
-<li><a href="section-2.html" data-scroll="section-2">Progressões Geométricas</a></li>
+<li>
+<div class="toc-item"><a href="numeros_naturais.html" class="internal"><span class="codenumber">1</span> <span class="title">Números Naturais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Números Ordinais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Números Ordinais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsec-ad-mul-ord" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Adição, multiplicação e Ordem</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="recorrencias.html" data-scroll="recorrencias"><span class="codenumber">2</span> <span class="title">Recorrências</span></a><ul>
-<li><a href="section-3.html" data-scroll="section-3">Introdução</a></li>
-<li><a href="section-4.html" data-scroll="section-4">Recorrências Lineares de Primeira Ordem</a></li>
-<li><a href="section-5.html" data-scroll="section-5" class="active">Recorrências Lineares de Segunda Ordem</a></li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Números Naturais e Contagem</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="matfinanceira.html" data-scroll="matfinanceira"><span class="codenumber">3</span> <span class="title">Matemática Financeira</span></a><ul>
-<li><a href="section-6.html" data-scroll="section-6">Juros Compostos</a></li>
-<li><a href="section-7.html" data-scroll="section-7">A Fórmula das Taxas Equivalentes</a></li>
-<li><a href="section-8.html" data-scroll="section-8">Renda Perpétua (Séries Uniformes)</a></li>
-<li><a href="section-9.html" data-scroll="section-9">Sistemas de Amortização</a></li>
+<li>
+<div class="toc-item"><a href="metodo_inducao.html" class="internal"><span class="codenumber">2</span> <span class="title">O Método da Indução</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsection-4" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-5" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Demonstrando Igualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-6" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Demonstrando Desigualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-7" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Aplicações em Aritmética</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">4</span> <span class="title">Princípios de Contagem</span></a><ul>
-<li><a href="section-10.html" data-scroll="section-10">Conjuntos</a></li>
-<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
-<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
-<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
-<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
-<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Outras Formas do Princípio da Indução</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">5</span> <span class="title">Números Binomiais</span></a><ul>
-<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
-<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
-<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+<li>
+<div class="toc-item"><a href="pa.html" class="internal"><span class="codenumber">3</span> <span class="title">Progressões</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Progressões Aritméticas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsection-8" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Sequências Numéricas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-9" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Progressões Aritméticas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-10" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Progressões Aritméticas e Funções Afins</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-11" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Soma dos Termos de uma Progressão Aritmética</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-12" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Progressões Aritméticas de Ordem Superior</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-13" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Somas Polinomiais</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">6</span> <span class="title">Probabilidade</span></a><ul>
-<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
-<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
-<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
-<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Progressões Geométricas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-14" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Termo geral de uma Progressão Geométrica</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-15" class="internal"><span class="codenumber">3.2.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-16" class="internal"><span class="codenumber">3.2.3</span> <span class="title">A Soma dos Termos de uma Progressão Geométrica</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="media_gavetas.html" data-scroll="media_gavetas"><span class="codenumber">7</span> <span class="title">Médias e Princípio das Gavetas</span></a><ul>
-<li><a href="section-24.html" data-scroll="section-24">Médias</a></li>
-<li><a href="section-25.html" data-scroll="section-25">A Desigualdade das Médias</a></li>
 </ul>
 </li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">8</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-5"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">2.3</span> <span class="title">Recorrências Lineares de Segunda Ordem</span>
+<li>
+<div class="toc-item"><a href="recorrencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Recorrências</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Recorrências Lineares de Primeira Ordem</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Recorrências Lineares de Segunda Ordem</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="matfinanceira.html" class="internal"><span class="codenumber">5</span> <span class="title">Matemática Financeira</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Juros Compostos</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">5.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Renda Perpétua (Séries Uniformes)</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Sistemas de Amortização</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Princípio Aditivo e Princípio Multiplicativo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-17" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-18" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-19" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-20" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-21" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-22" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">6.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">6.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">7</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-7" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-8" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-9" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">8</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-10" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-23" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-11" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-24" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-12" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="media_gavetas.html" class="internal"><span class="codenumber">9</span> <span class="title">Médias e Princípio das Gavetas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-28.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Médias</span></a></div></li>
+<li><div class="toc-item"><a href="section-29.html" class="internal"><span class="codenumber">9.2</span> <span class="title">A Desigualdade das Médias</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">10</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-5"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3.1</span> <span class="title">Progressões Aritméticas</span>
 </h2>
-<p id="p-145">Inicialmente, trataremos das recorrências lineares de segunda ordem homogêneas com coeficientes constantes, isto é, recorrências da forma</p>
-<div class="displaymath">
+<section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.1.1</span> <span class="title">Sequências Numéricas</span>
+</h3>
+<ol class="decimal">
+<li id="li-54"><div class="para" id="p-derived-li-54">Progressões Aritméticas são casos particulares de sequências numéricas.</div></li>
+<li id="li-55"><div class="para" id="p-derived-li-55">Uma sequência numérica é uma função <span class="process-math">\(x:\mathbb{N}\rightarrow\mathbb{R}\text{.}\)</span>
+</div></li>
+<li id="li-56"><div class="para" id="p-derived-li-56">É comum denotar <span class="process-math">\(x(n)\)</span> por <span class="process-math">\(x_n\)</span> e usar <span class="process-math">\((x_n)\)</span> para representar a sequência.</div></li>
+</ol></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.1.2</span> <span class="title">Progressões Aritméticas</span>
+</h3>
+<article class="definition definition-like" id="definition-8"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h4>
+<ol class="decimal">
+<li id="li-57"><div class="para" id="p-derived-li-57">Uma <em class="emphasis">progressão aritmética</em> é uma sequência na qual a diferença entre cada termo e o termo anterior é constante. Essa diferença constante é chamada de razão da progressão e representada pela letra r.</div></li>
+<li id="li-58"><div class="para" id="p-derived-li-58">Mais formalmente: <span class="process-math">\((a_n)\)</span> é uma progressão aritmética quando existe um número real <span class="process-math">\(r\)</span> tal que  <span class="process-math">\(a_{n+1} = a_n + r\text{,}\)</span> para todo <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span>
+</div></li>
+</ol></article><div class="para logical" id="p-92">
+<div class="para">Em uma progressão aritmética <span class="process-math">\((a_n)\)</span>
+</div>
+<ul class="disc">
+<li id="li-59"><div class="para" id="p-derived-li-59">para avançar um termo, basta somar a razão;</div></li>
+<li id="li-60"><div class="para" id="p-derived-li-60">para avançar dois termos, basta somar duas vezes a razão;</div></li>
+<li id="li-61"><div class="para" id="p-derived-li-61">e assim por diante;</div></li>
+</ul>
+<div class="para">De modo geral,</div>
+<div class="displaymath process-math">
 \begin{equation*}
-x_{n+2}+px_{n+1}+qx_n=0.
+a_n = a_1+(n-1)r,
 \end{equation*}
 </div>
-<p data-braille="continuation">Suporemos sempre \(q\neq 0\text{,}\) pois se \(q=0\text{,}\) a recorrência seria, na realidade, uma recorrência de primeira ordem.</p>
-<p id="p-146">A cada recorrência linear de segunda ordem homogênea, com coeficientes constantes, da forma acima, associaremos uma equação do segundo grau,</p>
-<div class="displaymath">
+<div class="para">pois, ao passar de <span class="process-math">\(a_1\)</span> para <span class="process-math">\(a_n\)</span> , avançamos <span class="process-math">\(n-1\)</span> termos.</div>
+</div>
+<article class="example example-like" id="example-13"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-93">Em uma progressão aritmética, o quinto termo vale 30 e o vigésimo termo vale 50. Quanto vale o oitavo termo dessa progressão?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><div class="para logical" id="p-94">
+<div class="para">Observe que <span class="process-math">\(a_{20}=a_5+15r\text{.}\)</span> Logo, <span class="process-math">\(50=30+15r\text{,}\)</span> daí <span class="process-math">\(r=\frac{4}{3}\text{.}\)</span> Assim,</div>
+<div class="displaymath process-math">
 \begin{equation*}
-r^2+pr+q=0,
+a_8 = a_5+3r =30+3\times \frac{4}{3} = 34.
 \end{equation*}
 </div>
-<p data-braille="continuation">chamada <em class="emphasis">equação característica.</em> A nossa suposição preliminar de que \(q\neq 0\) implica que \(0\) não é raiz da equação característica.</p>
-<article class="example example-like" id="example-40"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
-</h6>
-<p id="p-147">A recorrência \(x_{n+2}=x_{n+1}+x_n\) tem equação característica \(r^2=r+1\text{.}\) As raízes da equação característica são:</p>
-<div class="displaymath">
+</div></div></div></article><article class="example example-like" id="example-14"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-95">Qual é a razão da progressão aritmética que se obtem inserindo 10 termos entre os números 3 e 25?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><div class="para" id="p-96">Temos <span class="process-math">\(a_1=3\)</span> e <span class="process-math">\(a_{12}=25\text{.}\)</span> Como <span class="process-math">\(a_{12}=a_1+11r\text{,}\)</span> temos <span class="process-math">\(25 = 3+11r\text{,}\)</span> logo <span class="process-math">\(r=2\text{.}\)</span>
+</div></div></div></article><article class="example example-like" id="example-15"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-97">O cometa Halley visita a Terra a cada 76 anos. Sua última passagem por aqui foi em 1986. Quantas vezes ele visitou a Terra desde o nascimento de Cristo? Em que ano foi sua primeira passagem na era cristã?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<div class="para" id="p-98">Os anos de passagem do cometa foram 1986, 1910, 1834,... e formam uma progressão aritmética de razão −76.</div> <div class="para logical" id="p-99">
+<div class="para">O termo de ordem n dessa progressão é</div>
+<div class="displaymath process-math">
 \begin{equation*}
-r_1=\frac{1+\sqrt{5}}{2}~~ \text{ e } ~~ r_2=\frac{1-\sqrt{5}}{2}.
+a_n = a_1+(n-1)r=1986-76(n-1)=2062-76n.
 \end{equation*}
-</div></article><p id="p-148">O teorema a seguir mostra que se as raízes da equação característica são \(r_1\) e \(r_2\text{,}\)  com \(r_1\neq r_2\text{,}\) então qualquer sequência da forma \(a_n=C_1r_1^n + C_2r_2^n\) é solução da recorrência, quais que sejam os valores das constantes \(C_1\) e \(C_2\text{.}\)</p>
-<article class="theorem theorem-like" id="teo-recorrencia01"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
-</h6>
-<p id="p-149">Se as raízes de \(r^2+pr+q=0\) são \(r_1\) e \(r_2\text{,}\) com \(r_1\neq r_2\text{,}\) então \(a_n=C_1r_1^n + C_2r_2^n\) é solução da recorrência \(x_{n+2}+px_{n+1}+qx_n=0\text{,}\) quaisquer que sejam os valores das constantes \(C_1\) e \(C_2\text{.}\)</p></article><article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><p id="p-150">Substituindo \(a_n=C_1r_1^n + C_2r_2^n\) na recorrência \(x_{n+2}+px_{n+1}+qx_n=0\text{,}\) obtemos, agrupando convenientemente os termos,</p>
-<div class="displaymath">
+</div>
+<div class="para">Temos <span class="process-math">\(a_n&gt;0\)</span> quando <span class="process-math">\(n\lt\frac{2062}{76}=27,13...\)</span> Portanto, os termos positivos dessa progressão são os 27 primeiros.</div>
+</div> <div class="para" id="p-100">Logo, ele nos visitou 27 vezes na era cristã e sua primeira passagem na era cristã foi no ano  <span class="process-math">\(a_{27} = 2062 - 76 \times 27 = 10\text{.}\)</span>
+</div> <article class="remark remark-like" id="remark-13"><h5 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h5>Na verdade, a primeira passagem do cometa Halley na era cristã ocorreu no ano 12.</article>
+</div></div></article><article class="example example-like" id="example-16"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-101">O preço de um carro novo é de R$ 15 000,00 e diminui de R$1 000,00 a cada ano de uso. Qual será o preço com 4 anos de uso?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<div class="para" id="p-102">Chamando o preço com <span class="process-math">\(n\)</span> anos de uso de <span class="process-math">\(a_n\text{,}\)</span> temos <span class="process-math">\(a_0 = 15000\)</span> e queremos calcular <span class="process-math">\(a_4\text{.}\)</span>
+</div> <div class="para" id="p-103">Como a desvalorização anual é constante, <span class="process-math">\((a_n)\)</span> é uma progressão aritmética.</div> <div class="para" id="p-104">Logo, <span class="process-math">\(a_4 = a_0 + 4r = 15000 + 4 \times (−1000) = 11000\text{,}\)</span> ou seja, o preço será de R$11 000,00.</div>
+</div></div></article><article class="example example-like" id="example-17"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-105">Determine 4 números em progressão aritmética crescente, conhecendo sua soma 8 e a soma de seus quadrados 36.</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para logical" id="p-106">
+<div class="para">Um bom truque, para representar progressões aritméticas com um número par de termos, é chamar os dois termos centrais de <span class="process-math">\(x-y\)</span> e <span class="process-math">\(x+y\text{.}\)</span> Isso faz com que a razão seja <span class="process-math">\((x+y)-(x-y)=2y\text{.}\)</span> A progressão é então</div>
+<div class="displaymath process-math">
 \begin{equation*}
-C_1r_1^n(r_1^2+pr_1+q) + C_2r_2^n(r_2^2+pr_2+q) = C_1r_1^n\cdot 0 + C_2r_2^n\cdot 0=0.
+x-3y, x-y, x+y, x+3y.
 \end{equation*}
+</div>
+<div class="para">Temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} \displaystyle(x-3y)+(x-y)+(x+y)+(x+3y)=8\\
+(x-3y)^2+(x-y)^2+(x+y)^2+(x+3y)^2=36
+\end{cases}\\
+\begin{cases} \displaystyle 4x=8\\
+4x^2+20y^2=36
+\end{cases}\\
+\begin{cases} \displaystyle x=2\\
+y=\pm 1
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Como a progressão é crescente, <span class="process-math">\(y&gt;0\text{.}\)</span> Logo, <span class="process-math">\(x=2\)</span> e <span class="process-math">\(y=1\text{.}\)</span> Os números são <span class="process-math">\(-1, 1, 3, 5\text{.}\)</span>
+</div>
+</div></div></div></article></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.1.3</span> <span class="title">Progressões Aritméticas e Funções Afins</span>
+</h3>
+<article class="remark remark-like" id="rem-pa-polig1"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-107">
+<div class="para">Em uma progressão aritmética de razão não nula, o termo geral é dado por um polinômio do primeiro grau em <span class="process-math">\(n\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n=a_1+(n-1)r = r\cdot n+(a_1-r).
+\end{equation*}
+</div>
+</div> <div class="para" id="p-108">Reciprocamente, se em uma sequência o termo de ordem <span class="process-math">\(n\)</span> for dado por um polinômio do primeiro grau em <span class="process-math">\(n\)</span> ela será uma progressão aritmética de razão não nula. Com efeito, se <span class="process-math">\(x_n = an + b, (x_n)\)</span> é uma progressão aritmética na qual <span class="process-math">\(r = a\)</span> e <span class="process-math">\(a_1 = a + b\text{.}\)</span>
+</div> <div class="para" id="p-109">Portanto, uma progressão aritmética pode ser vista como uma função afim, restrita ao domı́nio dos números naturais.</div></article><div class="para" id="p-110">Em consequência, o gráfico de uma progressão aritmética é um conjunto de pontos igualmente espaçados sobre uma reta.</div></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.1.4</span> <span class="title">Soma dos Termos de uma Progressão Aritmética</span>
+</h3>
+<div class="para" id="p-111">Baseado na ideia de Gauss, usada para calcular a soma <span class="process-math">\(1+2+3+\cdots+100\text{,}\)</span> podemos calcular a soma dos <span class="process-math">\(n\)</span> primeiros termos de uma progressão aritmética qualquer.</div>
+<article class="theorem theorem-like" id="teo-soma-pa"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-112">
+<div class="para">A soma dos <span class="process-math">\(n\)</span> primeiros termos da progressão aritmética <span class="process-math">\((a_1, a_2, a_3, \ldots)\)</span> é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n = \frac{(a_1+a_n)n}{2}.
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><div class="para logical" id="p-113">
+<div class="displaymath process-math">
+\begin{equation*}
+S_n = a_1+a_2+\cdots+a_{n-1}+a_n
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n = a_n+a_{n-1}+\cdots+a_2+a_1
+\end{equation*}
+</div>
+<div class="para">Somando as duas igualdades, ficamos com</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2S_n=(a_1+a_n)+(a_2+a_{n-1})+\cdots+(a_{n-1}+a_2)+(a_1+a_n)
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(a_j+a_{n-(j-1)} = a_1+a_n\text{,}\)</span> para <span class="process-math">\(j=1,2,\ldots, n\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n = \frac{(a_1+a_n)n}{2}.
+\end{equation*}
+</div>
 </div></article></div>
-<article class="example example-like" id="example-41"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
-</h6>
-<p id="p-151">A equação \(x_{n+2}+3x_{n+1}-4x_n=0\) tem \(r^2+3r-4=0\) como equação característica. As raízes da equação são \(1\) e \(-4\text{.}\) De acordo com o <a class="xref" data-knowl="./knowl/teo-recorrencia01.html" title="Teorema 2.3.2">Teorema 2.3.2</a>, todas as sequências da forma \(a_n=C_11^n+C_2(-4)^n\) são soluções da recorrência.</p></article><article class="theorem theorem-like" id="teo-recorrencia02"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
-</h6>
-<p id="p-152">Se as raízes de \(r^2+pr+q=0\) são \(r_1\) e \(r_2\text{,}\) com \(r_1\neq r_2\text{,}\) então todas as soluções da recorrência \(x_{n+2}+px_{n+1}+qx_n=0\) são da forma \(a_n=C_1r_1^n+C_2r_2^n, C_1\) e \(C_2\) constantes.</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-153">Seja \(y_n\) uma solução qualquer de \(x_{n+2}+px_{n+1}+qx_n=0\text{.}\) Determinemos constantes \(C_1\) e \(C_2\) que sejam soluções do sistema de equações:</p>
-<div class="displaymath">
+<article class="example example-like" id="example-18"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-114">Qual é o valor da soma dos 20 primeiros termos da progressão aritmética <span class="process-math">\(2,6,10,\ldots\text{?}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para logical" id="p-115">
+<div class="para">Primeiro, vamos calcular <span class="process-math">\(a_{20}\text{,}\)</span> depois, usamos a fórmula da soma.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{20}=a_1+19r=2+19\times 4=78.
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{20}=\frac{(2+78)20}{2}=800.
+\end{equation*}
+</div>
+</div></div></div></article><article class="example example-like" id="ex-soma-inteiros"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-116">Qual é a soma dos <span class="process-math">\(n\)</span> primeiros números inteiros positivos?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="para logical" id="p-117"><div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n k = 1+2+3+\cdots+n=\frac{n(n+1)}{2}.
+\end{equation*}
+</div></div></div></div></article><div class="para" id="p-118">Observe que <span class="process-math">\(S_n\)</span> no exemplo anterior, é um polinômio do segundo grau em <span class="process-math">\(n\text{,}\)</span> sem termo independente.</div>
+<article class="example example-like" id="example-20"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-119">Qual é a soma dos <span class="process-math">\(n\)</span> primeiros números ímpares?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="para logical" id="p-120"><div class="displaymath process-math">
+\begin{equation*}
+1+3+5+\cdots+(2n-1)=\frac{(1+2n-1)n}{2}=n^2.
+\end{equation*}
+</div></div></div></div></article><article class="remark remark-like" id="ex-soma-poli-grau2"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-121">Observe que <span class="process-math">\(S_n\text{,}\)</span> no exemplo anterior, é também um polinômio do segundo grau em <span class="process-math">\(n\text{,}\)</span> sem termo indepentente. Isto se generaliza como segue.</div> <div class="para logical" id="p-122">
+<div class="para">A soma dos <span class="process-math">\(n\)</span> primeiros termos de um progressão aritmética é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n = \frac{(a_1+a_n)n}{2}=\frac{(a_1+a_1+(n-1)r)n}{2} = \frac{r}{2}n^2+\left( a_1-\frac{r}{2} \right)n.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-123">Observe que, se <span class="process-math">\(r\neq 0\text{,}\)</span> então <span class="process-math">\(S_n\)</span> é um polinômio do segundo grau em <span class="process-math">\(n\text{,}\)</span> desprovido de termo independente. Se <span class="process-math">\(r=0, S_n\)</span> é um polinômio de grau menor que 2, sem termo independente.</div> <div class="para logical" id="p-124">
+<div class="para">Reciprocamente, todo polinômio do segundo grau em <span class="process-math">\(n\text{,}\)</span> desprovido de termo independente, é o valor da soma dos <span class="process-math">\(n\)</span> primeiros termos de alguma progressão aritmética. Com efeito</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(n)=an^2+bn
+\end{equation*}
+</div>
+<div class="para">é a soma dos <span class="process-math">\(n\)</span> primeiros termos da progressão aritmética na qual</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{r}{2}=a \text{ e } a_1-\frac{r}{2}=b, \text{ ou seja, } r=2a \text{ e } a_1=a+b.
+\end{equation*}
+</div>
+</div></article></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.1.5</span> <span class="title">Progressões Aritméticas de Ordem Superior</span>
+</h3>
+<article class="definition definition-like" id="definition-9"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+</h4>Define-se para sequências o operador <span class="process-math">\(\Delta\text{,}\)</span> chamado de operador diferença, por <span class="process-math">\(\Delta a_n = a_{n+1}-a_n\text{.}\)</span></article><div class="para" id="p-125">Portanto, da definição segue imediatamente que uma sequência <span class="process-math">\((a_n)\)</span> é uma progressão aritmética se e somente se <span class="process-math">\((\Delta a_n) = (a_{n+1} - a_n)\)</span> é constante.</div>
+<article class="example example-like" id="example-21"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-126">
+<div class="para">Mostre que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n \Delta a_k = a_{n+1}-a_1.
+\end{equation*}
+</div>
+<div class="para">Este resultado é conhecido como o <em class="emphasis">Teorema Fundamental da Somação</em>.</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><div class="para logical" id="p-127">
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n \Delta a_k = \Delta a_1+\Delta a_2+\cdots+\Delta a_{n-1}+\Delta a_n=
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a_2-a_1)+(a_3-a_2)+\cdots+(a_n-a_{n-1})+(a_{n+1}-a_n)=
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{n+1}-a_1.
+\end{equation*}
+</div>
+</div></div></div></article><article class="definition definition-like" id="definition-10"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
+</h4>Uma <em class="emphasis">progressão aritmética de segunda ordem</em> é uma sequência <span class="process-math">\((a_n)\)</span> na qual as diferenças <span class="process-math">\(\Delta a_n = a_{n+1} - a_n\text{,}\)</span> entre cada termo e o termo anterior, formam uma progressão aritmética não-estacionária.</article><article class="example example-like" id="example-22"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-128">
+<div class="para">A sequência <span class="process-math">\((a_n)=(1,3,6,10,15,21,\ldots)\)</span> é uma progressão aritmética de segunda ordem, pois a sequência das diferenças entre cada termo e o anterior,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(b_n)=(\Delta a_n)=(a_{n+1}-a_n)=(2,3,4,5,6,\ldots)
+\end{equation*}
+</div>
+<div class="para">é uma progressão aritmética não-estacionária.</div>
+</div></article><article class="theorem theorem-like" id="teo-termo-pa-segundaordem"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.18</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-129">
+<div class="para">Dada uma progressão aritmética de segunda ordem, o termo <span class="process-math">\(a_n\)</span> pode ser determinado da seguinte maneira</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n = a_1 + \sum_{k=1}^{n-1} \Delta a_k = a_1+\frac{(\Delta a_{n-1}+\Delta a_1)(n-1)}{2}.
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-6"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><div class="para logical" id="p-130">
+<div class="para">Calculando o somatório,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-soma-pa.html">
+\begin{equation*}
+a_1 + \sum_{k=1}^{n-1} \Delta a_k = a_1+(a_2-a_1)+(a_3-a_2)+\cdots+(a_n-a_{n-1}),
+\end{equation*}
+</div>
+<div class="para">obtemos <span class="process-math">\(a_n\text{.}\)</span> A última igualdade segue diretamente do <a href="" class="xref" data-knowl="./knowl/teo-soma-pa.html" title="Teorema 3.1.9">Teorema 3.1.9</a>
+</div>
+</div></article></div>
+<article class="example example-like" id="example-23"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-131">Determine o termo <span class="process-math">\(a_{20}\text{,}\)</span> da progressão aritmética de segunda ordem <span class="process-math">\((a_n)=(1,3,6,10,15,21,\ldots)\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="para logical" id="p-132">
+<div class="para">Já conhecemos <span class="process-math">\(a_1\)</span> e <span class="process-math">\(\Delta a_1\text{.}\)</span> Para usar o <a href="" class="xref" data-knowl="./knowl/teo-termo-pa-segundaordem.html" title="Teorema 3.1.18">Teorema 3.1.18</a>, precisamos calcular <span class="process-math">\(\Delta a_{19}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-termo-pa-segundaordem.html ./knowl/teo-termo-pa-segundaordem.html">
+\begin{equation*}
+\Delta a_{19} = \Delta a_1 + 18\cdot 1 = 2+18 = 20.
+\end{equation*}
+</div>
+<div class="para">Substituindo os valores na última igualdade do <a href="" class="xref" data-knowl="./knowl/teo-termo-pa-segundaordem.html" title="Teorema 3.1.18">Teorema 3.1.18</a>, obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-termo-pa-segundaordem.html ./knowl/teo-termo-pa-segundaordem.html">
+\begin{equation*}
+a_{20} = a_1+\frac{(\Delta a_{19}+\Delta a_1)19}{2} = 1+\frac{(20+2)19}{2}=210.
+\end{equation*}
+</div>
+</div></div></div></article><article class="definition definition-like" id="definition-11"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.1.20</span><span class="period">.</span>
+</h4>De modo geral, uma <em class="emphasis">progressão aritmética de ordem <span class="process-math">\(k\)</span></em> <span class="process-math">\((k &gt; 2)\)</span> é uma sequência na qual as diferenças entre cada termo e o termo anterior formam uma progressão aritmética de ordem <span class="process-math">\(k - 1\text{.}\)</span></article><article class="example example-like" id="example-24"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.21</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-133">Moste que <span class="process-math">\((a_n) = (n^3 - n)\)</span> é uma progressão aritmética de terceira ordem.</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-tabular" data-refid="hk-solution-19" id="solution-19"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
+<div class="para" id="p-134">A tabela abaixo mostra as sequências <span class="process-math">\(a_n, (\Delta a_n), (\Delta^2 a_n), (\Delta^3 a_n)\text{.}\)</span>
+</div> <figure class="table table-like" id="table-2"><figcaption><span class="type">Tabela</span><span class="space"> </span><span class="codenumber">3.1.22<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(n\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(a_n\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Delta a_n\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Delta^2 a_n\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Delta^3 a_n\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines">12</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines">18</td>
+<td class="c m b0 r0 l0 t0 lines">18</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines">24</td>
+<td class="c m b0 r0 l0 t0 lines">36</td>
+<td class="c m b0 r0 l0 t0 lines">24</td>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
+<td class="c m b0 r0 l0 t0 lines">60</td>
+<td class="c m b0 r0 l0 t0 lines">60</td>
+<td class="c m b0 r0 l0 t0 lines">30</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\square\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines">120</td>
+<td class="c m b0 r0 l0 t0 lines">90</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\square\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">6</td>
+<td class="c m b0 r0 l0 t0 lines">210</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\square\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">7</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\square\)</span></td>
+</tr>
+</table></div></figure> <div class="para logical" id="p-135">
+<div class="para">Se <span class="process-math">\((\Delta^3 a_n)\text{,}\)</span> como parece, for constante, <span class="process-math">\((\Delta^2 a_n)\)</span> será uma progressão aritmética, <span class="process-math">\((\Delta a_n)\)</span> será uma progressão aritmética de segunda ordem e <span class="process-math">\((a_n)\)</span> será uma progressão aritmética de terceira ordem. Isso é verdade, pois</div>
+<div class="displaymath process-math" id="md-10">
+\begin{align*}
+a_n = \amp ~n^3-n \\
+\Delta a_n = \amp ~ a_{n+1}-a_n = (n+1)^3-(n+1) - (n^3-n)=3n^2+3n\\
+\Delta^2 a_n = \amp ~ 3(n+1)^2+3(n+1)-(3n^2+3n) = 6n+6 \\
+\Delta^3 a_n = \amp ~ 6(n+1)+6 - (6n+6) = 6. 
+\end{align*}
+</div>
+<div class="para">e <span class="process-math">\(\Delta^3 a_n\)</span> realmente é constante.</div>
+</div> <div class="para" id="p-136">Observe que, nesse quadro, a soma de dois elementos lado a lado é igual ao elemento que está embaixo do primeiro desses elementos. Isso nos permite calcular os elementos que estão assinalados por <span class="process-math">\(\square\)</span> na tabela acima. Da direita para a esquerda, eles são iguais a 6 , 30 + 6 = 36 , 90 + 36 = 126 e 210 + 126 = 336. Portanto, <span class="process-math">\(a_7 = 336\)</span> e este foi o processo mais exótico que você já viu para calcular <span class="process-math">\(a_7 = 7^3 - 7\text{.}\)</span>
+</div>
+</div></div></article><article class="remark remark-like" id="remark-16"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">3.1.23</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-137">A sequência cujo termo de ordem <span class="process-math">\(n\)</span> é a soma <span class="process-math">\(S_n=a_1+a_2+\cdots+a_n\)</span> dos <span class="process-math">\(n\)</span> primeiros termos de uma progressão aritmética de ordem <span class="process-math">\(p\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p+1\text{.}\)</span> Basta observar que o operador diferença, aplicado a <span class="process-math">\((S_n)\text{,}\)</span> fornece <span class="process-math">\(\Delta S_n=S_{n+1}-S_n=a_{n+1}\)</span> e define, portanto, uma progressão aritmética de ordem <span class="process-math">\(p\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="theorem-11"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.24</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-138">Toda sequência na qual o termo de ordem <span class="process-math">\(n\)</span> é um polinômio do segundo grau, é uma progressão aritmética de segunda ordem e, reciprocamente, se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de segunda ordem então <span class="process-math">\((a_n)\)</span> é um polinômio de segundo grau em <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-7"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><div class="para logical" id="p-139">
+<div class="para">Com efeito, se <span class="process-math">\(a_n=an^2+bn+c\text{,}\)</span> com <span class="process-math">\(a\neq 0\text{,}\)</span> temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rem-pa-polig1.html" id="md-11">
+\begin{align*}
+\Delta a_n = \amp ~a_{n+1}-a_n \\
+= \amp ~ a(n+1)^2+b(n+1)+c - (an^2+bn+c)\\
+= \amp ~ 2an+(a+b), 
+\end{align*}
+</div>
+<div class="para"> que é do primeiro grau em n. Pela <a href="" class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Nota 3.1.8">Nota 3.1.8</a>, <span class="process-math">\((\Delta a_n)\)</span> é uma progressão aritmética não-estacionária.</div>
+</div> <div class="para logical" id="p-140">
+<div class="para">Por outro lado, se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de segunda ordem, <span class="process-math">\(b_n = \Delta a_n = a_{n+1} - a_n\)</span> é uma progressão aritmética com razão diferente de zero e</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-soma-poli-grau2.html" id="md-12">
+\begin{align*}
+S_n= \amp~b_1+b_2+b_3+\cdots+b_{n-1}+b_{n}\\
+= \amp~(a_2-a_1)+(a_3-a_2)+(a_4-a_3)+\cdots+(a_n-a_{a-1})+(a_{n+1}-a_n)\\
+= \amp~a_{n+1}-a_1.
+\end{align*}
+</div>
+<div class="para"> Pela <a href="" class="xref" data-knowl="./knowl/ex-soma-poli-grau2.html" title="Nota 3.1.13">Nota 3.1.13</a>, como <span class="process-math">\(b_n\)</span> é uma progressão aritmética, <span class="process-math">\(S_n=a_{n+1}-a_1\)</span> é um polinômio do segundo grau em <span class="process-math">\(n\text{.}\)</span>  Em consequência, <span class="process-math">\(a_n\)</span> também é um polinômio do segundo grau em <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="theorem theorem-like" id="teo-seqPoliOrdem"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.25</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-141">Toda sequência na qual o termo de ordem <span class="process-math">\(n\)</span> é um polinômio em <span class="process-math">\(n\text{,}\)</span> de grau <span class="process-math">\(p\text{,}\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\)</span> e, reciprocamente, se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\text{,}\)</span> então <span class="process-math">\((a_n)\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-8"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-8"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><div class="para" id="p-142">A demonstração está no final da seção e encontra-se no <a href="" class="xref" data-knowl="./knowl/teo-seqPoliOrdemP.html" title="Teorema 3.1.30">Teorema 3.1.30</a>.</div></article></div>
+<article class="example example-like" id="example-25"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.26</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-143">
+<div class="para">Calcule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n = \sum_{k=1}^n k(k+2).
+\end{equation*}
+</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><div class="para logical" id="p-144">
+<div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 3.1.25">Teorema 3.1.25</a>, a sequência definida por <span class="process-math">\(a_n=n(n+2)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(2\text{,}\)</span> já que seu termo geral é um polinômio de grau 2. Logo, a soma <span class="process-math">\(S_n\)</span> de seus <span class="process-math">\(n\)</span> primeiros termos define uma progressão aritmética de ordem <span class="process-math">\(2+1=3\text{.}\)</span> Portanto, usando agora a volta do <a href="" class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 3.1.25">Teorema 3.1.25</a>, o termo geral de <span class="process-math">\(S_n\)</span> é dado por um polinômios de grau 3 em <span class="process-math">\(n\text{.}\)</span> Isto é, podemos escrever <span class="process-math">\(S_n=an^3+bn^2+cn+d\text{.}\)</span> Atribuindo valores 1, 2, 3 e 4, obtemos as equações</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-seqPoliOrdem.html ./knowl/teo-seqPoliOrdem.html">
 \begin{equation*}
 \begin{cases} 
-C_1r_1+C_2r_2=y_1\\
-C_1r_1^2+C_2r_2^2=y_2\\
+a+b+c+d=3\\
+8a+4b+2c+d=11\\
+27a+9b+3c+d=26\\
+64a+16b+4c+d=50.
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">isto é,</p>
-<div class="displaymath">
+<div class="para">Resolvendo, encontramos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-seqPoliOrdem.html ./knowl/teo-seqPoliOrdem.html">
 \begin{equation*}
-C_1 = \frac{r_2^2y_1-r_2y_2}{r_1r_2(r_2-r_1)}~~ \text{ e }  C_2=\frac{r_1y_2-r_1^2y_1}{r_1r_2(r_2-r_1)}.
+a=\frac{1}{3}, b=\frac{3}{2}, c=\frac{7}{6}, d=0.
 \end{equation*}
 </div>
-<p data-braille="continuation">Isso é possível, pois \(r_1\neq r_2\text{,}\) \(r_1\neq 0\) e \(r_2\neq 0\text{.}\)</p>
-<p id="p-154">Afirmamos que \(y_n = C_1r_1^n+C_2r_2^n\) para todo \(n\) natural, o que provará o teorema. Com efeito, seja \(z_n=y_n-C_1r_1^n-C_2r_2^n\text{.}\) Mostraremos que \(z_n=0\) para todo \(n\text{.}\) Temos</p>
-<div class="displaymath">
+<div class="para">Então,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-seqPoliOrdem.html ./knowl/teo-seqPoliOrdem.html">
 \begin{equation*}
-z_{n+2}+pz_{n+1}+qz_n=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(n+1)(2n+7)}{6}.
 \end{equation*}
 </div>
-<div class="displaymath">
+</div></div></div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.1.6</span> <span class="title">Somas Polinomiais</span>
+</h3>
+<div class="para logical" id="p-145">
+<div class="para">A pergunta que nos colocamos é como calcular somas do tipo</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\quad\quad=(y_{n+2}+py_{n+1}+qy_n)-C_1r_1^n(r_1^2+pr_1+q)-C_2r_2^n(r_2^2+pr_2+q).
+\sum_{k=1}^n P(k),
 \end{equation*}
 </div>
-<p data-braille="continuation">O primeiro parênteses é igual a zero porque \(y_n\) é solução de \(x_{n+2}+px_{n+1}+qx_n=0\text{;}\) os dois últimos parênteses são iguais a zero porque \(r_1\) e \(r_2\) são raízes de \(r^2+pr+q=0\text{.}\) Então \(z_{n+2}+pz_{n+1}+qz_n=0\text{.}\) Além disso, como \(C_1r_1+C_2r_2=y_1\) e \(C_2r_1^2+C_2r_2^2=y_2\text{,}\) temos \(z_1=z_2=0\text{.}\) Mas, se \(z_{n+2}+pz_{n+1}+qz_n=0\) e \(z_1=z_2=0\text{,}\) então \(z_n=0\) para todo \(n\text{.}\)</p></article></div>
-<article class="example example-like" id="example-42"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
-</h6>
-<p id="p-155">Determine as soluções da recorrência \(x_{n+2}+3x_{n+1}-4x_n=0.\)</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><p id="p-156">A equação característica \(r^2+3r-4=0\text{,}\) tem raízes \(1\) e \(-4\text{.}\) De acordo com o <a class="xref" data-knowl="./knowl/teo-recorrencia01.html" title="Teorema 2.3.2">Teorema 2.3.2</a> e o <a class="xref" data-knowl="./knowl/teo-recorrencia02.html" title="Teorema 2.3.4">Teorema 2.3.4</a>, as soluções da recorrência são as sequências da forma \(a_n=C_11^n+C_2(-4)^n\text{,}\) isto é, \(a_n=C_1+C_2(-4)^n\text{,}\) na qual, \(C_1\) e \(C_2\) são constantes arbitrárias.</p></div></div></article><article class="example example-like" id="example-43"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
-</h6>
-<p id="p-157">Determine o número de Fibonacci \(F_n\) definido por</p>
-<div class="displaymath">
+<div class="para">onde <span class="process-math">\(P(k)\)</span> é um polinômio em <span class="process-math">\(k\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-146">
+<div class="para">Se o polinômio é <span class="process-math">\(P(k) = a_0 + a_1k + a_2k^2 +\cdots+ a_mk^m\text{,}\)</span> temos</div>
+<div class="displaymath process-math" id="md-13">
+\begin{align*}
+\sum_{k=1}^n P(k) = \amp ~\sum_{k=1}^n a_0 +\sum_{k=1}^n a_1k+\cdots +\sum_{k=1}^n a_mk^m \\
+= \amp ~ a_0\sum_{k=1}^n 1 +a_1\sum_{k=1}^n k+\cdots +a_m\sum_{k=1}^n k^m,
+\end{align*}
+</div>
+<div class="para">que pode ser calculado desde que saibamos calcular, para <span class="process-math">\(p \in \mathbb{N}\text{,}\)</span> somas do tipo:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-F_{n+2}=F_{n+1}+F_n, \quad\text{ com } \quad F_1=F_2=1.
+\sum_{k=1}^n k^p = 1^p+2^p+\cdots+n^p. 
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like">
-<p id="p-158">A equação característica é \(r^2=r+1\) e suas raízes são dadas por</p>
-<div class="displaymath">
+</div>
+<article class="example example-like" id="example-26"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.27</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-147">
+<div class="para">Determine o valor de</div>
+<div class="displaymath process-math">
 \begin{equation*}
-r_1 = \frac{1+\sqrt{5}}{2} ~~ \text{ e }~~ r_2 = \frac{1-\sqrt{5}}{2}.
+\sum_{k=1}^n k^2 = 1^2+2^2+\cdots+n^2. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Então,</p>
-<div class="displaymath">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para logical" id="p-148">
+<div class="para">Observe que</div>
+<div class="displaymath process-math">
 \begin{equation*}
-F_n=C_1\left( \frac{1+\sqrt{5}}{2} \right)^n + C_2\left( \frac{1-\sqrt{5}}{2} \right)^n.
+\sum_{k=1}^n (k+1)^3 = \sum_{k=1}^n k^3+3\sum_{k=1}^n k^2+3\sum_{k=1}^n k +\sum_{k=1}^n 1.
 \end{equation*}
 </div>
-<p data-braille="continuation">Para determinar \(C_1\) e \(C_2\text{,}\) podemos usar \(F_1=F_2=1\text{,}\) mas é mais conveniente usar \(F_0=0\) e \(F_1=1\text{.}\)</p>
-<p id="p-159">Obtemos o sistema</p>
-<div class="displaymath">
+<div class="para">Os dois primeiros somatórios têm várias parcelas em comum, pois</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\begin{cases} 
-C_1+C_2=0\\
-C_1\left( \frac{1+\sqrt{5}}{2} \right) +C_2\left( \frac{1-\sqrt{5}}{2} \right)=1.\\
-\end{cases}
+\sum_{k=1}^n(k+1)^3 = 2^3+3^3+\cdots+n^3+(n+1)^3
 \end{equation*}
 </div>
-<p data-braille="continuation">Resolvendo o sistema, encontramos \(C_1=-C_2=\frac{1}{\sqrt{5}}\text{.}\) Daí:</p>
-<div class="displaymath">
+<div class="para">e</div>
+<div class="displaymath process-math">
 \begin{equation*}
-F_n=\frac{1}{\sqrt{5}}\left( \frac{1+\sqrt{5}}{2} \right)^n - \frac{1}{\sqrt{5}}\left( \frac{1-\sqrt{5}}{2} \right)^n.
+\sum_{k=1}^n k^3 = 1^3+2^3+3^3+\cdots+n^3
 \end{equation*}
 </div>
-</div></div></article><article class="remark remark-like" id="remark-12"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
-</h6>
-<p id="p-160">Se as raízes da equação característica forem complexas, a solução \(a_n = C_1r_1^n + C_2r_2^n,\) \(C_1\) e \(C_2\) constantes arbitrárias pode ser escrita de modo a evitar cálculos com números complexos. Pondo as raízes na forma trigonométrica, teremos:</p>
-<div class="displaymath">
+<div class="para">Simplificando as parcelas em comum, obtemos</div>
+<div class="displaymath process-math">
 \begin{equation*}
-r_1 = \rho(\cos{\theta}+ i\sin{\theta}), \quad\quad r_2 = \rho(\cos{\theta}- i\sin{\theta})
+(n+1)^3 = 1^3+ 3\sum_{k=1}^nk^2+3\underbrace{\sum_{k=1}^n k}_{=\frac{n(n+1)}{2}}+\underbrace{\sum_{k=1}^n 1}_{=n}.
 \end{equation*}
 </div>
-<div class="displaymath">
+<div class="para">Daí,</div>
+<div class="displaymath process-math" id="md-14">
+\begin{align*}
+3\sum_{k=1}^n k^2 = \amp ~(n+1)^3-1^3-\frac{3n(n+1)}{2}-n \\
+\sum_{k=1}^n k^2        = \amp ~ \frac{2n^3+3n^2+n}{6}\\
+\sum_{k=1}^n k^2       = \amp ~ \frac{n(n+1)(2n+1)}{6}.
+\end{align*}
+</div>
+<div class="para"> Observe que <span class="process-math">\(\sum_{k=1}^n k^2\)</span> é um polinômio do terceiro grau.</div>
+</div></div></div></article><article class="theorem theorem-like" id="theorem-13"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.28</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-149">
+<div class="displaymath process-math">
 \begin{equation*}
-r_1^n = \rho^n(\cos{n\theta}+ i\sin{n\theta}), \quad\quad r_2^n = \rho^n(\cos{n\theta}- i\sin{n\theta}).
+\sum_{k=1}^n k^p = 1^p+2^p+\cdots+n^p. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Logo,</p>
-<div class="displaymath">
+<div class="para">é um polinômio de grau <span class="process-math">\(p+1\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para" id="p-150">Vamos proceder por indução sobre <span class="process-math">\(p\text{.}\)</span> Para <span class="process-math">\(p=1\text{,}\)</span> o teorema já foi provado no <a href="" class="xref" data-knowl="./knowl/ex-soma-inteiros.html" title="Exemplo 3.1.11">Exemplo 3.1.11</a>.</div> <div class="para logical" id="p-151">
+<div class="para">Suponhamos agora que <span class="process-math">\(\sum_{k=1}^n k^p\)</span> seja um polinômio de grau <span class="process-math">\(p+1\)</span> em <span class="process-math">\(n\text{,}\)</span> para todo <span class="process-math">\(p\in \{1, 2, \ldots, s\}\text{,}\)</span> Mostraremos que essa afirmação é verdadeira para <span class="process-math">\(p=s+1\text{,}\)</span> isto é, mostraremos que <span class="process-math">\(\sum_{k=1}^n k^{s+1}\)</span> é um polinômio de grau <span class="process-math">\(s+2\)</span> em <span class="process-math">\(n\text{.}\)</span> Observe que</div>
+<div class="displaymath process-math">
 \begin{equation*}
-C_1r_1^n+C_2r_2^n = \rho^n((C_1+C_2)\cos{n\theta}+ i(C_1-C_2)\sin{n\theta}).
+(k+1)^{s+2}=k^{s+2}+(s+2)k^{s+1}+\cdots,
 \end{equation*}
 </div>
-<p data-braille="continuation">É claro que \(C_1'=C_1+C_2\) e \(C_2'=i(C_1-C_2)\) são novas constantes e a solução pode ser escrita como</p>
-<div class="displaymath">
+<div class="para">onde os termos que não foram escritos explicitamente formam um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(k\text{.}\)</span> Temos então,</div>
+<div class="displaymath process-math">
 \begin{equation*}
-a_n = \rho^n(C_1'\cos{n\theta}+C_2'\sin{n\theta}).
-\end{equation*}
-</div></article><article class="example example-like" id="example-44"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
-</h6>
-<p id="p-161">A recorrência \(x_{n+2}-x_{n+1}+x_n=0\) tem equação característica \(r^2-r+1=0\text{,}\) cujas raízes são</p>
-<div class="displaymath">
-\begin{equation*}
-r_1=\frac{1+i\sqrt{3}}{2} ~~ \text{ e } ~~ r_2 = \frac{1-i\sqrt{3}}{2},
+\sum_{k=1}^n (k+1)^{s+2} = \sum_{k=1}^n k^{s+2}+(s+2)\sum_{k=1}^n k^{s+1}+F(n),
 \end{equation*}
 </div>
-<p data-braille="continuation">que são complexas de módulo \(\rho =1\) e argumento principal \(\theta = \pm\frac{\pi}{3}\text{.}\)</p>
-<p id="p-162">A solução é</p>
-<div class="displaymath">
+<div class="para">na qual, <span class="process-math">\(F(n)\)</span> é um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{,}\)</span> pela hipótese de indução. Simplificando os termos comuns aos dois primeiros somatórios, obtemos</div>
+<div class="displaymath process-math">
 \begin{equation*}
-x_n = \rho^n(C_1\cos{n\theta}+C_2\sin{n\theta}) = C_1\cos{\frac{n\pi}{3}}+C_2\sin{\frac{n\pi}{3}}.
-\end{equation*}
-</div></article><p id="p-163">O que acontece se as raízes da equação característica forem iguais? Os teoremas a seguir respondem essa pergunta.</p>
-<article class="theorem theorem-like" id="theorem-11"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
-</h6>
-<p id="p-164">Se as raízes de \(r^2+pr+q=0\) são iguais, \(r_1=r_2=r\text{,}\) então,</p>
-<div class="displaymath">
-\begin{equation*}
-a_n=C_1r^n+C_2nr^n
+(n+1)^{s+2} = 1+(s+2)\sum_{k=1}^n k^{s+1}+F(n).
 \end{equation*}
 </div>
-<p data-braille="continuation">é a solução da recorrência</p>
-<div class="displaymath">
+<div class="para">Daí,</div>
+<div class="displaymath process-math">
 \begin{equation*}
-x_{n+2}+px_{n+1}+qx_n=0,
+\sum_{k=1}^n k^{s+1}=\frac{(n+1)^{s+2}-1-F(n)}{s+2}
 \end{equation*}
 </div>
-<p data-braille="continuation">quaisquer que sejam os valores das contantes \(C_1\) e \(C_2\text{.}\)</p></article><article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-165">Se as raízes são iguais, então \(r=-\frac{p}{2}\text{.}\)  Substituindo \(a_n=C_1r^n+C_2nr^n\) na recorrência</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}+px_{n+1}+qx_n=0
-\end{equation*}
+<div class="para">que é um polinômio de grau <span class="process-math">\(s+2\)</span> em <span class="process-math">\(n\text{.}\)</span>
 </div>
-<p data-braille="continuation">obtemos,</p>
-<div class="displaymath">
-\begin{equation*}
-C_1r^n(r^2+pr+q)+C_2nr^n(r^2+pr+q) + C_2r^nr(2r+p)
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-= C_1r^n\cdot0+C_2nr^n\cdot0+C_2r^nr\cdot0=0.
-\end{equation*}
 </div></article></div>
-<article class="theorem theorem-like" id="theorem-12"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
-</h6>
-<p id="p-166">Se as raízes de \(r^2+pr+q=0\) são iguais, \(r_1=r_2=r\text{,}\) então todas as soluções da recorrência \(x_{n+2}+px_{n+1}+qx_n=0\) são da forma \(C_1r^n+C_2nr^n\text{,}\) \(C_1\) e \(C_2\) constantes.</p></article><article class="hiddenproof" id="proof-15"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><p id="p-167">Seja \(y_n\) uma solução qualquer de \(x_{n+2}+px_{n+1}+qx_n=0\text{.}\) Determine constantes \(C_1\) e \(C_2\) que sejam soluções do sistema de equações.</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{cases}
-C_1r+C_2r=y_1\\
-C_1r^2+2C_2r^2=y_2
-\end{cases}
-\end{equation*}
+<article class="corollary theorem-like" id="cor-poligraupmais1"><h4 class="heading">
+<span class="type">Corolário</span><span class="space"> </span><span class="codenumber">3.1.29</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-152">Se <span class="process-math">\(F\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> então <span class="process-math">\(\sum_{k=1}^n F(k)\)</span> é um polinômio de grau <span class="process-math">\(p + 1\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="teo-seqPoliOrdemP"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.30</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-153">Toda sequência na qual o termo de ordem <span class="process-math">\(n\)</span> é um polinômio em <span class="process-math">\(n\text{,}\)</span> de grau <span class="process-math">\(p\text{,}\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\)</span> e, reciprocamente, se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\text{,}\)</span> então <span class="process-math">\((a_n)\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para" id="p-154">Vamos proceder por indução sobre <span class="process-math">\(p\text{.}\)</span>
+</div> <div class="para" id="p-155">Para <span class="process-math">\(p=1\text{,}\)</span> o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária (<a href="" class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Nota 3.1.8">Nota 3.1.8</a>).</div> <div class="para" id="p-156">Suponhamos que o teorema seja verdadeiro para todo <span class="process-math">\(p\in \{1, 2, \ldots, s\}\text{.}\)</span> Mostraremos que essa afirmação é verdadeira para <span class="process-math">\(p=s+1\text{.}\)</span>
+</div> <div class="para" id="p-157">Se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s+1\text{,}\)</span> <span class="process-math">\(b_n=\Delta a_n=a_{n+1}-a_n\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s\)</span> e, pela hipótese de indução, <span class="process-math">\(b_n\)</span> é um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(n\text{.}\)</span> Então <span class="process-math">\(\sum_{k=1}^n b_k = a_{n+1}-a_1\)</span> é, pelo <a href="" class="xref" data-knowl="./knowl/cor-poligraupmais1.html" title="Corolário 3.1.29">Corolário 3.1.29</a>, um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para" id="p-158">Reciprocamente, se <span class="process-math">\(a_n\)</span> é um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\Delta a_n\)</span> é um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(n\text{,}\)</span> pois <span class="process-math">\(c_{s+1}(n+1)^{s+1} - c_{s+1}(n)^{s+1}\)</span> é um polinômio de grau <span class="process-math">\(s\text{.}\)</span> Assim, pela hipótese de indução, <span class="process-math">\((\Delta a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s\text{,}\)</span> ou seja, <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s+1\text{.}\)</span>
+</div></article></div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="pa.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-6.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
 </div>
-<p data-braille="continuation">isto é possível, pois \(r\neq 0\text{.}\)</p>
-<p id="p-168">Afirmamos que \(y_n=C_1r^n+C_2nr^n\) para todo \(n\) natural, o que provará o teorema. Com efeito, seja \(z_n=y_n-C_1r^n-C_2nr^n\text{.}\) Mostraremos que \(z_n=0\) para todo \(n\text{.}\) Temos</p>
-<div class="displaymath">
-\begin{equation*}
-z_{n+2}+pz_{n+1}+qz_n=(y_{n+2}+py_{n+1}+qy_n)-
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
--C_1r^n(r^2+pr+q)-C_2nr^n(r^2+pr+q)-C_2r^nr(2r+p).
-\end{equation*}
-</div>
-<p data-braille="continuation">O primeiro parênteses é igual a zero porque \(y_n\) é a solução de \(x_{n+2}+px_{n+1}+qx_n=0\text{;}\) o segundo e terceiro parênteses são iguais a zero porque \(r\) é raiz de \(r^2+pr+q=0\text{;}\) o quarto é igual a zero porque \(2r+p=0\) já que, quando \(r_1=r_2=r\text{,}\) tem-se \(r=-\frac{p}{2}\text{.}\) Então, \(z_{n+2}+pz_{n+1}+qz_n=0\text{.}\)</p>
-<p id="p-169">Além disso, como \(C_1r+C_2r=y_1\) e \(C_1r^2+2C_2r^2=y_2\text{,}\) temos \(z_1=z_2=0\text{.}\) Mas, se \(z_{n+2}+pz_{n+1}+qz_n=0\) e \(z_1=z_2=0\text{,}\) então \(z_n=0\) para todo \(n\text{.}\)</p></article></div>
-<article class="example example-like" id="example-45"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
-</h6>
-<p id="p-170">A recorrência \(x_{n+2}-4x_{n+1}+4x_n=0\) tem equação característica \(r^2-4r+4=0\text{.}\) As raízes são \(r_1=r_2=2\) e a solução da recorrência é \(x_n=C_12^n+C_2n2^n\text{.}\)</p></article><p id="p-171">O teorema a seguir mostra um processo para resolver algumas recorrências não homogêneas.</p>
-<article class="theorem theorem-like" id="teo-4.6"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span>
-</h6>
-<p id="p-172">Se \(a_n\) é uma solução da equação</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}+px_{n+1}+qx_n=f(n),
-\end{equation*}
-</div>
-<p data-braille="continuation">então a substituição \(x_n=a_n+y_n\) transforma a equação em</p>
-<div class="displaymath">
-\begin{equation*}
-y_{n+2}+py_{n+1}+qy_n=0.
-\end{equation*}
-</div></article><article class="hiddenproof" id="proof-16"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><p id="p-173">Substituindo \(x_n\) por \(a_n+y_n\) na equação, obtemos</p>
-<div class="displaymath">
-\begin{equation*}
-(a_{n+2}+pa_{n+1}+qa_n)+(y_{n+2}+py_{n+1}+qy_n)=f(n).
-\end{equation*}
-</div>
-<p data-braille="continuation">Mas \(a_{n+2}+pa_{n+1}+qa_n=f(n)\text{,}\) pois \(a_n\) é a solução da equação original. Logo, a equação se transformou em</p>
-<div class="displaymath">
-\begin{equation*}
-y_{n+2}+py_{n+1}+qy_n=0.
-\end{equation*}
-</div></article></div>
-<p id="p-174">De acordo com o <a class="xref" data-knowl="./knowl/teo-4.6.html" title="Teorema 2.3.12">Teorema 2.3.12</a>, a solução de uma recorrência não homogênea é constituída de duas parcelas: uma solução qualquer da não homogênea e a solução da homogênea. A solução da homogênea, sabemos achar. Uma solução da não homogênea, procuramos por tentativas.</p>
-<article class="example example-like" id="example-46"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span>
-</h6>
-<p id="p-175">Determine a solução da recorrência:</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}-6x_{n+1}+8x_n=n+3^n.
-\end{equation*}
-</div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like">
-<p id="p-176">A recorrência tem equação característica \(r^2-6r+8=0\text{,}\) cujas raízes são \(r_1=2\) e \(r_2=4\text{.}\) Portanto, a solução da homogênea, isto é, de \(x_{n+2}-6x_{n+1}+8x_n=0\) é \(h_n=C_12^n+C_24^n\text{.}\) Tentaremos agora descobrir uma solução particular, \(t_n\text{,}\) da recorrência</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}-6x_{n+1}+8x_n=n+3^n.
-\end{equation*}
-</div>
-<p data-braille="continuation">Ora, se substituirmos \(t_n\) em \(x_{n+2}-6x_{n+1}+8x_n\) devemos encontrar \(n+3^n\text{.}\) Que tipo de função deve ter \(t_n\text{?}\) É bastante razoável imaginar que \(t_n\) seja a soma  de um polinômio do primeiro grau com uma exponencial de base 3. Tentaremos \(t_n=An+B+C3^n\text{.}\) Substituindo em</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}-6x_{n+1}+8x_n=n+3^n,
-\end{equation*}
-</div>
-<p data-braille="continuation">obtemos \(3An+3B-4A-C3^n=n+3^n\text{.}\) Logo, \(t_n\) será solução se \(3A=1, 3B-4A=0\) e \(-C=1\text{.}\) Logo,</p>
-<div class="displaymath">
-\begin{equation*}
-A=\frac{1}{3}, B=\frac{4}{9}, \text{ e } C=-1.
-\end{equation*}
-</div>
-<p data-braille="continuation">Daí,</p>
-<div class="displaymath">
-\begin{equation*}
-t_n=\frac{1}{3}n+\frac{4}{9}-3^n.
-\end{equation*}
-</div>
-<p data-braille="continuation">Portanto, a solução da recorrência não homogênea é</p>
-<div class="displaymath">
-\begin{equation*}
-x_n=C_12^n+C_24^n+\frac{1}{3}n+\frac{4}{9}-3^n.
-\end{equation*}
-</div>
-</div></div></article><article class="example example-like" id="example-47"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
-</h6>
-<p id="p-177">Determine a solução da recorrência:</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}-6x_{n+1}+8x_n=1+2^n.
-\end{equation*}
-</div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like">
-<p id="p-178">A recorrência tem equação característica \(r^2-6r+8=0\text{,}\) cujas raízes são \(r_1=2\) e \(r_2=4\text{.}\) Portanto, a solução da homogênea, isto é, de \(x_{n+2}-6x_{n+1}+8x_n=0\) é \(h_n=C_12^n+C_24^n\text{.}\) Tentaremos agora descobrir uma solução particular, \(t_n\) da recorrência \(x_{n+2}-6x_{n+1}+8x_n=1+2^n\text{.}\) Ora, se substituirmos \(t_n\) em \(x_{n+2}-6x_{n+1}+8x_n\) devemos encontrar \(1+2^n\text{.}\) Que tipo de função deve ser \(t_n\text{?}\) É bastante razoável imaginar que \(t_n\) seja a soma de um polinômio constante com uma exponencial de base 2. Tentaremos \(t_n=A+B2^n\text{.}\) Substituindo em</p>
-<div class="displaymath">
-\begin{equation*}
-x_{n+2}-6x_{n+1}+8x_n=1+2^n,
-\end{equation*}
-</div>
-<p data-braille="continuation">obtemos \(3A=1+2^n\text{.}\) Essa igualdade é impossível. A recorrência não admite solução da forma \(t_n=A+B2^n\text{.}\)</p>
-<p id="p-179">Parando para pensar no que aconteceu, verificamos que era óbvio que a nossa tentativa não podia dar certo. O espírito da nossa tentativa era tentar uma constante \(A\) para que obtivéssemos uma constante que igualaríamos a 1 e tentar \(B2^n\) para gerar uma exponencial que pudéssemos igualar a \(2^n\text{.}\) É claro que o termo \(B2^n\) não poderia cumprir o seu papel. \(B2^n\) é solução da homogênea (é a solução da homogênea que é obtida pondo \(C_1=B\) e \(C_2=0\)) e, substituindo na equação daria zero e não uma exponencial que pudéssemos igualar a \(2^n\text{.}\)</p>
-<p id="p-180">Vamos corrigir a nossa tentativa para \(t_n=A+Bn2^n\text{.}\) Sempre que na nossa tentativa em algum bloco não cumprir o seu papel, fazemos a correção "aumentando o grau", isto é, multiplicando o bloco por \(n\text{.}\) Agora, substituindo na recorrência, obtemos \(3A-4B2^n=1+2^n\text{,}\) ou seja,</p>
-<div class="displaymath">
-\begin{equation*}
-A=\frac{1}{3} \quad \text{ e } \quad B=-\frac{1}{4},
-\end{equation*}
-</div>
-<p data-braille="continuation">Assim, obtemos a solução</p>
-<div class="displaymath">
-\begin{equation*}
-t_n=\frac{1}{3}-\frac{n2^n}{4}.
-\end{equation*}
-</div>
-<p data-braille="continuation">A solução da recorrência é a soma de \(h_n\) com \(t_n\text{.}\) Portanto,</p>
-<div class="displaymath">
-\begin{equation*}
-x_n=C_12^n+C_24^n+\frac{1}{3}-\frac{n2^n}{4}.
-\end{equation*}
-</div>
-</div></div></article><p id="p-181">Podemos verificar as soluções das recorrências usando o software Maxima da seguinite maneira: <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">maxima('load("solve_rec")')
-sol=maxima('solve_rec(x[n+2]-6*x[n+1]+8*x[n]=1+2^n,x[n])')
-show(sol)
-</script></div></p>
-<article class="remark remark-like" id="remark-13"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
-</h6>
-<p id="p-182">O <a class="xref" data-knowl="./knowl/teo-4.6.html" title="Teorema 2.3.12">Teorema 2.3.12</a> pode ser utilizado para resolver uma recorrência linear não homogênea de qualquer grau, toda vez que se conheça a solução geral \(y_n\) da recorrência homogênea correspondente e uma solução particular \(a(n)\text{:}\) a solução geral da equação não homogênea é dada por \(x_n=a_n+y_n\text{.}\) Ilustramos este fato resolvendo, de um outro modo, a recorrência linear de primeira ordem vista no <a class="xref" data-knowl="./knowl/ex-4.13.html" title="Exemplo 2.2.10">Exemplo 2.2.10</a>.</p></article><article class="example example-like" id="example-48"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span>
-</h6>
-<p id="p-183">Resolva a recorrência \(x_{n+1}=3x_n+3^n, x_1=2\text{,}\) usando o método sugerido pelo <a class="xref" data-knowl="./knowl/teo-4.6.html" title="Teorema 2.3.12">Teorema 2.3.12</a>.</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like">
-<p id="p-184">A equação homogênea correspondente é \(x_{n+1}=3x_n\text{,}\) cuja solução geral é \(y_n=C3^n\text{.}\) Para encontrar uma solução particular da recorrência, poderia parecer natural buscar uma solução da forma \(a_n=k3^n\text{.}\) Mas, como no exemplo anterior, isto não funciona, pois soluções deste tipo satisfazem a equação homogênea. Buscamos, então, uma solução da forma \(a_n=kn3^n\text{.}\) Substituindo na recorrência, obtemos \(k(n+1)3^{n+1}=3kn3^n+3^n\text{.}\) Daí, obtemos \(3kn+3k=3kn+1\text{,}\) o que leva a \(k=\frac{1}{3}\text{.}\) Logo, a solução geral da recorrência é \(x_n=C3^n+\frac{1}{3}n3^n\text{.}\) Finalmente, usando a condição inicial \(x_1=2\text{,}\) obtemos \(2=3C+1\text{,}\) que fornece \(C=\frac{1}{3}\text{.}\) Logo, a solução da recorrência é</p>
-<div class="displaymath">
-\begin{equation*}
-x_n=\frac{1}{3}3^n+\frac{1}{3}n3^n=(n+1)3^{n-1},
-\end{equation*}
-</div>
-<p data-braille="continuation">como encontrado anteriormente.</p>
-</div></div></article></section></div></main>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

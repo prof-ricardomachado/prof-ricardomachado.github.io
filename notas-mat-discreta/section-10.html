@@ -1,63 +1,204 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:54:53-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UFRPE-DM Conjuntos</title>
+<title>UFRPE-DM Juros Compostos</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Matemática Discreta">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="matfinanceira.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="matfinanceira.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-11.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -71,229 +212,332 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
-<p class="byline">Ricardo Machado</p>
-</div>
-</div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="pcontagem.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-note-on-proofs.html" title="Próximo">Próximo</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="pcontagem.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-note-on-proofs.html" title="Próximo">Próximo</a>
-</div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pa.html" data-scroll="pa"><span class="codenumber">1</span> <span class="title">Progressões</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Progressões Aritméticas</a></li>
-<li><a href="section-2.html" data-scroll="section-2">Progressões Geométricas</a></li>
+<li>
+<div class="toc-item"><a href="numeros_naturais.html" class="internal"><span class="codenumber">1</span> <span class="title">Números Naturais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Números Ordinais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Números Ordinais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsec-ad-mul-ord" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Adição, multiplicação e Ordem</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="recorrencias.html" data-scroll="recorrencias"><span class="codenumber">2</span> <span class="title">Recorrências</span></a><ul>
-<li><a href="section-3.html" data-scroll="section-3">Introdução</a></li>
-<li><a href="section-4.html" data-scroll="section-4">Recorrências Lineares de Primeira Ordem</a></li>
-<li><a href="section-5.html" data-scroll="section-5">Recorrências Lineares de Segunda Ordem</a></li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Números Naturais e Contagem</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="matfinanceira.html" data-scroll="matfinanceira"><span class="codenumber">3</span> <span class="title">Matemática Financeira</span></a><ul>
-<li><a href="section-6.html" data-scroll="section-6">Juros Compostos</a></li>
-<li><a href="section-7.html" data-scroll="section-7">A Fórmula das Taxas Equivalentes</a></li>
-<li><a href="section-8.html" data-scroll="section-8">Renda Perpétua (Séries Uniformes)</a></li>
-<li><a href="section-9.html" data-scroll="section-9">Sistemas de Amortização</a></li>
+<li>
+<div class="toc-item"><a href="metodo_inducao.html" class="internal"><span class="codenumber">2</span> <span class="title">O Método da Indução</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsection-4" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-5" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Demonstrando Igualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-6" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Demonstrando Desigualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-7" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Aplicações em Aritmética</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">4</span> <span class="title">Princípios de Contagem</span></a><ul>
-<li><a href="section-10.html" data-scroll="section-10" class="active">Conjuntos</a></li>
-<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
-<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
-<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
-<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
-<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Outras Formas do Princípio da Indução</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">5</span> <span class="title">Números Binomiais</span></a><ul>
-<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
-<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
-<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+<li>
+<div class="toc-item"><a href="pa.html" class="internal"><span class="codenumber">3</span> <span class="title">Progressões</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Progressões Aritméticas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsection-8" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Sequências Numéricas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-9" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Progressões Aritméticas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-10" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Progressões Aritméticas e Funções Afins</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-11" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Soma dos Termos de uma Progressão Aritmética</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-12" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Progressões Aritméticas de Ordem Superior</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-13" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Somas Polinomiais</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">6</span> <span class="title">Probabilidade</span></a><ul>
-<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
-<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
-<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
-<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Progressões Geométricas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-14" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Termo geral de uma Progressão Geométrica</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-15" class="internal"><span class="codenumber">3.2.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-16" class="internal"><span class="codenumber">3.2.3</span> <span class="title">A Soma dos Termos de uma Progressão Geométrica</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="media_gavetas.html" data-scroll="media_gavetas"><span class="codenumber">7</span> <span class="title">Médias e Princípio das Gavetas</span></a><ul>
-<li><a href="section-24.html" data-scroll="section-24">Médias</a></li>
-<li><a href="section-25.html" data-scroll="section-25">A Desigualdade das Médias</a></li>
 </ul>
 </li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">8</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-10"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">4.1</span> <span class="title">Conjuntos</span>
+<li>
+<div class="toc-item"><a href="recorrencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Recorrências</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Recorrências Lineares de Primeira Ordem</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Recorrências Lineares de Segunda Ordem</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="matfinanceira.html" class="internal"><span class="codenumber">5</span> <span class="title">Matemática Financeira</span></a></div>
+<ul class="structural">
+<li class="active"><div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Juros Compostos</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">5.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Renda Perpétua (Séries Uniformes)</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Sistemas de Amortização</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Princípio Aditivo e Princípio Multiplicativo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-17" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-18" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-19" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-20" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-21" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-22" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">6.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">6.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">7</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-7" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-8" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-9" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">8</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-10" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-23" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-11" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-24" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-12" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="media_gavetas.html" class="internal"><span class="codenumber">9</span> <span class="title">Médias e Princípio das Gavetas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-28.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Médias</span></a></div></li>
+<li><div class="toc-item"><a href="section-29.html" class="internal"><span class="codenumber">9.2</span> <span class="title">A Desigualdade das Médias</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">10</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-10"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">5.1</span> <span class="title">Juros Compostos</span>
 </h2>
-<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
-<ol class="decimal">
-<li id="li-37">Mostrar as principais definições da teoria dos conjuntos.</li>
-<li id="li-38">Mostrar os principais resultados da teoria dos conjuntos.</li>
-</ol></article><section class="introduction" id="introduction-2"><p id="p-270">Em combinatória, estamos quase sempre contando o número de elementos de conjuntos ou número de subconjuntos com determinada propriedade. Por isso este material possui uma seção dedicado a este tópico.</p></section><p id="p-271">Utilizamos o conceito de conjunto, como no ensino médio, como uma ideia de coleção. Uma noção completa com os axiomas da teoria dos conjuntos foge do propósito deste material. Para mais informações sobre a teoria dos conjuntos veja <a class="xref" data-knowl="./knowl/conjuntos.html" title="[biblio] 8.1">[8.1]</a> ou <a class="external" href="https://pt.wikipedia.org/wiki/Teoria_ing%C3%AAnua_dos_conjuntos" target="_blank"><dfn class="terminology">Teoria ingênua dos conjuntos</dfn></a>.</p>
-<p id="p-272">A seguir há três notações básicas:</p>
-<ol class="lower-roman ">
-<li id="li-39"><p id="p-273">letras maiúsculas indicarão conjuntos. Ex. \(A, B, \ldots, Z\)</p></li>
-<li id="li-40"><p id="p-274">a letra grega \(\Omega\) representará o <em class="emphasis">conjunto universo</em>.</p></li>
-<li id="li-41"><p id="p-275">letras minúsculas indicarão elementos dos conjuntos. Ex. \(a, b, \ldots, z\text{.}\)</p></li>
+<div class="para" id="p-271">Quotidianamente, estamos frente a problemas práticos, tais como se devemos ou não parcelar uma compra e, se for o caso, em quantas parcelas? Se devemos ou não antecipar o pagamento de uma dívida, usando o décimo terceiro salário? Esses são desafios que, se resolvidos corretamente, nos auxiliam a tomar decisões que podem proporcionar uma boa economia.</div>
+<div class="para" id="p-272">A ferramenta matemática básica que é utilizada nesse tipo de questões são as progressões geométricas, bastando, para resolvê-las modelar corretamente cada problema.</div>
+<article class="definition definition-like" id="definition-14"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-273">Alguém que dispõe de um capital <span class="process-math">\(C\)</span> (chamado de <em class="emphasis">principal</em>), empresta-o a outrem por um certo período de tempo, e após esse período, recebe o seu capital <span class="process-math">\(C\)</span> de volta, acrescido de uma remuneração <span class="process-math">\(J\)</span> pelo empréstimo. Essa remuneração é chamada de <em class="emphasis">juro</em>. A soma <span class="process-math">\(C+J\)</span> é chamada de <em class="emphasis">montante</em> e será representada por <span class="process-math">\(M\text{.}\)</span> A razão <span class="process-math">\(i=\frac{J}{C}\)</span> que é a taxa de crescimento do capital, será sempre referida ao período da operação e chamada de <em class="emphasis">taxa de juros</em>.</div></article><article class="example example-like" id="example-61"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-274">Lúcia tomou um empréstimo de R$ 100,00. Dois meses após, pagou R$ 140,00. Quais foram os juros pagos, a taxa de juros e o montante pago por Lúcia?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><div class="para" id="p-275">Os juros pagos por Lúcia são de R$ 40,00 e a taxa de juros é de <span class="process-math">\(\frac{40}{100}=0,40=40\%\)</span> ao bimestre. O montante, que é a dívida na época do pagamento, é de R$ 140,00.</div></div></div></article><article class="theorem theorem-like" id="teo-5.1"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-276">No regime de juros compostos de taxa <span class="process-math">\(i\text{,}\)</span> um principal <span class="process-math">\(C_0\)</span> transforma-se, depois de <span class="process-math">\(n\)</span> períodos de tempo, em um montante <span class="process-math">\(C_n=C_0(1+i)^n\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-21"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><div class="para" id="p-277">Basta observar que os valores do capital crescem a uma taxa constante <span class="process-math">\(i\)</span> e, portanto, formam uma progressão geométrica de razão <span class="process-math">\(1+i\text{.}\)</span>
+</div></article></div>
+<article class="example example-like" id="example-62"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-278">Pedro investe 150 reais a juros de <span class="process-math">\(1\%\)</span> ao mês. Qual será o montante de Pedro três meses depois? E qual o montante de Pedro 10 anos depois?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like">
+<div class="para logical" id="p-279"><ol class="lower-alpha">
+<li id="li-73"><div class="para" id="p-derived-li-73">
+<span class="process-math">\(C_3=C_0(1+i)^3 = 150(1+0,01)^3=154,55\)</span> reais</div></li>
+<li id="li-74"><div class="para" id="p-derived-li-74">
+<span class="process-math">\(C_{10\times12}=C_0(1+i)^{120} = 150(1+0,01)^{120}\)</span> reais. Isso pode ser calculado no Sage da seguinte maneira:</div></li>
+</ol></div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-7"><script type="text/x-sage">150*(1+0.01)^120
+</script></pre>
+</div></div></article><div class="para" id="p-280">É importante perceber que o valor de uma quantia depende da época à qual ela está referida. Se eu consigo fazer com que meu dinheiro renda 10% ao mês, me é indiferente pagar agora R$ 100,00 ou pagar R$ 110,00 daqui a um mês. É mais vantajoso pagar R$ 105,00 daqui a um mês do que pagar R$ 100,00 agora. é mais vantajoso pagar R$ 100,00 agora do que pagar R$ 120,00 daqui a um mês.</div>
+<article class="remark remark-like" id="remark-26"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-281">No fundo, só há um único problema de Matemática Financeira: deslocar quantias no tempo.</div> <div class="para" id="p-282">Outro modo de ler o <a href="" class="xref" data-knowl="./knowl/teo-5.1.html" title="Teorema 5.1.3">Teorema 5.1.3</a>, é que uma quantia, hoje igual a <span class="process-math">\(C_0\text{,}\)</span> transforma-se-á, depois de <span class="process-math">\(n\)</span> períodos de tempo, em uma quantia igual a <span class="process-math">\(C_0(1+i)^n\text{.}\)</span> Isto é, uma quantia, cujo valor atual é <span class="process-math">\(A\text{,}\)</span> equivalerá no futuro, depois de <span class="process-math">\(n\)</span> períodos de tempo, a <span class="process-math">\(F=A(1+i)^n\text{.}\)</span>
+</div> <div class="para logical" id="p-283">
+<div class="para">Essa é a fórmula fundamental da equivalência de capitais, para obter o valor futuro, basta multiplicar o atual por <span class="process-math">\((1+i)^n\text{,}\)</span> e para obter o valor atual, sabendo o valor futuro, basta dividir o valor futuro por <span class="process-math">\((1+i)^n\text{,}\)</span> ou seja:</div>
+<ol class="lower-alpha">
+<li id="li-75"><div class="para" id="p-derived-li-75"><span class="process-math">\(F = A(1+i)^n\text{,}\)</span></div></li>
+<li id="li-76"><div class="para" id="p-derived-li-76"><span class="process-math">\(\displaystyle A = \frac{F}{(1+i)^n}.\)</span></div></li>
 </ol>
-<p id="p-276">A relação de pertencer será indicada pela letra grega \(\in\) e escrevemos por exemplo, \(a\in A\text{.}\) O conjunto vazio será representado pela letra \(\varnothing\text{.}\) Um conjunto com um número reduzido de elementos será indicado simplesmente listando seus elementos. Por exemplo, o conjunto que consiste nos números \(1, 2\) e \(3\) será representado por</p>
-<div class="displaymath">
+</div></article><article class="example example-like" id="example-63"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-284">Pedro tomou um emprétimo de <span class="process-math">\(300\)</span> reais, a juros de <span class="process-math">\(15\%\)</span> ao mês. Dois meses após, Pedro pagou <span class="process-math">\(150\)</span> reais e, um mês após esse pagamento, Pedro liquidou seu débito. Qual o valor desse último pagamento?</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-44" id="solution-44"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<div class="para logical" id="p-285">
+<div class="para">Os esquemas de pagamento abaixo são equivalentes. Logo, 300 reais, na data 0, têm o mesmo valor de 150 reais dois meses após, mais um pagamento igual a <span class="process-math">\(P\text{,}\)</span> na data 3. <figure class="figure figure-like" id="fig-fin01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan01.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.7<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Portanto, trazendo todos os valores para o valor atual, ficamos com</div>
+<div class="displaymath process-math">
 \begin{equation*}
-A = \{ 1, 2, 3 \} 
+300 = \frac{150}{(1+0,15)^2}+\frac{P}{(1+0,15)^3}.
 \end{equation*}
 </div>
-<p id="p-277">Um conjunto também pode ser descrito por uma propriedade \(\pi\text{,}\) comum a todos os seus elementos e escrevemos</p>
-<div class="displaymath">
-\begin{equation*}
-A = \{ x|x \text{ tem a propriedade } \pi \}. 
-\end{equation*}
+<div class="para">E resolvendo a equação, obtemos <span class="process-math">\(P=283,76\text{.}\)</span>
 </div>
-<p id="p-278">Por exemplo,</p>
-<div class="displaymath">
-\begin{equation*}
-A = \{ x|x = 2k, k\in\mathbb{Z} \} 
-\end{equation*}
-</div>
-<p data-braille="continuation">é o conjunto dos números inteiros e pares.</p>
-<article class="definition definition-like" id="definition-9"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
-</h6>
-<p id="p-279">Usamos o símbolo \(\#A\) para representar o número de elementos do conjunto \(A\text{,}\) isto é, a <em class="emphasis">cardinalidade</em> de \(A\text{.}\)</p></article><article class="definition definition-like" id="definition-10"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
-</h6>
-<p id="p-280">Se todo elemento de um conjunto \(A\) é também elemento de um conjunto \(B\text{,}\) dizemos que \(A\)  é <em class="emphasis">subconjunto</em> de \(B\) e escrevemos simbolicamente \(A\subset B\text{.}\) Se \(A\subset B\) mas existe um elemento \(b\in B\) tal que \(b\notin A\text{,}\) diremos que \(A\) é um <em class="emphasis">subconjunto próprio</em> de B.</p></article><article class="definition definition-like" id="definition-11"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-281">Sejam \(A\) e \(B\) dois conjuntos. \(A\) e \(B\) são chamados de <em class="emphasis">conjuntos iguais</em> quando todo elemento de \(A\) pertence a \(B\) e, reciprocamente, todo elemento de \(B\) pertence a \(A\text{.}\)</p>
-<div class="displaymath">
-\begin{equation*}
-A=B \Leftrightarrow (\forall x)(x \in A \Leftrightarrow x \in B ).
-\end{equation*}
-</div>Isto é, \(A\subset B\) e \(B\subset A\text{;}\) portanto, podemos escrever:<div class="displaymath">
-\begin{equation*}
-A=B \Leftrightarrow  A \subset B \text{ e } B \subset A.
-\end{equation*}
-</div></article><p id="p-282">Para ilustrar definições, resultados e demonstrações da teoria de conjuntos, é muito comum usar uma representação gráfica chamada de <em class="emphasis">diagrama de Venn</em>.</p>
-<article class="definition definition-like" id="venn"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
-</h6>
-<p id="p-283">Os <em class="emphasis">diagramas de Venn</em> consistem em curvas fechadas simples, tais como círculos ou ovais, desenhadas sobre um plano, de forma a simbolizar os conjuntos e permitir a representação das relações de pertinência entre conjuntos e seus elementos (por exemplo, \(A = \{1, 2, 3, 4\}\)) <figure class="figure figure-like" id="conjA"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/conjA.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>Conjunto \(A\text{.}\)</figcaption></figure> e relações de continência (inclusão) entre os conjuntos (por exemplo, \(\{1, 3\} \subset \{1, 2, 3, 4\}\)). Assim, duas curvas que não se tocam e estão uma no espaço interno da outra simbolizam conjuntos que possuem continência; <figure class="figure figure-like" id="subconj"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/subconj.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>\(\{1, 3\} \subset \{1, 2, 3, 4\}\text{.}\)</figcaption></figure></p></article><article class="definition definition-like" id="definition-13"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
-</h6>
-<p id="p-284">Sejam \(A_1, A_2, \ldots, A_n\text{,}\) (\(n\geq 2\)) conjuntos e \(\Omega\) o conjunto universo.</p>
-<ol class="decimal ">
-<li id="li-42">O conjunto <em class="emphasis">união</em> de \(A_1\) e \(A_2\) é o conjunto dos elementos que pertencem a \(A_1\) ou a \(A_2\text{.}\) Simbolicamente,<div class="displaymath">
-\begin{equation*}
-A_1\cup A_2 = \{ \omega\in\Omega| \omega\in A_1 \text{ ou } \omega\in A_2 \}. 
-\end{equation*}
-</div>Mais geralmente,<div class="displaymath">
-\begin{equation*}
-\bigcup_{i=1}^{n}A_i = A_1\cup \cdots \cup A_n =\{ \omega\in\Omega| \omega\in A_1 \text{ ou } \omega\in A_2 \text{ ou }\cdots \text{ ou } \omega\in A_n \}. 
-\end{equation*}
-</div>
-</li>
-<li id="li-43">O conjunto <em class="emphasis">interseção</em> de \(A_1\) e \(A_2\) é o conjunto dos elementos que pertencem simultaneamente a \(A_1\) e a \(A_2\text{.}\) Simbolicamente,<div class="displaymath">
-\begin{equation*}
-A_1\cap A_2 = \{ \omega\in\Omega| \omega\in A_1 \text{ e } \omega\in A_2 \}. 
-\end{equation*}
-</div>De forma geral,<div class="displaymath">
-\begin{equation*}
-\bigcap_{i=1}^{n}A_i = A_1\cap \cdots \cap A_n =\{ \omega\in\Omega| \omega\in A_1 \text{ e } \omega\in A_2 \text{ e }\cdots \text{ e } \omega\in A_n \}. 
-\end{equation*}
-</div>
-</li>
-<li id="li-44">Dizemos que \(A_1\) e \(A_2\) são <em class="emphasis">disjuntos</em> se \(A_1\cap A_2=\varnothing\text{.}\) E dizemos que \(A_1, A_2, \ldots, A_n\) são disjuntos quando forem disjuntos dois a dois, ou seja,<div class="displaymath">
-\begin{equation*}
-A_i\cap A_j = \varnothing, \text{ para quaisquer } i, j \in\{1, 2, \ldots n\}, \text{ com } i\neq j. 
-\end{equation*}
-</div>
-</li>
-<li id="li-45">O <em class="emphasis">conjunto complementar</em> de \(A_i\) é o conjunto dos elementos de \(\Omega\) que não pertencem a \(A_i\text{.}\) Simbolicamente<div class="displaymath">
-\begin{equation*}
-A_i^c = \{ \omega\in\Omega| \omega\notin A_i \}. 
-\end{equation*}
-</div>
-</li>
-<li id="li-46">O conjunto <em class="emphasis">diferença</em> de \(A_1\) e \(A_2\) é o conjunto dos elementos que pertencem a \(A_1\) e não pertencem a \(A_2\text{.}\) Simbolicamente,<div class="displaymath">
-\begin{equation*}
-A_1\setminus A_2 = A_1\cap A_2^c = \{ \omega\in\Omega | \omega\in A_1 \text{ e } \omega\notin A_2 \}.
-\end{equation*}
-</div>
-</li>
-<li id="li-47">O <em class="emphasis">produto cartesiano</em> de \(A_1\) por \(A_2\) é o conjunto de pares ordenados \((a_1, a_2)\text{,}\) na qual \(a_1\in A_1\) e \(a_2\in A_2\text{.}\) Simbolicamente,<div class="displaymath">
-\begin{equation*}
-A_1\times A_2 = \{ (a_1, a_2)| a_1\in A_1 \text{ e } a_2\in A_2 \}. 
-\end{equation*}
-</div>
-</li>
-<li id="li-48">O <em class="emphasis">conjunto das partes</em> ou <em class="emphasis">conjunto potência</em> de \(A_1\) é o conjunto de todos os subconjuntos de \(A_1\text{.}\) Simbolicamente,<div class="displaymath">
-\begin{equation*}
-\mathcal{P}(A_1) = \{ B| B\subset A_1 \}. 
-\end{equation*}
-</div>
-</li>
-</ol></article><article class="theorem theorem-like" id="distributiva"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
-</h6>
-<p id="p-285">Sejam \(A, B\) e \(C\) conjuntos; então, valem as seguintes propriedades:</p>
-<ol class="decimal">
-<li id="li-49">\(\displaystyle A\cap (B\cup C) = (A\cap B)\cup(A\cap C);\)</li>
-<li id="li-50">\(\displaystyle A\cup (B\cap C) = (A\cup B)\cap(A\cup C).\)</li>
-</ol></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-286">Demonstração do item 1:</p>
-<div class="displaymath">
+</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-8"><script type="text/x-sage">p = var('p')
+solve(300 == 150/(1+0.15)^2+p/(1+0.15)^3, p)[0].rhs().n()
+</script></pre>
+</div></div></article><article class="example example-like" id="example-64"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-286">
+<div class="para">Pedro tem duas opções de pagamento na compra de um televisor:</div>
+<ol class="lower-roman">
+<li id="li-77"><div class="para" id="p-derived-li-77">três prestações mensais de R$ 160,00 cada;</div></li>
+<li id="li-78"><div class="para" id="p-derived-li-78">sete prestações mensais de R$ 70,00 cada.</div></li>
+</ol>
+<div class="para">Em ambos os casos, a primeira prestação é paga no ato da compra. Se o dinheiro vale 2% ao mês para Pedro, qual a melhor opção que Pedro possui?</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-45" id="solution-45"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like">
+<div class="para logical" id="p-287">
+<div class="para">Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época, por exemplo na época 2. Os  esquemas de pagamentos são: <figure class="figure figure-like" id="fig-fin02"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan02.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.9<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época. Por exemplo, na época 0, temos,</div>
+<div class="displaymath process-math" id="md-26">
 \begin{align*}
-x\in A\cap(B\cup C) \amp \Leftrightarrow x\in A \text{ e } x\in B\cup C \Leftrightarrow x\in A \text{ e } (x\in B \text{ ou } x\in C) \\
-\amp \Leftrightarrow (x\in A \text{ e }x\in B) \text{ ou } (x\in A\text{ e }x\in C) \\
-\amp \Leftrightarrow (x\in A\cap B) \text{ ou } (x\in A\cap C) \\
-\amp \Leftrightarrow x\in (A\cap B)\cup(A\cap C) 
+a = \amp~ 160+\frac{160}{(1,02)}+\frac{160}{(1,02)^2}=470,65\\
+b = \amp~ 70+\frac{70}{(1,02)}+\frac{70}{(1,02)^2}+\frac{70}{(1,02)^3}+\frac{70}{(1,02)^4}+\frac{70}{(1,02)^5}\\
+\amp~\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad+\frac{70}{(1,02)^6}=462,10
 \end{align*}
 </div>
-<p id="p-287">O segundo pode ser demonstrado de forma análoga.</p></article></div>
-<article class="theorem theorem-like" id="morgan"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
-</h6>
-<p id="p-288"><em class="emphasis">(Leis de Morgan)</em> Sejam \(A\) e \(B\) conjuntos. São válidas as seguintes propriedades:</p>
-<ol class="decimal">
-<li id="li-51">\(\displaystyle (A \cup B)^c=A^c \cap B^c;\)</li>
-<li id="li-52">\(\displaystyle (A \cap B)^c=A^c \cup B^c.\)</li>
-</ol></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-289">Vamos demonstrar a primeira destas propriedades. A outra é demonstrada de forma análoga. Usamos o fato de que \((A \cup B)^c=A^c \cap B^c\text{,}\) se, e somente se,  \((A \cup B)^c \subset A^c \cap B^c\) e \(A^c \cap B^c \subset (A \cup B)^c\text{.}\)</p>
-<p id="p-290">Seja \(x \in (A \cup B)^c\text{,}\) logo \(x \notin (A \cup B)\text{.}\) Sendo assim, \(x \notin A\)  e  \(x \notin B\text{.}\) Portanto \(x \in A^c\)  e  \(x \in B^c\text{,}\) logo \(x \in (A^c \cap B^c)\text{.}\) Acabamos de mostrar que \((A \cup B)^c \subset A^c \cap B^c\text{.}\)</p>
-<p id="p-291">Considere \(x \in A^c \cap B^c\text{,}\) então \(x \in A^c\)  e \(x \in B^c\text{.}\) Logo \(x \notin A\text{,}\) \(x \notin B\)  e \(x \notin (A\cap B)\text{.}\) Portanto, \(x \notin (A \cup B)\text{,}\) sendo assim \(x \in (A \cup B)^c\text{.}\) Acabamos de mostrar que \(A^c \cap B^c \subset  (A \cup B)^c\text{.}\) Portanto</p>
-<div class="displaymath">
+<div class="para">Pedro deve preferir o pagamento em sete prestações.</div>
+</div> <div class="para" id="p-288">É um absurdo que muitas pessoas razoavelmente instruídas achem que o primeiro esquema é melhor pois o total pago é de R$ 480,00 ao passo que no segundo esquema o total pago é de R$ 490,00.</div> <div class="para" id="p-289">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-9"><script type="text/x-sage">a = sum(160*(1/(1.02)^x), x, 0, 2)
+b = sum(70*(1/(1.02)^x), x, 0, 6)
+a,b
+</script></pre>
+</div></div></article><article class="example example-like" id="example-65"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-290">
+<div class="para">Pedro tem três opções de pagamento na compra de vestuário.</div>
+<ol class="lower-roman">
+<li id="li-79"><div class="para" id="p-derived-li-79">à vista, com 30% de desconto;</div></li>
+<li id="li-80"><div class="para" id="p-derived-li-80">em duas prestações mensais iguais, sem desconto, vencendo a primeira um mês após a compra;</div></li>
+<li id="li-81"><div class="para" id="p-derived-li-81">em três prestações mensais iguais, sem desconto, vencendo a primeira no ato da compra.</div></li>
+</ol>
+<div class="para">Qual a melhor opção para Pedro, se o dinheiro vale, para ele, 25% ao mês?</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-46" id="solution-46"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like">
+<div class="para logical" id="p-291">
+<div class="para">Fixando o preço do bem em 30, temos os três esquemas abaixo <figure class="figure figure-like" id="fig-fin03"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan03.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.11<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Comparando os valores, por exemplo, na época 0, obtemos:</div>
+<div class="displaymath process-math" id="md-27">
+\begin{align*}
+a = \amp~ 21\\
+b = \amp~ \frac{15}{(1,25)}+\frac{15}{(1,25)^2} = 21,60\\
+c = \amp~ 10+\frac{10}{(1,25)}+\frac{10}{(1,25)^2}=24,40. 
+\end{align*}
+</div>
+<div class="para">A melhor alternativa é a primeira e a pior é a terceira.</div>
+</div> <div class="para" id="p-292">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-10"><script type="text/x-sage">a = 21
+b = sum(15*(1/(1.25)^x), x, 1, 2)
+c = sum(10*(1/(1.25)^x), x, 0, 2)
+a,b,c
+</script></pre>
+</div></div></article><article class="example example-like" id="example-66"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.12</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-293">
+<div class="para">Uma loja oferece duas opções de pagamento:</div>
+<ol class="lower-roman">
+<li id="li-82"><div class="para" id="p-derived-li-82">à vista, com 30% de desconto;</div></li>
+<li id="li-83"><div class="para" id="p-derived-li-83">em duas prestações mensais iguais, sem desconto, a primeira prestação sendo paga no ato da compra.</div></li>
+</ol>
+<div class="para">Qual a taxa mensal dos juros embutidos nas vendas a prazo?</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-47" id="solution-47"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like">
+<div class="para logical" id="p-294">
+<div class="para">Fixando o valor do bem em 100, temos os esquemas de pagamentos abaixo: <figure class="figure figure-like" id="fig-fin04"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/finan04.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.13<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Igualando os valores, por exemplo, na época 0 (a data usada nessas comparações é chamada de <em class="emphasis">data focal</em>), obtemos</div>
+<div class="displaymath process-math">
 \begin{equation*}
-(A \cup \ B)^c=A^c \cap B^c.
+70 = 50+\frac{50}{1+i}.
 \end{equation*}
-</div></article></div></section></div></main>
+</div>
+<div class="para">Daí, <span class="process-math">\(i = 1,5 = 150\%\text{.}\)</span> A loja cobra 150% ao mês nas vendas a prazo.</div>
+</div> <div class="para" id="p-295">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-11"><script type="text/x-sage">i = var('i')
+solve(70 == 50+50/(1+i), i)[0].rhs().n()
+</script></pre>
+</div></div></article><article class="example example-like" id="example-67"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-296">Investindo seu capital a juros mensais de 8%, em quanto tempo você dobrará o seu capital inicial?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like"><div class="para logical" id="p-297">
+<div class="para">Temos <span class="process-math">\(C_0(1+0,08)^n = 2C_0\text{.}\)</span> Daí</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(1,08)^n = 2\quad \text{ e }\quad n = \frac{\log(2)}{\log(1,08)}\approx 9.
+\end{equation*}
+</div>
+</div></div></div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="matfinanceira.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-11.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

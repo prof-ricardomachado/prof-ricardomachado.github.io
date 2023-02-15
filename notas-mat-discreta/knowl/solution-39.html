@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:00-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,34 +9,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
+<body class="ignore-math">
 <div class="solution solution-like">
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.12.1</span><span class="period">.</span>
-</h6>
-<p>Fixando o valor do bem em 100, temos os esquemas de pagamentos abaixo: <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/finan04.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.13<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Igualando os valores, por exemplo, na época 0 (a data usada nessas comparações é chamada de <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">data focal</em>), obtemos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.13.1</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">A recorrência tem equação característica <span class="process-math">\(r^2-6r+8=0\text{,}\)</span> cujas raízes são <span class="process-math">\(r_1=2\)</span> e <span class="process-math">\(r_2=4\text{.}\)</span> Portanto, a solução da homogênea, isto é, de <span class="process-math">\(x_{n+2}-6x_{n+1}+8x_n=0\)</span> é <span class="process-math">\(h_n=C_12^n+C_24^n\text{.}\)</span> Tentaremos agora descobrir uma solução particular, <span class="process-math">\(t_n\text{,}\)</span> da recorrência</div>
+<div class="displaymath process-math">
 \begin{equation*}
-70 = 50+\frac{50}{1+i}.
+x_{n+2}-6x_{n+1}+8x_n=n+3^n.
 \end{equation*}
 </div>
-<p data-braille="continuation">Daí, \(i = 1,5 = 150\%\text{.}\) A loja cobra 150% ao mês nas vendas a prazo.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
-<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">i = var('i')
-solve(70 == 50+50/(1+i), i)[0].rhs().n()
-</script></div>
+<div class="para">Ora, se substituirmos <span class="process-math">\(t_n\)</span> em <span class="process-math">\(x_{n+2}-6x_{n+1}+8x_n\)</span> devemos encontrar <span class="process-math">\(n+3^n\text{.}\)</span> Que tipo de função deve ter <span class="process-math">\(t_n\text{?}\)</span> É bastante razoável imaginar que <span class="process-math">\(t_n\)</span> seja a soma  de um polinômio do primeiro grau com uma exponencial de base 3. Tentaremos <span class="process-math">\(t_n=An+B+C3^n\text{.}\)</span> Substituindo em</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_{n+2}-6x_{n+1}+8x_n=n+3^n,
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-6.html#solution-39">[incontext]</a></span>
+<div class="para">obtemos <span class="process-math">\(3An+3B-4A-C3^n=n+3^n\text{.}\)</span> Logo, <span class="process-math">\(t_n\)</span> será solução se <span class="process-math">\(3A=1, 3B-4A=0\)</span> e <span class="process-math">\(-C=1\text{.}\)</span> Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\frac{1}{3}, B=\frac{4}{9}, \text{ e } C=-1.
+\end{equation*}
+</div>
+<div class="para">Daí,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+t_n=\frac{1}{3}n+\frac{4}{9}-3^n.
+\end{equation*}
+</div>
+<div class="para">Portanto, a solução da recorrência não homogênea é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_n=C_12^n+C_24^n+\frac{1}{3}n+\frac{4}{9}-3^n.
+\end{equation*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="section-9.html#solution-39" class="internal">em contexto</a></span>
 </body>
 </html>

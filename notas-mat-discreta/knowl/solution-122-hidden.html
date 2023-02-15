@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:05-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,38 +9,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body><div class="solution solution-like">Note que<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
-= \amp \sum_{k=1}^{n} k^3+k^2  
-\end{align*}
-</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">O número de soluções desta equação, com <span class="process-math">\(x_i\in \mathbb{Z} \text{ e } x_i\geq 0, i\in\{1, 2, \ldots, 10\}\)</span>  é o  número de combinações completas de 10 elementos, tomados 20 a 20:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
+CR_{10}^{20}
 \end{equation*}
-</div>Então, vamos procurar valores para \(A, B, C\) e \(D\text{,}\) para os quais, vale a igualdade<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
-= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D  
-\end{align*}
-</div>igualando os coeficientes, obtemos<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{cases} 
-A = ~ 1 \\
-3A+B  = ~ 1 \\
-2A+B+C  = ~ 0 \\
-D = ~ 0 \\
-\end{cases}
-\end{equation*}
-</div>Portanto,  \(A= 1\) e  \(B = -2\text{.}\) Agora podemos terminar o cálculo da soma<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
-= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
-= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
-= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
-= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
-\end{align*}
 </div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-33"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p) 
+CR(10, 20)
+</script></pre>
 </div></body>
 </html>

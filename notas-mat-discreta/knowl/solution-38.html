@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:00-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,38 +9,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body>
+<body class="ignore-math">
 <div class="solution solution-like">
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.10.1</span><span class="period">.</span>
-</h6>
-<p>Fixando o preço do bem em 30, temos os três esquemas abaixo <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan03.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.11<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Comparando os valores, por exemplo, na época 0, obtemos:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-a = \amp~ 21\\
-b = \amp~ \frac{15}{(1,25)}+\frac{15}{(1,25)^2} = 21,60\\
-c = \amp~ 10+\frac{10}{(1,25)}+\frac{10}{(1,25)^2}=24,40. 
-\end{align*}
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.6.1</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">A equação característica é <span class="process-math">\(r^2=r+1\)</span> e suas raízes são dadas por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r_1 = \frac{1+\sqrt{5}}{2} ~~ \text{ e }~~ r_2 = \frac{1-\sqrt{5}}{2}.
+\end{equation*}
 </div>
-<p data-braille="continuation">A melhor alternativa é a primeira e a pior é a terceira.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">O cálculo dos valores de \(a\) e \(b\) podem ser conferidos no Sage da seguinte maneira:</p>
-<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">a = 21
-b = sum(15*(1/(1.25)^x), x, 1, 2)
-c = sum(10*(1/(1.25)^x), x, 0, 2)
-a,b,c
-</script></div>
+<div class="para">Então,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_n=C_1\left( \frac{1+\sqrt{5}}{2} \right)^n + C_2\left( \frac{1-\sqrt{5}}{2} \right)^n.
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-6.html#solution-38">[incontext]</a></span>
+<div class="para">Para determinar <span class="process-math">\(C_1\)</span> e <span class="process-math">\(C_2\text{,}\)</span> podemos usar <span class="process-math">\(F_1=F_2=1\text{,}\)</span> mas é mais conveniente usar <span class="process-math">\(F_0=0\)</span> e <span class="process-math">\(F_1=1\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Obtemos o sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} 
+C_1+C_2=0\\
+C_1\left( \frac{1+\sqrt{5}}{2} \right) +C_2\left( \frac{1-\sqrt{5}}{2} \right)=1.\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Resolvendo o sistema, encontramos <span class="process-math">\(C_1=-C_2=\frac{1}{\sqrt{5}}\text{.}\)</span> Daí:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_n=\frac{1}{\sqrt{5}}\left( \frac{1+\sqrt{5}}{2} \right)^n - \frac{1}{\sqrt{5}}\left( \frac{1-\sqrt{5}}{2} \right)^n.
+\end{equation*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="section-9.html#solution-38" class="internal">em contexto</a></span>
 </body>
 </html>

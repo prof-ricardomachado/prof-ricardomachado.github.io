@@ -1537,7 +1537,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.3",
   "title": "O Teorema do Confronto",
-  "body": " O Teorema do Confronto   O Teorema do Confronto    Seja um número real e funções tais que para todo próximo de , exceto possivelmente em , então     Teorema do Confronto  Seja um número real e funções tais que para todo próximo de , exceto possivelmente em . Então se teremos    Usando o teorema acima, podemos calcular o limite de funções com expressões complicadas.    Determine .    Já que para todo número , temos multiplicando por veremos que Como o  fornece     Outro exemplo com o teorema do confronto   Suponha que é função que satisfaz . Determine .    Já estamos supridos com uma desigualdade, então é provável que ela nos ajude. Devemos examinar os limites de cada lado para ver se eles são os mesmos: Então observamos que a função limitada entre duas funções que tende para quando . Portanto, pelo teorema do confronto teremos       Determine            Se para todo , encontre            O limite fundamental  O limite , é conhecido como o limite fundamental.   Existe tal que para .   Justificativa geométrica.      Note que as áreas dos triângulos e são Portanto, ou seja,          Pelo , para valem as desigualdades: . Dividindo por , obtemos Por outro lado, para , temos e aplicando o novamente, obtemos Assim, para todo , com , temos E pelo Teorema do Confronto, concluímos que      Calcule     Calcule            Se para todo calcule   Calcule os seguintes limites:      Calcule os seguintes limites:              "
+  "body": " O Teorema do Confronto   O Teorema do Confronto    Seja um número real e funções tais que para todo próximo de , exceto possivelmente em , então     Teorema do Confronto  Seja um número real e funções tais que para todo próximo de , exceto possivelmente em . Então se teremos    Usando o teorema acima, podemos calcular o limite de funções com expressões complicadas.    Determine .    Já que para todo número , temos multiplicando por veremos que Como o  fornece     Outro exemplo com o teorema do confronto   Suponha que é função que satisfaz . Determine .    Já estamos supridos com uma desigualdade, então é provável que ela nos ajude. Devemos examinar os limites de cada lado para ver se eles são os mesmos: Então observamos que a função limitada entre duas funções que tende para quando . Portanto, pelo teorema do confronto teremos       Determine            Se para todo , encontre            O limite fundamental  O limite , é conhecido como o limite fundamental.    para .   Justificativa geométrica.      Note que as áreas dos triângulos e são Portanto, ou seja,          Pelo , para valem as desigualdades: . Dividindo por , obtemos Por outro lado, para , temos e aplicando o novamente, obtemos Assim, para todo , com , temos E pelo Teorema do Confronto, concluímos que      Calcule     Calcule            Se para todo calcule   Calcule os seguintes limites:      Calcule os seguintes limites:              "
 },
 {
   "id": "theorem-7",
@@ -1600,7 +1600,7 @@ var ptx_lunr_docs = [
   "type": "Teorema",
   "number": "2.3.7",
   "title": "",
-  "body": " Existe tal que para .   Justificativa geométrica.      Note que as áreas dos triângulos e são Portanto, ou seja,    "
+  "body": "  para .   Justificativa geométrica.      Note que as áreas dos triângulos e são Portanto, ou seja,    "
 },
 {
   "id": "theorem-10",

@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:03-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,27 +9,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body>
+<body class="ignore-math">
 <div class="solution solution-like">
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.3.6.1</span><span class="period">.</span>
-</h6>
-<ol class="lower-alpha">
-<li>Na primeira linha, temos 8 opções para colocar a primeira torre, na segunda linha temos \(8-1\) opções para colocar a segunda torre, pois ela não pode ficar na mesma coluna que a primeira torre. Seguindo esse raciocínio, na \(i\)-ésima linha, temos \(8-i\) opções para colocar a \(i\)-ésima torre. Logo, a resposta é<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">6.3.10.1</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Podemos ordenar as <span class="process-math">\(12\)</span> pessoas em uma fila. O primeiro grupo será formado pelas <span class="process-math">\(4\)</span> primeiras pessoas, o segundo grupo, pelas <span class="process-math">\(4\)</span> pessoas seguintes e o terceiro grupo pelas quatro últimas pessoas. O número de maneiras de ordenar as <span class="process-math">\(12\)</span> pessoas é <span class="process-math">\(P_{12}\text{.}\)</span> Dessa forma, cada grupo esta sendo contado <span class="process-math">\(P_4\)</span> vezes, por exemplo,</div>
+<div class="displaymath process-math">
 \begin{equation*}
-8!
+[1, 2, 3, 4], [1, 2, 4, 3], \ldots, [4, 3, 2, 1]
 \end{equation*}
 </div>
-</li>
-<li>Seguindo com a ideia do item a, temos \(8!\) modos de escolher os lugares onde as torres podem ocupar, depois disso podemos ordenar as torres de \(8!\) modos, portanto a resposta é<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<div class="para">representam o mesmo grupo. Logo, precisamos dividir <span class="process-math">\(P_{12}\)</span> por <span class="process-math">\((P_4)^3\text{,}\)</span> já que são <span class="process-math">\(3\)</span> grupos.</div>
+</div> <div class="para logical">
+<div class="para">Por fim, note que a ordem dos grupos não importa, como são <span class="process-math">\(P_3\)</span> maneiras de ordenar os grupos, dividindo por <span class="process-math">\(P_3\text{,}\)</span> obtemos a resposta</div>
+<div class="displaymath process-math">
 \begin{equation*}
-8!\times 8!
+\frac{P(12)}{P(3)\times P(4)\times P(4)\times P(4)} = 5775.
 \end{equation*}
 </div>
-</li>
-</ol>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-17"><script type="text/x-sage">P(n) = factorial(n)
+P(12)/(P(3)*P(4)*P(4)*P(4))
+</script></pre>
 </div>
-<span class="incontext"><a href="section-permutacoes-simples.html#solution-76">[incontext]</a></span>
+<span class="incontext"><a href="section-permutacoes-simples.html#solution-76" class="internal">em contexto</a></span>
 </body>
 </html>

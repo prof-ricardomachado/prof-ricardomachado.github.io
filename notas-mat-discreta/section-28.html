@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Médias</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Matemática Discreta">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Matemática Discreta:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="media_gavetas.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="media_gavetas.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-29.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="numeros_naturais.html" class="internal"><span class="codenumber">1</span> <span class="title">Números Naturais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Números Ordinais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsection-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Números Ordinais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#subsec-ad-mul-ord" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Adição, multiplicação e Ordem</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Números Naturais e Contagem</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="metodo_inducao.html" class="internal"><span class="codenumber">2</span> <span class="title">O Método da Indução</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsection-4" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Definições por Indução ou Recorrência</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-5" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Demonstrando Igualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-6" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Demonstrando Desigualdades</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#subsection-7" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Aplicações em Aritmética</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Outras Formas do Princípio da Indução</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pa.html" class="internal"><span class="codenumber">3</span> <span class="title">Progressões</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Progressões Aritméticas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsection-8" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Sequências Numéricas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-9" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Progressões Aritméticas</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-10" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Progressões Aritméticas e Funções Afins</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-11" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Soma dos Termos de uma Progressão Aritmética</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-12" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Progressões Aritméticas de Ordem Superior</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-13" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Somas Polinomiais</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Progressões Geométricas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-14" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Termo geral de uma Progressão Geométrica</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-15" class="internal"><span class="codenumber">3.2.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#subsection-16" class="internal"><span class="codenumber">3.2.3</span> <span class="title">A Soma dos Termos de uma Progressão Geométrica</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="recorrencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Recorrências</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Recorrências Lineares de Primeira Ordem</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Recorrências Lineares de Segunda Ordem</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="matfinanceira.html" class="internal"><span class="codenumber">5</span> <span class="title">Matemática Financeira</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Juros Compostos</span></a></div></li>
+<li><div class="toc-item"><a href="section-11.html" class="internal"><span class="codenumber">5.2</span> <span class="title">A Fórmula das Taxas Equivalentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Renda Perpétua (Séries Uniformes)</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Sistemas de Amortização</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">6</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Princípio Aditivo e Princípio Multiplicativo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-17" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-18" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-19" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-20" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-21" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-22" class="internal"><span class="codenumber">6.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">6.4.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">6.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">6.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">7</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-7" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-8" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-9" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">8</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-10" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-23" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-11" class="internal"><span class="codenumber">8.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-24" class="internal"><span class="codenumber">8.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-12" class="internal"><span class="codenumber">8.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="media_gavetas.html" class="internal"><span class="codenumber">9</span> <span class="title">Médias e Princípio das Gavetas</span></a></div>
+<ul class="structural">
+<li class="active"><div class="toc-item"><a href="section-28.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Médias</span></a></div></li>
+<li><div class="toc-item"><a href="section-29.html" class="internal"><span class="codenumber">9.2</span> <span class="title">A Desigualdade das Médias</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">10</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-28"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">9.1</span> <span class="title">Médias</span>
+</h2>
+<div class="para logical" id="p-1061">
+<div class="para">Uma ideia bastante importante é a ideia de média. Uma média de uma lista de números é um valor que pode substituir todos os elementos da lista sem alterar uma certa característica da lista. Se essa característica é a soma dos elementos da lista, obtemos a mais simples de todas as médias, a média aritmética. A <em class="emphasis">média aritmética</em> (simples) da lista de <span class="process-math">\(n\)</span> números <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é um valor <span class="process-math">\(\bar{x}\)</span> tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1+x_2+\cdots+x_n=\bar{x}+\bar{x}+\cdots+\bar{x}=n\bar{x}.
+\end{equation*}
+</div>
+<div class="para">Portanto, temos a seguinte definição:</div>
+</div>
+<article class="definition definition-like" id="definition-37"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1062">
+<div class="para">A <em class="emphasis">média aritmética (simples)</em> da lista de <span class="process-math">\(n\)</span> números <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é definida por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-132"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1063">
+<div class="para">A média aritmética dos números 3, 36, 54 é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{3+36+54}{3}=31.
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="p-1064">
+<div class="para">Se a característica a ser considerada for o produto dos elementos da lista, obtemos a média geométrica. A <em class="emphasis">média geométrica</em> (simples) dos <span class="process-math">\(n\)</span> números positivos <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é um valor positivo <span class="process-math">\(g\)</span> tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1\cdot x_2\cdots x_n=g\cdot g\cdots g=g^n.
+\end{equation*}
+</div>
+<div class="para">Portanto, temos a seguinite definição:</div>
+</div>
+<article class="definition definition-like" id="definition-38"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1065">
+<div class="para">A <em class="emphasis">média geométrica (simples)</em> dos <span class="process-math">\(n\)</span> números positivos <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é definida por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g=G(x_1, x_2, \ldots, x_n)=\sqrt[n]{x_1x_2\cdots x_n}.
+\end{equation*}
+</div>
+</div></article><div class="para" id="p-1066">Observe que só definimos a média geométrica para números positivos. Assim, evitamos a possibilidade da média não existir.</div>
+<article class="example example-like" id="example-133"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1067">
+<div class="para">A média geométrica dos números 3, 36, 54 é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt[3]{3\cdot 36\cdot 54}=18.
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="p-1068">
+<div class="para">Se a característica for a soma dos inversos dos elementos da lista, obteremos a média harmônica. A <em class="emphasis">média harmônica</em> (simples) dos <span class="process-math">\(n\)</span> números positivos <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é um valor <span class="process-math">\(h\)</span> tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}=\frac{1}{h}+\frac{1}{h}+\cdots+\frac{1}{h}=\frac{n}{h}.
+\end{equation*}
+</div>
+<div class="para">Portanto, temos a seguinte definição:</div>
+</div>
+<article class="definition definition-like" id="definition-39"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1069">
+<div class="para">A <em class="emphasis">média harmônica (simples)</em> dos <span class="process-math">\(n\)</span> números positivos <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é definida por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h=\frac{n}{\dfrac{1}{x_1}+\dfrac{1}{x_2}+\cdots+\dfrac{1}{x_n}}.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-134"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1070">
+<div class="para">A média harmônica é, pois, o inverso da média aritmética dos inversos dos números. A média harmônica dos números 3, 36, 54 é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{3}{\dfrac{1}{3}+\dfrac{1}{36}+\dfrac{1}{54}}=\dfrac{3}{\dfrac{36+3+2}{108}}=\dfrac{3\cdot 108}{41}=\dfrac{324}{41}\approx 7,9.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-135"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1071">Uma empresa produziu, durante o primeiro trimestre do ano passado, 500, 200 e 200 unidades, em janeiro, fevereiro e março, respectivamente. Qual foi a produção média mensal nesse trimestre?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-173" id="solution-173"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-173"><div class="solution solution-like"><div class="para logical" id="p-1072">
+<div class="para">Que média é essa que queremos? Queremos uma média <span class="process-math">\(M\)</span> tal que, se a produção mensal fosse sempre igual a <span class="process-math">\(M\text{,}\)</span> a produção trimestral seria a mesma. A produção trimestral foi de <span class="process-math">\(500+200+200\text{.}\)</span> Se em todos os meses a produção fosse igual a <span class="process-math">\(M\text{,}\)</span> a produção trimestral seria igual a <span class="process-math">\(3M\text{.}\)</span> Logo, <span class="process-math">\(3M=500+200+200\)</span> e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M=\frac{500+200+200}{3}=300.
+\end{equation*}
+</div>
+<div class="para">A média desejada era a média aritmética. Resposta: <span class="process-math">\(300\text{.}\)</span>
+</div>
+</div></div></div></article><article class="example example-like" id="example-136"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.8</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1073">Uma empresa aumentou sua produção durante o primeiro bimestre do ano passado. Em janeiro e em fevereiro, as taxas de aumento foram de 21% e 8%, respectivamente. Qual foi a taxa média de aumento mensal nesse bimetre?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-174" id="solution-174"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-174"><div class="solution solution-like">
+<div class="para" id="p-1074">
+<dfn class="terminology">Comentário.</dfn> A resposta não é <span class="process-math">\((21\%+8\%)/2=14,5\%\text{.}\)</span>
+</div> <div class="para logical" id="p-1075">
+<div class="para">Que média queremos? Queremos uma taxa média <span class="process-math">\(i\)</span> tal que, se em todos os meses a taxa de aumento fosse igual a <span class="process-math">\(i\text{,}\)</span> o aumento bimetral seria o mesmo. O aumento bimestral foi de 30,68%, conforme mostra o esquema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+100\mapsto 100\cdot 1,21 \mapsto 100\cdot 1,21\cdot 1,08=130,68.
+\end{equation*}
+</div>
+<div class="para">Se em todos os meses tivéssemos um aumento de taxa <span class="process-math">\(i\text{,}\)</span> teríamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+100\mapsto 100(1+i) \mapsto 100(1+i)^2.
+\end{equation*}
+</div>
+<div class="para">Então,</div>
+<div class="displaymath process-math" id="md-66">
+\begin{align*}
+100(1+i)^2 =\amp~ 100\cdot 1,21\cdot 1,08\\
+(1+i)^2 =\amp~ 1,21\cdot 1,08\\
+1+i =\amp~ \sqrt{1,21\cdot 1,08}\approx 1,1432\\
+i \approx\amp~ 0,1432=14,32\%.
+\end{align*}
+</div>
+<div class="para">A média procurada era uma média geométrica. Mais precisamente: a taxa média, aumentada de uma unidade, é a média geométrica das taxas mensais aumentadas de uma unidade.</div>
+</div>
+</div></div></article><article class="example example-like" id="example-137"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.9</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1076">Um concurso anual distribui igualmente entre os vencedores um prêmio total de R$ 1800,00. Nos últimos três anos houve 2, 1 e 3 premiados, respectivamente. Qual foi o prêmio médio desses ganhadores?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-175" id="solution-175"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-175"><div class="solution solution-like">
+<div class="para" id="p-1077">
+<dfn class="terminology">Comentário.</dfn> Embora o número médio de ganhadores tenha sido igual a 2, o prêmio médio não foi de R$ <span class="process-math">\(\dfrac{1800,00}{2}=\)</span> R$ <span class="process-math">\(900,00\text{.}\)</span>
+</div> <div class="para logical" id="p-1078">
+<div class="para">Queremos uma média tal que, se todos os prêmios fossem iguais a essa média, o total distribuído seria o mesmo. Essa é precisamente a média aritmética. Os prêmios foram de</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1800}{2}=900, \frac{1800}{1}=1800 ~\text{ e }~ \frac{1800}{3}=600\text{.}
+\end{equation*}
+</div>
+<div class="para">O prêmio médio foi de <span class="process-math">\(\dfrac{900+1800+600}{3}=1100\)</span> reais.</div>
+</div> <div class="para logical" id="p-1079">
+<div class="para">Observe que a média aritmética dos rateios é igual a</div>
+<div class="displaymath process-math" id="md-67">
+\begin{align*}
+\frac{\dfrac{1800}{2}+\dfrac{1800}{1}+\dfrac{1800}{3}}{3} = \amp~ 1800\times \frac{\dfrac{1}{2}+\dfrac{1}{1}+\dfrac{1}{3}}{3}\\
+=\amp ~ 1800 \div \frac{3}{\dfrac{1}{2}+\dfrac{1}{1}+\dfrac{1}{3}}.
+\end{align*}
+</div>
+<div class="para">e que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{3}{\dfrac{1}{2}+\dfrac{1}{1}+\dfrac{1}{3}}
+\end{equation*}
+</div>
+<div class="para">é a média harmônica dos números de ganhadores.</div>
+</div> <div class="para" id="p-1080">O rateio médio é o rateio que corresponderia a uma quantidade de ganhadores igual à média harmônica dos números de ganhadores.</div>
+</div></div></article><div class="para" id="p-1081">Outra média importante é a média quadrática.</div>
+<article class="definition definition-like" id="definition-40"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">9.1.10</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1082">
+<div class="para">A <em class="emphasis">média quadrática</em> dos números <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é definida por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+q=\sqrt{\frac{x_1^2+x_2^2+\cdots+x_n^2}{n}},
+\end{equation*}
+</div>
+<div class="para">isto é, a média quadrática é a raiz quadrada da média aritmética dos quadrados dos números.</div>
+</div></article><article class="example example-like" id="example-138"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.11</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1083">
+<div class="para">A média quadrática dos números 1 e 7 é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{\frac{1^2+7^2}{2}}=5.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-139"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1084">A qualidade de uma aproximação é  medida pelo seu erro, que é a diferença entre o valor da aproximação e o valor real da grandeza. Por exemplo, 4 é uma aproximação de 3,8 com erro 0,2 (também se diz uma aproximação de 3,8 por excesso, com erro 0,2) e 5,5 é uma aproximação de 5,7 com erro -0,2 (ou uma aproximação de 5,7 por falta, com erro de 0,2). Evidentemente, quanto mais próximo de zero estiver o erro, tanto melhor será a aproximação. Assim, por exemplo, 39 é uma aproximação de 40 (erro igual a -1) que é melhor do que a aproximação 42 (erro igual a 2).</div> <div class="para logical" id="p-1085">
+<div class="para">Mede-se a qualidade de uma lista de aproximações pela média quadrática dos seus erros. Também se usa o <em class="emphasis">erro médio quadrático</em>, que é o quadrado dessa média quadrática, ou seja, é a média aritmética dos quadrados dos erros. Abaixo temos duas listas de aproximações do número 4.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_1 = [3;4,5;3,6]\quad \text{e}\quad S_2=[3,2;4,8].
+\end{equation*}
+</div>
+<div class="para">Os erros médios quadráticos são respectivamente iguais a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1^2+0,5^2+0,4^2}{3}=0,47 \quad \text{e}\quad \frac{0,8^2+0,8^2}{2}=0,64.
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(S_1\)</span> é uma lista de aproximações de <span class="process-math">\(4\)</span> melhor do que <span class="process-math">\(S_2\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="teo-pre-casa-pombos"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">9.1.13</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1086">Se a média aritmética dos números <span class="process-math">\(x_1,x_2,\ldots,x_n\)</span> é igual a <span class="process-math">\(\bar{x}\text{,}\)</span> pelo menos um dos números <span class="process-math">\(x_1,x_2,\ldots,x_n\)</span> é maior que ou igual a <span class="process-math">\(\bar{x}\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-51"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-51"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><div class="para logical" id="p-1087">
+<div class="para">Com efeito, se fosse <span class="process-math">\(x_1\lt \bar{x}\text{,}\)</span> <span class="process-math">\(x_2\lt \bar{x}, \ldots, x_n\lt \bar{x}\text{,}\)</span> teríamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1+x_2+\cdots+x_n\lt n \bar{x}
+\end{equation*}
+</div>
+<div class="para">Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x_1+x_2+\cdots+x_n}{n}\lt \bar{x}.
+\end{equation*}
+</div>
+<div class="para">E portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{x}\lt \bar{x},
+\end{equation*}
+</div>
+<div class="para">o que é um absurdo.</div>
+</div></article></div>
+<article class="example example-like" id="example-140"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1088">Mostre que em um grupo de 50 pessoas, há sempre pelo menos 5 que nasceram no mesmo mês.</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-176" id="solution-176"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-176"><div class="solution solution-like"><div class="para" id="p-1089">O número médio de pessoas por mês é <span class="process-math">\(\frac{50}{12}\approx 4,1\text{.}\)</span> Logo, em algum mês o número de nascidos nesse mês é maior que ou igual a <span class="process-math">\(4,1\text{,}\)</span> ou seja, é maior que ou igual a 5.</div></div></div></article><div class="para" id="p-1090">Uma consequência imediata do <a href="" class="xref" data-knowl="./knowl/teo-pre-casa-pombos.html" title="Teorema 9.1.13">Teorema 9.1.13</a> é o Princípio das Casas dos Pombos (ou Princípio das Gavetas de Dirichlet).</div>
+<article class="theorem theorem-like" id="theorem-50"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">9.1.15</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1091">Se <span class="process-math">\(n+1\)</span> ou mais objetos são colocados em <span class="process-math">\(n\)</span> ou menos gavetas, então pelo menos uma gaveta recebe mais de um objeto.</div></article><article class="hiddenproof" id="proof-52"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-52"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><div class="para" id="p-1092">O número médio de objetos por gaveta é maior que ou igual a <span class="process-math">\(\frac{n+1}{n}\text{,}\)</span> que é maior que 1. Logo, em alguma gaveta haverá um número de objetos maior que 1.</div></article></div>
+<article class="example example-like" id="example-141"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.16</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1093">Mostre que todo inteiro positivo <span class="process-math">\(n\)</span> tem um múltiplo que se escreve apenas com os algarismos 0 e 1.</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-177" id="solution-177"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-177"><div class="solution solution-like">
+<div class="para" id="p-1094">Considere os <span class="process-math">\(n+1\)</span> primeiros números da sequência <span class="process-math">\(1,11,111,\ldots\text{.}\)</span> Divida-os por <span class="process-math">\(n\)</span> e considere os restos dessas divisões. Esses restos só podem ser iguais a <span class="process-math">\(0,1,2,\ldots, n-1\text{.}\)</span>
+</div> <div class="para" id="p-1095">Pensando nos números como objetos e nos restos como gavetas, temos mais objetos do que gavetas. O Princípio das Gavetas assegura que alguma gaveta receberá mais de um objeto, isto é, há dois números na sequência que dão o mesmo resto quando divididos por <span class="process-math">\(n\text{,}\)</span> digamos <span class="process-math">\(111\ldots1\)</span> (<span class="process-math">\(p\)</span> algarismos) e <span class="process-math">\(111\ldots1\)</span> (<span class="process-math">\(q\)</span> algarismos), <span class="process-math">\(p\lt q\text{.}\)</span> A diferença desses números é um múltiplo de <span class="process-math">\(n\)</span> e se escreve <span class="process-math">\(111\ldots10\ldots0\text{,}\)</span> com <span class="process-math">\(p\)</span> algarismos <span class="process-math">\(0\)</span> e <span class="process-math">\(q\)</span> algarismos <span class="process-math">\(1\text{.}\)</span>
+</div>
+</div></div></article><article class="example example-like" id="example-142"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.17</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1096">Cinco pontos são tomados sobre a superfície de um quadrado de lado 2. Mostre que há dois desses pontos tais que a distância entre eles é menor que ou igual a <span class="process-math">\(\sqrt{2}\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-178" id="solution-178"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-178"><div class="solution solution-like"><div class="para" id="p-1097">Divida o quadrado de lado 2 em quatro quadrados de lado 1, ligando os pontos médios dos lados opostos. Pensando nos pontos como objetos e nos quadrados como gavetas, temos mais objetos que gavetas. O Princípio das Gavetas assegura que alguma gaveta receberá mais de um objeto, isto é, haverá dois pontos no mesmo quadrado de lado 1. A distância entre esses pontos é no máximo igual ao comprimento da diagonal do quadrado, que é <span class="process-math">\(\sqrt{2}\text{.}\)</span>
+</div></div></div></article><article class="example example-like" id="example-143"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.18</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1098">Um enxadrista, durante 11 semanas, joga pelo menos uma partida por dia mas não joga mais de 12 partidas por semana. Mostre que é possível achar um conjunto de dias consecutivos durante os quais ele jogou exatamente 20 partidas.</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-179" id="solution-179"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-179"><div class="solution solution-like">
+<div class="para" id="p-1099">Em 11 semanas temos 77 dias. Chamaremos de <span class="process-math">\(S_k, k=1,2,\ldots, 77\text{,}\)</span> o número de partidas jogadas desde o primeiro até o <span class="process-math">\(k\)</span>-ésimo dia, inclusive. Como ele joga pelo menos uma partida por dia, temos <span class="process-math">\(1\leq S_1\lt S_2\lt \cdots \lt S_{77}\text{.}\)</span> Além disso, <span class="process-math">\(S_{77}\leq 132\)</span> pois ele não joga mais de 12 partidas por semana.</div> <div class="para" id="p-1100">Definindo <span class="process-math">\(S_0=0\text{,}\)</span> a quantidade de partidas jogadas do dia <span class="process-math">\(p\)</span> ao dia <span class="process-math">\(q\text{,}\)</span> inclusive, é igual a <span class="process-math">\(S_q-S_{p-1}\text{.}\)</span> Queremos mostrar que é possível determinar <span class="process-math">\(p\)</span> e <span class="process-math">\(q\)</span> de modo que <span class="process-math">\(S_q-S_{p-1}=20\text{.}\)</span>
+</div> <div class="para logical" id="p-1101">
+<div class="para">Considere os 154 números</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_1, S_2, \ldots, S_{77}, S_1+20, S_2+20, \ldots, S_{77}+20.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-1102">Eles pertencem a <span class="process-math">\(\{1,2,\ldots, 152\}\text{.}\)</span> O Princípio das Gavetas assegura que dois desses números são iguais. Como <span class="process-math">\(S_1\lt S_2\lt \cdots \lt S_{77}\text{,}\)</span> os números iguais devem estar em metades diferentes dessa lista de 154 números. Então, existem <span class="process-math">\(m\)</span> e <span class="process-math">\(n\)</span> tais que <span class="process-math">\(S_m=S_n+20\text{.}\)</span> O enxadrista joga 20 partidas entre os dias <span class="process-math">\(n+1\)</span> e <span class="process-math">\(m\text{,}\)</span> inclusive.</div>
+</div></div></article><div class="para" id="p-1103">Finalmente, definimos médias ponderadas.</div>
+<article class="definition definition-like" id="definition-41"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">9.1.19</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-1104">
+<div class="para">A <em class="emphasis">média aritmética ponderada</em> dos números <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> com pesos respectivamente iguais a <span class="process-math">\(p_1, p_2, \ldots, p_n\)</span> é definida por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{p_1x_1+p_2x_2+\cdots+p_nx_n}{p_1+p_2+\cdots+p_n}.
+\end{equation*}
+</div>
+</div></article><article class="remark remark-like" id="remark-34"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">9.1.20</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1105">Embora a ideia primitiva seja que a média aritmética ponderada é uma média aritmética simples de uma lista de números dos quais <span class="process-math">\(p_1\)</span> são iguais a <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(p_2\)</span> são iguais a <span class="process-math">\(x_2\text{,}\)</span> ..., <span class="process-math">\(p_n\)</span> são iguais a <span class="process-math">\(x_n\)</span> não há problema em considerar pesos não inteiros.</div> <div class="para logical" id="p-1106">
+<div class="para">Aliás, é bastante útil trabalhar com pesos relativos e considerar a média aritmética ponderada dos números <span class="process-math">\(x_1, x_2, \ldots, x_n\text{,}\)</span> com pesos iguais a <span class="process-math">\(p_1, p_2, \ldots, p_n\text{,}\)</span> respectivamente, como sendo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{p_1}{p_1+p_2+\cdots+p_n}x_1+\cdots+\frac{p_n}{p_1+p_2+\cdots+p_n}x_n.
+\end{equation*}
+</div>
+<div class="para">Assim, uma média aritmética ponderada dos números <span class="process-math">\(x_1, x_2, \ldots, x_n\)</span> é uma expressão da forma</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda_1 x_1+\lambda_2 x_1+\cdots +\lambda_n x_n, \quad \text{na qual}\quad \lambda_1+\lambda_2+\cdots +\lambda_n=1.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-144"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">9.1.21</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-1107">Em um grupo de pessoas, 70% das pessoas são adultos e 30% são crianças. O peso médio dos adultos é 70kg e o peso médio das crianças é de 40kg. Qual o peso médio do grupo?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-180" id="solution-180"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-180"><div class="solution solution-like"><div class="para" id="p-1108">É a média aritmética ponderada dos dois subgrupos, com pesos relativos de 0,7 e 0,3. A resposta é <span class="process-math">\(0,7\times 70+0,3\times 40=61kg.\)</span>
+</div></div></div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="media_gavetas.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-29.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:00-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,28 +9,56 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
 </script>
 </head>
-<body>
+<body class="ignore-math">
 <div class="solution solution-like">
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.4.1</span><span class="period">.</span>
-</h6>
-<ol class="lower-alpha">
-<li>\(C_3=C_0(1+i)^3 = 150(1+0,01)^3=154,55\) reais</li>
-<li>\(C_{10\times12}=C_0(1+i)^{120} = 150(1+0,01)^{120}\) reais. Isso pode ser calculado no Sage da seguinte maneira:</li>
-</ol>
-<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">150*(1+0.01)^120
-</script></div>
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.2.9.1</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Uma solução não nula de <span class="process-math">\(x_{n+1}=2x_n\)</span> é, por exemplo, <span class="process-math">\(x_n=2^{n-1}\text{,}\)</span> conforme vimos no <a href="" class="xref" data-knowl="./knowl/ex-7.html" title="Exemplo 4.2.4">Exemplo 4.2.4</a>. Fazendo a substituição <span class="process-math">\(x_n=2^{n-1}y_n\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{equation*}
+2^ny_{n+1}=2^ny_n+1,
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-6.html#solution-35">[incontext]</a></span>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{equation*}
+y_{n+1}=y_n+2^{-n}.
+\end{equation*}
+</div>
+<div class="para">Daí, se tem</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{align*}
+y_2 = \amp ~ y_1 + 2^{-1}\\
+y_3 = \amp ~ y_2 + 2^{-2}\\
+y_4 = \amp ~ y_3 + 2^{-3}\\
+\vdots~~ = \amp ~~~~ \vdots\\
+y_n = \amp ~ y_{n-1} + 2^{-(n-1)}.
+\end{align*}
+</div>
+<div class="para">Somando, resulta</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{align*}
+y_n = \amp~ y_1+2^{-1}+2^{-2}+2^{-3}+\cdots+2^{-(n-1)}\\
+= \amp~ y_1+2^{-1}\frac{(2^{-1})^{n-1}-1}{2^{-1}-1}\\
+= \amp~ y_1-2^{1-n}+1.
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(x_n=2^{n-1}y_n\)</span> e <span class="process-math">\(x_1=2\text{,}\)</span> temos <span class="process-math">\(y_1=2\)</span> e <span class="process-math">\(y_n=3-2^{1-n}\text{.}\)</span> Daí, <span class="process-math">\(x_n=3\cdot 2^{n-1}-1.\)</span>
+</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">maxima('load("solve_rec")')
+sol=maxima('solve_rec(x[n+1]=2*x[n]+1,x[n],x[1]=2)')
+show(sol)
+</script></pre> </div>
+<span class="incontext"><a href="section-8.html#solution-35" class="internal">em contexto</a></span>
 </body>
 </html>

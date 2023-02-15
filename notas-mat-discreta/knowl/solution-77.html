@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:55:03-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,24 +9,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body>
+<body class="ignore-math">
 <div class="solution solution-like">
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.3.7.1</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Vamos separar em quatro casos.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">1º caso: a senhorita será a primeira pessoa a entrar. Nesse caso, os quatro rapazes podem entrar em qualquer ordem, ou seja, \(4!\) possibilidades.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">2º caso: a senhorita será a segunda pessoa a entrar. Nesse caso temos 3 possibilidades de escolha o primeiro rapaz, depois temos \(3!\) possíveis ordem para os outros rapazes.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">3º caso: a senhorita será a terceira pessoa a entrar. Nesse caso temos \(3\times 2\) possibilidades para os dois primeiros rapazes e \(2\) ordens possíveis para os dois últimos rapazes.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">4º caso: a senhorita será a quarta pessoa a entrar. Nesse caso temos \(3!\) ordens para os três primeiros rapazes.</p>
-<p>Portanto, pelo Princípio Aditivo, a resposta é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">6.3.11.1</span><span class="period">.</span>
+</h4>
+<div class="para"><dfn class="terminology">item a.</dfn></div> <div class="para">Como os números foram escritos em ordem crescente, os que começam com <span class="process-math">\(2, 3\)</span> e <span class="process-math">\(5\)</span> aparecem antes do número <span class="process-math">\(653289\text{.}\)</span> Existem <span class="process-math">\(5!\)</span> números que começam com cada um destes algarismos, ou seja <span class="process-math">\(3\times 5!\)</span> números.</div> <div class="para">Existem <span class="process-math">\(4!\)</span> números que começam com <span class="process-math">\(62\text{,}\)</span> e a mesma quantidade que começam com <span class="process-math">\(63\text{,}\)</span> ou seja <span class="process-math">\(2\times 4!\)</span> números.</div> <div class="para">Existem <span class="process-math">\(3!\)</span> números que começam com <span class="process-math">\(652\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">O próximo número já que o que queremos. Portanto, a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
-4! + 3! + 3\times 2\times 2 + 3! = 60.
+3\times 5! + 2\times 4! +3! +1 = 415.
 \end{equation*}
 </div>
+</div> <div class="para"><dfn class="terminology">item b.</dfn></div> <div class="para">Começando com <span class="process-math">\(2, 3, 5\)</span> e <span class="process-math">\(6\)</span> temos um total de <span class="process-math">\(4\times 5! = 480\)</span> números. Se considerarmos também, todos que começam com <span class="process-math">\(8\text{,}\)</span> teremos mais <span class="process-math">\(120\)</span> números, ultrapassando a posição <span class="process-math">\(500\text{.}\)</span>
+</div> <div class="para">Já sabemos que o número que ocupa a posição <span class="process-math">\(500\)</span> começa com o algarismo <span class="process-math">\(8\)</span> e que o primeiro número com o algarismo <span class="process-math">\(8\)</span> ocupa a posição <span class="process-math">\(481\text{.}\)</span> Precisamos encontrar o número que começa com o algarismo <span class="process-math">\(8\)</span> e está na posição <span class="process-math">\(20\text{,}\)</span> dentre estes números que começam com <span class="process-math">\(8\text{.}\)</span>
+</div> <div class="para">Começando com <span class="process-math">\(823, 825\)</span> e <span class="process-math">\(826\text{,}\)</span> são <span class="process-math">\(3\times 3! = 18\)</span> números. Dessa forma, o número seguinte está na posição <span class="process-math">\(19\text{,}\)</span> dentre os que começam com o algarismo <span class="process-math">\(8\text{.}\)</span> Assim, o número <span class="process-math">\(829356\)</span> está na posição <span class="process-math">\(499\)</span> e o número <span class="process-math">\(829365\)</span> está na posição <span class="process-math">\(500\text{.}\)</span>
+</div> <div class="para"><dfn class="terminology">(Usando o Sage)</dfn></div> <div class="para">Quando calculamos todas as permutações no Sage, a saída é exibida em ordem crescente. Como as listas no Sage começam a ser contadas a partir do <dfn class="terminology">zero</dfn>, podemos consultar a permutação de posição 500 com o comando abaixo:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-18"><script type="text/x-sage">Permutations([2, 3, 5, 6, 8, 9]).list()[499]
+</script></pre>
 </div>
-<span class="incontext"><a href="section-permutacoes-simples.html#solution-77">[incontext]</a></span>
+<span class="incontext"><a href="section-permutacoes-simples.html#solution-77" class="internal">em contexto</a></span>
 </body>
 </html>
