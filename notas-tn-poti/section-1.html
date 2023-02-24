@@ -260,25 +260,28 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 7 = 9\cdot 7 +0, \quad r=7\lt 9=a;
 \end{equation*}
 </div>
-</div></article><article class="technology computation-like" id="technology-1"><h3 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</div></article><article class="remark remark-like" id="remark-1"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-10">Abaixo temos um código em SageMath, no qual podemos trocar os valores de <span class="process-math">\(b\)</span> e <span class="process-math">\(a\)</span> nas linhas <span class="process-math">\(1\)</span> e <span class="process-math">\(2\text{,}\)</span> respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de <span class="process-math">\(b\)</span> por <span class="process-math">\(a\text{.}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">b=13
-a=5
-(q,r) = (b//a, b%a)
-print('%d = %d*%d + %d' %(b,a,q,r))
-</script></pre></article><article class="remark remark-like" id="remark-1"><h3 class="heading">
-<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="p-11">
+<div class="para logical" id="p-10">
 <div class="para">O teorema anterior admite um enunciado mais geral: Para quaisquer inteiros <span class="process-math">\(a\)</span> e <span class="process-math">\(b\text{,}\)</span> com <span class="process-math">\(a\neq 0\text{,}\)</span> existe um único par de inteiros <span class="process-math">\((q, r)\)</span> tais que <span class="process-math">\(b = aq + r, ~0 \leq r \lt |a|\text{.}\)</span> Por exemplo,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 -7 = -3\cdot 3 + 2, \quad r=2\lt |-3| = a.
 \end{equation*}
 </div>
-</div></article><article class="remark remark-like" id="rem-001"><h3 class="heading">
+</div></article><article class="technology computation-like" id="technology-1"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-11">Abaixo temos um código em SageMath, no qual podemos trocar os valores de <span class="process-math">\(b\)</span> e <span class="process-math">\(a\)</span> nas linhas <span class="process-math">\(1\)</span> e <span class="process-math">\(2\text{,}\)</span> respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de <span class="process-math">\(b\)</span> por <span class="process-math">\(a\text{.}\)</span>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">b=-7
+a=-3
+(q,r) = (b//a, b%a)
+if 0>r:
+    q = q+1
+    r = r-a
+print('%d = %d*%d + %d' %(b,a,q,r))
+</script></pre></article><article class="remark remark-like" id="rem-001"><h3 class="heading">
 <span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">(PTOM).</span>
 </h3> <div class="para" id="p-12">De modo geral, fixado um número natural <span class="process-math">\(a\geq 2\text{,}\)</span> pode-se sempre escrever um número qualquer <span class="process-math">\(b\text{,}\)</span> de modo único, na forma <span class="process-math">\(b = aq+r\text{,}\)</span> na qual <span class="process-math">\(q, r\)</span> são inteiros e <span class="process-math">\(0\leq r \lt a\text{.}\)</span>
 </div> <div class="para logical" id="p-13">
@@ -703,32 +706,74 @@ ab2016 =\amp~ ab\cdot 100^2+ 20\cdot 100^1 + 16\cdot 100^0\\
 <span class="type">Exercícios</span> <span class="codenumber">1.1.1</span> <span class="title">Exercícios</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-57">Determinar os números que divididos por <span class="process-math">\(17\)</span> dão um resto igual ao quadrado do quociente correspondente.</div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
+<div class="para" id="p-57">Determinar os números que divididos por <span class="process-math">\(17\)</span> dão um resto igual ao quadrado do quociente correspondente.</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
+<div class="para logical" id="p-58">
+<div class="para">Estamos procurando os valores de <span class="process-math">\(n\)</span> que satisfazem</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n = 17\cdot q + q^2, \quad 0\leq q^2\lt 17.
+\end{equation*}
+</div>
+<div class="para">Assim, <span class="process-math">\(-4\leq q\leq 4\)</span> e portanto, precisamos substituir os valores de <span class="process-math">\(q=-4, -3, -2, -1, 0, 1, 2, 3, 4\text{.}\)</span>
+</div>
+</div>
+<div class="displaymath process-math" id="md-18">
+\begin{align*}
+n =\amp~ 17\cdot (-4) + (-4)^2 = -52\\
+n =\amp~ 17\cdot (-3) + (-3)^2 = -42\\
+n =\amp~ 17\cdot (-2) + (-2)^2 = -30\\
+n =\amp~ 17\cdot (-1) + (-1)^2 = -16\\
+n =\amp~ 17\cdot (0) +0^2 = 0\\
+n =\amp~ 17\cdot (1) +1^2 = 18\\
+n =\amp~ 17\cdot (2) +2^2 = 38\\
+n =\amp~ 17\cdot (3) +3^2 = 60\\
+n =\amp~ 17\cdot (4) +4^2 = 84
+\end{align*}
+</div>
+</div></div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">(OCM 1985).</span>
 </h4>
-<div class="para logical" id="p-58">
+<div class="para logical" id="p-59">
 <div class="para">Encontre o quociente da divisão de <span class="process-math">\(a^{128}-b^{128}\)</span> por</div>
 <div class="displaymath process-math">
 \begin{equation*}
 (a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a+b).
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading">
+</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
+<div class="para" id="p-60">Fatorando <span class="process-math">\(a^{128}-b^{128}\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math" id="md-19">
+\begin{align*}
+a^{128}-b^{128} =\amp~ (a^{64}+b^{64})(a^{64}-b^{64})\\
+=\amp~ (a^{64}+b^{64})(a^{32}+b^{32})(a^{32}-b^{32})\\
+\vdots
+\end{align*}
+</div>Seguindo assim, obtemos que <span class="process-math">\(a^{128}-b^{128}\)</span> é igual a<div class="displaymath process-math">
+\begin{equation*}
+(a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a^{2}-b^{2}),
+\end{equation*}
+</div>consequentemente <span class="process-math">\(a^{128}-b^{128}\)</span> é igual a<div class="displaymath process-math">
+\begin{equation*}
+(a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a+b)(a-b).
+\end{equation*}
+</div>Portanto, o quociente é <span class="process-math">\((a-b)\)</span> e o resto é zero.</div></div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">(OCM 1994).</span>
 </h4>
-<div class="para" id="p-59">Seja <span class="process-math">\(A=777\ldots 777\)</span> um número onde o dígito "<span class="process-math">\(7\)</span>" aparece <span class="process-math">\(1001\)</span> vezes. Determine o quociente e o resto da divisão de <span class="process-math">\(A\)</span> por <span class="process-math">\(1001\text{.}\)</span>
+<div class="para" id="p-61">Seja <span class="process-math">\(A=777\ldots 777\)</span> um número onde o dígito "<span class="process-math">\(7\)</span>" aparece <span class="process-math">\(1001\)</span> vezes. Determine o quociente e o resto da divisão de <span class="process-math">\(A\)</span> por <span class="process-math">\(1001\text{.}\)</span>
 </div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
-<div class="para logical" id="p-60">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
+<div class="para logical" id="p-62">
 <div class="para">Observe que <span class="process-math">\(A = 7\frac{10^{1001}-1}{9}\text{,}\)</span> e que <span class="process-math">\(1001 = 10^3+1\text{.}\)</span> Como</div>
-<div class="displaymath process-math" id="md-18">
+<div class="displaymath process-math" id="md-20">
 \begin{align*}
 (10^{999}+1)=\amp~((10^3)^{333}+1)\\
 =\amp~(10^3+1)((10^3)^{332}-(10^3)^{331}+(10^3)^{330}-\cdots+1),
 \end{align*}
 </div>
 <div class="para">Sabemos que <span class="process-math">\(\frac{10^{999}+1}{10^3+1}\)</span> é um número inteiro. Assim,</div>
-<div class="displaymath process-math" id="md-19">
+<div class="displaymath process-math" id="md-21">
 \begin{align*}
 \frac{10^{1001}-1}{10^3+1} =\amp~100\cdot\frac{10^{999}+1}{10^3+1}-\frac{101}{10^3+1}\\
 =\amp~100\cdot\frac{10^{999}+1}{10^3+1}-\frac{1001-900}{10^3+1}\\
@@ -737,7 +782,7 @@ ab2016 =\amp~ ab\cdot 100^2+ 20\cdot 100^1 + 16\cdot 100^0\\
 \end{align*}
 </div>
 <div class="para">Dividindo ambos os membros da igualdade por <span class="process-math">\(9\)</span> e em seguida multiplicando por <span class="process-math">\(7\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" id="md-20">
+<div class="displaymath process-math" id="md-22">
 \begin{align*}
 \frac{10^{1001}-1}{9(10^3+1)} =\amp~\frac{10^{1001}-901}{9(10^3+1)}+\frac{100}{10^3+1}\\
 \frac{7\cdot(10^{1001}-1)}{9(10^3+1)} =\amp~\frac{7\cdot(10^{1001}-901)}{9(10^3+1)}+\frac{700}{10^3+1}.
@@ -749,18 +794,75 @@ ab2016 =\amp~ ab\cdot 100^2+ 20\cdot 100^1 + 16\cdot 100^0\\
 A = 1001\cdot \frac{7\cdot(10^{1001}-901)}{9(10^3+1)} + 700.
 \end{equation*}
 </div>
-</div> <div class="para" id="p-61">Para concluir, vamos provar a afirmação acima. Observe que <span class="process-math">\(1001=7\cdot11\cdot13\text{.}\)</span> Então, como <span class="process-math">\(7, 9, 11, 13\)</span> não possuem fatores primos em comum, para mostrar que <span class="process-math">\(9(10^3+1)\)</span> divide <span class="process-math">\(7\cdot(10^{1001}-901)\text{,}\)</span> basta mostrar que cada um dos números <span class="process-math">\(9, 11\)</span> e <span class="process-math">\(13\)</span> divide <span class="process-math">\((10^{1001}-901)\text{.}\)</span>
-</div> <div class="para logical" id="p-62"><ol class="lower-roman">
+</div> <div class="para" id="p-63">Para concluir, vamos provar a afirmação acima. Observe que <span class="process-math">\(1001=7\cdot11\cdot13\text{.}\)</span> Então, como <span class="process-math">\(7, 9, 11, 13\)</span> não possuem fatores primos em comum, para mostrar que <span class="process-math">\(9(10^3+1)\)</span> divide <span class="process-math">\(7\cdot(10^{1001}-901)\text{,}\)</span> basta mostrar que cada um dos números <span class="process-math">\(9, 11\)</span> e <span class="process-math">\(13\)</span> divide <span class="process-math">\((10^{1001}-901)\text{.}\)</span>
+</div> <div class="para logical" id="p-64"><ol class="lower-roman">
 <li id="li-7"><div class="para" id="p-derived-li-7">(<span class="process-math">\(9\)</span> divide <span class="process-math">\((10^{1001}-901)\)</span>). Note que <span class="process-math">\(10\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(9\)</span> e que <span class="process-math">\(-901\)</span> deixa resto <span class="process-math">\(8\text{,}\)</span> na divisão por <span class="process-math">\(9\text{.}\)</span> Assim, Pelo Teorema dos Restos, <span class="process-math">\((10^{1001}-901)\)</span> deixa o mesmo resto que <span class="process-math">\((1^{1001}+8)=9\)</span> na divisão por <span class="process-math">\(9\text{,}\)</span> ou seja, o resto é zero.</div></li>
 <li id="li-8"><div class="para" id="p-derived-li-8">(<span class="process-math">\(11\)</span> divide <span class="process-math">\((10^{1001}-901)\)</span>). Como <span class="process-math">\(10^2\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(11\)</span> e <span class="process-math">\(-901\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(11\text{.}\)</span> Pelo Teorema dos restos, <span class="process-math">\((10^{1001}-901)\)</span> deixa o mesmo resto que <span class="process-math">\(((1)^{500}\cdot10+1)=11\text{,}\)</span> na divisão por <span class="process-math">\(11\text{.}\)</span> Portanto o resto é zero.</div></li>
 <li id="li-9"><div class="para" id="p-derived-li-9">(<span class="process-math">\(13\)</span> divide <span class="process-math">\((10^{1001}-901)\)</span>). De fato, <span class="process-math">\(10^6\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(13\)</span> e <span class="process-math">\(-901\)</span> deixa resto <span class="process-math">\(9\text{,}\)</span> na divisão por <span class="process-math">\(13\text{.}\)</span> Logo, pelo Teorema dos Restos <span class="process-math">\((10^{1001}-901)\)</span>) deixa o mesmo resto que <span class="process-math">\(((1)^{166}\cdot 10^5+9)=100009\text{.}\)</span> Assim, o resto também é zero.</div></li>
 </ol></div>
+</div></div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-65">Prove que, o número <span class="process-math">\(1^{99}+2^{99}+3^{99}+4^{99}+5^{99}\)</span> é múltiplo de <span class="process-math">\(5\text{.}\)</span>
+</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
+<div class="para logical" id="p-66">
+<div class="para">Vamos usar a seguinte igualdade:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^n+b^n = (a+b)(a^{n-1}\cdot b^0 - a^{n-2}\cdot b^1 +\cdots +a^{0}\cdot b^{n-1}).
+\end{equation*}
+</div>
+</div> <div class="para" id="p-67">
+<span class="process-math">\(5^{99}\)</span> é múltiplo de <span class="process-math">\(5\)</span> e portanto deixa resto zero.</div> <div class="para" id="p-68">
+<span class="process-math">\(4^{99}+1^{99} = (4+1)(4^{98}-4^{97}+\cdots+1)\text{,}\)</span> deixa resto zero na divisão por <span class="process-math">\(5\text{.}\)</span>
+</div> <div class="para" id="p-69">
+<span class="process-math">\(3^{99}+2^{99} = (3+2)(3^{98}-3^{97}\cdot 2^1+\cdots+2^{98})\text{,}\)</span> também deixa resto zero na divisão por <span class="process-math">\(5\text{.}\)</span>
+</div> <div class="para" id="p-70">Portanto, o número <span class="process-math">\(1^{99}+2^{99}+3^{99}+4^{99}+5^{99}\)</span> é múltiplo de <span class="process-math">\(5\text{.}\)</span>
+</div>
+</div></div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-71">Mostre que o número <span class="process-math">\(1^n+8^n-3^n-6^n\)</span> é múltiplo de <span class="process-math">\(10\text{.}\)</span>
+</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<div class="para" id="p-72">Para mostrar que o número é mútiplo de <span class="process-math">\(10\text{,}\)</span> basta mostrar que <span class="process-math">\(2\)</span> e <span class="process-math">\(5\)</span> dividem o número.</div> <div class="para" id="p-73">Como <span class="process-math">\(8^n-3^n\)</span> e <span class="process-math">\(1^n-6^n\)</span> são ímpares, a soma <span class="process-math">\((8^n-3^n) + (1^n-6^n)\)</span> é par, assim, <span class="process-math">\(2\)</span> divide <span class="process-math">\(1^n+8^n-3^n-6^n\text{.}\)</span>
+</div> <div class="para logical" id="p-74">
+<div class="para">Para mostrar <span class="process-math">\(5\)</span> divide <span class="process-math">\(1^n+8^n-3^n-6^n\text{,}\)</span> vamos usar as seguintes fatorações:</div>
+<div class="displaymath process-math" id="md-23">
+\begin{align*}
+8^n-3^n =\amp~ \underbrace{(8-3)}_{=5}(8^{n-1}+8^{n-2}\cdot 3+8^{n-3}\cdot3^2+\cdots + 3^{n-1})\\
+1^n-6^n =\amp~ \underbrace{(1-6)}_{=-5}(1+6+6^2+\cdots+6^{n-1})
+\end{align*}
+</div>
+<div class="para">Assim, <span class="process-math">\(8^n-3^n\)</span> e <span class="process-math">\(1^n-6^n\)</span> são divisíveis por <span class="process-math">\(5\)</span> e portanto a soma também é.</div>
+</div>
+</div></div></article><div class="para" id="p-75"><dfn class="terminology">Simulados Antigos</dfn></div>
+<article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="p-76">
+<div class="para">(2013) O algarismo das unidades do número <span class="process-math">\(1\times 3\times 5\times \cdots\times 97\times 99\)</span> é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a) 2 \quad (b) 3\quad (c) 5 \quad (d) 7 \quad (e) 9
+\end{equation*}
+</div>
+</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><span class="process-math">\((c) 5\)</span></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para" id="p-77">Todo múltiplo de <span class="process-math">\(5\)</span> ímpar termina em <span class="process-math">\(5\text{.}\)</span>
+</div></div></div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para logical" id="p-78">
+<div class="para">(2015) Paula iniciou um programa de ginástica no qual os dias de treino são separados por dois dias de descanso. Se o primeiro treino foi em uma segunda-feira, em qual dia da semana cairá o centésimo treino?</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a) \text{Domingo} ~~~ (b) \text{segunda-feira} ~~~ (c) \text{terça-feira} ~~~ (d) \text{quinita-feira} ~~~ (e) \text{sexta-feira}
+\end{equation*}
+</div>
+</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><span class="process-math">\((d) \text{quinita-feira}\)</span></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<div class="para" id="p-79">Como os treinos ocorrem de <span class="process-math">\(3\)</span> em <span class="process-math">\(3\)</span> dias, o segundo treino ocorrerá <span class="process-math">\(3\)</span> dias após o primeiro. O terceiro treino ocorrerá <span class="process-math">\(3\times 2 = 6\)</span> dias após o primeiro e assim sucessivamente. O <span class="process-math">\(n\)</span>-ésimo treino ocorrerá <span class="process-math">\(3\times(n-1)\)</span> dias após o primeiro. Assim, o centésimo treino ocorrerá <span class="process-math">\(3 \times 99 = 297\)</span> dias após o primeiro.</div> <div class="para" id="p-80">A cada <span class="process-math">\(7\)</span> dias repete-se o dia da semana. Como <span class="process-math">\(297\)</span> deixa resto <span class="process-math">\(3\)</span> na divisão por <span class="process-math">\(7\text{,}\)</span> o centésimo treino ocorrerá <span class="process-math">\(3\)</span> dias após uma segunda-feira, ou seja, em uma quinta-feira.</div>
 </div></div></article></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">1.1.2</span> <span class="title">Realização e Apoio</span>
 </h3>
-<div class="para" id="p-63"><dfn class="terminology">Realização:</dfn></div>
+<div class="para" id="p-81"><dfn class="terminology">Realização:</dfn></div>
 <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/realizacao.svg" role="img" class="contained"></div>
-<div class="para" id="p-64"><dfn class="terminology">Apoio:</dfn></div>
+<div class="para" id="p-82"><dfn class="terminology">Apoio:</dfn></div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/apoio.svg" role="img" class="contained"></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="01-divisibilidade.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-2.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
