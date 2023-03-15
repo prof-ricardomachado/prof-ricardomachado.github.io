@@ -1924,7 +1924,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Derivadas: Conceito e Interpretação Geométrica",
-  "body": " Derivadas: Conceito e Interpretação Geométrica   O conceito de derivada está relacionado ao conceito de reta tangente ao gráfico de uma função .   Antes de definir a reta tangente ao gráfico de uma função no ponto , vamos escrever a equação da reta , que passa pelos pontos e .       Chama-se coeficiente angular de uma reta  de inclinação , o número tal que .    Se é uma reta não-vertical que passa pelo ponto e tem coeficiente angular , então uma equação de é Tal equação é denominada equação fundamental da reta .     O coeficiente angular da reta , que passa pelos pontos e é dado por:       E a equação da reta que passa por e é dada por     A reta tangente ao gráfico de é obtida fazendo tender a , na equação da reta :        Sejam uma função e um ponto do domínio de . O limite quando existe e é finito, denomina-se derivada de em e é indicada por . Assim,   Se admite derivada em , então diremos que é diferenciável em . A função é diferenciável em um intervalo aberto (ou ou ou ) se for diferenciável em cada ponto do intervalo.     Segue da definição de limites que    A reta tangente ao gráfico de , no ponto , é dada por      Seja .  Calcule a derivada de no ponto  Encontre a equação da reta tangente ao gráfico de no ponto .      Encontre a equação da reta tangente ao gráfico da função , no ponto .    Encontre a equação da reta tangente ao gráfico da função , no ponto .    Mostre que não é derivável em .   Calcule         A Derivada como uma Função   Seja , calcule .       Seja , calcule .       Seja , encontre uma fórmula para .     Calcule pela definição (através do limite), nos seguintes casos;         Para cada item da questão 1, determine a equação da reta tangente ao gráfico de no ponto .   "
+  "body": " Derivadas: Conceito e Interpretação Geométrica   O conceito de derivada está relacionado ao conceito de reta tangente ao gráfico de uma função .   Antes de definir a reta tangente ao gráfico de uma função no ponto , vamos escrever a equação da reta , que passa pelos pontos e .       Chama-se coeficiente angular de uma reta  de inclinação , o número tal que .    Se é uma reta não-vertical que passa pelo ponto e tem coeficiente angular , então uma equação de é Tal equação é denominada equação fundamental da reta .     O coeficiente angular da reta , que passa pelos pontos e é dado por:       E a equação da reta que passa por e é dada por     A reta tangente ao gráfico de é obtida fazendo tender a , na equação da reta :        Sejam uma função e um ponto do domínio de . O limite quando existe e é finito, denomina-se derivada de em e é indicada por . Assim,   Se admite derivada em , então diremos que é diferenciável em . A função é diferenciável em um intervalo aberto (ou ou ou ) se for diferenciável em cada ponto do intervalo.     Segue da definição de limites que    A reta tangente ao gráfico de , no ponto , é dada por      Seja .  Calcule a derivada de no ponto  Encontre a equação da reta tangente ao gráfico de no ponto .       Mostre que não é derivável em .   Calcule         A Derivada como uma Função   Seja , calcule .       Seja , calcule .       Seja , encontre uma fórmula para .      Calcule pela definição (através do limite), nos seguintes casos;         Para cada item da questão 1, determine a equação da reta tangente ao gráfico de no ponto .   "
 },
 {
   "id": "fig-permuta",
@@ -2005,7 +2005,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.1.11",
   "title": "",
-  "body": " Encontre a equação da reta tangente ao gráfico da função , no ponto .  "
+  "body": " Mostre que não é derivável em .   Calcule       "
 },
 {
   "id": "example-58",
@@ -2014,7 +2014,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.1.12",
   "title": "",
-  "body": " Encontre a equação da reta tangente ao gráfico da função , no ponto .  "
+  "body": " Seja , calcule .     "
 },
 {
   "id": "example-59",
@@ -2023,7 +2023,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.1.13",
   "title": "",
-  "body": " Mostre que não é derivável em .   Calcule       "
+  "body": " Seja , calcule .     "
 },
 {
   "id": "example-60",
@@ -2031,24 +2031,6 @@ var ptx_lunr_docs = [
   "url": "section-14.html#example-60",
   "type": "Exemplo",
   "number": "3.1.14",
-  "title": "",
-  "body": " Seja , calcule .     "
-},
-{
-  "id": "example-61",
-  "level": "2",
-  "url": "section-14.html#example-61",
-  "type": "Exemplo",
-  "number": "3.1.15",
-  "title": "",
-  "body": " Seja , calcule .     "
-},
-{
-  "id": "example-62",
-  "level": "2",
-  "url": "section-14.html#example-62",
-  "type": "Exemplo",
-  "number": "3.1.16",
   "title": "",
   "body": " Seja , encontre uma fórmula para .  "
 },
@@ -2077,7 +2059,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.2",
   "title": "Derivadas das Funções Elementares",
-  "body": " Derivadas das Funções Elementares   Derivadas das Funções e   Seja um natural. São válidas as fórmulas de derivação:  .  , .  , na qual se for par e se for ímpar .     item a)  (faça a mudança de variável ). Logo,   item b)    item c)  Fazendo e obtemos: Assim, para e no domínio de , temos      Seja , calcule.  ;  .          Seja .  Calcule ;  Determine a equação da reta tangente ao gráfico de no ponto de abscissa . (ou seja, )          Calcule sendo.  ;  ;  .            Derivadas das Funções e   São válidas as fórmulas de derivação.  .  .      item a)     item b)  Fazendo a mudança , ficamos com      Seja , na qual e é um número real. Mostre que .    Calcule .          Seja , na qual e é um número real. Mostre que .    Calcule .           Derivadas das Funções Trigonométricas   São válidas as fórmulas de derivação.            item a)     item b)    Os itens c), d), e), f) ficam como exercício, depois que for visto o Teorema da derivada da soma , do produto e do quociente de funções .     Determine a equação da reta tangente ao gráfico de no ponto de abscissa .       Determine a equação da reta tangente ao gráfico de no ponto de abscissa .        Usando que , calcule a derivada das funções, nos seguintes casos;          Dica: Observe que e use isso nos casos , , etc.   "
+  "body": " Derivadas das Funções Elementares   Derivadas das Funções e   Seja um natural. São válidas as fórmulas de derivação:  .  , .  , na qual se for par e se for ímpar .     item a)  (faça a mudança de variável ). Logo,   item b)    item c)  Fazendo e obtemos: Assim, para e no domínio de , temos      Seja , calcule.  ;  .          Seja .  Calcule ;  Determine a equação da reta tangente ao gráfico de no ponto de abscissa . (ou seja, )          Calcule sendo.  ;  ;  .            Derivadas das Funções e   São válidas as fórmulas de derivação.  .  .      item a)     item b)  Fazendo a mudança , ficamos com      Seja , na qual e é um número real. Mostre que .    Calcule .          Seja , na qual e é um número real. Mostre que .    Calcule .           Derivadas das Funções Trigonométricas   São válidas as fórmulas de derivação.            item a)     item b)    Os itens c), d), e), f) ficam como exercício, depois que for visto o Teorema da derivada da soma , do produto e do quociente de funções .     Determine a equação da reta tangente ao gráfico de no ponto de abscissa .       Determine a equação da reta tangente ao gráfico de no ponto de abscissa .         Usando que , calcule a derivada das funções, nos seguintes casos;          Dica: Observe que e use isso nos casos , , etc.   "
 },
 {
   "id": "theorem-18",
@@ -2089,27 +2071,27 @@ var ptx_lunr_docs = [
   "body": " Seja um natural. São válidas as fórmulas de derivação:  .  , .  , na qual se for par e se for ímpar .     item a)  (faça a mudança de variável ). Logo,   item b)    item c)  Fazendo e obtemos: Assim, para e no domínio de , temos    "
 },
 {
-  "id": "example-63",
+  "id": "example-61",
   "level": "2",
-  "url": "section-15.html#example-63",
+  "url": "section-15.html#example-61",
   "type": "Exemplo",
   "number": "3.2.2",
   "title": "",
   "body": " Seja , calcule.  ;  .        "
 },
 {
-  "id": "example-64",
+  "id": "example-62",
   "level": "2",
-  "url": "section-15.html#example-64",
+  "url": "section-15.html#example-62",
   "type": "Exemplo",
   "number": "3.2.3",
   "title": "",
   "body": " Seja .  Calcule ;  Determine a equação da reta tangente ao gráfico de no ponto de abscissa . (ou seja, )        "
 },
 {
-  "id": "example-65",
+  "id": "example-63",
   "level": "2",
-  "url": "section-15.html#example-65",
+  "url": "section-15.html#example-63",
   "type": "Exemplo",
   "number": "3.2.4",
   "title": "",
@@ -2125,11 +2107,29 @@ var ptx_lunr_docs = [
   "body": " São válidas as fórmulas de derivação.  .  .      item a)     item b)  Fazendo a mudança , ficamos com    "
 },
 {
+  "id": "example-64",
+  "level": "2",
+  "url": "section-15.html#example-64",
+  "type": "Exemplo",
+  "number": "3.2.6",
+  "title": "",
+  "body": " Seja , na qual e é um número real. Mostre que .  "
+},
+{
+  "id": "example-65",
+  "level": "2",
+  "url": "section-15.html#example-65",
+  "type": "Exemplo",
+  "number": "3.2.7",
+  "title": "",
+  "body": " Calcule .        "
+},
+{
   "id": "example-66",
   "level": "2",
   "url": "section-15.html#example-66",
   "type": "Exemplo",
-  "number": "3.2.6",
+  "number": "3.2.8",
   "title": "",
   "body": " Seja , na qual e é um número real. Mostre que .  "
 },
@@ -2137,24 +2137,6 @@ var ptx_lunr_docs = [
   "id": "example-67",
   "level": "2",
   "url": "section-15.html#example-67",
-  "type": "Exemplo",
-  "number": "3.2.7",
-  "title": "",
-  "body": " Calcule .        "
-},
-{
-  "id": "example-68",
-  "level": "2",
-  "url": "section-15.html#example-68",
-  "type": "Exemplo",
-  "number": "3.2.8",
-  "title": "",
-  "body": " Seja , na qual e é um número real. Mostre que .  "
-},
-{
-  "id": "example-69",
-  "level": "2",
-  "url": "section-15.html#example-69",
   "type": "Exemplo",
   "number": "3.2.9",
   "title": "",
@@ -2170,18 +2152,18 @@ var ptx_lunr_docs = [
   "body": " São válidas as fórmulas de derivação.            item a)     item b)    Os itens c), d), e), f) ficam como exercício, depois que for visto o Teorema da derivada da soma , do produto e do quociente de funções .   "
 },
 {
-  "id": "example-70",
+  "id": "example-68",
   "level": "2",
-  "url": "section-15.html#example-70",
+  "url": "section-15.html#example-68",
   "type": "Exemplo",
   "number": "3.2.11",
   "title": "",
   "body": " Determine a equação da reta tangente ao gráfico de no ponto de abscissa .     "
 },
 {
-  "id": "example-71",
+  "id": "example-69",
   "level": "2",
-  "url": "section-15.html#example-71",
+  "url": "section-15.html#example-69",
   "type": "Exemplo",
   "number": "3.2.12",
   "title": "",
@@ -2203,7 +2185,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.3",
   "title": "Derivabilidade e Continuidade, Regras de Derivação",
-  "body": " Derivabilidade e Continuidade, Regras de Derivação   Derivabilidade e Continuidade   Já vimos que a função não é derivável em , entretanto esta função é contínua em , o que nos mostra que uma função pode ser contínua em um ponto sem ser derivável neste ponto.  Desse modo, continuidade não implica diferenciabilidade. Entretanto, diferenciabilidade implica continuidade.    Se for diferenciável em , então é contínua em .   Para demonstrar o teorema, basta mostrar que  Observe que      Segue do Teorema que, se não for contínua em , então não poderá ser derivável em .    A função, é derivável em ? Por quê?       Considere a função,   é diferenciável em ?  é contínua em ?          Regras de Derivação   Sejam e deriváveis em e seja uma constante. Então     Se , então      item a)     item b)     item c)     item d)       Calcule .              Mostre as regras de derivação:        Considere a função definida por partes dada por:   é contínua no ponto  é diferenciável no ponto    Considere a função definida por partes dada por:   é contínua no ponto  é diferenciável no ponto    Considere a função definida por partes dada por:   é contínua no ponto  é diferenciável no ponto    Use as regras de derivação para calcular nos seguinte casos:                    "
+  "body": " Derivabilidade e Continuidade, Regras de Derivação   Derivabilidade e Continuidade   Já vimos que a função não é derivável em , entretanto esta função é contínua em , o que nos mostra que uma função pode ser contínua em um ponto sem ser derivável neste ponto.  Desse modo, continuidade não implica diferenciabilidade. Entretanto, diferenciabilidade implica continuidade.    Se for diferenciável em , então é contínua em .   Para demonstrar o teorema, basta mostrar que  Observe que      Segue do Teorema que, se não for contínua em , então não poderá ser derivável em .    A função, é derivável em ? Por quê?       Considere a função,   é diferenciável em ?  é contínua em ?          Regras de Derivação   Sejam e deriváveis em e seja uma constante. Então     Se , então      item a)     item b)     item c)     item d)       Calcule .               Mostre as regras de derivação:        Considere a função definida por partes dada por:   é contínua no ponto  é diferenciável no ponto    Considere a função definida por partes dada por:   é contínua no ponto  é diferenciável no ponto    Considere a função definida por partes dada por:   é contínua no ponto  é diferenciável no ponto    Use as regras de derivação para calcular nos seguinte casos:                    "
 },
 {
   "id": "remark-22",
@@ -2233,18 +2215,18 @@ var ptx_lunr_docs = [
   "body": " Segue do Teorema que, se não for contínua em , então não poderá ser derivável em .  "
 },
 {
-  "id": "example-72",
+  "id": "example-70",
   "level": "2",
-  "url": "section-16.html#example-72",
+  "url": "section-16.html#example-70",
   "type": "Exemplo",
   "number": "3.3.4",
   "title": "",
   "body": " A função, é derivável em ? Por quê?     "
 },
 {
-  "id": "example-73",
+  "id": "example-71",
   "level": "2",
-  "url": "section-16.html#example-73",
+  "url": "section-16.html#example-71",
   "type": "Exemplo",
   "number": "3.3.5",
   "title": "",
@@ -2260,9 +2242,9 @@ var ptx_lunr_docs = [
   "body": " Sejam e deriváveis em e seja uma constante. Então     Se , então      item a)     item b)     item c)     item d)     "
 },
 {
-  "id": "example-74",
+  "id": "example-72",
   "level": "2",
-  "url": "section-16.html#example-74",
+  "url": "section-16.html#example-72",
   "type": "Exemplo",
   "number": "3.3.7",
   "title": "",
@@ -2341,27 +2323,27 @@ var ptx_lunr_docs = [
   "body": " (Regra da Cadeia) Sejam e duas funções deriváveis, com , então a composta é derivável e vale a regra da cadeia:    Supondo . Por hipótese e são deriváveis, e portanto contínuas, quando , e a igualdade implica na existência de . Portanto é derivável. Além disso,    "
 },
 {
-  "id": "example-75",
+  "id": "example-73",
   "level": "2",
-  "url": "section-17.html#example-75",
+  "url": "section-17.html#example-73",
   "type": "Exemplo",
   "number": "3.4.4",
   "title": "",
   "body": " Calcule , sendo        "
 },
 {
-  "id": "example-76",
+  "id": "example-74",
   "level": "2",
-  "url": "section-17.html#example-76",
+  "url": "section-17.html#example-74",
   "type": "Exemplo",
   "number": "3.4.5",
   "title": "",
   "body": " Seja uma função derivável e seja . Calcule supondo .  "
 },
 {
-  "id": "example-77",
+  "id": "example-75",
   "level": "2",
-  "url": "section-17.html#example-77",
+  "url": "section-17.html#example-75",
   "type": "Exemplo",
   "number": "3.4.6",
   "title": "",
@@ -2377,36 +2359,36 @@ var ptx_lunr_docs = [
   "body": " Uma função está escrita na forma explícita quando a variável está de uma lado da igualdade e do outro lado os termos em . Caso contrário, a função está escrita na forma implícita .  "
 },
 {
-  "id": "example-78",
+  "id": "example-76",
   "level": "2",
-  "url": "section-17.html#example-78",
+  "url": "section-17.html#example-76",
   "type": "Exemplo",
   "number": "3.4.8",
   "title": "",
   "body": " Função na forma explícita. , com , dada por: Forma implícita da função:   "
 },
 {
-  "id": "example-79",
+  "id": "example-77",
   "level": "2",
-  "url": "section-17.html#example-79",
+  "url": "section-17.html#example-77",
   "type": "Exemplo",
   "number": "3.4.9",
   "title": "",
   "body": " Calcule a derivada da função .    .   "
 },
 {
-  "id": "example-80",
+  "id": "example-78",
   "level": "2",
-  "url": "section-17.html#example-80",
+  "url": "section-17.html#example-78",
   "type": "Exemplo",
   "number": "3.4.10",
   "title": "",
   "body": " Calcule a função na forma implícita: .   Para derivar a função na forma implícita, a função deve ser vista como função de , ou seja, como , assim: E aplicamos as regras da soma e do produto:       Como , substituindo em , temos:    "
 },
 {
-  "id": "example-81",
+  "id": "example-79",
   "level": "2",
-  "url": "section-17.html#example-81",
+  "url": "section-17.html#example-79",
   "type": "Exemplo",
   "number": "3.4.11",
   "title": "",
@@ -2422,27 +2404,27 @@ var ptx_lunr_docs = [
   "body": " Seja uma função inversível com inversa . Se é derivável em um ponto e , então sua inversa é também derivável em . Além disso:    Como é inversível e derivável em , com , sabemos que e Como derivando esta última identidade em relação a e usando a regra da cadeia, obtemos: Portanto,    "
 },
 {
-  "id": "example-82",
+  "id": "example-80",
   "level": "2",
-  "url": "section-17.html#example-82",
+  "url": "section-17.html#example-80",
   "type": "Exemplo",
   "number": "3.4.13",
   "title": "",
   "body": " Seja uma função definida por Encontre a derivada de no ponto .   Como , temos que é uma função crescente, portanto é sobrejetiva. Dessa forma, como , temos    "
 },
 {
-  "id": "example-83",
+  "id": "example-81",
   "level": "2",
-  "url": "section-17.html#example-83",
+  "url": "section-17.html#example-81",
   "type": "Exemplo",
   "number": "3.4.14",
   "title": "",
   "body": " Calcule , com .   Como é contínua e é a inversa de em , temos pois, . Sabemos que Para , temos segue pois . Substituindo em temos    "
 },
 {
-  "id": "example-84",
+  "id": "example-82",
   "level": "2",
-  "url": "section-17.html#example-84",
+  "url": "section-17.html#example-82",
   "type": "Exemplo",
   "number": "3.4.15",
   "title": "",
@@ -2503,9 +2485,9 @@ var ptx_lunr_docs = [
   "body": " Seja a função . A razão é a taxa média de variação de entre e . A derivada de , em é também denominada de taxa de variação de em .  "
 },
 {
-  "id": "example-85",
+  "id": "example-83",
   "level": "2",
-  "url": "section-18.html#example-85",
+  "url": "section-18.html#example-83",
   "type": "Exemplo",
   "number": "4.1.2",
   "title": "",
@@ -2521,27 +2503,27 @@ var ptx_lunr_docs = [
   "body": " Suponhamos que uma partícula se desloca sobre o eixo de acordo com uma função de posição . A velocidade média da partícula entre os instantes e é definida pelo quociente é o deslocamento da partícula entre os instantes e .  A velocidade da partícula no instante é definida como sendo a derivada (caso exista) de em . Assim,   A aceleração no instante é definida como sendo a derivada em da função ; Assim,   "
 },
 {
-  "id": "example-86",
+  "id": "example-84",
   "level": "2",
-  "url": "section-18.html#example-86",
+  "url": "section-18.html#example-84",
   "type": "Exemplo",
   "number": "4.1.4",
   "title": "",
   "body": " Uma partícula move-se (de acordo com a animação abaixo) sobre o eixo de modo que no instante a posição é dada por , . Suponha dado em metros e em segundos.       Determine as posições ocupadas pela partícula nos instantes , , , , .  Qual a velocidade no instante ?  Qual a aceleração no instante ?  Esboce o gráfico da função de posição.        "
 },
 {
-  "id": "example-87",
+  "id": "example-85",
   "level": "2",
-  "url": "section-18.html#example-87",
+  "url": "section-18.html#example-85",
   "type": "Exemplo",
   "number": "4.1.6",
   "title": "",
   "body": " Uma partícula move-se sobre o eixo (de acordo com a animação abaixo) de modo que no instante a posição é dada por , .       Qual a velocidade no instante ?  Qual a aceleração no instante ?  Estude a variação de sinal de .  Esboce o gráfico da função de posição.        "
 },
 {
-  "id": "example-88",
+  "id": "example-86",
   "level": "2",
-  "url": "section-18.html#example-88",
+  "url": "section-18.html#example-86",
   "type": "Exemplo",
   "number": "4.1.8",
   "title": "",
@@ -2584,18 +2566,18 @@ var ptx_lunr_docs = [
   "body": "  1ª Regra de L'Hospital: indeterminações do tipo .  Sejam e funções deriváveis em com . Se e se existir, então        "
 },
 {
-  "id": "example-89",
+  "id": "example-87",
   "level": "2",
-  "url": "section-19.html#example-89",
+  "url": "section-19.html#example-87",
   "type": "Exemplo",
   "number": "4.2.2",
   "title": "",
   "body": " Calcule    Defina e , como e são diferenciáveis em e , vamos verificar as outras hipóteses da 1ª Regra de L'Hospital. Como  Logo, Pela 1ª Regra de L'Hospital    "
 },
 {
-  "id": "example-90",
+  "id": "example-88",
   "level": "2",
-  "url": "section-19.html#example-90",
+  "url": "section-19.html#example-88",
   "type": "Exemplo",
   "number": "4.2.3",
   "title": "",
@@ -2611,27 +2593,27 @@ var ptx_lunr_docs = [
   "body": "  2ª Regra de L'Hospital: indeterminações do tipo .  Sejam e deriváveis em com . Se e se existir, então   "
 },
 {
-  "id": "example-91",
+  "id": "example-89",
   "level": "2",
-  "url": "section-19.html#example-91",
+  "url": "section-19.html#example-89",
   "type": "Exemplo",
   "number": "4.2.5",
   "title": "",
   "body": " Calcule    Defina e , como e são diferenciáveis em e , vamos verificar as outras hipóteses da 2ª Regra de L'Hospital. Como e Pela 2ª Regra de L'Hospital    "
 },
 {
-  "id": "example-92",
+  "id": "example-90",
   "level": "2",
-  "url": "section-19.html#example-92",
+  "url": "section-19.html#example-90",
   "type": "Exemplo",
   "number": "4.2.6",
   "title": "",
   "body": " Calcule    R. .    "
 },
 {
-  "id": "example-93",
+  "id": "example-91",
   "level": "2",
-  "url": "section-19.html#example-93",
+  "url": "section-19.html#example-91",
   "type": "Exemplo",
   "number": "4.2.7",
   "title": "",
@@ -2665,9 +2647,9 @@ var ptx_lunr_docs = [
   "body": "  (Teorema de Weierstrass)  Seja uma função contínua no intervalo , então existem e em tais que    Veja págino 81 do livro .   "
 },
 {
-  "id": "example-94",
+  "id": "example-92",
   "level": "2",
-  "url": "section-20.html#example-94",
+  "url": "section-20.html#example-92",
   "type": "Exemplo",
   "number": "4.3.2",
   "title": "",
@@ -2692,9 +2674,9 @@ var ptx_lunr_docs = [
   "body": " Teorema do Valor Médio (TVM).  Se for contínua no intervalo e derivável em , então existirá pelo menos um em tal que    Considere a função , com , dada por Observe que e que Pelo Teorema de Rolle ( ), existe tal que Ou seja,    "
 },
 {
-  "id": "example-95",
+  "id": "example-93",
   "level": "2",
-  "url": "section-20.html#example-95",
+  "url": "section-20.html#example-93",
   "type": "Exemplo",
   "number": "4.3.7",
   "title": "",
@@ -2710,18 +2692,18 @@ var ptx_lunr_docs = [
   "body": " Seja contínua no intervalo .  Se para todo , então será estritamente crescente em .  Se para todo , então será estritamente decrescente em .      item a) Já que , , sejam, , com . Vamos mostrar que Como satisfaz as hipóteses do TVM, existe tal que Como , pois e segue Portando, como a escolha de , foi arbitrária, o resultado segue.  item b) Este item é análogo ao anterior.   "
 },
 {
-  "id": "example-96",
+  "id": "example-94",
   "level": "2",
-  "url": "section-20.html#example-96",
+  "url": "section-20.html#example-94",
   "type": "Exemplo",
   "number": "4.3.10",
   "title": "",
   "body": " Determine os intervalos de crescimento e de decrescimento de .    e Como o gráfico de é uma parábola, sabemos que Como é contínua, pelo , temos    "
 },
 {
-  "id": "example-97",
+  "id": "example-95",
   "level": "2",
-  "url": "section-20.html#example-97",
+  "url": "section-20.html#example-95",
   "type": "Exemplo",
   "number": "4.3.11",
   "title": "",
@@ -2755,18 +2737,18 @@ var ptx_lunr_docs = [
   "body": " Seja uma função que admite derivada até 2ª ordem no intervalo .  Se para , então terá concavidade para cima em .  Se para , então terá concavidade para baixo em .     item a) Sejam para e arbitrário. Vamos mostrar que para todo , com , na qual, . Considere , logo pois . Como em , pelo , é estritamente crescente em . Então, Mais uma vez pelo , Como , temos para todo , . E como , temos    "
 },
 {
-  "id": "example-98",
+  "id": "example-96",
   "level": "2",
-  "url": "section-20.html#example-98",
+  "url": "section-20.html#example-96",
   "type": "Exemplo",
   "number": "4.3.15",
   "title": "",
   "body": " Estude a função com relação à concavidade e pontos de inflexão.         "
 },
 {
-  "id": "example-99",
+  "id": "example-97",
   "level": "2",
-  "url": "section-20.html#example-99",
+  "url": "section-20.html#example-97",
   "type": "Exemplo",
   "number": "4.3.16",
   "title": "",
@@ -2800,9 +2782,9 @@ var ptx_lunr_docs = [
   "body": " Esboço de Gráficos   Roteiro Base para Esboço de Gráficos  Juntando todo o conteúdo do curso, elaboramos um roteiro para ajudar no esboço do gráfico de funções reais. Além desse roteiro, podemos adicionar o estudo de assíntotas ( ) e de máximos e mínimos ( ) para obter um esboço de melhor qualidade.   Roteiro para o esboço do gráfico de uma função    Verificar o domínio (maior subconjunto de que a função está bem definida)  Determinar os intervalos de crescimento e de decrescimento  Estudar a concavidade e encontrar os pontos de inflexão  Calcular os limites laterais de nos seguintes casos:   , mas é extremo de um dos intervalos que compõem .  , mas não é contínua em .    Calcular os limites para e  Determinar ou ter uma aproximação das raízes de .      Esboce o gráfico de    a) b) Intervalos de crescimento e de decrescimento. Logo c) Concavidade e pontos de inflexão Portanto, 1 é ponto de inflexão e d) Como é contínua em nós pulamos este item. e) Calcular os limites para e . e f) Determinar as raízes de . As raízes de são e .       Assíntotas  Seja uma função. Se existir uma reta tal que ou então diremos que é uma assíntota para . Se , temos uma assíntota horizontal, e se temos uma assíntota oblíqua.   Verifique que e são assíntotas oblíquias da função    Basta calcular os limites e Veja o gráfico usando o código a seguir.      Verifique que é assíntota horizontal da função    Basta calcular o limite Veja o gráfico usando o código a seguir.      Determine a assíntota e esboce o gráfico de    Observe que Como quando tende a ou , o gráfico de vai encostando na assíntota a) .  b) Intervalos de crescimento e de decrescimento.  e , obtendo a igualdade apenas em . Logo , para e portanto é estritamente crescente em . c) Concavidade e pontos de inflexão.  , portanto basta analisar . As raízes de são e . d) e) zero é a única raiz de .  f) é a única assíntota.  Veja o gráfico usando o código a seguir.       Máximos e Mínimos   Sejam uma função e    Dizemos que é o valor máximo local de ou que é um ponto de máximo local de se, existe um intervalo , tal que, para todo , temos .  Dizemos que é o valor mínimo local de ou que é um ponto de mínimo local de se, existe um intervalo , tal que, para todo , temos .     Seja uma função derivável em , na qual é um ponto interior do . Para que seja um ponto de máximo ou de mínimo local, é necessário que    Suponha, sem perda de generalidade, que é ponto de máximo local. Como é ponto interior do , existe , tal que Para , temos e , logo Para , temos e , logo Como é derivável, os limites laterais são iguais, portanto, .     Seja uma função real, dizemos que é um ponto crítico de se .    Sejam uma função que admite derivada de 2ª ordem contínua num intervalo aberto com .   e é ponto de mínimo local  e é ponto de máximo local     item a) Como é contínua em existe tal que e Portanto, é estritamente crescente neste intervalo, como , temos Assim, é estritamente crescente em e estritamente decrescente em . Portanto, é ponto de mínimo local.  O item b) é análogo.     Seja dada por . Determine os pontos críticos de e classifique-os.    Portanto Ou seja, Agora, vamos analisar os pontos críticos e .  Veja o gráfico usando o código a seguir.       Encontre os valores máximo e mínimo absolutos de no intervalo dado.  , em  , em  , em  , em  , em  , em  , em  , em  , em  , em   Construa o gráfico das funções dadas.                         Construa o gráfico das funções dadas.      "
 },
 {
-  "id": "example-100",
+  "id": "example-98",
   "level": "2",
-  "url": "section-21.html#example-100",
+  "url": "section-21.html#example-98",
   "type": "Exemplo",
   "number": "4.4.1",
   "title": "",
@@ -2818,27 +2800,27 @@ var ptx_lunr_docs = [
   "body": "Seja uma função. Se existir uma reta tal que ou então diremos que é uma assíntota para . Se , temos uma assíntota horizontal, e se temos uma assíntota oblíqua. "
 },
 {
-  "id": "example-101",
+  "id": "example-99",
   "level": "2",
-  "url": "section-21.html#example-101",
+  "url": "section-21.html#example-99",
   "type": "Exemplo",
   "number": "4.4.3",
   "title": "",
   "body": " Verifique que e são assíntotas oblíquias da função    Basta calcular os limites e Veja o gráfico usando o código a seguir.    "
 },
 {
-  "id": "example-102",
+  "id": "example-100",
   "level": "2",
-  "url": "section-21.html#example-102",
+  "url": "section-21.html#example-100",
   "type": "Exemplo",
   "number": "4.4.4",
   "title": "",
   "body": " Verifique que é assíntota horizontal da função    Basta calcular o limite Veja o gráfico usando o código a seguir.    "
 },
 {
-  "id": "example-103",
+  "id": "example-101",
   "level": "2",
-  "url": "section-21.html#example-103",
+  "url": "section-21.html#example-101",
   "type": "Exemplo",
   "number": "4.4.5",
   "title": "",
@@ -2881,9 +2863,9 @@ var ptx_lunr_docs = [
   "body": " Sejam uma função que admite derivada de 2ª ordem contínua num intervalo aberto com .   e é ponto de mínimo local  e é ponto de máximo local     item a) Como é contínua em existe tal que e Portanto, é estritamente crescente neste intervalo, como , temos Assim, é estritamente crescente em e estritamente decrescente em . Portanto, é ponto de mínimo local.  O item b) é análogo.   "
 },
 {
-  "id": "example-104",
+  "id": "example-102",
   "level": "2",
-  "url": "section-21.html#example-104",
+  "url": "section-21.html#example-102",
   "type": "Exemplo",
   "number": "4.4.10",
   "title": "",
@@ -2926,18 +2908,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-513",
+  "id": "p-511",
   "level": "2",
-  "url": "referencias.html#p-513",
+  "url": "referencias.html#p-511",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-514",
+  "id": "p-512",
   "level": "2",
-  "url": "referencias.html#p-514",
+  "url": "referencias.html#p-512",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
