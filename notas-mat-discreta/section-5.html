@@ -57,7 +57,13 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -799,7 +805,8 @@ S_n= \amp~b_1+b_2+b_3+\cdots+b_{n-1}+b_{n}\\
 S_n = \sum_{k=1}^n k(k+2).
 \end{equation*}
 </div>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><div class="para logical" id="p-144">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<div class="para logical" id="p-144">
 <div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 3.1.25">Teorema 3.1.25</a>, a sequência definida por <span class="process-math">\(a_n=n(n+2)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(2\text{,}\)</span> já que seu termo geral é um polinômio de grau 2. Logo, a soma <span class="process-math">\(S_n\)</span> de seus <span class="process-math">\(n\)</span> primeiros termos define uma progressão aritmética de ordem <span class="process-math">\(2+1=3\text{.}\)</span> Portanto, usando agora a volta do <a href="" class="xref" data-knowl="./knowl/teo-seqPoliOrdem.html" title="Teorema 3.1.25">Teorema 3.1.25</a>, o termo geral de <span class="process-math">\(S_n\)</span> é dado por um polinômios de grau 3 em <span class="process-math">\(n\text{.}\)</span> Isto é, podemos escrever <span class="process-math">\(S_n=an^3+bn^2+cn+d\text{.}\)</span> Atribuindo valores 1, 2, 3 e 4, obtemos as equações</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-seqPoliOrdem.html ./knowl/teo-seqPoliOrdem.html">
 \begin{equation*}
@@ -823,10 +830,13 @@ a=\frac{1}{3}, b=\frac{3}{2}, c=\frac{7}{6}, d=0.
 S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(n+1)(2n+7)}{6}.
 \end{equation*}
 </div>
-</div></div></div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+</div> <div class="para" id="p-145">Abaixo, usamos o SageMath para obter a solução do sistema.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-2"><script type="text/x-sage">M = matrix([[1,1,1,1,3],[8,4,2,1,11],[27,9,3,1,26],[64,16,4,1,50]])
+M.rref()
+</script></pre>
+</div></div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">3.1.6</span> <span class="title">Somas Polinomiais</span>
 </h3>
-<div class="para logical" id="p-145">
+<div class="para logical" id="p-146">
 <div class="para">A pergunta que nos colocamos é como calcular somas do tipo</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -836,7 +846,7 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 <div class="para">onde <span class="process-math">\(P(k)\)</span> é um polinômio em <span class="process-math">\(k\text{.}\)</span>
 </div>
 </div>
-<div class="para logical" id="p-146">
+<div class="para logical" id="p-147">
 <div class="para">Se o polinômio é <span class="process-math">\(P(k) = a_0 + a_1k + a_2k^2 +\cdots+ a_mk^m\text{,}\)</span> temos</div>
 <div class="displaymath process-math" id="md-13">
 \begin{align*}
@@ -854,14 +864,14 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 <article class="example example-like" id="example-26"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.27</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-147">
+<div class="para logical" id="p-148">
 <div class="para">Determine o valor de</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \sum_{k=1}^n k^2 = 1^2+2^2+\cdots+n^2. 
 \end{equation*}
 </div>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para logical" id="p-148">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para logical" id="p-149">
 <div class="para">Observe que</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -898,7 +908,7 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 </div></div></div></article><article class="theorem theorem-like" id="theorem-13"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.28</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-149">
+<div class="para logical" id="p-150">
 <div class="displaymath process-math">
 \begin{equation*}
 \sum_{k=1}^n k^p = 1^p+2^p+\cdots+n^p. 
@@ -906,7 +916,7 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 </div>
 <div class="para">é um polinômio de grau <span class="process-math">\(p+1\)</span> em <span class="process-math">\(n\text{.}\)</span>
 </div>
-</div></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para" id="p-150">Vamos proceder por indução sobre <span class="process-math">\(p\text{.}\)</span> Para <span class="process-math">\(p=1\text{,}\)</span> o teorema já foi provado no <a href="" class="xref" data-knowl="./knowl/ex-soma-inteiros.html" title="Exemplo 3.1.11">Exemplo 3.1.11</a>.</div> <div class="para logical" id="p-151">
+</div></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><div class="para" id="p-151">Vamos proceder por indução sobre <span class="process-math">\(p\text{.}\)</span> Para <span class="process-math">\(p=1\text{,}\)</span> o teorema já foi provado no <a href="" class="xref" data-knowl="./knowl/ex-soma-inteiros.html" title="Exemplo 3.1.11">Exemplo 3.1.11</a>.</div> <div class="para logical" id="p-152">
 <div class="para">Suponhamos agora que <span class="process-math">\(\sum_{k=1}^n k^p\)</span> seja um polinômio de grau <span class="process-math">\(p+1\)</span> em <span class="process-math">\(n\text{,}\)</span> para todo <span class="process-math">\(p\in \{1, 2, \ldots, s\}\text{,}\)</span> Mostraremos que essa afirmação é verdadeira para <span class="process-math">\(p=s+1\text{,}\)</span> isto é, mostraremos que <span class="process-math">\(\sum_{k=1}^n k^{s+1}\)</span> é um polinômio de grau <span class="process-math">\(s+2\)</span> em <span class="process-math">\(n\text{.}\)</span> Observe que</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -937,15 +947,15 @@ S_n = \frac{1}{3}n^3+\frac{3}{2}n^2+\frac{7}{6}n=\frac{2n^3+9n^2+7n}{6}=\frac{n(
 <article class="corollary theorem-like" id="cor-poligraupmais1"><h4 class="heading">
 <span class="type">Corolário</span><span class="space"> </span><span class="codenumber">3.1.29</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-152">Se <span class="process-math">\(F\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> então <span class="process-math">\(\sum_{k=1}^n F(k)\)</span> é um polinômio de grau <span class="process-math">\(p + 1\)</span> em <span class="process-math">\(n\text{.}\)</span>
+<div class="para" id="p-153">Se <span class="process-math">\(F\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> então <span class="process-math">\(\sum_{k=1}^n F(k)\)</span> é um polinômio de grau <span class="process-math">\(p + 1\)</span> em <span class="process-math">\(n\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="teo-seqPoliOrdemP"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.30</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-153">Toda sequência na qual o termo de ordem <span class="process-math">\(n\)</span> é um polinômio em <span class="process-math">\(n\text{,}\)</span> de grau <span class="process-math">\(p\text{,}\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\)</span> e, reciprocamente, se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\text{,}\)</span> então <span class="process-math">\((a_n)\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> em <span class="process-math">\(n\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para" id="p-154">Vamos proceder por indução sobre <span class="process-math">\(p\text{.}\)</span>
-</div> <div class="para" id="p-155">Para <span class="process-math">\(p=1\text{,}\)</span> o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária (<a href="" class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Nota 3.1.8">Nota 3.1.8</a>).</div> <div class="para" id="p-156">Suponhamos que o teorema seja verdadeiro para todo <span class="process-math">\(p\in \{1, 2, \ldots, s\}\text{.}\)</span> Mostraremos que essa afirmação é verdadeira para <span class="process-math">\(p=s+1\text{.}\)</span>
-</div> <div class="para" id="p-157">Se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s+1\text{,}\)</span> <span class="process-math">\(b_n=\Delta a_n=a_{n+1}-a_n\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s\)</span> e, pela hipótese de indução, <span class="process-math">\(b_n\)</span> é um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(n\text{.}\)</span> Então <span class="process-math">\(\sum_{k=1}^n b_k = a_{n+1}-a_1\)</span> é, pelo <a href="" class="xref" data-knowl="./knowl/cor-poligraupmais1.html" title="Corolário 3.1.29">Corolário 3.1.29</a>, um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{.}\)</span>
-</div> <div class="para" id="p-158">Reciprocamente, se <span class="process-math">\(a_n\)</span> é um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\Delta a_n\)</span> é um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(n\text{,}\)</span> pois <span class="process-math">\(c_{s+1}(n+1)^{s+1} - c_{s+1}(n)^{s+1}\)</span> é um polinômio de grau <span class="process-math">\(s\text{.}\)</span> Assim, pela hipótese de indução, <span class="process-math">\((\Delta a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s\text{,}\)</span> ou seja, <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s+1\text{.}\)</span>
+<div class="para" id="p-154">Toda sequência na qual o termo de ordem <span class="process-math">\(n\)</span> é um polinômio em <span class="process-math">\(n\text{,}\)</span> de grau <span class="process-math">\(p\text{,}\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\)</span> e, reciprocamente, se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(p\text{,}\)</span> então <span class="process-math">\((a_n)\)</span> é um polinômio de grau <span class="process-math">\(p\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para" id="p-155">Vamos proceder por indução sobre <span class="process-math">\(p\text{.}\)</span>
+</div> <div class="para" id="p-156">Para <span class="process-math">\(p=1\text{,}\)</span> o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária (<a href="" class="xref" data-knowl="./knowl/rem-pa-polig1.html" title="Nota 3.1.8">Nota 3.1.8</a>).</div> <div class="para" id="p-157">Suponhamos que o teorema seja verdadeiro para todo <span class="process-math">\(p\in \{1, 2, \ldots, s\}\text{.}\)</span> Mostraremos que essa afirmação é verdadeira para <span class="process-math">\(p=s+1\text{.}\)</span>
+</div> <div class="para" id="p-158">Se <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s+1\text{,}\)</span> <span class="process-math">\(b_n=\Delta a_n=a_{n+1}-a_n\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s\)</span> e, pela hipótese de indução, <span class="process-math">\(b_n\)</span> é um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(n\text{.}\)</span> Então <span class="process-math">\(\sum_{k=1}^n b_k = a_{n+1}-a_1\)</span> é, pelo <a href="" class="xref" data-knowl="./knowl/cor-poligraupmais1.html" title="Corolário 3.1.29">Corolário 3.1.29</a>, um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para" id="p-159">Reciprocamente, se <span class="process-math">\(a_n\)</span> é um polinômio de grau <span class="process-math">\(s+1\)</span> em <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\Delta a_n\)</span> é um polinômio de grau <span class="process-math">\(s\)</span> em <span class="process-math">\(n\text{,}\)</span> pois <span class="process-math">\(c_{s+1}(n+1)^{s+1} - c_{s+1}(n)^{s+1}\)</span> é um polinômio de grau <span class="process-math">\(s\text{.}\)</span> Assim, pela hipótese de indução, <span class="process-math">\((\Delta a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s\text{,}\)</span> ou seja, <span class="process-math">\((a_n)\)</span> é uma progressão aritmética de ordem <span class="process-math">\(s+1\text{.}\)</span>
 </div></article></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="pa.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-6.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
