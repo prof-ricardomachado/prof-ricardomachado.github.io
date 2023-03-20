@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-24T10:12:36-03:00       *-->
+<!--*       on 2023-03-20T19:17:20-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,6 +12,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
@@ -23,6 +32,32 @@
 ax+by=c.
 \end{equation*}
 </div>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-reta" width="600" height="660" src="interactive-reta-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><span class="incontext"><a href="section-2.html#technology-4">[incontext]</a></span>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-reta" width="600" height="660" src="interactive-reta-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico, das equações diofantinas em duas variáveis.</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def grafDiof(a1,b1,c1, sols=6):
+    y, t_0=var('y, t_0')
+    if c1%gcd(a1, b1)!=0:
+        print('O mcd(%d, %d) não divide %d' %(a1, b1, c1))
+    else:
+        l=[]
+        temp = solve_diophantine(a1*x+b1*y==c1)
+        lt=[temp[0], temp[1]]
+        yzero = solve(temp[0]==0, t_0)
+        yzero = ceil(yzero[0].rhs())
+        for i in range(yzero, yzero+ceil(sols/2)):
+            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+        for i in range(yzero-1, yzero-ceil(sols/2)-1, -1):
+            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+        
+        l.sort()
+        pe = l[0]
+        pd = l[-1]
+        p2=line((pe, pd))
+        p1=list_plot(l, size=30, color='red')
+        (p2+p1).show(figsize=4)
+        print('As soluções destacadas de %dx + %dy = %d são:' %(a1, b1, c1))
+        for i in l:
+            print(i)
+grafDiof(5, 9, 31)
+</script></div></article><span class="incontext"><a href="section-2.html#technology-4">[incontext]</a></span>
 </body>
 </html>

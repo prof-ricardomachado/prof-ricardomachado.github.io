@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-24T10:12:36-03:00       *-->
+<!--*       on 2023-03-20T19:17:20-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,12 +12,50 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
 </h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Número de Frobenius para duas variáveis.</p>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-frobenius" width="600" height="600" src="interactive-frobenius-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><span class="incontext"><a href="section-3.html#technology-5">[incontext]</a></span>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-frobenius" width="600" height="420" src="interactive-frobenius-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O código para calcular o número de Frobenius para duas variáveis e uma parametrização para a solução geral segue abaixo:</p>
+<div class="sagecell-sage" id="sage-7"><script type="text/x-sage">def numFrob(a1,b1):
+
+    if gcd(a1, b1)!=1:
+        print('Insira valores tais que o mdc seja igual a 1.')
+    else:
+        frob = a1*b1-a1-b1
+        print('g = %d*%d-%d-%d=%d' %(a1, b1, a1, b1, frob))
+        m = min([a1,b1])
+        M = max([a1,b1])
+        l=[]
+        dic={}
+        temp=0
+        
+        print('Abaixo, sendo t inteiro não negativo, temos uma')
+        print('parametrização para obter qualquer valor inteiro,') 
+        print('maior ou igual a %d que pode ser obtido pela' %(frob+1)) 
+        print('expressão: %dx+%dy.' %(m, M))
+        print('\n')
+
+        for j in range(m):
+            for i in range(m):
+                temp = solve(m*x + M*j==frob+i+1, x)[0].rhs()
+                if temp in ZZ:
+                    dic.update({(frob+i+1):[temp, j]})
+            
+        for j in range(frob+1, frob+m+1):
+            print('%d*(%d+t) + %d*%d = %d + %d*t' %(m,dic[j][0],M,dic[j][1],j,m))
+numFrob(5,9)
+</script></div></article><span class="incontext"><a href="section-3.html#technology-5">[incontext]</a></span>
 </body>
 </html>

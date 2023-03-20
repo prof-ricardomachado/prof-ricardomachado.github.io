@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-24T10:12:36-03:00       *-->
+<!--*       on 2023-03-20T19:17:20-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,55 +57,32 @@ MathJax.Hub.Config({
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="pretext-content" id="pretext-SA"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label="b:"), c1=input_box(31 , width=10,  label="c:")):
+def _(a=input_box(5 , width=10,  label="a:"), b=input_box(9 , width=10,  label="b:"), c=input_box(31 , width=10,  label="c:")):
 
-    if c1%gcd(a1, b1)!=0:
-        print('A equação %dx+%dy=%d não possui solução.\nO mcd(%d, %d) não divide %d' %(a1, b1, c1, a1, b1, c1))
-    else:
-        
-        #m = min([a1,b1])
-        #M = max([a1,b1])
-        m=a1
-        M=b1
-
-        l=[]
-        j=0
-        
-        m1 = min([a1,b1])
-        m1 = ceil(m1/2)
-        #print(m1)
-
-        while m1>len(l):    
-            temp = solve_diophantine(m*x+M*j==c1, x)
-            if temp in ZZ:
-                l.append((temp, j))
-            #j=(abs(j)+1)*(-1)*(j/abs(j))
-            j=j+1
-                
-        j=-1
-        while 2*m1>len(l):    
-            temp = solve_diophantine(m*x+M*j==c1, x)
-            if temp in ZZ:
-                l.append((temp, j))
-            #j=(abs(j)+1)*(-1)*(j/abs(j))
-            j=j-1
-
+    def grafDiof(a1,b1,c1, sols=6):
+        y, t_0=var('y, t_0')
+        if c1%gcd(a1, b1)!=0:
+            print('O mcd(%d, %d) não divide %d' %(a1, b1, c1))
+        else:
+            l=[]
+            temp = solve_diophantine(a1*x+b1*y==c1)
+            lt=[temp[0], temp[1]]
+            yzero = solve(temp[1]==0, t_0)
+            yzero = ceil(yzero[0].rhs())
+            for i in range(yzero, yzero+ceil(sols/2)):
+                l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+            for i in range(yzero-1, yzero-ceil(sols/2)-1, -1):
+                l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
             
-        
-        
-        l.sort()
-        pe = l[0]
-        pd = l[-1]
-        p2=line((pe, pd))
-
-        p1=list_plot(l, size=30, color='red')
-        
-        (p2+p1).show(figsize=4)
-
-        print('As soluções da equação %dx + %dy= %d, \ndestacadas no gráfico são:' %(a1, b1, c1))
-
-        
-        for i in l:
-            print(i)
+            l.sort()
+            pe = l[0]
+            pd = l[-1]
+            p2=line((pe, pd))
+            p1=list_plot(l, size=30, color='red')
+            (p2+p1).show(figsize=4)
+            print('As soluções destacadas de %dx + %dy = %d são:' %(a1, b1, c1))
+            for i in l:
+                print(i)
+    grafDiof(a, b, c)
 </script></div></div></body>
 </html>

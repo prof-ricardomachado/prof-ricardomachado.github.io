@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-24T10:12:36-03:00       *-->
+<!--*       on 2023-03-20T19:17:21-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,39 +56,27 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:360px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
 def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label="b:")):
 
 
-    def naosolve(a,b):
-        
+    def proposicao_3_6(a,b):
         if (gcd(a,b)==1):
-        
             t = (a-1)*(b-1)/2
-
-        #     print('A quantidade de números inteiros não negativos que não são da forma %dx+%dy com a,x>=0 é:%d' %(a,b,t))
             print('Quantidade que não pode ser obtida: \n(%d-1)(%d-1)/2 = %d' %(a,b,t))
-            print('')
-
 
             a1 = min([a,b])
             b1 = max([a,b])
-            print('Variando y de %d até %d:' %(1,a1-1))
+            print('\nVariando y de %d até %d:' %(1,a1-1))
             l=[]
             for y in range(1,a1):
                 for i in range(1,y*b1//a1+1):
                     l.append(b1*y-a1*i)
-
-        #         print('y=%d : %d = %dx%d + %d' %(y, y*b1, a1, y*b1//a1, y*b1%a1 ))
-
                 l.sort()
-    #             l = set(l)
                 print('y=%d, %d>=x>0: %dy-%dx sols: %s' %(y, y*b1//a1,b1,a1 ,l))
-        #         print(l)
                 l=[]
         else:
             print('Insira valores tais que o mdc seja igual a 1.')
-    
-    naosolve(a1,b1)
+    proposicao_3_6(a1,b1)
 </script></div></div></body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-24T10:12:36-03:00       *-->
+<!--*       on 2023-03-20T19:17:20-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -56,37 +56,27 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:300px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
 def _(a1=input_box(88 , width=10,  label="a:"), b1=input_box(25 , width=10,  label="b:")):
 
 
     def mdc(a,b):
-    
-        r0 = max([a,b])
-        r1 = min([a,b])
-        
-        
-        q=[]
-        r=[]
-        q.append(r0)
-        r.append(r1)
-        
-        q2=(r0//r1)
-        r2=(r0%r1)
-        q.append(q2)
-        r.append(r2)
-        
-        while r[-1] != 0:
-            q.append(r[-2]//r[-1])
-            r.append(r[-2]%r[-1])
+        if 1>a or 1>b:
+            print('a e b precisam ser maiores que zero')
+        else:
+            r0 = max([a,b])             # define r0
+            r1 = min([a,b])             # define r1
+            q=[r0, r0//r1]              # lista para guardar os q's
+            r=[r1, r0%r1]               # lista para guardar os r's
 
-        q=q[1:]
-        
-        show('%d = %d*%d+%d' %(r0, r1, q[0], r[1]))
-        for i in range(len(q)-1):
-            show('%d = %d*%d+%d' %(r[i], r[i+1], q[i+1], r[i+2]))
-        
-        show('mdc(%d,%d)=%d' %(a,b,r[-2]))
+            while r[-1] != 0:           # 
+                q.append(r[-2]//r[-1])  # Cálculo de todos os
+                r.append(r[-2]%r[-1])   # valores dos q's e r's
+            q=q[1:]
+            print('%d = %d*%d+%d' %(r0, r1, q[0], r[1]))
+            for i in range(len(q)-1):
+                print('%d = %d*%d+%d' %(r[i], r[i+1], q[i+1], r[i+2]))
+            print('\nmdc(%d,%d)=%d' %(a,b,r[-2]))
     
     mdc(a1,b1)
 </script></div></div></body>

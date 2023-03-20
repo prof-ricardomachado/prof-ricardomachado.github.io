@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-11-24T10:12:36-03:00       *-->
+<!--*       on 2023-03-20T19:17:20-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -78,7 +78,7 @@ MathJax.Hub.Config({
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="artigo-frobenius.html"><span class="title">Equações Diofantinas Lineares:</span> <span class="subtitle">O Problema do Troco de Frobenius</span></a></h1>
-<p class="byline">Edgar Correa de Amorim Filho, Jogli Gidel da Silva Araújo, Ricardo Nunes Machado Junior, Thiago Yukio Tanaka</p>
+<p class="byline">Jogli Gidel da Silva Araújo, Ricardo Nunes Machado Junior, Thiago Yukio Tanaka</p>
 </div>
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
@@ -103,7 +103,7 @@ MathJax.Hub.Config({
 <article class="proposition theorem-like" id="proposition-1"><h6 class="heading">
 <span class="type">Proposição</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
 </h6>
-<p id="p-11">Seja \((x_0, y_0)\) uma solução particular da <em class="emphasis">equação diofantina linear</em> \(ax+by=c\text{,}\) na qual, \(mdc(a,b)=1\text{.}\) Então, o seu conjunto solução, é composto pelos pares \((x,y)\) em \(\mathbb{Z}^2\) tal que</p>
+<p id="p-12">Seja \((x_0, y_0)\) uma solução particular da <em class="emphasis">equação diofantina linear</em> \(ax+by=c\text{,}\) na qual, \(mdc(a,b)=1\text{.}\) Então, o seu conjunto solução, é composto pelos pares \((x,y)\) em \(\mathbb{Z}^2\) tal que</p>
 <div class="displaymath">
 \begin{equation*}
 x=x_0+tb, \quad y=y_0-ta; \quad t\in \mathbb{Z}.
@@ -111,26 +111,52 @@ x=x_0+tb, \quad y=y_0-ta; \quad t\in \mathbb{Z}.
 </div></article><article class="technology computation-like" id="technology-3"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span>
 </h6>
-<p id="p-12">No SageMath existe um método para resolver equações diofantinas. Para utiliza-lo é necessário declarar cada variável que será usada na equação. Abaixo, declaramos a variável \(y\) e escrevemos os comandos para resolver a equação diofantina</p>
+<p id="p-13">No SageMath existe um método para resolver equações diofantinas. Para utiliza-lo é necessário declarar cada variável que será usada na equação. Abaixo, declaramos a variável \(y\) e escrevemos os comandos para resolver a equação diofantina</p>
 <div class="displaymath">
 \begin{equation*}
 5x+9y=31. 
 \end{equation*}
 </div>
-<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">y=var('y')
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">y=var('y')
 eq = 5*x+9*y==31
 show(solve_diophantine(eq))
 </script></div></article><article class="technology computation-like" id="technology-4"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
 </h6>
-<p id="p-13">Escolha os valores \(a\text{,}\) \(b\) e \(c\) para obter algumas soluções inteiras no plano, da equação diofantina:</p>
+<p id="p-14">Escolha os valores \(a\text{,}\) \(b\) e \(c\) para obter algumas soluções inteiras no plano, da equação diofantina:</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by=c.
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-2"><iframe id="interactive-reta" width="600" height="660" src="interactive-reta-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><p id="p-14">Não entraremos em detalhes, mas ressaltamos que a função "solve_diophantine" se estende para maior quantidade de variáveis e não está restrita ao caso linear. Experimente a equação abaixo e depois substitua a equação por outra.</p>
-<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">y,z = var('y,z') 
+<figure class="figure figure-like" id="figure-2"><iframe id="interactive-reta" width="600" height="660" src="interactive-reta-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-15">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico, das equações diofantinas em duas variáveis.</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def grafDiof(a1,b1,c1, sols=6):
+    y, t_0=var('y, t_0')
+    if c1%gcd(a1, b1)!=0:
+        print('O mcd(%d, %d) não divide %d' %(a1, b1, c1))
+    else:
+        l=[]
+        temp = solve_diophantine(a1*x+b1*y==c1)
+        lt=[temp[0], temp[1]]
+        yzero = solve(temp[0]==0, t_0)
+        yzero = ceil(yzero[0].rhs())
+        for i in range(yzero, yzero+ceil(sols/2)):
+            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+        for i in range(yzero-1, yzero-ceil(sols/2)-1, -1):
+            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+        
+        l.sort()
+        pe = l[0]
+        pd = l[-1]
+        p2=line((pe, pd))
+        p1=list_plot(l, size=30, color='red')
+        (p2+p1).show(figsize=4)
+        print('As soluções destacadas de %dx + %dy = %d são:' %(a1, b1, c1))
+        for i in l:
+            print(i)
+grafDiof(5, 9, 31)
+</script></div></article><p id="p-16">Não entraremos em detalhes, mas ressaltamos que a função "solve_diophantine" se estende para maior quantidade de variáveis e não está restrita ao caso linear. Experimente a equação abaixo e depois substitua a equação por outra.</p>
+<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">y,z = var('y,z') 
 eq = 5*x + 9*y + 7*z ==31
 show(solve_diophantine(eq))
 </script></div></section></div></main>
