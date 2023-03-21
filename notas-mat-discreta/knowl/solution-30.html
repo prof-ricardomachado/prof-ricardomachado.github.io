@@ -9,49 +9,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.2.2.1</span><span class="period">.</span>
 </h3>
-<div class="para logical">
-<div class="para">Chamando de <span class="process-math">\(x_n\)</span> o número de tais sequências com <span class="process-math">\(n\)</span> termos, o valor de <span class="process-math">\(x_{n+2}\)</span> será a soma das seguintes quantidades:</div>
-<ol class="lower-roman">
-<li><div class="para">O número de sequências de <span class="process-math">\(n+2\)</span> termos que começam por 1 e não possuem dois zeros consecutivos. Isto é precisamente igual a <span class="process-math">\(x_{n+1}\text{,}\)</span> pois se o primeiro termo é 1, para formar a sequência basta determinar os termos a partir do <dfn class="terminology">segundo</dfn>, o que pode ser feito de <span class="process-math">\(x_{n+1}\)</span> modos.</div></li>
-<li><div class="para">O número de sequências de <span class="process-math">\(n+2\)</span> termos que começam por 2 e não possuem dois zeros consecutivos. Analogamente, isto é igual a <span class="process-math">\(x_{n+1}\text{.}\)</span>
-</div></li>
-<li><div class="para">O número de sequências de <span class="process-math">\(n+2\)</span> termos que começam por 0 e não possuem dois zeros consecutivos. Se o primeiro termo é zero, temos dois modos de escolher o segundo termo (1 ou 2) e, escolhido o segundo termo, temos <span class="process-math">\(x_n\)</span> modos de escolher os demais. Há, pois, <span class="process-math">\(2x_n\)</span> sequências começadas em 0.</div></li>
-</ol>
-<div class="para">Logo, <span class="process-math">\(x_{n+2}=2x_{n+1}+2x_n\text{.}\)</span>
+<div class="para">A cada vitória, a quantia é multiplicada por <span class="process-math">\(\frac{3}{2}\text{;}\)</span> a cada derrota, é multiplicada por <span class="process-math">\(\frac{1}{2}\text{.}\)</span>
+</div> <div class="para">Após três vitórias e três derrotas, os R$ 64,00 são multiplicados três vezes por <span class="process-math">\(\frac{3}{2}\)</span> e três vezes por <span class="process-math">\(\frac{1}{2}\text{.}\)</span>
+</div> <div class="para">Logo, ao final, independentemente da ordem das vitórias e derrotas, a pessoa terá <span class="process-math">\(64\left(\frac{3}{2}\right)^3\left(\frac{1}{2}\right)^3=27\)</span> reais, ou seja, ela perde <span class="process-math">\(37\)</span> reais (alternativa d.)</div>
 </div>
-</div> <div class="para">Observe que <span class="process-math">\(x_1=3\text{,}\)</span> pois, as sequências só possuem um termo, e este termo pode ser qualquer valor do conjunto <span class="process-math">\(\{0,1,2\}\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">Para obter <span class="process-math">\(x_2\text{,}\)</span> vamos determinar todas as sequências com dois termos que não possuem dois zeros consecutivos:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-(0,1), (0,2), (1,0), (2,0), (1,1), (1,2), (2,1), (2,2).
-\end{equation*}
-</div>
-<div class="para">Portanto <span class="process-math">\(x_2=8\text{.}\)</span>
-</div>
-</div> <div class="para">Agora vamos usar o Sage para mostrar que o valor de <span class="process-math">\(x_{10}\)</span> é 24960.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">def x(n):
-    if n==1:
-        return 3
-    elif n==2:
-        return 8
-    else:
-        return 2*x(n-1)+2*x(n-2)
-x(10)
-</script></pre>
-</div>
-<span class="incontext"><a href="section-7.html#solution-30" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-6.html#solution-30" class="internal">em contexto</a></span>
 </body>
 </html>

@@ -9,40 +9,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">5.3.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">5.1.10.1</span><span class="period">.</span>
 </h3>
-<div class="para">Quando você aluga um imóvel, você cede a posso do imóvel em troca de uma renda perpétua cujos termos são iguais ao valor do aluguel. Então o valor do imóvel deve ser igual ao valor do conjunto dos aluguéis. De acordo com o <a href="" class="xref" data-knowl="./knowl/cor-5.3.html" title="Corolário 5.3.3">Corolário 5.3.3</a>.</div> <div class="para logical">
-<div class="para"><dfn class="terminology">item a)</dfn></div>
+<div class="para logical">
+<div class="para">Fixando o preço do bem em 30, temos os três esquemas abaixo <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan03.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.11<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Comparando os valores, por exemplo, na época 0, obtemos:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-400 = \frac{P}{i}=\frac{P}{0,01}
-\end{equation*}
+\begin{align*}
+a = \amp~ 21\\
+b = \amp~ \frac{15}{(1,25)}+\frac{15}{(1,25)^2} = 21,60\\
+c = \amp~ 10+\frac{10}{(1,25)}+\frac{10}{(1,25)^2}=24,40. 
+\end{align*}
 </div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P = 400\times 0,01 = 4 \text{ mil reais}.
-\end{equation*}
+<div class="para">A melhor alternativa é a primeira e a pior é a terceira.</div>
+</div> <div class="para">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-11"><script type="text/x-sage">a = 21
+b = sum(15*(1/(1.25)^x), x, 1, 2)
+c = sum(10*(1/(1.25)^x), x, 0, 2)
+a,b,c
+</script></pre>
 </div>
-</div> <div class="para logical">
-<div class="para"><dfn class="terminology">item b)</dfn></div>
-<div class="displaymath process-math">
-\begin{equation*}
-400 = \frac{P}{i}=\frac{P}{0,005}
-\end{equation*}
-</div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P = 400\times 0,005 = 2 \text{ mil reais}.
-\end{equation*}
-</div>
-</div>
-</div>
-<span class="incontext"><a href="section-12.html#solution-53" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-10.html#solution-53" class="internal">em contexto</a></span>
 </body>
 </html>

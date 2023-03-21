@@ -9,18 +9,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Um pequeno comentário: essas prestações são ditas <em class="emphasis">postecipadas</em>, pois a primeira prestação só é paga um tempo depois da compra.</div> <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/finan06.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.3.5<span class="period">.</span></span><span class="space"> </span>Pagamento em 8 parcelas.</figcaption></figure> <div class="para logical">
-<div class="para">Igualando os valores na época <span class="process-math">\(0\)</span> (essa é a escolha natural da data de comparação: um tempo antes do primeiro termo da série), obtemos:</div>
+<div class="para logical">
+<div class="para">Os esquemas de pagamento abaixo são equivalentes. Logo, 300 reais, na data 0, têm o mesmo valor de 150 reais dois meses após, mais um pagamento igual a <span class="process-math">\(P\text{,}\)</span> na data 3. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan01.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.7<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Portanto, trazendo todos os valores para o valor atual, ficamos com</div>
 <div class="displaymath process-math">
-\begin{align*}
-120 = \amp ~P\frac{1-(1+0,08)^{-8}}{0,08}\\
-P = \amp ~ 120\frac{0,08}{1-1,08^{-8}}\approx 20,88.
-\end{align*}
+\begin{equation*}
+300 = \frac{150}{(1+0,15)^2}+\frac{P}{(1+0,15)^3}.
+\end{equation*}
 </div>
-<div class="para">As prestações são de R$ 20,88.</div>
+<div class="para">E resolvendo a equação, obtemos <span class="process-math">\(P=283,76\text{.}\)</span>
 </div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-9"><script type="text/x-sage">p = var('p')
+solve(300 == 150/(1+0.15)^2+p/(1+0.15)^3, p)[0].rhs().n()
+</script></pre>
 </div></body>
 </html>

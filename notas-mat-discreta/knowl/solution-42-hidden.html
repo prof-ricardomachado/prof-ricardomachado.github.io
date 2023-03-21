@@ -9,6 +9,50 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para">Os juros pagos por Lúcia são de R$ 40,00 e a taxa de juros é de <span class="process-math">\(\frac{40}{100}=0,40=40\%\)</span> ao bimestre. O montante, que é a dívida na época do pagamento, é de R$ 140,00.</div></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Uma solução não nula de <span class="process-math">\(x_{n+1}=2x_n\)</span> é, por exemplo, <span class="process-math">\(x_n=2^{n-1}\text{,}\)</span> conforme vimos no <a href="" class="xref" data-knowl="./knowl/ex-7.html" title="Exemplo 4.2.4">Exemplo 4.2.4</a>. Fazendo a substituição <span class="process-math">\(x_n=2^{n-1}y_n\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{equation*}
+2^ny_{n+1}=2^ny_n+1,
+\end{equation*}
+</div>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{equation*}
+y_{n+1}=y_n+2^{-n}.
+\end{equation*}
+</div>
+<div class="para">Daí, se tem</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{align*}
+y_2 = \amp ~ y_1 + 2^{-1}\\
+y_3 = \amp ~ y_2 + 2^{-2}\\
+y_4 = \amp ~ y_3 + 2^{-3}\\
+\vdots~~ = \amp ~~~~ \vdots\\
+y_n = \amp ~ y_{n-1} + 2^{-(n-1)}.
+\end{align*}
+</div>
+<div class="para">Somando, resulta</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-7.html">
+\begin{align*}
+y_n = \amp~ y_1+2^{-1}+2^{-2}+2^{-3}+\cdots+2^{-(n-1)}\\
+= \amp~ y_1+2^{-1}\frac{(2^{-1})^{n-1}-1}{2^{-1}-1}\\
+= \amp~ y_1-2^{1-n}+1.
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(x_n=2^{n-1}y_n\)</span> e <span class="process-math">\(x_1=2\text{,}\)</span> temos <span class="process-math">\(y_1=2\)</span> e <span class="process-math">\(y_n=3-2^{1-n}\text{.}\)</span> Daí, <span class="process-math">\(x_n=3\cdot 2^{n-1}-1.\)</span>
+</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-6"><script type="text/x-sage">maxima('load("solve_rec")')
+sol=maxima('solve_rec(x[n+1]=2*x[n]+1,x[n],x[1]=2)')
+show(sol)
+</script></pre> </div></body>
 </html>

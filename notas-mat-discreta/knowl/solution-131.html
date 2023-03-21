@@ -13,40 +13,41 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">7.2.3.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">6.7.8.1</span><span class="period">.</span>
 </h3>
 <div class="para logical">
-<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo do desenvolvimento é</div>
+<div class="para">Observe que uma possibilidade seria calcular o número de soluções de cada um dos casos:</div>
 <div class="displaymath process-math">
-\begin{align*}
-T_k = \amp ~ C_{11}^{k-1}(x^4)^{k-1}\left(-\frac{1}{x^2}\right)^{11-k+1}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{4(k-1)}x^{-2(12-k)}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{6k-28}  
-\end{align*}
+\begin{equation}
+\begin{cases} x_1 + x_2 + x_3 + x_4  = 0,\\
+x_1 + x_2 + x_3 + x_4  = 1\\
+\vdots \\
+x_1 + x_2 + x_3 + x_4  = 50.\end{cases}\tag{6.7.4}
+\end{equation}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Para que <span class="process-math">\(6k-28 = 2\text{,}\)</span> temos <span class="process-math">\(k=5\text{,}\)</span> logo estamos procurando o 5º termo:</div>
-<div class="displaymath process-math">
+<div class="para">A soma do número de soluções de cada um dos casos é a resposta, no entanto, é inviável fazer tal cálculo. Felizmente temos outra forma de resolver este problema.</div>
+</div> <div class="para">Observe que existe uma bijeção entre o conjunto das soluções de <a href="" class="xref" data-knowl="./knowl/sol-desi.html" title="Equação 6.7.3">(6.7.3)</a> com o conjunto das soluções da equação <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 6.7.5">(6.7.5)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
+\begin{equation}
+x_1 + x_2 + x_3 + x_4 + y  = 50.\tag{6.7.5}
+\end{equation}
+</div>
+<div class="para">Para entender a bijeção, observe o seguinte. Somando <span class="process-math">\(50-i, i\in \{0, 1, 2, \ldots, 50\}\text{,}\)</span> nos dois lados da igualdade, na linha <span class="process-math">\(i, i\in \{0, 1, 2, \ldots, 50\}\)</span> de <a href="" class="xref" data-knowl="./knowl/sol-igual.html" title="Equação 6.7.4">(6.7.4)</a>, não mudamos absolutamente nada e ficamos com:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
+\begin{equation}
+\begin{cases} x_1 + x_2 + x_3 + x_4 + 50 = 0 + 50,\\
+x_1 + x_2 + x_3 + x_4 + 49  = 1 +49 \\
+\vdots \\
+x_1 + x_2 + x_3 + x_4 + 0  = 50+0.\end{cases}\tag{6.7.6}
+\end{equation}
+</div>
+<div class="para">Cada solução da linha <span class="process-math">\(i\text{,}\)</span> é uma solução de <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 6.7.5">(6.7.5)</a> com o valor de <span class="process-math">\(y\)</span> igual a <span class="process-math">\(50-i\text{.}\)</span> E para cada <span class="process-math">\(y\in \{0, 1, 2, \ldots, 50\}\)</span> a solução de <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 6.7.5">(6.7.5)</a> vai ser a solução da linha <span class="process-math">\(y\)</span> de <a href="" class="xref" data-knowl="./knowl/sol-igual.html" title="Equação 6.7.4">(6.7.4)</a> .</div> <div class="para">Portanto a resposta é o número de solução da equação <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 6.7.5">(6.7.5)</a> que é dado por:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
 \begin{equation*}
-T_5 = (-1)^{7}C_{11}^4x^2.
+CR_5^{50} = 316251. 
 \end{equation*}
 </div>
-<div class="para">E portanto o coeficiente é <span class="process-math">\((-1)^{7}C_{11}^4 = -330\text{.}\)</span>
 </div>
-</div> <div class="para">
-<dfn class="terminology">item b)</dfn> <span class="process-math">\(6k-28 = 5\)</span> não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de <span class="process-math">\(x^5\)</span> é zero.</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item c)</dfn> Para que <span class="process-math">\(6k-28 = 8\text{,}\)</span> temos <span class="process-math">\(k=6\text{,}\)</span> logo estamos procurando o 6º termo:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T_6 = (-1)^{6}C_{11}^5x^8.
-\end{equation*}
-</div>
-<div class="para">E portanto, o coeficiente é <span class="process-math">\((-1)^{6}C_{11}^5 = 462\text{.}\)</span>
-</div>
-</div>
-</div>
-<span class="incontext"><a href="section-binomio-newton.html#solution-131" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-combinacoes-completas.html#solution-131" class="internal">em contexto</a></span>
 </body>
 </html>

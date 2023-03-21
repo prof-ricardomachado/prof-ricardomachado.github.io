@@ -9,22 +9,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">5.3.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">5.1.8.1</span><span class="period">.</span>
 </h3>
 <div class="para logical">
-<div class="para">Igualando os valores na época <span class="process-math">\(-1\)</span> (essa escolha, que pode parecer exótica, é muito conveniente pois dispomos de uma fórmula que calcula diretamente o valor da série nessa época), obtemos:</div>
+<div class="para">Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época, por exemplo na época 2. Os  esquemas de pagamentos são: <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan02.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.9<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época. Por exemplo, na época 0, temos,</div>
 <div class="displaymath process-math">
 \begin{align*}
-\frac{120}{1+0,1} = \amp ~P\frac{1-(1+0,1)^{-6}}{0,1}\\
-P \approx \amp ~ 25,05.
+a = \amp~ 160+\frac{160}{(1,02)}+\frac{160}{(1,02)^2}=470,65\\
+b = \amp~ 70+\frac{70}{(1,02)}+\frac{70}{(1,02)^2}+\frac{70}{(1,02)^3}+\frac{70}{(1,02)^4}+\frac{70}{(1,02)^5}\\
+\amp~\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad\quad \quad+\frac{70}{(1,02)^6}=462,10
 \end{align*}
 </div>
+<div class="para">Pedro deve preferir o pagamento em sete prestações.</div>
+</div> <div class="para">É um absurdo que muitas pessoas razoavelmente instruídas achem que o primeiro esquema é melhor pois o total pago é de R$ 480,00 ao passo que no segundo esquema o total pago é de R$ 490,00.</div> <div class="para">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-10"><script type="text/x-sage">a = sum(160*(1/(1.02)^x), x, 0, 2)
+b = sum(70*(1/(1.02)^x), x, 0, 6)
+a,b
+</script></pre>
 </div>
-</div>
-<span class="incontext"><a href="section-12.html#solution-52" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-10.html#solution-52" class="internal">em contexto</a></span>
 </body>
 </html>

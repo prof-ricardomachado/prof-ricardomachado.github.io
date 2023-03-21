@@ -9,26 +9,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de <span class="process-math">\(C_{11}^9=55 \)</span> maneiras.</div> <div class="para">
-<dfn class="terminology">item b)</dfn> Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.</div> <div class="para logical">
-<div class="para">Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é</div>
+<div class="para">Note que cada número formado possui 5 dígitos. Podemos contar o valor de <span class="process-math">\(S\)</span> da seguinte maneira.</div> <div class="para logical">
+<div class="para">Sejam <span class="process-math">\(a_i\)</span> os números formados pelos algarismos disponíveis. Como são 5 algarismos, temos um total de <span class="process-math">\(P(5)=5!=120\)</span> números, então</div>
+<div class="displaymath process-math">
+\begin{align*}
+a_1 =\amp~ a_{1,4}\cdot 10^4+a_{1,3}\cdot 10^3+a_{1,2}\cdot 10^2+a_{1,1}\cdot 10^1+a_{1,0}\cdot 10^0,\\
+a_2 =\amp~ a_{2,4}\cdot 10^4+a_{2,3}\cdot 10^3+a_{2,2}\cdot 10^2+a_{2,1}\cdot 10^1+a_{2,0}\cdot 10^0,\\
+\vdots\\
+a_j =\amp~ a_{j,4}\cdot 10^4+a_{j,3}\cdot 10^3+a_{j,2}\cdot 10^2+a_{j,1}\cdot 10^1+a_{j,0}\cdot 10^0,\\
+\vdots\\
+a_{120} =\amp~ a_{120,4}\cdot 10^4+a_{120,3}\cdot 10^3+a_{120,2}\cdot 10^2+a_{120,1}\cdot 10^1+a_{120,0}\cdot 10^0
+\end{align*}
+</div>
+<div class="para">Observe que para cada <span class="process-math">\(j=0,1,2,3,4\text{,}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-C_4^2\times C_7^4 + C_4^3\times C_7^3 + C_4^4\times C_7^2 = 371. 
+\sum_{0\leq i\leq 120}a_{i,j} = 4!\cdot1+4!\cdot3+4!\cdot5+4!\cdot7+4!\cdot9=4!\cdot 25,
 \end{equation*}
 </div>
-</div> <div class="para">No Sage, esse cálculo pode ser feito da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-23"><script type="text/x-sage">C(n, p) = binomial(n, p)
-C(4,2)*C(7,4) + C(4,3)*C(7,3) + C(4,4)*C(7,2)
-</script></pre>
+<div class="para">pois, cada algarismo estará presente em <span class="process-math">\(\frac{120}{5}=24=4!\)</span> dos <span class="process-math">\(a_{i,j}\text{,}\)</span> para cada <span class="process-math">\(j\)</span> fixado.</div>
+</div> <div class="para logical">
+<div class="para">Logo,</div>
+<div class="displaymath process-math">
+\begin{align*}
+S=\amp ~(10^4+10^3+10^2+10^1+10^0)\cdot4!\cdot 25\\
+=\amp~ 11111\cdot 600\\
+=\amp~ 6666600.
+\end{align*}
+</div>
+</div>
 </div></body>
 </html>

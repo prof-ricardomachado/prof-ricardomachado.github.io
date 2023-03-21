@@ -9,18 +9,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Vamos tomar receitas como positivas e despesas como negativas. O fluxo de caixa de Helena na segunda alternativa é representado na <a href="" class="xref" data-knowl="./knowl/fig-fin07.html" title="Figura 5.3.9">Figura 5.3.9</a>.</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan07.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.3.9<span class="period">.</span></span><span class="space"> </span>Fluxo de caixa na segunda alternativa.</figcaption></figure> <div class="para">Vamos determinar o fluxo de caixa equivalente, representado na <a href="" class="xref" data-knowl="./knowl/fig-fin08.html" title="Figura 5.3.10">Figura 5.3.10</a>.</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/finan08.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.3.10<span class="period">.</span></span><span class="space"> </span>Fluxo uniforme equivalente.</figcaption></figure> <div class="para logical">
-<div class="para">Igualando os valores na época <span class="process-math">\(0\text{,}\)</span> obtemos</div>
+<div class="para logical">
+<div class="para">Fixando o valor do bem em 100, temos os esquemas de pagamentos abaixo: <figure class="figure figure-like"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/finan04.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.13<span class="period">.</span></span><span class="space"> </span>Esquemas de pagamento.</figcaption></figure> Igualando os valores, por exemplo, na época 0 (a data usada nessas comparações é chamada de <em class="emphasis">data focal</em>), obtemos</div>
 <div class="displaymath process-math">
 \begin{equation*}
--150-\frac{5}{1,07}-\frac{5}{1,07^2}-\frac{8}{1,07^3}-\frac{8}{1,07^4}+\frac{12}{1,07^5}=P\frac{1-1,07^{-5}}{0,07}.
+70 = 50+\frac{50}{1+i}.
 \end{equation*}
 </div>
-<div class="para">Daí, <span class="process-math">\(P=-39,78\text{.}\)</span> Comprar a copiadora é equivalente a ter um custo anual de 39,78 reais. Como o aluguel corresponde a um custo anual de 35 reais, a melhor alternativa para Helena é alugar.</div>
-</div>
+<div class="para">Daí, <span class="process-math">\(i = 1,5 = 150\%\text{.}\)</span> A loja cobra 150% ao mês nas vendas a prazo.</div>
+</div> <div class="para">O cálculo dos valores de <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> podem ser conferidos no Sage da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-12"><script type="text/x-sage">i = var('i')
+solve(70 == 50+50/(1+i), i)[0].rhs().n()
+</script></pre>
 </div></body>
 </html>

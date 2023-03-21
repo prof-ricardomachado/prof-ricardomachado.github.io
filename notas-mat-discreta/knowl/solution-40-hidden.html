@@ -10,36 +10,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">A recorrência tem equação característica <span class="process-math">\(r^2-6r+8=0\text{,}\)</span> cujas raízes são <span class="process-math">\(r_1=2\)</span> e <span class="process-math">\(r_2=4\text{.}\)</span> Portanto, a solução da homogênea, isto é, de <span class="process-math">\(x_{n+2}-6x_{n+1}+8x_n=0\)</span> é <span class="process-math">\(h_n=C_12^n+C_24^n\text{.}\)</span> Tentaremos agora descobrir uma solução particular, <span class="process-math">\(t_n\)</span> da recorrência <span class="process-math">\(x_{n+2}-6x_{n+1}+8x_n=1+2^n\text{.}\)</span> Ora, se substituirmos <span class="process-math">\(t_n\)</span> em <span class="process-math">\(x_{n+2}-6x_{n+1}+8x_n\)</span> devemos encontrar <span class="process-math">\(1+2^n\text{.}\)</span> Que tipo de função deve ser <span class="process-math">\(t_n\text{?}\)</span> É bastante razoável imaginar que <span class="process-math">\(t_n\)</span> seja a soma de um polinômio constante com uma exponencial de base 2. Tentaremos <span class="process-math">\(t_n=A+B2^n\text{.}\)</span> Substituindo em</div>
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">Temos</div>
 <div class="displaymath process-math">
-\begin{equation*}
-x_{n+2}-6x_{n+1}+8x_n=1+2^n,
-\end{equation*}
+\begin{align*}
+x_2 = \amp ~ x_1 + 2\\
+x_3 = \amp ~ x_2 + 2^2\\
+x_4 = \amp ~ x_3 + 2^3\\
+\vdots~~ = \amp ~~~~ \vdots\\
+x_n = \amp ~ x_{n-1} + 2^{n-1}.
+\end{align*}
 </div>
-<div class="para">obtemos <span class="process-math">\(3A=1+2^n\text{.}\)</span> Essa igualdade é impossível. A recorrência não admite solução da forma <span class="process-math">\(t_n=A+B2^n\text{.}\)</span>
-</div>
-</div> <div class="para">Parando para pensar no que aconteceu, verificamos que era óbvio que a nossa tentativa não podia dar certo. O espírito da nossa tentativa era tentar uma constante <span class="process-math">\(A\)</span> para que obtivéssemos uma constante que igualaríamos a 1 e tentar <span class="process-math">\(B2^n\)</span> para gerar uma exponencial que pudéssemos igualar a <span class="process-math">\(2^n\text{.}\)</span> É claro que o termo <span class="process-math">\(B2^n\)</span> não poderia cumprir o seu papel. <span class="process-math">\(B2^n\)</span> é solução da homogênea (é a solução da homogênea que é obtida pondo <span class="process-math">\(C_1=B\)</span> e <span class="process-math">\(C_2=0\)</span>) e, substituindo na equação daria zero e não uma exponencial que pudéssemos igualar a <span class="process-math">\(2^n\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">Vamos corrigir a nossa tentativa para <span class="process-math">\(t_n=A+Bn2^n\text{.}\)</span> Sempre que na nossa tentativa em algum bloco não cumprir o seu papel, fazemos a correção "aumentando o grau", isto é, multiplicando o bloco por <span class="process-math">\(n\text{.}\)</span> Agora, substituindo na recorrência, obtemos <span class="process-math">\(3A-4B2^n=1+2^n\text{,}\)</span> ou seja,</div>
+<div class="para">Somando, resulta</div>
 <div class="displaymath process-math">
-\begin{equation*}
-A=\frac{1}{3} \quad \text{ e } \quad B=-\frac{1}{4},
-\end{equation*}
+\begin{align*}
+x_n = \amp~ x_1 + (2+2^2+2^3+\cdots+2^{n-1})\\
+= \amp~ 1+2+2^2+2^3+\cdots+2^{n-1}\\
+= \amp~ 1\frac{2^n-1}{2-1}\\
+= \amp~ 2^n-1.
+\end{align*}
 </div>
-<div class="para">Assim, obtemos a solução</div>
-<div class="displaymath process-math">
-\begin{equation*}
-t_n=\frac{1}{3}-\frac{n2^n}{4}.
-\end{equation*}
-</div>
-<div class="para">A solução da recorrência é a soma de <span class="process-math">\(h_n\)</span> com <span class="process-math">\(t_n\text{.}\)</span> Portanto,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-x_n=C_12^n+C_24^n+\frac{1}{3}-\frac{n2^n}{4}.
-\end{equation*}
-</div>
-</div>
-</div></body>
+</div></div></body>
 </html>

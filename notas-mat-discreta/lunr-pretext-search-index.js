@@ -412,7 +412,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Progressões Aritméticas",
-  "body": " Progressões Aritméticas    Sequências Numéricas   Progressões Aritméticas são casos particulares de sequências numéricas.  Uma sequência numérica é uma função .  É comum denotar por e usar para representar a sequência.     Progressões Aritméticas    Uma progressão aritmética é uma sequência na qual a diferença entre cada termo e o termo anterior é constante. Essa diferença constante é chamada de razão da progressão e representada pela letra r.  Mais formalmente: é uma progressão aritmética quando existe um número real tal que , para todo .    Em uma progressão aritmética   para avançar um termo, basta somar a razão;  para avançar dois termos, basta somar duas vezes a razão;  e assim por diante;  De modo geral, pois, ao passar de para , avançamos termos.   Em uma progressão aritmética, o quinto termo vale 30 e o vigésimo termo vale 50. Quanto vale o oitavo termo dessa progressão?   Observe que . Logo, , daí . Assim,      Qual é a razão da progressão aritmética que se obtem inserindo 10 termos entre os números 3 e 25?   Temos e . Como , temos , logo .     O cometa Halley visita a Terra a cada 76 anos. Sua última passagem por aqui foi em 1986. Quantas vezes ele visitou a Terra desde o nascimento de Cristo? Em que ano foi sua primeira passagem na era cristã?   Os anos de passagem do cometa foram 1986, 1910, 1834,... e formam uma progressão aritmética de razão −76.  O termo de ordem n dessa progressão é Temos quando Portanto, os termos positivos dessa progressão são os 27 primeiros.  Logo, ele nos visitou 27 vezes na era cristã e sua primeira passagem na era cristã foi no ano .  Na verdade, a primeira passagem do cometa Halley na era cristã ocorreu no ano 12.     O preço de um carro novo é de R$ 15 000,00 e diminui de R$1 000,00 a cada ano de uso. Qual será o preço com 4 anos de uso?   Chamando o preço com anos de uso de , temos e queremos calcular .  Como a desvalorização anual é constante, é uma progressão aritmética.  Logo, , ou seja, o preço será de R$11 000,00.     Determine 4 números em progressão aritmética crescente, conhecendo sua soma 8 e a soma de seus quadrados 36.   Um bom truque, para representar progressões aritméticas com um número par de termos, é chamar os dois termos centrais de e . Isso faz com que a razão seja . A progressão é então Temos Somando cada linha , obtemos Como a progressão é crescente, . Logo, e . Os números são .      Progressões Aritméticas e Funções Afins   Em uma progressão aritmética de razão não nula, o termo geral é dado por um polinômio do primeiro grau em :   Reciprocamente, se em uma sequência o termo de ordem for dado por um polinômio do primeiro grau em ela será uma progressão aritmética de razão não nula. Com efeito, se é uma progressão aritmética na qual e .  Portanto, uma progressão aritmética pode ser vista como uma função afim, restrita ao domı́nio dos números naturais.   Em consequência, o gráfico de uma progressão aritmética é um conjunto de pontos igualmente espaçados sobre uma reta.    Soma dos Termos de uma Progressão Aritmética  Baseado na ideia de Gauss, usada para calcular a soma , podemos calcular a soma dos primeiros termos de uma progressão aritmética qualquer.   A soma dos primeiros termos da progressão aritmética é      Somando as duas igualdades, ficamos com Como , para , obtemos      Qual é o valor da soma dos 20 primeiros termos da progressão aritmética ?   Primeiro, vamos calcular , depois, usamos a fórmula da soma.       Qual é a soma dos primeiros números inteiros positivos?        Observe que no exemplo anterior, é um polinômio do segundo grau em , sem termo independente.   Qual é a soma dos primeiros números ímpares?         Observe que , no exemplo anterior, é também um polinômio do segundo grau em , sem termo indepentente. Isto se generaliza como segue.  A soma dos primeiros termos de um progressão aritmética é   Observe que, se , então é um polinômio do segundo grau em , desprovido de termo independente. Se é um polinômio de grau menor que 2, sem termo independente.  Reciprocamente, todo polinômio do segundo grau em , desprovido de termo independente, é o valor da soma dos primeiros termos de alguma progressão aritmética. Com efeito é a soma dos primeiros termos da progressão aritmética na qual      Progressões Aritméticas de Ordem Superior  Define-se para sequências o operador , chamado de operador diferença, por .  Portanto, da definição segue imediatamente que uma sequência é uma progressão aritmética se e somente se é constante.   Mostre que Este resultado é conhecido como o Teorema Fundamental da Somação .          Uma progressão aritmética de segunda ordem é uma sequência na qual as diferenças , entre cada termo e o termo anterior, formam uma progressão aritmética não-estacionária.   A sequência é uma progressão aritmética de segunda ordem, pois a sequência das diferenças entre cada termo e o anterior, é uma progressão aritmética não-estacionária.    Dada uma progressão aritmética de segunda ordem, o termo pode ser determinado da seguinte maneira    Calculando o somatório, obtemos . A última igualdade segue diretamente do      Determine o termo , da progressão aritmética de segunda ordem .   Já conhecemos e . Para usar o , precisamos calcular . Substituindo os valores na última igualdade do , obtemos     De modo geral, uma progressão aritmética de ordem  é uma sequência na qual as diferenças entre cada termo e o termo anterior formam uma progressão aritmética de ordem .   Moste que é uma progressão aritmética de terceira ordem.   A tabela abaixo mostra as sequências .             0  0  0  6  6    1  0  6  12  6    2  6  18  18  6    3  24  36  24  6    4  60  60  30     5  120  90     6  210     7      Se , como parece, for constante, será uma progressão aritmética, será uma progressão aritmética de segunda ordem e será uma progressão aritmética de terceira ordem. Isso é verdade, pois e realmente é constante.  Observe que, nesse quadro, a soma de dois elementos lado a lado é igual ao elemento que está embaixo do primeiro desses elementos. Isso nos permite calcular os elementos que estão assinalados por na tabela acima. Da direita para a esquerda, eles são iguais a 6 , 30 + 6 = 36 , 90 + 36 = 126 e 210 + 126 = 336. Portanto, e este foi o processo mais exótico que você já viu para calcular .     A sequência cujo termo de ordem é a soma dos primeiros termos de uma progressão aritmética de ordem é uma progressão aritmética de ordem . Basta observar que o operador diferença, aplicado a , fornece e define, portanto, uma progressão aritmética de ordem .    Toda sequência na qual o termo de ordem é um polinômio do segundo grau, é uma progressão aritmética de segunda ordem e, reciprocamente, se é uma progressão aritmética de segunda ordem então é um polinômio de segundo grau em .   Com efeito, se , com , temos  que é do primeiro grau em n. Pela , é uma progressão aritmética não-estacionária.  Por outro lado, se é uma progressão aritmética de segunda ordem, é uma progressão aritmética com razão diferente de zero e  Pela , como é uma progressão aritmética, é um polinômio do segundo grau em . Em consequência, também é um polinômio do segundo grau em .     Toda sequência na qual o termo de ordem é um polinômio em , de grau , é uma progressão aritmética de ordem e, reciprocamente, se é uma progressão aritmética de ordem , então é um polinômio de grau em .   A demonstração está no final da seção e encontra-se no .     Calcule    Pelo , a sequência definida por é uma progressão aritmética de ordem , já que seu termo geral é um polinômio de grau 2. Logo, a soma de seus primeiros termos define uma progressão aritmética de ordem . Portanto, usando agora a volta do , o termo geral de é dado por um polinômios de grau 3 em . Isto é, podemos escrever . Atribuindo valores 1, 2, 3 e 4, obtemos as equações Resolvendo, encontramos Então,   Abaixo, usamos o SageMath para obter a solução do sistema.       Somas Polinomiais  A pergunta que nos colocamos é como calcular somas do tipo onde é um polinômio em .  Se o polinômio é , temos que pode ser calculado desde que saibamos calcular, para , somas do tipo:    Determine o valor de    Observe que Os dois primeiros somatórios têm várias parcelas em comum, pois e Simplificando as parcelas em comum, obtemos Daí,  Observe que é um polinômio do terceiro grau.       é um polinômio de grau em .   Vamos proceder por indução sobre . Para , o teorema já foi provado no .  Suponhamos agora que seja um polinômio de grau em , para todo , Mostraremos que essa afirmação é verdadeira para , isto é, mostraremos que é um polinômio de grau em . Observe que onde os termos que não foram escritos explicitamente formam um polinômio de grau em . Temos então, na qual, é um polinômio de grau em , pela hipótese de indução. Simplificando os termos comuns aos dois primeiros somatórios, obtemos Daí, que é um polinômio de grau em .     Se é um polinômio de grau então é um polinômio de grau em .    Toda sequência na qual o termo de ordem é um polinômio em , de grau , é uma progressão aritmética de ordem e, reciprocamente, se é uma progressão aritmética de ordem , então é um polinômio de grau em .   Vamos proceder por indução sobre .  Para , o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária ( ).  Suponhamos que o teorema seja verdadeiro para todo . Mostraremos que essa afirmação é verdadeira para .  Se é uma progressão aritmética de ordem , é uma progressão aritmética de ordem e, pela hipótese de indução, é um polinômio de grau em . Então é, pelo , um polinômio de grau em .  Reciprocamente, se é um polinômio de grau em , é um polinômio de grau em , pois é um polinômio de grau . Assim, pela hipótese de indução, é uma progressão aritmética de ordem , ou seja, é uma progressão aritmética de ordem .      "
+  "body": " Progressões Aritméticas    Sequências Numéricas   Progressões Aritméticas são casos particulares de sequências numéricas.  Uma sequência numérica é uma função .  É comum denotar por e usar para representar a sequência.     Progressões Aritméticas    Uma progressão aritmética é uma sequência na qual a diferença entre cada termo e o termo anterior é constante. Essa diferença constante é chamada de razão da progressão e representada pela letra r.  Mais formalmente: é uma progressão aritmética quando existe um número real tal que , para todo .    Em uma progressão aritmética   para avançar um termo, basta somar a razão;  para avançar dois termos, basta somar duas vezes a razão;  e assim por diante;  De modo geral, pois, ao passar de para , avançamos termos.   Em uma progressão aritmética, o quinto termo vale 30 e o vigésimo termo vale 50. Quanto vale o oitavo termo dessa progressão?   Observe que . Logo, , daí . Assim,      Qual é a razão da progressão aritmética que se obtem inserindo 10 termos entre os números 3 e 25?   Temos e . Como , temos , logo .     O cometa Halley visita a Terra a cada 76 anos. Sua última passagem por aqui foi em 1986. Quantas vezes ele visitou a Terra desde o nascimento de Cristo? Em que ano foi sua primeira passagem na era cristã?   Os anos de passagem do cometa foram 1986, 1910, 1834,... e formam uma progressão aritmética de razão −76.  O termo de ordem n dessa progressão é Temos quando Portanto, os termos positivos dessa progressão são os 27 primeiros.  Logo, ele nos visitou 27 vezes na era cristã e sua primeira passagem na era cristã foi no ano .  Na verdade, a primeira passagem do cometa Halley na era cristã ocorreu no ano 12.     O preço de um carro novo é de R$ 15 000,00 e diminui de R$1 000,00 a cada ano de uso. Qual será o preço com 4 anos de uso?   Chamando o preço com anos de uso de , temos e queremos calcular .  Como a desvalorização anual é constante, é uma progressão aritmética.  Logo, , ou seja, o preço será de R$11 000,00.     Determine 4 números em progressão aritmética crescente, conhecendo sua soma 8 e a soma de seus quadrados 36.   Um bom truque, para representar progressões aritméticas com um número par de termos, é chamar os dois termos centrais de e . Isso faz com que a razão seja . A progressão é então Temos Somando cada linha , obtemos Como a progressão é crescente, . Logo, e . Os números são .      Progressões Aritméticas e Funções Afins   Em uma progressão aritmética de razão não nula, o termo geral é dado por um polinômio do primeiro grau em :   Reciprocamente, se em uma sequência o termo de ordem for dado por um polinômio do primeiro grau em ela será uma progressão aritmética de razão não nula. Com efeito, se é uma progressão aritmética na qual e .  Portanto, uma progressão aritmética pode ser vista como uma função afim, restrita ao domı́nio dos números naturais.   Em consequência, o gráfico de uma progressão aritmética é um conjunto de pontos igualmente espaçados sobre uma reta.    Soma dos Termos de uma Progressão Aritmética  Baseado na ideia de Gauss, usada para calcular a soma , podemos calcular a soma dos primeiros termos de uma progressão aritmética qualquer.   A soma dos primeiros termos da progressão aritmética é      Somando as duas igualdades, ficamos com Como , para , obtemos      Qual é o valor da soma dos 20 primeiros termos da progressão aritmética ?   Primeiro, vamos calcular , depois, usamos a fórmula da soma.       Qual é a soma dos primeiros números inteiros positivos?        Observe que no exemplo anterior, é um polinômio do segundo grau em , sem termo independente.   Qual é a soma dos primeiros números ímpares?         Observe que , no exemplo anterior, é também um polinômio do segundo grau em , sem termo indepentente. Isto se generaliza como segue.  A soma dos primeiros termos de um progressão aritmética é   Observe que, se , então é um polinômio do segundo grau em , desprovido de termo independente. Se é um polinômio de grau menor que 2, sem termo independente.  Reciprocamente, todo polinômio do segundo grau em , desprovido de termo independente, é o valor da soma dos primeiros termos de alguma progressão aritmética. Com efeito é a soma dos primeiros termos da progressão aritmética na qual      Progressões Aritméticas de Ordem Superior  Define-se para sequências o operador , chamado de operador diferença, por .  Portanto, da definição segue imediatamente que uma sequência é uma progressão aritmética se e somente se é constante.   Mostre que Este resultado é conhecido como o Teorema Fundamental da Somação .          Uma progressão aritmética de segunda ordem é uma sequência na qual as diferenças , entre cada termo e o termo anterior, formam uma progressão aritmética não-estacionária.   A sequência é uma progressão aritmética de segunda ordem, pois a sequência das diferenças entre cada termo e o anterior, é uma progressão aritmética não-estacionária.    Dada uma progressão aritmética de segunda ordem, o termo pode ser determinado da seguinte maneira    Calculando o somatório, obtemos . A última igualdade segue diretamente do      Determine o termo , da progressão aritmética de segunda ordem .   Já conhecemos e . Para usar o , precisamos calcular . Substituindo os valores na última igualdade do , obtemos     De modo geral, uma progressão aritmética de ordem  é uma sequência na qual as diferenças entre cada termo e o termo anterior formam uma progressão aritmética de ordem .   Moste que é uma progressão aritmética de terceira ordem.   A tabela abaixo mostra as sequências .             0  0  0  6  6    1  0  6  12  6    2  6  18  18  6    3  24  36  24  6    4  60  60  30     5  120  90     6  210     7      Se , como parece, for constante, será uma progressão aritmética, será uma progressão aritmética de segunda ordem e será uma progressão aritmética de terceira ordem. Isso é verdade, pois e realmente é constante.  Observe que, nesse quadro, a soma de dois elementos lado a lado é igual ao elemento que está embaixo do primeiro desses elementos. Isso nos permite calcular os elementos que estão assinalados por na tabela acima. Da direita para a esquerda, eles são iguais a 6 , 30 + 6 = 36 , 90 + 36 = 126 e 210 + 126 = 336. Portanto, e este foi o processo mais exótico que você já viu para calcular .     A sequência cujo termo de ordem é a soma dos primeiros termos de uma progressão aritmética de ordem é uma progressão aritmética de ordem . Basta observar que o operador diferença, aplicado a , fornece e define, portanto, uma progressão aritmética de ordem .    Toda sequência na qual o termo de ordem é um polinômio do segundo grau, é uma progressão aritmética de segunda ordem e, reciprocamente, se é uma progressão aritmética de segunda ordem então é um polinômio de segundo grau em .   Com efeito, se , com , temos  que é do primeiro grau em n. Pela , é uma progressão aritmética não-estacionária.  Por outro lado, se é uma progressão aritmética de segunda ordem, é uma progressão aritmética com razão diferente de zero e  Pela , como é uma progressão aritmética, é um polinômio do segundo grau em . Em consequência, também é um polinômio do segundo grau em .     Toda sequência na qual o termo de ordem é um polinômio em , de grau , é uma progressão aritmética de ordem e, reciprocamente, se é uma progressão aritmética de ordem , então é um polinômio de grau em .   A demonstração está no final da seção e encontra-se no .     Calcule    Pelo , a sequência definida por é uma progressão aritmética de ordem , já que seu termo geral é um polinômio de grau 2. Logo, a soma de seus primeiros termos define uma progressão aritmética de ordem . Portanto, usando agora a volta do , o termo geral de é dado por um polinômios de grau 3 em . Isto é, podemos escrever . Atribuindo valores 1, 2, 3 e 4, obtemos as equações Resolvendo, encontramos Então,   Abaixo, usamos o SageMath para obter a solução do sistema.       Somas Polinomiais  A pergunta que nos colocamos é como calcular somas do tipo onde é um polinômio em .  Se o polinômio é , temos que pode ser calculado desde que saibamos calcular, para , somas do tipo:    Determine o valor de    Observe que Os dois primeiros somatórios têm várias parcelas em comum, pois e Simplificando as parcelas em comum, obtemos Daí,  Observe que é um polinômio do terceiro grau.       é um polinômio de grau em .   Vamos proceder por indução sobre . Para , o teorema já foi provado no .  Suponhamos agora que seja um polinômio de grau em , para todo , Mostraremos que essa afirmação é verdadeira para , isto é, mostraremos que é um polinômio de grau em . Observe que onde os termos que não foram escritos explicitamente formam um polinômio de grau em . Temos então, na qual, é um polinômio de grau em , pela hipótese de indução. Simplificando os termos comuns aos dois primeiros somatórios, obtemos Daí, que é um polinômio de grau em .     Se é um polinômio de grau então é um polinômio de grau em .    Toda sequência na qual o termo de ordem é um polinômio em , de grau , é uma progressão aritmética de ordem e, reciprocamente, se é uma progressão aritmética de ordem , então é um polinômio de grau em .   Vamos proceder por indução sobre .  Para , o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária ( ).  Suponhamos que o teorema seja verdadeiro para todo . Mostraremos que essa afirmação é verdadeira para .  Se é uma progressão aritmética de ordem , é uma progressão aritmética de ordem e, pela hipótese de indução, é um polinômio de grau em . Então é, pelo , um polinômio de grau em .  Reciprocamente, se é um polinômio de grau em , é um polinômio de grau em , pois é um polinômio de grau . Assim, pela hipótese de indução, é uma progressão aritmética de ordem , ou seja, é uma progressão aritmética de ordem .       Exemplos  Exemplos do Artigo    (PIC-OBMEP\/2021)  Podem os números e compor três termos consecutivos de uma progressão aritmética?   Suponha, por absurdo, que seja uma progressão aritmética. Dessa forma, existe uma razão tal que Elevando ambos os lados da última igualdade ao quadrado, obtemos o que é um absurdo, uma vez que é um número irracional.     (Banco de Questões OBMEP, Ano do Ensino Médio, Módulo de Progressão Aritmética: Definição e Lei de Formação, Problema , - Adaptado)  A sequência dos números pentagonais está ilustrada na figura abaixo:   Sequência pentagonal - Fonte: .    Sendo o número de pontos na borda externa do pentágono I, o número de pontos na borda externa do pentágono II e assim sucessivamente, determine quantos pontos possuem na borda externa do pentágono XX, isto é, determine .   Contando os pontos da borda externa dos pentágonos presentes na figura, vemos que e . Essa construção tem um certo padrão; perceba que cada pentágono é construído através do seu antecessor, adicionando um ponto a cada borda externa, assim podemos notar que o número de pontos, em cada etapa, formam uma PA cuja razão é . Daí, sendo e , podemos encontrar facilmente o termo do pentágono XX que corresponde a vigésima posição, assim:      (OME, 1994, Fase Nacional, Problema 1)  Demonstre que se entre os infinitos termos de uma progressão aritmética de inteiros positivos existe um quadrado perfeito, então existem infinitos quadrados perfeitos na mesma progressão.   Por hipótese a PA é composta por termos positivos, assim podemos considerar o primeiro termo da PA e sua razão. Como a PA contém um quadrado perfeito, considere tal que é um termo da PA, dessa forma existe tal que . Note agora que Logo, encontramos um novo quadrado perfeito maior que que também pertence a mesma PA. Perceba que poderíamos afirmar que também pertence a PA, pois Analogamente, repetindo o mesmo argumento, podemos afirmar que a PA contém todos os termos do conjunto infinito o que mostra que a PA contém uma infinidade de quadrados perfeitos.     (POTI, 2012, Álgebra, Nível 2, Aula 4, Problema 15)  Em uma PA, temos e , com . Determine e .   Usando diretamente a Fórmula do Termo Generalizado Como e , segue que Sendo a razão, usando obtemos Por fim, utilizando       (OBM, 2007, fase, Nível 3, Problema 8)  Qual dos inteiros positivos abaixo satisfaz a seguinte equação:     Colocando em evidência na equação do enunciado, ficamos com: Percebemos que as parcelas da soma dentro dos parênteses formam uma PA de razão com . Considere a quantidade de termos dessa PA, logo . Então, temos Além disso, da equação , utilizando a fórmula da soma para os termos dessa PA e o valor de em função de , obtemos Portanto, A resposta correta é o item e).     (Portal da OBMEP, 2022, Ano do Ensino Médio, Módulo de Progressão Aritmética: Soma dos Termos de Uma PA, Problema )  Qual deve ser o numero mínimo de termos consecutivos que devemos somar, a partir do primeiro, da sequência para que a soma seja positiva.   Note que e . Dessa forma, temos Daí para , devemos ter , que é equivalente a , e isso nos mostra que . Portanto, o menor inteiro positivo que satisfaz o que é pedido é .     Uma curiosidade interessante que podemos extrair da fórmula da soma dos primeiros termos de uma PA de razão é a relação entre média aritmética e mediana dos seus termos. (Valor central de uma sequência numérica ordenada. Se a sequência tiver uma quantidade ímpar de termos, a mediana é o termo central. Se tiver uma quantidade par, a mediana é a média aritmética dos dois termos centrais.)  Isso pode ser feito da seguinte forma: se é ímpar, podemos escrevê-lo como para algum logo , onde é a mediana e a fração a média aritmética desses termos. De fato,     (AMC, 2005, 10A, Problema 17)  Na estrela abaixo, as letras A, B, C, D e E serão trocadas pelos números e , não necessariamente nessa ordem. As somas dos números nos extremos dos segmentos AB, BC, CD, DE e EA formam uma PA, outra vez, não necessariamente nessa ordem. Qual o termo médio dessa PA?    Chame de o termo médio (mediana) da sequência. Por hipótese, os termos estão em PA, não necessariamente nesta ordem. Perceba que tentar resolver de forma direta seria impraticável, uma vez que não sabemos a ordem em que os números estão. Contudo, pela , pode ser encontrado por       "
 },
 {
   "id": "definition-8",
@@ -667,6 +667,78 @@ var ptx_lunr_docs = [
   "body": " Toda sequência na qual o termo de ordem é um polinômio em , de grau , é uma progressão aritmética de ordem e, reciprocamente, se é uma progressão aritmética de ordem , então é um polinômio de grau em .   Vamos proceder por indução sobre .  Para , o teorema decorre da expressão do termo geral de uma progressão aritmética não estacionária ( ).  Suponhamos que o teorema seja verdadeiro para todo . Mostraremos que essa afirmação é verdadeira para .  Se é uma progressão aritmética de ordem , é uma progressão aritmética de ordem e, pela hipótese de indução, é um polinômio de grau em . Então é, pelo , um polinômio de grau em .  Reciprocamente, se é um polinômio de grau em , é um polinômio de grau em , pois é um polinômio de grau . Assim, pela hipótese de indução, é uma progressão aritmética de ordem , ou seja, é uma progressão aritmética de ordem .   "
 },
 {
+  "id": "example-27",
+  "level": "2",
+  "url": "section-5.html#example-27",
+  "type": "Exemplo",
+  "number": "3.1.31",
+  "title": "(PIC-OBMEP\/2021).",
+  "body": " (PIC-OBMEP\/2021)  Podem os números e compor três termos consecutivos de uma progressão aritmética?   Suponha, por absurdo, que seja uma progressão aritmética. Dessa forma, existe uma razão tal que Elevando ambos os lados da última igualdade ao quadrado, obtemos o que é um absurdo, uma vez que é um número irracional.   "
+},
+{
+  "id": "example-28",
+  "level": "2",
+  "url": "section-5.html#example-28",
+  "type": "Exemplo",
+  "number": "3.1.32",
+  "title": "(Banco de Questões OBMEP, <span class=\"process-math\">\\(1^\\circ\\)<\/span> Ano do Ensino Médio, Módulo de Progressão Aritmética: Definição e Lei de Formação, Problema <span class=\"process-math\">\\(5\\text{,}\\)<\/span> - Adaptado).",
+  "body": " (Banco de Questões OBMEP, Ano do Ensino Médio, Módulo de Progressão Aritmética: Definição e Lei de Formação, Problema , - Adaptado)  A sequência dos números pentagonais está ilustrada na figura abaixo:   Sequência pentagonal - Fonte: .    Sendo o número de pontos na borda externa do pentágono I, o número de pontos na borda externa do pentágono II e assim sucessivamente, determine quantos pontos possuem na borda externa do pentágono XX, isto é, determine .   Contando os pontos da borda externa dos pentágonos presentes na figura, vemos que e . Essa construção tem um certo padrão; perceba que cada pentágono é construído através do seu antecessor, adicionando um ponto a cada borda externa, assim podemos notar que o número de pontos, em cada etapa, formam uma PA cuja razão é . Daí, sendo e , podemos encontrar facilmente o termo do pentágono XX que corresponde a vigésima posição, assim:    "
+},
+{
+  "id": "example-29",
+  "level": "2",
+  "url": "section-5.html#example-29",
+  "type": "Exemplo",
+  "number": "3.1.34",
+  "title": "(OME, 1994, Fase Nacional, Problema 1).",
+  "body": " (OME, 1994, Fase Nacional, Problema 1)  Demonstre que se entre os infinitos termos de uma progressão aritmética de inteiros positivos existe um quadrado perfeito, então existem infinitos quadrados perfeitos na mesma progressão.   Por hipótese a PA é composta por termos positivos, assim podemos considerar o primeiro termo da PA e sua razão. Como a PA contém um quadrado perfeito, considere tal que é um termo da PA, dessa forma existe tal que . Note agora que Logo, encontramos um novo quadrado perfeito maior que que também pertence a mesma PA. Perceba que poderíamos afirmar que também pertence a PA, pois Analogamente, repetindo o mesmo argumento, podemos afirmar que a PA contém todos os termos do conjunto infinito o que mostra que a PA contém uma infinidade de quadrados perfeitos.   "
+},
+{
+  "id": "example-30",
+  "level": "2",
+  "url": "section-5.html#example-30",
+  "type": "Exemplo",
+  "number": "3.1.35",
+  "title": "(POTI, 2012, Álgebra, Nível 2, Aula 4, Problema 15).",
+  "body": " (POTI, 2012, Álgebra, Nível 2, Aula 4, Problema 15)  Em uma PA, temos e , com . Determine e .   Usando diretamente a Fórmula do Termo Generalizado Como e , segue que Sendo a razão, usando obtemos Por fim, utilizando     "
+},
+{
+  "id": "example-31",
+  "level": "2",
+  "url": "section-5.html#example-31",
+  "type": "Exemplo",
+  "number": "3.1.36",
+  "title": "(OBM, 2007, <span class=\"process-math\">\\(1^\\circ\\)<\/span> fase, Nível 3, Problema 8).",
+  "body": " (OBM, 2007, fase, Nível 3, Problema 8)  Qual dos inteiros positivos abaixo satisfaz a seguinte equação:     Colocando em evidência na equação do enunciado, ficamos com: Percebemos que as parcelas da soma dentro dos parênteses formam uma PA de razão com . Considere a quantidade de termos dessa PA, logo . Então, temos Além disso, da equação , utilizando a fórmula da soma para os termos dessa PA e o valor de em função de , obtemos Portanto, A resposta correta é o item e).   "
+},
+{
+  "id": "example-32",
+  "level": "2",
+  "url": "section-5.html#example-32",
+  "type": "Exemplo",
+  "number": "3.1.37",
+  "title": "(Portal da OBMEP, 2022, <span class=\"process-math\">\\(1^\\circ\\)<\/span> Ano do Ensino Médio, Módulo de Progressão Aritmética: Soma dos Termos de Uma PA, Problema <span class=\"process-math\">\\(12\\)<\/span>).",
+  "body": " (Portal da OBMEP, 2022, Ano do Ensino Médio, Módulo de Progressão Aritmética: Soma dos Termos de Uma PA, Problema )  Qual deve ser o numero mínimo de termos consecutivos que devemos somar, a partir do primeiro, da sequência para que a soma seja positiva.   Note que e . Dessa forma, temos Daí para , devemos ter , que é equivalente a , e isso nos mostra que . Portanto, o menor inteiro positivo que satisfaz o que é pedido é .   "
+},
+{
+  "id": "obs-tanaka01",
+  "level": "2",
+  "url": "section-5.html#obs-tanaka01",
+  "type": "Nota",
+  "number": "3.1.38",
+  "title": "",
+  "body": " Uma curiosidade interessante que podemos extrair da fórmula da soma dos primeiros termos de uma PA de razão é a relação entre média aritmética e mediana dos seus termos. (Valor central de uma sequência numérica ordenada. Se a sequência tiver uma quantidade ímpar de termos, a mediana é o termo central. Se tiver uma quantidade par, a mediana é a média aritmética dos dois termos centrais.)  Isso pode ser feito da seguinte forma: se é ímpar, podemos escrevê-lo como para algum logo , onde é a mediana e a fração a média aritmética desses termos. De fato,   "
+},
+{
+  "id": "example-33",
+  "level": "2",
+  "url": "section-5.html#example-33",
+  "type": "Exemplo",
+  "number": "3.1.39",
+  "title": "(AMC, 2005, 10A, Problema 17).",
+  "body": " (AMC, 2005, 10A, Problema 17)  Na estrela abaixo, as letras A, B, C, D e E serão trocadas pelos números e , não necessariamente nessa ordem. As somas dos números nos extremos dos segmentos AB, BC, CD, DE e EA formam uma PA, outra vez, não necessariamente nessa ordem. Qual o termo médio dessa PA?    Chame de o termo médio (mediana) da sequência. Por hipótese, os termos estão em PA, não necessariamente nesta ordem. Perceba que tentar resolver de forma direta seria impraticável, uma vez que não sabemos a ordem em que os números estão. Contudo, pela , pode ser encontrado por    "
+},
+{
   "id": "section-6",
   "level": "1",
   "url": "section-6.html",
@@ -676,45 +748,45 @@ var ptx_lunr_docs = [
   "body": " Progressões Geométricas   A população de um paı́s é hoje igual a 100.000 habitantes e cresce 2% ao ano. Qual será a população desse paı́s daqui a 10 anos?   Em 10 perı́odos, a população é multiplicada 10 vezes por 1,02. habitantes.     Uma pessoa, começando com R$ 64,00, faz seis apostas consecutivas, em cada uma das quais arrisca perder ou ganhar a metade do que possui na ocasião. Se ela ganha três e perde três dessas apostas, pode-se afirmar que ela:  Ganha dinheiro.  Não ganha dinheiro nem perde dinheiro.  Perde R$ 27,00.  Perde R$ 37,00.  Ganha ou perde dinheiro, dependendo da ordem em que ocorreram suas vitórias e derrotas.     A cada vitória, a quantia é multiplicada por ; a cada derrota, é multiplicada por .  Após três vitórias e três derrotas, os R$ 64,00 são multiplicados três vezes por e três vezes por .  Logo, ao final, independentemente da ordem das vitórias e derrotas, a pessoa terá reais, ou seja, ela perde reais (alternativa d.)     A sequência é um exemplo de uma progressão geométrica. Aqui a taxa de crescimento de cada termo para o seguinte é de 100%, o que faz com que cada termo seja igual a 200% do termo anterior.    A sequência é um exemplo de uma progressão geométrica. Aqui, cada termo é 80% do termo anterior. A taxa de crescimento de cada termo para o seguinte é de -20%.    É claro então que numa progressão geométrica cada termo é igual ao anterior multiplicado por , na qual, é a taxa de crescimento dos termos. Chamamos de razão da progressão e representamos por .    Uma progressão geométrica é uma sequência na qual o quociente entre cada termo e o termo anterior é constante. Esse quociente constante é chamado de razão da progressão e representado pela letra q. A razão de uma progressão geométrica é simplemente o valor de , na qual, é a taxa de crescimento constante de cada termo para o seguinte.     As sequências e são progressões geométricas cujas razões valem, respectivamente, e . Suas taxas de crescimento são respectivamente e , pois .    Termo geral de uma Progressão Geométrica   Em uma progressão geométrica   para avançar um termo, basta multiplicar pela razão;  para avançar dois termos, basta multiplicar duas vezes pela razão;  De modo geral, , pois ao passar de para , avançamos termos.      Em uma progressão geométrica, o quinto termo vale 5 e o oitavo vale 135. Quanto vale o sétimo termo dessa progressão?   Temos . Logo, e . Assim, .     Como em uma progressão geométrica , a função que associa a cada natural o valor de é simplemente a restrição aos naturais da função exponencial .    Qual é a razão da progressão geométrica que se obtem inserindo 3 termos entre os números 30 e 480?   Temos e . Como e .      A Fórmula das Taxas Equivalentes   Se é a taxa de crescimento de uma grandeza relativamente ao período de tempo e é a taxa de crescimento relativamente ao período , e se , então    Seja o valor inicial da grandeza. Após um período de tempo , o valor da grandeza será . Como um período de tempo equivale a períodos de tempo , o valor da grandeza será também igual a . Logo, e .     Se a população de um país cresce 2% ao ano, quanto crescerá em 25 anos?   Temos e . Daí, e .     Uma bomba de vácuo retira, em cada sucção, 2% do gás existente em certo recipiente. Depois de 50 sucções, quanto restará do gás inicialmente existente?   Temos e . Daí, e . A quantidade de gás diminuirá de aproximadamente 63,58%. Restarão aproximadamente 36,42% do gás inicialmente existente.      A Soma dos Termos de uma Progressão Geométrica   A soma dos primeiros termos de uma progressão geométrica de razão , é     . Multiplicando por , obtemos . Subtraindo, temos , isto é, e finalmente,      Diz a lenda que o inventor do xadrez pediu como recompensa 1 grão de trigo pela primeira casa, 2 grão pela segunda casa, 4 pela terceira casa e assim por diante, sempre dobrando a quantidade a cada casa nova. Como o tabuleiro de xadrez tem 64 casas, o número de grãos pedidos pelo inventor do jogo é a soma dos 64 primeiros termos da progressão geométrica O valor dessa soma é Calculando, obtemos o valor:     Nas progressões geométricas em que , a soma dos primeiros termos tem um limite finito quando . Como nesse caso , temos     Calcule o limite da soma da progressão geométrica    Temos      O teorema da somação, , também nos permitiria determinar o valor da soma dos primeiros termos de uma progressão geométrica. Supondo e observando que temos     (Somação por Partes) Sejam e sequências numéricas. Então,    Temos Daí, Somando, obtemos a fórmula.     Calcule    Temos Logo, e Aplicando a fórmula da somação por partes, com e , temos Mas Daí, resulta No Sage, podemos fazer este cálculo da seguinte maneira:      "
 },
 {
-  "id": "example-27",
+  "id": "example-34",
   "level": "2",
-  "url": "section-6.html#example-27",
+  "url": "section-6.html#example-34",
   "type": "Exemplo",
   "number": "3.2.1",
   "title": "",
   "body": " A população de um paı́s é hoje igual a 100.000 habitantes e cresce 2% ao ano. Qual será a população desse paı́s daqui a 10 anos?   Em 10 perı́odos, a população é multiplicada 10 vezes por 1,02. habitantes.   "
 },
 {
-  "id": "example-28",
+  "id": "example-35",
   "level": "2",
-  "url": "section-6.html#example-28",
+  "url": "section-6.html#example-35",
   "type": "Exemplo",
   "number": "3.2.2",
   "title": "",
   "body": " Uma pessoa, começando com R$ 64,00, faz seis apostas consecutivas, em cada uma das quais arrisca perder ou ganhar a metade do que possui na ocasião. Se ela ganha três e perde três dessas apostas, pode-se afirmar que ela:  Ganha dinheiro.  Não ganha dinheiro nem perde dinheiro.  Perde R$ 27,00.  Perde R$ 37,00.  Ganha ou perde dinheiro, dependendo da ordem em que ocorreram suas vitórias e derrotas.     A cada vitória, a quantia é multiplicada por ; a cada derrota, é multiplicada por .  Após três vitórias e três derrotas, os R$ 64,00 são multiplicados três vezes por e três vezes por .  Logo, ao final, independentemente da ordem das vitórias e derrotas, a pessoa terá reais, ou seja, ela perde reais (alternativa d.)   "
 },
 {
-  "id": "example-29",
+  "id": "example-36",
   "level": "2",
-  "url": "section-6.html#example-29",
+  "url": "section-6.html#example-36",
   "type": "Exemplo",
   "number": "3.2.3",
   "title": "",
   "body": " A sequência é um exemplo de uma progressão geométrica. Aqui a taxa de crescimento de cada termo para o seguinte é de 100%, o que faz com que cada termo seja igual a 200% do termo anterior.  "
 },
 {
-  "id": "example-30",
+  "id": "example-37",
   "level": "2",
-  "url": "section-6.html#example-30",
+  "url": "section-6.html#example-37",
   "type": "Exemplo",
   "number": "3.2.4",
   "title": "",
   "body": " A sequência é um exemplo de uma progressão geométrica. Aqui, cada termo é 80% do termo anterior. A taxa de crescimento de cada termo para o seguinte é de -20%.  "
 },
 {
-  "id": "remark-17",
+  "id": "remark-18",
   "level": "2",
-  "url": "section-6.html#remark-17",
+  "url": "section-6.html#remark-18",
   "type": "Nota",
   "number": "3.2.5",
   "title": "",
@@ -730,45 +802,45 @@ var ptx_lunr_docs = [
   "body": " Uma progressão geométrica é uma sequência na qual o quociente entre cada termo e o termo anterior é constante. Esse quociente constante é chamado de razão da progressão e representado pela letra q. A razão de uma progressão geométrica é simplemente o valor de , na qual, é a taxa de crescimento constante de cada termo para o seguinte.   "
 },
 {
-  "id": "example-31",
+  "id": "example-38",
   "level": "2",
-  "url": "section-6.html#example-31",
+  "url": "section-6.html#example-38",
   "type": "Exemplo",
   "number": "3.2.7",
   "title": "",
   "body": " As sequências e são progressões geométricas cujas razões valem, respectivamente, e . Suas taxas de crescimento são respectivamente e , pois .  "
 },
 {
-  "id": "remark-18",
+  "id": "remark-19",
   "level": "2",
-  "url": "section-6.html#remark-18",
+  "url": "section-6.html#remark-19",
   "type": "Nota",
   "number": "3.2.8",
   "title": "",
   "body": " Em uma progressão geométrica   para avançar um termo, basta multiplicar pela razão;  para avançar dois termos, basta multiplicar duas vezes pela razão;  De modo geral, , pois ao passar de para , avançamos termos.    "
 },
 {
-  "id": "example-32",
+  "id": "example-39",
   "level": "2",
-  "url": "section-6.html#example-32",
+  "url": "section-6.html#example-39",
   "type": "Exemplo",
   "number": "3.2.9",
   "title": "",
   "body": " Em uma progressão geométrica, o quinto termo vale 5 e o oitavo vale 135. Quanto vale o sétimo termo dessa progressão?   Temos . Logo, e . Assim, .   "
 },
 {
-  "id": "remark-19",
+  "id": "remark-20",
   "level": "2",
-  "url": "section-6.html#remark-19",
+  "url": "section-6.html#remark-20",
   "type": "Nota",
   "number": "3.2.10",
   "title": "",
   "body": " Como em uma progressão geométrica , a função que associa a cada natural o valor de é simplemente a restrição aos naturais da função exponencial .  "
 },
 {
-  "id": "example-33",
+  "id": "example-40",
   "level": "2",
-  "url": "section-6.html#example-33",
+  "url": "section-6.html#example-40",
   "type": "Exemplo",
   "number": "3.2.11",
   "title": "",
@@ -784,18 +856,18 @@ var ptx_lunr_docs = [
   "body": " Se é a taxa de crescimento de uma grandeza relativamente ao período de tempo e é a taxa de crescimento relativamente ao período , e se , então    Seja o valor inicial da grandeza. Após um período de tempo , o valor da grandeza será . Como um período de tempo equivale a períodos de tempo , o valor da grandeza será também igual a . Logo, e .   "
 },
 {
-  "id": "example-34",
+  "id": "example-41",
   "level": "2",
-  "url": "section-6.html#example-34",
+  "url": "section-6.html#example-41",
   "type": "Exemplo",
   "number": "3.2.13",
   "title": "",
   "body": " Se a população de um país cresce 2% ao ano, quanto crescerá em 25 anos?   Temos e . Daí, e .   "
 },
 {
-  "id": "example-35",
+  "id": "example-42",
   "level": "2",
-  "url": "section-6.html#example-35",
+  "url": "section-6.html#example-42",
   "type": "Exemplo",
   "number": "3.2.14",
   "title": "",
@@ -811,36 +883,36 @@ var ptx_lunr_docs = [
   "body": " A soma dos primeiros termos de uma progressão geométrica de razão , é     . Multiplicando por , obtemos . Subtraindo, temos , isto é, e finalmente,    "
 },
 {
-  "id": "example-36",
+  "id": "example-43",
   "level": "2",
-  "url": "section-6.html#example-36",
+  "url": "section-6.html#example-43",
   "type": "Exemplo",
   "number": "3.2.16",
   "title": "",
   "body": " Diz a lenda que o inventor do xadrez pediu como recompensa 1 grão de trigo pela primeira casa, 2 grão pela segunda casa, 4 pela terceira casa e assim por diante, sempre dobrando a quantidade a cada casa nova. Como o tabuleiro de xadrez tem 64 casas, o número de grãos pedidos pelo inventor do jogo é a soma dos 64 primeiros termos da progressão geométrica O valor dessa soma é Calculando, obtemos o valor:   "
 },
 {
-  "id": "remark-20",
+  "id": "remark-21",
   "level": "2",
-  "url": "section-6.html#remark-20",
+  "url": "section-6.html#remark-21",
   "type": "Nota",
   "number": "3.2.17",
   "title": "",
   "body": " Nas progressões geométricas em que , a soma dos primeiros termos tem um limite finito quando . Como nesse caso , temos   "
 },
 {
-  "id": "example-37",
+  "id": "example-44",
   "level": "2",
-  "url": "section-6.html#example-37",
+  "url": "section-6.html#example-44",
   "type": "Exemplo",
   "number": "3.2.18",
   "title": "",
   "body": " Calcule o limite da soma da progressão geométrica    Temos    "
 },
 {
-  "id": "remark-21",
+  "id": "remark-22",
   "level": "2",
-  "url": "section-6.html#remark-21",
+  "url": "section-6.html#remark-22",
   "type": "Nota",
   "number": "3.2.19",
   "title": "",
@@ -856,9 +928,9 @@ var ptx_lunr_docs = [
   "body": " (Somação por Partes) Sejam e sequências numéricas. Então,    Temos Daí, Somando, obtemos a fórmula.   "
 },
 {
-  "id": "example-38",
+  "id": "example-45",
   "level": "2",
-  "url": "section-6.html#example-38",
+  "url": "section-6.html#example-45",
   "type": "Exemplo",
   "number": "3.2.21",
   "title": "",
@@ -910,18 +982,18 @@ var ptx_lunr_docs = [
   "body": " A sequência , dita de Fibonacci, cujos termos são e na qual cada termo é a soma dos dois imediatamente anteriores, é definida por   "
 },
 {
-  "id": "remark-22",
+  "id": "remark-23",
   "level": "2",
-  "url": "section-7.html#remark-22",
+  "url": "section-7.html#remark-23",
   "type": "Nota",
   "number": "4.1.5",
   "title": "",
   "body": " Observe que uma recorrência por si só, não define uma sequência. Para que a sequência fique perfeitamente determinada é necessário também o conhecimento dos primeiros termos.  Observe que, no , no e no , temos recorrências de primeira ordem , isto é, cada termo é expresso em função do antecessor imediato, e que, no , temos uma recorrência de segunda ordem , ou seja, cada termo é expresso em função dos dois antecessores imediatos.  "
 },
 {
-  "id": "example-43",
+  "id": "example-50",
   "level": "2",
-  "url": "section-7.html#example-43",
+  "url": "section-7.html#example-50",
   "type": "Exemplo",
   "number": "4.1.6",
   "title": "",
@@ -955,18 +1027,18 @@ var ptx_lunr_docs = [
   "body": "Uma recorrência de primeira ordem expressa em função de . Ela é dita linear se, e somente se, essa função for do primeiro grau. "
 },
 {
-  "id": "example-45",
+  "id": "example-52",
   "level": "2",
-  "url": "section-8.html#example-45",
+  "url": "section-8.html#example-52",
   "type": "Exemplo",
   "number": "4.2.2",
   "title": "",
   "body": " As recorrências e são lineares e a recorrência não é linear. As duas últimas são ditas homogêneas, por não possuírem termo independente de .  "
 },
 {
-  "id": "example-46",
+  "id": "example-53",
   "level": "2",
-  "url": "section-8.html#example-46",
+  "url": "section-8.html#example-53",
   "type": "Exemplo",
   "number": "4.2.3",
   "title": "",
@@ -982,27 +1054,27 @@ var ptx_lunr_docs = [
   "body": " Resolva a recorrência    Temos Daí, multiplicando, obtemos Como não foi definido o valor de , há uma infinidade de soluções para a recorrência, na qual, é uma constante arbitrária.   "
 },
 {
-  "id": "remark-23",
+  "id": "remark-24",
   "level": "2",
-  "url": "section-8.html#remark-23",
+  "url": "section-8.html#remark-24",
   "type": "Nota",
   "number": "4.2.5",
   "title": "",
   "body": " As recorrências lineares não-homogêneas de primeira ordem que mais facilmente se resolvem são as da forma .  Com efeito, temos Somando, obtemos   "
 },
 {
-  "id": "example-48",
+  "id": "example-55",
   "level": "2",
-  "url": "section-8.html#example-48",
+  "url": "section-8.html#example-55",
   "type": "Exemplo",
   "number": "4.2.6",
   "title": "",
   "body": " Resolva a recorrência    Temos Somando, resulta    "
 },
 {
-  "id": "example-49",
+  "id": "example-56",
   "level": "2",
-  "url": "section-8.html#example-49",
+  "url": "section-8.html#example-56",
   "type": "Exemplo",
   "number": "4.2.7",
   "title": "",
@@ -1018,9 +1090,9 @@ var ptx_lunr_docs = [
   "body": " Se é uma solução não nula da recorrência então a substituição transforma a recorrência em    A substituição transforma Mas, , pois é solução de . Portanto, a equação se transforma em ou seja, .   "
 },
 {
-  "id": "example-50",
+  "id": "example-57",
   "level": "2",
-  "url": "section-8.html#example-50",
+  "url": "section-8.html#example-57",
   "type": "Exemplo",
   "number": "4.2.9",
   "title": "",
@@ -1045,9 +1117,9 @@ var ptx_lunr_docs = [
   "body": " Recorrências Lineares de Segunda Ordem  Inicialmente, trataremos das recorrências lineares de segunda ordem homogêneas com coeficientes constantes, isto é, recorrências da forma Suporemos sempre , pois se , a recorrência seria, na realidade, uma recorrência de primeira ordem.  A cada recorrência linear de segunda ordem homogênea, com coeficientes constantes, da forma acima, associaremos uma equação do segundo grau, chamada equação característica. A nossa suposição preliminar de que implica que não é raiz da equação característica.   A recorrência tem equação característica . As raízes da equação característica são:    O teorema a seguir mostra que se as raízes da equação característica são e , com , então qualquer sequência da forma é solução da recorrência, quais que sejam os valores das constantes e .   Se as raízes de são e , com , então é solução da recorrência , quaisquer que sejam os valores das constantes e .   Substituindo na recorrência , obtemos, agrupando convenientemente os termos,      A equação tem como equação característica. As raízes da equação são e . De acordo com o , todas as sequências da forma são soluções da recorrência.    Se as raízes de são e , com , então todas as soluções da recorrência são da forma e constantes.   Seja uma solução qualquer de . Determinemos constantes e que sejam soluções do sistema de equações: isto é, Isso é possível, pois , e .  Afirmamos que para todo natural, o que provará o teorema. Com efeito, seja . Mostraremos que para todo . Temos  O primeiro parênteses é igual a zero porque é solução de ; os dois últimos parênteses são iguais a zero porque e são raízes de . Então . Além disso, como e , temos . Mas, se e , então para todo .     Determine as soluções da recorrência    A equação característica , tem raízes e . De acordo com o e o , as soluções da recorrência são as sequências da forma , isto é, , na qual, e são constantes arbitrárias.     Determine o número de Fibonacci definido por    A equação característica é e suas raízes são dadas por Então, Para determinar e , podemos usar , mas é mais conveniente usar e .  Obtemos o sistema Resolvendo o sistema, encontramos . Daí:      Se as raízes da equação característica forem complexas, a solução  e constantes arbitrárias pode ser escrita de modo a evitar cálculos com números complexos. Pondo as raízes na forma trigonométrica, teremos:  Logo, É claro que e são novas constantes e a solução pode ser escrita como     A recorrência tem equação característica , cujas raízes são que são complexas de módulo e argumento principal .  A solução é    O que acontece se as raízes da equação característica forem iguais? Os teoremas a seguir respondem essa pergunta.   Se as raízes de são iguais, , então, é a solução da recorrência quaisquer que sejam os valores das contantes e .   Se as raízes são iguais, então . Substituindo na recorrência obtemos,       Se as raízes de são iguais, , então todas as soluções da recorrência são da forma , e constantes.   Seja uma solução qualquer de . Determine constantes e que sejam soluções do sistema de equações. isto é possível, pois .  Afirmamos que para todo natural, o que provará o teorema. Com efeito, seja . Mostraremos que para todo . Temos  O primeiro parênteses é igual a zero porque é a solução de ; o segundo e terceiro parênteses são iguais a zero porque é raiz de ; o quarto é igual a zero porque já que, quando , tem-se . Então, .  Além disso, como e , temos . Mas, se e , então para todo .     A recorrência tem equação característica . As raízes são e a solução da recorrência é .   O teorema a seguir mostra um processo para resolver algumas recorrências não homogêneas.   Se é uma solução da equação então a substituição transforma a equação em    Substituindo por na equação, obtemos Mas , pois é a solução da equação original. Logo, a equação se transformou em     De acordo com o , a solução de uma recorrência não homogênea é constituída de duas parcelas: uma solução qualquer da não homogênea e a solução da homogênea. A solução da homogênea, sabemos achar. Uma solução da não homogênea, procuramos por tentativas.   Determine a solução da recorrência:    A recorrência tem equação característica , cujas raízes são e . Portanto, a solução da homogênea, isto é, de é . Tentaremos agora descobrir uma solução particular, , da recorrência Ora, se substituirmos em devemos encontrar . Que tipo de função deve ter ? É bastante razoável imaginar que seja a soma de um polinômio do primeiro grau com uma exponencial de base 3. Tentaremos . Substituindo em obtemos . Logo, será solução se e . Logo, Daí, Portanto, a solução da recorrência não homogênea é      Determine a solução da recorrência:    A recorrência tem equação característica , cujas raízes são e . Portanto, a solução da homogênea, isto é, de é . Tentaremos agora descobrir uma solução particular, da recorrência . Ora, se substituirmos em devemos encontrar . Que tipo de função deve ser ? É bastante razoável imaginar que seja a soma de um polinômio constante com uma exponencial de base 2. Tentaremos . Substituindo em obtemos . Essa igualdade é impossível. A recorrência não admite solução da forma .  Parando para pensar no que aconteceu, verificamos que era óbvio que a nossa tentativa não podia dar certo. O espírito da nossa tentativa era tentar uma constante para que obtivéssemos uma constante que igualaríamos a 1 e tentar para gerar uma exponencial que pudéssemos igualar a . É claro que o termo não poderia cumprir o seu papel. é solução da homogênea (é a solução da homogênea que é obtida pondo e ) e, substituindo na equação daria zero e não uma exponencial que pudéssemos igualar a .  Vamos corrigir a nossa tentativa para . Sempre que na nossa tentativa em algum bloco não cumprir o seu papel, fazemos a correção \"aumentando o grau\", isto é, multiplicando o bloco por . Agora, substituindo na recorrência, obtemos , ou seja, Assim, obtemos a solução A solução da recorrência é a soma de com . Portanto,     Podemos verificar as soluções das recorrências usando o software Maxima da seguinite maneira:    O pode ser utilizado para resolver uma recorrência linear não homogênea de qualquer grau, toda vez que se conheça a solução geral da recorrência homogênea correspondente e uma solução particular : a solução geral da equação não homogênea é dada por . Ilustramos este fato resolvendo, de um outro modo, a recorrência linear de primeira ordem vista no .    Resolva a recorrência , usando o método sugerido pelo .   A equação homogênea correspondente é , cuja solução geral é . Para encontrar uma solução particular da recorrência, poderia parecer natural buscar uma solução da forma . Mas, como no exemplo anterior, isto não funciona, pois soluções deste tipo satisfazem a equação homogênea. Buscamos, então, uma solução da forma . Substituindo na recorrência, obtemos . Daí, obtemos , o que leva a . Logo, a solução geral da recorrência é . Finalmente, usando a condição inicial , obtemos , que fornece . Logo, a solução da recorrência é como encontrado anteriormente.    "
 },
 {
-  "id": "example-52",
+  "id": "example-59",
   "level": "2",
-  "url": "section-9.html#example-52",
+  "url": "section-9.html#example-59",
   "type": "Exemplo",
   "number": "4.3.1",
   "title": "",
@@ -1063,9 +1135,9 @@ var ptx_lunr_docs = [
   "body": " Se as raízes de são e , com , então é solução da recorrência , quaisquer que sejam os valores das constantes e .   Substituindo na recorrência , obtemos, agrupando convenientemente os termos,    "
 },
 {
-  "id": "example-53",
+  "id": "example-60",
   "level": "2",
-  "url": "section-9.html#example-53",
+  "url": "section-9.html#example-60",
   "type": "Exemplo",
   "number": "4.3.3",
   "title": "",
@@ -1081,36 +1153,36 @@ var ptx_lunr_docs = [
   "body": " Se as raízes de são e , com , então todas as soluções da recorrência são da forma e constantes.   Seja uma solução qualquer de . Determinemos constantes e que sejam soluções do sistema de equações: isto é, Isso é possível, pois , e .  Afirmamos que para todo natural, o que provará o teorema. Com efeito, seja . Mostraremos que para todo . Temos  O primeiro parênteses é igual a zero porque é solução de ; os dois últimos parênteses são iguais a zero porque e são raízes de . Então . Além disso, como e , temos . Mas, se e , então para todo .   "
 },
 {
-  "id": "example-54",
+  "id": "example-61",
   "level": "2",
-  "url": "section-9.html#example-54",
+  "url": "section-9.html#example-61",
   "type": "Exemplo",
   "number": "4.3.5",
   "title": "",
   "body": " Determine as soluções da recorrência    A equação característica , tem raízes e . De acordo com o e o , as soluções da recorrência são as sequências da forma , isto é, , na qual, e são constantes arbitrárias.   "
 },
 {
-  "id": "example-55",
+  "id": "example-62",
   "level": "2",
-  "url": "section-9.html#example-55",
+  "url": "section-9.html#example-62",
   "type": "Exemplo",
   "number": "4.3.6",
   "title": "",
   "body": " Determine o número de Fibonacci definido por    A equação característica é e suas raízes são dadas por Então, Para determinar e , podemos usar , mas é mais conveniente usar e .  Obtemos o sistema Resolvendo o sistema, encontramos . Daí:    "
 },
 {
-  "id": "remark-24",
+  "id": "remark-25",
   "level": "2",
-  "url": "section-9.html#remark-24",
+  "url": "section-9.html#remark-25",
   "type": "Nota",
   "number": "4.3.7",
   "title": "",
   "body": " Se as raízes da equação característica forem complexas, a solução  e constantes arbitrárias pode ser escrita de modo a evitar cálculos com números complexos. Pondo as raízes na forma trigonométrica, teremos:  Logo, É claro que e são novas constantes e a solução pode ser escrita como   "
 },
 {
-  "id": "example-56",
+  "id": "example-63",
   "level": "2",
-  "url": "section-9.html#example-56",
+  "url": "section-9.html#example-63",
   "type": "Exemplo",
   "number": "4.3.8",
   "title": "",
@@ -1135,9 +1207,9 @@ var ptx_lunr_docs = [
   "body": " Se as raízes de são iguais, , então todas as soluções da recorrência são da forma , e constantes.   Seja uma solução qualquer de . Determine constantes e que sejam soluções do sistema de equações. isto é possível, pois .  Afirmamos que para todo natural, o que provará o teorema. Com efeito, seja . Mostraremos que para todo . Temos  O primeiro parênteses é igual a zero porque é a solução de ; o segundo e terceiro parênteses são iguais a zero porque é raiz de ; o quarto é igual a zero porque já que, quando , tem-se . Então, .  Além disso, como e , temos . Mas, se e , então para todo .   "
 },
 {
-  "id": "example-57",
+  "id": "example-64",
   "level": "2",
-  "url": "section-9.html#example-57",
+  "url": "section-9.html#example-64",
   "type": "Exemplo",
   "number": "4.3.11",
   "title": "",
@@ -1153,36 +1225,36 @@ var ptx_lunr_docs = [
   "body": " Se é uma solução da equação então a substituição transforma a equação em    Substituindo por na equação, obtemos Mas , pois é a solução da equação original. Logo, a equação se transformou em    "
 },
 {
-  "id": "example-58",
+  "id": "example-65",
   "level": "2",
-  "url": "section-9.html#example-58",
+  "url": "section-9.html#example-65",
   "type": "Exemplo",
   "number": "4.3.13",
   "title": "",
   "body": " Determine a solução da recorrência:    A recorrência tem equação característica , cujas raízes são e . Portanto, a solução da homogênea, isto é, de é . Tentaremos agora descobrir uma solução particular, , da recorrência Ora, se substituirmos em devemos encontrar . Que tipo de função deve ter ? É bastante razoável imaginar que seja a soma de um polinômio do primeiro grau com uma exponencial de base 3. Tentaremos . Substituindo em obtemos . Logo, será solução se e . Logo, Daí, Portanto, a solução da recorrência não homogênea é    "
 },
 {
-  "id": "example-59",
+  "id": "example-66",
   "level": "2",
-  "url": "section-9.html#example-59",
+  "url": "section-9.html#example-66",
   "type": "Exemplo",
   "number": "4.3.14",
   "title": "",
   "body": " Determine a solução da recorrência:    A recorrência tem equação característica , cujas raízes são e . Portanto, a solução da homogênea, isto é, de é . Tentaremos agora descobrir uma solução particular, da recorrência . Ora, se substituirmos em devemos encontrar . Que tipo de função deve ser ? É bastante razoável imaginar que seja a soma de um polinômio constante com uma exponencial de base 2. Tentaremos . Substituindo em obtemos . Essa igualdade é impossível. A recorrência não admite solução da forma .  Parando para pensar no que aconteceu, verificamos que era óbvio que a nossa tentativa não podia dar certo. O espírito da nossa tentativa era tentar uma constante para que obtivéssemos uma constante que igualaríamos a 1 e tentar para gerar uma exponencial que pudéssemos igualar a . É claro que o termo não poderia cumprir o seu papel. é solução da homogênea (é a solução da homogênea que é obtida pondo e ) e, substituindo na equação daria zero e não uma exponencial que pudéssemos igualar a .  Vamos corrigir a nossa tentativa para . Sempre que na nossa tentativa em algum bloco não cumprir o seu papel, fazemos a correção \"aumentando o grau\", isto é, multiplicando o bloco por . Agora, substituindo na recorrência, obtemos , ou seja, Assim, obtemos a solução A solução da recorrência é a soma de com . Portanto,    "
 },
 {
-  "id": "remark-25",
+  "id": "remark-26",
   "level": "2",
-  "url": "section-9.html#remark-25",
+  "url": "section-9.html#remark-26",
   "type": "Nota",
   "number": "4.3.15",
   "title": "",
   "body": " O pode ser utilizado para resolver uma recorrência linear não homogênea de qualquer grau, toda vez que se conheça a solução geral da recorrência homogênea correspondente e uma solução particular : a solução geral da equação não homogênea é dada por . Ilustramos este fato resolvendo, de um outro modo, a recorrência linear de primeira ordem vista no .  "
 },
 {
-  "id": "example-60",
+  "id": "example-67",
   "level": "2",
-  "url": "section-9.html#example-60",
+  "url": "section-9.html#example-67",
   "type": "Exemplo",
   "number": "4.3.16",
   "title": "",
@@ -1207,9 +1279,9 @@ var ptx_lunr_docs = [
   "body": " Alguém que dispõe de um capital (chamado de principal ), empresta-o a outrem por um certo período de tempo, e após esse período, recebe o seu capital de volta, acrescido de uma remuneração pelo empréstimo. Essa remuneração é chamada de juro . A soma é chamada de montante e será representada por . A razão que é a taxa de crescimento do capital, será sempre referida ao período da operação e chamada de taxa de juros .  "
 },
 {
-  "id": "example-61",
+  "id": "example-68",
   "level": "2",
-  "url": "section-10.html#example-61",
+  "url": "section-10.html#example-68",
   "type": "Exemplo",
   "number": "5.1.2",
   "title": "",
@@ -1225,63 +1297,63 @@ var ptx_lunr_docs = [
   "body": " No regime de juros compostos de taxa , um principal transforma-se, depois de períodos de tempo, em um montante .   Basta observar que os valores do capital crescem a uma taxa constante e, portanto, formam uma progressão geométrica de razão .   "
 },
 {
-  "id": "example-62",
+  "id": "example-69",
   "level": "2",
-  "url": "section-10.html#example-62",
+  "url": "section-10.html#example-69",
   "type": "Exemplo",
   "number": "5.1.4",
   "title": "",
   "body": " Pedro investe 150 reais a juros de ao mês. Qual será o montante de Pedro três meses depois? E qual o montante de Pedro 10 anos depois?     reais  reais. Isso pode ser calculado no Sage da seguinte maneira:      "
 },
 {
-  "id": "remark-26",
+  "id": "remark-27",
   "level": "2",
-  "url": "section-10.html#remark-26",
+  "url": "section-10.html#remark-27",
   "type": "Nota",
   "number": "5.1.5",
   "title": "",
   "body": " No fundo, só há um único problema de Matemática Financeira: deslocar quantias no tempo.  Outro modo de ler o , é que uma quantia, hoje igual a , transforma-se-á, depois de períodos de tempo, em uma quantia igual a . Isto é, uma quantia, cujo valor atual é , equivalerá no futuro, depois de períodos de tempo, a .  Essa é a fórmula fundamental da equivalência de capitais, para obter o valor futuro, basta multiplicar o atual por , e para obter o valor atual, sabendo o valor futuro, basta dividir o valor futuro por , ou seja:  ,     "
 },
 {
-  "id": "example-63",
+  "id": "example-70",
   "level": "2",
-  "url": "section-10.html#example-63",
+  "url": "section-10.html#example-70",
   "type": "Exemplo",
   "number": "5.1.6",
   "title": "",
   "body": " Pedro tomou um emprétimo de reais, a juros de ao mês. Dois meses após, Pedro pagou reais e, um mês após esse pagamento, Pedro liquidou seu débito. Qual o valor desse último pagamento?   Os esquemas de pagamento abaixo são equivalentes. Logo, 300 reais, na data 0, têm o mesmo valor de 150 reais dois meses após, mais um pagamento igual a , na data 3.  Esquemas de pagamento.   Portanto, trazendo todos os valores para o valor atual, ficamos com E resolvendo a equação, obtemos .    "
 },
 {
-  "id": "example-64",
+  "id": "example-71",
   "level": "2",
-  "url": "section-10.html#example-64",
+  "url": "section-10.html#example-71",
   "type": "Exemplo",
   "number": "5.1.8",
   "title": "",
   "body": " Pedro tem duas opções de pagamento na compra de um televisor:  três prestações mensais de R$ 160,00 cada;  sete prestações mensais de R$ 70,00 cada.  Em ambos os casos, a primeira prestação é paga no ato da compra. Se o dinheiro vale 2% ao mês para Pedro, qual a melhor opção que Pedro possui?   Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época, por exemplo na época 2. Os esquemas de pagamentos são:  Esquemas de pagamento.   Para comparar, determinaremos o valor dos dois conjuntos de pagamentos na mesma época. Por exemplo, na época 0, temos, Pedro deve preferir o pagamento em sete prestações.  É um absurdo que muitas pessoas razoavelmente instruídas achem que o primeiro esquema é melhor pois o total pago é de R$ 480,00 ao passo que no segundo esquema o total pago é de R$ 490,00.  O cálculo dos valores de e podem ser conferidos no Sage da seguinte maneira:    "
 },
 {
-  "id": "example-65",
+  "id": "example-72",
   "level": "2",
-  "url": "section-10.html#example-65",
+  "url": "section-10.html#example-72",
   "type": "Exemplo",
   "number": "5.1.10",
   "title": "",
   "body": " Pedro tem três opções de pagamento na compra de vestuário.  à vista, com 30% de desconto;  em duas prestações mensais iguais, sem desconto, vencendo a primeira um mês após a compra;  em três prestações mensais iguais, sem desconto, vencendo a primeira no ato da compra.  Qual a melhor opção para Pedro, se o dinheiro vale, para ele, 25% ao mês?   Fixando o preço do bem em 30, temos os três esquemas abaixo  Esquemas de pagamento.   Comparando os valores, por exemplo, na época 0, obtemos: A melhor alternativa é a primeira e a pior é a terceira.  O cálculo dos valores de e podem ser conferidos no Sage da seguinte maneira:    "
 },
 {
-  "id": "example-66",
+  "id": "example-73",
   "level": "2",
-  "url": "section-10.html#example-66",
+  "url": "section-10.html#example-73",
   "type": "Exemplo",
   "number": "5.1.12",
   "title": "",
   "body": " Uma loja oferece duas opções de pagamento:  à vista, com 30% de desconto;  em duas prestações mensais iguais, sem desconto, a primeira prestação sendo paga no ato da compra.  Qual a taxa mensal dos juros embutidos nas vendas a prazo?   Fixando o valor do bem em 100, temos os esquemas de pagamentos abaixo:  Esquemas de pagamento.   Igualando os valores, por exemplo, na época 0 (a data usada nessas comparações é chamada de data focal ), obtemos Daí, . A loja cobra 150% ao mês nas vendas a prazo.  O cálculo dos valores de e podem ser conferidos no Sage da seguinte maneira:    "
 },
 {
-  "id": "example-67",
+  "id": "example-74",
   "level": "2",
-  "url": "section-10.html#example-67",
+  "url": "section-10.html#example-74",
   "type": "Exemplo",
   "number": "5.1.14",
   "title": "",
@@ -1297,18 +1369,18 @@ var ptx_lunr_docs = [
   "body": " A Fórmula das Taxas Equivalentes   Se a taxa de juros relativamente a um determinado período de tempo é igual a , a taxa de juros relativamente a períodos de tempo é , tal que, .    Se a taxa de juros ao mês é de 4%. Qual a taxa de juros anual?    Daí,     Um erro muito comum é achar que juros de 4% ao mês equivalem a juros anuais de ao ano.   Taxas como 4% ao mês e 48% ao ano são chamadas de taxas proporcionais , pois a razão entre elas é igual à razão dos períodos aos quais elas se referem.  Uma frase como \"48% ao ano, com capitalização mensal \" significa que a taxa usada na operação não é a taxa de 48% anunciada e sim uma taxa mensal que lhe é proporcional, ou seja, 4% ano mês.  A taxa de 48% ao ano é chamada de taxa nominal , enquanto que a taxa de 60% ao ano é chamada de taxa efetiva .    Verônica investe seu dinheiro a juros de 6% ao ano com capitalização mensal. Qual a taxa anual de juros à qual está investido o capital de Verônica?   O dinheiro de Verônica está investido a juros de taxa ao mês. A taxa anual equivalente é , tal que, . Daí, ao ano. A taxa de 6% ao ano é nominal e a taxa de 6,17% ao ano é efetiva.    "
 },
 {
-  "id": "remark-27",
+  "id": "remark-28",
   "level": "2",
-  "url": "section-11.html#remark-27",
+  "url": "section-11.html#remark-28",
   "type": "Nota",
   "number": "5.2.1",
   "title": "",
   "body": " Se a taxa de juros relativamente a um determinado período de tempo é igual a , a taxa de juros relativamente a períodos de tempo é , tal que, .  "
 },
 {
-  "id": "example-68",
+  "id": "example-75",
   "level": "2",
-  "url": "section-11.html#example-68",
+  "url": "section-11.html#example-75",
   "type": "Exemplo",
   "number": "5.2.2",
   "title": "",
@@ -1324,9 +1396,9 @@ var ptx_lunr_docs = [
   "body": " Taxas como 4% ao mês e 48% ao ano são chamadas de taxas proporcionais , pois a razão entre elas é igual à razão dos períodos aos quais elas se referem.  Uma frase como \"48% ao ano, com capitalização mensal \" significa que a taxa usada na operação não é a taxa de 48% anunciada e sim uma taxa mensal que lhe é proporcional, ou seja, 4% ano mês.  A taxa de 48% ao ano é chamada de taxa nominal , enquanto que a taxa de 60% ao ano é chamada de taxa efetiva .  "
 },
 {
-  "id": "example-69",
+  "id": "example-76",
   "level": "2",
-  "url": "section-11.html#example-69",
+  "url": "section-11.html#example-76",
   "type": "Exemplo",
   "number": "5.2.4",
   "title": "",
@@ -1360,36 +1432,36 @@ var ptx_lunr_docs = [
   "body": " O valor de uma perpetuidade de termos iguais a , um tempo antes do primeiro pagamento, é, sendo a taxa de juros, igual a    Basta fazer tender para infinito no .   "
 },
 {
-  "id": "example-70",
+  "id": "example-77",
   "level": "2",
-  "url": "section-12.html#example-70",
+  "url": "section-12.html#example-77",
   "type": "Exemplo",
   "number": "5.3.4",
   "title": "",
   "body": " Um bem, cujo preço é R$ 120,00, é vendido em 8 prestações mensais iguais, a primeira sendo paga um mês após a compra. Se os juros são de 8% ao mês, determine o valor das prestações.   Um pequeno comentário: essas prestações são ditas postecipadas , pois a primeira prestação só é paga um tempo depois da compra.   Pagamento em 8 parcelas.    Igualando os valores na época (essa é a escolha natural da data de comparação: um tempo antes do primeiro termo da série), obtemos: As prestações são de R$ 20,88.   "
 },
 {
-  "id": "example-71",
+  "id": "example-78",
   "level": "2",
-  "url": "section-12.html#example-71",
+  "url": "section-12.html#example-78",
   "type": "Exemplo",
   "number": "5.3.6",
   "title": "",
   "body": " Um bem, cujo preço à vista é R$ 120,00, é vendido em 6 prestações mensais iguais, antecipadas (isto é, a primeira é paga no ato da compra). Se os juros são de 10% ao mês, determine o valor das prestações.   Igualando os valores na época (essa escolha, que pode parecer exótica, é muito conveniente pois dispomos de uma fórmula que calcula diretamente o valor da série nessa época), obtemos:    "
 },
 {
-  "id": "example-72",
+  "id": "example-79",
   "level": "2",
-  "url": "section-12.html#example-72",
+  "url": "section-12.html#example-79",
   "type": "Exemplo",
   "number": "5.3.7",
   "title": "",
   "body": " Se um imóvel vale 400 mil reais  Se o dinheiro vale 1% ao mês, por quanto deve ser alugado o imóvel?  Se o dinheiro vale 0,5% ao mês, por quanto deve ser alugado o imóvel?     Quando você aluga um imóvel, você cede a posso do imóvel em troca de uma renda perpétua cujos termos são iguais ao valor do aluguel. Então o valor do imóvel deve ser igual ao valor do conjunto dos aluguéis. De acordo com o .   item a)  Portanto,    item b)  Portanto,    "
 },
 {
-  "id": "example-73",
+  "id": "example-80",
   "level": "2",
-  "url": "section-12.html#example-73",
+  "url": "section-12.html#example-80",
   "type": "Exemplo",
   "number": "5.3.8",
   "title": "",
@@ -1405,27 +1477,27 @@ var ptx_lunr_docs = [
   "body": " Sistemas de Amortização  Quando um banco empresta dinheiro (crédito pessoal ou desconto de duplicatas), o tomador do empréstimo emite uma nota promissória, que é um papel no qual o tomador se compromete a pagar ao banco, em uma data fixada, uma certa quantia, que é chamada de valor de face da promissória.  O banco então desconta a promissória para o cliente, isto é, recebe a promissória de valor de face e entrega ao cliente uma quantia (menor que , naturalmente). A diferença é chamada de desconto.  Os bancos efetuam o desconto de acordo com a fórmula , onde é uma taxa fixada pelo banco e chamada de taxa de desconto bancário (ou taxa de desconto simples por fora) e é o prazo da operação, medido na unidade de tempo a que se refere a taxa.   Pedro desconta uma promissória de valor 100, com vencimento em 60 dias, em um banco cuja taxa de desconto é de 12% ao mês.  Quanto Pedro receberá?  Qual a taxa mensal de juros que Pedro está pagando?     item a) Ora, Logo, Pedro receberá agora 76, para pagar 100 em 60 dias.  item b) Se é a taxa mensal de juros à qual cresce a dívida de Pedro, temos . Daí, .  Observe que anunciar a taxa de desconto e não a taxa de juros é um modo sutil de fazer crer aos mais ingênuos estarem eles pagando juros menores que os que realmente lhes estão sendo cobrados.    Quando se paga parceladamente um débito, cada pagamento efetuado tem dupla finalidade. Uma parte do pagamento quita os juros e outra parte amortiza (abate) a dívida.   Pedro tomou um empréstimo de 100, a juros mensais de taxa 10%. Quitou-o em três meses, pagando a cada mês os juros devidos e amortizando 30% da dívida no primeiro mês e 30% e 40% nos dois meses seguintes.  Na planilha abaixo, e são, respectivamente, a parcela de amortização, a parcela de juros, a prestação e o estado da dívida (isto é, o valor da dívida após o pagamento da prestação) na época .             0  -  -  -  100    1  40  30  10  70    2  37  30  7  40    3  44  40  4  -     Para facilitar a compreensão, olhe cada linha na ordem e .   Os sistemas usuais de amortização são o sistema de amortização constante (SAC) e o sistema francês de amortização, também chamado de Tabela Price (Richard Price foi um economista inglês). O sistema francês é caracterizado por prestações constantes.   Uma dívida de 100 é paga, com juros de 15% ao mês, em 5 meses, pelo SAC. Faça a planilha de amortização.   Como as amortizações são iguais, cada amortização será de da dívida inicial. A planilha é, portanto:          No SAC, sendo o número de pagamentos e a taxa de juros, temos    Se a dívida é amortizada em quotas iguais, cada quota é igual a O estado da dívida, após amortizações, é As duas últimas fórmulas são óbvias.     Uma dívida de 150 é paga, em 4 meses, pelo sistema francês, com juros de 8% ao mês. Faça a planilha de amortização.   No sistema francês, as prestações são constantes. Pelo , cada prestação vale           No sistema francês de amortização, sendo o número de pagamentos e a taxa de juros, temos       A primeira fórmula é simplesmente o e as duas últimas fórmulas são óbvias. Quanto à segunda fórmula, observe que é a dívida que será liquidada, postecipadamente, por pagamentos sucessivos a . Portanto, novamente pelo , temos Substituindo o valor de , obtemos a segunda fórmula.     Em um mês cuja inflação foi de 25%, Paulo Jorge investiu seu capital a juros de 30% ao mês. Evidentemente, isso não significa que Paulo Jorge tenha aumentado seu poder de compra em 30%, pois, embora a quantidade de reais de Paulo Jorge tenha crescido 30%, o valor do real sofreu uma redução. Dizemos nesse caso que 30% ao mês é a taxa nominal de juros mensais de Paulo Jorge.  Suponhamos que, no início do referido mês, o capital de Paulo Jorge pudesse comprar artigos de preço unitário igual a . No fim do mês, o capital 1,3 e o preço unitário passou a ser 1,25 . Logo, Paulo Jorge poderá agora comprar O poder de compra de Paulo Jorge aumentou de 4% nesse mês.  Essa taxa de 4% ao mês, à qual cresceu o poder de compra de Paulo Jorge, é chamada de taxa real de juros .    Em algumas situações (prazos pequenos, juros de mora) são usados juros simples e não juros compostos. No regime de juros simples, os juros em cada época são calculados sobre o principal e não sobre o montante da época anterior. Por exemplo, um principal igual a 100, a juros simples de 10% ao mês evolui de acordo com a tabela abaixo:                         Não há dificuldade em calcular juros simples pois a taxa incide sempre sobre o capital inicial. No nosso exemplo, os juros são sempre de 10% de 100, ou seja, 10.  É claro então que, , o que faz com que os valores de formem uma progressão aritmética.   Comparando Juros.    Olhando para os gráficos de evolução de um mesmo principal a juros de taxa , a juros simples e a juros compostos, observamos que o montante a juros compostos é superior ao montante a juros simples, exceto se o prazo for menor que 1. É por isso que juros simples só são utilizados em cobranças de juros em prazos inferiores ao prazo ao qual se refere a taxa de juros combinada.   "
 },
 {
-  "id": "example-74",
+  "id": "example-81",
   "level": "2",
-  "url": "section-13.html#example-74",
+  "url": "section-13.html#example-81",
   "type": "Exemplo",
   "number": "5.4.1",
   "title": "",
   "body": " Pedro desconta uma promissória de valor 100, com vencimento em 60 dias, em um banco cuja taxa de desconto é de 12% ao mês.  Quanto Pedro receberá?  Qual a taxa mensal de juros que Pedro está pagando?     item a) Ora, Logo, Pedro receberá agora 76, para pagar 100 em 60 dias.  item b) Se é a taxa mensal de juros à qual cresce a dívida de Pedro, temos . Daí, .  Observe que anunciar a taxa de desconto e não a taxa de juros é um modo sutil de fazer crer aos mais ingênuos estarem eles pagando juros menores que os que realmente lhes estão sendo cobrados.   "
 },
 {
-  "id": "example-75",
+  "id": "example-82",
   "level": "2",
-  "url": "section-13.html#example-75",
+  "url": "section-13.html#example-82",
   "type": "Exemplo",
   "number": "5.4.2",
   "title": "",
   "body": " Pedro tomou um empréstimo de 100, a juros mensais de taxa 10%. Quitou-o em três meses, pagando a cada mês os juros devidos e amortizando 30% da dívida no primeiro mês e 30% e 40% nos dois meses seguintes.  Na planilha abaixo, e são, respectivamente, a parcela de amortização, a parcela de juros, a prestação e o estado da dívida (isto é, o valor da dívida após o pagamento da prestação) na época .             0  -  -  -  100    1  40  30  10  70    2  37  30  7  40    3  44  40  4  -     Para facilitar a compreensão, olhe cada linha na ordem e .  "
 },
 {
-  "id": "example-76",
+  "id": "example-83",
   "level": "2",
-  "url": "section-13.html#example-76",
+  "url": "section-13.html#example-83",
   "type": "Exemplo",
   "number": "5.4.4",
   "title": "",
@@ -1441,9 +1513,9 @@ var ptx_lunr_docs = [
   "body": " No SAC, sendo o número de pagamentos e a taxa de juros, temos    Se a dívida é amortizada em quotas iguais, cada quota é igual a O estado da dívida, após amortizações, é As duas últimas fórmulas são óbvias.   "
 },
 {
-  "id": "example-77",
+  "id": "example-84",
   "level": "2",
-  "url": "section-13.html#example-77",
+  "url": "section-13.html#example-84",
   "type": "Exemplo",
   "number": "5.4.8",
   "title": "",
@@ -1459,18 +1531,18 @@ var ptx_lunr_docs = [
   "body": " No sistema francês de amortização, sendo o número de pagamentos e a taxa de juros, temos       A primeira fórmula é simplesmente o e as duas últimas fórmulas são óbvias. Quanto à segunda fórmula, observe que é a dívida que será liquidada, postecipadamente, por pagamentos sucessivos a . Portanto, novamente pelo , temos Substituindo o valor de , obtemos a segunda fórmula.   "
 },
 {
-  "id": "example-78",
+  "id": "example-85",
   "level": "2",
-  "url": "section-13.html#example-78",
+  "url": "section-13.html#example-85",
   "type": "Exemplo",
   "number": "5.4.12",
   "title": "",
   "body": " Em um mês cuja inflação foi de 25%, Paulo Jorge investiu seu capital a juros de 30% ao mês. Evidentemente, isso não significa que Paulo Jorge tenha aumentado seu poder de compra em 30%, pois, embora a quantidade de reais de Paulo Jorge tenha crescido 30%, o valor do real sofreu uma redução. Dizemos nesse caso que 30% ao mês é a taxa nominal de juros mensais de Paulo Jorge.  Suponhamos que, no início do referido mês, o capital de Paulo Jorge pudesse comprar artigos de preço unitário igual a . No fim do mês, o capital 1,3 e o preço unitário passou a ser 1,25 . Logo, Paulo Jorge poderá agora comprar O poder de compra de Paulo Jorge aumentou de 4% nesse mês.  Essa taxa de 4% ao mês, à qual cresceu o poder de compra de Paulo Jorge, é chamada de taxa real de juros .  "
 },
 {
-  "id": "example-79",
+  "id": "example-86",
   "level": "2",
-  "url": "section-13.html#example-79",
+  "url": "section-13.html#example-86",
   "type": "Exemplo",
   "number": "5.4.13",
   "title": "",
@@ -1495,9 +1567,9 @@ var ptx_lunr_docs = [
   "body": "  Mostrar as principais definições da teoria dos conjuntos.  Mostrar os principais resultados da teoria dos conjuntos.   "
 },
 {
-  "id": "p-358",
+  "id": "p-376",
   "level": "2",
-  "url": "section-14.html#p-358",
+  "url": "section-14.html#p-376",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -1603,9 +1675,9 @@ var ptx_lunr_docs = [
   "body": "  Definir o Princípio Aditivo.  Definir o Princípio Multiplicativo.  Exemplificar.   "
 },
 {
-  "id": "example-80",
+  "id": "example-87",
   "level": "2",
-  "url": "section-note-on-proofs.html#example-80",
+  "url": "section-note-on-proofs.html#example-87",
   "type": "Exemplo",
   "number": "6.2.1",
   "title": "",
@@ -1639,9 +1711,9 @@ var ptx_lunr_docs = [
   "body": " Abaixo, clique em \"Evaluate (Sage)\" para obter a lista com todos os elementos da união dos conjuntos e .   O comando set(['a', 'b', 'c']) transforma a lista ['a', 'b', 'c'] em conjunto, ou seja, mesmo se tiverem elementos repetidos na lista, o método set remove as repetições e retorna um conjunto. Assim é possível usar métodos específicos para conjuntos, como união, interseção, diferença e diferença simétrica.  "
 },
 {
-  "id": "example-81",
+  "id": "example-88",
   "level": "2",
-  "url": "section-note-on-proofs.html#example-81",
+  "url": "section-note-on-proofs.html#example-88",
   "type": "Exemplo",
   "number": "6.2.5",
   "title": "",
@@ -1675,27 +1747,27 @@ var ptx_lunr_docs = [
   "body": " Abaixo, clique em \"Evaluate (Sage)\" para obter a lista com todos os elementos do produto cartesiano .   "
 },
 {
-  "id": "example-82",
+  "id": "example-89",
   "level": "2",
-  "url": "section-note-on-proofs.html#example-82",
+  "url": "section-note-on-proofs.html#example-89",
   "type": "Exemplo",
   "number": "6.2.9",
   "title": "",
   "body": " A placa dos automóveis eram formadas por 3 letras (K, Y e W inclusive) seguidas por quatro algarismos. Quantas placas podiam ser formadas?   Cada letra pode ser escolhida de 26 modos e cada algarismo de 10 modos distintos. A resposta é    "
 },
 {
-  "id": "example-83",
+  "id": "example-90",
   "level": "2",
-  "url": "section-note-on-proofs.html#example-83",
+  "url": "section-note-on-proofs.html#example-90",
   "type": "Exemplo",
   "number": "6.2.10",
   "title": "",
   "body": " Sejam e dois conjuntos com e .  Quantas são as funções ?  Quantas são as funções injetoras ?     Solução 1. Devemos escolher a imagem de cada elemento de . Existem modos de escolher a imagem do \"primeiro\" elemento de , modos de escolher a imagem do \"segundo\" elemento de  até modos de escolher a imagem do \"m-ésimo\" elemento de . Pelo princípio multiplicativo, temos 2. Primeiramente, para existir solução precisamos que , pois a função precisa ser injetora. Neste caso, existem modos de escolher a imagem do \"primeiro\" elemento de , modos de escolher a imagem do \"segundo\" elemento de  até modos de escolher a imagem do \"m-ésimo\" elemento de . A resposta é    "
 },
 {
-  "id": "example-84",
+  "id": "example-91",
   "level": "2",
-  "url": "section-note-on-proofs.html#example-84",
+  "url": "section-note-on-proofs.html#example-91",
   "type": "Exemplo",
   "number": "6.2.11",
   "title": "",
@@ -1819,9 +1891,9 @@ var ptx_lunr_docs = [
   "body": "  Nota histórica  Definir Permutação Simples.  Mostrar como obter a lista com todas as permutações de elementos distintos no Sage.  Mostrar como calcular o número de permutações com elementos distintos.  Exemplificar.   "
 },
 {
-  "id": "p-454",
+  "id": "p-472",
   "level": "2",
-  "url": "section-permutacoes-simples.html#p-454",
+  "url": "section-permutacoes-simples.html#p-472",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -1837,9 +1909,9 @@ var ptx_lunr_docs = [
   "body": " Permutar uma lista de objetos é mudar a ordem em que eles estavam. O número de permutações de objetos distintos , é o número total de maneiras de ordenar estes objetos.  Para descrever, o número de permutações de objetos distintos, usamos as notações:   "
 },
 {
-  "id": "example-85",
+  "id": "example-92",
   "level": "2",
-  "url": "section-permutacoes-simples.html#example-85",
+  "url": "section-permutacoes-simples.html#example-92",
   "type": "Exemplo",
   "number": "6.3.2",
   "title": "",
@@ -1864,9 +1936,9 @@ var ptx_lunr_docs = [
   "body": " O número de permutações de objetos distintos é    Pelo princípio multiplicativo, temos modos de escolher o elemento que ocupará o primeiro lugar, uma vez tomada essa decisão, teremos modos de escolher o elemento que ocupará o segundo lugar, e assim por diante, até que haja apenas um único modo de escolher o elemento que ocupará o último lugar. Portanto   "
 },
 {
-  "id": "remark-28",
+  "id": "remark-29",
   "level": "2",
-  "url": "section-permutacoes-simples.html#remark-28",
+  "url": "section-permutacoes-simples.html#remark-29",
   "type": "Nota",
   "number": "6.3.5",
   "title": "",
@@ -1891,27 +1963,27 @@ var ptx_lunr_docs = [
   "body": " Um anagrama é uma palavra ou expressão elaborada usando exatamente as mesmas letras que a palavra ou expressão original. Por exemplo, a palavra ROMA é um anagrama da palavra AMOR e vice-versa.  Nos dicionários, um anagrama é a transposição das letras de uma palavra (ou frase) para formar outra palavra (ou frase). Observe que pela definição do dicionário, só seria contado os casos em que a permutação das letras formassem outra palavra (ou frase). No entanto, em matemática, qualquer permutação das letras de uma palavra é considerado como anagrama.  "
 },
 {
-  "id": "example-86",
+  "id": "example-93",
   "level": "2",
-  "url": "section-permutacoes-simples.html#example-86",
+  "url": "section-permutacoes-simples.html#example-93",
   "type": "Exemplo",
   "number": "6.3.8",
   "title": "",
   "body": " Quantos são os anagramas da palavra SAGE?   A palavra SAGE possui quatro letras distintas, logo, o número de anagramas da palavra SAGE é    "
 },
 {
-  "id": "example-87",
+  "id": "example-94",
   "level": "2",
-  "url": "section-permutacoes-simples.html#example-87",
+  "url": "section-permutacoes-simples.html#example-94",
   "type": "Exemplo",
   "number": "6.3.9",
   "title": "",
   "body": " Quantos são os anagramas da palavra XADREZ que começam e terminam por consoante?   A consoante inicial pode ser escolhida de maneiras, uma vez feita essa escolha, a consoante final pode ser escolhida de maneiras. Restam quatro letras que podem ser ordenadas de maneiras. Pelo Princípio Multiplicativo, a resposta é     "
 },
 {
-  "id": "example-88",
+  "id": "example-95",
   "level": "2",
-  "url": "section-permutacoes-simples.html#example-88",
+  "url": "section-permutacoes-simples.html#example-95",
   "type": "Exemplo",
   "number": "6.3.10",
   "title": "",
@@ -1945,9 +2017,9 @@ var ptx_lunr_docs = [
   "body": " Um palíndromo (ou capicua ) é uma sequência de caracteres que pode ser lido da esquerda para a direita ou da direita para a esquerda, mantendo seu sentido. Esses caracteres podem ser número, palavra ou frase.  Por exemplo, , \"osso\" e \"Socorram-me, subi no ônibus em Marrocos\", são palíndromos.  "
 },
 {
-  "id": "example-90",
+  "id": "example-97",
   "level": "2",
-  "url": "section-permutacoes-simples.html#example-90",
+  "url": "section-permutacoes-simples.html#example-97",
   "type": "Exemplo",
   "number": "6.3.16",
   "title": "",
@@ -2107,9 +2179,9 @@ var ptx_lunr_docs = [
   "body": "  Definir combinação simples.  Mostrar como obter a lista com todas as combinações simples de elementos distintos, tomados a no Sage.  Mostrar como calcular o número de combinações simples de elementos distintos, tomados a .  Exemplificar.   "
 },
 {
-  "id": "p-576",
+  "id": "p-594",
   "level": "2",
-  "url": "section-combinacoes-simples.html#p-576",
+  "url": "section-combinacoes-simples.html#p-594",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -2125,9 +2197,9 @@ var ptx_lunr_docs = [
   "body": " Līlāvatī de Bhāskarācārya, traduzido para inglês por Patwardhan, Naimpally e Shyam Lal Singh.   "
 },
 {
-  "id": "example-91",
+  "id": "example-98",
   "level": "2",
-  "url": "section-combinacoes-simples.html#example-91",
+  "url": "section-combinacoes-simples.html#example-98",
   "type": "Exemplo",
   "number": "6.4.2",
   "title": "",
@@ -2170,27 +2242,27 @@ var ptx_lunr_docs = [
   "body": " pode ser calculado no Sage com o código binomial(n, p). Para abreviar vamos usar C(n, p) = binomial(n, p). Teste o código abaixo, para o caso , .   "
 },
 {
-  "id": "example-92",
+  "id": "example-99",
   "level": "2",
-  "url": "section-combinacoes-simples.html#example-92",
+  "url": "section-combinacoes-simples.html#example-99",
   "type": "Exemplo",
   "number": "6.4.7",
   "title": "",
   "body": " Uma criança possui 5 figurinhas distintas e outra criança possui 7 figurinhas distintas. Se as figurinhas da primeira criança são todas diferentes das figurinhas da segunda criança, de quantas maneiras é possível trocar 4 figurinhas pertencentes a primeira criança com 4 pertencentes a segunda?   A primeira criança pode escolher suas 4 figurinhas de maneiras e a segunda criança pode escolher suas 4 figurinhas de maneiras. Portanto, o número de maneiras de realizar a troca é    "
 },
 {
-  "id": "example-93",
+  "id": "example-100",
   "level": "2",
-  "url": "section-combinacoes-simples.html#example-93",
+  "url": "section-combinacoes-simples.html#example-100",
   "type": "Exemplo",
   "number": "6.4.8",
   "title": "",
   "body": " Um Juiz dispõe de 11 mulheres, das quais somente 4 são advogadas.   Para formar um único júri com 9 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?  Para formar um único júri com 6 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?    item a) Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de maneiras.  item b) Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.  Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é   No Sage, esse cálculo pode ser feito da seguinte maneira:    "
 },
 {
-  "id": "example-94",
+  "id": "example-101",
   "level": "2",
-  "url": "section-combinacoes-simples.html#example-94",
+  "url": "section-combinacoes-simples.html#example-101",
   "type": "Exemplo",
   "number": "6.4.9",
   "title": "",
@@ -2332,9 +2404,9 @@ var ptx_lunr_docs = [
   "body": " O número de permutações circulares de elementos, é o número de maneiras de organizar objetos distintos ao longo de um círculo fixo (isto é, não pode ser retirado do plano e virado). Notação:   "
 },
 {
-  "id": "remark-29",
+  "id": "remark-30",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#remark-29",
+  "url": "section-permutacoes-circulares.html#remark-30",
   "type": "Nota",
   "number": "6.5.2",
   "title": "",
@@ -2368,18 +2440,18 @@ var ptx_lunr_docs = [
   "body": " A lista com todas as permutações circulares, pode ser obtida com o seguinte comando:    O número de permutações circulares com 10 elementos pode ser calculado da seguinte forma:   "
 },
 {
-  "id": "example-95",
+  "id": "example-102",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#example-95",
+  "url": "section-permutacoes-circulares.html#example-102",
   "type": "Exemplo",
   "number": "6.5.8",
   "title": "",
   "body": " Quantas rodas de ciranda podem ser formadas com 8 pessoas?  Basta calcular o número de permutações circulares de 8 elementos.    "
 },
 {
-  "id": "example-96",
+  "id": "example-103",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#example-96",
+  "url": "section-permutacoes-circulares.html#example-103",
   "type": "Exemplo",
   "number": "6.5.9",
   "title": "",
@@ -2431,9 +2503,9 @@ var ptx_lunr_docs = [
   "body": "  Definir Permutação com Repetição.  Mostrar como obter a lista com todas as permutações com repetições de elementos no Sage.  Mostrar como calcular o número de permutações com repetições de elementos.  Exemplificar.   "
 },
 {
-  "id": "example-97",
+  "id": "example-104",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#example-97",
+  "url": "section-permutacoes-com-repeticoes.html#example-104",
   "type": "Exemplo",
   "number": "6.6.1",
   "title": "",
@@ -2485,18 +2557,18 @@ var ptx_lunr_docs = [
   "body": " Obtendo o número de permutações com repetições no Sage. Da linha 1 até a linha 5 temos uma implementação de uma função para efetuar esse cálculo. Na linha 6, a função está sendo usada para o caso e .   Para entender essa implementação e aprender mais sobre o SageMath veja a referência .  "
 },
 {
-  "id": "example-98",
+  "id": "example-105",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#example-98",
+  "url": "section-permutacoes-com-repeticoes.html#example-105",
   "type": "Exemplo",
   "number": "6.6.7",
   "title": "",
   "body": " Quantos são os anagramas da palavra MATEMATICA?   Temos uma palavra com 10 letras. Das 10 letras, temos 3 A's, 2 M's e 2 T's e as outras aparecem uma única vez, portanto o número de anagramas desta palavra é    "
 },
 {
-  "id": "example-99",
+  "id": "example-106",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#example-99",
+  "url": "section-permutacoes-com-repeticoes.html#example-106",
   "type": "Exemplo",
   "number": "6.6.8",
   "title": "",
@@ -2656,9 +2728,9 @@ var ptx_lunr_docs = [
   "body": " O número de combinações completas de elementos, tomados a é o número de formas de escolher elementos dentre disponíveis, podendo escolher repetidamente os objetos, até obter a quantidade .  O número de combinações completas de elementos, tomados a é denotado por:  "
 },
 {
-  "id": "remark-30",
+  "id": "remark-31",
   "level": "2",
-  "url": "section-combinacoes-completas.html#remark-30",
+  "url": "section-combinacoes-completas.html#remark-31",
   "type": "Nota",
   "number": "6.7.3",
   "title": "",
@@ -2683,36 +2755,36 @@ var ptx_lunr_docs = [
   "body": " Para obter o número de combinações completas de ,tomados a , usamos o código binomial(p+n-1, p).   "
 },
 {
-  "id": "example-102",
+  "id": "example-109",
   "level": "2",
-  "url": "section-combinacoes-completas.html#example-102",
+  "url": "section-combinacoes-completas.html#example-109",
   "type": "Exemplo",
   "number": "6.7.6",
   "title": "",
   "body": " Quantas são as soluções inteiras e não negativas de   O número de soluções desta equação, com é o número de combinações completas de 10 elementos, tomados 20 a 20:    "
 },
 {
-  "id": "example-103",
+  "id": "example-110",
   "level": "2",
-  "url": "section-combinacoes-completas.html#example-103",
+  "url": "section-combinacoes-completas.html#example-110",
   "type": "Exemplo",
   "number": "6.7.7",
   "title": "",
   "body": " Quantas são as soluções inteiras da equação com , e ?   Defina   Substituindo, temos ou seja Desta forma, o número de soluções de será a solução do problema, pois, quando teremos , quando teremos e quando teremos . Portanto a resposta é    "
 },
 {
-  "id": "example-104",
+  "id": "example-111",
   "level": "2",
-  "url": "section-combinacoes-completas.html#example-104",
+  "url": "section-combinacoes-completas.html#example-111",
   "type": "Exemplo",
   "number": "6.7.8",
   "title": "",
   "body": " Quantas são as soluções inteiras e não negativas de   Observe que uma possibilidade seria calcular o número de soluções de cada um dos casos: A soma do número de soluções de cada um dos casos é a resposta, no entanto, é inviável fazer tal cálculo. Felizmente temos outra forma de resolver este problema.  Observe que existe uma bijeção entre o conjunto das soluções de com o conjunto das soluções da equação :   Para entender a bijeção, observe o seguinte. Somando , nos dois lados da igualdade, na linha de , não mudamos absolutamente nada e ficamos com:   Cada solução da linha , é uma solução de com o valor de igual a . E para cada a solução de vai ser a solução da linha de .  Portanto a resposta é o número de solução da equação que é dado por:    "
 },
 {
-  "id": "example-105",
+  "id": "example-112",
   "level": "2",
-  "url": "section-combinacoes-completas.html#example-105",
+  "url": "section-combinacoes-completas.html#example-112",
   "type": "Exemplo",
   "number": "6.7.9",
   "title": "",
@@ -2980,18 +3052,18 @@ var ptx_lunr_docs = [
   "body": " Se e são número reais e é um inteiro positivo,    Observe que Cada termo, do desenvolvimento, é obtido escolhendo-se em cada parênteses um, ou um e multiplicando-se os escolhidos.  Para cada valor de , se escolhermos em dos parênteses, será escolhido em dos parênteses e o produto será igual a . Isto pode ser feito de modos. Então é uma soma na qual, para cada , existem parcelas iguais a . Portanto    "
 },
 {
-  "id": "remark-31",
+  "id": "remark-32",
   "level": "2",
-  "url": "section-binomio-newton.html#remark-31",
+  "url": "section-binomio-newton.html#remark-32",
   "type": "Nota",
   "number": "7.2.2",
   "title": "",
   "body": " Destacamos o termo geral e o fato de que o desenvolvimento do Binômio de Newton pode ser desenvolvido na ordem inversa:  1) O -ésimo termo do desenvolvimento é dado por: 2) Observe também que: Portanto   "
 },
 {
-  "id": "example-109",
+  "id": "example-116",
   "level": "2",
-  "url": "section-binomio-newton.html#example-109",
+  "url": "section-binomio-newton.html#example-116",
   "type": "Exemplo",
   "number": "7.2.3",
   "title": "",
@@ -3007,9 +3079,9 @@ var ptx_lunr_docs = [
   "body": "No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:   "
 },
 {
-  "id": "example-110",
+  "id": "example-117",
   "level": "2",
-  "url": "section-binomio-newton.html#example-110",
+  "url": "section-binomio-newton.html#example-117",
   "type": "Exemplo",
   "number": "7.2.5",
   "title": "",
@@ -3034,9 +3106,9 @@ var ptx_lunr_docs = [
   "body": " O termo máximo do desenvolvimento de Troque os valores de , e , para obter o termo máximo e o termo mínimo do desenvolvimento de   Os termos máximo e mínimo.    "
 },
 {
-  "id": "example-112",
+  "id": "example-119",
   "level": "2",
-  "url": "section-binomio-newton.html#example-112",
+  "url": "section-binomio-newton.html#example-119",
   "type": "Exemplo",
   "number": "7.2.9",
   "title": "",
@@ -3124,9 +3196,9 @@ var ptx_lunr_docs = [
   "body": "  Na qual, para cada , , ou seja é um inteiro não negativo.   Temos Um termo genérico do produto é obtido escolhendo um em cada parênteses e multiplicando os escolhidos. Se em dos parênteses escolhermos , em dos parênteses escolhermos , , obteremos Agora falta responder quantas vezes o termo aparece no desenvolvimento.  O termo aparece tantas vezes, quantas são as formas de escolher, nos parênteses, deles para escolher o , deles para escolher o , . Isto pode ser feito de maneiras, o que mostra o resultado.   "
 },
 {
-  "id": "example-113",
+  "id": "example-120",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#example-113",
+  "url": "section-polinomio-leibniz.html#example-120",
   "type": "Exemplo",
   "number": "7.3.2",
   "title": "",
@@ -3187,36 +3259,36 @@ var ptx_lunr_docs = [
   "body": " Seja um espaço amostral. Uma probabilidade sobre é uma função que associa a cada evento um número de forma que:  Para todo evento , ;  ;  Se então .    "
 },
 {
-  "id": "example-114",
+  "id": "example-121",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-114",
+  "url": "section-espacos-probabilidade.html#example-121",
   "type": "Exemplo",
   "number": "8.1.3",
   "title": "",
   "body": " Ao lançar uma moeda observe a face que cai voltada para cima.  O espaço amostral é os eventos são a) Vamos definir uma probabilidade para , que chamaremos de : b) Vamos definir outra probabilidade para , que chamaremos de : Observe que e satisfazem a definição de probabilidade.  "
 },
 {
-  "id": "example-115",
+  "id": "example-122",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-115",
+  "url": "section-espacos-probabilidade.html#example-122",
   "type": "Exemplo",
   "number": "8.1.4",
   "title": "",
   "body": "Um modelo de probabilidade muito utilizado é o equiprobabilístico, que é o caso de do exemplo anterior.  O caso geral deste modelo, ou seja para , atribuímos a cada evento unitário a probabilidade Pois, se e . Pelo item c) da , temos Portanto,   "
 },
 {
-  "id": "example-116",
+  "id": "example-123",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-116",
+  "url": "section-espacos-probabilidade.html#example-123",
   "type": "Exemplo",
   "number": "8.1.5",
   "title": "",
   "body": " Quatro moedas (não viciadas) são jogadas simultâneamente.   Qual é a probabilidade de obter 3 caras?  Qual é a probabilidade de obter pelo menos 3 caras?    Para simplificar a notação, indicaremos 0 para cara e 1 para coroa. O espaço amostral é  item a) Observe que dentre as 16 possibilidades, o subconjunto abaixo: possui todos os casos favoráveis. Portanto a probabilidade de obter 3 caras é    item b) Observe que dentre as 16 possibilidades, o subconjunto abaixo: possui todos os casos favoráveis. Portanto a probabilidade de obter pelo menos 3 caras é    "
 },
 {
-  "id": "remark-32",
+  "id": "remark-33",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#remark-32",
+  "url": "section-espacos-probabilidade.html#remark-33",
   "type": "Nota",
   "number": "8.1.6",
   "title": "",
@@ -3232,9 +3304,9 @@ var ptx_lunr_docs = [
   "body": " Sejam e eventos, então:  ;  ;  ;  ;  Se então .      item a)    item b) Como , temos . Portanto   item c) Escrevendo como a união disjunta: temos   item d) Escrevendo como a união disjunta: temos   item e) Pelo item c) temos se , ficamos com pois .   "
 },
 {
-  "id": "example-117",
+  "id": "example-124",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-117",
+  "url": "section-espacos-probabilidade.html#example-124",
   "type": "Exemplo",
   "number": "8.1.8",
   "title": "",
@@ -3259,18 +3331,18 @@ var ptx_lunr_docs = [
   "body": "  Escolha um intervalo, referente a variação de pessoas, para obter uma tabela com a quantidade e a respectiva probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o .     Escolha um intervalo, referente a variação de pessoas, para obter o gráfico do tipo: quantidade versus probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o .     "
 },
 {
-  "id": "example-119",
+  "id": "example-126",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-119",
+  "url": "section-espacos-probabilidade.html#example-126",
   "type": "Exemplo",
   "number": "8.1.13",
   "title": "",
   "body": " Vinte três pessoas foram fazer uma prova e precisaram deixar seus celulares com o fiscal. No horário previsto de entrega, houve uma emergência e todos precisaram entregar suas provas e pegar seus celulares com pressa, de modo que os celulares foram entregues ao acaso. Qual a probabilidade de que todos os participantes tenha recebido os celulares errados?   O espaço amostral é constituido por todas as formas de ordenar os 23 celulares. Os casos favoráveis é constituído por todas as permutações caóticas com os 23 celulares. Portanto a resposta é    "
 },
 {
-  "id": "example-120",
+  "id": "example-127",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-120",
+  "url": "section-espacos-probabilidade.html#example-127",
   "type": "Exemplo",
   "number": "8.1.14",
   "title": "",
@@ -3439,9 +3511,9 @@ var ptx_lunr_docs = [
   "body": "Note que só está definido quando . A igualdade pode ser reescrita das seguintes formas: e, caso :  "
 },
 {
-  "id": "example-122",
+  "id": "example-129",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-122",
+  "url": "section-probabilidade-condicional.html#example-129",
   "type": "Exemplo",
   "number": "8.2.4",
   "title": "",
@@ -3457,9 +3529,9 @@ var ptx_lunr_docs = [
   "body": " Seja tal que . Então a probabilidade condicional é outra probabilidade sobre o espaço amostral , ou seja, valem as seguintes propriedades:  ;  ;  Se então .       a) Como temos  b)  e  c)     "
 },
 {
-  "id": "example-123",
+  "id": "example-130",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-123",
+  "url": "section-probabilidade-condicional.html#example-130",
   "type": "Exemplo",
   "number": "8.2.6",
   "title": "",
@@ -3475,9 +3547,9 @@ var ptx_lunr_docs = [
   "body": " (Regra do Produto de Probabilidades)  Sejam eventos de um espaço amostral e uma probabilidade em . Se então    Para dois conjuntos a fórmula é verdadeira, pois coincide com a definição de probabilidade condicional. Vamos usar o Princípio de Indução para mostrar que o resultado é verdadeiro. Suponha o resultado válido para eventos.  Defina , queremos a probabilidade . Pela definição de probabilidade condicional, temos ou seja,  Pela hipótese de indução, temos Substituindo a igualdade dada pela hipótese de indução em , chegamos no resultado:    "
 },
 {
-  "id": "example-124",
+  "id": "example-131",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-124",
+  "url": "section-probabilidade-condicional.html#example-131",
   "type": "Exemplo",
   "number": "8.2.9",
   "title": "",
@@ -3511,9 +3583,9 @@ var ptx_lunr_docs = [
   "body": " Sejam e eventos. e são independentes se,   Da , temos   "
 },
 {
-  "id": "example-125",
+  "id": "example-132",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-125",
+  "url": "section-probabilidade-condicional.html#example-132",
   "type": "Exemplo",
   "number": "8.2.14",
   "title": "",
@@ -3529,18 +3601,18 @@ var ptx_lunr_docs = [
   "body": " Sejam eventos. são independentes se, para todo , e para quaisquer , tem-se  Consequentemente,    "
 },
 {
-  "id": "example-126",
+  "id": "example-133",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-126",
+  "url": "section-probabilidade-condicional.html#example-133",
   "type": "Exemplo",
   "number": "8.2.16",
   "title": "",
   "body": " Em um experimento aleatório é retirado sucessivamente, com reposição, três bolas de uma caixa que comtém 8 bolas pretas e 6 bolas brancas. Qual a probabilidade de que sejam três bolas brancas?   Considere os eventos: Observe que os eventos são independentes, portanto a probabilidade é    "
 },
 {
-  "id": "example-127",
+  "id": "example-134",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-127",
+  "url": "section-probabilidade-condicional.html#example-134",
   "type": "Exemplo",
   "number": "8.2.17",
   "title": "",
@@ -3628,9 +3700,9 @@ var ptx_lunr_docs = [
   "body": "  Enunciar e demonstrar o Teorema da Distribuição Binomial.  Exemplificar.   "
 },
 {
-  "id": "example-128",
+  "id": "example-135",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#example-128",
+  "url": "section-distribuicao-binomial.html#example-135",
   "type": "Exemplo",
   "number": "8.3.1",
   "title": "",
@@ -3646,9 +3718,9 @@ var ptx_lunr_docs = [
   "body": " Considere um experimento com apenas dois resultados possíveis, chamados de sucesso e fracasso . Denotaremos por a probabilidade de sucesso.  A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é    "
 },
 {
-  "id": "example-129",
+  "id": "example-136",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#example-129",
+  "url": "section-distribuicao-binomial.html#example-136",
   "type": "Exemplo",
   "number": "8.3.3",
   "title": "",
@@ -3691,18 +3763,18 @@ var ptx_lunr_docs = [
   "body": " Espaço Amostral Infinito  Até este momento, somente consideramos situações em que o espaço amostral do experimento aleatório de interesse fosse finito. Mas o ferramental desenvolvido pode ser aplicado também a situações em que o espaço amostral é infinito e, mesmo, não enumerável. O exemplo a seguir é um interessante exemplo de probabilidade geométrica. Quando selecionamos um ponto ao acaso em uma parte do plano é razoável supor que a probabilidade do ponto selecionado permanecer a uma certa região seja proporcional à área dessa região.   Selecionam-se ao acaso dois pontos em um segmento de tamanho 1, dividindo-o em três partes. Determine a probabilidade de que se possa formar um triângulo com essas três partes.   Sejam e os pontos escolhidos, .   Escolhendo dois pontos em um segmento.    Escolher e pertencentes a , com , equivale a escolher um ponto no triângulo da figura abaixo.   Como escolher os pontos e .    Para que exista um triângulo de lados e devemos ter e e , o que dá e e . Em suma, o triângulo existirá se, e somente se, o ponto for selecionado na parte laranja do triângulo .  Sendo o evento \"as três partes formam um triângulo\" e sendo o evento certo, temos que é proporcional a área da parte sombreada e é proporcional à área de . Logo,      A e B lançam sucessivamente um par de dados até que um deles obtenha soma de pontos 7, caso em que a disputa termina e o vencedor é o jogador que obteve soma 7. Se A é o primeiro a jogal, qual é a probabilidade de A ser o vencedor?   A probabilidade de obter 7 é e a de não ser soma 7 é   Para ganhar, ou ganha na primeira mão, ou na segunda, ou na terceira, etc. A probabilidade de ganhar na primeira mão é . Para ganhar na segunda mão, não pode obter soma 7 na primeira mão e não pode obter soma 7 na primeira mão e deve obter soma 7 na segunda mão, o que ocorre com probabilidade   Para ganhar na terceira mão, não pode obter soma 7 nas duas primeiras mãos e não pode obter soma 7 nas duas primeiras mãos e deve obter soma 7 na terceira mão, o que ocorre com probabilidade   Portanto, a probabilidade de ganhar é     Uma solução mais elegante pode ser obtida ignorando as mãos sem vencedores. A probabilidade de ganhar uma mão é de ; de ganhar uma mão é de pois, para ganhar, não pode obter soma 7 e deve obter soma 7; a de ninguem ganhar é de pois, para que ninguém ganhe, não pode obter soma 7 e não pode obter soma 7.  A probabilidade de ganhar é a probabilidade de ganhar em uma mão em que houve vencedor, isto é     "
 },
 {
-  "id": "example-130",
+  "id": "example-137",
   "level": "2",
-  "url": "section-espaco-infinito.html#example-130",
+  "url": "section-espaco-infinito.html#example-137",
   "type": "Exemplo",
   "number": "8.4.1",
   "title": "",
   "body": " Selecionam-se ao acaso dois pontos em um segmento de tamanho 1, dividindo-o em três partes. Determine a probabilidade de que se possa formar um triângulo com essas três partes.   Sejam e os pontos escolhidos, .   Escolhendo dois pontos em um segmento.    Escolher e pertencentes a , com , equivale a escolher um ponto no triângulo da figura abaixo.   Como escolher os pontos e .    Para que exista um triângulo de lados e devemos ter e e , o que dá e e . Em suma, o triângulo existirá se, e somente se, o ponto for selecionado na parte laranja do triângulo .  Sendo o evento \"as três partes formam um triângulo\" e sendo o evento certo, temos que é proporcional a área da parte sombreada e é proporcional à área de . Logo,    "
 },
 {
-  "id": "example-131",
+  "id": "example-138",
   "level": "2",
-  "url": "section-espaco-infinito.html#example-131",
+  "url": "section-espaco-infinito.html#example-138",
   "type": "Exemplo",
   "number": "8.4.4",
   "title": "",
@@ -3727,9 +3799,9 @@ var ptx_lunr_docs = [
   "body": " A média aritmética (simples) da lista de números é definida por   "
 },
 {
-  "id": "example-132",
+  "id": "example-139",
   "level": "2",
-  "url": "section-28.html#example-132",
+  "url": "section-28.html#example-139",
   "type": "Exemplo",
   "number": "9.1.2",
   "title": "",
@@ -3745,9 +3817,9 @@ var ptx_lunr_docs = [
   "body": " A média geométrica (simples) dos números positivos é definida por   "
 },
 {
-  "id": "example-133",
+  "id": "example-140",
   "level": "2",
-  "url": "section-28.html#example-133",
+  "url": "section-28.html#example-140",
   "type": "Exemplo",
   "number": "9.1.4",
   "title": "",
@@ -3763,36 +3835,36 @@ var ptx_lunr_docs = [
   "body": " A média harmônica (simples) dos números positivos é definida por   "
 },
 {
-  "id": "example-134",
+  "id": "example-141",
   "level": "2",
-  "url": "section-28.html#example-134",
+  "url": "section-28.html#example-141",
   "type": "Exemplo",
   "number": "9.1.6",
   "title": "",
   "body": " A média harmônica é, pois, o inverso da média aritmética dos inversos dos números. A média harmônica dos números 3, 36, 54 é   "
 },
 {
-  "id": "example-135",
+  "id": "example-142",
   "level": "2",
-  "url": "section-28.html#example-135",
+  "url": "section-28.html#example-142",
   "type": "Exemplo",
   "number": "9.1.7",
   "title": "",
   "body": " Uma empresa produziu, durante o primeiro trimestre do ano passado, 500, 200 e 200 unidades, em janeiro, fevereiro e março, respectivamente. Qual foi a produção média mensal nesse trimestre?   Que média é essa que queremos? Queremos uma média tal que, se a produção mensal fosse sempre igual a , a produção trimestral seria a mesma. A produção trimestral foi de . Se em todos os meses a produção fosse igual a , a produção trimestral seria igual a . Logo, e A média desejada era a média aritmética. Resposta: .   "
 },
 {
-  "id": "example-136",
+  "id": "example-143",
   "level": "2",
-  "url": "section-28.html#example-136",
+  "url": "section-28.html#example-143",
   "type": "Exemplo",
   "number": "9.1.8",
   "title": "",
   "body": " Uma empresa aumentou sua produção durante o primeiro bimestre do ano passado. Em janeiro e em fevereiro, as taxas de aumento foram de 21% e 8%, respectivamente. Qual foi a taxa média de aumento mensal nesse bimetre?    Comentário. A resposta não é .  Que média queremos? Queremos uma taxa média tal que, se em todos os meses a taxa de aumento fosse igual a , o aumento bimetral seria o mesmo. O aumento bimestral foi de 30,68%, conforme mostra o esquema Se em todos os meses tivéssemos um aumento de taxa , teríamos Então, A média procurada era uma média geométrica. Mais precisamente: a taxa média, aumentada de uma unidade, é a média geométrica das taxas mensais aumentadas de uma unidade.   "
 },
 {
-  "id": "example-137",
+  "id": "example-144",
   "level": "2",
-  "url": "section-28.html#example-137",
+  "url": "section-28.html#example-144",
   "type": "Exemplo",
   "number": "9.1.9",
   "title": "",
@@ -3808,18 +3880,18 @@ var ptx_lunr_docs = [
   "body": " A média quadrática dos números é definida por isto é, a média quadrática é a raiz quadrada da média aritmética dos quadrados dos números.  "
 },
 {
-  "id": "example-138",
+  "id": "example-145",
   "level": "2",
-  "url": "section-28.html#example-138",
+  "url": "section-28.html#example-145",
   "type": "Exemplo",
   "number": "9.1.11",
   "title": "",
   "body": " A média quadrática dos números 1 e 7 é   "
 },
 {
-  "id": "example-139",
+  "id": "example-146",
   "level": "2",
-  "url": "section-28.html#example-139",
+  "url": "section-28.html#example-146",
   "type": "Exemplo",
   "number": "9.1.12",
   "title": "",
@@ -3835,9 +3907,9 @@ var ptx_lunr_docs = [
   "body": " Se a média aritmética dos números é igual a , pelo menos um dos números é maior que ou igual a .   Com efeito, se fosse , , teríamos Logo, E portanto, o que é um absurdo.   "
 },
 {
-  "id": "example-140",
+  "id": "example-147",
   "level": "2",
-  "url": "section-28.html#example-140",
+  "url": "section-28.html#example-147",
   "type": "Exemplo",
   "number": "9.1.14",
   "title": "",
@@ -3853,27 +3925,27 @@ var ptx_lunr_docs = [
   "body": " Se ou mais objetos são colocados em ou menos gavetas, então pelo menos uma gaveta recebe mais de um objeto.   O número médio de objetos por gaveta é maior que ou igual a , que é maior que 1. Logo, em alguma gaveta haverá um número de objetos maior que 1.   "
 },
 {
-  "id": "example-141",
+  "id": "example-148",
   "level": "2",
-  "url": "section-28.html#example-141",
+  "url": "section-28.html#example-148",
   "type": "Exemplo",
   "number": "9.1.16",
   "title": "",
   "body": " Mostre que todo inteiro positivo tem um múltiplo que se escreve apenas com os algarismos 0 e 1.   Considere os primeiros números da sequência . Divida-os por e considere os restos dessas divisões. Esses restos só podem ser iguais a .  Pensando nos números como objetos e nos restos como gavetas, temos mais objetos do que gavetas. O Princípio das Gavetas assegura que alguma gaveta receberá mais de um objeto, isto é, há dois números na sequência que dão o mesmo resto quando divididos por , digamos ( algarismos) e ( algarismos), . A diferença desses números é um múltiplo de e se escreve , com algarismos e algarismos .   "
 },
 {
-  "id": "example-142",
+  "id": "example-149",
   "level": "2",
-  "url": "section-28.html#example-142",
+  "url": "section-28.html#example-149",
   "type": "Exemplo",
   "number": "9.1.17",
   "title": "",
   "body": " Cinco pontos são tomados sobre a superfície de um quadrado de lado 2. Mostre que há dois desses pontos tais que a distância entre eles é menor que ou igual a .   Divida o quadrado de lado 2 em quatro quadrados de lado 1, ligando os pontos médios dos lados opostos. Pensando nos pontos como objetos e nos quadrados como gavetas, temos mais objetos que gavetas. O Princípio das Gavetas assegura que alguma gaveta receberá mais de um objeto, isto é, haverá dois pontos no mesmo quadrado de lado 1. A distância entre esses pontos é no máximo igual ao comprimento da diagonal do quadrado, que é .   "
 },
 {
-  "id": "example-143",
+  "id": "example-150",
   "level": "2",
-  "url": "section-28.html#example-143",
+  "url": "section-28.html#example-150",
   "type": "Exemplo",
   "number": "9.1.18",
   "title": "",
@@ -3889,18 +3961,18 @@ var ptx_lunr_docs = [
   "body": " A média aritmética ponderada dos números com pesos respectivamente iguais a é definida por   "
 },
 {
-  "id": "remark-34",
+  "id": "remark-35",
   "level": "2",
-  "url": "section-28.html#remark-34",
+  "url": "section-28.html#remark-35",
   "type": "Nota",
   "number": "9.1.20",
   "title": "",
   "body": " Embora a ideia primitiva seja que a média aritmética ponderada é uma média aritmética simples de uma lista de números dos quais são iguais a , são iguais a , ..., são iguais a não há problema em considerar pesos não inteiros.  Aliás, é bastante útil trabalhar com pesos relativos e considerar a média aritmética ponderada dos números , com pesos iguais a , respectivamente, como sendo Assim, uma média aritmética ponderada dos números é uma expressão da forma   "
 },
 {
-  "id": "example-144",
+  "id": "example-151",
   "level": "2",
-  "url": "section-28.html#example-144",
+  "url": "section-28.html#example-151",
   "type": "Exemplo",
   "number": "9.1.21",
   "title": "",
@@ -3925,99 +3997,99 @@ var ptx_lunr_docs = [
   "body": " A média aritmética de números positivos é maior que ou igual a sua média geométrica e só é igual se os números forem todos iguais. Isto é, se são números positivos, então Além disso, se, e somente se,    Provaremos primeiramente a desigualdade no caso . Sendo a média aritmética dos números positivos e e sendo sua média geométrica, temos e só é igual a quando , o que prova a desigualdade no caso .  Para prová-lo no caso , aplicamos o resultado anterior aos números obtendo ou seja, a igualdade só sendo obtida quando forem iguas. Aplicando agora duas vezes a desigualdade no caso , primeiramente para e , e posteriormente para e , obtemos a igualdade sendo obtida apenas quando e .  Portanto, a igualdade só sendo obtida quando e e isto é, quando   É claro que, repetindo esse argumento, provaríamos a desigualdade das médias para números positivos.  Esse argumento permite provar, por indução, a desigualdade para números positivos.  Provaremos agora a desigualdade para três números positivos.  Sejam e números positivos e sejam a sua média aritmética e a sua média geométrica. É claro que Aplicando a desigualdade das médias no caso aos números e , obtemos  a igualdade só se verifica quando , isto é, quando . Se desejássemos provar a desigualdade para cinco números positivos e , aplicaríamos a desigualdade para 8 números e , , e , onde é a média aritmética dos números e .  O mesmo raciocínio pode mostrar que, se a desigualdade é verdadeira para , então ela é também verdadeira para todo .   "
 },
 {
-  "id": "example-145",
+  "id": "example-152",
   "level": "2",
-  "url": "section-29.html#example-145",
+  "url": "section-29.html#example-152",
   "type": "Exemplo",
   "number": "9.2.2",
   "title": "",
   "body": " Mostre que, entre todos os retângulos de perímetro , o quadrado é o de maior área.   Se os lados do retângulo são e , temos isto é, a média aritmética e é igual a . A área do retângulo é . Temos Portanto, e a igualdade só é obtida quando . Portanto, o retângulo de maior área é o quadrado de área .   "
 },
 {
-  "id": "example-146",
+  "id": "example-153",
   "level": "2",
-  "url": "section-29.html#example-146",
+  "url": "section-29.html#example-153",
   "type": "Exemplo",
   "number": "9.2.3",
   "title": "",
   "body": " Mostre que, entre todos os retângulos de área , o quadrado é o de menor perímetro.   Se os lados do retângulo são e , temos , isto é, a média geométrica de e é igual a . O perímetro do retângulo é . Temos Portanto, e a igualdade só é obtida quando . Portanto, o retângulo de menor perímetro é o quadrado de perímetro .   "
 },
 {
-  "id": "remark-35",
+  "id": "remark-36",
   "level": "2",
-  "url": "section-29.html#remark-35",
+  "url": "section-29.html#remark-36",
   "type": "Nota",
   "number": "9.2.4",
   "title": "",
   "body": "  (Desigualdade das Médias) A desigualdade das médias pode ser generalizada como segue: Dados números reais positivos. Então, Além disso, em cada caso, a igualdade vale se, e somente se, .  "
 },
 {
-  "id": "example-147",
+  "id": "example-154",
   "level": "2",
-  "url": "section-29.html#example-147",
+  "url": "section-29.html#example-154",
   "type": "Exemplo",
   "number": "9.2.5",
   "title": "",
   "body": " Qual o maior valor possível para , com ?   Pela desigualdade das médias, como : Portanto, e a igualdade só é atingida quando , ou seja, quando .   "
 },
 {
-  "id": "example-148",
+  "id": "example-155",
   "level": "2",
-  "url": "section-29.html#example-148",
+  "url": "section-29.html#example-155",
   "type": "Exemplo",
   "number": "9.2.6",
   "title": "",
   "body": " Suponha que , com . Determine reais positivos e tais que seja máximo.   Pela desigualdade das médias, como : A igualdada é obtida apenas quando , portanto    "
 },
 {
-  "id": "example-149",
+  "id": "example-156",
   "level": "2",
-  "url": "section-29.html#example-149",
+  "url": "section-29.html#example-156",
   "type": "Exemplo",
   "number": "9.2.7",
   "title": "",
   "body": " Um triângulo isósceles tem seu vértice na origem, sua base é paralela ao eixo acima dele e os vértices da base estão na parábola . Calcule a maior área de um triângulo nessas condições.     Parábola e triângulo.    A área do triângulo é dada por . Pela desigualdade das médias, como , logo Portanto, E a igualdade será obtida quando . Como , substituindo o valor de , ficamos com , portanto e .   "
 },
 {
-  "id": "example-150",
+  "id": "example-157",
   "level": "2",
-  "url": "section-29.html#example-150",
+  "url": "section-29.html#example-157",
   "type": "Exemplo",
   "number": "9.2.9",
   "title": "",
   "body": " Um fazendeiro deseja delimitar uma área retangular utilizando 40m de cerca e aproveitando um muro (de mais de 40m) que já está construído. Determine as dimensões do retângulo de maior área que o fazendeiro consegue delimitar.     Muro e cerca.   Observe que . Usando que , obtemos Portanto, e a igualdade é obtida apenas quando .   "
 },
 {
-  "id": "example-151",
+  "id": "example-158",
   "level": "2",
-  "url": "section-29.html#example-151",
+  "url": "section-29.html#example-158",
   "type": "Exemplo",
   "number": "9.2.11",
   "title": "",
   "body": " Sejam e números reais positivos e suponha que determine e reais positivos, tais que seja máximo.   Vamos usar a desigualdade : Portanto E a igualdade só é obtida quando , dessa maneira    "
 },
 {
-  "id": "example-152",
+  "id": "example-159",
   "level": "2",
-  "url": "section-29.html#example-152",
+  "url": "section-29.html#example-159",
   "type": "Exemplo",
   "number": "9.2.12",
   "title": "",
   "body": " Numa folha de cartolina quadrada de lados retiramos quadrados de lado de cada vértice, dobrando em seguida as abas restantes para formar uma caixa cuja base é um quadrado de lado e altura . Qual deve ser o valor de para que o volume da caixa seja máximo?     Cartolina e caixa.   O volume da caixa é dado por . Para descobrir o volume máximo, usaremos a desigualdade , dessa maneira obtemos Portanto, A igualdade será obtida apenas quando , ou seja, quando .   "
 },
 {
-  "id": "example-153",
+  "id": "example-160",
   "level": "2",
-  "url": "section-29.html#example-153",
+  "url": "section-29.html#example-160",
   "type": "Exemplo",
   "number": "9.2.14",
   "title": "",
   "body": " Qual deve ser o formato de uma lata cilíndrica de volume (cilindro circular reto) para minimizar o gasto de material para confeccioná-la?     Cilindro.   Sabemos que o volume é fixo e é dado por . A área é dada por . Usando que : Então, a área será mínima quando .   "
 },
 {
-  "id": "example-154",
+  "id": "example-161",
   "level": "2",
-  "url": "section-29.html#example-154",
+  "url": "section-29.html#example-161",
   "type": "Exemplo",
   "number": "9.2.16",
   "title": "",
@@ -4030,30 +4102,30 @@ var ptx_lunr_docs = [
   "type": "Referêcias",
   "number": "10",
   "title": "Referências Bibliográficas",
-  "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.  Artigos    Machado J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Fonte, A. C., Médias, desigualdades e problemas de otimização , Dissertação do ProfMat.   "
+  "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.  Artigos    Nascimento, E. C. A.; Silva Filho, M. M.; Tanaka, T. Y.; Araújo, J. G. S., Do termo geral à soma de Gauss: uma abordagem olímpica sobre progressões aritméticas , REMAT, 2023.    Machado J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Fonte, A. C., Médias, desigualdades e problemas de otimização , Dissertação do ProfMat.   "
 },
 {
-  "id": "p-1141",
+  "id": "p-1159",
   "level": "2",
-  "url": "referencias.html#p-1141",
+  "url": "referencias.html#p-1159",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1142",
+  "id": "p-1160",
   "level": "2",
-  "url": "referencias.html#p-1142",
+  "url": "referencias.html#p-1160",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1143",
+  "id": "p-1161",
   "level": "2",
-  "url": "referencias.html#p-1143",
+  "url": "referencias.html#p-1161",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

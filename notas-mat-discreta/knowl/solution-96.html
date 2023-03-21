@@ -20,20 +20,35 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">6.4.9.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">6.3.3.10.2</span><span class="period">.</span>
 </h4>
-<div class="para">Para o primeiro grupo, temos um total de <span class="process-math">\(C_{12}^4 \)</span> maneiras de selecionar as 4 pessoas.</div> <div class="para">Para o segundo grupo temos um total de <span class="process-math">\(C_8^4 \)</span> maneiras de selecionar as 4 pessoas.</div> <div class="para">Para o terceiro grupo temos um total de <span class="process-math">\(C_4^4 \)</span> maneiras de selecionar as 4 pessoas.</div> <div class="para logical">
-<div class="para">Como a ordem dos grupos não importa, precisamos dividir por <span class="process-math">\(3!\)</span> Portanto a resposta é</div>
+<div class="para logical">
+<div class="para">Observe que para cada permutação existe exatamente outra que a soma delas é  <span class="process-math">\(111110\text{.}\)</span> Por exemplo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{C_{12}^4\times C_8^4\times C_4^4}{3!} = 5775.
+1, 3, 5, 7, 9 ~~\text{ e }~~ 9, 7, 5, 3, 1. 
 \end{equation*}
 </div>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage">C(n, p) = binomial(n, p)
-P(n) = factorial(n)
-C(12, 4)*C(8,4)*C(4, 4)/P(3)
+<div class="displaymath process-math">
+\begin{equation*}
+3, 9, 7, 1, 5 ~~\text{ e }~~ 7, 1 ,3, 9, 5. 
+\end{equation*}
+</div>
+<div class="para">Podemos organizar as <span class="process-math">\(5! = 120\)</span> permutações de duas em duas, de modo que a soma de cada par seja <span class="process-math">\(111110\text{.}\)</span> Portanto, o valor da soma de todas as permutações é <span class="process-math">\(60 \times 111110 = 6666600\text{.}\)</span> Somando os dígitos chegamos na resposta que é <span class="process-math">\(30\text{.}\)</span>
+</div>
+</div> <div class="para">Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-20"><script type="text/x-sage">def soma(lista):
+    l = lista
+    l2=[]
+    for k in Permutations(l):
+        list(k).reverse()
+        n=0
+        for i in range(len(k)):
+            n = n + k[i]*10^i
+        l2.append(n)
+    return sum(l2)
+soma([1,3,5,7,9])
 </script></pre>
 </div>
-<span class="incontext"><a href="section-combinacoes-simples.html#solution-96" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-permutacoes-simples.html#solution-96" class="internal">em contexto</a></span>
 </body>
 </html>
