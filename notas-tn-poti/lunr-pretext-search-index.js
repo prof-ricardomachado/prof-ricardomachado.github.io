@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.1",
   "title": "Aula 01 - Divisibilidade I",
-  "body": " Aula 01 - Divisibilidade I    (Algoritmo da Divisão)  Para quaisquer inteiros positivos e , existe um único par de inteiros não negativos tais que e . Os números e são chamados de quociente e resto, respectivamente, da divisão de por .          O teorema anterior admite um enunciado mais geral: Para quaisquer inteiros e , com , existe um único par de inteiros tais que . Por exemplo,     Abaixo temos um código em SageMath, no qual podemos trocar os valores de e nas linhas e , respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de por .    (PTOM)  De modo geral, fixado um número natural , pode-se sempre escrever um número qualquer , de modo único, na forma , na qual são inteiros e .  Por exemplo, fixado um valor para , qualquer inteiro pode ser escrito em apenas uma das seguintes formas    (PTOM)  Dados dois números primos , dizemos que ele são primos gêmeos se . Prove que para cada par de primos gêmeos com , se , então deixa resto zero na divisão por .   Pela , só pode assumir uma das três formas: . Podemos analizar cada um dos casos.   Caso 1 ( ). Neste caso o número não seria primo, então este caso está descartado.   Caso 2 ( ). Neste caso, e não seria primo, o que é uma contradição.   Caso 3 ( ). Neste caso, que é múltiplo de e . Portanto, este é o único caso possível e o número sempre deixa resto zero na divisão por .     Encontre um número natural que, ao ser dividido por , deixa resto , ao ser dividido por deixa resto , e ao ser dividido por deixa resto .   Pelos dados do enunciado, Somando em cada igualdade, obtemos Portanto, é múltiplo de , e . Uma solução é , logo .  Outra resposta pode ser obtida calculando o menor múltiplo comum: . Outro valor válido para é .      Verifique que  Calcule o resto da Divisão de por 3.    item a)    item b)  Portanto, Ou seja, o resto é igual a .     No SageMath, o resto da divisão de por pode ser calculado da seguinte maneira:     Seja um número natural maior que zero. Qual o resto de na divisão por ?         Quantos números entre e (inclusive) são divisíveis por ? Ou seja, quando deixam resto zero na divisão por ?   Aplicando a divisão euclidiana, Isto significa que existem números divisíveis por entre e , pois ao escrever todos os números neste intervalo, o último que deixa resto zero será no número . Observe,     (Teorema dos Restos)  Se e deixam restos e na divisão por , respectivamente, então:   deixa o mesmo resto que na divisão por  deixa o mesmo resto que na divisão por .    Por hipótese   item a)    Aplicando a divisão euclidiana obtemos Substituindo em obtemos   item b)    Aplicando a divisão euclidiana, podemos escrever Substituindo em obtemos Como queríamos.     Qual o resto que o número deixa quando dividido por ?   Aplicando a divisão euclidiana, obtemos Aplicando o , o resto de na divisão por é o mesmo que o resto de na divisão por . Como Temos,      Qual o resto que o número deixa quando dividido por ?   Como o número deixa resto na divisão por , deixa o mesmo resto que na divisão por .     Qual o resto que o número deixa quando dividido por ?   Note que    deixa resto na divisão por , logo também deixa resto na divisão por 3;  deixa resto na divisão por .   Pelo , deixa o mesmo resto que na divisão por , ou seja, o resto é o mesmo que o resto de na divisão por .     Qual o resto de na divisão por ?   Dado um número , ele pode ser escrito em apenas uma das três formas: ou . Pelo , basta analisar os três possíveis restos na divisão de por .  Caso 1: :   Caso 2: :   Caso 3: :      Prove que, para cada natural, é divisível por .   Observe que Para cada número escrito no denominador, existe o número no numerador. Agrupando as frações com , sobrará todos os números ímpares de até . Ou seja,      Encontre todos os pares de inteiros positivos e tais que .   Note que quase pode ser escrito como um produto, pois no produto \"sobra\" uma constante: Como ao somar em ambos os membros da igualdade anterior, obtemos Como é o produto de dois primos ( ), então Temos apenas dois casos: e      (OBMEP 2013). Lucas pensou em um número, dividiu-o por e obteve resto . Se ele dividir o número em que pensou por , qual o resto que ele vai encontrar?   Note que e que , logo Portanto, o resto na divisão por é .     Encontre os inteiros que, na divisão por deixam um quociente igual ao resto.   Estamos procurando os números que podem ser escritos da seguinte maneira São apenas restos possíveis, podemos substituir esses valores em para obter os valores de .      Ao dividir o número inteiro por obtemos resto . Qual é o menor valor inteiro positivo de ?    Como é positivo, . Substituindo , obtemos      (OBM). O número de seis dígitos é um múltiplo de . Determine o valor do dígito .   Note que . Podemos escrever o número da seguinte maneira: Portanto, divide se, e somente se, divide . Ou seja, como possui dois diígitos e é menor que , temos a seguinte igualdade Então, .     Determinar os números que divididos por dão um resto igual ao quadrado do quociente correspondente.  Estamos procurando os valores de que satisfazem Assim, e portanto, precisamos substituir os valores de .    (OCM 1985) Encontre o quociente da divisão de por   Fatorando , obtemos  Seguindo assim, obtemos que é igual a consequentemente é igual a Portanto, o quociente é e o resto é zero.  (OCM 1994) Seja um número onde o dígito \" \" aparece vezes. Determine o quociente e o resto da divisão de por .  Observe que , e que . Como Sabemos que é um número inteiro. Assim, Dividindo ambos os membros da igualdade por e em seguida multiplicando por , obtemos Afirmação: é inteiro e portanto   Para concluir, vamos provar a afirmação acima. Observe que . Então, como não possuem fatores primos em comum, para mostrar que divide , basta mostrar que cada um dos números e divide .    ( divide ). Note que deixa resto na divisão por e que deixa resto , na divisão por . Assim, Pelo Teorema dos Restos, deixa o mesmo resto que na divisão por , ou seja, o resto é zero.  ( divide ). Como deixa resto na divisão por e deixa resto na divisão por . Pelo Teorema dos restos, deixa o mesmo resto que , na divisão por . Portanto o resto é zero.  ( divide ). De fato, deixa resto na divisão por e deixa resto , na divisão por . Logo, pelo Teorema dos Restos ) deixa o mesmo resto que . Assim, o resto também é zero.     Prove que, o número é múltiplo de .  Vamos usar a seguinte igualdade:    é múltiplo de e portanto deixa resto zero.   , deixa resto zero na divisão por .   , também deixa resto zero na divisão por .  Portanto, o número é múltiplo de .   Mostre que o número é múltiplo de .  Para mostrar que o número é mútiplo de , basta mostrar que e dividem o número.  Como e são ímpares, a soma é par, assim, divide .  Para mostrar divide , vamos usar as seguintes fatorações: Assim, e são divisíveis por e portanto a soma também é.   Simulados Antigos  (2013) O algarismo das unidades do número é:   Todo múltiplo de ímpar termina em .   (2015) Paula iniciou um programa de ginástica no qual os dias de treino são separados por dois dias de descanso. Se o primeiro treino foi em uma segunda-feira, em qual dia da semana cairá o centésimo treino?   Como os treinos ocorrem de em dias, o segundo treino ocorrerá dias após o primeiro. O terceiro treino ocorrerá dias após o primeiro e assim sucessivamente. O -ésimo treino ocorrerá dias após o primeiro. Assim, o centésimo treino ocorrerá dias após o primeiro.  A cada dias repete-se o dia da semana. Como deixa resto na divisão por , o centésimo treino ocorrerá dias após uma segunda-feira, ou seja, em uma quinta-feira.     Realização e Apoio  Realização:   Apoio:    "
+  "body": " Aula 01 - Divisibilidade I    (Algoritmo da Divisão)  Para quaisquer inteiros positivos e , existe um único par de inteiros não negativos tais que e . Os números e são chamados de quociente e resto, respectivamente, da divisão de por .          O teorema anterior admite um enunciado mais geral: Para quaisquer inteiros e , com , existe um único par de inteiros tais que . Por exemplo,     Abaixo temos um código em SageMath, no qual podemos trocar os valores de e nas linhas e , respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de por .    (PTOM)  De modo geral, fixado um número natural , pode-se sempre escrever um número qualquer , de modo único, na forma , na qual são inteiros e .  Por exemplo, fixado um valor para , qualquer inteiro pode ser escrito em apenas uma das seguintes formas    (PTOM)  Dados dois números primos , dizemos que ele são primos gêmeos se . Prove que para cada par de primos gêmeos com , se , então deixa resto zero na divisão por .   Pela , só pode assumir uma das três formas: . Podemos analizar cada um dos casos.   Caso 1 ( ). Neste caso o número não seria primo, então este caso está descartado.   Caso 2 ( ). Neste caso, e não seria primo, o que é uma contradição.   Caso 3 ( ). Neste caso, que é múltiplo de e . Portanto, este é o único caso possível e o número sempre deixa resto zero na divisão por .     Encontre um número natural que, ao ser dividido por , deixa resto , ao ser dividido por deixa resto , e ao ser dividido por deixa resto .   Pelos dados do enunciado, Somando em cada igualdade, obtemos Portanto, é múltiplo de , e . Uma solução é , logo .  Outra resposta pode ser obtida calculando o menor múltiplo comum: . Outro valor válido para é .      Verifique que  Calcule o resto da Divisão de por 3.    item a)    item b)  Portanto, Ou seja, o resto é igual a .     No SageMath, o resto da divisão de por pode ser calculado da seguinte maneira:     Seja um número natural maior que zero. Qual o resto de na divisão por ?         Quantos números entre e (inclusive) são divisíveis por ? Ou seja, quando deixam resto zero na divisão por ?   Aplicando a divisão euclidiana, Isto significa que existem números divisíveis por entre e , pois ao escrever todos os números neste intervalo, o último que deixa resto zero será no número . Observe,     (Teorema dos Restos)  Se e deixam restos e na divisão por , respectivamente, então:   deixa o mesmo resto que na divisão por  deixa o mesmo resto que na divisão por .    Por hipótese   item a)    Aplicando a divisão euclidiana obtemos Substituindo em obtemos   item b)    Aplicando a divisão euclidiana, podemos escrever Substituindo em obtemos Como queríamos.     Qual o resto que o número deixa quando dividido por ?   Aplicando a divisão euclidiana, obtemos Aplicando o , o resto de na divisão por é o mesmo que o resto de na divisão por . Como Temos,      Qual o resto que o número deixa quando dividido por ?   Como o número deixa resto na divisão por , deixa o mesmo resto que na divisão por .     Qual o resto que o número deixa quando dividido por ?   Note que    deixa resto na divisão por , logo também deixa resto na divisão por 3;  deixa resto na divisão por .   Pelo , deixa o mesmo resto que na divisão por , ou seja, o resto é o mesmo que o resto de na divisão por .     Qual o resto de na divisão por ?   Dado um número , ele pode ser escrito em apenas uma das três formas: ou . Pelo , basta analisar os três possíveis restos na divisão de por .  Caso 1: :   Caso 2: :   Caso 3: :      Prove que, para cada natural, é divisível por .   Observe que Para cada número escrito no denominador, existe o número no numerador. Agrupando as frações com , sobrará todos os números ímpares de até . Ou seja,      Encontre todos os pares de inteiros positivos e tais que .   Note que quase pode ser escrito como um produto, pois no produto \"sobra\" uma constante: Como ao somar em ambos os membros da igualdade anterior, obtemos Como é o produto de dois primos ( ), então Temos apenas dois casos: e      (OBMEP 2013). Lucas pensou em um número, dividiu-o por e obteve resto . Se ele dividir o número em que pensou por , qual o resto que ele vai encontrar?   Note que e que , logo Portanto, o resto na divisão por é .     Encontre os inteiros que, na divisão por deixam um quociente igual ao resto.   Estamos procurando os números que podem ser escritos da seguinte maneira São apenas restos possíveis, podemos substituir esses valores em para obter os valores de .      Ao dividir o número inteiro por obtemos resto . Qual é o menor valor inteiro positivo de ?    Como é positivo, . Substituindo , obtemos      (OBM). O número de seis dígitos é um múltiplo de . Determine o valor do dígito .   Note que . Podemos escrever o número da seguinte maneira: Portanto, divide se, e somente se, divide . Ou seja, como possui dois diígitos e é menor que , temos a seguinte igualdade Então, .     Determinar os números que divididos por dão um resto igual ao quadrado do quociente correspondente.  Estamos procurando os valores de que satisfazem Assim, e portanto, precisamos substituir os valores de .    (OCM 1985) Encontre o quociente da divisão de por   Fatorando , obtemos  Seguindo assim, obtemos que é igual a consequentemente é igual a Portanto, o quociente é e o resto é zero.  (OCM 1994) Seja um número onde o dígito \" \" aparece vezes. Determine o quociente e o resto da divisão de por .  Observe que , e que . Como Sabemos que é um número inteiro. Assim, Dividindo ambos os membros da igualdade por e em seguida multiplicando por , obtemos Afirmação: é inteiro e portanto   Para concluir, vamos provar a afirmação acima. Observe que . Então, como não possuem fatores primos em comum, para mostrar que divide , basta mostrar que cada um dos números e divide .    ( divide ). Note que deixa resto na divisão por e que deixa resto , na divisão por . Assim, Pelo Teorema dos Restos, deixa o mesmo resto que na divisão por , ou seja, o resto é zero.  ( divide ). Como deixa resto na divisão por e deixa resto na divisão por . Pelo Teorema dos restos, deixa o mesmo resto que , na divisão por . Portanto o resto é zero.  ( divide ). De fato, deixa resto na divisão por e deixa resto , na divisão por . Logo, pelo Teorema dos Restos ) deixa o mesmo resto que . Assim, o resto também é zero.     Prove que, o número é múltiplo de .  Vamos usar a seguinte igualdade:    é múltiplo de e portanto deixa resto zero.   , deixa resto zero na divisão por .   , também deixa resto zero na divisão por .  Portanto, o número é múltiplo de .   Mostre que o número é múltiplo de .  Para mostrar que o número é mútiplo de , basta mostrar que e dividem o número.  Como e são ímpares, a soma é par, assim, divide .  Para mostrar divide , vamos usar as seguintes fatorações: Assim, e são divisíveis por e portanto a soma também é.   Simulados Antigos  (2013) O algarismo das unidades do número é:   Todo múltiplo de ímpar termina em .   (2015) Paula iniciou um programa de ginástica no qual os dias de treino são separados por dois dias de descanso. Se o primeiro treino foi em uma segunda-feira, em qual dia da semana cairá o centésimo treino?   Como os treinos ocorrem de em dias, o segundo treino ocorrerá dias após o primeiro. O terceiro treino ocorrerá dias após o primeiro e assim sucessivamente. O -ésimo treino ocorrerá dias após o primeiro. Assim, o centésimo treino ocorrerá dias após o primeiro.  A cada dias repete-se o dia da semana. Como deixa resto na divisão por , o centésimo treino ocorrerá dias após uma segunda-feira, ou seja, em uma quinta-feira.     "
 },
 {
   "id": "theorem-1",
@@ -230,7 +230,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-1",
   "type": "Exercício",
-  "number": "1.1.1.1",
+  "number": "1.1.1",
   "title": "",
   "body": "Determinar os números que divididos por dão um resto igual ao quadrado do quociente correspondente.  Estamos procurando os valores de que satisfazem Assim, e portanto, precisamos substituir os valores de .   "
 },
@@ -239,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-2",
   "type": "Exercício",
-  "number": "1.1.1.2",
+  "number": "1.1.2",
   "title": "(OCM 1985).",
   "body": "(OCM 1985) Encontre o quociente da divisão de por   Fatorando , obtemos  Seguindo assim, obtemos que é igual a consequentemente é igual a Portanto, o quociente é e o resto é zero. "
 },
@@ -248,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-3",
   "type": "Exercício",
-  "number": "1.1.1.3",
+  "number": "1.1.3",
   "title": "(OCM 1994).",
   "body": "(OCM 1994) Seja um número onde o dígito \" \" aparece vezes. Determine o quociente e o resto da divisão de por .  Observe que , e que . Como Sabemos que é um número inteiro. Assim, Dividindo ambos os membros da igualdade por e em seguida multiplicando por , obtemos Afirmação: é inteiro e portanto   Para concluir, vamos provar a afirmação acima. Observe que . Então, como não possuem fatores primos em comum, para mostrar que divide , basta mostrar que cada um dos números e divide .    ( divide ). Note que deixa resto na divisão por e que deixa resto , na divisão por . Assim, Pelo Teorema dos Restos, deixa o mesmo resto que na divisão por , ou seja, o resto é zero.  ( divide ). Como deixa resto na divisão por e deixa resto na divisão por . Pelo Teorema dos restos, deixa o mesmo resto que , na divisão por . Portanto o resto é zero.  ( divide ). De fato, deixa resto na divisão por e deixa resto , na divisão por . Logo, pelo Teorema dos Restos ) deixa o mesmo resto que . Assim, o resto também é zero.    "
 },
@@ -257,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-4",
   "type": "Exercício",
-  "number": "1.1.1.4",
+  "number": "1.1.4",
   "title": "",
   "body": "Prove que, o número é múltiplo de .  Vamos usar a seguinte igualdade:    é múltiplo de e portanto deixa resto zero.   , deixa resto zero na divisão por .   , também deixa resto zero na divisão por .  Portanto, o número é múltiplo de .  "
 },
@@ -266,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-5",
   "type": "Exercício",
-  "number": "1.1.1.5",
+  "number": "1.1.5",
   "title": "",
   "body": "Mostre que o número é múltiplo de .  Para mostrar que o número é mútiplo de , basta mostrar que e dividem o número.  Como e são ímpares, a soma é par, assim, divide .  Para mostrar divide , vamos usar as seguintes fatorações: Assim, e são divisíveis por e portanto a soma também é.  "
 },
@@ -284,7 +284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-6",
   "type": "Exercício",
-  "number": "1.1.1.6",
+  "number": "1.1.6",
   "title": "",
   "body": "(2013) O algarismo das unidades do número é:   Todo múltiplo de ímpar termina em .  "
 },
@@ -293,27 +293,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-1.html#exercise-7",
   "type": "Exercício",
-  "number": "1.1.1.7",
+  "number": "1.1.7",
   "title": "",
   "body": "(2015) Paula iniciou um programa de ginástica no qual os dias de treino são separados por dois dias de descanso. Se o primeiro treino foi em uma segunda-feira, em qual dia da semana cairá o centésimo treino?   Como os treinos ocorrem de em dias, o segundo treino ocorrerá dias após o primeiro. O terceiro treino ocorrerá dias após o primeiro e assim sucessivamente. O -ésimo treino ocorrerá dias após o primeiro. Assim, o centésimo treino ocorrerá dias após o primeiro.  A cada dias repete-se o dia da semana. Como deixa resto na divisão por , o centésimo treino ocorrerá dias após uma segunda-feira, ou seja, em uma quinta-feira.  "
-},
-{
-  "id": "p-81",
-  "level": "2",
-  "url": "section-1.html#p-81",
-  "type": "Parágrafo (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Realização: "
-},
-{
-  "id": "p-82",
-  "level": "2",
-  "url": "section-1.html#p-82",
-  "type": "Parágrafo (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Apoio: "
 },
 {
   "id": "section-2",
@@ -322,7 +304,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.2",
   "title": "Aula 02 - Divisibilidade II",
-  "body": " Aula 02 - Divisibilidade II   Dados dois inteiros e , com , dizemos que divide ou que é um divisor de ou ainda que é um múltiplo de e escrevemos se o obtido pelo algoritmo de divisão aplicado à e é , ou seja, se para algum inteiro .    Sejam inteiros. Temos   (\" divide\") Se e , então para quaisquer e inteiros.  (\"Limitação\") Se , então ou .  (\"Transitividade\") Se e , então .     (Olimpíada de Maio 2006). Encontre todos os naturais e tais que e .   Pelo (\"Limitação\"), Ou seja, então temos três possibilidades: ou ou .  Se , então Pelo item i do , escolhendo e temos Então, ou . Se e se .   Se , então Logo, Portanto, e consequentemente e .   Se , isto significa que . Assim, logo Portanto, , então ou .  O conjunto de todas as soluções:      (PTOM)(Critério de divisibilidade por 2)  Seja um número inteiro com dígitos na base : então se, e somente se, .   "
+  "body": " Aula 02 - Divisibilidade II   Dados dois inteiros e , com , dizemos que divide ou que é um divisor de ou ainda que é um múltiplo de e escrevemos se o obtido pelo algoritmo de divisão aplicado à e é , ou seja, se para algum inteiro .    Sejam inteiros. Temos   (\" divide\") Se e , então para quaisquer e inteiros.  (\"Limitação\") Se , então ou .  (\"Transitividade\") Se e , então .     (Olimpíada de Maio 2006). Encontre todos os naturais e tais que e .   Pelo (\"Limitação\"), Ou seja, então temos três possibilidades: ou ou .  Se , então Pelo item i do , escolhendo e temos Então, ou . Se e se .   Se , então Logo, Portanto, e consequentemente e .   Se , isto significa que . Assim, logo Portanto, , então ou .  O conjunto de todas as soluções:      (PTOM)(Critério de divisibilidade por 2)  Seja um número inteiro com dígitos na base : então se, e somente se, .   Podemos escrever da seguinte maneira: Assim, logo, se, e somente se, .     (PTOM)(Critério de divisibilidade por 4)  Seja um número inteiro com dígitos na base : então se, e somente se, .   Podemos escrever da seguinte maneira: Assim, logo, se, e somente se, .     (PTOM)(Critério de divisibilidade por 3 e por 9)  Seja um número inteiro com dígitos na base : então  se, e somente se, ;  se, e somente se, .      Portanto, ou seja, Então,  se, e somente se, .  se, e somente se, .       (PTOM)(Critério de divisibilidade por 7)  Para saber se um inteiro é multiplo de , basta apagar seu último dı́gito, multiplicá-lo por e o subtrair do número que restou. Se o resultado é múltiplo de , então o número original também é múltiplo de .    Se nosso número original está escrito na forma , então o número obtido após a operação descrita é . Basta mostrar que se , então .  Se , , ou seja, Como , pela propriedade i. do , concluímos que ou seja, .     Mostre que se , então .    . Pela propriedade i. do , , ou seja,      Usando os dígitos , construímos vários números de sete dígitos distintos. Existem dois deles, distintos, tais que um divide o outro?   Suponha, por absurdo, que sejam dois desses números, com . Vamos usar o critério de divisibilidade por . Note que e possuem a mesma soma dos dígitos: , consequentemente e . Portanto, Assim, existem e inteiros, tais que . Logo, e como , concluímos que . Portanto, . Pelo item ii. do , . Assim, possui um dígito a mais que , mas isto é um absurdo. Portanto, não existem dois números distintos usando os dígitos , tais que um divide o outro.     (AIME 1986)  Qual é o maior inteiro para o qual é divisível por ?   Fazendo a divisão de por , obtemos: para que divida basta que . O maior que satisfaz a condição é .     (Leningrado 1989)  Seja um número natural maior que , e seja um número natural que é um divisor de . Prove que se , então .     Se é um divisor de , então .  Se , então , com .  Então, e pelo item a. vale . Como , temos . Pelo item i. do , usando e , temos ou seja, Pelo item ii. do , . Se , , mas por hipótese .  Se , então . Portanto,       (Extraído de ). Encontre todos os inteiros positivos tais que .   Como , usando o item i. do  Pelo item ii. do , ou , ou Como a função no lado esquerdo da desigualdade é quadrática (dentro do módulo) e a função do lado direito é linear (dentro do módulo), precisamos testar apenas alguns valores para , pois a partir de um determinado valor, a função quadrática sempre assume valores maiores que a linear. Agora, precisamos testar se para e . Portanto, todas as soluções são e .     (Leningrado 1990)  Sejam e números naturais tais que divide . Prove que .   Por hipótese, Pelo item ii. do , Como divide ele mesmo, podemos usar o item i. do para escrever: simplificando, ficamos com Como , . Temos dois casos para analisar.  Caso 1: , então Chegamos em um absurdo.  Caso 2: . Então, .     Mostre que se , então .  Mostre que se , então .  Mostre que se , então .  Mostre que se , então .  O número de seis dígitos satisfaz a propriedade de que é divisível por . Prove que também é divisível por .   Como e , .   Encontre todos os inteiros positivos tais que divide e divide .  Note que e são soluções, vamos mostrar que não existem outras soluções.  Note que portanto , ou seja, Portanto, e consequentemente, Então, não possui solução, pois e .   Sejam e um inteiro positivo qualquer. Prove que se, e somente se, .   Somando em cada termo exceto o último e subtraindo no último termo: Como divide , se , se, e somente se, .   (Bielorússia 1996) Inteiros e , satisfazem a igualdade   Prove que é um quadrado perfeito.  Encontre todos os pares satisfazendo a equação acima.    item a.  Assim, é o quadrado de um número.   item b. Se , então . Os pares de soluções são:     "
 },
 {
   "id": "definition-1",
@@ -358,7 +340,160 @@ var ptx_lunr_docs = [
   "type": "Proposição",
   "number": "1.2.4",
   "title": "(PTOM)(Critério de divisibilidade por 2).",
-  "body": " (PTOM)(Critério de divisibilidade por 2)  Seja um número inteiro com dígitos na base : então se, e somente se, .  "
+  "body": " (PTOM)(Critério de divisibilidade por 2)  Seja um número inteiro com dígitos na base : então se, e somente se, .   Podemos escrever da seguinte maneira: Assim, logo, se, e somente se, .   "
+},
+{
+  "id": "proposition-2",
+  "level": "2",
+  "url": "section-2.html#proposition-2",
+  "type": "Proposição",
+  "number": "1.2.5",
+  "title": "(PTOM)(Critério de divisibilidade por 4).",
+  "body": " (PTOM)(Critério de divisibilidade por 4)  Seja um número inteiro com dígitos na base : então se, e somente se, .   Podemos escrever da seguinte maneira: Assim, logo, se, e somente se, .   "
+},
+{
+  "id": "proposition-3",
+  "level": "2",
+  "url": "section-2.html#proposition-3",
+  "type": "Proposição",
+  "number": "1.2.6",
+  "title": "(PTOM)(Critério de divisibilidade por 3 e por 9).",
+  "body": " (PTOM)(Critério de divisibilidade por 3 e por 9)  Seja um número inteiro com dígitos na base : então  se, e somente se, ;  se, e somente se, .      Portanto, ou seja, Então,  se, e somente se, .  se, e somente se, .     "
+},
+{
+  "id": "proposition-4",
+  "level": "2",
+  "url": "section-2.html#proposition-4",
+  "type": "Proposição",
+  "number": "1.2.7",
+  "title": "(PTOM)(Critério de divisibilidade por 7).",
+  "body": " (PTOM)(Critério de divisibilidade por 7)  Para saber se um inteiro é multiplo de , basta apagar seu último dı́gito, multiplicá-lo por e o subtrair do número que restou. Se o resultado é múltiplo de , então o número original também é múltiplo de .    Se nosso número original está escrito na forma , então o número obtido após a operação descrita é . Basta mostrar que se , então .  Se , , ou seja, Como , pela propriedade i. do , concluímos que ou seja, .   "
+},
+{
+  "id": "example-18",
+  "level": "2",
+  "url": "section-2.html#example-18",
+  "type": "Exemplo",
+  "number": "1.2.8",
+  "title": "",
+  "body": " Mostre que se , então .    . Pela propriedade i. do , , ou seja,    "
+},
+{
+  "id": "example-19",
+  "level": "2",
+  "url": "section-2.html#example-19",
+  "type": "Exemplo",
+  "number": "1.2.9",
+  "title": "",
+  "body": " Usando os dígitos , construímos vários números de sete dígitos distintos. Existem dois deles, distintos, tais que um divide o outro?   Suponha, por absurdo, que sejam dois desses números, com . Vamos usar o critério de divisibilidade por . Note que e possuem a mesma soma dos dígitos: , consequentemente e . Portanto, Assim, existem e inteiros, tais que . Logo, e como , concluímos que . Portanto, . Pelo item ii. do , . Assim, possui um dígito a mais que , mas isto é um absurdo. Portanto, não existem dois números distintos usando os dígitos , tais que um divide o outro.   "
+},
+{
+  "id": "example-20",
+  "level": "2",
+  "url": "section-2.html#example-20",
+  "type": "Exemplo",
+  "number": "1.2.10",
+  "title": "(AIME 1986).",
+  "body": " (AIME 1986)  Qual é o maior inteiro para o qual é divisível por ?   Fazendo a divisão de por , obtemos: para que divida basta que . O maior que satisfaz a condição é .   "
+},
+{
+  "id": "example-21",
+  "level": "2",
+  "url": "section-2.html#example-21",
+  "type": "Exemplo",
+  "number": "1.2.11",
+  "title": "(Leningrado 1989).",
+  "body": " (Leningrado 1989)  Seja um número natural maior que , e seja um número natural que é um divisor de . Prove que se , então .     Se é um divisor de , então .  Se , então , com .  Então, e pelo item a. vale . Como , temos . Pelo item i. do , usando e , temos ou seja, Pelo item ii. do , . Se , , mas por hipótese .  Se , então . Portanto,    "
+},
+{
+  "id": "example-22",
+  "level": "2",
+  "url": "section-2.html#example-22",
+  "type": "Exemplo",
+  "number": "1.2.12",
+  "title": "",
+  "body": "  (Extraído de ). Encontre todos os inteiros positivos tais que .   Como , usando o item i. do  Pelo item ii. do , ou , ou Como a função no lado esquerdo da desigualdade é quadrática (dentro do módulo) e a função do lado direito é linear (dentro do módulo), precisamos testar apenas alguns valores para , pois a partir de um determinado valor, a função quadrática sempre assume valores maiores que a linear. Agora, precisamos testar se para e . Portanto, todas as soluções são e .   "
+},
+{
+  "id": "example-23",
+  "level": "2",
+  "url": "section-2.html#example-23",
+  "type": "Exemplo",
+  "number": "1.2.13",
+  "title": "(Leningrado 1990).",
+  "body": " (Leningrado 1990)  Sejam e números naturais tais que divide . Prove que .   Por hipótese, Pelo item ii. do , Como divide ele mesmo, podemos usar o item i. do para escrever: simplificando, ficamos com Como , . Temos dois casos para analisar.  Caso 1: , então Chegamos em um absurdo.  Caso 2: . Então, .   "
+},
+{
+  "id": "exercise-8",
+  "level": "2",
+  "url": "section-2.html#exercise-8",
+  "type": "Exercício",
+  "number": "1.2.1",
+  "title": "",
+  "body": "Mostre que se , então . "
+},
+{
+  "id": "exercise-9",
+  "level": "2",
+  "url": "section-2.html#exercise-9",
+  "type": "Exercício",
+  "number": "1.2.2",
+  "title": "",
+  "body": "Mostre que se , então . "
+},
+{
+  "id": "exercise-10",
+  "level": "2",
+  "url": "section-2.html#exercise-10",
+  "type": "Exercício",
+  "number": "1.2.3",
+  "title": "",
+  "body": "Mostre que se , então . "
+},
+{
+  "id": "exercise-11",
+  "level": "2",
+  "url": "section-2.html#exercise-11",
+  "type": "Exercício",
+  "number": "1.2.4",
+  "title": "",
+  "body": "Mostre que se , então . "
+},
+{
+  "id": "exercise-12",
+  "level": "2",
+  "url": "section-2.html#exercise-12",
+  "type": "Exercício",
+  "number": "1.2.5",
+  "title": "",
+  "body": "O número de seis dígitos satisfaz a propriedade de que é divisível por . Prove que também é divisível por .   Como e , .  "
+},
+{
+  "id": "exercise-13",
+  "level": "2",
+  "url": "section-2.html#exercise-13",
+  "type": "Exercício",
+  "number": "1.2.6",
+  "title": "",
+  "body": "Encontre todos os inteiros positivos tais que divide e divide .  Note que e são soluções, vamos mostrar que não existem outras soluções.  Note que portanto , ou seja, Portanto, e consequentemente, Então, não possui solução, pois e .  "
+},
+{
+  "id": "exercise-14",
+  "level": "2",
+  "url": "section-2.html#exercise-14",
+  "type": "Exercício",
+  "number": "1.2.7",
+  "title": "",
+  "body": "Sejam e um inteiro positivo qualquer. Prove que se, e somente se, .   Somando em cada termo exceto o último e subtraindo no último termo: Como divide , se , se, e somente se, .  "
+},
+{
+  "id": "exercise-15",
+  "level": "2",
+  "url": "section-2.html#exercise-15",
+  "type": "Exercício",
+  "number": "1.2.8",
+  "title": "(Bielorússia 1996).",
+  "body": "(Bielorússia 1996) Inteiros e , satisfazem a igualdade   Prove que é um quadrado perfeito.  Encontre todos os pares satisfazendo a equação acima.    item a.  Assim, é o quadrado de um número.   item b. Se , então . Os pares de soluções são:   "
 },
 {
   "id": "referencias",
@@ -367,7 +502,7 @@ var ptx_lunr_docs = [
   "type": "Referêcias",
   "number": "2",
   "title": "Referências Bibliográficas",
-  "body": "    Referências Bibliográficas     Notas de aula de Teoria dos Números do POTI  "
+  "body": "    Referências Bibliográficas     Notas de aula de Teoria dos Números do POTI    F. E. Brochero Martinez, C. G. Moreira, N. C. Saldanha, E. Tengan - Teoria dos Números um passeio com primos e outros números familiares pelo mundo inteiro, Projeto Euclides, IMPA, 2010.  "
 }
 ]
 
