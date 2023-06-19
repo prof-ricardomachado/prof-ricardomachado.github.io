@@ -505,11 +505,146 @@ var ptx_lunr_docs = [
   "body": "(Bielorússia 1996) Inteiros e , satisfazem a igualdade   Prove que é um quadrado perfeito.  Encontre todos os pares satisfazendo a equação acima.    item a.  Assim, é o quadrado de um número.   item b. Se , então . Os pares de soluções são:   "
 },
 {
+  "id": "section-3",
+  "level": "1",
+  "url": "section-3.html",
+  "type": "Seção",
+  "number": "2.1",
+  "title": "Aula 03 - Congruência I",
+  "body": " Aula 03 - Congruência I   Dizemos que os inteiros e são congrentes módulo  se eles deixam o mesmo resto quando divididos por . Denotaremos isso por .     Veja que se, e somente se, .    Se e , então:        .  .     Calcule o resto de por .   Observe que Pelo item v. do  Portanto, o resto é .     Calcule o resto de por .   Observe que Pelo item v. do  Portanto, o resto é .     Calcule o resto de por .    Queremos o resto da divisão de por , como , vamos usar a última conguência, e o item v. do para , logo: Agora, usando o item iii. , com : Portanto, o resto é .     Qual o resto de na divisão por ?   Inicialmente, vamos analisar separadamente as congruências:   A fim de usar o item vii. do , vamos analisar as congruências módulo e módulo , separadamente.   1º a congruência do :  e Então, e . Assim, pelo item vii.  Como , temos    2º a congruência do :  e Então, e . Assim, pelo item vii.  Como , temos   Assim, Portanto, o resto é zero.     Prove que é divisível por se é um primo maior que .   Como é um primo ímpar, podemos escrevê-lo da seguinte maneira: , para algum . Assim, Observe que divide , pois ou ou será par. Então,   Agora, basta mostrar que divide . Note que Portanto,   Logo,      (IMO)  Seja a soma dos dı́gitos de . Se , e . Quanto vale ?   Pelo critério de divisibilidade por , , pois o resto da divisão de por é o mesmo que o resto da divisão da soma dos dígitos de por . Como precisamos encontrar . Como , temos   Agora, vamos estimar o valor de . Como , temos . Então, o maior valor possível para seria se fosse igual a , ou seja, teria dígitos do número , portanto .  Além disso, . Então, é menor ou igual a maior soma dos dígitos dos números naturais menores que . Logo,  Como a maior soma é , . O único inteiro menor ou igual a com resto por é o próprio , daí .    Prove que é divisı́vel por para qualquer natural .         Prove que é divisı́vel por para todo inteiro .   O número só pode ser congruente ou a 0, ou a 1, ou a 2, ou a 3 ou a 4, módulo 5. Vamos analisar cada caso.  Caso   Caso   Caso   Caso   Caso        Seja um inteiro positivo tal que e são primos. Mostre que é divisível por . A recı́proca é verdadeira?   Observe que , para algum . De fato, dentre os números , exatamente um deles é divisível por 3 e como e são primos, é divisível por 3 e é par.  Substituindo em : Como , basta mostrar que 5 divide . Vamos analisar a congruência módulo 5.  Se :  Se :  Se :  Se :  Se : .  Isso conclui a demonstração. A recı́proca não é verdadeira. Basta tomar, por exemplo, , pois mas .       "
+},
+{
+  "id": "definition-2",
+  "level": "2",
+  "url": "section-3.html#definition-2",
+  "type": "Definição",
+  "number": "2.1.1",
+  "title": "",
+  "body": " Dizemos que os inteiros e são congrentes módulo  se eles deixam o mesmo resto quando divididos por . Denotaremos isso por .  "
+},
+{
+  "id": "example-24",
+  "level": "2",
+  "url": "section-3.html#example-24",
+  "type": "Exemplo",
+  "number": "2.1.2",
+  "title": "",
+  "body": "  Veja que se, e somente se, .  "
+},
+{
+  "id": "teo-cong01",
+  "level": "2",
+  "url": "section-3.html#teo-cong01",
+  "type": "Teorema",
+  "number": "2.1.3",
+  "title": "",
+  "body": " Se e , então:        .  .   "
+},
+{
+  "id": "example-25",
+  "level": "2",
+  "url": "section-3.html#example-25",
+  "type": "Exemplo",
+  "number": "2.1.4",
+  "title": "",
+  "body": " Calcule o resto de por .   Observe que Pelo item v. do  Portanto, o resto é .   "
+},
+{
+  "id": "example-26",
+  "level": "2",
+  "url": "section-3.html#example-26",
+  "type": "Exemplo",
+  "number": "2.1.5",
+  "title": "",
+  "body": " Calcule o resto de por .   Observe que Pelo item v. do  Portanto, o resto é .   "
+},
+{
+  "id": "example-27",
+  "level": "2",
+  "url": "section-3.html#example-27",
+  "type": "Exemplo",
+  "number": "2.1.6",
+  "title": "",
+  "body": " Calcule o resto de por .    Queremos o resto da divisão de por , como , vamos usar a última conguência, e o item v. do para , logo: Agora, usando o item iii. , com : Portanto, o resto é .   "
+},
+{
+  "id": "example-28",
+  "level": "2",
+  "url": "section-3.html#example-28",
+  "type": "Exemplo",
+  "number": "2.1.7",
+  "title": "",
+  "body": " Qual o resto de na divisão por ?   Inicialmente, vamos analisar separadamente as congruências:   A fim de usar o item vii. do , vamos analisar as congruências módulo e módulo , separadamente.   1º a congruência do :  e Então, e . Assim, pelo item vii.  Como , temos    2º a congruência do :  e Então, e . Assim, pelo item vii.  Como , temos   Assim, Portanto, o resto é zero.   "
+},
+{
+  "id": "example-29",
+  "level": "2",
+  "url": "section-3.html#example-29",
+  "type": "Exemplo",
+  "number": "2.1.8",
+  "title": "",
+  "body": " Prove que é divisível por se é um primo maior que .   Como é um primo ímpar, podemos escrevê-lo da seguinte maneira: , para algum . Assim, Observe que divide , pois ou ou será par. Então,   Agora, basta mostrar que divide . Note que Portanto,   Logo,    "
+},
+{
+  "id": "example-30",
+  "level": "2",
+  "url": "section-3.html#example-30",
+  "type": "Exemplo",
+  "number": "2.1.9",
+  "title": "(IMO).",
+  "body": " (IMO)  Seja a soma dos dı́gitos de . Se , e . Quanto vale ?   Pelo critério de divisibilidade por , , pois o resto da divisão de por é o mesmo que o resto da divisão da soma dos dígitos de por . Como precisamos encontrar . Como , temos   Agora, vamos estimar o valor de . Como , temos . Então, o maior valor possível para seria se fosse igual a , ou seja, teria dígitos do número , portanto .  Além disso, . Então, é menor ou igual a maior soma dos dígitos dos números naturais menores que . Logo,  Como a maior soma é , . O único inteiro menor ou igual a com resto por é o próprio , daí .  "
+},
+{
+  "id": "example-31",
+  "level": "2",
+  "url": "section-3.html#example-31",
+  "type": "Exemplo",
+  "number": "2.1.10",
+  "title": "",
+  "body": " Prove que é divisı́vel por para qualquer natural .       "
+},
+{
+  "id": "example-32",
+  "level": "2",
+  "url": "section-3.html#example-32",
+  "type": "Exemplo",
+  "number": "2.1.11",
+  "title": "",
+  "body": " Prove que é divisı́vel por para todo inteiro .   O número só pode ser congruente ou a 0, ou a 1, ou a 2, ou a 3 ou a 4, módulo 5. Vamos analisar cada caso.  Caso   Caso   Caso   Caso   Caso      "
+},
+{
+  "id": "example-33",
+  "level": "2",
+  "url": "section-3.html#example-33",
+  "type": "Exemplo",
+  "number": "2.1.12",
+  "title": "",
+  "body": " Seja um inteiro positivo tal que e são primos. Mostre que é divisível por . A recı́proca é verdadeira?   Observe que , para algum . De fato, dentre os números , exatamente um deles é divisível por 3 e como e são primos, é divisível por 3 e é par.  Substituindo em : Como , basta mostrar que 5 divide . Vamos analisar a congruência módulo 5.  Se :  Se :  Se :  Se :  Se : .  Isso conclui a demonstração. A recı́proca não é verdadeira. Basta tomar, por exemplo, , pois mas .   "
+},
+{
+  "id": "section-4",
+  "level": "1",
+  "url": "section-4.html",
+  "type": "Seção",
+  "number": "2.2",
+  "title": "Aula 04 - Congruência II",
+  "body": " Aula 04 - Congruência II      "
+},
+{
+  "id": "exercise-18",
+  "level": "2",
+  "url": "section-4.html#exercise-18",
+  "type": "Exercício",
+  "number": "2.2.1",
+  "title": "",
+  "body": " "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
   "type": "Referêcias",
-  "number": "2",
+  "number": "3",
   "title": "Referências Bibliográficas",
   "body": "    Referências Bibliográficas     Notas de aula de Teoria dos Números do POTI    F. E. Brochero Martinez, C. G. Moreira, N. C. Saldanha, E. Tengan - Teoria dos Números um passeio com primos e outros números familiares pelo mundo inteiro, Projeto Euclides, IMPA, 2010.  "
 }

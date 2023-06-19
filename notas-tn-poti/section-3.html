@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Aula 03 - Congruência I</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Teoria dos Números">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Teoria dos Números:</span> <span class="subtitle">notas de aula (PTOM/POTI)</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="01-congruencia.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="01-congruencia.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-4.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01-divisibilidade.html" class="internal"><span class="codenumber">1</span> <span class="title">Divisibilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Aula 01 - Divisibilidade I</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1.1</span> <span class="title">Simulados Antigos</span></a></div></li></ul>
+</li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Aula 02 - Divisibilidade II</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-2.html#exercises-2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01-congruencia.html" class="internal"><span class="codenumber">2</span> <span class="title">Congruência</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Aula 03 - Congruência I</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-3.html#exercises-3" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Aula 04 - Congruência II</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-4.html#exercises-4" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">3</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-3"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">2.1</span> <span class="title">Aula 03 - Congruência I</span>
+</h2>
+<article class="definition definition-like" id="definition-2"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-135">Dizemos que os inteiros <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> são <em class="emphasis">congrentes módulo</em> <span class="process-math">\(m\)</span> se eles deixam o mesmo resto quando divididos por <span class="process-math">\(m\text{.}\)</span> Denotaremos isso por <span class="process-math">\(a \equiv b \mod{m}\text{.}\)</span>
+</div></article><article class="example example-like" id="example-24"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-136">
+<div class="displaymath process-math" id="md-42">
+\begin{gather*}
+7 \equiv 2 \mod 5,\\
+9 \equiv 3 \mod 6,\\
+37 \equiv 7 \mod 10,\\
+5\not\equiv 4 \mod{4}.
+\end{gather*}
+</div>
+<div class="para">Veja que <span class="process-math">\(a \equiv b \mod m\)</span> se, e somente se, <span class="process-math">\(m | a - b\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="teo-cong01"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-137">Se <span class="process-math">\(a\equiv b \mod m\)</span> e <span class="process-math">\(c\equiv d \mod m\text{,}\)</span> então:</div>
+<ol class="lower-roman">
+<li id="li-21"><div class="para" id="p-derived-li-21"><span class="process-math">\(\displaystyle a+c \equiv b+d \mod m\)</span></div></li>
+<li id="li-22"><div class="para" id="p-derived-li-22"><span class="process-math">\(\displaystyle a-c \equiv b-d \mod m\)</span></div></li>
+<li id="li-23"><div class="para" id="p-derived-li-23"><span class="process-math">\(\displaystyle ka \equiv kb \mod m ~ \forall ~k\in \mathbb{Z}\)</span></div></li>
+<li id="li-24"><div class="para" id="p-derived-li-24"><span class="process-math">\(\displaystyle ac\equiv bd \mod m\)</span></div></li>
+<li id="li-25"><div class="para" id="p-derived-li-25"><span class="process-math">\(\displaystyle a^k \equiv b^k \mod m\)</span></div></li>
+<li id="li-26"><div class="para" id="p-derived-li-26"><span class="process-math">\(ka\equiv kb \mod m\Leftrightarrow a\equiv b \mod \left(\dfrac{m}{mdc(k, m)}\right)\text{.}\)</span></div></li>
+<li id="li-27"><div class="para" id="p-derived-li-27"><span class="process-math">\(a\equiv b \mod m_i,~\forall i=1, \ldots, r \Leftrightarrow a\equiv b \mod (mmc(m_1, \ldots, m_r))\text{.}\)</span></div></li>
+</ol></article><article class="example example-like" id="example-25"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-138">Calcule o resto de <span class="process-math">\(4^{100}\)</span> por <span class="process-math">\(3\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><div class="para logical" id="p-139">
+<div class="para">Observe que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html">
+\begin{equation*}
+4\equiv 1 \mod 3.
+\end{equation*}
+</div>
+<div class="para">Pelo item <em class="emphasis">v.</em> do <a href="" class="xref" data-knowl="./knowl/teo-cong01.html" title="Teorema 2.1.3">Teorema 2.1.3</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html">
+\begin{equation*}
+4^{100}\equiv 1^{100} \mod 3 \Rightarrow 4^{100} \equiv 1 \mod 3.
+\end{equation*}
+</div>
+<div class="para">Portanto, o resto é <span class="process-math">\(1\text{.}\)</span>
+</div>
+</div></div></div></article><article class="example example-like" id="example-26"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-140">Calcule o resto de <span class="process-math">\(4^{100}\)</span> por <span class="process-math">\(5\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><div class="para logical" id="p-141">
+<div class="para">Observe que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html">
+\begin{equation*}
+4\equiv -1 \mod 5.
+\end{equation*}
+</div>
+<div class="para">Pelo item <em class="emphasis">v.</em> do <a href="" class="xref" data-knowl="./knowl/teo-cong01.html" title="Teorema 2.1.3">Teorema 2.1.3</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html">
+\begin{equation*}
+4^{100}\equiv (-1)^{100} \mod 3 \Rightarrow 4^{100} \equiv 1 \mod 3.
+\end{equation*}
+</div>
+<div class="para">Portanto, o resto é <span class="process-math">\(1\text{.}\)</span>
+</div>
+</div></div></div></article><article class="example example-like" id="example-27"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-142">Calcule o resto de <span class="process-math">\(4^{100}\)</span> por <span class="process-math">\(7\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><div class="para logical" id="p-143">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html" id="md-43">
+\begin{align*}
+4   \equiv\amp~ 4 \mod 7\\
+4^2 \equiv\amp~ 16 \equiv 2 \mod 7\\
+4^3 \equiv\amp~ 2\cdot 4 \equiv 8 \mod 7\\
+4^3 \equiv\amp~ 1 \mod 7
+\end{align*}
+</div>
+<div class="para">Queremos o resto da divisão de <span class="process-math">\(4^{100}\)</span> por <span class="process-math">\(7\text{,}\)</span> como <span class="process-math">\(100 = 3\cdot 33 +1\text{,}\)</span> vamos usar a última conguência, e o item <em class="emphasis">v.</em> do <a href="" class="xref" data-knowl="./knowl/teo-cong01.html" title="Teorema 2.1.3">Teorema 2.1.3</a> para <span class="process-math">\(k=33\text{,}\)</span> logo:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html">
+\begin{equation*}
+(4^3)^{33} \equiv 1^{33} \mod 7.
+\end{equation*}
+</div>
+<div class="para">Agora, usando o item <em class="emphasis">iii.</em>, com <span class="process-math">\(k=4\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-cong01.html" id="md-44">
+\begin{align*}
+(4^3)^{33}\cdot 4 \equiv\amp~ 1\cdot 4 \mod 7\\
+4^{3\cdot 33+1} \equiv\amp~  4 \mod 7\\
+4^{100} \equiv\amp~ 4 \mod 7
+\end{align*}
+</div>
+<div class="para">Portanto, o resto é <span class="process-math">\(4\text{.}\)</span>
+</div>
+</div></div></div></article><article class="example example-like" id="example-28"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-144">Qual o resto de <span class="process-math">\(36^{36}+41^{41}\)</span> na divisão por <span class="process-math">\(77\text{?}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<div class="para logical" id="p-145">
+<div class="para">Inicialmente, vamos analisar separadamente as congruências:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+36^{36}\equiv x \mod 77 \quad \text{e} \quad 41^{41}\equiv y \mod 77.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-146">A fim de usar o item <em class="emphasis">vii.</em> do <a href="" class="xref" data-knowl="./knowl/teo-cong01.html" title="Teorema 2.1.3">Teorema 2.1.3</a>, vamos analisar as congruências módulo <span class="process-math">\(7\)</span> e módulo <span class="process-math">\(11\text{,}\)</span> separadamente.</div> <div class="para logical" id="p-147">
+<div class="para"><dfn class="terminology">1º a congruência do <span class="process-math">\(36^{36}\text{:}\)</span></dfn></div>
+<div class="displaymath process-math">
+\begin{equation*}
+36\equiv 1 \mod 7
+\end{equation*}
+</div>
+<div class="para">e</div>
+<div class="displaymath process-math" id="md-45">
+\begin{align*}
+36\equiv\amp~ 3 \mod 11\\
+36^2\equiv\amp~ 9 \mod 11\\
+36^3\equiv\amp~ 27\equiv 5 \mod 11\\
+36^4\equiv\amp~ 5\cdot3\equiv 4 \mod 11\\
+36^5\equiv\amp~ 3\cdot 4\equiv 1 \mod 11
+\end{align*}
+</div>
+<div class="para">Então, <span class="process-math">\(36^5\equiv 1 \mod 7\)</span> e <span class="process-math">\(36^5\equiv 1 \mod 11\text{.}\)</span> Assim, pelo item <em class="emphasis">vii.</em>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+36^5\equiv 1 \mod 77.
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(36 = 5\cdot 7 +1\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+36^{36} \equiv(36^5)^7\cdot 36\equiv1\cdot 36 \equiv 36 \mod 77.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-148">
+<div class="para"><dfn class="terminology">2º a congruência do <span class="process-math">\(41^{41}\text{:}\)</span></dfn></div>
+<div class="displaymath process-math" id="md-46">
+\begin{align*}
+41\equiv\amp~ 6 \mod 7\\
+41^2\equiv\amp~ 36 \equiv 1 \mod 7
+\end{align*}
+</div>
+<div class="para">e</div>
+<div class="displaymath process-math" id="md-47">
+\begin{align*}
+41\equiv\amp~ 8 \mod 11\\
+41^2\equiv\amp~ 64 \equiv 9 \equiv -2\mod 11\\
+41^4\equiv\amp~ 4 \mod 11\\
+41^5\equiv\amp~ 4\cdot 8 \equiv 32 \equiv 10 \equiv -1 \mod 11\\
+41^{10}\equiv\amp~ 1 \mod 11
+\end{align*}
+</div>
+<div class="para">Então, <span class="process-math">\(41^{10}\equiv 1 \mod 7\)</span> e <span class="process-math">\(41^{10}\equiv 1 \mod 11\text{.}\)</span> Assim, pelo item <em class="emphasis">vii.</em>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+41^{10}\equiv 1 \mod 77.
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(41 = 10\cdot 4 +1\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+41^{41} \equiv(41^{10})^4\cdot 41\equiv1\cdot 41 \equiv 41 \mod 77.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-149">
+<div class="para">Assim,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+36^{36}+41^{41}\equiv 36+41 \equiv 77 \equiv 0 \mod 77.
+\end{equation*}
+</div>
+<div class="para">Portanto, o resto é zero.</div>
+</div>
+</div></div></article><article class="example example-like" id="example-29"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-150">Prove que <span class="process-math">\(p^2-1\)</span> é divisível por <span class="process-math">\(24\)</span> se <span class="process-math">\(p\)</span> é um primo maior que <span class="process-math">\(3\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<div class="para logical" id="p-151">
+<div class="para">Como <span class="process-math">\(p\)</span> é um primo ímpar, podemos escrevê-lo da seguinte maneira: <span class="process-math">\(p=2k+1\text{,}\)</span> para algum <span class="process-math">\(k\in \mathbb{N}\text{.}\)</span> Assim,</div>
+<div class="displaymath process-math" id="md-48">
+\begin{align*}
+p^2-1 =\amp~ (2k+1)^2-1\\
+=\amp~ 4k^2+4k + 1-1\\
+=\amp~ 4k(k+1)
+\end{align*}
+</div>
+<div class="para">Observe que <span class="process-math">\(8\)</span> divide <span class="process-math">\(4k(k+1)\text{,}\)</span> pois ou <span class="process-math">\(k\)</span> ou <span class="process-math">\(k+1\)</span> será par. Então,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p^2-1 \equiv 0 \mod 8.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-152">
+<div class="para">Agora, basta mostrar que <span class="process-math">\(3\)</span> divide <span class="process-math">\(p^2-1\text{.}\)</span> Note que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p \equiv \pm 1 \mod 3.
+\end{equation*}
+</div>
+<div class="para">Portanto,</div>
+<div class="displaymath process-math" id="md-49">
+\begin{align*}
+p^2\equiv\amp~ 1 \mod 3\\
+p^2-1\equiv\amp~ 0 \mod 3
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-153">
+<div class="para">Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p^2-1 \equiv 0 \mod 24.
+\end{equation*}
+</div>
+</div>
+</div></div></article><article class="example example-like" id="example-30"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">(IMO).</span>
+</h3> <div class="para" id="p-154">Seja <span class="process-math">\(s(n)\)</span> a soma dos dı́gitos de <span class="process-math">\(n\text{.}\)</span> Se <span class="process-math">\(N = 4444^{4444}\text{,}\)</span> <span class="process-math">\(A = s(N)\)</span> e <span class="process-math">\(B = s(A)\text{.}\)</span> Quanto vale <span class="process-math">\(s(B)\text{?}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">
+<div class="para logical" id="p-155">
+<div class="para">Pelo critério de divisibilidade por <span class="process-math">\(9\text{,}\)</span> <span class="process-math">\(N \equiv A \equiv B \mod 9\text{,}\)</span> pois o resto da divisão de <span class="process-math">\(N\)</span> por <span class="process-math">\(9\)</span> é o mesmo que o resto da divisão da soma dos dígitos de <span class="process-math">\(N\)</span> por <span class="process-math">\(9\text{.}\)</span> Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4444\equiv 16\equiv 7 \mod 9,
+\end{equation*}
+</div>
+<div class="para">precisamos encontrar <span class="process-math">\(7^{4444} \mod 9\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-50">
+\begin{align*}
+7^2\equiv\amp~ 4 \mod 9\\
+7^3\equiv\amp~ 4\cdot 7 \equiv 1 \mod 9.
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(4444 = 1481\cdot 3+1\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+7^{4444}\equiv 7^{1481\cdot 3+1}\equiv (7^3)^{1481}\cdot 7 \equiv 7 \mod 9.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-156">Agora, vamos estimar o valor de <span class="process-math">\(s(B)\text{.}\)</span> Como <span class="process-math">\(4444\lt 10^5\text{,}\)</span> temos <span class="process-math">\(N=4444^{4444}\lt 10^{5\cdot 4444}\text{.}\)</span> Então, o maior valor possível para <span class="process-math">\(s(N)\)</span> seria se <span class="process-math">\(N\)</span> fosse igual a <span class="process-math">\(10^{5\cdot 4444}-1\text{,}\)</span> ou seja, <span class="process-math">\(N\)</span> teria <span class="process-math">\(5\cdot 4444\)</span> dígitos do número <span class="process-math">\(9\text{,}\)</span> portanto <span class="process-math">\(A=s(N)\leq 5\cdot 4444\cdot 9=199980\text{.}\)</span>
+</div> <div class="para logical" id="p-157">
+<div class="para">Além disso, <span class="process-math">\(B=s(A)\leq 1+9\cdot 5=46\text{.}\)</span> Então, <span class="process-math">\(s(B)\)</span> é menor ou igual a maior soma dos dígitos dos números naturais menores que <span class="process-math">\(46\text{.}\)</span> Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s(B)\leq s(46), s(45)\ldots, s(39), s(38), \ldots
+\end{equation*}
+</div>
+</div> Como a maior soma é <span class="process-math">\(s(39)=12\text{,}\)</span> <span class="process-math">\(s(B)\leq 12\text{.}\)</span> O único inteiro menor ou igual a <span class="process-math">\(12\)</span> com resto <span class="process-math">\(7\)</span> por <span class="process-math">\(9\)</span> é o próprio <span class="process-math">\(7\text{,}\)</span> daí <span class="process-math">\(s(B)=7\text{.}\)</span>
+</div></div></article><article class="example example-like" id="example-31"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-158">Prove que <span class="process-math">\(11^{n+2} + 12^{2n+1}\)</span> é divisı́vel por <span class="process-math">\(133\)</span> para qualquer natural <span class="process-math">\(n\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><div class="para logical" id="p-159"><div class="displaymath process-math" id="md-51">
+\begin{align*}
+12^2 \equiv 144 \equiv\amp~ 11 \mod 133\\
+12^2 \equiv\amp~ 11 \mod 133\\
+12^{2n}\equiv \amp~ 11^n \mod 133\\
+12^{2n+1}\equiv\amp~ 11^n\cdot 12 \mod 133\\
+12^{2n+1}\equiv\amp~ 11^n(133-121)\\
+12^{2n+1}\equiv\amp~ 11^n\cdot 133 +11^n\cdot(-121)\mod 133\\
+12^{2n+1}\equiv \amp~ -11^{n+2}\mod 133\\
+12^{2n+1} +11^{n+2}\equiv \amp~ 0\mod 133
+\end{align*}
+</div></div></div></div></article><article class="example example-like" id="example-32"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-160">Prove que <span class="process-math">\(n^5 + 4n\)</span> é divisı́vel por <span class="process-math">\(5\)</span> para todo inteiro <span class="process-math">\(n\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><div class="para logical" id="p-161">
+<div class="para">O número <span class="process-math">\(n\)</span> só pode ser congruente ou a 0, ou a 1, ou a 2, ou a 3 ou a 4, módulo 5. Vamos analisar cada caso.</div>
+<ul class="disc">
+<li id="li-28"><div class="para" id="p-derived-li-28">Caso <span class="process-math">\(n\equiv 0 \mod 5:\)</span><div class="displaymath process-math">
+\begin{equation*}
+n^5+4n \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-29"><div class="para" id="p-derived-li-29">Caso <span class="process-math">\(n\equiv 1 \mod 5:\)</span><div class="displaymath process-math">
+\begin{equation*}
+n^5+4n \equiv 1^5 + 4\cdot 1 \equiv 5 \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-30"><div class="para" id="p-derived-li-30">Caso <span class="process-math">\(n\equiv 2 \mod 5:\)</span><div class="displaymath process-math">
+\begin{equation*}
+n^5+4n \equiv 2^5 + 4\cdot 2 \equiv 32+8 \equiv 40 \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-31"><div class="para" id="p-derived-li-31">Caso <span class="process-math">\(n\equiv 3 \mod 5:\)</span><div class="displaymath process-math">
+\begin{equation*}
+n^5+4n \equiv 3^5 + 4\cdot 3 \equiv 243+12 \equiv 260 \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-32"><div class="para" id="p-derived-li-32">Caso <span class="process-math">\(n\equiv 4 \mod 5:\)</span><div class="displaymath process-math">
+\begin{equation*}
+n^5+4n \equiv 4^5 + 4\cdot 4 \equiv 4^2(4^3+1) \equiv 4^2\cdot 65 \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+</ul>
+</div></div></div></article><article class="example example-like" id="example-33"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-162">Seja <span class="process-math">\(n &gt; 6\)</span> um inteiro positivo tal que <span class="process-math">\(n - 1\)</span> e <span class="process-math">\(n + 1\)</span> são primos. Mostre que <span class="process-math">\(n^2 (n^2 + 16)\)</span> é divisível por <span class="process-math">\(720\text{.}\)</span> A recı́proca é verdadeira?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<div class="para" id="p-163">Observe que <span class="process-math">\(n=6k\text{,}\)</span> para algum <span class="process-math">\(k\in \mathbb{N}\text{.}\)</span> De fato, dentre os números <span class="process-math">\(n-1, n, n+1\text{,}\)</span> exatamente um deles é divisível por 3 e como <span class="process-math">\(n-1\)</span> e <span class="process-math">\(n+1\)</span> são primos, <span class="process-math">\(n\)</span> é divisível por 3 e é par.</div> <div class="para logical" id="p-164">
+<div class="para">Substituindo <span class="process-math">\(n=6k\)</span> em <span class="process-math">\(n^2(n^2+16)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-52">
+\begin{align*}
+n^2(n^2+16)=\amp~ (6k)^2((6k)^2+16)\\
+=\amp~ 36k^2(36k^2+16)\\
+=\amp~2^4\cdot 3^4\cdot k^4+2^6\cdot 3^3\cdot k^2\\
+=\amp~2^4\cdot3^2(3^2k^4+2^2k^2)
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(720=2^4\cdot 3^2\cdot 5\text{,}\)</span> basta mostrar que 5 divide <span class="process-math">\((3^2k^4+2^2k^2)\text{.}\)</span> Vamos analisar a congruência módulo 5.</div>
+<ol class="decimal">
+<li id="li-33"><div class="para" id="p-derived-li-33">Se <span class="process-math">\(k\equiv 0 \mod 5\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+9\cdot 0^4+4\cdot 0^2\equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-34"><div class="para" id="p-derived-li-34">Se <span class="process-math">\(k\equiv 1 \mod 5\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+n\equiv 6 \equiv 1 \mod 5 \Rightarrow n-1 \equiv 0 \mod 5, \text{ absurdo}.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-35"><div class="para" id="p-derived-li-35">Se <span class="process-math">\(k\equiv 2 \mod 5\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+9\cdot 2^4+4\cdot 2^2\equiv 160 \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-36"><div class="para" id="p-derived-li-36">Se <span class="process-math">\(k\equiv 3 \mod 5\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+9\cdot 3^4+4\cdot 3^2\equiv 765 \equiv 0 \mod 5.
+\end{equation*}
+</div>
+</div></li>
+<li id="li-37"><div class="para" id="p-derived-li-37">Se <span class="process-math">\(k\equiv 4 \mod 5\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+n\equiv 6\cdot 4 \equiv 24 \equiv -1 \mod 5 \Rightarrow n+1\equiv 0\mod 5, \text{ absurdo}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+<div class="para">Isso conclui a demonstração. A recı́proca não é verdadeira. Basta tomar, por exemplo, <span class="process-math">\(n = 90\text{,}\)</span> pois</div>
+<div class="displaymath process-math">
+\begin{equation*}
+90^2(90^2+16) = 65739600 = 720\cdot 91305,
+\end{equation*}
+</div>
+<div class="para">mas <span class="process-math">\(n+1=91=13\cdot7\text{.}\)</span>
+</div>
+</div>
+</div></div></article><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
+</h3></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="01-congruencia.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-4.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
