@@ -2302,7 +2302,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.4",
   "title": "Derivada da Função Composta, Derivada de Função Implícita e Inversa",
-  "body": " Derivada da Função Composta, Derivada de Função Implícita e Inversa   Notação de Leibniz   Seja . Fazendo , temos       A notação é usada para indicar .  Na notação de Leibniz, a derivada de , em é indicada por .     Derivada da Função Composta   (Regra da Cadeia) Sejam e duas funções deriváveis, com , então a composta é derivável e vale a regra da cadeia:    Supondo . Por hipótese e são deriváveis, e portanto contínuas, quando , e a igualdade implica na existência de . Portanto é derivável. Além disso,      Calcule , sendo          Seja uma função derivável e seja . Calcule supondo .    Seja . Verifique que      Derivada de Função Dada Implicitamente   Uma função está escrita na forma explícita quando a variável está de uma lado da igualdade e do outro lado os termos em . Caso contrário, a função está escrita na forma implícita .    Função na forma explícita. , com , dada por: Forma implícita da função:     Calcule a derivada da função .    .     Calcule a função na forma implícita: .   Para derivar a função na forma implícita, a função deve ser vista como função de , ou seja, como , assim: E aplicamos as regras da soma e do produto:       Como , substituindo em , temos:      Expresse em termos de e de , na qual é uma função diferenciável dada implicitamente pela equação        a)    b)    c)        Derivada da Função Inversa   Seja uma função inversível com inversa . Se é derivável em um ponto e , então sua inversa é também derivável em . Além disso:    Como é inversível e derivável em , com , sabemos que e Como derivando esta última identidade em relação a e usando a regra da cadeia, obtemos: Portanto,      Seja uma função definida por Encontre a derivada de no ponto .   Como , temos que é uma função crescente, portanto é sobrejetiva. Dessa forma, como , temos      Calcule , com .   Como é contínua e é a inversa de em , temos pois, . Sabemos que Para , temos segue pois . Substituindo em temos      Determine a derivada.          Para cada função determine e tais que . Depois use a regra da cadeia para calcular a derivada de .             Encontre a derivada das seguintes funções.                        Expresse em termos de e , onde é uma função diferenciável dada implicitamente pela equação                           Encontre a derivada da função. Simplifique onde possível.             "
+  "body": " Derivada da Função Composta, Derivada de Função Implícita e Inversa   Notação de Leibniz   Seja . Fazendo , temos       A notação é usada para indicar .  Na notação de Leibniz, a derivada de , em é indicada por .     Derivada da Função Composta   (Regra da Cadeia) Sejam e duas funções deriváveis, com , então a composta é derivável e vale a regra da cadeia:    Supondo . Por hipótese e são deriváveis, e portanto contínuas, quando , e a igualdade implica na existência de . Portanto é derivável. Além disso,      Calcule , sendo          Seja uma função derivável e seja . Calcule supondo .    Seja . Verifique que      Derivada de Função Dada Implicitamente   Uma função está escrita na forma explícita quando a variável está de uma lado da igualdade e do outro lado os termos em . Caso contrário, a função está escrita na forma implícita .    Função na forma explícita. , com , dada por: Forma implícita da função:     Calcule a derivada da função .    .     Calcule a função na forma implícita: .   Para derivar a função na forma implícita, a função deve ser vista como função de , ou seja, como , assim: E aplicamos as regras da soma e do produto:       Como , substituindo em , temos:      Expresse em termos de e de , na qual é uma função diferenciável dada implicitamente pela equação        a)    b)    c)        Derivada da Função Inversa   Seja uma função inversível com inversa . Se é derivável em um ponto e , então sua inversa é também derivável em . Além disso:    Como é inversível e derivável em , com , sabemos que e Como derivando esta última identidade em relação a e usando a regra da cadeia, obtemos: Portanto,      Seja uma função definida por Encontre a derivada de no ponto .   Como , temos que é uma função crescente, portanto é sobrejetiva. Dessa forma, como , temos      Calcule , com .   Observe que é contínua e é a inversa de , . Então e Derivando a igualdade: , obtemos Usando a Igualdade , obtemos Sabemos que Para , temos Portanto, Substituindo em temos      Determine a derivada.          Para cada função determine e tais que . Depois use a regra da cadeia para calcular a derivada de .             Encontre a derivada das seguintes funções.                        Expresse em termos de e , onde é uma função diferenciável dada implicitamente pela equação                           Encontre a derivada da função. Simplifique onde possível.             "
 },
 {
   "id": "remark-24",
@@ -2419,7 +2419,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.4.14",
   "title": "",
-  "body": " Calcule , com .   Como é contínua e é a inversa de em , temos pois, . Sabemos que Para , temos segue pois . Substituindo em temos    "
+  "body": " Calcule , com .   Observe que é contínua e é a inversa de , . Então e Derivando a igualdade: , obtemos Usando a Igualdade , obtemos Sabemos que Para , temos Portanto, Substituindo em temos    "
 },
 {
   "id": "example-82",
@@ -2473,7 +2473,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.1",
   "title": "Problemas de Taxa de Variação",
-  "body": " Problemas de Taxa de Variação   Seja a função . A razão é a taxa média de variação de entre e . A derivada de , em é também denominada de taxa de variação de em .    O raio de uma esfera está variando, com o tempo, a uma taxa constante de (m\/s). Com que taxa está variando o volume da esfera no instante em que (m)?   Seja o instante em que . Queremos calcular . Sabemos que . Pela regra da cadeia Como e , temos Para , , logo      Suponhamos que uma partícula se desloca sobre o eixo de acordo com uma função de posição . A velocidade média da partícula entre os instantes e é definida pelo quociente é o deslocamento da partícula entre os instantes e .  A velocidade da partícula no instante é definida como sendo a derivada (caso exista) de em . Assim,   A aceleração no instante é definida como sendo a derivada em da função ; Assim,     Uma partícula move-se (de acordo com a animação abaixo) sobre o eixo de modo que no instante a posição é dada por , . Suponha dado em metros e em segundos.       Determine as posições ocupadas pela partícula nos instantes , , , , .  Qual a velocidade no instante ?  Qual a aceleração no instante ?  Esboce o gráfico da função de posição.          Uma partícula move-se sobre o eixo (de acordo com a animação abaixo) de modo que no instante a posição é dada por , .       Qual a velocidade no instante ?  Qual a aceleração no instante ?  Estude a variação de sinal de .  Esboce o gráfico da função de posição.          Um ponto move-se sobre a parábola (conforme a animação abaixo). Suponha que as coordenadas e de são deriváveis e que . Pergunta-se: em que ponto da parábola a velocidade da ordenada de é o triplo da velocidade da abscissa de ?       Como a velocidade da ordenada de é o triplo da velocidade da abscissa de , temos Usando derivação implícita: Substituindo em temos      Uma partícula desloca-se sobre o eixo com função de posição .  Determine a velocidade no instante .  Qual a aceleração no instante ?  Esboce o gráfico da função de posição.   A posição de uma partícula que se desloca ao longo do eixo depende do tempo de acordo com a equação .  Determine a velocidade no instante .  Determine a aceleração no instante .    "
+  "body": " Problemas de Taxa de Variação   Seja a função . A razão é a taxa média de variação de entre e . A derivada de , em é também denominada de taxa de variação de em .    O raio de uma esfera está variando, com o tempo, a uma taxa constante de (m\/s). Com que taxa está variando o volume da esfera no instante em que (m)?   Seja o instante em que . Queremos calcular . Sabemos que . Pela regra da cadeia Como , temos Para , , logo     Seja o instante em que . Queremos calcular . Sabemos que . Pela regra da cadeia Como e , temos Para , , logo      Suponhamos que uma partícula se desloca sobre o eixo de acordo com uma função de posição . A velocidade média da partícula entre os instantes e é definida pelo quociente é o deslocamento da partícula entre os instantes e .  A velocidade da partícula no instante é definida como sendo a derivada (caso exista) de em . Assim,   A aceleração no instante é definida como sendo a derivada em da função ; Assim,     Uma partícula move-se (de acordo com a animação abaixo) sobre o eixo de modo que no instante a posição é dada por , . Suponha dado em metros e em segundos.       Determine as posições ocupadas pela partícula nos instantes , , , , .  Qual a velocidade no instante ?  Qual a aceleração no instante ?  Esboce o gráfico da função de posição.          Uma partícula move-se sobre o eixo (de acordo com a animação abaixo) de modo que no instante a posição é dada por , .       Qual a velocidade no instante ?  Qual a aceleração no instante ?  Estude a variação de sinal de .  Esboce o gráfico da função de posição.          Um ponto move-se sobre a parábola (conforme a animação abaixo). Suponha que as coordenadas e de são deriváveis e que . Pergunta-se: em que ponto da parábola a velocidade da ordenada de é o triplo da velocidade da abscissa de ?       Como a velocidade da ordenada de é o triplo da velocidade da abscissa de , temos Usando derivação implícita em , obtemos: Substituindo em temos     Como a velocidade da ordenada de é o triplo da velocidade da abscissa de , temos Usando derivação implícita: Substituindo em temos      Uma partícula desloca-se sobre o eixo com função de posição .  Determine a velocidade no instante .  Qual a aceleração no instante ?  Esboce o gráfico da função de posição.   A posição de uma partícula que se desloca ao longo do eixo depende do tempo de acordo com a equação .  Determine a velocidade no instante .  Determine a aceleração no instante .    "
 },
 {
   "id": "definition-42",
@@ -2491,7 +2491,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "4.1.2",
   "title": "",
-  "body": " O raio de uma esfera está variando, com o tempo, a uma taxa constante de (m\/s). Com que taxa está variando o volume da esfera no instante em que (m)?   Seja o instante em que . Queremos calcular . Sabemos que . Pela regra da cadeia Como e , temos Para , , logo    "
+  "body": " O raio de uma esfera está variando, com o tempo, a uma taxa constante de (m\/s). Com que taxa está variando o volume da esfera no instante em que (m)?   Seja o instante em que . Queremos calcular . Sabemos que . Pela regra da cadeia Como , temos Para , , logo     Seja o instante em que . Queremos calcular . Sabemos que . Pela regra da cadeia Como e , temos Para , , logo    "
 },
 {
   "id": "definition-43",
@@ -2527,7 +2527,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "4.1.8",
   "title": "",
-  "body": " Um ponto move-se sobre a parábola (conforme a animação abaixo). Suponha que as coordenadas e de são deriváveis e que . Pergunta-se: em que ponto da parábola a velocidade da ordenada de é o triplo da velocidade da abscissa de ?       Como a velocidade da ordenada de é o triplo da velocidade da abscissa de , temos Usando derivação implícita: Substituindo em temos    "
+  "body": " Um ponto move-se sobre a parábola (conforme a animação abaixo). Suponha que as coordenadas e de são deriváveis e que . Pergunta-se: em que ponto da parábola a velocidade da ordenada de é o triplo da velocidade da abscissa de ?       Como a velocidade da ordenada de é o triplo da velocidade da abscissa de , temos Usando derivação implícita em , obtemos: Substituindo em temos     Como a velocidade da ordenada de é o triplo da velocidade da abscissa de , temos Usando derivação implícita: Substituindo em temos    "
 },
 {
   "id": "exercise-51",
@@ -2908,18 +2908,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-511",
+  "id": "p-513",
   "level": "2",
-  "url": "referencias.html#p-511",
+  "url": "referencias.html#p-513",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-512",
+  "id": "p-514",
   "level": "2",
-  "url": "referencias.html#p-512",
+  "url": "referencias.html#p-514",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
