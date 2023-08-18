@@ -1,71 +1,206 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:53:51-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Combinações Completas</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Análise Combinatória e Probabilidade">
+<meta property="book:author" content="Ricardo Nunes Machado Junior">
+<meta property="book:author" content="Gabriel Araújo Guedes">
+<meta property="book:author" content="Luiz Manoel de Santana Neto">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior, Gabriel Araújo Guedes, Luiz Manoel de Santana Neto</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-permutacoes-com-repeticoes.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="pcontagem.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="ocontagem.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -79,234 +214,336 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
-<p class="byline">Ricardo Nunes Machado Junior, Luiz Manoel de Santana Neto</p>
-</div>
-</div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-permutacoes-com-repeticoes.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="ocontagem.html" title="Próximo">Próximo</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-permutacoes-com-repeticoes.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="ocontagem.html" title="Próximo">Próximo</a>
-</div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
-<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
+<li><div class="toc-item"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li>
-<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
-<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
-<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
-<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
-<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas" class="active">Combinações Completas</a></li>
+<li>
+<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípio Aditivo e Princípio Multiplicativo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-1" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-2" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="ocontagem.html" data-scroll="ocontagem"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
-<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
-<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
-<li><a href="section-permutacao-caotica-repeticoes.html" data-scroll="section-permutacao-caotica-repeticoes">Permutações Caóticas com Repetições</a></li>
-<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
-<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
-<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
-<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
-<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-5" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-6" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a><ul>
-<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
-<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
-<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
-<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link"><a href="calculadora.html" data-scroll="calculadora"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-combinacoes-completas"><h2 class="heading hide-type">
+<li>
+<div class="toc-item"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-7" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
+<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-8" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
+<li><div class="toc-item"><a href="section-inclusao-exclusao.html#exercises-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-9" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-10" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-11" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-12" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#exercises-8" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-13" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-14" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#exercises-9" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-15" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-16" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-17" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-18" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#exercises-10" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-19" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-20" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-21" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-casa-pombos.html#exercises-11" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-13.html#subsection-22" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html#subsection-23" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html#subsection-24" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html#exercises-12" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-13" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-14" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-15" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-16" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-25" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-17" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-26" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-18" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-combinacoes-completas"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1.7</span> <span class="title">Combinações Completas</span>
 </h2>
-<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
+<article class="objectives goal-like" id="dEf"><h3 class="heading"><span class="type">Objetivos</span></h3>
 <ol class="decimal">
-<li id="li-78">Definir combinação completa.</li>
-<li id="li-79">Mostrar como obter a lista com todas as permutações com repetições de \(n\) elementos.</li>
-<li id="li-80">Mostrar como calcular o número de permutações com repetições de \(n\) elementos.</li>
-<li id="li-81">Exemplificar.</li>
-</ol></article><p id="p-400">Na <em class="emphasis">combinação completa</em> (ou <em class="emphasis">combinação com repetição</em>), contamos o número de maneiras de escolher elementos de um conjunto, sendo permitido escolher um elemento repetidamente. Antes de formalizar o conceito, começamos com um exemplo que ilustra bem essa noção.</p>
-<article class="example example-like" id="exem-com-completa"><h6 class="heading">
+<li id="li-78"><div class="para" id="p-derived-li-78">Definir combinação completa.</div></li>
+<li id="li-79"><div class="para" id="p-derived-li-79">Mostrar como obter a lista com todas as permutações com repetições de <span class="process-math">\(n\)</span> elementos.</div></li>
+<li id="li-80"><div class="para" id="p-derived-li-80">Mostrar como calcular o número de permutações com repetições de <span class="process-math">\(n\)</span> elementos.</div></li>
+<li id="li-81"><div class="para" id="p-derived-li-81">Exemplificar.</div></li>
+</ol></article><div class="para" id="p-400">Na <em class="emphasis">combinação completa</em> (ou <em class="emphasis">combinação com repetição</em>), contamos o número de maneiras de escolher elementos de um conjunto, sendo permitido escolher um elemento repetidamente. Antes de formalizar o conceito, começamos com um exemplo que ilustra bem essa noção.</div>
+<article class="example example-like" id="exem-com-completa"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span>
-</h6>
-<p id="p-401">Em uma determinada sorveteria há 6 sabores disponíveis, de quantos modos pode ser feito um pedido de uma taça com 3 bolas de sorvete?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like">
-<p id="p-402">Denote cada sabor por um número entre \(1\) e \(6\text{.}\) Note que este problema é equivalente ao de encontrar o número de soluções inteiras da equação:</p>
-<div class="displaymath">
+</h3>
+<div class="para" id="p-401">Em uma determinada sorveteria há 6 sabores disponíveis, de quantos modos pode ser feito um pedido de uma taça com 3 bolas de sorvete?</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-64" id="solution-64"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like">
+<div class="para logical" id="p-402">
+<div class="para">Denote cada sabor por um número entre <span class="process-math">\(1\)</span> e <span class="process-math">\(6\text{.}\)</span> Note que este problema é equivalente ao de encontrar o número de soluções inteiras da equação:</div>
+<div class="displaymath process-math" id="eq-comb-completa">
 \begin{equation}
-x_1 + x_2 + x_3 + x_4 + x_5 + x_6  = 3, ~~~ \text{ com }  x_i \geq 0, \label{eq-comb-completa}\tag{1.7.1}
+x_1 + x_2 + x_3 + x_4 + x_5 + x_6  = 3, ~~~ \text{ com }  x_i \geq 0, \tag{1.7.1}
 \end{equation}
 </div>
-<p data-braille="continuation">na qual, cada \(x_i, i\in\{1, 2, 3, 4, 5, 6\}\) representa a quantidade de bolas de sorvete com sabor \(i\text{.}\) Claramente, temos a restrição \(x_i\geq 0\text{,}\) pois não podemos pegar uma quantidade negativa de bolas de sorvete.</p>
-<p id="p-403">Vamos mostrar que o problema de encontrar o número de soluções <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 1.7.1">(1.7.1)</a> é equivalente a encontrar o número de permutações com repetições de uma sequência com \(3\) elementos de um tipo e \(5\) elementos de outro tipo.</p>
-<p id="p-404">Escreva de \(x_1\) até \(x_6\text{,}\) entre uma incógnita e outra coloque na linha de baixo um traço vertical. Para representar a quantidade bolas de sorvete com sabor \(1\) ou \(6\text{,}\) coloque a respectiva quantidade de bolas antes do primeiro traço ou depois do último traço, respectivamente. Para representar a quantidade de bolas de sorvete com sabor \(i\text{,}\) com \(i\in \{2, 3, 4, 5\}\text{,}\) coloque a quantidade de bolas abaixo de \(x_i\text{,}\) entre dois traços consecutivos. Assim, a solução</p>
-<div class="displaymath">
+<div class="para">na qual, cada <span class="process-math">\(x_i, i\in\{1, 2, 3, 4, 5, 6\}\)</span> representa a quantidade de bolas de sorvete com sabor <span class="process-math">\(i\text{.}\)</span> Claramente, temos a restrição <span class="process-math">\(x_i\geq 0\text{,}\)</span> pois não podemos pegar uma quantidade negativa de bolas de sorvete.</div>
+</div> <div class="para" id="p-403">Vamos mostrar que o problema de encontrar o número de soluções <a href="" class="xref" data-knowl="./knowl/eq-comb-completa.html" title="Equação 1.7.1">(1.7.1)</a> é equivalente a encontrar o número de permutações com repetições de uma sequência com <span class="process-math">\(3\)</span> elementos de um tipo e <span class="process-math">\(5\)</span> elementos de outro tipo.</div> <div class="para logical" id="p-404">
+<div class="para">Escreva de <span class="process-math">\(x_1\)</span> até <span class="process-math">\(x_6\text{,}\)</span> entre uma incógnita e outra coloque na linha de baixo um traço vertical. Para representar a quantidade bolas de sorvete com sabor <span class="process-math">\(1\)</span> ou <span class="process-math">\(6\text{,}\)</span> coloque a respectiva quantidade de bolas antes do primeiro traço ou depois do último traço, respectivamente. Para representar a quantidade de bolas de sorvete com sabor <span class="process-math">\(i\text{,}\)</span> com <span class="process-math">\(i\in \{2, 3, 4, 5\}\text{,}\)</span> coloque a quantidade de bolas abaixo de <span class="process-math">\(x_i\text{,}\)</span> entre dois traços consecutivos. Assim, a solução</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_1=1, ~ x_5=2, ~ x_i=0, ~~ i\in \{2, 3, 4, 6\} 
 \end{equation*}
 </div>
-<p data-braille="continuation">é representada por:</p>
-<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/combinacaocompleta.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<p id="p-405">Observe que cada permutação dessa representação de traços e bolas é uma solução da Equação <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 1.7.1">(1.7.1)</a> e que cada solução da Equação <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 1.7.1">(1.7.1)</a> pode ser representada com traços de bolas (Existe uma bijeção entre as duas coisas).</p>
-<p id="p-406">Portanto, para encontrar o número de soluções da Equação <a class="xref" data-knowl="./knowl/eq-comb-completa.html" title="[men] 1.7.1">(1.7.1)</a>, basta calcular</p>
-<div class="displaymath">
+<div class="para">é representada por:</div>
+</div> <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/combinacaocompleta.svg" role="img" class="contained"></div> <div class="para" id="p-405">Observe que cada permutação dessa representação de traços e bolas é uma solução da Equação <a href="" class="xref" data-knowl="./knowl/eq-comb-completa.html" title="Equação 1.7.1">(1.7.1)</a> e que cada solução da Equação <a href="" class="xref" data-knowl="./knowl/eq-comb-completa.html" title="Equação 1.7.1">(1.7.1)</a> pode ser representada com traços de bolas (Existe uma bijeção entre as duas coisas).</div> <div class="para logical" id="p-406">
+<div class="para">Portanto, para encontrar o número de soluções da Equação <a href="" class="xref" data-knowl="./knowl/eq-comb-completa.html" title="Equação 1.7.1">(1.7.1)</a>, basta calcular</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-comb-completa.html">
 \begin{equation*}
 PR_8^{5, 3} = 56, 
 \end{equation*}
 </div>
-<p data-braille="continuation">pois, temos 5 traços e 3 bolas, então estamos permutando um total de 8 elementos, sendo 5 de um tipo e 3 de outro tipo.</p>
-</div></div></article><article class="definition definition-like" id="def-combinacao-completa"><h6 class="heading">
+<div class="para">pois, temos 5 traços e 3 bolas, então estamos permutando um total de 8 elementos, sendo 5 de um tipo e 3 de outro tipo.</div>
+</div>
+</div></div></article><article class="definition definition-like" id="def-combinacao-completa"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span>
-</h6>
-<p id="p-407">O número de <em class="emphasis">combinações completas</em> de \(n\) elementos, tomados \(p\) a \(p\) é o número de formas de escolher \(p\) elementos dentre \(n\) disponíveis, podendo escolher repetidamente os objetos, até obter a quantidade \(p\text{.}\)</p>
-<p id="p-408">O número de combinações completas de \(n\) elementos, tomados \(p\) a \(p\) é denotado por:</p>
-<div class="displaymath">
+</h3>
+<div class="para" id="p-407">O número de <em class="emphasis">combinações completas</em> de <span class="process-math">\(n\)</span> elementos, tomados <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> é o número de formas de escolher <span class="process-math">\(p\)</span> elementos dentre <span class="process-math">\(n\)</span> disponíveis, podendo escolher repetidamente os objetos, até obter a quantidade <span class="process-math">\(p\text{.}\)</span>
+</div> <div class="para logical" id="p-408">
+<div class="para">O número de combinações completas de <span class="process-math">\(n\)</span> elementos, tomados <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> é denotado por:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 CR_n^{p} 
 \end{equation*}
-</div></article><article class="remark remark-like" id="remark-3"><h6 class="heading">
-<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
-</h6>As combinações completas dos objetos \(1, 2, 3, 4\) tomados 3 a 3 são: <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">Combinations([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4], 3).list()
-</script></div></article><article class="theorem theorem-like" id="teo-combinacao-completa"><h6 class="heading">
+</div>
+</div></article><article class="remark remark-like" id="remark-3"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
+</h3>As combinações completas dos objetos <span class="process-math">\(1, 2, 3, 4\)</span> tomados 3 a 3 são: <pre class="ptx-sagecell sagecell-sage" id="sage-20"><script type="text/x-sage">Combinations([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4], 3).list()
+</script></pre></article><article class="theorem theorem-like" id="teo-combinacao-completa"><h3 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span>
-</h6>
-<div class="displaymath" id="p-409">
+</h3>
+<div class="para logical" id="p-409"><div class="displaymath process-math">
 \begin{equation*}
 CR_n^p = PR_{p+n-1}^{p, n-1} = C_{p+n-1}^p
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof">Calcular \(CR_n^p\) é o mesmo que encontrar o número de soluções da equação:<div class="displaymath">
+</div></div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof">Calcular <span class="process-math">\(CR_n^p\)</span> é o mesmo que encontrar o número de soluções da equação:<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-com-completa.html">
 \begin{equation*}
 x_1 + x_2 + x_3 + \ldots + x_n  = p, ~~~ \text{ com }  x_i \geq 0 
 \end{equation*}
-</div>Usando a ideia da representação de "bolas e traços" da Solução do (<a class="xref" data-knowl="./knowl/exem-com-completa.html" title="Exemplo 1.7.1">Exemplo 1.7.1</a>) vamos ficar com \(p\) bolas e \(n-1\) traços. O cálculo do número de permutações destes \(p+n-1\) objetos com \(p\) objetos de um tipo e \(n-1\) objetos de outro tipo é dado por:<div class="displaymath">
+</div>Usando a ideia da representação de "bolas e traços" da Solução do (<a href="" class="xref" data-knowl="./knowl/exem-com-completa.html" title="Exemplo 1.7.1">Exemplo 1.7.1</a>) vamos ficar com <span class="process-math">\(p\)</span> bolas e <span class="process-math">\(n-1\)</span> traços. O cálculo do número de permutações destes <span class="process-math">\(p+n-1\)</span> objetos com <span class="process-math">\(p\)</span> objetos de um tipo e <span class="process-math">\(n-1\)</span> objetos de outro tipo é dado por:<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-com-completa.html">
 \begin{equation*}
 PR_{p+n-1}^{p, n-1} = C_{p+n-1}^p 
 \end{equation*}
 </div></article></div>
-<article class="technology computation-like" id="tec-combinacao-completa"><h6 class="heading">
+<article class="technology computation-like" id="tec-combinacao-completa"><h3 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span>
-</h6>
-<p id="p-410">Para obter o número de combinações completas de \(n\text{,}\)tomados \(p\) a \(p\text{,}\) usamos o código binomial(p+n-1, p).</p>
-<div class="sagecell-sage" id="sage-21"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p)
+</h3>
+<div class="para" id="p-410">Para obter o número de combinações completas de <span class="process-math">\(n\text{,}\)</span>tomados <span class="process-math">\(p\)</span> a <span class="process-math">\(p\text{,}\)</span> usamos o código binomial(p+n-1, p).</div> <pre class="ptx-sagecell sagecell-sage" id="sage-21"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p)
 CR(6, 3)
-</script></div></article><article class="example example-like" id="example-23"><h6 class="heading">
+</script></pre></article><article class="example example-like" id="example-23"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span>
-</h6>
-<p id="p-411">Quantas são as soluções inteiras e não negativas de</p>
-<div class="displaymath">
+</h3>
+<div class="para logical" id="p-411">
+<div class="para">Quantas são as soluções inteiras e não negativas de</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_1 + x_2 + x_3 + \ldots + x_{10}  = 20?
 \end{equation*}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
-<p id="p-412">O número de soluções desta equação, com \(x_i\in \mathbb{Z} \text{ e } x_i\geq 0, i\in\{1, 2, \ldots, 10\}\)  é o  número de combinações completas de 10 elementos, tomados 20 a 20:</p>
-<div class="displaymath">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
+<div class="para logical" id="p-412">
+<div class="para">O número de soluções desta equação, com <span class="process-math">\(x_i\in \mathbb{Z} \text{ e } x_i\geq 0, i\in\{1, 2, \ldots, 10\}\)</span>  é o  número de combinações completas de 10 elementos, tomados 20 a 20:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 CR_{10}^{20}
 \end{equation*}
 </div>
-<div class="hidden-sagecell-sage" id="sage-22"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p) 
+</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-22"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p) 
 CR(10, 20)
-</script></div>
-</div></div></article><article class="example example-like" id="example-24"><h6 class="heading">
+</script></pre>
+</div></div></article><article class="example example-like" id="example-24"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span>
-</h6>
-<p id="p-413">Quantas são as soluções inteiras da equação</p>
-<div class="displaymath">
+</h3>
+<div class="para logical" id="p-413">
+<div class="para">Quantas são as soluções inteiras da equação</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_1 + x_2 + x_3 = 15,
 \end{equation*}
 </div>
-<p data-braille="continuation">com \(x_1&gt;0\text{,}\) \(x_2\geq 2\) e \(x_3 \geq 4\text{?}\)</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like">
-<p id="p-414">Defina</p>
-<div class="displaymath">
+<div class="para">com <span class="process-math">\(x_1&gt;0\text{,}\)</span> <span class="process-math">\(x_2\geq 2\)</span> e <span class="process-math">\(x_3 \geq 4\text{?}\)</span>
+</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like"><div class="para logical" id="p-414">
+<div class="para">Defina</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-exem-178.html">
 \begin{equation*}
 x_1 = x+1, 
 \end{equation*}
 </div>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-exem-178.html">
 \begin{equation*}
 x_2 = y+2 
 \end{equation*}
 </div>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-exem-178.html">
 \begin{equation*}
 x_3 = z+4 
 \end{equation*}
 </div>
-<p data-braille="continuation">Substituindo, temos</p>
-<div class="displaymath">
+<div class="para">Substituindo, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-exem-178.html">
 \begin{equation*}
 (x+1) + (y+2) + (z+4) = 15 
 \end{equation*}
 </div>
-<p data-braille="continuation">ou seja</p>
-<div class="displaymath">
+<div class="para">ou seja</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-exem-178.html" id="eq-exem-178">
 \begin{equation}
-x + y + z = 8 \label{eq-exem-178}\tag{1.7.2}
+x + y + z = 8 \tag{1.7.2}
 \end{equation}
 </div>
-<p data-braille="continuation">Desta forma, o número de soluções de <a class="xref" data-knowl="./knowl/eq-exem-178.html" title="[men] 1.7.2">(1.7.2)</a> será a solução do problema, pois, quando \(x=0\) teremos \(x_1=1\text{,}\) quando \(y=0\) teremos \(x_2=2\) e quando \(z=0\) teremos \(x_3=4\text{.}\) Portanto a resposta é</p>
-<div class="displaymath">
+<div class="para">Desta forma, o número de soluções de <a href="" class="xref" data-knowl="./knowl/eq-exem-178.html" title="Equação 1.7.2">(1.7.2)</a> será a solução do problema, pois, quando <span class="process-math">\(x=0\)</span> teremos <span class="process-math">\(x_1=1\text{,}\)</span> quando <span class="process-math">\(y=0\)</span> teremos <span class="process-math">\(x_2=2\)</span> e quando <span class="process-math">\(z=0\)</span> teremos <span class="process-math">\(x_3=4\text{.}\)</span> Portanto a resposta é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-exem-178.html">
 \begin{equation*}
 CR_3^{8} = 45. 
 \end{equation*}
 </div>
-</div></div></article><article class="example example-like" id="example-25"><h6 class="heading">
+</div></div></div></article><article class="example example-like" id="example-25"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.7.8</span><span class="period">.</span>
-</h6>
-<p id="p-415">Quantas são as soluções inteiras e não negativas de</p>
-<div class="displaymath">
+</h3>
+<div class="para logical" id="p-415">
+<div class="para">Quantas são as soluções inteiras e não negativas de</div>
+<div class="displaymath process-math" id="sol-desi">
 \begin{equation}
-x_1 + x_2 + x_3 + x_4  \leq 50?\label{sol-desi}\tag{1.7.3}
+x_1 + x_2 + x_3 + x_4  \leq 50?\tag{1.7.3}
 \end{equation}
 </div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like">
-<p id="p-416">Observe que uma possibilidade seria calcular o número de soluções de cada um dos casos:</p>
-<div class="displaymath">
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like">
+<div class="para logical" id="p-416">
+<div class="para">Observe que uma possibilidade seria calcular o número de soluções de cada um dos casos:</div>
+<div class="displaymath process-math" id="sol-igual">
 \begin{equation}
 \begin{cases} x_1 + x_2 + x_3 + x_4  = 0,\\
 x_1 + x_2 + x_3 + x_4  = 1\\
 \vdots \\
-x_1 + x_2 + x_3 + x_4  = 50.\end{cases}\label{sol-igual}\tag{1.7.4}
+x_1 + x_2 + x_3 + x_4  = 50.\end{cases}\tag{1.7.4}
 \end{equation}
 </div>
-<p data-braille="continuation">A soma do número de soluções de cada um dos casos é a resposta, no entanto, é inviável fazer tal cálculo. Felizmente temos outra forma de resolver este problema.</p>
-<p id="p-417">Observe que existe uma bijeção entre o conjunto das soluções de <a class="xref" data-knowl="./knowl/sol-desi.html" title="[men] 1.7.3">(1.7.3)</a> com o conjunto das soluções da equação <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 1.7.5">(1.7.5)</a>:</p>
-<div class="displaymath">
+<div class="para">A soma do número de soluções de cada um dos casos é a resposta, no entanto, é inviável fazer tal cálculo. Felizmente temos outra forma de resolver este problema.</div>
+</div> <div class="para" id="p-417">Observe que existe uma bijeção entre o conjunto das soluções de <a href="" class="xref" data-knowl="./knowl/sol-desi.html" title="Equação 1.7.3">(1.7.3)</a> com o conjunto das soluções da equação <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html" id="sol-desi2">
 \begin{equation}
-x_1 + x_2 + x_3 + x_4 + y  = 50.\label{sol-desi2}\tag{1.7.5}
+x_1 + x_2 + x_3 + x_4 + y  = 50.\tag{1.7.5}
 \end{equation}
 </div>
-<p id="p-418">Para entender a bijeção, observe o seguinte. Somando \(50-i, i\in \{0, 1, 2, \ldots, 50\}\text{,}\) nos dois lados da igualdade, na linha \(i, i\in \{0, 1, 2, \ldots, 50\}\) de <a class="xref" data-knowl="./knowl/sol-igual.html" title="[men] 1.7.4">(1.7.4)</a>, não mudamos absolutamente nada e ficamos com:</p>
-<div class="displaymath">
+<div class="para" id="p-418">Para entender a bijeção, observe o seguinte. Somando <span class="process-math">\(50-i, i\in \{0, 1, 2, \ldots, 50\}\text{,}\)</span> nos dois lados da igualdade, na linha <span class="process-math">\(i, i\in \{0, 1, 2, \ldots, 50\}\)</span> de <a href="" class="xref" data-knowl="./knowl/sol-igual.html" title="Equação 1.7.4">(1.7.4)</a>, não mudamos absolutamente nada e ficamos com:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html" id="men-7">
 \begin{equation}
 \begin{cases} x_1 + x_2 + x_3 + x_4 + 50 = 0 + 50,\\
 x_1 + x_2 + x_3 + x_4 + 49  = 1 +49 \\
@@ -314,102 +551,109 @@ x_1 + x_2 + x_3 + x_4 + 49  = 1 +49 \\
 x_1 + x_2 + x_3 + x_4 + 0  = 50+0.\end{cases}\tag{1.7.6}
 \end{equation}
 </div>
-<p id="p-419">Cada solução da linha \(i\text{,}\) é uma solução de <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 1.7.5">(1.7.5)</a> com o valor de \(y\) igual a \(50-i\text{.}\) E para cada \(y\in \{0, 1, 2, \ldots, 50\}\) a solução de <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 1.7.5">(1.7.5)</a> vai ser a solução da linha \(y\) de <a class="xref" data-knowl="./knowl/sol-igual.html" title="[men] 1.7.4">(1.7.4)</a> .</p>
-<p id="p-420">Portanto a resposta é o número de solução da equação <a class="xref" data-knowl="./knowl/sol-desi2.html" title="[men] 1.7.5">(1.7.5)</a> que é dado por:</p>
-<div class="displaymath">
+<div class="para" id="p-419">Cada solução da linha <span class="process-math">\(i\text{,}\)</span> é uma solução de <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a> com o valor de <span class="process-math">\(y\)</span> igual a <span class="process-math">\(50-i\text{.}\)</span> E para cada <span class="process-math">\(y\in \{0, 1, 2, \ldots, 50\}\)</span> a solução de <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a> vai ser a solução da linha <span class="process-math">\(y\)</span> de <a href="" class="xref" data-knowl="./knowl/sol-igual.html" title="Equação 1.7.4">(1.7.4)</a> .</div> <div class="para" id="p-420">Portanto a resposta é o número de solução da equação <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a> que é dado por:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
 \begin{equation*}
 CR_5^{50} = 316251. 
 \end{equation*}
 </div>
-</div></div></article><article class="example example-like" id="example-26"><h6 class="heading">
+</div></div></article><article class="example example-like" id="example-26"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span>
-</h6>(VESTIBULAR UFPE – UFRPE / 1998 2ª ETAPA) <p id="p-421">Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).</p>
-<figure class="figure figure-like" id="tro"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/tro.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.7.10<span class="period">.</span></span><span class="space"> </span>Uma das peças com os valores 1, 2 e 4.</figcaption></figure><p id="p-422">Quantas peças há no trominó, supondo n = 6?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like">
-<p id="p-423">Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:</p>
-<ol class="decimal">
-<li id="li-82">Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma.</li>
-<li id="li-83">Dois lados possuem um valor e o terceiro lado possui um valor diferente. Cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas como temos duas entradas iguais, precisamos dividir por 2.</li>
-<li id="li-84">Cada lado possui um valor diferente. Cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2.</li>
-</ol>
-<p id="p-424">Inicialmente, vamos contar como se em cada tipo, as peças só pudessem ser formadas de uma forma, depois vamos acrescentar a quantidade de peças do terceiro tipo, que fica faltando nessa contagem inicial.</p>
-<p id="p-425">Temos que escolher os valores de cada um dos 3 lados de cada peça do trominó. Como os valores vão de 1 até 6 e são 3 lados, o número de peças do trominó (sem contar as permutações circulares) para \(n=6\) é o número de soluções inteiras não negativas da equação:</p>
-<div class="displaymath">
+</h3>(VESTIBULAR UFPE – UFRPE / 1998 2ª ETAPA) <div class="para" id="p-421">Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).</div> <figure class="figure figure-like" id="tro"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/tro.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.7.10<span class="period">.</span></span><span class="space"> </span>Uma das peças com os valores 1, 2 e 4.</figcaption></figure> <div class="para" id="p-422">Quantas peças há no trominó, supondo n = 6?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like">
+<div class="para" id="p-423">Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:</div> <ol class="decimal">
+<li id="li-82"><div class="para" id="p-derived-li-82">Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma.</div></li>
+<li id="li-83"><div class="para" id="p-derived-li-83">Dois lados possuem um valor e o terceiro lado possui um valor diferente. Cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas como temos duas entradas iguais, precisamos dividir por 2.</div></li>
+<li id="li-84"><div class="para" id="p-derived-li-84">Cada lado possui um valor diferente. Cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2.</div></li>
+</ol> <div class="para" id="p-424">Inicialmente, vamos contar como se em cada tipo, as peças só pudessem ser formadas de uma forma, depois vamos acrescentar a quantidade de peças do terceiro tipo, que fica faltando nessa contagem inicial.</div> <div class="para logical" id="p-425">
+<div class="para">Temos que escolher os valores de cada um dos 3 lados de cada peça do trominó. Como os valores vão de 1 até 6 e são 3 lados, o número de peças do trominó (sem contar as permutações circulares) para <span class="process-math">\(n=6\)</span> é o número de soluções inteiras não negativas da equação:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_1 + x_2 + x_3 + x_4 + x_ 5 + x_ 6 = 3, 
 \end{equation*}
 </div>
-<p data-braille="continuation">que é dado por \(CR_6^3\text{.}\)</p>
-<p id="p-426">Agora precisamos contar as peças, do terceiro tipo, que estão faltando. Como os três valores são diferentes, temos 6 opções de valores para escolher 3 e para cada escolha, temos duas formas de organizar na peça do trominó, portanto o número de peças desse tipo é:</p>
-<div class="displaymath">
+<div class="para">que é dado por <span class="process-math">\(CR_6^3\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-426">
+<div class="para">Agora precisamos contar as peças, do terceiro tipo, que estão faltando. Como os três valores são diferentes, temos 6 opções de valores para escolher 3 e para cada escolha, temos duas formas de organizar na peça do trominó, portanto o número de peças desse tipo é:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 2\times C_6^3 =40. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Já que, a metade das peças do terceiro tipo foram contadas uma vez pela combinação completa, \(CR_6^3\text{,}\) a quantidade total de peças é:</p>
-<div class="displaymath">
+<div class="para">Já que, a metade das peças do terceiro tipo foram contadas uma vez pela combinação completa, <span class="process-math">\(CR_6^3\text{,}\)</span> a quantidade total de peças é:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 CR_6^{3} + C_6^3 = 56+20 = 76. 
 \end{equation*}
 </div>
+</div>
 </div></div></article><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber">1.7.1</span> <span class="title">Exercícios</span>
+<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-427">Quantas são as soluções inteiras positivas de \(x+y+z+w = 15\text{?}\)</p>
+<article class="exercise exercise-like" id="exercise-53"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-427">Quantas são as soluções inteiras positivas de <span class="process-math">\(x+y+z+w = 15\text{?}\)</span>
+</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-53" id="answer-53"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-53"><div class="answer solution-like"><p id="p-428">\(CR_{4}^{11} = 364.\)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-429">Quantas são as peças de um dominó comum?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-53" id="answer-53"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-53"><div class="answer solution-like"><div class="para" id="p-428"><span class="process-math">\(CR_{4}^{11} = 364.\)</span></div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-54"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-429">Quantas são as peças de um dominó comum?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-54" id="answer-54"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-54"><div class="answer solution-like"><p id="p-430">28</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like">
-<p id="p-431">Sejam \(x_i, i\in\{0, 1, 2, \ldots, 6\}\) variáveis. Cada solução não negativa da equação:</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-54" id="answer-54"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-54"><div class="answer solution-like"><div class="para" id="p-430">28</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like"><div class="para logical" id="p-431">
+<div class="para">Sejam <span class="process-math">\(x_i, i\in\{0, 1, 2, \ldots, 6\}\)</span> variáveis. Cada solução não negativa da equação:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_0+x_1+x_2+\cdots+x_6 = 2,
 \end{equation*}
 </div>
-<p data-braille="continuation">representa uma pedra do dominó. Portanto, o número de pedras do dominó é</p>
-<div class="displaymath">
+<div class="para">representa uma pedra do dominó. Portanto, o número de pedras do dominó é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 CR_{7}^2 = 28.
 \end{equation*}
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-432">(UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.</p>
-<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/domino.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-55"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-432">(UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.</div> <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/domino.svg" role="img" class="contained"></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-55" id="answer-55"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-55"><div class="answer solution-like"><p id="p-433">55</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like">
-<p id="p-434">Sejam \(x_i, i\in\{0, 1, 2, \ldots, 9\}\) variáveis. Cada solução não negativa da equação:</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-55" id="answer-55"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-55"><div class="answer solution-like"><div class="para" id="p-433">55</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like"><div class="para logical" id="p-434">
+<div class="para">Sejam <span class="process-math">\(x_i, i\in\{0, 1, 2, \ldots, 9\}\)</span> variáveis. Cada solução não negativa da equação:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_0+x_1+x_2+\cdots+x_9 = 2,
 \end{equation*}
 </div>
-<p data-braille="continuation">representa uma pedra do dominó. Portanto, o número de pedras do dominó é</p>
-<div class="displaymath">
+<div class="para">representa uma pedra do dominó. Portanto, o número de pedras do dominó é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 CR_{10}^2 = 55.
 \end{equation*}
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-435">Quantas são as soluções inteiras não-negativas de \(x_1+x_2+x_3+x_4+x_5 = 8\) nas quais \(x_1&gt;x_2\text{?}\)</p>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-56"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-435">Quantas são as soluções inteiras não-negativas de <span class="process-math">\(x_1+x_2+x_3+x_4+x_5 = 8\)</span> nas quais <span class="process-math">\(x_1&gt;x_2\text{?}\)</span>
+</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-56" id="answer-56"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-56"><div class="answer solution-like"><p id="p-436">200</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-437">Quantos inteiros entre \(1\) e \(100.000.000\text{,}\) inclusive, possui a propriedade: "cada dígito é menor ou igual ao seu sucessor"?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-56" id="answer-56"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-56"><div class="answer solution-like"><div class="para" id="p-436">200</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-57"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-437">Quantos inteiros entre <span class="process-math">\(1\)</span> e <span class="process-math">\(100.000.000\text{,}\)</span> inclusive, possui a propriedade: "cada dígito é menor ou igual ao seu sucessor"?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-57" id="answer-57"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-57"><div class="answer solution-like"><p id="p-438">24309</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-439">De quantas maneiras é possível colocar 10 anéis diferentes em 8 dedos?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-57" id="answer-57"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-57"><div class="answer solution-like"><div class="para" id="p-438">24309</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-58"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-439">De quantas maneiras é possível colocar 10 anéis diferentes em 8 dedos?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-58" id="answer-58"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-58"><div class="answer solution-like"><p id="p-440">70572902400</p></div></div>
-</div></article></section></section></div></main>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-58" id="answer-58"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-58"><div class="answer solution-like"><div class="para" id="p-440">70572902400</div></div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-permutacoes-com-repeticoes.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ocontagem.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

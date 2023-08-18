@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-20T09:54:09-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="sample-book.html"><span class="title">Análise Combinatória e ProbabilidadeAnálise Combinatória:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-inclusao-exclusao.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="section-inclusao-exclusao.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="subsection-6.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-inclusao-exclusao.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="section-inclusao-exclusao.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="subsection-6.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sets.html" data-scroll="sets"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="exercicios-lista1.html" data-scroll="exercicios-lista1">Exercícios</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li><a href="exercicios-lista2.html" data-scroll="exercicios-lista2">Exercícios</a></li>
+<li><a href="references-1.html" data-scroll="references-1">Referências</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="contagem2.html" data-scroll="contagem2"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="exercicios-lista3.html" data-scroll="exercicios-lista3">Exercícios</a></li>
+<li><a href="references-2.html" data-scroll="references-2">Referências</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integers.html" data-scroll="integers"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-math-induction.html" data-scroll="section-math-induction">Triângulo de Pascal</a></li>
+<li><a href="section-division-algorithm.html" data-scroll="section-division-algorithm">O Binômio de Newton</a></li>
+<li><a href="references-3.html" data-scroll="references-3">References and Suggested Readings</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-algebra.html" data-scroll="part-algebra"><span class="codenumber">I</span> <span class="title">Probabilidade</span></a></li>
+<li class="link">
+<a href="groups.html" data-scroll="groups"><span class="codenumber">4</span> <span class="title">Espaços de Probabilidade</span></a><ul>
+<li><a href="section-mod-n-sym.html" data-scroll="section-mod-n-sym">Integer Equivalence Classes and Symmetries</a></li>
+<li><a href="section-groups-define.html" data-scroll="section-groups-define">Definitions and Examples</a></li>
+<li><a href="section-subgroups.html" data-scroll="section-subgroups">Subgroups</a></li>
+<li><a href="groups-sage.html" data-scroll="groups-sage">Sage</a></li>
+<li><a href="exercises-groups.html" data-scroll="exercises-groups">Exercises</a></li>
+<li><a href="exercises-5.html" data-scroll="exercises-5">Additional Exercises: Detecting Errors</a></li>
+<li><a href="groups-sage-exercises.html" data-scroll="groups-sage-exercises">Sage Exercises</a></li>
+<li><a href="references-4.html" data-scroll="references-4">References and Suggested Readings</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="cyclic.html" data-scroll="cyclic"><span class="codenumber">5</span> <span class="title">Probabilidades Condicionais e Distribuição Binomial</span></a><ul>
+<li><a href="section-27.html" data-scroll="section-27">Cyclic groups</a></li>
+<li><a href="section-28.html" data-scroll="section-28">Subgroups of a Cyclic Group</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Cyclic Groups of Complex Numbers</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Large Powers of Integers</a></li>
+<li><a href="exercises-cyclic.html" data-scroll="exercises-cyclic">Exercises</a></li>
+<li><a href="exercises-8.html" data-scroll="exercises-8">Programming Exercises</a></li>
+<li><a href="cyclic-sage-exercises.html" data-scroll="cyclic-sage-exercises">Sage Exercises</a></li>
+<li><a href="references-5.html" data-scroll="references-5">References and Suggested Readings</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="subsection" id="subsection-5"><h2 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span>
+</h2>
+<article class="theorem theorem-like" id="teo-inclusao-exclusao-2"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.1.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-162">Sejam  \(A\)  e  \(B\)  conjuntos finitos, então</p>
+<div class="displaymath">
+\begin{equation*}
+\#(A\cup B) = \#A + \# B - \#(A\cap B). 
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="inclusao-exclusao-2"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/inclusaoexclusao2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.1.2<span class="period">.</span></span><span class="space"> </span>Diagrama de Venn para \((A\cup B)\text{.}\)</figcaption></figure><p id="p-163">Ou seja, a cardinalidade de \(A\cup B\) é igual a cardinalidade de \(A\) mais a cardinalidade de \(B\) menos a cardinalidade de \(A\cap B\text{.}\)</p></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-164">Sejam \(A\) e \(B\) conjuntos finitos, \(T_1\) a tarefa de selecionar um elemento de \(A\) e \(T_2\) a tarefa de selecionar um elemento de \(B\text{.}\)</p>
+<p id="p-165">Existem \(\#A\) maneiras de realizar \(T_1\) e \(\#B\) maneiras de realizar \(T_2\text{.}\) O número de maneiras de executar \(T_1\) ou \(T_2\) é a soma do número de maneiras de executar \(T_1\) com o número de maneiras de executar \(T_2\) menos o número  de maneiras de  executar ambos \(T_1\) e \(T_2\text{,}\) pois esta quantidade já foi contada duas vezes.</p>
+<p id="p-166">Como existem \(\#(A\cup B)\) maneiras de realizar \(T_1\) ou \(T_2\) e \(\#(A\cap B)\) maneiras de realizar \(T_1\) e \(T_2\text{,}\) temos:</p>
+<div class="displaymath">
+\begin{equation*}
+\#(A\cup B)=\#A+\#B-\#(A\cap B).
+\end{equation*}
+</div></article></div>
+<article class="fact theorem-like" id="fact-23"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-167">Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens foram entrevistados?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<p id="p-168">Defina \(E\) como o conjunto dos alunos entrevistados que gostam de exatas e defina \(H\) como o conjunto dos alunos entrevistados que gostam de humanas, assim</p>
+<div class="displaymath">
+\begin{equation*}
+\#E=80, \#H = 60 \text{ e }\#(E\cap H) = 15.
+\end{equation*}
+</div>
+<p data-braille="continuation">Dessa forma, calculando \(\#E+\#H\) o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja</p>
+<div class="displaymath">
+\begin{equation*}
+\#(E\cup H)= \#E+\#H-\#(E\cap H) = 80 + 60-15 = 125.
+\end{equation*}
+</div>
+</div></div></article><article class="theorem theorem-like" id="theorem-7"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.1.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-169">Sejam  \(A, B\) e  \(C\)  conjuntos finitos, então</p>
+<div class="displaymath">
+\begin{align*}
+\#(A\cup B\cup C) = \amp ~\#(A)+\#(B)+\#(C) \\
+\amp ~ -\#(A\cap B)-\#(A\cap C)-\#(B\cap C) \\
+\amp ~ +\#(A\cap B\cap C). 
+\end{align*}
+</div>
+<figure class="figure figure-like" id="inclusao-exclusao-3"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/inclusaoexclusao3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.1.5<span class="period">.</span></span><span class="space"> </span>Diagrama de Venn para \((A\cup B\cup C)\text{.}\)</figcaption></figure></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-170">Considere \((A\cup B)\) como um conjunto, usando o (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.1.1">Teorema 2.1.1.1</a>) temos:</p>
+<div class="displaymath">
+\begin{align*}
+\#[A\cup B\cup C] = \amp~\#[(A\cup B)\cup C] \\
+= \amp ~\#(A\cup B)+\#C-\#[(A\cup B)\cap C] \\
+= \amp ~ \#A+\#B-\#(A\cap B)+\#C-\#[(A\cup B)\cap C]. 
+\end{align*}
+</div>
+<p data-braille="continuation">Usando a igualdade: $$ (A\cup B)\cap C = (A\cap C)\cup (B\cap C), $$ temos</p>
+<div class="displaymath">
+\begin{equation*}
+\#[A\cup B\cup C] = \#A+\#B-\#(A\cap B)+\#C-\#[(A\cap C)\cup (B\cap C)]. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Aplicando o (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.1.1">Teorema 2.1.1.1</a>) na união \([(A\cap C)\cup (B\cap C)]\text{,}\) concluímos a demonstração:</p>
+<div class="displaymath">
+\begin{align*}
+\#(A\cup B\cup C) = \amp ~\#A+\#B-\#(A\cap B)+\#C \\
+\amp ~ -\#(A\cap C)-\#(B\cap C) \\
+\amp ~ +\#(A\cap B\cap C). 
+\end{align*}
+</div></article></div></section></div></main>
+</div>
+</body>
+</html>

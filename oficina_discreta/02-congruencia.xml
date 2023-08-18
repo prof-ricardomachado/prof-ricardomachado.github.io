@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2015 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+<!-- This file was originally part of the book     -->
+<!-- (as copied on 2015/07/12)                     -->
+<!--                                               -->
+<!--   Abstract Algebra: Theory and Applications   -->
+<!--                                               -->
+<!-- Copyright (C) 1997-2014  Thomas W. Judson     -->
+
+<chapter xml:id="01-congruencia" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- % TWJ, 2010/03/31 -->
+<!-- % Chapters now begin with Chapter 1 -->
+
+<title>Congruência</title>
+
+
+
+    <introduction>
+
+      <!-- <p>Falta Texto</p> -->
+<p><term>Realização:</term></p>
+<image source="images/realizacao" width="40%"/> 
+<p><term>Apoio:</term></p>
+<image source="images/apoio" width="25%"/> 
+    </introduction> 
+
+
+<section >
+<title>Aula 03 - Congruência I</title>
+
+
+
+<definition>
+<p>
+Dizemos que os inteiros <m>a</m> e <m>b</m> são <em>congrentes módulo</em> <m>m</m> se eles deixam o mesmo resto quando divididos por <m>m</m>. Denotaremos isso por <m>a \equiv b \mod{m}</m>.
+</p>
+</definition>
+
+<example>
+<p>
+<md>
+<mrow>7 \equiv 2 \mod 5,</mrow>
+<mrow>9 \equiv 3 \mod 6,</mrow>
+<mrow>37 \equiv 7 \mod 10,</mrow>
+<mrow>5\not\equiv 4 \mod{4}.</mrow>
+</md>
+Veja que <m>a \equiv b \mod m</m> se, e somente se, <m>m | a - b</m>.
+</p>
+</example>
+
+<theorem xml:id='teo-cong01'>
+<p>
+Se <m>a\equiv b \mod m</m> e <m>c\equiv d \mod m</m>, então:
+</p>
+<ol label='i'>
+<li><m>a+c \equiv b+d \mod m</m></li>
+<li><m>a-c \equiv b-d \mod m</m></li>
+<li><m>ka \equiv kb \mod m ~ \forall ~k\in \mathbb{Z}</m></li>
+<li><m>ac\equiv bd \mod m</m></li>
+<li><m>a^k \equiv b^k \mod m</m></li>
+<li><m>ka\equiv kb \mod m\Leftrightarrow a\equiv b \mod \left(\dfrac{m}{mdc(k, m)}\right)</m>.</li>
+<li><m>a\equiv b \mod m_i,~\forall i=1, \ldots, r \Leftrightarrow a\equiv b \mod (mmc(m_1, \ldots, m_r))</m>.</li>
+</ol>
+</theorem>
+
+<example>
+<p>
+Calcule o resto de <m>4^{100}</m> por <m>3</m>.
+</p>
+<solution>
+<p>
+Observe que
+<me>4\equiv 1 \mod 3.</me>
+Pelo item <em>v.</em> do <xref ref="teo-cong01"/>
+<me>4^{100}\equiv 1^{100} \mod 3 \Rightarrow 4^{100} \equiv 1 \mod 3.</me>
+Portanto, o resto é <m>1</m>.
+</p>
+</solution>
+</example>
+
+
+<example>
+<p>
+Calcule o resto de <m>4^{100}</m> por <m>5</m>.
+</p>
+<solution>
+<p>
+Observe que
+<me>4\equiv -1 \mod 5.</me>
+Pelo item <em>v.</em> do <xref ref="teo-cong01"/>
+<me>4^{100}\equiv (-1)^{100} \mod 3 \Rightarrow 4^{100} \equiv 1 \mod 3.</me>
+Portanto, o resto é <m>1</m>.
+</p>
+</solution>
+</example>
+
+
+<example>
+<p>
+Calcule o resto de <m>4^{100}</m> por <m>7</m>.
+</p>
+<solution>
+<p>
+<md>
+<mrow>4   \equiv\amp~ 4 \mod 7</mrow>
+<mrow>4^2 \equiv\amp~ 16 \equiv 2 \mod 7</mrow>
+<mrow>4^3 \equiv\amp~ 2\cdot 4 \equiv 8 \mod 7</mrow>
+<mrow>4^3 \equiv\amp~ 1 \mod 7</mrow>
+</md>
+Queremos o resto da divisão de <m>4^{100}</m> por <m>7</m>, como <m>100 = 3\cdot 33 +1</m>, vamos usar a última conguência, e o item <em>v.</em> do <xref ref="teo-cong01"/> para <m>k=33</m>, logo:
+<me>(4^3)^{33} \equiv 1^{33} \mod 7.</me>
+Agora, usando o item <em>iii.</em>, com <m>k=4</m>:
+<md>
+<mrow>(4^3)^{33}\cdot 4 \equiv\amp~ 1\cdot 4 \mod 7</mrow>
+<mrow>4^{3\cdot 33+1} \equiv\amp~  4 \mod 7</mrow>
+<mrow>4^{100} \equiv\amp~ 4 \mod 7</mrow>
+</md>
+Portanto, o resto é <m>4</m>.
+</p>
+</solution>
+</example>
+
+<example>
+<p>
+Qual o resto de <m>36^{36}+41^{41}</m> na divisão por <m>77</m>?
+</p>
+<solution>
+<p>
+Inicialmente, vamos analisar separadamente as congruências:
+<me>36^{36}\equiv x \mod 77 \quad \text{e} \quad 41^{41}\equiv y \mod 77.</me>
+</p>
+<p>
+A fim de usar o item <em>vii.</em> do <xref ref="teo-cong01"/>, vamos analisar as congruências módulo <m>7</m> e módulo <m>11</m>, separadamente.
+</p>
+<p>
+<term>1º a congruência do <m>36^{36}</m>:</term>
+<me>36\equiv 1 \mod 7</me>
+e
+<md>
+<mrow>36\equiv\amp~ 3 \mod 11</mrow>
+<mrow>36^2\equiv\amp~ 9 \mod 11</mrow>
+<mrow>36^3\equiv\amp~ 27\equiv 5 \mod 11</mrow>
+<mrow>36^4\equiv\amp~ 5\cdot3\equiv 4 \mod 11</mrow>
+<mrow>36^5\equiv\amp~ 3\cdot 4\equiv 1 \mod 11</mrow>
+</md>
+Então, <m>36^5\equiv 1 \mod 7</m> e <m>36^5\equiv 1 \mod 11</m>. Assim, pelo item <em>vii.</em> 
+<me>36^5\equiv 1 \mod 77.</me>
+Como <m>36 = 5\cdot 7 +1</m>, temos
+<me>36^{36} \equiv(36^5)^7\cdot 36\equiv1\cdot 36 \equiv 36 \mod 77.</me>
+</p>
+<p>
+<term>2º a congruência do <m>41^{41}</m>:</term>
+<md>
+<mrow>41\equiv\amp~ 6 \mod 7</mrow>
+<mrow>41^2\equiv\amp~ 36 \equiv 1 \mod 7</mrow>
+</md>
+e
+<md>
+<mrow>41\equiv\amp~ 8 \mod 11</mrow>
+<mrow>41^2\equiv\amp~ 64 \equiv 9 \equiv -2\mod 11</mrow>
+<mrow>41^4\equiv\amp~ 4 \mod 11</mrow>
+<mrow>41^5\equiv\amp~ 4\cdot 8 \equiv 32 \equiv 10 \equiv -1 \mod 11</mrow>
+<mrow>41^{10}\equiv\amp~ 1 \mod 11</mrow>
+</md>
+Então, <m>41^{10}\equiv 1 \mod 7</m> e <m>41^{10}\equiv 1 \mod 11</m>. Assim, pelo item <em>vii.</em> 
+<me>41^{10}\equiv 1 \mod 77.</me>
+Como <m>41 = 10\cdot 4 +1</m>, temos
+<me>41^{41} \equiv(41^{10})^4\cdot 41\equiv1\cdot 41 \equiv 41 \mod 77.</me>
+</p>
+<p>
+Assim, 
+<me>36^{36}+41^{41}\equiv 36+41 \equiv 77 \equiv 0 \mod 77.</me>
+Portanto, o resto é zero.
+</p>
+</solution>
+</example>
+
+
+<example>
+<p>
+Prove que <m>p^2-1</m> é divisível por <m>24</m> se <m>p</m> é um primo maior que <m>3</m>.
+</p>
+<solution>
+<p>
+Como <m>p</m> é um primo ímpar, podemos escrevê-lo da seguinte maneira: <m>p=2k+1</m>, para algum <m>k\in \mathbb{N}</m>. Assim,
+<md>
+<mrow>p^2-1 =\amp~ (2k+1)^2-1</mrow>
+<mrow>      =\amp~ 4k^2+4k + 1-1</mrow>
+<mrow>      =\amp~ 4k(k+1)</mrow>
+</md>
+Observe que <m>8</m> divide <m>4k(k+1)</m>, pois ou <m>k</m> ou <m>k+1</m> será par. Então,
+<me>p^2-1 \equiv 0 \mod 8.</me>
+</p>
+<p>
+Agora, basta mostrar que <m>3</m> divide <m>p^2-1</m>. Note que 
+<me>p \equiv \pm 1 \mod 3.</me>
+Portanto,
+<md>
+<mrow>p^2\equiv\amp~ 1 \mod 3</mrow>
+<mrow>p^2-1\equiv\amp~ 0 \mod 3</mrow>
+</md>
+</p>
+<p>
+Logo,
+<me>p^2-1 \equiv 0 \mod 24.</me>
+</p>
+</solution>
+</example>
+
+<example>
+<title>(IMO)</title>
+<p>
+Seja <m>s(n)</m> a soma dos dı́gitos de <m>n</m>. Se <m>N = 4444^{4444}</m>, <m>A = s(N)</m> e <m>B = s(A)</m>. Quanto vale <m>s(B)</m>?
+</p>
+<solution>
+<p>
+Pelo critério de divisibilidade por <m>9</m>, <m>N \equiv A \equiv B \mod 9</m>, pois o resto da divisão de <m>N</m> por <m>9</m> é o mesmo que o resto da divisão da soma dos dígitos de <m>N</m> por <m>9</m>.
+Como
+<me>4444\equiv 16\equiv 7 \mod 9,</me>
+precisamos encontrar <m>7^{4444} \mod 9</m>.
+<md>
+<mrow>7^2\equiv\amp~ 4 \mod 9</mrow>
+<mrow>7^3\equiv\amp~ 4\cdot 7 \equiv 1 \mod 9.</mrow>
+</md>
+Como <m>4444 = 1481\cdot 3+1</m>, temos
+<me>7^{4444}\equiv 7^{1481\cdot 3+1}\equiv (7^3)^{1481}\cdot 7 \equiv 7 \mod 9.</me>
+</p>
+<p>
+Agora, vamos estimar o valor de <m>s(B)</m>. Como <m>4444\lt 10^5</m>, temos <m>N=4444^{4444}\lt 10^{5\cdot 4444}</m>. Então, o maior valor possível para <m>s(N)</m> seria se <m>N</m> fosse igual a <m>10^{5\cdot 4444}-1</m>, ou seja, <m>N</m> teria <m>5\cdot 4444</m> dígitos do número <m>9</m>, portanto <m>A=s(N)\leq 5\cdot 4444\cdot 9=199980</m>.
+</p>
+<p>
+Além disso, <m>B=s(A)\leq 1+9\cdot 5=46</m>. Então, <m>s(B)</m> é menor ou igual a maior soma dos dígitos dos números naturais menores que <m>46</m>. Logo, 
+<me>s(B)\leq s(46), s(45)\ldots, s(39), s(38), \ldots</me>
+</p>
+Como a maior soma é <m>s(39)=12</m>, <m>s(B)\leq 12</m>. O único inteiro menor ou igual a <m>12</m> com resto <m>7</m> por <m>9</m> é o próprio <m>7</m>, daí <m>s(B)=7</m>.
+</solution>
+</example>
+
+
+
+<example>
+<p>
+Prove que <m>11^{n+2} + 12^{2n+1}</m> é divisı́vel por <m>133</m> para qualquer natural <m>n</m>.
+</p>
+<solution>
+<p>
+<md>
+<mrow>12^2 \equiv 144 \equiv\amp~ 11 \mod 133</mrow>
+<mrow>12^2 \equiv\amp~ 11 \mod 133</mrow>
+<mrow>12^{2n}\equiv \amp~ 11^n \mod 133</mrow>
+<mrow>12^{2n+1}\equiv\amp~ 11^n\cdot 12 \mod 133</mrow>
+<mrow>12^{2n+1}\equiv\amp~ 11^n(133-121)</mrow>
+<mrow>12^{2n+1}\equiv\amp~ 11^n\cdot 133 +11^n\cdot(-121)\mod 133</mrow>
+<mrow>12^{2n+1}\equiv \amp~ -11^{n+2}\mod 133</mrow>
+<mrow>12^{2n+1} +11^{n+2}\equiv \amp~ 0\mod 133</mrow>
+</md>
+</p>
+</solution> 
+</example>
+
+<example>
+<p>
+Prove que <m>n^5 + 4n</m> é divisı́vel por <m>5</m> para todo inteiro <m>n</m>.
+</p>
+<solution>
+<p>
+O número <m>n</m> só pode ser congruente ou a 0, ou a 1, ou a 2, ou a 3 ou a 4, módulo 5. Vamos analisar cada caso. 
+<ul>
+<li>Caso <m>n\equiv 0 \mod 5:</m> <me>n^5+4n \equiv 0 \mod 5.</me></li>
+<li>Caso <m>n\equiv 1 \mod 5:</m> <me>n^5+4n \equiv 1^5 + 4\cdot 1 \equiv 5 \equiv 0 \mod 5.</me></li>
+<li>Caso <m>n\equiv 2 \mod 5:</m> <me>n^5+4n \equiv 2^5 + 4\cdot 2 \equiv 32+8 \equiv 40 \equiv 0 \mod 5.</me></li>
+<li>Caso <m>n\equiv 3 \mod 5:</m> <me>n^5+4n \equiv 3^5 + 4\cdot 3 \equiv 243+12 \equiv 260 \equiv 0 \mod 5.</me></li>
+<li>Caso <m>n\equiv 4 \mod 5:</m> <me>n^5+4n \equiv 4^5 + 4\cdot 4 \equiv 4^2(4^3+1) \equiv 4^2\cdot 65 \equiv 0 \mod 5.</me></li>
+</ul>
+</p>
+</solution>
+</example>
+
+
+<example>
+<p>
+Seja <m>n > 6</m> um inteiro positivo tal que <m>n - 1</m> e <m>n + 1</m> são primos. Mostre que <m>n^2 (n^2 + 16)</m> é divisível por <m>720</m>. A recı́proca é verdadeira?
+</p>
+<solution>
+<p>
+Observe que <m>n=6k</m>, para algum <m>k\in \mathbb{N}</m>. De fato, dentre os números <m>n-1, n, n+1</m>, exatamente um deles é divisível por 3 e como <m>n-1</m> e <m>n+1</m> são primos, <m>n</m> é divisível por 3 e é par. 
+</p>
+<p>
+Substituindo <m>n=6k</m> em <m>n^2(n^2+16)</m>:
+<md>
+<mrow>n^2(n^2+16)=\amp~ (6k)^2((6k)^2+16)</mrow>
+<mrow>=\amp~ 36k^2(36k^2+16)</mrow>
+<mrow>=\amp~2^4\cdot 3^4\cdot k^4+2^6\cdot 3^3\cdot k^2</mrow>
+<mrow>=\amp~2^4\cdot3^2(3^2k^4+2^2k^2)</mrow>
+</md>
+Como <m>720=2^4\cdot 3^2\cdot 5</m>, basta mostrar que 5 divide <m>(3^2k^4+2^2k^2)</m>. Vamos analisar a congruência módulo 5.
+<ol>
+<li>Se <m>k\equiv 0 \mod 5</m>: 
+<me>9\cdot 0^4+4\cdot 0^2\equiv 0 \mod 5.</me></li>
+<li>Se <m>k\equiv 1 \mod 5</m>:
+<me>n\equiv 6 \equiv 1 \mod 5 \Rightarrow n-1 \equiv 0 \mod 5, \text{ absurdo}.</me></li>
+<li>Se <m>k\equiv 2 \mod 5</m>:
+<me>9\cdot 2^4+4\cdot 2^2\equiv 160 \equiv 0 \mod 5.</me></li>
+<li>Se <m>k\equiv 3 \mod 5</m>:
+<me>9\cdot 3^4+4\cdot 3^2\equiv 765 \equiv 0 \mod 5.</me></li>
+<li>Se <m>k\equiv 4 \mod 5</m>:
+<me>n\equiv 6\cdot 4 \equiv 24 \equiv -1 \mod 5 \Rightarrow n+1\equiv 0\mod 5, \text{ absurdo}</me>.</li>
+</ol>
+Isso conclui a demonstração. A recı́proca não é verdadeira. Basta tomar, por exemplo, <m>n = 90</m>, pois 
+<me>90^2(90^2+16) = 65739600 = 720\cdot 91305,</me>
+mas <m>n+1=91=13\cdot7</m>.
+</p>
+</solution>
+</example>
+
+<exercises>
+
+
+
+</exercises>
+
+
+<!-- <subsection>
+<title>Realização e Apoio</title>
+<p><term>Realização:</term></p>
+<image source="images/realizacao" width="40%"/> 
+<p><term>Apoio:</term></p>
+<image source="images/apoio" width="60%"/> 
+
+</subsection> -->
+
+</section>
+
+
+<section>
+<title>Aula 04 - Congruência II</title>
+
+
+
+<exercises>
+    
+
+<exercise>
+<p>
+
+</p>
+</exercise>
+
+
+
+</exercises>
+
+
+</section>
+
+
+</chapter>

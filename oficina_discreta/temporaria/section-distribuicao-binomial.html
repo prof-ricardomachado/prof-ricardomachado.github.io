@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-25T16:31:24-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Distribuição Binomial</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="part-basics.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior, Luiz Manoel de Santana Neto</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-probabilidade-condicional.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="probabilidade.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="referencias.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-probabilidade-condicional.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="probabilidade.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="referencias.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="set1.html" data-scroll="set1"><span class="codenumber">1</span> <span class="title">O básico de Conjuntos</span></a><ul><li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li></ul>
+</li>
+<li class="link">
+<a href="sets.html" data-scroll="sets"><span class="codenumber">2</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="contagem2.html" data-scroll="contagem2"><span class="codenumber">3</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="binomial.html" data-scroll="binomial"><span class="codenumber">4</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">5</span> <span class="title">Probabilidade</span></a><ul>
+<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
+<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
+<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial" class="active">Distribuição Binomial</a></li>
+</ul>
+</li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-distribuicao-binomial"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">5.3</span> <span class="title">Distribuição Binomial</span>
+</h2>
+<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
+<ol class="decimal">
+<li id="li-111">Enunciar e demonstrar o Teorema da Distribuição Binomial.</li>
+<li id="li-112">Exemplificar.</li>
+</ol></article><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">5.3.1</span> <span class="title">Distribuição Binomial</span>
+</h3>
+<article class="example example-like" id="example-66"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-721">Jogando uma moeda não viciada 15 vezes. Qual é a probabilidade de obtermos exatamente 7 caras?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
+<p id="p-722">Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é \(p=\frac{1}{2}\text{.}\)</p>
+<p id="p-723">Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é </p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{1}{2}\right)^7 \times \left(1 - \frac{1}{2}\right)^{8},
+\end{equation*}
+</div>
+<p data-braille="continuation">mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.</p>
+<p id="p-724">Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de \(C_{15}^{7}\) maneiras.</p>
+<p id="p-725">Portanto a resposta para nosso problema é</p>
+<div class="displaymath">
+\begin{equation*}
+C_{15}^{7}\times \left(\frac{1}{2}\right)^7 \times \left(\frac{1}{2}\right)^{8}=0.1963 \approx 20\%. 
+\end{equation*}
+</div>
+</div></div></article><article class="theorem theorem-like" id="teo-dist-binomial"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-726">Considere um experimento com apenas dois resultados possíveis, chamados de <em class="emphasis">sucesso</em> e <em class="emphasis">fracasso</em>. Denotaremos por \(p\) a probabilidade de sucesso.</p>
+<p id="p-727">A probabilidade de ocorrerem exatamente \(k\) sucessos em uma sequência de \(n\) provas independentes, na qual a probabilidade de sucesso em cada etapa é \(p\text{,}\) é igual a</p>
+<div class="displaymath">
+\begin{equation*}
+C_n^k\times p^k\times (1-p)^{n-k}. 
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><p id="p-728">A probabilidade de nessas \(n\) provas obtermos \(k\) sucessos, e consequentemente, \(n-k\) fracassos em uma ordem fixada é</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{p\cdot p \cdots p}_{k\text{ fatores}}\underbrace{\cdot (1-p)\cdots(1-p)}_{(n-k)\text{ fatores}} = p^k(1-p)^{n-k}, 
+\end{equation*}
+</div>
+<p data-braille="continuation">pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é \(C_n^k\text{,}\) a probabilidade de obtermos \(k\) sucessos, em \(n\) provas é</p>
+<div class="displaymath">
+\begin{equation*}
+C_n^k \times p^k\times(1-p)^{n-k}. 
+\end{equation*}
+</div></article></div>
+<article class="example example-like" id="example-67"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-729">Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.</p>
+<p id="p-730">a) Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?</p>
+<p id="p-731">b) Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
+<p id="p-732"><dfn class="terminology">item a)</dfn> Vamos considerar os eventos:</p>
+<p id="p-733">S: saiu uma face verde \(\Rightarrow p = \frac{3}{12} = \frac{1}{4}.\)</p>
+<p id="p-734">F: não saiu uma face verde \(\Rightarrow p = \frac{9}{12} = \frac{3}{4}.\)</p>
+<p id="p-735">Pelo <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 5.3.2">Teorema 5.3.2</a> a probabilidade é</p>
+<div class="displaymath">
+\begin{equation*}
+C_8^3\times \left( \frac{1}{4} \right)^3 \times \left( \frac{3}{4} \right)^5 = \frac{1701}{8192} \approx 0.20764 \approx 21\%. 
+\end{equation*}
+</div>
+<p id="p-736"><dfn class="terminology">item b)</dfn> Vamos considerar os eventos:</p>
+<p id="p-737">S: saiu uma face azul \(\Rightarrow p = \frac{5}{12}.\)</p>
+<p id="p-738">F: não saiu uma face azul \(\Rightarrow p = \frac{7}{12}.\)</p>
+<p id="p-739">Pelo <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 5.3.2">Teorema 5.3.2</a> a probabilidade é</p>
+<div class="displaymath">
+\begin{equation*}
+C_8^3\times \left( \frac{5}{12} \right)^3 \times \left( \frac{7}{12} \right)^5 = \frac{14706125}{53747712} \approx 0.27361 \approx 27,4\%. 
+\end{equation*}
+</div>
+</div></div></article></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">5.3.2</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-740">Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:</p>
+<ol class="lower-alpha">
+<li id="li-113">das 4 bolas retiradas serem vermelhas;</li>
+<li id="li-114">de somente 2 bolas retiradas serem vermelhas;</li>
+<li id="li-115">de pelo menos 2 bolas serem vermelhas.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-84" id="answer-84"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-84"><div class="answer solution-like"><p id="p-741">a) \(\dfrac{1}{256}\text{,}\) b) \(\dfrac{27}{128}\text{,}\) c) \(\dfrac{67}{256}\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-742">(ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-85" id="answer-85"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-85"><div class="answer solution-like"><p id="p-743">\(P = \frac{53}{3125}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
+<p id="p-744">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</p>
+<div class="displaymath">
+\begin{align*}
+1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
+2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
+3º: \amp ~ \text{6 conseguem.} 
+\end{align*}
+</div>
+<p id="p-745">Aplicando o <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 5.3.2">Teorema 5.3.2</a> temos que a probabilidade pedida é dada por:</p>
+<div class="displaymath">
+\begin{equation*}
+P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
+\end{equation*}
+</div>
+<div class="hidden-sagecell-sage" id="sage-40"><script type="text/x-sage">C(n, p) = binomial(n,p)
+a = C(6, 4)*(2/10)^4*(8/10)^2
+b = C(6, 5)*(2/10)^5*(8/10)
+c = C(6, 6)*(2/10)^6
+a+b+c
+</script></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-746">(ITA 2010) Um palco possui \(6\) refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de \(\frac{2}{3}\) a probabilidade de ser aceso. Então, a probabilidade de que,  este instante, \(4\) ou \(5\) refletores sejam acesos simultaneamente, é igual a</p>
+<p id="p-747">a) \(\dfrac{16}{27}~~~~\) b) \(\dfrac{49}{81}~~~~\) c) \(\dfrac{151}{243}~~~~\) d) \(\dfrac{479}{729}~~~~\) e) \(\dfrac{2^4}{3^4} + \dfrac{2^5}{3^5}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-86" id="answer-86"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-86"><div class="answer solution-like"><p id="p-748">a)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like">
+<p id="p-749">Aplicando o <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 5.3.2">Teorema 5.3.2</a> temos</p>
+<div class="displaymath">
+\begin{equation*}
+P = C_6^4\times \left(\frac{2}{3}\right)^4\times \left(\frac{1}{3}\right)^2 + C_6^5\times \left(\frac{2}{3}\right)^5\times \left(\frac{1}{3}\right)^1 = \frac{16}{27}
+\end{equation*}
+</div>
+<div class="hidden-sagecell-sage" id="sage-41"><script type="text/x-sage">C(n, p) = binomial(n,p)
+a = C(6, 4)*(2/3)^4*(1/3)^2
+b = C(6, 5)*(2/3)^5*(1/3)
+a+b
+</script></div>
+</div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

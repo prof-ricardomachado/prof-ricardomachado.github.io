@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-20T09:54:10-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Permutações Caóticas</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="sample-book.html"><span class="title">Análise Combinatória e ProbabilidadeAnálise Combinatória:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="subsection-7.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="section-permutacao-caotica.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-lemas-kaplansky.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="subsection-7.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="section-permutacao-caotica.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-lemas-kaplansky.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sets.html" data-scroll="sets"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="exercicios-lista1.html" data-scroll="exercicios-lista1">Exercícios</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li><a href="exercicios-lista2.html" data-scroll="exercicios-lista2">Exercícios</a></li>
+<li><a href="references-1.html" data-scroll="references-1">Referências</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="contagem2.html" data-scroll="contagem2"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="exercicios-lista3.html" data-scroll="exercicios-lista3">Exercícios</a></li>
+<li><a href="references-2.html" data-scroll="references-2">Referências</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integers.html" data-scroll="integers"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-math-induction.html" data-scroll="section-math-induction">Triângulo de Pascal</a></li>
+<li><a href="section-division-algorithm.html" data-scroll="section-division-algorithm">O Binômio de Newton</a></li>
+<li><a href="references-3.html" data-scroll="references-3">References and Suggested Readings</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-algebra.html" data-scroll="part-algebra"><span class="codenumber">I</span> <span class="title">Probabilidade</span></a></li>
+<li class="link">
+<a href="groups.html" data-scroll="groups"><span class="codenumber">4</span> <span class="title">Espaços de Probabilidade</span></a><ul>
+<li><a href="section-mod-n-sym.html" data-scroll="section-mod-n-sym">Integer Equivalence Classes and Symmetries</a></li>
+<li><a href="section-groups-define.html" data-scroll="section-groups-define">Definitions and Examples</a></li>
+<li><a href="section-subgroups.html" data-scroll="section-subgroups">Subgroups</a></li>
+<li><a href="groups-sage.html" data-scroll="groups-sage">Sage</a></li>
+<li><a href="exercises-groups.html" data-scroll="exercises-groups">Exercises</a></li>
+<li><a href="exercises-5.html" data-scroll="exercises-5">Additional Exercises: Detecting Errors</a></li>
+<li><a href="groups-sage-exercises.html" data-scroll="groups-sage-exercises">Sage Exercises</a></li>
+<li><a href="references-4.html" data-scroll="references-4">References and Suggested Readings</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="cyclic.html" data-scroll="cyclic"><span class="codenumber">5</span> <span class="title">Probabilidades Condicionais e Distribuição Binomial</span></a><ul>
+<li><a href="section-27.html" data-scroll="section-27">Cyclic groups</a></li>
+<li><a href="section-28.html" data-scroll="section-28">Subgroups of a Cyclic Group</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Cyclic Groups of Complex Numbers</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Large Powers of Integers</a></li>
+<li><a href="exercises-cyclic.html" data-scroll="exercises-cyclic">Exercises</a></li>
+<li><a href="exercises-8.html" data-scroll="exercises-8">Programming Exercises</a></li>
+<li><a href="cyclic-sage-exercises.html" data-scroll="cyclic-sage-exercises">Sage Exercises</a></li>
+<li><a href="references-5.html" data-scroll="references-5">References and Suggested Readings</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="subsection" id="subsection-8"><h2 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.2</span> <span class="title">Permutações Caóticas</span>
+</h2>
+<article class="definition definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.2.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-196">Uma permutação de uma lista de \(n\) elementos é chamada de <em class="emphasis">permutação caótica</em>, quando nenhum dos elementos, da permutação, está na posição original, ou seja, uma permutação de \(a_1,a_2, ...,a_n\)  é chamada de caótica quando nenhum dos \(a'_{i}s\) se encontra na \(i\)-ésima posição.</p>
+<p id="p-197">Notação: $$ D_n \text{ ou } D(n) $$</p></article><article class="technology computation-like" id="technology-1"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Faça você mesmo.</span>
+</h6>
+<figure class="figure figure-like" id="interactive-caotica"><p id="p-198">Escolha o valor para \(n\) para obter as permutações caóticas de \(\{1,2,3,\cdots,n\}\text{.}\)</p>
+<iframe id="interactive-caotica" width="600" height="300" src="interactive-caotica-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.2.5<span class="period">.</span></span><span class="space"> </span>Todas as permutações caóticas de \(\{1,2,3,\cdots,n\}\text{.}\)</figcaption></figure></article><article class="theorem theorem-like" id="theorem-9"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-199">A quantidade de permutações caóticas de um conjunto com \(n\) elementos distintos, pode ser calculada da seguinte maneira:</p>
+<div class="displaymath">
+\begin{equation*}
+D_n=n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-200">Considere todas as permutações dos elementos \(a_1 , a_2 , \ldots , a_n\text{.}\) Indicando por \(A_i\) todas as permutações formadas pelos elementos \(a_1 , a_2 , \ldots , a_n\) com \(a_i\) no \(i\)-ésimo lugar, calcularemos \(D_n\text{,}\) usando a ideia do exemplo (<a class="xref" data-knowl="./knowl/exem-antes-permut-cao.html" title="Exemplo 2.2.1.2">Exemplo 2.2.1.2</a>):</p>
+<div class="displaymath">
+\begin{align*}
+D_n = \amp ~  n! - \sum_{i=1}^{n}\#A_i + \sum_{0\lt i\lt j\leq n}\#(A_i\cap A_j)+\cdots \\
+\amp ~  \cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n). 
+\end{align*}
+</div>
+<p data-braille="continuation">Visto que existem \(n\) termos no primeiro somatório, \(C_n^2\) termos no segundo, \(C_n^3\) termos no terceiro,\(\cdots\text{,}\) \(C_n^n=1\) no último e</p>
+<div class="displaymath">
+\begin{align*}
+\#(A_i) \amp =  (n-1)! \\
+\#(A_i\cap A_j) \amp =  (n-2)! \\
+\#(A_i\cap A_j\cap A_k) \amp =  (n-3)! \\
+\vdots ~~~~~ \amp = ~~ \vdots \\
+\#(A_1\cap A_2\cap\cdots\cap A_n) \amp =  1 
+\end{align*}
+</div>
+<p data-braille="continuation">temos</p>
+<div class="displaymath">
+\begin{align*}
+D_n \amp = ~ n!-n\cdot(n-1)!+C_n^2\cdot(n-2)!-C_n^3\cdot(n-3)!+\cdots +(-1)^n\cdot 1 \\
+\amp = ~ n!-\dfrac{n!}{1!}+\dfrac{n!}{2!}-\dfrac{n!}{3!}+\cdots
++(-1)^n\cdot \dfrac{n!}{n!} 
+\end{align*}
+</div>
+<p data-braille="continuation">evidenciando \(n!\text{,}\) obtém-se:</p>
+<div class="displaymath">
+\begin{align*}
+D_n \amp = ~ n!\cdot\left(1-\dfrac{1}{1!}+\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+(-1)^n\cdot \dfrac{1}{n!}\right) \\
+\amp = ~ n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!} 
+\end{align*}
+</div></article></div>
+<article class="remark remark-like" id="remark-8"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">2.2.2.7</span><span class="period">.</span>
+</h6>Calculando o número de permutações caóticas no Sage: <div class="sagecell-sage" id="sage-19"><script type="text/x-sage">def D(n):
+    d = 0
+    for i in range(n+1):
+        d = d + (-1)^(i)*(factorial(n)/factorial(i))
+    return d
+D(8)
+</script></div></article><article class="fact theorem-like" id="fact-28"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-201">Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like">
+<p id="p-202">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</p>
+<div class="displaymath">
+\begin{align*}
+D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) \\
+\amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} \\
+\amp =  ~5\cdot 4 \cdot 3 -5\cdot 4 + 5 - 1 \\
+\amp = ~60-20+5-1 \\
+\amp =  ~44 
+\end{align*}
+</div>
+</div></div></article><article class="fact theorem-like" id="fact-29"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.2.9</span><span class="period">.</span>
+</h6>
+<p id="p-203">Quantas são as permutações de \((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\) que têm exatamente 4 elementos no seu lugar primitivo?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like">
+<p id="p-204">O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é \(C_{10}^4\text{.}\)</p>
+<p id="p-205">Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de \(D_6\) formas. A resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+C_{10}^4\times D_6 = 55650.
+\end{equation*}
+</div>
+</div></div></article></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,1164 @@
+%********************************************%
+%*       Generated from PreTeXt source      *%
+%*       on 2023-02-24T09:52:38-03:00       *%
+%*   A recent stable commit (2020-08-09):   *%
+%* 98f21740783f166a773df4dc83cab5293ab63a4a *%
+%*                                          *%
+%*         https://pretextbook.org          *%
+%*                                          *%
+%********************************************%
+\documentclass[oneside,10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% begin: defined colors, via xcolor package, for styling
+%% end: defined colors, via xcolor package, for styling
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% independent of constructions of the tcb title
+%% Places \blocktitlefont onto many block titles
+\tcbset{ runintitlestyle/.style={fonttitle=\blocktitlefont\upshape\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% begin: engine-specific capabilities
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific default configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% end:   xelatex and lualatex-specific default configuration
+}{
+%% begin: pdflatex-specific default configuration
+%% We assume a PreTeXt XML source file may have Unicode characters
+%% and so we ask LaTeX to parse a UTF-8 encoded file
+%% This may work well for accented characters in Western language,
+%% but not with Greek, Asian languages, etc.
+%% When this is not good enough, switch to the  xelatex  engine
+%% where Unicode is better supported (encouraged, even)
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific default configuration
+}
+%% end:   engine-specific capabilities
+%%
+%% Fonts.  Conditional on LaTex engine employed.
+%% Default Text Font: The Latin Modern fonts are
+%% "enhanced versions of the [original TeX] Computer Modern fonts."
+%% We use them as the default text font for PreTeXt output.
+%% Default Monospace font: Inconsolata (aka zi4)
+%% Sponsored by TUG: http://levien.com/type/myfonts/inconsolata.html
+%% Loaded for documents with intentional objects requiring monospace
+%% See package documentation for excellent instructions
+%% fontspec will work universally if we use filename to locate OTF files
+%% Loads the "upquote" package as needed, so we don't have to
+%% Upright quotes might come from the  textcomp  package, which we also use
+%% We employ the shapely \ell to match Google Font version
+%% pdflatex: "varl" package option produces shapely \ell
+%% pdflatex: "var0" package option produces plain zero (not used)
+%% pdflatex: "varqu" package option produces best upright quotes
+%% xelatex,lualatex: add OTF StylisticSet 1 for shapely \ell
+%% xelatex,lualatex: add OTF StylisticSet 2 for plain zero (not used)
+%% xelatex,lualatex: add OTF StylisticSet 3 for upright quotes
+%%
+%% Automatic Font Control
+%% Portions of a document, are, or may, be affected by defined commands
+%% These are perhaps more flexible when using  xelatex  rather than  pdflatex
+%% The following definitions are meant to be re-defined in a style, using \renewcommand
+%% They are scoped when employed (in a TeX group), and so should not be defined with an argument
+\newcommand{\divisionfont}{\relax}
+\newcommand{\blocktitlefont}{\relax}
+\newcommand{\contentsfont}{\relax}
+\newcommand{\pagefont}{\relax}
+\newcommand{\tabularfont}{\relax}
+\newcommand{\xreffont}{\relax}
+\newcommand{\titlepagefont}{\relax}
+%%
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: font setup and configuration for use with xelatex
+%% Generally, xelatex is necessary for non-Western fonts
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% (it is possible that a TeX distribution will place fonts in a system location)
+%%
+%% The fontspec package is the best vehicle for using different fonts in  xelatex
+%% So we load it always, no matter what a publisher or style might want
+%%
+\usepackage{fontspec}
+%%
+%% begin: xelatex main font ("font-xelatex-main" template)
+%% Latin Modern Roman is the default font for xelatex and so is loaded with a TU encoding
+%% *in the format* so we can't touch it, only perhaps adjust it later
+%% in one of two ways (then known by NFSS names such as "lmr")
+%% (1) via NFSS with font family names such as "lmr" and "lmss"
+%% (2) via fontspec with commands like \setmainfont{Latin Modern Roman}
+%% The latter requires the font to be known at the system-level by its font name,
+%% but will give access to OTF font features through optional arguments
+%% https://tex.stackexchange.com/questions/470008/
+%% where-and-how-does-fontspec-sty-specify-the-default-font-latin-modern-roman
+%% http://tex.stackexchange.com/questions/115321
+%% /how-to-optimize-latin-modern-font-with-xelatex
+%%
+%% end:   xelatex main font ("font-xelatex-main" template)
+%% begin: xelatex mono font ("font-xelatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+\IfFontExistsTF{Inconsolatazi4-Regular.otf}{}{\GenericError{}{The font "Inconsolatazi4-Regular.otf" requested by PreTeXt output is not available.  Either a file cannot be located in default locations via a filename, or a font is not known by its name as part of your system.}{Consult the PreTeXt Guide for help with LaTeX fonts.}{}}
+\IfFontExistsTF{Inconsolatazi4-Bold.otf}{}{\GenericError{}{The font "Inconsolatazi4-Bold.otf" requested by PreTeXt output is not available.  Either a file cannot be located in default locations via a filename, or a font is not known by its name as part of your system.}{Consult the PreTeXt Guide for help with LaTeX fonts.}{}}
+\usepackage{zi4}
+\setmonofont[BoldFont=Inconsolatazi4-Bold.otf,StylisticSet={1,3}]{Inconsolatazi4-Regular.otf}
+%% end:   xelatex mono font ("font-xelatex-mono" template)
+%% begin: xelatex font adjustments ("font-xelatex-style" template)
+%% end:   xelatex font adjustments ("font-xelatex-style" template)
+%%
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end:   font setup and configuration for use with xelatex
+}{%
+%% begin: font setup and configuration for use with pdflatex
+%% begin: pdflatex main font ("font-pdflatex-main" template)
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end:   pdflatex main font ("font-pdflatex-main" template)
+%% begin: pdflatex mono font ("font-pdflatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+\usepackage[varqu,varl]{inconsolata}
+%% end:   pdflatex mono font ("font-pdflatex-mono" template)
+%% begin: pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   font setup and configuration for use with pdflatex
+}
+%% Symbols, align environment, commutative diagrams, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option.
+%% The "newparttoc" option causes a consistent entry for parts in the ToC 
+%% file, but it is only effective if there is a \titleformat for \part.
+%% "pagestyles" loads the  titleps  package cooperatively.
+\usepackage[explicit, newparttoc, pagestyles]{titlesec}
+%% The companion titletoc package for the ToC.
+\usepackage{titletoc}
+%% Fixes a bug with transition from chapters to appendices in a "book"
+%% See generating XSL code for more details about necessity
+\newtitlemark{\chaptertitlename}
+%% begin: customizations of page styles via the modal "titleps-style" template
+%% Designed to use commands from the LaTeX "titleps" package
+%% Plain pages should have the same font for page numbers
+\renewpagestyle{plain}{%
+\setfoot{}{\pagefont\thepage}{}%
+}%
+%% Single pages as in default LaTeX
+\renewpagestyle{headings}{%
+\sethead{\pagefont\slshape\MakeUppercase{\ifthechapter{\chaptertitlename\space\thechapter.\space}{}\chaptertitle}}{}{\pagefont\thepage}%
+}%
+\pagestyle{headings}
+%% end: customizations of page styles via the modal "titleps-style" template
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "preface" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{preface}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Prefácio}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\chapter*{#1}%
+\addcontentsline{toc}{chapter}{#3}
+\label{#6}%
+}{}%
+%% Environment for a PTX "chapter" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{chapterptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Capítulo}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\chapter[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Seção}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\section[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "exercises" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{exercises-subsection}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Exercícios}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\subsection[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "exercises" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{exercises-subsection-numberless}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Exercícios}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\subsection*{#1}%
+\addcontentsline{toc}{subsection}{#3}
+\label{#6}%
+}{}%
+%% Environment for a PTX "subsection" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{subsectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Subseção}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\subsection[{#3}]{#1}%
+\label{#6}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\part}[display]
+{\divisionfont\Huge\bfseries\centering}{\divisionnameptx\space\thepart}{30pt}{\Huge#1}
+[{\Large\centering\authorsptx}]
+\titleformat{\chapter}[display]
+{\divisionfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\divisionfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\divisionfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\divisionfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\divisionfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\divisionfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\divisionfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\divisionfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Styles for five traditional LaTeX divisions
+\titlecontents{part}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\Large\thecontentslabel\enspace}{\Large}%
+{}%
+[\addvspace{.5pc}]%
+\titlecontents{chapter}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\large\thecontentslabel\enspace}{\large}%
+{\hfill\bfseries\thecontentspage}%
+[\addvspace{.5pc}]%
+\dottedcontents{section}[3.8em]{\contentsfont}{2.3em}{1pc}%
+\dottedcontents{subsection}[6.1em]{\contentsfont}{3.2em}{1pc}%
+\dottedcontents{subsubsection}[9.3em]{\contentsfont}{4.3em}{1pc}%
+%%
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% End: Semantic Macros
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\makeatletter
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+\makeatother
+%%
+%% tcolorbox, with styles, for THEOREM-LIKE
+%%
+%% theorem: fairly simple numbered block/structure
+\tcbset{ theoremstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{theorem}[3]{title={{Teorema~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, fontupper=\itshape, theoremstyle, }
+%% lemma: fairly simple numbered block/structure
+\tcbset{ lemmastyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{lemma}[3]{title={{Lema~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, fontupper=\itshape, lemmastyle, }
+%% proposition: fairly simple numbered block/structure
+\tcbset{ propositionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{proposition}[3]{title={{Proposição~\thetcbcounter\notblank{#1#2}{\space}{}\notblank{#1}{\space#1}{}\notblank{#2}{\space(#2)}{}}}, phantomlabel={#3}, breakable, parbox=false, after={\par}, fontupper=\itshape, propositionstyle, }
+%%
+%% tcolorbox, with styles, for DEFINITION-LIKE
+%%
+%% definition: fairly simple numbered block/structure
+\tcbset{ definitionstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\lozenge\)}, } }
+\newtcolorbox[use counter from=block]{definition}[2]{title={{Definição~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, parbox=false, after={\par}, definitionstyle, }
+%%
+%% tcolorbox, with styles, for REMARK-LIKE
+%%
+%% remark: fairly simple numbered block/structure
+\tcbset{ remarkstyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{remark}[2]{title={{Observação~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, parbox=false, after={\par}, remarkstyle, }
+%%
+%% tcolorbox, with styles, for COMPUTATION-LIKE
+%%
+%% technology: fairly simple numbered block/structure
+\tcbset{ technologystyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, } }
+\newtcolorbox[use counter from=block]{technology}[2]{title={{Tecnologia~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, parbox=false, after={\par}, technologystyle, }
+%%
+%% tcolorbox, with styles, for EXAMPLE-LIKE
+%%
+%% example: fairly simple numbered block/structure
+\tcbset{ examplestyle/.style={bwminimalstyle, runintitlestyle, blockspacingstyle, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\square\)}, } }
+\newtcolorbox[use counter from=block]{example}[2]{title={{Exemplo~\thetcbcounter\notblank{#1}{\space\space#1}{}}}, phantomlabel={#2}, breakable, parbox=false, after={\par}, examplestyle, }
+%%
+%% xparse environments for introductions and conclusions of divisions
+%%
+%% introduction: in a structured division
+\NewDocumentEnvironment{introduction}{m}
+{\notblank{#1}{\noindent\textbf{#1}\space}{}}{\par\medskip}
+%%
+%% tcolorbox, with styles, for miscellaneous environments
+%%
+%% proof: title is a replacement
+\tcbset{ proofstyle/.style={bwminimalstyle, fonttitle=\blocktitlefont\itshape, attach title to upper, after title={\space}, after upper={\space\space\hspace*{\stretch{1}}\(\blacksquare\)},
+} }
+\newtcolorbox{proof}[2]{title={\notblank{#1}{#1}{Demonstração.}}, phantom={\hypertarget{#2}{}}, breakable, parbox=false, after={\par}, proofstyle }
+%% Divisional exercises (and worksheet) as LaTeX environments
+%% Third argument is option for extra workspace in worksheets
+%% Hanging indent occupies a 5ex width slot prior to left margin
+%% Experimentally this seems just barely sufficient for a bold "888."
+%% Division exercises, not in exercise group
+\tcbset{ divisionexercisestyle/.style={bwminimalstyle, runintitlestyle, exercisespacingstyle, left=5ex, breakable, parbox=false } }
+\newtcolorbox{divisionexercise}[4]{divisionexercisestyle, before title={\hspace{-5ex}\makebox[5ex][l]{#1.}}, title={\notblank{#2}{#2\space}{}}, phantom={\hypertarget{#4}{}}, after={\notblank{#3}{\newline\rule{\workspacestrutwidth}{#3\textheight}\newline}{}}}
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\chaptername}{Capítulo}
+%% Equation Numbering
+%% Controlled by  numbering.equations.level  processing parameter
+%% No adjustment here implies document-wide numbering
+\numberwithin{equation}{section}
+%% "tcolorbox" environment for a single image, occupying entire \linewidth
+%% arguments are left-margin, width, right-margin, as multiples of
+%% \linewidth, and are guaranteed to be positive and sum to 1.0
+\tcbset{ imagestyle/.style={bwminimalstyle} }
+\NewTColorBox{image}{mmm}{imagestyle,left skip=#1\linewidth,width=#2\linewidth}
+%% Program listing support: for listings, programs, consoles, and Sage code
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}%
+  {\tcbuselibrary{listings}}%
+  {\tcbuselibrary{listingsutf8}}%
+%% We define the listings font style to be the default "ttfamily"
+%% To fix hyphens/dashes rendered in PDF as fancy minus signs by listing
+%% http://tex.stackexchange.com/questions/33185/listings-package-changes-hyphens-to-minus-signs
+\makeatletter
+\lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
+\@empty\z@\@empty
+\makeatother
+%% We define a null language, free of any formatting or style
+%% for use when a language is not supported, or pseudo-code, or consoles
+%% Not necessary for Sage code, so in limited cases included unnecessarily
+\lstdefinelanguage{none}{identifierstyle=,commentstyle=,stringstyle=,keywordstyle=}
+\ifthenelse{\boolean{xetex}}{}{%
+%% begin: pdflatex-specific listings configuration
+%% translate U+0080 - U+00F0 to their textmode LaTeX equivalents
+%% Data originally from https://www.w3.org/Math/characters/unicode.xml, 2016-07-23
+%% Lines marked in XSL with "$" were converted from mathmode to textmode
+\lstset{extendedchars=true}
+\lstset{literate={ }{{~}}{1}{¡}{{\textexclamdown }}{1}{¢}{{\textcent }}{1}{£}{{\textsterling }}{1}{¤}{{\textcurrency }}{1}{¥}{{\textyen }}{1}{¦}{{\textbrokenbar }}{1}{§}{{\textsection }}{1}{¨}{{\textasciidieresis }}{1}{©}{{\textcopyright }}{1}{ª}{{\textordfeminine }}{1}{«}{{\guillemotleft }}{1}{¬}{{\textlnot }}{1}{­}{{\-}}{1}{®}{{\textregistered }}{1}{¯}{{\textasciimacron }}{1}{°}{{\textdegree }}{1}{±}{{\textpm }}{1}{²}{{\texttwosuperior }}{1}{³}{{\textthreesuperior }}{1}{´}{{\textasciiacute }}{1}{µ}{{\textmu }}{1}{¶}{{\textparagraph }}{1}{·}{{\textperiodcentered }}{1}{¸}{{\c{}}}{1}{¹}{{\textonesuperior }}{1}{º}{{\textordmasculine }}{1}{»}{{\guillemotright }}{1}{¼}{{\textonequarter }}{1}{½}{{\textonehalf }}{1}{¾}{{\textthreequarters }}{1}{¿}{{\textquestiondown }}{1}{À}{{\`{A}}}{1}{Á}{{\'{A}}}{1}{Â}{{\^{A}}}{1}{Ã}{{\~{A}}}{1}{Ä}{{\"{A}}}{1}{Å}{{\AA }}{1}{Æ}{{\AE }}{1}{Ç}{{\c{C}}}{1}{È}{{\`{E}}}{1}{É}{{\'{E}}}{1}{Ê}{{\^{E}}}{1}{Ë}{{\"{E}}}{1}{Ì}{{\`{I}}}{1}{Í}{{\'{I}}}{1}{Î}{{\^{I}}}{1}{Ï}{{\"{I}}}{1}{Ð}{{\DH }}{1}{Ñ}{{\~{N}}}{1}{Ò}{{\`{O}}}{1}{Ó}{{\'{O}}}{1}{Ô}{{\^{O}}}{1}{Õ}{{\~{O}}}{1}{Ö}{{\"{O}}}{1}{×}{{\texttimes }}{1}{Ø}{{\O }}{1}{Ù}{{\`{U}}}{1}{Ú}{{\'{U}}}{1}{Û}{{\^{U}}}{1}{Ü}{{\"{U}}}{1}{Ý}{{\'{Y}}}{1}{Þ}{{\TH }}{1}{ß}{{\ss }}{1}{à}{{\`{a}}}{1}{á}{{\'{a}}}{1}{â}{{\^{a}}}{1}{ã}{{\~{a}}}{1}{ä}{{\"{a}}}{1}{å}{{\aa }}{1}{æ}{{\ae }}{1}{ç}{{\c{c}}}{1}{è}{{\`{e}}}{1}{é}{{\'{e}}}{1}{ê}{{\^{e}}}{1}{ë}{{\"{e}}}{1}{ì}{{\`{\i}}}{1}{í}{{\'{\i}}}{1}{î}{{\^{\i}}}{1}{ï}{{\"{\i}}}{1}{ð}{{\dh }}{1}{ñ}{{\~{n}}}{1}{ò}{{\`{o}}}{1}{ó}{{\'{o}}}{1}{ô}{{\^{o}}}{1}{õ}{{\~{o}}}{1}{ö}{{\"{o}}}{1}{÷}{{\textdiv }}{1}{ø}{{\o }}{1}{ù}{{\`{u}}}{1}{ú}{{\'{u}}}{1}{û}{{\^{u}}}{1}{ü}{{\"{u}}}{1}{ý}{{\'{y}}}{1}{þ}{{\th }}{1}{ÿ}{{\"{y}}}{1}}
+%% end: pdflatex-specific listings configuration
+}
+%% End of generic listing adjustments
+%% The listings package as tcolorbox for Sage code
+%% We do as much styling as possible with tcolorbox, not listings
+%% Sage's blue is 50%, we go way lighter (blue!05 would also work)
+%% Note that we defuse listings' default "aboveskip" and "belowskip"
+\definecolor{sageblue}{rgb}{0.95,0.95,1}
+\tcbset{ sagestyle/.style={left=0pt, right=0pt, top=0ex, bottom=0ex, middle=0pt, toptitle=0pt, bottomtitle=0pt,
+boxsep=4pt, listing only, fontupper=\small\ttfamily,
+breakable, parbox=false, 
+listing options={language=Python,breaklines=true,breakatwhitespace=true, extendedchars=true, aboveskip=0pt, belowskip=0pt}} }
+\newtcblisting{sageinput}{sagestyle, colback=sageblue, sharp corners, boxrule=0.5pt, toprule at break=-0.3pt, bottomrule at break=-0.3pt, }
+\newtcblisting{sageoutput}{sagestyle, colback=white, colframe=white, frame empty, before skip=0pt, after skip=0pt, }
+%% More flexible list management, esp. for references
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% Lists of references in their own section, maximum depth 1
+\newlist{referencelist}{description}{4}
+\setlist[referencelist]{leftmargin=!,labelwidth=!,labelsep=0ex,itemsep=1.0ex,topsep=1.0ex,partopsep=0pt,parsep=0pt}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% Hyperlinking active in electronic PDFs, all links solid and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={Teoria dos Números}}
+%% If you manually remove hyperref, leave in this next command
+\providecommand\phantomsection{}
+%% Graphics Preamble Entries
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,matrix}
+\usetikzlibrary{snakes}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+\begin{document}
+\frontmatter
+%% begin: half-title
+\thispagestyle{empty}
+{\titlepagefont\centering
+\vspace*{0.28\textheight}
+{\Huge Teoria dos Números}\\[2\baselineskip]
+{\LARGE notas de aula (PTOM\slash{}POTI)}\\
+}
+\clearpage
+%% end:   half-title
+%% begin: adcard
+\thispagestyle{empty}
+\null%
+\clearpage
+%% end:   adcard
+%% begin: title page
+%% Inspired by Peter Wilson's "titleDB" in "titlepages" CTAN package
+\thispagestyle{empty}
+{\titlepagefont\centering
+\vspace*{0.14\textheight}
+%% Target for xref to top-level element is ToC
+\addtocontents{toc}{\protect\hypertarget{x:book:indice}{}}
+{\Huge Teoria dos Números}\\[\baselineskip]
+{\LARGE notas de aula (PTOM\slash{}POTI)}\\[3\baselineskip]
+{\Large Ricardo Machado}\\[0.5\baselineskip]
+{\Large Universidade Federal Rural de Pernambuco}\\[3\baselineskip]
+{\Large February 24, 2023}\\}
+\clearpage
+%% end:   title page
+%% begin: copyright-page
+\thispagestyle{empty}
+\noindent\textbf{Sobre Ricardo Machado}\space\space
+Professor Adjunto da Universidade Federal Rural de Pernambuco, DM.%
+\par
+Doutor em Matemática pela Universidade Federal de Pernambuco (2009-2013).%
+\par
+Mestre em Matemática pela Universidade Federal de Pernambuco (2007-2009).%
+\par
+Bacharel em Matemática pela Universidade Federal de Pernambuco (2003-2006).%
+\par
+\vspace*{\stretch{2}}
+\vspace*{\stretch{1}}
+\null\clearpage
+%% end:   copyright-page
+%
+%
+\typeout{************************************************}
+\typeout{Prefácio  Prefácio}
+\typeout{************************************************}
+%
+\begin{preface}{Prefácio}{}{Prefácio}{}{}{x:preface:preface}
+%
+\nopagebreak\par%
+\hfill\begin{tabular}[t]{l@{}}
+Ricardo Machado\\
+Recife, 2023
+\end{tabular}\\\par
+\end{preface}
+%% begin: table of contents
+%% Adjust Table of Contents
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Sumário}
+\tableofcontents
+%% end:   table of contents
+\mainmatter
+%
+%
+\typeout{************************************************}
+\typeout{Capítulo 1 Divisibilidade}
+\typeout{************************************************}
+%
+\begin{chapterptx}{Divisibilidade}{}{Divisibilidade}{}{}{x:chapter:01-divisibilidade}
+\begin{introduction}{}%
+\terminology{Realização:}%
+\begin{image}{0.3}{0.4}{0.3}%
+\includegraphics[width=\linewidth]{images/realizacao}
+\end{image}%
+\terminology{Apoio:}%
+\begin{image}{0.2}{0.6}{0.2}%
+\includegraphics[width=\linewidth]{images/apoio}
+\end{image}%
+\end{introduction}%
+%
+%
+\typeout{************************************************}
+\typeout{Seção 1.1 Aula 01 - Divisibilidade I}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Aula 01 - Divisibilidade I}{}{Aula 01 - Divisibilidade I}{}{}{g:section:idp1}
+\begin{theorem}{(Algoritmo da Divisão).}{}{g:theorem:idp2}%
+Para quaisquer inteiros positivos \(a\) e \(b\), existe um único par \((q, r)\) de inteiros não negativos tais que \(b = aq + r\) e \(r \lt a\). Os números \(q\) e \(r\) são chamados de quociente e resto, respectivamente, da divisão de \(b\) por \(a\).%
+\end{theorem}
+\begin{example}{}{g:example:idp3}%
+%
+\begin{equation*}
+5 = 3\cdot 1 +2, \quad r=2\lt 3=a;
+\end{equation*}
+%
+\begin{equation*}
+7 = 9\cdot 7 +0, \quad r=7\lt 9=a;
+\end{equation*}
+%
+\end{example}
+\begin{remark}{}{g:remark:idp4}%
+O teorema anterior admite um enunciado mais geral: Para quaisquer inteiros \(a\) e \(b\), com \(a\neq 0\), existe um único par de inteiros \((q, r)\) tais que \(b = aq + r, ~0 \leq r \lt |a|\). Por exemplo,%
+\begin{equation*}
+-7 = -3\cdot 3 + 2, \quad r=2\lt |-3| = a.
+\end{equation*}
+%
+\end{remark}
+\begin{technology}{}{g:technology:idp5}%
+Abaixo temos um código em SageMath, no qual podemos trocar os valores de \(b\) e \(a\) nas linhas \(1\) e \(2\), respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de \(b\) por \(a\).%
+\begin{sageinput}
+b=-7
+a=-3
+(q,r) = (b//a, b%a)
+if 0>r:
+    q = q+1
+    r = r-a
+print('%d = %d*%d + %d' %(b,a,q,r))
+\end{sageinput}
+\begin{sageoutput}
+
+\end{sageoutput}
+\end{technology}
+\begin{remark}{(PTOM).}{x:remark:rem-001}%
+De modo geral, fixado um número natural \(a\geq 2\), pode-se sempre escrever um número qualquer \(b\), de modo único, na forma \(b = aq+r\), na qual \(q, r\) são inteiros e \(0\leq r \lt a\).%
+\par
+Por exemplo, fixado um valor para \(a\),  qualquer inteiro \(b\) pode ser escrito em apenas uma das seguintes formas%
+\begin{align*}
+a=3:\amp~ 3q, 3q+1, 3q+2\\
+a=4:\amp~ 4q, 4q+1, 4q+2, 4q+3\\
+a=5:\amp~ 5q, 5q+1, 5q+2, 5q+3, 5q+4\\
+\vdots 
+\end{align*}
+%
+\end{remark}
+\begin{example}{(PTOM).}{g:example:idp6}%
+Dados dois números primos \(p\lt q\), dizemos que ele são \emph{primos gêmeos} se \(q-p=2\). Prove que para cada par de primos gêmeos com \(p\lt q\), se \(p>3\), então \(p+1\) deixa resto zero na divisão por \(3\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp7}{}\quad{}Pela \hyperref[x:remark:rem-001]{Observação~{\xreffont\ref{x:remark:rem-001}}}, \(p\) só pode assumir uma das três formas: \(3k, 3k+1, 3k+2\). Podemos analizar cada um dos casos.%
+\par
+\terminology{Caso 1} (\(p=3k\)). Neste caso o número não seria primo, então este caso está descartado.%
+\par
+\terminology{Caso 2} (\(p=3k+1\)). Neste caso, \(p+1 = 3k+2\) e \(q = p+2 = 3k+3=3(k+1)\) não seria primo, o que é uma contradição.%
+\par
+\terminology{Caso 3} (\(p=3k+2\)). Neste caso, \(p+1 = 3(k+1)\) que é múltiplo de \(3\) e \(q = 3(k+1)+1\). Portanto, este é o único caso possível e o número \(p+1\) sempre deixa resto zero na divisão por \(3\).%
+\end{example}
+\begin{example}{}{g:example:idp8}%
+Encontre um número natural \(N\) que, ao ser dividido por \(10\), deixa resto \(9\), ao ser dividido por \(9\) deixa resto \(8\), e ao ser dividido por \(8\) deixa resto \(7\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp9}{}\quad{}Pelos dados do enunciado,%
+\begin{align*}
+N = \amp~10q_1+9\\
+N = \amp~9q_2+8\\
+N = \amp~8q_3+7
+\end{align*}
+Somando \(1\) em cada igualdade, obtemos%
+\begin{align*}
+N+1 = 10q_1+10 = \amp~10(q_1+1)\\
+N+1 = 9q_2+9 = \amp~9(q_2+1)\\
+N+1 = 8q_3+8 = \amp~8(q_3+1)
+\end{align*}
+Portanto, \(N+1\) é múltiplo de \(10\), \(9\) e \(8\). Uma solução é \(N+1 = 10\cdot 9\cdot 8 = 720\), logo \(N=719\).%
+\par
+Outra resposta pode ser obtida calculando o menor múltiplo comum: \(MMC(10, 9, 8)=360\). Outro valor válido para \(N\) é \(359\).%
+\end{example}
+\begin{example}{}{g:example:idp10}%
+%
+\begin{enumerate}[label=\alph*]
+\item{}Verifique que%
+\begin{equation*}
+a^n-1 = (a-1)(a^{n-1}+a^{n-2}+\cdots+a+1).
+\end{equation*}
+%
+\item{}Calcule o resto da Divisão de \(4^{2012}\) por 3.%
+\end{enumerate}
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp11}{}\quad{}\terminology{item a)}%
+\begin{align*}
+(a-1)(a^{n-1}+a^{n-2}+\cdots+a+1) =\amp~ a^n+a^{n-1}+a^{n-2}+\cdots+ a^2+a \\
+\amp~ - a^{n-1} - a^{n-2}-\cdots-a-1
+\end{align*}
+%
+\par
+\terminology{item b)}%
+\begin{align*}
+4^{2012}-1 =\amp~ (4-1)(4^{2011}+4^{2010}+\cdots+4+1) \\
+=\amp~ 3\cdot\underbrace{(4^{2011}+4^{2010}+\cdots+4+1)}_{q} 
+\end{align*}
+Portanto,%
+\begin{equation*}
+4^{2012} = 3q+1
+\end{equation*}
+Ou seja, o resto é igual a \(1\).%
+\end{example}
+\begin{technology}{}{g:technology:idp12}%
+No SageMath, o resto da divisão de \(b^c\) por \(a\) pode ser calculado da seguinte maneira: \begin{sageinput}
+b=4
+c=2012
+a=3
+pow(b,c,a)
+\end{sageinput}
+\begin{sageoutput}
+
+\end{sageoutput}
+%
+\end{technology}
+\begin{example}{}{g:example:idp13}%
+Seja \(n\) um número natural maior que zero. Qual o resto de \(10^n\) na divisão por \(9\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp14}{}\quad{}%
+\begin{align*}
+10^n-1=\amp~ (10-1)(10^{n-1}+10^{n-2}+\cdots+10+1)\\
+10^n-1=\amp~9q\\
+10^n=\amp~ 9q+1
+\end{align*}
+%
+\end{example}
+\begin{example}{}{g:example:idp15}%
+Quantos números entre \(1\) e \(253\) (inclusive) são divisíveis por \(5\)? Ou seja, quando deixam resto zero na divisão por \(5\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp16}{}\quad{}Aplicando a divisão euclidiana,%
+\begin{equation*}
+253 = 5\cdot 50 + 3.
+\end{equation*}
+Isto significa que existem \(50\) números divisíveis por \(5\) entre \(1\) e \(253\), pois ao escrever todos os números neste intervalo, o último que deixa resto zero será no número \(5\cdot 50 = 250\). Observe,%
+\begin{equation*}
+1, 2, 3, 4, \underbrace{5}_{5\cdot1}, 6, \ldots,\underbrace{10}_{5\cdot2}, \ldots, \underbrace{15}_{5\cdot3}, \ldots \underbrace{250}_{5\cdot50}, 251, 252, 253 
+\end{equation*}
+%
+\end{example}
+\begin{theorem}{(Teorema dos Restos).}{}{x:theorem:teo-restos}%
+Se \(b_1\) e \(b_2\) deixam restos \(r_1\) e \(r_2\) na divisão por \(a\), respectivamente, então:%
+%
+\begin{enumerate}[label=\roman*]
+\item{}\(b_1 + b_2\) deixa o mesmo resto que \(r_1 + r_2\) na divisão por \(a\)%
+\item{}\(b_1 b_2\) deixa o mesmo resto que \(r_1 r_2\) na divisão por \(a\).%
+\end{enumerate}
+\end{theorem}
+\begin{proof}{}{g:proof:idp17}
+Por hipótese%
+\begin{equation*}
+b_1 = aq_1+r_1, ~ 0\leq r_1\lt a \quad \text{ e }\quad b_2 = aq_2+r_2, ~ 0\leq r_2\lt a.
+\end{equation*}
+%
+\par
+\terminology{item a)}%
+\begin{equation*}
+b_1+b_2 = aq_1+r_1 + aq_2+r_2
+\end{equation*}
+%
+\begin{equation}
+b_1+b_2= a(q_1+q_2) + r_1+r_2.\label{x:men:dem-restos01}
+\end{equation}
+ Aplicando a divisão euclidiana obtemos%
+\begin{equation}
+r_1+r_2 = aq_3 + r_3, ~ 0\leq r_3\lt a.\label{x:men:dem-restos02}
+\end{equation}
+Substituindo \hyperref[x:men:dem-restos02]{({\xreffont\ref{x:men:dem-restos02}})} em \hyperref[x:men:dem-restos01]{({\xreffont\ref{x:men:dem-restos01}})} obtemos%
+\begin{equation*}
+b_1+b_2 = a(q_1+q_2+q_3) + r_3, ~ 0\leq r_3\lt a.
+\end{equation*}
+%
+\par
+\terminology{item b)}%
+\begin{equation*}
+b_1b_2 = (aq_1+r_1)(aq_2+r_2)
+\end{equation*}
+%
+\begin{equation*}
+b_1b_2 = a^2q_1q_2+aq_1r_2+aq_2r_1+r_1r_2
+\end{equation*}
+%
+\begin{equation}
+b_1b_2 = a(aq_1q_2+q_1r_2+q_2r_1) + r_1r_2.\label{x:men:dem-restos03}
+\end{equation}
+Aplicando a divisão euclidiana, podemos escrever%
+\begin{equation}
+r_1r_2 = aq_4+r_4, ~ 0\leq r_4\lt a.\label{x:men:dem-restos04}
+\end{equation}
+Substituindo \hyperref[x:men:dem-restos03]{({\xreffont\ref{x:men:dem-restos03}})} em \hyperref[x:men:dem-restos04]{({\xreffont\ref{x:men:dem-restos04}})} obtemos%
+\begin{equation*}
+b_1b_2 = a(aq_1q_2+q_1r_2+q_2r_1 + q_4) + r_4, ~ 0\leq r_4\lt a.
+\end{equation*}
+Como queríamos.%
+\end{proof}
+\begin{example}{}{g:example:idp18}%
+Qual o resto que o número \(1002\cdot1003\cdot1004\) deixa quando dividido por \(7\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp19}{}\quad{}Aplicando a divisão euclidiana, obtemos%
+\begin{gather*}
+1002 = 7\cdot 143+1\\
+1003 = 7\cdot 143+2\\
+1004 = 7\cdot 143+3
+\end{gather*}
+Aplicando o \hyperref[x:theorem:teo-restos]{(Teorema dos Restos)}, o resto de \(1002\cdot1003\cdot1004\) na divisão por \(7\) é o mesmo que o resto de \(1\cdot 2\cdot 3\) na divisão por \(7\). Como \(1\cdot 2\cdot 3 = 6\) Temos,%
+\begin{equation*}
+1002\cdot1003\cdot1004 = 7\cdot q + 6.
+\end{equation*}
+%
+\end{example}
+\begin{example}{}{g:example:idp20}%
+Qual o resto que o número \(4^{5000}\) deixa quando dividido por \(3\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp21}{}\quad{}Como o número \(4\) deixa resto \(1\) na divisão por \(3\), \(4^{5000}\) deixa o mesmo resto que \(\underbrace{1\cdot 1\cdot 1\cdots 1}_{5000} = 1\) na divisão por \(3\).%
+\end{example}
+\begin{example}{}{g:example:idp22}%
+Qual o resto que o número \(2^{2k+1}\) deixa quando dividido por \(3\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp23}{}\quad{}Note que%
+\begin{equation*}
+2^{2k+1} = 2^{2k}\cdot 2 = 4^k\cdot 2.
+\end{equation*}
+%
+%
+\begin{itemize}[label=\textbullet]
+\item{}\(4\) deixa resto \(1\) na divisão por \(3\), logo \(4^k\) também deixa resto \(1\) na divisão por 3;%
+\item{}\(2\) deixa resto \(2\) na divisão por \(3\).%
+\end{itemize}
+Pelo \hyperref[x:theorem:teo-restos]{(Teorema dos Restos)}, \(2^{2k+1}\) deixa o mesmo resto que \(4^k\cdot 2\) na divisão por \(3\), ou seja, o resto é o mesmo que o resto de \(1\cdot 2 = 2\) na divisão por \(3\).%
+\end{example}
+\begin{example}{}{g:example:idp24}%
+Qual o resto de \(n^3+2n\) na divisão por \(3\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp25}{}\quad{}Dado um número \(n\), ele pode ser escrito em apenas uma das três formas: \(3q, 3q+1\) ou \(3q+2\). Pelo \hyperref[x:theorem:teo-restos]{(Teorema dos Restos)}, basta analisar os três possíveis restos na divisão de \(n\) por \(3\).%
+\par
+Caso 1: \(r = 0\):%
+\begin{equation*}
+0^3+2\cdot 0 = 0 = 3\cdot 0+0
+\end{equation*}
+%
+\par
+Caso 2: \(r = 1\):%
+\begin{equation*}
+1^3+2\cdot 1 = 3 = 3\cdot 1+0
+\end{equation*}
+%
+\par
+Caso 3: \(r = 2\):%
+\begin{equation*}
+2^3+2\cdot 12 = 3\cdot 4+0
+\end{equation*}
+%
+\end{example}
+\begin{example}{}{g:example:idp26}%
+Prove que, para cada \(n\) natural,%
+\begin{equation*}
+(n+1)(n+2)\cdots(2n)
+\end{equation*}
+é divisível por \(2^n\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp27}{}\quad{}Observe que%
+\begin{align*}
+(n+1)(n+2)\cdots(2n) =\amp~  (n+1)(n+2)\cdots(2n)\cdot \frac{1\cdot 2\cdot 3\cdots n}{1\cdot 2\cdot 3\cdots n}.\\
+=\amp~\frac{1\cdot 2 \cdot 3\cdots (2n-1)\cdot (2n)}{1\cdot 2\cdot 3\cdots n}.
+\end{align*}
+Para cada número \(k\) escrito no denominador, existe o número \(2k\) no numerador. Agrupando as frações \(\frac{2k}{k}\) com \(1\leq k\leq n\), sobrará todos os números ímpares de \(1\) até \(2n\). Ou seja,%
+\begin{align*}
+(n+1)(n+2)\cdots(2n) =\amp~\frac{2\cdot1}{1}\cdot\frac{2\cdot2}{2}\cdots\frac{2\cdot n}{n}\cdot 1\cdot3\cdot5\cdots (2n-1)\\
+=\amp~2^n\cdot 1\cdot3\cdot5\cdots (2n-1).
+\end{align*}
+%
+\end{example}
+\begin{example}{}{g:example:idp28}%
+Encontre todos os pares de inteiros positivos \(a\) e \(b\) tais que \(79 = ab+2a+3b\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp29}{}\quad{}Note que \(ab+2a+3b\) quase pode ser escrito como um produto, pois no produto "sobra" uma constante:%
+\begin{equation*}
+(a+3)(b+2) = ab+2a+3b+6.
+\end{equation*}
+Como%
+\begin{equation*}
+79 = ab+2a+3b,
+\end{equation*}
+ao somar \(6\) em ambos os membros da igualdade anterior, obtemos%
+\begin{equation*}
+85 = (a+3)(b+2).
+\end{equation*}
+Como \(85\) é o produto de dois primos (\(5\cdot 17\)), então%
+\begin{equation*}
+5\cdot 17 = (a+3)(b+2).
+\end{equation*}
+Temos apenas dois casos:%
+\begin{gather*}
+\begin{cases} 
+a+3 = 5 \Rightarrow a = 2 \\ 
+b+2 = 17 \Rightarrow b = 15  
+\end{cases}
+\end{gather*}
+e%
+\begin{gather*}
+\begin{cases} 
+a+3 = 17 \Rightarrow a = 14 \\ 
+b+2 = 5 \Rightarrow b = 3  
+\end{cases}
+\end{gather*}
+%
+\end{example}
+\begin{example}{}{g:example:idp30}%
+(OBMEP 2013). Lucas pensou em um número, dividiu-o por \(285\) e obteve resto \(77\). Se ele dividir o número em que pensou por \(57\), qual o resto que ele vai encontrar?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp31}{}\quad{}Note que \(285 = 5\cdot 57\) e que \(77 = 57+20\), logo%
+\begin{align*}
+n=\amp~ 285\cdot q+77\\
+=\amp~5\cdot 57\cdot q+57+20\\
+=\amp~57(5\cdot q+1)+20.
+\end{align*}
+Portanto, o resto na divisão por \(57\) é \(20\).%
+\end{example}
+\begin{example}{}{g:example:idp32}%
+Encontre os inteiros que, na divisão por \(7\) deixam um quociente igual ao resto.%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp33}{}\quad{}Estamos procurando os números que podem ser escritos da seguinte maneira%
+\begin{equation}
+n = 7q+r, (0\leq r\lt 7)\quad \text{com } q=r.\label{x:men:eq-quores}
+\end{equation}
+São apenas \(7\) restos possíveis, podemos substituir esses valores em \hyperref[x:men:eq-quores]{({\xreffont\ref{x:men:eq-quores}})} para obter os valores de \(n\).%
+\begin{align*}
+n =\amp~ 7\cdot 0+0 \Rightarrow n= (7+1)\cdot 0\Rightarrow n=0\\
+n =\amp~ 7\cdot 1+1 \Rightarrow n= (7+1)\cdot 1\Rightarrow n=8\\
+n =\amp~ 7\cdot 2+2 \Rightarrow n= (7+1)\cdot 2\Rightarrow n=16\\
+n =\amp~ 7\cdot 3+3 \Rightarrow n= (7+1)\cdot 3\Rightarrow n=24\\
+n =\amp~ 7\cdot 4+4 \Rightarrow n= (7+1)\cdot 4\Rightarrow n=32\\
+n =\amp~ 7\cdot 5+5 \Rightarrow n= (7+1)\cdot 5\Rightarrow n=40\\
+n =\amp~ 7\cdot 6+6 \Rightarrow n= (7+1)\cdot 6\Rightarrow n=48
+\end{align*}
+%
+\end{example}
+\begin{example}{}{g:example:idp34}%
+Ao dividir o número inteiro \(20+x\) por \(11\) obtemos resto \(7\). Qual é o menor valor inteiro positivo de \(x\)?%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp35}{}\quad{}%
+\begin{align*}
+20+x =\amp~ 11q+7\\
+x=\amp~11q-13.
+\end{align*}
+Como \(x\) é positivo, \(q\geq 2\). Substituindo \(q=2\), obtemos%
+\begin{align*}
+x =\amp~ 11\cdot 2-13\\
+=\amp~22-13\\
+=\amp~9.
+\end{align*}
+%
+\end{example}
+\begin{example}{}{g:example:idp36}%
+(OBM). O número de seis dígitos \(ab2016\) é um múltiplo de \(99\). Determine o valor do dígito \(a\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp37}{}\quad{}Note que \(100 = 99\cdot 1 + 1\). Podemos escrever o número \(ab2016\) da seguinte maneira:%
+\begin{align*}
+ab2016 =\amp~ ab\cdot 100^2+ 20\cdot 100^1 + 16\cdot 100^0\\
+=\amp~ab(99q_2+1)+20(99\cdot 1+1)+16(99\cdot 0+1)\\
+=\amp~99(ab\cdot q_2+20\cdot 1+16\cdot 0) + (ab+20+16).
+\end{align*}
+Portanto, \(99\) divide \(ab2016\) se, e somente se, \(99\) divide \((ab+20+16)\). Ou seja, como \(99\) possui dois diígitos e \((ab+20+16)\) é menor que \(2\cdot 99\), temos a seguinte igualdade%
+\begin{align*}
+99 =\amp~ ab+36\\
+99-36=\amp~ab\\
+63=\amp~ab.
+\end{align*}
+Então, \(a=6\).%
+\end{example}
+%
+%
+\typeout{************************************************}
+\typeout{Exercícios 1.1.1 Exercícios}
+\typeout{************************************************}
+%
+\begin{exercises-subsection}{Exercícios}{}{Exercícios}{}{}{g:exercises:idp38}
+\begin{divisionexercise}{1}{}{}{g:exercise:idp39}%
+Determinar os números que divididos por \(17\) dão um resto igual ao quadrado do quociente correspondente.%
+\end{divisionexercise}%
+\begin{divisionexercise}{2}{(OCM 1985).}{}{g:exercise:idp40}%
+Encontre o quociente da divisão de \(a^{128}-b^{128}\) por%
+\begin{equation*}
+(a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a+b).
+\end{equation*}
+%
+\end{divisionexercise}%
+\begin{divisionexercise}{3}{(OCM 1994).}{}{g:exercise:idp41}%
+Seja \(A=777\ldots 777\) um número onde o dígito "\(7\)" aparece \(1001\) vezes. Determine o quociente e o resto da divisão de \(A\) por \(1001\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp42}{}\quad{}Observe que \(A = 7\frac{10^{1001}-1}{9}\), e que \(1001 = 10^3+1\). Como%
+\begin{align*}
+(10^{999}+1)=\amp~((10^3)^{333}+1)\\
+=\amp~(10^3+1)((10^3)^{332}-(10^3)^{331}+(10^3)^{330}-\cdots+1),
+\end{align*}
+Sabemos que \(\frac{10^{999}+1}{10^3+1}\) é um número inteiro. Assim,%
+\begin{align*}
+\frac{10^{1001}-1}{10^3+1} =\amp~100\cdot\frac{10^{999}+1}{10^3+1}-\frac{101}{10^3+1}\\
+=\amp~100\cdot\frac{10^{999}+1}{10^3+1}-\frac{1001-900}{10^3+1}\\
+=\amp~100\cdot\frac{10^{999}+1}{10^3+1}-1+\frac{900}{10^3+1}\\
+=\amp~\frac{10^{1001}-901}{10^3+1}+\frac{900}{10^3+1}.
+\end{align*}
+Dividindo ambos os membros da igualdade por \(9\) e em seguida multiplicando por \(7\), obtemos%
+\begin{align*}
+\frac{10^{1001}-1}{9(10^3+1)} =\amp~\frac{10^{1001}-901}{9(10^3+1)}+\frac{100}{10^3+1}\\
+\frac{7\cdot(10^{1001}-1)}{9(10^3+1)} =\amp~\frac{7\cdot(10^{1001}-901)}{9(10^3+1)}+\frac{700}{10^3+1}.
+\end{align*}
+Afirmação: \(\frac{7\cdot(10^{1001}-901)}{9(10^3+1)}\) é inteiro e portanto%
+\begin{equation*}
+A = 1001\cdot \frac{7\cdot(10^{1001}-901)}{9(10^3+1)} + 700.
+\end{equation*}
+%
+\par
+Para concluir, vamos provar a afirmação acima. Observe que \(1001=7\cdot11\cdot13\). Então, como \(7, 9, 11, 13\) não possuem fatores primos em comum, para mostrar que \(9(10^3+1)\) divide \(7\cdot(10^{1001}-901)\), basta mostrar que cada um dos números \(9, 11\) e \(13\) divide \((10^{1001}-901)\).%
+\par
+%
+\begin{enumerate}[label=\roman*]
+\item{}(\(9\) divide \((10^{1001}-901)\)). Note que \(10\) deixa resto \(1\) na divisão por \(9\) e que \(-901\) deixa resto \(8\), na divisão por \(9\). Assim, Pelo Teorema dos Restos, \((10^{1001}-901)\) deixa o mesmo resto que \((1^{1001}+8)=9\) na divisão por \(9\), ou seja, o resto é zero.%
+\item{}(\(11\) divide \((10^{1001}-901)\)). Como \(10^2\) deixa resto \(1\) na divisão por \(11\) e \(-901\) deixa resto \(1\) na divisão por \(11\). Pelo Teorema dos restos, \((10^{1001}-901)\) deixa o mesmo resto que \(((1)^{500}\cdot10+1)=11\), na divisão por \(11\). Portanto o resto é zero.%
+\item{}(\(13\) divide \((10^{1001}-901)\)). De fato, \(10^6\) deixa resto \(1\) na divisão por \(13\) e \(-901\) deixa resto \(9\), na divisão por \(13\). Logo, pelo Teorema dos Restos \((10^{1001}-901)\)) deixa o mesmo resto que \(((1)^{166}\cdot 10^5+9)=100009\). Assim, o resto também é zero.%
+\end{enumerate}
+%
+\end{divisionexercise}%
+\end{exercises-subsection}
+%
+%
+\typeout{************************************************}
+\typeout{Subseção 1.1.2 Realização e Apoio}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Realização e Apoio}{}{Realização e Apoio}{}{}{g:subsection:idp43}
+\terminology{Realização:}%
+\begin{image}{0.3}{0.4}{0.3}%
+\includegraphics[width=\linewidth]{images/realizacao}
+\end{image}%
+\terminology{Apoio:}%
+\begin{image}{0.2}{0.6}{0.2}%
+\includegraphics[width=\linewidth]{images/apoio}
+\end{image}%
+\end{subsectionptx}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Seção 1.2 Aula 02 - Divisibilidade II}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Aula 02 - Divisibilidade II}{}{Aula 02 - Divisibilidade II}{}{}{g:section:idp44}
+\begin{definition}{}{g:definition:idp45}%
+Dados dois inteiros \(a\) e \(b\), com \(a \neq 0\), dizemos que \(a\) divide \(b\) ou que \(a\) é um divisor de \(b\) ou ainda que \(b\) é um múltiplo de \(a\) e escrevemos \(a|b\) se o \(r\) obtido pelo algoritmo de divisão aplicado à \(a\) e \(b\) é \(0\), ou seja, se \(b = aq\) para algum inteiro \(q\).%
+\end{definition}
+\begin{lemma}{}{}{x:lemma:lema-01}%
+Sejam \(a, b, c, d\) inteiros. Temos%
+%
+\begin{enumerate}[label=\roman*]
+\item{}("\(d\) divide") Se \(d|a\) e \(d|b\), então \(d|(ax+by)\) para quaisquer \(x\) e \(y\) inteiros.%
+\item{}("Limitação") Se \(d|a\), então \(a=0\) ou \(|d|\leq |a|\).%
+\item{}("Transitividade") Se \(a|b\) e \(b|c\), então \(a|c\).%
+\end{enumerate}
+\end{lemma}
+\begin{example}{}{g:example:idp46}%
+(Olimpíada de Maio 2006). Encontre todos os naturais \(a\) e \(b\) tais que \(a|(b + 1)\) e \(b|(a + 1)\).%
+\textbf{\blocktitlefont Solução}.\hypertarget{g:solution:idp47}{}\quad{}Pelo \hyperref[x:lemma:lema-01]{Lema~{\xreffont\ref{x:lemma:lema-01}}} ("Limitação"),%
+\begin{align*}
+a|(b+1) \amp\Rightarrow a\leq b+1\\
+b|(a+1) \amp\Rightarrow b\leq a+1 \Leftrightarrow b-1\leq a
+\end{align*}
+Ou seja,%
+\begin{equation*}
+b-1\leq a\leq b+1,
+\end{equation*}
+então temos três possibilidades: \(a=b-1\) ou \(a=b\) ou \(a=b+1\).%
+\par
+\(\bullet\) Se \(a=b-1\), então%
+\begin{equation*}
+a|(b-1)\quad \text{e}\quad a|(b+1).
+\end{equation*}
+Pelo item \emph{i} do \hyperref[x:lemma:lema-01]{Lema~{\xreffont\ref{x:lemma:lema-01}}}, escolhendo \(x=-1\) e \(y=1\) temos%
+\begin{align*}
+a|\amp[(b-1)\cdot(-1) + (b+1)\cdot(1)]\\
+a|\amp 2.
+\end{align*}
+Então, \(a=1\) ou \(a=2\). Se \(a=1, b=2\) e se \(a=2, b=3\).%
+\par
+\(\bullet\) Se \(a=b\), então%
+\begin{equation*}
+a|a\quad \text{e}\quad a|(a+1),
+\end{equation*}
+Logo, \(a|[(a+1)-a].\) Portanto, \(a|1\) e consequentemente \(a=1\) e \(b=1\).%
+\par
+\(\bullet\) Se \(a=b+1\), isto significa que \(b=a-1\). Assim,%
+\begin{equation*}
+b|(a-1)\quad \text{e}\quad b|(a+1),
+\end{equation*}
+logo%
+\begin{equation*}
+b|(a+1)-(a-1).
+\end{equation*}
+Portanto, \(b|2\), então \(b=1, a=2\) ou \(b=2, a=3\).%
+\par
+O conjunto de todas as soluções: \(\{(1,2),(2,3), (1,1), (2,1), (3,2)\}\)%
+\end{example}
+\begin{proposition}{(PTOM)(Critério de divisibilidade por 2).}{}{g:proposition:idp48}%
+Seja \(n\) um número inteiro com \(k\) dígitos na base \(10\):%
+\begin{equation*}
+n=r_kr_{k-1}\ldots r_1r_0,
+\end{equation*}
+então \(2|n\) se, e somente se, \(2|r_0\).%
+\end{proposition}
+\end{sectionptx}
+\end{chapterptx}
+%
+%
+\typeout{************************************************}
+\typeout{Referêcias 2 Referências Bibliográficas}
+\typeout{************************************************}
+%
+\begin{references-}{Referências Bibliográficas}{}{Referências Bibliográficas}{}{}{x:references:referencias}
+%% If this is a top-level references
+%%   you can replace with "thebibliography" environment
+\begin{referencelist}
+\bibitem[1]{x:biblio:poti-tn-01}\hypertarget{x:biblio:poti-tn-01}{}  Notas de aula de Teoria dos Números do POTI
+\end{referencelist}
+\end{references-}
+\end{document}

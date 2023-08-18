@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2015 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+<!-- This file was originally part of the book     -->
+<!-- (as copied on 2015/07/12)                     -->
+<!--                                               -->
+<!--   Abstract Algebra: Theory and Applications   -->
+<!--                                               -->
+<!-- Copyright (C) 1997-2014  Thomas W. Judson     -->
+
+<chapter xml:id="01-oficina" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- % TWJ, 2010/03/31 -->
+<!-- % Chapters now begin with Chapter 1 -->
+
+<title>Problemas</title>
+
+
+
+    <introduction>
+
+<!--  -->
+    </introduction> 
+
+
+<section >
+<title>Combinatória</title>
+
+
+<subsection>
+<title>Permutação Simples</title>
+
+<definition xml:id="def-permutacao">
+        <p>Permutar uma lista de objetos é mudar a ordem em que eles estavam. O <em>número de permutações de <m>n</m> objetos distintos</em>, é o número total de maneiras de ordenar estes <m>n</m> objetos. O número de permutações de <m> n </m> objetos distintos é </p>
+        <me> P_n = P(n) = n\times (n-1) \times (n-2)\times \cdots \times 1. </me> 
+        </definition>
+        
+   
+
+<remark>
+O <em>fatorial</em> de um número natural <m>n</m> é denotado por <m>n!</m> e consiste na multiplicação desse número por seus antecessores, com exceção do zero. Ou seja
+<me>n!=P_n = n\times (n-1) \times \cdots \times 1.</me>
+</remark>    
+
+</subsection>
+
+
+<subsection>
+<title>Arranjo Simples</title>
+
+<definition>
+<p>O número de maneiras de ordenar <m>p</m> elementos, dentre <m>n</m> elementos distintos disponíveis, é chamado de <em>número de arranjos simples de <m>n</m> elementos, tomados <m>p</m> a <m>p</m></em>.
+O número de arranjos simples pode ser obtido da seguinte maneira:</p>
+<md>
+<mrow>A_n^p = A(n,p)=\amp~ n\times(n-1)\times \cdots\times(n-(p-1)) </mrow>
+<mrow>=\amp~ \frac{n!}{(n-p)!}.</mrow>
+</md>
+</definition>
+
+
+<example>
+<statement>
+    <p>Quantas palavras contendo 5 letras diferentes podem ser formadas com um alfabeto de 26 letras?</p>
+</statement>
+<solution>
+    <p>Para formar uma palavra, temos 26 opções para a primeira letra, 25 opções para a segunda letra, 24 opções para a terceira letra, 23 opções para a quarta letra e 22 opções para quinta e última letra. Pelo Princípio Multiplicativo a resposta é
+        <me>26\times 25\times 24\times 23\times 22 = 7893600.</me></p>
+</solution>            
+</example>
+    
+</subsection>
+
+
+<subsection>
+<title>Combinação Simples</title>
+
+<definition xml:id="def-combinacao">
+        <p>O número de formas de escolher <m>p</m> elementos, dentre <m>n</m> elementos disponíveis, sem que a ordem importe, é chamado de <em>número de combinações de <m>n</m> elementos, tomados <m>p</m> a <m>p</m></em>. O número de combinações de <m>n</m> objetos distintos, tomados <m> p </m> a <m> p </m> é
+        <me> C_n^p = C_{n, p} = C(n, p) = \frac{n!}{p!\times(n-p)!}.</me> </p>
+
+</definition>
+
+</subsection>
+
+<subsection>
+<title>Permutação com Repetição</title>
+
+<definition>
+<p>
+<em>(Número de Permutações com Repetições)</em>. Se temos <m>n</m> objetos a serem permutados, dos quais  existem <m>\beta_1</m> objetos iguais a <m>b_1</m>, <m>\beta_2</m> objetos iguais a <m>b_2</m>, e assim por diante, até um elemento <m>b_k</m> que figura <m>\beta_k</m> vezes, no qual, <m>\beta_1, \beta_2, \ldots, \beta_k</m> devem satisfazer <m>\beta_1+\beta_2+\cdots+\beta_k=n</m>. Então, a quantidade procurada é dada por:
+<me>
+PR_n^{\beta_1,\beta_2,\ldots,\beta_k}=PR(n,\beta_1,\beta_2,\ldots,\beta_k)=\dfrac{n!}{\beta_1!\beta_2!\cdots\beta_k!}.</me>
+</p>
+</definition>
+
+<example>
+<p>Quantos são os anagramas da palavra MATEMATICA?</p>
+<solution>
+<p> Temos uma palavra com 10 letras. Das 10 letras, temos 3 A's, 2 M's e 2 T's e as outras aparecem uma única vez, portanto o número de anagramas desta palavra é
+    
+<me> PR_{10}^{3, 2, 2} = 151200. </me> 
+</p>
+</solution>    
+</example>    
+
+<example>
+<p>Quantos são os anagramas da palavra MATEMATICA que começam por vogal?</p>
+<solution>
+<p> Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</p>
+
+<p>Começando com A, temos um total de <m>PR_9^{2, 2, 2}</m> anagramas,
+começando com E, temos um total de <m>PR_9^{3, 2, 2}</m> anagramas e
+começando com I, temos um total de <m>PR_9^{3, 2, 2}</m> anagramas.
+
+Portanto a resposta é
+
+<me> PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600. </me>
+</p>
+</solution>    
+</example>  
+
+</subsection>
+
+<subsection>
+<title>Combinação Completa</title>
+
+<definition xml:id="def-combinacao-completa">
+<p>O número de <em>combinações completas</em> de <m>n</m> elementos, tomados <m>p</m> a <m>p</m> é o número de formas de escolher <m>p</m> elementos dentre <m>n</m> disponíveis, podendo escolher repetidamente os objetos, até obter a quantidade <m>p</m>. O número de combinações completas de <m>n</m> elementos, tomados <m>p</m> a <m>p</m> é dado por:
+<me> CR_n^p = PR_{p+n-1}^{p, n-1} = C_{p+n-1}^p</me></p>
+</definition>  
+
+<example xml:id="exem-com-completa">
+<p>Em uma determinada sorveteria há <m>35</m> sabores disponíveis. De quantos modos pode ser feito um pedido de uma taça com <m>3</m> bolas de sorvete?</p>
+<answer>
+<p><m>CR(35,3)=7770</m>.</p>
+</answer>
+</example>
+
+</subsection>
+
+
+<subsection>
+<title>Permutação Caótica</title>
+<definition xml:id="def-permutacao-caotica">
+<p>
+Uma permutação de uma lista de <m>n</m> elementos é chamada de <em>permutação caótica</em>, quando nenhum dos elementos da permutação está na posição original. O número de permutações caóticas de <m>n</m> elementos distintos é
+<me> D_n=n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!}.</me>
+</p>
+</definition>   
+
+<example>
+<p>Quantas são as permutações de <m>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)</m> que têm exatamente 4 elementos no seu lugar primitivo?</p>
+<solution>
+<p>
+O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é <m>C_{10}^4</m>. 
+</p>
+<p>
+Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de <m>D_6</m> formas.
+
+A resposta é 
+<me>C_{10}^4\times D_6 = 55650.</me>
+</p>    
+</solution>    
+</example>  
+</subsection>
+
+</section>
+
+<section >
+<title>Probabilidade</title>
+
+<!-- <assemblage>
+    <title>Aula 01 - Teoria dos Números</title>
+<p>
+Realização:
+</p>
+
+<p>Apoio:
+</p>
+
+</assemblage> -->
+<!-- <figure xml:id="fig-realizacao">
+        <caption>Realização.</caption>            
+        <image source="images/realizacao" width="60%"/> 
+</figure>
+
+<figure xml:id="fig-apoio">
+        <caption>Apoio.</caption>            
+        <image source="images/apoio" width="80%"/> 
+</figure> -->
+
+<theorem xml:id="teo-probabilidade" >
+<p>
+Sejam <m>A</m> e <m>B</m> eventos, então:
+
+<ol label='a'>
+    <li><m>P(A^c) = 1 - P(A)</m>;</li>
+    <li><m>P(\varnothing)=0</m>;</li>
+    <li><m>P(A\setminus B) = P(A) - P(A\cap B)</m>;</li>
+    <li><m>P(A\cup B) = P(A)+P(B) - P(A\cap B)</m>;</li>
+    <li>Se <m>A\supset B</m> então <m>P(A) \geq P(B)</m>.</li>
+</ol>
+<!-- <md>
+  <mrow> a) \amp ~  P(A^c) = 1 - P(A); </mrow>
+  <mrow> b) \amp ~ P(\varnothing)=0; </mrow>
+  <mrow> c) \amp ~ P(A\setminus B) = P(A) - P(A\cap B);  </mrow>
+  <mrow> d) \amp ~ P(A\cup B) = P(A)+P(B) - P(A\cap B);  </mrow>
+  <mrow> e) \amp ~ \text{Se } A\supset B \text{ então } P(A) \geq P(B).  </mrow>
+</md> -->
+</p>  
+<proof>
+<p><term>item a)</term>
+<me>1 = P(\Omega) = P(A\cup A^c) = P(A) + P(A^c), \text{ logo } P(A^c) = 1-P(A).</me>  
+</p>  
+<p><term>item b)</term>
+Como <m>\Omega\cap \varnothing = \varnothing</m>, temos <m>P(\Omega\cup \varnothing) = P(\Omega) + P(\varnothing)</m>. Portanto
+
+<me> 1 = P(\Omega) = P(\Omega\cup \varnothing) = \underbrace{P(\Omega)}_{=1} + P(\varnothing)\Rightarrow P(\varnothing) = 0. </me>
+</p> 
+<p><term>item c)</term>
+Escrevendo <m>A</m> como a união disjunta: 
+
+<me>A = (A\setminus B) \cup (A\cap B)</me>
+
+temos
+
+<me>P(A) =  P(A\setminus B) + P(A\cap B)~~ \Rightarrow ~~ P(A\setminus B) = P(A) - P(A\cap B). </me>
+</p>
+<p><term>item d)</term>
+Escrevendo <m>A\cup B</m> como a união disjunta: 
+
+<me> A\cup B = (A\setminus B)\cup B, </me>
+
+temos 
+
+<me> P(A\cup B) = \underbrace{P(A\setminus B)}_{\underset{\text{pelo item c)}}{= P(A) - P(A\cap B)}} + P(B) = P(A) - P(A\cap B) + P(B). </me>
+</p>
+<p><term>item e)</term>
+Pelo item c) temos 
+
+<me>P(A\setminus B) = P(A) - P(A\cap B)</me>
+
+se <m>A\supset B</m>, ficamos com
+
+<me>P(A\setminus B) = P(A) - P(B)\Rightarrow P(A) \geq P(B),</me>
+
+pois <m>P(A\setminus B)\geq 0</m>.
+</p>
+</proof>  
+</theorem>  
+
+<example>
+<p>
+Uma caixa de chocolate contém 40 chocolates, 30 são do tipo <em>ao leite</em> e 10 são do tipo <em>amargo</em>. Ao pegar 8 chocolates aleatoriamente, qual a probabilidade de que ao menos um chocolate seja do tipo <em>amargo</em>?
+</p>  
+<solution>
+<p>
+Primeiro, vamos calcular a probabilidade de que todos os chocolates sejam do tipo <em>ao leite</em>. Em seguida, vamos usar o item a) do (<xref ref="teo-probabilidade"/>) para chegar na resposta deste problema.</p>
+
+<p> cardinalidade do espaço amostral é dada pelo número de maneiras de pegar 8 chocolates dentre 40 disponívies, portanto
+
+<me>\#\Omega = C_{40}^{8}.</me>
+
+Agora queremos contar quantas são as formas de pegar 8 chocolates do tipo <em>ao leite</em>. Como existem 30 disponíveis a resposta é:
+
+<me> C_{30}^{8}. </me>
+
+Usando o item a) do (<xref ref="teo-probabilidade"/>), a probabilidade de que ao menos um seja do tipo <em>amargo</em> é
+
+<me> 1 - \frac{C_{30}^{8}}{C_{40}^{8}} \approx 0.923893778382943 \approx 92,4\% </me>
+</p>  
+</solution>  
+</example>  
+
+
+<example xml:id="exem-aniversario">
+<p>
+Em um grupo de 45 pessoas, qual é a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia?  
+</p>  
+<solution>
+<p>
+Mais uma vez, usaremos o item a) do (<xref ref="teo-probabilidade"/>). </p>
+
+<p>Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. 
+
+O número de casos possíveis para os aniversários das 45 pessoas é <m>365^{45}</m>.
+
+O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é 
+
+<me> 365\times 364\times 363\times \cdots \times321. </me>
+
+Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é 
+
+<me> \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. </me>
+
+Usando o item a) do (<xref ref="teo-probabilidade"/>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é
+
+<me> 1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. </me>
+</p>  
+<p>Este cálculo pode ser verificado no Sage, usando o código abaixo:</p>
+<sage>
+<input>pd = prod(i for i in (321..365))
+(1 - pd/365^45).n()
+</input>
+<output>0.940975899465775</output>
+</sage> 
+</solution>  
+</example>
+
+
+<example>
+<p>
+Vinte três pessoas foram fazer uma prova e precisaram deixar seus celulares com o fiscal. 
+
+No horário previsto de entrega, houve uma emergência e todos precisaram entregar suas provas e pegar seus celulares com pressa, de modo que os celulares foram entregues ao acaso. 
+
+Qual a probabilidade de que todos os participantes tenha recebido os celulares errados?
+</p>
+<solution>
+<p>
+O espaço amostral <m>\Omega</m> é constituido por todas as formas de ordenar os 23 celulares. 
+
+Os casos favoráveis é constituído por todas as permutações caóticas com os 23 celulares. 
+
+Portanto a resposta é 
+
+<me>P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\% </me>
+</p>  
+</solution>  
+</example>  
+
+<example>
+<p>
+8 bolas de ping-pong são colocadas aleatóriamente em 8 caixas. Qual a probabilidade de que exatamente uma caixa fique vazia?
+</p>
+<solution>
+<p>
+A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas 
+
+<me> \#\Omega = 8^8, </me>
+
+pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.</p>
+
+<p>Agora vamos calcular o número de casos favoráveis. 
+
+Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. 
+
+O número de formas de escolher qual deve ficar vazia é 8.
+
+O número de formas de escolher qual caixa recebe duas bolas é 7. </p>
+
+<p>A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é <m>C_8^2</m>.
+
+A quantidade de formas de arrumar o restante das bolas é <m>(8-2)!</m>. </p>
+
+<p>Portanto o número de casos favoráveis é <m>8\cdot 7 \cdot C_8^2\cdot 6! = 8!C_8^2</m>.
+
+A resposta do problema é 
+
+<me> \frac{8!C_8^2}{8^8} \approx 0.0672912597656250 \approx 6,7\%. </me>
+</p>  
+</solution>  
+</example>  
+
+</section>
+
+
+<section>
+<title>Teoria dos Números</title>
+
+
+<example>
+<p>
+Qual o resto que o número <m>1002\cdot 1003\cdot 1004</m> deixa quando dividido por <m>7</m>?
+</p>
+</example>
+
+<example>
+<p>
+No Planeta <m>X</m> existem apenas dois tipos de notas de dinheiro: <m>$5</m> e <m>$78</m>. É possível pagarmos exatamente <m>$7</m> por alguma mercadoria? E se as notas fossem de <m>$3</m> e <m>$78</m>?
+</p>
+</example>
+
+<example>
+<p>
+Qual o resto que o número <m>4^{100}</m> deixa quando dividido por <m>7</m>?
+</p>
+</example>
+
+
+<example>
+<p>
+Determine o resto de <m>2^{20} -1</m> por <m>7</m>.
+</p>
+</example>
+
+<example>
+<p>
+Qual o resto de <m>36^{36} + 41^{41}</m> por <m>7</m>?
+</p>
+</example>
+
+<example>
+<p>
+Prove que <m>2222^{5555}+5555^{2222}</m> é divisível por <m>7</m>.
+</p>
+</example>
+
+
+<example>
+Mostre que não existe inteiro positivo <m>x</m>, tal que <m>103</m> divide <m>x^3-2</m>.
+</example>
+
+
+<example>
+<p>
+Encontre todas as soluções interior de <m>21x + 48y = 6</m>.
+</p>
+</example>
+
+<example>
+<p>
+encontre os últimos <m>3</m> dígitos do número <m>7^{9999}</m>.
+</p>
+</example>
+
+</section>
+
+
+</chapter>

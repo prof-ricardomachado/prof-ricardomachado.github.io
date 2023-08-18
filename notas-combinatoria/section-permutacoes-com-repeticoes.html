@@ -1,71 +1,206 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:53:50-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Permutações com Repetições</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<meta property="og:type" content="book">
+<meta property="book:title" content="Análise Combinatória e Probabilidade">
+<meta property="book:author" content="Ricardo Nunes Machado Junior">
+<meta property="book:author" content="Gabriel Araújo Guedes">
+<meta property="book:author" content="Luiz Manoel de Santana Neto">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior, Gabriel Araújo Guedes, Luiz Manoel de Santana Neto</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-permutacoes-circulares.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="pcontagem.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-combinacoes-completas.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -79,372 +214,483 @@ MathJax.Hub.Config({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
-<p class="byline">Ricardo Nunes Machado Junior, Luiz Manoel de Santana Neto</p>
-</div>
-</div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-permutacoes-circulares.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-combinacoes-completas.html" title="Próximo">Próximo</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-permutacoes-circulares.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="pcontagem.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-combinacoes-completas.html" title="Próximo">Próximo</a>
-</div>
-</div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
-<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
-<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
-<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
+<li><div class="toc-item"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
-<li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li>
-<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
-<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
-<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
-<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
-<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes" class="active">Permutações com Repetições</a></li>
-<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li>
+<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípio Aditivo e Princípio Multiplicativo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-1" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-2" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="ocontagem.html" data-scroll="ocontagem"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
-<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
-<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
-<li><a href="section-permutacao-caotica-repeticoes.html" data-scroll="section-permutacao-caotica-repeticoes">Permutações Caóticas com Repetições</a></li>
-<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
-<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-3" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-4" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
-<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
-<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
-<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-5" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-6" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a><ul>
-<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
-<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
-<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
-<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
+<li>
+<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link"><a href="calculadora.html" data-scroll="calculadora"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></li>
-<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-permutacoes-com-repeticoes"><h2 class="heading hide-type">
+<li>
+<div class="toc-item"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-7" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
+<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-8" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
+<li><div class="toc-item"><a href="section-inclusao-exclusao.html#exercises-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-9" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-10" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-11" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-12" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica.html#exercises-8" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-13" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-14" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
+<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#exercises-9" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-15" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-16" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-17" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-18" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
+<li><div class="toc-item"><a href="section-lemas-kaplansky.html#exercises-10" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-19" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-20" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-21" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-casa-pombos.html#exercises-11" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-13.html#subsection-22" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html#subsection-23" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html#subsection-24" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
+<li><div class="toc-item"><a href="section-13.html#exercises-12" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-13" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-14" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-15" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-16" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-25" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-17" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-26" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-18" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-permutacoes-com-repeticoes"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span>
 </h2>
-<article class="objectives goal-like" id="dEf"><h6 class="heading"><span class="type">Objetivos</span></h6>
+<article class="objectives goal-like" id="dEf"><h3 class="heading"><span class="type">Objetivos</span></h3>
 <ol class="decimal">
-<li id="li-70">Definir Permutação com Repetição.</li>
-<li id="li-71">Mostrar como obter a lista com todas as permutações com repetições de \(n\) elementos no Sage.</li>
-<li id="li-72">Mostrar como calcular o número de permutações com repetições de \(n\) elementos.</li>
-<li id="li-73">Exemplificar.</li>
-</ol></article><p id="p-341">Quando estamos contando o número de permutações, precisamos levar em consideração se todos os elementos são distintos ou não, pois a permutação de dois elementos idênticos não gera uma nova permutação. Veja o exemplo a seguir.</p>
-<article class="example example-like" id="example-18"><h6 class="heading">
+<li id="li-70"><div class="para" id="p-derived-li-70">Definir Permutação com Repetição.</div></li>
+<li id="li-71"><div class="para" id="p-derived-li-71">Mostrar como obter a lista com todas as permutações com repetições de <span class="process-math">\(n\)</span> elementos no Sage.</div></li>
+<li id="li-72"><div class="para" id="p-derived-li-72">Mostrar como calcular o número de permutações com repetições de <span class="process-math">\(n\)</span> elementos.</div></li>
+<li id="li-73"><div class="para" id="p-derived-li-73">Exemplificar.</div></li>
+</ol></article><div class="para" id="p-341">Quando estamos contando o número de permutações, precisamos levar em consideração se todos os elementos são distintos ou não, pois a permutação de dois elementos idênticos não gera uma nova permutação. Veja o exemplo a seguir.</div>
+<article class="example example-like" id="example-18"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span>
-</h6>
-<p id="p-342">Quantos são os anagramas da palavra SAGEMATH?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
-<p id="p-343">Observe que a palavra SAGEMATH possui 8 letras, mas a letra A aparece duas vezes, o restante aparece apenas uma vez. Podemos imaginar, por enquanto, que a palavra é assim</p>
-<div class="displaymath">
+</h3>
+<div class="para" id="p-342">Quantos são os anagramas da palavra SAGEMATH?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
+<div class="para logical" id="p-343">
+<div class="para">Observe que a palavra SAGEMATH possui 8 letras, mas a letra A aparece duas vezes, o restante aparece apenas uma vez. Podemos imaginar, por enquanto, que a palavra é assim</div>
+<div class="displaymath process-math">
 \begin{equation*}
 SA_1GEMA_2TH
 \end{equation*}
 </div>
-<p data-braille="continuation">com \(A_1\neq A_2\text{,}\) nesse caso teríamos um total de</p>
-<div class="displaymath">
+<div class="para">com <span class="process-math">\(A_1\neq A_2\text{,}\)</span> nesse caso teríamos um total de</div>
+<div class="displaymath process-math">
 \begin{equation*}
 P_8 = 8! 
 \end{equation*}
 </div>
-<p data-braille="continuation">permutações.</p>
-<p id="p-344">Agora vamos resolver o problema das repetições. Observe que para cada permutação, trocar os A's de lugar não muda o anagrama. Portanto, precisamos dividir do total de permutações, o número de maneiras de ordenar os A's, como se fossem elementos distintos. Dessa forma, a resposta é</p>
-<div class="displaymath">
+<div class="para">permutações.</div>
+</div> <div class="para logical" id="p-344">
+<div class="para">Agora vamos resolver o problema das repetições. Observe que para cada permutação, trocar os A's de lugar não muda o anagrama. Portanto, precisamos dividir do total de permutações, o número de maneiras de ordenar os A's, como se fossem elementos distintos. Dessa forma, a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{P_8}{P_2}=20160.
 \end{equation*}
 </div>
-</div></div></article><article class="definition definition-like" id="definition-13"><h6 class="heading">
+</div>
+</div></div></article><article class="definition definition-like" id="definition-13"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span>
-</h6>
-<p id="p-345">Quando permutamos uma lista de objetos, na qual, nem todos os elementos são distintos, precisamos considerar que permutar dois elementos idênticos não gera uma nova permutação. Este tipo de permutação é chamado de <em class="emphasis">permutação com repetição</em>.</p></article><article class="technology computation-like" id="technology-9"><h6 class="heading">
+</h3>
+<div class="para" id="p-345">Quando permutamos uma lista de objetos, na qual, nem todos os elementos são distintos, precisamos considerar que permutar dois elementos idênticos não gera uma nova permutação. Este tipo de permutação é chamado de <em class="emphasis">permutação com repetição</em>.</div></article><article class="technology computation-like" id="technology-9"><h3 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span>
-</h6>Obtendo a lista com todas as permutações com repetições dos elementos \(1, 1, 1, 2, 2\text{:}\) <div class="sagecell-sage" id="sage-17"><script type="text/x-sage">Permutations([1, 1, 1, 2, 2]).list()
-</script></div></article><article class="definition definition-like" id="def-permutacao-repeticao"><h6 class="heading">
+</h3>Obtendo a lista com todas as permutações com repetições dos elementos <span class="process-math">\(1, 1, 1, 2, 2\text{:}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-17"><script type="text/x-sage">Permutations([1, 1, 1, 2, 2]).list()
+</script></pre></article><article class="definition definition-like" id="def-permutacao-repeticao"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span>
-</h6>O número de permutações de \(n\) objetos, com um objeto repetido \(r_1\) vezes, outro objeto repetido \(r_2\) vezes, até o "último" objeto repetido \(r_k\) vezes, com<div class="displaymath">
+</h3>O número de permutações de <span class="process-math">\(n\)</span> objetos, com um objeto repetido <span class="process-math">\(r_1\)</span> vezes, outro objeto repetido <span class="process-math">\(r_2\)</span> vezes, até o "último" objeto repetido <span class="process-math">\(r_k\)</span> vezes, com<div class="displaymath process-math">
 \begin{equation*}
 r_1+r_2+\cdots+r_k=n
 \end{equation*}
-</div>é denotado por:<div class="displaymath">
+</div>é denotado por:<div class="displaymath process-math">
 \begin{equation*}
 PR_n^{r_1, r_2, \ldots, r_k}. 
 \end{equation*}
-</div></article><article class="theorem theorem-like" id="teo-permutacao-repeticao"><h6 class="heading">
+</div></article><article class="theorem theorem-like" id="teo-permutacao-repeticao"><h3 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span>
-</h6>
-<div class="displaymath" id="p-346">
+</h3>
+<div class="para logical" id="p-346"><div class="displaymath process-math">
 \begin{equation*}
 PR_n^{r_1, r_2, \ldots, r_k} = \frac{n!}{r_1!\times r_2!\times\cdots\times r_k!}. 
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof">Considere os \(n\) objetos da seguinte forma:<div class="displaymath">
+</div></div></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof">Considere os <span class="process-math">\(n\)</span> objetos da seguinte forma:<div class="displaymath process-math">
 \begin{equation*}
 \underbrace{A_1A_1\ldots A_1}_{r_1  \text{ vezes}} \underbrace{A_2A_2\ldots A_2}_{r_2  \text{ vezes}}\ldots\underbrace{A_kA_k\ldots A_k}_{r_k  \text{ vezes}} 
 \end{equation*}
-</div>observe que \(r_1+r_2+\cdots+ r_k = n.\) Para encontrar o número de formas de permutar esses elementos, vamos quebrar em \(k\) etapas. Na primeira etapa, vamos escolher \(r_1\) posições, dentre \(n\text{,}\) para colocar \(A_1: C_n^{r_1}\text{.}\) Na segunda etapa, vamos escolher \(r_2\) posições, dentre \(n-r_1\text{,}\) para colocar \(A_2: C_{n-r_1}^{r_2}\text{.}\) \(\ldots\) Na \(k\)-ésima etapa, vamos escolher \(r_k\) posições, dentre \(n-r_1-r_2-\cdots-r_{k-1}=r_k\text{,}\) para colocar \(A_k: C_{r_k}^{r_k}\text{.}\) Portanto,<div class="displaymath">
+</div>observe que <span class="process-math">\(r_1+r_2+\cdots+ r_k = n.\)</span> Para encontrar o número de formas de permutar esses elementos, vamos quebrar em <span class="process-math">\(k\)</span> etapas. Na primeira etapa, vamos escolher <span class="process-math">\(r_1\)</span> posições, dentre <span class="process-math">\(n\text{,}\)</span> para colocar <span class="process-math">\(A_1: C_n^{r_1}\text{.}\)</span> Na segunda etapa, vamos escolher <span class="process-math">\(r_2\)</span> posições, dentre <span class="process-math">\(n-r_1\text{,}\)</span> para colocar <span class="process-math">\(A_2: C_{n-r_1}^{r_2}\text{.}\)</span> <span class="process-math">\(\ldots\)</span> Na <span class="process-math">\(k\)</span>-ésima etapa, vamos escolher <span class="process-math">\(r_k\)</span> posições, dentre <span class="process-math">\(n-r_1-r_2-\cdots-r_{k-1}=r_k\text{,}\)</span> para colocar <span class="process-math">\(A_k: C_{r_k}^{r_k}\text{.}\)</span> Portanto,<div class="displaymath process-math">
 \begin{equation*}
 PR_n^{r_1, r_2, \ldots, r_k} =~ C_n^{r_1}\times C_{n-r_1}^{r_2} \times \cdots \times C_{r_k}^{r_k} \\
 \end{equation*}
-</div>Calculando cada \(C_x^y\)<div class="displaymath">
+</div>Calculando cada <span class="process-math">\(C_x^y\)</span><div class="displaymath process-math">
 \begin{equation*}
 PR_n^{r_1, r_2, \ldots, r_k} = \frac{n!}{r_1!\underbrace{(n-r_1)!}_{x_1}}\cdot\frac{\overbrace{(n-r_1)!}^{x_1}}{r_2!\underbrace{(n-r_1-r_2)!}_{x_2}}\cdots\frac{\overbrace{r_k!}^{x_k}}{r_k!\underbrace{(r_k-r_k)!}_{=1}}
 \end{equation*}
-</div>E cancelando os \(x_i's\text{,}\) obtemos<div class="displaymath">
+</div>E cancelando os <span class="process-math">\(x_i's\text{,}\)</span> obtemos<div class="displaymath process-math">
 \begin{equation*}
 PR_n^{r_1, r_2, \ldots, r_k}= \frac{n!}{r_1!\times r_2!\times\cdots\times r_k!}.
 \end{equation*}
 </div></article></div>
-<article class="technology computation-like" id="tec-permutacao-repeticao"><h6 class="heading">
+<article class="technology computation-like" id="tec-permutacao-repeticao"><h3 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span>
-</h6>
-<p id="p-347">Obtendo o número de permutações com repetições no Sage. Da linha 1 até a linha 5 temos uma implementação de uma função para efetuar esse cálculo. Na linha 6, a função está sendo usada para o caso \(n=10, r_1 = 3, r_2=2, r_3=2, r_4=1, r_5=1\) e \(r_6=1\text{.}\)</p>
-<div class="sagecell-sage" id="sage-18"><script type="text/x-sage">def PR(*lista):
+</h3>
+<div class="para" id="p-347">Obtendo o número de permutações com repetições no Sage. Da linha 1 até a linha 5 temos uma implementação de uma função para efetuar esse cálculo. Na linha 6, a função está sendo usada para o caso <span class="process-math">\(n=10, r_1 = 3, r_2=2, r_3=2, r_4=1, r_5=1\)</span> e <span class="process-math">\(r_6=1\text{.}\)</span>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-18"><script type="text/x-sage">def PR(*lista):
     p = factorial(lista[0])
     for i in lista[1:]:
         p = p/factorial(i)
     return p
 PR(10, 3, 2, 2)
-</script></div>
-<p id="p-348">Para entender essa implementação e aprender mais sobre o SageMath veja a referência <a class="xref" data-knowl="./knowl/sage.html" title="[biblio] 6.5">[6.5]</a>.</p></article><article class="example example-like" id="example-19"><h6 class="heading">
+</script></pre> <div class="para" id="p-348">Para entender essa implementação e aprender mais sobre o SageMath veja a referência <a href="" class="xref" data-knowl="./knowl/sage.html" title="Referência bibliográfica 6.5">[6.5]</a>.</div></article><article class="example example-like" id="example-19"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span>
-</h6>
-<p id="p-349">Quantos são os anagramas da palavra MATEMATICA?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
-<p id="p-350">Temos uma palavra com 10 letras. Das 10 letras, temos 3 A's, 2 M's e 2 T's e as outras aparecem uma única vez, portanto o número de anagramas desta palavra é</p>
-<div class="displaymath">
+</h3>
+<div class="para" id="p-349">Quantos são os anagramas da palavra MATEMATICA?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><div class="para logical" id="p-350">
+<div class="para">Temos uma palavra com 10 letras. Das 10 letras, temos 3 A's, 2 M's e 2 T's e as outras aparecem uma única vez, portanto o número de anagramas desta palavra é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_{10}^{3, 2, 2} = 151200. 
 \end{equation*}
 </div>
-</div></div></article><article class="example example-like" id="example-20"><h6 class="heading">
+</div></div></div></article><article class="example example-like" id="example-20"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span>
-</h6>
-<p id="p-351">Quantos são os anagramas da palavra MATEMATICA que começam por vogal?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
-<p id="p-352">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</p>
-<p id="p-353">Começando com A, temos um total de \(PR_9^{2, 2, 2}\) anagramas, começando com E, temos um total de \(PR_9^{3, 2, 2}\) anagramas e começando com I, temos um total de \(PR_9^{3, 2, 2}\) anagramas. Portanto a resposta é</p>
-<div class="displaymath">
+</h3>
+<div class="para" id="p-351">Quantos são os anagramas da palavra MATEMATICA que começam por vogal?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
+<div class="para" id="p-352">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</div> <div class="para logical" id="p-353">
+<div class="para">Começando com A, temos um total de <span class="process-math">\(PR_9^{2, 2, 2}\)</span> anagramas, começando com E, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas e começando com I, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas. Portanto a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Este cálculo pode ser efetuado no Sage da seguinte maneira:</p>
-<div class="hidden-sagecell-sage" id="sage-19"><script type="text/x-sage">def PR(*lista):
+<div class="para">Este cálculo pode ser efetuado no Sage da seguinte maneira:</div>
+</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-19"><script type="text/x-sage">def PR(*lista):
     p = factorial(lista[0])
     for i in lista[1:]:
         p = p/factorial(i)
     return p
 PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
-</script></div>
-</div></div></article><article class="example example-like" id="exemplo_permut_repet"><h6 class="heading">
+</script></pre>
+</div></div></article><article class="example example-like" id="exemplo_permut_repet"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.9</span><span class="period">.</span>
-</h6>
-<p id="p-354">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</p>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
-<p id="p-355">Use os números de 1 à 12 para representar as pessoas. Desta forma, a posição de cada permutação dos dígitos:</p>
-<div class="displaymath">
+</h3>
+<div class="para" id="p-354">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
+<div class="para logical" id="p-355">
+<div class="para">Use os números de 1 à 12 para representar as pessoas. Desta forma, a posição de cada permutação dos dígitos:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3
 \end{equation*}
 </div>
-<p data-braille="continuation">serve para representar quem está no grupo 1, no grupo 2 e no grupo 3, respectivamente. Assim pela ordem que está escrito, os números que estão no grupo 1 são: \(1, 2, 3, 4\text{,}\) no grupo 2 são \(5, 6, 7, 8\) e no grupo 3 são \(9, 10, 11, 12\text{.}\)</p>
-<p id="p-356">Desta forma, usando permutação com repetição para</p>
-<div class="displaymath">
+<div class="para">serve para representar quem está no grupo 1, no grupo 2 e no grupo 3, respectivamente. Assim pela ordem que está escrito, os números que estão no grupo 1 são: <span class="process-math">\(1, 2, 3, 4\text{,}\)</span> no grupo 2 são <span class="process-math">\(5, 6, 7, 8\)</span> e no grupo 3 são <span class="process-math">\(9, 10, 11, 12\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-356">
+<div class="para">Desta forma, usando permutação com repetição para</div>
+<div class="displaymath process-math">
 \begin{equation*}
 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">o número de maneiras de dividir 12 pessoas em três grupos, levando em consideração a ordem dos grupos é</p>
-<div class="displaymath">
+<div class="para">o número de maneiras de dividir 12 pessoas em três grupos, levando em consideração a ordem dos grupos é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_{12}^{4, 4, 4} = \frac{12!}{4!4!4!}.
 \end{equation*}
 </div>
-<p id="p-357">Como a ordem dos grupos não é importante, estamos contando a mais. Assim, precisamos dividir tudo pelo número de maneiras de ordenar os 3 grupos que é 3!. Portanto a resposta é</p>
-<div class="displaymath">
+</div> <div class="para logical" id="p-357">
+<div class="para">Como a ordem dos grupos não é importante, estamos contando a mais. Assim, precisamos dividir tudo pelo número de maneiras de ordenar os 3 grupos que é 3!. Portanto a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \frac{12!}{4!4!4!3!} = 5775.
 \end{equation*}
 </div>
+</div>
 </div></div></article><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber">1.6.1</span> <span class="title">Exercícios</span>
+<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-358">(OPEMAT 2016 - nível 2) A figura abaixo representa o mapa de uma cidade. Cada aresta representa uma rua e cada vértice representa um cruzamento. Quantos são os trajetos de comprimento mínimo ligando o ponto A ao ponto B?</p>
-<div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="images/permut.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<article class="exercise exercise-like" id="exercise-41"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-358">(OPEMAT 2016 - nível 2) A figura abaixo representa o mapa de uma cidade. Cada aresta representa uma rua e cada vértice representa um cruzamento. Quantos são os trajetos de comprimento mínimo ligando o ponto A ao ponto B?</div> <div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="images/permut.svg" role="img" class="contained"></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><p id="p-359">1743</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-360">Quantos números de 8 dígitos, maiores que 50.000.000, podem ser formados usando apenas os algarismos 1, 2, 5, 5, 5, 7, 7, 7?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><div class="para" id="p-359">1743</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-360">Quantos números de 8 dígitos, maiores que 50.000.000, podem ser formados usando apenas os algarismos 1, 2, 5, 5, 5, 7, 7, 7?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><p id="p-361">840</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-362">De quantos modos podemos colocar em fila 6 letras A, 6 letras B, 5 letras C e 4 letras D, de modo que não haja duas letras C juntas?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><div class="para" id="p-361">840</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-362">De quantos modos podemos colocar em fila 6 letras A, 6 letras B, 5 letras C e 4 letras D, de modo que não haja duas letras C juntas?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><p id="p-363">10406235840</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-364">De quantos modos podem ser pintados 15 objetos iguais usando 6 cores diferentes?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><div class="para" id="p-363">10406235840</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-364">De quantos modos podem ser pintados 15 objetos iguais usando 6 cores diferentes?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><p id="p-365">15504</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-366">Quantas são as opções que temos de colocar 10 bolinhas \((\bullet)\) e 7 barras \((~|~)\) em sequência?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><div class="para" id="p-365">15504</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-366">Quantas são as opções que temos de colocar 10 bolinhas <span class="process-math">\((\bullet)\)</span> e 7 barras <span class="process-math">\((~|~)\)</span> em sequência?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><p id="p-367">19448</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>(OBM 2011 - 2ª fase do nível 3) <p id="p-368">Uma sequência de letras, com ou sem sentido, é dita alternada quando é formada alternadamente por consoantes e vogais. Por exemplo, EZEQAF, MATEMÁTICA, LEGAL e ANIMADA  são palavras alternadas, mas DSOIUF, DINHEIRO e ORDINÁRIO não são. Quantos anagramas da palavra FELICIDADE (incluindo a palavra FELICIDADE) são sequências alternadas?</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><div class="para" id="p-367">19448</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>(OBM 2011 - 2ª fase do nível 3) <div class="para" id="p-368">Uma sequência de letras, com ou sem sentido, é dita alternada quando é formada alternadamente por consoantes e vogais. Por exemplo, EZEQAF, MATEMÁTICA, LEGAL e ANIMADA  são palavras alternadas, mas DSOIUF, DINHEIRO e ORDINÁRIO não são. Quantos anagramas da palavra FELICIDADE (incluindo a palavra FELICIDADE) são sequências alternadas?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><p id="p-369">3600</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
-<p id="p-370">As consoantes de FELICIDADE são F, L, C, D, D e as vogais são E, I, I, A, E. Como são 5 vogais e 5 consoantes, cada anagrama alternado terá cada consoante em posição ímpar ou em posição par. Organizando as consoantes em posições ímpares, ficamos com a seguinte organização</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><div class="para" id="p-369">3600</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
+<div class="para" id="p-370">As consoantes de FELICIDADE são F, L, C, D, D e as vogais são E, I, I, A, E. Como são 5 vogais e 5 consoantes, cada anagrama alternado terá cada consoante em posição ímpar ou em posição par. Organizando as consoantes em posições ímpares, ficamos com a seguinte organização</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \text{F_L_C_D_D_}
 \end{equation*}
 </div>
-<p id="p-371">Na qual, os espaços \(\verb|_|\) serão ocupados por vogais. Assim, temos um total de \(PR_5^2\) maneiras de ordenar essas consoantes. Para ordenar as vogais, temos \(PR_5^{2, 2}\) maneiras, pois temos no total 5 letras, sendo duas letras E, duas letras I e uma letra A.</p>
-<p id="p-372">Como podemos alterar as vogais com as consoantes, o número de anagramas alternados de FELICIDADE é</p>
-<div class="displaymath">
+<div class="para" id="p-371">Na qual, os espaços <span class="process-math">\(\verb|_|\)</span> serão ocupados por vogais. Assim, temos um total de <span class="process-math">\(PR_5^2\)</span> maneiras de ordenar essas consoantes. Para ordenar as vogais, temos <span class="process-math">\(PR_5^{2, 2}\)</span> maneiras, pois temos no total 5 letras, sendo duas letras E, duas letras I e uma letra A.</div> <div class="para" id="p-372">Como podemos alterar as vogais com as consoantes, o número de anagramas alternados de FELICIDADE é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_5^2\times PR_5^{2, 2} \times 2 = 60 \times 30 \times 2 = 3600.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-373">Um bar vende três tipos de cerveja: Antártica, Brahma e Devassa. De quantos modos uma pessoa pode comprar 7 garrafas de cerveja?</p>
+</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-373">Um bar vende três tipos de cerveja: Antártica, Brahma e Devassa. De quantos modos uma pessoa pode comprar 7 garrafas de cerveja?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><p id="p-374">36</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like">
-<p id="p-375">O número de soluções deste problema é o mesmo que o número de solução inteiras, não negativas da equação:</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><div class="para" id="p-374">36</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like"><div class="para logical" id="p-375">
+<div class="para">O número de soluções deste problema é o mesmo que o número de solução inteiras, não negativas da equação:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 x_1 + x_2 + x_3 = 7. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Portanto a resposta é</p>
-<div class="displaymath">
+<div class="para">Portanto a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_9^{7, 2} = 36.
 \end{equation*}
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-376">De quantos formas 12 estudantes podem ser divididos e colocados em 3 salas, sendo 4 na primeira, 5 na segunda e 3 na terceira?</p>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-376">De quantos formas 12 estudantes podem ser divididos e colocados em 3 salas, sendo 4 na primeira, 5 na segunda e 3 na terceira?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><p id="p-377">27720</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like">
-<p id="p-378">Pense na seguinte lista:</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><div class="para" id="p-377">27720</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like">
+<div class="para logical" id="p-378">
+<div class="para">Pense na seguinte lista:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 L= [1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3]. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Para cada permutação da lista \(L\text{,}\) podemos distribuir os estudantes nas salas da seguinte maneira. Use a posição do número para indicar a pessoa e o número para indicar a sala. Desta forma, a resposta é:</p>
-<div class="displaymath">
+<div class="para">Para cada permutação da lista <span class="process-math">\(L\text{,}\)</span> podemos distribuir os estudantes nas salas da seguinte maneira. Use a posição do número para indicar a pessoa e o número para indicar a sala. Desta forma, a resposta é:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_{12}^{4, 5, 3} = 27720. 
 \end{equation*}
 </div>
-<p id="p-379">Por exemplo, a permutação identidade, que é a apresentada na lista \(L\) indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.</p>
+</div> <div class="para" id="p-379">Por exemplo, a permutação identidade, que é a apresentada na lista <span class="process-math">\(L\)</span> indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.</div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-380">De quantos modos 8 pessoas podem ocupar duas salas distintas, devendo cada sala conter pelo menos 3 pessoas?</p>
+</div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-380">De quantos modos 8 pessoas podem ocupar duas salas distintas, devendo cada sala conter pelo menos 3 pessoas?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><p id="p-381">182</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
-<p id="p-382">Observe que temos 3 casos para distribuir as pessoas nas duas salas.</p>
-<p id="p-383">1º caso: 3 pessoas na sala 1 e 5 pessoas na sala 2. Neste caso temos um total de \(PR_8^{3, 5}\) soluções.</p>
-<p id="p-384">2º caso: 4 pessoas na sala 1 e 4 pessoas na sala 2. Neste caso temos um total de \(PR_8^{4, 4}\) soluções.</p>
-<p id="p-385">3º caso: 5 pessoas na sala 1 e 3 pessoas na sala 2. Neste caso temos um total de \(PR_8^{5, 3}\) soluções.</p>
-<p id="p-386">Portanto a resposta é</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><div class="para" id="p-381">182</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<div class="para" id="p-382">Observe que temos 3 casos para distribuir as pessoas nas duas salas.</div> <div class="para" id="p-383">1º caso: 3 pessoas na sala 1 e 5 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{3, 5}\)</span> soluções.</div> <div class="para" id="p-384">2º caso: 4 pessoas na sala 1 e 4 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{4, 4}\)</span> soluções.</div> <div class="para" id="p-385">3º caso: 5 pessoas na sala 1 e 3 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{5, 3}\)</span> soluções.</div> <div class="para logical" id="p-386">
+<div class="para">Portanto a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_8^{3, 5} + PR_8^{4, 4} + PR_8^{5, 3} = 182.
 \end{equation*}
 </div>
+</div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-387">Um baralho tem 52 cartas. De quantos modos podemos distribuí-las entre 4 jogadores, de modo que cada um receba 13 cartas?</p>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-387">Um baralho tem 52 cartas. De quantos modos podemos distribuí-las entre 4 jogadores, de modo que cada um receba 13 cartas?</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><p id="p-388">53644737765488792839237440000</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
-<p id="p-389">Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.</p>
-<p id="p-390">A justificativa é a seguinte. Para cada elemento da lista permutada, use a posição do elemento para pegar a carta que deve estar em uma pilha ou ordenada, e use o número para indicar a pessoa, sendo o número 1 indicando a primeira pessoa e assim por diante. A resposta é:</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><div class="para" id="p-388">53644737765488792839237440000</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
+<div class="para" id="p-389">Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.</div> <div class="para logical" id="p-390">
+<div class="para">A justificativa é a seguinte. Para cada elemento da lista permutada, use a posição do elemento para pegar a carta que deve estar em uma pilha ou ordenada, e use o número para indicar a pessoa, sendo o número 1 indicando a primeira pessoa e assim por diante. A resposta é:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_{52}^{13, 13, 13, 13} = 53644737765488792839237440000.
 \end{equation*}
 </div>
+</div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<p id="p-391">No mapa abaixo estão esboçadas as ruas de um bairro. As ruas verticais são paralelas entre si e é igual a distância entre ruas consecutivas; o mesmo acontece com as ruas horizontais. Calcule o número de formas de sair de A e chegar até B percorrendo a menor distância possível.</p>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></article><article class="exercise exercise-like" id="exercise-51"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-391">No mapa abaixo estão esboçadas as ruas de um bairro. As ruas verticais são paralelas entre si e é igual a distância entre ruas consecutivas; o mesmo acontece com as ruas horizontais. Calcule o número de formas de sair de A e chegar até B percorrendo a menor distância possível.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa.svg" role="img" class="contained"></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><p id="p-392">735</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
-<p id="p-393">Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.</p>
-<figure class="figure figure-like" id="mapa_sol"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.10<span class="period">.</span></span><span class="space"> </span>Mapa da solução.</figcaption></figure><p id="p-394">1º tipo: De A para X e de X para B. Nesse caso temos \(PR_7^{4, 3}\) caminhos de A para X e \(PR_5^{4, 1}\) caminhos de X para B. No total temos</p>
-<div class="displaymath">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><div class="para" id="p-392">735</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
+<div class="para" id="p-393">Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.</div> <figure class="figure figure-like" id="mapa_sol"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.10<span class="period">.</span></span><span class="space"> </span>Mapa da solução.</figcaption></figure> <div class="para logical" id="p-394">
+<div class="para">1º tipo: De A para X e de X para B. Nesse caso temos <span class="process-math">\(PR_7^{4, 3}\)</span> caminhos de A para X e <span class="process-math">\(PR_5^{4, 1}\)</span> caminhos de X para B. No total temos</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_7^{4, 3} \times PR_5^{4, 1}
 \end{equation*}
 </div>
-<p data-braille="continuation">caminhos do 1º tipo.</p>
-<p id="p-395">2º tipo: De A para Y e de Y para B. Nesse caso temos \(PR_8^{5, 3}\) caminhos de A para Y e \(PR_5^{3, 2}\) caminhos de Y para B. No total temos</p>
-<div class="displaymath">
+<div class="para">caminhos do 1º tipo.</div>
+</div> <div class="para logical" id="p-395">
+<div class="para">2º tipo: De A para Y e de Y para B. Nesse caso temos <span class="process-math">\(PR_8^{5, 3}\)</span> caminhos de A para Y e <span class="process-math">\(PR_5^{3, 2}\)</span> caminhos de Y para B. No total temos</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_8^{5, 3} \times PR_5^{3, 2}
 \end{equation*}
 </div>
-<p data-braille="continuation">caminhos do 2º tipo.</p>
-<p id="p-396">Como os caminhos do 1º e 2º tipos são disjuntos a resposta é</p>
-<div class="displaymath">
+<div class="para">caminhos do 2º tipo.</div>
+</div> <div class="para logical" id="p-396">
+<div class="para">Como os caminhos do 1º e 2º tipos são disjuntos a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_7^{4, 3}\times PR_5^{4, 1} + PR_8^{5, 3}\times PR_5^{3, 2} = 735.
 \end{equation*}
 </div>
+</div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
-<p id="p-397">João vai comprar algo que custa \(55\) centavos em uma máquina automática e dispõe de \(8\) moedas de \(5\) centavos do mesmo modelo e \(5\) moedas de \(10\) centavos também do mesmo modelo. Assim, sendo \(n\) o número de diferentes sequências de moedas que ele pode inserir de modo a totalizar os 55 centavos, determine o valor de \(n\text{.}\)</p>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-397">João vai comprar algo que custa <span class="process-math">\(55\)</span> centavos em uma máquina automática e dispõe de <span class="process-math">\(8\)</span> moedas de <span class="process-math">\(5\)</span> centavos do mesmo modelo e <span class="process-math">\(5\)</span> moedas de <span class="process-math">\(10\)</span> centavos também do mesmo modelo. Assim, sendo <span class="process-math">\(n\)</span> o número de diferentes sequências de moedas que ele pode inserir de modo a totalizar os 55 centavos, determine o valor de <span class="process-math">\(n\text{.}\)</span>
+</div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><p id="p-398">\(133\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like">
-<p id="p-399">João pode escolher os valores das moedas de \(4\) maneiras, em cada caso, existem várias maneiras de ordenar as moedas escolhida:</p>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><div class="para" id="p-398"><span class="process-math">\(133\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like"><div class="para logical" id="p-399">
+<div class="para">João pode escolher os valores das moedas de <span class="process-math">\(4\)</span> maneiras, em cada caso, existem várias maneiras de ordenar as moedas escolhida:</div>
 <ol class="decimal">
-<li id="li-74">\(5\) moedas de \(10\) centavos e \(1\) de \(5\) centavos, totalizando \(PR_{6}^{5, 1}\) ordens possíveis;</li>
-<li id="li-75">\(4\) moedas de \(10\) centavos e \(3\) de \(5\) centavos, totalizando \(PR_{7}^{4, 3}\) ordens possíveis;</li>
-<li id="li-76">\(3\) moedas de \(10\) centavos e \(5\) de \(5\) centavos, totalizando \(PR_{8}^{5, 3}\) ordens possíveis;</li>
-<li id="li-77">\(2\) moedas de \(10\) centavos e \(7\) de \(5\) centavos, totalizando \(PR_{9}^{7, 2}\) ordens possíveis.</li>
+<li id="li-74"><div class="para" id="p-derived-li-74">
+<span class="process-math">\(5\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(1\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{6}^{5, 1}\)</span> ordens possíveis;</div></li>
+<li id="li-75"><div class="para" id="p-derived-li-75">
+<span class="process-math">\(4\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(3\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{7}^{4, 3}\)</span> ordens possíveis;</div></li>
+<li id="li-76"><div class="para" id="p-derived-li-76">
+<span class="process-math">\(3\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(5\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{8}^{5, 3}\)</span> ordens possíveis;</div></li>
+<li id="li-77"><div class="para" id="p-derived-li-77">
+<span class="process-math">\(2\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(7\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{9}^{7, 2}\)</span> ordens possíveis.</div></li>
 </ol>
-<p data-braille="continuation">Portanto, a resposta é</p>
-<div class="displaymath">
+<div class="para">Portanto, a resposta é</div>
+<div class="displaymath process-math">
 \begin{equation*}
 PR_{6}^{5, 1} + PR_{7}^{4, 3}+ PR_{8}^{5, 3}+ PR_{9}^{7, 2}=133.
 \end{equation*}
 </div>
-</div></div>
-</div></article></section></section></div></main>
+</div></div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-permutacoes-circulares.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-combinacoes-completas.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

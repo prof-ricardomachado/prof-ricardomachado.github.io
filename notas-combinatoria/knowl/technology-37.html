@@ -2,9 +2,6 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-01-18T15:54:01-03:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,25 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
 </script>
 </head>
-<body>
-<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">No Sage, podemos obter a expanção do polinômio da seguinte forma:</p>
-<div class="sagecell-sage" id="sage-47"><script type="text/x-sage">((x^4 - 1/x^2)^11).expand()
-</script></div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Os coeficientes do polinômio, podem ser obtidos da seguinte forma:</p>
-<div class="sagecell-sage" id="sage-48"><script type="text/x-sage">((x^4 - 1/x^2)^11).coefficients()
-</script></div></article><span class="incontext"><a href="section-binomio-newton.html#technology-37">[incontext]</a></span>
+<body class="ignore-math">
+<article class="technology computation-like"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/exem-soma1.html" title="Exemplo 3.1.8">Exemplo 3.1.8</a> usando o Sage. Primeiramente note que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-soma1.html">
+\begin{equation*}
+S = \sum_{k=1}^n \frac{1}{k+1}C_n^k.
+\end{equation*}
+</div>
+<div class="para">Definimos as variáveis <span class="process-math">\(\verb|n|\)</span> e <span class="process-math">\(\verb|k|\text{,}\)</span> definimos a função <span class="process-math">\(\verb|C(n,p)=binomial(n,p)|\)</span> e usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório. No final do código do método <span class="process-math">\(\verb|sum|\)</span> foi acrescentado o comando <span class="process-math">\(\verb|.show()|\)</span> apenas para o resultado ser exibido no formato compilado pelo <span class="process-math">\(\LaTeX\text{,}\)</span> ou seja, visualmente mais elegante.</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-47"><script type="text/x-sage">n, k = var('n, k')
+C(n, p) = binomial(n, p)
+sum((1/(k+1))*C(n, k), k, 1, n).show()
+</script></pre></article><span class="incontext"><a href="section-triangulo-pascal.html#technology-37" class="internal">em contexto</a></span>
 </body>
 </html>

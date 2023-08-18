@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-20T09:54:09-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM O Princípio da Inclusão-Exclusão para \(n\) conjuntos</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="sample-book.html"><span class="title">Análise Combinatória e ProbabilidadeAnálise Combinatória:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="subsection-5.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="section-inclusao-exclusao.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-permutacao-caotica.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="subsection-5.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="section-inclusao-exclusao.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-permutacao-caotica.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sets.html" data-scroll="sets"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípio Aditivo e Princípio Multiplicativo</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="exercicios-lista1.html" data-scroll="exercicios-lista1">Exercícios</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+<li><a href="exercicios-lista2.html" data-scroll="exercicios-lista2">Exercícios</a></li>
+<li><a href="references-1.html" data-scroll="references-1">Referências</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="contagem2.html" data-scroll="contagem2"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="exercicios-lista3.html" data-scroll="exercicios-lista3">Exercícios</a></li>
+<li><a href="references-2.html" data-scroll="references-2">Referências</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="integers.html" data-scroll="integers"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-math-induction.html" data-scroll="section-math-induction">Triângulo de Pascal</a></li>
+<li><a href="section-division-algorithm.html" data-scroll="section-division-algorithm">O Binômio de Newton</a></li>
+<li><a href="references-3.html" data-scroll="references-3">References and Suggested Readings</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-algebra.html" data-scroll="part-algebra"><span class="codenumber">I</span> <span class="title">Probabilidade</span></a></li>
+<li class="link">
+<a href="groups.html" data-scroll="groups"><span class="codenumber">4</span> <span class="title">Espaços de Probabilidade</span></a><ul>
+<li><a href="section-mod-n-sym.html" data-scroll="section-mod-n-sym">Integer Equivalence Classes and Symmetries</a></li>
+<li><a href="section-groups-define.html" data-scroll="section-groups-define">Definitions and Examples</a></li>
+<li><a href="section-subgroups.html" data-scroll="section-subgroups">Subgroups</a></li>
+<li><a href="groups-sage.html" data-scroll="groups-sage">Sage</a></li>
+<li><a href="exercises-groups.html" data-scroll="exercises-groups">Exercises</a></li>
+<li><a href="exercises-5.html" data-scroll="exercises-5">Additional Exercises: Detecting Errors</a></li>
+<li><a href="groups-sage-exercises.html" data-scroll="groups-sage-exercises">Sage Exercises</a></li>
+<li><a href="references-4.html" data-scroll="references-4">References and Suggested Readings</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="cyclic.html" data-scroll="cyclic"><span class="codenumber">5</span> <span class="title">Probabilidades Condicionais e Distribuição Binomial</span></a><ul>
+<li><a href="section-27.html" data-scroll="section-27">Cyclic groups</a></li>
+<li><a href="section-28.html" data-scroll="section-28">Subgroups of a Cyclic Group</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Cyclic Groups of Complex Numbers</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Large Powers of Integers</a></li>
+<li><a href="exercises-cyclic.html" data-scroll="exercises-cyclic">Exercises</a></li>
+<li><a href="exercises-8.html" data-scroll="exercises-8">Programming Exercises</a></li>
+<li><a href="cyclic-sage-exercises.html" data-scroll="cyclic-sage-exercises">Sage Exercises</a></li>
+<li><a href="references-5.html" data-scroll="references-5">References and Suggested Readings</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="subsection" id="subsection-6"><h2 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para \(n\) conjuntos</span>
+</h2>
+<article class="theorem theorem-like" id="teo-inclusao-exclusao-n"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.1.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-171">Sejam \(A_1,A_2,\cdots,A_n\) conjuntos finitos. A cardinalidade de $$ \bigcup_{i=1}^{n}A_i =  A_1 \cup A_2 \cup \cdots \cup A_n ~~~~ (\blacklozenge) $$ é dada por:</p>
+<div class="displaymath">
+\begin{equation*}
+(\bigstar)  \begin{cases} \displaystyle\#\bigcup_{i=1}^{n}A_i \amp \displaystyle=  \sum_{i=1}^{n}\#A_i-\sum_{0 \lt  i \lt j   \leq n}\#(A_i\cap A_j)+\cdots\\
+\amp ~~~~~ \displaystyle\cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n) \end{cases}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-172">Vamos verificar que a fórmula é verdadeira mostrando que um elemento da união \((\blacklozenge)\) é contada exatamente uma vez pelo lado direito da Expressão \((\bigstar)\text{.}\)</p>
+<p id="p-173">Suponha que o elemento \(a\) pertence a exatamente \(r\) (\(1\leq r\leq n\)) dos conjuntos \(A_1, A_2, \ldots, A_n\text{.}\)</p>
+<p id="p-174">O elemento \(a\) é contado \(C_r^1\) vezes por \(\sum_{i=1}^{n}\#A_i, C_r^2\) vezes por \(\sum_{0\lt i \lt j\leq n}\#(A_i\cap A_j)\text{,}\) e de forma geral \(C_r^m\) vezes, pelo somatório envolvendo \(m\) dos conjuntos \(A_i\text{.}\) Assim, este elemento será contado exatamente $$C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r$$ vezes pelo lado direito de \((\bigstar)\text{.}\) Usando a Expansão do Binômio de Newton, temos $$0 = (1-1)^p = C_r^0 -(C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r).$$ Portanto $$C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r = C_r^0 = 1.$$ Isto mostra que o elemento \(a\) é contado exatamente uma vez pelo lado direito de \((\bigstar)\text{.}\)</p></article></div>
+<article class="fact theorem-like" id="fact-24"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.2.7</span><span class="period">.</span>
+</h6>
+<p id="p-175">Quantos são os anagramas da palavra COMPLEXA que tem C em 1º lugar, ou O em 2º lugar, ou M em 3º lugar ou P em 4º lugar?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<p id="p-176">Sejam</p>
+<div class="displaymath">
+\begin{equation*}
+\bullet A_1 \text{o conjunto dos anagramas de COMPLEXA que tem C em 1º lugar}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bullet A_2 \text{o conjunto dos anagramas de COMPLEXA que tem O em 2º lugar}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bullet A_3 \text{o conjunto dos anagramas de COMPLEXA que tem M em 3º lugar}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bullet A_4 \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}
+\end{equation*}
+</div>
+<p data-braille="continuation">Assim, \(\#A_i = 7!,\) para  \(i\in \{1, 2, 3, 4\}\text{.}\)</p>
+<p id="p-177">Observe que \(\#(A_i\cap A_j), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<div class="displaymath">
+\begin{equation*}
+\#(A_i\cap A_j) = 6!
+\end{equation*}
+</div>
+<p id="p-178">Observe que \(\#(A_i\cap A_j\cap A_k), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<div class="displaymath">
+\begin{equation*}
+\#(A_i\cap A_j\cap A_k) = 5!
+\end{equation*}
+</div>
+<p id="p-179">Observe que \(\#(A_1\cap A_2\cap A_3\cap A_4)\) é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P  nas posições \(1, 2, 3, 4\) fixas, logo</p>
+<div class="displaymath">
+\begin{equation*}
+\#(A_1\cap A_2\cap A_3\cap A_4) = 4!
+\end{equation*}
+</div>
+<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.2.6">Teorema 2.1.2.6</a>),</p>
+<div class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~\sum_{i=1}^{4} \#A_i - \sum_{1\leq i\lt j\leq 4} \#(A_i\cap A_j) \\
+\amp ~ +\sum_{1\leq i\lt j\lt k \leq 4} \#(A_i\cap A_j\cap A_k) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<p data-braille="continuation">Organizando, temos</p>
+<div class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times\#A_1 - C_4^2\times\#(A_1\cap A_2) \\
+\amp ~ +C_4^3\times\#(A_1\cap A_2\cap A_3) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<p data-braille="continuation">Substituindo, temos</p>
+<div class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times 7! - C_4^2\times 6! +C_4^3\times 5! -4! \\
+=\amp ~ 16296. 
+\end{align*}
+</div>
+</div></div></article><article class="fact theorem-like" id="fact-25"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.1.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-180">Qual é o número de elementos do conjunto: <p id="p-181">a)</p></p>
+<div class="displaymath">
+\begin{equation*}
+A = \{ a\in \mathbb{N}~|~ a \text{ é múltiplo de } 2, 3 \text{ ou } 5 \text{ menor que } 10000\}; 
+\end{equation*}
+</div>
+<p data-braille="continuation"><p id="p-182">b)</p></p>
+<div class="displaymath">
+\begin{equation*}
+B = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, 3, 5, 7, 11, 13, 17 \text{ ou } 19 \text{ menor que } 10000\}. 
+\end{equation*}
+</div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solução</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<p id="p-183"><dfn class="terminology">item a)</dfn> Sejam $$\bullet A_2=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 2}\}$$ $$\bullet A_3=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 3}\}$$ $$\bullet A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 5}\}$$ A resposta do item a) é a cardinalidade do conjunto: $$ A_2\cup A_3\cup A_5. $$ Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.2.6">Teorema 2.1.2.6</a>):</p>
+<div class="displaymath">
+\begin{align*}
+\#(A_2\cup A_3\cup A_5) = \amp ~  \#A_2+\#A_3+\#A_5 \\
+\amp ~ - \#(A_2\cap A_3) - \#(A_2\cap A_5) - \#(A_3\cap A_5) \\
+\amp ~ +\#(A_2\cap A_3\cap A_5). 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de cada um dos conjuntos \(A_i's\text{,}\) vamos dividir 10000 por \(i\text{,}\) pois se obtermos \(10000 = p\times i + r\text{,}\) na divisão Euclideana, significa que \(1\times i, 2\times i, \ldots, p\times i \) são todos múltiplos de \(i\) e são menores que 10000. Fazendo as divisões obtemos:</p>
+<div class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 2000\times 5 + 0 \Rightarrow \#A_5 = 2000. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de cada uma das interseções \(A_i\cap A_j\text{,}\) vamos dividir 10000 por \(i\times j\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 1000\times 10 + 0 \Rightarrow \#(A_2\cap A_5) = 1000 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_5) = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de \(A_2\cap A_3\cap A_5\text{,}\) vamos dividir 10000 por \(2\times 3\times 5\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_5) = 333. 
+\end{align*}
+</div>
+<p data-braille="continuation">Portanto, pelo Princípio Inclusão-Exclusão temos:</p>
+<div class="displaymath">
+\begin{align*}
+\#(A_2\cup A_3\cup A_5) \amp =  5000+3333+2000-1666-1000-666+333 \\
+\amp =  ~ 7334 
+\end{align*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solução</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like">
+<p id="p-184"><dfn class="terminology">item b)</dfn> Não é viável fazer as contas "na mão" para calcular a cardinalidade da união de 8 conjuntos, vamos usar o SageMath para contar a quantidade de elementos da união:</p>
+<div class="displaymath">
+\begin{equation*}
+A_2\cup A_3\cup A_5\cup A_7\cup A_{11}\cup A_{13}\cup A_{17}\cup A_{19}.
+\end{equation*}
+</div>
+<p id="p-185">Clique em "Evaluate (Sage)" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).</p>
+<div class="hidden-sagecell-sage" id="sage-18"><script type="text/x-sage">def numeros_de_multiplos(lista, num):
+    l=[]
+    for i in lista:
+        l = l+[x for x in [1..num] if x%i == 0]   
+    return len(set(l))
+numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
+</script></div>
+</div></div></article></section></div></main>
+</div>
+</body>
+</html>
