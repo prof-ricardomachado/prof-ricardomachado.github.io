@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+    inputLocation: ".sage-interact",
+    autoeval: 'true',
+    hide: ["editor", "evalButton", "permalink"]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="pretext ignore-math"><div style="width:600px; height:780px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
+    xr = range(lcoord[0], rcoord[0]+1)
+    yr = range(lcoord[1], rcoord[1]+1)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
+            
+    return R
+
+
+def delannoy(n,k):
+    
+    M = max(n, k)
+    m = min(n, k)
+    
+    lista=[]
+    temp=[]
+    for i in range(m+1):
+        temp = (n-i)*['L'] + (k-i)*['N'] + i*['S']
+        lista.append(temp)
+
+    soma = 0
+    for l in lista:
+        soma = soma + Permutations(l).cardinality()
+    
+    
+    
+    
+    return soma
+
+
+
+@interact
+def _(lista=input_box('LNDNLDN' , width=45,  label="Caminho:"), Pontos=True, auto_update=False):
+
+    
+    lista = str(lista)
+    
+    lista2=[]
+    k=0
+    for i in lista:
+        k += 1
+        if k>6 :
+            if i == "'":
+                break
+            lista2.append(i)
+
+    
+
+    def caminho(texto):
+        
+        nc = texto.count('N')
+        nd = texto.count('L')
+        ndiag = texto.count('D')
+        
+        
+        
+        
+        cam = Graphics()
+        p0 = vector((0,0))
+        for i in texto:
+            if i=='L':
+                cam = cam+arrow(p0, p0+vector((1,0)), color='red', arrowsize=3)
+                p0 = p0+vector((1,0))
+                
+            elif i=='N':
+                cam = cam+arrow(p0, p0+vector((0,1)), color='red', arrowsize=3)
+                p0 = p0+vector((0,1))
+            elif i=='D':
+                cam = cam+arrow(p0, p0+vector((1,1)), color='red', arrowsize=3)
+                p0 = p0+vector((1,1))
+        
+        
+        ret = reticulado((-1,-1), (p0[0]+1, p0[1]+1), pontos=Pontos)
+    
+        return (ret+cam, p0)
+    
+    
+    ok = 0
+    for i in lista2:
+        if i not in ['N', 'L', 'D']:
+            ok = 0
+            break
+        else:
+            ok = 1
+    
+
+    if ok == 1:
+        cam = caminho(lista2)
+        #print('O caminho informado chega no ponto %s.' %(cam[1]))
+        print('Existem %s caminhos de Delannoy até o ponto %s.' %(delannoy(cam[1][0], cam[1][1]), cam[1]))
+        show(cam[0], figsize=6.2)
+    else:
+        print('Digite um caminho válido.')
+</script></pre></div></body>
+</html>

@@ -19,17 +19,17 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </head>
 <body class="ignore-math">
 <article class="technology computation-like"><h4 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
 </h4>
-<div class="para">A implementação de uma função que substitui <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(n-k)!\)</span> em um polinômio de grau <span class="process-math">\(n\text{.}\)</span> Na linha 14 a função está sendo "chamada" com o polinômio: <span class="process-math">\(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-33"><script type="text/x-sage">def substituicao(p):
-    c = p.coefficients()   # lista de coeficientes
-    d = p.degree(x)        # grau máximo
-    s = 0
-    for i in c:
-        s = s + i[0]*(-1)^i[1]*factorial(d-i[1])
-    return s
-substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
+<div class="para">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a href="" class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> que multiplica cada um dos polinômios de torre. As entradas da função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro <span class="process-math">\(3\times 3\)</span> e 4 tabuleiros <span class="process-math">\(1\times 1\text{.}\)</span>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage">def produto_polinomios_torre(*lista):
+    R = PolynomialRing(ZZ, 'x')
+    p = R(1)
+    for n in lista:
+        B = matrix.ones(n)
+        p = p*R(B.rook_vector())
+    return show(p)
+produto_polinomios_torre(3, 1, 1, 1, 1)
 </script></pre></article><span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#technology-22" class="internal">em contexto</a></span>
 </body>
 </html>
