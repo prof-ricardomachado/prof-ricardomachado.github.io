@@ -18,14 +18,15 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </script>
 </head>
 <body class="ignore-math">
-<div class="answer solution-like">
-<h5 class="heading">
-<span class="type">Resposta</span><span class="space"> </span><span class="codenumber">1.6.4.3.a.1</span><span class="period">.</span>
-</h5>
-<div class="para"><span class="process-math">\(S = \left\{ 0, \frac{\pi}{2}, \pi, \frac{3\pi}{2} \right\}\)</span></div> <pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">f=sin(x)*cos(x)
-plot(f, (x,0,2*pi), ticks=pi/2, tick_formatter=[pi/2,1], figsize=4)
-</script></pre>
-</div>
-<span class="incontext"><a href="section-6.html#answer-1" class="internal">em contexto</a></span>
+<article class="technology computation-like"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4.17</span><span class="period">.</span>
+</h3>Podemos utilizar o SageMath para calcular a inversa de funções. Para calcular a inversa da função <span class="process-math">\(f(x)=3x+2\text{,}\)</span> use o código a seguir. E para trocar a função, modifique o valor atribuído a f na linha 5. <pre class="ptx-sagecell sagecell-sage" id="sage-15"><script type="text/x-sage">def symbolic_inverse(f, x):
+    y = SR.var('y')
+    g = (f - y).roots(x, multiplicities=False)
+    return [expr.subs(y=x) for expr in g]
+f = 3*x+2
+inv = symbolic_inverse(f, x)
+show(inv)
+</script></pre></article><span class="incontext"><a href="section-4.html#technology-1" class="internal">em contexto</a></span>
 </body>
 </html>

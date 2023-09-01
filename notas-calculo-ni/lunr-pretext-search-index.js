@@ -565,7 +565,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.4",
   "title": "Funções Injetoras, Sobrejetoras e Bijetoras",
-  "body": " Funções Injetoras, Sobrejetoras e Bijetoras   Uma função injetiva (ou injetora) é uma função que cada elemento do contradomínio da função é a imagem de no máximo um elemento de seu domínio. Ou seja, Uma função diz-se injetiva (ou injetora) se e somente se quaisquer que sejam e (pertencentes ao domínio da função), implica que .    a) não é injetora, pois , porém .  b) é injetora. De fato, sejam , com . mas por hipótese. Portanto, é injetiva.    Uma função é sobrejetiva (ou sobrejetora) , se para todo elemento houver pelo menos um elemento tal que . Ou seja, quando o conjunto imagem coincide com o contradomínio da função.    a) , na qual, não é sobrejetiva, pois dado , não existe tal que .  b) , na qual, é sobrejetiva.    Uma função é chamada de bijetora se for injetiva e sobrejetiva.    Sejam e funções tais que o domínio de é igual ao contradomínio de . Neste caso podemos definir a função composta  , que consiste em aplicar primeiro e depois . Mais precisamente,    Função .      Sejam e dadas por e . Determine e .     Dadas as funções e , diremos que é uma inversa à esquerda para quando , ou seja, quando para todo .    Uma função possui inversa à esquerda se, e somente se, é injetiva.    Seja dada por , que é injetiva e não é sobrejetiva. A inversa à esquerda da função é a função , pois para todo .    Dadas as funções e , diremos que é uma inversa à direita para quando , ou seja, quando para todo .    Uma função possui inversa à direita se, e somente se, é sobrejetiva.    Seja , dada por . A inversa à direita de é a função , dada por .    Uma função chama-se inversa da função , quando e , isto é, quando é inversa à esquerda e à direita para .    Seja , dada por . A inversa é a função , dada por .     Encontre as funções e seus domínios.        Encontre        Expresse na forma .        Encontre a inversa das funções.          "
+  "body": " Funções Injetoras, Sobrejetoras e Bijetoras   Uma função injetiva (ou injetora) é uma função que cada elemento do contradomínio da função é a imagem de no máximo um elemento de seu domínio. Ou seja, Uma função diz-se injetiva (ou injetora) se e somente se quaisquer que sejam e (pertencentes ao domínio da função), implica que .    a) não é injetora, pois , porém .  b) é injetora. De fato, sejam , com . mas por hipótese. Portanto, é injetiva.    Uma função é sobrejetiva (ou sobrejetora) , se para todo elemento houver pelo menos um elemento tal que . Ou seja, quando o conjunto imagem coincide com o contradomínio da função.    a) , na qual, não é sobrejetiva, pois dado , não existe tal que .  b) , na qual, é sobrejetiva.    Uma função é chamada de bijetora se for injetiva e sobrejetiva.    Sejam e funções tais que o domínio de é igual ao contradomínio de . Neste caso podemos definir a função composta  , que consiste em aplicar primeiro e depois . Mais precisamente,    Função .      Sejam e dadas por e . Determine e .     Dadas as funções e , diremos que é uma inversa à esquerda para quando , ou seja, quando para todo .    Uma função possui inversa à esquerda se, e somente se, é injetiva.    Seja dada por , que é injetiva e não é sobrejetiva. A inversa à esquerda da função é a função , pois para todo .    Dadas as funções e , diremos que é uma inversa à direita para quando , ou seja, quando para todo .    Uma função possui inversa à direita se, e somente se, é sobrejetiva.    Seja , dada por . A inversa à direita de é a função , dada por .    Uma função chama-se inversa da função , quando e , isto é, quando é inversa à esquerda e à direita para .    Seja , dada por . A inversa é a função , dada por .    Podemos utilizar o SageMath para calcular a inversa de funções. Para calcular a inversa da função , use o código a seguir. E para trocar a função, modifique o valor atribuído a f na linha 5.    Encontre as funções e seus domínios.        Encontre        Expresse na forma .        Encontre a inversa das funções.          "
 },
 {
   "id": "definition-14",
@@ -701,6 +701,15 @@ var ptx_lunr_docs = [
   "number": "1.4.16",
   "title": "",
   "body": " Seja , dada por . A inversa é a função , dada por .   "
+},
+{
+  "id": "technology-1",
+  "level": "2",
+  "url": "section-4.html#technology-1",
+  "type": "Tecnologia",
+  "number": "1.4.17",
+  "title": "",
+  "body": "Podemos utilizar o SageMath para calcular a inversa de funções. Para calcular a inversa da função , use o código a seguir. E para trocar a função, modifique o valor atribuído a f na linha 5.  "
 },
 {
   "id": "exercise-7",
@@ -2302,7 +2311,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.4",
   "title": "Derivada da Função Composta, Derivada de Função Implícita e Inversa",
-  "body": " Derivada da Função Composta, Derivada de Função Implícita e Inversa   Notação de Leibniz   Seja . Fazendo , temos       A notação é usada para indicar .  Na notação de Leibniz, a derivada de , em é indicada por .     Derivada da Função Composta   (Regra da Cadeia) Sejam e duas funções deriváveis, com , então a composta é derivável e vale a regra da cadeia:    Supondo . Por hipótese e são deriváveis, e portanto contínuas, quando , e a igualdade implica na existência de . Portanto é derivável. Além disso,      Calcule , sendo          Seja uma função derivável e seja . Calcule supondo .    Seja . Verifique que      Derivada de Função Dada Implicitamente   Uma função está escrita na forma explícita quando a variável está de uma lado da igualdade e do outro lado os termos em . Caso contrário, a função está escrita na forma implícita .    Função na forma explícita. , com , dada por: Forma implícita da função:     Calcule a derivada da função .    .     Calcule a função na forma implícita: .   Para derivar a função na forma implícita, a função deve ser vista como função de , ou seja, como , assim: E aplicamos as regras da soma e do produto:       Como , substituindo em , temos:      Expresse em termos de e de , na qual é uma função diferenciável dada implicitamente pela equação        a)    b)    c)        Derivada da Função Inversa   Seja uma função inversível com inversa . Se é derivável em um ponto e , então sua inversa é também derivável em . Além disso:    Como é inversível e derivável em , com , sabemos que e Como derivando esta última identidade em relação a e usando a regra da cadeia, obtemos: Portanto,      Seja uma função definida por Encontre a derivada de no ponto .   Como , temos que é uma função crescente, portanto é sobrejetiva. Dessa forma, como , temos      Calcule , com .   Observe que é contínua e é a inversa de , . Então e Derivando a igualdade: , obtemos Usando a Igualdade , obtemos Sabemos que Para , temos Portanto, Substituindo em temos      Determine a derivada.          Para cada função determine e tais que . Depois use a regra da cadeia para calcular a derivada de .             Encontre a derivada das seguintes funções.                        Expresse em termos de e , onde é uma função diferenciável dada implicitamente pela equação                           Encontre a derivada da função. Simplifique onde possível.             "
+  "body": " Derivada da Função Composta, Derivada de Função Implícita e Inversa   Notação de Leibniz   Seja . Fazendo , temos       A notação é usada para indicar .  Na notação de Leibniz, a derivada de , em é indicada por .     Derivada da Função Composta   (Regra da Cadeia) Sejam e duas funções deriváveis, com , então a composta é derivável e vale a regra da cadeia:    Supondo . Por hipótese e são deriváveis, e portanto contínuas, quando , e a igualdade implica na existência de . Portanto é derivável. Além disso,      Calcule , sendo          Seja uma função derivável e seja . Calcule supondo .    Seja . Verifique que      Derivada de Função Dada Implicitamente   Uma função está escrita na forma explícita quando a variável está de uma lado da igualdade e do outro lado os termos em . Caso contrário, a função está escrita na forma implícita .    Função na forma explícita. , com , dada por: Forma implícita da função:     Calcule a derivada da função .    .     Calcule a função na forma implícita: .   Para derivar a função na forma implícita, a função deve ser vista como função de , ou seja, como , assim: E aplicamos as regras da soma e do produto:       Como , substituindo em , temos:      Expresse em termos de e de , na qual é uma função diferenciável dada implicitamente pela equação        a)    b)    c)      Podemos utilizar o SageMath para calcular derivada de função dada implicitamente. Para a equação , use o código a seguir     Derivada da Função Inversa   Seja uma função inversível com inversa . Se é derivável em um ponto e , então sua inversa é também derivável em . Além disso:    Como é inversível e derivável em , com , sabemos que e Como derivando esta última identidade em relação a e usando a regra da cadeia, obtemos: Portanto,      Seja uma função definida por Encontre a derivada de no ponto .   Como , temos que é uma função crescente, portanto é sobrejetiva. Dessa forma, como , temos      Calcule , com .   Observe que é contínua e é a inversa de , . Então e Derivando a igualdade: , obtemos Usando a Igualdade , obtemos Sabemos que Para , temos Portanto, Substituindo em temos      Determine a derivada.          Para cada função determine e tais que . Depois use a regra da cadeia para calcular a derivada de .             Encontre a derivada das seguintes funções.                        Expresse em termos de e , onde é uma função diferenciável dada implicitamente pela equação                           Encontre a derivada da função. Simplifique onde possível.             "
 },
 {
   "id": "remark-24",
@@ -2395,11 +2404,20 @@ var ptx_lunr_docs = [
   "body": " Expresse em termos de e de , na qual é uma função diferenciável dada implicitamente pela equação        a)    b)    c)     "
 },
 {
+  "id": "technology-2",
+  "level": "2",
+  "url": "section-17.html#technology-2",
+  "type": "Tecnologia",
+  "number": "3.4.12",
+  "title": "",
+  "body": "Podemos utilizar o SageMath para calcular derivada de função dada implicitamente. Para a equação , use o código a seguir  "
+},
+{
   "id": "theorem-24",
   "level": "2",
   "url": "section-17.html#theorem-24",
   "type": "Teorema",
-  "number": "3.4.12",
+  "number": "3.4.13",
   "title": "",
   "body": " Seja uma função inversível com inversa . Se é derivável em um ponto e , então sua inversa é também derivável em . Além disso:    Como é inversível e derivável em , com , sabemos que e Como derivando esta última identidade em relação a e usando a regra da cadeia, obtemos: Portanto,    "
 },
@@ -2408,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-17.html#example-80",
   "type": "Exemplo",
-  "number": "3.4.13",
+  "number": "3.4.14",
   "title": "",
   "body": " Seja uma função definida por Encontre a derivada de no ponto .   Como , temos que é uma função crescente, portanto é sobrejetiva. Dessa forma, como , temos    "
 },
@@ -2417,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-17.html#example-81",
   "type": "Exemplo",
-  "number": "3.4.14",
+  "number": "3.4.15",
   "title": "",
   "body": " Calcule , com .   Observe que é contínua e é a inversa de , . Então e Derivando a igualdade: , obtemos Usando a Igualdade , obtemos Sabemos que Para , temos Portanto, Substituindo em temos    "
 },
@@ -2426,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-17.html#example-82",
   "type": "Exemplo",
-  "number": "3.4.15",
+  "number": "3.4.16",
   "title": "",
   "body": " Determine a derivada.      "
 },

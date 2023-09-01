@@ -499,6 +499,15 @@ show('gof(x) = ', g.subs(x==f).full_simplify())
 </div> <pre class="ptx-sagecell sagecell-sage" id="sage-14"><script type="text/x-sage">f = 3*x+2; g = (x-2)/3
 show('fog(x) = ', f.subs(x==g).full_simplify())
 show('gof(x) = ', g.subs(x==f).full_simplify())
+</script></pre></article><article class="technology computation-like" id="technology-1"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4.17</span><span class="period">.</span>
+</h3>Podemos utilizar o SageMath para calcular a inversa de funções. Para calcular a inversa da função <span class="process-math">\(f(x)=3x+2\text{,}\)</span> use o código a seguir. E para trocar a função, modifique o valor atribuído a f na linha 5. <pre class="ptx-sagecell sagecell-sage" id="sage-15"><script type="text/x-sage">def symbolic_inverse(f, x):
+    y = SR.var('y')
+    g = (f - y).roots(x, multiplicities=False)
+    return [expr.subs(y=x) for expr in g]
+f = 3*x+2
+inv = symbolic_inverse(f, x)
+show(inv)
 </script></pre></article><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
 <span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
 </h3>
