@@ -9,41 +9,126 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.3.3.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.8.1</span><span class="period">.</span>
 </h4>
+<div class="para logical">
 <div class="para">
-<dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o <span class="process-math">\(n\)</span>-ésimo dígito que também temos 3 opções. Portanto a resposta é <span class="process-math">\(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn> Agora precisamos subtrair de <span class="process-math">\(3^n\)</span> a quantidade de números de <span class="process-math">\(n\)</span> dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina <span class="process-math">\(A_1\)</span> como o subconjunto dos números de <span class="process-math">\(n\)</span> dígitos formados pelos dígitos <span class="process-math">\(1, 2\)</span> e <span class="process-math">\(3\)</span> tal que o dígito <span class="process-math">\(1\)</span> não aparece. De maneira análoga defina os subconjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\text{.}\)</span> Desta forma, queremos calcular</div>
-<div class="displaymath process-math">
+<dfn class="terminology">item a)</dfn> Sejam</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{gather*}
+A_2=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 2}\}; \\
+A_3=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 3}\}; \\
+A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 5}\}. 
+\end{gather*}
+</div>
+<div class="para"> A resposta do item a) é a cardinalidade do conjunto:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
 \begin{equation*}
-3^n - \#(A_1\cup A_2 \cup A_3)\text{.}
+A_2\cup A_3\cup A_5. 
 \end{equation*}
 </div>
-<div class="para">Pelo Pincípio da Inclusão-Exclusão sabemos que</div>
-<div class="displaymath process-math">
+<div class="para">Pelo Princípio da Inclusão-Exclusão (<a href="" class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>):</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
 \begin{align*}
-\#(A_1\cup A_2\cup A_3) = \amp ~\#A_1+\#A_2+\#A_3 \\
-\amp ~ -\#(A_1\cap A_2)-\#(A_1\cap A_3)-\#(A_2\cap A_3) \\
-\amp ~ +\#(A_1\cap A_2\cap A_3). 
+\#(A_2\cup A_3\cup A_5) = \amp ~  \#A_2+\#A_3+\#A_5 \\
+\amp ~ - \#(A_2\cap A_3) - \#(A_2\cap A_5) - \#(A_3\cap A_5) \\
+\amp ~ +\#(A_2\cap A_3\cap A_5). 
 \end{align*}
 </div>
+<div class="para">Para obter a cardinalidade de cada um dos conjuntos <span class="process-math">\(A_i's\text{,}\)</span> vamos dividir 10000 por <span class="process-math">\(i\text{,}\)</span> pois se obtermos <span class="process-math">\(10000 = p\times i + r\text{,}\)</span> na divisão Euclideana, significa que <span class="process-math">\(1\times i, 2\times i, \ldots, p\times i \)</span> são todos múltiplos de <span class="process-math">\(i\)</span> e são menores que 10000. Fazendo as divisões obtemos:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 2000\times 5 + 0 \Rightarrow \#A_5 = 2000. 
+\end{align*}
+</div>
+<div class="para">Para obter a cardinalidade de cada uma das interseções <span class="process-math">\(A_i\cap A_j\text{,}\)</span> vamos dividir 10000 por <span class="process-math">\(i\times j\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 1000\times 10 + 0 \Rightarrow \#(A_2\cap A_5) = 1000 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_5) = 666. 
+\end{align*}
+</div>
+<div class="para">Para obter a cardinalidade de <span class="process-math">\(A_2\cap A_3\cap A_5\text{,}\)</span> vamos dividir 10000 por <span class="process-math">\(2\times 3\times 5\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_5) = 333. 
+\end{align*}
+</div>
+<div class="para">Portanto, pelo Princípio Inclusão-Exclusão temos:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+\#(A_2\cup A_3\cup A_5) \amp =  5000+3333+2000-1666-1000-666+333 \\
+\amp =  ~ 7334 
+\end{align*}
+</div>
+</div> <div class="para logical">
 <div class="para">
-<span class="process-math">\(A_1\)</span> possui <span class="process-math">\(2^n\)</span> elementos, pois o dígito <span class="process-math">\(1\)</span> não pode figurar no número de <span class="process-math">\(n\)</span> dígitos, sobrando apenas os dígitos <span class="process-math">\(2\)</span> e <span class="process-math">\(3\text{.}\)</span> Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\)</span> possuem a mesma quantidade de elementos.</div>
-</div> <div class="para">
-<span class="process-math">\(A_1\cap A_2\)</span> possui apenas <span class="process-math">\(1\)</span> elemento, pois os dígitos <span class="process-math">\(1\)</span> e <span class="process-math">\(2\)</span> não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que <span class="process-math">\(A_1\cap A_2\)</span> e <span class="process-math">\(A_2\cap A_3\)</span> também possuem apenas um elemento.</div> <div class="para logical">
-<div class="para">Finalmente, <span class="process-math">\(A_1\cap A_2\cap A_3\)</span>  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</div>
+<dfn class="terminology">item b)</dfn> Usando a ideia do item a), queremos calcular a cardinalidade do conjunto:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.
+A_2\cup A_3\cup A_{15}.
 \end{equation*}
 </div>
+<div class="para">Vamos começar calculando a cardinalidade de cada conjunto:</div>
+<div class="displaymath process-math">
+\begin{align*}
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#A_{15} = 666. 
+\end{align*}
 </div>
+<div class="para">Calculando a cardinalidade de cada uma das interseções <span class="process-math">\(A_i\cap A_j\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_{15}) = 333 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_{15}) = 666. 
+\end{align*}
+</div>
+<div class="para">Para obter a cardinalidade de <span class="process-math">\(A_2\cap A_3\cap A_{15}\text{,}\)</span> dividimos <span class="process-math">\(10000\)</span> pelo <span class="process-math">\(mmc(2, 3, 15)\text{,}\)</span> logo:</div>
+<div class="displaymath process-math">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_{15}) = 333. 
+\end{align*}
+</div>
+<div class="para">Portanto, pelo Princípio da Inclusão-Exclusão:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#(A_2\cap A_3\cap A_{15}) = 5000+3333+666-1666-333-666+333 = 6667.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">item c)</dfn> Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_2\cup A_3\cup A_5\cup A_7\cup A_{11}\cup A_{13}\cup A_{17}\cup A_{19}.
+\end{equation*}
+</div>
+</div> <div class="para">Clique em "Evaluate (Sage)" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).</div> <pre class="ptx-sagecell sagecell-sage" id="sage-23"><script type="text/x-sage">def numeros_de_multiplos(lista, num):
+    l=[]
+    for i in lista:
+        l = l+[x for x in [1..num] if x%i == 0]   
+    return len(set(l))
+numeros_de_multiplos([2,3,5,7,11,13,17,19], 10000)
+</script></pre>
 </div>
 <span class="incontext"><a href="section-inclusao-exclusao.html#solution-74" class="internal">em contexto</a></span>
 </body>

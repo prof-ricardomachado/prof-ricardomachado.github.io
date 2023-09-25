@@ -9,24 +9,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.11.1</span><span class="period">.</span>
-</h3>
-<div class="displaymath process-math">
-\begin{align*}
-S = \amp \sum_{k=10}^{98} k(k+1)  \\
-= \amp \sum_{k=1}^{98} k(k+1) - \sum_{k=1}^9 k(k+1)  \\
-= \amp \sum_{k=1}^{98} 2!C_{k+1}^2 - \sum_{k=1}^9 2!C_{k+1}^2  \\
-= \amp 2(C_2^2 +C_3^2 + \cdots + C_{99}^2) - 2(C_2^2 +C_3^2 + \cdots + C_{10}^2)  \\
-= \amp 2C_{100}^3 - 2C_{11}^3  \\
-= \amp  323400 - 330\\
-= \amp 323070  
-\end{align*}
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.6.4.5.1</span><span class="period">.</span>
+</h4>
+<div class="para">No <a href="" class="xref" data-knowl="./knowl/ex-dyckway.html" title="Exemplo 2.6.19">Exemplo 2.6.19</a>, mostramos que o número de caminhos de Dyck, de comprimento <span class="process-math">\(2n\text{,}\)</span> é dado por <span class="process-math">\(C_n\text{.}\)</span> É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo <span class="process-math">\(n\)</span> pares de parenteses que estão corretamente emparelhados.</div> <div class="para">Para cada caminho de Dyck, cada vez que o passo for de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n+1)\text{,}\)</span> abra um parêntese e cada vez que o passo for de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n-1)\)</span> feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo <span class="process-math">\(x\text{,}\)</span> em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de <span class="process-math">\(2n\)</span> passos e estão no eixo <span class="process-math">\(x\text{,}\)</span> portanto a expressão correspondente conterá <span class="process-math">\(n\)</span> pares de parênteses corretamente emparelhados.</div> <div class="para">Reciprocamente, para cada expressão corretamente emparelhada contendo <span class="process-math">\(n\)</span> pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n+1)\text{,}\)</span> sempre que houver um parêntese abrindo, e dê um passo de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n-1)\text{,}\)</span> sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo <span class="process-math">\(x\text{.}\)</span> O primeiro parêntese será do tipo "(", garantindo que o primeiro passo seja de <span class="process-math">\((0,0)\)</span> para <span class="process-math">\((1,1)\text{.}\)</span> Como as expressões estão corretamente emparelhadas e contêm <span class="process-math">\(n\)</span> pares de parênteses, o último parêntese será do tipo ")" e o caminho correspondente chegará no ponto <span class="process-math">\((2n,0)\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Observação:</dfn> No Sage, a lista contendo todas as expressões de <span class="process-math">\(n\)</span> pares de parênteses corretamente emparelhados pode ser gerada com o método <span class="process-math">\(\verb|DyckWords|\text{.}\)</span> Para exibir a representação em parênteses, basta usar o método <span class="process-math">\(\verb|print|\text{:}\)</span>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-47"><script type="text/x-sage">for dw in DyckWords(3):
+    print(dw)
+</script></pre>
 </div>
-</div>
-<span class="incontext"><a href="section-triangulo-pascal.html#solution-116" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-13.html#solution-116" class="internal">em contexto</a></span>
 </body>
 </html>

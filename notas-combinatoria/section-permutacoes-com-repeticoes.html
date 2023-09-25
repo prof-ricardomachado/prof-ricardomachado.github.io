@@ -376,18 +376,12 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-permutacoes-com-repeticoes"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span>
 </h2>
-<article class="objectives goal-like" id="dEf"><h3 class="heading"><span class="type">Objetivos</span></h3>
-<ol class="decimal">
-<li id="li-70"><div class="para" id="p-derived-li-70">Definir Permutação com Repetição.</div></li>
-<li id="li-71"><div class="para" id="p-derived-li-71">Mostrar como obter a lista com todas as permutações com repetições de <span class="process-math">\(n\)</span> elementos no Sage.</div></li>
-<li id="li-72"><div class="para" id="p-derived-li-72">Mostrar como calcular o número de permutações com repetições de <span class="process-math">\(n\)</span> elementos.</div></li>
-<li id="li-73"><div class="para" id="p-derived-li-73">Exemplificar.</div></li>
-</ol></article><div class="para" id="p-345">Quando estamos contando o número de permutações, precisamos levar em consideração se todos os elementos são distintos ou não, pois a permutação de dois elementos idênticos não gera uma nova permutação. Veja o exemplo a seguir.</div>
+<div class="para" id="p-344">Quando estamos contando o número de permutações, precisamos levar em consideração se todos os elementos são distintos ou não, pois a permutação de dois elementos idênticos não gera uma nova permutação. Veja o exemplo a seguir.</div>
 <article class="example example-like" id="example-18"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-346">Quantos são os anagramas da palavra SAGEMATH?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
-<div class="para logical" id="p-347">
+<div class="para" id="p-345">Quantos são os anagramas da palavra SAGEMATH?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
+<div class="para logical" id="p-346">
 <div class="para">Observe que a palavra SAGEMATH possui 8 letras, mas a letra A aparece duas vezes, o restante aparece apenas uma vez. Podemos imaginar, por enquanto, que a palavra é assim</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -401,7 +395,7 @@ P_8 = 8!
 \end{equation*}
 </div>
 <div class="para">permutações.</div>
-</div> <div class="para logical" id="p-348">
+</div> <div class="para logical" id="p-347">
 <div class="para">Agora vamos resolver o problema das repetições. Observe que para cada permutação, trocar os A's de lugar não muda o anagrama. Portanto, precisamos dividir do total de permutações, o número de maneiras de ordenar os A's, como se fossem elementos distintos. Dessa forma, a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -409,60 +403,57 @@ P_8 = 8!
 \end{equation*}
 </div>
 </div>
-</div></div></article><article class="definition definition-like" id="definition-13"><h3 class="heading">
+</div></div></article><article class="definition definition-like" id="def-perm_repet"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-349">Quando permutamos uma lista de objetos, na qual, nem todos os elementos são distintos, precisamos considerar que permutar dois elementos idênticos não gera uma nova permutação. Este tipo de permutação é chamado de <em class="emphasis">permutação com repetição</em>.</div></article><article class="technology computation-like" id="technology-9"><h3 class="heading">
+<div class="para logical" id="p-348">
+<div class="para">O <em class="emphasis">número de permutações com repetições</em> envolvendo <span class="process-math">\(n\)</span> objetos, dos quais  existem <span class="process-math">\(\beta_1\)</span> objetos iguais a <span class="process-math">\(b_1\text{,}\)</span> <span class="process-math">\(\beta_2\)</span> objetos iguais a <span class="process-math">\(b_2\text{,}\)</span> e assim por diante, até um elemento <span class="process-math">\(b_k\)</span> que figura <span class="process-math">\(\beta_k\)</span> vezes, no qual, <span class="process-math">\(\beta_1+\beta_2+\cdots+\beta_k=n\)</span> é denotado por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR_n^{\beta_1, \beta_2, \ldots, \beta_k}.
+\end{equation*}
+</div>
+</div> </article><article class="technology computation-like" id="technology-9"><h3 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span>
 </h3>Obtendo a lista com todas as permutações com repetições dos elementos <span class="process-math">\(1, 1, 1, 2, 2\text{:}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-17"><script type="text/x-sage">Permutations([1, 1, 1, 2, 2]).list()
-</script></pre></article><article class="definition definition-like" id="def-permutacao-repeticao"><h3 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span>
-</h3>O número de permutações de <span class="process-math">\(n\)</span> objetos, com um objeto repetido <span class="process-math">\(r_1\)</span> vezes, outro objeto repetido <span class="process-math">\(r_2\)</span> vezes, até o "último" objeto repetido <span class="process-math">\(r_k\)</span> vezes, com<div class="displaymath process-math">
-\begin{equation*}
-r_1+r_2+\cdots+r_k=n
-\end{equation*}
-</div>é denotado por:<div class="displaymath process-math">
-\begin{equation*}
-PR_n^{r_1, r_2, \ldots, r_k}. 
-\end{equation*}
-</div></article><article class="theorem theorem-like" id="teo-permutacao-repeticao"><h3 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span>
+</script></pre></article><article class="theorem theorem-like" id="teo-permutacao-repeticao"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-350"><div class="displaymath process-math">
+<div class="para logical" id="p-349"><div class="displaymath process-math">
 \begin{equation*}
-PR_n^{r_1, r_2, \ldots, r_k} = \frac{n!}{r_1!\times r_2!\times\cdots\times r_k!}. 
+PR_n^{\beta_1, \beta_2, \ldots, \beta_k} = \frac{n!}{\beta_1!\times \beta_2!\times\cdots\times \beta_k!}. 
 \end{equation*}
 </div></div></article><article class="hiddenproof" id="proof-9"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof">Considere os <span class="process-math">\(n\)</span> objetos da seguinte forma:<div class="displaymath process-math">
 \begin{equation*}
-\underbrace{A_1A_1\ldots A_1}_{r_1  \text{ vezes}} \underbrace{A_2A_2\ldots A_2}_{r_2  \text{ vezes}}\ldots\underbrace{A_kA_k\ldots A_k}_{r_k  \text{ vezes}} 
+\underbrace{b_1b_1\ldots b_1}_{\beta_1  \text{ vezes}} \underbrace{b_2b_2\ldots b_2}_{\beta_2  \text{ vezes}}\ldots\underbrace{b_kb_k\ldots b_k}_{\beta_k  \text{ vezes}} 
 \end{equation*}
-</div>observe que <span class="process-math">\(r_1+r_2+\cdots+ r_k = n.\)</span> Para encontrar o número de formas de permutar esses elementos, vamos quebrar em <span class="process-math">\(k\)</span> etapas. Na primeira etapa, vamos escolher <span class="process-math">\(r_1\)</span> posições, dentre <span class="process-math">\(n\text{,}\)</span> para colocar <span class="process-math">\(A_1: C_n^{r_1}\text{.}\)</span> Na segunda etapa, vamos escolher <span class="process-math">\(r_2\)</span> posições, dentre <span class="process-math">\(n-r_1\text{,}\)</span> para colocar <span class="process-math">\(A_2: C_{n-r_1}^{r_2}\text{.}\)</span> <span class="process-math">\(\ldots\)</span> Na <span class="process-math">\(k\)</span>-ésima etapa, vamos escolher <span class="process-math">\(r_k\)</span> posições, dentre <span class="process-math">\(n-r_1-r_2-\cdots-r_{k-1}=r_k\text{,}\)</span> para colocar <span class="process-math">\(A_k: C_{r_k}^{r_k}\text{.}\)</span> Portanto,<div class="displaymath process-math">
+</div>observe que <span class="process-math">\(\beta_1+\beta_2+\cdots+ \beta_k = n.\)</span> Para encontrar o número de formas de permutar esses elementos, vamos quebrar em <span class="process-math">\(k\)</span> etapas. Na primeira etapa, vamos escolher <span class="process-math">\(\beta_1\)</span> posições, dentre <span class="process-math">\(n\text{,}\)</span> para colocar <span class="process-math">\(b_1: C_n^{\beta_1}\text{.}\)</span> Na segunda etapa, vamos escolher <span class="process-math">\(\beta_2\)</span> posições, dentre <span class="process-math">\(n-\beta_1\text{,}\)</span> para colocar <span class="process-math">\(b_2: C_{n-\beta_1}^{\beta_2}\text{.}\)</span> <span class="process-math">\(\ldots\)</span> Na <span class="process-math">\(k\)</span>-ésima etapa, vamos escolher <span class="process-math">\(\beta_k\)</span> posições, dentre <span class="process-math">\(n-\beta_1-\beta_2-\cdots-\beta_{k-1}=\beta_k\text{,}\)</span> para colocar <span class="process-math">\(b_k: C_{\beta_k}^{\beta_k}\text{.}\)</span> Portanto,<div class="displaymath process-math">
 \begin{equation*}
-PR_n^{r_1, r_2, \ldots, r_k} =~ C_n^{r_1}\times C_{n-r_1}^{r_2} \times \cdots \times C_{r_k}^{r_k} \\
+PR_n^{\beta_1, \beta_2, \ldots, \beta_k} =~ C_n^{\beta_1}\times C_{n-\beta_1}^{\beta_2} \times \cdots \times C_{\beta_k}^{\beta_k} \\
 \end{equation*}
 </div>Calculando cada <span class="process-math">\(C_x^y\)</span><div class="displaymath process-math">
 \begin{equation*}
-PR_n^{r_1, r_2, \ldots, r_k} = \frac{n!}{r_1!\underbrace{(n-r_1)!}_{x_1}}\cdot\frac{\overbrace{(n-r_1)!}^{x_1}}{r_2!\underbrace{(n-r_1-r_2)!}_{x_2}}\cdots\frac{\overbrace{r_k!}^{x_k}}{r_k!\underbrace{(r_k-r_k)!}_{=1}}
+PR_n^{\beta_1, \beta_2, \ldots, \beta_k} = \frac{n!}{\beta_1!\underbrace{(n-\beta_1)!}_{x_1}}\cdot\frac{\overbrace{(n-\beta_1)!}^{x_1}}{\beta_2!\underbrace{(n-\beta_1-\beta_2)!}_{x_2}}\cdots\frac{\overbrace{\beta_k!}^{x_k}}{\beta_k!\underbrace{(\beta_k-\beta_k)!}_{=1}}
 \end{equation*}
 </div>E cancelando os <span class="process-math">\(x_i's\text{,}\)</span> obtemos<div class="displaymath process-math">
 \begin{equation*}
-PR_n^{r_1, r_2, \ldots, r_k}= \frac{n!}{r_1!\times r_2!\times\cdots\times r_k!}.
+PR_n^{\beta_1, \beta_2, \ldots, \beta_k}= \frac{n!}{\beta_1!\times \beta_2!\times\cdots\times \beta_k!}.
 \end{equation*}
 </div></article></div>
 <article class="technology computation-like" id="tec-permutacao-repeticao"><h3 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-351">Obtendo o número de permutações com repetições no Sage. Da linha 1 até a linha 5 temos uma implementação de uma função para efetuar esse cálculo. Na linha 6, a função está sendo usada para o caso <span class="process-math">\(n=10, r_1 = 3, r_2=2, r_3=2, r_4=1, r_5=1\)</span> e <span class="process-math">\(r_6=1\text{.}\)</span>
+<div class="para" id="p-350">Obtendo o número de permutações com repetições no Sage. Da linha 1 até a linha 5 temos uma implementação de uma função para efetuar esse cálculo. Na linha 6, a função está sendo usada para o caso <span class="process-math">\(n=10, \beta_1 = 3, \beta_2=2, \beta_3=2, \beta_4=1, \beta_5=1\)</span> e <span class="process-math">\(\beta_6=1\text{.}\)</span>
 </div> <pre class="ptx-sagecell sagecell-sage" id="sage-18"><script type="text/x-sage">def PR(*lista):
     p = factorial(lista[0])
     for i in lista[1:]:
         p = p/factorial(i)
     return p
 PR(10, 3, 2, 2)
-</script></pre> <div class="para" id="p-352">Para entender essa implementação e aprender mais sobre o SageMath veja a referência <a href="" class="xref" data-knowl="./knowl/sage.html" title="Referência bibliográfica 6.5">[6.5]</a>.</div></article><article class="example example-like" id="example-19"><h3 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span>
+</script></pre> <div class="para" id="p-351">Para entender essa implementação e aprender mais sobre o SageMath veja a referência <a href="" class="xref" data-knowl="./knowl/sage.html" title="Referência bibliográfica 6.5">[6.5]</a>.</div></article><article class="example example-like" id="example-19"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-353">Quantos são os anagramas da palavra MATEMATICA?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><div class="para logical" id="p-354">
+<div class="para" id="p-352">Quantos são os anagramas da palavra MATEMATICA?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><div class="para logical" id="p-353">
 <div class="para">Temos uma palavra com 10 letras. Das 10 letras, temos 3 A's, 2 M's e 2 T's e as outras aparecem uma única vez, portanto o número de anagramas desta palavra é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -470,10 +461,10 @@ PR_{10}^{3, 2, 2} = 151200.
 \end{equation*}
 </div>
 </div></div></div></article><article class="example example-like" id="example-20"><h3 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-355">Quantos são os anagramas da palavra MATEMATICA que começam por vogal?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
-<div class="para" id="p-356">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</div> <div class="para logical" id="p-357">
+<div class="para" id="p-354">Quantos são os anagramas da palavra MATEMATICA que começam por vogal?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
+<div class="para" id="p-355">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</div> <div class="para logical" id="p-356">
 <div class="para">Começando com A, temos um total de <span class="process-math">\(PR_9^{2, 2, 2}\)</span> anagramas, começando com E, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas e começando com I, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas. Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -489,10 +480,10 @@ PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600.
 PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
 </script></pre>
 </div></div></article><article class="example example-like" id="exemplo_permut_repet"><h3 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.9</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-358">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
-<div class="para logical" id="p-359">
+<div class="para" id="p-357">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
+<div class="para logical" id="p-358">
 <div class="para">Use os números de 1 à 12 para representar as pessoas. Desta forma, a posição de cada permutação dos dígitos:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -501,7 +492,7 @@ PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
 </div>
 <div class="para">serve para representar quem está no grupo 1, no grupo 2 e no grupo 3, respectivamente. Assim pela ordem que está escrito, os números que estão no grupo 1 são: <span class="process-math">\(1, 2, 3, 4\text{,}\)</span> no grupo 2 são <span class="process-math">\(5, 6, 7, 8\)</span> e no grupo 3 são <span class="process-math">\(9, 10, 11, 12\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-360">
+</div> <div class="para logical" id="p-359">
 <div class="para">Desta forma, usando permutação com repetição para</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -514,7 +505,7 @@ PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
 PR_{12}^{4, 4, 4} = \frac{12!}{4!4!4!}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-361">
+</div> <div class="para logical" id="p-360">
 <div class="para">Como a ordem dos grupos não é importante, estamos contando a mais. Assim, precisamos dividir tudo pelo número de maneiras de ordenar os 3 grupos que é 3!. Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -526,47 +517,75 @@ PR_{12}^{4, 4, 4} = \frac{12!}{4!4!4!}.
 <span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-41"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-362">(OPEMAT 2016 - nível 2) A figura abaixo representa o mapa de uma cidade. Cada aresta representa uma rua e cada vértice representa um cruzamento. Quantos são os trajetos de comprimento mínimo ligando o ponto A ao ponto B?</div> <div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="images/permut.svg" role="img" class="contained"></div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><div class="para" id="p-363">1743</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-361">Um byte, em um computador, é uma sequência de 8 algarismos formada apenas com <span class="process-math">\(0's\)</span> e <span class="process-math">\(1's\text{.}\)</span> Determine quantos bytes existem formados com  três <span class="process-math">\(1's\)</span> e cinco <span class="process-math">\(0's\text{.}\)</span>
+</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><span class="process-math">\(56\)</span></div></div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-362">
+<div class="para">Quantos são os anagramas da palavra:</div>
+<ol class="lower-alpha">
+<li id="li-52"><div class="para" id="p-derived-li-52">PRECEDENTE;</div></li>
+<li id="li-53"><div class="para" id="p-derived-li-53">PROPONENTE;</div></li>
+<li id="li-54"><div class="para" id="p-derived-li-54">FOTOSSINTETIZANTES.</div></li>
+</ol>
+</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-55"><div class="para" id="p-derived-li-55"><span class="process-math">\(\displaystyle 151200\)</span></div></li>
+<li id="li-56"><div class="para" id="p-derived-li-56"><span class="process-math">\(\displaystyle 226800\)</span></div></li>
+<li id="li-57"><div class="para" id="p-derived-li-57"><span class="process-math">\(\displaystyle 2778808032000\)</span></div></li>
+</ol></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-58"><div class="para" id="p-derived-li-58"><span class="process-math">\(\displaystyle PR_{10}^{4}=151200\)</span></div></li>
+<li id="li-59"><div class="para" id="p-derived-li-59"><span class="process-math">\(\displaystyle PR_{10}^{2,2,2,2}=226800\)</span></div></li>
+<li id="li-60"><div class="para" id="p-derived-li-60"><span class="process-math">\(PR_{18}^{2, 4, 3, 2, 2, 2}=2778808032000\text{.}\)</span></div></li>
+</ol></div></div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-363">
+<div class="para">Refaça o exercício anterior com as seguintes condições:</div>
+<ol class="lower-alpha">
+<li id="li-61"><div class="para" id="p-derived-li-61">A palavra começa com vogal;</div></li>
+<li id="li-62"><div class="para" id="p-derived-li-62">A palavra começa e termina com consoante.</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="p-364">Quantos números de 8 dígitos, maiores que 50.000.000, podem ser formados usando apenas os algarismos 1, 2, 5, 5, 5, 7, 7, 7?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><div class="para" id="p-365">840</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><div class="para" id="p-365">840</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="p-366">De quantos modos podemos colocar em fila 6 letras A, 6 letras B, 5 letras C e 4 letras D, de modo que não haja duas letras C juntas?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><div class="para" id="p-367">10406235840</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><div class="para" id="p-367">10406235840</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para" id="p-368">De quantos modos podem ser pintados 15 objetos iguais usando 6 cores diferentes?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><div class="para" id="p-369">15504</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><div class="para" id="p-369">15504</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para" id="p-370">Quantas são as opções que temos de colocar 10 bolinhas <span class="process-math">\((\bullet)\)</span> e 7 barras <span class="process-math">\((~|~)\)</span> em sequência?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><div class="para" id="p-371">19448</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>(OBM 2011 - 2ª fase do nível 3) <div class="para" id="p-372">Uma sequência de letras, com ou sem sentido, é dita alternada quando é formada alternadamente por consoantes e vogais. Por exemplo, EZEQAF, MATEMÁTICA, LEGAL e ANIMADA  são palavras alternadas, mas DSOIUF, DINHEIRO e ORDINÁRIO não são. Quantos anagramas da palavra FELICIDADE (incluindo a palavra FELICIDADE) são sequências alternadas?</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><div class="para" id="p-371">19448</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-372">(OPEMAT 2016 - nível 2) A figura abaixo representa o mapa de uma cidade. Cada aresta representa uma rua e cada vértice representa um cruzamento. Quantos são os trajetos de comprimento mínimo ligando o ponto A ao ponto B?</div> <div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="images/permut.svg" role="img" class="contained"></div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><div class="para" id="p-373">3600</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
-<div class="para" id="p-374">As consoantes de FELICIDADE são F, L, C, D, D e as vogais são E, I, I, A, E. Como são 5 vogais e 5 consoantes, cada anagrama alternado terá cada consoante em posição ímpar ou em posição par. Organizando as consoantes em posições ímpares, ficamos com a seguinte organização</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><div class="para" id="p-373">1743</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>(OBM 2011 - 2ª fase do nível 3) <div class="para" id="p-374">Uma sequência de letras, com ou sem sentido, é dita alternada quando é formada alternadamente por consoantes e vogais. Por exemplo, EZEQAF, MATEMÁTICA, LEGAL e ANIMADA  são palavras alternadas, mas DSOIUF, DINHEIRO e ORDINÁRIO não são. Quantos anagramas da palavra FELICIDADE (incluindo a palavra FELICIDADE) são sequências alternadas?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><div class="para" id="p-375">3600</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like">
+<div class="para" id="p-376">As consoantes de FELICIDADE são F, L, C, D, D e as vogais são E, I, I, A, E. Como são 5 vogais e 5 consoantes, cada anagrama alternado terá cada consoante em posição ímpar ou em posição par. Organizando as consoantes em posições ímpares, ficamos com a seguinte organização</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \text{F_L_C_D_D_}
 \end{equation*}
 </div>
-<div class="para" id="p-375">Na qual, os espaços <span class="process-math">\(\verb|_|\)</span> serão ocupados por vogais. Assim, temos um total de <span class="process-math">\(PR_5^2\)</span> maneiras de ordenar essas consoantes. Para ordenar as vogais, temos <span class="process-math">\(PR_5^{2, 2}\)</span> maneiras, pois temos no total 5 letras, sendo duas letras E, duas letras I e uma letra A.</div> <div class="para" id="p-376">Como podemos alterar as vogais com as consoantes, o número de anagramas alternados de FELICIDADE é</div>
+<div class="para" id="p-377">Na qual, os espaços <span class="process-math">\(\verb|_|\)</span> serão ocupados por vogais. Assim, temos um total de <span class="process-math">\(PR_5^2\)</span> maneiras de ordenar essas consoantes. Para ordenar as vogais, temos <span class="process-math">\(PR_5^{2, 2}\)</span> maneiras, pois temos no total 5 letras, sendo duas letras E, duas letras I e uma letra A.</div> <div class="para" id="p-378">Como podemos alterar as vogais com as consoantes, o número de anagramas alternados de FELICIDADE é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 PR_5^2\times PR_5^{2, 2} \times 2 = 60 \times 30 \times 2 = 3600.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-377">Um bar vende três tipos de cerveja: Antártica, Brahma e Devassa. De quantos modos uma pessoa pode comprar 7 garrafas de cerveja?</div>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-379">Um bar vende três tipos de cerveja: Antártica, Brahma e Devassa. De quantos modos uma pessoa pode comprar 7 garrafas de cerveja?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><div class="para" id="p-378">36</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like"><div class="para logical" id="p-379">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><div class="para" id="p-380">36</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like"><div class="para logical" id="p-381">
 <div class="para">O número de soluções deste problema é o mesmo que o número de solução inteiras, não negativas da equação:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -580,12 +599,12 @@ PR_9^{7, 2} = 36.
 \end{equation*}
 </div>
 </div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-380">De quantos formas 12 estudantes podem ser divididos e colocados em 3 salas, sendo 4 na primeira, 5 na segunda e 3 na terceira?</div>
+</div></article><article class="exercise exercise-like" id="exercise-51"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-382">De quantos formas 12 estudantes podem ser divididos e colocados em 3 salas, sendo 4 na primeira, 5 na segunda e 3 na terceira?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><div class="para" id="p-381">27720</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like">
-<div class="para logical" id="p-382">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><div class="para" id="p-383">27720</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<div class="para logical" id="p-384">
 <div class="para">Pense na seguinte lista:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -598,14 +617,14 @@ L= [1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3].
 PR_{12}^{4, 5, 3} = 27720. 
 \end{equation*}
 </div>
-</div> <div class="para" id="p-383">Por exemplo, a permutação identidade, que é a apresentada na lista <span class="process-math">\(L\)</span> indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.</div>
+</div> <div class="para" id="p-385">Por exemplo, a permutação identidade, que é a apresentada na lista <span class="process-math">\(L\)</span> indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.</div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-384">De quantos modos 8 pessoas podem ocupar duas salas distintas, devendo cada sala conter pelo menos 3 pessoas?</div>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-386">De quantos modos 8 pessoas podem ocupar duas salas distintas, devendo cada sala conter pelo menos 3 pessoas?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><div class="para" id="p-385">182</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
-<div class="para" id="p-386">Observe que temos 3 casos para distribuir as pessoas nas duas salas.</div> <div class="para" id="p-387">1º caso: 3 pessoas na sala 1 e 5 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{3, 5}\)</span> soluções.</div> <div class="para" id="p-388">2º caso: 4 pessoas na sala 1 e 4 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{4, 4}\)</span> soluções.</div> <div class="para" id="p-389">3º caso: 5 pessoas na sala 1 e 3 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{5, 3}\)</span> soluções.</div> <div class="para logical" id="p-390">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><div class="para" id="p-387">182</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
+<div class="para" id="p-388">Observe que temos 3 casos para distribuir as pessoas nas duas salas.</div> <div class="para" id="p-389">1º caso: 3 pessoas na sala 1 e 5 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{3, 5}\)</span> soluções.</div> <div class="para" id="p-390">2º caso: 4 pessoas na sala 1 e 4 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{4, 4}\)</span> soluções.</div> <div class="para" id="p-391">3º caso: 5 pessoas na sala 1 e 3 pessoas na sala 2. Neste caso temos um total de <span class="process-math">\(PR_8^{5, 3}\)</span> soluções.</div> <div class="para logical" id="p-392">
 <div class="para">Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -614,12 +633,12 @@ PR_8^{3, 5} + PR_8^{4, 4} + PR_8^{5, 3} = 182.
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-50"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-391">Um baralho tem 52 cartas. De quantos modos podemos distribuí-las entre 4 jogadores, de modo que cada um receba 13 cartas?</div>
+</div></article><article class="exercise exercise-like" id="exercise-53"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="p-393">Um baralho tem 52 cartas. De quantos modos podemos distribuí-las entre 4 jogadores, de modo que cada um receba 13 cartas?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><div class="para" id="p-392">53644737765488792839237440000</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
-<div class="para" id="p-393">Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.</div> <div class="para logical" id="p-394">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><div class="para" id="p-394">53644737765488792839237440000</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
+<div class="para" id="p-395">Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.</div> <div class="para logical" id="p-396">
 <div class="para">A justificativa é a seguinte. Para cada elemento da lista permutada, use a posição do elemento para pegar a carta que deve estar em uma pilha ou ordenada, e use o número para indicar a pessoa, sendo o número 1 indicando a primeira pessoa e assim por diante. A resposta é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -628,13 +647,13 @@ PR_{52}^{13, 13, 13, 13} = 53644737765488792839237440000.
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-51"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-395">No mapa abaixo estão esboçadas as ruas de um bairro. As ruas verticais são paralelas entre si e é igual a distância entre ruas consecutivas; o mesmo acontece com as ruas horizontais. Calcule o número de formas de sair de A e chegar até B percorrendo a menor distância possível.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa.svg" role="img" class="contained"></div>
+</div></article><article class="exercise exercise-like" id="exercise-54"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="p-397">No mapa abaixo estão esboçadas as ruas de um bairro. As ruas verticais são paralelas entre si e é igual a distância entre ruas consecutivas; o mesmo acontece com as ruas horizontais. Calcule o número de formas de sair de A e chegar até B percorrendo a menor distância possível.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa.svg" role="img" class="contained"></div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><div class="para" id="p-396">735</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
-<div class="para" id="p-397">Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.</div> <figure class="figure figure-like" id="mapa_sol"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.10<span class="period">.</span></span><span class="space"> </span>Mapa da solução.</figcaption></figure> <div class="para logical" id="p-398">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-53" id="answer-53"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-53"><div class="answer solution-like"><div class="para" id="p-398">735</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like">
+<div class="para" id="p-399">Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.</div> <figure class="figure figure-like" id="mapa_sol"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/mapa2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.9<span class="period">.</span></span><span class="space"> </span>Mapa da solução.</figcaption></figure> <div class="para logical" id="p-400">
 <div class="para">1º tipo: De A para X e de X para B. Nesse caso temos <span class="process-math">\(PR_7^{4, 3}\)</span> caminhos de A para X e <span class="process-math">\(PR_5^{4, 1}\)</span> caminhos de X para B. No total temos</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -642,7 +661,7 @@ PR_7^{4, 3} \times PR_5^{4, 1}
 \end{equation*}
 </div>
 <div class="para">caminhos do 1º tipo.</div>
-</div> <div class="para logical" id="p-399">
+</div> <div class="para logical" id="p-401">
 <div class="para">2º tipo: De A para Y e de Y para B. Nesse caso temos <span class="process-math">\(PR_8^{5, 3}\)</span> caminhos de A para Y e <span class="process-math">\(PR_5^{3, 2}\)</span> caminhos de Y para B. No total temos</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -650,7 +669,7 @@ PR_8^{5, 3} \times PR_5^{3, 2}
 \end{equation*}
 </div>
 <div class="para">caminhos do 2º tipo.</div>
-</div> <div class="para logical" id="p-400">
+</div> <div class="para logical" id="p-402">
 <div class="para">Como os caminhos do 1º e 2º tipos são disjuntos a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -659,21 +678,21 @@ PR_7^{4, 3}\times PR_5^{4, 1} + PR_8^{5, 3}\times PR_5^{3, 2} = 735.
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-52"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="p-401">João vai comprar algo que custa <span class="process-math">\(55\)</span> centavos em uma máquina automática e dispõe de <span class="process-math">\(8\)</span> moedas de <span class="process-math">\(5\)</span> centavos do mesmo modelo e <span class="process-math">\(5\)</span> moedas de <span class="process-math">\(10\)</span> centavos também do mesmo modelo. Assim, sendo <span class="process-math">\(n\)</span> o número de diferentes sequências de moedas que ele pode inserir de modo a totalizar os 55 centavos, determine o valor de <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-55"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="p-403">João vai comprar algo que custa <span class="process-math">\(55\)</span> centavos em uma máquina automática e dispõe de <span class="process-math">\(8\)</span> moedas de <span class="process-math">\(5\)</span> centavos do mesmo modelo e <span class="process-math">\(5\)</span> moedas de <span class="process-math">\(10\)</span> centavos também do mesmo modelo. Assim, sendo <span class="process-math">\(n\)</span> o número de diferentes sequências de moedas que ele pode inserir de modo a totalizar os 55 centavos, determine o valor de <span class="process-math">\(n\text{.}\)</span>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><div class="para" id="p-402"><span class="process-math">\(133\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like"><div class="para logical" id="p-403">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-54" id="answer-54"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-54"><div class="answer solution-like"><div class="para" id="p-404"><span class="process-math">\(133\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><div class="para logical" id="p-405">
 <div class="para">João pode escolher os valores das moedas de <span class="process-math">\(4\)</span> maneiras, em cada caso, existem várias maneiras de ordenar as moedas escolhida:</div>
 <ol class="decimal">
-<li id="li-74"><div class="para" id="p-derived-li-74">
+<li id="li-63"><div class="para" id="p-derived-li-63">
 <span class="process-math">\(5\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(1\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{6}^{5, 1}\)</span> ordens possíveis;</div></li>
-<li id="li-75"><div class="para" id="p-derived-li-75">
+<li id="li-64"><div class="para" id="p-derived-li-64">
 <span class="process-math">\(4\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(3\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{7}^{4, 3}\)</span> ordens possíveis;</div></li>
-<li id="li-76"><div class="para" id="p-derived-li-76">
+<li id="li-65"><div class="para" id="p-derived-li-65">
 <span class="process-math">\(3\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(5\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{8}^{5, 3}\)</span> ordens possíveis;</div></li>
-<li id="li-77"><div class="para" id="p-derived-li-77">
+<li id="li-66"><div class="para" id="p-derived-li-66">
 <span class="process-math">\(2\)</span> moedas de <span class="process-math">\(10\)</span> centavos e <span class="process-math">\(7\)</span> de <span class="process-math">\(5\)</span> centavos, totalizando <span class="process-math">\(PR_{9}^{7, 2}\)</span> ordens possíveis.</div></li>
 </ol>
 <div class="para">Portanto, a resposta é</div>
@@ -683,15 +702,15 @@ PR_{6}^{5, 1} + PR_{7}^{4, 3}+ PR_{8}^{5, 3}+ PR_{9}^{7, 2}=133.
 \end{equation*}
 </div>
 </div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-53"><h4 class="heading">
-<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">(Caminhos de Delannoy).</span>
+</div></article><article class="exercise exercise-like" id="exercise-56"><h4 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">(Caminhos de Delannoy).</span>
 </h4>
-<div class="para" id="p-404">Diremos que uma partícula faz um caminho de Delannoy se estando no ponto <span class="process-math">\((n,m)\)</span> ela pode se deslocar para os pontos: <span class="process-math">\((n+1,m)\)</span> ou <span class="process-math">\((n,m+1)\)</span> ou <span class="process-math">\((n+1,m+1)\text{.}\)</span> Calcule o número de caminhos de Delannoy da origem até o ponto <span class="process-math">\(C(k,k)\text{.}\)</span> E da origem até o ponto <span class="process-math">\(D(n,k)\text{.}\)</span>
+<div class="para" id="p-406">Diremos que uma partícula faz um caminho de Delannoy se estando no ponto <span class="process-math">\((n,m)\)</span> ela pode se deslocar para os pontos: <span class="process-math">\((n+1,m)\)</span> ou <span class="process-math">\((n,m+1)\)</span> ou <span class="process-math">\((n+1,m+1)\text{.}\)</span> Calcule o número de caminhos de Delannoy da origem até o ponto <span class="process-math">\(C(k,k)\text{.}\)</span> E da origem até o ponto <span class="process-math">\(D(n,k)\text{.}\)</span>
 </div>
 <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-3" id="hint-3"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><article class="technology computation-like" id="technology-11"><h5 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.11</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span>
 </h5>
-<div class="para" id="p-405">Digite uma sequência de L's, N's e D's e clique no botão "Update" para obter o respectivo caminho no reticulado.</div> <figure class="figure figure-like" id="figure-13"><iframe id="interactive-reticulado-delannoy01" width="600" height="780" src="interactive-reticulado-delannoy01-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.12<span class="period">.</span></span><span class="space"> </span>Um caminho de Delannoy no reticulado.</figcaption></figure></article></div></div></article></section></section></div>
+<div class="para" id="p-407">Digite uma sequência de L's, N's e D's e clique no botão "Update" para obter o respectivo caminho no reticulado.</div> <figure class="figure figure-like" id="figure-13"><iframe id="interactive-reticulado-delannoy01" width="600" height="780" src="interactive-reticulado-delannoy01-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.11<span class="period">.</span></span><span class="space"> </span>Um caminho de Delannoy no reticulado.</figcaption></figure></article></div></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section-permutacoes-circulares.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-combinacoes-completas.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
 </div></main>

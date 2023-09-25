@@ -9,39 +9,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+<div class="para">
+<span class="process-math">\(P(C|A\cap B^c) = \frac{P(C\cap A\cap B^c)}{P(A\cap B^c)}\text{.}\)</span> Precisamos calcular <span class="process-math">\(P(C\cap A\cap B^c)\)</span> e <span class="process-math">\(P(A\cap B^c)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\(\bullet\)</span> Para calcular <span class="process-math">\(P(A\cap B^c)\text{,}\)</span> usaremos a igualdade <span class="process-math">\(A = (A\cap B)\cup (A\cap B^c)\text{.}\)</span> Logo</div>
+<div class="displaymath process-math">
 \begin{align*}
-1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
-2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
-3º: \amp ~ \text{6 conseguem.} 
+P(A) = \amp ~ P((A\cap B)\cup (A\cap B^c)) \\
+\underbrace{P(A)}_{1/2} = \amp ~ \underbrace{P(A\cap B)}_{1/4} + P(A\cap B^c) 
 \end{align*}
 </div>
-<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+<div class="para">Portanto <span class="process-math">\(P(A\cap B^c)=1/4\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\(\bullet\)</span> Para calcular <span class="process-math">\(P(C\cap A\cap B^c)\text{,}\)</span> usaremos a igualdade <span class="process-math">\(C\cap A = (C\cap A\cap B)\cup (C\cap A\cap B^c)\text{.}\)</span> Logo</div>
+<div class="displaymath process-math">
+\begin{align*}
+P(C\cap A) = \amp ~ P(C\cap A\cap B)\cup (C\cap A\cap B^c) \\
+\underbrace{P(C\cap A)}_{?} = \amp ~ \underbrace{P(C\cap A\cap B)}_{1/16} + P(C\cap A\cap B^c) 
+\end{align*}
+</div>
+<div class="para">Resta agora calcular  <span class="process-math">\(P(C\cap A)\text{.}\)</span>
+</div>
+</div> <div class="para">Pelo item d) do <a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a> temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
 \begin{equation*}
-P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
+\underbrace{P((A\cap B)\cup (A\cap C))}_{3/10} = \underbrace{P(A\cap B)}_{1/4} + P(A\cap C) - \underbrace{P((A\cap B)\cap (A\cap C))}_{1/16}
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+<div class="para">Logo, <span class="process-math">\(P(A\cap C) = 3/10 - 1/4+1/6 = 9/80.\)</span> E</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
 \begin{equation*}
-P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
+P(C\cap A\cap B^c) = 9/80-1/16 = 1/20.
 \end{equation*}
 </div>
-<pre class="ptx-sagecell sagecell-sage" id="sage-55"><script type="text/x-sage">C(n, p) = binomial(n,p)
-a = C(6, 4)*(2/10)^4*(8/10)^2
-b = C(6, 5)*(2/10)^5*(8/10)
-c = C(6, 6)*(2/10)^6
-a+b+c
-</script></pre>
+<div class="para logical">
+<div class="para">Substituindo os valores obtidos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(C|A\cap B^c) = \frac{P(C\cap A\cap B^c)}{P(A\cap B^c)} = \frac{1/20}{1/4}=\frac{1}{5}.
+\end{equation*}
+</div>
+</div>
 </div></body>
 </html>
