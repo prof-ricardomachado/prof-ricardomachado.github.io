@@ -10,18 +10,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">Sejam <span class="process-math">\(x_i, i\in\{0, 1, 2, \ldots, 9\}\)</span> variáveis. Cada solução não negativa da equação:</div>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:</div> <ol class="decimal">
+<li><div class="para">Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma.</div></li>
+<li><div class="para">Dois lados possuem um valor e o terceiro lado possui um valor diferente. Cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas como temos duas entradas iguais, precisamos dividir por 2.</div></li>
+<li><div class="para">Cada lado possui um valor diferente. Cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2.</div></li>
+</ol> <div class="para">Inicialmente, vamos contar como se em cada tipo, as peças só pudessem ser formadas de uma forma, depois vamos acrescentar a quantidade de peças do terceiro tipo, que fica faltando nessa contagem inicial.</div> <div class="para logical">
+<div class="para">Temos que escolher os valores de cada um dos 3 lados de cada peça do trominó. Como os valores vão de 1 até 6 e são 3 lados, o número de peças do trominó (sem contar as permutações circulares) para <span class="process-math">\(n=6\)</span> é o número de soluções inteiras não negativas da equação:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x_0+x_1+x_2+\cdots+x_9 = 2,
+x_1 + x_2 + x_3 + x_4 + x_ 5 + x_ 6 = 3, 
 \end{equation*}
 </div>
-<div class="para">representa uma pedra do dominó. Portanto, o número de pedras do dominó é</div>
+<div class="para">que é dado por <span class="process-math">\(CR_6^3\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Agora precisamos contar as peças, do terceiro tipo, que estão faltando. Como os três valores são diferentes, temos 6 opções de valores para escolher 3 e para cada escolha, temos duas formas de organizar na peça do trominó, portanto o número de peças desse tipo é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-CR_{10}^2 = 55.
+2\times C_6^3 =40. 
 \end{equation*}
 </div>
-</div></div></body>
+<div class="para">Já que, a metade das peças do terceiro tipo foram contadas uma vez pela combinação completa, <span class="process-math">\(CR_6^3\text{,}\)</span> a quantidade total de peças é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+CR_6^{3} + C_6^3 = 56+20 = 76. 
+\end{equation*}
+</div>
+</div>
+</div></body>
 </html>

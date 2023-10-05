@@ -9,39 +9,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
-\begin{align*}
-1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
-2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
-3º: \amp ~ \text{6 conseguem.} 
-\end{align*}
-</div>
-<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+<div class="para">Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é <span class="process-math">\(p=\frac{1}{2}\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é </div>
+<div class="displaymath process-math">
 \begin{equation*}
-P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
+\left(\frac{1}{2}\right)^7 \times \left(1 - \frac{1}{2}\right)^{8},
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+<div class="para">mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.</div>
+</div> <div class="para">Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de <span class="process-math">\(C_{15}^{7}\)</span> maneiras.</div> <div class="para logical">
+<div class="para">Portanto a resposta para nosso problema é</div>
+<div class="displaymath process-math">
 \begin{equation*}
-P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
+C_{15}^{7}\times \left(\frac{1}{2}\right)^7 \times \left(\frac{1}{2}\right)^{8}=0.1963 \approx 20\%. 
 \end{equation*}
 </div>
-<pre class="ptx-sagecell sagecell-sage" id="sage-56"><script type="text/x-sage">C(n, p) = binomial(n,p)
-a = C(6, 4)*(2/10)^4*(8/10)^2
-b = C(6, 5)*(2/10)^5*(8/10)
-c = C(6, 6)*(2/10)^6
-a+b+c
-</script></pre>
+</div>
 </div></body>
 </html>

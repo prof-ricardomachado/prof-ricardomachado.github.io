@@ -11,28 +11,32 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><article class="hiddenproof"><div class="para logical">
-<div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/teo-pcaotica1.html" title="Teorema 2.2.7">Teorema 2.2.7</a> temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-pcaotica1.html">
+<div class="para">Para <span class="process-math">\(n=1\)</span> e <span class="process-math">\(n=2\)</span> a verificação é direta. Para <span class="process-math">\(n&gt;2\)</span> vamos usar a expansão em série de portência de <span class="process-math">\(e^x\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
-D_n = n!\times \left( \frac{1}{0!} - \frac{1}{1!} + \cdots + \frac{(-1)^n}{n!} \right).
+e^x = \frac{1}{0!} + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!}+\cdots 
 \end{equation*}
 </div>
-<div class="para">Isolando a última parcela da soma, ficamos com</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-pcaotica1.html">
+<div class="para">para <span class="process-math">\(x = -1\)</span> temos</div>
+<div class="displaymath process-math">
 \begin{equation*}
-D_n = n!\times \left( \frac{1}{0!} - \frac{1}{1!} + \cdots + \frac{(-1)^{n-1}}{(n-1)!} \right) + n!\times \frac{(-1)^n}{n!}.
+e^{-1} = \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!}+\cdots 
 \end{equation*}
 </div>
-<div class="para">Cancelando <span class="process-math">\(n!\)</span> do último termo e reescrevendo <span class="process-math">\(n!\)</span> como <span class="process-math">\(n\times (n-1)!\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-pcaotica1.html">
-\begin{equation*}
-D_n = n\times\underbrace{(n-1)!\times \left( \frac{1}{0!} - \frac{1}{1!} + \cdots + \frac{(-1)^{n-1}}{(n-1)!} \right)}_{D_{n-1}} +  (-1)^n,
-\end{equation*}
+<div class="para">Calculando</div>
+<div class="displaymath process-math">
+\begin{align*}
+\left| D_n -\frac{n!}{e} \right| \amp = ~n!\times\left| \frac{(-1)^{n+1}}{(n+1)!} + \frac{(-1)^{n+2}}{(n+2)!} +\cdots \right| \\
+\amp \leq n!\times \left( \frac{1}{(n+1)!} + \frac{1}{(n+2)!}+\cdots \right)   \\
+\amp \leq \frac{1}{(n+1)} + \frac{1}{(n+1)(n+2)} +\cdots   \\
+\amp \leq \frac{1}{(n+1)} + \frac{1}{(n+1)^2} + \cdots  
+\end{align*}
 </div>
-<div class="para">Ou seja,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-pcaotica1.html">
+<div class="para">Aplicando a fórmula da soma da PG, ficamos com</div>
+<div class="displaymath process-math">
 \begin{equation*}
-D_n = n\times D_{n-1}+(-1)^n.
+\left| D_n -\frac{n!}{e} \right| \leq \frac{\frac{1}{n+1}}{1-\frac{1}{n+1}} = \frac{1}{n}\lt \frac{1}{2}.
 \end{equation*}
 </div>
 </div></article></body>

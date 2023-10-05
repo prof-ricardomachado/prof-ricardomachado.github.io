@@ -12,32 +12,35 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h3 class="heading"><span class="type">Demonstração</span></h3>
-<div class="para">Para dois conjuntos a fórmula é verdadeira, pois coincide com a definição de probabilidade condicional. Vamos usar o Princípio de Indução para mostrar que o resultado é verdadeiro. Suponha o resultado válido para <span class="process-math">\(n-1\)</span> eventos.</div> <div class="para logical">
-<div class="para">Defina <span class="process-math">\(B = A_1\cap A_2\cap \cdots \cap A_{n-1}\text{,}\)</span> queremos a probabilidade <span class="process-math">\(P(B\cap A_n)\text{.}\)</span> Pela definição de probabilidade condicional, temos</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">a)</dfn> Como <span class="process-math">\(0\leq P(A\cap B)\leq P(A)\)</span> temos</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P(B\cap A_n) =  P(B)\cdot P(A_n|B),
+0\leq \frac{P(A\cap B)}{P(A)}\leq 1, ~~ \text{ ou seja }~~ 0\leq P(B|A)\leq 1. 
 \end{equation*}
 </div>
-<div class="para">ou seja,</div>
+</div> <div class="para logical">
+<div class="para"><dfn class="terminology">b)</dfn></div>
 <div class="displaymath process-math">
-\begin{equation}
-P(A_1\cap \cdots \cap A_{n-1}) =  P(A_1\cap \cdots \cap A_{n-1})\cdot P(A_n|A_1\cap \cdots \cap A_{n-1})\tag{4.2.2}
-\end{equation}
+\begin{equation*}
+P(\varnothing|A) = \frac{P(\varnothing\cap A)}{P(A)} = \frac{P(\varnothing)}{P(A)} = \frac{0}{P(A)} = 0
+\end{equation*}
+</div>
+<div class="para">e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(\Omega|A) = \frac{P(\Omega\cap A)}{P(A)} = \frac{P(A)}{P(A)} = 1. 
+\end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">Pela hipótese de indução, temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
+<div class="para"><dfn class="terminology">c)</dfn></div>
+<div class="displaymath process-math">
 \begin{align*}
-P(A_1\cap \cdots \cap A_{n-1}) = \amp ~  P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
-\amp ~~~~ ~ \cdots P(A_{n-1}|(A_1\cap A_2\cap \cdots \cap A_{n-2})). 
-\end{align*}
-</div>
-<div class="para">Substituindo a igualdade dada pela hipótese de indução em <a href="" class="xref" data-knowl="./knowl/eq-prod-probab.html" title="Equação 4.2.2">(4.2.2)</a>, chegamos no resultado:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
-\begin{align*}
-P(A_1\cap A_2\cap \cdots \cap A_n) = \amp ~ P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
-\amp ~~~~ \cdots P(A_n|(A_1\cap A_2\cap \cdots \cap A_{n-1})). 
+P((B\cup C)|A) = \amp ~ \frac{P((B\cup C)\cap A)}{P(A)} \\
+\amp ~ \frac{P((B\cap A)\cup (C\cap A))}{P(A)} \\
+\amp ~ \frac{P(B\cap A)}{P(A)} + \frac{P(C\cap A)}{P(A)} \\
+\amp ~ P(B|A) + P(C|A). 
 \end{align*}
 </div>
 </div></article><span class="incontext"><a href="section-probabilidade-condicional.html#proof-41" class="internal">em contexto</a></span>

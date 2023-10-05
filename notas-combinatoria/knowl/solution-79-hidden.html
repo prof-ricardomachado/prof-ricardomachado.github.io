@@ -11,19 +11,48 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Definimos <span class="process-math">\(A_i\text{,}\)</span> para <span class="process-math">\(i = 2, 3, 4\text{,}\)</span> como o conjunto das permutações em que <span class="process-math">\(a_i\)</span> está no <span class="process-math">\(i\)</span>-ésima posição, para <span class="process-math">\(i = 2, 3, 4\text{.}\)</span> Queremos encontrar o número de elementos no complementar de <span class="process-math">\(A_2\cup A_3\cup A_4\text{.}\)</span>
-</div> <div class="para">As cardinalidade dos conjuntos <span class="process-math">\(A_i's\)</span> e das interseções dos <span class="process-math">\(A_i's\text{,}\)</span> dois a dois e três a três são:</div> <div class="para"><span class="process-math">\(\#(A_2) = \#(A_3) = \#(A_4) = (n-1)!;\)</span></div> <div class="para"><span class="process-math">\(\#(A_2\cap A_3) = \#(A_2\cap A_4) = \#(A_3\cap A_4) = (n-2)!;\)</span></div> <div class="para"><span class="process-math">\(\#(A_2\cap A_3\cap A_4) = (n-3)!.\)</span></div> <div class="para logical">
-<div class="para">Sabendo que o número total de permutações é <span class="process-math">\(n!\text{,}\)</span> a solução para o questionamento é</div>
-<div class="displaymath process-math">
-\begin{gather*}
-n!-\#(A_2)-\#(A_3)-\#(A_4)+\#(A_2\cap A_3)+  \\
-~~~~~~~~~~~~~ +\#(A_2\cap A_4)+\#(A_3\cap A_4)-\#(A_2\cap A_3\cap A_4)
-\end{gather*}
-</div>
-<div class="para">Que é igual a:</div>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">item a)</dfn> Como <span class="process-math">\(C\subset B\text{,}\)</span> temos <span class="process-math">\(B\cap C = C\text{,}\)</span> logo <span class="process-math">\(\#(B\cap C) = \#C\)</span> e <span class="process-math">\(\#(B\setminus C) = \#B - \#C\text{.}\)</span> Logo</div>
 <div class="displaymath process-math">
 \begin{equation*}
-n!-3\times (n-1)!+3 \times (n-2)!-(n-3)! 
+\#B - \#C = \overbrace{\#(B\setminus C) = 3\times \#(B\cap C)}^{\text{por hipótese}} = 3\times\#C. 
+\end{equation*}
+</div>
+<div class="para">Ou seja, <span class="process-math">\(\#B = 4\times\#C.\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\(\bullet\)</span> Usando que <span class="process-math">\((\#C, \#A, \#B)\)</span> é uma PG, obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \#A \right)^2 = \#C\times \#B = \#C\times 4\times\#C \Rightarrow \#A = 2\times \#C.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\(\bullet\)</span> Por hipótese, <span class="process-math">\(3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\)</span> mas <span class="process-math">\(\#(B\cap C) = \#C\text{,}\)</span> logo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#C = 2\#(A\cap B) \Rightarrow \#(A\cap B) = \frac{\#C}{2}. 
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\(\bullet\)</span> Finalmente, usando o  (<a href="" class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.1">Teorema 2.1.1</a>) obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-2.html">
+\begin{equation*}
+\underbrace{\#(A\cup B)}_{22} = \underbrace{\#A}_{2\times \#C} + \underbrace{\#B}_{4\times \#C} -\underbrace{\#(A\cap B)}_{\#C/2}.
+\end{equation*}
+</div>
+<div class="para">Efetuando o calculo obtemos <span class="process-math">\(\#C = 4\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">item b)</dfn>  Como <span class="process-math">\(\#(B\setminus C) = 3\times \#C = 12\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#\mathcal{P}(B\setminus C) = 2^{\#(B\setminus C)} = 2^{12} = 4096.
 \end{equation*}
 </div>
 </div>

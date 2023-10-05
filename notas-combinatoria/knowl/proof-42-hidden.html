@@ -10,24 +10,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
-<div class="para">Como vale</div>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Para dois conjuntos a fórmula é verdadeira, pois coincide com a definição de probabilidade condicional. Vamos usar o Princípio de Indução para mostrar que o resultado é verdadeiro. Suponha o resultado válido para <span class="process-math">\(n-1\)</span> eventos.</div> <div class="para logical">
+<div class="para">Defina <span class="process-math">\(B = A_1\cap A_2\cap \cdots \cap A_{n-1}\text{,}\)</span> queremos a probabilidade <span class="process-math">\(P(B\cap A_n)\text{.}\)</span> Pela definição de probabilidade condicional, temos</div>
 <div class="displaymath process-math">
 \begin{equation*}
-B\subset A_1\cup A_2\cup\cdots \cup A_n, ~~~~ A_i\cap A_j = \varnothing, ~~\text{ para } i\neq j. 
+P(B\cap A_n) =  P(B)\cdot P(A_n|B),
 \end{equation*}
 </div>
-<div class="para">Temos</div>
+<div class="para">ou seja,</div>
 <div class="displaymath process-math">
-\begin{equation*}
-B = (A_1\cap B) \cup (A_2\cap B) \cup \cdots \cup (A_n\cap B). 
-\end{equation*}
+\begin{equation}
+P(A_1\cap \cdots \cap A_{n-1}) =  P(A_1\cap \cdots \cap A_{n-1})\cdot P(A_n|A_1\cap \cdots \cap A_{n-1})\tag{4.2.2}
+\end{equation}
 </div>
-<div class="para">com a união disjunta, portanto</div>
-<div class="displaymath process-math">
+</div> <div class="para logical">
+<div class="para">Pela hipótese de indução, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
 \begin{align*}
-P(B) = \amp ~ P(A_1\cap B) + P(A_2\cap B) + \cdots + P(A_n\cap B) \\
-= \amp ~ P(A_1)P(B|A_1)+ P(A_2)P(B|A_2)+\cdots + P(A_n)P(B|A_n).
+P(A_1\cap \cdots \cap A_{n-1}) = \amp ~  P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
+\amp ~~~~ ~ \cdots P(A_{n-1}|(A_1\cap A_2\cap \cdots \cap A_{n-2})). 
+\end{align*}
+</div>
+<div class="para">Substituindo a igualdade dada pela hipótese de indução em <a href="" class="xref" data-knowl="./knowl/eq-prod-probab.html" title="Equação 4.2.2">(4.2.2)</a>, chegamos no resultado:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
+\begin{align*}
+P(A_1\cap A_2\cap \cdots \cap A_n) = \amp ~ P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
+\amp ~~~~ \cdots P(A_n|(A_1\cap A_2\cap \cdots \cap A_{n-1})). 
 \end{align*}
 </div>
 </div></article></body>

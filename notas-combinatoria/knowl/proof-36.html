@@ -13,20 +13,33 @@
 <body class="ignore-math">
 <article class="hiddenproof"><h3 class="heading"><span class="type">Demonstração</span></h3>
 <div class="para logical">
-<div class="para">Observe que</div>
+<div class="para">Vamos analisar a diferença <span class="process-math">\(C_n^{p+1}-C_n^p\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
+= \amp ~ \frac{n!}{(p+1) p!(n-p-1)!} - \frac{n!}{p!(n-p)(n-p-1)!}  \\
+= \amp ~ \frac{n!(n-p) - n!(p+1)}{(p+1)!(n-p)!}  \\
+= \amp ~ \frac{n!(n-2p-1)}{(p+1)! (n-p)!}  
+\end{align*}
+</div>
+<div class="para">Oberve que <span class="process-math">\(n!, (p+1)!\)</span> e <span class="process-math">\((n-p)!\)</span> são positivos, portanto o sinal de <span class="process-math">\(C_n^{p+1}-C_n^p\text{,}\)</span> será determinado pelo sinal de</div>
 <div class="displaymath process-math">
 \begin{equation*}
-(x+a)^n  = \overbrace{(x+a)(x+a)\cdots(x+a)}^{n \text{ parcelas}}.
+n-2p-1.
 \end{equation*}
 </div>
-<div class="para">Cada termo, do desenvolvimento, é obtido escolhendo-se em cada parênteses um, <span class="process-math">\(x\)</span> ou um <span class="process-math">\(a\)</span> e multiplicando-se os escolhidos.</div>
-</div> <div class="para logical">
-<div class="para">Para cada valor de <span class="process-math">\(k, 0\leq k \leq n\text{,}\)</span> se escolhermos <span class="process-math">\(x\)</span> em <span class="process-math">\(k\)</span> dos parênteses, <span class="process-math">\(a\)</span> será escolhido em <span class="process-math">\(n-k\)</span> dos parênteses e o produto será igual a <span class="process-math">\(x^ka^{n-k}\text{.}\)</span> Isto pode ser feito de <span class="process-math">\(C_n^k\)</span> modos. Então <span class="process-math">\((x+a)^n\)</span> é uma soma na qual, para cada <span class="process-math">\(k\in\{0, 1, \ldots, n\}\text{,}\)</span> existem <span class="process-math">\(C_n^k\)</span> parcelas iguais a <span class="process-math">\(x^ka^{n-k}\text{.}\)</span> Portanto</div>
+<div class="para">Logo,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-(x+a)^n  = \sum_{k=0}^n C_n^k x^ka^{n-k}.
+\text{Se } n-2p-1&gt;0, \text{ então } p\lt\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}&gt;0 \Rightarrow C_n^{p}\lt C_n^{p+1}. 
 \end{equation*}
 </div>
-</div></article><span class="incontext"><a href="section-binomio-newton.html#proof-36" class="internal">em contexto</a></span>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Se } n-2p-1\lt 0, \text{ então } p&gt;\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}\lt 0 \Rightarrow C_n^{p}&gt;C_n^{p+1}.   
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="section-triangulo-pascal.html#proof-36" class="internal">em contexto</a></span>
 </body>
 </html>

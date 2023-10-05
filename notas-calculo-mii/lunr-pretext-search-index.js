@@ -1,15 +1,6 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "prof-clessius-silva",
-  "level": "1",
-  "url": "prof-clessius-silva.html",
-  "type": "Biografia do autor",
-  "number": "",
-  "title": "Sobre Clessus Silva",
-  "body": " Sobre Clessus Silva  Doutor em Matemática pela Universidade Federal de Pernambuco (2015).  Mestre em Matemática pela Universidade Federal de Pernambuco (2012).  Licenciado em Matemática pela Universidade Federal de Sergipe (2009).  "
-},
-{
   "id": "prof-leon-silva",
   "level": "1",
   "url": "prof-leon-silva.html",
@@ -19,13 +10,22 @@ var ptx_lunr_docs = [
   "body": " Sobre Leon Silva  Doutor em Ciência da Computação pela Universidade Federal de Pernambuco (2019).  Mestre em Matemática pela Universidade Federal do Ceará.  Licenciado em Matemática pela Universidade Federal Rural de Pernambuco.  "
 },
 {
+  "id": "prof-leon-silva",
+  "level": "1",
+  "url": "prof-leon-silva.html",
+  "type": "Biografia do autor",
+  "number": "",
+  "title": "Deibsom Silva",
+  "body": " Deibsom Silva  Doutor em Matemática pela Universidade Federal de Pernambuco.  Mestre em Matemática pela Universidade Federal do Ceará.  Possui graduação em Licenciatura em Matemática pela Universidade Federal Rural de Pernambuco.  "
+},
+{
   "id": "prof-ricardo-machado",
   "level": "1",
   "url": "prof-ricardo-machado.html",
   "type": "Biografia do autor",
   "number": "",
   "title": "Sobre Ricardo Machado",
-  "body": " Sobre Ricardo Machado  Professor Adjunto da Universidade Federal Rural de Pernambuco, DM.  Doutor em Matemática pela Universidade Federal de Pernambuco (2009-2013).  Mestre em Matemática pela Universidade Federal de Pernambuco (2007-2009).  Bacharel em Matemática pela Universidade Federal de Pernambuco (2003-2006).  "
+  "body": " Sobre Ricardo Machado  Professor Adjunto da Universidade Federal Rural de Pernambuco, DM.  Doutor em Matemática pela Universidade Federal de Pernambuco (2009-2013).  Mestre em Matemática pela Universidade Federal de Pernambuco (2007-2009).  Bacharel em Matemática pela Universidade Federal de Pernambuco (2003-2007).  "
 },
 {
   "id": "preface",
