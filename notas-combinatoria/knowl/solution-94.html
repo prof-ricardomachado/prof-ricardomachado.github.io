@@ -9,29 +9,50 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.19.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.2.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">Utilizando a Generalização do 1º Lema de Kaplansky, onde <span class="process-math">\(n = 20, p = 4\)</span> e <span class="process-math">\(r = 3\text{,}\)</span> o número de maneiras de escolher os quatro dias para a realização das provas será dado por</div>
+<div class="para">Esse problema será resolvido criando uma forma alternativa de representar os subconjuntos onde marcaremos com o sinal <span class="process-math">\((+)\)</span> os elementos pertencente ao subconjunto e com o sinal <span class="process-math">\((-)\)</span> os elementos que não pertencentes ao subconjunto.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-4!\times gK(20, 4, 3) = 7920.
+\{a,c,e,h\} \text{ será representado  por } +-+-+--+
 \end{equation*}
 </div>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-40"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
-factorial(4)*gK(20, 4, 3)
-</script></pre>
+<div class="displaymath process-math">
+\begin{equation*}
+\{b,d,f,h\} \text{ será representado  por } -+-+-+-+
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{b,e,g,h\} \text{ será representado  por } -+--+-++
+\end{equation*}
+</div>
+<div class="para">O terceiro caso não satisfaz as condições do enunciado, pois 2 <span class="process-math">\((+)\)</span> juntos significa que teremos letras consecutivas (do alfabeto).</div>
+</div> <div class="para logical">
+<div class="para">Assim, compreendendo o problema observa-se que para soluciona-lo devemos calcular o número de formas distintas de permutar 8 símbolos, onde <span class="process-math">\(4\)</span> são <span class="process-math">\((-)\)</span> e 4 são <span class="process-math">\((+)\)</span> de modo que não tenha 2 símbolos <span class="process-math">\((+)\)</span> juntos.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\LARGE \bigcirc-\bigcirc-\bigcirc-\bigcirc-\bigcirc
+\end{equation*}
+</div>
+<div class="para">Veja que de acordo com  o esquema, de círculos e traços, podem-se colocar 4 símbolos <span class="process-math">\((+)\)</span> em quaisquer dos cinco lugares, ou seja, é possível escolher 4 dos 5 lugares disponíveis (representados pelas circunferências) para por os símbolos <span class="process-math">\((+)\)</span> o que pode ser realizado de</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_5^4=5 \text{ modos distintos}.
+\end{equation*}
+</div>
+<div class="para">Dessa forma 5 subconjuntos podem ser formados, os quais estão listados abaixo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{ a, c, e, g \}, \{ a, c, e, h \}, \{ a, c, f, h \}, \{ a, d, f, h \}, \{ b, d, f, h \} 
+\end{equation*}
+</div>
+</div>
 </div>
 <span class="incontext"><a href="section-lemas-kaplansky.html#solution-94" class="internal">em contexto</a></span>
 </body>

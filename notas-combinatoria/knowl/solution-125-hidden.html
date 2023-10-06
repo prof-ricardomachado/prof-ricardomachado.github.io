@@ -10,18 +10,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">Seja <span class="process-math">\(p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n\text{,}\)</span> a soma dos coeficientes de <span class="process-math">\(p(x)\)</span> é igual a</div>
-<div class="displaymath process-math">
+<body class="ignore-math"><div class="solution solution-like">Note que<div class="displaymath process-math">
+\begin{align*}
+S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
+= \amp \sum_{k=1}^{n} k^3+k^2  
+\end{align*}
+</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div class="displaymath process-math">
 \begin{equation*}
-p(1) = a_0 + a_1(1) + a_2(1)^2 + \cdots + a_n(1)^n.
+k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
 \end{equation*}
-</div>
-<div class="para">Portando a soma dos coeficientes do desenvolvimento de <span class="process-math">\(q(x) = (5x^{11} - 6x^{4})^{25}\)</span> é</div>
-<div class="displaymath process-math">
+</div>Então, vamos procurar valores para <span class="process-math">\(A, B, C\)</span> e <span class="process-math">\(D\text{,}\)</span> para os quais, vale a igualdade<div class="displaymath process-math">
+\begin{align*}
+k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
+= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D  
+\end{align*}
+</div>igualando os coeficientes, obtemos<div class="displaymath process-math">
 \begin{equation*}
-q(1) = (5 - 6)^{25} = -1.
+\begin{cases} 
+A = ~ 1 \\
+3A+B  = ~ 1 \\
+2A+B+C  = ~ 0 \\
+D = ~ 0 \\
+\end{cases}
 \end{equation*}
+</div>Portanto,  <span class="process-math">\(A= 1\)</span> e  <span class="process-math">\(B = -2\text{.}\)</span> Agora podemos terminar o cálculo da soma<div class="displaymath process-math">
+\begin{align*}
+S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
+= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
+= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
+= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
+= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
+\end{align*}
 </div>
-</div></div></body>
+</div></body>
 </html>

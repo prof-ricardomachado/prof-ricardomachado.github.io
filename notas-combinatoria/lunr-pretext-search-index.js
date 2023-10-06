@@ -367,7 +367,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.3",
   "title": "Permutações Simples",
-  "body": " Permutações Simples    Nota Histórica  Al-Khalil (717-786), um matemático e criptógrafo árabe, escreveu o Livro de Mensagens Criptográficas. Ele contém o primeiro uso de permutações e combinações, para listar todas as palavras árabes possíveis com e sem vogais.  A regra para determinar o número de permutações de objetos era conhecida na cultura indiana por volta de 1150. O Līlāvatī, do matemático indiano Bhāskarācārya (Bhaskara II), contém uma passagem que se traduz em:  O produto da multiplicação da série aritmética começando e aumentando pela unidade e continuando até o número de casas, serão as variações do número com algarismos específicos.   Fonte: en.wikipedia.org\/wiki\/Permutation .    Permutações Simples   Permutar uma lista de objetos é mudar a ordem em que eles estavam. O número de permutações de objetos distintos , é o número total de maneiras de ordenar estes objetos. Para descrever o número de permutações de objetos distintos, usamos as notações:     Todas as permutações dos elementos :   Observe que é uma das permutações possíveis, pois essa é uma das formas de ordenar os elementos . Portanto,    Abaixo, clique em \"Evaluate (Sage)\" para obter a lista com todas as permutações dos elementos: 1, 2, 3, 4.   Os números podem ser alterados, ao executar o código, a lista das permutações será atualizada.     O número de permutações de objetos distintos é    Pelo princípio multiplicativo, temos modos de escolher o elemento que ocupará o primeiro lugar, uma vez tomada essa decisão, teremos modos de escolher o elemento que ocupará o segundo lugar, e assim por diante, até que haja apenas um único modo de escolher o elemento que ocupará o último lugar. Portanto    O fatorial de um número natural é denotado por e consiste na multiplicação desse número por seus antecessores, com exceção do zero. Ou seja    Para calcular no Sage, usamos a função fatorial: . Definimos apenas para abreviar, confira o cálculo de apertando no botão \"Evaluate (Sage)\".   Uma vez definida a função , podemos combiná-la com outras operações já definidas no Sage. Veja na próxima célula o cálculo de :     Um anagrama é uma palavra ou expressão elaborada usando exatamente as mesmas letras que a palavra ou expressão original. Por exemplo, a palavra ROMA é um anagrama da palavra AMOR e vice-versa.  Nos dicionários, um anagrama é a transposição das letras de uma palavra (ou frase) para formar outra palavra (ou frase). Observe que pela definição do dicionário, só seria contado os casos em que a permutação das letras formassem outra palavra (ou frase). No entanto, em matemática, qualquer permutação das letras de uma palavra é considerado como anagrama.    Quantos são os anagramas da palavra SAGE?   A palavra SAGE possui quatro letras distintas, logo, o número de anagramas da palavra SAGE é      Quantos são os anagramas da palavra XADREZ que começam e terminam por consoante?   A consoante inicial pode ser escolhida de maneiras, uma vez feita essa escolha, a consoante final pode ser escolhida de maneiras. Restam quatro letras que podem ser ordenadas de maneiras. Pelo Princípio Multiplicativo, a resposta é       De quantos modos podemos dividir pessoas em três grupos de quatro pessoas cada?   Podemos ordenar as pessoas em uma fila. O primeiro grupo será formado pelas primeiras pessoas, o segundo grupo, pelas pessoas seguintes e o terceiro grupo pelas quatro últimas pessoas. O número de maneiras de ordenar as pessoas é . Dessa forma, cada grupo esta sendo contado vezes, por exemplo, representam o mesmo grupo. Logo, precisamos dividir por , já que são grupos.  Por fim, note que a ordem dos grupos não importa, como são maneiras de ordenar os grupos, dividindo por , obtemos a resposta       Permutam-se de todos os modos possíveis os algarismos e escrevem-se os números assim formados em ordem crescente.   Que lugar ocupa o número ?  Qual o número que ocupa o lugar?    item a.  Como os números foram escritos em ordem crescente, os que começam com e aparecem antes do número . Existem números que começam com cada um destes algarismos, ou seja números.  Existem números que começam com , e a mesma quantidade que começam com , ou seja números.  Existem números que começam com .  O próximo número já que o que queremos. Portanto, a resposta é  item b.  Começando com e temos um total de números. Se considerarmos também, todos que começam com , teremos mais números, ultrapassando a posição .  Já sabemos que o número que ocupa a posição começa com o algarismo e que o primeiro número com o algarismo ocupa a posição . Precisamos encontrar o número que começa com o algarismo e está na posição , dentre estes números que começam com .  Começando com e , são números. Dessa forma, o número seguinte está na posição , dentre os que começam com o algarismo . Assim, o número está na posição e o número está na posição .  (Usando o Sage)  Quando calculamos todas as permutações no Sage, a saída é exibida em ordem crescente. Como as listas no Sage começam a ser contadas a partir do zero , podemos consultar a permutação de posição 500 com o comando abaixo:      Implementação em Sage para verificar respostas de problemas como o .  No campo abaixo, digite um número para obter a posição dele, numa permutação dos dígitos do número informado.      Escolha os dígitos que serão permutados e escreva como um número, em seguida, escolha a posição para obter o número que a ocupa.       Um palíndromo (ou capicua ) é uma sequência de caracteres que pode ser lido da esquerda para a direita ou da direita para a esquerda, mantendo seu sentido. Esses caracteres podem ser número, palavra ou frase.  Por exemplo, , \"osso\" e \"Socorram-me, subi no ônibus em Marrocos\", são palíndromos.     Quantos números palíndromos de algarismos há em nosso sistema de numeração?  Com os algarismos , quantos palíndromos de algarismos conseguimos formar?    item a.  Para formar um número palíndromo com três algarismos, quando o primeiro algarismo for escolhido, o terceiro já está definido como sendo igual ao primeiro. Depois desta escolha, resta apenas o segundo algarismo para ser definido.  Para escolher o primeiro algarismo temos opções, pois o zero não é permitido, para o segundo algarismo, temos opções. Portanto, a resposta é   item b.  Observe que, usando ou algarismos distintos não é possível formar um palíndromo de algarismos.  Usando apenas um dos cinco algarismos distintos, só temos um número que é um palíndromo, por exemplo . Como temos possibilidades de escolha de algarismo, existem palíndromos deste tipo.  Usando dois algarismos distintos, só temos palíndromos, por exemplo e . Com os cinco algarismos disponíveis, podemos escolher dois deles de maneiras, pois o primeiro pode ser escolhido de maneiras e o segundo de maneiras, como a ordem da escolha não importa, precisamos dividir por . Portanto, neste caso temos palíndromos. Pelo Princípio Aditivo, a resposta é      O palíndromo do Chico.   Quando Chico era nosso homem na Itália toda semana a gente publicava matéria dele. Era um correspondente aplicado. Me lembro de umas fotos que mandou, posando ao lado de nosso ancestral, o temível Pasquino.  Agora... Liguei para ele pedindo para escrever alguma coisa para o primeiro número do Pasquim paulista. \"Minha agenda estourou. Tô enlouquecido, ensaiando o show com Bethânia para o dia 2 em Paris.\" \"Pô, Chico, tremenda sacanagem nos deixar na mão!\" \"Fazer matéria nem pensar, mas se vocês quiserem um palíndromo...\" Palíndromo, como talvez só o Houaiss saiba, é uma frase que significa literalmente o mesmo, seja lida de cá pra lá, como de lá pra cá, da direita para a esquerda. \"Levei 5 horas fazendo\", disse Chico. \"Insônia.\" Era pegar ou largar. Peguei. E, outra vez por acaso, eis o Pasquim inovando ao publicar o primeiro palíndromo ilustrado. Por outro Chico. (Jaguar)  Pasquim São Paulo Ano XVIII número 13 a 10 de julho de 1986  O palíndromo que Chico Buarque fez: \"Até reagan sibarita tira bisnaga ereta\"   Fonte: http:\/\/www.chicobuarque.com.br\/sanatorio\/palindromo.htm .     Exercícios   Quantos são os anagramas da palavra SINGULAR:   Que começam por consoante e terminam por vogal?  Que têm as letras S,I,N juntas em qualquer ordem?  Que têm as vogais e as consoantes intercaladas?    a) 5×3×6!=10800, b) , c) 0    Temos 5 consoantes e 3 vogais, então são 5 opções para escolher a primeira letra e 3 opções para escolher a última letra. Depois de fazer essas escolhas sobram 6 letras que podem ocupar as outras 6 posições. Portanto a resposta é  Temos modos de ordenar as letras S,I,N. Considerando cada permutação das letras S,I,N como um elemento, ficamos com 6 elementos no total para serem ordenados, o que pode ser feito de modos. A resposta é  Como temos 5 consoantes e 3 vogais, não é possível deixar as vogais e as consoantes intercaladas, portanto a resposta é     De quantos modos é possível fazer uma fila com pessoas de modo que três determinadas pessoas dessas não fiquem juntas?   457228800   O número total de modos de ordenar as pessoas é . Vamos contar o número de maneiras de ordenar as pessoas de modo que determinadas pessoas fiquem juntas, para subtrair de e obter a resposta.  Temos modos de ordenar as pessoas que vão ficar juntas. Considerando essas pessoas como apenas um elemento, ficamos com elementos no total e podemos ordenar esses elementos de maneiras.  Juntando as ideias obtemos a resposta:    Quantos dados diferentes podemos formar gravando números de a sobre as faces indistinguíveis de um cubo   se os número podem ser gravados em qualquer ordem?  se o valor da soma das faces opostas precisam ser iguais a ?    a. b.     A princípio, temos maneiras de gravar os números nas faces dos cubos. Dessa forma ficaremos com vários cubos repetidos, pois existem várias maneiras de posicionar um cubo, observe que figura que os dois cubos são iguais.   Dois dados equivalentes.    Para posicionar um cubo, temos 6 maneiras de escolher qual a face que ficará para cima, uma vez feita essa escolha, sobram 4 faces para escolher uma que ficará de frente. Portanto existem maneiras de posicionar um cubo. A resposta é  Podemos escolher a face do 1 de 6 maneiras, a face do 6 estará automaticamente determinada. Uma vez que as faces do 1 e do 6 estão definidas, temos 4 maneiras de escolher a face do 2. A face do 5 estará automaticamente definida. Agora temos duas maneiras de escolher a face do 3. A face do 4 também estará automaticamente determinada.  Assim como no item a. precisamos dividir pelo número de maneiras de posicionar os dados. Fazendo a divisão, obtemos o resultado      (UPE 2013 tradicional) Oito amigos entraram em um restaurante para jantar e sentaram-se numa mesa retangular, com oito lugares, como mostra a figura a seguir:   Dentre todas as configurações possíveis, quantas são as possibilidades de dois desses amigos, Amaro e Danilo, ficarem sentados em frente um do outro?  a) 1440 b) 1920 c) 2016 d) 4032 e) 5760   e)   Uma vez que Amaro escolha um lugar, Danilo já está com seu lugar definido. Amaro pode escolher um lugar de 8 modos. Depois que Amaro e Danilo definiram seus lugares, os outros 6 amigos podem escolher quaisquer lugares, portanto restam possibilidades. A resposta é     (UPE 2013 tradicional) Seguindo a etiqueta japonesa, um restaurante tipicamente oriental solicita aos seus clientes que retirem seus calçados na entrada do estabelecimento. Em certa noite, 6 pares de sapatos e 2 pares de sandálias, todos distintos, estavam dispostos na entrada do restaurante, em duas fileiras com quatro pares de calçados cada uma. Se esses pares de calçados forem organizados nessas fileiras de tal forma que as sandálias devam ocupar as extremidades da primeira fila, de quantas formas diferentes podem-se organizar esses calçados nas duas fileiras?  a)  b)  c)  d)  e)   b)   Como as sandálias devem ocupar as extremidades da primeira fileira, temos duas maneiras de escolher onde colocá-las. Uma vez escolhido os lugares das sandálias, temos 6 pares de sapatos e 6 lugares, portanto a resposta é     Considere um tabuleiro de xadrez .   De quantos modos podemos colocar 8 torres iguais, de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 8 torres diferentes, de modo que haja uma única em cada linha e em cada coluna?    a) b)    Na primeira linha, temos 8 opções para colocar a primeira torre, na segunda linha temos opções para colocar a segunda torre, pois ela não pode ficar na mesma coluna que a primeira torre. Seguindo esse raciocínio, na -ésima linha, temos opções para colocar a -ésima torre. Logo, a resposta é  Seguindo com a ideia do item a, temos modos de escolher os lugares onde as torres podem ocupar, depois disso podemos ordenar as torres de modos, portanto a resposta é      Um grupo formado por quatro rapazes e uma senhorita vão visitar uma exposição de arte. À entrada, passa uma pessoa de cada vez pela porta da sala de exposições. Um dos rapazes dando-se ares de perfeito cavalheiro, não passa pela porta sem que a senhorita já o tenha feito. Qual o número de modos, isto é, de quantas maneiras diferentes eles podem entrar no recinto?     Vamos separar em quatro casos.  1º caso: a senhorita será a primeira pessoa a entrar. Nesse caso, os quatro rapazes podem entrar em qualquer ordem, ou seja, possibilidades.  2º caso: a senhorita será a segunda pessoa a entrar. Nesse caso temos 3 possibilidades de escolha o primeiro rapaz, depois temos possíveis ordem para os outros rapazes.  3º caso: a senhorita será a terceira pessoa a entrar. Nesse caso temos possibilidades para os dois primeiros rapazes e ordens possíveis para os dois últimos rapazes.  4º caso: a senhorita será a quarta pessoa a entrar. Nesse caso temos ordens para os três primeiros rapazes.  Portanto, pelo Princípio Aditivo, a resposta é    (UPE 2011 seriado) Uma bibliotecária tenta organizar 4 livros diferentes de matemática, 4 livros diferentes de geografia e 2 livros diferentes de inglês em uma estante. O número de modos distintos de organização deve ser de tal forma que os livros da mesma disciplina estejam sempre juntos e que os de geografia apareçam sempre na mesma ordem. Assim, o número de possibilidades dessa arrumação é de  a)  b)  c)  d)  e)   d)   O número de modos de ordenar as disciplinas é . Os livros de matemática podem ser ordenados de maneiras e os livros de inglês podem ser ordenados de maneiras. Dessa forma, o número de possibilidades dessa arrumação é    Quantas são as permutações das letras A, B, C, D, E, F, G, H, nas quais, a letra B está situada à direita da letra A e à esquerda da letra F, embora, não necessariamente, em lugares consecutivos?     Inicialmente contamos o número de maneiras de ordenar as oito letras que é . Dividindo esse valor pelo número de maneiras de ordenar as letras B, A, F, obtemos o resultado, pois em apenas uma das formas de ordenar as três letras teremos a ordem exigida. A resposta é    (UFPE - UFRPE 2003) Seja a soma dos números formados pelas permutações dos algarismos e . Indique a soma dos dígitos de .     Note que cada número formado possui 5 dígitos. Podemos contar o valor de da seguinte maneira.  Sejam os números formados pelos algarismos disponíveis. Como são 5 algarismos, temos um total de números, então Observe que para cada , pois, cada algarismo estará presente em dos , para cada fixado.  Logo,    Observe que para cada permutação existe exatamente outra que a soma delas é . Por exemplo:  Podemos organizar as permutações de duas em duas, de modo que a soma de cada par seja . Portanto, o valor da soma de todas as permutações é . Somando os dígitos chegamos na resposta que é .  Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.     (UFF-RJ) Um garçom anotou os pedidos de três fregueses. Cada freguês pediu um prato principal, um acompanhamento e uma bebida. Posteriormente, o garçom não sabia identificar o autor de cada pedido. Lembrava-se, porém, de que não havia qualquer coincidência entre os pedidos: os pratos principais eram diferentes entre si, o mesmo ocorrendo com os acompanhamentos e as bebidas. O número de maneiras diferentes que o garçom poderia distribuir os pedidos entre os três fregueses é:  a)  b)  c)  d)  e)   a)   O garçom poderia distribuir os pratos principais de maneiras, os acompanhamentos também poderiam ser distribuídos de , assim como as bebidas que também poderiam ser distribuídas de maneiras. Portanto a resposta é     (OPEMAT 2019 - nível 1) Em uma viagem a Recife, o grupo formado pelos números 1, 2, 3, 4 e 5, resolveu tirar fotos próximo ao monumento do Parque das Esculturas do artista Pernambucano Francisco Brennand. Indecisos pela escolha da disposição na foto, eles concordaram em tirar várias fotos em todas as disposições possíveis, permutando os lugares entre si conforme as imagens abaixo:    Por fim, eles colocaram as fotos em ordem crescente de numeração formando a seguinte lista:   Julgue as afirmações a seguir atribuindo (V) se a afirmação for verdadeira e (F) se a afirmação for falsa.   (V) (F) Quem ocupa a última posição da vigésima foto é o 3.  (V) (F) A foto em que os números aparecem na disposição 32541, ocupa o 59º lugar desta lista.  (V) (F) A quantidade de fotos em que os números 1 e 2 aparecem separados é 96.  (V) (F) A quantidade de fotos em que a disposição dos números é maior do que a foto com disposição 25413 é 73.  (V) (F) A soma de todos os números de cinco dígitos representados pelas fotos é 3999960.    A) V, B) F, C) F, D) V, E) V   (OBM 2008 - 2ª fase do nível 3) Quantas permutações de há com a propriedade de que, para todo , os números que aparecem entre e (onde pode aparecer tanto antes como depois de ) são todos menores do que ? Por exemplo, é uma permutação com esta propriedade.   256  Da propriedade, decorre que só pode aparecer ou como primeiro ou como último elemento da permutação e que os elementos de a formam uma permutação com a mesma propriedade. Assim, o número pedido é o dobro do número de permutações de com a mesma propriedade. Da mesma forma, o número de permutações de com a propriedade é o dobro do número de permutações de com a propriedade. Repetindo o raciocínio, concluímos que o número pedido é portanto .  (UPE - SSA 2 - 2014) Depois de explicar à turma do ano o que é um número palíndromo ou capicua, o professor Barreto pediu que os alunos se organizassem em duplas e entregou algumas cartelas numeradas para que formassem capicuas de três, quatro e cinco algarismos, fazendo o registro de cada resultado possível e podendo reutilizar as cartelas.  Números palíndromos ou capicuas são aqueles que são iguais quando lidos nos dois sentidos, isto é, da direita para a esquerda e da esquerda para a direita. Exemplo: ; ; .  A dupla Ian e Júlia recebeu as cartelas seguintes:    No máximo, quantos capicuas de quatro algarismos essa dupla conseguiu formar?  a)  b)  c)  d)  e)   b)   Para uma melhor visualização, ordenando as cartelas disponíveis, ficamos com os seguintes dígitos: .  Para as capicuas com os quatro algarismos iguais, temos apenas e .  Para as capicuas com dois algarismos distintos, nem podemos usar o 5, nem o 8, pois só temos uma cartela de cada. Sobraram os algarismos que estão disponíveis em pelo menos duas cartelas. Usando dois algarismos distintos, podemos formar duas capicuas, por exemplo e . Como são sete opções para escolher estes dois algarismos, temos 21 possibilidades, pois são 7 opções para a primeira escolha e 6 opções para a segunda escolha, dividindo por 2, pois a ordem não importa, ficamos com 21. Portando, temos capicuas com dois algarismos distintos.  Observe que usando três ou mais algarismos distintos, não é possível formar uma capicua de 4 algarismos. A resposta é    "
+  "body": " Permutações Simples    Nota Histórica  Al-Khalil (717-786), um matemático e criptógrafo árabe, escreveu o Livro de Mensagens Criptográficas. Ele contém o primeiro uso de permutações e combinações, para listar todas as palavras árabes possíveis com e sem vogais.  A regra para determinar o número de permutações de objetos era conhecida na cultura indiana por volta de 1150. O Līlāvatī, do matemático indiano Bhāskarācārya (Bhaskara II), contém uma passagem que se traduz em:  O produto da multiplicação da série aritmética começando e aumentando pela unidade e continuando até o número de casas, serão as variações do número com algarismos específicos.   Fonte: en.wikipedia.org\/wiki\/Permutation .    Permutações Simples   Permutar uma lista de objetos é mudar a ordem em que eles estavam. O número de permutações de objetos distintos , é o número total de maneiras de ordenar estes objetos. Para descrever o número de permutações de objetos distintos, usamos as notações:     Todas as permutações dos elementos :   Observe que é uma das permutações possíveis, pois essa é uma das formas de ordenar os elementos . Portanto,    Abaixo, clique em \"Evaluate (Sage)\" para obter a lista com todas as permutações dos elementos: 1, 2, 3, 4.   Os números podem ser alterados, ao executar o código, a lista das permutações será atualizada.     O número de permutações de objetos distintos é    Pelo princípio multiplicativo, temos modos de escolher o elemento que ocupará o primeiro lugar, uma vez tomada essa decisão, teremos modos de escolher o elemento que ocupará o segundo lugar, e assim por diante, até que haja apenas um único modo de escolher o elemento que ocupará o último lugar. Portanto    O fatorial de um número natural é denotado por e consiste na multiplicação desse número por seus antecessores, com exceção do zero. Ou seja    Para calcular no Sage, usamos a função fatorial: . Definimos apenas para abreviar, confira o cálculo de apertando no botão \"Evaluate (Sage)\".   Uma vez definida a função , podemos combiná-la com outras operações já definidas no Sage. Veja na próxima célula o cálculo de :     Um anagrama é uma palavra ou expressão elaborada usando exatamente as mesmas letras que a palavra ou expressão original. Por exemplo, a palavra ROMA é um anagrama da palavra AMOR e vice-versa.  Nos dicionários, um anagrama é a transposição das letras de uma palavra (ou frase) para formar outra palavra (ou frase). Observe que pela definição do dicionário, só seria contado os casos em que a permutação das letras formassem outra palavra (ou frase). No entanto, em matemática, qualquer permutação das letras de uma palavra é considerado como anagrama.    Quantos são os anagramas da palavra SAGE?   A palavra SAGE possui quatro letras distintas, logo, o número de anagramas da palavra SAGE é      Quantos são os anagramas da palavra XADREZ que começam e terminam por consoante?   A consoante inicial pode ser escolhida de maneiras, uma vez feita essa escolha, a consoante final pode ser escolhida de maneiras. Restam quatro letras que podem ser ordenadas de maneiras. Pelo Princípio Multiplicativo, a resposta é       De quantos modos podemos dividir pessoas em três grupos de quatro pessoas cada?   Podemos ordenar as pessoas em uma fila. O primeiro grupo será formado pelas primeiras pessoas, o segundo grupo, pelas pessoas seguintes e o terceiro grupo pelas quatro últimas pessoas. O número de maneiras de ordenar as pessoas é . Dessa forma, cada grupo esta sendo contado vezes, por exemplo, representam o mesmo grupo. Logo, precisamos dividir por , já que são grupos.  Por fim, note que a ordem dos grupos não importa, como são maneiras de ordenar os grupos, dividindo por , obtemos a resposta       Permutam-se de todos os modos possíveis os algarismos e escrevem-se os números assim formados em ordem crescente.   Que lugar ocupa o número ?  Qual o número que ocupa o lugar?    item a.  Como os números foram escritos em ordem crescente, os que começam com e aparecem antes do número . Existem números que começam com cada um destes algarismos, ou seja números.  Existem números que começam com , e a mesma quantidade que começam com , ou seja números.  Existem números que começam com .  O próximo número já que o que queremos. Portanto, a resposta é  item b.  Começando com e temos um total de números. Se considerarmos também, todos que começam com , teremos mais números, ultrapassando a posição .  Já sabemos que o número que ocupa a posição começa com o algarismo e que o primeiro número com o algarismo ocupa a posição . Precisamos encontrar o número que começa com o algarismo e está na posição , dentre estes números que começam com .  Começando com e , são números. Dessa forma, o número seguinte está na posição , dentre os que começam com o algarismo . Assim, o número está na posição e o número está na posição .  (Usando o Sage)  Quando calculamos todas as permutações no Sage, a saída é exibida em ordem crescente. Como as listas no Sage começam a ser contadas a partir do zero , podemos consultar a permutação de posição 500 com o comando abaixo:      Implementação em Sage para verificar respostas de problemas como o .  No campo abaixo, digite um número para obter a posição dele, numa permutação dos dígitos do número informado.      Escolha os dígitos que serão permutados e escreva como um número, em seguida, escolha a posição para obter o número que a ocupa.       Um palíndromo (ou capicua ) é uma sequência de caracteres que pode ser lido da esquerda para a direita ou da direita para a esquerda, mantendo seu sentido. Esses caracteres podem ser número, palavra ou frase.  Por exemplo, , \"osso\" e \"Socorram-me, subi no ônibus em Marrocos\", são palíndromos.     Quantos números palíndromos de algarismos há em nosso sistema de numeração?  Com os algarismos , quantos palíndromos de algarismos conseguimos formar?    item a.  Para formar um número palíndromo com três algarismos, quando o primeiro algarismo for escolhido, o terceiro já está definido como sendo igual ao primeiro. Depois desta escolha, resta apenas o segundo algarismo para ser definido.  Para escolher o primeiro algarismo temos opções, pois o zero não é permitido, para o segundo algarismo, temos opções. Portanto, a resposta é   item b.  Observe que, usando ou algarismos distintos não é possível formar um palíndromo de algarismos.  Usando apenas um dos cinco algarismos distintos, só temos um número que é um palíndromo, por exemplo . Como temos possibilidades de escolha de algarismo, existem palíndromos deste tipo.  Usando dois algarismos distintos, só temos palíndromos, por exemplo e . Com os cinco algarismos disponíveis, podemos escolher dois deles de maneiras, pois o primeiro pode ser escolhido de maneiras e o segundo de maneiras, como a ordem da escolha não importa, precisamos dividir por . Portanto, neste caso temos palíndromos. Pelo Princípio Aditivo, a resposta é      O palíndromo do Chico.   Quando Chico era nosso homem na Itália toda semana a gente publicava matéria dele. Era um correspondente aplicado. Me lembro de umas fotos que mandou, posando ao lado de nosso ancestral, o temível Pasquino.  Agora... Liguei para ele pedindo para escrever alguma coisa para o primeiro número do Pasquim paulista. \"Minha agenda estourou. Tô enlouquecido, ensaiando o show com Bethânia para o dia 2 em Paris.\" \"Pô, Chico, tremenda sacanagem nos deixar na mão!\" \"Fazer matéria nem pensar, mas se vocês quiserem um palíndromo...\" Palíndromo, como talvez só o Houaiss saiba, é uma frase que significa literalmente o mesmo, seja lida de cá pra lá, como de lá pra cá, da direita para a esquerda. \"Levei 5 horas fazendo\", disse Chico. \"Insônia.\" Era pegar ou largar. Peguei. E, outra vez por acaso, eis o Pasquim inovando ao publicar o primeiro palíndromo ilustrado. Por outro Chico. (Jaguar)  Pasquim São Paulo Ano XVIII número 13 a 10 de julho de 1986  O palíndromo que Chico Buarque fez: \"Até reagan sibarita tira bisnaga ereta\"   Fonte: http:\/\/www.chicobuarque.com.br\/sanatorio\/palindromo.htm .     Exercícios   Quantos são os anagramas da palavra SINGULAR:   Que começam por consoante e terminam por vogal?  Que têm as letras S,I,N juntas em qualquer ordem?  Que têm as vogais e as consoantes intercaladas?    a) 5×3×6!=10800, b) , c) 0    Temos 5 consoantes e 3 vogais, então são 5 opções para escolher a primeira letra e 3 opções para escolher a última letra. Depois de fazer essas escolhas sobram 6 letras que podem ocupar as outras 6 posições. Portanto a resposta é  Temos modos de ordenar as letras S,I,N. Considerando cada permutação das letras S,I,N como um elemento, ficamos com 6 elementos no total para serem ordenados, o que pode ser feito de modos. A resposta é  Como temos 5 consoantes e 3 vogais, não é possível deixar as vogais e as consoantes intercaladas, portanto a resposta é     Com relação aos anagramas da palavra CADERNO:   Quantos são ao todo?  Quantos começam por C?  Quantos começam por C e terminam com O?  Quantos começam por vogal?  Quantos têm as vogais juntas?  Quantos têm as vogais juntas em ordem alfabética?  Quantos têm as vogais em ordem alfabética, mesmo não estando juntas?  Quantos têm as vogais e as consoantes intercaladas?                De quantos modos é possível fazer uma fila com pessoas de modo que três determinadas pessoas dessas não fiquem juntas?   457228800   O número total de modos de ordenar as pessoas é . Vamos contar o número de maneiras de ordenar as pessoas de modo que determinadas pessoas fiquem juntas, para subtrair de e obter a resposta.  Temos modos de ordenar as pessoas que vão ficar juntas. Considerando essas pessoas como apenas um elemento, ficamos com elementos no total e podemos ordenar esses elementos de maneiras.  Juntando as ideias obtemos a resposta:    Quantos dados diferentes podemos formar gravando números de a sobre as faces indistinguíveis de um cubo   se os número podem ser gravados em qualquer ordem?  se o valor da soma das faces opostas precisam ser iguais a ?    a. b.     A princípio, temos maneiras de gravar os números nas faces dos cubos. Dessa forma ficaremos com vários cubos repetidos, pois existem várias maneiras de posicionar um cubo, observe que figura que os dois cubos são iguais.   Dois dados equivalentes.    Para posicionar um cubo, temos 6 maneiras de escolher qual a face que ficará para cima, uma vez feita essa escolha, sobram 4 faces para escolher uma que ficará de frente. Portanto existem maneiras de posicionar um cubo. A resposta é  Podemos escolher a face do 1 de 6 maneiras, a face do 6 estará automaticamente determinada. Uma vez que as faces do 1 e do 6 estão definidas, temos 4 maneiras de escolher a face do 2. A face do 5 estará automaticamente definida. Agora temos duas maneiras de escolher a face do 3. A face do 4 também estará automaticamente determinada.  Assim como no item a. precisamos dividir pelo número de maneiras de posicionar os dados. Fazendo a divisão, obtemos o resultado      (UPE 2013 tradicional) Oito amigos entraram em um restaurante para jantar e sentaram-se numa mesa retangular, com oito lugares, como mostra a figura a seguir:   Dentre todas as configurações possíveis, quantas são as possibilidades de dois desses amigos, Amaro e Danilo, ficarem sentados em frente um do outro?  a) 1440 b) 1920 c) 2016 d) 4032 e) 5760   e)   Uma vez que Amaro escolha um lugar, Danilo já está com seu lugar definido. Amaro pode escolher um lugar de 8 modos. Depois que Amaro e Danilo definiram seus lugares, os outros 6 amigos podem escolher quaisquer lugares, portanto restam possibilidades. A resposta é     (UPE 2013 tradicional) Seguindo a etiqueta japonesa, um restaurante tipicamente oriental solicita aos seus clientes que retirem seus calçados na entrada do estabelecimento. Em certa noite, 6 pares de sapatos e 2 pares de sandálias, todos distintos, estavam dispostos na entrada do restaurante, em duas fileiras com quatro pares de calçados cada uma. Se esses pares de calçados forem organizados nessas fileiras de tal forma que as sandálias devam ocupar as extremidades da primeira fila, de quantas formas diferentes podem-se organizar esses calçados nas duas fileiras?  a)  b)  c)  d)  e)   b)   Como as sandálias devem ocupar as extremidades da primeira fileira, temos duas maneiras de escolher onde colocá-las. Uma vez escolhido os lugares das sandálias, temos 6 pares de sapatos e 6 lugares, portanto a resposta é     Considere um tabuleiro de xadrez .   De quantos modos podemos colocar 8 torres iguais, de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 8 torres diferentes, de modo que haja uma única em cada linha e em cada coluna?    a) b)    Na primeira linha, temos 8 opções para colocar a primeira torre, na segunda linha temos opções para colocar a segunda torre, pois ela não pode ficar na mesma coluna que a primeira torre. Seguindo esse raciocínio, na -ésima linha, temos opções para colocar a -ésima torre. Logo, a resposta é  Seguindo com a ideia do item a, temos modos de escolher os lugares onde as torres podem ocupar, depois disso podemos ordenar as torres de modos, portanto a resposta é      Um grupo formado por quatro rapazes e uma senhorita vão visitar uma exposição de arte. À entrada, passa uma pessoa de cada vez pela porta da sala de exposições. Um dos rapazes dando-se ares de perfeito cavalheiro, não passa pela porta sem que a senhorita já o tenha feito. Qual o número de modos, isto é, de quantas maneiras diferentes eles podem entrar no recinto?     Vamos separar em quatro casos.  1º caso: a senhorita será a primeira pessoa a entrar. Nesse caso, os quatro rapazes podem entrar em qualquer ordem, ou seja, possibilidades.  2º caso: a senhorita será a segunda pessoa a entrar. Nesse caso temos 3 possibilidades de escolha o primeiro rapaz, depois temos possíveis ordem para os outros rapazes.  3º caso: a senhorita será a terceira pessoa a entrar. Nesse caso temos possibilidades para os dois primeiros rapazes e ordens possíveis para os dois últimos rapazes.  4º caso: a senhorita será a quarta pessoa a entrar. Nesse caso temos ordens para os três primeiros rapazes.  Portanto, pelo Princípio Aditivo, a resposta é    (UPE 2011 seriado) Uma bibliotecária tenta organizar 4 livros diferentes de matemática, 4 livros diferentes de geografia e 2 livros diferentes de inglês em uma estante. O número de modos distintos de organização deve ser de tal forma que os livros da mesma disciplina estejam sempre juntos e que os de geografia apareçam sempre na mesma ordem. Assim, o número de possibilidades dessa arrumação é de  a)  b)  c)  d)  e)   d)   O número de modos de ordenar as disciplinas é . Os livros de matemática podem ser ordenados de maneiras e os livros de inglês podem ser ordenados de maneiras. Dessa forma, o número de possibilidades dessa arrumação é    Quantas são as permutações das letras A, B, C, D, E, F, G, H, nas quais, a letra B está situada à direita da letra A e à esquerda da letra F, embora, não necessariamente, em lugares consecutivos?     Inicialmente contamos o número de maneiras de ordenar as oito letras que é . Dividindo esse valor pelo número de maneiras de ordenar as letras B, A, F, obtemos o resultado, pois em apenas uma das formas de ordenar as três letras teremos a ordem exigida. A resposta é    (UFPE - UFRPE 2003) Seja a soma dos números formados pelas permutações dos algarismos e . Indique a soma dos dígitos de .     Note que cada número formado possui 5 dígitos. Podemos contar o valor de da seguinte maneira.  Sejam os números formados pelos algarismos disponíveis. Como são 5 algarismos, temos um total de números, então Observe que para cada , pois, cada algarismo estará presente em dos , para cada fixado.  Logo,    Observe que para cada permutação existe exatamente outra que a soma delas é . Por exemplo:  Podemos organizar as permutações de duas em duas, de modo que a soma de cada par seja . Portanto, o valor da soma de todas as permutações é . Somando os dígitos chegamos na resposta que é .  Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.     (UFF-RJ) Um garçom anotou os pedidos de três fregueses. Cada freguês pediu um prato principal, um acompanhamento e uma bebida. Posteriormente, o garçom não sabia identificar o autor de cada pedido. Lembrava-se, porém, de que não havia qualquer coincidência entre os pedidos: os pratos principais eram diferentes entre si, o mesmo ocorrendo com os acompanhamentos e as bebidas. O número de maneiras diferentes que o garçom poderia distribuir os pedidos entre os três fregueses é:  a)  b)  c)  d)  e)   a)   O garçom poderia distribuir os pratos principais de maneiras, os acompanhamentos também poderiam ser distribuídos de , assim como as bebidas que também poderiam ser distribuídas de maneiras. Portanto a resposta é     (OPEMAT 2019 - nível 1) Em uma viagem a Recife, o grupo formado pelos números 1, 2, 3, 4 e 5, resolveu tirar fotos próximo ao monumento do Parque das Esculturas do artista Pernambucano Francisco Brennand. Indecisos pela escolha da disposição na foto, eles concordaram em tirar várias fotos em todas as disposições possíveis, permutando os lugares entre si conforme as imagens abaixo:    Por fim, eles colocaram as fotos em ordem crescente de numeração formando a seguinte lista:   Julgue as afirmações a seguir atribuindo (V) se a afirmação for verdadeira e (F) se a afirmação for falsa.   (V) (F) Quem ocupa a última posição da vigésima foto é o 3.  (V) (F) A foto em que os números aparecem na disposição 32541, ocupa o 59º lugar desta lista.  (V) (F) A quantidade de fotos em que os números 1 e 2 aparecem separados é 96.  (V) (F) A quantidade de fotos em que a disposição dos números é maior do que a foto com disposição 25413 é 73.  (V) (F) A soma de todos os números de cinco dígitos representados pelas fotos é 3999960.    A) V, B) F, C) F, D) V, E) V   (OBM 2008 - 2ª fase do nível 3) Quantas permutações de há com a propriedade de que, para todo , os números que aparecem entre e (onde pode aparecer tanto antes como depois de ) são todos menores do que ? Por exemplo, é uma permutação com esta propriedade.   256  Da propriedade, decorre que só pode aparecer ou como primeiro ou como último elemento da permutação e que os elementos de a formam uma permutação com a mesma propriedade. Assim, o número pedido é o dobro do número de permutações de com a mesma propriedade. Da mesma forma, o número de permutações de com a propriedade é o dobro do número de permutações de com a propriedade. Repetindo o raciocínio, concluímos que o número pedido é portanto .  (UPE - SSA 2 - 2014) Depois de explicar à turma do ano o que é um número palíndromo ou capicua, o professor Barreto pediu que os alunos se organizassem em duplas e entregou algumas cartelas numeradas para que formassem capicuas de três, quatro e cinco algarismos, fazendo o registro de cada resultado possível e podendo reutilizar as cartelas.  Números palíndromos ou capicuas são aqueles que são iguais quando lidos nos dois sentidos, isto é, da direita para a esquerda e da esquerda para a direita. Exemplo: ; ; .  A dupla Ian e Júlia recebeu as cartelas seguintes:    No máximo, quantos capicuas de quatro algarismos essa dupla conseguiu formar?  a)  b)  c)  d)  e)   b)   Para uma melhor visualização, ordenando as cartelas disponíveis, ficamos com os seguintes dígitos: .  Para as capicuas com os quatro algarismos iguais, temos apenas e .  Para as capicuas com dois algarismos distintos, nem podemos usar o 5, nem o 8, pois só temos uma cartela de cada. Sobraram os algarismos que estão disponíveis em pelo menos duas cartelas. Usando dois algarismos distintos, podemos formar duas capicuas, por exemplo e . Como são sete opções para escolher estes dois algarismos, temos 21 possibilidades, pois são 7 opções para a primeira escolha e 6 opções para a segunda escolha, dividindo por 2, pois a ordem não importa, ficamos com 21. Portando, temos capicuas com dois algarismos distintos.  Observe que usando três ou mais algarismos distintos, não é possível formar uma capicua de 4 algarismos. A resposta é    "
 },
 {
   "id": "p-124",
@@ -529,7 +529,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.2",
   "title": "",
-  "body": " De quantos modos é possível fazer uma fila com pessoas de modo que três determinadas pessoas dessas não fiquem juntas?   457228800   O número total de modos de ordenar as pessoas é . Vamos contar o número de maneiras de ordenar as pessoas de modo que determinadas pessoas fiquem juntas, para subtrair de e obter a resposta.  Temos modos de ordenar as pessoas que vão ficar juntas. Considerando essas pessoas como apenas um elemento, ficamos com elementos no total e podemos ordenar esses elementos de maneiras.  Juntando as ideias obtemos a resposta:  "
+  "body": " Com relação aos anagramas da palavra CADERNO:   Quantos são ao todo?  Quantos começam por C?  Quantos começam por C e terminam com O?  Quantos começam por vogal?  Quantos têm as vogais juntas?  Quantos têm as vogais juntas em ordem alfabética?  Quantos têm as vogais em ordem alfabética, mesmo não estando juntas?  Quantos têm as vogais e as consoantes intercaladas?              "
 },
 {
   "id": "exercise-14",
@@ -538,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.3",
   "title": "",
-  "body": " Quantos dados diferentes podemos formar gravando números de a sobre as faces indistinguíveis de um cubo   se os número podem ser gravados em qualquer ordem?  se o valor da soma das faces opostas precisam ser iguais a ?    a. b.     A princípio, temos maneiras de gravar os números nas faces dos cubos. Dessa forma ficaremos com vários cubos repetidos, pois existem várias maneiras de posicionar um cubo, observe que figura que os dois cubos são iguais.   Dois dados equivalentes.    Para posicionar um cubo, temos 6 maneiras de escolher qual a face que ficará para cima, uma vez feita essa escolha, sobram 4 faces para escolher uma que ficará de frente. Portanto existem maneiras de posicionar um cubo. A resposta é  Podemos escolher a face do 1 de 6 maneiras, a face do 6 estará automaticamente determinada. Uma vez que as faces do 1 e do 6 estão definidas, temos 4 maneiras de escolher a face do 2. A face do 5 estará automaticamente definida. Agora temos duas maneiras de escolher a face do 3. A face do 4 também estará automaticamente determinada.  Assim como no item a. precisamos dividir pelo número de maneiras de posicionar os dados. Fazendo a divisão, obtemos o resultado   "
+  "body": " De quantos modos é possível fazer uma fila com pessoas de modo que três determinadas pessoas dessas não fiquem juntas?   457228800   O número total de modos de ordenar as pessoas é . Vamos contar o número de maneiras de ordenar as pessoas de modo que determinadas pessoas fiquem juntas, para subtrair de e obter a resposta.  Temos modos de ordenar as pessoas que vão ficar juntas. Considerando essas pessoas como apenas um elemento, ficamos com elementos no total e podemos ordenar esses elementos de maneiras.  Juntando as ideias obtemos a resposta:  "
 },
 {
   "id": "exercise-15",
@@ -547,7 +547,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.4",
   "title": "",
-  "body": " (UPE 2013 tradicional) Oito amigos entraram em um restaurante para jantar e sentaram-se numa mesa retangular, com oito lugares, como mostra a figura a seguir:   Dentre todas as configurações possíveis, quantas são as possibilidades de dois desses amigos, Amaro e Danilo, ficarem sentados em frente um do outro?  a) 1440 b) 1920 c) 2016 d) 4032 e) 5760   e)   Uma vez que Amaro escolha um lugar, Danilo já está com seu lugar definido. Amaro pode escolher um lugar de 8 modos. Depois que Amaro e Danilo definiram seus lugares, os outros 6 amigos podem escolher quaisquer lugares, portanto restam possibilidades. A resposta é   "
+  "body": " Quantos dados diferentes podemos formar gravando números de a sobre as faces indistinguíveis de um cubo   se os número podem ser gravados em qualquer ordem?  se o valor da soma das faces opostas precisam ser iguais a ?    a. b.     A princípio, temos maneiras de gravar os números nas faces dos cubos. Dessa forma ficaremos com vários cubos repetidos, pois existem várias maneiras de posicionar um cubo, observe que figura que os dois cubos são iguais.   Dois dados equivalentes.    Para posicionar um cubo, temos 6 maneiras de escolher qual a face que ficará para cima, uma vez feita essa escolha, sobram 4 faces para escolher uma que ficará de frente. Portanto existem maneiras de posicionar um cubo. A resposta é  Podemos escolher a face do 1 de 6 maneiras, a face do 6 estará automaticamente determinada. Uma vez que as faces do 1 e do 6 estão definidas, temos 4 maneiras de escolher a face do 2. A face do 5 estará automaticamente definida. Agora temos duas maneiras de escolher a face do 3. A face do 4 também estará automaticamente determinada.  Assim como no item a. precisamos dividir pelo número de maneiras de posicionar os dados. Fazendo a divisão, obtemos o resultado   "
 },
 {
   "id": "exercise-16",
@@ -556,6 +556,15 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.5",
   "title": "",
+  "body": " (UPE 2013 tradicional) Oito amigos entraram em um restaurante para jantar e sentaram-se numa mesa retangular, com oito lugares, como mostra a figura a seguir:   Dentre todas as configurações possíveis, quantas são as possibilidades de dois desses amigos, Amaro e Danilo, ficarem sentados em frente um do outro?  a) 1440 b) 1920 c) 2016 d) 4032 e) 5760   e)   Uma vez que Amaro escolha um lugar, Danilo já está com seu lugar definido. Amaro pode escolher um lugar de 8 modos. Depois que Amaro e Danilo definiram seus lugares, os outros 6 amigos podem escolher quaisquer lugares, portanto restam possibilidades. A resposta é   "
+},
+{
+  "id": "exercise-17",
+  "level": "2",
+  "url": "section-permutacoes-simples.html#exercise-17",
+  "type": "Exercício",
+  "number": "1.3.3.6",
+  "title": "",
   "body": " (UPE 2013 tradicional) Seguindo a etiqueta japonesa, um restaurante tipicamente oriental solicita aos seus clientes que retirem seus calçados na entrada do estabelecimento. Em certa noite, 6 pares de sapatos e 2 pares de sandálias, todos distintos, estavam dispostos na entrada do restaurante, em duas fileiras com quatro pares de calçados cada uma. Se esses pares de calçados forem organizados nessas fileiras de tal forma que as sandálias devam ocupar as extremidades da primeira fila, de quantas formas diferentes podem-se organizar esses calçados nas duas fileiras?  a)  b)  c)  d)  e)   b)   Como as sandálias devem ocupar as extremidades da primeira fileira, temos duas maneiras de escolher onde colocá-las. Uma vez escolhido os lugares das sandálias, temos 6 pares de sapatos e 6 lugares, portanto a resposta é   "
 },
 {
@@ -563,18 +572,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-permutacoes-simples.html#exer-xadrez",
   "type": "Exercício",
-  "number": "1.3.3.6",
-  "title": "",
-  "body": " Considere um tabuleiro de xadrez .   De quantos modos podemos colocar 8 torres iguais, de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 8 torres diferentes, de modo que haja uma única em cada linha e em cada coluna?    a) b)    Na primeira linha, temos 8 opções para colocar a primeira torre, na segunda linha temos opções para colocar a segunda torre, pois ela não pode ficar na mesma coluna que a primeira torre. Seguindo esse raciocínio, na -ésima linha, temos opções para colocar a -ésima torre. Logo, a resposta é  Seguindo com a ideia do item a, temos modos de escolher os lugares onde as torres podem ocupar, depois disso podemos ordenar as torres de modos, portanto a resposta é    "
-},
-{
-  "id": "exercise-18",
-  "level": "2",
-  "url": "section-permutacoes-simples.html#exercise-18",
-  "type": "Exercício",
   "number": "1.3.3.7",
   "title": "",
-  "body": " Um grupo formado por quatro rapazes e uma senhorita vão visitar uma exposição de arte. À entrada, passa uma pessoa de cada vez pela porta da sala de exposições. Um dos rapazes dando-se ares de perfeito cavalheiro, não passa pela porta sem que a senhorita já o tenha feito. Qual o número de modos, isto é, de quantas maneiras diferentes eles podem entrar no recinto?     Vamos separar em quatro casos.  1º caso: a senhorita será a primeira pessoa a entrar. Nesse caso, os quatro rapazes podem entrar em qualquer ordem, ou seja, possibilidades.  2º caso: a senhorita será a segunda pessoa a entrar. Nesse caso temos 3 possibilidades de escolha o primeiro rapaz, depois temos possíveis ordem para os outros rapazes.  3º caso: a senhorita será a terceira pessoa a entrar. Nesse caso temos possibilidades para os dois primeiros rapazes e ordens possíveis para os dois últimos rapazes.  4º caso: a senhorita será a quarta pessoa a entrar. Nesse caso temos ordens para os três primeiros rapazes.  Portanto, pelo Princípio Aditivo, a resposta é  "
+  "body": " Considere um tabuleiro de xadrez .   De quantos modos podemos colocar 8 torres iguais, de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 8 torres diferentes, de modo que haja uma única em cada linha e em cada coluna?    a) b)    Na primeira linha, temos 8 opções para colocar a primeira torre, na segunda linha temos opções para colocar a segunda torre, pois ela não pode ficar na mesma coluna que a primeira torre. Seguindo esse raciocínio, na -ésima linha, temos opções para colocar a -ésima torre. Logo, a resposta é  Seguindo com a ideia do item a, temos modos de escolher os lugares onde as torres podem ocupar, depois disso podemos ordenar as torres de modos, portanto a resposta é    "
 },
 {
   "id": "exercise-19",
@@ -583,7 +583,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.8",
   "title": "",
-  "body": " (UPE 2011 seriado) Uma bibliotecária tenta organizar 4 livros diferentes de matemática, 4 livros diferentes de geografia e 2 livros diferentes de inglês em uma estante. O número de modos distintos de organização deve ser de tal forma que os livros da mesma disciplina estejam sempre juntos e que os de geografia apareçam sempre na mesma ordem. Assim, o número de possibilidades dessa arrumação é de  a)  b)  c)  d)  e)   d)   O número de modos de ordenar as disciplinas é . Os livros de matemática podem ser ordenados de maneiras e os livros de inglês podem ser ordenados de maneiras. Dessa forma, o número de possibilidades dessa arrumação é  "
+  "body": " Um grupo formado por quatro rapazes e uma senhorita vão visitar uma exposição de arte. À entrada, passa uma pessoa de cada vez pela porta da sala de exposições. Um dos rapazes dando-se ares de perfeito cavalheiro, não passa pela porta sem que a senhorita já o tenha feito. Qual o número de modos, isto é, de quantas maneiras diferentes eles podem entrar no recinto?     Vamos separar em quatro casos.  1º caso: a senhorita será a primeira pessoa a entrar. Nesse caso, os quatro rapazes podem entrar em qualquer ordem, ou seja, possibilidades.  2º caso: a senhorita será a segunda pessoa a entrar. Nesse caso temos 3 possibilidades de escolha o primeiro rapaz, depois temos possíveis ordem para os outros rapazes.  3º caso: a senhorita será a terceira pessoa a entrar. Nesse caso temos possibilidades para os dois primeiros rapazes e ordens possíveis para os dois últimos rapazes.  4º caso: a senhorita será a quarta pessoa a entrar. Nesse caso temos ordens para os três primeiros rapazes.  Portanto, pelo Princípio Aditivo, a resposta é  "
 },
 {
   "id": "exercise-20",
@@ -592,7 +592,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.9",
   "title": "",
-  "body": " Quantas são as permutações das letras A, B, C, D, E, F, G, H, nas quais, a letra B está situada à direita da letra A e à esquerda da letra F, embora, não necessariamente, em lugares consecutivos?     Inicialmente contamos o número de maneiras de ordenar as oito letras que é . Dividindo esse valor pelo número de maneiras de ordenar as letras B, A, F, obtemos o resultado, pois em apenas uma das formas de ordenar as três letras teremos a ordem exigida. A resposta é  "
+  "body": " (UPE 2011 seriado) Uma bibliotecária tenta organizar 4 livros diferentes de matemática, 4 livros diferentes de geografia e 2 livros diferentes de inglês em uma estante. O número de modos distintos de organização deve ser de tal forma que os livros da mesma disciplina estejam sempre juntos e que os de geografia apareçam sempre na mesma ordem. Assim, o número de possibilidades dessa arrumação é de  a)  b)  c)  d)  e)   d)   O número de modos de ordenar as disciplinas é . Os livros de matemática podem ser ordenados de maneiras e os livros de inglês podem ser ordenados de maneiras. Dessa forma, o número de possibilidades dessa arrumação é  "
 },
 {
   "id": "exercise-21",
@@ -601,7 +601,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.10",
   "title": "",
-  "body": " (UFPE - UFRPE 2003) Seja a soma dos números formados pelas permutações dos algarismos e . Indique a soma dos dígitos de .     Note que cada número formado possui 5 dígitos. Podemos contar o valor de da seguinte maneira.  Sejam os números formados pelos algarismos disponíveis. Como são 5 algarismos, temos um total de números, então Observe que para cada , pois, cada algarismo estará presente em dos , para cada fixado.  Logo,    Observe que para cada permutação existe exatamente outra que a soma delas é . Por exemplo:  Podemos organizar as permutações de duas em duas, de modo que a soma de cada par seja . Portanto, o valor da soma de todas as permutações é . Somando os dígitos chegamos na resposta que é .  Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.   "
+  "body": " Quantas são as permutações das letras A, B, C, D, E, F, G, H, nas quais, a letra B está situada à direita da letra A e à esquerda da letra F, embora, não necessariamente, em lugares consecutivos?     Inicialmente contamos o número de maneiras de ordenar as oito letras que é . Dividindo esse valor pelo número de maneiras de ordenar as letras B, A, F, obtemos o resultado, pois em apenas uma das formas de ordenar as três letras teremos a ordem exigida. A resposta é  "
 },
 {
   "id": "exercise-22",
@@ -610,7 +610,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.11",
   "title": "",
-  "body": " (UFF-RJ) Um garçom anotou os pedidos de três fregueses. Cada freguês pediu um prato principal, um acompanhamento e uma bebida. Posteriormente, o garçom não sabia identificar o autor de cada pedido. Lembrava-se, porém, de que não havia qualquer coincidência entre os pedidos: os pratos principais eram diferentes entre si, o mesmo ocorrendo com os acompanhamentos e as bebidas. O número de maneiras diferentes que o garçom poderia distribuir os pedidos entre os três fregueses é:  a)  b)  c)  d)  e)   a)   O garçom poderia distribuir os pratos principais de maneiras, os acompanhamentos também poderiam ser distribuídos de , assim como as bebidas que também poderiam ser distribuídas de maneiras. Portanto a resposta é   "
+  "body": " (UFPE - UFRPE 2003) Seja a soma dos números formados pelas permutações dos algarismos e . Indique a soma dos dígitos de .     Note que cada número formado possui 5 dígitos. Podemos contar o valor de da seguinte maneira.  Sejam os números formados pelos algarismos disponíveis. Como são 5 algarismos, temos um total de números, então Observe que para cada , pois, cada algarismo estará presente em dos , para cada fixado.  Logo,    Observe que para cada permutação existe exatamente outra que a soma delas é . Por exemplo:  Podemos organizar as permutações de duas em duas, de modo que a soma de cada par seja . Portanto, o valor da soma de todas as permutações é . Somando os dígitos chegamos na resposta que é .  Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.   "
 },
 {
   "id": "exercise-23",
@@ -619,7 +619,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.12",
   "title": "",
-  "body": " (OPEMAT 2019 - nível 1) Em uma viagem a Recife, o grupo formado pelos números 1, 2, 3, 4 e 5, resolveu tirar fotos próximo ao monumento do Parque das Esculturas do artista Pernambucano Francisco Brennand. Indecisos pela escolha da disposição na foto, eles concordaram em tirar várias fotos em todas as disposições possíveis, permutando os lugares entre si conforme as imagens abaixo:    Por fim, eles colocaram as fotos em ordem crescente de numeração formando a seguinte lista:   Julgue as afirmações a seguir atribuindo (V) se a afirmação for verdadeira e (F) se a afirmação for falsa.   (V) (F) Quem ocupa a última posição da vigésima foto é o 3.  (V) (F) A foto em que os números aparecem na disposição 32541, ocupa o 59º lugar desta lista.  (V) (F) A quantidade de fotos em que os números 1 e 2 aparecem separados é 96.  (V) (F) A quantidade de fotos em que a disposição dos números é maior do que a foto com disposição 25413 é 73.  (V) (F) A soma de todos os números de cinco dígitos representados pelas fotos é 3999960.    A) V, B) F, C) F, D) V, E) V  "
+  "body": " (UFF-RJ) Um garçom anotou os pedidos de três fregueses. Cada freguês pediu um prato principal, um acompanhamento e uma bebida. Posteriormente, o garçom não sabia identificar o autor de cada pedido. Lembrava-se, porém, de que não havia qualquer coincidência entre os pedidos: os pratos principais eram diferentes entre si, o mesmo ocorrendo com os acompanhamentos e as bebidas. O número de maneiras diferentes que o garçom poderia distribuir os pedidos entre os três fregueses é:  a)  b)  c)  d)  e)   a)   O garçom poderia distribuir os pratos principais de maneiras, os acompanhamentos também poderiam ser distribuídos de , assim como as bebidas que também poderiam ser distribuídas de maneiras. Portanto a resposta é   "
 },
 {
   "id": "exercise-24",
@@ -628,7 +628,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.3.3.13",
   "title": "",
-  "body": "(OBM 2008 - 2ª fase do nível 3) Quantas permutações de há com a propriedade de que, para todo , os números que aparecem entre e (onde pode aparecer tanto antes como depois de ) são todos menores do que ? Por exemplo, é uma permutação com esta propriedade.   256  Da propriedade, decorre que só pode aparecer ou como primeiro ou como último elemento da permutação e que os elementos de a formam uma permutação com a mesma propriedade. Assim, o número pedido é o dobro do número de permutações de com a mesma propriedade. Da mesma forma, o número de permutações de com a propriedade é o dobro do número de permutações de com a propriedade. Repetindo o raciocínio, concluímos que o número pedido é portanto . "
+  "body": " (OPEMAT 2019 - nível 1) Em uma viagem a Recife, o grupo formado pelos números 1, 2, 3, 4 e 5, resolveu tirar fotos próximo ao monumento do Parque das Esculturas do artista Pernambucano Francisco Brennand. Indecisos pela escolha da disposição na foto, eles concordaram em tirar várias fotos em todas as disposições possíveis, permutando os lugares entre si conforme as imagens abaixo:    Por fim, eles colocaram as fotos em ordem crescente de numeração formando a seguinte lista:   Julgue as afirmações a seguir atribuindo (V) se a afirmação for verdadeira e (F) se a afirmação for falsa.   (V) (F) Quem ocupa a última posição da vigésima foto é o 3.  (V) (F) A foto em que os números aparecem na disposição 32541, ocupa o 59º lugar desta lista.  (V) (F) A quantidade de fotos em que os números 1 e 2 aparecem separados é 96.  (V) (F) A quantidade de fotos em que a disposição dos números é maior do que a foto com disposição 25413 é 73.  (V) (F) A soma de todos os números de cinco dígitos representados pelas fotos é 3999960.    A) V, B) F, C) F, D) V, E) V  "
 },
 {
   "id": "exercise-25",
@@ -636,6 +636,15 @@ var ptx_lunr_docs = [
   "url": "section-permutacoes-simples.html#exercise-25",
   "type": "Exercício",
   "number": "1.3.3.14",
+  "title": "",
+  "body": "(OBM 2008 - 2ª fase do nível 3) Quantas permutações de há com a propriedade de que, para todo , os números que aparecem entre e (onde pode aparecer tanto antes como depois de ) são todos menores do que ? Por exemplo, é uma permutação com esta propriedade.   256  Da propriedade, decorre que só pode aparecer ou como primeiro ou como último elemento da permutação e que os elementos de a formam uma permutação com a mesma propriedade. Assim, o número pedido é o dobro do número de permutações de com a mesma propriedade. Da mesma forma, o número de permutações de com a propriedade é o dobro do número de permutações de com a propriedade. Repetindo o raciocínio, concluímos que o número pedido é portanto . "
+},
+{
+  "id": "exercise-26",
+  "level": "2",
+  "url": "section-permutacoes-simples.html#exercise-26",
+  "type": "Exercício",
+  "number": "1.3.3.15",
   "title": "",
   "body": "(UPE - SSA 2 - 2014) Depois de explicar à turma do ano o que é um número palíndromo ou capicua, o professor Barreto pediu que os alunos se organizassem em duplas e entregou algumas cartelas numeradas para que formassem capicuas de três, quatro e cinco algarismos, fazendo o registro de cada resultado possível e podendo reutilizar as cartelas.  Números palíndromos ou capicuas são aqueles que são iguais quando lidos nos dois sentidos, isto é, da direita para a esquerda e da esquerda para a direita. Exemplo: ; ; .  A dupla Ian e Júlia recebeu as cartelas seguintes:    No máximo, quantos capicuas de quatro algarismos essa dupla conseguiu formar?  a)  b)  c)  d)  e)   b)   Para uma melhor visualização, ordenando as cartelas disponíveis, ficamos com os seguintes dígitos: .  Para as capicuas com os quatro algarismos iguais, temos apenas e .  Para as capicuas com dois algarismos distintos, nem podemos usar o 5, nem o 8, pois só temos uma cartela de cada. Sobraram os algarismos que estão disponíveis em pelo menos duas cartelas. Usando dois algarismos distintos, podemos formar duas capicuas, por exemplo e . Como são sete opções para escolher estes dois algarismos, temos 21 possibilidades, pois são 7 opções para a primeira escolha e 6 opções para a segunda escolha, dividindo por 2, pois a ordem não importa, ficamos com 21. Portando, temos capicuas com dois algarismos distintos.  Observe que usando três ou mais algarismos distintos, não é possível formar uma capicua de 4 algarismos. A resposta é  "
 },
@@ -646,12 +655,12 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.4",
   "title": "Combinações Simples",
-  "body": " Combinações Simples    Nota Histórica  A primeira descrição conhecida sobre coeficientes binomiais (equivalente a combinações simples) está em um dos livros do matemático indiano do século X, Halayudha. O livro possui o título Mṛta-Sañjīvanī e é conhecido como um comentário do livro Chandaḥśāstra do poeta e matemático indiano, Pingala (dos séculos III\/II A.C.). O comentário de Halayudha inclui uma apresentação do triângulo de Pascal (chamado meruprastāra).  Fonte: https:\/\/en.wikipedia.org\/wiki\/Binomial_coefficient .  Por volta de 1150, o matemático indiano Bhāskarācārya (Bhaskara II) fez uma exposição dos coeficientes binomiais em seu livro Līlāvatī.   Līlāvatī de Bhāskarācārya, traduzido para inglês por Patwardhan, Naimpally e Shyam Lal Singh.      Combinações Simples  Em determinadas situações, precisamos escolher algumas opções, sem que a ordem seja importante. Confira o exemplo a seguir.   De quantas maneiras é possível fazer uma salada de frutas, usando quatro frutas distintas, se temos disponíveis as frutas: abacaxi, banana, maçã, mamão, manga e uva?   São 6 opções para a primeira fruta, 5 opções para a segunda fruta, 4 opções para a terceira fruta, e finalmente, 3 opções para a última fruta.  Note que, dessa maneira a ordem está sendo levada em consideração. Como cada escolha de frutas pode ser ordenada de maneiras, dividindo por passamos a contar cada salada exatamente uma vez. A resposta é dada por       No Sage, podemos obter uma lista com todos os subconjuntos de {1, 2, 3, 4, 5, 6}, tomados 4 a 4. Basta usar o seguinte código:     O número de formas de escolher elementos, dentre elementos disponíveis, sem que a ordem importe, é chamado de número de combinações de elementos, tomados a .  Observe que, o número de subconjuntos com elementos, de um conjunto com elementos é exatamente o número de combinações de , tomados a . As notações para o número de combinações de , a são dadas por:     O número de combinações de objetos distintos, tomados a é    Temos modos de escolher o primeiro elemento, modos de escolher o segundo elemento, e assim sucessivamente, até modos de escolher o -ésimo elemento.  Agora observe que contamos muito mais agrupamentos do que deveríamos, pois para conjuntos, a ordem não importa, portanto precisamos dividir pelo número de formas de ordenar estes elementos que escolhemos de forma ordenada, ou seja, por . Assim:    Fazendo as contas concluímos que      pode ser calculado no Sage com o código binomial(n, p). Para abreviar vamos usar C(n, p) = binomial(n, p). Teste o código abaixo, para o caso , .      Uma criança possui 5 figurinhas distintas e outra criança possui 7 figurinhas distintas. Se as figurinhas da primeira criança são todas diferentes das figurinhas da segunda criança, de quantas maneiras é possível trocar 4 figurinhas pertencentes a primeira criança com 4 pertencentes a segunda?   A primeira criança pode escolher suas 4 figurinhas de maneiras e a segunda criança pode escolher suas 4 figurinhas de maneiras. Portanto, o número de maneiras de realizar a troca é      Um Juiz dispõe de 11 mulheres, das quais somente 4 são advogadas.   Para formar um único júri com 9 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?  Para formar um único júri com 6 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?    item a) Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de maneiras.  item b) Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.  Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é   No Sage, esse cálculo pode ser feito da seguinte maneira:      De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?   Para o primeiro grupo, temos um total de maneiras de selecionar as 4 pessoas.  Para o segundo grupo temos um total de maneiras de selecionar as 4 pessoas.  Para o terceiro grupo temos um total de maneiras de selecionar as 4 pessoas.  Como a ordem dos grupos não importa, precisamos dividir por Portanto a resposta é       Exercícios   Quantas diagonais possuem um polígono de lados?     Cada vértice pode ser ligado a outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são vértices ficamos com diagonais, mas elas foram contadas duas vezes, portanto a resposta é     Quantas são as pedras de um dominó comum?   28   As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedras de um dominó comum é     (UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.    55   As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedros desse dominó é     (UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.    90   Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:   Paralelogramos com prolongamento de segmentos.    Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:    Seja um polígono convexo de lados, tal que não há três diagonais que se intersectam no mesmo ponto. Qual o número total de pontos de interseções dessas diagonais.    Vamos analisar o que acontece no caso . Num polígono convexo com vértices, do total de segmentos, temos lados e diagonais que se intersectam num único ponto. Perceba que para quaisquer vértices de um polígono de lados teremos um único par de diagonais que se encontram num único ponto.  Quatro vértices do polígono convexo .     Assim, defina uma função que associa cada quádrupla de vértices do polígono ao par de diagonais que se intersectam num único ponto. Observe que, por construção, esta função é sobrejetiva. Ela também é injetiva, pois a única forma dela não ser injetiva seria termos três diagonais que se intersectassem num único ponto, mas por hipótese isto não acontece. Dessa maneira, temos uma bijeção que associa cada vértices de em um ponto de interseção das diagonais, determinado por eles. Aplicando o Princípio da Bijeção ( ), a quantidade de pontos das interseções das diagonais é o mesmo que o número de maneiras de escolher vértices em um polígono com vértices, e este número é dado por .     (PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?     Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é     (UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.   8   Seja a quantidade de pessoas na reunião. No primeiro caso temos modos de escolher a comissão. No segundo caso temos modos de escolher a comissão. Como a primeira alternativa oferece possibilidades de escolha a mais que a segunda, temos Logo e Observe que no lado esquerdo da equação temos o produto de três números naturais consecutivos, e do outro lado, temos o número . Fatorando e reescrevendo como produto de três números naturais consecutivos obtemos: Portanto, e .     Considere tabuleiros, como os de xadrez, mas com dimensões .   De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?    a) b) c)    Precisamos selecionar as linhas e as colunas que colocaremos as torres, em seguida procedemos como no  . Para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, também temos opções. Portanto, a resposta é  Seguindo com a ideia do item a, para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, temos opções. Logo, a resposta é  Observe que para ter solução, é necessário que . Se isto for verdade, procedendo de modo análogo ao item anterior, a resposta é    (OBM 2004 - 2ª fase do nível 3) Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?   Temos maneiras de escolher 6 dentre 12 alunos. Note que para cada 5 alunos fixados, temos 7 times possíveis.     (OBM 2006 - 2ª fase do nível 3) Seja inteiro positivo. De quantas maneiras podemos distribuir brinquedos distintos para crianças de modo que toda criança receba pelo menos um brinquedo?   Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.     (OBM 2013 - 2ª fase do nível 3) Para cobrir um tabuleiro de dimensões , podemos utilizar heptaminós amarelos, de dimensões , e octaminós vermelhos, de dimensões . De quantos modos podemos cobrir completamente o tabuleiro?     Suponha que vamos usar heptaminós e octaminós. Para cobrir tudo, temos .  Observe que é múltiplo de e de . Assim, é múltiplo de 8, pois . Analogamente, é múltiplo de 7, pois . Como e são primos entre si, é múltiplo de e é múltiplo de .  Sendo e , temos . Assim, os valores de são e , que correspondem a sendo e .  Analisando os três casos:  1º: , apenas uma maneira de cobrir, pois todas as peças são octaminós.  2º: , temos no total peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é   3º: , análogo ao primeiro caso, apenas uma maneira.  No total temos maneiras de cobrir completamente o tabuleiro.   (OBM 2015 - 2ª fase do nível 3) Um subconjunto de elementos do conjunto é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que , do terceiro para o segundo é maior que , do quarto para o terceiro é maior que e do quinto para o quarto é maior que . Existem quantos subconjuntos largos?     Sejam os elementos de um conjunto largo. Assim, e , ou seja, .  Desta forma, é um subconjunto de . Reciprocamente, se é um subconjunto de com então é um conjunto largo, pois e .  Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de elementos de , que é     (FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.   Quantas são as possíveis coleções que um jogador pode receber?  A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?    a) b)   item a) O número de possíveis coleções é dado por:   item b) As coleções possíveis são:  1) 4 estrelas e 4 quadrados totalizando 28 pontos:  2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:  3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:  4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:  5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos: Portanto existem coleções possíveis.    (FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há participantes. Na primeira rodada, há jogos. Calcule, em função de , o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.      Para o primeiro jogo, temos um total de maneiras de escolher os participantes. Para o segundo jogo, temos um total de maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com maneiras de escolher os participantes.  Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:     "
+  "body": " Combinações Simples    Nota Histórica  A primeira descrição conhecida sobre coeficientes binomiais (equivalente a combinações simples) está em um dos livros do matemático indiano do século X, Halayudha. O livro possui o título Mṛta-Sañjīvanī e é conhecido como um comentário do livro Chandaḥśāstra do poeta e matemático indiano, Pingala (dos séculos III\/II A.C.). O comentário de Halayudha inclui uma apresentação do triângulo de Pascal (chamado meruprastāra).  Fonte: https:\/\/en.wikipedia.org\/wiki\/Binomial_coefficient .  Por volta de 1150, o matemático indiano Bhāskarācārya (Bhaskara II) fez uma exposição dos coeficientes binomiais em seu livro Līlāvatī.   Līlāvatī de Bhāskarācārya, traduzido para inglês por Patwardhan, Naimpally e Shyam Lal Singh.      Combinações Simples  Em determinadas situações, precisamos escolher algumas opções, sem que a ordem seja importante. Confira o exemplo a seguir.   De quantas maneiras é possível fazer uma salada de frutas, usando quatro frutas distintas, se temos disponíveis as frutas: abacaxi, banana, maçã, mamão, manga e uva?   São 6 opções para a primeira fruta, 5 opções para a segunda fruta, 4 opções para a terceira fruta, e finalmente, 3 opções para a última fruta.  Note que, dessa maneira a ordem está sendo levada em consideração. Como cada escolha de frutas pode ser ordenada de maneiras, dividindo por passamos a contar cada salada exatamente uma vez. A resposta é dada por       No Sage, podemos obter uma lista com todos os subconjuntos de {1, 2, 3, 4, 5, 6}, tomados 4 a 4. Basta usar o seguinte código:     O número de formas de escolher elementos, dentre elementos disponíveis, sem que a ordem importe, é chamado de número de combinações de elementos, tomados a .  Observe que, o número de subconjuntos com elementos, de um conjunto com elementos é exatamente o número de combinações de , tomados a . As notações para o número de combinações de , a são dadas por:     O número de combinações de objetos distintos, tomados a é    Temos modos de escolher o primeiro elemento, modos de escolher o segundo elemento, e assim sucessivamente, até modos de escolher o -ésimo elemento.  Agora observe que contamos muito mais agrupamentos do que deveríamos, pois para conjuntos, a ordem não importa, portanto precisamos dividir pelo número de formas de ordenar estes elementos que escolhemos de forma ordenada, ou seja, por . Assim:    Fazendo as contas concluímos que      pode ser calculado no Sage com o código binomial(n, p). Para abreviar vamos usar C(n, p) = binomial(n, p). Teste o código abaixo, para o caso , .      Uma criança possui 5 figurinhas distintas e outra criança possui 7 figurinhas distintas. Se as figurinhas da primeira criança são todas diferentes das figurinhas da segunda criança, de quantas maneiras é possível trocar 4 figurinhas pertencentes a primeira criança com 4 pertencentes a segunda?   A primeira criança pode escolher suas 4 figurinhas de maneiras e a segunda criança pode escolher suas 4 figurinhas de maneiras. Portanto, o número de maneiras de realizar a troca é      Um Juiz dispõe de 11 pessoas, das quais somente 4 são advogados.   Para formar um único júri com 9 jurados. Qual é o número de formas de compor o júri, com pelo menos 2 advogados?  Para formar um único júri com 6 jurados. Qual é o número de formas de compor o júri, com pelo menos 2 advogados?    item a) Basta escolher 9 jurados, pois pelo menos dois serão advogados. Isto pode ser feito de maneiras.  item b) Se escolhermos diretamente 6 jurados, dentre as 11 pessoas disponíveis, estaremos contando os casos em que não temos pelo menos dois advogados. Precisamos contornar este problema.  Para garantir que estamos contando todos os casos em que pelo menos dois advogados foram selecionados, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogados e 4 não advogados. 2º vamos contar o número de maneiras de selecionar 3 advogados e 3 não advogados. 3º vamos contar o número de maneiras de selecionar 4 advogados e 2 não advogados. Como os casos são disjuntos, pelo Princípio Aditivo a resposta é   No Sage, esse cálculo pode ser feito da seguinte maneira:      De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?   Para o primeiro grupo, temos um total de maneiras de selecionar as 4 pessoas.  Para o segundo grupo temos um total de maneiras de selecionar as 4 pessoas.  Para o terceiro grupo temos um total de maneiras de selecionar as 4 pessoas.  Como a ordem dos grupos não importa, precisamos dividir por Portanto a resposta é       Exercícios   Quantas diagonais possuem um polígono de lados?     Cada vértice pode ser ligado a outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são vértices ficamos com diagonais, mas elas foram contadas duas vezes, portanto a resposta é    Em uma reunião social, cada pessoa cumprimentou todas as outras, havendo ao todo apertos de mão. Quantas pessoas havia na reunião?    Precisamos descobrir o valor de para o qual, Assim, como , precisamos resolver a equação: Ou seja, . As soluções são ou . Como o número de pessoas precisa ser positivo, a resposta é    Doze atletas disputam uma prova. Serão premiados os cinco primeiros colocados com prêmios diferentes para cada um deles. De quantas maneiras pode ser feita a premiação?    Precisamos contar o números de maneiras de \"separar\" das pessoas, as que ficarão entre os primeiros lugares. Depois disso, como os prêmios são diferentes, precisamos contar o número de maneiras de ordenar essas pessoas. Portanto, a resposta é    Dentre números positivos e números negativos, de quantos modos podemos escolher números cujo produto seja positivo?  255.   Para que o produto de números seja positivo, precisamos que sejam números positivos, ou números negativos, ou positivos e negativos. O total de maneiras de fazer essas escolhas é dado por    Dez amigos pretendiam viajar de férias, mas apenas dispõem de um automóvel de cinco lugares. Chegaram a um acordo de sortear os cinco que iriam de carro, enquanto os demais iriam de ônibus. Quantos grupos distintos podem ser formados para ocuparem o carro, admitindo-se que:  qualquer uma das dez pessoas pode dirigir.  apenas 3 pessos possuem habilitação.          item a) Basta escolher as pessoas que irão de carro, as demais irão de ônibus. A resposta é    item b) Neste caso, podemos escolher as pessoas que irão no carro das seguintes maneiras:  1 pessoa com habilitação e 4 sem habilitação, ou  2 pessoas com habilitação e 3 sem habilitação, ou  3 pessoas com habilitação e 2 sem habilitação.  Isto pode ser contato da seguinte forma:     Quantas são as pedras de um dominó comum?   28   As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedras de um dominó comum é     (UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.    55   As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedros desse dominó é     (UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.    90   Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:   Paralelogramos com prolongamento de segmentos.    Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:    Seja um polígono convexo de lados, tal que não há três diagonais que se intersectam no mesmo ponto. Qual o número total de pontos de interseções dessas diagonais.    Vamos analisar o que acontece no caso . Num polígono convexo com vértices, do total de segmentos, temos lados e diagonais que se intersectam num único ponto. Perceba que para quaisquer vértices de um polígono de lados teremos um único par de diagonais que se encontram num único ponto.  Quatro vértices do polígono convexo .     Assim, defina uma função que associa cada quádrupla de vértices do polígono ao par de diagonais que se intersectam num único ponto. Observe que, por construção, esta função é sobrejetiva. Ela também é injetiva, pois a única forma dela não ser injetiva seria termos três diagonais que se intersectassem num único ponto, mas por hipótese isto não acontece. Dessa maneira, temos uma bijeção que associa cada vértices de em um ponto de interseção das diagonais, determinado por eles. Aplicando o Princípio da Bijeção ( ), a quantidade de pontos das interseções das diagonais é o mesmo que o número de maneiras de escolher vértices em um polígono com vértices, e este número é dado por .     (PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?     Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é     (UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.   8   Seja a quantidade de pessoas na reunião. No primeiro caso temos modos de escolher a comissão. No segundo caso temos modos de escolher a comissão. Como a primeira alternativa oferece possibilidades de escolha a mais que a segunda, temos Logo e Observe que no lado esquerdo da equação temos o produto de três números naturais consecutivos, e do outro lado, temos o número . Fatorando e reescrevendo como produto de três números naturais consecutivos obtemos: Portanto, e .     Considere tabuleiros, como os de xadrez, mas com dimensões .   De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?    a) b) c)    Precisamos selecionar as linhas e as colunas que colocaremos as torres, em seguida procedemos como no  . Para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, também temos opções. Portanto, a resposta é  Seguindo com a ideia do item a, para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, temos opções. Logo, a resposta é  Observe que para ter solução, é necessário que . Se isto for verdade, procedendo de modo análogo ao item anterior, a resposta é    (OBM 2004 - 2ª fase do nível 3) Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?   Temos maneiras de escolher 6 dentre 12 alunos. Note que para cada 5 alunos fixados, temos 7 times possíveis.     (OBM 2006 - 2ª fase do nível 3) Seja inteiro positivo. De quantas maneiras podemos distribuir brinquedos distintos para crianças de modo que toda criança receba pelo menos um brinquedo?   Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.     (OBM 2013 - 2ª fase do nível 3) Para cobrir um tabuleiro de dimensões , podemos utilizar heptaminós amarelos, de dimensões , e octaminós vermelhos, de dimensões . De quantos modos podemos cobrir completamente o tabuleiro?     Suponha que vamos usar heptaminós e octaminós. Para cobrir tudo, temos .  Observe que é múltiplo de e de . Assim, é múltiplo de 8, pois . Analogamente, é múltiplo de 7, pois . Como e são primos entre si, é múltiplo de e é múltiplo de .  Sendo e , temos . Assim, os valores de são e , que correspondem a sendo e .  Analisando os três casos:  1º: , apenas uma maneira de cobrir, pois todas as peças são octaminós.  2º: , temos no total peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é   3º: , análogo ao primeiro caso, apenas uma maneira.  No total temos maneiras de cobrir completamente o tabuleiro.   (OBM 2015 - 2ª fase do nível 3) Um subconjunto de elementos do conjunto é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que , do terceiro para o segundo é maior que , do quarto para o terceiro é maior que e do quinto para o quarto é maior que . Existem quantos subconjuntos largos?     Sejam os elementos de um conjunto largo. Assim, e , ou seja, .  Desta forma, é um subconjunto de . Reciprocamente, se é um subconjunto de com então é um conjunto largo, pois e .  Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de elementos de , que é     (FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.   Quantas são as possíveis coleções que um jogador pode receber?  A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?    a) b)   item a) O número de possíveis coleções é dado por:   item b) As coleções possíveis são:  1) 4 estrelas e 4 quadrados totalizando 28 pontos:  2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:  3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:  4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:  5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos: Portanto existem coleções possíveis.    (FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há participantes. Na primeira rodada, há jogos. Calcule, em função de , o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.      Para o primeiro jogo, temos um total de maneiras de escolher os participantes. Para o segundo jogo, temos um total de maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com maneiras de escolher os participantes.  Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:     "
 },
 {
-  "id": "p-245",
+  "id": "p-246",
   "level": "2",
-  "url": "section-combinacoes-simples.html#p-245",
+  "url": "section-combinacoes-simples.html#p-246",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -727,7 +736,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.4.8",
   "title": "",
-  "body": " Um Juiz dispõe de 11 mulheres, das quais somente 4 são advogadas.   Para formar um único júri com 9 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?  Para formar um único júri com 6 juradas. Qual é o número de formas de compor o júri, com pelo menos 2 advogadas?    item a) Basta escolher 9 juradas, pois pelo menos duas serão advogadas. Isto pode ser feito de maneiras.  item b) Se escolhermos diretamente 6 juradas, dentre as 11 mulheres disponíveis, estaremos contando os casos em que não temos pelo menos duas advogadas. Precisamos contornar este problema.  Para garantir que estamos contando todos os casos em que pelo menos duas advogadas foram selecionadas, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogadas e 4 não advogadas. 2º vamos contar o número de maneiras de selecionar 3 advogadas e 3 não advogadas. 3º vamos contar o número de maneiras de selecionar 4 advogadas e 2 não advogadas. Como os casos são disjuntos, pelo Princípio aditivo a resposta é   No Sage, esse cálculo pode ser feito da seguinte maneira:    "
+  "body": " Um Juiz dispõe de 11 pessoas, das quais somente 4 são advogados.   Para formar um único júri com 9 jurados. Qual é o número de formas de compor o júri, com pelo menos 2 advogados?  Para formar um único júri com 6 jurados. Qual é o número de formas de compor o júri, com pelo menos 2 advogados?    item a) Basta escolher 9 jurados, pois pelo menos dois serão advogados. Isto pode ser feito de maneiras.  item b) Se escolhermos diretamente 6 jurados, dentre as 11 pessoas disponíveis, estaremos contando os casos em que não temos pelo menos dois advogados. Precisamos contornar este problema.  Para garantir que estamos contando todos os casos em que pelo menos dois advogados foram selecionados, vamos separar em três casos. 1º vamos contar o número de maneiras de selecionar 2 advogados e 4 não advogados. 2º vamos contar o número de maneiras de selecionar 3 advogados e 3 não advogados. 3º vamos contar o número de maneiras de selecionar 4 advogados e 2 não advogados. Como os casos são disjuntos, pelo Princípio Aditivo a resposta é   No Sage, esse cálculo pode ser feito da seguinte maneira:    "
 },
 {
   "id": "example-15",
@@ -739,110 +748,146 @@ var ptx_lunr_docs = [
   "body": " De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?   Para o primeiro grupo, temos um total de maneiras de selecionar as 4 pessoas.  Para o segundo grupo temos um total de maneiras de selecionar as 4 pessoas.  Para o terceiro grupo temos um total de maneiras de selecionar as 4 pessoas.  Como a ordem dos grupos não importa, precisamos dividir por Portanto a resposta é    "
 },
 {
-  "id": "exercise-26",
+  "id": "exercise-27",
   "level": "2",
-  "url": "section-combinacoes-simples.html#exercise-26",
+  "url": "section-combinacoes-simples.html#exercise-27",
   "type": "Exercício",
   "number": "1.4.3.1",
   "title": "",
   "body": " Quantas diagonais possuem um polígono de lados?     Cada vértice pode ser ligado a outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são vértices ficamos com diagonais, mas elas foram contadas duas vezes, portanto a resposta é   "
 },
 {
-  "id": "exercise-27",
-  "level": "2",
-  "url": "section-combinacoes-simples.html#exercise-27",
-  "type": "Exercício",
-  "number": "1.4.3.2",
-  "title": "",
-  "body": " Quantas são as pedras de um dominó comum?   28   As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedras de um dominó comum é   "
-},
-{
   "id": "exercise-28",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-28",
   "type": "Exercício",
-  "number": "1.4.3.3",
+  "number": "1.4.3.2",
   "title": "",
-  "body": " (UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.    55   As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedros desse dominó é   "
+  "body": "Em uma reunião social, cada pessoa cumprimentou todas as outras, havendo ao todo apertos de mão. Quantas pessoas havia na reunião?    Precisamos descobrir o valor de para o qual, Assim, como , precisamos resolver a equação: Ou seja, . As soluções são ou . Como o número de pessoas precisa ser positivo, a resposta é   "
 },
 {
   "id": "exercise-29",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-29",
   "type": "Exercício",
-  "number": "1.4.3.4",
+  "number": "1.4.3.3",
   "title": "",
-  "body": " (UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.    90   Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:   Paralelogramos com prolongamento de segmentos.    Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:   "
+  "body": "Doze atletas disputam uma prova. Serão premiados os cinco primeiros colocados com prêmios diferentes para cada um deles. De quantas maneiras pode ser feita a premiação?    Precisamos contar o números de maneiras de \"separar\" das pessoas, as que ficarão entre os primeiros lugares. Depois disso, como os prêmios são diferentes, precisamos contar o número de maneiras de ordenar essas pessoas. Portanto, a resposta é   "
 },
 {
   "id": "exercise-30",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-30",
   "type": "Exercício",
-  "number": "1.4.3.5",
+  "number": "1.4.3.4",
   "title": "",
-  "body": "Seja um polígono convexo de lados, tal que não há três diagonais que se intersectam no mesmo ponto. Qual o número total de pontos de interseções dessas diagonais.    Vamos analisar o que acontece no caso . Num polígono convexo com vértices, do total de segmentos, temos lados e diagonais que se intersectam num único ponto. Perceba que para quaisquer vértices de um polígono de lados teremos um único par de diagonais que se encontram num único ponto.  Quatro vértices do polígono convexo .     Assim, defina uma função que associa cada quádrupla de vértices do polígono ao par de diagonais que se intersectam num único ponto. Observe que, por construção, esta função é sobrejetiva. Ela também é injetiva, pois a única forma dela não ser injetiva seria termos três diagonais que se intersectassem num único ponto, mas por hipótese isto não acontece. Dessa maneira, temos uma bijeção que associa cada vértices de em um ponto de interseção das diagonais, determinado por eles. Aplicando o Princípio da Bijeção ( ), a quantidade de pontos das interseções das diagonais é o mesmo que o número de maneiras de escolher vértices em um polígono com vértices, e este número é dado por .  "
+  "body": "Dentre números positivos e números negativos, de quantos modos podemos escolher números cujo produto seja positivo?  255.   Para que o produto de números seja positivo, precisamos que sejam números positivos, ou números negativos, ou positivos e negativos. O total de maneiras de fazer essas escolhas é dado por   "
 },
 {
   "id": "exercise-31",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-31",
   "type": "Exercício",
-  "number": "1.4.3.6",
+  "number": "1.4.3.5",
   "title": "",
-  "body": " (PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?     Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é   "
+  "body": "Dez amigos pretendiam viajar de férias, mas apenas dispõem de um automóvel de cinco lugares. Chegaram a um acordo de sortear os cinco que iriam de carro, enquanto os demais iriam de ônibus. Quantos grupos distintos podem ser formados para ocuparem o carro, admitindo-se que:  qualquer uma das dez pessoas pode dirigir.  apenas 3 pessos possuem habilitação.          item a) Basta escolher as pessoas que irão de carro, as demais irão de ônibus. A resposta é    item b) Neste caso, podemos escolher as pessoas que irão no carro das seguintes maneiras:  1 pessoa com habilitação e 4 sem habilitação, ou  2 pessoas com habilitação e 3 sem habilitação, ou  3 pessoas com habilitação e 2 sem habilitação.  Isto pode ser contato da seguinte forma:   "
 },
 {
   "id": "exercise-32",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-32",
   "type": "Exercício",
-  "number": "1.4.3.7",
+  "number": "1.4.3.6",
   "title": "",
-  "body": " (UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.   8   Seja a quantidade de pessoas na reunião. No primeiro caso temos modos de escolher a comissão. No segundo caso temos modos de escolher a comissão. Como a primeira alternativa oferece possibilidades de escolha a mais que a segunda, temos Logo e Observe que no lado esquerdo da equação temos o produto de três números naturais consecutivos, e do outro lado, temos o número . Fatorando e reescrevendo como produto de três números naturais consecutivos obtemos: Portanto, e .  "
+  "body": " Quantas são as pedras de um dominó comum?   28   As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedras de um dominó comum é   "
 },
 {
   "id": "exercise-33",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-33",
   "type": "Exercício",
-  "number": "1.4.3.8",
+  "number": "1.4.3.7",
   "title": "",
-  "body": " Considere tabuleiros, como os de xadrez, mas com dimensões .   De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?    a) b) c)    Precisamos selecionar as linhas e as colunas que colocaremos as torres, em seguida procedemos como no  . Para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, também temos opções. Portanto, a resposta é  Seguindo com a ideia do item a, para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, temos opções. Logo, a resposta é  Observe que para ter solução, é necessário que . Se isto for verdade, procedendo de modo análogo ao item anterior, a resposta é   "
+  "body": " (UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.    55   As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos modos de escolher os números. Portanto o número de pedros desse dominó é   "
 },
 {
   "id": "exercise-34",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-34",
   "type": "Exercício",
-  "number": "1.4.3.9",
+  "number": "1.4.3.8",
   "title": "",
-  "body": "(OBM 2004 - 2ª fase do nível 3) Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?   Temos maneiras de escolher 6 dentre 12 alunos. Note que para cada 5 alunos fixados, temos 7 times possíveis.    "
+  "body": " (UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.    90   Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:   Paralelogramos com prolongamento de segmentos.    Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:   "
 },
 {
   "id": "exercise-35",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-35",
   "type": "Exercício",
-  "number": "1.4.3.10",
+  "number": "1.4.3.9",
   "title": "",
-  "body": "(OBM 2006 - 2ª fase do nível 3) Seja inteiro positivo. De quantas maneiras podemos distribuir brinquedos distintos para crianças de modo que toda criança receba pelo menos um brinquedo?   Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.    "
+  "body": "Seja um polígono convexo de lados, tal que não há três diagonais que se intersectam no mesmo ponto. Qual o número total de pontos de interseções dessas diagonais.    Vamos analisar o que acontece no caso . Num polígono convexo com vértices, do total de segmentos, temos lados e diagonais que se intersectam num único ponto. Perceba que para quaisquer vértices de um polígono de lados teremos um único par de diagonais que se encontram num único ponto.  Quatro vértices do polígono convexo .     Assim, defina uma função que associa cada quádrupla de vértices do polígono ao par de diagonais que se intersectam num único ponto. Observe que, por construção, esta função é sobrejetiva. Ela também é injetiva, pois a única forma dela não ser injetiva seria termos três diagonais que se intersectassem num único ponto, mas por hipótese isto não acontece. Dessa maneira, temos uma bijeção que associa cada vértices de em um ponto de interseção das diagonais, determinado por eles. Aplicando o Princípio da Bijeção ( ), a quantidade de pontos das interseções das diagonais é o mesmo que o número de maneiras de escolher vértices em um polígono com vértices, e este número é dado por .  "
 },
 {
   "id": "exercise-36",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-36",
   "type": "Exercício",
-  "number": "1.4.3.11",
+  "number": "1.4.3.10",
   "title": "",
-  "body": "(OBM 2013 - 2ª fase do nível 3) Para cobrir um tabuleiro de dimensões , podemos utilizar heptaminós amarelos, de dimensões , e octaminós vermelhos, de dimensões . De quantos modos podemos cobrir completamente o tabuleiro?     Suponha que vamos usar heptaminós e octaminós. Para cobrir tudo, temos .  Observe que é múltiplo de e de . Assim, é múltiplo de 8, pois . Analogamente, é múltiplo de 7, pois . Como e são primos entre si, é múltiplo de e é múltiplo de .  Sendo e , temos . Assim, os valores de são e , que correspondem a sendo e .  Analisando os três casos:  1º: , apenas uma maneira de cobrir, pois todas as peças são octaminós.  2º: , temos no total peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é   3º: , análogo ao primeiro caso, apenas uma maneira.  No total temos maneiras de cobrir completamente o tabuleiro.  "
+  "body": " (PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?     Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é   "
 },
 {
   "id": "exercise-37",
   "level": "2",
   "url": "section-combinacoes-simples.html#exercise-37",
   "type": "Exercício",
+  "number": "1.4.3.11",
+  "title": "",
+  "body": " (UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.   8   Seja a quantidade de pessoas na reunião. No primeiro caso temos modos de escolher a comissão. No segundo caso temos modos de escolher a comissão. Como a primeira alternativa oferece possibilidades de escolha a mais que a segunda, temos Logo e Observe que no lado esquerdo da equação temos o produto de três números naturais consecutivos, e do outro lado, temos o número . Fatorando e reescrevendo como produto de três números naturais consecutivos obtemos: Portanto, e .  "
+},
+{
+  "id": "exercise-38",
+  "level": "2",
+  "url": "section-combinacoes-simples.html#exercise-38",
+  "type": "Exercício",
   "number": "1.4.3.12",
+  "title": "",
+  "body": " Considere tabuleiros, como os de xadrez, mas com dimensões .   De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar 5 torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?  De quantos modos podemos colocar torres iguais em um tabuleiro , de modo que haja uma única em cada linha e em cada coluna?    a) b) c)    Precisamos selecionar as linhas e as colunas que colocaremos as torres, em seguida procedemos como no  . Para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, também temos opções. Portanto, a resposta é  Seguindo com a ideia do item a, para selecionar as linhas que serão utilizadas, temos opções. Para selecionar as colunas que serão utilizadas, temos opções. Logo, a resposta é  Observe que para ter solução, é necessário que . Se isto for verdade, procedendo de modo análogo ao item anterior, a resposta é   "
+},
+{
+  "id": "exercise-39",
+  "level": "2",
+  "url": "section-combinacoes-simples.html#exercise-39",
+  "type": "Exercício",
+  "number": "1.4.3.13",
+  "title": "",
+  "body": "(OBM 2004 - 2ª fase do nível 3) Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?   Temos maneiras de escolher 6 dentre 12 alunos. Note que para cada 5 alunos fixados, temos 7 times possíveis.    "
+},
+{
+  "id": "exercise-40",
+  "level": "2",
+  "url": "section-combinacoes-simples.html#exercise-40",
+  "type": "Exercício",
+  "number": "1.4.3.14",
+  "title": "",
+  "body": "(OBM 2006 - 2ª fase do nível 3) Seja inteiro positivo. De quantas maneiras podemos distribuir brinquedos distintos para crianças de modo que toda criança receba pelo menos um brinquedo?   Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.    "
+},
+{
+  "id": "exercise-41",
+  "level": "2",
+  "url": "section-combinacoes-simples.html#exercise-41",
+  "type": "Exercício",
+  "number": "1.4.3.15",
+  "title": "",
+  "body": "(OBM 2013 - 2ª fase do nível 3) Para cobrir um tabuleiro de dimensões , podemos utilizar heptaminós amarelos, de dimensões , e octaminós vermelhos, de dimensões . De quantos modos podemos cobrir completamente o tabuleiro?     Suponha que vamos usar heptaminós e octaminós. Para cobrir tudo, temos .  Observe que é múltiplo de e de . Assim, é múltiplo de 8, pois . Analogamente, é múltiplo de 7, pois . Como e são primos entre si, é múltiplo de e é múltiplo de .  Sendo e , temos . Assim, os valores de são e , que correspondem a sendo e .  Analisando os três casos:  1º: , apenas uma maneira de cobrir, pois todas as peças são octaminós.  2º: , temos no total peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é   3º: , análogo ao primeiro caso, apenas uma maneira.  No total temos maneiras de cobrir completamente o tabuleiro.  "
+},
+{
+  "id": "exercise-42",
+  "level": "2",
+  "url": "section-combinacoes-simples.html#exercise-42",
+  "type": "Exercício",
+  "number": "1.4.3.16",
   "title": "",
   "body": "(OBM 2015 - 2ª fase do nível 3) Um subconjunto de elementos do conjunto é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que , do terceiro para o segundo é maior que , do quarto para o terceiro é maior que e do quinto para o quarto é maior que . Existem quantos subconjuntos largos?     Sejam os elementos de um conjunto largo. Assim, e , ou seja, .  Desta forma, é um subconjunto de . Reciprocamente, se é um subconjunto de com então é um conjunto largo, pois e .  Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de elementos de , que é   "
 },
@@ -851,7 +896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-combinacoes-simples.html#quest-fuvest2020comb",
   "type": "Exercício",
-  "number": "1.4.3.13",
+  "number": "1.4.3.17",
   "title": "",
   "body": " (FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.   Quantas são as possíveis coleções que um jogador pode receber?  A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?    a) b)   item a) O número de possíveis coleções é dado por:   item b) As coleções possíveis são:  1) 4 estrelas e 4 quadrados totalizando 28 pontos:  2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:  3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:  4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:  5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos: Portanto existem coleções possíveis.  "
 },
@@ -860,7 +905,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-combinacoes-simples.html#quest-fuvest2018comb",
   "type": "Exercício",
-  "number": "1.4.3.14",
+  "number": "1.4.3.18",
   "title": "",
   "body": " (FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há participantes. Na primeira rodada, há jogos. Calcule, em função de , o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.      Para o primeiro jogo, temos um total de maneiras de escolher os participantes. Para o segundo jogo, temos um total de maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com maneiras de escolher os participantes.  Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:   "
 },
@@ -937,36 +982,36 @@ var ptx_lunr_docs = [
   "body": " Quantas rodas de ciranda podem ser formadas com 8 pessoas, se duas determinadas pessoas não podem ficar juntas?   Calculamos o número de permutações circulares com 8 elementos, . Agora, subtraímos desse total, o número de permutações de 8 elementos, na qual, dois deles estão juntos.   Duas formas de organizar os elementos 1 e 2.    O que dá um total de permutações circulares, pois temos duas formas de permutar os dois elementos que estão juntos, depois disso, olhamos para a roda de ciranda como se tivesse apenas 7 elementos. Portanto a resposta é    "
 },
 {
-  "id": "exercise-40",
+  "id": "exercise-45",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#exercise-40",
+  "url": "section-permutacoes-circulares.html#exercise-45",
   "type": "Exercício",
   "number": "1.5.1",
   "title": "",
   "body": " De quantos modos 7 meninos e 7 meninas podem formar uma roda de ciranda de modo que pessoas de mesmo sexo não fiquem juntas?   3628800  "
 },
 {
-  "id": "exercise-41",
+  "id": "exercise-46",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#exercise-41",
+  "url": "section-permutacoes-circulares.html#exercise-46",
   "type": "Exercício",
   "number": "1.5.2",
   "title": "",
   "body": " De quantos modos 18 casais podem formar uma roda de ciranda de modo que cada homem permaneça ao lado de sua mulher?   93241325150797824000  "
 },
 {
-  "id": "exercise-42",
+  "id": "exercise-47",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#exercise-42",
+  "url": "section-permutacoes-circulares.html#exercise-47",
   "type": "Exercício",
   "number": "1.5.3",
   "title": "",
   "body": "(Fundação CEFETMINAS - Prefeitura de Barbacena - Enfermeiro - 2016). Em uma empresa, as reuniões ocorrem em uma sala de mesa circular, segundo os seguintes critérios:  O presidente e o vice-presidente sempre se sentam um ao lado do outro.  Os três gerentes sempre se sentam um ao lado do outro.  Considerando-se uma reunião com 9 pessoas, o número de maneiras que elas poderão ocupar os assentos de tal forma que esses critérios sejam cumpridos é    "
 },
 {
-  "id": "exercise-43",
+  "id": "exercise-48",
   "level": "2",
-  "url": "section-permutacoes-circulares.html#exercise-43",
+  "url": "section-permutacoes-circulares.html#exercise-48",
   "type": "Exercício",
   "number": "1.5.4",
   "title": "",
@@ -1054,144 +1099,144 @@ var ptx_lunr_docs = [
   "body": " De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?   Use os números de 1 à 12 para representar as pessoas. Desta forma, a posição de cada permutação dos dígitos: serve para representar quem está no grupo 1, no grupo 2 e no grupo 3, respectivamente. Assim pela ordem que está escrito, os números que estão no grupo 1 são: , no grupo 2 são e no grupo 3 são .  Desta forma, usando permutação com repetição para , o número de maneiras de dividir 12 pessoas em três grupos, levando em consideração a ordem dos grupos é  Como a ordem dos grupos não é importante, estamos contando a mais. Assim, precisamos dividir tudo pelo número de maneiras de ordenar os 3 grupos que é 3!. Portanto a resposta é    "
 },
 {
-  "id": "exercise-44",
+  "id": "exercise-49",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-44",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-49",
   "type": "Exercício",
   "number": "1.6.1",
   "title": "",
   "body": "Um byte, em um computador, é uma sequência de 8 algarismos formada apenas com e . Determine quantos bytes existem formados com três e cinco .   "
 },
 {
-  "id": "exercise-45",
+  "id": "exercise-50",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-45",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-50",
   "type": "Exercício",
   "number": "1.6.2",
   "title": "",
   "body": "Quantos são os anagramas da palavra:  PRECEDENTE;  PROPONENTE;  FOTOSSINTETIZANTES.             .   "
 },
 {
-  "id": "exercise-46",
+  "id": "exercise-51",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-46",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-51",
   "type": "Exercício",
   "number": "1.6.3",
   "title": "",
   "body": "Refaça o exercício anterior com as seguintes condições:  A palavra começa com vogal;  A palavra começa e termina com consoante.   "
 },
 {
-  "id": "exercise-47",
+  "id": "exercise-52",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-47",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-52",
   "type": "Exercício",
   "number": "1.6.4",
   "title": "",
   "body": " Quantos números de 8 dígitos, maiores que 50.000.000, podem ser formados usando apenas os algarismos 1, 2, 5, 5, 5, 7, 7, 7?   840  "
 },
 {
-  "id": "exercise-48",
+  "id": "exercise-53",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-48",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-53",
   "type": "Exercício",
   "number": "1.6.5",
   "title": "",
   "body": " De quantos modos podemos colocar em fila 6 letras A, 6 letras B, 5 letras C e 4 letras D, de modo que não haja duas letras C juntas?   10406235840  "
 },
 {
-  "id": "exercise-49",
+  "id": "exercise-54",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-49",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-54",
   "type": "Exercício",
   "number": "1.6.6",
   "title": "",
   "body": " De quantos modos podem ser pintados 15 objetos iguais usando 6 cores diferentes?   15504  "
 },
 {
-  "id": "exercise-50",
+  "id": "exercise-55",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-50",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-55",
   "type": "Exercício",
   "number": "1.6.7",
   "title": "",
   "body": " Quantas são as opções que temos de colocar 10 bolinhas e 7 barras em sequência?   19448  "
 },
 {
-  "id": "exercise-51",
+  "id": "exercise-56",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-51",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-56",
   "type": "Exercício",
   "number": "1.6.8",
   "title": "",
   "body": " (OPEMAT 2016 - nível 2) A figura abaixo representa o mapa de uma cidade. Cada aresta representa uma rua e cada vértice representa um cruzamento. Quantos são os trajetos de comprimento mínimo ligando o ponto A ao ponto B?    1743  "
 },
 {
-  "id": "exercise-52",
+  "id": "exercise-57",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-52",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-57",
   "type": "Exercício",
   "number": "1.6.9",
   "title": "",
   "body": "(OBM 2011 - 2ª fase do nível 3) Uma sequência de letras, com ou sem sentido, é dita alternada quando é formada alternadamente por consoantes e vogais. Por exemplo, EZEQAF, MATEMÁTICA, LEGAL e ANIMADA são palavras alternadas, mas DSOIUF, DINHEIRO e ORDINÁRIO não são. Quantos anagramas da palavra FELICIDADE (incluindo a palavra FELICIDADE) são sequências alternadas?   3600   As consoantes de FELICIDADE são F, L, C, D, D e as vogais são E, I, I, A, E. Como são 5 vogais e 5 consoantes, cada anagrama alternado terá cada consoante em posição ímpar ou em posição par. Organizando as consoantes em posições ímpares, ficamos com a seguinte organização   Na qual, os espaços serão ocupados por vogais. Assim, temos um total de maneiras de ordenar essas consoantes. Para ordenar as vogais, temos maneiras, pois temos no total 5 letras, sendo duas letras E, duas letras I e uma letra A.  Como podemos alterar as vogais com as consoantes, o número de anagramas alternados de FELICIDADE é   "
 },
 {
-  "id": "exercise-53",
+  "id": "exercise-58",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-53",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-58",
   "type": "Exercício",
   "number": "1.6.10",
   "title": "",
   "body": " Um bar vende três tipos de cerveja: Antártica, Brahma e Devassa. De quantos modos uma pessoa pode comprar 7 garrafas de cerveja?   36   O número de soluções deste problema é o mesmo que o número de solução inteiras, não negativas da equação: Portanto a resposta é   "
 },
 {
-  "id": "exercise-54",
+  "id": "exercise-59",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-54",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-59",
   "type": "Exercício",
   "number": "1.6.11",
   "title": "",
   "body": " De quantos formas 12 estudantes podem ser divididos e colocados em 3 salas, sendo 4 na primeira, 5 na segunda e 3 na terceira?   27720   Pense na seguinte lista: Para cada permutação da lista , podemos distribuir os estudantes nas salas da seguinte maneira. Use a posição do número para indicar a pessoa e o número para indicar a sala. Desta forma, a resposta é:   Por exemplo, a permutação identidade, que é a apresentada na lista indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.  "
 },
 {
-  "id": "exercise-55",
+  "id": "exercise-60",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-55",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-60",
   "type": "Exercício",
   "number": "1.6.12",
   "title": "",
   "body": " De quantos modos 8 pessoas podem ocupar duas salas distintas, devendo cada sala conter pelo menos 3 pessoas?   182   Observe que temos 3 casos para distribuir as pessoas nas duas salas.  1º caso: 3 pessoas na sala 1 e 5 pessoas na sala 2. Neste caso temos um total de soluções.  2º caso: 4 pessoas na sala 1 e 4 pessoas na sala 2. Neste caso temos um total de soluções.  3º caso: 5 pessoas na sala 1 e 3 pessoas na sala 2. Neste caso temos um total de soluções.  Portanto a resposta é   "
 },
 {
-  "id": "exercise-56",
+  "id": "exercise-61",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-56",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-61",
   "type": "Exercício",
   "number": "1.6.13",
   "title": "",
   "body": " Um baralho tem 52 cartas. De quantos modos podemos distribuí-las entre 4 jogadores, de modo que cada um receba 13 cartas?   53644737765488792839237440000   Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.  A justificativa é a seguinte. Para cada elemento da lista permutada, use a posição do elemento para pegar a carta que deve estar em uma pilha ou ordenada, e use o número para indicar a pessoa, sendo o número 1 indicando a primeira pessoa e assim por diante. A resposta é:   "
 },
 {
-  "id": "exercise-57",
+  "id": "exercise-62",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-57",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-62",
   "type": "Exercício",
   "number": "1.6.14",
   "title": "",
   "body": " No mapa abaixo estão esboçadas as ruas de um bairro. As ruas verticais são paralelas entre si e é igual a distância entre ruas consecutivas; o mesmo acontece com as ruas horizontais. Calcule o número de formas de sair de A e chegar até B percorrendo a menor distância possível.    735   Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.   Mapa da solução.    1º tipo: De A para X e de X para B. Nesse caso temos caminhos de A para X e caminhos de X para B. No total temos caminhos do 1º tipo.  2º tipo: De A para Y e de Y para B. Nesse caso temos caminhos de A para Y e caminhos de Y para B. No total temos caminhos do 2º tipo.  Como os caminhos do 1º e 2º tipos são disjuntos a resposta é   "
 },
 {
-  "id": "exercise-58",
+  "id": "exercise-63",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-58",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-63",
   "type": "Exercício",
   "number": "1.6.15",
   "title": "",
   "body": " João vai comprar algo que custa centavos em uma máquina automática e dispõe de moedas de centavos do mesmo modelo e moedas de centavos também do mesmo modelo. Assim, sendo o número de diferentes sequências de moedas que ele pode inserir de modo a totalizar os 55 centavos, determine o valor de .     João pode escolher os valores das moedas de maneiras, em cada caso, existem várias maneiras de ordenar as moedas escolhida:  moedas de centavos e de centavos, totalizando ordens possíveis;  moedas de centavos e de centavos, totalizando ordens possíveis;  moedas de centavos e de centavos, totalizando ordens possíveis;  moedas de centavos e de centavos, totalizando ordens possíveis.  Portanto, a resposta é   "
 },
 {
-  "id": "exercise-59",
+  "id": "exercise-64",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-59",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-64",
   "type": "Exercício",
   "number": "1.6.16",
   "title": "(Caminhos de Delannoy).",
@@ -1288,54 +1333,54 @@ var ptx_lunr_docs = [
   "body": "(VESTIBULAR UFPE – UFRPE \/ 1998 2ª ETAPA) Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).   Uma das peças com os valores 1, 2 e 4.    Quantas peças há no trominó, supondo n = 6?   Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:   Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma.  Dois lados possuem um valor e o terceiro lado possui um valor diferente. Cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas como temos duas entradas iguais, precisamos dividir por 2.  Cada lado possui um valor diferente. Cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2.   Inicialmente, vamos contar como se em cada tipo, as peças só pudessem ser formadas de uma forma, depois vamos acrescentar a quantidade de peças do terceiro tipo, que fica faltando nessa contagem inicial.  Temos que escolher os valores de cada um dos 3 lados de cada peça do trominó. Como os valores vão de 1 até 6 e são 3 lados, o número de peças do trominó (sem contar as permutações circulares) para é o número de soluções inteiras não negativas da equação: que é dado por .  Agora precisamos contar as peças, do terceiro tipo, que estão faltando. Como os três valores são diferentes, temos 6 opções de valores para escolher 3 e para cada escolha, temos duas formas de organizar na peça do trominó, portanto o número de peças desse tipo é: Já que, a metade das peças do terceiro tipo foram contadas uma vez pela combinação completa, , a quantidade total de peças é:   "
 },
 {
-  "id": "exercise-60",
+  "id": "exercise-65",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-60",
+  "url": "section-combinacoes-completas.html#exercise-65",
   "type": "Exercício",
   "number": "1.7.1",
   "title": "",
   "body": " Quantas são as soluções inteiras positivas de ?    "
 },
 {
-  "id": "exercise-61",
+  "id": "exercise-66",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-61",
+  "url": "section-combinacoes-completas.html#exercise-66",
   "type": "Exercício",
   "number": "1.7.2",
   "title": "",
   "body": " Quantas são as peças de um dominó comum?   28   Sejam variáveis. Cada solução não negativa da equação: representa uma pedra do dominó. Portanto, o número de pedras do dominó é  "
 },
 {
-  "id": "exercise-62",
+  "id": "exercise-67",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-62",
+  "url": "section-combinacoes-completas.html#exercise-67",
   "type": "Exercício",
   "number": "1.7.3",
   "title": "",
   "body": " (UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.    55   Sejam variáveis. Cada solução não negativa da equação: representa uma pedra do dominó. Portanto, o número de pedras do dominó é  "
 },
 {
-  "id": "exercise-63",
+  "id": "exercise-68",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-63",
+  "url": "section-combinacoes-completas.html#exercise-68",
   "type": "Exercício",
   "number": "1.7.4",
   "title": "",
   "body": " Quantas são as soluções inteiras não-negativas de nas quais ?   200  "
 },
 {
-  "id": "exercise-64",
+  "id": "exercise-69",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-64",
+  "url": "section-combinacoes-completas.html#exercise-69",
   "type": "Exercício",
   "number": "1.7.5",
   "title": "",
   "body": " Quantos inteiros entre e , inclusive, possui a propriedade: \"cada dígito é menor ou igual ao seu sucessor\"?   24309  "
 },
 {
-  "id": "exercise-65",
+  "id": "exercise-70",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-65",
+  "url": "section-combinacoes-completas.html#exercise-70",
   "type": "Exercício",
   "number": "1.7.6",
   "title": "",
@@ -1405,54 +1450,54 @@ var ptx_lunr_docs = [
   "body": " Determine o número de elementos dos conjuntos:        item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:   item c) Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:   Clique em \"Evaluate (Sage)\" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).    "
 },
 {
-  "id": "exercise-66",
+  "id": "exercise-71",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-66",
+  "url": "section-inclusao-exclusao.html#exercise-71",
   "type": "Exercício",
   "number": "2.1.3.1",
   "title": "",
   "body": " (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28  "
 },
 {
-  "id": "exercise-67",
+  "id": "exercise-72",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-67",
+  "url": "section-inclusao-exclusao.html#exercise-72",
   "type": "Exercício",
   "number": "2.1.3.2",
   "title": "",
   "body": " Determine o número de permutações de nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?   27240  "
 },
 {
-  "id": "exercise-68",
+  "id": "exercise-73",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-68",
+  "url": "section-inclusao-exclusao.html#exercise-73",
   "type": "Exercício",
   "number": "2.1.3.3",
   "title": "",
   "body": " Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Pincípio da Inclusão-Exclusão sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é   "
 },
 {
-  "id": "exercise-69",
+  "id": "exercise-74",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-69",
+  "url": "section-inclusao-exclusao.html#exercise-74",
   "type": "Exercício",
   "number": "2.1.3.4",
   "title": "",
   "body": " Considere o conjunto , determine o número de funções bijetoras , nas quais , para .   44  "
 },
 {
-  "id": "exercise-70",
+  "id": "exercise-75",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-70",
+  "url": "section-inclusao-exclusao.html#exercise-75",
   "type": "Exercício",
   "number": "2.1.3.5",
   "title": "",
   "body": " (IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.   2088960   Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada . Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos formas distintas de organizarmos esses carros.  Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.  Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos formas de escolhermos essas 2 equipes e podemos colocá-las de maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado e das demais equipes .  Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos   "
 },
 {
-  "id": "exercise-71",
+  "id": "exercise-76",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-71",
+  "url": "section-inclusao-exclusao.html#exercise-76",
   "type": "Exercício",
   "number": "2.1.3.6",
   "title": "",
@@ -1621,36 +1666,36 @@ var ptx_lunr_docs = [
   "body": "Calculando o número de permutações caóticas no Sage, usando o :  "
 },
 {
-  "id": "exercise-72",
+  "id": "exercise-77",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-72",
+  "url": "section-permutacao-caotica.html#exercise-77",
   "type": "Exercício",
   "number": "2.2.5.1",
   "title": "",
   "body": " Suponha que . Quantas são as funções para as quais a equação não possui solução? Quantas são as funções  bijetoras para as quais a equação não possui solução?   a) , b) .    item a) A imagem de cada elemento do domínio pode ser escolhida de maneiras, assim, o total é .   item b) Como é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem funções.  "
 },
 {
-  "id": "exercise-73",
+  "id": "exercise-78",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-73",
+  "url": "section-permutacao-caotica.html#exercise-78",
   "type": "Exercício",
   "number": "2.2.5.2",
   "title": "",
   "body": " Quantas são as permutações de que têm exatamente 5 elementos no seu lugar primitivo?   1468368   Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de maneiras. Logo, o total é   "
 },
 {
-  "id": "exercise-74",
+  "id": "exercise-79",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-74",
+  "url": "section-permutacao-caotica.html#exercise-79",
   "type": "Exercício",
   "number": "2.2.5.3",
   "title": "",
   "body": " Determine o número de permutações caóticas de nas quais os números ocupam, em alguma ordem, os cinco primeiro lugares.   81576   Podemos escolher a posição dos 5 primeiros elementos de maneiras e a posição dos 7 últimos elementos de maneiras. Portanto, o total é   "
 },
 {
-  "id": "exercise-75",
+  "id": "exercise-80",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-75",
+  "url": "section-permutacao-caotica.html#exercise-80",
   "type": "Exercício",
   "number": "2.2.5.4",
   "title": "",
@@ -1810,9 +1855,9 @@ var ptx_lunr_docs = [
   "body": " A resposta do junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.  Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.     "
 },
 {
-  "id": "p-597",
+  "id": "p-610",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#p-597",
+  "url": "section-permutacao-caotica-repeticoes.html#p-610",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -1864,9 +1909,9 @@ var ptx_lunr_docs = [
   "body": " A implementação da função DR (derangement with repetition) usando o . Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.   "
 },
 {
-  "id": "exercise-76",
+  "id": "exercise-81",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#exercise-76",
+  "url": "section-permutacao-caotica-repeticoes.html#exercise-81",
   "type": "Exercício",
   "number": "2.3.3.1",
   "title": "",
@@ -2035,72 +2080,72 @@ var ptx_lunr_docs = [
   "body": " Lucas recebeu uma proposta para trabalhar em uma multinacional na China. A empresa lhe prometeu duas férias por ano, sempre nos mesmos meses, com passagem paga pela empresa, para ela poder visitar seus familiares no Brasil. A única restrição que a empresa fez foi que houvesse um intervalo de pelo menos 4 meses entre as duas férias. Quantas são as formas de Lucas escolher os meses das suas férias?   Como a escolha dos meses será mantida pelos anos seguintes, aplicando a Generalização do 2º Lema de Kaplansky obtemos:    "
 },
 {
-  "id": "exercise-77",
+  "id": "exercise-82",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-77",
+  "url": "section-lemas-kaplansky.html#exercise-82",
   "type": "Exercício",
   "number": "2.4.5.1",
   "title": "",
   "body": " Um estacionamento tem 10 vagas, uma ao lado da outra, inicialmente todas livres. Um carro preto, um carro rosa e um carro branco chegam a esse estacionamento. De quantas maneiras diferentes esses carros podem ocupar três vagas de forma que haja pelo menos uma vaga livre entre eles?   336   As vagas que serão ocupadas podem ser escolhidas de maneiras, e a ordem dos carros pode ser escolhida de maneiras. Logo, o número de soluções é   "
 },
 {
-  "id": "exercise-78",
+  "id": "exercise-83",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-78",
+  "url": "section-lemas-kaplansky.html#exercise-83",
   "type": "Exercício",
   "number": "2.4.5.2",
   "title": "",
   "body": " De quantos modos podemos formar uma sequência de 9 elementos iguais a 1 e 6 elementos iguais a 0 se dois elementos iguais a 0 não podem ser adjacentes?   210   No total temos elementos e seis deles não podem ficar lado a lado. Portanto, o número de soluções é   "
 },
 {
-  "id": "exercise-79",
+  "id": "exercise-84",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-79",
+  "url": "section-lemas-kaplansky.html#exercise-84",
   "type": "Exercício",
   "number": "2.4.5.3",
   "title": "",
   "body": " (ITA) 12 cavaleiros estão sentados em torno de uma mesa redonda. Cada um dos 12 cavaleiros considera seus dois vizinhos como rivais. Deseja-se formar um grupo de 5 cavaleiros para libertar uma princesa. Nesse grupo não poderá haver cavaleiros rivais. Determine de quantas maneiras é possível escolher esse grupo.   36   Vamos usar o 2º Lema de Kaplansky. De 12 pessoas em disposição circular, precisamos contar o número de maneiras de escolher 5 dessas pessoas, sem selecionar duas adjacentes. Logo, o número de soluções é   "
 },
 {
-  "id": "exercise-80",
+  "id": "exercise-85",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-80",
+  "url": "section-lemas-kaplansky.html#exercise-85",
   "type": "Exercício",
   "number": "2.4.5.4",
   "title": "",
   "body": " 8 pessoas devem se sentar em 25 cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se não deve haver ocupação simultânea de duas cadeiras adjacentes?   1441440000   Primeiro, contamos o número de maneiras de escolher as 8 cadeiras que serão usadas, dentre as 25 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 8 pessoas que irão sentar nas cadeiras. Isto pode ser feito de maneiras  "
 },
 {
-  "id": "exercise-81",
+  "id": "exercise-86",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-81",
+  "url": "section-lemas-kaplansky.html#exercise-86",
   "type": "Exercício",
   "number": "2.4.5.5",
   "title": "",
   "body": "(OBM 2010 - 2ª fase do nível 3) Diamantino gosta de jogar futebol, mas se jogar dois dias seguidos ele fica com dores musculares. De quantas maneiras Diamantino pode escolher em quais de dez dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   144   O número de maneiras de Diamantino escolher os dias que quer jogar futebol, sem ter dores musculares é   "
 },
 {
-  "id": "exercise-82",
+  "id": "exercise-87",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-82",
+  "url": "section-lemas-kaplansky.html#exercise-87",
   "type": "Exercício",
   "number": "2.4.5.6",
   "title": "",
   "body": " Irving gosta de jogar futebol, mas precisa ficar dois dias consecutivos sem jogar para evitar dores musculares. De quantas maneiras Irving pode escolher em quais de 20 dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   2737   O número de formas de Irving jogar futebol sem ter dores musculares é    "
 },
 {
-  "id": "exercise-83",
+  "id": "exercise-88",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-83",
+  "url": "section-lemas-kaplansky.html#exercise-88",
   "type": "Exercício",
   "number": "2.4.5.7",
   "title": "",
   "body": " Um determinado atleta quer fazer treinos HIIT para se preparar fisicamente para um campeonato. Sabendo que faltam 28 dias para o campeonato, que ele quer pelo menos 3 dias de intervalo entre dois treinos HIIT e que ele pode escolher 3 tipos desses treinos. De quantas maneiras esse atleta pode escolher fazer os treinos HIIT, se ele quer treinar pelo menos 5 vezes?     O atleta pode escolher treinar ou vezes, pois . Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é  No Sage o cálculo pode ser feito da seguinte maneira:   "
 },
 {
-  "id": "exercise-84",
+  "id": "exercise-89",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-84",
+  "url": "section-lemas-kaplansky.html#exercise-89",
   "type": "Exercício",
   "number": "2.4.5.8",
   "title": "",
@@ -2215,54 +2260,54 @@ var ptx_lunr_docs = [
   "body": " Assuma que em um grupo de 6 pessoas, cada par de pessoas consistem em dois amigos ou dois inimigos. Mostre que ou existem 3 amigos mútuos ou 3 inimigos mútuos.   Seja uma das 6 pessoas. Sejam e o conjunto com as outras 5 pessoas.  Pela 2ª versão do princípio da casa dos pombos, dividindo as 5 pessoas de nos 2 conjuntos de , um desses conjuntos possui pelo menos elementos. Então, ou existem 3 ou mais que são amigos de , ou 3 ou mais que são inimigos de .  Suponha sem perda de generalidade que e sejam amigos de . Se quaisquer duas destas 3 pessoas são amigas, então estas duas pessoas e formam um conjunto de 3 amigos mútuos.   "
 },
 {
-  "id": "exercise-85",
+  "id": "exercise-90",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-85",
+  "url": "section-casa-pombos.html#exercise-90",
   "type": "Exercício",
   "number": "2.5.4.1",
   "title": "",
   "body": " Qual é o número mínimo de pessoas que deve haver em um grupo para que possamos garantir que nele haja pelo menos 5 pessoas nascidas no mesmo mês?   49   Pelo basta encontrar o menor número inteiro , tal que . Como , o valor de é 5.  "
 },
 {
-  "id": "exercise-86",
+  "id": "exercise-91",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-86",
+  "url": "section-casa-pombos.html#exercise-91",
   "type": "Exercício",
   "number": "2.5.4.2",
   "title": "",
   "body": " Escolhem-se ao acaso 5 pontos sobre a superfície de um quadrado de lado 2. Mostre que pelo menos um dos segmentos que eles determinam tem comprimento menor ou igual a .   Dividindo o quadrado de lado 2 em 4 quadrados de lado 1 ficamos com quatro regiões, nas quais, a maior distância possível entre dois pontos é determinado pelas diagonais, cujo comprimento mede . Se os segmentos determinados pelos quatro primeiros pontos ainda não satisfazem a condição do enunciado, necessariamente, ao escolher o quinto ponto, ele ficará em um dos quatro quadrados que já possuem um ponto cada um. Portando dentre todos os segmentos determinados pelos cinco pontos, a menor distância será menor ou igual a .  "
 },
 {
-  "id": "exercise-87",
+  "id": "exercise-92",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-87",
+  "url": "section-casa-pombos.html#exercise-92",
   "type": "Exercício",
   "number": "2.5.4.3",
   "title": "",
   "body": " (IMO 1964) 17 pessoas se comunicam por cartas. Em todas a cartas, eles discutem apenas um dos três tópicos possíveis. Cada par de pessoas discute apenas um tópico. Mostre que há pelo menos três pessoas que discutiram apenas um tópico.   Selecione uma pessoa qualquer e chame de . Como se comunica com 16 outras pessoas e são apenas 3 tópicos possíveis, pelo  deve discutir sobre um mesmo tópico com pelo menos 6 pessoas, pois  Suponha que discute o tópico I com 6 pessoas. Se qualquer uma dessas seis pessoas discutir com outra dessas 6 pessoas sobre o tópico I, então há 3 escritores correspondentes no tópico I. (O triângulo verde da representa as 3 pessoas que discutem o mesmo tôpico.)   3 pessoas que discutem o tópico 1.    Portanto, suponha que dentre essas seis pessoas apenas os tópicos II e III são discutidos. Se for um desses seis, então pelo  deve discutir com pelo menos 3 dos outros 5 um dos dois tópicos, digamos II, pois  Ainda, existem duas possibilidades para essas três últimas pessoas.  3 pessoas que discutem o tópico II ou o tópico III.   Se alguém escreve para outra pessoa sobre o tópico II, então encontramos três pessoas discutindo sobre o tópico II. Caso contrário, se nenhum dos três escreve para outro sobre o tópico II, então todos os três devem escrever um para o outro sobre o tópico III. Isso prova o afirmação.  "
 },
 {
-  "id": "exercise-88",
+  "id": "exercise-93",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-88",
+  "url": "section-casa-pombos.html#exercise-93",
   "type": "Exercício",
   "number": "2.5.4.4",
   "title": "",
   "body": " (IMO 1985) Seja um conjunto com 1985 inteiros positivos, de modo que nenhum possui um divisor primo maior que 23. Mostre que em existem 4 inteiros, cujo produto é o quarta potência de um inteiro.   Existem nove primos menores ou iguais a : e . Considere uma lista, com entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número estiver entre os 1985 números, a lista dele será: Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.  Para cada uma das 1985 listas , considere uma nova lista , na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:  Assim, cada nova lista estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas , haverão duas idênticas. Considere quaiquer 513 listas , separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.  Para cada um dos 737 pares, considere uma lista formada pela soma . Observe que cada entrada das 737 listas é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas serão idênticas. Digamos que e , então o número é a quarta potência de um inteiro.  "
 },
 {
-  "id": "exercise-89",
+  "id": "exercise-94",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-89",
+  "url": "section-casa-pombos.html#exercise-94",
   "type": "Exercício",
   "number": "2.5.4.5",
   "title": "",
   "body": " (Vietnam 2007) Dado um polígono regular com lados, encontre o menor inteiro positivo tal que entre quaisquer vértices do polígono existam com a propriedade: o quadrilátero convexo que eles formam compartilha lados com o polígono.   Numere os vértices do polígono de a . O que queremos descobir é o menor valor de , tal que, qualquer conjunto com vértices possua pelo menos vértices consecutivos.  Considere o conjunto das -tuplas de vértices consecutivos: Cada vértice do polígono está presente em 4 elementos do conjunto . Desse modo, cada vértice escolhido no polígono correspondem a 4 elementos de . Como possui elementos, escreva uma lista com os números de todas as -tuplas de forma consecutiva, formando uma lista com números. Na lista podemos escolher até números, de forma que não tenham elementos consecutivos. Então, como cada vértice do polígono correspondem a elementos de , se , teremos a condição satisfeita: qualquer conjunto de vértices possui pelo menos vértices consecutivos. Fazendo as contas,   Agora precisamos monstrar que o menor valor de é . Vamos escolher vértices de forma que não tenham vértices consecutivos. Considere todos os vértices do polígono, menos o vértice e os vértices que são múltiplos de . Como , temos múltiplos de , dessa forma temos vértices sem que deles sejam consecutivos.  "
 },
 {
-  "id": "exercise-90",
+  "id": "exercise-95",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-90",
+  "url": "section-casa-pombos.html#exercise-95",
   "type": "Exercício",
   "number": "2.5.4.6",
   "title": "",
@@ -2422,18 +2467,18 @@ var ptx_lunr_docs = [
   "body": " Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.   "
 },
 {
-  "id": "exercise-91",
+  "id": "exercise-96",
   "level": "2",
-  "url": "section-13.html#exercise-91",
+  "url": "section-13.html#exercise-96",
   "type": "Exercício",
   "number": "2.6.4.1",
   "title": "",
   "body": "Existem valores de e tais que a quantidade de caminhos bons é igual ao número de caminhos ruins? "
 },
 {
-  "id": "exercise-92",
+  "id": "exercise-97",
   "level": "2",
-  "url": "section-13.html#exercise-92",
+  "url": "section-13.html#exercise-97",
   "type": "Exercício",
   "number": "2.6.4.2",
   "title": "",
@@ -2467,18 +2512,18 @@ var ptx_lunr_docs = [
   "body": "Em uma eleição há dois candidatos A e B. Se o candidato teve votos e o candidato teve votos com Qual a probabilidade de durante a apuração, cédula a cédula, o candidato sempre esteja à frente, isto é, com mais votos ou empatado, com ? "
 },
 {
-  "id": "exercise-95",
+  "id": "exercise-100",
   "level": "2",
-  "url": "section-13.html#exercise-95",
+  "url": "section-13.html#exercise-100",
   "type": "Exercício",
   "number": "2.6.4.5",
   "title": "",
   "body": "Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :   "
 },
 {
-  "id": "exercise-96",
+  "id": "exercise-101",
   "level": "2",
-  "url": "section-13.html#exercise-96",
+  "url": "section-13.html#exercise-101",
   "type": "Exercício",
   "number": "2.6.4.6",
   "title": "",
@@ -2620,36 +2665,36 @@ var ptx_lunr_docs = [
   "body": "    Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,     "
 },
 {
-  "id": "exercise-97",
+  "id": "exercise-102",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-97",
+  "url": "section-triangulo-pascal.html#exercise-102",
   "type": "Exercício",
   "number": "3.1.1",
   "title": "",
   "body": " Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?    "
 },
 {
-  "id": "exercise-98",
+  "id": "exercise-103",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-98",
+  "url": "section-triangulo-pascal.html#exercise-103",
   "type": "Exercício",
   "number": "3.1.2",
   "title": "",
   "body": " Calcule o valor da soma    746660  "
 },
 {
-  "id": "exercise-99",
+  "id": "exercise-104",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-99",
+  "url": "section-triangulo-pascal.html#exercise-104",
   "type": "Exercício",
   "number": "3.1.3",
   "title": "",
   "body": " Calcule o valor de     "
 },
 {
-  "id": "exercise-100",
+  "id": "exercise-105",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-100",
+  "url": "section-triangulo-pascal.html#exercise-105",
   "type": "Exercício",
   "number": "3.1.4",
   "title": "",
@@ -2746,45 +2791,45 @@ var ptx_lunr_docs = [
   "body": "      e Portanto,    "
 },
 {
-  "id": "exercise-101",
+  "id": "exercise-106",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-101",
+  "url": "section-binomio-newton.html#exercise-106",
   "type": "Exercício",
   "number": "3.2.1",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    6435  "
 },
 {
-  "id": "exercise-102",
+  "id": "exercise-107",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-102",
+  "url": "section-binomio-newton.html#exercise-107",
   "type": "Exercício",
   "number": "3.2.2",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    -33   O termo geral é dado por Portanto, queremos encontrar valores de e , tais que , ou seja, , logo e . Então, precisamos obter o coeficiente de de :   "
 },
 {
-  "id": "exercise-103",
+  "id": "exercise-108",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-103",
+  "url": "section-binomio-newton.html#exercise-108",
   "type": "Exercício",
   "number": "3.2.3",
   "title": "",
   "body": " Calcule o termo máximo do desenvolvimento de     "
 },
 {
-  "id": "exercise-104",
+  "id": "exercise-109",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-104",
+  "url": "section-binomio-newton.html#exercise-109",
   "type": "Exercício",
   "number": "3.2.4",
   "title": "",
   "body": " Qual é o maior dos números    a         Portanto, Como mostramos que , logo .  "
 },
 {
-  "id": "exercise-105",
+  "id": "exercise-110",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-105",
+  "url": "section-binomio-newton.html#exercise-110",
   "type": "Exercício",
   "number": "3.2.5",
   "title": "",
@@ -2827,9 +2872,9 @@ var ptx_lunr_docs = [
   "body": "No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:   "
 },
 {
-  "id": "exercise-106",
+  "id": "exercise-111",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#exercise-106",
+  "url": "section-polinomio-leibniz.html#exercise-111",
   "type": "Exercício",
   "number": "3.3.1",
   "title": "",
@@ -2953,54 +2998,54 @@ var ptx_lunr_docs = [
   "body": " 8 bolas de ping-pong são colocadas aleatóriamente em 8 caixas. Qual a probabilidade de que exatamente uma caixa fique vazia?   A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.  Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.  A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é . A quantidade de formas de arrumar o restante das bolas é .  Portanto o número de casos favoráveis é . A resposta do problema é    "
 },
 {
-  "id": "exercise-107",
+  "id": "exercise-112",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-107",
+  "url": "section-espacos-probabilidade.html#exercise-112",
   "type": "Exercício",
   "number": "4.1.1",
   "title": "",
   "body": " Um número é escolhido ao acaso no conjunto . Determine a probabilidade do número escolhido ser:  múltiplo de 3;  múltiplo de 5;  múltiplo de 3 e múltiplo de 5;  múltiplo de 3 ou múltiplo de 5.     a) , b) , c) , d) .   item a)    item b)    item c)    item d) Pelo princípio da Inclusão-Exclusão:   "
 },
 {
-  "id": "exercise-108",
+  "id": "exercise-113",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-108",
+  "url": "section-espacos-probabilidade.html#exercise-113",
   "type": "Exercício",
   "number": "4.1.2",
   "title": "",
   "body": " Em uma caixa existem 6 bolinhas numeradas de 1 a 6. Uma a uma elas são extraı́das, sem reposição. Qual a probabilidade de que a sequência de números observada seja crescente ou seja decrescente?   .   O espaço amostral tem cardinalidade , que é o número de maneiras de ordenar as bolinhas. Como só existe uma sequência seja crescente e uma que seja decrescente, a probabilidade é   "
 },
 {
-  "id": "exercise-109",
+  "id": "exercise-114",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-109",
+  "url": "section-espacos-probabilidade.html#exercise-114",
   "type": "Exercício",
   "number": "4.1.3",
   "title": "",
   "body": " Doze pessoas são divididas em três grupos de 4. Qual é a probabilidade de duas determinadas dessas pessoas fiquem no mesmo grupo?      Para a cardinalidade do espaço amostral, a segunda pessoa pode ficar em qualquer lugar de 11 disponíveis. Os casos favoráveis são 3, pois a primeira pessoa vai estar em algum grupo e a segunda pessoa tem 3 opções de lugares para escolher um, no grupo que se encontra a primeira pessoa. Portanto, a probabilidade é   "
 },
 {
-  "id": "exercise-110",
+  "id": "exercise-115",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-110",
+  "url": "section-espacos-probabilidade.html#exercise-115",
   "type": "Exercício",
   "number": "4.1.4",
   "title": "",
   "body": " Um armário contém 6 pares de sapatos. Escolhem-se 4 pés de sapatos. Qual é a probabilidade de se formar exatamente um par de sapatos?       A cardinalidade do espaço amostral é , pois essa é a quantidade de maneiras distintas de retirar 4 pés de sapatos, de 12 disponíveis.  Agora, vamos contar o número de casos favoráveis. Temos maneiras de retirar 1 par de sapatos, de 6 pares disponíveis. Depois disso, temos maneiras de escolher dois representantes de 5 tipos de sapatos disponíveis. Em seguida, precisamos decidir se será retirado o pé esquerdo ou o pé direito de cada um desses dois sapatos. Isto pode ser feito de maneiras. Portanto, a probabilidade é   "
 },
 {
-  "id": "exercise-111",
+  "id": "exercise-116",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-111",
+  "url": "section-espacos-probabilidade.html#exercise-116",
   "type": "Exercício",
   "number": "4.1.5",
   "title": "",
   "body": " Oito carros estão estacionados em doze vagas em fila. Determine a probabilidade:  das vagas vazias serem consecutivas;  de não haver duas vagas vazias adjacentes.    a) , b) .   item a) Para que as vagas vazias fiquem juntas, juntamos 4 vagas em uma, ficamos com 9 vagas para escolher uma, que será quádrupla. Isto pode ser feito de 9 maneiras. A cardinalidade do espaço amostral é o número de maneiras de escolher 4 lugares para ficarem fazios, dentre 12 disponíveis. Logo, a probabilidade é   item b) Já sabemos que o espaço amostral tem cardinalidade . Para que não haja duas vagas vazias adjacentes, podemos escolher as 4 vagas que ficarão vazias de maneiras. Assim, a probabilidade é   "
 },
 {
-  "id": "exercise-112",
+  "id": "exercise-117",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-112",
+  "url": "section-espacos-probabilidade.html#exercise-117",
   "type": "Exercício",
   "number": "4.1.6",
   "title": "",
@@ -3016,81 +3061,81 @@ var ptx_lunr_docs = [
   "body": "(Plínio , 2007, p. 181) Um palhaço está na ponta do trampolim de uma piscina, carregando uma caixa que contém bolas vermelhas e bolas azuis. Aleatoriamente ele vai retirando bolas da caixa, descartando-as em seguida. Cada vez que ele seleciona uma bola azul, ele dá um passo para trás, e cada vez que ele retira uma bola vermelha ele dá um passo para frente. Encontre a probabilidade de que o palhaço permaneça seco após a retirada das bolas da caixa.    Observe que uma sequência de retiradas na qual o palhaço permanece seco até o fim, quer dizer que, a cada retirada, a quantidade de bolas azuis tem que ser maior ou igual à quantidade de bolas vermelhas.  A cada vez que o palhaço retira uma bola, anotamos um se ela foi azul e um se ela foi vermelha. Com isto, construímos uma sequência formada por  e  . O palhaço ficará seco, se na sequência correspondente às retiradas, a cada momento o número dos é maior ou igual que o dos .  Perceba que se trocarmos por e por esse é o problema do deslocamento de uma partícula de até , sem que ela ultrapasse a reta , ou seja, é o número de Catalan: .  A quantidade de maneiras distintas para retirar as bolas é dada pela permutação com repetição: Assim, como esses eventos são equiprováveis, a probabilidade do palhaço permanecer seco é Concluímos que quanto maior a quantidade de bolas, menor a chance dele ficar seco.  "
 },
 {
-  "id": "exercise-114",
+  "id": "exercise-119",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-114",
+  "url": "section-espacos-probabilidade.html#exercise-119",
   "type": "Exercício",
   "number": "4.1.8",
   "title": "",
   "body": "(OPEMAT 2021 - nível 3) Pensando em sua segurança, a mãe de Dafne a proibiu de entrar na cozinha. Certo dia, sua mãe a encontra a um passo de entrar na cozinha. Lembrando que Dafne adora brinquedos, sua mãe pega uma sacola que contém de seus brinquedos favoritos e brinquedos dos quais não se interessa muito. A cada passo que Dafne está prestes a dar, sua mãe pega aleatoriamente um brinquedo na sacola, mostra a Dafne e depois deixa o brinquedo no chão. Se o brinquedo em questão for um dos que ela não se interessa muito, Dafne dá um passo em direção a cozinha, e se for um de seus favoritos, ela dá um passo na direção oposta. Qual a probabilidade de que Dafne entre na cozinha?    Observe que este exercício é equivalente ao exercício anterior ( ). Porém, neste caso ele pergunta pela probabilidade complementar. Portanto,   "
 },
 {
-  "id": "exercise-115",
+  "id": "exercise-120",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-115",
+  "url": "section-espacos-probabilidade.html#exercise-120",
   "type": "Exercício",
   "number": "4.1.9",
   "title": "",
   "body": " (ITA 2004) Uma caixa branca contém 5 bolas verdes e 3 azuis, e uma caixa preta contém 3 bolas verdes e 2 azuis. Pretende-se retirar uma bola de uma das caixas. Para tanto, 2 dados são atirados. Se a soma resultante dos dois dados for menor que 4, retira-se uma bola da caixa branca. Nos demais casos, retira-se uma bola da caixa preta. Qual é a probabilidade de se retirar uma bola verde?     No lançamento de dois dados, são possíveis 36 (pares) resultados diferentes, sendo que em apenas 3 deles a soma resultante é menor que 4. São eles: (1;1), (1;2), (2;1). A probabilidade de que uma bola verde seja retirada da urna branca é e da urna preta é . Assim, a probabilidade de se retirar uma bola verde é   "
 },
 {
-  "id": "exercise-116",
+  "id": "exercise-121",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-116",
+  "url": "section-espacos-probabilidade.html#exercise-121",
   "type": "Exercício",
   "number": "4.1.10",
   "title": "",
   "body": " (ITA 2005) São dados dois cartões, sendo que um deles tem ambos os lados na cor vermelha, enquanto o outro tem um lado na cor vermelha e o outro na cor azul. Um dos cartões é escolhido ao acaso e colocado sobre uma mesa. Se a cor exposta é vermelha, calcule a probabilidade de o cartão escolhido ter a outra cor também vermelha      O total de faces nos dois cartões é 4, sendo 3 faces vermelhas e 1 azul. Como a cor exposta é vermelha, temos duas chances do verso ser vermelho e uma chance do verso ser azul. Portanto a probabilidade de o cartão escolhido ter a outra cor também vermelha é   "
 },
 {
-  "id": "exercise-117",
+  "id": "exercise-122",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-117",
+  "url": "section-espacos-probabilidade.html#exercise-122",
   "type": "Exercício",
   "number": "4.1.11",
   "title": "",
   "body": " (ITA 2008) Considere o conjunto e formado por todos os subconjuntos de com elementos. Escolhendo ao acaso um elemento , a probabilidade de a soma de seus elementos ser 183 é igual a  a) b) c) d) e)   a)   De acordo com o enunciado . O conjunto dos elementos , cuja soma deve ser é   Logo . Então, escolhendo ao acaso um elemento a probabilidade de que a soma dos elementos de seja 183 é   "
 },
 {
-  "id": "exercise-118",
+  "id": "exercise-123",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-118",
+  "url": "section-espacos-probabilidade.html#exercise-123",
   "type": "Exercício",
   "number": "4.1.12",
   "title": "",
   "body": " (ITA 2010) Uma urna de sorteio contém bolas numeradas de a , sendo que a retirada de uma bola é equiprovável à retirada de cada uma das demais.   Retira-se aleatoriamente uma das bolas desta urna. Calcule a probabilidade de o número desta bola ser um múltiplo de ou .  Retira-se aleatoriamente uma das bolas desta urna e, sem repôla, retira-se uma segunda bola. Calcule a probabilidade de o número da segunda bola retirada não ser múltiplo de .    a) b)   a) Usaremos o Princípio da Inclusão-Exclusão para calcular o número de bolas com números múltiplos de 5 ou 6.    Note que e que é o conjunto dos múltiplos de entre e , incluindo o . Observe que , e . Portanto a probabilidade é   b) Para que o número da segunda bola retirada não seja múltiplo de 6, temos dois casos. 1º caso: primeira bola é um múltiplo de 6 e a segunda não. Essa probabilidade é dada por: . 2º caso: primeira bola não é um múltiplo de 6 e a segunda também não é. Essa probabilidade é dada por: . Logo a probabilidade de o número da segunda bola retirada não ser múltiplo de é   "
 },
 {
-  "id": "exercise-119",
+  "id": "exercise-124",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-119",
+  "url": "section-espacos-probabilidade.html#exercise-124",
   "type": "Exercício",
   "number": "4.1.13",
   "title": "",
   "body": " (ITA 2011) Sobre uma mesa estão dispostos livros de história, de biologia e de espanhol. Determine a probabilidade de os livros serem empilhados sobre a mesa de tal forma que aqueles que tratam do mesmo assunto estejam juntos.   .   No total os livros podem ser organizados de maneiras. Para que os livros de mesmo assunto fiquem juntos, temos maneiras. Portanto a probabilidade é dada por   "
 },
 {
-  "id": "exercise-120",
+  "id": "exercise-125",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-120",
+  "url": "section-espacos-probabilidade.html#exercise-125",
   "type": "Exercício",
   "number": "4.1.14",
   "title": "",
   "body": " (FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.  a) Qual é a probabilidade de que os dois jogadores recebam a mesma quantidade de peças amarelas?   a)   De acordo com o o espaço amostral é dado por .  Precisamos calcular o número de maneiras de distribuir as 8 peças para cada jogador, de forma que exatamente duas delas sejam amarelas. Vamos calcular o número de maneiras de distribuir as peças para o primeiro jogador, as peças que sobram ficam para o segundo jogador.  Como são 4 peças amarelas distintas duas a duas, temos maneiras de separar duas peças amarelas. Agora precisamos separar 6 peças com cores diferentes de amarelo. Temos um total de maneiras de fazer isto, pois existem exatamente 12 peças com cores diferentes de amarelo. Portanto a probabilidade é  "
 },
 {
-  "id": "exercise-121",
+  "id": "exercise-126",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-121",
+  "url": "section-espacos-probabilidade.html#exercise-126",
   "type": "Exercício",
   "number": "4.1.15",
   "title": "",
   "body": " (FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há 2n participantes. Suponha que 12 jogadores participem do torneio, dos quais 6 sejam homens e 6 sejam mulheres. Qual é a probabilidade de que, na primeira rodada, só haja confrontos entre jogadores do mesmo sexo?     De acordo com o o espaço amostral é dado por .  O número de maneiras de emparceirar as mulheres entre si é dado por .  Como o número de maneiras de emparceirar os homens entre si é o mesmo de emparceirar as mulheres entre si, a probabilidade pedida é dada por  "
 },
 {
-  "id": "exercise-122",
+  "id": "exercise-127",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-122",
+  "url": "section-espacos-probabilidade.html#exercise-127",
   "type": "Exercício",
   "number": "4.1.16",
   "title": "",
@@ -3241,63 +3286,63 @@ var ptx_lunr_docs = [
   "body": " Um dado (não viciado) é lançado 5 vezes. Qual é a probabilidade de obtermos os resultados , exatamente nessa ordem?   Seja o evento: saiu o valor da posição da lista , no -ésimo lançamento, .  Como os eventos são independentes, temos    "
 },
 {
-  "id": "exercise-123",
+  "id": "exercise-128",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-123",
+  "url": "section-probabilidade-condicional.html#exercise-128",
   "type": "Exercício",
   "number": "4.2.2.1",
   "title": "",
   "body": " Dois dados e são lançados e os resultados nas faces de cima anotados.  Qual a probabilidade da soma dos pontos ser 6, se a face observada em foi 2?  Qual a probabilidade de ter saı́do 2 em , se a soma dos pontos foi 6?  Qual a probablidade da soma dos pontos ser menor do que 7, sabendo que o número 2 saiu pelo menos uma vez?  Qual a probabilidade da soma dos pontos ser menor do que ou igual a 6, se o maior dos números obtidos é menor do que 5?  Qual a probabilidade do maior dos números obtidos ser menor do que 5, sabendo que a soma dos pontos foi menor do que ou igual a 6?     a) , b) , c) , d) , e) .  "
 },
 {
-  "id": "exercise-124",
+  "id": "exercise-129",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-124",
+  "url": "section-probabilidade-condicional.html#exercise-129",
   "type": "Exercício",
   "number": "4.2.2.2",
   "title": "",
   "body": " Três caixas I, II e III contém respectivamente 1 bola branca e 2 pretas; 2 brancas e 1 preta; 3 brancas e 2 pretas. Uma caixa é escolhida ao acaso e dela é retirada uma bola. Determine a probabilidade:   da bola retirada ser branca, sabendo que a caixa escolhida foi a I;  da caixa escolhida ter sido a I e a bola retirada ser branca.    a) , b) .  "
 },
 {
-  "id": "exercise-125",
+  "id": "exercise-130",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-125",
+  "url": "section-probabilidade-condicional.html#exercise-130",
   "type": "Exercício",
   "number": "4.2.2.3",
   "title": "",
   "body": " Uma caixa contém 30 bolas pretas, 20 brancas e 10 vermelhas. Três bolas são retiradas da caixa, uma após a outra, sem reposição. Qual a pobabilidade da terceira bola retirada ser preta?    "
 },
 {
-  "id": "exercise-126",
+  "id": "exercise-131",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-126",
+  "url": "section-probabilidade-condicional.html#exercise-131",
   "type": "Exercício",
   "number": "4.2.2.4",
   "title": "",
   "body": " (ITA 2008) Considere uma população de igual número de homens e mulheres, em que sejam daltônicos dos homens e das mulheres. Indique a probabilidade de que seja mulher uma pessoa daltônica selecionada ao acaso nessa população.  a) b) c) d) e)   a)  "
 },
 {
-  "id": "exercise-127",
+  "id": "exercise-132",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-127",
+  "url": "section-probabilidade-condicional.html#exercise-132",
   "type": "Exercício",
   "number": "4.2.2.5",
   "title": "",
   "body": " (ITA 2009) Uma amostra de estrangeiros, em que 18% são proficientes em inglês, realizou um exame para classificar a sua proficiência nesta língua. Dos estrangeiros que são proficientes em inglês, 75% foram classificados como proficientes. Entre os não proficientes em inglês, 7% foram classificados como proficientes. Um estrangeiro desta amostra, escolhido ao acaso, foi classificado como proficiente em inglês. A probabilidade deste estrangeiro ser efetivamente proficiente nesta língua é de aproximadamente  a) b) c) d) e)   b)   Dos de estrangeiros proficientes em inglês, foram classificados como proficientes: Dos de estrangeiros não-proficientes em inglês, foram classificados como proficientes: A probabilidade do estrangeiro ser efetivamente proficiente em inglês é   "
 },
 {
-  "id": "exercise-128",
+  "id": "exercise-133",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-128",
+  "url": "section-probabilidade-condicional.html#exercise-133",
   "type": "Exercício",
   "number": "4.2.2.6",
   "title": "",
   "body": " (ITA 2008) Em um espaço amostral com uma probabilidade , são dados os eventos e tais que: , com e independentes, , e sabe-se que . Calcule as probabilidades condicionais e .      . Precisamos calcular e .  Para calcular , usaremos a igualdade . Logo Portanto .  Para calcular , usaremos a igualdade . Logo Resta agora calcular .  Pelo item d) do temos   Logo, E   Substituindo os valores obtidos   "
 },
 {
-  "id": "exercise-129",
+  "id": "exercise-134",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-129",
+  "url": "section-probabilidade-condicional.html#exercise-134",
   "type": "Exercício",
   "number": "4.2.2.7",
   "title": "",
@@ -3340,27 +3385,27 @@ var ptx_lunr_docs = [
   "body": " Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.   Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?  Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?    item a) Vamos considerar os eventos:  S: saiu uma face verde  F: não saiu uma face verde  Pelo a probabilidade é   item b) Vamos considerar os eventos:  S: saiu uma face azul  F: não saiu uma face azul  Pelo a probabilidade é    "
 },
 {
-  "id": "exercise-130",
+  "id": "exercise-135",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-130",
+  "url": "section-distribuicao-binomial.html#exercise-135",
   "type": "Exercício",
   "number": "4.3.2.1",
   "title": "",
   "body": " Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .  "
 },
 {
-  "id": "exercise-131",
+  "id": "exercise-136",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-131",
+  "url": "section-distribuicao-binomial.html#exercise-136",
   "type": "Exercício",
   "number": "4.3.2.2",
   "title": "",
   "body": " (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:     "
 },
 {
-  "id": "exercise-132",
+  "id": "exercise-137",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-132",
+  "url": "section-distribuicao-binomial.html#exercise-137",
   "type": "Exercício",
   "number": "4.3.2.3",
   "title": "",
@@ -3430,27 +3475,27 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle , Discrete mathematics, 280(1-3), 233-236, 2004.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.   "
 },
 {
-  "id": "p-1054",
+  "id": "p-1067",
   "level": "2",
-  "url": "referencias.html#p-1054",
+  "url": "referencias.html#p-1067",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1055",
+  "id": "p-1068",
   "level": "2",
-  "url": "referencias.html#p-1055",
+  "url": "referencias.html#p-1068",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1056",
+  "id": "p-1069",
   "level": "2",
-  "url": "referencias.html#p-1056",
+  "url": "referencias.html#p-1069",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

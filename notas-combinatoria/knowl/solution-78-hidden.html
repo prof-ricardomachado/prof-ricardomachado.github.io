@@ -10,18 +10,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <span class="process-math">\(C_5^1\)</span> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <span class="process-math">\((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\)</span> Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <span class="process-math">\(C_5^1\times 5\times 2!\times 8!\)</span> formas distintas de organizarmos esses carros.</div> <div class="para">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</div> <div class="para">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <span class="process-math">\(C_5^2\)</span> formas de escolhermos essas 2 equipes e podemos colocá-las de <span class="process-math">\(5\times4\)</span> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <span class="process-math">\(2!\times2\)</span> e das demais <span class="process-math">\(6\)</span> equipes <span class="process-math">\(6!\text{.}\)</span>
-</div> <div class="para">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</div>
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">Defina <span class="process-math">\(E\)</span> como o conjunto dos alunos entrevistados que gostam de exatas e defina <span class="process-math">\(H\)</span> como o conjunto dos alunos entrevistados que gostam de humanas, assim</div>
 <div class="displaymath process-math">
-\begin{align*}
-10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
-\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
-\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
-\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
-\amp   ~~~~~~ - 5!\times 2^5\\
-\amp ~ = 2088960. 
-\end{align*}
+\begin{equation*}
+\#E=80, \#H = 60 \text{ e }\#(E\cap H) = 15.
+\end{equation*}
 </div>
-</div></body>
+<div class="para">Dessa forma, calculando <span class="process-math">\(\#E+\#H\)</span> o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#(E\cup H)= \#E+\#H-\#(E\cap H) = 80 + 60-15 = 125.
+\end{equation*}
+</div>
+</div></div></body>
 </html>

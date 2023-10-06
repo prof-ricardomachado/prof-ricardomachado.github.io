@@ -13,21 +13,21 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.11.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.3.5.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</div>
+<div class="para">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <span class="process-math">\(C_5^1\)</span> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <span class="process-math">\((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\)</span> Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <span class="process-math">\(C_5^1\times 5\times 2!\times 8!\)</span> formas distintas de organizarmos esses carros.</div> <div class="para">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</div> <div class="para">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <span class="process-math">\(C_5^2\)</span> formas de escolhermos essas 2 equipes e podemos colocá-las de <span class="process-math">\(5\times4\)</span> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <span class="process-math">\(2!\times2\)</span> e das demais <span class="process-math">\(6\)</span> equipes <span class="process-math">\(6!\text{.}\)</span>
+</div> <div class="para">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</div>
 <div class="displaymath process-math">
 \begin{align*}
-D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) \\
-\amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} \\
-\amp =  ~5\cdot 4 \cdot 3 -5\cdot 4 + 5 - 1 \\
-\amp = ~60-20+5-1 \\
-\amp =  ~44 
+10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
+\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
+\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
+\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
+\amp   ~~~~~~ - 5!\times 2^5\\
+\amp ~ = 2088960. 
 \end{align*}
 </div>
 </div>
-</div>
-<span class="incontext"><a href="section-permutacao-caotica.html#solution-82" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-inclusao-exclusao.html#solution-82" class="internal">em contexto</a></span>
 </body>
 </html>
