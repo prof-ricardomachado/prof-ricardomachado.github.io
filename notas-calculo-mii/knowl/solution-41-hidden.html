@@ -9,54 +9,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">Escolha <span class="process-math">\(u=\sqrt{x}\text{.}\)</span> Então,  <span class="process-math">\(\frac{\dd u}{\dd x}=\frac{1}{2\sqrt{x}}\)</span> e <span class="process-math">\(\dd u = \frac{1}{2\sqrt{x}}\dd x\text{.}\)</span> Logo,</div>
 <div class="displaymath process-math">
-\begin{equation*}
-f'(x) = 4x^3 - 3x^2 - 10x 
-\end{equation*}
+\begin{align*}
+\integral{\frac{e^{\sqrt{x}}}{\sqrt{x}}}{x}\amp = \integral{\left(2e^{\ob{\sqrt{x}}{u}}\right)\ob{\left(\frac{1}{2\sqrt{x}}\right)}{\dd u /\dd x}}{x}\amp \ct{Multiplicando e dividindo por 2.}\\
+\amp = \integral{2e^u}{u}=2\integral{e^u}{u}\amp \ct{Integral em relação a}\, \ctm{u.}  \\
+\amp =2e^u + C \amp \ct{Primitiva da função exponêncial.}\\
+\amp = 2e^{\sqrt{x}} + C \amp \ct{Retorna à variável}\, \ctm{x.} 
+\end{align*}
 </div>
-<div class="para">Portanto</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f'(x)=0 \Leftrightarrow 4x^3 - 3x^2 - 10x = 0 \Leftrightarrow x(4x^2 - 3x - 10)=0 
-\end{equation*}
-</div>
-<div class="para">Ou seja,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f'(x)=0 \Leftrightarrow x = -\frac{5}{4} \text{ ou } x = 0 \text{ ou } x = 2 
-\end{equation*}
-</div>
-<div class="para">Agora, vamos analisar os pontos críticos <span class="process-math">\(x = -5/4, x = 0\)</span> e <span class="process-math">\(x=2\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f''(x) = 12x^2-6x-10. 
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{cases}  f''\left(-\frac{5}{4}\right) = \frac{65}{4} &gt;0 \Rightarrow x = -\frac{5}{4} \text{ é ponto de mínimo local}  \\ 
-f''(0) = -10 \lt 0 \Rightarrow x = 0 \text{ é ponto de máximo local} \\
-f''(2) = 26 &gt;0 \Rightarrow x = 2 \text{ é ponto de mínimo local}\end{cases}
-\end{equation*}
-</div>
-<div class="para">Veja o gráfico usando o código a seguir.</div>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-63"><script type="text/x-sage">f = x^4-x^3-5*x^2+1
-p1 = plot(f, (-1.8, 2.8))
-c1 = circle((-5/4, f(x=-5/4)), 0.15, thickness=2, color='black')
-c2 = circle((0, f(x=0)), 0.15, thickness=2, color='black')
-c3 = circle((2, f(x=2)), 0.15, thickness=2, color='black')
-(p1+c1+c2+c3)
-</script></pre>
-</div></body>
+</div></div></body>
 </html>

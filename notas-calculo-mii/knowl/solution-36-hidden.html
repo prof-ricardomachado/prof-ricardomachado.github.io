@@ -11,26 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">O limite é da forma:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\lim_{x\rightarrow 0^+} x\cdot\ln{(4x^2+x)} = \left[ 0\cdot(-\infty) \right]
-\end{equation*}
-</div>
-<div class="para">podemos fazer uma modificação para adequar a forma do limite:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\lim_{x\rightarrow 0^+} x\cdot\ln{(4x^2+x)} = \lim_{x\rightarrow 0^+} \frac{\ln{(4x^2+x)}}{\frac{1}{x}}=\left[ \frac{\infty}{\infty} \right] 
-\end{equation*}
-</div>
-<div class="para">Agora podemos tentar usar a 2ª Regra de L'Hospital.</div>
+<div class="para">Escolha <span class="process-math">\(u=1-2x^2\text{.}\)</span> Então,  <span class="process-math">\(\frac{\dd u}{\dd x}=-4x\)</span> e <span class="process-math">\(\dd u = (-4x)\dd x\text{.}\)</span> Logo,</div>
 <div class="displaymath process-math">
 \begin{align*}
-\lim_{x\rightarrow 0^+} \frac{\ln{(4x^2+x)}}{\frac{1}{x}}=\amp~ \lim_{x\rightarrow 0^+} \frac{(\ln{(4x^2+x))'}}{\left(\frac{1}{x}\right)'}\\
-=\amp~\lim_{x\rightarrow 0^+} \frac{\frac{8x+1}{4x^2+x}}{-\frac{1}{x^2}}\\
-=\amp~\lim_{x\rightarrow 0^+} -\frac{8x+1}{4x^2+x}\cdot x^2\\
-=\amp~- \lim_{x\rightarrow 0^+} \frac{x}{x}\cdot\frac{8x+1}{4x+1}\cdot x\\
-=\amp~0
+\integral{\frac{-4x}{(1-2x^2)^2}}{x}\amp =\integral{\ob{(1-2x^2)^{-2}}{u^{-2}}\ob{(-4x)}{\dd u / \dd x} }{x} \amp \ctm{\dd u=(-4x)\dd x}\\
+\amp =\integral{u^{-2}}{u} \amp \ct{Integral em relação a}\, \ctm{u.}\\
+\amp  = \frac{u^{-1}}{(-1)} + C \amp \ct{Regra da potência.}\\
+\amp =  \frac{(1-2x^2)^{-1}}{(-1)} + C\amp \ct{Retorna à variável} \, \ctm{x.}\\
+\amp = -\frac{1}{1-2x^2} + C \amp \ct{Simplifique.}
 \end{align*}
 </div>
 </div></div></body>

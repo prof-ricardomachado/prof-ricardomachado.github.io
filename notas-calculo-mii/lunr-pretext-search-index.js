@@ -557,6 +557,267 @@ var ptx_lunr_docs = [
   "number": "1.3.5.6",
   "title": "",
   "body": " Determine .      "
+},
+{
+  "id": "section-5",
+  "level": "1",
+  "url": "section-5.html",
+  "type": "Seção",
+  "number": "2.1",
+  "title": "Método da Substituição",
+  "body": " Método da Substituição   Substituição  A integração por substituição consiste em um método para encontrar primitivas por meio de uma substituição conveniente da variável do integrando, de tal forma, a transformar o problema de integração, inicialmente complicado, em um mais simples.  Para exemplificar o método, vamos considerar resolver a integral indefinida . Com criatividade podemos conjecturar Ação ou efeito de deduzir algo, baseando-se em palpites, intuições, provas inconclusas ou suposições. que é uma primitiva para e depois confirmar usando a operação derivada combinada com a regra da cadeia : . Dessa forma, a solução da integral é . Agora, pensando em simplificar o problema, seria útil tomar e transformar o integrando em uma função do tipo potência na variável , neste caso, . O próximo passo é verificar se a partir da substituição para variável é possível encontrar , em termos da variável , de tal forma que . O que nesse caso é verdadeiro pois, , ou seja, . Então, usando a substituição , a integral é convertida para a forma . O processo de converter a integral na variável para uma integral em outra variável, digamos , é denominado de método de substituição por .   Regra da potência       Escolha . Então, e . Logo,         Escolha . Então, e . Logo,    É possível evitar o uso do método de substituição expandindo e utilizando a regra da potência.        Escolha . Então, e . Logo,         Escolha . Então, e . Logo,      Determine .   Revise .        Determine .   Revise .        Determine .   Revise .        Reescrevendo o integrando   Determine .    Escolha . Então, e . Então,      Nem sempre é possível   Determine     A escolha gera e . Note que a escolha de combinada com a expressão de não permite o usar o método de substituição, uma vez que não produz uma integral em relação a . No reescrevemos o integrando usando a estratégia de multiplicar e dividir por uma constante e então retirar a constante do integrando. O fato é que isso não é possível quando trata-se de variáveis, observe: Nesse caso, a melhor estratégia é expandir o integrando e depois aplicar a regra da potência em cada parte. .     Determine .   Considere expandir o integrando. Veja .        Envolvendo funções trigonométricas   Determine    Escolha . Então, e . Logo,     Determine .   Escolha . Então, e . Logo,      Envolvendo funções exponenciais   Determine .   Escolha . Então, e . Logo,     Determine .   Escolha . Então, e . Logo,      Determine .   Revise         Determine .   Use .        Roteiro para substituição     Escolha como uma função de e escreva como função de .    Converta toda a integral para a variável .    Após a integração, reescreva a primitiva como uma função de .       Mais integração por substituição   Determine .   Escolha . Então, e . Logo,     Determine    A composição sugere a substituição que implica em . Percebe-se que devemos expressar o termo , do integrando, também em termos de . Para isso, a partir de , fazemos para obter e então calcular a integral como segue:      Determine .   Revise .        Determine    Revise .         Sugestões de Vídeos    Resolvendo       Resolvendo  .     Resolvendo  .     Resolvendo  .     Resolvendo  .     Resolvendo  .        Substituições Trigonométricas  O integrando que envolve raízes quadradas de polinômios e polinômios não fatoráveis Informalmente, são polinômios que não pode ser obtido por produtos de dois polinômios não constantes. Por exemplo, admitem uma substituição por de forma implicita. Por exemplo, e . Essas substituições são denominadas de substituições trigonométricas .  As simplificações necessárias nas substituições trigonométricas fazem uso da identidade para integrandos que envolvem a expressões do tipo , no caso da substitução por e para substituições por .    Substituição usando o seno   Determine .   Escolha . Então, e . Logo, . Escolhendo , temos . Então, A última igualdade acima segue do fato de que se , no qual .    Determine .   O integrando acima sugere a escolha , para que seja possível obter . Dessa forma,      Substituição usando o seno   Determine     Novamente o integrando sugere a substituição , de modo que . Dessa forma, Antes de voltar à variável , note que implica na igualdade que quando cada lado é elevado ao quadrado torna-se . De segue que o que fornece . Já que em , a igualdade acima se reduz a expressão Finalmente, . Voltando a varável : , logo, .     Regra geral para substituições por   Para integrando envolvendo , sendo uma constante, tente a substituição a partir de , com .   É importante enfatizar que só está definida no intervalo . Supondo que o domínio do integrando é a substituição , com é válida para todo do domínio, uma vez que a imagem é e tem inversa em .   Determine    Use a substituição .        Determine .   Use a substituição .        Substituição usando tangente   Determine .    A substituição , fornece . Daí, . A última igualdade acima segue do fato de que se , com .     Substituição usando tangente   Determine .    Para resolver esse problema usamos a substituição trigonométrica , ao passo que . Portanto, Para finalizar, vamos expressar em termos da variável . Para isso, lembramos a identidade que particularmente produz já que e em . Finalmente, .      Regra geral para substituições por  Para o integrando envolvendo ou , sendo constante, tente com .   É importante enfatizar que e estão definida no intervalo . Supondo que o domínio do integrando é a substituição , com é válida para todo do domínio, uma vez que a imagem é e tem inversa em .   Determine .   Use a substituição por , com .         Sugestões de Vídeos    O método:     Relação fundamental:     Relações secundárias:     Relações trigonométricas e integrais:     Resolvendo  .     Resolvendo  .         Determine as integrais usando substituição.                      Use o método de substituição trigonométrica para calcular as seguintes integrais indefinidas.         "
+},
+{
+  "id": "p-165",
+  "level": "2",
+  "url": "section-5.html#p-165",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "regra da cadeia método de substituição por "
+},
+{
+  "id": "ex-potencia-01",
+  "level": "2",
+  "url": "section-5.html#ex-potencia-01",
+  "type": "Exemplo",
+  "number": "2.1.1",
+  "title": "Regra da potência.",
+  "body": " Regra da potência       Escolha . Então, e . Logo,         Escolha . Então, e . Logo,    É possível evitar o uso do método de substituição expandindo e utilizando a regra da potência.        Escolha . Então, e . Logo,         Escolha . Então, e . Logo,    "
+},
+{
+  "id": "exer-potencia-01",
+  "level": "2",
+  "url": "section-5.html#exer-potencia-01",
+  "type": "Autoavaliação",
+  "number": "2.1.2",
+  "title": "",
+  "body": " Determine .   Revise .      "
+},
+{
+  "id": "exer-potencia-02",
+  "level": "2",
+  "url": "section-5.html#exer-potencia-02",
+  "type": "Autoavaliação",
+  "number": "2.1.3",
+  "title": "",
+  "body": " Determine .   Revise .      "
+},
+{
+  "id": "exer-potencia-03",
+  "level": "2",
+  "url": "section-5.html#exer-potencia-03",
+  "type": "Autoavaliação",
+  "number": "2.1.4",
+  "title": "",
+  "body": " Determine .   Revise .      "
+},
+{
+  "id": "ex-reescrevendo-02",
+  "level": "2",
+  "url": "section-5.html#ex-reescrevendo-02",
+  "type": "Exemplo",
+  "number": "2.1.5",
+  "title": "Reescrevendo o integrando.",
+  "body": " Reescrevendo o integrando   Determine .    Escolha . Então, e . Então,    "
+},
+{
+  "id": "ex-subs-03",
+  "level": "2",
+  "url": "section-5.html#ex-subs-03",
+  "type": "Exemplo",
+  "number": "2.1.6",
+  "title": "Nem sempre é possível.",
+  "body": " Nem sempre é possível   Determine     A escolha gera e . Note que a escolha de combinada com a expressão de não permite o usar o método de substituição, uma vez que não produz uma integral em relação a . No reescrevemos o integrando usando a estratégia de multiplicar e dividir por uma constante e então retirar a constante do integrando. O fato é que isso não é possível quando trata-se de variáveis, observe: Nesse caso, a melhor estratégia é expandir o integrando e depois aplicar a regra da potência em cada parte. .   "
+},
+{
+  "id": "exer-nem-sempre-01",
+  "level": "2",
+  "url": "section-5.html#exer-nem-sempre-01",
+  "type": "Autoavaliação",
+  "number": "2.1.7",
+  "title": "",
+  "body": " Determine .   Considere expandir o integrando. Veja .      "
+},
+{
+  "id": "ex-subs-04",
+  "level": "2",
+  "url": "section-5.html#ex-subs-04",
+  "type": "Exemplo",
+  "number": "2.1.8",
+  "title": "Envolvendo funções trigonométricas.",
+  "body": " Envolvendo funções trigonométricas   Determine    Escolha . Então, e . Logo,     Determine .   Escolha . Então, e . Logo,    "
+},
+{
+  "id": "ex-subs-05",
+  "level": "2",
+  "url": "section-5.html#ex-subs-05",
+  "type": "Exemplo",
+  "number": "2.1.9",
+  "title": "Envolvendo funções exponenciais.",
+  "body": " Envolvendo funções exponenciais   Determine .   Escolha . Então, e . Logo,     Determine .   Escolha . Então, e . Logo,    "
+},
+{
+  "id": "exercise-13",
+  "level": "2",
+  "url": "section-5.html#exercise-13",
+  "type": "Autoavaliação",
+  "number": "2.1.10",
+  "title": "",
+  "body": " Determine .   Revise       "
+},
+{
+  "id": "exercise-14",
+  "level": "2",
+  "url": "section-5.html#exercise-14",
+  "type": "Autoavaliação",
+  "number": "2.1.11",
+  "title": "",
+  "body": " Determine .   Use .      "
+},
+{
+  "id": "ex-subsu-05",
+  "level": "2",
+  "url": "section-5.html#ex-subsu-05",
+  "type": "Exemplo",
+  "number": "2.1.12",
+  "title": "Mais integração por substituição <span class=\"process-math\">\\(u\\)<\/span>.",
+  "body": " Mais integração por substituição   Determine .   Escolha . Então, e . Logo,     Determine    A composição sugere a substituição que implica em . Percebe-se que devemos expressar o termo , do integrando, também em termos de . Para isso, a partir de , fazemos para obter e então calcular a integral como segue:    "
+},
+{
+  "id": "exercise-15",
+  "level": "2",
+  "url": "section-5.html#exercise-15",
+  "type": "Autoavaliação",
+  "number": "2.1.13",
+  "title": "",
+  "body": " Determine .   Revise .      "
+},
+{
+  "id": "exer-regras-01",
+  "level": "2",
+  "url": "section-5.html#exer-regras-01",
+  "type": "Autoavaliação",
+  "number": "2.1.14",
+  "title": "",
+  "body": " Determine    Revise .      "
+},
+{
+  "id": "p-225",
+  "level": "2",
+  "url": "section-5.html#p-225",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "substituições trigonométricas "
+},
+{
+  "id": "ex-seno-01",
+  "level": "2",
+  "url": "section-5.html#ex-seno-01",
+  "type": "Exemplo",
+  "number": "2.1.15",
+  "title": "Substituição usando o seno.",
+  "body": " Substituição usando o seno   Determine .   Escolha . Então, e . Logo, . Escolhendo , temos . Então, A última igualdade acima segue do fato de que se , no qual .    Determine .   O integrando acima sugere a escolha , para que seja possível obter . Dessa forma,    "
+},
+{
+  "id": "ex-seno-02",
+  "level": "2",
+  "url": "section-5.html#ex-seno-02",
+  "type": "Exemplo",
+  "number": "2.1.16",
+  "title": "Substituição usando o seno.",
+  "body": " Substituição usando o seno   Determine     Novamente o integrando sugere a substituição , de modo que . Dessa forma, Antes de voltar à variável , note que implica na igualdade que quando cada lado é elevado ao quadrado torna-se . De segue que o que fornece . Já que em , a igualdade acima se reduz a expressão Finalmente, . Voltando a varável : , logo, .   "
+},
+{
+  "id": "remark-1",
+  "level": "2",
+  "url": "section-5.html#remark-1",
+  "type": "Nota",
+  "number": "2.1.17",
+  "title": "",
+  "body": "É importante enfatizar que só está definida no intervalo . Supondo que o domínio do integrando é a substituição , com é válida para todo do domínio, uma vez que a imagem é e tem inversa em . "
+},
+{
+  "id": "exercise-17",
+  "level": "2",
+  "url": "section-5.html#exercise-17",
+  "type": "Autoavaliação",
+  "number": "2.1.18",
+  "title": "",
+  "body": " Determine    Use a substituição .      "
+},
+{
+  "id": "exercise-18",
+  "level": "2",
+  "url": "section-5.html#exercise-18",
+  "type": "Autoavaliação",
+  "number": "2.1.19",
+  "title": "",
+  "body": " Determine .   Use a substituição .      "
+},
+{
+  "id": "ex-tangente-02",
+  "level": "2",
+  "url": "section-5.html#ex-tangente-02",
+  "type": "Exemplo",
+  "number": "2.1.20",
+  "title": "Substituição usando tangente.",
+  "body": " Substituição usando tangente   Determine .    A substituição , fornece . Daí, . A última igualdade acima segue do fato de que se , com .   "
+},
+{
+  "id": "ex-tangente-03",
+  "level": "2",
+  "url": "section-5.html#ex-tangente-03",
+  "type": "Exemplo",
+  "number": "2.1.21",
+  "title": "Substituição usando tangente.",
+  "body": " Substituição usando tangente   Determine .    Para resolver esse problema usamos a substituição trigonométrica , ao passo que . Portanto, Para finalizar, vamos expressar em termos da variável . Para isso, lembramos a identidade que particularmente produz já que e em . Finalmente, .   "
+},
+{
+  "id": "remark-2",
+  "level": "2",
+  "url": "section-5.html#remark-2",
+  "type": "Nota",
+  "number": "2.1.22",
+  "title": "",
+  "body": "É importante enfatizar que e estão definida no intervalo . Supondo que o domínio do integrando é a substituição , com é válida para todo do domínio, uma vez que a imagem é e tem inversa em . "
+},
+{
+  "id": "exer-substrig-01",
+  "level": "2",
+  "url": "section-5.html#exer-substrig-01",
+  "type": "Autoavaliação",
+  "number": "2.1.23",
+  "title": "",
+  "body": " Determine .   Use a substituição por , com .      "
+},
+{
+  "id": "exercise-20",
+  "level": "2",
+  "url": "section-5.html#exercise-20",
+  "type": "Exercício",
+  "number": "2.1.5.1",
+  "title": "",
+  "body": "Determine as integrais usando substituição.                     "
+},
+{
+  "id": "exercise-21",
+  "level": "2",
+  "url": "section-5.html#exercise-21",
+  "type": "Exercício",
+  "number": "2.1.5.2",
+  "title": "",
+  "body": "Use o método de substituição trigonométrica para calcular as seguintes integrais indefinidas.       "
+},
+{
+  "id": "section-6",
+  "level": "1",
+  "url": "section-6.html",
+  "type": "Seção",
+  "number": "2.2",
+  "title": "Integração por Partes",
+  "body": " Integração por Partes  "
 }
 ]
 

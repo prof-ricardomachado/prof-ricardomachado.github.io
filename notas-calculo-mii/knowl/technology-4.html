@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="technology computation-like"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Usando o software SageMath.</span>
+</h4> <div class="introduction"><div class="para">Software matemático pode ser útil para calcular  integrais complicadas. Um ótima opção é utilizar sistema de computação algébrica  <a class="external" href="https://www.sagemath.org" target="_blank">SageMath</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-24-hidden.html" title="Nota de rodapé 2.3.7"><sup> 7 </sup></a>. Com uma sintaxe simples e baseada em <em class="emphasis">Python</em><a href="" class="fn-knowl original" data-knowl="./knowl/fn-25-hidden.html" title="Nota de rodapé 2.3.8"><sup> 8 </sup></a> O <em class="emphasis">SageMath</em> (abreviaremos como <em class="emphasis">Sage</em>) é <em class="emphasis">open-source</em> <a href="" class="fn-knowl original" data-knowl="./knowl/fn-26-hidden.html" title="Nota de rodapé 2.3.9"><sup> 9 </sup></a> e tem sido bastante utilizado por professores e  estudantes de todos os níveis para conferir cálculos algébricos complicados. Uma boa referência em língua portuguesa para este software pode ser encontrado na página  <a class="external" href="https://www.sagectu.com.br" target="_blank"><code class="code-inline tex2jax_ignore">https://www.sagectu.com.br</code></a>. Detalhes sobre os comandos são resumidos em <a class="external" href="https://sagectu.com.br/sagecell.html" target="_blank"><code class="code-inline tex2jax_ignore">https://sagectu.com.br/sagecell.html</code></a>.</div></div> <section class="paragraphs"><h5 class="heading"><span class="title">Sintaxe dos comandos.</span></h5> <div class="para">Com o <em class="emphasis">SageMath</em>, usando o comando <code class="code-inline tex2jax_ignore">integral(f, x)</code> é possível calcular a integral indefinida de <span class="process-math">\(f(x)\)</span> em relação a variável <span class="process-math">\(x\text{.}\)</span> Por exemplo, o <a href="" class="xref" data-knowl="./knowl/ex4.html" title="Exemplo 1.3.17: Identidades trigonométricas">Exemplo 1.3.17</a> pode ser resolvido com o comando: <pre class="ptx-sagecell sagecell-sage" id="sage-6"><script type="text/x-sage">integral(x^2/(x^2+1), x)
+</script></pre> Mas se a função depender da variável <span class="process-math">\(t\text{,}\)</span> por exemplo, <span class="process-math">\(f(t)=t^3-2t^2+ 3t + 1 \text{?}\)</span> Basta declarar a variável <span class="process-math">\(t\)</span> usando o comando <code class="code-inline tex2jax_ignore">var('t')</code>. <pre class="ptx-sagecell sagecell-sage" id="sage-7"><script type="text/x-sage">var('t')
+integral(t^3-2*t^2+ 3*t + 1, t )
+</script></pre> Para obter a integral com a notação matemática usual, o <em class="emphasis">Sage</em> possui o comando <code class="code-inline tex2jax_ignore">show</code>, observe: <pre class="ptx-sagecell sagecell-sage" id="sage-8"><script type="text/x-sage">var('t')
+F = integral(t^3-2*t^2+ 3*t + 1, t)
+show(F)
+</script></pre>
+</div> <div class="para">Nas células acima pode-se notar que os comandos <code class="code-inline tex2jax_ignore">/</code>, <code class="code-inline tex2jax_ignore">*</code>, <code class="code-inline tex2jax_ignore">^</code> <code class="code-inline tex2jax_ignore">+</code>, <code class="code-inline tex2jax_ignore">-</code>, representam a operações de divisão, multiplicação, potenciação,  soma e subtração, respectivamente. Existe muitos outros comandos de operações matemáticas importantes, confira em <a class="external" href="https://sagectu.com.br/sagecell.html" target="_blank"><code class="code-inline tex2jax_ignore">https://sagectu.com.br/sagecell.html</code></a>.</div> <article class="activity project-like"><h6 class="heading">
+<span class="type">Atividade</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h6>
+<div class="para">Usando a célula do <em class="emphasis">Sage</em> abaixo, confira todas as integrais apresentadas até aqui. Se a resposta produzida  não estiver de acordo com a sua, mostre que elas são equivalentes. <pre class="ptx-sagecell sagecell-sage" id="sage-9"><script type="text/x-sage">
+</script></pre>
+</div></article> <article class="activity project-like"><h6 class="heading">
+<span class="type">Atividade</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Faça você mesmo.</span>
+</h6>
+<div class="para">O avanço dos softwares matemáticos tornou possível calcular vários tipos de integrais que dariam muito trabalho se feitos à mão. <article class="task exercise-like"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para logical">
+<div class="para">Usando o conteúdo aprendido até aqui encontre</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\integral{\frac{5x^2}{(1+x)^{1/3}}}{x} \text{.}
+\end{equation*}
+</div>
+</div></article> <article class="task exercise-like"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para">Use <em class="emphasis">Sage</em> para encontrar a integral do item anterior.</div></article> <pre class="ptx-sagecell sagecell-sage" id="sage-10"><script type="text/x-sage">
+</script></pre>
+</div></article></section></article><span class="incontext"><a href="sec-integral-indefinida.html#technology-4" class="internal">em contexto</a></span>
+</body>
+</html>
