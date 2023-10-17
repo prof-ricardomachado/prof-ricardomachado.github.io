@@ -11,37 +11,32 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">Observe que uma possibilidade seria calcular o número de soluções de cada um dos casos:</div>
+<div class="para">Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:</div> <ol class="decimal">
+<li><div class="para">Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma.</div></li>
+<li><div class="para">Dois lados possuem um valor e o terceiro lado possui um valor diferente. Cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas como temos duas entradas iguais, precisamos dividir por 2.</div></li>
+<li><div class="para">Cada lado possui um valor diferente. Cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2.</div></li>
+</ol> <div class="para">Inicialmente, vamos contar como se em cada tipo, as peças só pudessem ser formadas de uma forma, depois vamos acrescentar a quantidade de peças do terceiro tipo, que fica faltando nessa contagem inicial.</div> <div class="para logical">
+<div class="para">Temos que escolher os valores de cada um dos 3 lados de cada peça do trominó. Como os valores vão de 1 até 6 e são 3 lados, o número de peças do trominó (sem contar as permutações circulares) para <span class="process-math">\(n=6\)</span> é o número de soluções inteiras não negativas da equação:</div>
 <div class="displaymath process-math">
-\begin{equation}
-\begin{cases} x_1 + x_2 + x_3 + x_4  = 0,\\
-x_1 + x_2 + x_3 + x_4  = 1\\
-\vdots \\
-x_1 + x_2 + x_3 + x_4  = 50.\end{cases}\tag{1.7.4}
-\end{equation}
-</div>
-<div class="para">A soma do número de soluções de cada um dos casos é a resposta, no entanto, é inviável fazer tal cálculo. Felizmente temos outra forma de resolver este problema.</div>
-</div> <div class="para">Observe que existe uma bijeção entre o conjunto das soluções de <a href="" class="xref" data-knowl="./knowl/sol-desi.html" title="Equação 1.7.3">(1.7.3)</a> com o conjunto das soluções da equação <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a>:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
-\begin{equation}
-x_1 + x_2 + x_3 + x_4 + y  = 50.\tag{1.7.5}
-\end{equation}
-</div>
-<div class="para">Para entender a bijeção, observe o seguinte. Somando <span class="process-math">\(50-i, i\in \{0, 1, 2, \ldots, 50\}\text{,}\)</span> nos dois lados da igualdade, na linha <span class="process-math">\(i, i\in \{0, 1, 2, \ldots, 50\}\)</span> de <a href="" class="xref" data-knowl="./knowl/sol-igual.html" title="Equação 1.7.4">(1.7.4)</a>, não mudamos absolutamente nada e ficamos com:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
-\begin{equation}
-\begin{cases} x_1 + x_2 + x_3 + x_4 + 50 = 0 + 50,\\
-x_1 + x_2 + x_3 + x_4 + 49  = 1 +49 \\
-\vdots \\
-x_1 + x_2 + x_3 + x_4 + 0  = 50+0.\end{cases}\tag{1.7.6}
-\end{equation}
-</div>
-<div class="para">Cada solução da linha <span class="process-math">\(i\text{,}\)</span> é uma solução de <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a> com o valor de <span class="process-math">\(y\)</span> igual a <span class="process-math">\(50-i\text{.}\)</span> E para cada <span class="process-math">\(y\in \{0, 1, 2, \ldots, 50\}\)</span> a solução de <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a> vai ser a solução da linha <span class="process-math">\(y\)</span> de <a href="" class="xref" data-knowl="./knowl/sol-igual.html" title="Equação 1.7.4">(1.7.4)</a> .</div> <div class="para">Portanto a resposta é o número de solução da equação <a href="" class="xref" data-knowl="./knowl/sol-desi2.html" title="Equação 1.7.5">(1.7.5)</a> que é dado por:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/sol-desi.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html ./knowl/sol-desi2.html ./knowl/sol-igual.html ./knowl/sol-desi2.html">
 \begin{equation*}
-CR_5^{50} = 316251. 
+x_1 + x_2 + x_3 + x_4 + x_ 5 + x_ 6 = 3, 
 \end{equation*}
+</div>
+<div class="para">que é dado por <span class="process-math">\(CR_6^3\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Agora precisamos contar as peças, do terceiro tipo, que estão faltando. Como os três valores são diferentes, temos 6 opções de valores para escolher 3 e para cada escolha, temos duas formas de organizar na peça do trominó, portanto o número de peças desse tipo é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\times C_6^3 =40. 
+\end{equation*}
+</div>
+<div class="para">Já que, a metade das peças do terceiro tipo foram contadas uma vez pela combinação completa, <span class="process-math">\(CR_6^3\text{,}\)</span> a quantidade total de peças é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+CR_6^{3} + C_6^3 = 56+20 = 76. 
+\end{equation*}
+</div>
 </div>
 </div></body>
 </html>
