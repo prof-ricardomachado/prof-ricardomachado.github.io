@@ -11,17 +11,62 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <span class="process-math">\(C_5^1\)</span> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <span class="process-math">\((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\)</span> Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <span class="process-math">\(C_5^1\times 5\times 2!\times 8!\)</span> formas distintas de organizarmos esses carros.</div> <div class="para">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</div> <div class="para">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <span class="process-math">\(C_5^2\)</span> formas de escolhermos essas 2 equipes e podemos colocá-las de <span class="process-math">\(5\times4\)</span> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <span class="process-math">\(2!\times2\)</span> e das demais <span class="process-math">\(6\)</span> equipes <span class="process-math">\(6!\text{.}\)</span>
-</div> <div class="para">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</div>
+<div class="para logical">
+<div class="para">Sejam</div>
 <div class="displaymath process-math">
 \begin{align*}
-10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
-\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
-\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
-\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
-\amp   ~~~~~~ - 5!\times 2^5\\
-\amp ~ = 2088960. 
+A_1, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem C em 1º lugar}; \\
+A_2, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem O em 2º lugar}; \\
+A_3, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem M em 3º lugar}; \\
+A_4, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}. 
 \end{align*}
+</div>
+<div class="para"> Assim, <span class="process-math">\(\#A_i = 7!,\)</span> para  <span class="process-math">\(i\in \{1, 2, 3, 4\}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Observe que <span class="process-math">\(\#(A_i\cap A_j), 1\leq i\lt j\leq 4\)</span> é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos <span class="process-math">\(A_i's, i\in\{1, 2, 3, 4\}\text{,}\)</span> logo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#(A_i\cap A_j) = 6!
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Observe que <span class="process-math">\(\#(A_i\cap A_j\cap A_k), 1\leq i\lt j\leq 4\)</span> é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos <span class="process-math">\(A_i's, i\in\{1, 2, 3, 4\}\text{,}\)</span> logo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#(A_i\cap A_j\cap A_k) = 5!
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Observe que <span class="process-math">\(\#(A_1\cap A_2\cap A_3\cap A_4)\)</span> é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P  nas posições <span class="process-math">\(1, 2, 3, 4\)</span> fixas, logo</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{equation*}
+\#(A_1\cap A_2\cap A_3\cap A_4) = 4!
+\end{equation*}
+</div>
+<div class="para">Pelo Princípio da Inclusão-Exclusão (<a href="" class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>),</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~\sum_{i=1}^{4} \#A_i - \sum_{1\leq i\lt j\leq 4} \#(A_i\cap A_j) \\
+\amp ~ +\sum_{1\leq i\lt j\lt k \leq 4} \#(A_i\cap A_j\cap A_k) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<div class="para">Organizando, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times\#A_1 - C_4^2\times\#(A_1\cap A_2) \\
+\amp ~ +C_4^3\times\#(A_1\cap A_2\cap A_3) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<div class="para">Substituindo, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-inclusao-exclusao-n.html">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times 7! - C_4^2\times 6! +C_4^3\times 5! -4! \\
+=\amp ~ 16296. 
+\end{align*}
+</div>
 </div>
 </div></body>
 </html>

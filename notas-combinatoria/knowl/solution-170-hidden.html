@@ -9,42 +9,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">A probabilidade de obter 7 é</div>
-<div class="displaymath process-math">
+<div class="para">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+\begin{align*}
+1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
+2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
+3º: \amp ~ \text{6 conseguem.} 
+\end{align*}
+</div>
+<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
 \begin{equation*}
-\frac{6}{36}=\frac{1}{6}
+P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
 \end{equation*}
 </div>
-<div class="para">e a de não ser soma 7 é</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
 \begin{equation*}
-1-\frac{1}{6}=\frac{5}{6}.
+P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">Para <span class="process-math">\(A\)</span> ganhar, ou <span class="process-math">\(A\)</span> ganha na primeira mão, ou na segunda, ou na terceira, etc. A probabilidade de <span class="process-math">\(A\)</span> ganhar na primeira mão é <span class="process-math">\(\frac{1}{6}\text{.}\)</span> Para <span class="process-math">\(A\)</span> ganhar na segunda mão, <span class="process-math">\(A\)</span> não pode obter soma 7 na primeira mão e <span class="process-math">\(B\)</span> não pode obter soma 7 na primeira mão e <span class="process-math">\(A\)</span> deve obter soma 7 na segunda mão, o que ocorre com probabilidade</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left( \frac{5}{6} \right)^2\cdot \frac{1}{6}.
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Para <span class="process-math">\(A\)</span> ganhar na terceira mão, <span class="process-math">\(A\)</span> não pode obter soma 7 nas duas primeiras mãos e <span class="process-math">\(B\)</span> não pode obter soma 7 nas duas primeiras mãos e <span class="process-math">\(A\)</span> deve obter soma 7 na terceira mão, o que ocorre com probabilidade</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left( \frac{5}{6} \right)^4\cdot \frac{1}{6}.
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Portanto, a probabilidade de <span class="process-math">\(A\)</span> ganhar é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{1}{6}+\left( \frac{5}{6} \right)^2\cdot \frac{1}{6}+\left( \frac{5}{6} \right)^4\cdot \frac{1}{6}+\cdots = \frac{\frac{1}{6}}{1-\left(\frac{5}{6}\right)^2}=\frac{6}{11}.
-\end{equation*}
-</div>
-</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-56"><script type="text/x-sage">C(n, p) = binomial(n,p)
+a = C(6, 4)*(2/10)^4*(8/10)^2
+b = C(6, 5)*(2/10)^5*(8/10)
+c = C(6, 6)*(2/10)^6
+a+b+c
+</script></pre>
 </div></body>
 </html>

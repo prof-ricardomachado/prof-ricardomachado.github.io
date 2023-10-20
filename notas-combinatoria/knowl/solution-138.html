@@ -9,42 +9,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.1.1</span><span class="period">.</span>
-</h4>
-<div class="para logical">
-<div class="para"><dfn class="terminology">item a)</dfn></div>
-<div class="displaymath process-math">
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.9.1</span><span class="period">.</span>
+</h3>
+<div class="para">Mais uma vez, usaremos o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</div> <div class="para logical">
+<div class="para">Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. O número de casos possíveis para os aniversários das 45 pessoas é <span class="process-math">\(365^{45}\text{.}\)</span> O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
 \begin{equation*}
-\frac{\left\lfloor\frac{100}{3}\right\rfloor}{100}=\frac{33}{100}.
+365\times 364\times 363\times \cdots \times321. 
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para"><dfn class="terminology">item b)</dfn></div>
-<div class="displaymath process-math">
+<div class="para">Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
 \begin{equation*}
-\frac{\left\lfloor\frac{100}{5}\right\rfloor}{100}=\frac{20}{100}=\frac{1}{5}.
+\frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. 
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para"><dfn class="terminology">item c)</dfn></div>
-<div class="displaymath process-math">
+<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
 \begin{equation*}
-\frac{\left\lfloor\frac{100}{15}\right\rfloor}{100}=\frac{6}{100}=\frac{3}{50}.
+1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. 
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item d)</dfn> Pelo princípio da Inclusão-Exclusão:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{\left\lfloor\frac{100}{3}\right\rfloor+\left\lfloor\frac{100}{5}\right\rfloor-\left\lfloor\frac{100}{15}\right\rfloor}{100}=\frac{47}{100}.
-\end{equation*}
-</div>
-</div>
+</div> <div class="para">Este cálculo pode ser verificado no Sage, usando o código abaixo:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-55"><script type="text/x-sage">pd = prod(i for i in (321..365))
+(1 - pd/365^45).n()
+</script></pre>
 </div>
 <span class="incontext"><a href="section-espacos-probabilidade.html#solution-138" class="internal">em contexto</a></span>
 </body>

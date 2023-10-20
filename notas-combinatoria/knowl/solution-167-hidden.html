@@ -9,39 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
-\begin{align*}
-1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
-2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
-3º: \amp ~ \text{6 conseguem.} 
-\end{align*}
-</div>
-<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
+<div class="para">Temos 10 moedas comuns, com uma cara e uma coroa, 25 moedas com duas coroas e 5 moedas com duas caras. Desenhando a árvore de probabilidades:</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/pcondicionalita2011.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.2.21<span class="period">.</span></span><span class="space"> </span>Árvore de Probabilidades.</figcaption></figure> <div class="para">Podemos calcular a probabilidade da seguinte maneira:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
+P = \frac{\frac{25}{40}\times 1}{\frac{25}{40}\times 1 + \frac{10}{40}\times \frac{1}{2}}= \frac{5}{6}. 
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
-\begin{equation*}
-P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
-\end{equation*}
-</div>
-<pre class="ptx-sagecell sagecell-sage" id="sage-56"><script type="text/x-sage">C(n, p) = binomial(n,p)
-a = C(6, 4)*(2/10)^4*(8/10)^2
-b = C(6, 5)*(2/10)^5*(8/10)
-c = C(6, 6)*(2/10)^6
-a+b+c
-</script></pre>
 </div></body>
 </html>

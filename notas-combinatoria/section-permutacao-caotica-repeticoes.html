@@ -383,21 +383,21 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </h3>
 <article class="definition definition-like" id="def-permutacao-caotica-repeticao"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
-</h4> <div class="para" id="p-575">Uma <em class="emphasis">permutação caótica com repetição</em> é uma permutação, na qual, os elementos nem podem ocupar suas posições originais, nem as posições de seus elementos repetidos.</div> <div class="para" id="p-576">Por exemplo, MARAAEL é uma permutação caótica (com repetição) das letras da palavra AMARELA. Note que as letras A's não podem ocupar as posições 1, 3 ou 7.</div> </article><article class="example example-like" id="exem-amarela"><h4 class="heading">
+</h4> <div class="para" id="p-578">Uma <em class="emphasis">permutação caótica com repetição</em> é uma permutação, na qual, os elementos nem podem ocupar suas posições originais, nem as posições de seus elementos repetidos.</div> <div class="para" id="p-579">Por exemplo, MARAAEL é uma permutação caótica (com repetição) das letras da palavra AMARELA. Note que as letras A's não podem ocupar as posições 1, 3 ou 7.</div> </article><article class="example example-like" id="exem-amarela"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-577">Quantos são os anagramas da palavra AMARELA, sem que as letras fiquem nas posições originais?</div></article><article class="technology computation-like" id="technology-20"><h4 class="heading">
+<div class="para" id="p-580">Quantos são os anagramas da palavra AMARELA, sem que as letras fiquem nas posições originais?</div></article><article class="technology computation-like" id="technology-20"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
 </h4>Usando o Sage, podemos obter a resposta desse problema sem dificuldade alguma. Com o código abaixo, basta clicar em "Evaluate (Sage)" para obter a resposta. <pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage">len(Derangements(['A', 'M', 'A', 'R', 'E', 'L', 'A']))
-</script></pre></article><div class="para" id="p-578">Ao longo dessa seção, esse problema está resolvido sem depender do uso de um computador/software. Porém, alguns códigos estão disponíveis, apenas para facilitar/conferir contas que podem ser feitas à mão. A solução foi desenvolvida de forma que a mesma ideia se aplique em casos mais gerais, no qual, mais de uma letra distinta se repete.</div>
-<div class="para" id="p-579">Para resolver o <a href="" class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>, observe que o número de soluções para a palavra AMARELA é o mesmo que o número de soluções para a "palavra" AAAMREL, pois uma palavra é um anagrama da outra, então para cada permutação caótica de AAAMREL, podemos obter uma única permutação caótica da palavra AMARELA, apenas aplicando a mesma permutação que leva AAAMREL em AMARELA.</div>
-<div class="para" id="p-580">Vamos contar o número de permutações caóticas de AAAMREL para facilitar a explicação. Inicialmente troque AAAMREL por A<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\)</span>MREL, pois assim todas as letras ficam diferentes, depois resolvemos o problema das permutações das letras A. Em seguida colocamos a palavra em um tabuleiro e usamos torres para representar as permutações. Cada permutação da palavra é representada por uma única forma de colocar <span class="process-math">\(7\)</span> torres em um tabuleiro <span class="process-math">\(7\times 7\text{,}\)</span> de forma que uma torre não possa atacar a outra, ou seja, em linhas e colunas diferentes. Por exemplo</div>
+</script></pre></article><div class="para" id="p-581">Ao longo dessa seção, esse problema está resolvido sem depender do uso de um computador/software. Porém, alguns códigos estão disponíveis, apenas para facilitar/conferir contas que podem ser feitas à mão. A solução foi desenvolvida de forma que a mesma ideia se aplique em casos mais gerais, no qual, mais de uma letra distinta se repete.</div>
+<div class="para" id="p-582">Para resolver o <a href="" class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>, observe que o número de soluções para a palavra AMARELA é o mesmo que o número de soluções para a "palavra" AAAMREL, pois uma palavra é um anagrama da outra, então para cada permutação caótica de AAAMREL, podemos obter uma única permutação caótica da palavra AMARELA, apenas aplicando a mesma permutação que leva AAAMREL em AMARELA.</div>
+<div class="para" id="p-583">Vamos contar o número de permutações caóticas de AAAMREL para facilitar a explicação. Inicialmente troque AAAMREL por A<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\)</span>MREL, pois assim todas as letras ficam diferentes, depois resolvemos o problema das permutações das letras A. Em seguida colocamos a palavra em um tabuleiro e usamos torres para representar as permutações. Cada permutação da palavra é representada por uma única forma de colocar <span class="process-math">\(7\)</span> torres em um tabuleiro <span class="process-math">\(7\times 7\text{,}\)</span> de forma que uma torre não possa atacar a outra, ou seja, em linhas e colunas diferentes. Por exemplo</div>
 <figure class="figure figure-like" id="fig-permuta"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/permuta.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Tabela de Permutação.</figcaption></figure><div class="para" id="p-581">fica com a seguinte configuração no tabuleiro:</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Tabela de Permutação.</figcaption></figure><div class="para" id="p-584">fica com a seguinte configuração no tabuleiro:</div>
 <figure class="figure figure-like" id="fig-tabuleiro"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/tabuleiro.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>Tabuleiro da permutação MRELA<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\text{.}\)</span></figcaption></figure><div class="para" id="p-582">Para uma permutação simples, as torres podem ocupar qualquer quadrado, desde que uma não possa atacar a outra. No nosso caso, os quadrados cinzas são os lugares que não queremos colocar as torres, pois assim estamos evitando os casos em que alguma letra fica em seu lugar original. Chamaremos de <em class="emphasis">subtabuleiro proibido</em>, o subtabuleiro que não queremos colocar as torres.</div>
-<div class="para" id="p-583">Defina <span class="process-math">\(B_k = \)</span> colocações de torres, na qual, a torre da linha <span class="process-math">\(k\)</span> está em um subtabuleiro proibido.</div>
-<div class="para logical" id="p-584">
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>Tabuleiro da permutação MRELA<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\text{.}\)</span></figcaption></figure><div class="para" id="p-585">Para uma permutação simples, as torres podem ocupar qualquer quadrado, desde que uma não possa atacar a outra. No nosso caso, os quadrados cinzas são os lugares que não queremos colocar as torres, pois assim estamos evitando os casos em que alguma letra fica em seu lugar original. Chamaremos de <em class="emphasis">subtabuleiro proibido</em>, o subtabuleiro que não queremos colocar as torres.</div>
+<div class="para" id="p-586">Defina <span class="process-math">\(B_k = \)</span> colocações de torres, na qual, a torre da linha <span class="process-math">\(k\)</span> está em um subtabuleiro proibido.</div>
+<div class="para logical" id="p-587">
 <div class="para">A resposta do nosso problema será dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -407,7 +407,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <div class="para">ou seja, o número de elementos do complementar de <span class="process-math">\((B_1\cup B_2\cup \cdots \cup B_7)\text{,}\)</span> dividido pelo número de maneiras de permutar as letras <span class="process-math">\(A_1, A_2, A_3\text{.}\)</span>
 </div>
 </div>
-<div class="para logical" id="p-585">
+<div class="para logical" id="p-588">
 <div class="para">Pelo princípio da Inclusão-Exclusão, isso pode ser calculado da seguinte maneira:</div>
 <div class="displaymath process-math" id="eq-PIE02">
 \begin{equation}
@@ -415,7 +415,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \end{equation}
 </div>
 </div>
-<div class="para logical" id="p-586">
+<div class="para logical" id="p-589">
 <div class="para">A seguir, será mostrado que cada somatório da equação <a href="" class="xref" data-knowl="./knowl/eq-PIE02.html" title="Equação 2.3.1">(2.3.1)</a>  envolvendo interseções de <span class="process-math">\(k\)</span> conjuntos,  pode ser calculado pelo produto de um valor <span class="process-math">\(r_k\text{,}\)</span> a ser determinado, pelo fatorial de <span class="process-math">\((7-k)\text{.}\)</span> Observe que</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-PIE02.html">
 \begin{equation*}
@@ -449,7 +449,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <article class="definition definition-like" id="def-ptorre"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-587">
+<div class="para logical" id="p-590">
 <div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro qualquer. O <em class="emphasis">polinômio de torre</em> de <span class="process-math">\(T\)</span> é definido como</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/Holton.html">
 \begin{equation*}
@@ -457,18 +457,18 @@ R(x, T) = \sum_{k=0}^n r_k(T)x^k,
 \end{equation*}
 </div>
 <div class="para">no qual, <span class="process-math">\(r_k(T)\)</span> é o número de maneiras de colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra e <span class="process-math">\(n\)</span> é o número máximo de torres que é possível colocar em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra. Em inglês esse polinômio é chamado de <em class="emphasis">Rook Polynomial</em>, para mais informações veja <a href="" class="xref" data-knowl="./knowl/Holton.html" title="Referência bibliográfica 6.9: A Second Step to Mathematical Olympiad Problems">[6.9]</a>.</div>
-</div></article><div class="para" id="p-588">Note que na <a href="" class="xref" data-knowl="./knowl/def-ptorre.html" title="Definição 2.3.6">Definição 2.3.6</a>, o tabuleiro não precisa ser quadrado nem retangular, pode inclusive ser um tabuleiro formado apenas pela parte cinza do tabuleiro da <a href="" class="xref" data-knowl="./knowl/fig-tabuleiro.html" title="Figura 2.3.5">Figura 2.3.5</a>.</div>
+</div></article><div class="para" id="p-591">Note que na <a href="" class="xref" data-knowl="./knowl/def-ptorre.html" title="Definição 2.3.6">Definição 2.3.6</a>, o tabuleiro não precisa ser quadrado nem retangular, pode inclusive ser um tabuleiro formado apenas pela parte cinza do tabuleiro da <a href="" class="xref" data-knowl="./knowl/fig-tabuleiro.html" title="Figura 2.3.5">Figura 2.3.5</a>.</div>
 <article class="theorem theorem-like" id="theorem-18"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-589">
+<div class="para logical" id="p-592">
 <div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro <span class="process-math">\(n\times n\text{,}\)</span> sem subtabuleiros proibidos. O polinômio de torre de <span class="process-math">\(T\)</span> é dado por:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 R(x, T) = \sum_{k=0}^n\left(C_n^k\right)^2\cdot k!\cdot x^k.
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-19"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-19"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><div class="para" id="p-590">Precisamos escolher <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(k\)</span> colunas no tabuleiro <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(n\times n\text{,}\)</span> para colocar as torres, de modo que uma torre não possa atacar a outra, isto pode ser feito de <span class="process-math">\(\left(C_n^k\right)^2\)</span> maneiras. Agora precisamos escolher a posição da linha 1 na qual será colocada a primeira torre, isso pode ser feito de <span class="process-math">\(k\)</span> maneiras, em seguida, precisamos escolher a posição da linha 2 na qual será colocada a segunda torre, o que pode ser feito de <span class="process-math">\((k-1)\)</span> maneiras, e assim por diante, até ficarmos com uma maneira de escolher a <span class="process-math">\(k\)</span>-ésima torre.</div> <div class="para logical" id="p-591">
+</div></article><article class="hiddenproof" id="proof-19"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-19"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><div class="para" id="p-593">Precisamos escolher <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(k\)</span> colunas no tabuleiro <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(n\times n\text{,}\)</span> para colocar as torres, de modo que uma torre não possa atacar a outra, isto pode ser feito de <span class="process-math">\(\left(C_n^k\right)^2\)</span> maneiras. Agora precisamos escolher a posição da linha 1 na qual será colocada a primeira torre, isso pode ser feito de <span class="process-math">\(k\)</span> maneiras, em seguida, precisamos escolher a posição da linha 2 na qual será colocada a segunda torre, o que pode ser feito de <span class="process-math">\((k-1)\)</span> maneiras, e assim por diante, até ficarmos com uma maneira de escolher a <span class="process-math">\(k\)</span>-ésima torre.</div> <div class="para logical" id="p-594">
 <div class="para">Assim, pelo princípio multiplicativo, o número de maneiras de colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de modo que uma torre não possa atacar a outra é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -479,7 +479,7 @@ R(x, T) = \sum_{k=0}^n\left(C_n^k\right)^2\cdot k!\cdot x^k.
 <article class="example example-like" id="example-35"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-592">
+<div class="para logical" id="p-595">
 <div class="para">Sejam <span class="process-math">\(T^i\text{,}\)</span> tabuleiros <span class="process-math">\(i\times i\text{,}\)</span> <span class="process-math">\(i = 1, 2, 3\text{,}\)</span> então</div>
 <div class="displaymath process-math" id="md-30">
 \begin{align*}
@@ -491,20 +491,20 @@ R(x, T^3)= \amp ~ 6x^3 + 18x^2 + 9x +1.
 </div></article><article class="technology computation-like" id="tech-politorre01"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-593">A seguir, temos os códigos para gerar o polinômio de torre de um tabuleiro <span class="process-math">\(n\times n\text{.}\)</span> Na linha 1, definimos uma matriz <span class="process-math">\(4\times 4\)</span> de uns e guardamos na variável <dfn class="terminology">B</dfn>. Para obter o polinômio de torre de um tabuleiro quadrado diferente, troque o número 4 da linha 1 pelo valor desejado e clique em "Evaluate (Sage)".</div> <pre class="ptx-sagecell sagecell-sage" id="sage-31"><script type="text/x-sage">B = matrix.ones(4)
+<div class="para" id="p-596">A seguir, temos os códigos para gerar o polinômio de torre de um tabuleiro <span class="process-math">\(n\times n\text{.}\)</span> Na linha 1, definimos uma matriz <span class="process-math">\(4\times 4\)</span> de uns e guardamos na variável <dfn class="terminology">B</dfn>. Para obter o polinômio de torre de um tabuleiro quadrado diferente, troque o número 4 da linha 1 pelo valor desejado e clique em "Evaluate (Sage)".</div> <pre class="ptx-sagecell sagecell-sage" id="sage-31"><script type="text/x-sage">B = matrix.ones(4)
 R = PolynomialRing(ZZ, 'x')
 show(R(B.rook_vector()))
 </script></pre></article><article class="definition definition-like" id="definition-18"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-594">Dizemos que a união de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\)</span> é uma união disjunta, quando nenhum quadrado de <span class="process-math">\(T_1\)</span> está na mesma linha ou mesma coluna de <span class="process-math">\(T_2\text{.}\)</span>
+<div class="para" id="p-597">Dizemos que a união de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\)</span> é uma união disjunta, quando nenhum quadrado de <span class="process-math">\(T_1\)</span> está na mesma linha ou mesma coluna de <span class="process-math">\(T_2\text{.}\)</span>
 </div></article><article class="example example-like" id="example-36"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-595">Sejam <span class="process-math">\(T^i\text{,}\)</span> tabuleiros <span class="process-math">\(i\times i\text{,}\)</span> <span class="process-math">\(i = 1, 2\text{,}\)</span> então o polinômio de torre da união disjunta <span class="process-math">\(T^2\cup T^1\)</span> é o produto dos polinômios de torre de <span class="process-math">\(T^2\)</span> e <span class="process-math">\(T^1\text{.}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-92" id="solution-92"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-92"><div class="solution solution-like">
-<div class="para" id="p-596">O polinômio de torre <span class="process-math">\(R(x, T^2\cup T^1)\)</span> pode ser obtido fazendo todas as figuras, da seguinte forma:</div> <figure class="figure figure-like" id="fig-tabuleirouniao2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/tabuleirouniao2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.12<span class="period">.</span></span><span class="space"> </span>Polinômio de Torre do tabuleiro <span class="process-math">\(T^2\cup T^1\text{.}\)</span></figcaption></figure> <div class="para logical" id="p-597">
+<div class="para" id="p-598">Sejam <span class="process-math">\(T^i\text{,}\)</span> tabuleiros <span class="process-math">\(i\times i\text{,}\)</span> <span class="process-math">\(i = 1, 2\text{,}\)</span> então o polinômio de torre da união disjunta <span class="process-math">\(T^2\cup T^1\)</span> é o produto dos polinômios de torre de <span class="process-math">\(T^2\)</span> e <span class="process-math">\(T^1\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-95" id="solution-95"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like">
+<div class="para" id="p-599">O polinômio de torre <span class="process-math">\(R(x, T^2\cup T^1)\)</span> pode ser obtido fazendo todas as figuras, da seguinte forma:</div> <figure class="figure figure-like" id="fig-tabuleirouniao2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/tabuleirouniao2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.12<span class="period">.</span></span><span class="space"> </span>Polinômio de Torre do tabuleiro <span class="process-math">\(T^2\cup T^1\text{.}\)</span></figcaption></figure> <div class="para logical" id="p-600">
 <div class="para">Calculando o produto dos polinômios de torre de <span class="process-math">\(T^2\)</span> e <span class="process-math">\(T^1\text{,}\)</span> obtemos</div>
 <div class="displaymath process-math" id="md-31">
 \begin{align*}
@@ -522,8 +522,8 @@ R(x, T^2\cup T^1) = R(x, T^2)\cdot R(x, T^1).
 </div></div></article><article class="proposition theorem-like" id="prop-uniaodis"><h4 class="heading">
 <span class="type">Proposição</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-598">O polinômio de torre da união disjunta de dois tabuleiros é dado pelo produto dos polinômios de torre de cada um dos tabuleiros.</div></article><article class="hiddenproof" id="proof-20"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><div class="para" id="p-599">Seja <span class="process-math">\(T\)</span> um tabuleiro obtido pela união disjunta de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\text{.}\)</span>
-</div> <div class="para logical" id="p-600">
+<div class="para" id="p-601">O polinômio de torre da união disjunta de dois tabuleiros é dado pelo produto dos polinômios de torre de cada um dos tabuleiros.</div></article><article class="hiddenproof" id="proof-20"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><div class="para" id="p-602">Seja <span class="process-math">\(T\)</span> um tabuleiro obtido pela união disjunta de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\text{.}\)</span>
+</div> <div class="para logical" id="p-603">
 <div class="para">Para colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra, podemos colocar <span class="process-math">\(r_{k-i}(T_1)\text{,}\)</span> <span class="process-math">\(0\leq i \leq k\text{,}\)</span> torres em <span class="process-math">\(T_1\text{,}\)</span> de forma que uma não possa atacar a outra, e <span class="process-math">\(r_{i}(T_2)\)</span> torres em <span class="process-math">\(T_2\text{,}\)</span> de forma que uma não possa atacar a outra. Dessa forma, dados duas torres quaisquer em <span class="process-math">\(T\text{,}\)</span> na configuração obtida anteriormente, uma não pode atacar a outra. Portanto, o número de maneiras de colocarmos <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\)</span> é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -543,7 +543,7 @@ R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
 <article class="technology computation-like" id="technology-22"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-601">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a href="" class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> que multiplica cada um dos polinômios de torre. As entradas da função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro <span class="process-math">\(3\times 3\)</span> e 4 tabuleiros <span class="process-math">\(1\times 1\text{.}\)</span>
+<div class="para" id="p-604">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a href="" class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> que multiplica cada um dos polinômios de torre. As entradas da função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro <span class="process-math">\(3\times 3\)</span> e 4 tabuleiros <span class="process-math">\(1\times 1\text{.}\)</span>
 </div> <pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage">def produto_polinomios_torre(*lista):
     R = PolynomialRing(ZZ, 'x')
     p = R(1)
@@ -552,7 +552,7 @@ R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
         p = p*R(B.rook_vector())
     return show(p)
 produto_polinomios_torre(3, 1, 1, 1, 1)
-</script></pre></article><div class="para logical" id="p-602">
+</script></pre></article><div class="para logical" id="p-605">
 <div class="para">Voltando a solução do <a href="" class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>. Pela <a href="" class="xref" data-knowl="./knowl/prop-uniaodis.html" title="Proposição 2.3.13">Proposição 2.3.13</a> o polinômio de torre do tabuleiro da palavra AAAMREL é dado por</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-amarela.html ./knowl/prop-uniaodis.html ./knowl/eq-PIE02.html ./knowl/exem-amarela.html ./knowl/eq-poli-torre.html ./knowl/naaa.html" id="paaa">
 \begin{equation}
@@ -581,7 +581,7 @@ R(x, T) =  6x^{7} + 42x^{6} + 117x^{5} + 169x^{4} + 136x^{3} + 60x^{2} + 13x^1 +
 <article class="technology computation-like" id="technology-23"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-603">A implementação de uma função que substitui <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(n-k)!\)</span> em um polinômio de grau <span class="process-math">\(n\text{.}\)</span> Na linha 14 a função está sendo "chamada" com o polinômio: <span class="process-math">\(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</span>
+<div class="para" id="p-606">A implementação de uma função que substitui <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(n-k)!\)</span> em um polinômio de grau <span class="process-math">\(n\text{.}\)</span> Na linha 14 a função está sendo "chamada" com o polinômio: <span class="process-math">\(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</span>
 </div> <pre class="ptx-sagecell sagecell-sage" id="sage-33"><script type="text/x-sage">def substituicao(p):
     c = p.coefficients()   # lista de coeficientes
     d = p.degree(x)        # grau máximo
@@ -593,8 +593,8 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 </script></pre></article><article class="example example-like" id="exem-perguntainternet"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-604">Quantos são os anagramas da palavra MATEMÁTICA, sem que as letras fiquem nas posições originais? (Supondo que A e Á são letras iguais)</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-93" id="solution-93"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-93"><div class="solution solution-like">
-<div class="para logical" id="p-605">
+<div class="para" id="p-607">Quantos são os anagramas da palavra MATEMÁTICA, sem que as letras fiquem nas posições originais? (Supondo que A e Á são letras iguais)</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like">
+<div class="para logical" id="p-608">
 <div class="para">O polinômio de torre desse caso é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -607,7 +607,7 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 1x^0   + 20x^1 + 164x^{2}+ 728x^{3} + 1941x^{4}+ 3260x^{5} + 3514x^{6}+ 2416x^{7}+ 1020x^{8}+ 240x^{9}+24x^{10}. 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-606">
+</div> <div class="para logical" id="p-609">
 <div class="para">Trocando <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(10-k)!\)</span> obtemos:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -624,10 +624,10 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 </div></div></article><article class="technology computation-like" id="tec-caotica-r"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-607">A resposta do <a href="" class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a> junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.</div> <div class="para" id="p-608">Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.</div> <figure class="figure figure-like" id="figure-23"><iframe id="interactive-caotica-r" width="600" height="690" src="interactive-caotica-r-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<div class="para" id="p-610">A resposta do <a href="" class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a> junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.</div> <div class="para" id="p-611">Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.</div> <figure class="figure figure-like" id="figure-23"><iframe id="interactive-caotica-r" width="600" height="690" src="interactive-caotica-r-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span>
 </h3>
-<div class="para logical" id="p-609">
+<div class="para logical" id="p-612">
 <div class="para">Na matemática, os polinômios de Laguerre, nomeados em homenagem a Edmond Laguerre (1834-1886), são soluções da equação de Laguerre:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -636,13 +636,13 @@ xy''+ (1-x)y' + ny = 0
 </div>
 <div class="para">que é uma equação diferencial linear de segunda ordem. Esses polinômios surgiram na mecânica quântica, na parte radial da solução da equação de Schrödinger para um átomo de um elétron. Eles também descrevem as funções de Wigner estáticas de sistemas osciladores em mecânica quântica no espaço de fase.</div>
 </div>
-<div class="para" id="p-610">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Laguerre_polynomials" target="_blank"><dfn class="terminology">en.wikipedia.org/wiki/Laguerre_polynomials</dfn></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a>
+<div class="para" id="p-613">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Laguerre_polynomials" target="_blank"><dfn class="terminology">en.wikipedia.org/wiki/Laguerre_polynomials</dfn></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a>
 </div>
-<div class="para" id="p-611">Os polinômios de torre, em combinatória, são mais ou menos os mesmos que os polinômios de Laguerre, a menos de mudanças elementares de variáveis. Usaremos os polinômios de Laguerre para enunciar um Teorema com uma fórmula para calcular permutações caóticas com repetições usando integrais.</div>
+<div class="para" id="p-614">Os polinômios de torre, em combinatória, são mais ou menos os mesmos que os polinômios de Laguerre, a menos de mudanças elementares de variáveis. Usaremos os polinômios de Laguerre para enunciar um Teorema com uma fórmula para calcular permutações caóticas com repetições usando integrais.</div>
 <article class="definition definition-like" id="definition-19"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.19</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-612">
+<div class="para logical" id="p-615">
 <div class="para">Usando recursividade é possível chegar na seguinte forma fechada para os polinômios de Laguerre:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -652,16 +652,16 @@ L_n(x) = \sum_{k=0}^nC_n^k \frac{(-1)^k}{k!}x^k
 </div></article><article class="technology computation-like" id="technology-25"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.20</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-613">Obtendo o polinômio de Laguerre <span class="process-math">\(L_3(x)\)</span> no Sage.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-34"><script type="text/x-sage">laguerre(3,x).show()
+<div class="para" id="p-616">Obtendo o polinômio de Laguerre <span class="process-math">\(L_3(x)\)</span> no Sage.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-34"><script type="text/x-sage">laguerre(3,x).show()
 </script></pre></article><article class="theorem theorem-like" id="teo-permutacao-caotica-repet"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.21</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-614">O número de permutações caóticas, <span class="process-math">\(DR_n^{r_1, r_2, \ldots, r_k}\text{,}\)</span> de uma lista com <span class="process-math">\(n\)</span> objetos, com um objeto repetido <span class="process-math">\(r_1\)</span> vezes, outro objeto repetido <span class="process-math">\(r_2\)</span> vezes, até o "último" objeto repetido <span class="process-math">\(r_k\)</span> vezes, tal que <span class="process-math">\(r_1+r_2+\cdots +r_k = n\text{,}\)</span> pode ser calculado da seguinte maneira:</div>
+<div class="para" id="p-617">O número de permutações caóticas, <span class="process-math">\(DR_n^{r_1, r_2, \ldots, r_k}\text{,}\)</span> de uma lista com <span class="process-math">\(n\)</span> objetos, com um objeto repetido <span class="process-math">\(r_1\)</span> vezes, outro objeto repetido <span class="process-math">\(r_2\)</span> vezes, até o "último" objeto repetido <span class="process-math">\(r_k\)</span> vezes, tal que <span class="process-math">\(r_1+r_2+\cdots +r_k = n\text{,}\)</span> pode ser calculado da seguinte maneira:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 DR_n^{r_1, r_2, \ldots, r_k} = \left|\int_0^\infty e^{-x} L_{r_1}(x)L_{r_2}(x)\cdots L_{r_k}(x) ~dx \right|
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-21"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><div class="para logical" id="p-615">
+</div></article><article class="hiddenproof" id="proof-21"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><div class="para logical" id="p-618">
 <div class="para">Como</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -669,15 +669,15 @@ DR_n^{r_1, r_2, \ldots, r_k} = \left|\int_0^\infty e^{-x} L_{r_1}(x)L_{r_2}(x)\c
 \end{equation*}
 </div>
 <div class="para">o resultado segue.</div>
-</div> <div class="para" id="p-616">Mais detalhes em breve.</div></article></div>
+</div> <div class="para" id="p-619">Mais detalhes em breve.</div></article></div>
 <article class="technology computation-like" id="technology-26"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-617">Usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a> para calcular o número de soluções do <a href="" class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a>. Foram usados os métodos <em class="emphasis">abs</em> e <em class="emphasis">integral</em> que calculam o valor absoluto e a integral, respectivamente.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-35"><script type="text/x-sage">abs(integral(exp(-x)*laguerre(3,x)*laguerre(2,x)^2*laguerre(1, x)^3, (x, 0, +oo)))
+<div class="para" id="p-620">Usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a> para calcular o número de soluções do <a href="" class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a>. Foram usados os métodos <em class="emphasis">abs</em> e <em class="emphasis">integral</em> que calculam o valor absoluto e a integral, respectivamente.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-35"><script type="text/x-sage">abs(integral(exp(-x)*laguerre(3,x)*laguerre(2,x)^2*laguerre(1, x)^3, (x, 0, +oo)))
 </script></pre></article><article class="technology computation-like" id="tec-permutacao-caotica-repet"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.23</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-618">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-36"><script type="text/x-sage">def DR(*lista):
+<div class="para" id="p-621">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-36"><script type="text/x-sage">def DR(*lista):
     n = sum(lista)
     p = exp(-x)
     for i in lista:
@@ -688,9 +688,9 @@ DR(3, 2, 2, 1, 1, 1)
 <span class="type">Exercícios</span> <span class="codenumber">2.3.3</span> <span class="title">Exercícios</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-81"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-619">(PRMO 2019) Diremos que um rearranjo das letras de uma palavra não tem letras fixas, quando o rearranjo é colocado diretamente abaixo da palavra, e nenhuma coluna tem a mesma letra repetida. Por exemplo, HBRATA é um rearranjo sem letras fixas de BHARAT. Quantos rearranjos distinguíveis sem letras fixas que BHARAT tem? (As duas letras A são consideradas idênticas.)</div>
+<div class="para" id="p-622">(PRMO 2019) Diremos que um rearranjo das letras de uma palavra não tem letras fixas, quando o rearranjo é colocado diretamente abaixo da palavra, e nenhuma coluna tem a mesma letra repetida. Por exemplo, HBRATA é um rearranjo sem letras fixas de BHARAT. Quantos rearranjos distinguíveis sem letras fixas que BHARAT tem? (As duas letras A são consideradas idênticas.)</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-79" id="answer-79"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-79"><div class="answer solution-like"><div class="para" id="p-620">84</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-79" id="answer-79"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-79"><div class="answer solution-like"><div class="para" id="p-623">84</div></div></div>
 </div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-7"><div class="fn"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Laguerre_polynomials</code></div></div>
 </div>
 <div class="ptx-content-footer">

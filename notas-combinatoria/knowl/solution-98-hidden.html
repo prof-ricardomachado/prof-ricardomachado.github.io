@@ -9,24 +9,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
 <div class="para logical">
-<div class="para">Utilizando a Generalização do 1º Lema de Kaplansky, onde <span class="process-math">\(n = 20, p = 4\)</span> e <span class="process-math">\(r = 3\text{,}\)</span> o número de maneiras de escolher os quatro dias para a realização das provas será dado por</div>
+<div class="para">São 3 questões de Matemática e 7 questões de outras áreas <span class="process-math">\((Q_1, Q_2,\cdots, Q_7)\text{.}\)</span> Inicialmente, iremos dispor as provas que não sofrem restrições.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-4!\times gK(20, 4, 3) = 7920.
+\large\bigcirc \ Q_1\ \bigcirc \ Q_2 \ \bigcirc \ Q_3 \ \bigcirc \ Q_4 \ \bigcirc \ Q_5 \ \bigcirc \ Q_6 \  \bigcirc \ Q_7 \ \bigcirc
 \end{equation*}
 </div>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-40"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
-factorial(4)*gK(20, 4, 3)
-</script></pre>
+</div> <div class="para logical">
+<div class="para">Temos 8 lugares <span class="process-math">\(\bigcirc\)</span> para colocar as 3 provas de Matemática e o número de formas de calcular isso, pode ser feito utilizando o 1º Lema de Kaplansky:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K(10,3).
+\end{equation*}
+</div>
+<div class="para">Devemos, agora, permutar a ordem das 7 provas das outras áreas e as 3 de Matemática. Assim, temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+7! \times 3! \text{ possibilidades.}
+\end{equation*}
+</div>
+<div class="para">E o total de formas de programar a sequência dessas 10 provas é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K(10, 3)\times 7! \times 3! = 1693440. 
+\end{equation*}
+</div>
+</div>
 </div></body>
 </html>

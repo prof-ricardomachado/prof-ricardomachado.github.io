@@ -9,42 +9,58 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.9.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.3.2.1</span><span class="period">.</span>
 </h3>
-<div class="para">Mais uma vez, usaremos o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</div> <div class="para logical">
-<div class="para">Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. O número de casos possíveis para os aniversários das 45 pessoas é <span class="process-math">\(365^{45}\text{.}\)</span> O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-365\times 364\times 363\times \cdots \times321. 
+(x^3-x+5)^8   = \sum_{\alpha_1 + \alpha_2 + \alpha_3 = 8} \frac{8!}{\alpha_1!\alpha_2!\alpha_3!}(x^3)^{\alpha_1}(-x)^{\alpha_2}5^{\alpha_3}\\
+\end{equation*}
+</div></div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">item a)</dfn> Para que o expoente de <span class="process-math">\(x\)</span> seja 2, devemos ter <span class="process-math">\(x^{3\alpha_1}x^{\alpha_2} = x^2\text{,}\)</span> juntando com a condição <span class="process-math">\(\alpha_1+\alpha_2+\alpha_3 = 8\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} 
+\alpha_1 + \alpha_2 +\alpha_3    =  8 \\
+~~~~ ~~~~ 3\alpha_1 + \alpha_2  =  2 \end{cases}
 \end{equation*}
 </div>
-<div class="para">Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para">Assim, <span class="process-math">\(\alpha_1 = 0, \alpha_2 = 2\)</span> e <span class="process-math">\(\alpha_3 = 6.\)</span> E a soma dos termos que possuem <span class="process-math">\(x^2\)</span> é:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. 
+\frac{8!}{0!\times 2! \times 6!} 5^6x^2 = 437500x^2.
 \end{equation*}
 </div>
-<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">item b)</dfn> Para que o expoente de <span class="process-math">\(x\)</span> seja 4, devemos ter <span class="process-math">\(x^{3\alpha_1}x^{\alpha_2} = x^4\text{,}\)</span> juntando com a condição <span class="process-math">\(\alpha_1+\alpha_2+\alpha_3 = 8\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
 \begin{equation*}
-1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. 
+\begin{cases} 
+\alpha_1 + \alpha_2 +\alpha_3    =  8 \\
+~~~~ ~~~~ 3\alpha_1 + \alpha_2  =  4 \end{cases}
 \end{equation*}
 </div>
-</div> <div class="para">Este cálculo pode ser verificado no Sage, usando o código abaixo:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-55"><script type="text/x-sage">pd = prod(i for i in (321..365))
-(1 - pd/365^45).n()
-</script></pre>
+<div class="para">Temos duas soluções:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} 
+\alpha_1 = 0, \alpha_2 = 4 \text{ e }\alpha_3 = 4 \\
+\alpha_1 = 1, \alpha_2 = 1 \text{ e } \alpha_3 = 6 \end{cases}
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-135" class="internal">em contexto</a></span>
+<div class="para">E a soma dos termos que possuem <span class="process-math">\(x^4\)</span> é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{8!}{0!\times 4! \times 4!} 5^4x^2 - \frac{8!}{1!\times 1! \times 6!} 5^6x^2 = -831250x^2.
+\end{equation*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="section-polinomio-leibniz.html#solution-135" class="internal">em contexto</a></span>
 </body>
 </html>

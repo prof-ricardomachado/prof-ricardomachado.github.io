@@ -9,13 +9,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">No total temos <span class="process-math">\(9+6=15\)</span> elementos e seis deles não podem ficar lado a lado. Portanto, o número de soluções é</div>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Utilizando a Generalização do 1º Lema de Kaplansky, onde <span class="process-math">\(n = 20, p = 4\)</span> e <span class="process-math">\(r = 3\text{,}\)</span> o número de maneiras de escolher os quatro dias para a realização das provas será dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
-K(15,6)=C(10,6)=210.
+4!\times gK(20, 4, 3) = 7920.
 \end{equation*}
 </div>
-</div></div></body>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-40"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+factorial(4)*gK(20, 4, 3)
+</script></pre>
+</div></body>
 </html>

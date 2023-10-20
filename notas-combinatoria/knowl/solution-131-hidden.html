@@ -11,30 +11,46 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical"><div class="displaymath process-math">
-\begin{align*}
-a = \amp ~(102+1)^{60}\\
-= \amp ~C_{60}^0102^{0}+C_{60}^1102^{1}+C_{60}^2102^{2}+\cdots+C_{60}^j102^{j}+\cdots+C_{60}^{60}102^{60}\quad\quad\quad
-\end{align*}
-</div></div> <div class="para logical"><div class="displaymath process-math">
-\begin{align*}
-b = \amp ~102^{60}+(102-1)^{60}\\
-= \amp ~102^{60}+C_{60}^0102^{0}(-1)^{60}+\cdots+C_{60}^j102^{j}(-1)^{60-j}+\cdots+C_{60}^{60}102^{60}(-1)^0
-\end{align*}
-</div></div> <div class="para logical">
-<div class="para">Portanto,</div>
+<div class="para logical">
+<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-a-b = 2C_{60}^1102^1+2C_{60}^3102^3+\cdots+2C_{60}^{59}102^{59}-102^{60}.
+T_{k} = C_{70}^{k-1}1^{k-1}\left(\frac{1}{4}\right)^{71-k} = C_{70}^{k-1}\cdot\frac{1}{4^{71-k}}\text{.}
 \end{equation*}
 </div>
-<div class="para">Como</div>
+<div class="para">
+<span class="process-math">\(T_{k+1}&gt; T_{k}\)</span> se</div>
 <div class="displaymath process-math">
 \begin{equation*}
-2C_{60}^{59}102^{59}-102^{60} = 120\cdot102^{59} - 102\cdot 102^{59} = 102^{59}\cdot 18&gt;0,
+C_{70}^{k}\cdot\frac{1}{4^{70-k}} &gt; C_{70}^{k-1}\cdot\frac{1}{4^{71-k}} 
 \end{equation*}
 </div>
-<div class="para">mostramos que <span class="process-math">\(a-b&gt;0\text{,}\)</span> logo <span class="process-math">\(a&gt;b\text{.}\)</span>
+<div class="para">Isto é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{70!}{k!(70-k)!}\cdot\frac{1}{4^{70-k}} &gt; \frac{70!}{(k-1)!(71-k)!}\cdot\frac{1}{4^{71-k}}, 
+\end{equation*}
+</div>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(71-k)!}{(70-k)!} &gt; \frac{k!}{(k-1)!}\cdot\frac{4^{70-k}}{4^{71-k}}, 
+\end{equation*}
+</div>
+<div class="para">e simplificando temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(71-k)}{1} &gt; \frac{k}{1}\cdot\frac{1}{4}. 
+\end{equation*}
+</div>
+<div class="para">Portanto, <span class="process-math">\(71-k &gt; k/4 \text{,}\)</span> logo <span class="process-math">\(k\lt 56, 8\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Assim, temos  <span class="process-math">\(T_{k} \lt  T_{k+1}\)</span> para <span class="process-math">\(k = 1, 2, \ldots, 56\)</span> e portanto o maior termo é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T_{57} = C_{70}^{56}\cdot\frac{1}{4^{14}} = \frac{24156719613645}{33554432}.
+\end{equation*}
 </div>
 </div>
 </div></body>
