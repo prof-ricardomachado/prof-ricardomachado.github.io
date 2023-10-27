@@ -13,28 +13,30 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.4.1</span><span class="period">.</span>
 </h4>
-<div class="para">Numere os vértices do polígono de <span class="process-math">\(1\)</span> a <span class="process-math">\(2007\text{.}\)</span> O que queremos descobir é o menor valor de <span class="process-math">\(k\text{,}\)</span> tal que, qualquer conjunto com <span class="process-math">\(k\)</span> vértices possua pelo menos <span class="process-math">\(4\)</span> vértices consecutivos.</div> <div class="para logical">
-<div class="para">Considere o conjunto das <span class="process-math">\(4\)</span>-tuplas de vértices consecutivos:</div>
+<div class="para logical">
+<div class="para">Existem nove primos menores ou iguais a <span class="process-math">\(23\text{:}\)</span> <span class="process-math">\(2, 3, 5, 7, 11, 13, 17, 19\)</span> e <span class="process-math">\(23\text{.}\)</span>  Considere uma lista, com <span class="process-math">\(9\)</span> entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número</div>
 <div class="displaymath process-math">
 \begin{equation*}
-T_4=\{(1, 2, 3, 4), (2, 3, 4, 5), \ldots, (2007, 1, 2, 3)\}.
+2128793535 = 2^0\times3^3\times5^1\times7^0\times11^2\times13^0\times 17^0\times19^4\times 23^0
 \end{equation*}
 </div>
-<div class="para">Cada vértice do polígono está presente em 4 elementos do conjunto <span class="process-math">\(T_4\text{.}\)</span> Desse modo, cada vértice escolhido no polígono correspondem a 4 elementos de <span class="process-math">\(T_4\text{.}\)</span> Como <span class="process-math">\(T_4\)</span> possui <span class="process-math">\(2007\)</span> elementos, escreva uma lista <span class="process-math">\(L\)</span> com os números de todas as <span class="process-math">\(4\)</span>-tuplas de forma consecutiva, formando uma lista com <span class="process-math">\(4\times 2007\)</span> números.</div>
+<div class="para">estiver entre os 1985 números, a lista dele será:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-L = \underbrace{1, 2, 3, 4}_{1º}, \underbrace{2, 3, 4, 5}_{2º}, \ldots, \underbrace{2007, 1,2,3}_{2007º}.
+L_{2128793535}= 0, 3, 1, 0, 2, 0, 0, 4, 0.
 \end{equation*}
 </div>
-<div class="para">Na lista <span class="process-math">\(L\)</span> podemos escolher até <span class="process-math">\(3\times 2007\)</span> números, de forma que não tenham <span class="process-math">\(4\)</span> elementos consecutivos. Então, como cada vértice do polígono correspondem a <span class="process-math">\(4\)</span> elementos de <span class="process-math">\(L\text{,}\)</span> se <span class="process-math">\(4k&gt;3\times 2007\text{,}\)</span> teremos a condição satisfeita: qualquer conjunto de <span class="process-math">\(k\)</span> vértices possui pelo menos <span class="process-math">\(4\)</span> vértices consecutivos. Fazendo as contas,</div>
+<div class="para">Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.</div>
+</div> <div class="para logical">
+<div class="para">Para cada uma das 1985 listas <span class="process-math">\(L_n\text{,}\)</span> considere uma nova lista <span class="process-math">\(L_n^2\text{,}\)</span> na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-k&gt; \frac{3\times 2007}{4} = 1505,25 ~~~ \Rightarrow k\geq 1506. 
+L_{2128793535}^2= 0, 1, 1, 0, 0, 0, 0, 0, 0.
 \end{equation*}
 </div>
-</div> <div class="para">Agora precisamos monstrar que o menor valor de <span class="process-math">\(k\)</span> é <span class="process-math">\(1506\text{.}\)</span> Vamos escolher <span class="process-math">\(1505\)</span> vértices de forma que não tenham <span class="process-math">\(4\)</span> vértices consecutivos. Considere todos os vértices do polígono, menos o vértice <span class="process-math">\(2007\)</span> e os vértices que são múltiplos de <span class="process-math">\(4\text{.}\)</span> Como <span class="process-math">\(2007 = 501\times 4+3\text{,}\)</span> temos <span class="process-math">\(501\)</span> múltiplos de <span class="process-math">\(4\text{,}\)</span> dessa forma temos <span class="process-math">\(2007-501-1 = 1505\)</span> vértices sem que <span class="process-math">\(4\)</span> deles sejam consecutivos.</div>
+</div> <div class="para">Assim, cada nova lista <span class="process-math">\(L_n^2\)</span> estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> haverão duas idênticas. Considere quaiquer 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.</div> <div class="para">Para cada um dos 737 pares, considere uma lista <span class="process-math">\(L_{n+m}^2\)</span> formada pela soma <span class="process-math">\(L_n^2+L_m^2\text{.}\)</span> Observe que cada entrada das 737 listas <span class="process-math">\(L_{n+m}^2\)</span> é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas <span class="process-math">\(L_{n+m}^2\)</span> serão idênticas. Digamos que  <span class="process-math">\(L_{n+m}^2\)</span> e <span class="process-math">\(L_{p+q}^2\text{,}\)</span> então o número <span class="process-math">\(n\times m\times p\times q\)</span> é a quarta potência de um inteiro.</div>
 </div>
 <span class="incontext"><a href="section-casa-pombos.html#solution-120" class="internal">em contexto</a></span>
 </body>

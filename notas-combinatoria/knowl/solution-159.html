@@ -13,23 +13,67 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.2.9.2</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.2.9.1</span><span class="period">.</span>
 </h3>
-<div class="para"><dfn class="terminology">item b)</dfn></div> <div class="para">Para organizar melhor as ideias, desenhamos uma árvore com todas as possibilidades.</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/pcondicionalb.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.2.10<span class="period">.</span></span><span class="space"> </span>Árvore de Probabilidades.</figcaption></figure> <div class="para logical">
-<div class="para">Observa-se mais facilmente que a probabilidade da importação chegar na residência é dada por</div>
+<div class="para"><dfn class="terminology">item a)</dfn></div> <div class="para logical">
+<div class="para">Usaremos as notações:</div>
 <div class="displaymath process-math">
+\begin{align*}
+C: \amp ~ \text{ é uma importação da China;} \\
+R: \amp ~ \text{ o comprador Recebe a importação;} 
+\end{align*}
+</div>
+<div class="para">Logo,</div>
+<div class="displaymath process-math">
+\begin{align*}
+P(C\cap R) = \amp ~ P(C) P(R|C) \\
+= \amp ~ 0,8\times 0,3 = 0,24\\
+= \amp 24\% 
+\end{align*}
+</div>
+</div> <div class="para"><dfn class="terminology">item b)</dfn></div> <div class="para logical">
+<div class="para">Para uma importação chegar na residência do comprador, ela pode ter sido feita da china ou do complementar da china. Usaremos <span class="process-math">\(nR\)</span> para dizer que não chegou na residência e <span class="process-math">\(nC\)</span> para dizer que não é da china. A probabilidade de que a importação chegue é dada por</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-prob-condicional-p2.html ./knowl/teo-probabilidade-total.html">
 \begin{equation*}
-0,2\times 0,9 + 0,8\times 0,3 = 0,42=42\% 
+P(R) = \underbrace{P( (C\cap R) \cup (nC\cap R))}_{(\bigstar)} = P(C\cap R) + P(nC\cap R). 
 \end{equation*}
 </div>
-</div> <div class="para"><dfn class="terminology">item c)</dfn></div> <div class="para logical">
-<div class="para">Usando a árvore de probabilidades, vamos calcular a probabilidade de que a importação seja da China e tenha se perdido, vamos dividir esse valor pela probabilidade de que a importação tenha se perdido.</div>
-<div class="displaymath process-math">
+<div class="para">Usando a <a href="" class="xref" data-knowl="./knowl/def-prob-condicional-p2.html" title="Nota 4.2.3">Nota 4.2.3</a>, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-prob-condicional-p2.html ./knowl/teo-probabilidade-total.html">
+\begin{align*}
+P(R) = \amp ~ \overbrace{P(C)P(R|C) +P(nC)P(R|nC)}^{(\bigstar)} \\
+= \amp ~ 0,8\times 0,3 + 0,2\times 0.9 = 42\%
+\end{align*}
+</div>
+<div class="para">Nesta solução, usamos o <a href="" class="xref" data-knowl="./knowl/teo-probabilidade-total.html" title="Teorema 4.2.11">Teorema 4.2.11</a> (Teorema da Probabilidade Total).</div>
+</div> <div class="para"><dfn class="terminology">item c)</dfn></div> <div class="para">Vamos calcular a probabilidade de que a importação seja da China e tenha se perdido, vamos dividir esse valor pela probabilidade de que a importação tenha se perdido.</div> <div class="para logical">
+<div class="para">A probabilidade de que a importação se perdeu e foi da china é de</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-bayes.html">
 \begin{equation*}
-\frac{0,8\times 0,7}{0,2\times 0,1 + 0,8\times 0,7} = \frac{0,56}{0,58} = 0,9655 \approx 97\%.
+P(C\cap nR) = 0,8\times 0,7 = 0,56 = 56\%. 
 \end{equation*}
 </div>
+<div class="para">A probabilidade de que a importação tenha se perdido é dada por</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-bayes.html">
+\begin{equation*}
+P(nR) = 0,2\times 0,1 + 0,8\times 0,7 = 58\%.
+\end{equation*}
+</div>
+<div class="para">Portanto a probabilidade de que tenha sido da china a  importação que se perdeu  é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-bayes.html">
+\begin{equation*}
+\frac{P(C\cap nR)}{P(nR)} = \frac{0,56}{0,58} = 0.965517241379310 \approx 0,97\%.
+\end{equation*}
+</div>
+<div class="para">Observe que o cálculo usado foi o seguinte:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-bayes.html">
+\begin{align*}
+P(C|nR) = \amp ~\frac{P(C\cap nR)}{P(nR)} \\
+= \amp ~ \frac{P(C)P(nR|C)}{P(nC\cap nR)+P(C\cap nR)}\\
+= \amp ~ \frac{P(C)P(nR|C)}{P(nC)P(nR|nC)+P(C)P(nR|C)}
+\end{align*}
+</div>
+<div class="para">Este é o <a href="" class="xref" data-knowl="./knowl/teo-bayes.html" title="Teorema 4.2.12">Teorema 4.2.12</a> Teorema de Bayes.</div>
 </div>
 </div>
 <span class="incontext"><a href="section-probabilidade-condicional.html#solution-159" class="internal">em contexto</a></span>

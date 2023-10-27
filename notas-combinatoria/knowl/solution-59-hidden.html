@@ -11,15 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:</div> <ol class="lower-alpha">
-<li><div class="para">Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma, assim temos 6 peças desse tipo.</div></li>
-<li><div class="para">Dois lados possuem um valor e o terceiro lado possui um valor diferente. Uma vez decidido qual valor será usado duas vezes, cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas duas entradas são iguais, logo precisamos dividir por 2. Nesse caso temos <span class="process-math">\(2\times C_6^2\)</span> modos de formar as peças.</div></li>
-<li><div class="para">Cada lado possui um valor diferente. Neste caso, cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2. Nesse caso temos <span class="process-math">\(2\times C_6^3\)</span> modos de formar as peças.</div></li>
-</ol> <div class="para logical">
-<div class="para">Portanto, o número de soluções é:</div>
+<div class="para">Observe que precisamos separar em dois casos.</div> <div class="para">
+<dfn class="terminology">1º Caso:</dfn> José, Cléber, Márcia e Luíza não participam do debate. Neste caso temos <span class="process-math">\(C_8^6\)</span> maneiras de escolher as pessoas que vão participar do debate e <span class="process-math">\(PC_6\)</span> maneiras de organizar as pessoas na mesa circular. No total não <span class="process-math">\(C_8^6\times PC_6 = 28\times 120=3360\)</span> maneiras.</div> <div class="para">
+<dfn class="terminology">2º Caso:</dfn> José, Cléber, Márcia e Luíza participam do debate. Neste caso, vamos contar sem a restrição de José e Cléber não sentarem juntos e subtrair dos casos em que eles sentam juntos. Em ambos os casos precisamos escolher 2 pessoas de 8 disponíveis para completar a mesa.</div> <div class="para">Sem a restrição de José e Cléber não sentarem juntos temos duas maneiras de colocar Márcia e Luíza juntas na mesa e temos mais 4 pessoas para colocar na mesa. Então, são <span class="process-math">\(2\times PC_5\)</span> maneiras de organizar essas 6 pessoas.</div> <div class="para logical">
+<div class="para">Contando os casos em que José e Cléber sentam juntos, temos duas maneiras de colocar Márcia e Luíza e duas maneiras de colocar José e Cléber juntos na mesa. Uma vez feita esssa escolhas, ficamos com o equivalente a 4 pessoas para serem organizadas numa mesa circular, ou seja, são <span class="process-math">\(2\times 2\times PC_4\)</span> maneiras. Assim, a quantidade de maneiras do 2º caso é dada por:</div>
+<div class="displaymath process-math">
+\begin{align*}
+C_8^2\times(2\times PC_5-2\times 2\times PC_4)=\amp~ 2\times C_8^2(P_4-2\times P_3)\\
+=\amp~2\times 28(24-2\times 6)\\
+=\amp~672.
+\end{align*}
+</div>
+<div class="para">Portanto, juntando os dois casos, o número total de maneiras é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-6 + 2\times C_6^2 + 2\times C_6^3 = 76. 
+3360+672=4032.
 \end{equation*}
 </div>
 </div>

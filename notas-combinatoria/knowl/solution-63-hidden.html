@@ -9,37 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">Use os números de 1 à 12 para representar as pessoas. Desta forma, a posição de cada permutação dos dígitos:</div>
+<div class="para">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</div> <div class="para logical">
+<div class="para">Começando com A, temos um total de <span class="process-math">\(PR_9^{2, 2, 2}\)</span> anagramas, começando com E, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas e começando com I, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas. Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3
+PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600. 
 \end{equation*}
 </div>
-<div class="para">serve para representar quem está no grupo 1, no grupo 2 e no grupo 3, respectivamente. Assim pela ordem que está escrito, os números que estão no grupo 1 são: <span class="process-math">\(1, 2, 3, 4\text{,}\)</span> no grupo 2 são <span class="process-math">\(5, 6, 7, 8\)</span> e no grupo 3 são <span class="process-math">\(9, 10, 11, 12\text{.}\)</span>
-</div>
-</div> <div class="para logical">
-<div class="para">Desta forma, usando permutação com repetição para</div>
-<div class="displaymath process-math">
-\begin{equation*}
-1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3\text{,}
-\end{equation*}
-</div>
-<div class="para">o número de maneiras de dividir 12 pessoas em três grupos, levando em consideração a ordem dos grupos é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-PR_{12}^{4, 4, 4} = \frac{12!}{4!4!4!}.
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Como a ordem dos grupos não é importante, estamos contando a mais. Assim, precisamos dividir tudo pelo número de maneiras de ordenar os 3 grupos que é 3!. Portanto a resposta é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{12!}{4!4!4!3!} = 5775.
-\end{equation*}
-</div>
-</div>
+<div class="para">Este cálculo pode ser efetuado no Sage da seguinte maneira:</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-19"><script type="text/x-sage">def PR(*lista):
+    p = factorial(lista[0])
+    for i in lista[1:]:
+        p = p/factorial(i)
+    return p
+PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
+</script></pre>
 </div></body>
 </html>

@@ -916,7 +916,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.5",
   "title": "Permutações Circulares",
-  "body": " Permutações Circulares    O número de permutações circulares de elementos, é o número de maneiras de organizar objetos distintos ao longo de um círculo fixo (isto é, não pode ser retirado do plano e virado). Notação:     Observe que os três círculos da ( ) são equivalentes, ou seja, representam a mesma permutação circular, pois o segundo círculo pode ser obtido a partir do primeiro por uma rotação de e o terceiro círculo pode ser obtido a partir do primeiro por uma rotação de .   Três círculos que representam a mesma permutação circular.      O número total de permutações circulares com 3 elementos distintos é 2.   Observe que as permutações simples (1, 2, 3), (3, 1, 2) e (2, 3 ,1) podem ser identificadas com os círculos da ( ), colocando o primeiro elemento na parte mais alta do círculo, o segundo elemento do lado direito e o terceiro elemento do lado esquerdo. Portanto essas três permutações simples, correspondem a apenas uma permutação circular.  Observe que as permutações simples (1, 3, 2), (2, 1, 3) e (3, 2 ,1) podem ser identificadas com os círculos da ( ), da mesma forma que foi feito no caso anterior. Portanto essas três permutações simples, correspondem a apenas uma permutação circular.   Três circulos que representam a mesma permutação circular.   Como não temos mais casos, o número total de permutações circulares com três elementos é 2.   > O número de permutações circulares com elementos distintos é   Se não considerássemos equivalentes disposições que possam coincidir por rotação, teríamos disposições.  Como para cada disposição, temos disposições equivalentes, dividindo o total de permutações por , obtemos     A lista com todas as permutações circulares, pode ser obtida com o seguinte comando:    O número de permutações circulares com 10 elementos pode ser calculado da seguinte forma:     Quantas rodas de ciranda podem ser formadas com 8 pessoas?  Basta calcular o número de permutações circulares de 8 elementos.      Quantas rodas de ciranda podem ser formadas com 8 pessoas, se duas determinadas pessoas não podem ficar juntas?   Calculamos o número de permutações circulares com 8 elementos, . Agora, subtraímos desse total, o número de permutações de 8 elementos, na qual, dois deles estão juntos.   Duas formas de organizar os elementos 1 e 2.    O que dá um total de permutações circulares, pois temos duas formas de permutar os dois elementos que estão juntos, depois disso, olhamos para a roda de ciranda como se tivesse apenas 7 elementos. Portanto a resposta é       Exercícios   De quantos modos 7 meninos e 7 meninas podem formar uma roda de ciranda de modo que pessoas de mesmo sexo não fiquem juntas?   3628800    De quantos modos 18 casais podem formar uma roda de ciranda de modo que cada homem permaneça ao lado de sua mulher?   93241325150797824000   (Fundação CEFETMINAS - Prefeitura de Barbacena - Enfermeiro - 2016). Em uma empresa, as reuniões ocorrem em uma sala de mesa circular, segundo os seguintes critérios:  O presidente e o vice-presidente sempre se sentam um ao lado do outro.  Os três gerentes sempre se sentam um ao lado do outro.  Considerando-se uma reunião com 9 pessoas, o número de maneiras que elas poderão ocupar os assentos de tal forma que esses critérios sejam cumpridos é     (VESTIBULAR UFPE – UFRPE \/ 1998 2ª ETAPA) Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).   Uma das peças com os valores 1, 2 e 4.    Quantas peças há no trominó, supondo ?  76   Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:   Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma, assim temos 6 peças desse tipo.  Dois lados possuem um valor e o terceiro lado possui um valor diferente. Uma vez decidido qual valor será usado duas vezes, cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas duas entradas são iguais, logo precisamos dividir por 2. Nesse caso temos modos de formar as peças.  Cada lado possui um valor diferente. Neste caso, cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2. Nesse caso temos modos de formar as peças.   Portanto, o número de soluções é:    "
+  "body": " Permutações Circulares    O número de permutações circulares de elementos, é o número de maneiras de organizar objetos distintos ao longo de um círculo fixo (isto é, não pode ser retirado do plano e virado). Notação:     Observe que os três círculos da ( ) são equivalentes, ou seja, representam a mesma permutação circular, pois o segundo círculo pode ser obtido a partir do primeiro por uma rotação de e o terceiro círculo pode ser obtido a partir do primeiro por uma rotação de .   Três círculos que representam a mesma permutação circular.      O número total de permutações circulares com 3 elementos distintos é 2.   Observe que as permutações simples (1, 2, 3), (3, 1, 2) e (2, 3 ,1) podem ser identificadas com os círculos da ( ), colocando o primeiro elemento na parte mais alta do círculo, o segundo elemento do lado direito e o terceiro elemento do lado esquerdo. Portanto essas três permutações simples, correspondem a apenas uma permutação circular.  Observe que as permutações simples (1, 3, 2), (2, 1, 3) e (3, 2 ,1) podem ser identificadas com os círculos da ( ), da mesma forma que foi feito no caso anterior. Portanto essas três permutações simples, correspondem a apenas uma permutação circular.   Três circulos que representam a mesma permutação circular.   Como não temos mais casos, o número total de permutações circulares com três elementos é 2.   > O número de permutações circulares com elementos distintos é   Se não considerássemos equivalentes disposições que possam coincidir por rotação, teríamos disposições.  Como para cada disposição, temos disposições equivalentes, dividindo o total de permutações por , obtemos     A lista com todas as permutações circulares, pode ser obtida com o seguinte comando:    O número de permutações circulares com 10 elementos pode ser calculado da seguinte forma:     Quantas rodas de ciranda podem ser formadas com 8 pessoas?  Basta calcular o número de permutações circulares de 8 elementos.      Quantas rodas de ciranda podem ser formadas com 8 pessoas, se duas determinadas pessoas não podem ficar juntas?   Calculamos o número de permutações circulares com 8 elementos, . Agora, subtraímos desse total, o número de permutações de 8 elementos, na qual, dois deles estão juntos.   Duas formas de organizar os elementos 1 e 2.    O que dá um total de permutações circulares, pois temos duas formas de permutar os dois elementos que estão juntos, depois disso, olhamos para a roda de ciranda como se tivesse apenas 7 elementos. Portanto a resposta é       Exercícios   De quantos modos 7 meninos e 7 meninas podem formar uma roda de ciranda de modo que pessoas de mesmo sexo não fiquem juntas?   3628800    De quantos modos 18 casais podem formar uma roda de ciranda de modo que cada homem permaneça ao lado de sua mulher?   93241325150797824000   (Fundação CEFETMINAS - Prefeitura de Barbacena - Enfermeiro - 2016). Em uma empresa, as reuniões ocorrem em uma sala de mesa circular, segundo os seguintes critérios:  O presidente e o vice-presidente sempre se sentam um ao lado do outro.  Os três gerentes sempre se sentam um ao lado do outro.  Considerando-se uma reunião com 9 pessoas, o número de maneiras que elas poderão ocupar os assentos de tal forma que esses critérios sejam cumpridos é     (Portal da Obmep) Dos 12 estudantes da uma turma, seis serão escolhidos para participar de um debate em uma mesa circular. José, Cléber, Márcia e Luíza só irão se forem juntos; de tal forma que Márcia e Luíza vão sentar lado a lado e o José e o Cléber nunca irão sentar lado a lado à mesa. De quantas maneiras distintas podem se sentar?  4032   Observe que precisamos separar em dois casos.  1º Caso: José, Cléber, Márcia e Luíza não participam do debate. Neste caso temos maneiras de escolher as pessoas que vão participar do debate e maneiras de organizar as pessoas na mesa circular. No total não maneiras.  2º Caso: José, Cléber, Márcia e Luíza participam do debate. Neste caso, vamos contar sem a restrição de José e Cléber não sentarem juntos e subtrair dos casos em que eles sentam juntos. Em ambos os casos precisamos escolher 2 pessoas de 8 disponíveis para completar a mesa.  Sem a restrição de José e Cléber não sentarem juntos temos duas maneiras de colocar Márcia e Luíza juntas na mesa e temos mais 4 pessoas para colocar na mesa. Então, são maneiras de organizar essas 6 pessoas.  Contando os casos em que José e Cléber sentam juntos, temos duas maneiras de colocar Márcia e Luíza e duas maneiras de colocar José e Cléber juntos na mesa. Uma vez feita esssa escolhas, ficamos com o equivalente a 4 pessoas para serem organizadas numa mesa circular, ou seja, são maneiras. Assim, a quantidade de maneiras do 2º caso é dada por: Portanto, juntando os dois casos, o número total de maneiras é    (VESTIBULAR UFPE – UFRPE \/ 1998 2ª ETAPA) Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).   Uma das peças com os valores 1, 2 e 4.    Quantas peças há no trominó, supondo ?  76   Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:   Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma, assim temos 6 peças desse tipo.  Dois lados possuem um valor e o terceiro lado possui um valor diferente. Para formar cada peça deste tipo, precisamos escolher dois números de seis disponíveis, uma vez feita esta escolha temos duas maneiras de escolher qual número será usado duas vezes. No total são modos de formar essas peças, já que qualquer permutações desses números não gera uma nova peça.  Cada lado possui um valor diferente. Neste caso, cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2. Neste caso temos modos de formar as peças.   Portanto, o número de soluções é:    "
 },
 {
   "id": "def-permutacao-circular",
@@ -1015,7 +1015,16 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.5.4",
   "title": "",
-  "body": "(VESTIBULAR UFPE – UFRPE \/ 1998 2ª ETAPA) Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).   Uma das peças com os valores 1, 2 e 4.    Quantas peças há no trominó, supondo ?  76   Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:   Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma, assim temos 6 peças desse tipo.  Dois lados possuem um valor e o terceiro lado possui um valor diferente. Uma vez decidido qual valor será usado duas vezes, cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas duas entradas são iguais, logo precisamos dividir por 2. Nesse caso temos modos de formar as peças.  Cada lado possui um valor diferente. Neste caso, cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2. Nesse caso temos modos de formar as peças.   Portanto, o número de soluções é:  "
+  "body": "(Portal da Obmep) Dos 12 estudantes da uma turma, seis serão escolhidos para participar de um debate em uma mesa circular. José, Cléber, Márcia e Luíza só irão se forem juntos; de tal forma que Márcia e Luíza vão sentar lado a lado e o José e o Cléber nunca irão sentar lado a lado à mesa. De quantas maneiras distintas podem se sentar?  4032   Observe que precisamos separar em dois casos.  1º Caso: José, Cléber, Márcia e Luíza não participam do debate. Neste caso temos maneiras de escolher as pessoas que vão participar do debate e maneiras de organizar as pessoas na mesa circular. No total não maneiras.  2º Caso: José, Cléber, Márcia e Luíza participam do debate. Neste caso, vamos contar sem a restrição de José e Cléber não sentarem juntos e subtrair dos casos em que eles sentam juntos. Em ambos os casos precisamos escolher 2 pessoas de 8 disponíveis para completar a mesa.  Sem a restrição de José e Cléber não sentarem juntos temos duas maneiras de colocar Márcia e Luíza juntas na mesa e temos mais 4 pessoas para colocar na mesa. Então, são maneiras de organizar essas 6 pessoas.  Contando os casos em que José e Cléber sentam juntos, temos duas maneiras de colocar Márcia e Luíza e duas maneiras de colocar José e Cléber juntos na mesa. Uma vez feita esssa escolhas, ficamos com o equivalente a 4 pessoas para serem organizadas numa mesa circular, ou seja, são maneiras. Assim, a quantidade de maneiras do 2º caso é dada por: Portanto, juntando os dois casos, o número total de maneiras é   "
+},
+{
+  "id": "exercise-49",
+  "level": "2",
+  "url": "section-permutacoes-circulares.html#exercise-49",
+  "type": "Exercício",
+  "number": "1.5.5",
+  "title": "",
+  "body": "(VESTIBULAR UFPE – UFRPE \/ 1998 2ª ETAPA) Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).   Uma das peças com os valores 1, 2 e 4.    Quantas peças há no trominó, supondo ?  76   Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:   Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma, assim temos 6 peças desse tipo.  Dois lados possuem um valor e o terceiro lado possui um valor diferente. Para formar cada peça deste tipo, precisamos escolher dois números de seis disponíveis, uma vez feita esta escolha temos duas maneiras de escolher qual número será usado duas vezes. No total são modos de formar essas peças, já que qualquer permutações desses números não gera uma nova peça.  Cada lado possui um valor diferente. Neste caso, cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2. Neste caso temos modos de formar as peças.   Portanto, o número de soluções é:  "
 },
 {
   "id": "section-permutacoes-com-repeticoes",
@@ -1099,126 +1108,126 @@ var ptx_lunr_docs = [
   "body": " De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?   Use os números de 1 à 12 para representar as pessoas. Desta forma, a posição de cada permutação dos dígitos: serve para representar quem está no grupo 1, no grupo 2 e no grupo 3, respectivamente. Assim pela ordem que está escrito, os números que estão no grupo 1 são: , no grupo 2 são e no grupo 3 são .  Desta forma, usando permutação com repetição para , o número de maneiras de dividir 12 pessoas em três grupos, levando em consideração a ordem dos grupos é  Como a ordem dos grupos não é importante, estamos contando a mais. Assim, precisamos dividir tudo pelo número de maneiras de ordenar os 3 grupos que é 3!. Portanto a resposta é    "
 },
 {
-  "id": "exercise-49",
+  "id": "exercise-50",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-49",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-50",
   "type": "Exercício",
   "number": "1.6.1",
   "title": "",
   "body": "Um byte, em um computador, é uma sequência de 8 algarismos formada apenas com e . Determine quantos bytes existem formados com três e cinco .   "
 },
 {
-  "id": "exercise-50",
+  "id": "exercise-51",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-50",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-51",
   "type": "Exercício",
   "number": "1.6.2",
   "title": "",
   "body": "Quantos são os anagramas da palavra:  PRECEDENTE;  PROPONENTE;  FOTOSSINTETIZANTES.             .   "
 },
 {
-  "id": "exercise-51",
+  "id": "exercise-52",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-51",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-52",
   "type": "Exercício",
   "number": "1.6.3",
   "title": "",
   "body": "Refaça o exercício anterior com as seguintes condições:  A palavra começa com vogal;  A palavra começa e termina com consoante.   "
 },
 {
-  "id": "exercise-52",
+  "id": "exercise-53",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-52",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-53",
   "type": "Exercício",
   "number": "1.6.4",
   "title": "",
   "body": " Quantos números de 8 dígitos, maiores que 50.000.000, podem ser formados usando apenas os algarismos 1, 2, 5, 5, 5, 7, 7, 7?   840  "
 },
 {
-  "id": "exercise-53",
+  "id": "exercise-54",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-53",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-54",
   "type": "Exercício",
   "number": "1.6.5",
   "title": "",
   "body": " De quantos modos podemos colocar em fila 6 letras A, 6 letras B, 5 letras C e 4 letras D, de modo que não haja duas letras C juntas?   10406235840  "
 },
 {
-  "id": "exercise-54",
+  "id": "exercise-55",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-54",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-55",
   "type": "Exercício",
   "number": "1.6.6",
   "title": "",
   "body": " Quantas são as opções que temos de colocar 10 bolinhas e 7 barras em sequência?   19448  "
 },
 {
-  "id": "exercise-55",
+  "id": "exercise-56",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-55",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-56",
   "type": "Exercício",
   "number": "1.6.7",
   "title": "",
   "body": " (OPEMAT 2016 - nível 2) A figura abaixo representa o mapa de uma cidade. Cada aresta representa uma rua e cada vértice representa um cruzamento. Quantos são os trajetos de comprimento mínimo ligando o ponto A ao ponto B?    1743  "
 },
 {
-  "id": "exercise-56",
+  "id": "exercise-57",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-56",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-57",
   "type": "Exercício",
   "number": "1.6.8",
   "title": "",
   "body": "(OBM 2011 - 2ª fase do nível 3) Uma sequência de letras, com ou sem sentido, é dita alternada quando é formada alternadamente por consoantes e vogais. Por exemplo, EZEQAF, MATEMÁTICA, LEGAL e ANIMADA são palavras alternadas, mas DSOIUF, DINHEIRO e ORDINÁRIO não são. Quantos anagramas da palavra FELICIDADE (incluindo a palavra FELICIDADE) são sequências alternadas?   3600   As consoantes de FELICIDADE são F, L, C, D, D e as vogais são E, I, I, A, E. Como são 5 vogais e 5 consoantes, cada anagrama alternado terá cada consoante em posição ímpar ou em posição par. Organizando as consoantes em posições ímpares, ficamos com a seguinte organização   Na qual, os espaços serão ocupados por vogais. Assim, temos um total de maneiras de ordenar essas consoantes. Para ordenar as vogais, temos maneiras, pois temos no total 5 letras, sendo duas letras E, duas letras I e uma letra A.  Como podemos alterar as vogais com as consoantes, o número de anagramas alternados de FELICIDADE é   "
 },
 {
-  "id": "exercise-57",
+  "id": "exercise-58",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-57",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-58",
   "type": "Exercício",
   "number": "1.6.9",
   "title": "",
   "body": " De quantos formas 12 estudantes podem ser divididos e colocados em 3 salas, sendo 4 na primeira, 5 na segunda e 3 na terceira?   27720   Pense na seguinte lista: Para cada permutação da lista , podemos distribuir os estudantes nas salas da seguinte maneira. Use a posição do número para indicar a pessoa e o número para indicar a sala. Desta forma, a resposta é:   Por exemplo, a permutação identidade, que é a apresentada na lista indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.  "
 },
 {
-  "id": "exercise-58",
+  "id": "exercise-59",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-58",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-59",
   "type": "Exercício",
   "number": "1.6.10",
   "title": "",
   "body": " De quantos modos 8 pessoas podem ocupar duas salas distintas, devendo cada sala conter pelo menos 3 pessoas?   182   Observe que temos 3 casos para distribuir as pessoas nas duas salas.  1º caso: 3 pessoas na sala 1 e 5 pessoas na sala 2. Neste caso temos um total de soluções.  2º caso: 4 pessoas na sala 1 e 4 pessoas na sala 2. Neste caso temos um total de soluções.  3º caso: 5 pessoas na sala 1 e 3 pessoas na sala 2. Neste caso temos um total de soluções.  Portanto a resposta é   "
 },
 {
-  "id": "exercise-59",
+  "id": "exercise-60",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-59",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-60",
   "type": "Exercício",
   "number": "1.6.11",
   "title": "",
   "body": " Um baralho tem 52 cartas. De quantos modos podemos distribuí-las entre 4 jogadores, de modo que cada um receba 13 cartas?   53644737765488792839237440000   Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.  A justificativa é a seguinte. Para cada elemento da lista permutada, use a posição do elemento para pegar a carta que deve estar em uma pilha ou ordenada, e use o número para indicar a pessoa, sendo o número 1 indicando a primeira pessoa e assim por diante. A resposta é:   "
 },
 {
-  "id": "exercise-60",
+  "id": "exercise-61",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-60",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-61",
   "type": "Exercício",
   "number": "1.6.12",
   "title": "",
   "body": " No mapa abaixo estão esboçadas as ruas de um bairro. As ruas verticais são paralelas entre si e é igual a distância entre ruas consecutivas; o mesmo acontece com as ruas horizontais. Calcule o número de formas de sair de A e chegar até B percorrendo a menor distância possível.    735   Podemos separar os caminhos que saem de A e chegam em B em tipos disjuntos.   Mapa da solução.    1º tipo: De A para X e de X para B. Nesse caso temos caminhos de A para X e caminhos de X para B. No total temos caminhos do 1º tipo.  2º tipo: De A para Y e de Y para B. Nesse caso temos caminhos de A para Y e caminhos de Y para B. No total temos caminhos do 2º tipo.  Como os caminhos do 1º e 2º tipos são disjuntos a resposta é   "
 },
 {
-  "id": "exercise-61",
+  "id": "exercise-62",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-61",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-62",
   "type": "Exercício",
   "number": "1.6.13",
   "title": "",
   "body": " João vai comprar algo que custa centavos em uma máquina automática e dispõe de moedas de centavos do mesmo modelo e moedas de centavos também do mesmo modelo. Assim, sendo o número de diferentes sequências de moedas que ele pode inserir de modo a totalizar os 55 centavos, determine o valor de .     João pode escolher os valores das moedas de maneiras, em cada caso, existem várias maneiras de ordenar as moedas escolhida:  moedas de centavos e de centavos, totalizando ordens possíveis;  moedas de centavos e de centavos, totalizando ordens possíveis;  moedas de centavos e de centavos, totalizando ordens possíveis;  moedas de centavos e de centavos, totalizando ordens possíveis.  Portanto, a resposta é   "
 },
 {
-  "id": "exercise-62",
+  "id": "exercise-63",
   "level": "2",
-  "url": "section-permutacoes-com-repeticoes.html#exercise-62",
+  "url": "section-permutacoes-com-repeticoes.html#exercise-63",
   "type": "Exercício",
   "number": "1.6.14",
   "title": "(Caminhos de Delannoy).",
@@ -1315,72 +1324,72 @@ var ptx_lunr_docs = [
   "body": "(VESTIBULAR UFPE – UFRPE \/ 1998 2ª ETAPA) Semelhante ao dominó, mas feito de pedras triangulares equiláteras, o jogo de trominó apresenta na face triangular superior um certo número de pontos com repetições, escolhidos de 1 a n, dispostos ao longo de cada aresta (ver figura).   Uma das peças com os valores 1, 2 e 4.    Quantas peças há no trominó, supondo ?   Observe que os números estão em disposição circular, então vamos separar as peças em três tipos:   Todos os lados com o mesmo valor. Cada peça pode ser formada de uma única forma.  Dois lados possuem um valor e o terceiro lado possui um valor diferente. Cada peça pode ser formada de uma única forma, pois o número de permutações circulares com 3 elementos é 2, mas como temos duas entradas iguais, precisamos dividir por 2.  Cada lado possui um valor diferente. Cada peça pode ser formada de duas formas, pois o número de permutações circulares com 3 elementos é 2.   Inicialmente, vamos contar como se em cada tipo, as peças só pudessem ser formadas de uma forma, depois vamos acrescentar a quantidade de peças do terceiro tipo, que fica faltando nessa contagem inicial.  Temos que escolher os valores de cada um dos 3 lados de cada peça do trominó. Como os valores vão de 1 até 6 e são 3 lados, o número de peças do trominó (sem contar as permutações circulares) para é o número de soluções inteiras não negativas da equação: que é dado por .  Agora precisamos contar as peças, do terceiro tipo, que estão faltando. Como os três valores são diferentes, temos 6 opções de valores para escolher 3 e para cada escolha, temos duas formas de organizar na peça do trominó, portanto o número de peças desse tipo é: Já que, a metade das peças do terceiro tipo foram contadas uma vez pela combinação completa, , a quantidade total de peças é:   "
 },
 {
-  "id": "exercise-63",
+  "id": "exercise-64",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-63",
+  "url": "section-combinacoes-completas.html#exercise-64",
   "type": "Exercício",
   "number": "1.7.1",
   "title": "",
   "body": " Quantas são as soluções inteiras positivas de ?   364   Como as soluções precisam ser positivas, precisamos fazer as seguintes mudanças de variáveis: Assim, a equação original se transforma em O número de soluções inteiras e não negativas da equação anterior é  "
 },
 {
-  "id": "exercise-64",
+  "id": "exercise-65",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-64",
+  "url": "section-combinacoes-completas.html#exercise-65",
   "type": "Exercício",
   "number": "1.7.2",
   "title": "",
   "body": " Quantas são as peças de um dominó comum?   28   Sejam variáveis. Cada solução não negativa da equação: representa uma pedra do dominó. Portanto, o número de pedras do dominó é  "
 },
 {
-  "id": "exercise-65",
+  "id": "exercise-66",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-65",
+  "url": "section-combinacoes-completas.html#exercise-66",
   "type": "Exercício",
   "number": "1.7.3",
   "title": "",
   "body": " (UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.    55   Sejam variáveis. Cada solução não negativa da equação: representa uma pedra do dominó. Portanto, o número de pedras do dominó é  "
 },
 {
-  "id": "exercise-66",
+  "id": "exercise-67",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-66",
+  "url": "section-combinacoes-completas.html#exercise-67",
   "type": "Exercício",
   "number": "1.7.4",
   "title": "",
   "body": " Um bar vende três tipos de cerveja: Heineken, Spaten e Budweiser. De quantos modos uma pessoa pode comprar 7 garrafas de cerveja?   36   O número de soluções deste problema é o mesmo que o número de solução inteiras, não negativas da equação: Portanto a resposta é   "
 },
 {
-  "id": "exercise-67",
+  "id": "exercise-68",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-67",
+  "url": "section-combinacoes-completas.html#exercise-68",
   "type": "Exercício",
   "number": "1.7.5",
   "title": "",
   "body": " Quantas são as soluções inteiras não-negativas de nas quais ?   200  "
 },
 {
-  "id": "exercise-68",
+  "id": "exercise-69",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-68",
+  "url": "section-combinacoes-completas.html#exercise-69",
   "type": "Exercício",
   "number": "1.7.6",
   "title": "",
   "body": " De quantos modos podem ser pintados 15 objetos iguais usando 6 cores diferentes?   15504  "
 },
 {
-  "id": "exercise-69",
+  "id": "exercise-70",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-69",
+  "url": "section-combinacoes-completas.html#exercise-70",
   "type": "Exercício",
   "number": "1.7.7",
   "title": "",
   "body": " Quantos inteiros entre e , inclusive, possui a propriedade: \"cada dígito é menor ou igual ao seu sucessor\"?   24309  "
 },
 {
-  "id": "exercise-70",
+  "id": "exercise-71",
   "level": "2",
-  "url": "section-combinacoes-completas.html#exercise-70",
+  "url": "section-combinacoes-completas.html#exercise-71",
   "type": "Exercício",
   "number": "1.7.8",
   "title": "",
@@ -1450,54 +1459,54 @@ var ptx_lunr_docs = [
   "body": " Determine o número de elementos dos conjuntos:        item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:   item c) Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:   Clique em \"Evaluate (Sage)\" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).    "
 },
 {
-  "id": "exercise-71",
+  "id": "exercise-72",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-71",
+  "url": "section-inclusao-exclusao.html#exercise-72",
   "type": "Exercício",
   "number": "2.1.3.1",
   "title": "",
   "body": " (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28  "
 },
 {
-  "id": "exercise-72",
+  "id": "exercise-73",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-72",
+  "url": "section-inclusao-exclusao.html#exercise-73",
   "type": "Exercício",
   "number": "2.1.3.2",
   "title": "",
   "body": " Determine o número de permutações de nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?   27240  "
 },
 {
-  "id": "exercise-73",
+  "id": "exercise-74",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-73",
+  "url": "section-inclusao-exclusao.html#exercise-74",
   "type": "Exercício",
   "number": "2.1.3.3",
   "title": "",
   "body": " Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Pincípio da Inclusão-Exclusão sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é   "
 },
 {
-  "id": "exercise-74",
+  "id": "exercise-75",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-74",
+  "url": "section-inclusao-exclusao.html#exercise-75",
   "type": "Exercício",
   "number": "2.1.3.4",
   "title": "",
   "body": " Considere o conjunto , determine o número de funções bijetoras , nas quais , para .   44  "
 },
 {
-  "id": "exercise-75",
+  "id": "exercise-76",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-75",
+  "url": "section-inclusao-exclusao.html#exercise-76",
   "type": "Exercício",
   "number": "2.1.3.5",
   "title": "",
   "body": " (IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.   2088960   Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada . Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos formas distintas de organizarmos esses carros.  Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.  Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos formas de escolhermos essas 2 equipes e podemos colocá-las de maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado e das demais equipes .  Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos   "
 },
 {
-  "id": "exercise-76",
+  "id": "exercise-77",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#exercise-76",
+  "url": "section-inclusao-exclusao.html#exercise-77",
   "type": "Exercício",
   "number": "2.1.3.6",
   "title": "",
@@ -1666,36 +1675,36 @@ var ptx_lunr_docs = [
   "body": "Calculando o número de permutações caóticas no Sage, usando o :  "
 },
 {
-  "id": "exercise-77",
+  "id": "exercise-78",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-77",
+  "url": "section-permutacao-caotica.html#exercise-78",
   "type": "Exercício",
   "number": "2.2.5.1",
   "title": "",
   "body": " Suponha que . Quantas são as funções para as quais a equação não possui solução? Quantas são as funções  bijetoras para as quais a equação não possui solução?   a) , b) .    item a) A imagem de cada elemento do domínio pode ser escolhida de maneiras, assim, o total é .   item b) Como é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem funções.  "
 },
 {
-  "id": "exercise-78",
+  "id": "exercise-79",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-78",
+  "url": "section-permutacao-caotica.html#exercise-79",
   "type": "Exercício",
   "number": "2.2.5.2",
   "title": "",
   "body": " Quantas são as permutações de que têm exatamente 5 elementos no seu lugar primitivo?   1468368   Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de maneiras. Logo, o total é   "
 },
 {
-  "id": "exercise-79",
+  "id": "exercise-80",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-79",
+  "url": "section-permutacao-caotica.html#exercise-80",
   "type": "Exercício",
   "number": "2.2.5.3",
   "title": "",
   "body": " Determine o número de permutações caóticas de nas quais os números ocupam, em alguma ordem, os cinco primeiro lugares.   81576   Podemos escolher a posição dos 5 primeiros elementos de maneiras e a posição dos 7 últimos elementos de maneiras. Portanto, o total é   "
 },
 {
-  "id": "exercise-80",
+  "id": "exercise-81",
   "level": "2",
-  "url": "section-permutacao-caotica.html#exercise-80",
+  "url": "section-permutacao-caotica.html#exercise-81",
   "type": "Exercício",
   "number": "2.2.5.4",
   "title": "",
@@ -1855,9 +1864,9 @@ var ptx_lunr_docs = [
   "body": " A resposta do junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.  Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.     "
 },
 {
-  "id": "p-613",
+  "id": "p-620",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#p-613",
+  "url": "section-permutacao-caotica-repeticoes.html#p-620",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -1909,9 +1918,9 @@ var ptx_lunr_docs = [
   "body": " A implementação da função DR (derangement with repetition) usando o . Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.   "
 },
 {
-  "id": "exercise-81",
+  "id": "exercise-82",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#exercise-81",
+  "url": "section-permutacao-caotica-repeticoes.html#exercise-82",
   "type": "Exercício",
   "number": "2.3.3.1",
   "title": "",
@@ -2080,72 +2089,72 @@ var ptx_lunr_docs = [
   "body": " Lucas recebeu uma proposta para trabalhar em uma multinacional na China. A empresa lhe prometeu duas férias por ano, sempre nos mesmos meses, com passagem paga pela empresa, para ela poder visitar seus familiares no Brasil. A única restrição que a empresa fez foi que houvesse um intervalo de pelo menos 4 meses entre as duas férias. Quantas são as formas de Lucas escolher os meses das suas férias?   Como a escolha dos meses será mantida pelos anos seguintes, aplicando a Generalização do 2º Lema de Kaplansky obtemos:    "
 },
 {
-  "id": "exercise-82",
+  "id": "exercise-83",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-82",
+  "url": "section-lemas-kaplansky.html#exercise-83",
   "type": "Exercício",
   "number": "2.4.5.1",
   "title": "",
   "body": " Um estacionamento tem 10 vagas, uma ao lado da outra, inicialmente todas livres. Um carro preto, um carro rosa e um carro branco chegam a esse estacionamento. De quantas maneiras diferentes esses carros podem ocupar três vagas de forma que haja pelo menos uma vaga livre entre eles?   336   As vagas que serão ocupadas podem ser escolhidas de maneiras, e a ordem dos carros pode ser escolhida de maneiras. Logo, o número de soluções é   "
 },
 {
-  "id": "exercise-83",
+  "id": "exercise-84",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-83",
+  "url": "section-lemas-kaplansky.html#exercise-84",
   "type": "Exercício",
   "number": "2.4.5.2",
   "title": "",
   "body": " De quantos modos podemos formar uma sequência de 9 elementos iguais a 1 e 6 elementos iguais a 0 se dois elementos iguais a 0 não podem ser adjacentes?   210   No total temos elementos e seis deles não podem ficar lado a lado. Portanto, o número de soluções é   "
 },
 {
-  "id": "exercise-84",
+  "id": "exercise-85",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-84",
+  "url": "section-lemas-kaplansky.html#exercise-85",
   "type": "Exercício",
   "number": "2.4.5.3",
   "title": "",
   "body": " (ITA) 12 cavaleiros estão sentados em torno de uma mesa redonda. Cada um dos 12 cavaleiros considera seus dois vizinhos como rivais. Deseja-se formar um grupo de 5 cavaleiros para libertar uma princesa. Nesse grupo não poderá haver cavaleiros rivais. Determine de quantas maneiras é possível escolher esse grupo.   36   Vamos usar o 2º Lema de Kaplansky. De 12 pessoas em disposição circular, precisamos contar o número de maneiras de escolher 5 dessas pessoas, sem selecionar duas adjacentes. Logo, o número de soluções é   "
 },
 {
-  "id": "exercise-85",
+  "id": "exercise-86",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-85",
+  "url": "section-lemas-kaplansky.html#exercise-86",
   "type": "Exercício",
   "number": "2.4.5.4",
   "title": "",
   "body": " 8 pessoas devem se sentar em 25 cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se não deve haver ocupação simultânea de duas cadeiras adjacentes?   1441440000   Primeiro, contamos o número de maneiras de escolher as 8 cadeiras que serão usadas, dentre as 25 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 8 pessoas que irão sentar nas cadeiras. Isto pode ser feito de maneiras  "
 },
 {
-  "id": "exercise-86",
+  "id": "exercise-87",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-86",
+  "url": "section-lemas-kaplansky.html#exercise-87",
   "type": "Exercício",
   "number": "2.4.5.5",
   "title": "",
   "body": "(OBM 2010 - 2ª fase do nível 3) Diamantino gosta de jogar futebol, mas se jogar dois dias seguidos ele fica com dores musculares. De quantas maneiras Diamantino pode escolher em quais de dez dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   144   O número de maneiras de Diamantino escolher os dias que quer jogar futebol, sem ter dores musculares é   "
 },
 {
-  "id": "exercise-87",
+  "id": "exercise-88",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-87",
+  "url": "section-lemas-kaplansky.html#exercise-88",
   "type": "Exercício",
   "number": "2.4.5.6",
   "title": "",
   "body": " Irving gosta de jogar futebol, mas precisa ficar dois dias consecutivos sem jogar para evitar dores musculares. De quantas maneiras Irving pode escolher em quais de 20 dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   2737   O número de formas de Irving jogar futebol sem ter dores musculares é    "
 },
 {
-  "id": "exercise-88",
+  "id": "exercise-89",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-88",
+  "url": "section-lemas-kaplansky.html#exercise-89",
   "type": "Exercício",
   "number": "2.4.5.7",
   "title": "",
   "body": " Um determinado atleta quer fazer treinos HIIT para se preparar fisicamente para um campeonato. Sabendo que faltam 28 dias para o campeonato, que ele quer pelo menos 3 dias de intervalo entre dois treinos HIIT e que ele pode escolher 3 tipos desses treinos. De quantas maneiras esse atleta pode escolher fazer os treinos HIIT, se ele quer treinar pelo menos 5 vezes?     O atleta pode escolher treinar ou vezes, pois . Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é  No Sage o cálculo pode ser feito da seguinte maneira:   "
 },
 {
-  "id": "exercise-89",
+  "id": "exercise-90",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#exercise-89",
+  "url": "section-lemas-kaplansky.html#exercise-90",
   "type": "Exercício",
   "number": "2.4.5.8",
   "title": "",
@@ -2260,54 +2269,54 @@ var ptx_lunr_docs = [
   "body": " Assuma que em um grupo de 6 pessoas, cada par de pessoas consistem em dois amigos ou dois inimigos. Mostre que ou existem 3 amigos mútuos ou 3 inimigos mútuos.   Seja uma das 6 pessoas. Sejam e o conjunto com as outras 5 pessoas.  Pela 2ª versão do princípio da casa dos pombos, dividindo as 5 pessoas de nos 2 conjuntos de , um desses conjuntos possui pelo menos elementos. Então, ou existem 3 ou mais que são amigos de , ou 3 ou mais que são inimigos de .  Suponha sem perda de generalidade que e sejam amigos de . Se quaisquer duas destas 3 pessoas são amigas, então estas duas pessoas e formam um conjunto de 3 amigos mútuos.   "
 },
 {
-  "id": "exercise-90",
+  "id": "exercise-91",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-90",
+  "url": "section-casa-pombos.html#exercise-91",
   "type": "Exercício",
   "number": "2.5.4.1",
   "title": "",
   "body": " Qual é o número mínimo de pessoas que deve haver em um grupo para que possamos garantir que nele haja pelo menos 5 pessoas nascidas no mesmo mês?   49   Pelo basta encontrar o menor número inteiro , tal que . Como , o valor de é 5.  "
 },
 {
-  "id": "exercise-91",
+  "id": "exercise-92",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-91",
+  "url": "section-casa-pombos.html#exercise-92",
   "type": "Exercício",
   "number": "2.5.4.2",
   "title": "",
   "body": " Escolhem-se ao acaso 5 pontos sobre a superfície de um quadrado de lado 2. Mostre que pelo menos um dos segmentos que eles determinam tem comprimento menor ou igual a .   Dividindo o quadrado de lado 2 em 4 quadrados de lado 1 ficamos com quatro regiões, nas quais, a maior distância possível entre dois pontos é determinado pelas diagonais, cujo comprimento mede . Se os segmentos determinados pelos quatro primeiros pontos ainda não satisfazem a condição do enunciado, necessariamente, ao escolher o quinto ponto, ele ficará em um dos quatro quadrados que já possuem um ponto cada um. Portando dentre todos os segmentos determinados pelos cinco pontos, a menor distância será menor ou igual a .  "
 },
 {
-  "id": "exercise-92",
+  "id": "exercise-93",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-92",
+  "url": "section-casa-pombos.html#exercise-93",
   "type": "Exercício",
   "number": "2.5.4.3",
   "title": "",
   "body": " (IMO 1964) 17 pessoas se comunicam por cartas. Em todas a cartas, eles discutem apenas um dos três tópicos possíveis. Cada par de pessoas discute apenas um tópico. Mostre que há pelo menos três pessoas que discutiram apenas um tópico.   Selecione uma pessoa qualquer e chame de . Como se comunica com 16 outras pessoas e são apenas 3 tópicos possíveis, pelo  deve discutir sobre um mesmo tópico com pelo menos 6 pessoas, pois  Suponha que discute o tópico I com 6 pessoas. Se qualquer uma dessas seis pessoas discutir com outra dessas 6 pessoas sobre o tópico I, então há 3 escritores correspondentes no tópico I. (O triângulo verde da representa as 3 pessoas que discutem o mesmo tôpico.)   3 pessoas que discutem o tópico 1.    Portanto, suponha que dentre essas seis pessoas apenas os tópicos II e III são discutidos. Se for um desses seis, então pelo  deve discutir com pelo menos 3 dos outros 5 um dos dois tópicos, digamos II, pois  Ainda, existem duas possibilidades para essas três últimas pessoas.  3 pessoas que discutem o tópico II ou o tópico III.   Se alguém escreve para outra pessoa sobre o tópico II, então encontramos três pessoas discutindo sobre o tópico II. Caso contrário, se nenhum dos três escreve para outro sobre o tópico II, então todos os três devem escrever um para o outro sobre o tópico III. Isso prova o afirmação.  "
 },
 {
-  "id": "exercise-93",
+  "id": "exercise-94",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-93",
+  "url": "section-casa-pombos.html#exercise-94",
   "type": "Exercício",
   "number": "2.5.4.4",
   "title": "",
   "body": " (IMO 1985) Seja um conjunto com 1985 inteiros positivos, de modo que nenhum possui um divisor primo maior que 23. Mostre que em existem 4 inteiros, cujo produto é o quarta potência de um inteiro.   Existem nove primos menores ou iguais a : e . Considere uma lista, com entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número estiver entre os 1985 números, a lista dele será: Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.  Para cada uma das 1985 listas , considere uma nova lista , na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:  Assim, cada nova lista estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas , haverão duas idênticas. Considere quaiquer 513 listas , separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.  Para cada um dos 737 pares, considere uma lista formada pela soma . Observe que cada entrada das 737 listas é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas serão idênticas. Digamos que e , então o número é a quarta potência de um inteiro.  "
 },
 {
-  "id": "exercise-94",
+  "id": "exercise-95",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-94",
+  "url": "section-casa-pombos.html#exercise-95",
   "type": "Exercício",
   "number": "2.5.4.5",
   "title": "",
   "body": " (Vietnam 2007) Dado um polígono regular com lados, encontre o menor inteiro positivo tal que entre quaisquer vértices do polígono existam com a propriedade: o quadrilátero convexo que eles formam compartilha lados com o polígono.   Numere os vértices do polígono de a . O que queremos descobir é o menor valor de , tal que, qualquer conjunto com vértices possua pelo menos vértices consecutivos.  Considere o conjunto das -tuplas de vértices consecutivos: Cada vértice do polígono está presente em 4 elementos do conjunto . Desse modo, cada vértice escolhido no polígono correspondem a 4 elementos de . Como possui elementos, escreva uma lista com os números de todas as -tuplas de forma consecutiva, formando uma lista com números. Na lista podemos escolher até números, de forma que não tenham elementos consecutivos. Então, como cada vértice do polígono correspondem a elementos de , se , teremos a condição satisfeita: qualquer conjunto de vértices possui pelo menos vértices consecutivos. Fazendo as contas,   Agora precisamos monstrar que o menor valor de é . Vamos escolher vértices de forma que não tenham vértices consecutivos. Considere todos os vértices do polígono, menos o vértice e os vértices que são múltiplos de . Como , temos múltiplos de , dessa forma temos vértices sem que deles sejam consecutivos.  "
 },
 {
-  "id": "exercise-95",
+  "id": "exercise-96",
   "level": "2",
-  "url": "section-casa-pombos.html#exercise-95",
+  "url": "section-casa-pombos.html#exercise-96",
   "type": "Exercício",
   "number": "2.5.4.6",
   "title": "",
@@ -2467,18 +2476,18 @@ var ptx_lunr_docs = [
   "body": " Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.   "
 },
 {
-  "id": "exercise-96",
+  "id": "exercise-97",
   "level": "2",
-  "url": "section-13.html#exercise-96",
+  "url": "section-13.html#exercise-97",
   "type": "Exercício",
   "number": "2.6.4.1",
   "title": "",
   "body": "Existem valores de e tais que a quantidade de caminhos bons é igual ao número de caminhos ruins? "
 },
 {
-  "id": "exercise-97",
+  "id": "exercise-98",
   "level": "2",
-  "url": "section-13.html#exercise-97",
+  "url": "section-13.html#exercise-98",
   "type": "Exercício",
   "number": "2.6.4.2",
   "title": "",
@@ -2512,18 +2521,18 @@ var ptx_lunr_docs = [
   "body": "Em uma eleição há dois candidatos A e B. Se o candidato teve votos e o candidato teve votos com Qual a probabilidade de durante a apuração, cédula a cédula, o candidato sempre esteja à frente, isto é, com mais votos ou empatado, com ? "
 },
 {
-  "id": "exercise-100",
+  "id": "exercise-101",
   "level": "2",
-  "url": "section-13.html#exercise-100",
+  "url": "section-13.html#exercise-101",
   "type": "Exercício",
   "number": "2.6.4.5",
   "title": "",
   "body": "Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :   "
 },
 {
-  "id": "exercise-101",
+  "id": "exercise-102",
   "level": "2",
-  "url": "section-13.html#exercise-101",
+  "url": "section-13.html#exercise-102",
   "type": "Exercício",
   "number": "2.6.4.6",
   "title": "",
@@ -2665,36 +2674,36 @@ var ptx_lunr_docs = [
   "body": "    Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,     "
 },
 {
-  "id": "exercise-102",
+  "id": "exercise-103",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-102",
+  "url": "section-triangulo-pascal.html#exercise-103",
   "type": "Exercício",
   "number": "3.1.1",
   "title": "",
   "body": " Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?    "
 },
 {
-  "id": "exercise-103",
+  "id": "exercise-104",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-103",
+  "url": "section-triangulo-pascal.html#exercise-104",
   "type": "Exercício",
   "number": "3.1.2",
   "title": "",
   "body": " Calcule o valor da soma    746660  "
 },
 {
-  "id": "exercise-104",
+  "id": "exercise-105",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-104",
+  "url": "section-triangulo-pascal.html#exercise-105",
   "type": "Exercício",
   "number": "3.1.3",
   "title": "",
   "body": " Calcule o valor de     "
 },
 {
-  "id": "exercise-105",
+  "id": "exercise-106",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-105",
+  "url": "section-triangulo-pascal.html#exercise-106",
   "type": "Exercício",
   "number": "3.1.4",
   "title": "",
@@ -2791,45 +2800,45 @@ var ptx_lunr_docs = [
   "body": "      e Portanto,    "
 },
 {
-  "id": "exercise-106",
+  "id": "exercise-107",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-106",
+  "url": "section-binomio-newton.html#exercise-107",
   "type": "Exercício",
   "number": "3.2.1",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    6435  "
 },
 {
-  "id": "exercise-107",
+  "id": "exercise-108",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-107",
+  "url": "section-binomio-newton.html#exercise-108",
   "type": "Exercício",
   "number": "3.2.2",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    -33   O termo geral é dado por Portanto, queremos encontrar valores de e , tais que , ou seja, , logo e . Então, precisamos obter o coeficiente de de :   "
 },
 {
-  "id": "exercise-108",
+  "id": "exercise-109",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-108",
+  "url": "section-binomio-newton.html#exercise-109",
   "type": "Exercício",
   "number": "3.2.3",
   "title": "",
   "body": " Calcule o termo máximo do desenvolvimento de     "
 },
 {
-  "id": "exercise-109",
+  "id": "exercise-110",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-109",
+  "url": "section-binomio-newton.html#exercise-110",
   "type": "Exercício",
   "number": "3.2.4",
   "title": "",
   "body": " Qual é o maior dos números    a         Portanto, Como mostramos que , logo .  "
 },
 {
-  "id": "exercise-110",
+  "id": "exercise-111",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-110",
+  "url": "section-binomio-newton.html#exercise-111",
   "type": "Exercício",
   "number": "3.2.5",
   "title": "",
@@ -2872,9 +2881,9 @@ var ptx_lunr_docs = [
   "body": "No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:   "
 },
 {
-  "id": "exercise-111",
+  "id": "exercise-112",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#exercise-111",
+  "url": "section-polinomio-leibniz.html#exercise-112",
   "type": "Exercício",
   "number": "3.3.1",
   "title": "",
@@ -2998,54 +3007,54 @@ var ptx_lunr_docs = [
   "body": " 8 bolas de ping-pong são colocadas aleatóriamente em 8 caixas. Qual a probabilidade de que exatamente uma caixa fique vazia?   A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.  Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.  A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é . A quantidade de formas de arrumar o restante das bolas é .  Portanto o número de casos favoráveis é . A resposta do problema é    "
 },
 {
-  "id": "exercise-112",
+  "id": "exercise-113",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-112",
+  "url": "section-espacos-probabilidade.html#exercise-113",
   "type": "Exercício",
   "number": "4.1.1",
   "title": "",
   "body": " Um número é escolhido ao acaso no conjunto . Determine a probabilidade do número escolhido ser:  múltiplo de 3;  múltiplo de 5;  múltiplo de 3 e múltiplo de 5;  múltiplo de 3 ou múltiplo de 5.     a) , b) , c) , d) .   item a)    item b)    item c)    item d) Pelo princípio da Inclusão-Exclusão:   "
 },
 {
-  "id": "exercise-113",
+  "id": "exercise-114",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-113",
+  "url": "section-espacos-probabilidade.html#exercise-114",
   "type": "Exercício",
   "number": "4.1.2",
   "title": "",
   "body": " Em uma caixa existem 6 bolinhas numeradas de 1 a 6. Uma a uma elas são extraı́das, sem reposição. Qual a probabilidade de que a sequência de números observada seja crescente ou seja decrescente?   .   O espaço amostral tem cardinalidade , que é o número de maneiras de ordenar as bolinhas. Como só existe uma sequência seja crescente e uma que seja decrescente, a probabilidade é   "
 },
 {
-  "id": "exercise-114",
+  "id": "exercise-115",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-114",
+  "url": "section-espacos-probabilidade.html#exercise-115",
   "type": "Exercício",
   "number": "4.1.3",
   "title": "",
   "body": " Doze pessoas são divididas em três grupos de 4. Qual é a probabilidade de duas determinadas dessas pessoas fiquem no mesmo grupo?      Para a cardinalidade do espaço amostral, a segunda pessoa pode ficar em qualquer lugar de 11 disponíveis. Os casos favoráveis são 3, pois a primeira pessoa vai estar em algum grupo e a segunda pessoa tem 3 opções de lugares para escolher um, no grupo que se encontra a primeira pessoa. Portanto, a probabilidade é   "
 },
 {
-  "id": "exercise-115",
+  "id": "exercise-116",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-115",
+  "url": "section-espacos-probabilidade.html#exercise-116",
   "type": "Exercício",
   "number": "4.1.4",
   "title": "",
   "body": " Um armário contém 6 pares de sapatos. Escolhem-se 4 pés de sapatos. Qual é a probabilidade de se formar exatamente um par de sapatos?       A cardinalidade do espaço amostral é , pois essa é a quantidade de maneiras distintas de retirar 4 pés de sapatos, de 12 disponíveis.  Agora, vamos contar o número de casos favoráveis. Temos maneiras de retirar 1 par de sapatos, de 6 pares disponíveis. Depois disso, temos maneiras de escolher dois representantes de 5 tipos de sapatos disponíveis. Em seguida, precisamos decidir se será retirado o pé esquerdo ou o pé direito de cada um desses dois sapatos. Isto pode ser feito de maneiras. Portanto, a probabilidade é   "
 },
 {
-  "id": "exercise-116",
+  "id": "exercise-117",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-116",
+  "url": "section-espacos-probabilidade.html#exercise-117",
   "type": "Exercício",
   "number": "4.1.5",
   "title": "",
   "body": " Oito carros estão estacionados em doze vagas em fila. Determine a probabilidade:  das vagas vazias serem consecutivas;  de não haver duas vagas vazias adjacentes.    a) , b) .   item a) Para que as vagas vazias fiquem juntas, juntamos 4 vagas em uma, ficamos com 9 vagas para escolher uma, que será quádrupla. Isto pode ser feito de 9 maneiras. A cardinalidade do espaço amostral é o número de maneiras de escolher 4 lugares para ficarem fazios, dentre 12 disponíveis. Logo, a probabilidade é   item b) Já sabemos que o espaço amostral tem cardinalidade . Para que não haja duas vagas vazias adjacentes, podemos escolher as 4 vagas que ficarão vazias de maneiras. Assim, a probabilidade é   "
 },
 {
-  "id": "exercise-117",
+  "id": "exercise-118",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-117",
+  "url": "section-espacos-probabilidade.html#exercise-118",
   "type": "Exercício",
   "number": "4.1.6",
   "title": "",
@@ -3061,81 +3070,81 @@ var ptx_lunr_docs = [
   "body": "(Plínio , 2007, p. 181) Um palhaço está na ponta do trampolim de uma piscina, carregando uma caixa que contém bolas vermelhas e bolas azuis. Aleatoriamente ele vai retirando bolas da caixa, descartando-as em seguida. Cada vez que ele seleciona uma bola azul, ele dá um passo para trás, e cada vez que ele retira uma bola vermelha ele dá um passo para frente. Encontre a probabilidade de que o palhaço permaneça seco após a retirada das bolas da caixa.    Observe que uma sequência de retiradas na qual o palhaço permanece seco até o fim, quer dizer que, a cada retirada, a quantidade de bolas azuis tem que ser maior ou igual à quantidade de bolas vermelhas.  A cada vez que o palhaço retira uma bola, anotamos um se ela foi azul e um se ela foi vermelha. Com isto, construímos uma sequência formada por  e  . O palhaço ficará seco, se na sequência correspondente às retiradas, a cada momento o número dos é maior ou igual que o dos .  Perceba que se trocarmos por e por esse é o problema do deslocamento de uma partícula de até , sem que ela ultrapasse a reta , ou seja, é o número de Catalan: .  A quantidade de maneiras distintas para retirar as bolas é dada pela permutação com repetição: Assim, como esses eventos são equiprováveis, a probabilidade do palhaço permanecer seco é Concluímos que quanto maior a quantidade de bolas, menor a chance dele ficar seco.  "
 },
 {
-  "id": "exercise-119",
+  "id": "exercise-120",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-119",
+  "url": "section-espacos-probabilidade.html#exercise-120",
   "type": "Exercício",
   "number": "4.1.8",
   "title": "",
   "body": "(OPEMAT 2021 - nível 3) Pensando em sua segurança, a mãe de Dafne a proibiu de entrar na cozinha. Certo dia, sua mãe a encontra a um passo de entrar na cozinha. Lembrando que Dafne adora brinquedos, sua mãe pega uma sacola que contém de seus brinquedos favoritos e brinquedos dos quais não se interessa muito. A cada passo que Dafne está prestes a dar, sua mãe pega aleatoriamente um brinquedo na sacola, mostra a Dafne e depois deixa o brinquedo no chão. Se o brinquedo em questão for um dos que ela não se interessa muito, Dafne dá um passo em direção a cozinha, e se for um de seus favoritos, ela dá um passo na direção oposta. Qual a probabilidade de que Dafne entre na cozinha?    Observe que este exercício é equivalente ao exercício anterior ( ). Porém, neste caso ele pergunta pela probabilidade complementar. Portanto,   "
 },
 {
-  "id": "exercise-120",
+  "id": "exercise-121",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-120",
+  "url": "section-espacos-probabilidade.html#exercise-121",
   "type": "Exercício",
   "number": "4.1.9",
   "title": "",
   "body": " (ITA 2004) Uma caixa branca contém 5 bolas verdes e 3 azuis, e uma caixa preta contém 3 bolas verdes e 2 azuis. Pretende-se retirar uma bola de uma das caixas. Para tanto, 2 dados são atirados. Se a soma resultante dos dois dados for menor que 4, retira-se uma bola da caixa branca. Nos demais casos, retira-se uma bola da caixa preta. Qual é a probabilidade de se retirar uma bola verde?     No lançamento de dois dados, são possíveis 36 (pares) resultados diferentes, sendo que em apenas 3 deles a soma resultante é menor que 4. São eles: (1;1), (1;2), (2;1). A probabilidade de que uma bola verde seja retirada da urna branca é e da urna preta é . Assim, a probabilidade de se retirar uma bola verde é   "
 },
 {
-  "id": "exercise-121",
+  "id": "exercise-122",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-121",
+  "url": "section-espacos-probabilidade.html#exercise-122",
   "type": "Exercício",
   "number": "4.1.10",
   "title": "",
   "body": " (ITA 2005) São dados dois cartões, sendo que um deles tem ambos os lados na cor vermelha, enquanto o outro tem um lado na cor vermelha e o outro na cor azul. Um dos cartões é escolhido ao acaso e colocado sobre uma mesa. Se a cor exposta é vermelha, calcule a probabilidade de o cartão escolhido ter a outra cor também vermelha      O total de faces nos dois cartões é 4, sendo 3 faces vermelhas e 1 azul. Como a cor exposta é vermelha, temos duas chances do verso ser vermelho e uma chance do verso ser azul. Portanto a probabilidade de o cartão escolhido ter a outra cor também vermelha é   "
 },
 {
-  "id": "exercise-122",
+  "id": "exercise-123",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-122",
+  "url": "section-espacos-probabilidade.html#exercise-123",
   "type": "Exercício",
   "number": "4.1.11",
   "title": "",
   "body": " (ITA 2008) Considere o conjunto e formado por todos os subconjuntos de com elementos. Escolhendo ao acaso um elemento , a probabilidade de a soma de seus elementos ser 183 é igual a  a) b) c) d) e)   a)   De acordo com o enunciado . O conjunto dos elementos , cuja soma deve ser é   Logo . Então, escolhendo ao acaso um elemento a probabilidade de que a soma dos elementos de seja 183 é   "
 },
 {
-  "id": "exercise-123",
+  "id": "exercise-124",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-123",
+  "url": "section-espacos-probabilidade.html#exercise-124",
   "type": "Exercício",
   "number": "4.1.12",
   "title": "",
   "body": " (ITA 2010) Uma urna de sorteio contém bolas numeradas de a , sendo que a retirada de uma bola é equiprovável à retirada de cada uma das demais.   Retira-se aleatoriamente uma das bolas desta urna. Calcule a probabilidade de o número desta bola ser um múltiplo de ou .  Retira-se aleatoriamente uma das bolas desta urna e, sem repôla, retira-se uma segunda bola. Calcule a probabilidade de o número da segunda bola retirada não ser múltiplo de .    a) b)   a) Usaremos o Princípio da Inclusão-Exclusão para calcular o número de bolas com números múltiplos de 5 ou 6.    Note que e que é o conjunto dos múltiplos de entre e , incluindo o . Observe que , e . Portanto a probabilidade é   b) Para que o número da segunda bola retirada não seja múltiplo de 6, temos dois casos. 1º caso: primeira bola é um múltiplo de 6 e a segunda não. Essa probabilidade é dada por: . 2º caso: primeira bola não é um múltiplo de 6 e a segunda também não é. Essa probabilidade é dada por: . Logo a probabilidade de o número da segunda bola retirada não ser múltiplo de é   "
 },
 {
-  "id": "exercise-124",
+  "id": "exercise-125",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-124",
+  "url": "section-espacos-probabilidade.html#exercise-125",
   "type": "Exercício",
   "number": "4.1.13",
   "title": "",
   "body": " (ITA 2011) Sobre uma mesa estão dispostos livros de história, de biologia e de espanhol. Determine a probabilidade de os livros serem empilhados sobre a mesa de tal forma que aqueles que tratam do mesmo assunto estejam juntos.   .   No total os livros podem ser organizados de maneiras. Para que os livros de mesmo assunto fiquem juntos, temos maneiras. Portanto a probabilidade é dada por   "
 },
 {
-  "id": "exercise-125",
+  "id": "exercise-126",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-125",
+  "url": "section-espacos-probabilidade.html#exercise-126",
   "type": "Exercício",
   "number": "4.1.14",
   "title": "",
   "body": " (FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.  a) Qual é a probabilidade de que os dois jogadores recebam a mesma quantidade de peças amarelas?   a)   De acordo com o o espaço amostral é dado por .  Precisamos calcular o número de maneiras de distribuir as 8 peças para cada jogador, de forma que exatamente duas delas sejam amarelas. Vamos calcular o número de maneiras de distribuir as peças para o primeiro jogador, as peças que sobram ficam para o segundo jogador.  Como são 4 peças amarelas distintas duas a duas, temos maneiras de separar duas peças amarelas. Agora precisamos separar 6 peças com cores diferentes de amarelo. Temos um total de maneiras de fazer isto, pois existem exatamente 12 peças com cores diferentes de amarelo. Portanto a probabilidade é  "
 },
 {
-  "id": "exercise-126",
+  "id": "exercise-127",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-126",
+  "url": "section-espacos-probabilidade.html#exercise-127",
   "type": "Exercício",
   "number": "4.1.15",
   "title": "",
   "body": " (FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há 2n participantes. Suponha que 12 jogadores participem do torneio, dos quais 6 sejam homens e 6 sejam mulheres. Qual é a probabilidade de que, na primeira rodada, só haja confrontos entre jogadores do mesmo sexo?     De acordo com o o espaço amostral é dado por .  O número de maneiras de emparceirar as mulheres entre si é dado por .  Como o número de maneiras de emparceirar os homens entre si é o mesmo de emparceirar as mulheres entre si, a probabilidade pedida é dada por  "
 },
 {
-  "id": "exercise-127",
+  "id": "exercise-128",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-127",
+  "url": "section-espacos-probabilidade.html#exercise-128",
   "type": "Exercício",
   "number": "4.1.16",
   "title": "",
@@ -3295,72 +3304,72 @@ var ptx_lunr_docs = [
   "body": " Um dado (não viciado) é lançado 5 vezes. Qual é a probabilidade de obtermos os resultados , exatamente nessa ordem?   Seja o evento: saiu o valor da posição da lista , no -ésimo lançamento, .  Como os eventos são independentes, temos    "
 },
 {
-  "id": "exercise-128",
+  "id": "exercise-129",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-128",
+  "url": "section-probabilidade-condicional.html#exercise-129",
   "type": "Exercício",
   "number": "4.2.2.1",
   "title": "",
   "body": " Dois dados e são lançados e os resultados nas faces de cima anotados.  Qual a probabilidade da soma dos pontos ser 6, se a face observada em foi 2?  Qual a probabilidade de ter saı́do 2 em , se a soma dos pontos foi 6?  Qual a probablidade da soma dos pontos ser menor do que 7, sabendo que o número 2 saiu pelo menos uma vez?  Qual a probabilidade da soma dos pontos ser menor do que ou igual a 6, se o maior dos números obtidos é menor do que 5?  Qual a probabilidade do maior dos números obtidos ser menor do que 5, sabendo que a soma dos pontos foi menor do que ou igual a 6?     a) , b) , c) , d) , e) .  "
 },
 {
-  "id": "exercise-129",
+  "id": "exercise-130",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-129",
+  "url": "section-probabilidade-condicional.html#exercise-130",
   "type": "Exercício",
   "number": "4.2.2.2",
   "title": "",
   "body": " Três caixas I, II e III contém respectivamente 1 bola branca e 2 pretas; 2 brancas e 1 preta; 3 brancas e 2 pretas. Uma caixa é escolhida ao acaso e dela é retirada uma bola. Determine a probabilidade:   da bola retirada ser branca, sabendo que a caixa escolhida foi a I;  da caixa escolhida ter sido a I e a bola retirada ser branca.    a) , b) .  "
 },
 {
-  "id": "exercise-130",
+  "id": "exercise-131",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-130",
+  "url": "section-probabilidade-condicional.html#exercise-131",
   "type": "Exercício",
   "number": "4.2.2.3",
   "title": "",
   "body": " Uma caixa contém 30 bolas pretas, 20 brancas e 10 vermelhas. Três bolas são retiradas da caixa, uma após a outra, sem reposição. Qual a pobabilidade da terceira bola retirada ser preta?    "
 },
 {
-  "id": "exercise-131",
+  "id": "exercise-132",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-131",
+  "url": "section-probabilidade-condicional.html#exercise-132",
   "type": "Exercício",
   "number": "4.2.2.4",
   "title": "",
   "body": " (ITA 2008) Considere uma população de igual número de homens e mulheres, em que sejam daltônicos dos homens e das mulheres. Indique a probabilidade de que seja mulher uma pessoa daltônica selecionada ao acaso nessa população.  a) b) c) d) e)   a)  "
 },
 {
-  "id": "exercise-132",
+  "id": "exercise-133",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-132",
+  "url": "section-probabilidade-condicional.html#exercise-133",
   "type": "Exercício",
   "number": "4.2.2.5",
   "title": "",
   "body": " (ITA 2009) Uma amostra de estrangeiros, em que 18% são proficientes em inglês, realizou um exame para classificar a sua proficiência nesta língua. Dos estrangeiros que são proficientes em inglês, 75% foram classificados como proficientes. Entre os não proficientes em inglês, 7% foram classificados como proficientes. Um estrangeiro desta amostra, escolhido ao acaso, foi classificado como proficiente em inglês. A probabilidade deste estrangeiro ser efetivamente proficiente nesta língua é de aproximadamente  a) b) c) d) e)   b)   Dos de estrangeiros proficientes em inglês, foram classificados como proficientes: Dos de estrangeiros não-proficientes em inglês, foram classificados como proficientes: A probabilidade do estrangeiro ser efetivamente proficiente em inglês é   "
 },
 {
-  "id": "exercise-133",
+  "id": "exercise-134",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-133",
+  "url": "section-probabilidade-condicional.html#exercise-134",
   "type": "Exercício",
   "number": "4.2.2.6",
   "title": "",
   "body": " (ITA 2008) Em um espaço amostral com uma probabilidade , são dados os eventos e tais que: , com e independentes, , e sabe-se que . Calcule as probabilidades condicionais e .      . Precisamos calcular e .  Para calcular , usaremos a igualdade . Logo Portanto .  Para calcular , usaremos a igualdade . Logo Resta agora calcular .  Pelo item d) do temos   Logo, E   Substituindo os valores obtidos   "
 },
 {
-  "id": "exercise-134",
+  "id": "exercise-135",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-134",
+  "url": "section-probabilidade-condicional.html#exercise-135",
   "type": "Exercício",
   "number": "4.2.2.7",
   "title": "",
   "body": "(ESAF 2004\/MPU – Técnico Administrativo) Luís é prisioneiro do temível imperador Ivan. Ivan coloca Luís à frente de três portas e lhe diz: Atrás de uma destas portas encontra-se uma barra de ouro, atrás de cada uma das outras, um tigre feroz. Eu sei onde cada um deles está. Podes escolher uma porta qualquer. Feita tua escolha, abrirei uma das portas, entre as que não escolheste, atrás da qual sei que se encontra um dos tigres, para que tu mesmo vejas uma das feras. Aí, se quiseres, poderás mudar a tua escolha.  Luís, então, escolhe uma porta e o imperador abre uma das portas não-escolhidas por Luís e lhe mostra um tigre. Luís, após ver a fera, e aproveitando-se do que dissera o imperador, muda sua escolha e diz: Temível imperador, não quero mais a porta que escolhi; quero, entre as duas portas que eu não havia escolhido, aquela que não abriste.  A probabilidade de que, agora, nessa nova escolha, Luís tenha escolhido a porta que conduz à barra de ouro é igual a a) b) c) d) e)  c)  "
 },
 {
-  "id": "exercise-135",
+  "id": "exercise-136",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-135",
+  "url": "section-probabilidade-condicional.html#exercise-136",
   "type": "Exercício",
   "number": "4.2.2.8",
   "title": "",
@@ -3403,27 +3412,27 @@ var ptx_lunr_docs = [
   "body": " Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.   Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?  Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?    item a) Vamos considerar os eventos:  S: saiu uma face verde  F: não saiu uma face verde  Pelo a probabilidade é   item b) Vamos considerar os eventos:  S: saiu uma face azul  F: não saiu uma face azul  Pelo a probabilidade é    "
 },
 {
-  "id": "exercise-136",
+  "id": "exercise-137",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-136",
+  "url": "section-distribuicao-binomial.html#exercise-137",
   "type": "Exercício",
   "number": "4.3.2.1",
   "title": "",
   "body": " Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .  "
 },
 {
-  "id": "exercise-137",
+  "id": "exercise-138",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-137",
+  "url": "section-distribuicao-binomial.html#exercise-138",
   "type": "Exercício",
   "number": "4.3.2.2",
   "title": "",
   "body": " (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:     "
 },
 {
-  "id": "exercise-138",
+  "id": "exercise-139",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-138",
+  "url": "section-distribuicao-binomial.html#exercise-139",
   "type": "Exercício",
   "number": "4.3.2.3",
   "title": "",
@@ -3493,27 +3502,27 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle , Discrete mathematics, 280(1-3), 233-236, 2004.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Barbosa Junior C. M., A Porta dos Desesperados: Uma Proposta Didática para a Aprendizagem de Probabilidade no Ensino Médio , Monografia Lic. Mat da UFRPE.   "
 },
 {
-  "id": "p-1086",
+  "id": "p-1093",
   "level": "2",
-  "url": "referencias.html#p-1086",
+  "url": "referencias.html#p-1093",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1087",
+  "id": "p-1094",
   "level": "2",
-  "url": "referencias.html#p-1087",
+  "url": "referencias.html#p-1094",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1088",
+  "id": "p-1095",
   "level": "2",
-  "url": "referencias.html#p-1088",
+  "url": "referencias.html#p-1095",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

@@ -9,25 +9,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.4.1.1</span><span class="period">.</span>
-</h3>
-<div class="para">Sejam <span class="process-math">\(x\in [0,1]\)</span> e <span class="process-math">\(y\in [0,1]\)</span> os pontos escolhidos, <span class="process-math">\(x\leq y\text{.}\)</span>
-</div> <figure class="figure figure-like"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/probatri01.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>Escolhendo dois pontos em um segmento.</figcaption></figure> <div class="para">Escolher <span class="process-math">\(x\)</span> e <span class="process-math">\(y\)</span> pertencentes a <span class="process-math">\([0,1]\text{,}\)</span> com <span class="process-math">\(x\leq y\text{,}\)</span> equivale a escolher um ponto <span class="process-math">\((x,y)\)</span> no triângulo <span class="process-math">\(T\)</span> da figura abaixo.</div> <figure class="figure figure-like"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/probatri.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span>Como escolher os pontos <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{.}\)</span></figcaption></figure> <div class="para">Para que exista um triângulo de lados <span class="process-math">\(x, y-x\)</span> e <span class="process-math">\(1-y\)</span> devemos ter <span class="process-math">\(x\lt y-x+1-y\)</span> e <span class="process-math">\(y-x\lt x+1-y\)</span> e <span class="process-math">\(1-y\lt x+y-x\text{,}\)</span> o que dá <span class="process-math">\(x\lt 0,5\)</span> e <span class="process-math">\(y\lt x+0,5\)</span> e <span class="process-math">\(y&gt;0,5\text{.}\)</span> Em suma, o triângulo existirá se, e somente se, o ponto <span class="process-math">\((x,y)\)</span> for selecionado na parte laranja do triângulo <span class="process-math">\(T\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">Sendo <span class="process-math">\(A\)</span> o evento "as três partes formam um triângulo" e sendo <span class="process-math">\(S\)</span> o evento certo, temos que <span class="process-math">\(P(A)\)</span> é proporcional a área da parte sombreada e <span class="process-math">\(P(S)=1\)</span> é proporcional à área de <span class="process-math">\(T\text{.}\)</span> Logo,</div>
-<div class="displaymath process-math">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.3.2.3.1</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-dist-binomial.html">
 \begin{equation*}
-P(A)=\frac{P(A)}{P(S)}=\frac{\text{área sombreada}}{\text{área de } T} = \frac{1}{4}.
+P = C_6^4\times \left(\frac{2}{3}\right)^4\times \left(\frac{1}{3}\right)^2 + C_6^5\times \left(\frac{2}{3}\right)^5\times \left(\frac{1}{3}\right)^1 = \frac{16}{27}
 \end{equation*}
 </div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-57"><script type="text/x-sage">C(n, p) = binomial(n,p)
+a = C(6, 4)*(2/3)^4*(1/3)^2
+b = C(6, 5)*(2/3)^5*(1/3)
+a+b
+</script></pre>
 </div>
-</div>
-<span class="incontext"><a href="section-espaco-infinito.html#solution-172" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-distribuicao-binomial.html#solution-172" class="internal">em contexto</a></span>
 </body>
 </html>
