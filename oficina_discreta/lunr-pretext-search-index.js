@@ -196,7 +196,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.3",
   "title": "Teoria dos Números",
-  "body": " Teoria dos Números   Qual o resto que o número deixa quando dividido por ?    No Planeta existem apenas dois tipos de notas de dinheiro: e . É possível pagarmos exatamente por alguma mercadoria? E se as notas fossem de e ?    Qual o resto que o número deixa quando dividido por ?    Determine o resto de por .    Qual o resto de por ?    Prove que é divisível por .   Mostre que não existe inteiro positivo , tal que divide .   Encontre todas as soluções interior de .    encontre os últimos dígitos do número .   "
+  "body": " Teoria dos Números   Qual o resto que o número deixa quando dividido por ?   Os restos das divisões de 1002, 1003 e 1004 por 7 são 1, 2 e 3, respectivamente. Logo, deixa o mesmo na divisão por que deixa na divião por , ou seja, o resto é .     Qual o resto que o número deixa quando dividido por ?   Pelo Pequeno Teorema de Fermat. Como , temos Agora precisamos calcular o resto da divisão de por 7. Logo,      Determine o resto de por .   Usando a mesma ideia do exemplo anterior, obtemos Como , somando as congruências obtemos      Se um “googolplex” é , que dia da semana será daqui a um googolplex de dias?  Obs.: Suponha que hoje seja um Sábado.   Como os dias da semana se repetem em um ciclo de tamanho 7, queremos saber qual o resto da divisão de um googolplex por 7.  Pelo Pequeno Teorema de Fermat, . Para utilizar isso a nosso favor na hora de calcular , precisamos decompor em um múltiplo de 6 e um resto.   Logo, . Portanto, Portanto, o dia da semana em que estaremos daqui a um googolplex de dias será 4 dias da semana depois do dia de hoje. Se hoje é domingo, então, daqui a um googolpex de dias será uma quarta-feira.     Qual o resto de por ?   Usando a mesma ideia dos dois exemplos anteriores, obtemos Somando as congruências, obtemos      Prove que é divisível por .   Usando a mesma ideia dos dois exemplos anteriores, obtemos Somando as congruências, obtemos       Encontre os últimos dígitos do número .  Basta calcular o resto da divisão de por . Para isto, vamos usar o Teorema de Euler, ou seja, se . Então, como Portanto, Note que Logo, Agora, precisamos achar tal que . Ou seja, o inverso do 7, módulo 1000. O valor é . Logo     Mostre que não existe inteiro positivo , tal que divide .  Suponha que existe tal que . Pelo Pequeno Teorema de Fermat, . No entando, e Chegamos numa contradição, logo não existe tal .     Encontre todas as soluções inteiras de .   Resolvendo a equação diofantina, obtemos      No Planeta existem apenas dois tipos de notas de dinheiro: e . É possível pagarmos exatamente por alguma mercadoria? E se as notas fossem de e ?   O mdc entre 5 e 78 é 1. Portanto existem , tais que . Multiplicando tudo por 7, obtemos Os valores de e podem ser encontrados resolvendo a equação diofantina . Os valorem podem ser e .    "
 },
 {
   "id": "example-10",
@@ -205,7 +205,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.1",
   "title": "",
-  "body": " Qual o resto que o número deixa quando dividido por ?  "
+  "body": " Qual o resto que o número deixa quando dividido por ?   Os restos das divisões de 1002, 1003 e 1004 por 7 são 1, 2 e 3, respectivamente. Logo, deixa o mesmo na divisão por que deixa na divião por , ou seja, o resto é .   "
 },
 {
   "id": "example-11",
@@ -214,7 +214,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.2",
   "title": "",
-  "body": " No Planeta existem apenas dois tipos de notas de dinheiro: e . É possível pagarmos exatamente por alguma mercadoria? E se as notas fossem de e ?  "
+  "body": " Qual o resto que o número deixa quando dividido por ?   Pelo Pequeno Teorema de Fermat. Como , temos Agora precisamos calcular o resto da divisão de por 7. Logo,    "
 },
 {
   "id": "example-12",
@@ -223,7 +223,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.3",
   "title": "",
-  "body": " Qual o resto que o número deixa quando dividido por ?  "
+  "body": " Determine o resto de por .   Usando a mesma ideia do exemplo anterior, obtemos Como , somando as congruências obtemos    "
 },
 {
   "id": "example-13",
@@ -232,7 +232,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.4",
   "title": "",
-  "body": " Determine o resto de por .  "
+  "body": " Se um “googolplex” é , que dia da semana será daqui a um googolplex de dias?  Obs.: Suponha que hoje seja um Sábado.   Como os dias da semana se repetem em um ciclo de tamanho 7, queremos saber qual o resto da divisão de um googolplex por 7.  Pelo Pequeno Teorema de Fermat, . Para utilizar isso a nosso favor na hora de calcular , precisamos decompor em um múltiplo de 6 e um resto.   Logo, . Portanto, Portanto, o dia da semana em que estaremos daqui a um googolplex de dias será 4 dias da semana depois do dia de hoje. Se hoje é domingo, então, daqui a um googolpex de dias será uma quarta-feira.   "
 },
 {
   "id": "example-14",
@@ -241,7 +241,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.5",
   "title": "",
-  "body": " Qual o resto de por ?  "
+  "body": " Qual o resto de por ?   Usando a mesma ideia dos dois exemplos anteriores, obtemos Somando as congruências, obtemos    "
 },
 {
   "id": "example-15",
@@ -250,7 +250,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.6",
   "title": "",
-  "body": " Prove que é divisível por .  "
+  "body": " Prove que é divisível por .   Usando a mesma ideia dos dois exemplos anteriores, obtemos Somando as congruências, obtemos    "
 },
 {
   "id": "example-16",
@@ -259,7 +259,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.7",
   "title": "",
-  "body": "Mostre que não existe inteiro positivo , tal que divide . "
+  "body": "  Encontre os últimos dígitos do número .  Basta calcular o resto da divisão de por . Para isto, vamos usar o Teorema de Euler, ou seja, se . Então, como Portanto, Note que Logo, Agora, precisamos achar tal que . Ou seja, o inverso do 7, módulo 1000. O valor é . Logo   "
 },
 {
   "id": "example-17",
@@ -268,7 +268,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.8",
   "title": "",
-  "body": " Encontre todas as soluções interior de .  "
+  "body": " Mostre que não existe inteiro positivo , tal que divide .  Suponha que existe tal que . Pelo Pequeno Teorema de Fermat, . No entando, e Chegamos numa contradição, logo não existe tal .   "
 },
 {
   "id": "example-18",
@@ -277,14 +277,41 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "1.3.9",
   "title": "",
-  "body": " encontre os últimos dígitos do número .  "
+  "body": " Encontre todas as soluções inteiras de .   Resolvendo a equação diofantina, obtemos    "
+},
+{
+  "id": "example-19",
+  "level": "2",
+  "url": "section-3.html#example-19",
+  "type": "Exemplo",
+  "number": "1.3.10",
+  "title": "",
+  "body": " No Planeta existem apenas dois tipos de notas de dinheiro: e . É possível pagarmos exatamente por alguma mercadoria? E se as notas fossem de e ?   O mdc entre 5 e 78 é 1. Portanto existem , tais que . Multiplicando tudo por 7, obtemos Os valores de e podem ser encontrados resolvendo a equação diofantina . Os valorem podem ser e .   "
+},
+{
+  "id": "02-congruencia",
+  "level": "1",
+  "url": "02-congruencia.html",
+  "type": "Capítulo",
+  "number": "2",
+  "title": "Códigos Calculadora",
+  "body": "   Códigos Calculadora     Tabela com códigos para resgatar a Calculadora Discreta:    Número  Código    1  Z77DYXFEQ3NMP1F5Q4K57XQ    2  D0QV2ABAN22FRUBQW18ZJHB    3  GXNBYW04QCGSVMBZXX7XJZZ    4  2UHQEXAYA1TP8ZXNFAL9V3G    5  7067WTDG64EPSW2941UU72R    6  RMFRK7X9JKLBR2T5AJ4XJSF    7  YYFT3MD144DS846TAVPU5TK    8  XB1JH66UMSXE9UJ1WBV1NGE    9  A9NFE9W9R7G6Y6H6KP6QP6T    10  D1NWR3UBXUQXCHQ75JWSFVV    11  SGC5DMLKP2BE7C47SH2H318    12  BBU6Q6YLTZEAQA2DHERKGXH    13  7M2YFC10QY8D60E5S5YJNKB    14  EN2D615W86H8GH1XVN0QSSU    15  3RAKR2QMKURQ9ARNHGYW555    16  R8Z6R4EY6E24GKX07C7EDWW    17  6VDP6AMD6J3YEKRAR3RURPD    18  0YS6KXA7S1YW997QHHZD15N    19  7VQY7D93SBBFY1HGYWQ3DCM    20  J2E47DXQEDPPZ4HKD07VPSJ    21  QX8EA0PANEE1C25PEDRLV25    22  085QQ81NT7TKX387MEG6CEG    23  DW9A0C5BVPMWC5GWED8YLP7    24  S0M0TRFXXLD9H2TSL51PFLP    25  CLZ6W8ME3S7MYSQUZ4C0UCU    26  VFMKQ0927TB0KRK3CJND73P    27  RK0K59DCTGZYV8QEVE7WDRX    28  10ZN1K1GB1NMGHZLJFGAHYX    29  A90R3BJ4DJX544J7U52HPZF    30  D72ACRQ506HRXWRD84XC705    31  VCQLN8VQHR69C9PS76WXPZJ    32  FZXD17EWTL2H6NGFUSATEZE    33  L2NH5LX8SBNGDJ1MXLPC61A    34  3YCWX95ZPAS5HYFT83FZSMZ    35  BDR40BCKXFM7RDQYC903NNU    36  Y09HHH3S7NKMVS024G3FM71    37  3QUQ1AQCVR54PAVZQCCFSND    38  P7JV482N3LTLT8R4VTDY0PY    39  1KD63CPS45FHVJ969ZW88YS    40  D2WY82ELQ7SVBJDHN465N90    41  D2VDS7L004A2YT05YV2YUE8       "
+},
+{
+  "id": "table-1",
+  "level": "2",
+  "url": "02-congruencia.html#table-1",
+  "type": "Tabela",
+  "number": "2.0.1",
+  "title": "Tabela com códigos para resgatar a Calculadora Discreta:",
+  "body": " Tabela com códigos para resgatar a Calculadora Discreta:    Número  Código    1  Z77DYXFEQ3NMP1F5Q4K57XQ    2  D0QV2ABAN22FRUBQW18ZJHB    3  GXNBYW04QCGSVMBZXX7XJZZ    4  2UHQEXAYA1TP8ZXNFAL9V3G    5  7067WTDG64EPSW2941UU72R    6  RMFRK7X9JKLBR2T5AJ4XJSF    7  YYFT3MD144DS846TAVPU5TK    8  XB1JH66UMSXE9UJ1WBV1NGE    9  A9NFE9W9R7G6Y6H6KP6QP6T    10  D1NWR3UBXUQXCHQ75JWSFVV    11  SGC5DMLKP2BE7C47SH2H318    12  BBU6Q6YLTZEAQA2DHERKGXH    13  7M2YFC10QY8D60E5S5YJNKB    14  EN2D615W86H8GH1XVN0QSSU    15  3RAKR2QMKURQ9ARNHGYW555    16  R8Z6R4EY6E24GKX07C7EDWW    17  6VDP6AMD6J3YEKRAR3RURPD    18  0YS6KXA7S1YW997QHHZD15N    19  7VQY7D93SBBFY1HGYWQ3DCM    20  J2E47DXQEDPPZ4HKD07VPSJ    21  QX8EA0PANEE1C25PEDRLV25    22  085QQ81NT7TKX387MEG6CEG    23  DW9A0C5BVPMWC5GWED8YLP7    24  S0M0TRFXXLD9H2TSL51PFLP    25  CLZ6W8ME3S7MYSQUZ4C0UCU    26  VFMKQ0927TB0KRK3CJND73P    27  RK0K59DCTGZYV8QEVE7WDRX    28  10ZN1K1GB1NMGHZLJFGAHYX    29  A90R3BJ4DJX544J7U52HPZF    30  D72ACRQ506HRXWRD84XC705    31  VCQLN8VQHR69C9PS76WXPZJ    32  FZXD17EWTL2H6NGFUSATEZE    33  L2NH5LX8SBNGDJ1MXLPC61A    34  3YCWX95ZPAS5HYFT83FZSMZ    35  BDR40BCKXFM7RDQYC903NNU    36  Y09HHH3S7NKMVS024G3FM71    37  3QUQ1AQCVR54PAVZQCCFSND    38  P7JV482N3LTLT8R4VTDY0PY    39  1KD63CPS45FHVJ969ZW88YS    40  D2WY82ELQ7SVBJDHN465N90    41  D2VDS7L004A2YT05YV2YUE8    "
 },
 {
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
   "type": "Referêcias",
-  "number": "2",
+  "number": "3",
   "title": "Referências Bibliográficas",
   "body": "    Referências Bibliográficas     Notas de aula de Teoria dos Números do POTI    F. E. Brochero Martinez, C. G. Moreira, N. C. Saldanha, E. Tengan - Teoria dos Números um passeio com primos e outros números familiares pelo mundo inteiro, Projeto Euclides, IMPA, 2010.  "
 }

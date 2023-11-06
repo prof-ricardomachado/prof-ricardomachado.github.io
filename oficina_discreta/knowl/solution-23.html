@@ -12,12 +12,40 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h5 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.2.8.1</span><span class="period">.</span>
-</h5>
-<div class="para">Ao decorrer do Pentágono, a formiga anda <span class="process-math">\(12\)</span> metros em <span class="process-math">\(12\)</span> segundos, então podemos escrever pelo algoritmo da divisão que no segundo <span class="process-math">\(2013\)</span> a formiga andou <span class="process-math">\(12\times 167+9\)</span> metros, ou seja, deu <span class="process-math">\(167\)</span> voltas e andou mais <span class="process-math">\(9\)</span> metros, estando agora no ponto <span class="process-math">\(E\text{.}\)</span>
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.9.1</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Pelo critério de divisibilidade por <span class="process-math">\(9\text{,}\)</span> <span class="process-math">\(N \equiv A \equiv B \mod 9\text{,}\)</span> pois o resto da divisão de <span class="process-math">\(N\)</span> por <span class="process-math">\(9\)</span> é o mesmo que o resto da divisão da soma dos dígitos de <span class="process-math">\(N\)</span> por <span class="process-math">\(9\text{.}\)</span> Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4444\equiv 16\equiv 7 \mod 9,
+\end{equation*}
 </div>
+<div class="para">precisamos encontrar <span class="process-math">\(7^{4444} \mod 9\text{.}\)</span>
 </div>
-<span class="incontext"><a href="section-2.html#solution-23" class="internal">em contexto</a></span>
+<div class="displaymath process-math">
+\begin{align*}
+7^2\equiv\amp~ 4 \mod 9\\
+7^3\equiv\amp~ 4\cdot 7 \equiv 1 \mod 9.
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(4444 = 1481\cdot 3+1\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+7^{4444}\equiv 7^{1481\cdot 3+1}\equiv (7^3)^{1481}\cdot 7 \equiv 7 \mod 9.
+\end{equation*}
+</div>
+</div> <div class="para">Agora, vamos estimar o valor de <span class="process-math">\(s(B)\text{.}\)</span> Como <span class="process-math">\(4444\lt 10^5\text{,}\)</span> temos <span class="process-math">\(N=4444^{4444}\lt 10^{5\cdot 4444}\text{.}\)</span> Então, o maior valor possível para <span class="process-math">\(s(N)\)</span> seria se <span class="process-math">\(N\)</span> fosse igual a <span class="process-math">\(10^{5\cdot 4444}-1\text{,}\)</span> ou seja, <span class="process-math">\(N\)</span> teria <span class="process-math">\(5\cdot 4444\)</span> dígitos do número <span class="process-math">\(9\text{,}\)</span> portanto <span class="process-math">\(A=s(N)\leq 5\cdot 4444\cdot 9=199980\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Além disso, <span class="process-math">\(B=s(A)\leq 1+9\cdot 5=46\text{.}\)</span> Então, <span class="process-math">\(s(B)\)</span> é menor ou igual a maior soma dos dígitos dos números naturais menores que <span class="process-math">\(46\text{.}\)</span> Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s(B)\leq s(46), s(45)\ldots, s(39), s(38), \ldots
+\end{equation*}
+</div>
+</div> Como a maior soma é <span class="process-math">\(s(39)=12\text{,}\)</span> <span class="process-math">\(s(B)\leq 12\text{.}\)</span> O único inteiro menor ou igual a <span class="process-math">\(12\)</span> com resto <span class="process-math">\(7\)</span> por <span class="process-math">\(9\)</span> é o próprio <span class="process-math">\(7\text{,}\)</span> daí <span class="process-math">\(s(B)=7\text{.}\)</span>
+</div>
+<span class="incontext"><a href="section-4.html#solution-23" class="internal">em contexto</a></span>
 </body>
 </html>
