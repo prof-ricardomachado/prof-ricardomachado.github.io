@@ -2329,7 +2329,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.6",
   "title": "O Princípio da Reflexão",
-  "body": " O Princípio da Reflexão   Passeios Sobre o Reticulado  Chamaremos o plano de coordenadas inteiras de reticulado.  Um reticulado.     Existe uma classe de problemas em análise combinatória que consiste em determinar a quantidade de caminhos de um ponto até , em um reticulado, sob algumas condições. Como por exemplo:  Uma partícula está sobre o reticulado. Ela só pode fazer dois tipos de movimentos:  Estando sobre o ponto se move para o ponto ;  Estando sobre o ponto se move para o ponto .  Determine o número de caminhos da origem até o ponto .  Chamamos o primeiro tipo de movimento de \"para o Norte\" e o denotaremos com uma letra , e o segundo de \"para o Leste\" e o denotaremos por uma letra . Com esta notação, temos uma bijeção entre os caminhos dessa partícula no reticulado e os anagramas formados por letras e por letras , por meio da seguinte associação: Toda vez que a partícula faz o movimento , escrevemos e toda vez que a partícula faz o movimento , escrevemos .      O Princípio da Reflexão  O princípio da reflexão é uma ideia geométrica aplicada na contagem de caminhos no reticulado com a restrição de não poder ultrapassar uma determinada reta. Dentre as variadas aplicações deste princípio, temos o problema do troco na fila de cinema ( ) e o problema da eleição de André ( ). Outra aplicação notável, é a dedução dos Números de Catalan, por meio de um caso particular deste princípio.    O princípio da reflexão consiste em determinar o número de caminhos da origem até o ponto , de modo que os caminhos fiquem sempre abaixo da diagonal , isto é, eles podem tocar, mas não podem cruzar.    Chamamos de caminho bom no reticulado, se o caminho não cruza a diagonal, e de caminho ruim se o caminho cruza a diagonal. Veja um exemplo de cada tipo na , na e na .   Um exemplo de caminho bom.       Seja a reflexão dos pontos de um reticulado em relação à reta , observe que . Na , veja que a reflexão leva a seta que liga à na seta que liga à .   Exemplo da reflexão .      A quantidade de caminhos ruins de até é igual ao número total de caminhos de até .    Seja o conjunto dos caminhos ruins de até e o conjunto dos caminhos de até . Primeiramente, observe que se , o ponto A estaria acima da diagonal , então não haveria caminhos bons, só os ruins. Logo, vamos supor que .  Seja um caminho ruim de até , isto é, , como ele é um caminho ruim, por definição, esse caminho cruza a reta pelo menos uma vez. Aplicando a reflexão aos pontos de , após o primeiro cruzamento, obtemos um caminho de até . Como é um caminho arbitrário, concluímos que cada caminho de é levado, dessa maneira, em um caminho de , logo .  Veja um exemplo na e na abaixo.   Exemplos de caminhos.    Exemplo de caminho ruim.     Caminho ruim em laranja e sua respectiva reflexão em verde.      Reciprocamente, tomando um caminho de até , isto é , ele necessariamente toca na diagonal , uma vez que a ordenada de é maior que a abscissa. Aplicando a reflexão , a partir do primeiro cruzamento em relação à reta , obtemos um caminho que termina em A. Ou seja, verificamos que todo caminho de é levado em um caminho de . Portanto, .  Da propriedade da tricotomia dos números reais, se e , concluímos que .    A quantidade de caminhos ruins de até é    Pela , o número de caminhos ruins de até é igual à quantidade de caminhos de até , sem restrições, ou seja, é o número de anagramas com os L's repetidos vezes e os N's repetidos vezes, que pode ser calculado por como queríamos demonstrar.     (Princípio da Reflexão)  Sejam com . A quantidade de caminhos da origem até o ponto que ficam abaixo da reta é dada por    Queremos calcular a quantidade de caminhos bons da origem até o ponto . Para tanto, vamos calcular o total e subtrair o número de caminhos ruins. O total de caminhos é dado por . E pela , sabemos que o número de caminhos ruins é dado por . Assim,      Abaixo, definimos uma função, que calcula o número de caminhos bons do ponto até o ponto .     Digite uma sequência de L's e D's e clique no botão \"Update\" para obter um reticulado, o respectivo caminho e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta , a partir do primeiro ponto que toca nessa reta.   Reticulado, caminho e reflexão.       Números de Catalan  Os Números de Catalan, que foram nosso fio condutor até aqui, são muitos profícuos em análise combinatória, modelando uma gama enorme de problemas, por exemplo, a referência apresenta 214 tipos diferentes de configurações combinatórias que podem ser contados usando Números de Catalan. Destacamos também, não só a variedade de problemas que são modelados por estes números, mais a versatilidade de temas que podem ser apresentados com eles, como por exemplo as funções geradoras, relações de recorrências, semi-ordem e muito mais. Para o leitor interessado, recomendamos as referências , e .   No (Princípio da Reflexão), o caso particular em que é conhecido como números de Catalan, ou seja, os números são conhecidos como números de Catalan (ou Catalão).    O Sage possui um método específico para calcular os números de Catalan. Basta escolher o valor de e usar o método conforme o código a seguir.     Anteriormente, no , vimos a bijeção entre os caminhos da origem até o ponto , com os anagramas formados por letras e letras . Neste momento, é natural perguntar: Qual é a relação entre estes anagramas e os números de Catalan?   Apresentamos os números de Catalan como a quantidade de caminhos da origem até o ponto de maneira que cada um desses caminhos nunca ultrapasse a diagonal , ou seja, a cada momento a quantidade de movimentos \"para o norte\" deve ser sempre menor ou igual que a quantidade de movimentos \"para o leste\". Assim, por meio da bijeção já apresentada no , concluímos que um caminho que é solução do problema de Catalan para o reticulado está associado aos anagramas com letras e letras de modo que ao lermos da esquerda para a direita a cada momento, a quantidade de letras será maior ou igual a quantidade de letras . Vejamos que para , o anagrama é uma palavra válida para o problema de Catalan, enquanto não é válida.     Um caminho de Dyck é um caminho de comprimento , no plano cartesiano, do ponto ao ponto . No qual, em cada passo, saímos do ponto para ou , com a condição adicional de que o caminho nunca fica abaixo do eixo . Quantos são os caminhos de Dyck?  Observe que se a cada passo de para associarmos uma letra \"L\" e a cada passo de para associarmos uma letra \"N\", temos uma associação dos caminhos de Dyck com os anagramas do que acabamos de ver. O qual tem sua cardinalidade determinada pelos números de Catalan.    Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.      Existem valores de e tais que a quantidade de caminhos bons é igual ao número de caminhos ruins?  Refaça o princípio da reflexão no caso em que os caminhos não possam nem tocar a diagonal .  Numa fila de cinema, pessoas têm notas de e pessoas têm notas de , com . A entrada custa .  Quais são as filas possíveis?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar sem troco?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar com duas notas de ?     O princípio da reflexão, também é conhecido como \"O princípio da reflexão de André\" (Andre's reflection principle), devido a sua utilização na solução do Problema da Eleição (\"The Ballot Problem\"). O qual enunciamos abaixo. Esse princípio possui várias generalizações e ainda pesquisado atualmente, o que pode ser visto em e .   Em uma eleição há dois candidatos A e B. Se o candidato teve votos e o candidato teve votos com Qual a probabilidade de durante a apuração, cédula a cédula, o candidato sempre esteja à frente, isto é, com mais votos ou empatado, com ?  Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :    Mostre que o número de maneiras de empilhar moedas no plano de modo que a linha da base consista em moedas consecutivas é . Vejamos como exemplo :  Todos os empilhamentos com 3 moedas na base.       "
+  "body": " O Princípio da Reflexão   Passeios Sobre o Reticulado  Chamaremos o plano de coordenadas inteiras de reticulado.  Um reticulado.     Existe uma classe de problemas em análise combinatória que consiste em determinar a quantidade de caminhos de um ponto até , em um reticulado, sob algumas condições. Como por exemplo:   Uma partícula está sobre o reticulado. Ela só pode fazer dois tipos de movimentos:  Estando sobre o ponto se move para o ponto ;  Estando sobre o ponto se move para o ponto .  Determine o número de caminhos da origem até o ponto .   Chamamos o primeiro tipo de movimento de \"para o Norte\" e o denotaremos com uma letra , e o segundo de \"para o Leste\" e o denotaremos por uma letra . Com esta notação, temos uma bijeção entre os caminhos dessa partícula no reticulado e os anagramas formados por letras e por letras , por meio da seguinte associação: Toda vez que a partícula faz o movimento , escrevemos e toda vez que a partícula faz o movimento , escrevemos .  Vamos ilustrar a ideia na figura abaixo:   Todos os caminhos de até e seus respectivos anagramas.    Pelo princípio da bijeção, calcular a quantidade de caminhos no reticulado do ponto até o ponto é o mesmo que calcular o número de anagramas com letras repetidas e letras repetidas, o que é obtido calculando .      O Princípio da Reflexão  O princípio da reflexão é uma ideia geométrica aplicada na contagem de caminhos no reticulado com a restrição de não poder ultrapassar uma determinada reta. Dentre as variadas aplicações deste princípio, temos o problema do troco na fila de cinema ( ) e o problema da eleição de André ( ). Outra aplicação notável, é a dedução dos Números de Catalan, por meio de um caso particular deste princípio.    O princípio da reflexão consiste em determinar o número de caminhos da origem até o ponto , de modo que os caminhos fiquem sempre abaixo da diagonal , isto é, eles podem tocar, mas não podem cruzar.    Chamamos de caminho bom no reticulado, se o caminho não cruza a diagonal, e de caminho ruim se o caminho cruza a diagonal. Veja um exemplo de cada tipo na , na e na .   Um exemplo de caminho bom.       Seja a reflexão dos pontos de um reticulado em relação à reta , observe que . Na , veja que a reflexão leva a seta que liga à na seta que liga à .   Exemplo da reflexão .      A quantidade de caminhos ruins de até é igual ao número total de caminhos de até .    Seja o conjunto dos caminhos ruins de até e o conjunto dos caminhos de até . Primeiramente, observe que se , o ponto A estaria acima da diagonal , então não haveria caminhos bons, só os ruins. Logo, vamos supor que .  Seja um caminho ruim de até , isto é, , como ele é um caminho ruim, por definição, esse caminho cruza a reta pelo menos uma vez. Aplicando a reflexão aos pontos de , após o primeiro cruzamento, obtemos um caminho de até . Como é um caminho arbitrário, concluímos que cada caminho de é levado, dessa maneira, em um caminho de , logo .  Veja um exemplo na e na abaixo.   Exemplos de caminhos.    Exemplo de caminho ruim.     Caminho ruim em laranja e sua respectiva reflexão em verde.      Reciprocamente, tomando um caminho de até , isto é , ele necessariamente toca na diagonal , uma vez que a ordenada de é maior que a abscissa. Aplicando a reflexão , a partir do primeiro cruzamento em relação à reta , obtemos um caminho que termina em A. Ou seja, verificamos que todo caminho de é levado em um caminho de . Portanto, .  Da propriedade da tricotomia dos números reais, se e , concluímos que .    A quantidade de caminhos ruins de até é    Pela , o número de caminhos ruins de até é igual à quantidade de caminhos de até , sem restrições, ou seja, é o número de anagramas com os L's repetidos vezes e os N's repetidos vezes, que pode ser calculado por como queríamos demonstrar.     (Princípio da Reflexão)  Sejam com . A quantidade de caminhos da origem até o ponto que ficam abaixo da reta é dada por    Queremos calcular a quantidade de caminhos bons da origem até o ponto . Para tanto, vamos calcular o total e subtrair o número de caminhos ruins. O total de caminhos é dado por . E pela , sabemos que o número de caminhos ruins é dado por . Assim,      Abaixo, definimos uma função, que calcula o número de caminhos bons do ponto até o ponto .     Digite uma sequência de L's e D's e clique no botão \"Update\" para obter um reticulado, o respectivo caminho e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta , a partir do primeiro ponto que toca nessa reta.   Reticulado, caminho e reflexão.       Números de Catalan  Os Números de Catalan, que foram nosso fio condutor até aqui, são muitos profícuos em análise combinatória, modelando uma gama enorme de problemas, por exemplo, a referência apresenta 214 tipos diferentes de configurações combinatórias que podem ser contados usando Números de Catalan. Destacamos também, não só a variedade de problemas que são modelados por estes números, mais a versatilidade de temas que podem ser apresentados com eles, como por exemplo as funções geradoras, relações de recorrências, semi-ordem e muito mais. Para o leitor interessado, recomendamos as referências , e .   No (Princípio da Reflexão), o caso particular em que é conhecido como números de Catalan, ou seja, os números são conhecidos como números de Catalan (ou Catalão).    O Sage possui um método específico para calcular os números de Catalan. Basta escolher o valor de e usar o método conforme o código a seguir.     Anteriormente, no , vimos a bijeção entre os caminhos da origem até o ponto , com os anagramas formados por letras e letras . Neste momento, é natural perguntar: Qual é a relação entre estes anagramas e os números de Catalan?   Apresentamos os números de Catalan como a quantidade de caminhos da origem até o ponto de maneira que cada um desses caminhos nunca ultrapasse a diagonal , ou seja, a cada momento a quantidade de movimentos \"para o norte\" deve ser sempre menor ou igual que a quantidade de movimentos \"para o leste\". Assim, por meio da bijeção já apresentada no , concluímos que um caminho que é solução do problema de Catalan para o reticulado está associado aos anagramas com letras e letras de modo que ao lermos da esquerda para a direita a cada momento, a quantidade de letras será maior ou igual a quantidade de letras . Vejamos que para , o anagrama é uma palavra válida para o problema de Catalan, enquanto não é válida.     Um caminho de Dyck é um caminho de comprimento , no plano cartesiano, do ponto ao ponto . No qual, em cada passo, saímos do ponto para ou , com a condição adicional de que o caminho nunca fica abaixo do eixo . Quantos são os caminhos de Dyck?  Observe que se a cada passo de para associarmos uma letra \"L\" e a cada passo de para associarmos uma letra \"N\", temos uma associação dos caminhos de Dyck com os anagramas do que acabamos de ver. O qual tem sua cardinalidade determinada pelos números de Catalan.    Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.      Existem valores de e tais que a quantidade de caminhos bons é igual ao número de caminhos ruins?  Refaça o princípio da reflexão no caso em que os caminhos não possam nem tocar a diagonal .  Numa fila de cinema, pessoas têm notas de e pessoas têm notas de , com . A entrada custa .  Quais são as filas possíveis?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar sem troco?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar com duas notas de ?     O princípio da reflexão, também é conhecido como \"O princípio da reflexão de André\" (Andre's reflection principle), devido a sua utilização na solução do Problema da Eleição (\"The Ballot Problem\"). O qual enunciamos abaixo. Esse princípio possui várias generalizações e ainda pesquisado atualmente, o que pode ser visto em e .   Em uma eleição há dois candidatos A e B. Se o candidato teve votos e o candidato teve votos com Qual a probabilidade de durante a apuração, cédula a cédula, o candidato sempre esteja à frente, isto é, com mais votos ou empatado, com ?  Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :    Mostre que o número de maneiras de empilhar moedas no plano de modo que a linha da base consista em moedas consecutivas é . Vejamos como exemplo :  Todos os empilhamentos com 3 moedas na base.       "
 },
 {
   "id": "definition-20",
@@ -2347,14 +2347,14 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "2.6.3",
   "title": "",
-  "body": "Uma partícula está sobre o reticulado. Ela só pode fazer dois tipos de movimentos:  Estando sobre o ponto se move para o ponto ;  Estando sobre o ponto se move para o ponto .  Determine o número de caminhos da origem até o ponto .  Chamamos o primeiro tipo de movimento de \"para o Norte\" e o denotaremos com uma letra , e o segundo de \"para o Leste\" e o denotaremos por uma letra . Com esta notação, temos uma bijeção entre os caminhos dessa partícula no reticulado e os anagramas formados por letras e por letras , por meio da seguinte associação: Toda vez que a partícula faz o movimento , escrevemos e toda vez que a partícula faz o movimento , escrevemos .   "
+  "body": " Uma partícula está sobre o reticulado. Ela só pode fazer dois tipos de movimentos:  Estando sobre o ponto se move para o ponto ;  Estando sobre o ponto se move para o ponto .  Determine o número de caminhos da origem até o ponto .   Chamamos o primeiro tipo de movimento de \"para o Norte\" e o denotaremos com uma letra , e o segundo de \"para o Leste\" e o denotaremos por uma letra . Com esta notação, temos uma bijeção entre os caminhos dessa partícula no reticulado e os anagramas formados por letras e por letras , por meio da seguinte associação: Toda vez que a partícula faz o movimento , escrevemos e toda vez que a partícula faz o movimento , escrevemos .  Vamos ilustrar a ideia na figura abaixo:   Todos os caminhos de até e seus respectivos anagramas.    Pelo princípio da bijeção, calcular a quantidade de caminhos no reticulado do ponto até o ponto é o mesmo que calcular o número de anagramas com letras repetidas e letras repetidas, o que é obtido calculando .   "
 },
 {
   "id": "definition-21",
   "level": "2",
   "url": "section-13.html#definition-21",
   "type": "Definição",
-  "number": "2.6.4",
+  "number": "2.6.5",
   "title": "",
   "body": "  O princípio da reflexão consiste em determinar o número de caminhos da origem até o ponto , de modo que os caminhos fiquem sempre abaixo da diagonal , isto é, eles podem tocar, mas não podem cruzar.  "
 },
@@ -2363,7 +2363,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#definition-22",
   "type": "Definição",
-  "number": "2.6.5",
+  "number": "2.6.6",
   "title": "",
   "body": " Chamamos de caminho bom no reticulado, se o caminho não cruza a diagonal, e de caminho ruim se o caminho cruza a diagonal. Veja um exemplo de cada tipo na , na e na .   Um exemplo de caminho bom.    "
 },
@@ -2372,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#definition-23",
   "type": "Definição",
-  "number": "2.6.7",
+  "number": "2.6.8",
   "title": "",
   "body": " Seja a reflexão dos pontos de um reticulado em relação à reta , observe que . Na , veja que a reflexão leva a seta que liga à na seta que liga à .   Exemplo da reflexão .    "
 },
@@ -2381,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#prop1",
   "type": "Proposição",
-  "number": "2.6.9",
+  "number": "2.6.10",
   "title": "",
   "body": " A quantidade de caminhos ruins de até é igual ao número total de caminhos de até .  "
 },
@@ -2399,7 +2399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#prop2",
   "type": "Proposição",
-  "number": "2.6.11",
+  "number": "2.6.12",
   "title": "",
   "body": " A quantidade de caminhos ruins de até é    Pela , o número de caminhos ruins de até é igual à quantidade de caminhos de até , sem restrições, ou seja, é o número de anagramas com os L's repetidos vezes e os N's repetidos vezes, que pode ser calculado por como queríamos demonstrar.   "
 },
@@ -2408,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#teo-reflexao",
   "type": "Teorema",
-  "number": "2.6.12",
+  "number": "2.6.13",
   "title": "(Princípio da Reflexão).",
   "body": " (Princípio da Reflexão)  Sejam com . A quantidade de caminhos da origem até o ponto que ficam abaixo da reta é dada por    Queremos calcular a quantidade de caminhos bons da origem até o ponto . Para tanto, vamos calcular o total e subtrair o número de caminhos ruins. O total de caminhos é dado por . E pela , sabemos que o número de caminhos ruins é dado por . Assim,    "
 },
@@ -2417,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#tec-permutacao-circular",
   "type": "Tecnologia",
-  "number": "2.6.13",
+  "number": "2.6.14",
   "title": "",
   "body": " Abaixo, definimos uma função, que calcula o número de caminhos bons do ponto até o ponto .   "
 },
@@ -2426,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#technology-35",
   "type": "Tecnologia",
-  "number": "2.6.14",
+  "number": "2.6.15",
   "title": "",
   "body": " Digite uma sequência de L's e D's e clique no botão \"Update\" para obter um reticulado, o respectivo caminho e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta , a partir do primeiro ponto que toca nessa reta.   Reticulado, caminho e reflexão.    "
 },
@@ -2435,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#definition-24",
   "type": "Definição",
-  "number": "2.6.16",
+  "number": "2.6.17",
   "title": "",
   "body": " No (Princípio da Reflexão), o caso particular em que é conhecido como números de Catalan, ou seja, os números são conhecidos como números de Catalan (ou Catalão).  "
 },
@@ -2444,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#tec-permutacao-circular",
   "type": "Tecnologia",
-  "number": "2.6.17",
+  "number": "2.6.18",
   "title": "",
   "body": " O Sage possui um método específico para calcular os números de Catalan. Basta escolher o valor de e usar o método conforme o código a seguir.   "
 },
@@ -2453,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#catalanporseqs",
   "type": "Exemplo",
-  "number": "2.6.18",
+  "number": "2.6.19",
   "title": "",
   "body": " Anteriormente, no , vimos a bijeção entre os caminhos da origem até o ponto , com os anagramas formados por letras e letras . Neste momento, é natural perguntar: Qual é a relação entre estes anagramas e os números de Catalan?   Apresentamos os números de Catalan como a quantidade de caminhos da origem até o ponto de maneira que cada um desses caminhos nunca ultrapasse a diagonal , ou seja, a cada momento a quantidade de movimentos \"para o norte\" deve ser sempre menor ou igual que a quantidade de movimentos \"para o leste\". Assim, por meio da bijeção já apresentada no , concluímos que um caminho que é solução do problema de Catalan para o reticulado está associado aos anagramas com letras e letras de modo que ao lermos da esquerda para a direita a cada momento, a quantidade de letras será maior ou igual a quantidade de letras . Vejamos que para , o anagrama é uma palavra válida para o problema de Catalan, enquanto não é válida.   "
 },
@@ -2462,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#ex-dyckway",
   "type": "Exemplo",
-  "number": "2.6.19",
+  "number": "2.6.20",
   "title": "",
   "body": " Um caminho de Dyck é um caminho de comprimento , no plano cartesiano, do ponto ao ponto . No qual, em cada passo, saímos do ponto para ou , com a condição adicional de que o caminho nunca fica abaixo do eixo . Quantos são os caminhos de Dyck?  Observe que se a cada passo de para associarmos uma letra \"L\" e a cada passo de para associarmos uma letra \"N\", temos uma associação dos caminhos de Dyck com os anagramas do que acabamos de ver. O qual tem sua cardinalidade determinada pelos números de Catalan.  "
 },
@@ -2471,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#tec-permutacao-circular",
   "type": "Tecnologia",
-  "number": "2.6.20",
+  "number": "2.6.21",
   "title": "",
   "body": " Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.   "
 },
@@ -2507,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-13.html#remark-7",
   "type": "Nota",
-  "number": "2.6.21",
+  "number": "2.6.22",
   "title": "",
   "body": " O princípio da reflexão, também é conhecido como \"O princípio da reflexão de André\" (Andre's reflection principle), devido a sua utilização na solução do Problema da Eleição (\"The Ballot Problem\"). O qual enunciamos abaixo. Esse princípio possui várias generalizações e ainda pesquisado atualmente, o que pode ser visto em e .  "
 },
@@ -3502,27 +3502,27 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle , Discrete mathematics, 280(1-3), 233-236, 2004.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Barbosa Junior C. M., A Porta dos Desesperados: Uma Proposta Didática para a Aprendizagem de Probabilidade no Ensino Médio , Monografia Lic. Mat da UFRPE.   "
 },
 {
-  "id": "p-1093",
+  "id": "p-1096",
   "level": "2",
-  "url": "referencias.html#p-1093",
+  "url": "referencias.html#p-1096",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1094",
+  "id": "p-1097",
   "level": "2",
-  "url": "referencias.html#p-1094",
+  "url": "referencias.html#p-1097",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1095",
+  "id": "p-1098",
   "level": "2",
-  "url": "referencias.html#p-1095",
+  "url": "referencias.html#p-1098",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
