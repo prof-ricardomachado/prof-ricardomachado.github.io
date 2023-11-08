@@ -10,37 +10,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo do desenvolvimento é</div>
-<div class="displaymath process-math">
+<body class="ignore-math"><div class="solution solution-like">Note que<div class="displaymath process-math">
 \begin{align*}
-T_k = \amp ~ C_{11}^{k-1}(x^4)^{k-1}\left(-\frac{1}{x^2}\right)^{11-k+1}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{4(k-1)}x^{-2(12-k)}  \\
-= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{6k-28}  
+S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
+= \amp \sum_{k=1}^{n} k^3+k^2  
 \end{align*}
-</div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Para que <span class="process-math">\(6k-28 = 2\text{,}\)</span> temos <span class="process-math">\(k=5\text{,}\)</span> logo estamos procurando o 5º termo:</div>
-<div class="displaymath process-math">
+</div>Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois<div class="displaymath process-math">
 \begin{equation*}
-T_5 = (-1)^{7}C_{11}^4x^2.
+k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
 \end{equation*}
-</div>
-<div class="para">E portanto o coeficiente é <span class="process-math">\((-1)^{7}C_{11}^4 = -330\text{.}\)</span>
-</div>
-</div> <div class="para">
-<dfn class="terminology">item b)</dfn> <span class="process-math">\(6k-28 = 5\)</span> não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de <span class="process-math">\(x^5\)</span> é zero.</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item c)</dfn> Para que <span class="process-math">\(6k-28 = 8\text{,}\)</span> temos <span class="process-math">\(k=6\text{,}\)</span> logo estamos procurando o 6º termo:</div>
-<div class="displaymath process-math">
+</div>Então, vamos procurar valores para <span class="process-math">\(A, B, C\)</span> e <span class="process-math">\(D\text{,}\)</span> para os quais, vale a igualdade<div class="displaymath process-math">
+\begin{align*}
+k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
+= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D  
+\end{align*}
+</div>igualando os coeficientes, obtemos<div class="displaymath process-math">
 \begin{equation*}
-T_6 = (-1)^{6}C_{11}^5x^8.
+\begin{cases} 
+A = ~ 1 \\
+3A+B  = ~ 1 \\
+2A+B+C  = ~ 0 \\
+D = ~ 0 \\
+\end{cases}
 \end{equation*}
-</div>
-<div class="para">E portanto, o coeficiente é <span class="process-math">\((-1)^{6}C_{11}^5 = 462\text{.}\)</span>
-</div>
+</div>Portanto,  <span class="process-math">\(A= 1\)</span> e  <span class="process-math">\(B = -2\text{.}\)</span> Agora podemos terminar o cálculo da soma<div class="displaymath process-math">
+\begin{align*}
+S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
+= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
+= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
+= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
+= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
+\end{align*}
 </div>
 </div></body>
 </html>

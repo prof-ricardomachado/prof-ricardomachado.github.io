@@ -13,9 +13,28 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.5.1</span><span class="period">.</span>
 </h4>
-<div class="para">Considere os pares <span class="process-math">\((r, s)\text{,}\)</span> na qual <span class="process-math">\(r\)</span> é um menino que gosta da menina <span class="process-math">\(s\text{.}\)</span> Para cada menino, existem <span class="process-math">\(a\)</span> pares, então existem <span class="process-math">\(a\times n\)</span> pares. Portanto existe uma menina em <span class="process-math">\(a\)</span> desses pares, ou seja, existe uma menina que pelo menos <span class="process-math">\(a\)</span> meninos gostam dela. Se essa menina gosta de mais que <span class="process-math">\(n-a\)</span> meninos, então podemos encontrar o par desejado. Portanto, se <span class="process-math">\(a+b&gt;n\text{,}\)</span> podemos encontrar um par.</div> <div class="para">Se <span class="process-math">\(a+b \leq n\)</span> vamos mostar que nem sempre é possível encontrar um par satisfazendo a condição do enunciado. Vamos numerar os meninos e as meninas de <span class="process-math">\(1\)</span> a <span class="process-math">\(n\text{.}\)</span> Dado um par <span class="process-math">\((i, j)\text{,}\)</span> com a primeira entrada correspondendo a menina e a segunda entrada correspondendo ao menino. Diremos que <span class="process-math">\(i\)</span> gosta de <span class="process-math">\(j\text{,}\)</span> se <span class="process-math">\(i+j\)</span> deixar resto que pertence ao conjunto <span class="process-math">\(\{1, 2, 3, \ldots, b\}\text{,}\)</span> na divisão por <span class="process-math">\(n\text{.}\)</span> Diremos que <span class="process-math">\(j\)</span> gosta de <span class="process-math">\(i\text{,}\)</span> se <span class="process-math">\(i+j\)</span> deixar resto que pertence ao conjunto <span class="process-math">\(\{0, n-1, \ldots, n-a+1\}\text{,}\)</span> na divisão por <span class="process-math">\(n\text{.}\)</span> Com isso, cada menino gosta de <span class="process-math">\(a\)</span> meninas, cada menina gosta de <span class="process-math">\(b\)</span> meninos e não existe um par que os dois se gostem.</div>
+<div class="para">Numere os vértices do polígono de <span class="process-math">\(1\)</span> a <span class="process-math">\(2007\text{.}\)</span> O que queremos descobir é o menor valor de <span class="process-math">\(k\text{,}\)</span> tal que, qualquer conjunto com <span class="process-math">\(k\)</span> vértices possua pelo menos <span class="process-math">\(4\)</span> vértices consecutivos.</div> <div class="para logical">
+<div class="para">Considere o conjunto das <span class="process-math">\(4\)</span>-tuplas de vértices consecutivos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T_4=\{(1, 2, 3, 4), (2, 3, 4, 5), \ldots, (2007, 1, 2, 3)\}.
+\end{equation*}
+</div>
+<div class="para">Cada vértice do polígono está presente em 4 elementos do conjunto <span class="process-math">\(T_4\text{.}\)</span> Desse modo, cada vértice escolhido no polígono correspondem a 4 elementos de <span class="process-math">\(T_4\text{.}\)</span> Como <span class="process-math">\(T_4\)</span> possui <span class="process-math">\(2007\)</span> elementos, escreva uma lista <span class="process-math">\(L\)</span> com os números de todas as <span class="process-math">\(4\)</span>-tuplas de forma consecutiva, formando uma lista com <span class="process-math">\(4\times 2007\)</span> números.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = \underbrace{1, 2, 3, 4}_{1º}, \underbrace{2, 3, 4, 5}_{2º}, \ldots, \underbrace{2007, 1,2,3}_{2007º}.
+\end{equation*}
+</div>
+<div class="para">Na lista <span class="process-math">\(L\)</span> podemos escolher até <span class="process-math">\(3\times 2007\)</span> números, de forma que não tenham <span class="process-math">\(4\)</span> elementos consecutivos. Então, como cada vértice do polígono correspondem a <span class="process-math">\(4\)</span> elementos de <span class="process-math">\(L\text{,}\)</span> se <span class="process-math">\(4k&gt;3\times 2007\text{,}\)</span> teremos a condição satisfeita: qualquer conjunto de <span class="process-math">\(k\)</span> vértices possui pelo menos <span class="process-math">\(4\)</span> vértices consecutivos. Fazendo as contas,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k&gt; \frac{3\times 2007}{4} = 1505,25 ~~~ \Rightarrow k\geq 1506. 
+\end{equation*}
+</div>
+</div> <div class="para">Agora precisamos monstrar que o menor valor de <span class="process-math">\(k\)</span> é <span class="process-math">\(1506\text{.}\)</span> Vamos escolher <span class="process-math">\(1505\)</span> vértices de forma que não tenham <span class="process-math">\(4\)</span> vértices consecutivos. Considere todos os vértices do polígono, menos o vértice <span class="process-math">\(2007\)</span> e os vértices que são múltiplos de <span class="process-math">\(4\text{.}\)</span> Como <span class="process-math">\(2007 = 501\times 4+3\text{,}\)</span> temos <span class="process-math">\(501\)</span> múltiplos de <span class="process-math">\(4\text{,}\)</span> dessa forma temos <span class="process-math">\(2007-501-1 = 1505\)</span> vértices sem que <span class="process-math">\(4\)</span> deles sejam consecutivos.</div>
 </div>
 <span class="incontext"><a href="section-casa-pombos.html#solution-122" class="internal">em contexto</a></span>
 </body>

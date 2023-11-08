@@ -1402,7 +1402,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.1",
   "title": "Princípio da Inclusão-Exclusão",
-  "body": " Princípio da Inclusão-Exclusão     O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos   Sejam e conjuntos finitos, então   Diagrama de Venn para .    Ou seja, a cardinalidade de é igual a cardinalidade de mais a cardinalidade de menos a cardinalidade de .   Sejam e conjuntos finitos, a tarefa de selecionar um elemento de e a tarefa de selecionar um elemento de .  Existem maneiras de realizar e maneiras de realizar . O número de maneiras de executar ou é a soma do número de maneiras de executar com o número de maneiras de executar menos o número de maneiras de executar ambos e , pois esta quantidade já foi contada duas vezes.  Como existem maneiras de realizar ou e maneiras de realizar e , temos:      Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens foram entrevistados?   Defina como o conjunto dos alunos entrevistados que gostam de exatas e defina como o conjunto dos alunos entrevistados que gostam de humanas, assim Dessa forma, calculando o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja      Sejam e conjuntos finitos, então    Diagrama de Venn para .     Considere como um conjunto, usando o ( ) temos: Usando a igualdade: temos Aplicando o ( ) na união , concluímos a demonstração:       O Princípio da Inclusão-Exclusão para conjuntos   Sejam conjuntos finitos. A cardinalidade de é dada por:      Suponha que o elemento pertence a exatamente ( ) dos conjuntos . Será mostrado que é contado exatamente uma vez pelo lado direito da Expressão .  No somatório: observa-se que é contado vezes, pois pertence a exatamente dos conjuntos. No somatório nota-se que é contado vezes, pois, em cada termo do somatório, para que seja contado, precisa pertencer aos dois conjuntos. Se separarmos os conjuntos que contém , existem interseções contendo . No caso geral, será contado vezes, pelo somatório envolvendo dos conjuntos .   Desta forma, o elemento será contado exatamente vezes pelo lado direito de . Usando a Expansão do Binômio de Newton (veja ), temos Portanto, Isto mostra que o elemento é contado exatamente uma vez pelo lado direito de .  Como o elemento é arbitrário e a quantidade , também é arbitrária, esse argumento serve para cada um dos elementos de , o que prova o teorema.     Quantos são os anagramas da palavra COMPLEXA que tem C em 1º lugar, ou O em 2º lugar, ou M em 3º lugar ou P em 4º lugar?  Sejam  Assim, para .  Observe que é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P nas posições fixas, logo Pelo Princípio da Inclusão-Exclusão ( ), Organizando, temos Substituindo, temos      Determine o número de elementos dos conjuntos:        item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:   item c) Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:   Clique em \"Evaluate (Sage)\" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).       Exercícios   (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28    Determine o número de permutações de nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?   27240    Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Pincípio da Inclusão-Exclusão sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é      Considere o conjunto , determine o número de funções bijetoras , nas quais , para .   44    (IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.   2088960   Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada . Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos formas distintas de organizarmos esses carros.  Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.  Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos formas de escolhermos essas 2 equipes e podemos colocá-las de maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado e das demais equipes .  Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos     (ITA 2010) Sejam e conjuntos tais que , , e é uma progressão geométrica de razão .   Determine  Determine    a) b) .   item a) Como , temos , logo e . Logo Ou seja,   Usando que é uma PG, obtemos   Por hipótese, , mas , logo  Finalmente, usando o ( ) obtemos Efetuando o calculo obtemos .  item b) Como , temos    "
+  "body": " Princípio da Inclusão-Exclusão     O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos   Sejam e conjuntos finitos, então   Diagrama de Venn para .    Ou seja, a cardinalidade de é igual a cardinalidade de mais a cardinalidade de menos a cardinalidade de .   Sejam e conjuntos finitos, a tarefa de selecionar um elemento de e a tarefa de selecionar um elemento de .  Existem maneiras de realizar e maneiras de realizar . O número de maneiras de executar ou é a soma do número de maneiras de executar com o número de maneiras de executar menos o número de maneiras de executar ambos e , pois esta quantidade já foi contada duas vezes.  Como existem maneiras de realizar ou e maneiras de realizar e , temos:      Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens responderam sim para pelo menos uma pergunta?   Defina como o conjunto dos alunos entrevistados que gostam de exatas e defina como o conjunto dos alunos entrevistados que gostam de humanas, assim Dessa forma, calculando o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja      Sejam e conjuntos finitos, então    Diagrama de Venn para .     Considere como um conjunto, usando o ( ) temos: Usando a igualdade: temos Aplicando o ( ) na união , concluímos a demonstração:       O Princípio da Inclusão-Exclusão para conjuntos   Sejam conjuntos finitos. A cardinalidade de é dada por:      Suponha que o elemento pertence a exatamente ( ) dos conjuntos . Será mostrado que é contado exatamente uma vez pelo lado direito da Expressão .  No somatório: observa-se que é contado vezes, pois pertence a exatamente dos conjuntos. No somatório nota-se que é contado vezes, pois, em cada termo do somatório, para que seja contado, precisa pertencer aos dois conjuntos. Se separarmos os conjuntos que contém , existem interseções contendo . No caso geral, será contado vezes, pelo somatório envolvendo dos conjuntos .   Desta forma, o elemento será contado exatamente vezes pelo lado direito de . Usando a Expansão do Binômio de Newton (veja ), temos Portanto, Isto mostra que o elemento é contado exatamente uma vez pelo lado direito de .  Como o elemento é arbitrário e a quantidade , também é arbitrária, esse argumento serve para cada um dos elementos de , o que prova o teorema.     Quantos são os anagramas da palavra COMPLEXA que tem C em 1º lugar, ou O em 2º lugar, ou M em 3º lugar ou P em 4º lugar?  Sejam  Assim, para .  Observe que é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P nas posições fixas, logo Pelo Princípio da Inclusão-Exclusão ( ), Organizando, temos Substituindo, temos      Determine o número de elementos dos conjuntos:        item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:   item c) Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:   Clique em \"Evaluate (Sage)\" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).      Escolha os valores dos campos  Vmax:  lista:  para determinar a cardinalidade do conjunto abaixo:    Cardinalidade do conjunto .       Exercícios   (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28   Sejam , , os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular . Pelo Princípio da Inclusão-Exclusão, temos Como , para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.  Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.   Polígonos encolhidos.    Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de e assim sucessivamente, de um vértice de até o seguinte. Desta forma cada conjunto define semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim, , para , com e . Logo,     Determine o número de permutações de nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?   27240    Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Princípio da Inclusão-Exclusão, sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é      Considere o conjunto , determine o número de funções bijetoras , nas quais , para .   44    (IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.   2088960   Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada . Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos formas distintas de organizarmos esses carros.  Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.  Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos formas de escolhermos essas 2 equipes e podemos colocá-las de maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado e das demais equipes .  Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos     (ITA 2010) Sejam e conjuntos tais que , , e é uma progressão geométrica de razão .   Determine  Determine    a) b) .   item a) Como , temos , logo e . Logo Ou seja,   Usando que é uma PG, obtemos   Por hipótese, , mas , logo  Finalmente, usando o ( ) obtemos Efetuando o calculo obtemos .  item b) Como , temos    "
 },
 {
   "id": "teo-inclusao-exclusao-2",
@@ -1420,7 +1420,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "2.1.3",
   "title": "",
-  "body": " Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens foram entrevistados?   Defina como o conjunto dos alunos entrevistados que gostam de exatas e defina como o conjunto dos alunos entrevistados que gostam de humanas, assim Dessa forma, calculando o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja    "
+  "body": " Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens responderam sim para pelo menos uma pergunta?   Defina como o conjunto dos alunos entrevistados que gostam de exatas e defina como o conjunto dos alunos entrevistados que gostam de humanas, assim Dessa forma, calculando o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja    "
 },
 {
   "id": "theorem-12",
@@ -1459,13 +1459,22 @@ var ptx_lunr_docs = [
   "body": " Determine o número de elementos dos conjuntos:        item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:   item c) Neste caso, não é viável fazer as contas à mão, vamos usar o SageMath para contar a quantidade de elementos da união:   Clique em \"Evaluate (Sage)\" para obter a resposta do problema, depois troque os valores da lista e execute o código novamente, para obter a resposta do item a).    "
 },
 {
+  "id": "technology-13",
+  "level": "2",
+  "url": "section-inclusao-exclusao.html#technology-13",
+  "type": "Tecnologia",
+  "number": "2.1.9",
+  "title": "",
+  "body": " Escolha os valores dos campos  Vmax:  lista:  para determinar a cardinalidade do conjunto abaixo:    Cardinalidade do conjunto .    "
+},
+{
   "id": "exercise-72",
   "level": "2",
   "url": "section-inclusao-exclusao.html#exercise-72",
   "type": "Exercício",
   "number": "2.1.3.1",
   "title": "",
-  "body": " (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28  "
+  "body": " (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28   Sejam , , os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular . Pelo Princípio da Inclusão-Exclusão, temos Como , para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.  Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.   Polígonos encolhidos.    Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de e assim sucessivamente, de um vértice de até o seguinte. Desta forma cada conjunto define semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim, , para , com e . Logo,   "
 },
 {
   "id": "exercise-73",
@@ -1483,7 +1492,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.1.3.3",
   "title": "",
-  "body": " Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Pincípio da Inclusão-Exclusão sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é   "
+  "body": " Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Princípio da Inclusão-Exclusão, sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é   "
 },
 {
   "id": "exercise-75",
@@ -1519,7 +1528,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.2",
   "title": "Permutações Caóticas",
-  "body": " Permutações Caóticas    Nota Histórica  O célebre matemático e físico suiço, Leonhard Paul Euler (1707-1783), empenhou-se em resolver uma questão, um tanto quanto curiosa, proposta por Nicolaus Bernoulli (1687-1759), conhecida como \"O PROBLEMA DAS CARTAS MAL ENDEREÇADAS\" que se fundamenta em esclarecer de quantas formas distintas pode-se colocar cartas em envelopes, endereçados a destinatários diferentes, de modo que nenhuma das cartas seja colocada no envelope correto.  Nessas condições, estamos perante um problema de análise combinatória, intitulado por Permutações Caóticas, também conhecida como Desarranjos ou Desordenamentos, uma Permutação em que nenhum de seus elementos estará presente no seu lugar de origem.   Leonarhd Euler, fonte: https:\/\/www.phylos.net      Exemplos introdutórios  Vamos iniciar este tópico com dois exemplos para facilitar o entendimento do conceito de permutação caótica e também da demonstração.   Determine o número de permutações simples dos elementos , nas quais está na segunda posição ou está em terceira posição.   Definindo como o conjunto das permutações em que está em segunda posição e como o conjunto das permutações em que está em terceira posição, é fácil ver que e que Assim o número procurado nada mais é do que que é igual a:      Dentre as permutações simples dos elementos determine o número daquelas em que não está na segunda posição, não está na terceira posição e nem está na quarta posição.   Definimos , para , como o conjunto das permutações em que está no -ésima posição, para . Queremos encontrar o número de elementos no complementar de .  As cardinalidade dos conjuntos e das interseções dos , dois a dois e três a três são:     Sabendo que o número total de permutações é , a solução para o questionamento é Que é igual a:       Permutações Caóticas   Uma permutação de uma lista de elementos é chamada de permutação caótica , quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de é chamada de caótica quando nenhum dos se encontra na -ésima posição.  Notação:    As permutações caóticas dos elementos podem ser geradas no Sage, com o seguinte comando:     Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.      A quantidade de permutações caóticas de uma lista com objetos distintos, pode ser calculada da seguinte maneira:   Considere todas as permutações dos elementos . Indicando por todas as permutações formadas pelos elementos com no -ésimo lugar, calcularemos , usando a ideia do exemplo ( ): Visto que existem termos no primeiro somatório, termos no segundo, termos no terceiro, , no último e temos evidenciando , obtém-se:     Calculando o número de permutações caóticas no Sage:    Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.       Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?   Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:      Quantas são as permutações de que têm exatamente 4 elementos no seu lugar primitivo?   O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é .  Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de formas. A resposta é       Outras formas de calcular   é igual ao inteiro mais próximo de .    Para e a verificação é direta. Para vamos usar a expansão em série de portência de : para temos Calculando Aplicando a fórmula da soma da PG, ficamos com     Calculando o número de permutações caóticas no Sage, usando o :    Se    Pelo temos Isolando a última parcela da soma, ficamos com Cancelando do último termo e reescrevendo como , obtemos Ou seja,     Calculando o número de permutações caóticas no Sage, usando o :    Se    Vamos separar as permutações caóticas de em dois casos.  1º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.  Como temos elementos, diferentes do , para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de formas.  2º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar não tem seu lugar original ocupado pelo 1.  Temos formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os elementos nos lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses elementos organizados da seguinte maneira: coloque os elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é  Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos     Calculando o número de permutações caóticas no Sage, usando o :     Exercícios   Suponha que . Quantas são as funções para as quais a equação não possui solução? Quantas são as funções  bijetoras para as quais a equação não possui solução?   a) , b) .    item a) A imagem de cada elemento do domínio pode ser escolhida de maneiras, assim, o total é .   item b) Como é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem funções.    Quantas são as permutações de que têm exatamente 5 elementos no seu lugar primitivo?   1468368   Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de maneiras. Logo, o total é     Determine o número de permutações caóticas de nas quais os números ocupam, em alguma ordem, os cinco primeiro lugares.   81576   Podemos escolher a posição dos 5 primeiros elementos de maneiras e a posição dos 7 últimos elementos de maneiras. Portanto, o total é     Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?   9344160   O horário do turno da manhã pode ser escolhido de maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de maneiras. O total de maneiras é     "
+  "body": " Permutações Caóticas    Nota Histórica  O primeiro problema notório relacionado a permutações caóticas é conhecido como \"O Problema das Cartas Mal Endereçadas\". Este enigma matemático tem conexões com figuras ilustres, como Pierre Raymond de Montmort (1678-1719) e Nicholas Bernoulli (1687-1759). Outro eminente matemático que se deparou com esse desafio foi Leonhard Euler (1707-1783). A solução por Euler foi publicada em seu artigo intitulado \"Calcul de la probabilité dans le jeu de rencontre\" , cuja versão em inglês pode ser encontrada em .  Atualmente, este problema de análise combinatória é intitulado por Permutações Caóticas, também conhecida como Desarranjos ou Desordenamentos, uma Permutação em que nenhum de seus elementos estará presente no seu lugar de origem.   Leonarhd Euler, fonte: https:\/\/www.phylos.net      Exemplos introdutórios  Vamos iniciar este tópico com dois exemplos para facilitar o entendimento do conceito de permutação caótica e também da demonstração.   Determine o número de permutações simples dos elementos , nas quais está na segunda posição ou está em terceira posição.   Definindo como o conjunto das permutações em que está em segunda posição e como o conjunto das permutações em que está em terceira posição, é fácil ver que e que Assim o número procurado nada mais é do que que é igual a:      Dentre as permutações simples dos elementos determine o número daquelas em que não está na segunda posição, não está na terceira posição e nem está na quarta posição.   Definimos , para , como o conjunto das permutações em que está no -ésima posição, para . Queremos encontrar o número de elementos no complementar de .  As cardinalidade dos conjuntos e das interseções dos , dois a dois e três a três são:     Sabendo que o número total de permutações é , a solução para o questionamento é Que é igual a:       Permutações Caóticas   Uma permutação de uma lista de elementos é chamada de permutação caótica , quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de é chamada de caótica quando nenhum dos se encontra na -ésima posição.  Notação:    As permutações caóticas dos elementos podem ser geradas no Sage, com o seguinte comando:     Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.      A quantidade de permutações caóticas de uma lista com objetos distintos, pode ser calculada da seguinte maneira:   Considere todas as permutações dos elementos . Indicando por todas as permutações formadas pelos elementos com no -ésimo lugar, calcularemos , usando a ideia do exemplo ( ): Visto que existem termos no primeiro somatório, termos no segundo, termos no terceiro, , no último e temos evidenciando , obtém-se:     Calculando o número de permutações caóticas no Sage:    Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.       Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?   Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:      Quantas são as permutações de que têm exatamente 4 elementos no seu lugar primitivo?   O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é .  Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de formas. A resposta é       Outras formas de calcular   é igual ao inteiro mais próximo de .    Para e a verificação é direta. Para vamos usar a expansão em série de portência de : para temos Calculando Aplicando a fórmula da soma da PG, ficamos com     Calculando o número de permutações caóticas no Sage, usando o :    Se    Pelo temos Isolando a última parcela da soma, ficamos com Cancelando do último termo e reescrevendo como , obtemos Ou seja,     Calculando o número de permutações caóticas no Sage, usando o :    Se    Vamos separar as permutações caóticas de em dois casos.  1º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.  Como temos elementos, diferentes do , para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de formas.  2º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar não tem seu lugar original ocupado pelo 1.  Temos formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os elementos nos lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses elementos organizados da seguinte maneira: coloque os elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é  Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos     Calculando o número de permutações caóticas no Sage, usando o :     Exercícios   Suponha que . Quantas são as funções para as quais a equação não possui solução? Quantas são as funções  bijetoras para as quais a equação não possui solução?   a) , b) .    item a) A imagem de cada elemento do domínio pode ser escolhida de maneiras, assim, o total é .   item b) Como é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem funções.    Quantas são as permutações de que têm exatamente 5 elementos no seu lugar primitivo?   1468368   Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de maneiras. Logo, o total é     Determine o número de permutações caóticas de nas quais os números ocupam, em alguma ordem, os cinco primeiro lugares.   81576   Podemos escolher a posição dos 5 primeiros elementos de maneiras e a posição dos 7 últimos elementos de maneiras. Portanto, o total é     Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?   9344160   O horário do turno da manhã pode ser escolhido de maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de maneiras. O total de maneiras é     "
 },
 {
   "id": "figura-euler",
@@ -1558,9 +1567,9 @@ var ptx_lunr_docs = [
   "body": " Uma permutação de uma lista de elementos é chamada de permutação caótica , quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de é chamada de caótica quando nenhum dos se encontra na -ésima posição.  Notação:   "
 },
 {
-  "id": "technology-13",
+  "id": "technology-14",
   "level": "2",
-  "url": "section-permutacao-caotica.html#technology-13",
+  "url": "section-permutacao-caotica.html#technology-14",
   "type": "Tecnologia",
   "number": "2.2.5",
   "title": "",
@@ -1594,9 +1603,9 @@ var ptx_lunr_docs = [
   "body": "Calculando o número de permutações caóticas no Sage:  "
 },
 {
-  "id": "technology-16",
+  "id": "technology-17",
   "level": "2",
-  "url": "section-permutacao-caotica.html#technology-16",
+  "url": "section-permutacao-caotica.html#technology-17",
   "type": "Tecnologia",
   "number": "2.2.9",
   "title": "",
@@ -1630,9 +1639,9 @@ var ptx_lunr_docs = [
   "body": " é igual ao inteiro mais próximo de .    Para e a verificação é direta. Para vamos usar a expansão em série de portência de : para temos Calculando Aplicando a fórmula da soma da PG, ficamos com    "
 },
 {
-  "id": "technology-17",
+  "id": "technology-18",
   "level": "2",
-  "url": "section-permutacao-caotica.html#technology-17",
+  "url": "section-permutacao-caotica.html#technology-18",
   "type": "Tecnologia",
   "number": "2.2.14",
   "title": "",
@@ -1648,9 +1657,9 @@ var ptx_lunr_docs = [
   "body": " Se    Pelo temos Isolando a última parcela da soma, ficamos com Cancelando do último termo e reescrevendo como , obtemos Ou seja,    "
 },
 {
-  "id": "technology-18",
+  "id": "technology-19",
   "level": "2",
-  "url": "section-permutacao-caotica.html#technology-18",
+  "url": "section-permutacao-caotica.html#technology-19",
   "type": "Tecnologia",
   "number": "2.2.16",
   "title": "",
@@ -1666,9 +1675,9 @@ var ptx_lunr_docs = [
   "body": " Se    Vamos separar as permutações caóticas de em dois casos.  1º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.  Como temos elementos, diferentes do , para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de formas.  2º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar não tem seu lugar original ocupado pelo 1.  Temos formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os elementos nos lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses elementos organizados da seguinte maneira: coloque os elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é  Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos    "
 },
 {
-  "id": "technology-19",
+  "id": "technology-20",
   "level": "2",
-  "url": "section-permutacao-caotica.html#technology-19",
+  "url": "section-permutacao-caotica.html#technology-20",
   "type": "Tecnologia",
   "number": "2.2.18",
   "title": "",
@@ -1738,9 +1747,9 @@ var ptx_lunr_docs = [
   "body": " Quantos são os anagramas da palavra AMARELA, sem que as letras fiquem nas posições originais?  "
 },
 {
-  "id": "technology-20",
+  "id": "technology-21",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#technology-20",
+  "url": "section-permutacao-caotica-repeticoes.html#technology-21",
   "type": "Tecnologia",
   "number": "2.3.3",
   "title": "",
@@ -1828,18 +1837,18 @@ var ptx_lunr_docs = [
   "body": " O polinômio de torre da união disjunta de dois tabuleiros é dado pelo produto dos polinômios de torre de cada um dos tabuleiros.   Seja um tabuleiro obtido pela união disjunta de dois tabuleiros e .  Para colocar torres em , de forma que uma torre não possa atacar a outra, podemos colocar , , torres em , de forma que uma não possa atacar a outra, e torres em , de forma que uma não possa atacar a outra. Dessa forma, dados duas torres quaisquer em , na configuração obtida anteriormente, uma não pode atacar a outra. Portanto, o número de maneiras de colocarmos torres em é dado por Logo,    "
 },
 {
-  "id": "technology-22",
+  "id": "technology-23",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#technology-22",
+  "url": "section-permutacao-caotica-repeticoes.html#technology-23",
   "type": "Tecnologia",
   "number": "2.3.14",
   "title": "",
   "body": " Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na para gerar cada polinômio e definimos a função que multiplica cada um dos polinômios de torre. As entradas da função são os tamanhos dos tabuleiros. Na linha 8 a função está sendo \"chamada\" para gerar a polinômio de torre da união disjunta de um tabuleiro e 4 tabuleiros .   "
 },
 {
-  "id": "technology-23",
+  "id": "technology-24",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#technology-23",
+  "url": "section-permutacao-caotica-repeticoes.html#technology-24",
   "type": "Tecnologia",
   "number": "2.3.15",
   "title": "",
@@ -1864,9 +1873,9 @@ var ptx_lunr_docs = [
   "body": " A resposta do junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.  Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.     "
 },
 {
-  "id": "p-620",
+  "id": "p-624",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#p-620",
+  "url": "section-permutacao-caotica-repeticoes.html#p-624",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -1882,9 +1891,9 @@ var ptx_lunr_docs = [
   "body": " Usando recursividade é possível chegar na seguinte forma fechada para os polinômios de Laguerre:   "
 },
 {
-  "id": "technology-25",
+  "id": "technology-26",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#technology-25",
+  "url": "section-permutacao-caotica-repeticoes.html#technology-26",
   "type": "Tecnologia",
   "number": "2.3.20",
   "title": "",
@@ -1900,9 +1909,9 @@ var ptx_lunr_docs = [
   "body": " O número de permutações caóticas, , de uma lista com objetos, com um objeto repetido vezes, outro objeto repetido vezes, até o \"último\" objeto repetido vezes, tal que , pode ser calculado da seguinte maneira:    Como o resultado segue.  Mais detalhes em breve.   "
 },
 {
-  "id": "technology-26",
+  "id": "technology-27",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#technology-26",
+  "url": "section-permutacao-caotica-repeticoes.html#technology-27",
   "type": "Tecnologia",
   "number": "2.3.22",
   "title": "",
@@ -1972,9 +1981,9 @@ var ptx_lunr_docs = [
   "body": " Calculando no Sage:   "
 },
 {
-  "id": "technology-29",
+  "id": "technology-30",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#technology-29",
+  "url": "section-lemas-kaplansky.html#technology-30",
   "type": "Tecnologia",
   "number": "2.4.6",
   "title": "",
@@ -2026,9 +2035,9 @@ var ptx_lunr_docs = [
   "body": " Calculando no Sage:   "
 },
 {
-  "id": "technology-31",
+  "id": "technology-32",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#technology-31",
+  "url": "section-lemas-kaplansky.html#technology-32",
   "type": "Tecnologia",
   "number": "2.4.14",
   "title": "Faça você mesmo.",
@@ -2422,9 +2431,9 @@ var ptx_lunr_docs = [
   "body": " Abaixo, definimos uma função, que calcula o número de caminhos bons do ponto até o ponto .   "
 },
 {
-  "id": "technology-35",
+  "id": "technology-36",
   "level": "2",
-  "url": "section-13.html#technology-35",
+  "url": "section-13.html#technology-36",
   "type": "Tecnologia",
   "number": "2.6.15",
   "title": "",
@@ -2557,9 +2566,9 @@ var ptx_lunr_docs = [
   "body": " O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .    O Triângulo de Pascal.    "
 },
 {
-  "id": "technology-38",
+  "id": "technology-39",
   "level": "2",
-  "url": "section-triangulo-pascal.html#technology-38",
+  "url": "section-triangulo-pascal.html#technology-39",
   "type": "Tecnologia",
   "number": "3.1.3",
   "title": "",
@@ -2602,9 +2611,9 @@ var ptx_lunr_docs = [
   "body": " Qual o valor da soma      "
 },
 {
-  "id": "technology-39",
+  "id": "technology-40",
   "level": "2",
-  "url": "section-triangulo-pascal.html#technology-39",
+  "url": "section-triangulo-pascal.html#technology-40",
   "type": "Tecnologia",
   "number": "3.1.9",
   "title": "",
@@ -2629,9 +2638,9 @@ var ptx_lunr_docs = [
   "body": " Qual o valor da soma      "
 },
 {
-  "id": "technology-40",
+  "id": "technology-41",
   "level": "2",
-  "url": "section-triangulo-pascal.html#technology-40",
+  "url": "section-triangulo-pascal.html#technology-41",
   "type": "Tecnologia",
   "number": "3.1.12",
   "title": "",
@@ -2647,9 +2656,9 @@ var ptx_lunr_docs = [
   "body": " Qual o valor da soma  Note que Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora podemos terminar o cálculo da soma   "
 },
 {
-  "id": "technology-41",
+  "id": "technology-42",
   "level": "2",
-  "url": "section-triangulo-pascal.html#technology-41",
+  "url": "section-triangulo-pascal.html#technology-42",
   "type": "Tecnologia",
   "number": "3.1.14",
   "title": "",
@@ -2746,9 +2755,9 @@ var ptx_lunr_docs = [
   "body": " Considere o binômio de Newton Determine os coeficientes de  no desenvolvimento do binômio;  no desenvolvimento do binômio;  no desenvolvimento do binômio.     O -ésimo termo do desenvolvimento é   item a) Para que , temos , logo estamos procurando o 5º termo: E portanto o coeficiente é .  item b)  não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de é zero.  item c) Para que , temos , logo estamos procurando o 6º termo: E portanto, o coeficiente é .   "
 },
 {
-  "id": "technology-42",
+  "id": "technology-43",
   "level": "2",
-  "url": "section-binomio-newton.html#technology-42",
+  "url": "section-binomio-newton.html#technology-43",
   "type": "Tecnologia",
   "number": "3.2.4",
   "title": "",
@@ -2773,9 +2782,9 @@ var ptx_lunr_docs = [
   "body": " Determine o termo máximo do desenvolvimento de    O -ésimo termo é . se Isto é ou seja, e simplificando temos Portanto, , logo .  Assim, temos para e portanto o maior termo é:    "
 },
 {
-  "id": "technology-43",
+  "id": "technology-44",
   "level": "2",
-  "url": "section-binomio-newton.html#technology-43",
+  "url": "section-binomio-newton.html#technology-44",
   "type": "Tecnologia",
   "number": "3.2.7",
   "title": "",
@@ -2872,9 +2881,9 @@ var ptx_lunr_docs = [
   "body": " Considere o polinômio: Determine os coeficientes de  no desenvolvimento;  no desenvolvimento.        item a) Para que o expoente de seja 2, devemos ter , juntando com a condição , temos Assim, e E a soma dos termos que possuem é:   item b) Para que o expoente de seja 4, devemos ter , juntando com a condição , temos Temos duas soluções: E a soma dos termos que possuem é:    "
 },
 {
-  "id": "technology-44",
+  "id": "technology-45",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#technology-44",
+  "url": "section-polinomio-leibniz.html#technology-45",
   "type": "Tecnologia",
   "number": "3.3.3",
   "title": "",
@@ -3484,9 +3493,9 @@ var ptx_lunr_docs = [
   "body": " Funções da calculadora.    Função  Definição  Teorema  Tecnologia    P(n)       C(n,p)       PC(n)       PR(n,r1,...,rk)       CR(n,p)       D(n)       DR(n1,...,nk)       K(n,p)       KC(n,p)       gK(n,p,r)       gKC(n,p,r)       "
 },
 {
-  "id": "technology-46",
+  "id": "technology-47",
   "level": "2",
-  "url": "calculadora.html#technology-46",
+  "url": "calculadora.html#technology-47",
   "type": "Tecnologia",
   "number": "5.0.2",
   "title": "",
@@ -3499,30 +3508,30 @@ var ptx_lunr_docs = [
   "type": "Referêcias",
   "number": "6",
   "title": "Referências Bibliográficas",
-  "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle , Discrete mathematics, 280(1-3), 233-236, 2004.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Barbosa Junior C. M., A Porta dos Desesperados: Uma Proposta Didática para a Aprendizagem de Probabilidade no Ensino Médio , Monografia Lic. Mat da UFRPE.   "
+  "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle. Discrete mathematics, 280(1-3), 233-236, 2004.    Leonhard Euler, Calcul de la probabilité dans le jeu de rencontre. Mémoires de l’académie des sciences de Berlin, pages 255–270, 1753.    Issac Todhunter, A History of the Mathematical Theory of Probability: From the Time of Pascal to that of Laplace. BoD–Books on Demand, 2022.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Barbosa Junior C. M., A Porta dos Desesperados: Uma Proposta Didática para a Aprendizagem de Probabilidade no Ensino Médio , Monografia Lic. Mat da UFRPE.   "
 },
 {
-  "id": "p-1096",
+  "id": "p-1100",
   "level": "2",
-  "url": "referencias.html#p-1096",
+  "url": "referencias.html#p-1100",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1097",
+  "id": "p-1101",
   "level": "2",
-  "url": "referencias.html#p-1097",
+  "url": "referencias.html#p-1101",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1098",
+  "id": "p-1102",
   "level": "2",
-  "url": "referencias.html#p-1098",
+  "url": "referencias.html#p-1102",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

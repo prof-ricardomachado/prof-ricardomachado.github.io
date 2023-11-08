@@ -13,17 +13,17 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.11.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.8.1</span><span class="period">.</span>
 </h3>
 <div class="displaymath process-math">
 \begin{align*}
-S = \amp \sum_{k=10}^{98} k(k+1)  \\
-= \amp \sum_{k=1}^{98} k(k+1) - \sum_{k=1}^9 k(k+1)  \\
-= \amp \sum_{k=1}^{98} 2!C_{k+1}^2 - \sum_{k=1}^9 2!C_{k+1}^2  \\
-= \amp 2(C_2^2 +C_3^2 + \cdots + C_{99}^2) - 2(C_2^2 +C_3^2 + \cdots + C_{10}^2)  \\
-= \amp 2C_{100}^3 - 2C_{11}^3  \\
-= \amp  323400 - 330\\
-= \amp 323070  
+S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
+= \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}  \\
+= \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}\cdot \frac{n+1}{n+1}  \\
+= \amp \frac{1}{n+1}\sum_{k=1}^n \frac{(n+1)!}{(k+1)!(n-k)!}  \\
+= \amp \frac{1}{n+1}\sum_{k=1}^n C_{n+1}^{k+1}  \\
+= \amp \frac{1}{n+1}\left( -C_{n+1}^0 - C_{n+1}^1 +\underbrace{C_{n+1}^0 + C_{n+1}^1 + \cdots+C_{n+1}^{n+1}}_{=2^{n+1}} \right)  \\
+= \amp \frac{1}{n+1}\left( 2^{n+1} - n -2 \right).  
 \end{align*}
 </div>
 </div>
