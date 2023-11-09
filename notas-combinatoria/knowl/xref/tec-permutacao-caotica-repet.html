@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Executar (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="technology computation-like"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.23</span><span class="period">.</span>
+</h4>
+<div class="para">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a href="" class="xref" data-knowl="./knowl/xref/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</div> <pre id="tec-permutacao-caotica-repet-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def DR(*lista):
+    n = sum(lista)
+    p = exp(-x)
+    for i in lista:
+        p = p*laguerre(i, x)
+    return abs(integral(p, (x, 0, +oo)))
+DR(3, 2, 2, 1, 1, 1)
+</script></pre></article><span class="incontext"><a class="internal" href="section-permutacao-caotica-repeticoes.html#tec-permutacao-caotica-repet">em contexto</a></span>
+</body>
+</html>

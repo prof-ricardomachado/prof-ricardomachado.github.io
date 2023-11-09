@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="pt-BR">
+<html lang="pt-BR" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Permutações Caóticas com Repetições</title>
@@ -16,20 +16,38 @@
 <meta property="book:author" content="Ricardo Machado">
 <meta property="book:author" content="Gabriel Guedes">
 <meta property="book:author" content="Luiz Manoel">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -39,168 +57,87 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Executar (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
 <p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>[no-search-results].</span></div>
-<ol id="searchresults"></ol>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-permutacao-caotica.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="ocontagem.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-lemas-kaplansky.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<h2 class="search-results-heading">Buscando por: </h2>
+<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section-permutacao-caotica.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="ocontagem.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="section-lemas-kaplansky.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -218,186 +155,185 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
-<li><div class="toc-item"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
-<li><div class="toc-item"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
-<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
-<li>
-<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-1" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
-<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-2" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
-<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-3" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
-<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pcontagem-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-3" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-4" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-5" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-4" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-5" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-6" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-7" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
-<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-2" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-3" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-circulares.html#section-permutacoes-circulares-9" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html#section-permutacoes-com-repeticoes-11" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-8" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
-<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-9" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
-<li><div class="toc-item"><a href="section-inclusao-exclusao.html#exercises-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-10" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-11" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-12" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-13" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#exercises-8" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="active">
-<div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-14" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-15" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#exercises-9" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-16" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-17" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-18" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-19" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#exercises-10" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-20" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-21" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-22" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li><div class="toc-item"><a href="section-casa-pombos.html#exercises-11" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-13.html#subsection-23" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html#subsection-24" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html#subsection-25" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html#exercises-12" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-completas.html#section-combinacoes-completas-12" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-13" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-2" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-3" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-4" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-14" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-5" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-15" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-5" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-6" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ocontagem-8.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-3" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-4" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-5" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-16" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-triangulo-pascal.html#section-triangulo-pascal-16" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-26" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
-<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-17" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-binomio-newton.html#section-binomio-newton-11" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-polinomio-leibniz.html#section-polinomio-leibniz-5" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-27" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
-<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-18" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-espacos-probabilidade.html#section-espacos-probabilidade-15" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-14" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-15" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
-<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="section-permutacao-caotica-repeticoes"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-permutacao-caotica-repeticoes"><h2 class="heading hide-type">
+<span class="type">Seção</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Permutações Caóticas com Repetições</span>
 </h2>
-<section class="subsection" id="subsection-14"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span>
+<section class="subsection" id="section-permutacao-caotica-repeticoes-2"><h3 class="heading hide-type">
+<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="space"> </span><span class="title">Permutações Caóticas com Repetições</span>
 </h3>
 <article class="definition definition-like" id="def-permutacao-caotica-repeticao"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
-</h4> <div class="para" id="p-587">Uma <em class="emphasis">permutação caótica com repetição</em> é uma permutação, na qual, os elementos nem podem ocupar suas posições originais, nem as posições de seus elementos repetidos.</div> <div class="para" id="p-588">Por exemplo, MARAAEL é uma permutação caótica (com repetição) das letras da palavra AMARELA. Note que as letras A's não podem ocupar as posições 1, 3 ou 7.</div> </article><article class="example example-like" id="exem-amarela"><h4 class="heading">
+</h4> <div class="para" id="def-permutacao-caotica-repeticao-1">Uma <em class="emphasis">permutação caótica com repetição</em> é uma permutação, na qual, os elementos nem podem ocupar suas posições originais, nem as posições de seus elementos repetidos.</div> <div class="para" id="def-permutacao-caotica-repeticao-2">Por exemplo, MARAAEL é uma permutação caótica (com repetição) das letras da palavra AMARELA. Note que as letras A’s não podem ocupar as posições 1, 3 ou 7.</div> </article><article class="example example-like" id="exem-amarela"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-589">Quantos são os anagramas da palavra AMARELA, sem que as letras fiquem nas posições originais?</div></article><article class="technology computation-like" id="technology-21"><h4 class="heading">
+<div class="para" id="exem-amarela-1">Quantos são os anagramas da palavra AMARELA, sem que as letras fiquem nas posições originais?</div></article><article class="technology computation-like" id="section-permutacao-caotica-repeticoes-2-4"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
-</h4>Usando o Sage, podemos obter a resposta desse problema sem dificuldade alguma. Com o código abaixo, basta clicar em "Evaluate (Sage)" para obter a resposta. <pre class="ptx-sagecell sagecell-sage" id="sage-29"><script type="text/x-sage">len(Derangements(['A', 'M', 'A', 'R', 'E', 'L', 'A']))
-</script></pre></article><div class="para" id="p-590">Ao longo dessa seção, esse problema está resolvido sem depender do uso de um computador/software. Porém, alguns códigos estão disponíveis, apenas para facilitar/conferir contas que podem ser feitas à mão. A solução foi desenvolvida de forma que a mesma ideia se aplique em casos mais gerais, no qual, mais de uma letra distinta se repete.</div>
-<div class="para" id="p-591">Para resolver o <a href="" class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>, observe que o número de soluções para a palavra AMARELA é o mesmo que o número de soluções para a "palavra" AAAMREL, pois uma palavra é um anagrama da outra, então para cada permutação caótica de AAAMREL, podemos obter uma única permutação caótica da palavra AMARELA, apenas aplicando a mesma permutação que leva AAAMREL em AMARELA.</div>
-<div class="para" id="p-592">Vamos contar o número de permutações caóticas de AAAMREL para facilitar a explicação. Inicialmente troque AAAMREL por A<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\)</span>MREL, pois assim todas as letras ficam diferentes, depois resolvemos o problema das permutações das letras A. Em seguida colocamos a palavra em um tabuleiro e usamos torres para representar as permutações. Cada permutação da palavra é representada por uma única forma de colocar <span class="process-math">\(7\)</span> torres em um tabuleiro <span class="process-math">\(7\times 7\text{,}\)</span> de forma que uma torre não possa atacar a outra, ou seja, em linhas e colunas diferentes. Por exemplo</div>
+</h4>Usando o Sage, podemos obter a resposta desse problema sem dificuldade alguma. Com o código abaixo, basta clicar em "Evaluate (Sage)" para obter a resposta. <pre id="section-permutacao-caotica-repeticoes-2-4-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">len(Derangements(['A', 'M', 'A', 'R', 'E', 'L', 'A']))
+</script></pre></article><div class="para" id="section-permutacao-caotica-repeticoes-2-5">Ao longo dessa seção, esse problema está resolvido sem depender do uso de um computador/software. Porém, alguns códigos estão disponíveis, apenas para facilitar/conferir contas que podem ser feitas à mão. A solução foi desenvolvida de forma que a mesma ideia se aplique em casos mais gerais, no qual, mais de uma letra distinta se repete.</div>
+<div class="para" id="section-permutacao-caotica-repeticoes-2-6">Para resolver o <a href="" class="xref" data-knowl="./knowl/xref/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>, observe que o número de soluções para a palavra AMARELA é o mesmo que o número de soluções para a "palavra" AAAMREL, pois uma palavra é um anagrama da outra, então para cada permutação caótica de AAAMREL, podemos obter uma única permutação caótica da palavra AMARELA, apenas aplicando a mesma permutação que leva AAAMREL em AMARELA.</div>
+<div class="para" id="section-permutacao-caotica-repeticoes-2-7">Vamos contar o número de permutações caóticas de AAAMREL para facilitar a explicação. Inicialmente troque AAAMREL por A<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\)</span>MREL, pois assim todas as letras ficam diferentes, depois resolvemos o problema das permutações das letras A. Em seguida colocamos a palavra em um tabuleiro e usamos torres para representar as permutações. Cada permutação da palavra é representada por uma única forma de colocar <span class="process-math">\(7\)</span> torres em um tabuleiro <span class="process-math">\(7\times 7\text{,}\)</span> de forma que uma torre não possa atacar a outra, ou seja, em linhas e colunas diferentes. Por exemplo</div>
 <figure class="figure figure-like" id="fig-permuta"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/permuta.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Tabela de Permutação.</figcaption></figure><div class="para" id="p-593">fica com a seguinte configuração no tabuleiro:</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Tabela de Permutação.</figcaption></figure><div class="para" id="section-permutacao-caotica-repeticoes-2-9">fica com a seguinte configuração no tabuleiro:</div>
 <figure class="figure figure-like" id="fig-tabuleiro"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/tabuleiro.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>Tabuleiro da permutação MRELA<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\text{.}\)</span></figcaption></figure><div class="para" id="p-594">Para uma permutação simples, as torres podem ocupar qualquer quadrado, desde que uma não possa atacar a outra. No nosso caso, os quadrados cinzas são os lugares que não queremos colocar as torres, pois assim estamos evitando os casos em que alguma letra fica em seu lugar original. Chamaremos de <em class="emphasis">subtabuleiro proibido</em>, o subtabuleiro que não queremos colocar as torres.</div>
-<div class="para" id="p-595">Defina <span class="process-math">\(B_k = \)</span> colocações de torres, na qual, a torre da linha <span class="process-math">\(k\)</span> está em um subtabuleiro proibido.</div>
-<div class="para logical" id="p-596">
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>Tabuleiro da permutação MRELA<span class="process-math">\(_1\)</span>A<span class="process-math">\(_2\)</span>A<span class="process-math">\(_3\text{.}\)</span></figcaption></figure><div class="para" id="section-permutacao-caotica-repeticoes-2-11">Para uma permutação simples, as torres podem ocupar qualquer quadrado, desde que uma não possa atacar a outra. No nosso caso, os quadrados cinzas são os lugares que não queremos colocar as torres, pois assim estamos evitando os casos em que alguma letra fica em seu lugar original. Chamaremos de <em class="emphasis">subtabuleiro proibido</em>, o subtabuleiro que não queremos colocar as torres.</div>
+<div class="para" id="section-permutacao-caotica-repeticoes-2-12">Defina <span class="process-math">\(B_k = \)</span> colocações de torres, na qual, a torre da linha <span class="process-math">\(k\)</span> está em um subtabuleiro proibido.</div>
+<div class="para logical" id="section-permutacao-caotica-repeticoes-2-13">
 <div class="para">A resposta do nosso problema será dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -407,7 +343,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <div class="para">ou seja, o número de elementos do complementar de <span class="process-math">\((B_1\cup B_2\cup \cdots \cup B_7)\text{,}\)</span> dividido pelo número de maneiras de permutar as letras <span class="process-math">\(A_1, A_2, A_3\text{.}\)</span>
 </div>
 </div>
-<div class="para logical" id="p-597">
+<div class="para logical" id="section-permutacao-caotica-repeticoes-2-14">
 <div class="para">Pelo princípio da Inclusão-Exclusão, isso pode ser calculado da seguinte maneira:</div>
 <div class="displaymath process-math" id="eq-PIE02">
 \begin{equation}
@@ -415,31 +351,31 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \end{equation}
 </div>
 </div>
-<div class="para logical" id="p-598">
-<div class="para">A seguir, será mostrado que cada somatório da equação <a href="" class="xref" data-knowl="./knowl/eq-PIE02.html" title="Equação 2.3.1">(2.3.1)</a>  envolvendo interseções de <span class="process-math">\(k\)</span> conjuntos,  pode ser calculado pelo produto de um valor <span class="process-math">\(r_k\text{,}\)</span> a ser determinado, pelo fatorial de <span class="process-math">\((7-k)\text{.}\)</span> Observe que</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-PIE02.html">
+<div class="para logical" id="section-permutacao-caotica-repeticoes-2-15">
+<div class="para">A seguir, será mostrado que cada somatório da equação <a href="" class="xref" data-knowl="./knowl/xref/eq-PIE02.html" title="Equação 2.3.1">(2.3.1)</a>  envolvendo interseções de <span class="process-math">\(k\)</span> conjuntos,  pode ser calculado pelo produto de um valor <span class="process-math">\(r_k\text{,}\)</span> a ser determinado, pelo fatorial de <span class="process-math">\((7-k)\text{.}\)</span> Observe que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-PIE02.html">
 \begin{equation*}
 \sum_{i=1}^7 \#B_i = r_1\cdot (7-1)! 
 \end{equation*}
 </div>
 <div class="para">com <span class="process-math">\(r_1=13\text{,}\)</span> pois se <span class="process-math">\(i\in \{1 ,2, 3\}\)</span> temos 3 opções para colocar a torre na linha <span class="process-math">\(i\text{,}\)</span> sobrando 6 torres para colocar cada uma em uma linha, logo <span class="process-math">\(\#B_i = 3\cdot 6!\text{.}\)</span> Para <span class="process-math">\(j\in \{4, 5, 6, 7\}\text{,}\)</span> <span class="process-math">\(\#B_j = 6!\text{,}\)</span> pois temos apenas um lugar para colocar a torre na linha <span class="process-math">\(j\text{,}\)</span> sobrando 6 torres para colocar cada uma em uma linha. Portanto, o valor do somatório é dado por</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-PIE02.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-PIE02.html">
 \begin{equation*}
 3\cdot 6!+3\cdot 6!+3\cdot 6!+6!+6!+6!+6! = 13\cdot 6!.
 \end{equation*}
 </div>
 <div class="para">Seguindo com esse raciocínio, temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-PIE02.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-PIE02.html">
 \begin{equation*}
 \sum_{0\lt i\lt j\leq 7} \#(B_i\cap B_j) = r_2\cdot (7-2)! 
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-PIE02.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-PIE02.html">
 \begin{equation*}
 \vdots 
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-PIE02.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-PIE02.html">
 \begin{equation*}
 \#(B_1\cap \cdots \cap B_7) = r_7\cdot (7-7)! 
 \end{equation*}
@@ -449,39 +385,38 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <article class="definition definition-like" id="def-ptorre"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-599">
+<div class="para logical" id="def-ptorre-1">
 <div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro qualquer. O <em class="emphasis">polinômio de torre</em> de <span class="process-math">\(T\)</span> é definido como</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/Holton.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Holton.html">
 \begin{equation*}
 R(x, T) = \sum_{k=0}^n r_k(T)x^k, 
 \end{equation*}
 </div>
-<div class="para">no qual, <span class="process-math">\(r_k(T)\)</span> é o número de maneiras de colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra e <span class="process-math">\(n\)</span> é o número máximo de torres que é possível colocar em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra. Em inglês esse polinômio é chamado de <em class="emphasis">Rook Polynomial</em>, para mais informações veja <a href="" class="xref" data-knowl="./knowl/Holton.html" title="Referência bibliográfica 6.9: A Second Step to Mathematical Olympiad Problems">[6.9]</a>.</div>
-</div></article><div class="para" id="p-600">Note que na <a href="" class="xref" data-knowl="./knowl/def-ptorre.html" title="Definição 2.3.6">Definição 2.3.6</a>, o tabuleiro não precisa ser quadrado nem retangular, pode inclusive ser um tabuleiro formado apenas pela parte cinza do tabuleiro da <a href="" class="xref" data-knowl="./knowl/fig-tabuleiro.html" title="Figura 2.3.5">Figura 2.3.5</a>.</div>
-<article class="theorem theorem-like" id="theorem-18"><h4 class="heading">
+<div class="para">no qual, <span class="process-math">\(r_k(T)\)</span> é o número de maneiras de colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra e <span class="process-math">\(n\)</span> é o número máximo de torres que é possível colocar em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra. Em inglês esse polinômio é chamado de <em class="emphasis">Rook Polynomial</em>, para mais informações veja <a href="" class="xref" data-knowl="./knowl/xref/Holton.html" title="Referência bibliográfica 6.9: A Second Step to Mathematical Olympiad Problems">[6.9]</a>.</div>
+</div></article><div class="para" id="section-permutacao-caotica-repeticoes-2-17">Note que na <a href="" class="xref" data-knowl="./knowl/xref/def-ptorre.html" title="Definição 2.3.6">Definição 2.3.6</a>, o tabuleiro não precisa ser quadrado nem retangular, pode inclusive ser um tabuleiro formado apenas pela parte cinza do tabuleiro da <a href="" class="xref" data-knowl="./knowl/xref/fig-tabuleiro.html" title="Figura 2.3.5">Figura 2.3.5</a>.</div>
+<article class="theorem theorem-like" id="section-permutacao-caotica-repeticoes-2-18"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-601">
+<div class="para logical" id="section-permutacao-caotica-repeticoes-2-18-1">
 <div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro <span class="process-math">\(n\times n\text{,}\)</span> sem subtabuleiros proibidos. O polinômio de torre de <span class="process-math">\(T\)</span> é dado por:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 R(x, T) = \sum_{k=0}^n\left(C_n^k\right)^2\cdot k!\cdot x^k.
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-19"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-19"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><div class="para" id="p-602">Precisamos escolher <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(k\)</span> colunas no tabuleiro <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(n\times n\text{,}\)</span> para colocar as torres, de modo que uma torre não possa atacar a outra, isto pode ser feito de <span class="process-math">\(\left(C_n^k\right)^2\)</span> maneiras. Agora precisamos escolher a posição da linha 1 na qual será colocada a primeira torre, isso pode ser feito de <span class="process-math">\(k\)</span> maneiras, em seguida, precisamos escolher a posição da linha 2 na qual será colocada a segunda torre, o que pode ser feito de <span class="process-math">\((k-1)\)</span> maneiras, e assim por diante, até ficarmos com uma maneira de escolher a <span class="process-math">\(k\)</span>-ésima torre.</div> <div class="para logical" id="p-603">
+</div></article><details id="section-permutacao-caotica-repeticoes-2-18-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="section-permutacao-caotica-repeticoes-2-18-2-1">Precisamos escolher <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(k\)</span> colunas no tabuleiro <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(n\times n\text{,}\)</span> para colocar as torres, de modo que uma torre não possa atacar a outra, isto pode ser feito de <span class="process-math">\(\left(C_n^k\right)^2\)</span> maneiras. Agora precisamos escolher a posição da linha 1 na qual será colocada a primeira torre, isso pode ser feito de <span class="process-math">\(k\)</span> maneiras, em seguida, precisamos escolher a posição da linha 2 na qual será colocada a segunda torre, o que pode ser feito de <span class="process-math">\((k-1)\)</span> maneiras, e assim por diante, até ficarmos com uma maneira de escolher a <span class="process-math">\(k\)</span>-ésima torre.</div> <div class="para logical" id="section-permutacao-caotica-repeticoes-2-18-2-2">
 <div class="para">Assim, pelo princípio multiplicativo, o número de maneiras de colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de modo que uma torre não possa atacar a outra é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left(C_n^k\right)^2\cdot k!.
 \end{equation*}
 </div>
-</div></article></div>
-<article class="example example-like" id="example-35"><h4 class="heading">
+</div></article></details><article class="example example-like" id="section-permutacao-caotica-repeticoes-2-19"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-604">
+<div class="para logical" id="section-permutacao-caotica-repeticoes-2-19-1">
 <div class="para">Sejam <span class="process-math">\(T^i\text{,}\)</span> tabuleiros <span class="process-math">\(i\times i\text{,}\)</span> <span class="process-math">\(i = 1, 2, 3\text{,}\)</span> então</div>
-<div class="displaymath process-math" id="md-33">
+<div class="displaymath process-math" id="section-permutacao-caotica-repeticoes-2-19-1-4">
 \begin{align*}
 R(x, T^1)= \amp ~ x+1.  \\
 R(x, T^2)= \amp ~ 2x^2 + 4x +1.  \\
@@ -491,22 +426,22 @@ R(x, T^3)= \amp ~ 6x^3 + 18x^2 + 9x +1.
 </div></article><article class="technology computation-like" id="tech-politorre01"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-605">A seguir, temos os códigos para gerar o polinômio de torre de um tabuleiro <span class="process-math">\(n\times n\text{.}\)</span> Na linha 1, definimos uma matriz <span class="process-math">\(4\times 4\)</span> de uns e guardamos na variável <dfn class="terminology">B</dfn>. Para obter o polinômio de torre de um tabuleiro quadrado diferente, troque o número 4 da linha 1 pelo valor desejado e clique em "Evaluate (Sage)".</div> <pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage">B = matrix.ones(4)
+<div class="para" id="tech-politorre01-1">A seguir, temos os códigos para gerar o polinômio de torre de um tabuleiro <span class="process-math">\(n\times n\text{.}\)</span> Na linha 1, definimos uma matriz <span class="process-math">\(4\times 4\)</span> de uns e guardamos na variável <dfn class="terminology">B</dfn>. Para obter o polinômio de torre de um tabuleiro quadrado diferente, troque o número 4 da linha 1 pelo valor desejado e clique em "Evaluate (Sage)".</div> <pre id="tech-politorre01-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">B = matrix.ones(4)
 R = PolynomialRing(ZZ, 'x')
 show(R(B.rook_vector()))
-</script></pre></article><article class="definition definition-like" id="definition-18"><h4 class="heading">
+</script></pre></article><article class="definition definition-like" id="section-permutacao-caotica-repeticoes-2-21"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-606">Dizemos que a união de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\)</span> é uma união disjunta, quando nenhum quadrado de <span class="process-math">\(T_1\)</span> está na mesma linha ou mesma coluna de <span class="process-math">\(T_2\text{.}\)</span>
-</div></article><article class="example example-like" id="example-36"><h4 class="heading">
+<div class="para" id="section-permutacao-caotica-repeticoes-2-21-1">Dizemos que a união de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\)</span> é uma união disjunta, quando nenhum quadrado de <span class="process-math">\(T_1\)</span> está na mesma linha ou mesma coluna de <span class="process-math">\(T_2\text{.}\)</span>
+</div></article><article class="example example-like" id="section-permutacao-caotica-repeticoes-2-22"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-607">Sejam <span class="process-math">\(T^i\text{,}\)</span> tabuleiros <span class="process-math">\(i\times i\text{,}\)</span> <span class="process-math">\(i = 1, 2\text{,}\)</span> então o polinômio de torre da união disjunta <span class="process-math">\(T^2\cup T^1\)</span> é o produto dos polinômios de torre de <span class="process-math">\(T^2\)</span> e <span class="process-math">\(T^1\text{.}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-97" id="solution-97"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like">
-<div class="para" id="p-608">O polinômio de torre <span class="process-math">\(R(x, T^2\cup T^1)\)</span> pode ser obtido fazendo todas as figuras, da seguinte forma:</div> <figure class="figure figure-like" id="fig-tabuleirouniao2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/tabuleirouniao2.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.12<span class="period">.</span></span><span class="space"> </span>Polinômio de Torre do tabuleiro <span class="process-math">\(T^2\cup T^1\text{.}\)</span></figcaption></figure> <div class="para logical" id="p-609">
+<div class="para" id="section-permutacao-caotica-repeticoes-2-22-1">Sejam <span class="process-math">\(T^i\text{,}\)</span> tabuleiros <span class="process-math">\(i\times i\text{,}\)</span> <span class="process-math">\(i = 1, 2\text{,}\)</span> então o polinômio de torre da união disjunta <span class="process-math">\(T^2\cup T^1\)</span> é o produto dos polinômios de torre de <span class="process-math">\(T^2\)</span> e <span class="process-math">\(T^1\text{.}\)</span>
+</div> <details id="section-permutacao-caotica-repeticoes-2-22-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-permutacao-caotica-repeticoes-2-22-2-1">O polinômio de torre <span class="process-math">\(R(x, T^2\cup T^1)\)</span> pode ser obtido fazendo todas as figuras, da seguinte forma:</div> <figure class="figure figure-like" id="fig-tabuleirouniao2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/tabuleirouniao2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.12<span class="period">.</span></span><span class="space"> </span>Polinômio de Torre do tabuleiro <span class="process-math">\(T^2\cup T^1\text{.}\)</span></figcaption></figure> <div class="para logical" id="section-permutacao-caotica-repeticoes-2-22-2-3">
 <div class="para">Calculando o produto dos polinômios de torre de <span class="process-math">\(T^2\)</span> e <span class="process-math">\(T^1\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" id="md-34">
+<div class="displaymath process-math" id="section-permutacao-caotica-repeticoes-2-22-2-3-3">
 \begin{align*}
 R(x, T^2)\cdot R(x, T^1)= \amp ~ (2x^2+4x+1)(x+1)  \\
 = \amp ~ 2x^3+6x^2+5x+1.  
@@ -519,11 +454,11 @@ R(x, T^2\cup T^1) = R(x, T^2)\cdot R(x, T^1).
 \end{equation*}
 </div>
 </div>
-</div></div></article><article class="proposition theorem-like" id="prop-uniaodis"><h4 class="heading">
+</div></details></article><article class="proposition theorem-like" id="prop-uniaodis"><h4 class="heading">
 <span class="type">Proposição</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-610">O polinômio de torre da união disjunta de dois tabuleiros é dado pelo produto dos polinômios de torre de cada um dos tabuleiros.</div></article><article class="hiddenproof" id="proof-20"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><div class="para" id="p-611">Seja <span class="process-math">\(T\)</span> um tabuleiro obtido pela união disjunta de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\text{.}\)</span>
-</div> <div class="para logical" id="p-612">
+<div class="para" id="prop-uniaodis-1">O polinômio de torre da união disjunta de dois tabuleiros é dado pelo produto dos polinômios de torre de cada um dos tabuleiros.</div></article><details id="prop-uniaodis-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="prop-uniaodis-2-1">Seja <span class="process-math">\(T\)</span> um tabuleiro obtido pela união disjunta de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\text{.}\)</span>
+</div> <div class="para logical" id="prop-uniaodis-2-2">
 <div class="para">Para colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra, podemos colocar <span class="process-math">\(r_{k-i}(T_1)\text{,}\)</span> <span class="process-math">\(0\leq i \leq k\text{,}\)</span> torres em <span class="process-math">\(T_1\text{,}\)</span> de forma que uma não possa atacar a outra, e <span class="process-math">\(r_{i}(T_2)\)</span> torres em <span class="process-math">\(T_2\text{,}\)</span> de forma que uma não possa atacar a outra. Dessa forma, dados duas torres quaisquer em <span class="process-math">\(T\text{,}\)</span> na configuração obtida anteriormente, uma não pode atacar a outra. Portanto, o número de maneiras de colocarmos <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\)</span> é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -531,7 +466,7 @@ r_k(T) = \sum_{i=0}^k r_{k-i}(T_1)r_i(T_2).
 \end{equation*}
 </div>
 <div class="para">Logo,</div>
-<div class="displaymath process-math" id="md-35">
+<div class="displaymath process-math" id="prop-uniaodis-2-2-12">
 \begin{align*}
 R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
 = \amp ~ \sum_{k=0}^n\sum_{i=0}^kr_{k-i}(T_1)r_i(T_2)x^k  \\
@@ -539,12 +474,11 @@ R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
 = \amp ~ R(x, T_1)\cdot R(x, T_2).
 \end{align*}
 </div>
-</div></article></div>
-<article class="technology computation-like" id="technology-23"><h4 class="heading">
+</div></article></details><article class="technology computation-like" id="section-permutacao-caotica-repeticoes-2-24"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-613">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a href="" class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> que multiplica cada um dos polinômios de torre. As entradas da função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro <span class="process-math">\(3\times 3\)</span> e 4 tabuleiros <span class="process-math">\(1\times 1\text{.}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-31"><script type="text/x-sage">def produto_polinomios_torre(*lista):
+<div class="para" id="section-permutacao-caotica-repeticoes-2-24-1">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a href="" class="xref" data-knowl="./knowl/xref/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> que multiplica cada um dos polinômios de torre. As entradas da função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro <span class="process-math">\(3\times 3\)</span> e 4 tabuleiros <span class="process-math">\(1\times 1\text{.}\)</span>
+</div> <pre id="section-permutacao-caotica-repeticoes-2-24-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def produto_polinomios_torre(*lista):
     R = PolynomialRing(ZZ, 'x')
     p = R(1)
     for n in lista:
@@ -552,37 +486,37 @@ R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
         p = p*R(B.rook_vector())
     return show(p)
 produto_polinomios_torre(3, 1, 1, 1, 1)
-</script></pre></article><div class="para logical" id="p-614">
-<div class="para">Voltando a solução do <a href="" class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>. Pela <a href="" class="xref" data-knowl="./knowl/prop-uniaodis.html" title="Proposição 2.3.13">Proposição 2.3.13</a> o polinômio de torre do tabuleiro da palavra AAAMREL é dado por</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-amarela.html ./knowl/prop-uniaodis.html ./knowl/eq-PIE02.html ./knowl/exem-amarela.html ./knowl/eq-poli-torre.html ./knowl/naaa.html" id="paaa">
+</script></pre></article><div class="para logical" id="section-permutacao-caotica-repeticoes-2-25">
+<div class="para">Voltando a solução do <a href="" class="xref" data-knowl="./knowl/xref/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a>. Pela <a href="" class="xref" data-knowl="./knowl/xref/prop-uniaodis.html" title="Proposição 2.3.13">Proposição 2.3.13</a> o polinômio de torre do tabuleiro da palavra AAAMREL é dado por</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-amarela.html ./knowl/xref/prop-uniaodis.html ./knowl/xref/eq-PIE02.html ./knowl/xref/exem-amarela.html ./knowl/xref/eq-poli-torre.html ./knowl/xref/naaa.html" id="paaa">
 \begin{equation}
 R(x, T) =  ~ (6x^3 + 18x^2 + 9x +1)(x+1)^4.\tag{2.3.2}
 \end{equation}
 </div>
 <div class="para">Fazendo as contas, obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-amarela.html ./knowl/prop-uniaodis.html ./knowl/eq-PIE02.html ./knowl/exem-amarela.html ./knowl/eq-poli-torre.html ./knowl/naaa.html" id="eq-poli-torre">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-amarela.html ./knowl/xref/prop-uniaodis.html ./knowl/xref/eq-PIE02.html ./knowl/xref/exem-amarela.html ./knowl/xref/eq-poli-torre.html ./knowl/xref/naaa.html" id="eq-poli-torre">
 \begin{equation}
 R(x, T) =  6x^{7} + 42x^{6} + 117x^{5} + 169x^{4} + 136x^{3} + 60x^{2} + 13x^1 + 1x^0. \tag{2.3.3}
 \end{equation}
 </div>
-<div class="para">Observe que eram exatamente os coeficientes desse polinômio que estavam faltando para resolvermos o problema pelo princípio da Inclusão-Exclusão dado pela equação <a href="" class="xref" data-knowl="./knowl/eq-PIE02.html" title="Equação 2.3.1">(2.3.1)</a>. Então a solução do <a href="" class="xref" data-knowl="./knowl/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a> é dada pelo polinômio de torre dado pela equação <a href="" class="xref" data-knowl="./knowl/eq-poli-torre.html" title="Equação 2.3.3">(2.3.3)</a>, com <span class="process-math">\(x^k\)</span> substituído por <span class="process-math">\((-1)^k\cdot(7-k)!\text{,}\)</span> dividido por <span class="process-math">\(3!\text{,}\)</span> pois temos que descontar o número de formas de ordenar as três letras A. Fazendo as substituições, obtemos:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-amarela.html ./knowl/prop-uniaodis.html ./knowl/eq-PIE02.html ./knowl/exem-amarela.html ./knowl/eq-poli-torre.html ./knowl/naaa.html" id="naaa">
+<div class="para">Observe que eram exatamente os coeficientes desse polinômio que estavam faltando para resolvermos o problema pelo princípio da Inclusão-Exclusão dado pela equação <a href="" class="xref" data-knowl="./knowl/xref/eq-PIE02.html" title="Equação 2.3.1">(2.3.1)</a>. Então a solução do <a href="" class="xref" data-knowl="./knowl/xref/exem-amarela.html" title="Exemplo 2.3.2">Exemplo 2.3.2</a> é dada pelo polinômio de torre dado pela equação <a href="" class="xref" data-knowl="./knowl/xref/eq-poli-torre.html" title="Equação 2.3.3">(2.3.3)</a>, com <span class="process-math">\(x^k\)</span> substituído por <span class="process-math">\((-1)^k\cdot(7-k)!\text{,}\)</span> dividido por <span class="process-math">\(3!\text{,}\)</span> pois temos que descontar o número de formas de ordenar as três letras A. Fazendo as substituições, obtemos:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-amarela.html ./knowl/xref/prop-uniaodis.html ./knowl/xref/eq-PIE02.html ./knowl/xref/exem-amarela.html ./knowl/xref/eq-poli-torre.html ./knowl/xref/naaa.html" id="naaa">
 \begin{equation}
 7!  -13\cdot6! + 60\cdot5! - 136\cdot4! + 169\cdot 3! - 117\cdot 2! + 42\cdot 1! -6\cdot 0!\tag{2.3.4}
 \end{equation}
 </div>
-<div class="para">Calculando <a href="" class="xref" data-knowl="./knowl/naaa.html" title="Equação 2.3.4">(2.3.4)</a> e dividido por <span class="process-math">\(3!\text{,}\)</span> resulta em</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/exem-amarela.html ./knowl/prop-uniaodis.html ./knowl/eq-PIE02.html ./knowl/exem-amarela.html ./knowl/eq-poli-torre.html ./knowl/naaa.html">
+<div class="para">Calculando <a href="" class="xref" data-knowl="./knowl/xref/naaa.html" title="Equação 2.3.4">(2.3.4)</a> e dividido por <span class="process-math">\(3!\text{,}\)</span> resulta em</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-amarela.html ./knowl/xref/prop-uniaodis.html ./knowl/xref/eq-PIE02.html ./knowl/xref/exem-amarela.html ./knowl/xref/eq-poli-torre.html ./knowl/xref/naaa.html">
 \begin{equation*}
 \frac{432}{6} = 72 \text{ soluções}.
 \end{equation*}
 </div>
 </div>
-<article class="technology computation-like" id="technology-24"><h4 class="heading">
+<article class="technology computation-like" id="section-permutacao-caotica-repeticoes-2-26"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-615">A implementação de uma função que substitui <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(n-k)!\)</span> em um polinômio de grau <span class="process-math">\(n\text{.}\)</span> Na linha 14 a função está sendo "chamada" com o polinômio: <span class="process-math">\(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage">def substituicao(p):
+<div class="para" id="section-permutacao-caotica-repeticoes-2-26-1">A implementação de uma função que substitui <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(n-k)!\)</span> em um polinômio de grau <span class="process-math">\(n\text{.}\)</span> Na linha 14 a função está sendo "chamada" com o polinômio: <span class="process-math">\(6x^7 + 42x^6 + 117x^5 + 169x^4 + 136x^3 + 60x^2 + 13x + 1\text{.}\)</span>
+</div> <pre id="section-permutacao-caotica-repeticoes-2-26-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def substituicao(p):
     c = p.coefficients()   # lista de coeficientes
     d = p.degree(x)        # grau máximo
     s = 0
@@ -593,8 +527,8 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 </script></pre></article><article class="example example-like" id="exem-perguntainternet"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-616">Quantos são os anagramas da palavra MATEMÁTICA, sem que as letras fiquem nas posições originais? (Supondo que A e Á são letras iguais)</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like">
-<div class="para logical" id="p-617">
+<div class="para" id="exem-perguntainternet-1">Quantos são os anagramas da palavra MATEMÁTICA, sem que as letras fiquem nas posições originais? (Supondo que A e Á são letras iguais)</div> <details id="exem-perguntainternet-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="exem-perguntainternet-2-1">
 <div class="para">O polinômio de torre desse caso é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -607,7 +541,7 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 1x^0   + 20x^1 + 164x^{2}+ 728x^{3} + 1941x^{4}+ 3260x^{5} + 3514x^{6}+ 2416x^{7}+ 1020x^{8}+ 240x^{9}+24x^{10}. 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-618">
+</div> <div class="para logical" id="exem-perguntainternet-2-2">
 <div class="para">Trocando <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k\cdot(10-k)!\)</span> obtemos:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -621,13 +555,13 @@ substituicao(6*x^7 + 42*x^6 + 117*x^5 + 169*x^4 + 136*x^3 + 60*x^2 + 13*x + 1)
 \end{equation*}
 </div>
 </div>
-</div></div></article><article class="technology computation-like" id="tec-caotica-r"><h4 class="heading">
+</div></details></article><article class="technology computation-like" id="tec-caotica-r"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-619">A resposta do <a href="" class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a> junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.</div> <div class="para" id="p-620">Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.</div> <figure class="figure figure-like" id="figure-25"><iframe id="interactive-caotica-r" width="600" height="690" src="interactive-caotica-r-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
-<span class="type">Subseção</span> <span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span>
+<div class="para" id="tec-caotica-r-1">A resposta do <a href="" class="xref" data-knowl="./knowl/xref/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a> junto com o polinômio de torre associado está disponível aqui. Troque as informações da lista para obter o número de permutações caóticas de outra palavra desejada.</div> <div class="para" id="tec-caotica-r-2">Obs. Para que o sistema atualize a resposta, basta clicar fora do campo de preenchimento, depois de atualizar os dados.</div> <figure class="figure figure-like" id="tec-caotica-r-3"><iframe id="interactive-caotica-r" width="600" height="600" src="interactive-caotica-r-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="subsection" id="section-permutacao-caotica-repeticoes-3"><h3 class="heading hide-type">
+<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">Teorema das Permutações Caóticas com Repetições</span>
 </h3>
-<div class="para logical" id="p-621">
+<div class="para logical" id="section-permutacao-caotica-repeticoes-3-2">
 <div class="para">Na matemática, os polinômios de Laguerre, nomeados em homenagem a Edmond Laguerre (1834-1886), são soluções da equação de Laguerre:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -636,32 +570,32 @@ xy''+ (1-x)y' + ny = 0
 </div>
 <div class="para">que é uma equação diferencial linear de segunda ordem. Esses polinômios surgiram na mecânica quântica, na parte radial da solução da equação de Schrödinger para um átomo de um elétron. Eles também descrevem as funções de Wigner estáticas de sistemas osciladores em mecânica quântica no espaço de fase.</div>
 </div>
-<div class="para" id="p-622">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Laguerre_polynomials" target="_blank"><dfn class="terminology">en.wikipedia.org/wiki/Laguerre_polynomials</dfn></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a>
+<div class="para" id="section-permutacao-caotica-repeticoes-3-3">Fonte: <a class="external" href="https://en.wikipedia.org/wiki/Laguerre_polynomials" target="_blank"><dfn class="terminology">en.wikipedia.org/wiki/Laguerre_polynomials</dfn></a><details class="ptx-footnote" aria-live="polite" id="section-permutacao-caotica-repeticoes-3-3-2"><summary class="ptx-footnote__number" title="Nota de rodapé 2.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="section-permutacao-caotica-repeticoes-3-3-2"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Laguerre_polynomials</code></div></details>
 </div>
-<div class="para" id="p-623">Os polinômios de torre, em combinatória, são mais ou menos os mesmos que os polinômios de Laguerre, a menos de mudanças elementares de variáveis. Usaremos os polinômios de Laguerre para enunciar um Teorema com uma fórmula para calcular permutações caóticas com repetições usando integrais.</div>
-<article class="definition definition-like" id="definition-19"><h4 class="heading">
+<div class="para" id="section-permutacao-caotica-repeticoes-3-4">Os polinômios de torre, em combinatória, são mais ou menos os mesmos que os polinômios de Laguerre, a menos de mudanças elementares de variáveis. Usaremos os polinômios de Laguerre para enunciar um Teorema com uma fórmula para calcular permutações caóticas com repetições usando integrais.</div>
+<article class="definition definition-like" id="section-permutacao-caotica-repeticoes-3-5"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.19</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-624">
+<div class="para logical" id="section-permutacao-caotica-repeticoes-3-5-1">
 <div class="para">Usando recursividade é possível chegar na seguinte forma fechada para os polinômios de Laguerre:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 L_n(x) = \sum_{k=0}^nC_n^k \frac{(-1)^k}{k!}x^k
 \end{equation*}
 </div>
-</div></article><article class="technology computation-like" id="technology-26"><h4 class="heading">
+</div></article><article class="technology computation-like" id="section-permutacao-caotica-repeticoes-3-6"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.20</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-625">Obtendo o polinômio de Laguerre <span class="process-math">\(L_3(x)\)</span> no Sage.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-33"><script type="text/x-sage">laguerre(3,x).show()
+<div class="para" id="section-permutacao-caotica-repeticoes-3-6-1">Obtendo o polinômio de Laguerre <span class="process-math">\(L_3(x)\)</span> no Sage.</div> <pre id="section-permutacao-caotica-repeticoes-3-6-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">laguerre(3,x).show()
 </script></pre></article><article class="theorem theorem-like" id="teo-permutacao-caotica-repet"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.21</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-626">O número de permutações caóticas, <span class="process-math">\(DR_n^{r_1, r_2, \ldots, r_k}\text{,}\)</span> de uma lista com <span class="process-math">\(n\)</span> objetos, com um objeto repetido <span class="process-math">\(r_1\)</span> vezes, outro objeto repetido <span class="process-math">\(r_2\)</span> vezes, até o "último" objeto repetido <span class="process-math">\(r_k\)</span> vezes, tal que <span class="process-math">\(r_1+r_2+\cdots +r_k = n\text{,}\)</span> pode ser calculado da seguinte maneira:</div>
+<div class="para" id="teo-permutacao-caotica-repet-1">O número de permutações caóticas, <span class="process-math">\(DR_n^{r_1, r_2, \ldots, r_k}\text{,}\)</span> de uma lista com <span class="process-math">\(n\)</span> objetos, com um objeto repetido <span class="process-math">\(r_1\)</span> vezes, outro objeto repetido <span class="process-math">\(r_2\)</span> vezes, até o "último" objeto repetido <span class="process-math">\(r_k\)</span> vezes, tal que <span class="process-math">\(r_1+r_2+\cdots +r_k = n\text{,}\)</span> pode ser calculado da seguinte maneira:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 DR_n^{r_1, r_2, \ldots, r_k} = \left|\int_0^\infty e^{-x} L_{r_1}(x)L_{r_2}(x)\cdots L_{r_k}(x) ~dx \right|
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-21"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><div class="para logical" id="p-627">
+</div></article><details id="teo-permutacao-caotica-repet-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="teo-permutacao-caotica-repet-3-1">
 <div class="para">Como</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -669,38 +603,32 @@ DR_n^{r_1, r_2, \ldots, r_k} = \left|\int_0^\infty e^{-x} L_{r_1}(x)L_{r_2}(x)\c
 \end{equation*}
 </div>
 <div class="para">o resultado segue.</div>
-</div> <div class="para" id="p-628">Mais detalhes em breve.</div></article></div>
-<article class="technology computation-like" id="technology-27"><h4 class="heading">
+</div> <div class="para" id="teo-permutacao-caotica-repet-3-2">Mais detalhes em breve.</div></article></details><article class="technology computation-like" id="section-permutacao-caotica-repeticoes-3-8"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-629">Usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a> para calcular o número de soluções do <a href="" class="xref" data-knowl="./knowl/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a>. Foram usados os métodos <em class="emphasis">abs</em> e <em class="emphasis">integral</em> que calculam o valor absoluto e a integral, respectivamente.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-34"><script type="text/x-sage">abs(integral(exp(-x)*laguerre(3,x)*laguerre(2,x)^2*laguerre(1, x)^3, (x, 0, +oo)))
+<div class="para" id="section-permutacao-caotica-repeticoes-3-8-1">Usando o <a href="" class="xref" data-knowl="./knowl/xref/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a> para calcular o número de soluções do <a href="" class="xref" data-knowl="./knowl/xref/exem-perguntainternet.html" title="Exemplo 2.3.16">Exemplo 2.3.16</a>. Foram usados os métodos <em class="emphasis">abs</em> e <em class="emphasis">integral</em> que calculam o valor absoluto e a integral, respectivamente.</div> <pre id="section-permutacao-caotica-repeticoes-3-8-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">abs(integral(exp(-x)*laguerre(3,x)*laguerre(2,x)^2*laguerre(1, x)^3, (x, 0, +oo)))
 </script></pre></article><article class="technology computation-like" id="tec-permutacao-caotica-repet"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.23</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-630">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-35"><script type="text/x-sage">def DR(*lista):
+<div class="para" id="tec-permutacao-caotica-repet-1">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a href="" class="xref" data-knowl="./knowl/xref/teo-permutacao-caotica-repet.html" title="Teorema 2.3.21">Teorema 2.3.21</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</div> <pre id="tec-permutacao-caotica-repet-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def DR(*lista):
     n = sum(lista)
     p = exp(-x)
     for i in lista:
         p = p*laguerre(i, x)
     return abs(integral(p, (x, 0, +oo)))
 DR(3, 2, 2, 1, 1, 1)
-</script></pre></article></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber">2.3.3</span> <span class="title">Exercícios</span>
+</script></pre></article></section><section class="exercises" id="section-permutacao-caotica-repeticoes-4"><h3 class="heading hide-type">
+<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="space"> </span><span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-82"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-631">(PRMO 2019) Diremos que um rearranjo das letras de uma palavra não tem letras fixas, quando o rearranjo é colocado diretamente abaixo da palavra, e nenhuma coluna tem a mesma letra repetida. Por exemplo, HBRATA é um rearranjo sem letras fixas de BHARAT. Quantos rearranjos distinguíveis sem letras fixas que BHARAT tem? (As duas letras A são consideradas idênticas.)</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-80" id="answer-80"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-80"><div class="answer solution-like"><div class="para" id="p-632">84</div></div></div>
-</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-7"><div class="fn"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/Laguerre_polynomials</code></div></div>
-</div>
+<article class="exercise exercise-like" id="section-permutacao-caotica-repeticoes-4-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="section-permutacao-caotica-repeticoes-4-2-1-1">(PRMO 2019) Diremos que um rearranjo das letras de uma palavra não tem letras fixas, quando o rearranjo é colocado diretamente abaixo da palavra, e nenhuma coluna tem a mesma letra repetida. Por exemplo, HBRATA é um rearranjo sem letras fixas de BHARAT. Quantos rearranjos distinguíveis sem letras fixas que BHARAT tem? (As duas letras A são consideradas idênticas.)</div>
+<div class="solutions"><details id="section-permutacao-caotica-repeticoes-4-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-permutacao-caotica-repeticoes-4-2-2-1">84</div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-permutacao-caotica.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-lemas-kaplansky.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="section-permutacao-caotica.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-lemas-kaplansky.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>

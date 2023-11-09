@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="pt-BR">
+<html lang="pt-BR" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Espaços de Probabilidade</title>
@@ -16,20 +16,38 @@
 <meta property="book:author" content="Ricardo Machado">
 <meta property="book:author" content="Gabriel Guedes">
 <meta property="book:author" content="Luiz Manoel">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -39,168 +57,87 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
 // Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Executar (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
 <p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>[no-search-results].</span></div>
-<ol id="searchresults"></ol>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="probabilidade.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="probabilidade.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-probabilidade-condicional.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<h2 class="search-results-heading">Buscando por: </h2>
+<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="probabilidade.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="probabilidade.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="section-probabilidade-condicional.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -218,184 +155,184 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
-<li><div class="toc-item"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
-<li><div class="toc-item"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
-<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
+<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
-<li>
-<div class="toc-item"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-1" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
-<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-2" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
-<li><div class="toc-item"><a href="section-note-on-proofs.html#subsection-3" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
-<li><div class="toc-item"><a href="section-note-on-proofs.html#exercises-1" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pcontagem-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-3" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-4" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-5" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-4" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacoes-simples.html#subsection-5" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacoes-simples.html#exercises-2" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-6" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-combinacoes-simples.html#subsection-7" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
-<li><div class="toc-item"><a href="section-combinacoes-simples.html#exercises-3" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-2" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-3" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-circulares.html#exercises-4" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-circulares.html#section-permutacoes-circulares-9" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-permutacoes-com-repeticoes.html#exercises-5" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html#section-permutacoes-com-repeticoes-11" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-combinacoes-completas.html#exercises-6" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-8" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
-<li><div class="toc-item"><a href="section-inclusao-exclusao.html#subsection-9" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
-<li><div class="toc-item"><a href="section-inclusao-exclusao.html#exercises-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-10" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-11" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-12" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#subsection-13" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica.html#exercises-8" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-14" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#subsection-15" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
-<li><div class="toc-item"><a href="section-permutacao-caotica-repeticoes.html#exercises-9" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-16" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-17" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-18" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#subsection-19" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
-<li><div class="toc-item"><a href="section-lemas-kaplansky.html#exercises-10" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-20" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-21" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li><div class="toc-item"><a href="section-casa-pombos.html#subsection-22" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li><div class="toc-item"><a href="section-casa-pombos.html#exercises-11" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-13.html#subsection-23" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html#subsection-24" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html#subsection-25" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html#exercises-12" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-completas.html#section-combinacoes-completas-12" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-triangulo-pascal.html#exercises-13" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-2" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-3" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-4" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-binomio-newton.html#exercises-14" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-5" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-polinomio-leibniz.html#exercises-15" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-5" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-6" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ocontagem-8.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-3" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-4" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-5" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
-<ul class="structural">
-<li class="active">
-<div class="toc-item"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-espacos-probabilidade.html#exercises-16" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-triangulo-pascal.html#section-triangulo-pascal-16" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-probabilidade-condicional.html#subsection-26" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
-<li><div class="toc-item"><a href="section-probabilidade-condicional.html#exercises-17" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-binomio-newton.html#section-binomio-newton-11" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-polinomio-leibniz.html#section-polinomio-leibniz-5" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-distribuicao-binomial.html#subsection-27" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
-<li><div class="toc-item"><a href="section-distribuicao-binomial.html#exercises-18" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercícios</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-espacos-probabilidade.html#section-espacos-probabilidade-15" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-14" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-15" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
-<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-espacos-probabilidade"><h2 class="heading hide-type">
-<span class="type">Seção</span> <span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span>
+<span class="type">Seção</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">Espaços de Probabilidade</span>
 </h2>
-<article class="definition definition-like" id="definition-26"><h3 class="heading">
+<article class="definition definition-like" id="section-espacos-probabilidade-2"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-865">Chamaremos de <em class="emphasis">espaço amostral</em> o conjunto de todos os resultados possíveis de uma experiência aleatória. Denotaremos o espaço amostral por <span class="process-math">\(\Omega\)</span> e só vamos considerar o caso de <span class="process-math">\(\Omega\)</span> ser finito.</div> <div class="para" id="p-866">Os subconjuntos de <span class="process-math">\(\Omega\)</span> serão chamados de <em class="emphasis">eventos</em>. Diremos que um evento ocorre quando o resultado da experiência pertence ao evento.</div></article><article class="definition definition-like" id="def-probabilidade"><h3 class="heading">
+<div class="para" id="section-espacos-probabilidade-2-1">Chamaremos de <em class="emphasis">espaço amostral</em> o conjunto de todos os resultados possíveis de uma experiência aleatória. Denotaremos o espaço amostral por <span class="process-math">\(\Omega\)</span> e só vamos considerar o caso de <span class="process-math">\(\Omega\)</span> ser finito.</div> <div class="para" id="section-espacos-probabilidade-2-2">Os subconjuntos de <span class="process-math">\(\Omega\)</span> serão chamados de <em class="emphasis">eventos</em>. Diremos que um evento ocorre quando o resultado da experiência pertence ao evento.</div></article><article class="definition definition-like" id="def-probabilidade"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-867">
+<div class="para logical" id="def-probabilidade-1">
 <div class="para">Seja <span class="process-math">\(\Omega\)</span> um espaço amostral. Uma probabilidade sobre <span class="process-math">\(\Omega\)</span> é uma função que associa a cada evento <span class="process-math">\(A\subset\Omega\)</span> um número <span class="process-math">\(P(A)\)</span> de forma que:</div>
 <ol class="lower-alpha">
-<li id="li-123"><div class="para" id="p-derived-li-123">Para todo evento <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(0\leq P(A)\leq 1\text{;}\)</span>
+<li id="def-probabilidade-1-5-1"><div class="para" id="p-derived-def-probabilidade-1-5-1">Para todo evento <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(0\leq P(A)\leq 1\text{;}\)</span>
 </div></li>
-<li id="li-124"><div class="para" id="p-derived-li-124"><span class="process-math">\(P(\Omega)=1\text{;}\)</span></div></li>
-<li id="li-125"><div class="para" id="p-derived-li-125">Se <span class="process-math">\(A\cap B = \varnothing\)</span> então <span class="process-math">\(P(A\cup B) = P(A) + P(B)\text{.}\)</span>
+<li id="def-probabilidade-1-5-2"><div class="para" id="p-derived-def-probabilidade-1-5-2"><span class="process-math">\(P(\Omega)=1\text{;}\)</span></div></li>
+<li id="def-probabilidade-1-5-3"><div class="para" id="p-derived-def-probabilidade-1-5-3">Se <span class="process-math">\(A\cap B = \varnothing\)</span> então <span class="process-math">\(P(A\cup B) = P(A) + P(B)\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><article class="example example-like" id="example-61"><h3 class="heading">
+</div></article><article class="example example-like" id="section-espacos-probabilidade-4"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-868">Ao lançar uma moeda observe a face que cai voltada para cima.</div> <div class="para logical" id="p-869">
+<div class="para" id="section-espacos-probabilidade-4-1">Ao lançar uma moeda observe a face que cai voltada para cima.</div> <div class="para logical" id="section-espacos-probabilidade-4-2">
 <div class="para">O espaço amostral é <span class="process-math">\(\Omega = \{\text{Cara}, \text{Coroa}\},\)</span> os eventos são</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -417,18 +354,18 @@ P_2(\varnothing)=0, ~~ P_2(A) = \frac{1}{10}, ~~P_2(B) = \frac{9}{10} ~~\text{ e
 \end{equation*}
 </div>
 <div class="para">Observe que <span class="process-math">\(P_1\)</span> e <span class="process-math">\(P_2\)</span> satisfazem a definição de probabilidade.</div>
-</div></article><article class="example example-like" id="example-62"><h3 class="heading">
+</div></article><article class="example example-like" id="section-espacos-probabilidade-5"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-870">Um modelo de probabilidade muito utilizado é o equiprobabilístico, que é o caso de <span class="process-math">\(P_1\)</span> do exemplo anterior.</div> <div class="para logical" id="p-871">
+<div class="para" id="section-espacos-probabilidade-5-1">Um modelo de probabilidade muito utilizado é o equiprobabilístico, que é o caso de <span class="process-math">\(P_1\)</span> do exemplo anterior.</div> <div class="para logical" id="section-espacos-probabilidade-5-2">
 <div class="para">O caso geral deste modelo, ou seja para <span class="process-math">\(\#\Omega = n\text{,}\)</span> atribuímos a cada evento unitário a probabilidade</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-probabilidade.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probabilidade.html">
 \begin{equation*}
 \frac{1}{n}. 
 \end{equation*}
 </div>
-<div class="para">Pois, se <span class="process-math">\(\Omega = \{e_1, e_2, \ldots, e_n\}\)</span> e <span class="process-math">\(P(\{e_1\}) = P(\{e_2\}) = \cdots = P(\{e_n\})= k\text{.}\)</span> Pelo item c) da <a href="" class="xref" data-knowl="./knowl/def-probabilidade.html" title="Definição 4.1.2">Definição 4.1.2</a>, temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-probabilidade.html" id="md-52">
+<div class="para">Pois, se <span class="process-math">\(\Omega = \{e_1, e_2, \ldots, e_n\}\)</span> e <span class="process-math">\(P(\{e_1\}) = P(\{e_2\}) = \cdots = P(\{e_n\})= k\text{.}\)</span> Pelo item c) da <a href="" class="xref" data-knowl="./knowl/xref/def-probabilidade.html" title="Definição 4.1.2">Definição 4.1.2</a>, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probabilidade.html" id="section-espacos-probabilidade-5-2-6">
 \begin{align*}
 1 = \amp ~P(\Omega) = P(\{e_1, e_2, \ldots, e_n\}) = P(\{e_1\} \cup \{e_2\}\cup \ldots\cup \{e_n\})   \\
 = \amp ~P(\{e_1\}) + P(\{e_2\})+ \ldots+ P(\{e_n\}) \\
@@ -436,21 +373,21 @@ P_2(\varnothing)=0, ~~ P_2(A) = \frac{1}{10}, ~~P_2(B) = \frac{9}{10} ~~\text{ e
 \end{align*}
 </div>
 <div class="para">Portanto,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-probabilidade.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-probabilidade.html">
 \begin{equation*}
 k = \frac{1}{n}. 
 \end{equation*}
 </div>
-</div></article><article class="example example-like" id="example-63"><h3 class="heading">
+</div></article><article class="example example-like" id="section-espacos-probabilidade-6"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-872">Quatro moedas (não viciadas) são jogadas simultâneamente.</div> <ol class="lower-alpha">
-<li id="li-126"><div class="para" id="p-derived-li-126">Qual é a probabilidade de obter 3 caras?</div></li>
-<li id="li-127"><div class="para" id="p-derived-li-127">Qual é a probabilidade de obter pelo menos 3 caras?</div></li>
-</ol> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-138" id="solution-138"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-138"><div class="solution solution-like">
-<div class="para logical" id="p-873">
+<div class="para" id="section-espacos-probabilidade-6-1">Quatro moedas (não viciadas) são jogadas simultâneamente.</div> <ol class="lower-alpha">
+<li id="section-espacos-probabilidade-6-2-1"><div class="para" id="p-derived-section-espacos-probabilidade-6-2-1">Qual é a probabilidade de obter 3 caras?</div></li>
+<li id="section-espacos-probabilidade-6-2-2"><div class="para" id="p-derived-section-espacos-probabilidade-6-2-2">Qual é a probabilidade de obter pelo menos 3 caras?</div></li>
+</ol> <details id="section-espacos-probabilidade-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="section-espacos-probabilidade-6-3-1">
 <div class="para">Para simplificar a notação, indicaremos 0 para cara e 1 para coroa. O espaço amostral é</div>
-<div class="displaymath process-math" id="md-53">
+<div class="displaymath process-math" id="section-espacos-probabilidade-6-3-1-1">
 \begin{align*}
 \Omega = \amp ~\{ [0, 0, 0, 0],[0, 0, 0, 1],[0, 0, 1, 0],[0, 0, 1, 1], \\
 \amp ~~~~[0, 1, 0, 0],[0, 1, 0, 1],[0, 1, 1, 0],[0, 1, 1, 1], \\
@@ -471,7 +408,7 @@ k = \frac{1}{n}.
 \frac{4}{16} = \frac{1}{4}. 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-874">
+</div> <div class="para logical" id="section-espacos-probabilidade-6-3-2">
 <div class="para">
 <dfn class="terminology">item b)</dfn> Observe que dentre as 16 possibilidades, o subconjunto abaixo:</div>
 <div class="displaymath process-math">
@@ -486,18 +423,18 @@ k = \frac{1}{n}.
 \end{equation*}
 </div>
 </div>
-</div></div></article><article class="remark remark-like" id="remark-9"><h3 class="heading">
+</div></details></article><article class="remark remark-like" id="section-espacos-probabilidade-7"><h3 class="heading">
 <span class="type">Nota</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-875">Sejam <span class="process-math">\(\Omega = \{1, 2, 3, 4, 5 \}, A = \{1, 3, 5\}\)</span> e <span class="process-math">\(B = \{1, 2, 3\}\text{.}\)</span>
-</div> <div class="para logical" id="p-876">
+<div class="para" id="section-espacos-probabilidade-7-1">Sejam <span class="process-math">\(\Omega = \{1, 2, 3, 4, 5 \}, A = \{1, 3, 5\}\)</span> e <span class="process-math">\(B = \{1, 2, 3\}\text{.}\)</span>
+</div> <div class="para logical" id="section-espacos-probabilidade-7-2">
 <div class="para">O conjunto complementar de <span class="process-math">\(A\)</span> é denotado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^c = \{x\in\Omega~|~ x\notin A\}. \text{ Ex. }  A^c = \{2, 4\}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-877">
+</div> <div class="para logical" id="section-espacos-probabilidade-7-3">
 <div class="para">O conjunto <span class="process-math">\(A\)</span> menos o conjunto <span class="process-math">\(B\)</span> é denotado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -507,24 +444,24 @@ A\setminus B = \{a\in A ~|~ a\notin B\}. \text{ Ex. } A\setminus B = \{5\}.
 </div></article><article class="theorem theorem-like" id="teo-probabilidade"><h3 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-878">
+<div class="para logical" id="teo-probabilidade-1">
 <div class="para">Sejam <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> eventos, então:</div>
 <ol class="lower-alpha">
-<li id="li-128"><div class="para" id="p-derived-li-128"><span class="process-math">\(P(A^c) = 1 - P(A)\text{;}\)</span></div></li>
-<li id="li-129"><div class="para" id="p-derived-li-129"><span class="process-math">\(P(\varnothing)=0\text{;}\)</span></div></li>
-<li id="li-130"><div class="para" id="p-derived-li-130"><span class="process-math">\(P(A\setminus B) = P(A) - P(A\cap B)\text{;}\)</span></div></li>
-<li id="li-131"><div class="para" id="p-derived-li-131"><span class="process-math">\(P(A\cup B) = P(A)+P(B) - P(A\cap B)\text{;}\)</span></div></li>
-<li id="li-132"><div class="para" id="p-derived-li-132">Se <span class="process-math">\(A\supset B\)</span> então <span class="process-math">\(P(A) \geq P(B)\text{.}\)</span>
+<li id="teo-probabilidade-1-3-1"><div class="para" id="p-derived-teo-probabilidade-1-3-1"><span class="process-math">\(P(A^c) = 1 - P(A)\text{;}\)</span></div></li>
+<li id="teo-probabilidade-1-3-2"><div class="para" id="p-derived-teo-probabilidade-1-3-2"><span class="process-math">\(P(\varnothing)=0\text{;}\)</span></div></li>
+<li id="teo-probabilidade-1-3-3"><div class="para" id="p-derived-teo-probabilidade-1-3-3"><span class="process-math">\(P(A\setminus B) = P(A) - P(A\cap B)\text{;}\)</span></div></li>
+<li id="teo-probabilidade-1-3-4"><div class="para" id="p-derived-teo-probabilidade-1-3-4"><span class="process-math">\(P(A\cup B) = P(A)+P(B) - P(A\cap B)\text{;}\)</span></div></li>
+<li id="teo-probabilidade-1-3-5"><div class="para" id="p-derived-teo-probabilidade-1-3-5">Se <span class="process-math">\(A\supset B\)</span> então <span class="process-math">\(P(A) \geq P(B)\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><div class="para logical" id="p-879">
+</div></article><details id="teo-probabilidade-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="teo-probabilidade-2-1">
 <div class="para"><dfn class="terminology">item a)</dfn></div>
 <div class="displaymath process-math">
 \begin{equation*}
 1 = P(\Omega) = P(A\cup A^c) = P(A) + P(A^c), \text{ logo } P(A^c) = 1-P(A).
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-880">
+</div> <div class="para logical" id="teo-probabilidade-2-2">
 <div class="para">
 <dfn class="terminology">item b)</dfn> Como <span class="process-math">\(\Omega\cap \varnothing = \varnothing\text{,}\)</span> temos <span class="process-math">\(P(\Omega\cup \varnothing) = P(\Omega) + P(\varnothing)\text{.}\)</span> Portanto</div>
 <div class="displaymath process-math">
@@ -532,7 +469,7 @@ A\setminus B = \{a\in A ~|~ a\notin B\}. \text{ Ex. } A\setminus B = \{5\}.
 1 = P(\Omega) = P(\Omega\cup \varnothing) = \underbrace{P(\Omega)}_{=1} + P(\varnothing)\Rightarrow P(\varnothing) = 0. 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-881">
+</div> <div class="para logical" id="teo-probabilidade-2-3">
 <div class="para">
 <dfn class="terminology">item c)</dfn> Escrevendo <span class="process-math">\(A\)</span> como a união disjunta:</div>
 <div class="displaymath process-math">
@@ -546,7 +483,7 @@ A = (A\setminus B) \cup (A\cap B)
 P(A) =  P(A\setminus B) + P(A\cap B)~~ \Rightarrow ~~ P(A\setminus B) = P(A) - P(A\cap B). 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-882">
+</div> <div class="para logical" id="teo-probabilidade-2-4">
 <div class="para">
 <dfn class="terminology">item d)</dfn> Escrevendo <span class="process-math">\(A\cup B\)</span> como a união disjunta:</div>
 <div class="displaymath process-math">
@@ -560,7 +497,7 @@ A\cup B = (A\setminus B)\cup B,
 P(A\cup B) = \underbrace{P(A\setminus B)}_{\underset{\text{pelo item c)}}{= P(A) - P(A\cap B)}} + P(B) = P(A) - P(A\cap B) + P(B). 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-883">
+</div> <div class="para logical" id="teo-probabilidade-2-5">
 <div class="para">
 <dfn class="terminology">item e)</dfn> Pelo item c) temos</div>
 <div class="displaymath process-math">
@@ -576,76 +513,75 @@ P(A\setminus B) = P(A) - P(B)\Rightarrow P(A) \geq P(B),
 </div>
 <div class="para">pois <span class="process-math">\(P(A\setminus B)\geq 0\text{.}\)</span>
 </div>
-</div></article></div>
-<article class="example example-like" id="example-64"><h3 class="heading">
+</div></article></details><article class="example example-like" id="section-espacos-probabilidade-9"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-884">Uma caixa de chocolate contém 40 chocolates, 30 são do tipo <em class="emphasis">ao leite</em> e 10 são do tipo <em class="emphasis">amargo</em>. Ao pegar 8 chocolates aleatoriamente, qual a probabilidade de que ao menos um chocolate seja do tipo <em class="emphasis">amargo</em>?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-139" id="solution-139"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-139"><div class="solution solution-like">
-<div class="para" id="p-885">Primeiro, vamos calcular a probabilidade de que todos os chocolates sejam do tipo <em class="emphasis">ao leite</em>. Em seguida, vamos usar o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>) para chegar na resposta deste problema.</div> <div class="para logical" id="p-886">
+<div class="para" id="section-espacos-probabilidade-9-1">Uma caixa de chocolate contém 40 chocolates, 30 são do tipo <em class="emphasis">ao leite</em> e 10 são do tipo <em class="emphasis">amargo</em>. Ao pegar 8 chocolates aleatoriamente, qual a probabilidade de que ao menos um chocolate seja do tipo <em class="emphasis">amargo</em>?</div> <details id="section-espacos-probabilidade-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-9-2-1">Primeiro, vamos calcular a probabilidade de que todos os chocolates sejam do tipo <em class="emphasis">ao leite</em>. Em seguida, vamos usar o item a) do (<a href="" class="xref" data-knowl="./knowl/xref/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>) para chegar na resposta deste problema.</div> <div class="para logical" id="section-espacos-probabilidade-9-2-2">
 <div class="para">cardinalidade do espaço amostral é dada pelo número de maneiras de pegar 8 chocolates dentre 40 disponívies, portanto</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-probabilidade.html">
 \begin{equation*}
 \#\Omega = C_{40}^{8}.
 \end{equation*}
 </div>
 <div class="para">Agora queremos contar quantas são as formas de pegar 8 chocolates do tipo <em class="emphasis">ao leite</em>. Como existem 30 disponíveis a resposta é:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-probabilidade.html">
 \begin{equation*}
 C_{30}^{8}. 
 \end{equation*}
 </div>
-<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que ao menos um seja do tipo <em class="emphasis">amargo</em> é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/xref/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que ao menos um seja do tipo <em class="emphasis">amargo</em> é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-probabilidade.html">
 \begin{equation*}
 1 - \frac{C_{30}^{8}}{C_{40}^{8}} \approx 0.923893778382943 \approx 92,4\% 
 \end{equation*}
 </div>
 </div>
-</div></div></article><div class="para" id="p-887">No próximo exemplo, resolvemos um caso particular do problema conhecido como <em class="emphasis">O Paradoxo dos Gêmeos</em> ou <em class="emphasis">O Problema dos Aniversários</em>. Este problema consiste em calcular a probabilidade de que duas pessoas, de uma amostra aleatória com <span class="process-math">\(n\)</span> pessoas, façam aniversário no mesmo dia. Note que, pelo Princípio da Casa dos Pombos, só podemos garantir que pelo menos duas dessas <span class="process-math">\(n\)</span> pessoas façam aniversário no mesmo dia, se a amostra aleatória contiver pelo menos <span class="process-math">\(367\)</span> pessoas. No entanto, com o cálculo direto, podemos verificar que basta <span class="process-math">\(70\)</span> pessoas para que a probabilidade seja maior que <span class="process-math">\(99,9\%\)</span> e que <span class="process-math">\(23\)</span> pessoas são suficientes, para que a probabilidade seja maior que <span class="process-math">\(50\%\text{.}\)</span> Essas probabilidades podem ser verificadas na tabela da <a href="" class="xref" data-knowl="./knowl/tech-aniversario.html" title="Tecnologia 4.1.10">Tecnologia 4.1.10</a>, cujos parâmetros podem ser ajustados de <span class="process-math">\(2\)</span> até <span class="process-math">\(120\text{.}\)</span>
+</div></details></article><div class="para" id="section-espacos-probabilidade-10">No próximo exemplo, resolvemos um caso particular do problema conhecido como <em class="emphasis">O Paradoxo dos Gêmeos</em> ou <em class="emphasis">O Problema dos Aniversários</em>. Este problema consiste em calcular a probabilidade de que duas pessoas, de uma amostra aleatória com <span class="process-math">\(n\)</span> pessoas, façam aniversário no mesmo dia. Note que, pelo Princípio da Casa dos Pombos, só podemos garantir que pelo menos duas dessas <span class="process-math">\(n\)</span> pessoas façam aniversário no mesmo dia, se a amostra aleatória contiver pelo menos <span class="process-math">\(367\)</span> pessoas. No entanto, com o cálculo direto, podemos verificar que basta <span class="process-math">\(70\)</span> pessoas para que a probabilidade seja maior que <span class="process-math">\(99,9\%\)</span> e que <span class="process-math">\(23\)</span> pessoas são suficientes, para que a probabilidade seja maior que <span class="process-math">\(50\%\text{.}\)</span> Essas probabilidades podem ser verificadas na tabela da <a href="" class="xref" data-knowl="./knowl/xref/tech-aniversario.html" title="Tecnologia 4.1.10">Tecnologia 4.1.10</a>, cujos parâmetros podem ser ajustados de <span class="process-math">\(2\)</span> até <span class="process-math">\(120\text{.}\)</span>
 </div>
 <article class="example example-like" id="exem-aniversario"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-888">Em um grupo de 45 pessoas, qual é a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-140" id="solution-140"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-140"><div class="solution solution-like">
-<div class="para" id="p-889">Mais uma vez, usaremos o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</div> <div class="para logical" id="p-890">
+<div class="para" id="exem-aniversario-1">Em um grupo de 45 pessoas, qual é a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia?</div> <details id="exem-aniversario-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exem-aniversario-2-1">Mais uma vez, usaremos o item a) do (<a href="" class="xref" data-knowl="./knowl/xref/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</div> <div class="para logical" id="exem-aniversario-2-2">
 <div class="para">Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. O número de casos possíveis para os aniversários das 45 pessoas é <span class="process-math">\(365^{45}\text{.}\)</span> O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-probabilidade.html">
 \begin{equation*}
 365\times 364\times 363\times \cdots \times321. 
 \end{equation*}
 </div>
 <div class="para">Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-probabilidade.html">
 \begin{equation*}
 \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. 
 \end{equation*}
 </div>
-<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/xref/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-probabilidade.html">
 \begin{equation*}
 1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. 
 \end{equation*}
 </div>
-</div> <div class="para" id="p-891">Este cálculo pode ser verificado no Sage, usando o código abaixo:</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-54"><script type="text/x-sage">pd = prod(i for i in (321..365))
+</div> <div class="para" id="exem-aniversario-2-3">Este cálculo pode ser verificado no Sage, usando o código abaixo:</div> <pre id="exem-aniversario-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">pd = prod(i for i in (321..365))
 (1 - pd/365^45).n()
 </script></pre>
-</div></div></article><article class="technology computation-like" id="tech-aniversario"><h3 class="heading">
+</div></details></article><article class="technology computation-like" id="tech-aniversario"><h3 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span>
-</h3> <div class="para" id="p-892">Escolha um intervalo, referente a variação de pessoas, para obter uma tabela com a quantidade e a respectiva probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o <a href="" class="xref" data-knowl="./knowl/exem-aniversario.html" title="Exemplo 4.1.9">Exemplo 4.1.9</a>.</div> <figure class="figure figure-like" id="figure-48"><iframe id="interactive-probabilidade-t" width="600" height="480" src="interactive-probabilidade-t-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.1.11<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="p-893">Escolha um intervalo, referente a variação de pessoas, para obter o gráfico do tipo: quantidade versus probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o <a href="" class="xref" data-knowl="./knowl/exem-aniversario.html" title="Exemplo 4.1.9">Exemplo 4.1.9</a>.</div> <figure class="figure figure-like" id="figure-49"><iframe id="interactive-probabilidade" width="600" height="510" src="interactive-probabilidade-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.1.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="example-66"><h3 class="heading">
+</h3> <div class="para" id="tech-aniversario-1">Escolha um intervalo, referente a variação de pessoas, para obter uma tabela com a quantidade e a respectiva probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o <a href="" class="xref" data-knowl="./knowl/xref/exem-aniversario.html" title="Exemplo 4.1.9">Exemplo 4.1.9</a>.</div> <figure class="figure figure-like" id="tech-aniversario-2"><iframe id="interactive-probabilidade-t" width="600" height="480" src="interactive-probabilidade-t-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.1.11<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="tech-aniversario-3">Escolha um intervalo, referente a variação de pessoas, para obter o gráfico do tipo: quantidade versus probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o <a href="" class="xref" data-knowl="./knowl/xref/exem-aniversario.html" title="Exemplo 4.1.9">Exemplo 4.1.9</a>.</div> <figure class="figure figure-like" id="tech-aniversario-4"><iframe id="interactive-probabilidade" width="600" height="480" src="interactive-probabilidade-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.1.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="section-espacos-probabilidade-13"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.13</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-894">Vinte três pessoas foram fazer uma prova e precisaram deixar seus celulares com o fiscal. No horário previsto de entrega, houve uma emergência e todos precisaram entregar suas provas e pegar seus celulares com pressa, de modo que os celulares foram entregues ao acaso. Qual a probabilidade de que todos os participantes tenha recebido os celulares errados?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-141" id="solution-141"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-141"><div class="solution solution-like"><div class="para logical" id="p-895">
+<div class="para" id="section-espacos-probabilidade-13-1">Vinte três pessoas foram fazer uma prova e precisaram deixar seus celulares com o fiscal. No horário previsto de entrega, houve uma emergência e todos precisaram entregar suas provas e pegar seus celulares com pressa, de modo que os celulares foram entregues ao acaso. Qual a probabilidade de que todos os participantes tenha recebido os celulares errados?</div> <details id="section-espacos-probabilidade-13-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-espacos-probabilidade-13-2-1">
 <div class="para">O espaço amostral <span class="process-math">\(\Omega\)</span> é constituido por todas as formas de ordenar os 23 celulares. Os casos favoráveis é constituído por todas as permutações caóticas com os 23 celulares. Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\% 
 \end{equation*}
 </div>
-</div></div></div></article><article class="example example-like" id="example-67"><h3 class="heading">
+</div></div></details></article><article class="example example-like" id="section-espacos-probabilidade-14"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.14</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-896">8 bolas de ping-pong são colocadas aleatóriamente em 8 caixas. Qual a probabilidade de que exatamente uma caixa fique vazia?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like">
-<div class="para logical" id="p-897">
+<div class="para" id="section-espacos-probabilidade-14-1">8 bolas de ping-pong são colocadas aleatóriamente em 8 caixas. Qual a probabilidade de que exatamente uma caixa fique vazia?</div> <details id="section-espacos-probabilidade-14-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="section-espacos-probabilidade-14-2-1">
 <div class="para">A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -653,8 +589,8 @@ P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\%
 \end{equation*}
 </div>
 <div class="para">pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.</div>
-</div> <div class="para" id="p-898">Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.</div> <div class="para" id="p-899">A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é <span class="process-math">\(C_8^2\text{.}\)</span> A quantidade de formas de arrumar o restante das bolas é <span class="process-math">\((8-2)!\text{.}\)</span>
-</div> <div class="para logical" id="p-900">
+</div> <div class="para" id="section-espacos-probabilidade-14-2-2">Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.</div> <div class="para" id="section-espacos-probabilidade-14-2-3">A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é <span class="process-math">\(C_8^2\text{.}\)</span> A quantidade de formas de arrumar o restante das bolas é <span class="process-math">\((8-2)!\text{.}\)</span>
+</div> <div class="para logical" id="section-espacos-probabilidade-14-2-4">
 <div class="para">Portanto o número de casos favoráveis é <span class="process-math">\(8\cdot 7 \cdot C_8^2\cdot 6! = 8!C_8^2\text{.}\)</span> A resposta do problema é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -662,45 +598,44 @@ P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\%
 \end{equation*}
 </div>
 </div>
-</div></div></article><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
+</div></details></article><section class="exercises" id="section-espacos-probabilidade-15"><h3 class="heading hide-type">
+<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-113"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="p-901">
+<article class="exercise exercise-like" id="section-espacos-probabilidade-15-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="section-espacos-probabilidade-15-2-1-1">
 <div class="para">Um número é escolhido ao acaso no conjunto <span class="process-math">\(\{1, 2, 3, ..., 100\}\text{.}\)</span> Determine a probabilidade do número escolhido ser:</div>
 <ol class="lower-alpha">
-<li id="li-133"><div class="para" id="p-derived-li-133">múltiplo de 3;</div></li>
-<li id="li-134"><div class="para" id="p-derived-li-134">múltiplo de 5;</div></li>
-<li id="li-135"><div class="para" id="p-derived-li-135">múltiplo de 3 e múltiplo de 5;</div></li>
-<li id="li-136"><div class="para" id="p-derived-li-136">múltiplo de 3 ou múltiplo de 5.</div></li>
+<li id="section-espacos-probabilidade-15-2-1-1-2-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-2-1-1-2-1">múltiplo de 3;</div></li>
+<li id="section-espacos-probabilidade-15-2-1-1-2-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-2-1-1-2-2">múltiplo de 5;</div></li>
+<li id="section-espacos-probabilidade-15-2-1-1-2-3"><div class="para" id="p-derived-section-espacos-probabilidade-15-2-1-1-2-3">múltiplo de 3 e múltiplo de 5;</div></li>
+<li id="section-espacos-probabilidade-15-2-1-1-2-4"><div class="para" id="p-derived-section-espacos-probabilidade-15-2-1-1-2-4">múltiplo de 3 ou múltiplo de 5.</div></li>
 </ol>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-100" id="answer-100"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-100"><div class="answer solution-like"><div class="para" id="p-902">a) <span class="process-math">\(\dfrac{33}{100}\text{,}\)</span> b) <span class="process-math">\(\dfrac{1}{5}\text{,}\)</span> c) <span class="process-math">\(\dfrac{3}{50}\text{,}\)</span> d) <span class="process-math">\(\dfrac{47}{100}\text{.}\)</span>
-</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like">
-<div class="para logical" id="p-903">
+<details id="section-espacos-probabilidade-15-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-2-2-1">a) <span class="process-math">\(\dfrac{33}{100}\text{,}\)</span> b) <span class="process-math">\(\dfrac{1}{5}\text{,}\)</span> c) <span class="process-math">\(\dfrac{3}{50}\text{,}\)</span> d) <span class="process-math">\(\dfrac{47}{100}\text{.}\)</span>
+</div></div></details><details id="section-espacos-probabilidade-15-2-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="section-espacos-probabilidade-15-2-3-1">
 <div class="para"><dfn class="terminology">item a)</dfn></div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{\left\lfloor\frac{100}{3}\right\rfloor}{100}=\frac{33}{100}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-904">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-2-3-2">
 <div class="para"><dfn class="terminology">item b)</dfn></div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{\left\lfloor\frac{100}{5}\right\rfloor}{100}=\frac{20}{100}=\frac{1}{5}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-905">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-2-3-3">
 <div class="para"><dfn class="terminology">item c)</dfn></div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{\left\lfloor\frac{100}{15}\right\rfloor}{100}=\frac{6}{100}=\frac{3}{50}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-906">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-2-3-4">
 <div class="para">
 <dfn class="terminology">item d)</dfn> Pelo princípio da Inclusão-Exclusão:</div>
 <div class="displaymath process-math">
@@ -709,37 +644,34 @@ P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\%
 \end{equation*}
 </div>
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-114"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-907">Em uma caixa existem 6 bolinhas numeradas de 1 a 6. Uma a uma elas são extraı́das, sem reposição. Qual a probabilidade de que a sequência de números observada seja crescente ou seja decrescente?</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-3-1-1">Em uma caixa existem 6 bolinhas numeradas de 1 a 6. Uma a uma elas são extraı́das, sem reposição. Qual a probabilidade de que a sequência de números observada seja crescente ou seja decrescente?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-101" id="answer-101"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-101"><div class="answer solution-like"><div class="para" id="p-908"><span class="process-math">\(\dfrac{1}{360}\text{.}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-144" id="solution-144"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-144"><div class="solution solution-like"><div class="para logical" id="p-909">
+<details id="section-espacos-probabilidade-15-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-3-2-1"><span class="process-math">\(\dfrac{1}{360}\text{.}\)</span></div></div></details><details id="section-espacos-probabilidade-15-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-espacos-probabilidade-15-3-3-1">
 <div class="para">O espaço amostral tem cardinalidade <span class="process-math">\(6!\text{,}\)</span> que é o número de maneiras de ordenar as bolinhas. Como só existe uma sequência seja crescente e uma que seja decrescente, a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{2}{6!} = \frac{2}{720}=\frac{1}{360}.
 \end{equation*}
 </div>
-</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-115"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-910">Doze pessoas são divididas em três grupos de 4. Qual é a probabilidade de duas determinadas dessas pessoas fiquem no mesmo grupo?</div>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-4-1-1">Doze pessoas são divididas em três grupos de 4. Qual é a probabilidade de duas determinadas dessas pessoas fiquem no mesmo grupo?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-102" id="answer-102"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-102"><div class="answer solution-like"><div class="para" id="p-911"><span class="process-math">\(\dfrac{3}{11}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-145" id="solution-145"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-145"><div class="solution solution-like"><div class="para logical" id="p-912">
+<details id="section-espacos-probabilidade-15-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-4-2-1"><span class="process-math">\(\dfrac{3}{11}\)</span></div></div></details><details id="section-espacos-probabilidade-15-4-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-espacos-probabilidade-15-4-3-1">
 <div class="para">Para a cardinalidade do espaço amostral, a segunda pessoa pode ficar em qualquer lugar de 11 disponíveis. Os casos favoráveis são 3, pois a primeira pessoa vai estar em algum grupo e a segunda pessoa tem 3 opções de lugares para escolher um, no grupo que se encontra a primeira pessoa. Portanto, a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{3}{11}.
 \end{equation*}
 </div>
-</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-116"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-913">Um armário contém 6 pares de sapatos. Escolhem-se 4 pés de sapatos. Qual é a probabilidade de se formar exatamente um par de sapatos?</div>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-5-1-1">Um armário contém 6 pares de sapatos. Escolhem-se 4 pés de sapatos. Qual é a probabilidade de se formar exatamente um par de sapatos?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-103" id="answer-103"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-103"><div class="answer solution-like"><div class="para" id="p-914"><span class="process-math">\(\dfrac{16}{33}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-146" id="solution-146"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-146"><div class="solution solution-like">
-<div class="para" id="p-915">A cardinalidade do espaço amostral é <span class="process-math">\(C_{12}^4\text{,}\)</span> pois essa é a quantidade de maneiras distintas de retirar 4 pés de sapatos, de 12 disponíveis.</div> <div class="para logical" id="p-916">
+<details id="section-espacos-probabilidade-15-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-5-2-1"><span class="process-math">\(\dfrac{16}{33}\)</span></div></div></details><details id="section-espacos-probabilidade-15-5-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-5-3-1">A cardinalidade do espaço amostral é <span class="process-math">\(C_{12}^4\text{,}\)</span> pois essa é a quantidade de maneiras distintas de retirar 4 pés de sapatos, de 12 disponíveis.</div> <div class="para logical" id="section-espacos-probabilidade-15-5-3-2">
 <div class="para">Agora, vamos contar o número de casos favoráveis. Temos <span class="process-math">\(C_6^1\)</span> maneiras de retirar 1 par de sapatos, de 6 pares disponíveis. Depois disso, temos <span class="process-math">\(C_5^2\)</span> maneiras de escolher dois representantes de 5 tipos de sapatos disponíveis. Em seguida, precisamos decidir se será retirado o pé esquerdo ou o pé direito de cada um desses dois sapatos. Isto pode ser feito de <span class="process-math">\(2^2\)</span> maneiras. Portanto, a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -747,20 +679,19 @@ P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\%
 \end{equation*}
 </div>
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-117"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="p-917">
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="section-espacos-probabilidade-15-6-1-1">
 <div class="para">Oito carros estão estacionados em doze vagas em fila. Determine a probabilidade:</div>
 <ol class="lower-alpha">
-<li id="li-137"><div class="para" id="p-derived-li-137">das vagas vazias serem consecutivas;</div></li>
-<li id="li-138"><div class="para" id="p-derived-li-138">de não haver duas vagas vazias adjacentes.</div></li>
+<li id="section-espacos-probabilidade-15-6-1-1-1-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-6-1-1-1-1">das vagas vazias serem consecutivas;</div></li>
+<li id="section-espacos-probabilidade-15-6-1-1-1-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-6-1-1-1-2">de não haver duas vagas vazias adjacentes.</div></li>
 </ol>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-104" id="answer-104"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-104"><div class="answer solution-like"><div class="para" id="p-918">a) <span class="process-math">\(\dfrac{1}{55}\text{,}\)</span> b) <span class="process-math">\(\dfrac{14}{55}\text{.}\)</span>
-</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like">
-<div class="para logical" id="p-919">
+<details id="section-espacos-probabilidade-15-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-6-2-1">a) <span class="process-math">\(\dfrac{1}{55}\text{,}\)</span> b) <span class="process-math">\(\dfrac{14}{55}\text{.}\)</span>
+</div></div></details><details id="section-espacos-probabilidade-15-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="section-espacos-probabilidade-15-6-3-1">
 <div class="para">
 <dfn class="terminology">item a)</dfn> Para que as vagas vazias fiquem juntas, juntamos 4 vagas em uma, ficamos com 9 vagas para escolher uma, que será quádrupla. Isto pode ser feito de 9 maneiras. A cardinalidade do espaço amostral é o número de maneiras de escolher 4 lugares para ficarem fazios, dentre 12 disponíveis. Logo, a probabilidade é</div>
 <div class="displaymath process-math">
@@ -768,7 +699,7 @@ P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\%
 \frac{9}{C_{12}^4}=\frac{1}{55}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-920">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-6-3-2">
 <div class="para">
 <dfn class="terminology">item b)</dfn> Já sabemos que o espaço amostral tem cardinalidade <span class="process-math">\(C_{12}^4\text{.}\)</span> Para que não haja duas vagas vazias adjacentes, podemos escolher as 4 vagas que ficarão vazias de <span class="process-math">\(K(12,4)\)</span> maneiras. Assim, a probabilidade é</div>
 <div class="displaymath process-math">
@@ -777,33 +708,32 @@ P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\%
 \end{equation*}
 </div>
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-118"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="p-921">
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="section-espacos-probabilidade-15-7-1">
 <div class="para">O jogo mais simples da LOTOFÁCIL consiste basicamente na escolha de <span class="process-math">\(15\)</span> números de um total de <span class="process-math">\(25\)</span> disponíveis,  os números vão de <span class="process-math">\(01\)</span> à <span class="process-math">\(25\text{.}\)</span> Outras possibilidades de jogos consistem na escolha de <span class="process-math">\(16, 17, 18, 19\)</span> ou <span class="process-math">\(20\)</span> números. Feitas as apostas, o jogador é dito premiado se após o sorteio dos <span class="process-math">\(15\)</span> números o mesmo tenha acertado <span class="process-math">\(11, 12, 13, 14\)</span> ou <span class="process-math">\(15\)</span> destes.</div>
 <ol class="lower-alpha">
-<li id="li-139"><div class="para" id="p-derived-li-139">Qual a probabilidade do jogador marcar <span class="process-math">\(15\)</span> números e acertar <span class="process-math">\(15\)</span> números?</div></li>
-<li id="li-140"><div class="para" id="p-derived-li-140">Qual a probabilidade do jogador marcar <span class="process-math">\(15\)</span> números e acertar <span class="process-math">\(13\)</span> números?</div></li>
-<li id="li-141"><div class="para" id="p-derived-li-141">Qual a probabilidade do jogador marcar <span class="process-math">\(17\)</span> números e acertar <span class="process-math">\(15\)</span> números?</div></li>
-<li id="li-142"><div class="para" id="p-derived-li-142">Qual a probabilidade do jogador marcar <span class="process-math">\(17\)</span> números e acertar <span class="process-math">\(12\)</span> números?</div></li>
-<li id="li-143"><div class="para" id="p-derived-li-143">Qual a probabilidade do jogador marcar <span class="process-math">\(20\)</span> números e acertar pelo menos <span class="process-math">\(14\)</span> números?</div></li>
-<li id="li-144"><div class="para" id="p-derived-li-144">Qual a probabilidade do jogador marcar <span class="process-math">\(n\)</span> números e acertar <span class="process-math">\(m\)</span> números? (Supondo <span class="process-math">\(15\leq n\leq 20\)</span> e <span class="process-math">\(11\leq m \leq 15\)</span>).</div></li>
+<li id="section-espacos-probabilidade-15-7-1-10-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-1-10-1">Qual a probabilidade do jogador marcar <span class="process-math">\(15\)</span> números e acertar <span class="process-math">\(15\)</span> números?</div></li>
+<li id="section-espacos-probabilidade-15-7-1-10-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-1-10-2">Qual a probabilidade do jogador marcar <span class="process-math">\(15\)</span> números e acertar <span class="process-math">\(13\)</span> números?</div></li>
+<li id="section-espacos-probabilidade-15-7-1-10-3"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-1-10-3">Qual a probabilidade do jogador marcar <span class="process-math">\(17\)</span> números e acertar <span class="process-math">\(15\)</span> números?</div></li>
+<li id="section-espacos-probabilidade-15-7-1-10-4"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-1-10-4">Qual a probabilidade do jogador marcar <span class="process-math">\(17\)</span> números e acertar <span class="process-math">\(12\)</span> números?</div></li>
+<li id="section-espacos-probabilidade-15-7-1-10-5"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-1-10-5">Qual a probabilidade do jogador marcar <span class="process-math">\(20\)</span> números e acertar pelo menos <span class="process-math">\(14\)</span> números?</div></li>
+<li id="section-espacos-probabilidade-15-7-1-10-6"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-1-10-6">Qual a probabilidade do jogador marcar <span class="process-math">\(n\)</span> números e acertar <span class="process-math">\(m\)</span> números? (Supondo <span class="process-math">\(15\leq n\leq 20\)</span> e <span class="process-math">\(11\leq m \leq 15\)</span>).</div></li>
 </ol>
 </div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-105" id="answer-105"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-105"><div class="answer solution-like"><ol class="lower-alpha">
-<li id="li-145"><div class="para" id="p-derived-li-145"><span class="process-math">\(\displaystyle \dfrac{1}{C_{25}^{15}}=\frac{1}{3268760}\approx 3,05926406343690\times 10^{-7}\)</span></div></li>
-<li id="li-146"><div class="para" id="p-derived-li-146"><span class="process-math">\(\displaystyle \dfrac{C_{15}^{13}\cdot C_{10}^2}{C_{25}^{15}}=\frac{945}{653752}\approx 0,0014455\approx 0,14455\%\)</span></div></li>
-<li id="li-147"><div class="para" id="p-derived-li-147"><span class="process-math">\(\displaystyle \dfrac{C_{17}^{15}}{C_{25}^{15}}=\frac{1}{24035}\approx 0,0000416\approx 0,00416\%\)</span></div></li>
-<li id="li-148"><div class="para" id="p-derived-li-148"><span class="process-math">\(\displaystyle \dfrac{C_{17}^{12}\cdot C_{8}^3}{C_{25}^{15}}=\frac{2548}{24035}\approx 0,106012\approx 10,6012\%\)</span></div></li>
-<li id="li-149"><div class="para" id="p-derived-li-149"><span class="process-math">\(\displaystyle \dfrac{C_{20}^{14}\cdot C_{9}^1}{C_{25}^{15}}+\dfrac{C_{20}^{15}}{C_{25}^{15}}=\frac{141}{1265}\approx 0.11146245\approx 11,146245\% \)</span></div></li>
-<li id="li-150"><div class="para" id="p-derived-li-150"><span class="process-math">\(\displaystyle \dfrac{C_{n}^{m}\cdot C_{25-n}^{15-m}}{C_{25}^{15}}\)</span></div></li>
-</ol></div></div></article><article class="exercise exercise-like" id="ex-palhaco"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-922">(Plínio <a href="" class="xref" data-knowl="./knowl/plinio.html" title="Referência bibliográfica 6.13: Problemas Resolvidos de Combinatória.">[6.13]</a>, 2007, p. 181) Um palhaço está na ponta do trampolim de uma piscina, carregando uma caixa que contém  <span class="process-math">\(n\)</span> bolas vermelhas e <span class="process-math">\(n\)</span> bolas azuis. Aleatoriamente ele vai retirando bolas da caixa,  descartando-as em seguida. Cada vez que ele  seleciona uma bola azul, ele dá um passo para trás, e cada vez que ele retira uma bola vermelha  ele dá um passo para frente. Encontre a probabilidade de que o palhaço permaneça seco após a retirada das <span class="process-math">\(2n\)</span> bolas da caixa.</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-106" id="answer-106"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-106"><div class="answer solution-like"><span class="process-math">\(\dfrac{1}{n+1}\)</span></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like">
-<div class="para" id="p-923">Observe que uma sequência de retiradas na qual o palhaço permanece seco até o fim, quer dizer que, a cada retirada, a quantidade de bolas azuis tem que ser maior ou igual à quantidade de bolas vermelhas.</div> <div class="para" id="p-924">A cada vez que o palhaço  retira uma bola, anotamos um <span class="process-math">\(A\)</span> se ela foi azul e um <span class="process-math">\(V\)</span> se ela foi vermelha. Com isto, construímos uma sequência formada por <span class="process-math">\(n\)</span> <span class="process-math">\(A's\)</span> e <span class="process-math">\(n\)</span> <span class="process-math">\(V's\text{.}\)</span> O palhaço ficará seco, se na  sequência correspondente às retiradas, a cada momento o número dos <span class="process-math">\(A's\)</span> é maior ou igual que o dos <span class="process-math">\(V's\text{.}\)</span>
-</div> <div class="para" id="p-925">Perceba que se trocarmos <span class="process-math">\(A\)</span> por <span class="process-math">\(N\)</span> e <span class="process-math">\(V\)</span> por <span class="process-math">\(L\)</span> esse é o problema do deslocamento de uma partícula de <span class="process-math">\(O(0,0)\)</span> até <span class="process-math">\(A(n,n)\text{,}\)</span> sem que ela ultrapasse a reta <span class="process-math">\(y=x\text{,}\)</span> ou seja, é o número de Catalan: <span class="process-math">\(C_n=\displaystyle\frac{1}{n+1}{2n \choose n}\text{.}\)</span>
-</div> <div class="para logical" id="p-926">
+<details id="section-espacos-probabilidade-15-7-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><ol class="lower-alpha">
+<li id="section-espacos-probabilidade-15-7-2-1-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-2-1-1"><span class="process-math">\(\displaystyle \dfrac{1}{C_{25}^{15}}=\frac{1}{3268760}\approx 3,05926406343690\times 10^{-7}\)</span></div></li>
+<li id="section-espacos-probabilidade-15-7-2-1-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-2-1-2"><span class="process-math">\(\displaystyle \dfrac{C_{15}^{13}\cdot C_{10}^2}{C_{25}^{15}}=\frac{945}{653752}\approx 0,0014455\approx 0,14455\%\)</span></div></li>
+<li id="section-espacos-probabilidade-15-7-2-1-3"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-2-1-3"><span class="process-math">\(\displaystyle \dfrac{C_{17}^{15}}{C_{25}^{15}}=\frac{1}{24035}\approx 0,0000416\approx 0,00416\%\)</span></div></li>
+<li id="section-espacos-probabilidade-15-7-2-1-4"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-2-1-4"><span class="process-math">\(\displaystyle \dfrac{C_{17}^{12}\cdot C_{8}^3}{C_{25}^{15}}=\frac{2548}{24035}\approx 0,106012\approx 10,6012\%\)</span></div></li>
+<li id="section-espacos-probabilidade-15-7-2-1-5"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-2-1-5"><span class="process-math">\(\displaystyle \dfrac{C_{20}^{14}\cdot C_{9}^1}{C_{25}^{15}}+\dfrac{C_{20}^{15}}{C_{25}^{15}}=\frac{141}{1265}\approx 0.11146245\approx 11,146245\% \)</span></div></li>
+<li id="section-espacos-probabilidade-15-7-2-1-6"><div class="para" id="p-derived-section-espacos-probabilidade-15-7-2-1-6"><span class="process-math">\(\displaystyle \dfrac{C_{n}^{m}\cdot C_{25-n}^{15-m}}{C_{25}^{15}}\)</span></div></li>
+</ol></div></details></article><article class="exercise exercise-like" id="ex-palhaco"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="ex-palhaco-1">(Plínio <a href="" class="xref" data-knowl="./knowl/xref/plinio.html" title="Referência bibliográfica 6.13: Problemas Resolvidos de Combinatória.">[6.13]</a>, 2007, p. 181) Um palhaço está na ponta do trampolim de uma piscina, carregando uma caixa que contém  <span class="process-math">\(n\)</span> bolas vermelhas e <span class="process-math">\(n\)</span> bolas azuis. Aleatoriamente ele vai retirando bolas da caixa,  descartando-as em seguida. Cada vez que ele  seleciona uma bola azul, ele dá um passo para trás, e cada vez que ele retira uma bola vermelha  ele dá um passo para frente. Encontre a probabilidade de que o palhaço permaneça seco após a retirada das <span class="process-math">\(2n\)</span> bolas da caixa.</div>
+<details id="ex-palhaco-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(\dfrac{1}{n+1}\)</span></div></details><details id="ex-palhaco-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="ex-palhaco-3-1">Observe que uma sequência de retiradas na qual o palhaço permanece seco até o fim, quer dizer que, a cada retirada, a quantidade de bolas azuis tem que ser maior ou igual à quantidade de bolas vermelhas.</div> <div class="para" id="ex-palhaco-3-2">A cada vez que o palhaço  retira uma bola, anotamos um <span class="process-math">\(A\)</span> se ela foi azul e um <span class="process-math">\(V\)</span> se ela foi vermelha. Com isto, construímos uma sequência formada por <span class="process-math">\(n\)</span> <span class="process-math">\(A's\)</span> e <span class="process-math">\(n\)</span> <span class="process-math">\(V's\text{.}\)</span> O palhaço ficará seco, se na  sequência correspondente às retiradas, a cada momento o número dos <span class="process-math">\(A's\)</span> é maior ou igual que o dos <span class="process-math">\(V's\text{.}\)</span>
+</div> <div class="para" id="ex-palhaco-3-3">Perceba que se trocarmos <span class="process-math">\(A\)</span> por <span class="process-math">\(N\)</span> e <span class="process-math">\(V\)</span> por <span class="process-math">\(L\)</span> esse é o problema do deslocamento de uma partícula de <span class="process-math">\(O(0,0)\)</span> até <span class="process-math">\(A(n,n)\text{,}\)</span> sem que ela ultrapasse a reta <span class="process-math">\(y=x\text{,}\)</span> ou seja, é o número de Catalan: <span class="process-math">\(C_n=\displaystyle\frac{1}{n+1}{2n \choose n}\text{.}\)</span>
+</div> <div class="para logical" id="ex-palhaco-3-4">
 <div class="para">A quantidade de maneiras distintas para retirar as <span class="process-math">\(2n\)</span> bolas é dada pela permutação com repetição:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -818,71 +748,66 @@ P=\frac{C_n}{P_{2n}^{n,n}}=\frac{\frac{1}{n+1}{2n \choose n}}{{2n \choose n}}=\f
 </div>
 <div class="para">Concluímos que quanto maior a quantidade de bolas, menor a chance dele ficar seco.</div>
 </div>
-</div></div></article><article class="exercise exercise-like" id="exercise-120"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-927">(OPEMAT 2021 - nível 3) Pensando em sua segurança, a mãe de Dafne a proibiu de entrar na cozinha. Certo dia, sua mãe a encontra a um passo de entrar na cozinha. Lembrando que Dafne adora brinquedos, sua mãe pega uma sacola que contém <span class="process-math">\(n\)</span> de seus brinquedos favoritos e <span class="process-math">\(n\)</span>  brinquedos dos quais não se interessa muito. A cada passo que Dafne está prestes a dar, sua mãe pega aleatoriamente um brinquedo na sacola, mostra a Dafne e depois deixa o brinquedo no chão. Se o brinquedo em questão for um dos que ela não se interessa muito, Dafne dá um passo em direção a cozinha, e se for um de seus favoritos, ela dá um passo na direção oposta. Qual a probabilidade de que Dafne entre na cozinha?</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-107" id="answer-107"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-107"><div class="answer solution-like"><span class="process-math">\(\dfrac{n}{n+1}\)</span></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-149" id="solution-149"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like"><div class="para logical" id="p-928">
-<div class="para">Observe que este exercício é equivalente ao exercício anterior (<a href="" class="xref" data-knowl="./knowl/ex-palhaco.html" title="Exercício 4.1.7">Exercício 4.1.7</a>). Porém, neste caso ele pergunta pela probabilidade complementar. Portanto,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex-palhaco.html">
+</div></details></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-9-1">(OPEMAT 2021 - nível 3) Pensando em sua segurança, a mãe de Dafne a proibiu de entrar na cozinha. Certo dia, sua mãe a encontra a um passo de entrar na cozinha. Lembrando que Dafne adora brinquedos, sua mãe pega uma sacola que contém <span class="process-math">\(n\)</span> de seus brinquedos favoritos e <span class="process-math">\(n\)</span>  brinquedos dos quais não se interessa muito. A cada passo que Dafne está prestes a dar, sua mãe pega aleatoriamente um brinquedo na sacola, mostra a Dafne e depois deixa o brinquedo no chão. Se o brinquedo em questão for um dos que ela não se interessa muito, Dafne dá um passo em direção a cozinha, e se for um de seus favoritos, ela dá um passo na direção oposta. Qual a probabilidade de que Dafne entre na cozinha?</div>
+<details id="section-espacos-probabilidade-15-9-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(\dfrac{n}{n+1}\)</span></div></details><details id="section-espacos-probabilidade-15-9-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-espacos-probabilidade-15-9-3-1">
+<div class="para">Observe que este exercício é equivalente ao exercício anterior (<a href="" class="xref" data-knowl="./knowl/xref/ex-palhaco.html" title="Exercício 4.1.7">Exercício 4.1.7</a>). Porém, neste caso ele pergunta pela probabilidade complementar. Portanto,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-palhaco.html">
 \begin{equation*}
 P = 1 - \dfrac{C_n}{P_{2n}^{n,n}}=1-\dfrac{\frac{1}{n+1}{2n \choose n}}{{2n \choose n}}=1-\dfrac{1}{n+1}=\dfrac{n}{n+1}
 \end{equation*}
 </div>
-</div></div></div></article><article class="exercise exercise-like" id="exercise-121"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-929">(ITA 2004) Uma caixa branca contém 5 bolas verdes e 3 azuis, e uma caixa preta contém 3 bolas verdes e 2 azuis. Pretende-se retirar uma bola de uma das caixas. Para tanto, 2 dados são atirados. Se a soma resultante dos dois dados for menor que 4, retira-se uma bola da caixa branca. Nos demais casos, retira-se uma bola da caixa preta. Qual é a probabilidade de se retirar uma bola verde?</div>
+</div></div></details></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-10-1-1">(ITA 2004) Uma caixa branca contém 5 bolas verdes e 3 azuis, e uma caixa preta contém 3 bolas verdes e 2 azuis. Pretende-se retirar uma bola de uma das caixas. Para tanto, 2 dados são atirados. Se a soma resultante dos dois dados for menor que 4, retira-se uma bola da caixa branca. Nos demais casos, retira-se uma bola da caixa preta. Qual é a probabilidade de se retirar uma bola verde?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-108" id="answer-108"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-108"><div class="answer solution-like"><div class="para" id="p-930"><span class="process-math">\(\dfrac{289}{480}.\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-150" id="solution-150"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like"><div class="para logical" id="p-931">
+<details id="section-espacos-probabilidade-15-10-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-10-2-1"><span class="process-math">\(\dfrac{289}{480}.\)</span></div></div></details><details id="section-espacos-probabilidade-15-10-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-espacos-probabilidade-15-10-3-1">
 <div class="para">No lançamento de dois dados, são possíveis 36 (pares) resultados diferentes, sendo que em apenas 3 deles a soma resultante é menor que 4. São eles: (1;1), (1;2), (2;1). A probabilidade de que uma bola verde seja retirada da urna branca é <span class="process-math">\(\frac{3}{36}\times \frac{5}{8}\)</span> e da urna preta é <span class="process-math">\(\frac{33}{36}\times \frac{3}{5}\text{.}\)</span> Assim, a probabilidade de se retirar uma bola verde é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \frac{3}{36}\times \frac{5}{8} + \frac{33}{36}\times \frac{3}{5} = \frac{289}{480}. 
 \end{equation*}
 </div>
-</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-122"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-932">(ITA 2005) São dados dois cartões, sendo que um deles tem ambos os lados na cor vermelha, enquanto o outro tem um lado na cor vermelha e o outro na cor azul. Um dos cartões é escolhido ao acaso e colocado sobre uma mesa. Se a cor exposta é vermelha, calcule a probabilidade de o cartão escolhido ter a outra cor também vermelha</div>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-11-1-1">(ITA 2005) São dados dois cartões, sendo que um deles tem ambos os lados na cor vermelha, enquanto o outro tem um lado na cor vermelha e o outro na cor azul. Um dos cartões é escolhido ao acaso e colocado sobre uma mesa. Se a cor exposta é vermelha, calcule a probabilidade de o cartão escolhido ter a outra cor também vermelha</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-109" id="answer-109"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-109"><div class="answer solution-like"><div class="para" id="p-933"><span class="process-math">\(\dfrac{2}{3}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-151" id="solution-151"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like"><div class="para logical" id="p-934">
+<details id="section-espacos-probabilidade-15-11-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-11-2-1"><span class="process-math">\(\dfrac{2}{3}\)</span></div></div></details><details id="section-espacos-probabilidade-15-11-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-espacos-probabilidade-15-11-3-1">
 <div class="para">O total de faces nos dois cartões é 4, sendo 3 faces vermelhas e 1 azul. Como a cor exposta é vermelha, temos duas chances do verso ser vermelho e uma chance do verso ser azul. Portanto a probabilidade de o cartão escolhido ter a outra cor também vermelha é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \frac{2}{3}.
 \end{equation*}
 </div>
-</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-123"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-935">(ITA 2008) Considere o conjunto <span class="process-math">\(D = \{n\in\mathbb{N}; 1\leq n\leq 365 \} \)</span> e <span class="process-math">\(H\subset \mathcal{P}(D)\)</span> formado por todos os subconjuntos de <span class="process-math">\(D\)</span> com <span class="process-math">\(2\)</span> elementos. Escolhendo ao acaso um elemento <span class="process-math">\(B \in H\text{,}\)</span> a probabilidade de a soma de seus elementos ser 183 é igual a</div> <div class="para" id="p-936">a) <span class="process-math">\(\dfrac{1}{730}~~~~\)</span> b) <span class="process-math">\(\dfrac{46}{33215}~~~~\)</span> c) <span class="process-math">\(\dfrac{1}{365}~~~~\)</span> d) <span class="process-math">\(\dfrac{92}{33215}~~~~\)</span> e) <span class="process-math">\(\dfrac{91}{730}~~~~\)</span>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-12"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-12-1-1">(ITA 2008) Considere o conjunto <span class="process-math">\(D = \{n\in\mathbb{N}; 1\leq n\leq 365 \} \)</span> e <span class="process-math">\(H\subset \mathcal{P}(D)\)</span> formado por todos os subconjuntos de <span class="process-math">\(D\)</span> com <span class="process-math">\(2\)</span> elementos. Escolhendo ao acaso um elemento <span class="process-math">\(B \in H\text{,}\)</span> a probabilidade de a soma de seus elementos ser 183 é igual a</div> <div class="para" id="section-espacos-probabilidade-15-12-1-2">a) <span class="process-math">\(\dfrac{1}{730}~~~~\)</span> b) <span class="process-math">\(\dfrac{46}{33215}~~~~\)</span> c) <span class="process-math">\(\dfrac{1}{365}~~~~\)</span> d) <span class="process-math">\(\dfrac{92}{33215}~~~~\)</span> e) <span class="process-math">\(\dfrac{91}{730}~~~~\)</span>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-110" id="answer-110"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-110"><div class="answer solution-like"><div class="para" id="p-937">a)</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-152" id="solution-152"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like">
-<div class="para" id="p-938">De acordo com o enunciado <span class="process-math">\(\#H = C_{365}^2\text{.}\)</span> O conjunto <span class="process-math">\(C\)</span> dos elementos <span class="process-math">\(B\text{,}\)</span> cuja soma deve ser <span class="process-math">\(183\)</span> é</div>
+<details id="section-espacos-probabilidade-15-12-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-12-2-1">a)</div></div></details><details id="section-espacos-probabilidade-15-12-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-12-3-1">De acordo com o enunciado <span class="process-math">\(\#H = C_{365}^2\text{.}\)</span> O conjunto <span class="process-math">\(C\)</span> dos elementos <span class="process-math">\(B\text{,}\)</span> cuja soma deve ser <span class="process-math">\(183\)</span> é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C = \{\{1, 182\}, \{2, 181\}, \{3, 180\}, \ldots, \{91, 92\} \}.
 \end{equation*}
 </div>
-<div class="para" id="p-939">Logo <span class="process-math">\(\#C = 91\text{.}\)</span> Então, escolhendo ao acaso um elemento <span class="process-math">\(B\in H\)</span> a probabilidade de que a soma dos elementos de <span class="process-math">\(B\)</span> seja 183 é</div>
+<div class="para" id="section-espacos-probabilidade-15-12-3-3">Logo <span class="process-math">\(\#C = 91\text{.}\)</span> Então, escolhendo ao acaso um elemento <span class="process-math">\(B\in H\)</span> a probabilidade de que a soma dos elementos de <span class="process-math">\(B\)</span> seja 183 é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \frac{\#C}{\#H} = \frac{91}{C_{365}^2} = \frac{91}{365\times 182} = \frac{1}{730}.
 \end{equation*}
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-124"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="p-940">(ITA 2010) Uma urna de sorteio contém <span class="process-math">\(90\)</span> bolas numeradas de <span class="process-math">\(1\)</span> a <span class="process-math">\(90\text{,}\)</span> sendo que a retirada de uma bola é equiprovável à retirada de cada uma das demais.</div> <ol class="lower-alpha">
-<li id="li-151"><div class="para" id="p-derived-li-151">Retira-se aleatoriamente uma das <span class="process-math">\(90\)</span> bolas desta urna. Calcule a probabilidade de o número desta bola ser um múltiplo de <span class="process-math">\(5\)</span> ou <span class="process-math">\(6\text{.}\)</span>
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-13"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-13-1-1">(ITA 2010) Uma urna de sorteio contém <span class="process-math">\(90\)</span> bolas numeradas de <span class="process-math">\(1\)</span> a <span class="process-math">\(90\text{,}\)</span> sendo que a retirada de uma bola é equiprovável à retirada de cada uma das demais.</div> <ol class="lower-alpha">
+<li id="section-espacos-probabilidade-15-13-1-2-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-13-1-2-1">Retira-se aleatoriamente uma das <span class="process-math">\(90\)</span> bolas desta urna. Calcule a probabilidade de o número desta bola ser um múltiplo de <span class="process-math">\(5\)</span> ou <span class="process-math">\(6\text{.}\)</span>
 </div></li>
-<li id="li-152"><div class="para" id="p-derived-li-152">Retira-se aleatoriamente uma das <span class="process-math">\(90\)</span> bolas desta urna e, sem repôla, retira-se uma  segunda bola. Calcule a probabilidade de o número da segunda bola retirada não ser múltiplo de <span class="process-math">\(6\text{.}\)</span>
+<li id="section-espacos-probabilidade-15-13-1-2-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-13-1-2-2">Retira-se aleatoriamente uma das <span class="process-math">\(90\)</span> bolas desta urna e, sem repôla, retira-se uma  segunda bola. Calcule a probabilidade de o número da segunda bola retirada não ser múltiplo de <span class="process-math">\(6\text{.}\)</span>
 </div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-111" id="answer-111"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-111"><div class="answer solution-like"><div class="para" id="p-941">a) <span class="process-math">\(P = \dfrac{1}{3} ~~~~\)</span> b) <span class="process-math">\(P=\dfrac{5}{6}\)</span>
-</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-153" id="solution-153"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-153"><div class="solution solution-like">
-<div class="para" id="p-942">a) Usaremos o Princípio da Inclusão-Exclusão para calcular o número de bolas com números múltiplos de 5 ou 6.</div>
+<details id="section-espacos-probabilidade-15-13-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-13-2-1">a) <span class="process-math">\(P = \dfrac{1}{3} ~~~~\)</span> b) <span class="process-math">\(P=\dfrac{5}{6}\)</span>
+</div></div></details><details id="section-espacos-probabilidade-15-13-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-13-3-1">a) Usaremos o Princípio da Inclusão-Exclusão para calcular o número de bolas com números múltiplos de 5 ou 6.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \bullet A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 90 \text{ e } n \text{ é múltiplo de 5}\}
@@ -893,13 +818,13 @@ P = \frac{\#C}{\#H} = \frac{91}{C_{365}^2} = \frac{91}{365\times 182} = \frac{1}
 \bullet A_6=\{n\in\mathbb{N}~|~ 1\leq n\leq 90 \text{ e } n \text{ é múltiplo de 6}\}
 \end{equation*}
 </div>
-<div class="para" id="p-943">Note que <span class="process-math">\(\#(A_5\cup A_6) = \#A_5+\#A_6 - \#(A_5\cap A_6)\)</span> e que <span class="process-math">\(A_5\cap A_6\)</span> é o conjunto dos múltiplos de <span class="process-math">\(30\)</span> entre <span class="process-math">\(1\)</span> e <span class="process-math">\(90\text{,}\)</span> incluindo o <span class="process-math">\(90\text{.}\)</span> Observe que <span class="process-math">\(90 = 5\times 18\text{,}\)</span> <span class="process-math">\(90 = 6\times 15\)</span> e <span class="process-math">\(90 = 30\times 3\text{.}\)</span> Portanto a probabilidade é</div>
+<div class="para" id="section-espacos-probabilidade-15-13-3-4">Note que <span class="process-math">\(\#(A_5\cup A_6) = \#A_5+\#A_6 - \#(A_5\cap A_6)\)</span> e que <span class="process-math">\(A_5\cap A_6\)</span> é o conjunto dos múltiplos de <span class="process-math">\(30\)</span> entre <span class="process-math">\(1\)</span> e <span class="process-math">\(90\text{,}\)</span> incluindo o <span class="process-math">\(90\text{.}\)</span> Observe que <span class="process-math">\(90 = 5\times 18\text{,}\)</span> <span class="process-math">\(90 = 6\times 15\)</span> e <span class="process-math">\(90 = 30\times 3\text{.}\)</span> Portanto a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \frac{\#(A_5\cup A_6)}{90} = \frac{18+15-3}{90} = \frac{30}{90} = \frac{1}{3}.
 \end{equation*}
 </div>
-<div class="para logical" id="p-944">
+<div class="para logical" id="section-espacos-probabilidade-15-13-3-6">
 <div class="para">b) Para que o número da segunda bola retirada não seja múltiplo de 6, temos dois casos. 1º caso: primeira bola é um múltiplo de 6 e a segunda não. Essa probabilidade é dada por:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -919,27 +844,25 @@ P = P_1 + P_2 = \frac{15}{90}\times \frac{75}{89} + \frac{75}{90}\times \frac{74
 \end{equation*}
 </div>
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-125"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para" id="p-945">(ITA 2011) Sobre uma mesa estão dispostos <span class="process-math">\(5\)</span> livros de história, <span class="process-math">\(4\)</span> de biologia e <span class="process-math">\(2\)</span> de espanhol. Determine a probabilidade de os livros serem empilhados sobre a mesa de tal forma que aqueles que tratam do mesmo assunto estejam juntos.</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-14"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-14-1-1">(ITA 2011) Sobre uma mesa estão dispostos <span class="process-math">\(5\)</span> livros de história, <span class="process-math">\(4\)</span> de biologia e <span class="process-math">\(2\)</span> de espanhol. Determine a probabilidade de os livros serem empilhados sobre a mesa de tal forma que aqueles que tratam do mesmo assunto estejam juntos.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-112" id="answer-112"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-112"><div class="answer solution-like"><div class="para" id="p-946"><span class="process-math">\(P = \dfrac{1}{1155}\text{.}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-154" id="solution-154"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-154"><div class="solution solution-like">
-<div class="para" id="p-947">No total os livros podem ser organizados de <span class="process-math">\(11!\)</span> maneiras. Para que os livros de mesmo assunto fiquem juntos, temos <span class="process-math">\((5!\times 4!\times 2!)\times 3!\)</span> maneiras. Portanto a probabilidade é dada por</div>
+<details id="section-espacos-probabilidade-15-14-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-14-2-1"><span class="process-math">\(P = \dfrac{1}{1155}\text{.}\)</span></div></div></details><details id="section-espacos-probabilidade-15-14-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-14-3-1">No total os livros podem ser organizados de <span class="process-math">\(11!\)</span> maneiras. Para que os livros de mesmo assunto fiquem juntos, temos <span class="process-math">\((5!\times 4!\times 2!)\times 3!\)</span> maneiras. Portanto a probabilidade é dada por</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \frac{(5!\times 4!\times 2!)\times 3!}{11!} = \frac{1}{1155}. 
 \end{equation*}
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-126"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para" id="p-948">(FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.</div> <div class="para" id="p-949">a)  Qual é a probabilidade de que os dois jogadores recebam a mesma quantidade de peças amarelas?</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-15"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-15-1-1">(FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.</div> <div class="para" id="section-espacos-probabilidade-15-15-1-2">a)  Qual é a probabilidade de que os dois jogadores recebam a mesma quantidade de peças amarelas?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-113" id="answer-113"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-113"><div class="answer solution-like"><div class="para" id="p-950">a) <span class="process-math">\(\dfrac{28}{65}\)</span>
-</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-155" id="solution-155"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-155"><div class="solution solution-like">
-<div class="para" id="p-951">De acordo com o <a href="" class="xref" data-knowl="./knowl/quest-fuvest2020comb.html" title="Exercício 1.4.3.17">Exercício 1.4.3.17</a> o espaço amostral é dado por <span class="process-math">\(C_{16}^8\text{.}\)</span>
-</div> <div class="para" id="p-952">Precisamos calcular o número de maneiras de distribuir as 8 peças para cada jogador, de forma que exatamente duas delas sejam amarelas. Vamos calcular o número de maneiras de distribuir as peças para o primeiro jogador, as peças que sobram ficam para o segundo jogador.</div> <div class="para logical" id="p-953">
+<details id="section-espacos-probabilidade-15-15-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-15-2-1">a) <span class="process-math">\(\dfrac{28}{65}\)</span>
+</div></div></details><details id="section-espacos-probabilidade-15-15-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-15-3-1">De acordo com o <a href="" class="xref" data-knowl="./knowl/xref/quest-fuvest2020comb.html" title="Exercício 1.4.3.17">Exercício 1.4.3.17</a> o espaço amostral é dado por <span class="process-math">\(C_{16}^8\text{.}\)</span>
+</div> <div class="para" id="section-espacos-probabilidade-15-15-3-2">Precisamos calcular o número de maneiras de distribuir as 8 peças para cada jogador, de forma que exatamente duas delas sejam amarelas. Vamos calcular o número de maneiras de distribuir as peças para o primeiro jogador, as peças que sobram ficam para o segundo jogador.</div> <div class="para logical" id="section-espacos-probabilidade-15-15-3-3">
 <div class="para">Como são 4 peças amarelas distintas duas a duas, temos <span class="process-math">\(C_4^2\)</span> maneiras de separar duas peças amarelas. Agora precisamos separar 6 peças com cores diferentes de amarelo. Temos um total de <span class="process-math">\(C_{12}^6\)</span> maneiras de fazer isto, pois existem exatamente 12 peças com cores diferentes de amarelo. Portanto a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -947,21 +870,20 @@ P = \frac{(5!\times 4!\times 2!)\times 3!}{11!} = \frac{1}{1155}.
 \end{equation*}
 </div>
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-127"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
-<div class="para" id="p-954">(FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há 2n participantes. Suponha que 12 jogadores participem do torneio, dos quais 6 sejam homens e 6 sejam mulheres. Qual é a probabilidade de que, na primeira rodada, só haja confrontos entre jogadores do mesmo sexo?</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-16"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-16-1-1">(FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há 2n participantes. Suponha que 12 jogadores participem do torneio, dos quais 6 sejam homens e 6 sejam mulheres. Qual é a probabilidade de que, na primeira rodada, só haja confrontos entre jogadores do mesmo sexo?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-114" id="answer-114"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-114"><div class="answer solution-like"><div class="para" id="p-955"><span class="process-math">\(\dfrac{5}{231}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-156" id="solution-156"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-156"><div class="solution solution-like">
-<div class="para" id="p-956">De acordo com o <a href="" class="xref" data-knowl="./knowl/quest-fuvest2018comb.html" title="Exercício 1.4.3.18">Exercício 1.4.3.18</a> o espaço amostral é dado por <span class="process-math">\(\dfrac{12!}{2^6\times 6!}\text{.}\)</span>
-</div> <div class="para logical" id="p-957">
+<details id="section-espacos-probabilidade-15-16-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-16-2-1"><span class="process-math">\(\dfrac{5}{231}\)</span></div></div></details><details id="section-espacos-probabilidade-15-16-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-16-3-1">De acordo com o <a href="" class="xref" data-knowl="./knowl/xref/quest-fuvest2018comb.html" title="Exercício 1.4.3.18">Exercício 1.4.3.18</a> o espaço amostral é dado por <span class="process-math">\(\dfrac{12!}{2^6\times 6!}\text{.}\)</span>
+</div> <div class="para logical" id="section-espacos-probabilidade-15-16-3-2">
 <div class="para">O número de maneiras de emparceirar as mulheres entre si é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{C_6^2\times C_4^2\times C_2^2}{3!}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-958">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-16-3-3">
 <div class="para">Como o número de maneiras de emparceirar os homens entre si é o mesmo de emparceirar as mulheres entre si, a probabilidade pedida é dada por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -969,50 +891,49 @@ P = \frac{(5!\times 4!\times 2!)\times 3!}{11!} = \frac{1}{1155}.
 \end{equation*}
 </div>
 </div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-128"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
-<div class="para" id="p-959">(FUVEST 2013 - 2ª fase) Sócrates e Xantipa enfrentam-se em um popular jogo de tabuleiro, que envolve a conquista e ocupação de territórios em um mapa. Sócrates ataca jogando três dados e Xantipa se defende com dois. Depois de lançados os dados, que são honestos, Sócrates terá conquistado um território se e somente se as duas condições seguintes forem satisfeitas:</div> <ol class="decimal">
-<li id="li-153"><div class="para" id="p-derived-li-153">o maior valor obtido em seus dados for maior que o maior valor obtido por Xantipa;</div></li>
-<li id="li-154"><div class="para" id="p-derived-li-154">algum outro dado de Sócrates cair com um valor maior que o menor valor obtido por Xantipa.</div></li>
+</div></details>
+</div></article><article class="exercise exercise-like" id="section-espacos-probabilidade-15-17"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para" id="section-espacos-probabilidade-15-17-1-1">(FUVEST 2013 - 2ª fase) Sócrates e Xantipa enfrentam-se em um popular jogo de tabuleiro, que envolve a conquista e ocupação de territórios em um mapa. Sócrates ataca jogando três dados e Xantipa se defende com dois. Depois de lançados os dados, que são honestos, Sócrates terá conquistado um território se e somente se as duas condições seguintes forem satisfeitas:</div> <ol class="decimal">
+<li id="section-espacos-probabilidade-15-17-1-2-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-17-1-2-1">o maior valor obtido em seus dados for maior que o maior valor obtido por Xantipa;</div></li>
+<li id="section-espacos-probabilidade-15-17-1-2-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-17-1-2-2">algum outro dado de Sócrates cair com um valor maior que o menor valor obtido por Xantipa.</div></li>
 </ol> <ol class="lower-alpha">
-<li id="li-155"><div class="para" id="p-derived-li-155">No caso em que Xantipa tira 5 e 5, qual é a probabilidade de Sócrates conquistar o território em jogo?</div></li>
-<li id="li-156"><div class="para" id="p-derived-li-156">No caso em que Xantipa tira 5 e 4, qual é a probabilidade de Sócrates conquistar o território em jogo?</div></li>
+<li id="section-espacos-probabilidade-15-17-1-3-1"><div class="para" id="p-derived-section-espacos-probabilidade-15-17-1-3-1">No caso em que Xantipa tira 5 e 5, qual é a probabilidade de Sócrates conquistar o território em jogo?</div></li>
+<li id="section-espacos-probabilidade-15-17-1-3-2"><div class="para" id="p-derived-section-espacos-probabilidade-15-17-1-3-2">No caso em que Xantipa tira 5 e 4, qual é a probabilidade de Sócrates conquistar o território em jogo?</div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-115" id="answer-115"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-115"><div class="answer solution-like"><div class="para" id="p-960">a) <span class="process-math">\(\dfrac{2}{27}~~~~\)</span> b) <span class="process-math">\(\dfrac{43}{216}\)</span>
-</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-157" id="solution-157"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-157"><div class="solution solution-like">
-<div class="para" id="p-961">
+<details id="section-espacos-probabilidade-15-17-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-espacos-probabilidade-15-17-2-1">a) <span class="process-math">\(\dfrac{2}{27}~~~~\)</span> b) <span class="process-math">\(\dfrac{43}{216}\)</span>
+</div></div></details><details id="section-espacos-probabilidade-15-17-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-espacos-probabilidade-15-17-3-1">
 <dfn class="terminology">item a)</dfn>  No caso em que Xantipa tira 5 e 5, Sócrates conquista o território se conseguir três vezes a face 6 ou duas vezes a face 6 e uma vez uma face diferente de 6. Como o segundo caso pode ser ordenado de três formas diferentes, a probabilidade de Sócrates conquistar o território é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{6}\times \frac{1}{6}\times \frac{1}{6} + 3\times \frac{1}{6}\times \frac{1}{6}\times \frac{5}{6} = \frac{2}{27}.
 \end{equation*}
 </div>
-<div class="para logical" id="p-962">
+<div class="para logical" id="section-espacos-probabilidade-15-17-3-3">
 <div class="para">
-<dfn class="terminology">item b)</dfn> No caso em que Xantipa tira 5 e 4, temos 4 possibilidades para Sócrates conquistar o território. <div class="para logical" id="p-963">
+<dfn class="terminology">item b)</dfn> No caso em que Xantipa tira 5 e 4, temos 4 possibilidades para Sócrates conquistar o território. <div class="para logical" id="section-espacos-probabilidade-15-17-3-3-2">
 <div class="para">1º Sócrates tira 6, 6 e 6. Neste caso a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{1}{6}\times \frac{1}{6}\times \frac{1}{6} = \frac{1}{216} 
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-964">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-17-3-3-3">
 <div class="para">2ª Sócrates tira 6, 6 e um número menor que 6. Neste caso a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 3\times\frac{1}{6}\times \frac{1}{6}\times \frac{5}{6} = \frac{15}{216}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-965">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-17-3-3-4">
 <div class="para">3º Sócrates tira 6, 5 e 5. Neste caso a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 3\times \frac{1}{6}\times \frac{1}{6}\times \frac{1}{6} = \frac{3}{216}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-966">
+</div> <div class="para logical" id="section-espacos-probabilidade-15-17-3-3-5">
 <div class="para">4º Sócrates tira 6, 5 e um número menor que 5. Neste caso a probabilidade é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1026,16 +947,14 @@ P = \frac{(5!\times 4!\times 2!)\times 3!}{11!} = \frac{1}{1155}.
 \end{equation*}
 </div>
 </div>
-</div></div>
+</div></details>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="probabilidade.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-probabilidade-condicional.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="probabilidade.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-probabilidade-condicional.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>
