@@ -342,7 +342,7 @@ sagecell.makeSagecell({
 <div class="para">Pelo princípio da bijeção, calcular a quantidade de caminhos no reticulado do ponto <span class="process-math">\(O(0,0)\)</span> até o ponto <span class="process-math">\(A(a,b)\)</span> é o mesmo que calcular o número de anagramas com <span class="process-math">\(a\)</span> letras <span class="process-math">\(L's\)</span> repetidas e <span class="process-math">\(b\)</span> letras <span class="process-math">\(N's\)</span> repetidas, o que é obtido calculando</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_{a+b}^{a,b}=\dfrac{(a+b)!}{a!b!} = \displaystyle\binom{a+b}{a}\text{.}
+PR_{a+b}^{a,b}=\dfrac{(a+b)!}{a!b!} = \displaystyle C_{a+b}^{a}\text{.}
 \end{equation*}
 </div>
 </div>
@@ -357,10 +357,10 @@ PR_{a+b}^{a,b}=\dfrac{(a+b)!}{a!b!} = \displaystyle\binom{a+b}{a}\text{.}
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
 </h4>
 <div class="para" id="ocontagem-8-3-4-1">Chamamos de <em class="emphasis">caminho bom</em> no reticulado, se o caminho não cruza a diagonal, e de <em class="emphasis">caminho ruim</em> se o caminho cruza a diagonal. Veja um exemplo de cada tipo na <a href="" class="xref" data-knowl="./knowl/xref/fig-reflex001.html" title="Figura 2.6.2">Figura 2.6.2</a>, na <a href="" class="xref" data-knowl="./knowl/xref/reflexao_prev.html" title="Figura 2.6.11.(a)">Figura 2.6.11.(a)</a> e na <a href="" class="xref" data-knowl="./knowl/xref/reflexao.html" title="Figura 2.6.11.(b)">Figura 2.6.11.(b)</a>.</div> <figure class="figure figure-like" id="fig-reflex001"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/reflexao001.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>Um exemplo de caminho bom.</figcaption></figure></article><article class="definition definition-like" id="ocontagem-8-3-5"><h4 class="heading">
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>Um exemplo de caminho bom.</figcaption></figure></article><article class="definition definition-like" id="def-reflexãor1"><h4 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="ocontagem-8-3-5-1">Seja <span class="process-math">\(R_1\)</span> a reflexão dos pontos de um reticulado em relação à reta <span class="process-math">\(y=x+1\text{,}\)</span> observe que <span class="process-math">\(R_1* P(r, s) = Q(s-1,r+1)\text{.}\)</span> Na <a href="" class="xref" data-knowl="./knowl/xref/reflex_segmento.html" title="Figura 2.6.9">Figura 2.6.9</a>, veja que a reflexão <span class="process-math">\(R_1\)</span> leva a seta que liga <span class="process-math">\(P(2,2)\)</span> à <span class="process-math">\(\tilde{P}(3,2)\)</span> na seta que liga <span class="process-math">\(Q(1,3)\)</span> à <span class="process-math">\(\tilde{Q}(1,4)\text{.}\)</span>
+<div class="para" id="def-reflexãor1-1">Seja <span class="process-math">\(R_1\)</span> a reflexão dos pontos de um reticulado em relação à reta <span class="process-math">\(y=x+1\text{,}\)</span> observe que <span class="process-math">\(R_1* P(r, s) = Q(s-1,r+1)\text{.}\)</span> Na <a href="" class="xref" data-knowl="./knowl/xref/reflex_segmento.html" title="Figura 2.6.9">Figura 2.6.9</a>, veja que a reflexão <span class="process-math">\(R_1\)</span> leva a seta que liga <span class="process-math">\(P(2,2)\)</span> à <span class="process-math">\(\tilde{P}(3,2)\)</span> na seta que liga <span class="process-math">\(Q(1,3)\)</span> à <span class="process-math">\(\tilde{Q}(1,4)\text{.}\)</span>
 </div> <figure class="figure figure-like" id="reflex_segmento"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/reflexao01.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>Exemplo da reflexão <span class="process-math">\(R_1\text{.}\)</span></figcaption></figure></article><article class="proposition theorem-like" id="prop1"><h4 class="heading">
 <span class="type">Proposição</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span>
@@ -416,7 +416,7 @@ num_caminhos_bons(5,3)
 </script></pre></article><article class="technology computation-like" id="ocontagem-8-3-11"><h4 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.6.15</span><span class="period">.</span>
 </h4>
-<div class="para" id="ocontagem-8-3-11-1">Digite uma sequência de L’s e D’s e clique no botão "Update" para obter um reticulado, o respectivo caminho e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta <span class="process-math">\(y=x+1\text{,}\)</span> a partir do primeiro ponto que toca nessa reta.</div> <figure class="figure figure-like" id="ocontagem-8-3-11-2"><iframe id="interactive-reflexao" width="600" height="720" src="interactive-reflexao-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.16<span class="period">.</span></span><span class="space"> </span>Reticulado, caminho e reflexão.</figcaption></figure></article></section><section class="subsection" id="ocontagem-8-4"><h3 class="heading hide-type">
+<div class="para" id="ocontagem-8-3-11-1">Digite uma posição no reticulado e clique no botão "Update" para gerar um reticulado, um caminho aleatório e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta <span class="process-math">\(y=x+1\text{,}\)</span> a partir do primeiro ponto que toca nessa reta.</div> <figure class="figure figure-like" id="ocontagem-8-3-11-2"><iframe id="interactive-reflexao2" width="600" height="780" src="interactive-reflexao2-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.16<span class="period">.</span></span><span class="space"> </span>Reticulado, caminho aleatório e respectiva reflexão.</figcaption></figure></article></section><section class="subsection" id="ocontagem-8-4"><h3 class="heading hide-type">
 <span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="space"> </span><span class="title">Números de Catalan</span>
 </h3>
 <section class="introduction" id="ocontagem-8-4-2">Os Números de Catalan, que foram nosso fio condutor até aqui, são muitos profícuos em análise combinatória, modelando uma gama enorme de problemas, por exemplo, a referência <a href="" class="xref" data-knowl="./knowl/xref/stanley.html" title="Referência bibliográfica 6.12: Catalan numbers.">[6.12]</a> apresenta 214 tipos diferentes de configurações combinatórias que podem ser contados usando Números de Catalan. Destacamos também, não só a variedade de problemas que são modelados por estes números, mais a versatilidade de temas que podem ser apresentados com eles, como por exemplo as funções geradoras, relações de recorrências, semi-ordem e muito mais. Para o leitor interessado, recomendamos as referências <a href="" class="xref" data-knowl="./knowl/xref/koshy2008catalan.html" title="Referência bibliográfica 6.10: Catalan Numbers With Applications.">[6.10]</a>, <a href="" class="xref" data-knowl="./knowl/xref/roman.html" title="Referência bibliográfica 6.11: An Introduction to Catalan Numbers.">[6.11]</a> e <a href="" class="xref" data-knowl="./knowl/xref/stanley.html" title="Referência bibliográfica 6.12: Catalan numbers.">[6.12]</a>.</section><article class="definition definition-like" id="ocontagem-8-4-3"><h4 class="heading">
@@ -426,7 +426,7 @@ num_caminhos_bons(5,3)
 <div class="para">No <a href="" class="xref" data-knowl="./knowl/xref/teo-reflexao.html" title="Teorema 2.6.13: (Princípio da Reflexão)">Teorema 2.6.13</a> (Princípio da Reflexão), o caso particular em que <span class="process-math">\(k=n\)</span> é conhecido como números de Catalan, ou seja, os números</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-reflexao.html">
 \begin{equation*}
-C_n=\displaystyle\frac{1}{n+1}{2n \choose n},
+C_n=\displaystyle\frac{1}{n+1}C_{2n}^n,
 \end{equation*}
 </div>
 <div class="para">são conhecidos como números de Catalan (ou Catalão).</div>
@@ -448,7 +448,20 @@ C_n=\displaystyle\frac{1}{n+1}{2n \choose n},
 <span class="type">Exercícios</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="space"> </span><span class="title">Exercícios</span>
 </h3>
 <article class="exercise exercise-like" id="ocontagem-8-5-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="ocontagem-8-5-1-1">Existem valores de <span class="process-math">\(n\)</span> e <span class="process-math">\(k\)</span> tais que a quantidade de caminhos bons é igual ao número de caminhos ruins?</div></article><article class="exercise exercise-like" id="ocontagem-8-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="ocontagem-8-5-1-1">Existem valores de <span class="process-math">\(n\)</span> e <span class="process-math">\(k\)</span> tais que a quantidade de caminhos bons é igual ao número de caminhos ruins?</div>
+<details id="ocontagem-8-5-1-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="ocontagem-8-5-1-2-1">Sim, <span class="process-math">\(n=2k-1\text{.}\)</span>
+</div></div></details><details id="ocontagem-8-5-1-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ocontagem-8-5-1-3-1">
+<div class="para">Basta igualar o número de caminhos bons com o número de caminhos ruins e encontrar <span class="process-math">\(n\)</span> em função de <span class="process-math">\(k\text{.}\)</span> Então,</div>
+<div class="displaymath process-math" id="ocontagem-8-5-1-3-1-3">
+\begin{align*}
+\frac{n-k+1}{n+1}C_{n+k}^{n}=\amp~C_{n+k}^{n+1}\\
+\frac{(n-k+1)}{n+1}\cdot \frac{(n+k)!}{n!k!} = \amp~ \frac{(n+k)!}{(n+1)!(k-1)!}\\
+\frac{(n-k+1)}{(n+1)!k(k-1)!}=\amp~\frac{1}{(n+1)!(k-1)!}\\
+n-k+1=\amp~k\\
+n=2k-1.
+\end{align*}
+</div>
+</div></div></details></article><article class="exercise exercise-like" id="ocontagem-8-5-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para" id="ocontagem-8-5-2-1">Refaça o princípio da reflexão no caso em que  os caminhos não possam nem tocar a diagonal <span class="process-math">\(y=x\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="ex-troco"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="ex-troco-1">
@@ -460,12 +473,47 @@ C_n=\displaystyle\frac{1}{n+1}{2n \choose n},
 <li id="ex-troco-1-7-3"><div class="para" id="p-derived-ex-troco-1-7-3">Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar com duas notas de <span class="process-math">\(R$5,00\text{?}\)</span>
 </div></li>
 </ol>
-</div></article><article class="remark remark-like" id="ocontagem-8-5-4"><h4 class="heading">
+</div>
+<details id="ex-troco-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-troco-2-1"><ol class="lower-alpha">
+<li id="ex-troco-2-1-1-1"><div class="para" id="p-derived-ex-troco-2-1-1-1">O número de filas possíveis é o número de maneiras de ordenar <span class="process-math">\(m+n\)</span> pessoas, ou seja, é (m+n)!.</div></li>
+<li id="ex-troco-2-1-1-2"><div class="para" id="p-derived-ex-troco-2-1-1-2">Considere um reticulado, na qual o eixo <span class="process-math">\(x\)</span> é referente as pessoas notas de <span class="process-math">\(R$5,00\)</span> e o eixo <span class="process-math">\(y\)</span> é referente as pessoas com notas de <span class="process-math">\(R$10,00\text{.}\)</span> Pela <a href="" class="xref" data-knowl="./knowl/xref/prop2.html" title="Proposição 2.6.12">Proposição 2.6.12</a>, o número de maneiras escolher as posições das pessoas com notas de <span class="process-math">\(R$5,00\)</span> e de <span class="process-math">\(R$10,00\)</span> é <span class="process-math">\(C_{m+n}^{m+1}\text{.}\)</span> Uma vez feita essa escolha, podemos ordenar as pessoas de <span class="process-math">\(m!\times n!\)</span> maneiras. Logo, no total, o número de filas que terão problemas de troco é<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop2.html">
+\begin{equation*}
+m!\times n!\times C_{m+n}^{m+1}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="ex-troco-2-1-1-3"><div class="para" id="p-derived-ex-troco-2-1-1-3">Basta aplicar a mesma ideia do item anterior, mas com uma reflexão diferente da <a href="" class="xref" data-knowl="./knowl/xref/def-reflexãor1.html" title="Definição 2.6.8">Definição 2.6.8</a>. Usaremos a reflexão em relação a reta <span class="process-math">\(y=x+3\text{,}\)</span> dada por <span class="process-math">\(R_3*P(m,n)=Q(n-3, m+3)\text{.}\)</span> Usando a mesma ideia da <a href="" class="xref" data-knowl="./knowl/xref/prop2.html" title="Proposição 2.6.12">Proposição 2.6.12</a>, vamos contar o número de caminhos da origem até o ponto <span class="process-math">\(B(n-3, m+3)\text{.}\)</span> Este número é<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-reflexãor1.html ./knowl/xref/prop2.html">
+\begin{equation*}
+PR_{m+n}^{n-3, m+3}=\frac{(m+n)!}{(n-3)!(m+3)!}=C_{m+n}^{m+3}.
+\end{equation*}
+</div>Agora, basta multiplicar o número anterior pelo número de maneiras de ordenar as pessoas. Portanto, a resposta é<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-reflexãor1.html ./knowl/xref/prop2.html">
+\begin{equation*}
+m!\times n! \times C_{m+n}^{m+3}.
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></article><article class="remark remark-like" id="ocontagem-8-5-4"><h4 class="heading">
 <span class="type">Nota</span><span class="space"> </span><span class="codenumber">2.6.22</span><span class="period">.</span>
 </h4>
 <div class="para" id="ocontagem-8-5-4-1">O princípio da reflexão, também é conhecido como "O princípio da reflexão de André" (Andre’s reflection principle), devido a sua utilização na solução do Problema da Eleição ("The Ballot Problem"). O qual enunciamos abaixo. Esse princípio possui várias generalizações e ainda pesquisado atualmente, o que pode ser visto em <a href="" class="xref" data-knowl="./knowl/xref/Goulden.html" title="Referência bibliográfica 6.17: Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope.">[6.17]</a> e <a href="" class="xref" data-knowl="./knowl/xref/Loehr.html" title="Referência bibliográfica 6.18: Note on André’s reflection principle.">[6.18]</a>.</div></article><article class="exercise exercise-like" id="ex-candidatos"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="ex-candidatos-1">Em uma eleição há dois candidatos A e B. Se o candidato <span class="process-math">\(A\)</span> teve <span class="process-math">\(a\)</span> votos e o candidato <span class="process-math">\(B\)</span> teve <span class="process-math">\(b\)</span> votos com <span class="process-math">\(a&gt;b.\)</span> Qual a probabilidade de durante a apuração, cédula a cédula, o candidato <span class="process-math">\(A\)</span> sempre esteja à frente, isto é, com mais votos ou empatado, com <span class="process-math">\(B\text{?}\)</span>
-</div></article><article class="exercise exercise-like" id="ocontagem-8-5-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="ex-candidatos-1">
+<div class="para">Em uma eleição há dois candidatos A e B. Se o candidato <span class="process-math">\(A\)</span> teve <span class="process-math">\(a\)</span> votos e o candidato <span class="process-math">\(B\)</span> teve <span class="process-math">\(b\)</span> votos com <span class="process-math">\(a&gt;b.\)</span> Quantas são as marchas de apuração:</div>
+<ol class="lower-alpha">
+<li id="ex-candidatos-1-6-1"><div class="para" id="p-derived-ex-candidatos-1-6-1">Possíveis?</div></li>
+<li id="ex-candidatos-1-6-2"><div class="para" id="p-derived-ex-candidatos-1-6-2">Nas quais o candidato <span class="process-math">\(A\)</span> permanece sempre em vantagem ou empatado com o candidato <span class="process-math">\(B\text{?}\)</span>
+</div></li>
+</ol>
+</div>
+<details id="ex-candidatos-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-candidatos-2-1"><ol class="lower-alpha">
+<li id="ex-candidatos-2-1-1-1"><div class="para" id="p-derived-ex-candidatos-2-1-1-1">O número de marchas possíveis é dado por <span class="process-math">\(PR_{a+b}^{a, b}\text{.}\)</span>
+</div></li>
+<li id="ex-candidatos-2-1-1-2"><div class="para" id="p-derived-ex-candidatos-2-1-1-2">O número de marchas, na qual o cadidato <span class="process-math">\(A\)</span> permanece sempre em vantagem ou empatado com o candidato <span class="process-math">\(B\)</span> é dado pelo número de caminhos bons da origem até o ponto <span class="process-math">\(P(a,b)\text{,}\)</span> ou seja, é<div class="displaymath process-math">
+\begin{equation*}
+\frac{a-b+1}{a+1}C_{a+b}^a.
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></article><article class="exercise exercise-like" id="ocontagem-8-5-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para" id="ocontagem-8-5-6-1">Mostre que o número de Catalan, <span class="process-math">\(C_n\text{,}\)</span> conta o número de expressões contendo <span class="process-math">\(n\)</span> pares de parenteses que estão corretamente emparelhados. Por exemplo, para <span class="process-math">\(n=3\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-dyckway.html">
