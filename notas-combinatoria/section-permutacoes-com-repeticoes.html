@@ -606,19 +606,74 @@ PR_{6}^{5, 1} + PR_{7}^{4, 3}+ PR_{8}^{5, 3}+ PR_{9}^{7, 2}=133.
 </div></article><article class="exercise exercise-like" id="section-permutacoes-com-repeticoes-11-15"><h4 class="heading">
 <span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">(Caminhos de Delannoy).</span>
 </h4>
-<div class="para" id="section-permutacoes-com-repeticoes-11-15-2">Diremos que uma partícula faz um caminho de Delannoy se estando no ponto <span class="process-math">\((n,m)\)</span> ela pode se deslocar para os pontos: <span class="process-math">\((n+1,m)\)</span> ou <span class="process-math">\((n,m+1)\)</span> ou <span class="process-math">\((n+1,m+1)\text{.}\)</span> Calcule o número de caminhos de Delannoy da origem até o ponto <span class="process-math">\(C(k,k)\text{.}\)</span> E da origem até o ponto <span class="process-math">\(D(n,k)\text{.}\)</span>
+<div class="para logical" id="section-permutacoes-com-repeticoes-11-15-2">
+<div class="para">Diremos que uma partícula faz um caminho de Delannoy se estando no ponto <span class="process-math">\((a,b)\)</span> ela pode se deslocar para os pontos:</div>
+<ol class="lower-alpha">
+<li id="section-permutacoes-com-repeticoes-11-15-2-2-1"><div class="para" id="p-derived-section-permutacoes-com-repeticoes-11-15-2-2-1">Leste: <span class="process-math">\((a+1,b)\text{,}\)</span> abreviado por L;</div></li>
+<li id="section-permutacoes-com-repeticoes-11-15-2-2-2"><div class="para" id="p-derived-section-permutacoes-com-repeticoes-11-15-2-2-2">Norte: <span class="process-math">\((a,b+1)\text{,}\)</span> abreviado por N;</div></li>
+<li id="section-permutacoes-com-repeticoes-11-15-2-2-3"><div class="para" id="p-derived-section-permutacoes-com-repeticoes-11-15-2-2-3">Nordeste: <span class="process-math">\((a+1,b+1)\text{,}\)</span> abreviado por D de diagonal.</div></li>
+</ol>
+<div class="para">Calcule o número de caminhos de Delannoy da origem até o ponto <span class="process-math">\(C(m,n)\text{.}\)</span>
+</div>
 </div>
 <details id="section-permutacoes-com-repeticoes-11-15-3" class="hint solution-like born-hidden-knowl"><summary><span class="type">Dica</span><span class="period">.</span></summary><div class="hint solution-like"><article class="technology computation-like" id="section-permutacoes-com-repeticoes-11-15-3-1"><h5 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span>
 </h5>
 <div class="para" id="section-permutacoes-com-repeticoes-11-15-3-1-1">Digite uma sequência de L’s, N’s e D’s e clique no botão "Update" para obter o respectivo caminho no reticulado.</div> <figure class="figure figure-like" id="section-permutacoes-com-repeticoes-11-15-3-1-2"><iframe id="interactive-reticulado-delannoy01" width="600" height="780" src="interactive-reticulado-delannoy01-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.6.11<span class="period">.</span></span><span class="space"> </span>Um caminho de Delannoy no reticulado.</figcaption></figure></article></div></details><details id="section-permutacoes-com-repeticoes-11-15-4" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para logical" id="section-permutacoes-com-repeticoes-11-15-4-1">
-<div class="para">Puponha que <span class="process-math">\(k\leq n\text{,}\)</span> se não for, permute <span class="process-math">\(n\)</span> e <span class="process-math">\(k\text{.}\)</span> A resposta é:</div>
+<div class="para">Puponha que <span class="process-math">\(m\leq n\text{,}\)</span> se não for, permute <span class="process-math">\(m\)</span> e <span class="process-math">\(n\text{.}\)</span> A resposta é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sum_{i=0}^k PR_{n+i}^{k-i, n-k+i, i}.
+\sum_{k=0}^{m}PR^{m-k,n-k,k}_{m+n-k}.
 \end{equation*}
 </div>
-</div></div></details></article></section></section></div>
+</div></div></details><details id="section-permutacoes-com-repeticoes-11-15-5" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="section-permutacoes-com-repeticoes-11-15-5-1">Para contar o total de caminhos até um ponto <span class="process-math">\(C(m,n)\text{,}\)</span> vamos considerar o <span class="process-math">\(m\lt n\text{.}\)</span> Quando consideramos <span class="process-math">\(m\lt n\)</span> isso fará com que no máximo podemos fazer <span class="process-math">\(m\)</span> movimentos diagonias (para o caso <span class="process-math">\(m&gt;n\)</span> o número máximo de movimentos diagonais é <span class="process-math">\(n\)</span>). Assim, teremos um total de <span class="process-math">\(m+1\)</span> casos para analisarmos:</div> <div class="para logical" id="section-permutacoes-com-repeticoes-11-15-5-2">
+<div class="para">
+<dfn class="terminology">Caso 1:</dfn> Contaremos todos os caminhos sem movimentos na direção nordeste, ou seja teremos que contar todas as permutações da palavra <span class="process-math">\(LLLL\ldots LNNNN\ldots N\text{,}\)</span> onde a letra <span class="process-math">\(L\)</span> aparece <span class="process-math">\(m\)</span> vezes e a letra <span class="process-math">\(N\)</span> aparece <span class="process-math">\(n\)</span> vezes, totalizando <span class="process-math">\(m+n\)</span> elementos. Assim obtemos,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m,n}_{m+n}.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="section-permutacoes-com-repeticoes-11-15-5-3">
+<div class="para">
+<dfn class="terminology">Caso 2:</dfn> Contaremos todos os caminhos onde faremos apenas um movimento na direção nordeste, assim, queremos contar as permutações da palavra <span class="process-math">\(DLL\ldots LNN\ldots N\text{,}\)</span> onde a letra <span class="process-math">\(L\)</span> aparece <span class="process-math">\(m-1\)</span> vezes, a letra <span class="process-math">\(N\)</span> aparece <span class="process-math">\(n-1\)</span> vezes, e a letra <span class="process-math">\(D\)</span> uma vez, totalizando <span class="process-math">\(m+n-1\)</span> elementos. Assim teremos,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m-1,n-1,1}_{m+n-1}.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="section-permutacoes-com-repeticoes-11-15-5-4">
+<div class="para">
+<dfn class="terminology">Caso 3:</dfn> Contaremos todos os caminhos onde faremos dois movimentos diagonais (ou na direção nordeste) e <span class="process-math">\(m-2\)</span> movimentos na direção leste e <span class="process-math">\(n-2\)</span> movimentos na direção norte. Assim contaremos o número de permutações da palavra <span class="process-math">\(DDLLL\ldots LNNN\ldots N\text{,}\)</span> onde a letra <span class="process-math">\(L\)</span> aparece <span class="process-math">\(m-2\)</span> vezes e a letra <span class="process-math">\(N\)</span> <span class="process-math">\(n-2\)</span> vezes. Teremos o total de,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m-2,n-2,2}_{m+n_2}.
+\end{equation*}
+</div>
+</div> <div class="para" id="section-permutacoes-com-repeticoes-11-15-5-5">Os casos seguirão, aumentando o número de movimentos diagonais, e assim chegaremos ao caso <span class="process-math">\(m+1\text{,}\)</span> então:</div> <div class="para logical" id="section-permutacoes-com-repeticoes-11-15-5-6">
+<div class="para">
+<dfn class="terminology">Caso <span class="process-math">\(m+1\text{:}\)</span></dfn> Contaremos todos os caminhos onde fazemos <span class="process-math">\(m\)</span> movimentos diagonais. Teremos então que contar todas as permutações da palavra <span class="process-math">\(DDD\ldots DNN\ldots N\text{,}\)</span>  onde a letra <span class="process-math">\(D\)</span> aparece <span class="process-math">\(m\)</span> vezes e a letra <span class="process-math">\(N\)</span> aparece <span class="process-math">\(n-m\)</span> vezes, totalizando <span class="process-math">\(m+(n-m)\)</span> elementos. Obtendo assim,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{0,n-m,m}_{m+(n-m)}.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="section-permutacoes-com-repeticoes-11-15-5-7">
+<div class="para">Pelo princípio aditivo, devemos somar todos os casos para que o número total de caminhos possíveis seja encontrado. Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m,n,0}_{m+n}+PR^{m-1,n-1,1}_{m+n-1}+\cdots+PR^{0,n-m,m}_{m+(m-n)}.
+\end{equation*}
+</div>
+<div class="para">Que pode ser reescrito como:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=0}^{m}PR^{m-k,n-k,k}_{m+n-k}.
+\end{equation*}
+</div>
+</div>
+</div></details></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section-permutacoes-circulares.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-combinacoes-completas.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
