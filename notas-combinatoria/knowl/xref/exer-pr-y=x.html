@@ -19,30 +19,46 @@
 <details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
 <div class="para logical">
 <div class="para">
-<dfn class="terminology">Quantidade total de caminhos.</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
+<dfn class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 PR_{n+k}^{n, k}=C_{n+k}^{n}.
 \end{equation*}
 </div>
+</div> <div class="para">
+<dfn class="terminology">Quantidade de caminhos bons:</dfn> Observe que a reflexão será em relação a reta <span class="process-math">\(y=x\text{,}\)</span> portanto a reflexão será <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{.}\)</span> Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao02.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Exemplo de um caminho bom, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao0.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.25<span class="period">.</span></span><span class="space"> </span>Exemplo de um caminho ruim, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+</div></div> <div class="para logical">
+<div class="para">Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e chegam no ponto <span class="process-math">\(A(n,k)\text{,}\)</span> depois vamos contar todos os caminhos ruins que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e também chegam no ponto <span class="process-math">\(A(n,k)\text{.}\)</span> A diferença entre essas quantidades será o número de caminhos bons.</div>
+<ul class="disc">
+<li><div class="para">O número de caminhos de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{n-1, k} = C_{n+k-1}^{n-1}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">O número de caminhos ruins de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual ao número de caminhos de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{,}\)</span> ou seja,<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{k-1, n} = C_{n+k-1}^n.
+\end{equation*}
+</div>
+</div></li>
+</ul>
+<div class="para">Finalmente, o número de caminhos bons de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_{n+k-1}^{n-1} - C_{n+k-1}^n = \frac{n-k}{k}\cdot C_{n+k-1}^n.
+\end{equation*}
+</div>
 </div> <div class="para logical">
 <div class="para">
-<dfn class="terminology">Quantidade de caminhos ruins.</dfn> Observe que a reflexão será em relação a reta <span class="process-math">\(y=x\text{,}\)</span> portanto <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{.}\)</span> Se contarmos os caminhos a partir da origem, todo caminho seria ruim, pois <span class="process-math">\(O(0,0)\)</span> pertence a reta <span class="process-math">\(y=x\text{.}\)</span> Assim, estamos interessados em contar o total de caminhos ruins do ponto <span class="process-math">\(P(1,0)\)</span> até o ponto <span class="process-math">\(B(k,n)\text{.}\)</span> Logo, o número de caminhos ruins é</div>
+<dfn class="terminology">Quantidade de caminhos ruins:</dfn> A quantidade de caminhos ruins de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual a quantidade total de caminhos, menos a quantidade de caminhos bons:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_{k-1+n}^{k-1, n}=C_{n+k-1}^{n}.
+C_{n+k}^n - \frac{n-k}{k}\cdot C_{n+k-1}^n = 2C_{n+k-1}^n.
 \end{equation*}
 </div>
-</div> <figure class="figure figure-like"><div class="image-box" style="width: 48%; margin-left: 26%; margin-right: 26%;"><img src="images/reflexao0.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Exemplo de caminho ruim e sua reflexão, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Quantidade de caminhos bons.</dfn> Neste caso, temos uma diferença em relação ao problema original. A quantidade de caminhos bons será igual a  quantidade total de caminhos que partem do ponto <span class="process-math">\(P(1,0)\)</span> menos a quantidade de caminhos ruins que também partem do ponto <span class="process-math">\(P(1,0)\text{.}\)</span> Portanto, a quantidade de caminhos bons é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-PR_{n-1+k}^{n-1, k} - PR_{k-1+n}^{k-1, n} = \frac{n-k}{k}\cdot C_{n+k-1}^n.
-\end{equation*}
-</div>
-</div>
-</div></details></article><span class="incontext"><a class="internal" href="ocontagem-8.html#exer-pr-y=x">em contexto</a></span>
+</div> </div></details></article><span class="incontext"><a class="internal" href="ocontagem-8.html#exer-pr-y=x">em contexto</a></span>
 </body>
 </html>
