@@ -16,7 +16,53 @@
 </h4>
 <div class="para">Refaça o princípio da reflexão no caso em que  os caminhos não possam nem tocar a diagonal <span class="process-math">\(y=x\text{.}\)</span>
 </div>
-<details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k}^{n, k}=C_{n+k}^{n}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Quantidade de caminhos ruins:</dfn> Note que o ponto <span class="process-math">\(O(0,0)\)</span> pertence a reta <span class="process-math">\(y=x\text{.}\)</span> Logo, precisamos ajustar nosso conceito de caminho ruim. Vamos considerar que um caminho é ruim se ele toca na reta <span class="process-math">\(y=x\text{,}\)</span> mas o ponto de interseção é diferente do ponto <span class="process-math">\(O(0,0)\text{.}\)</span> Assim, podemos classificar os caminhos ruins em dois tipos.</div>
+<ul class="disc">
+<li><div class="para">1º Tipo: o caminho vai do ponto <span class="process-math">\(O(0,0)\)</span> até o ponto <span class="process-math">\(A(n,k)\)</span> com o primeiro passo para cima. Assim, para contar o número desses caminhos, basta contar o número de caminhos do ponto <span class="process-math">\(Q(0,1)\)</span> até o ponto <span class="process-math">\(A(n,k)\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{n,k-1}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">2º Tipo: o caminho vai do ponto <span class="process-math">\(O(0,0)\)</span> até o ponto <span class="process-math">\(R_0*A(n,k)=B(k,n)\)</span> com o primeiro passo para a direita. Para contar o número desses caminhos, basta contar o número de caminhos do ponto <span class="process-math">\(P(1,0)\)</span> até o ponto <span class="process-math">\(B(k,n)\text{:}\)</span><div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{k-1, n}.
+\end{equation*}
+</div>
+</div></li>
+</ul>
+<div class="para"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao_r1.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Um caminho ruim do 1º Tipo.</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao_r2.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.25<span class="period">.</span></span><span class="space"> </span>Um caminho ruim do 2º Tipo.</figcaption></figure></div>
+</div></div></div>
+</div> <div class="para logical">
+<div class="para">Portanto, pelo Princípio Aditivo, o total de caminhos ruins é dado por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{n,k-1}+PR_{n+k-1}^{k-1, n} = 2\cdot PR_{n+k-1}^{n,k-1}=2\cdot C_{n+k-1}^n.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Quantidade de caminhos bons:</dfn> Para contar o número de caminhos bons, basta calcular a diferença entre o número total de caminhos e o número total de caminhos ruins:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k}^{n, k} - 2\cdot PR_{n+k-1}^{n,k-1} = \frac{n-k}{k}\cdot C_{n+k-1}^n.
+\end{equation*}
+</div>
+</div>
+</div></details><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="solution solution-like">
 <div class="para logical">
 <div class="para">
 <dfn class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
@@ -27,8 +73,8 @@ PR_{n+k}^{n, k}=C_{n+k}^{n}.
 </div>
 </div> <div class="para">
 <dfn class="terminology">Quantidade de caminhos bons:</dfn> Observe que a reflexão será em relação a reta <span class="process-math">\(y=x\text{,}\)</span> portanto a reflexão será <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{.}\)</span> Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao02.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Exemplo de um caminho bom, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao0.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.25<span class="period">.</span></span><span class="space"> </span>Exemplo de um caminho ruim, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao02.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.26<span class="period">.</span></span><span class="space"> </span>Um caminho bom, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao0.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.27<span class="period">.</span></span><span class="space"> </span>Um caminho ruim, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
 </div></div> <div class="para logical">
 <div class="para">Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e chegam no ponto <span class="process-math">\(A(n,k)\text{,}\)</span> depois vamos contar todos os caminhos ruins que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e também chegam no ponto <span class="process-math">\(A(n,k)\text{.}\)</span> A diferença entre essas quantidades será o número de caminhos bons.</div>
 <ul class="disc">

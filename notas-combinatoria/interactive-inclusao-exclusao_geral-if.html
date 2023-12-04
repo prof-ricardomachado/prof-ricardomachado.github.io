@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+  "inputLocation": ".sage-interact",
+  "autoeval": true,
+  "hide": [
+    "editor",
+    "evalButton",
+    "permalink"
+  ]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="ptx-content ignore-math"><div style="width:600px; height:420px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
+def _(n_min=input_box(1, width=25,  label="Vmin:"), n_max=input_box(10000, width=25,  label="Vmax:"), l_m=input_box([2,3,15] , width=25, label="lista:"), p=input_box(2, width=25,  label="p:") ):
+          
+    def numeros_de_multiplos2(lista, ini, fim):
+        card_omega = fim-ini+1
+        l=[]
+        for i in lista:
+            l = l+[x for x in [ini..fim] if x%i == 0]   
+            
+        #combinacoes = {}
+        listax=[]
+        for i in range(len(lista)):
+            listax.append(Combinations(lista, i+1).list())
+            #combinacoes.update({i+1:Combinations(lista, i+1).list()})
+        
+        listax2=[]
+        for i in listax:
+            temp=[]
+            for j in range(len(i)):
+                temp.append(lcm(i[j]))
+                #print(i[j])
+            listax2.append(temp)
+                
+        lSi=[]
+        for j in listax2:
+            temp=[]
+            for i in j:
+                temp = temp+[x for x in [ini..fim] if x%i == 0] 
+            lSi.append(len(temp))
+        #print(lSi)
+        
+        soma = 0
+        for i in range(len(lSi)):
+            #print(lSi[i])
+            soma = soma +(-1)^i*lSi[i]
+            
+        #print(soma)
+        
+        #comb2 = Combinations(lista, 2)
+        #print(listax2)
+        #print(combinacoes)
+        
+        #for i in range(len(lSi)):
+            #print('O valor de S%d é: %d' %(i+1,lSi[i]))
+        
+        #print('A cardinalidade de C é: %d' %soma)
+        
+        S0 = card_omega
+        lSi.insert(0, S0)
+        return (soma, lSi)
+
+    def inclu_exclu_geral(lista, ini, fim, p):
+        
+        multi, lS = numeros_de_multiplos2(lista, ini, fim)
+        
+        ap = 0
+        k=0
+        for i in range(p, len(lS)):
+            ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
+            k=k+1
+            
+        #print(ap)
+        
+        bp = 0
+        k=0
+        for i in range(p, len(lS)):
+            bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
+            k=k+1
+        #print(bp)
+        
+        for i in range(len(lS)):
+            print('O valor de S%d é: %d' %(i,lS[i]))    
+        
+        
+        print('a%d = %d' %(p, ap))
+        
+        print('b%d = %d' %(p, bp))
+        
+        lprint=''
+        for i in l_m:
+            
+            lprint=lprint+str(i)+','
+        lprint=lprint[0:len(lprint)-1]
+
+        print('O número de múltiplos\n dos números %s é: %d' %(lprint,multi))
+      
+      
+
+    inclu_exclu_geral(l_m, n_min, n_max, p)
+</script></pre></div></body>
+</html>
