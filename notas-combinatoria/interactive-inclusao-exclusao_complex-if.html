@@ -102,16 +102,62 @@ window.MathJax = {
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="ptx-content ignore-math"><div style="width:600px; height:300px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
-def _(n_min=input_box(1, width=25,  label="Vmin:"), n_max=input_box(10000, width=25,  label="Vmax:"), l_m=input_box([2,3,15] , width=25, label="lista:"),auto_update=False ):
-          
-  def numeros_de_multiplos(lista, ini, fim):
-      l=[]
-      for i in lista:
-          l = l+[x for x in [ini..fim] if x%i == 0]   
-      print('#C = %d' %len(set(l)))
-      
-      
+def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3,4] , width=30,  label="Posições fixas:"), auto_update=False):
 
-  numeros_de_multiplos(l_m, n_min, n_max)
+
+    lista2=[]
+    if lista not in ZZ and 'invalid' not in str(lista):
+        #print('invalid' in str(lista))
+        
+        lista = str(lista)
+        k=0
+        for i in lista:
+            k += 1
+            if k>6 :
+                if i == "'":
+                    break
+                lista2.append(i)
+        #print(lista2)
+        
+    def anagramas_fix(palavra, pfix):
+    
+        total_inter=len(pfix)
+        pfix.reverse()
+    
+        comb=Combinations(pfix).list()
+        subpalavra=0
+        lista_inter=[]
+        lista=[]
+        for i in comb:
+            subpalavra = copy(palavra)
+            for j in i:
+                subpalavra = copy(subpalavra)
+                subpalavra.pop(j-1)
+        #print(i, card)
+            lista_inter.append(i)
+            lista.append(subpalavra)
+    
+    #print(lista_inter)
+    #print(lista)
+    
+        lS=[]
+        soma=0
+        for i in range(len(lista_inter)):
+        
+            if len(lista_inter[i])>0:
+                soma = soma + Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1)
+            #lS.append([ Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1) ])
+        
+        #print(soma)
+    
+        return soma
+    resp = anagramas_fix(lista2, pos_fixas)
+    
+    s=''
+    for l in lista2:
+        s = s + l
+    
+    pos_fixas.reverse()
+    print('O número de anagramas da palavra %s, \n na qual pelo menos uma das letras das posições\n %s está na posição original é %d' %(s, pos_fixas,  resp))
 </script></pre></div></body>
 </html>
