@@ -101,8 +101,8 @@ window.MathJax = {
 });
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="ptx-content ignore-math"><div style="width:600px; height:300px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
-def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3,4] , width=30,  label="Posições fixas:"), auto_update=False):
+<body class="ptx-content ignore-math"><div style="width:600px; height:420px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
+def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3,4] , width=30,  label="Posições fixas:"), Cardinalidades=True, auto_update=False):
 
 
     lista2=[]
@@ -122,6 +122,7 @@ def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input
     def anagramas_fix(palavra, pfix):
     
         total_inter=len(pfix)
+        pfix.sort()
         pfix.reverse()
     
         comb=Combinations(pfix).list()
@@ -146,10 +147,49 @@ def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input
         
             if len(lista_inter[i])>0:
                 soma = soma + Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1)
-            #lS.append([ Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1) ])
+                lS.append( Permutations(lista[i]).cardinality() )
         
-        #print(soma)
-    
+
+        if Cardinalidades==True:
+            dic={}
+            for i in range(len(pfix)+1):
+                dic.update({i:[]})
+            
+            
+            for i in comb:
+                j=copy(i)
+                j.reverse()
+                dic[len(i)].append(j)
+
+            for i in dic:
+                dic[i].reverse()
+            
+            #print(dic)
+            
+            lS2=[]
+            comb2=[]
+            for i in dic:
+                if i > 0:
+                    for j in dic[i]:
+                        comb2.append(copy(j))
+                        
+                        j.reverse()
+                        lS2.append(lS[comb.index(j)-1])
+                        
+            #print(comb2)
+            lstring=[]
+            for i in range( len(comb2)):
+                temp=''
+                for j in comb2[i]:
+                    temp=temp + 'A' + str(j) + '∩'
+                temp=temp[0:-1]
+                lstring.append(temp)
+            #print(lstring)
+        
+        
+            for i in range(len(lstring)):
+                print('#%s = %d' %(lstring[i] , lS2[i]))
+            print('')
         return soma
     resp = anagramas_fix(lista2, pos_fixas)
     
@@ -158,6 +198,12 @@ def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input
         s = s + l
     
     pos_fixas.reverse()
-    print('O número de anagramas da palavra %s, \n na qual pelo menos uma das letras das posições\n %s está na posição original é %d' %(s, pos_fixas,  resp))
+
+    uni=''
+    for i in pos_fixas:
+        uni = uni + 'A' + str(i) + '∪'
+    uni = uni[0:-1]
+    
+    print('#%s = %d'  %(uni, resp))
 </script></pre></div></body>
 </html>
