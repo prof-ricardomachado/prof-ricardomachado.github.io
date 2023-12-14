@@ -2617,7 +2617,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Triângulo de Pascal",
-  "body": " Triângulo de Pascal    O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .    O Triângulo de Pascal.      Obtenha o Triângulo de Pascal referente ao intervalo escolhido.      (Relação de Stifel)       (Relação das Combinações Complementares)       (Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    (Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.     Qual o valor da soma  Note que Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora podemos terminar o cálculo da soma     Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    (Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.        Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,       Exercícios   Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?      Calcule o valor da soma    746660    Calcule o valor de       Calcule          "
+  "body": " Triângulo de Pascal    O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .    O Triângulo de Pascal.      Obtenha o Triângulo de Pascal referente ao intervalo escolhido.      A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:   Relação de Stifel.    (Relação de Stifel)       (Relação das Combinações Complementares)       A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha do triângulo de Pascal é igual . Veja a figura abaixo:   Teorema das Linhas.    (Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna , do início até a linha é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:   Teorema das Colunas.    (Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.     Qual o valor da soma  Note que Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora podemos terminar o cálculo da soma     Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha , até a linha , é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:   Teorema das Diagonais.    (Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.        Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,       Exercícios   Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?      Calcule o valor da soma    746660    Calcule o valor de       Calcule          "
 },
 {
   "id": "section-triangulo-pascal-2",
@@ -2638,11 +2638,20 @@ var ptx_lunr_docs = [
   "body": " Obtenha o Triângulo de Pascal referente ao intervalo escolhido.     "
 },
 {
-  "id": "section-triangulo-pascal-4",
+  "id": "inclusao-triangulopascal",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-4",
-  "type": "Teorema",
+  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "type": "Figura",
   "number": "3.1.5",
+  "title": "",
+  "body": " Relação de Stifel.   "
+},
+{
+  "id": "section-triangulo-pascal-6",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-6",
+  "type": "Teorema",
+  "number": "3.1.6",
   "title": "",
   "body": "(Relação de Stifel)      "
 },
@@ -2651,16 +2660,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#teo-reolacoes-complementares",
   "type": "Teorema",
-  "number": "3.1.6",
+  "number": "3.1.7",
   "title": "",
   "body": "(Relação das Combinações Complementares)      "
 },
 {
-  "id": "section-triangulo-pascal-6",
+  "id": "inclusao-triangulopascal",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-6",
+  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "type": "Figura",
+  "number": "3.1.8",
+  "title": "",
+  "body": " Teorema das Linhas.   "
+},
+{
+  "id": "section-triangulo-pascal-10",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-10",
   "type": "Teorema",
-  "number": "3.1.7",
+  "number": "3.1.9",
   "title": "",
   "body": "(Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é   "
 },
@@ -2669,25 +2687,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#exem-soma1",
   "type": "Exemplo",
-  "number": "3.1.8",
+  "number": "3.1.10",
   "title": "",
   "body": " Qual o valor da soma      "
 },
 {
-  "id": "section-triangulo-pascal-8",
+  "id": "section-triangulo-pascal-12",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-8",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-12",
   "type": "Tecnologia",
-  "number": "3.1.9",
+  "number": "3.1.11",
   "title": "",
   "body": " Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.   "
+},
+{
+  "id": "inclusao-triangulopascal",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "type": "Figura",
+  "number": "3.1.12",
+  "title": "",
+  "body": " Teorema das Colunas.   "
 },
 {
   "id": "teo-colunas",
   "level": "2",
   "url": "section-triangulo-pascal.html#teo-colunas",
   "type": "Teorema",
-  "number": "3.1.10",
+  "number": "3.1.13",
   "title": "",
   "body": "(Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:   "
 },
@@ -2696,16 +2723,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#exem-soma2",
   "type": "Exemplo",
-  "number": "3.1.11",
+  "number": "3.1.14",
   "title": "",
   "body": " Qual o valor da soma      "
 },
 {
-  "id": "section-triangulo-pascal-11",
+  "id": "section-triangulo-pascal-17",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-11",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-17",
   "type": "Tecnologia",
-  "number": "3.1.12",
+  "number": "3.1.15",
   "title": "",
   "body": " Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.   "
 },
@@ -2714,68 +2741,77 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#exem-soma3",
   "type": "Exemplo",
-  "number": "3.1.13",
+  "number": "3.1.16",
   "title": "",
   "body": " Qual o valor da soma  Note que Para usarmos o Teorema das Colunas, precisamos que no somatório apareca um produto de números consecutivos, pois Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora podemos terminar o cálculo da soma   "
 },
 {
-  "id": "section-triangulo-pascal-13",
+  "id": "section-triangulo-pascal-19",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-13",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-19",
   "type": "Tecnologia",
-  "number": "3.1.14",
+  "number": "3.1.17",
   "title": "",
   "body": " Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.   "
 },
 {
-  "id": "section-triangulo-pascal-14",
+  "id": "inclusao-triangulopascal",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-14",
+  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "type": "Figura",
+  "number": "3.1.18",
+  "title": "",
+  "body": " Teorema das Diagonais.   "
+},
+{
+  "id": "section-triangulo-pascal-22",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-22",
   "type": "Teorema",
-  "number": "3.1.15",
+  "number": "3.1.19",
   "title": "",
   "body": "(Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.   "
 },
 {
-  "id": "section-triangulo-pascal-15",
+  "id": "section-triangulo-pascal-23",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-15",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-23",
   "type": "Teorema",
-  "number": "3.1.16",
+  "number": "3.1.20",
   "title": "",
   "body": "    Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,     "
 },
 {
-  "id": "section-triangulo-pascal-16-2",
+  "id": "section-triangulo-pascal-24-2",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-16-2",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-24-2",
   "type": "Exercício",
   "number": "3.1.1",
   "title": "",
   "body": " Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?    "
 },
 {
-  "id": "section-triangulo-pascal-16-3",
+  "id": "section-triangulo-pascal-24-3",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-16-3",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-24-3",
   "type": "Exercício",
   "number": "3.1.2",
   "title": "",
   "body": " Calcule o valor da soma    746660  "
 },
 {
-  "id": "section-triangulo-pascal-16-4",
+  "id": "section-triangulo-pascal-24-4",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-16-4",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-24-4",
   "type": "Exercício",
   "number": "3.1.3",
   "title": "",
   "body": " Calcule o valor de     "
 },
 {
-  "id": "section-triangulo-pascal-16-5",
+  "id": "section-triangulo-pascal-24-5",
   "level": "2",
-  "url": "section-triangulo-pascal.html#section-triangulo-pascal-16-5",
+  "url": "section-triangulo-pascal.html#section-triangulo-pascal-24-5",
   "type": "Exercício",
   "number": "3.1.4",
   "title": "",
@@ -2788,7 +2824,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.2",
   "title": "Binômio de Newton",
-  "body": " Binômio de Newton     Se e são número reais e é um inteiro positivo,    Observe que Cada termo, do desenvolvimento, é obtido escolhendo-se em cada parênteses um, ou um e multiplicando-se os escolhidos.  Para cada valor de , se escolhermos em dos parênteses, será escolhido em dos parênteses e o produto será igual a . Isto pode ser feito de modos. Então é uma soma na qual, para cada , existem parcelas iguais a . Portanto      Destacamos o termo geral e o fato de que o desenvolvimento do Binômio de Newton pode ser desenvolvido na ordem inversa:  1) O -ésimo termo do desenvolvimento é dado por: 2) Observe também que: Portanto     Considere o binômio de Newton Determine os coeficientes de  no desenvolvimento do binômio;  no desenvolvimento do binômio;  no desenvolvimento do binômio.     O -ésimo termo do desenvolvimento é   item a) Para que , temos , logo estamos procurando o 5º termo: E portanto o coeficiente é .  item b)  não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de é zero.  item c) Para que , temos , logo estamos procurando o 6º termo: E portanto, o coeficiente é .    No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:     Determine o termo máximo do desenvolvimento de    Como O termo máximo é      Determine o termo máximo do desenvolvimento de    O -ésimo termo é . se Isto é ou seja, e simplificando temos Portanto, , logo .  Assim, temos para e portanto o maior termo é:      O termo máximo do desenvolvimento de Troque os valores de , e , para obter o termo máximo e o termo mínimo do desenvolvimento de   Os termos máximo e mínimo.      Qual é a soma dos coeficientes do desenvolvimento de    Seja , a soma dos coeficientes de é igual a Portanto, a soma dos coeficientes do desenvolvimento de é           e Portanto,      Exercícios   Determine o coeficiente de no desenvolvimento de    6435    Determine o coeficiente de no desenvolvimento de    -33   O termo geral é dado por Portanto, queremos encontrar valores de e , tais que , ou seja, , logo e . Então, precisamos obter o coeficiente de de :     Calcule o termo máximo do desenvolvimento de       Qual é o maior dos números    a         Portanto, Como mostramos que , logo .    (UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de    Existem exatamente dois termos com coeficientes que não são divisíveis por 13.  A soma dos coeficientes é   O maior coeficiente é  O menor coeficiente é  A soma dos coeficientes das potências de com expoentes ímpares é .    item a) Na expanção de apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.  item b) Seja . A soma dos coeficientes de é exatamente o valor de .  item c) O maior coeficiente de é exatamente o maior termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item d) O menor coeficiente de é exatamente o menor termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item e) Os termos de com expoentes ímpares são os termos . Note que portanto Então, basta calcular .   a) V, b) V, c) V, d) V, e) V    "
+  "body": " Binômio de Newton     Se e são número reais e é um inteiro positivo,    Observe que Cada termo, do desenvolvimento, é obtido escolhendo-se em cada parênteses um, ou um e multiplicando-se os escolhidos.  Para cada valor de , se escolhermos em dos parênteses, será escolhido em dos parênteses e o produto será igual a . Isto pode ser feito de modos. Então é uma soma na qual, para cada , existem parcelas iguais a . Portanto      Destacamos o termo geral e o fato de que o desenvolvimento do Binômio de Newton pode ser desenvolvido na ordem inversa:  1) O -ésimo termo do desenvolvimento é dado por: 2) Observe também que: Portanto     Considere o binômio de Newton Determine os coeficientes de  no desenvolvimento do binômio;  no desenvolvimento do binômio;  no desenvolvimento do binômio.     O -ésimo termo do desenvolvimento é   item a) Para que , temos , logo estamos procurando o 5º termo: E portanto o coeficiente é .  item b)  não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de é zero.  item c) Para que , temos , logo estamos procurando o 6º termo: E portanto, o coeficiente é .    No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:     Determine o termo máximo do desenvolvimento de    Como O termo máximo é      Determine o termo máximo do desenvolvimento de    O -ésimo termo é . se Isto é ou seja, e simplificando temos Portanto, , logo .  Assim, temos para e portanto o maior termo é:      O termo máximo do desenvolvimento de Troque os valores de , e , para obter o termo máximo e o termo mínimo do desenvolvimento de   Os termos máximo e mínimo.      Qual é a soma dos coeficientes do desenvolvimento de    Seja , a soma dos coeficientes de é igual a Portanto, a soma dos coeficientes do desenvolvimento de é           e Portanto,      Exercícios   Determine o coeficiente de no desenvolvimento de    6435    Determine o coeficiente de no desenvolvimento de    -33   O termo geral é dado por Portanto, queremos encontrar valores de e , tais que , ou seja, , logo e . Então, precisamos obter o coeficiente de de :     Calcule o termo máximo do desenvolvimento de       Qual é o maior dos números    a         Portanto, Como mostramos que , logo .    (UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de    Existem exatamente dois termos com coeficientes que não são divisíveis por 13.  A soma dos coeficientes é   O maior coeficiente é  O menor coeficiente é  A soma dos coeficientes das potências de com expoentes ímpares é .    item a) Na expanção de apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.  item b) Seja . A soma dos coeficientes de é exatamente o valor de .  item c) O maior coeficiente de é exatamente o maior termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item d) O menor coeficiente de é exatamente o menor termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item e) Observe que Então, os termos de com expoentes ímpares são os termos de índices pares: . Note que e  Portanto, Então, basta calcular .   a) V, b) V, c) V, d) V, e) V    "
 },
 {
   "id": "teo-binomio-newton",
@@ -2914,7 +2950,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.2.5",
   "title": "",
-  "body": " (UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de    Existem exatamente dois termos com coeficientes que não são divisíveis por 13.  A soma dos coeficientes é   O maior coeficiente é  O menor coeficiente é  A soma dos coeficientes das potências de com expoentes ímpares é .    item a) Na expanção de apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.  item b) Seja . A soma dos coeficientes de é exatamente o valor de .  item c) O maior coeficiente de é exatamente o maior termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item d) O menor coeficiente de é exatamente o menor termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item e) Os termos de com expoentes ímpares são os termos . Note que portanto Então, basta calcular .   a) V, b) V, c) V, d) V, e) V  "
+  "body": " (UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de    Existem exatamente dois termos com coeficientes que não são divisíveis por 13.  A soma dos coeficientes é   O maior coeficiente é  O menor coeficiente é  A soma dos coeficientes das potências de com expoentes ímpares é .    item a) Na expanção de apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.  item b) Seja . A soma dos coeficientes de é exatamente o valor de .  item c) O maior coeficiente de é exatamente o maior termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item d) O menor coeficiente de é exatamente o menor termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item e) Observe que Então, os termos de com expoentes ímpares são os termos de índices pares: . Note que e  Portanto, Então, basta calcular .   a) V, b) V, c) V, d) V, e) V  "
 },
 {
   "id": "section-polinomio-leibniz",
@@ -2923,12 +2959,12 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.3",
   "title": "Polinômio de Leibniz",
-  "body": " Polinômio de Leibniz       Na qual, para cada , , ou seja é um inteiro não negativo.   Temos Um termo genérico do produto é obtido escolhendo um em cada parênteses e multiplicando os escolhidos. Se em dos parênteses escolhermos , em dos parênteses escolhermos , , obteremos Agora falta responder quantas vezes o termo aparece no desenvolvimento.  O termo aparece tantas vezes, quantas são as formas de escolher, nos parênteses, deles para escolher o , deles para escolher o , . Isto pode ser feito de maneiras, o que mostra o resultado.     Considere o polinômio: Determine os coeficientes de  no desenvolvimento;  no desenvolvimento.        item a) Para que o expoente de seja 2, devemos ter , juntando com a condição , temos Assim, e E a soma dos termos que possuem é:   item b) Para que o expoente de seja 4, devemos ter , juntando com a condição , temos Temos duas soluções: E a soma dos termos que possuem é:     No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:     Exercícios   Determine o coeficiente de no desenvolvimento de    336    "
+  "body": " Polinômio de Leibniz       Na qual, para cada , , ou seja é um inteiro não negativo.   Temos Um termo genérico do produto é obtido escolhendo um em cada parênteses e multiplicando os escolhidos. Se em dos parênteses escolhermos , em dos parênteses escolhermos , , obteremos Agora falta responder quantas vezes o termo aparece no desenvolvimento.  O termo aparece tantas vezes, quantas são as formas de escolher, nos parênteses, deles para escolher o , deles para escolher o , . Isto pode ser feito de maneiras, o que mostra o resultado.     Considere o polinômio: Determine os coeficientes de  no desenvolvimento;  no desenvolvimento.        item a) Para que o expoente de seja 2, devemos ter , juntando com a condição , temos Assim, e E a soma dos termos que possuem é:   item b) Para que o expoente de seja 4, devemos ter , juntando com a condição , temos Temos duas soluções: E a soma dos termos que possuem é:     No Sage, podemos obter a expanção do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:     Exercícios   Determine o coeficiente de no desenvolvimento de    352   Pelo , temos Queremos , tais que Ou seja, O sistema admite duas soluções: Do somatório , a soma dos termos relacionados à é Logo, o coeficiente de é     "
 },
 {
-  "id": "section-polinomio-leibniz-2",
+  "id": "teo-leibniz",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#section-polinomio-leibniz-2",
+  "url": "section-polinomio-leibniz.html#teo-leibniz",
   "type": "Teorema",
   "number": "3.3.1",
   "title": "",
@@ -2959,7 +2995,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.3.1",
   "title": "",
-  "body": " Determine o coeficiente de no desenvolvimento de    336  "
+  "body": " Determine o coeficiente de no desenvolvimento de    352   Pelo , temos Queremos , tais que Ou seja, O sistema admite duas soluções: Do somatório , a soma dos termos relacionados à é Logo, o coeficiente de é   "
 },
 {
   "id": "section-espacos-probabilidade",
