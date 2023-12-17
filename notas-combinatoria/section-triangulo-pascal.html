@@ -601,7 +601,59 @@ n-2p-1.
 <article class="exercise exercise-like" id="section-triangulo-pascal-24-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para" id="section-triangulo-pascal-24-2-1-1">Tem-se <span class="process-math">\(n\)</span> comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?</div>
 <div class="solutions"><details id="section-triangulo-pascal-24-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-2-2-1"><span class="process-math">\(2^n-1\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-3-1-1">
+<div class="para" id="section-triangulo-pascal-24-3-1">Calcule o valor de</div>
+<ol class="lower-alpha">
+<li id="section-triangulo-pascal-24-3-2-1"><div class="para" id="p-derived-section-triangulo-pascal-24-3-2-1"><span class="process-math">\(\displaystyle \sum_{k=0}^nkC_n^k.\)</span></div></li>
+<li id="section-triangulo-pascal-24-3-2-2"><div class="para" id="p-derived-section-triangulo-pascal-24-3-2-2"><span class="process-math">\(\displaystyle \sum_{k=0}^nk^2C_n^k.\)</span></div></li>
+<li id="section-triangulo-pascal-24-3-2-3"><div class="para" id="p-derived-section-triangulo-pascal-24-3-2-3"><span class="process-math">\(\displaystyle \sum_{k=0}^nk^3C_n^k.\)</span></div></li>
+</ol>
+<details id="section-triangulo-pascal-24-3-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><ol class="lower-alpha">
+<li id="section-triangulo-pascal-24-3-3-1-1"><div class="para" id="p-derived-section-triangulo-pascal-24-3-3-1-1"><span class="process-math">\(n2^{n - 1}\text{.}\)</span></div></li>
+<li id="section-triangulo-pascal-24-3-3-1-2"><div class="para" id="p-derived-section-triangulo-pascal-24-3-3-1-2"><span class="process-math">\({\left(n^{2} + n\right)} 2^{n - 2}\text{.}\)</span></div></li>
+<li id="section-triangulo-pascal-24-3-3-1-3"><div class="para" id="p-derived-section-triangulo-pascal-24-3-3-1-3"><span class="process-math">\({\left(n^{3} + 3 \, n^{2}\right)} 2^{n - 3}\text{.}\)</span></div></li>
+</ol></div></details><details id="section-triangulo-pascal-24-3-4" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="lower-alpha">
+<li id="section-triangulo-pascal-24-3-4-1-1"><div class="para" id="p-derived-section-triangulo-pascal-24-3-4-1-1"><div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-1-1">
+\begin{align*}
+\sum_{k=1}^nkC_n^k = \amp~\sum_{k=1}^n k\cdot \frac{n!}{k(k-1)!(n-k)!}\\
+=\amp~ \sum_{k=1}^n n\cdot \frac{(n-1)!}{(k-1)!(n-k)!}\\
+=\amp~ n\sum_{k=1}^nC_{n-1}^{k-1}\\
+=\amp~ n2^{n-1}
+\end{align*}
+</div></div></li>
+<li id="section-triangulo-pascal-24-3-4-1-2"><div class="para" id="p-derived-section-triangulo-pascal-24-3-4-1-2">
+<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-2-1">
+\begin{align*}
+\sum_{k=1}^nk^2C_n^k = \amp~ \sum_{k=1}^n k^2\cdot \frac{n!}{k(k-1)!(n-k)!}\\
+=\amp~ n\sum_{k=1}^n kC_{n-1}^{k-1}. \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{align*}
+</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-2-3">
+\begin{align*}
+\sum_{k=1}^nk^2C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)C_{n-1}^p\\
+=\amp~ n \sum_{p=0}^{n-1}pC_{n-1}^p + n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}} \\
+=\amp~ n\sum_{p=1}^{n-1} p\cdot \frac{(n-1)!}{p(p-1)!(n-p-1)!}+n2^{n-1}\\
+=\amp~ n(n-1)\sum_{p=1}^{n-1}C_{n-2}^{p-1}+ n2^{n-1}\\
+=\amp~ n(n-1)2^{n-2}+n2^{n-1}\\
+=\amp~ n(n-1)2^{n-2}.
+\end{align*}
+</div>
+</div></li>
+<li id="section-triangulo-pascal-24-3-4-1-3"><div class="para" id="p-derived-section-triangulo-pascal-24-3-4-1-3">
+<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-3-1">
+\begin{align*}
+\sum_{k=1}^n k^3C_n^k =\amp~ \sum_{k=1}^nk^2k\cdot \frac{n!}{k(k-1)!(n-k)!} \\
+=\amp~ n\sum_{k=1}^n k^2C_{n-1}^{k-1}.\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{align*}
+</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-3-3">
+\begin{align*}
+\sum_{k=1}^nk^3C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)^2C_{n-1}^{k-1}\\
+=\amp~ n\sum_{p=0}^{n-1}(p^2+2p+1)C_{n-1}^p\\
+=\amp~ n\underbrace{\sum_{p=0}^{n-1}p^2C_{n-1}^p}_{=(n-1)n2^{n-3}} +2n\underbrace{\sum_{p=0}^{n-1}pC_{n-1}^p}_{=(n-1)2^{n-2}}+\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}}\\
+=\amp~(n^3+3n^2)2^{n-3}.
+\end{align*}
+</div>
+</div></li>
+</ol></div></details></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="section-triangulo-pascal-24-4-1-1">
 <div class="para">Calcule o valor da soma</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -609,8 +661,8 @@ S = 20\cdot21 + 21\cdot 22 +\cdots + 130\cdot 131.
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="section-triangulo-pascal-24-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-3-2-1">746660</div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-4-1-1">
+<div class="solutions"><details id="section-triangulo-pascal-24-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-4-2-1">746660</div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="section-triangulo-pascal-24-5-1-1">
 <div class="para">Calcule o valor de</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -618,8 +670,8 @@ S = \sum_{k=1}^{n}k(3k+1).
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="section-triangulo-pascal-24-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-4-2-1"><span class="process-math">\(n^{3} + 2 \, n^{2} + n\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-5-1-1">
+<div class="solutions"><details id="section-triangulo-pascal-24-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-5-2-1"><span class="process-math">\(n^{3} + 2 \, n^{2} + n\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="section-triangulo-pascal-24-6-1-1">
 <div class="para">Calcule</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -627,7 +679,7 @@ CR_n^0 + CR_n^1+\cdots+ CR_n^p.
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="section-triangulo-pascal-24-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-5-2-1"><span class="process-math">\(C_{n+p}^p\)</span></div></div></details></div></article></section></section></div>
+<div class="solutions"><details id="section-triangulo-pascal-24-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-6-2-1"><span class="process-math">\(C_{n+p}^p\)</span></div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="binomiais.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-binomio-newton.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
