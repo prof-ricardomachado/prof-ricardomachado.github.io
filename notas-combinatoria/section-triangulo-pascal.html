@@ -671,7 +671,51 @@ S = \sum_{k=1}^{n}k(3k+1).
 </div>
 </div>
 <div class="solutions"><details id="section-triangulo-pascal-24-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-5-2-1"><span class="process-math">\(n^{3} + 2 \, n^{2} + n\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-6-1-1">
+<div class="para logical" id="section-triangulo-pascal-24-6-1">
+<div class="para">Calcule o valor de</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=0}^p kC_{n+k}^{k+1}.
+\end{equation*}
+</div>
+</div>
+<details id="section-triangulo-pascal-24-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1\)</span></div></details><details id="section-triangulo-pascal-24-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-1">
+\begin{gather*}
+\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
+\end{gather*}
+</div>
+<div class="para" id="section-triangulo-pascal-24-6-3-2">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
+<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-3">
+\begin{align*}
+S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
+=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
+=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
+=\amp~n\sum_{k=0}^pC_{n+k}^k\\
+=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
+=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
+\end{align*}
+</div>
+<div class="para logical" id="section-triangulo-pascal-24-6-3-4">
+<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-4-3">
+\begin{align*}
+S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
+=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
+=\amp~ C_{n+p+1}^{p+1}-1.
+\end{align*}
+</div>
+<div class="para">Portanto,</div>
+<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-4-4">
+\begin{align*}
+\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
+=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
+\end{align*}
+</div>
+</div>
+</div></details></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="section-triangulo-pascal-24-7-1-1">
 <div class="para">Calcule</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -679,7 +723,7 @@ CR_n^0 + CR_n^1+\cdots+ CR_n^p.
 \end{equation*}
 </div>
 </div>
-<div class="solutions"><details id="section-triangulo-pascal-24-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-6-2-1"><span class="process-math">\(C_{n+p}^p\)</span></div></div></details></div></article></section></section></div>
+<div class="solutions"><details id="section-triangulo-pascal-24-7-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-7-2-1"><span class="process-math">\(C_{n+p}^p\)</span></div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="binomiais.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-binomio-newton.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
