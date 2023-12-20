@@ -643,7 +643,64 @@ P_7\times D_7 = 9344160.
 \end{equation*}
 </div>
 </div></div></details>
-</div></article></section></section></div>
+</div></article><article class="exercise exercise-like" id="section-permutacao-caotica-6-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="section-permutacao-caotica-6-6-1">
+<div class="para">(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de <span class="process-math">\(n\)</span> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:</div>
+<ol class="lower-alpha">
+<li id="section-permutacao-caotica-6-6-1-2-1"><div class="para" id="p-derived-section-permutacao-caotica-6-6-1-2-1">Ninguém pode tirar o próprio nome;</div></li>
+<li id="section-permutacao-caotica-6-6-1-2-2"><div class="para" id="p-derived-section-permutacao-caotica-6-6-1-2-2">Não podem existir duas pessoas <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> tais que <span class="process-math">\(A\)</span> tirou <span class="process-math">\(B\)</span> e <span class="process-math">\(B\)</span> tirou <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">De quantas maneiras poderá ser realizado o sorteio?</div>
+</div>
+<details id="section-permutacao-caotica-6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(\displaystyle D_n + \sum_{k=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^k\cdot \frac{D_{n-2k}}{(n-2k)!}\)</span></div></details><details id="section-permutacao-caotica-6-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="section-permutacao-caotica-6-6-3-1">
+<div class="para">Denote as <span class="process-math">\(n\)</span> pessoas por <span class="process-math">\(P_1, P_2, \ldots, P_n\text{.}\)</span> Sejam <span class="process-math">\(A_{ij}\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq n\text{,}\)</span> os conjuntos das permutações caóticas em que a pessoa <span class="process-math">\(P_i\)</span> tirou a pessoa <span class="process-math">\(P_j\)</span> e a pessoa <span class="process-math">\(P_j\)</span> tirou a pessoa <span class="process-math">\(P_i\text{.}\)</span> A resposta deste problema é dada por</div>
+<div class="displaymath process-math" id="que-cao-obm">
+\begin{equation}
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\tag{2.2.1}
+\end{equation}
+</div>
+<div class="para">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</div>
+</div> <div class="para logical" id="section-permutacao-caotica-6-6-3-2">
+<div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
+<ul class="disc">
+<li id="section-permutacao-caotica-6-6-3-2-4-1"><div class="para" id="p-derived-section-permutacao-caotica-6-6-3-2-4-1">
+<span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
+<li id="section-permutacao-caotica-6-6-3-2-4-2"><div class="para" id="p-derived-section-permutacao-caotica-6-6-3-2-4-2">
+<span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
+<li id="section-permutacao-caotica-6-6-3-2-4-3"><div class="para" id="p-derived-section-permutacao-caotica-6-6-3-2-4-3">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+</ul>
+<div class="para">Antes de escrever o resultado da Expressão <a href="" class="xref" data-knowl="./knowl/xref/que-cao-obm.html" title="Equação 2.2.1">(2.2.1)</a> vamos obter uma expressão para <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html" id="section-permutacao-caotica-6-6-3-2-7">
+\begin{align*}
+C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}\\
+=\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.
+\end{align*}
+</div>
+<div class="para">Utilizando essas informações na Expressão <a href="" class="xref" data-knowl="./knowl/xref/que-cao-obm.html" title="Equação 2.2.1">(2.2.1)</a>, obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html">
+\begin{equation*}
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html" id="section-permutacao-caotica-6-6-3-2-10">
+\begin{align*}
+\quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots\\
+=\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots\\
+=\amp~D_n +\sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} \frac{n!(-1)^{k+1}D_{n-2(k+1)}}{(n-2(k+1))!2^{k+1}}
+\end{align*}
+</div>
+<div class="para">Fazendo a mudança <span class="process-math">\(p=k+1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html">
+\begin{equation*}
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^p \cdot \frac{D_{n-2p}}{(n-2p)!}.
+\end{equation*}
+</div>
+</div>
+</div></details></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section-inclusao-exclusao.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-permutacao-caotica-repeticoes.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

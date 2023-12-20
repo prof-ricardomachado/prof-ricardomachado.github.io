@@ -1582,7 +1582,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.2",
   "title": "Permutações Caóticas",
-  "body": " Permutações Caóticas    Nota Histórica  O primeiro problema notório relacionado a permutações caóticas é conhecido como \"O Problema das Cartas Mal Endereçadas\". Este enigma matemático tem conexões com figuras ilustres, como Pierre Raymond de Montmort (1678-1719) e Nicholas Bernoulli (1687-1759). Outro eminente matemático que se deparou com esse desafio foi Leonhard Euler (1707-1783). A solução por Euler foi publicada em seu artigo intitulado \"Calcul de la probabilité dans le jeu de rencontre\" , cuja versão em inglês pode ser encontrada em .  Atualmente, este problema de análise combinatória é intitulado por Permutações Caóticas, também conhecida como Desarranjos ou Desordenamentos, uma Permutação em que nenhum de seus elementos estará presente no seu lugar de origem.   Leonarhd Euler, fonte: https:\/\/www.phylos.net      Exemplos introdutórios  Vamos iniciar este tópico com dois exemplos para facilitar o entendimento do conceito de permutação caótica e também da demonstração.   Determine o número de permutações simples dos elementos , nas quais está na segunda posição ou está em terceira posição.   Definindo como o conjunto das permutações em que está em segunda posição e como o conjunto das permutações em que está em terceira posição, é fácil ver que e que Assim o número procurado nada mais é do que que é igual a:      Dentre as permutações simples dos elementos determine o número daquelas em que não está na segunda posição, não está na terceira posição e nem está na quarta posição.   Definimos , para , como o conjunto das permutações em que está no -ésima posição, para . Queremos encontrar o número de elementos no complementar de .  As cardinalidade dos conjuntos e das interseções dos , dois a dois e três a três são:     Sabendo que o número total de permutações é , a solução para o questionamento é Que é igual a:       Permutações Caóticas   Uma permutação de uma lista de elementos é chamada de permutação caótica , quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de é chamada de caótica quando nenhum dos se encontra na -ésima posição.  Notação:    As permutações caóticas dos elementos podem ser geradas no Sage, com o seguinte comando:     Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.      A quantidade de permutações caóticas de uma lista com objetos distintos, pode ser calculada da seguinte maneira:   Considere todas as permutações dos elementos . Indicando por todas as permutações formadas pelos elementos com no -ésimo lugar, calcularemos , usando a ideia do : Visto que existem termos no primeiro somatório, termos no segundo, termos no terceiro, , no último e temos evidenciando , obtém-se:     Calculando o número de permutações caóticas no Sage:    Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.       Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?   Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:      Quantas são as permutações de que têm exatamente 4 elementos no seu lugar primitivo?   O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é .  Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de formas. A resposta é       Outras formas de calcular   é igual ao inteiro mais próximo de .    Para e a verificação é direta. Para vamos usar a expansão em série de portência de : para temos Calculando Aplicando a fórmula da soma da PG, ficamos com     Calculando o número de permutações caóticas no Sage, usando o :    Se    Pelo temos Isolando a última parcela da soma, ficamos com Cancelando do último termo e reescrevendo como , obtemos Ou seja,     Calculando o número de permutações caóticas no Sage, usando o :    Se    Vamos separar as permutações caóticas de em dois casos.  1º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.  Como temos elementos, diferentes do , para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de formas.  2º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar não tem seu lugar original ocupado pelo 1.  Temos formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os elementos nos lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses elementos organizados da seguinte maneira: coloque os elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é  Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos     Calculando o número de permutações caóticas no Sage, usando o :     Exercícios   Suponha que . Quantas são as funções para as quais a equação não possui solução? Quantas são as funções  bijetoras para as quais a equação não possui solução?   a) , b) .    item a) A imagem de cada elemento do domínio pode ser escolhida de maneiras, assim, o total é .   item b) Como é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem funções.    Quantas são as permutações de que têm exatamente 5 elementos no seu lugar primitivo?   1468368   Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de maneiras. Logo, o total é     Determine o número de permutações caóticas de nas quais os números ocupam, em alguma ordem, os cinco primeiro lugares.   81576   Podemos escolher a posição dos 5 primeiros elementos de maneiras e a posição dos 7 últimos elementos de maneiras. Portanto, o total é     Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?   9344160   O horário do turno da manhã pode ser escolhido de maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de maneiras. O total de maneiras é     "
+  "body": " Permutações Caóticas    Nota Histórica  O primeiro problema notório relacionado a permutações caóticas é conhecido como \"O Problema das Cartas Mal Endereçadas\". Este enigma matemático tem conexões com figuras ilustres, como Pierre Raymond de Montmort (1678-1719) e Nicholas Bernoulli (1687-1759). Outro eminente matemático que se deparou com esse desafio foi Leonhard Euler (1707-1783). A solução por Euler foi publicada em seu artigo intitulado \"Calcul de la probabilité dans le jeu de rencontre\" , cuja versão em inglês pode ser encontrada em .  Atualmente, este problema de análise combinatória é intitulado por Permutações Caóticas, também conhecida como Desarranjos ou Desordenamentos, uma Permutação em que nenhum de seus elementos estará presente no seu lugar de origem.   Leonarhd Euler, fonte: https:\/\/www.phylos.net      Exemplos introdutórios  Vamos iniciar este tópico com dois exemplos para facilitar o entendimento do conceito de permutação caótica e também da demonstração.   Determine o número de permutações simples dos elementos , nas quais está na segunda posição ou está em terceira posição.   Definindo como o conjunto das permutações em que está em segunda posição e como o conjunto das permutações em que está em terceira posição, é fácil ver que e que Assim o número procurado nada mais é do que que é igual a:      Dentre as permutações simples dos elementos determine o número daquelas em que não está na segunda posição, não está na terceira posição e nem está na quarta posição.   Definimos , para , como o conjunto das permutações em que está no -ésima posição, para . Queremos encontrar o número de elementos no complementar de .  As cardinalidade dos conjuntos e das interseções dos , dois a dois e três a três são:     Sabendo que o número total de permutações é , a solução para o questionamento é Que é igual a:       Permutações Caóticas   Uma permutação de uma lista de elementos é chamada de permutação caótica , quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de é chamada de caótica quando nenhum dos se encontra na -ésima posição.  Notação:    As permutações caóticas dos elementos podem ser geradas no Sage, com o seguinte comando:     Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.      A quantidade de permutações caóticas de uma lista com objetos distintos, pode ser calculada da seguinte maneira:   Considere todas as permutações dos elementos . Indicando por todas as permutações formadas pelos elementos com no -ésimo lugar, calcularemos , usando a ideia do : Visto que existem termos no primeiro somatório, termos no segundo, termos no terceiro, , no último e temos evidenciando , obtém-se:     Calculando o número de permutações caóticas no Sage:    Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.       Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?   Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:      Quantas são as permutações de que têm exatamente 4 elementos no seu lugar primitivo?   O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é .  Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de formas. A resposta é       Outras formas de calcular   é igual ao inteiro mais próximo de .    Para e a verificação é direta. Para vamos usar a expansão em série de portência de : para temos Calculando Aplicando a fórmula da soma da PG, ficamos com     Calculando o número de permutações caóticas no Sage, usando o :    Se    Pelo temos Isolando a última parcela da soma, ficamos com Cancelando do último termo e reescrevendo como , obtemos Ou seja,     Calculando o número de permutações caóticas no Sage, usando o :    Se    Vamos separar as permutações caóticas de em dois casos.  1º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.  Como temos elementos, diferentes do , para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de formas.  2º caso: permutações caóticas em que o elemento que ocupa o primeiro lugar não tem seu lugar original ocupado pelo 1.  Temos formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os elementos nos lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses elementos organizados da seguinte maneira: coloque os elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é  Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos     Calculando o número de permutações caóticas no Sage, usando o :     Exercícios   Suponha que . Quantas são as funções para as quais a equação não possui solução? Quantas são as funções  bijetoras para as quais a equação não possui solução?   a) , b) .    item a) A imagem de cada elemento do domínio pode ser escolhida de maneiras, assim, o total é .   item b) Como é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem funções.    Quantas são as permutações de que têm exatamente 5 elementos no seu lugar primitivo?   1468368   Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de maneiras. Logo, o total é     Determine o número de permutações caóticas de nas quais os números ocupam, em alguma ordem, os cinco primeiro lugares.   81576   Podemos escolher a posição dos 5 primeiros elementos de maneiras e a posição dos 7 últimos elementos de maneiras. Portanto, o total é     Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?   9344160   O horário do turno da manhã pode ser escolhido de maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de maneiras. O total de maneiras é    (OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:  Ninguém pode tirar o próprio nome;  Não podem existir duas pessoas e tais que tirou e tirou .  De quantas maneiras poderá ser realizado o sorteio?    Denote as pessoas por . Sejam , com , os conjuntos das permutações caóticas em que a pessoa tirou a pessoa e a pessoa tirou a pessoa . A resposta deste problema é dada por Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.  Observe que possui a mesma cardinalidade, independetemente dos valores dos índices, assim como também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos , das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:  e no total são conjuntos deste tipo, pois para formar um conjunto , precisamos escolher duas pessoas de disponíveis.  e no total são conjuntos deste tipo, pois para formar uma interseção , precisamos escolher duas pessoas de disponíveis e depois mais duas de disponíveis.  A cardinalidade da interseção de conjuntos é e no total são conjuntos deste tipo, pois para formar uma interseção de conjuntos, precisamos escolher duas pessoas de disponíveis e depois mais duas de disponíveis e assim por diante, até que precisamos escolher duas pessoas de disponíveis.  Antes de escrever o resultado da Expressão vamos obter uma expressão para . Utilizando essas informações na Expressão , obtemos  Fazendo a mudança ,     "
 },
 {
   "id": "figura-euler",
@@ -1772,6 +1772,15 @@ var ptx_lunr_docs = [
   "number": "2.2.5.4",
   "title": "",
   "body": " Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?   9344160   O horário do turno da manhã pode ser escolhido de maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de maneiras. O total de maneiras é   "
+},
+{
+  "id": "section-permutacao-caotica-6-6",
+  "level": "2",
+  "url": "section-permutacao-caotica.html#section-permutacao-caotica-6-6",
+  "type": "Exercício",
+  "number": "2.2.5.5",
+  "title": "",
+  "body": "(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:  Ninguém pode tirar o próprio nome;  Não podem existir duas pessoas e tais que tirou e tirou .  De quantas maneiras poderá ser realizado o sorteio?    Denote as pessoas por . Sejam , com , os conjuntos das permutações caóticas em que a pessoa tirou a pessoa e a pessoa tirou a pessoa . A resposta deste problema é dada por Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.  Observe que possui a mesma cardinalidade, independetemente dos valores dos índices, assim como também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos , das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:  e no total são conjuntos deste tipo, pois para formar um conjunto , precisamos escolher duas pessoas de disponíveis.  e no total são conjuntos deste tipo, pois para formar uma interseção , precisamos escolher duas pessoas de disponíveis e depois mais duas de disponíveis.  A cardinalidade da interseção de conjuntos é e no total são conjuntos deste tipo, pois para formar uma interseção de conjuntos, precisamos escolher duas pessoas de disponíveis e depois mais duas de disponíveis e assim por diante, até que precisamos escolher duas pessoas de disponíveis.  Antes de escrever o resultado da Expressão vamos obter uma expressão para . Utilizando essas informações na Expressão , obtemos  Fazendo a mudança ,   "
 },
 {
   "id": "section-permutacao-caotica-repeticoes",
@@ -2617,7 +2626,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Triângulo de Pascal",
-  "body": " Triângulo de Pascal    O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .    O Triângulo de Pascal.      Obtenha o Triângulo de Pascal referente ao intervalo escolhido.      A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:   Relação de Stifel.    (Relação de Stifel)       (Relação das Combinações Complementares)       A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha do triângulo de Pascal é igual . Veja a figura abaixo:   Teorema das Linhas.    (Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna , do início até a linha é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:   Teorema das Colunas.    (Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:     Qual o valor da soma     Observe que , assim . Portanto,      Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.     Qual o valor da soma  Note que  Vamos reescrever o polinômio como um polinômio de grau que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira: Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora, podemos terminar o cálculo da soma     Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha , até a linha , é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:   Teorema das Diagonais.    (Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.        Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,       Exercícios   Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?     Calcule o valor de       .  .  .         Definindo , obtemos    Definindo , obtemos      Calcule o valor da soma    746660    Calcule o valor de      Calcule o valor de      Vamos calcular e separadamente.   Para usar o Teorema das Diagonais no cálculo de , precisamos somar e subtrair . Portanto,     Calcule          "
+  "body": " Triângulo de Pascal    O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .      O Triângulo de Pascal (Coef. binomiais).     O Triângulo de Pascal (Numérico).       Obtenha o Triângulo de Pascal referente ao intervalo escolhido.      A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:     Relação de Stifel (Coef. binomiais).     Relação de Stifel (Numérico).     (Relação de Stifel)       (Relação das Combinações Complementares)       A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha do triângulo de Pascal é igual . Veja a figura abaixo:     Teo. Linhas (Coef. binomiais).     Teo. Linhas (Numérico).     (Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna , do início até a linha é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:     Teo. Colunas (Coef. binomiais).     Teo. Colunas (Numérico).     (Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:     Qual o valor da soma     Observe que , assim . Portanto,      Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.     Qual o valor da soma  Note que  Vamos reescrever o polinômio como um polinômio de grau que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira: Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora, podemos terminar o cálculo da soma     Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha , até a linha , é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:     Teo. Diagonais (Coef. binomiais).     Teo. Diagonais (Numérico).     (Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.        Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,       Exercícios   Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?     Calcule o valor de       .  .  .         Definindo , obtemos    Definindo , obtemos      Calcule o valor da soma    746660    Calcule o valor de      Calcule o valor de      Vamos calcular e separadamente.   Para usar o Teorema das Diagonais no cálculo de , precisamos somar e subtrair . Portanto,     Calcule          "
 },
 {
   "id": "section-triangulo-pascal-2",
@@ -2626,32 +2635,41 @@ var ptx_lunr_docs = [
   "type": "Definição",
   "number": "3.1.1",
   "title": "",
-  "body": " O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .    O Triângulo de Pascal.    "
+  "body": " O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .      O Triângulo de Pascal (Coef. binomiais).     O Triângulo de Pascal (Numérico).     "
 },
 {
   "id": "section-triangulo-pascal-3",
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-3",
   "type": "Tecnologia",
-  "number": "3.1.3",
+  "number": "3.1.4",
   "title": "",
   "body": " Obtenha o Triângulo de Pascal referente ao intervalo escolhido.     "
 },
 {
-  "id": "inclusao-triangulopascal",
+  "id": "fig-reflexao-01",
   "level": "2",
-  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "url": "section-triangulo-pascal.html#fig-reflexao-01",
   "type": "Figura",
-  "number": "3.1.5",
+  "number": "3.1.6",
   "title": "",
-  "body": " Relação de Stifel.   "
+  "body": " Relação de Stifel (Coef. binomiais).   "
+},
+{
+  "id": "fig-reflexao-02",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#fig-reflexao-02",
+  "type": "Figura",
+  "number": "3.1.7",
+  "title": "",
+  "body": " Relação de Stifel (Numérico).   "
 },
 {
   "id": "section-triangulo-pascal-6",
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-6",
   "type": "Teorema",
-  "number": "3.1.6",
+  "number": "3.1.8",
   "title": "",
   "body": "(Relação de Stifel)      "
 },
@@ -2660,25 +2678,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#teo-reolacoes-complementares",
   "type": "Teorema",
-  "number": "3.1.7",
+  "number": "3.1.9",
   "title": "",
   "body": "(Relação das Combinações Complementares)      "
 },
 {
-  "id": "inclusao-triangulopascal",
+  "id": "fig-reflexao-01",
   "level": "2",
-  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "url": "section-triangulo-pascal.html#fig-reflexao-01",
   "type": "Figura",
-  "number": "3.1.8",
+  "number": "3.1.10",
   "title": "",
-  "body": " Teorema das Linhas.   "
+  "body": " Teo. Linhas (Coef. binomiais).   "
+},
+{
+  "id": "fig-reflexao-02",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#fig-reflexao-02",
+  "type": "Figura",
+  "number": "3.1.11",
+  "title": "",
+  "body": " Teo. Linhas (Numérico).   "
 },
 {
   "id": "section-triangulo-pascal-10",
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-10",
   "type": "Teorema",
-  "number": "3.1.9",
+  "number": "3.1.12",
   "title": "",
   "body": "(Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é   "
 },
@@ -2687,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#exem-soma1",
   "type": "Exemplo",
-  "number": "3.1.10",
+  "number": "3.1.13",
   "title": "",
   "body": " Qual o valor da soma      "
 },
@@ -2696,25 +2723,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-12",
   "type": "Tecnologia",
-  "number": "3.1.11",
+  "number": "3.1.14",
   "title": "",
   "body": " Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.   "
 },
 {
-  "id": "inclusao-triangulopascal",
+  "id": "fig-reflexao-01",
   "level": "2",
-  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "url": "section-triangulo-pascal.html#fig-reflexao-01",
   "type": "Figura",
-  "number": "3.1.12",
+  "number": "3.1.15",
   "title": "",
-  "body": " Teorema das Colunas.   "
+  "body": " Teo. Colunas (Coef. binomiais).   "
+},
+{
+  "id": "fig-reflexao-02",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#fig-reflexao-02",
+  "type": "Figura",
+  "number": "3.1.16",
+  "title": "",
+  "body": " Teo. Colunas (Numérico).   "
 },
 {
   "id": "teo-colunas",
   "level": "2",
   "url": "section-triangulo-pascal.html#teo-colunas",
   "type": "Teorema",
-  "number": "3.1.13",
+  "number": "3.1.17",
   "title": "",
   "body": "(Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:   "
 },
@@ -2723,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#exem-soma2",
   "type": "Exemplo",
-  "number": "3.1.14",
+  "number": "3.1.18",
   "title": "",
   "body": " Qual o valor da soma     Observe que , assim . Portanto,    "
 },
@@ -2732,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-17",
   "type": "Tecnologia",
-  "number": "3.1.15",
+  "number": "3.1.19",
   "title": "",
   "body": " Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.   "
 },
@@ -2741,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#exem-soma3",
   "type": "Exemplo",
-  "number": "3.1.16",
+  "number": "3.1.20",
   "title": "",
   "body": " Qual o valor da soma  Note que  Vamos reescrever o polinômio como um polinômio de grau que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira: Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora, podemos terminar o cálculo da soma   "
 },
@@ -2750,25 +2786,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-19",
   "type": "Tecnologia",
-  "number": "3.1.17",
+  "number": "3.1.21",
   "title": "",
   "body": " Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.   "
 },
 {
-  "id": "inclusao-triangulopascal",
+  "id": "fig-reflexao-01",
   "level": "2",
-  "url": "section-triangulo-pascal.html#inclusao-triangulopascal",
+  "url": "section-triangulo-pascal.html#fig-reflexao-01",
   "type": "Figura",
-  "number": "3.1.18",
+  "number": "3.1.22",
   "title": "",
-  "body": " Teorema das Diagonais.   "
+  "body": " Teo. Diagonais (Coef. binomiais).   "
+},
+{
+  "id": "fig-reflexao-02",
+  "level": "2",
+  "url": "section-triangulo-pascal.html#fig-reflexao-02",
+  "type": "Figura",
+  "number": "3.1.23",
+  "title": "",
+  "body": " Teo. Diagonais (Numérico).   "
 },
 {
   "id": "section-triangulo-pascal-22",
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-22",
   "type": "Teorema",
-  "number": "3.1.19",
+  "number": "3.1.24",
   "title": "",
   "body": "(Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.   "
 },
@@ -2777,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-triangulo-pascal.html#section-triangulo-pascal-23",
   "type": "Teorema",
-  "number": "3.1.20",
+  "number": "3.1.25",
   "title": "",
   "body": "    Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,     "
 },
