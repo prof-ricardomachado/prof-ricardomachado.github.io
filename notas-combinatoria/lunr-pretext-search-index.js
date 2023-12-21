@@ -2626,7 +2626,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Triângulo de Pascal",
-  "body": " Triângulo de Pascal    O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .      O Triângulo de Pascal (Coef. binomiais).     O Triângulo de Pascal (Numérico).       Obtenha o Triângulo de Pascal referente ao intervalo escolhido.      A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:     Relação de Stifel (Coef. binomiais).     Relação de Stifel (Numérico).     (Relação de Stifel)       (Relação das Combinações Complementares)       A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha do triângulo de Pascal é igual . Veja a figura abaixo:     Teo. Linhas (Coef. binomiais).     Teo. Linhas (Numérico).     (Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna , do início até a linha é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:     Teo. Colunas (Coef. binomiais).     Teo. Colunas (Numérico).     (Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:     Qual o valor da soma     Observe que , assim . Portanto,      Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.     Qual o valor da soma  Note que  Vamos reescrever o polinômio como um polinômio de grau que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira: Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora, podemos terminar o cálculo da soma     Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha , até a linha , é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:     Teo. Diagonais (Coef. binomiais).     Teo. Diagonais (Numérico).     (Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.        Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,       Exercícios   Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?     Calcule o valor de       .  .  .         Definindo , obtemos    Definindo , obtemos      Calcule o valor da soma    746660    Calcule o valor de      Calcule o valor de      Vamos calcular e separadamente.   Para usar o Teorema das Diagonais no cálculo de , precisamos somar e subtrair . Portanto,     Calcule          "
+  "body": " Triângulo de Pascal    O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .      O Triângulo de Pascal.     O Triângulo de Pascal.       Obtenha o Triângulo de Pascal referente ao intervalo escolhido.      A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:     Relação de Stifel.     Relação de Stifel.     (Relação de Stifel)       (Relação das Combinações Complementares)       A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha do triângulo de Pascal é igual . Veja a figura abaixo:     Teorema das Linhas.     Teorema das Linhas.     (Teorema das Linhas)    Observe que   Ou seja, a soma conta o número de todos os subconjuntos, de um conjunto com n elementos.  Essa quantidade é , pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é     Qual o valor da soma        Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , definimos a função e usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna , do início até a linha é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:     Teorema das Colunas.     Teorema das Colunas.     (Teorema das Colunas)   Vamos aplicar a relação de Stifel aos elementos da coluna : Somando tudo, ficamos com Como , obtemos o resultado:     Qual o valor da soma     Observe que , assim . Portanto,      Vamos resolver o usando o Sage. Primeiramente note que Definimos a variável , usamos o método com a expressão do somatório.     Qual o valor da soma  Note que  Vamos reescrever o polinômio como um polinômio de grau que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira: Então, vamos procurar valores para e , para os quais, vale a igualdade igualando os coeficientes, obtemos Portanto, e . Agora, podemos terminar o cálculo da soma     Vamos resolver o usando o Sage. Primeiramente note que Definimos as variáveis e , usamos o método com a expressão do somatório. No final do código do método foi acrescentado o comando apenas para o resultado ser exibido no formato compilado pelo , ou seja, visualmente mais elegante.    A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha , até a linha , é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:     Teorema das Diagonais.     Teorema das Diagonais.     (Teorema das Diagonais)    Aplicando o , em cada obtemos  O que mostra o resultado.        Vamos analisar a diferença : Oberve que e são positivos, portanto o sinal de , será determinado pelo sinal de Logo,       Exercícios   Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?     Calcule o valor de       .  .  .         Definindo , obtemos    Definindo , obtemos      Calcule o valor da soma    746660    Calcule o valor de      Calcule o valor de      Vamos calcular e separadamente.   Para usar o Teorema das Diagonais no cálculo de , precisamos somar e subtrair . Portanto,     Calcule          "
 },
 {
   "id": "section-triangulo-pascal-2",
@@ -2635,7 +2635,7 @@ var ptx_lunr_docs = [
   "type": "Definição",
   "number": "3.1.1",
   "title": "",
-  "body": " O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .      O Triângulo de Pascal (Coef. binomiais).     O Triângulo de Pascal (Numérico).     "
+  "body": " O Triângulo de Pascal é um triângulo numérico infinito formado por números binomiais , na qual, representa a linha, e representa a coluna, com . Abaixo temos duas representações do mesmo triângulo, com .      O Triângulo de Pascal.     O Triângulo de Pascal.     "
 },
 {
   "id": "section-triangulo-pascal-3",
@@ -2653,7 +2653,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.6",
   "title": "",
-  "body": " Relação de Stifel (Coef. binomiais).   "
+  "body": " Relação de Stifel.   "
 },
 {
   "id": "fig-reflexao-02",
@@ -2662,7 +2662,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.7",
   "title": "",
-  "body": " Relação de Stifel (Numérico).   "
+  "body": " Relação de Stifel.   "
 },
 {
   "id": "section-triangulo-pascal-6",
@@ -2689,7 +2689,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.10",
   "title": "",
-  "body": " Teo. Linhas (Coef. binomiais).   "
+  "body": " Teorema das Linhas.   "
 },
 {
   "id": "fig-reflexao-02",
@@ -2698,7 +2698,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.11",
   "title": "",
-  "body": " Teo. Linhas (Numérico).   "
+  "body": " Teorema das Linhas.   "
 },
 {
   "id": "section-triangulo-pascal-10",
@@ -2734,7 +2734,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.15",
   "title": "",
-  "body": " Teo. Colunas (Coef. binomiais).   "
+  "body": " Teorema das Colunas.   "
 },
 {
   "id": "fig-reflexao-02",
@@ -2743,7 +2743,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.16",
   "title": "",
-  "body": " Teo. Colunas (Numérico).   "
+  "body": " Teorema das Colunas.   "
 },
 {
   "id": "teo-colunas",
@@ -2797,7 +2797,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.22",
   "title": "",
-  "body": " Teo. Diagonais (Coef. binomiais).   "
+  "body": " Teorema das Diagonais.   "
 },
 {
   "id": "fig-reflexao-02",
@@ -2806,7 +2806,7 @@ var ptx_lunr_docs = [
   "type": "Figura",
   "number": "3.1.23",
   "title": "",
-  "body": " Teo. Diagonais (Numérico).   "
+  "body": " Teorema das Diagonais.   "
 },
 {
   "id": "section-triangulo-pascal-22",
