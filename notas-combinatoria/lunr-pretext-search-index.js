@@ -3553,7 +3553,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.3",
   "title": "Distribuição Binomial",
-  "body": " Distribuição Binomial    Distribuição Binomial   Jogando uma moeda não viciada 15 vezes. Qual é a probabilidade de obtermos exatamente 7 caras?   Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é .  Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é  mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.  Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de maneiras.  Portanto a resposta para nosso problema é      Considere um experimento com apenas dois resultados possíveis, chamados de sucesso e fracasso . Denotaremos por a probabilidade de sucesso.  A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é       Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.   Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?  Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?    item a) Vamos considerar os eventos:  S: saiu uma face verde  F: não saiu uma face verde  Pelo a probabilidade é   item b) Vamos considerar os eventos:  S: saiu uma face azul  F: não saiu uma face azul  Pelo a probabilidade é       Exercícios    Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .    (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:       (ITA 2010) Um palco possui refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de a probabilidade de ser aceso. Então, a probabilidade de que, este instante, ou refletores sejam acesos simultaneamente, é igual a  a) b) c) d) e)    a)   Aplicando o temos     "
+  "body": " Distribuição Binomial    Distribuição Binomial   Jogando uma moeda não viciada 15 vezes. Qual é a probabilidade de obtermos exatamente 7 caras?   Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é .  Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é  mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.  Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de maneiras.  Portanto a resposta para nosso problema é     Considere um experimento com apenas dois resultados possíveis, chamados de sucesso e fracasso . Denotaremos por a probabilidade de sucesso.   A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é       Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.   Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?  Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?    item a) Vamos considerar os eventos:  S: saiu uma face verde  F: não saiu uma face verde  Pelo a probabilidade é   item b) Vamos considerar os eventos:  S: saiu uma face azul  F: não saiu uma face azul  Pelo a probabilidade é       Variáveis Aleatórias: Geométrica e Binomial Negativa   Dado um experimento aleatório com espaço amostral , uma variável aleatória é uma função que associa um número real a cada elemento do espaço amostral.    No experimento do lançamento de três moedas podemos definir a variável aleatória como a função que diz o número de caras, por exemplo:  ;  ;  ;  .  Observe que eventos, ou conjuntos de eventos no espaço amostral podem ser definidos pelas variáveis aleatórias. Por exemplo é o conjunto de eventos correspondente a sair exatamente uma cara e é igual a:     Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que o primeiro sucesso seja obtido. A probabilidade de que o sucesso seja obtido na -ésima tentativa é igual a     Para que o sucesso seja obtido exatamente na -ésima tentativa é necessário e suficiente que as tentativas seja fracassos e que a -ésima seja um sucesso. Assim, obtemos a Equação . Como um sucesso acabará ocorrendo, com probabilidade 1.    Qualquer variável aleatória  cuja função de probabilidade seja dada pela Equação é chamada de variável aleatória geométrica com parâmetro . No caso do , é o número de tentativas necessárias para obter 1 sucesso.   Uma urna contém 5 bolas brancas e 7 bolas pretas. A bolas são selecionadas aleatoriamente, uma de cada vez, até que saia uma bola preta. Se supormos que cada bola selecionada seja substituída por outra de mesma cor, antes que a próxima bola seja retirada, qual é a probabilidade de que  sejam necessárias exatamente 4 retiradas?  sejam necessárias pelo menos 4 retiradas?     item a) Se representar o número de retiradas necessárias até que se sele- cione uma bola preta, então satisfaz a Equação , com . Então, a probabilidade é   item b)       Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que se acumule um total de sucessos. A probabilidade de que o -ésimo sucesso seja obtido na -ésima tentativa é igual a      Para que o -ésimo sucesso ocorra na -ésima tentativa, devem ocorrer sucessos nas primeiras tentativas e a -ésima tentativa deve ser um sucesso. A probabilidade do primeiro evento é e a probabilidade do segundo evento é , assim, pela independência dos eventos, obtemos a Equação . Ainda precisamos verificar que um total de sucessos acaba sendo acumulado, ou seja, precisamos verificar que O número de tentativas necessárias para que se obtenham sucessos pode ser representado como , na qual, é o número de tentativas necessárias para o primeiro sucesso, , é o número de tentativas adicionais feitas até que ocorra o segundo sucesso e assim por diante. Tem-se que satisfazem o Teorema . Portanto, cada uma delas é finita com probabilidade 1, e então também deve ser finita, o que estabelece a Equação .     Qualquer variável aleatória cuja função de probabilidade seja dada pela Equação é chamada de variável aleatória binomial negativa com parâmetros . Observe que uma variável aleatória geométrica é simplesmente uma variável binomial negativa com parâmetros .    Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes. A probabilidade de que sucessos ocorram antes de fracassos é     Note que ocorrem sucessos antes de fracassos se e somente se o -ésimo sucesso ocorrer até a -ésima tentativa. Tem-se esse resultado porque, se o -ésimo sucesso tiver ocorrido antes ou na -ésima tentativa, então ele deve ter ocorrido antes do -ésimo fracasso, e vice-versa. Portanto, da Equação , a probabilidade desejada é dada pela Equação .     Joga-se uma moeda não viciada. Qual é a probabilidade de serem obtidas  3 caras antes de 2 coroas?  5 caras antes de 3 coroas?     item a) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é   item b) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é       Exercícios    Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .    (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:       (ITA 2010) Um palco possui refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de a probabilidade de ser aceso. Então, a probabilidade de que, este instante, ou refletores sejam acesos simultaneamente, é igual a  a) b) c) d) e)    a)   Aplicando o temos    Dois adversários A e B disputam uma série de partidas. O primeiro que obtiver vitórias ganha a série. No momento o resultado é a favor de A. Qual é a probabilidade de A ganhar a série sabendo que em cada partida as probabilidades de A e B vencerem são respectivamente 0,3 e 0,7?  Basta aplicar o , na qual, A deve obter 3 vitórias antes que 6 derrotas. Logo, a resposta é     "
 },
 {
   "id": "section-distribuicao-binomial-2-2",
@@ -3571,12 +3571,12 @@ var ptx_lunr_docs = [
   "type": "Teorema",
   "number": "4.3.2",
   "title": "",
-  "body": " Considere um experimento com apenas dois resultados possíveis, chamados de sucesso e fracasso . Denotaremos por a probabilidade de sucesso.  A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é    "
+  "body": " A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é    "
 },
 {
-  "id": "section-distribuicao-binomial-2-4",
+  "id": "section-distribuicao-binomial-2-5",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-2-4",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-2-5",
   "type": "Exemplo",
   "number": "4.3.3",
   "title": "",
@@ -3586,28 +3586,118 @@ var ptx_lunr_docs = [
   "id": "section-distribuicao-binomial-3-2",
   "level": "2",
   "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-2",
-  "type": "Exercício",
-  "number": "4.3.2.1",
+  "type": "Definição",
+  "number": "4.3.4",
   "title": "",
-  "body": " Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .  "
+  "body": " Dado um experimento aleatório com espaço amostral , uma variável aleatória é uma função que associa um número real a cada elemento do espaço amostral.  "
 },
 {
   "id": "section-distribuicao-binomial-3-3",
   "level": "2",
   "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-3",
+  "type": "Exemplo",
+  "number": "4.3.5",
+  "title": "",
+  "body": " No experimento do lançamento de três moedas podemos definir a variável aleatória como a função que diz o número de caras, por exemplo:  ;  ;  ;  .  Observe que eventos, ou conjuntos de eventos no espaço amostral podem ser definidos pelas variáveis aleatórias. Por exemplo é o conjunto de eventos correspondente a sair exatamente uma cara e é igual a:   "
+},
+{
+  "id": "teo01",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#teo01",
+  "type": "Teorema",
+  "number": "4.3.6",
+  "title": "",
+  "body": " Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que o primeiro sucesso seja obtido. A probabilidade de que o sucesso seja obtido na -ésima tentativa é igual a     Para que o sucesso seja obtido exatamente na -ésima tentativa é necessário e suficiente que as tentativas seja fracassos e que a -ésima seja um sucesso. Assim, obtemos a Equação . Como um sucesso acabará ocorrendo, com probabilidade 1.   "
+},
+{
+  "id": "section-distribuicao-binomial-3-5",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-5",
+  "type": "Nota",
+  "number": "4.3.7",
+  "title": "",
+  "body": "Qualquer variável aleatória  cuja função de probabilidade seja dada pela Equação é chamada de variável aleatória geométrica com parâmetro . No caso do , é o número de tentativas necessárias para obter 1 sucesso. "
+},
+{
+  "id": "section-distribuicao-binomial-3-6",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-6",
+  "type": "Exemplo",
+  "number": "4.3.8",
+  "title": "",
+  "body": " Uma urna contém 5 bolas brancas e 7 bolas pretas. A bolas são selecionadas aleatoriamente, uma de cada vez, até que saia uma bola preta. Se supormos que cada bola selecionada seja substituída por outra de mesma cor, antes que a próxima bola seja retirada, qual é a probabilidade de que  sejam necessárias exatamente 4 retiradas?  sejam necessárias pelo menos 4 retiradas?     item a) Se representar o número de retiradas necessárias até que se sele- cione uma bola preta, então satisfaz a Equação , com . Então, a probabilidade é   item b)     "
+},
+{
+  "id": "section-distribuicao-binomial-3-7",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-7",
+  "type": "Teorema",
+  "number": "4.3.9",
+  "title": "",
+  "body": " Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que se acumule um total de sucessos. A probabilidade de que o -ésimo sucesso seja obtido na -ésima tentativa é igual a      Para que o -ésimo sucesso ocorra na -ésima tentativa, devem ocorrer sucessos nas primeiras tentativas e a -ésima tentativa deve ser um sucesso. A probabilidade do primeiro evento é e a probabilidade do segundo evento é , assim, pela independência dos eventos, obtemos a Equação . Ainda precisamos verificar que um total de sucessos acaba sendo acumulado, ou seja, precisamos verificar que O número de tentativas necessárias para que se obtenham sucessos pode ser representado como , na qual, é o número de tentativas necessárias para o primeiro sucesso, , é o número de tentativas adicionais feitas até que ocorra o segundo sucesso e assim por diante. Tem-se que satisfazem o Teorema . Portanto, cada uma delas é finita com probabilidade 1, e então também deve ser finita, o que estabelece a Equação .   "
+},
+{
+  "id": "section-distribuicao-binomial-3-8",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-8",
+  "type": "Nota",
+  "number": "4.3.10",
+  "title": "",
+  "body": " Qualquer variável aleatória cuja função de probabilidade seja dada pela Equação é chamada de variável aleatória binomial negativa com parâmetros . Observe que uma variável aleatória geométrica é simplesmente uma variável binomial negativa com parâmetros .  "
+},
+{
+  "id": "coromorg",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#coromorg",
+  "type": "Corolário",
+  "number": "4.3.11",
+  "title": "",
+  "body": " Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes. A probabilidade de que sucessos ocorram antes de fracassos é     Note que ocorrem sucessos antes de fracassos se e somente se o -ésimo sucesso ocorrer até a -ésima tentativa. Tem-se esse resultado porque, se o -ésimo sucesso tiver ocorrido antes ou na -ésima tentativa, então ele deve ter ocorrido antes do -ésimo fracasso, e vice-versa. Portanto, da Equação , a probabilidade desejada é dada pela Equação .   "
+},
+{
+  "id": "section-distribuicao-binomial-3-10",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-10",
+  "type": "Exemplo",
+  "number": "4.3.12",
+  "title": "",
+  "body": " Joga-se uma moeda não viciada. Qual é a probabilidade de serem obtidas  3 caras antes de 2 coroas?  5 caras antes de 3 coroas?     item a) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é   item b) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é    "
+},
+{
+  "id": "section-distribuicao-binomial-4-2",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-4-2",
   "type": "Exercício",
-  "number": "4.3.2.2",
+  "number": "4.3.3.1",
+  "title": "",
+  "body": " Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .  "
+},
+{
+  "id": "section-distribuicao-binomial-4-3",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-4-3",
+  "type": "Exercício",
+  "number": "4.3.3.2",
   "title": "",
   "body": " (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:     "
 },
 {
-  "id": "section-distribuicao-binomial-3-4",
+  "id": "section-distribuicao-binomial-4-4",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-3-4",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-4-4",
   "type": "Exercício",
-  "number": "4.3.2.3",
+  "number": "4.3.3.3",
   "title": "",
   "body": " (ITA 2010) Um palco possui refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de a probabilidade de ser aceso. Então, a probabilidade de que, este instante, ou refletores sejam acesos simultaneamente, é igual a  a) b) c) d) e)    a)   Aplicando o temos   "
+},
+{
+  "id": "section-distribuicao-binomial-4-5",
+  "level": "2",
+  "url": "section-distribuicao-binomial.html#section-distribuicao-binomial-4-5",
+  "type": "Exercício",
+  "number": "4.3.3.4",
+  "title": "",
+  "body": "Dois adversários A e B disputam uma série de partidas. O primeiro que obtiver vitórias ganha a série. No momento o resultado é a favor de A. Qual é a probabilidade de A ganhar a série sabendo que em cada partida as probabilidades de A e B vencerem são respectivamente 0,3 e 0,7?  Basta aplicar o , na qual, A deve obter 3 vitórias antes que 6 derrotas. Logo, a resposta é   "
 },
 {
   "id": "section-espaco-infinito",
