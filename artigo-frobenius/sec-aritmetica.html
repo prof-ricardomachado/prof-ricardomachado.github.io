@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-04-26T11:19:32-03:00       *-->
+<!--*       on 2024-04-29T15:58:10-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -100,27 +100,52 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-aritmetica"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1</span> <span class="title">Aritmética dos Inteiros</span>
 </h2>
-<article class="definition definition-like" id="definition-1"><h6 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
+<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
 </h6>
-<p id="p-4">Sejam \(a\) e \(b\) dois inteiros, diz-se que o inteiro positivo \(d\) é o <em class="emphasis">máximo divisor comum</em> de \(a\) e \(b\text{,}\) e denotamos por \(d=mdc(a,b)\text{,}\) se \(d\) satisfaz as seguintes condições:</p>
+<p id="p-4">Sejam \(a\) e \(b\) números inteiros com \(b\neq 0\text{.}\) Então existem únicos inteiros \(q\) e \(r\) tais que</p>
+<div class="displaymath">
+\begin{equation*}
+a=bq+r,\quad \text{com}\quad 0\leq r\lt|b|. 
+\end{equation*}
+</div>
+<p data-braille="continuation">O número \(a\) é chamado de <em class="emphasis">dividendo</em>, o número \(b\) é chamado de <em class="emphasis">divisor</em>, o número \(q\) é chamado de <em class="emphasis">quociente</em> e o número \(r\) é chamado de <em class="emphasis">resto</em>.</p></article><article class="technology computation-like" id="technology-1"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
+</h6>
+<p id="p-5">Escolha valores para \(a\) e \(b\) para obter os valores do quociente e resto na divisão de \(a\) por \(b\text{.}\)</p>
+<figure class="figure figure-like" id="figure-1"><iframe id="interactive-algoritmo-div" width="600" height="300" src="interactive-algoritmo-div-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.3<span class="period">.</span></span><span class="space"> </span>Divisão Euclideana.</figcaption></figure><p id="p-6">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">def divisao(a, b):
+    r=ZZ(mod(a,b))                       # cálculo do resto da divisão de a por b
+    q=(a-r)/b                            # cálculo do quociente da divisão de a por b
+    print('%d = %d*%d + %d' %(a,b,q,r))  # imprime na tela os valores de a=b*q+r
+divisao(-7, -3)
+</script></div></article><article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h6>
+<p id="p-7">Sejam \(a\) e \(b\) dois inteiros, diz-se que o inteiro positivo \(d\) é o <em class="emphasis">máximo divisor comum</em> de \(a\) e \(b\text{,}\) e denotamos por \(d=mdc(a,b)\text{,}\) se \(d\) satisfaz as seguintes condições:</p>
 <ol class="lower-roman">
 <li id="li-5">\(d\) é um divisor comum de \(a\) e \(b\text{,}\) ou seja, \(d|a\) e \(d|b\text{;}\)</li>
 <li id="li-6">\(d\) é divisível por todo divisor comum de \(a\) e \(b\text{,}\) isto é, se \(c\) é divisor comum de \(a\) e \(b\text{,}\) então \(c|d\text{.}\)</li>
-</ol></article><article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span><span class="space"> </span><span class="title">(Algoritmo de Euclides para calcular o MDC).</span>
+</ol></article><article class="technology computation-like" id="technology-2"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span>
 </h6>
-<p id="p-5">Sejam \(a\) e \(b\) inteiros positivos. O \(mdc(a,b)\) pode ser calculado com os seguintes passos.</p>
+<p id="p-8">Método \(\verb|gcd|\) para calcular MDC.</p>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">n = var('n')                #define a variável n
+gcd(21*n+4, 14*n+3)         #calcula o MDC entre 21n+4 e 14n+3
+</script></div></article><article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span><span class="space"> </span><span class="title">(Algoritmo de Euclides para calcular o MDC).</span>
+</h6>
+<p id="p-9">Sejam \(a\) e \(b\) inteiros positivos. O \(mdc(a,b)\) pode ser calculado com os seguintes passos.</p>
 <ol class="decimal">
 <li id="li-7">Faça \(i=1\text{,}\) \(r_0=max\{a,b\}\) e \(r_1=min\{a,b\}\text{;}\)</li>
 <li id="li-8">Defina \(r_{i+1}\) como o resto da divisão de \(r_{i-1}\) por \(r_i\text{,}\) isto é, \(r_{i-1}=q_ir_i+r_{i+1}\) com \(0\leq r_{i+1}\lt r_i\text{;}\)</li>
 <li id="li-9">Se \(r_{i+1}\neq0\) incremete \(i\) de 1 e volte para o passo 2, caso contrário \(mdc(a,b)=r_i\text{.}\)</li>
-</ol></article><article class="technology computation-like" id="technology-1"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span>
+</ol></article><article class="technology computation-like" id="technology-3"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.7</span><span class="period">.</span>
 </h6>
-<p id="p-6">Escolha valores para \(a\) e \(b\) para obter todos os passos do algoritmo descrito no teorema anterior.</p>
-<figure class="figure figure-like" id="figure-1"><iframe id="interactive-algoritmoeu" width="600" height="300" src="interactive-algoritmoeu-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.4<span class="period">.</span></span><span class="space"> </span>Algoritmo de Euclides para calcular MDC.</figcaption></figure><p id="p-7">O algoritmo em SageMath está descrito abaixo:</p>
-<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">def mdc(a,b):
+<p id="p-10">Escolha valores para \(a\) e \(b\) para obter todos os passos do algoritmo descrito no teorema anterior.</p>
+<figure class="figure figure-like" id="figure-2"><iframe id="interactive-algoritmoeu" width="600" height="360" src="interactive-algoritmoeu-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.8<span class="period">.</span></span><span class="space"> </span>Algoritmo de Euclides para calcular MDC.</figcaption></figure><p id="p-11">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def mdc(a,b):
     if 1>a or 1>b:
         print('a e b precisam ser maiores que zero')
     else:
@@ -138,32 +163,63 @@ MathJax.Hub.Config({
             print('%d = %d*%d+%d' %(r[i], r[i+1], q[i+1], r[i+2]))
         print('\nmdc(%d,%d)=%d' %(a,b,r[-2]))
 mdc(25,88)
-</script></div></article><article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span>
+</script></div></article><article class="technology computation-like" id="technology-4"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
 </h6>
-<p id="p-8">Se \(a\) e \(b\) são inteiros, um dos quais não é nulo, então existem inteiros \(x\) e \(y\) tais que</p>
+<p id="p-12">Dados números inteiros \(a_1, a_2, \ldots, a_n\text{,}\) não todos nulos, existe seu MDC e</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{mdc}(a_1, a_2, \ldots, a_n)=\mathrm{mdc}(\mathrm{mdc}(a_1, a_2), \ldots, a_{n-1}, a_n).
+\end{equation*}
+</div>
+<p data-braille="continuation">Para obter o MDC de vários números inteiros, digite os números em uma lista como abaixo e aperte no botão "Update".</p>
+<figure class="figure figure-like" id="figure-3"><iframe id="interactive-algoritmo-mdc-recursivo" width="600" height="240" src="interactive-algoritmo-mdc-recursivo-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.10<span class="period">.</span></span><span class="space"> </span>Algoritmo de Euclides para calcular MDC.</figcaption></figure><p id="p-13">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def mdc_recursivo(lista):
+    if 2>len(lista):
+        return 'ERRO, a entrada precisa de pelo menos 2 argumentos'
+    elif len(lista) == 2:
+        return gcd(lista)
+    else: 
+        lista2  = [gcd(lista[0], lista[1])] + list(lista[2:])
+        return mdc_recursivo(lista2)  
+mdc_recursivo([54, 76, 94, 128])
+</script></div></article><article class="theorem theorem-like" id="theorem-3"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span>
+</h6>
+<p id="p-14"><dfn class="terminology">(Bachet-Bézout).</dfn> Se \(a\) e \(b\) são inteiros, um dos quais não é nulo, então existem inteiros \(x\) e \(y\) tais que</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by=mdc(a,b).
 \end{equation*}
-</div></article><p id="p-9">Além de partes implementadas em SageMath, vamos mostrar alguns comandos de SageMath para o cálculo do MDC e de soluções para Equações Diofantinas.</p>
-<article class="technology computation-like" id="technology-2"><h6 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span>
+</div></article><article class="technology computation-like" id="technology-5"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
 </h6>
-<p id="p-10">Dados \(a\) e \(b\) números inteiros, os valores de  \(mdc(a,b)\text{,}\) \(x\) e \(y\text{,}\) tais que</p>
-<div class="displaymath">
-\begin{equation*}
-ax+by=mdc(a,b),
-\end{equation*}
-</div>
-<p data-braille="continuation">podem ser obtidos usando método \(xgcd\text{.}\) A saída será uma tripla, contendo o MDC, o valor de \(x\) e o valor de \(y\text{,}\) respectivamente.</p>
-<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">xgcd(88,25)
+<p id="p-15">Escolha valores para \(a\) e \(b\) para obter todos os passos até obter o MDC entre \(a\) e \(b\) os valores de \(x\) e \(y\text{,}\) conforme o Teorema anterior.</p>
+<figure class="figure figure-like" id="figure-4"><iframe id="interactive-algoritmo-mdc-mdc_bachet_bezout" width="600" height="300" src="interactive-algoritmo-mdc-mdc_bachet_bezout-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.13<span class="period">.</span></span><span class="space"> </span>Bachet-Bézout.</figcaption></figure><p id="p-16">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def mdc_bachet_bezout(a,b):
+    if 1>a or 1>b:
+        print('a e b precisam ser maiores que zero')
+    else:
+        r0 = max([a,b])             # define r0
+        r1 = min([a,b])             # define r1
+        q=[r0, r0//r1]              # lista para guardar os q's
+        r=[r1, r0%r1]               # lista para guardar os r's
+
+        while r[-1] != 0:           # 
+            q.append(r[-2]//r[-1])  # cálculo de todos os
+            r.append(r[-2]%r[-1])   #  valores dos q's e r's
+            
+        r.reverse()                   # lista dos r's na ordem invertida
+        r=r[1:]+[max([a,b])]          # lista dos r's da entrada 1 em diante 
+                                      #  adicionada do maximo entre a e b 
+                                      
+        for i in range(len(r)-2):     # processo de impressão na tela usando
+            x=xgcd(r[i+1],r[i+2])     #  o método xgcd
+            print('%d = %d*(%d) + %d*(%d)' %(r[0],r[i+1],x[1],r[i+2],x[2]))
+mdc_bachet_bezout(25,88)
 </script></div>
-<p id="p-11">O código abaixo, quando executado, retornará "88 * (2) + 25 * (-7) = 1". Os valores de \(a\) e \(b\) podem ser trocados.</p>
-<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">a=88
-b=25
-(mdc,x0,y0) = xgcd(a,b)
-show('%d * (%d) + %d * (%d) = %d' %(a,x0,b,y0,mdc))
+<p id="p-17">Método xgcd do SageMath</p>
+<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">xgcd(88,25)
 </script></div></article></section></div></main>
 </div>
 </body>

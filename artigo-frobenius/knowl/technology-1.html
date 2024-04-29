@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-04-26T11:19:32-03:00       *-->
+<!--*       on 2024-04-29T15:58:10-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,28 +24,15 @@
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Escolha valores para \(a\) e \(b\) para obter todos os passos do algoritmo descrito no teorema anterior.</p>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-algoritmoeu" width="600" height="300" src="interactive-algoritmoeu-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.4<span class="period">.</span></span><span class="space"> </span>Algoritmo de Euclides para calcular MDC.</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O algoritmo em SageMath está descrito abaixo:</p>
-<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">def mdc(a,b):
-    if 1>a or 1>b:
-        print('a e b precisam ser maiores que zero')
-    else:
-        r0 = max([a,b])             # define r0
-        r1 = min([a,b])             # define r1
-        q=[r0, r0//r1]              # lista para guardar os q's
-        r=[r1, r0%r1]               # lista para guardar os r's
-
-        while r[-1] != 0:           # 
-            q.append(r[-2]//r[-1])  # Cálculo de todos os
-            r.append(r[-2]%r[-1])   # valores dos q's e r's
-        q=q[1:]
-        print('%d = %d*%d+%d' %(r0, r1, q[0], r[1]))
-        for i in range(len(q)-1):
-            print('%d = %d*%d+%d' %(r[i], r[i+1], q[i+1], r[i+2]))
-        print('\nmdc(%d,%d)=%d' %(a,b,r[-2]))
-mdc(25,88)
+<p xmlns:svg="http://www.w3.org/2000/svg">Escolha valores para \(a\) e \(b\) para obter os valores do quociente e resto na divisão de \(a\) por \(b\text{.}\)</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-algoritmo-div" width="600" height="300" src="interactive-algoritmo-div-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.3<span class="period">.</span></span><span class="space"> </span>Divisão Euclideana.</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">def divisao(a, b):
+    r=ZZ(mod(a,b))                       # cálculo do resto da divisão de a por b
+    q=(a-r)/b                            # cálculo do quociente da divisão de a por b
+    print('%d = %d*%d + %d' %(a,b,q,r))  # imprime na tela os valores de a=b*q+r
+divisao(-7, -3)
 </script></div></article><span class="incontext"><a href="sec-aritmetica.html#technology-1">[incontext]</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-04-26T11:19:32-03:00       *-->
+<!--*       on 2024-04-29T15:58:10-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,37 +57,33 @@ MathJax.Hub.Config({
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="pretext-content" id="pretext-SA"><div style="width:600px; height:420px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a=input_box(5 , width=10,  label="a:"), b=input_box(9 , width=10,  label="b:")):
+def _(a=input_box(3 , width=10,  label="a:"), b=input_box(8 , width=10,  label="b:"), auto_update=False):
 
-    def numFrob(a1,b1):
-
-        if gcd(a1, b1)!=1:
-            print('Insira valores tais que o mdc seja igual a 1.')
-        else:
-            frob = a1*b1-a1-b1
-            print('g = %d*%d-%d-%d=%d' %(a1, b1, a1, b1, frob))
-            m = min([a1,b1])
-            M = max([a1,b1])
-            l=[]
-            dic={}
-            temp=0
-            
-            print('Abaixo, sendo t inteiro não negativo, temos uma')
-            print('parametrização para obter qualquer valor inteiro,') 
-            print('maior ou igual a %d que pode ser obtido pela' %(frob+1)) 
-            print('expressão: %dx+%dy.' %(m, M))
-            print('\n')
-
-            for j in range(m):
-                for i in range(m):
-                    temp = solve(m*x + M*j==frob+i+1, x)[0].rhs()
-                    if temp in ZZ:
-                        dic.update({(frob+i+1):[temp, j]})
+        def num_frob(a,b):
+            if gcd(a, b)!=1:
+                print('Insira valores tais que o mdc seja igual a 1.')
+            else:
+                g = a*b-a-b
+                print('g = %d*%d-%d-%d=%d' %(a, b, a, b, g))
+                m = min([a,b])
+                M = max([a,b])
+                l=[]
+                dic={}
+                temp=0
                 
-            for j in range(frob+1, frob+m+1):
-                print('%d*(%d+t) + %d*%d = %d + %d*t' %(m,dic[j][0],M,dic[j][1],j,m))
-    
+                print('Abaixo, sendo t inteiro não negativo, temos uma')
+                print('parametrização para obter qualquer valor inteiro,') 
+                print('maior ou igual a %d que pode ser obtido pela' %(g+1)) 
+                print('expressão: %dx+%dy.\n' %(m, M))
 
-    numFrob(a,b)
+                for j in range(m):
+                    for i in range(m):
+                        temp = solve(m*x + M*j==g+i+1, x)[0].rhs()
+                        if temp in ZZ:
+                            dic.update({(g+i+1):[temp, j]})
+                    
+                for j in range(g+1, g+m+1):
+                    print('%d*(%d+t) + %d*%d = %d + %d*t' %(m,dic[j][0],M,dic[j][1],j,m))
+        num_frob(a,b)
 </script></div></div></body>
 </html>

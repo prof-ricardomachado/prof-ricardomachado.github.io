@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-04-26T11:19:32-03:00       *-->
+<!--*       on 2024-04-29T15:58:10-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,40 +24,25 @@
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
 </h6>
-<p>Escolha os valores \(a\text{,}\) \(b\) e \(c\) para obter algumas soluções inteiras no plano, da Equação Diofantina:</p>
+<p>Dados números inteiros \(a_1, a_2, \ldots, a_n\text{,}\) não todos nulos, existe seu MDC e</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-ax+by=c.
+\mathrm{mdc}(a_1, a_2, \ldots, a_n)=\mathrm{mdc}(\mathrm{mdc}(a_1, a_2), \ldots, a_{n-1}, a_n).
 \end{equation*}
 </div>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-reta" width="600" height="660" src="interactive-reta-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.</p>
-<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def grafDiof(a1,b1,c1, sols=6):
-    y, t_0=var('y, t_0')
-    if c1%gcd(a1, b1)!=0:
-        print('O mcd(%d, %d) não divide %d' %(a1, b1, c1))
-    else:
-        l=[]
-        temp = solve_diophantine(a1*x+b1*y==c1)
-        lt=[temp[0], temp[1]]
-        yzero = solve(temp[0]==0, t_0)
-        yzero = ceil(yzero[0].rhs())
-        for i in range(yzero, yzero+ceil(sols/2)):
-            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
-        for i in range(yzero-1, yzero-ceil(sols/2)-1, -1):
-            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
-        
-        l.sort()
-        pe = l[0]
-        pd = l[-1]
-        p2=line((pe, pd))
-        p1=list_plot(l, size=30, color='red')
-        (p2+p1).show(figsize=4)
-        print('As soluções destacadas de %dx + %dy = %d são:' %(a1, b1, c1))
-        for i in l:
-            print(i)
-grafDiof(5, 9, 31)
-</script></div></article><span class="incontext"><a href="section-2.html#technology-4">[incontext]</a></span>
+<p data-braille="continuation">Para obter o MDC de vários números inteiros, digite os números em uma lista como abaixo e aperte no botão "Update".</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-algoritmo-mdc-recursivo" width="600" height="240" src="interactive-algoritmo-mdc-recursivo-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.10<span class="period">.</span></span><span class="space"> </span>Algoritmo de Euclides para calcular MDC.</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def mdc_recursivo(lista):
+    if 2>len(lista):
+        return 'ERRO, a entrada precisa de pelo menos 2 argumentos'
+    elif len(lista) == 2:
+        return gcd(lista)
+    else: 
+        lista2  = [gcd(lista[0], lista[1])] + list(lista[2:])
+        return mdc_recursivo(lista2)  
+mdc_recursivo([54, 76, 94, 128])
+</script></div></article><span class="incontext"><a href="sec-aritmetica.html#technology-4">[incontext]</a></span>
 </body>
 </html>

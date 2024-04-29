@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2023-04-26T11:19:32-03:00       *-->
+<!--*       on 2024-04-29T15:58:10-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -24,38 +24,34 @@
 </head>
 <body>
 <article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Número de Frobenius para duas variáveis.</p>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-frobenius" width="600" height="420" src="interactive-frobenius-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O código para calcular o número de Frobenius para duas variáveis e uma parametrização para a solução geral segue abaixo:</p>
-<div class="sagecell-sage" id="sage-7"><script type="text/x-sage">def numFrob(a1,b1):
-
-    if gcd(a1, b1)!=1:
-        print('Insira valores tais que o mdc seja igual a 1.')
+<p xmlns:svg="http://www.w3.org/2000/svg">Escolha valores para \(a\) e \(b\) para obter todos os passos até obter o MDC entre \(a\) e \(b\) os valores de \(x\) e \(y\text{,}\) conforme o Teorema anterior.</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-algoritmo-mdc-mdc_bachet_bezout" width="600" height="300" src="interactive-algoritmo-mdc-mdc_bachet_bezout-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.13<span class="period">.</span></span><span class="space"> </span>Bachet-Bézout.</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def mdc_bachet_bezout(a,b):
+    if 1>a or 1>b:
+        print('a e b precisam ser maiores que zero')
     else:
-        frob = a1*b1-a1-b1
-        print('g = %d*%d-%d-%d=%d' %(a1, b1, a1, b1, frob))
-        m = min([a1,b1])
-        M = max([a1,b1])
-        l=[]
-        dic={}
-        temp=0
-        
-        print('Abaixo, sendo t inteiro não negativo, temos uma')
-        print('parametrização para obter qualquer valor inteiro,') 
-        print('maior ou igual a %d que pode ser obtido pela' %(frob+1)) 
-        print('expressão: %dx+%dy.' %(m, M))
-        print('\n')
+        r0 = max([a,b])             # define r0
+        r1 = min([a,b])             # define r1
+        q=[r0, r0//r1]              # lista para guardar os q's
+        r=[r1, r0%r1]               # lista para guardar os r's
 
-        for j in range(m):
-            for i in range(m):
-                temp = solve(m*x + M*j==frob+i+1, x)[0].rhs()
-                if temp in ZZ:
-                    dic.update({(frob+i+1):[temp, j]})
+        while r[-1] != 0:           # 
+            q.append(r[-2]//r[-1])  # cálculo de todos os
+            r.append(r[-2]%r[-1])   #  valores dos q's e r's
             
-        for j in range(frob+1, frob+m+1):
-            print('%d*(%d+t) + %d*%d = %d + %d*t' %(m,dic[j][0],M,dic[j][1],j,m))
-numFrob(5,9)
-</script></div></article><span class="incontext"><a href="section-3.html#technology-5">[incontext]</a></span>
+        r.reverse()                   # lista dos r's na ordem invertida
+        r=r[1:]+[max([a,b])]          # lista dos r's da entrada 1 em diante 
+                                      #  adicionada do maximo entre a e b 
+                                      
+        for i in range(len(r)-2):     # processo de impressão na tela usando
+            x=xgcd(r[i+1],r[i+2])     #  o método xgcd
+            print('%d = %d*(%d) + %d*(%d)' %(r[0],r[i+1],x[1],r[i+2],x[2]))
+mdc_bachet_bezout(25,88)
+</script></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Método xgcd do SageMath</p>
+<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">xgcd(88,25)
+</script></div></article><span class="incontext"><a href="sec-aritmetica.html#technology-5">[incontext]</a></span>
 </body>
 </html>
