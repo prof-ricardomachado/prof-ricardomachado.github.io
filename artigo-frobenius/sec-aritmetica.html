@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2024-04-29T15:58:10-03:00       *-->
+<!--*       on 2024-05-15T22:18:13-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -77,7 +77,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="artigo-frobenius.html"><span class="title">O Problema das Moedas de Frobenius:</span> <span class="subtitle">Uma abordagem Olímpica e Computacional</span></a></h1>
+<h1 class="heading"><a href="artigo-frobenius.html"><span class="title">Criação de tecnologias com o Software SageMath para Teoria dos Números</span></a></h1>
 <p class="byline">Jogli Gidel da Silva Araújo, Ricardo Nunes Machado Junior, Thiago Yukio Tanaka</p>
 </div>
 </div></div>
@@ -130,8 +130,8 @@ divisao(-7, -3)
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span>
 </h6>
 <p id="p-8">Método \(\verb|gcd|\) para calcular MDC.</p>
-<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">n = var('n')                #define a variável n
-gcd(21*n+4, 14*n+3)         #calcula o MDC entre 21n+4 e 14n+3
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">n = ZZ['n'].gen()   #indeterminada n no anel dos polinômios com coeficientes inteiros
+gcd(21*n+4, 14*n+3) #calcula o MDC entre 21n+4 e 14n+3
 </script></div></article><article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span><span class="space"> </span><span class="title">(Algoritmo de Euclides para calcular o MDC).</span>
 </h6>
@@ -182,7 +182,7 @@ mdc(25,88)
     else: 
         lista2  = [gcd(lista[0], lista[1])] + list(lista[2:])
         return mdc_recursivo(lista2)  
-mdc_recursivo([54, 76, 94, 128])
+mdc_recursivo([56, 84, 154, 210])
 </script></div></article><article class="theorem theorem-like" id="theorem-3"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span>
 </h6>
@@ -191,12 +191,15 @@ mdc_recursivo([54, 76, 94, 128])
 \begin{equation*}
 ax+by=mdc(a,b).
 \end{equation*}
-</div></article><article class="technology computation-like" id="technology-5"><h6 class="heading">
+</div></article><p id="p-15">Método xgcd do SageMath</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">xgcd(88,25)
+</script></div>
+<article class="technology computation-like" id="technology-5"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
 </h6>
-<p id="p-15">Escolha valores para \(a\) e \(b\) para obter todos os passos até obter o MDC entre \(a\) e \(b\) os valores de \(x\) e \(y\text{,}\) conforme o Teorema anterior.</p>
-<figure class="figure figure-like" id="figure-4"><iframe id="interactive-algoritmo-mdc-mdc_bachet_bezout" width="600" height="300" src="interactive-algoritmo-mdc-mdc_bachet_bezout-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.13<span class="period">.</span></span><span class="space"> </span>Bachet-Bézout.</figcaption></figure><p id="p-16">O algoritmo em SageMath está descrito abaixo:</p>
-<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def mdc_bachet_bezout(a,b):
+<p id="p-16">Escolha valores para \(a\) e \(b\) para obter todos os passos até obter o MDC entre \(a\) e \(b\) os valores de \(x\) e \(y\text{,}\) conforme o Teorema anterior.</p>
+<figure class="figure figure-like" id="figure-4"><iframe id="interactive-algoritmo-mdc-mdc_bachet_bezout" width="600" height="300" src="interactive-algoritmo-mdc-mdc_bachet_bezout-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.13<span class="period">.</span></span><span class="space"> </span>Bachet-Bézout.</figcaption></figure><p id="p-17">O algoritmo em SageMath está descrito abaixo:</p>
+<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">def mdc_bachet_bezout(a,b):
     if 1>a or 1>b:
         print('a e b precisam ser maiores que zero')
     else:
@@ -217,9 +220,6 @@ ax+by=mdc(a,b).
             x=xgcd(r[i+1],r[i+2])     #  o método xgcd
             print('%d = %d*(%d) + %d*(%d)' %(r[0],r[i+1],x[1],r[i+2],x[2]))
 mdc_bachet_bezout(25,88)
-</script></div>
-<p id="p-17">Método xgcd do SageMath</p>
-<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">xgcd(88,25)
 </script></div></article></section></div></main>
 </div>
 </body>

@@ -56,28 +56,30 @@ MathJax.Hub.Config({
 });
 </script><link xmlns:svg="http://www.w3.org/2000/svg" rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
-<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:360px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">@interact
-def _(a1=input_box(88 , width=10,  label="a:"), b1=input_box(25 , width=10,  label="b:"), auto_update=False):
+<body class="pretext-content" id="pretext-SA"><div style="width:600px; height:720px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div xmlns:svg="http://www.w3.org/2000/svg" class="sage-interact"><script type="text/x-sage">from sage.plot.plot3d.shapes import *
+@interact
+def _sols_pitagoricas():
+    l=[]
+    for i in range(-7,8):
+        for j in range(-7,8):
+            s = (2*i*j, i^2-j^2, i^2+j^2)
+            if 50>=i^2+j^2 and s not in l:
+                l.append(s)
 
 
-    def mdc(a,b):
-        if 1>a or 1>b:
-            print('a e b precisam ser maiores que zero')
-        else:
-            r0 = max([a,b])             # define r0
-            r1 = min([a,b])             # define r1
-            q=[r0, r0//r1]              # lista para guardar os q's
-            r=[r1, r0%r1]               # lista para guardar os r's
 
-            while r[-1] != 0:           # 
-                q.append(r[-2]//r[-1])  # Cálculo de todos os
-                r.append(r[-2]%r[-1])   # valores dos q's e r's
-            q=q[1:]
-            print('%d = %d*%d+%d' %(r0, r1, q[0], r[1]))
-            for i in range(len(q)-1):
-                print('%d = %d*%d+%d' %(r[i], r[i+1], q[i+1], r[i+2]))
-            print('\nmdc(%d,%d)=%d' %(a,b,r[-2]))
-    
-    mdc(a1,b1)
+    S = Sphere(0, color='red')
+    for s in l:
+        S += Sphere(0.8, color='red').translate(s)
+
+
+    var('r,t,z')
+    C = (r*cos(t), r*sin(t), z, [t, z])
+    p3 = plot3d(z, (t, 0, 2*pi), (z, 0, 50), transformation=C, opacity=0.7)
+    show(S+p3+polygon([(0,0,20), (0,0,60)]))
+
+    print('As solução em vermelho são:')
+    for s in l:
+        print(s)
 </script></div></div></body>
 </html>

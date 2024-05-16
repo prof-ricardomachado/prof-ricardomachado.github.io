@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2024-04-29T15:58:10-03:00       *-->
+<!--*       on 2024-05-15T22:18:13-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -77,7 +77,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="artigo-frobenius.html"><span class="title">O Problema das Moedas de Frobenius:</span> <span class="subtitle">Uma abordagem Olímpica e Computacional</span></a></h1>
+<h1 class="heading"><a href="artigo-frobenius.html"><span class="title">Criação de tecnologias com o Software SageMath para Teoria dos Números</span></a></h1>
 <p class="byline">Jogli Gidel da Silva Araújo, Ricardo Nunes Machado Junior, Thiago Yukio Tanaka</p>
 </div>
 </div></div>
@@ -114,49 +114,57 @@ x=x_0+tb, \quad y=y_0-ta; \quad t\in \mathbb{Z}.
 <p id="p-19">No SageMath existe um método para resolver equações diofantinas. Para utiliza-lo é necessário declarar cada variável que será usada na equação. Abaixo, declaramos as variáveis \(x\) e \(y\) e escrevemos os comandos para resolver a equação diofantina</p>
 <div class="displaymath">
 \begin{equation*}
-5x+9y=31. 
+3x+8y=13. 
 \end{equation*}
 </div>
 <div class="sagecell-sage" id="sage-7"><script type="text/x-sage">x,y = var('x,y')
-eq = 5*x+9*y==31
+eq = 3*x+8*y==13
 show(solve_diophantine(eq))
 </script></div></article><article class="technology computation-like" id="technology-7"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
 </h6>
-<p id="p-20">Escolha os valores \(a\text{,}\) \(b\) e \(c\) para obter algumas soluções inteiras no plano, da Equação Diofantina:</p>
+<p id="p-20">Resolvendo o problema das Ternas Pitagóricas no SageMath:</p>
+<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">x,y,z = var('x,y,z') 
+show(solve_diophantine(x^2+y^2==z^2))
+</script></div>
+<p id="p-21">Abaixo, podemos ver graficamente as soluções, podendo rotacionar o gráfico para melhor entendimento e visualização.</p>
+<figure class="figure figure-like" id="figure-5"><iframe id="interactive-sol-pita" width="600" height="720" src="interactive-sol-pita-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="technology computation-like" id="technology-8"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
+</h6>
+<p id="p-22">Escolha os valores \(a\text{,}\) \(b\) e \(c\) para obter algumas soluções inteiras no plano, da Equação Diofantina:</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by=c.
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-5"><iframe id="interactive-reta" width="600" height="720" src="interactive-reta-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-21">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.</p>
-<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">def grafDiof(a1,b1,c1, sols=6):
-    y, t_0=var('y, t_0')
-    if c1%gcd(a1, b1)!=0:
-        print('O mcd(%d, %d) não divide %d' %(a1, b1, c1))
-    else:
-        l=[]
-        temp = solve_diophantine(a1*x+b1*y==c1)
-        lt=[temp[0], temp[1]]
-        yzero = solve(temp[0]==0, t_0)
-        yzero = ceil(yzero[0].rhs())
-        for i in range(yzero, yzero+ceil(sols/2)):
-            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
-        for i in range(yzero-1, yzero-ceil(sols/2)-1, -1):
-            l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
-        
-        l.sort()
-        pe = l[0]
-        pd = l[-1]
-        p2=line((pe, pd))
-        p1=list_plot(l, size=30, color='red')
-        (p2+p1).show(figsize=4)
-        print('As soluções destacadas de %dx + %dy = %d são:' %(a1, b1, c1))
+<figure class="figure figure-like" id="figure-6"><iframe id="interactive-reta" width="600" height="720" src="interactive-reta-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-23">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.</p>
+<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">def graf_diof_lin(a,b,c,n_sols=6):
+    x,y,t_0=var('x,y,t_0')
+    if c%gcd(a, b)!=0:   #verifica se o mdc(a,b) não divide c
+        print('O mcd(%d, %d) não divide %d' %(a, b, c))  #caso divida, mens. de erro
+    else:   #caso mdc(a,b)|c, o código continua na linha 6
+        l=[]   #cria a lista vazia l, onde guardaremos as soluções inteiras
+        sd = solve_diophantine(a*x+b*y==c)  #obtendo a solução geral da eq. diof.  
+        t0 = solve(sd[0]==0, t_0)  #obtendo o valor de t_0 que a reta cruza o eixo y
+        t0 = ceil(t0[0].rhs())     #arredondando t0 para um valor inteiro 
+        for i in range(t0, t0+ceil(n_sols/2)):  
+            #guarda soluções inteiras depois de t0
+            l.append((sd[0].subs(t_0=(i)), sd[1].subs(t_0=(i))))
+        for i in range(t0-1, t0-ceil(n_sols/2)-1, -1): 
+            #guarda soluções inteiras antes de t0
+            l.append((sd[0].subs(t_0=(i)), sd[1].subs(t_0=(i))))
+        l.sort()   #ordena l
+        ps = l[0]  #guarda em ps a primeira solução da lista l           
+        us = l[-1] #guarda em us a última solução da lista l           
+        p2=line((ps, us))  #gráfico da reta que liga ps até us
+        p1=list_plot(l, size=30, color='red') #gráfico com as soluções inteiras
+        (p2+p1).show(figsize=4) #exibe os gráficos guardados em p2 e p1 sobrepostos
+        print('As soluções destacadas de %dx + %dy = %d são:' %(a, b, c))
         for i in l:
-            print(i)
-grafDiof(5, 9, 31)
-</script></div></article><p id="p-22">Não entraremos em detalhes, mas ressaltamos que a função "solve_diophantine" se estende para uma maior quantidade de variáveis e não está restrita ao caso linear. Experimente a equação abaixo e depois substitua a equação por outra.</p>
-<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">x,y,z = var('x,y,z') 
+            print(i)  #exibe as soluções inteiras
+graf_diof_lin(3, 8, 13)
+</script></div></article><p id="p-24">Não entraremos em detalhes, mas ressaltamos que a função "solve_diophantine" se estende para uma maior quantidade de variáveis e não está restrita ao caso linear. Experimente a equação abaixo e depois substitua a equação por outra.</p>
+<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">x,y,z = var('x,y,z') 
 eq = 5*x + 9*y + 7*z ==31
 show(solve_diophantine(eq))
 </script></div></section></div></main>
