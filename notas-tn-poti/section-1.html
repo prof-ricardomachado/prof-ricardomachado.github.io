@@ -1,204 +1,71 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2024-05-17T10:06:58-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="pt-BR">
-<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Aula 01 - Divisibilidade I</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Teoria dos Números">
-<meta property="book:author" content="Ricardo Machado">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
-  },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        }, '']
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
     },
-  },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
-  },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
-  },
-  startup: {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  },
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Teoria dos Números:</span> <span class="subtitle">notas de aula (PTOM/POTI)</span></a></h1>
-<p class="byline">Ricardo Machado</p>
-</div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>[no-search-results].</span></div>
-<ol id="searchresults"></ol>
-</div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="01-divisibilidade.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="01-divisibilidade.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-2.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -212,415 +79,381 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\definecolor{fillinmathshade}{gray}{0.9}
-\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
-\)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
-<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Teoria dos Números:</span> <span class="subtitle">notas de aula (PTOM/POTI)</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="01-divisibilidade.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="01-divisibilidade.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-2.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="01-divisibilidade.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="01-divisibilidade.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-2.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Machado</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="01-divisibilidade.html" class="internal"><span class="codenumber">1</span> <span class="title">Divisibilidade</span></a></div>
-<ul class="structural">
-<li class="active">
-<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Aula 01 - Divisibilidade I</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1.1</span> <span class="title">Simulados Antigos</span></a></div></li></ul>
-</li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Aula 02 - Divisibilidade II</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-2.html#exercises-2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="01-divisibilidade.html" data-scroll="01-divisibilidade"><span class="codenumber">1</span> <span class="title">Divisibilidade</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1" class="active">Aula 01 - Divisibilidade I</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Aula 02 - Divisibilidade II</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="01-congruencia.html" class="internal"><span class="codenumber">2</span> <span class="title">Congruência</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Aula 03 - Congruência I</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-3.html#exercises-3" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Aula 04 - Congruência II</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="section-4.html#exercises-4" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="01-congruencia.html" data-scroll="01-congruencia"><span class="codenumber">2</span> <span class="title">Congruência</span></a><ul>
+<li><a href="section-3.html" data-scroll="section-3">Aula 03 - Congruência I</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Aula 04 - Congruência II</a></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">3</span> <span class="title">Referências Bibliográficas</span></a></div></li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-1"><h2 class="heading hide-type">
+<li class="link">
+<a href="03-widgets.html" data-scroll="03-widgets"><span class="codenumber">3</span> <span class="title">Ferramentas Computacionais</span></a><ul>
+<li><a href="section-5.html" data-scroll="section-5">Máximo Divisor Comum</a></li>
+<li><a href="section-6.html" data-scroll="section-6">Números Primos</a></li>
+</ul>
+</li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">4</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-1"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1.1</span> <span class="title">Aula 01 - Divisibilidade I</span>
 </h2>
-<article class="theorem theorem-like" id="theorem-1"><h3 class="heading">
+<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Algoritmo da Divisão).</span>
-</h3>
-<div class="para" id="p-8">Para quaisquer inteiros positivos <span class="process-math">\(a\)</span> e <span class="process-math">\(b\text{,}\)</span> existe um único par <span class="process-math">\((q, r)\)</span> de inteiros não negativos tais que <span class="process-math">\(b = aq + r\)</span> e <span class="process-math">\(r \lt a\text{.}\)</span> Os números <span class="process-math">\(q\)</span> e <span class="process-math">\(r\)</span> são chamados de quociente e resto, respectivamente, da divisão de <span class="process-math">\(b\)</span> por <span class="process-math">\(a\text{.}\)</span>
-</div></article><article class="example example-like" id="example-1"><h3 class="heading">
+</h6>
+<p id="p-8">Para quaisquer inteiros positivos \(a\) e \(b\text{,}\) existe um único par \((q, r)\) de inteiros não negativos tais que \(b = aq + r\) e \(r \lt a\text{.}\) Os números \(q\) e \(r\) são chamados de quociente e resto, respectivamente, da divisão de \(b\) por \(a\text{.}\)</p></article><article class="example example-like" id="example-1"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="p-9">
-<div class="displaymath process-math">
+</h6>
+<div class="displaymath" id="p-9">
 \begin{equation*}
 5 = 3\cdot 1 +2, \quad r=2\lt 3=a;
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath">
 \begin{equation*}
 7 = 9\cdot 0 +7, \quad r=7\lt 9=a;
 \end{equation*}
-</div>
-</div></article><article class="remark remark-like" id="remark-1"><h3 class="heading">
-<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="p-10">
-<div class="para">O teorema anterior admite um enunciado mais geral: Para quaisquer inteiros <span class="process-math">\(a\)</span> e <span class="process-math">\(b\text{,}\)</span> com <span class="process-math">\(a\neq 0\text{,}\)</span> existe um único par de inteiros <span class="process-math">\((q, r)\)</span> tais que <span class="process-math">\(b = aq + r, ~0 \leq r \lt |a|\text{.}\)</span> Por exemplo,</div>
-<div class="displaymath process-math">
+</div></article><article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-10">O teorema anterior admite um enunciado mais geral: Para quaisquer inteiros \(a\) e \(b\text{,}\) com \(a\neq 0\text{,}\) existe um único par de inteiros \((q, r)\) tais que \(b = aq + r, ~0 \leq r \lt |a|\text{.}\) Por exemplo,</p>
+<div class="displaymath">
 \begin{equation*}
 -7 = -3\cdot 3 + 2, \quad r=2\lt |-3| = a.
 \end{equation*}
-</div>
-</div></article><article class="technology computation-like" id="technology-1"><h3 class="heading">
+</div></article><article class="technology computation-like" id="technology-1"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-11">Abaixo temos um código em SageMath, no qual podemos trocar os valores de <span class="process-math">\(b\)</span> e <span class="process-math">\(a\)</span> nas linhas <span class="process-math">\(1\)</span> e <span class="process-math">\(2\text{,}\)</span> respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de <span class="process-math">\(b\)</span> por <span class="process-math">\(a\text{.}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">b=-7
+</h6>
+<p id="p-11">Abaixo temos um código em SageMath, no qual podemos trocar os valores de \(b\) e \(a\) nas linhas \(1\) e \(2\text{,}\) respectivamente. Ao clicar em Executar (Sage) obtemos o quociente e o resto na divisão de \(b\) por \(a\text{.}\)</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">b=-7
 a=-3
 r=ZZ(mod(b,a))
 q=(b-r)/a
 print('%d = %d*%d + %d' %(b,a,q,r))
-</script></pre></article><article class="remark remark-like" id="rem-001"><h3 class="heading">
-<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">(PTOM).</span>
-</h3> <div class="para" id="p-12">De modo geral, fixado um número natural <span class="process-math">\(a\geq 2\text{,}\)</span> pode-se sempre escrever um número qualquer <span class="process-math">\(b\text{,}\)</span> de modo único, na forma <span class="process-math">\(b = aq+r\text{,}\)</span> na qual <span class="process-math">\(q, r\)</span> são inteiros e <span class="process-math">\(0\leq r \lt a\text{.}\)</span>
-</div> <div class="para logical" id="p-13">
-<div class="para">Por exemplo, fixado um valor para <span class="process-math">\(a\text{,}\)</span>  qualquer inteiro <span class="process-math">\(b\)</span> pode ser escrito em apenas uma das seguintes formas</div>
-<div class="displaymath process-math" id="md-1">
+</script></div></article><article class="remark remark-like" id="rem-001"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">(PTOM).</span>
+</h6>
+<p id="p-12">De modo geral, fixado um número natural \(a\geq 2\text{,}\) pode-se sempre escrever um número qualquer \(b\text{,}\) de modo único, na forma \(b = aq+r\text{,}\) na qual \(q, r\) são inteiros e \(0\leq r \lt a\text{.}\)</p>
+<p id="p-13">Por exemplo, fixado um valor para \(a\text{,}\)  qualquer inteiro \(b\) pode ser escrito em apenas uma das seguintes formas</p>
+<div class="displaymath">
 \begin{align*}
 a=3:\amp~ 3q, 3q+1, 3q+2\\
 a=4:\amp~ 4q, 4q+1, 4q+2, 4q+3\\
 a=5:\amp~ 5q, 5q+1, 5q+2, 5q+3, 5q+4\\
 \vdots 
 \end{align*}
-</div>
-</div></article><article class="example example-like" id="example-2"><h3 class="heading">
+</div></article><article class="example example-like" id="example-2"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">(PTOM).</span>
-</h3> <div class="para" id="p-14">Dados dois números primos <span class="process-math">\(p\lt q\text{,}\)</span> dizemos que ele são <em class="emphasis">primos gêmeos</em> se <span class="process-math">\(q-p=2\text{.}\)</span> Prove que para cada par de primos gêmeos com <span class="process-math">\(p\lt q\text{,}\)</span> se <span class="process-math">\(p&gt;3\text{,}\)</span> então <span class="process-math">\(p+1\)</span> deixa resto zero na divisão por <span class="process-math">\(3\text{.}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
-<div class="para" id="p-15">Pela <a href="" class="xref" data-knowl="./knowl/rem-001.html" title="Nota 1.1.5: (PTOM)">Nota 1.1.5</a>, <span class="process-math">\(p\)</span> só pode assumir uma das três formas: <span class="process-math">\(3k, 3k+1, 3k+2\text{.}\)</span> Podemos analizar cada um dos casos.</div> <div class="para" id="p-16">
-<dfn class="terminology">Caso 1</dfn> (<span class="process-math">\(p=3k\)</span>). Neste caso o número não seria primo, então este caso está descartado.</div> <div class="para" id="p-17">
-<dfn class="terminology">Caso 2</dfn> (<span class="process-math">\(p=3k+1\)</span>). Neste caso, <span class="process-math">\(p+1 = 3k+2\)</span> e <span class="process-math">\(q = p+2 = 3k+3=3(k+1)\)</span> não seria primo, o que é uma contradição.</div> <div class="para" id="p-18">
-<dfn class="terminology">Caso 3</dfn> (<span class="process-math">\(p=3k+2\)</span>). Neste caso, <span class="process-math">\(p+1 = 3(k+1)\)</span> que é múltiplo de <span class="process-math">\(3\)</span> e <span class="process-math">\(q = 3(k+1)+1\text{.}\)</span> Portanto, este é o único caso possível e o número <span class="process-math">\(p+1\)</span> sempre deixa resto zero na divisão por <span class="process-math">\(3\text{.}\)</span>
-</div>
-</div></div></article><article class="example example-like" id="example-3"><h3 class="heading">
+</h6>
+<p id="p-14">Dados dois números primos \(p\lt q\text{,}\) dizemos que ele são <em class="emphasis">primos gêmeos</em> se \(q-p=2\text{.}\) Prove que para cada par de primos gêmeos com \(p\lt q\text{,}\) se \(p&gt;3\text{,}\) então \(p+1\) deixa resto zero na divisão por \(3\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<p id="p-15">Pela <a class="xref" data-knowl="./knowl/rem-001.html" title="Observação 1.1.5: (PTOM)">Observação 1.1.5</a>, \(p\) só pode assumir uma das três formas: \(3k, 3k+1, 3k+2\text{.}\) Podemos analizar cada um dos casos.</p>
+<p id="p-16"><dfn class="terminology">Caso 1</dfn> (\(p=3k\)). Neste caso o número não seria primo, então este caso está descartado.</p>
+<p id="p-17"><dfn class="terminology">Caso 2</dfn> (\(p=3k+1\)). Neste caso, \(p+1 = 3k+2\) e \(q = p+2 = 3k+3=3(k+1)\) não seria primo, o que é uma contradição.</p>
+<p id="p-18"><dfn class="terminology">Caso 3</dfn> (\(p=3k+2\)). Neste caso, \(p+1 = 3(k+1)\) que é múltiplo de \(3\) e \(q = 3(k+1)+1\text{.}\) Portanto, este é o único caso possível e o número \(p+1\) sempre deixa resto zero na divisão por \(3\text{.}\)</p>
+</div></div></article><article class="example example-like" id="example-3"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-19">Encontre um número natural <span class="process-math">\(N\)</span> que, ao ser dividido por <span class="process-math">\(10\text{,}\)</span> deixa resto <span class="process-math">\(9\text{,}\)</span> ao ser dividido por <span class="process-math">\(9\)</span> deixa resto <span class="process-math">\(8\text{,}\)</span> e ao ser dividido por <span class="process-math">\(8\)</span> deixa resto <span class="process-math">\(7\text{.}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
-<div class="para logical" id="p-20">
-<div class="para">Pelos dados do enunciado,</div>
-<div class="displaymath process-math" id="md-2">
+</h6>
+<p id="p-19">Encontre um número natural \(N\) que, ao ser dividido por \(10\text{,}\) deixa resto \(9\text{,}\) ao ser dividido por \(9\) deixa resto \(8\text{,}\) e ao ser dividido por \(8\) deixa resto \(7\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<p id="p-20">Pelos dados do enunciado,</p>
+<div class="displaymath">
 \begin{align*}
 N = \amp~10q_1+9\\
 N = \amp~9q_2+8\\
 N = \amp~8q_3+7
 \end{align*}
 </div>
-<div class="para">Somando <span class="process-math">\(1\)</span> em cada igualdade, obtemos</div>
-<div class="displaymath process-math" id="md-3">
+<p data-braille="continuation">Somando \(1\) em cada igualdade, obtemos</p>
+<div class="displaymath">
 \begin{align*}
 N+1 = 10q_1+10 = \amp~10(q_1+1)\\
 N+1 = 9q_2+9 = \amp~9(q_2+1)\\
 N+1 = 8q_3+8 = \amp~8(q_3+1)
 \end{align*}
 </div>
-<div class="para">Portanto, <span class="process-math">\(N+1\)</span> é múltiplo de <span class="process-math">\(10\text{,}\)</span> <span class="process-math">\(9\)</span> e <span class="process-math">\(8\text{.}\)</span> Uma solução é <span class="process-math">\(N+1 = 10\cdot 9\cdot 8 = 720\text{,}\)</span> logo <span class="process-math">\(N=719\text{.}\)</span>
-</div>
-</div> <div class="para" id="p-21">Outra resposta pode ser obtida calculando o menor múltiplo comum: <span class="process-math">\(MMC(10, 9, 8)=360\text{.}\)</span> Outro valor válido para <span class="process-math">\(N\)</span> é <span class="process-math">\(359\text{.}\)</span>
-</div>
-</div></div></article><article class="example example-like" id="example-4"><h3 class="heading">
+<p data-braille="continuation">Portanto, \(N+1\) é múltiplo de \(10\text{,}\) \(9\) e \(8\text{.}\) Uma solução é \(N+1 = 10\cdot 9\cdot 8 = 720\text{,}\) logo \(N=719\text{.}\)</p>
+<p id="p-21">Outra resposta pode ser obtida calculando o menor múltiplo comum: \(MMC(10, 9, 8)=360\text{.}\) Outro valor válido para \(N\) é \(359\text{.}\)</p>
+</div></div></article><article class="example example-like" id="example-4"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
-</h3>
+</h6>
 <ol class="lower-alpha">
-<li id="li-1"><div class="para" id="p-derived-li-1">Verifique que<div class="displaymath process-math">
+<li id="li-1">Verifique que<div class="displaymath">
 \begin{equation*}
 a^n-1 = (a-1)(a^{n-1}+a^{n-2}+\cdots+a+1).
 \end{equation*}
 </div>
-</div></li>
-<li id="li-2"><div class="para" id="p-derived-li-2">Calcule o resto da Divisão de <span class="process-math">\(4^{2012}\)</span> por 3.</div></li>
-</ol> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
-<div class="para logical" id="p-22">
-<div class="para"><dfn class="terminology">item a)</dfn></div>
-<div class="displaymath process-math" id="md-4">
+</li>
+<li id="li-2">Calcule o resto da Divisão de \(4^{2012}\) por 3.</li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<p id="p-22"><dfn class="terminology">item a)</dfn></p>
+<div class="displaymath">
 \begin{align*}
 (a-1)(a^{n-1}+a^{n-2}+\cdots+a+1) =\amp~ a^n+a^{n-1}+a^{n-2}+\cdots+ a^2+a \\
 \amp~ - a^{n-1} - a^{n-2}-\cdots-a-1
 \end{align*}
 </div>
-</div> <div class="para logical" id="p-23">
-<div class="para"><dfn class="terminology">item b)</dfn></div>
-<div class="displaymath process-math" id="md-5">
+<p id="p-23"><dfn class="terminology">item b)</dfn></p>
+<div class="displaymath">
 \begin{align*}
 4^{2012}-1 =\amp~ (4-1)(4^{2011}+4^{2010}+\cdots+4+1) \\
 =\amp~ 3\cdot\underbrace{(4^{2011}+4^{2010}+\cdots+4+1)}_{q} 
 \end{align*}
 </div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Portanto,</p>
+<div class="displaymath">
 \begin{equation*}
 4^{2012} = 3q+1
 \end{equation*}
 </div>
-<div class="para">Ou seja, o resto é igual a <span class="process-math">\(1\text{.}\)</span>
-</div>
-</div>
-</div></div></article><article class="technology computation-like" id="technology-2"><h3 class="heading">
+<p data-braille="continuation">Ou seja, o resto é igual a \(1\text{.}\)</p>
+</div></div></article><article class="technology computation-like" id="technology-2"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-24">No SageMath, o resto da divisão de <span class="process-math">\(b^c\)</span> por <span class="process-math">\(a\)</span> pode ser calculado da seguinte maneira: <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">b=4
+</h6>
+<p id="p-24">No SageMath, o resto da divisão de \(b^c\) por \(a\) pode ser calculado da seguinte maneira: <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">b=4
 c=2012
 a=3
 pow(b,c,a)
-</script></pre>
-</div></article><article class="example example-like" id="example-5"><h3 class="heading">
+</script></div></p></article><article class="example example-like" id="example-5"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-25">Seja <span class="process-math">\(n\)</span> um número natural maior que zero. Qual o resto de <span class="process-math">\(10^n\)</span> na divisão por <span class="process-math">\(9\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><div class="para logical" id="p-26"><div class="displaymath process-math" id="md-6">
+</h6>
+<p id="p-25">Seja \(n\) um número natural maior que zero. Qual o resto de \(10^n\) na divisão por \(9\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><div class="displaymath" id="p-26">
 \begin{align*}
 10^n-1=\amp~ (10-1)(10^{n-1}+10^{n-2}+\cdots+10+1)\\
 10^n-1=\amp~9q\\
 10^n=\amp~ 9q+1
 \end{align*}
-</div></div></div></div></article><article class="example example-like" id="example-6"><h3 class="heading">
+</div></div></div></article><article class="example example-like" id="example-6"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-27">Quantos números entre <span class="process-math">\(1\)</span> e <span class="process-math">\(253\)</span> (inclusive) são divisíveis por <span class="process-math">\(5\text{?}\)</span> Ou seja, quando deixam resto zero na divisão por <span class="process-math">\(5\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para logical" id="p-28">
-<div class="para">Aplicando a divisão euclidiana,</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-27">Quantos números entre \(1\) e \(253\) (inclusive) são divisíveis por \(5\text{?}\) Ou seja, quando deixam resto zero na divisão por \(5\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
+<p id="p-28">Aplicando a divisão euclidiana,</p>
+<div class="displaymath">
 \begin{equation*}
 253 = 5\cdot 50 + 3.
 \end{equation*}
 </div>
-<div class="para">Isto significa que existem <span class="process-math">\(50\)</span> números divisíveis por <span class="process-math">\(5\)</span> entre <span class="process-math">\(1\)</span> e <span class="process-math">\(253\text{,}\)</span> pois ao escrever todos os números neste intervalo, o último que deixa resto zero será no número <span class="process-math">\(5\cdot 50 = 250\text{.}\)</span> Observe,</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Isto significa que existem \(50\) números divisíveis por \(5\) entre \(1\) e \(253\text{,}\) pois ao escrever todos os números neste intervalo, o último que deixa resto zero será no número \(5\cdot 50 = 250\text{.}\) Observe,</p>
+<div class="displaymath">
 \begin{equation*}
 1, 2, 3, 4, \underbrace{5}_{5\cdot1}, 6, \ldots,\underbrace{10}_{5\cdot2}, \ldots, \underbrace{15}_{5\cdot3}, \ldots \underbrace{250}_{5\cdot50}, 251, 252, 253 
 \end{equation*}
 </div>
-</div></div></div></article><article class="theorem theorem-like" id="teo-restos"><h3 class="heading">
+</div></div></article><article class="theorem theorem-like" id="teo-restos"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">(Teorema dos Restos).</span>
-</h3>
-<div class="para" id="p-29">Se <span class="process-math">\(b_1\)</span> e <span class="process-math">\(b_2\)</span> deixam restos <span class="process-math">\(r_1\)</span> e <span class="process-math">\(r_2\)</span> na divisão por <span class="process-math">\(a\text{,}\)</span> respectivamente, então:</div>
+</h6>
+<p id="p-29">Se \(b_1\) e \(b_2\) deixam restos \(r_1\) e \(r_2\) na divisão por \(a\text{,}\) respectivamente, então:</p>
 <ol class="lower-roman">
-<li id="li-3"><div class="para" id="p-derived-li-3">
-<span class="process-math">\(b_1 + b_2\)</span> deixa o mesmo resto que <span class="process-math">\(r_1 + r_2\)</span> na divisão por <span class="process-math">\(a\)</span>
-</div></li>
-<li id="li-4"><div class="para" id="p-derived-li-4">
-<span class="process-math">\(b_1 b_2\)</span> deixa o mesmo resto que <span class="process-math">\(r_1 r_2\)</span> na divisão por <span class="process-math">\(a\text{.}\)</span>
-</div></li>
-</ol></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para logical" id="p-30">
-<div class="para">Por hipótese</div>
-<div class="displaymath process-math">
+<li id="li-3">\(b_1 + b_2\) deixa o mesmo resto que \(r_1 + r_2\) na divisão por \(a\)</li>
+<li id="li-4">\(b_1 b_2\) deixa o mesmo resto que \(r_1 r_2\) na divisão por \(a\text{.}\)</li>
+</ol></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-30">Por hipótese</p>
+<div class="displaymath">
 \begin{equation*}
 b_1 = aq_1+r_1, ~ 0\leq r_1\lt a \quad \text{ e }\quad b_2 = aq_2+r_2, ~ 0\leq r_2\lt a.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-31">
-<div class="para"><dfn class="terminology">item a)</dfn></div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos02.html ./knowl/dem-restos01.html">
+<p id="p-31"><dfn class="terminology">item a)</dfn></p>
+<div class="displaymath">
 \begin{equation*}
 b_1+b_2 = aq_1+r_1 + aq_2+r_2
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos02.html ./knowl/dem-restos01.html" id="dem-restos01">
+<div class="displaymath">
 \begin{equation}
-b_1+b_2= a(q_1+q_2) + r_1+r_2.\tag{1.1.1}
+b_1+b_2= a(q_1+q_2) + r_1+r_2.\label{dem-restos01}\tag{1.1.1}
 \end{equation}
 </div>
-<div class="para"> Aplicando a divisão euclidiana obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos02.html ./knowl/dem-restos01.html" id="dem-restos02">
+<p data-braille="continuation"> Aplicando a divisão euclidiana obtemos</p>
+<div class="displaymath">
 \begin{equation}
-r_1+r_2 = aq_3 + r_3, ~ 0\leq r_3\lt a.\tag{1.1.2}
+r_1+r_2 = aq_3 + r_3, ~ 0\leq r_3\lt a.\label{dem-restos02}\tag{1.1.2}
 \end{equation}
 </div>
-<div class="para">Substituindo <a href="" class="xref" data-knowl="./knowl/dem-restos02.html" title="Equação 1.1.2">(1.1.2)</a> em <a href="" class="xref" data-knowl="./knowl/dem-restos01.html" title="Equação 1.1.1">(1.1.1)</a> obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos02.html ./knowl/dem-restos01.html">
+<p data-braille="continuation">Substituindo <a class="xref" data-knowl="./knowl/dem-restos02.html" title="[men] 1.1.2">(1.1.2)</a> em <a class="xref" data-knowl="./knowl/dem-restos01.html" title="[men] 1.1.1">(1.1.1)</a> obtemos</p>
+<div class="displaymath">
 \begin{equation*}
 b_1+b_2 = a(q_1+q_2+q_3) + r_3, ~ 0\leq r_3\lt a.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-32">
-<div class="para"><dfn class="terminology">item b)</dfn></div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos03.html ./knowl/dem-restos04.html">
+<p id="p-32"><dfn class="terminology">item b)</dfn></p>
+<div class="displaymath">
 \begin{equation*}
 b_1b_2 = (aq_1+r_1)(aq_2+r_2)
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos03.html ./knowl/dem-restos04.html">
+<div class="displaymath">
 \begin{equation*}
 b_1b_2 = a^2q_1q_2+aq_1r_2+aq_2r_1+r_1r_2
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos03.html ./knowl/dem-restos04.html" id="dem-restos03">
+<div class="displaymath">
 \begin{equation}
-b_1b_2 = a(aq_1q_2+q_1r_2+q_2r_1) + r_1r_2.\tag{1.1.3}
+b_1b_2 = a(aq_1q_2+q_1r_2+q_2r_1) + r_1r_2.\label{dem-restos03}\tag{1.1.3}
 \end{equation}
 </div>
-<div class="para">Aplicando a divisão euclidiana, podemos escrever</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos03.html ./knowl/dem-restos04.html" id="dem-restos04">
+<p data-braille="continuation">Aplicando a divisão euclidiana, podemos escrever</p>
+<div class="displaymath">
 \begin{equation}
-r_1r_2 = aq_4+r_4, ~ 0\leq r_4\lt a.\tag{1.1.4}
+r_1r_2 = aq_4+r_4, ~ 0\leq r_4\lt a.\label{dem-restos04}\tag{1.1.4}
 \end{equation}
 </div>
-<div class="para">Substituindo <a href="" class="xref" data-knowl="./knowl/dem-restos03.html" title="Equação 1.1.3">(1.1.3)</a> em <a href="" class="xref" data-knowl="./knowl/dem-restos04.html" title="Equação 1.1.4">(1.1.4)</a> obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dem-restos03.html ./knowl/dem-restos04.html">
+<p data-braille="continuation">Substituindo <a class="xref" data-knowl="./knowl/dem-restos03.html" title="[men] 1.1.3">(1.1.3)</a> em <a class="xref" data-knowl="./knowl/dem-restos04.html" title="[men] 1.1.4">(1.1.4)</a> obtemos</p>
+<div class="displaymath">
 \begin{equation*}
 b_1b_2 = a(aq_1q_2+q_1r_2+q_2r_1 + q_4) + r_4, ~ 0\leq r_4\lt a.
 \end{equation*}
 </div>
-<div class="para">Como queríamos.</div>
-</div></article></div>
-<article class="example example-like" id="example-7"><h3 class="heading">
+<p data-braille="continuation">Como queríamos.</p></article></div>
+<article class="example example-like" id="example-7"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-33">Qual o resto que o número <span class="process-math">\(1002\cdot1003\cdot1004\)</span> deixa quando dividido por <span class="process-math">\(7\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para logical" id="p-34">
-<div class="para">Aplicando a divisão euclidiana, obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-restos.html" id="md-7">
+</h6>
+<p id="p-33">Qual o resto que o número \(1002\cdot1003\cdot1004\) deixa quando dividido por \(7\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
+<p id="p-34">Aplicando a divisão euclidiana, obtemos</p>
+<div class="displaymath">
 \begin{gather*}
 1002 = 7\cdot 143+1\\
 1003 = 7\cdot 143+2\\
 1004 = 7\cdot 143+3
 \end{gather*}
 </div>
-<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/teo-restos.html" title="Teorema 1.1.12: (Teorema dos Restos)">(Teorema dos Restos)</a>, o resto de <span class="process-math">\(1002\cdot1003\cdot1004\)</span> na divisão por <span class="process-math">\(7\)</span> é o mesmo que o resto de <span class="process-math">\(1\cdot 2\cdot 3\)</span> na divisão por <span class="process-math">\(7\text{.}\)</span> Como <span class="process-math">\(1\cdot 2\cdot 3 = 6\)</span> Temos,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-restos.html">
+<p data-braille="continuation">Aplicando o <a class="xref" data-knowl="./knowl/teo-restos.html" title="Teorema 1.1.12: (Teorema dos Restos)">(Teorema dos Restos)</a>, o resto de \(1002\cdot1003\cdot1004\) na divisão por \(7\) é o mesmo que o resto de \(1\cdot 2\cdot 3\) na divisão por \(7\text{.}\) Como \(1\cdot 2\cdot 3 = 6\) Temos,</p>
+<div class="displaymath">
 \begin{equation*}
 1002\cdot1003\cdot1004 = 7\cdot q + 6.
 \end{equation*}
 </div>
-</div></div></div></article><article class="example example-like" id="example-8"><h3 class="heading">
+</div></div></article><article class="example example-like" id="example-8"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-35">Qual o resto que o número <span class="process-math">\(4^{5000}\)</span> deixa quando dividido por <span class="process-math">\(3\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><div class="para" id="p-36">Como o número <span class="process-math">\(4\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(4^{5000}\)</span> deixa o mesmo resto que <span class="process-math">\(\underbrace{1\cdot 1\cdot 1\cdots 1}_{5000} = 1\)</span> na divisão por <span class="process-math">\(3\text{.}\)</span>
-</div></div></div></article><article class="example example-like" id="example-9"><h3 class="heading">
+</h6>
+<p id="p-35">Qual o resto que o número \(4^{5000}\) deixa quando dividido por \(3\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><p id="p-36">Como o número \(4\) deixa resto \(1\) na divisão por \(3\text{,}\) \(4^{5000}\) deixa o mesmo resto que \(\underbrace{1\cdot 1\cdot 1\cdots 1}_{5000} = 1\) na divisão por \(3\text{.}\)</p></div></div></article><article class="example example-like" id="example-9"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-37">Qual o resto que o número <span class="process-math">\(2^{2k+1}\)</span> deixa quando dividido por <span class="process-math">\(3\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
-<div class="para logical" id="p-38">
-<div class="para">Note que</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-37">Qual o resto que o número \(2^{2k+1}\) deixa quando dividido por \(3\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
+<p id="p-38">Note que</p>
+<div class="displaymath">
 \begin{equation*}
 2^{2k+1} = 2^{2k}\cdot 2 = 4^k\cdot 2.
 \end{equation*}
 </div>
-</div> <ul class="disc">
-<li id="li-5"><div class="para" id="p-derived-li-5">
-<span class="process-math">\(4\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(3\text{,}\)</span> logo <span class="process-math">\(4^k\)</span> também deixa resto <span class="process-math">\(1\)</span> na divisão por 3;</div></li>
-<li id="li-6"><div class="para" id="p-derived-li-6">
-<span class="process-math">\(2\)</span> deixa resto <span class="process-math">\(2\)</span> na divisão por <span class="process-math">\(3\text{.}\)</span>
-</div></li>
-</ul> <div class="para" id="p-39">Pelo <a href="" class="xref" data-knowl="./knowl/teo-restos.html" title="Teorema 1.1.12: (Teorema dos Restos)">(Teorema dos Restos)</a>, <span class="process-math">\(2^{2k+1}\)</span> deixa o mesmo resto que <span class="process-math">\(4^k\cdot 2\)</span> na divisão por <span class="process-math">\(3\text{,}\)</span> ou seja, o resto é o mesmo que o resto de <span class="process-math">\(1\cdot 2 = 2\)</span> na divisão por <span class="process-math">\(3\text{.}\)</span>
-</div>
-</div></div></article><article class="example example-like" id="example-10"><h3 class="heading">
+<ul class="disc">
+<li id="li-5">\(4\) deixa resto \(1\) na divisão por \(3\text{,}\) logo \(4^k\) também deixa resto \(1\) na divisão por 3;</li>
+<li id="li-6">\(2\) deixa resto \(2\) na divisão por \(3\text{.}\)</li>
+</ul>
+<p id="p-39">Pelo <a class="xref" data-knowl="./knowl/teo-restos.html" title="Teorema 1.1.12: (Teorema dos Restos)">(Teorema dos Restos)</a>, \(2^{2k+1}\) deixa o mesmo resto que \(4^k\cdot 2\) na divisão por \(3\text{,}\) ou seja, o resto é o mesmo que o resto de \(1\cdot 2 = 2\) na divisão por \(3\text{.}\)</p>
+</div></div></article><article class="example example-like" id="example-10"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-40">Qual o resto de <span class="process-math">\(n^3+2n\)</span> na divisão por <span class="process-math">\(3\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
-<div class="para" id="p-41">Dado um número <span class="process-math">\(n\text{,}\)</span> ele pode ser escrito em apenas uma das três formas: <span class="process-math">\(3q, 3q+1\)</span> ou <span class="process-math">\(3q+2\text{.}\)</span> Pelo <a href="" class="xref" data-knowl="./knowl/teo-restos.html" title="Teorema 1.1.12: (Teorema dos Restos)">(Teorema dos Restos)</a>, basta analisar os três possíveis restos na divisão de <span class="process-math">\(n\)</span> por <span class="process-math">\(3\text{.}\)</span>
-</div> <div class="para logical" id="p-42">
-<div class="para">Caso 1: <span class="process-math">\(r = 0\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-40">Qual o resto de \(n^3+2n\) na divisão por \(3\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<p id="p-41">Dado um número \(n\text{,}\) ele pode ser escrito em apenas uma das três formas: \(3q, 3q+1\) ou \(3q+2\text{.}\) Pelo <a class="xref" data-knowl="./knowl/teo-restos.html" title="Teorema 1.1.12: (Teorema dos Restos)">(Teorema dos Restos)</a>, basta analisar os três possíveis restos na divisão de \(n\) por \(3\text{.}\)</p>
+<p id="p-42">Caso 1: \(r = 0\text{:}\)</p>
+<div class="displaymath">
 \begin{equation*}
 0^3+2\cdot 0 = 0 = 3\cdot 0+0
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-43">
-<div class="para">Caso 2: <span class="process-math">\(r = 1\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
+<p id="p-43">Caso 2: \(r = 1\text{:}\)</p>
+<div class="displaymath">
 \begin{equation*}
 1^3+2\cdot 1 = 3 = 3\cdot 1+0
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-44">
-<div class="para">Caso 3: <span class="process-math">\(r = 2\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
+<p id="p-44">Caso 3: \(r = 2\text{:}\)</p>
+<div class="displaymath">
 \begin{equation*}
 2^3+2\cdot 2 = 12 = 3\cdot 4+0
 \end{equation*}
 </div>
-</div>
-</div></div></article><article class="example example-like" id="example-11"><h3 class="heading">
+</div></div></article><article class="example example-like" id="example-11"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.17</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="p-45">
-<div class="para">Prove que, para cada <span class="process-math">\(n\)</span> natural,</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-45">Prove que, para cada \(n\) natural,</p>
+<div class="displaymath">
 \begin{equation*}
 (n+1)(n+2)\cdots(2n)
 \end{equation*}
 </div>
-<div class="para">é divisível por <span class="process-math">\(2^n\text{.}\)</span>
-</div>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><div class="para logical" id="p-46">
-<div class="para">Observe que</div>
-<div class="displaymath process-math" id="md-8">
+<p data-braille="continuation">é divisível por \(2^n\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<p id="p-46">Observe que</p>
+<div class="displaymath">
 \begin{align*}
 (n+1)(n+2)\cdots(2n) =\amp~  (n+1)(n+2)\cdots(2n)\cdot \frac{1\cdot 2\cdot 3\cdots n}{1\cdot 2\cdot 3\cdots n}.\\
 =\amp~\frac{1\cdot 2 \cdot 3\cdots (2n-1)\cdot (2n)}{1\cdot 2\cdot 3\cdots n}.
 \end{align*}
 </div>
-<div class="para">Para cada número <span class="process-math">\(k\)</span> escrito no denominador, existe o número <span class="process-math">\(2k\)</span> no numerador. Agrupando as frações <span class="process-math">\(\frac{2k}{k}\)</span> com <span class="process-math">\(1\leq k\leq n\text{,}\)</span> sobrará todos os números ímpares de <span class="process-math">\(1\)</span> até <span class="process-math">\(2n\text{.}\)</span> Ou seja,</div>
-<div class="displaymath process-math" id="md-9">
+<p data-braille="continuation">Para cada número \(k\) escrito no denominador, existe o número \(2k\) no numerador. Agrupando as frações \(\frac{2k}{k}\) com \(1\leq k\leq n\text{,}\) sobrará todos os números ímpares de \(1\) até \(2n\text{.}\) Ou seja,</p>
+<div class="displaymath">
 \begin{align*}
 (n+1)(n+2)\cdots(2n) =\amp~\frac{2\cdot1}{1}\cdot\frac{2\cdot2}{2}\cdots\frac{2\cdot n}{n}\cdot 1\cdot3\cdot5\cdots (2n-1)\\
 =\amp~2^n\cdot 1\cdot3\cdot5\cdots (2n-1).
 \end{align*}
 </div>
-</div></div></div></article><article class="example example-like" id="example-12"><h3 class="heading">
+</div></div></article><article class="example example-like" id="example-12"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-47">Encontre todos os pares de inteiros positivos <span class="process-math">\(a\)</span> e <span class="process-math">\(b\)</span> tais que <span class="process-math">\(79 = ab+2a+3b\text{.}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><div class="para logical" id="p-48">
-<div class="para">Note que <span class="process-math">\(ab+2a+3b\)</span> quase pode ser escrito como um produto, pois no produto "sobra" uma constante:</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-47">Encontre todos os pares de inteiros positivos \(a\) e \(b\) tais que \(79 = ab+2a+3b\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-48">Note que \(ab+2a+3b\) quase pode ser escrito como um produto, pois no produto "sobra" uma constante:</p>
+<div class="displaymath">
 \begin{equation*}
 (a+3)(b+2) = ab+2a+3b+6.
 \end{equation*}
 </div>
-<div class="para">Como</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Como</p>
+<div class="displaymath">
 \begin{equation*}
 79 = ab+2a+3b,
 \end{equation*}
 </div>
-<div class="para">ao somar <span class="process-math">\(6\)</span> em ambos os membros da igualdade anterior, obtemos</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">ao somar \(6\) em ambos os membros da igualdade anterior, obtemos</p>
+<div class="displaymath">
 \begin{equation*}
 85 = (a+3)(b+2).
 \end{equation*}
 </div>
-<div class="para">Como <span class="process-math">\(85\)</span> é o produto de dois primos (<span class="process-math">\(5\cdot 17\)</span>), então</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Como \(85\) é o produto de dois primos (\(5\cdot 17\)), então</p>
+<div class="displaymath">
 \begin{equation*}
 5\cdot 17 = (a+3)(b+2).
 \end{equation*}
 </div>
-<div class="para">Temos apenas dois casos:</div>
-<div class="displaymath process-math" id="md-10">
+<p data-braille="continuation">Temos apenas dois casos:</p>
+<div class="displaymath">
 \begin{gather*}
 \begin{cases} 
 a+3 = 5 \Rightarrow a = 2 \\ 
@@ -628,8 +461,8 @@ b+2 = 17 \Rightarrow b = 15
 \end{cases}
 \end{gather*}
 </div>
-<div class="para">e</div>
-<div class="displaymath process-math" id="md-11">
+<p data-braille="continuation">e</p>
+<div class="displaymath">
 \begin{gather*}
 \begin{cases} 
 a+3 = 17 \Rightarrow a = 14 \\ 
@@ -637,33 +470,33 @@ b+2 = 5 \Rightarrow b = 3
 \end{cases}
 \end{gather*}
 </div>
-</div></div></div></article><article class="example example-like" id="example-13"><h3 class="heading">
+</div></div></article><article class="example example-like" id="example-13"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.19</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-49">(OBMEP 2013). Lucas pensou em um número, dividiu-o por <span class="process-math">\(285\)</span> e obteve resto <span class="process-math">\(77\text{.}\)</span> Se ele dividir o número em que pensou por <span class="process-math">\(57\text{,}\)</span> qual o resto que ele vai encontrar?</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="para logical" id="p-50">
-<div class="para">Note que <span class="process-math">\(285 = 5\cdot 57\)</span> e que <span class="process-math">\(77 = 57+20\text{,}\)</span> logo</div>
-<div class="displaymath process-math" id="md-12">
+</h6>
+<p id="p-49">(OBMEP 2013). Lucas pensou em um número, dividiu-o por \(285\) e obteve resto \(77\text{.}\) Se ele dividir o número em que pensou por \(57\text{,}\) qual o resto que ele vai encontrar?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<p id="p-50">Note que \(285 = 5\cdot 57\) e que \(77 = 57+20\text{,}\) logo</p>
+<div class="displaymath">
 \begin{align*}
 n=\amp~ 285\cdot q+77\\
 =\amp~5\cdot 57\cdot q+57+20\\
 =\amp~57(5\cdot q+1)+20.
 \end{align*}
 </div>
-<div class="para">Portanto, o resto na divisão por <span class="process-math">\(57\)</span> é <span class="process-math">\(20\text{.}\)</span>
-</div>
-</div></div></div></article><article class="example example-like" id="example-14"><h3 class="heading">
+<p data-braille="continuation">Portanto, o resto na divisão por \(57\) é \(20\text{.}\)</p>
+</div></div></article><article class="example example-like" id="example-14"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.20</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-51">Encontre os inteiros que, na divisão por <span class="process-math">\(7\)</span> deixam um quociente igual ao resto.</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para logical" id="p-52">
-<div class="para">Estamos procurando os números que podem ser escritos da seguinte maneira</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-quores.html" id="eq-quores">
+</h6>
+<p id="p-51">Encontre os inteiros que, na divisão por \(7\) deixam um quociente igual ao resto.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<p id="p-52">Estamos procurando os números que podem ser escritos da seguinte maneira</p>
+<div class="displaymath">
 \begin{equation}
-n = 7q+r, (0\leq r\lt 7)\quad \text{com } q=r.\tag{1.1.5}
+n = 7q+r, (0\leq r\lt 7)\quad \text{com } q=r.\label{eq-quores}\tag{1.1.5}
 \end{equation}
 </div>
-<div class="para">São apenas <span class="process-math">\(7\)</span> restos possíveis, podemos substituir esses valores em <a href="" class="xref" data-knowl="./knowl/eq-quores.html" title="Equação 1.1.5">(1.1.5)</a> para obter os valores de <span class="process-math">\(n\text{.}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-quores.html" id="md-13">
+<p data-braille="continuation">São apenas \(7\) restos possíveis, podemos substituir esses valores em <a class="xref" data-knowl="./knowl/eq-quores.html" title="[men] 1.1.5">(1.1.5)</a> para obter os valores de \(n\text{.}\)</p>
+<div class="displaymath">
 \begin{align*}
 n =\amp~ 7\cdot 0+0 \Rightarrow n= (7+1)\cdot 0\Rightarrow n=0\\
 n =\amp~ 7\cdot 1+1 \Rightarrow n= (7+1)\cdot 1\Rightarrow n=8\\
@@ -674,65 +507,61 @@ n =\amp~ 7\cdot 5+5 \Rightarrow n= (7+1)\cdot 5\Rightarrow n=40\\
 n =\amp~ 7\cdot 6+6 \Rightarrow n= (7+1)\cdot 6\Rightarrow n=48
 \end{align*}
 </div>
-</div></div></div></article><article class="example example-like" id="example-15"><h3 class="heading">
+</div></div></article><article class="example example-like" id="example-15"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.21</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-53">Ao dividir o número inteiro <span class="process-math">\(20+x\)</span> por <span class="process-math">\(11\)</span> obtemos resto <span class="process-math">\(7\text{.}\)</span> Qual é o menor valor inteiro positivo de <span class="process-math">\(x\text{?}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para logical" id="p-54">
-<div class="displaymath process-math" id="md-14">
+</h6>
+<p id="p-53">Ao dividir o número inteiro \(20+x\) por \(11\) obtemos resto \(7\text{.}\) Qual é o menor valor inteiro positivo de \(x\text{?}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
+<div class="displaymath" id="p-54">
 \begin{align*}
 20+x =\amp~ 11q+7\\
 x=\amp~11q-13.
 \end{align*}
 </div>
-<div class="para">Como <span class="process-math">\(x\)</span> é positivo, <span class="process-math">\(q\geq 2\text{.}\)</span> Substituindo <span class="process-math">\(q=2\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" id="md-15">
+<p data-braille="continuation">Como \(x\) é positivo, \(q\geq 2\text{.}\) Substituindo \(q=2\text{,}\) obtemos</p>
+<div class="displaymath">
 \begin{align*}
 x =\amp~ 11\cdot 2-13\\
 =\amp~22-13\\
 =\amp~9.
 \end{align*}
 </div>
-</div></div></div></article><article class="example example-like" id="example-16"><h3 class="heading">
+</div></div></article><article class="example example-like" id="example-16"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.22</span><span class="period">.</span>
-</h3>
-<div class="para" id="p-55">(OBM). O número de seis dígitos <span class="process-math">\(ab2016\)</span> é um múltiplo de <span class="process-math">\(99\text{.}\)</span> Determine o valor do dígito <span class="process-math">\(a\text{.}\)</span>
-</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="para logical" id="p-56">
-<div class="para">Note que <span class="process-math">\(100 = 99\cdot 1 + 1\text{.}\)</span> Podemos escrever o número <span class="process-math">\(ab2016\)</span> da seguinte maneira:</div>
-<div class="displaymath process-math" id="md-16">
+</h6>
+<p id="p-55">(OBM). O número de seis dígitos \(ab2016\) é um múltiplo de \(99\text{.}\) Determine o valor do dígito \(a\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
+<p id="p-56">Note que \(100 = 99\cdot 1 + 1\text{.}\) Podemos escrever o número \(ab2016\) da seguinte maneira:</p>
+<div class="displaymath">
 \begin{align*}
 ab2016 =\amp~ ab\cdot 100^2+ 20\cdot 100^1 + 16\cdot 100^0\\
 =\amp~ab(99q_2+1)+20(99\cdot 1+1)+16(99\cdot 0+1)\\
 =\amp~99(ab\cdot q_2+20\cdot 1+16\cdot 0) + (ab+20+16).
 \end{align*}
 </div>
-<div class="para">Portanto, <span class="process-math">\(99\)</span> divide <span class="process-math">\(ab2016\)</span> se, e somente se, <span class="process-math">\(99\)</span> divide <span class="process-math">\((ab+20+16)\text{.}\)</span> Ou seja, como <span class="process-math">\(99\)</span> possui dois diígitos e <span class="process-math">\((ab+20+16)\)</span> é menor que <span class="process-math">\(2\cdot 99\text{,}\)</span> temos a seguinte igualdade</div>
-<div class="displaymath process-math" id="md-17">
+<p data-braille="continuation">Portanto, \(99\) divide \(ab2016\) se, e somente se, \(99\) divide \((ab+20+16)\text{.}\) Ou seja, como \(99\) possui dois diígitos e \((ab+20+16)\) é menor que \(2\cdot 99\text{,}\) temos a seguinte igualdade</p>
+<div class="displaymath">
 \begin{align*}
 99 =\amp~ ab+36\\
 99-36=\amp~ab\\
 63=\amp~ab.
 \end{align*}
 </div>
-<div class="para">Então, <span class="process-math">\(a=6\text{.}\)</span>
-</div>
-</div></div></div></article><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
-<span class="type">Exercícios</span> <span class="codenumber"></span> <span class="title">Exercícios</span>
+<p data-braille="continuation">Então, \(a=6\text{.}\)</p>
+</div></div></article><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">1.1.1</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-57">Determinar os números que divididos por <span class="process-math">\(17\)</span> dão um resto igual ao quadrado do quociente correspondente.</div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
-<div class="para logical" id="p-58">
-<div class="para">Estamos procurando os valores de <span class="process-math">\(n\)</span> que satisfazem</div>
-<div class="displaymath process-math">
+<article class="exercise exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-57">Determinar os números que divididos por \(17\) dão um resto igual ao quadrado do quociente correspondente.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
+<p id="p-58">Estamos procurando os valores de \(n\) que satisfazem</p>
+<div class="displaymath">
 \begin{equation*}
 n = 17\cdot q + q^2, \quad 0\leq q^2\lt 17.
 \end{equation*}
 </div>
-<div class="para">Assim, <span class="process-math">\(-4\leq q\leq 4\)</span> e portanto, precisamos substituir os valores de <span class="process-math">\(q=-4, -3, -2, -1, 0, 1, 2, 3, 4\text{.}\)</span>
-</div>
-</div>
-<div class="displaymath process-math" id="md-18">
+<p data-braille="continuation">Assim, \(-4\leq q\leq 4\) e portanto, precisamos substituir os valores de \(q=-4, -3, -2, -1, 0, 1, 2, 3, 4\text{.}\)</p>
+<div class="displaymath">
 \begin{align*}
 n =\amp~ 17\cdot (-4) + (-4)^2 = -52\\
 n =\amp~ 17\cdot (-3) + (-3)^2 = -42\\
@@ -745,67 +574,58 @@ n =\amp~ 17\cdot (3) +3^2 = 60\\
 n =\amp~ 17\cdot (4) +4^2 = 84
 \end{align*}
 </div>
-</div></div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
+</div></div></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">(OCM 1985).</span>
-</h4>
-<div class="para logical" id="p-59">
-<div class="para">Encontre o quociente da divisão de <span class="process-math">\(a^{128}-b^{128}\)</span> por</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-59">Encontre o quociente da divisão de \(a^{128}-b^{128}\) por</p>
+<div class="displaymath">
 \begin{equation*}
 (a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a+b).
 \end{equation*}
 </div>
-</div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
-<div class="para" id="p-60">Fatorando <span class="process-math">\(a^{128}-b^{128}\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" id="md-19">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
+<p id="p-60">Fatorando \(a^{128}-b^{128}\text{,}\) obtemos</p>
+<div class="displaymath">
 \begin{align*}
 a^{128}-b^{128} =\amp~ (a^{64}+b^{64})(a^{64}-b^{64})\\
 =\amp~ (a^{64}+b^{64})(a^{32}+b^{32})(a^{32}-b^{32})\\
 \vdots
 \end{align*}
-</div>Seguindo assim, obtemos que <span class="process-math">\(a^{128}-b^{128}\)</span> é igual a<div class="displaymath process-math">
+</div>Seguindo assim, obtemos que \(a^{128}-b^{128}\) é igual a<div class="displaymath">
 \begin{equation*}
 (a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a^{2}-b^{2}),
 \end{equation*}
-</div>consequentemente <span class="process-math">\(a^{128}-b^{128}\)</span> é igual a<div class="displaymath process-math">
+</div>consequentemente \(a^{128}-b^{128}\) é igual a<div class="displaymath">
 \begin{equation*}
 (a^{64}+b^{64})(a^{32}+b^{32})(a^{16}+b^{16})(a^{8}+b^{8})(a^{4}+b^{4})(a^{2}+b^{2})(a+b)(a-b).
 \end{equation*}
-</div>Portanto, o quociente é <span class="process-math">\((a-b)\)</span> e o resto é zero.</div></div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-61">Prove que, o número <span class="process-math">\(1^{99}+2^{99}+3^{99}+4^{99}+5^{99}\)</span> é múltiplo de <span class="process-math">\(5\text{.}\)</span>
-</div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
-<div class="para logical" id="p-62">
-<div class="para">Vamos usar a seguinte igualdade:</div>
-<div class="displaymath process-math">
+</div>Portanto, o quociente é \((a-b)\) e o resto é zero.</div></div></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-61">Prove que, o número \(1^{99}+2^{99}+3^{99}+4^{99}+5^{99}\) é múltiplo de \(5\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
+<p id="p-62">Vamos usar a seguinte igualdade:</p>
+<div class="displaymath">
 \begin{equation*}
 a^n+b^n = (a+b)(a^{n-1}\cdot b^0 - a^{n-2}\cdot b^1 +\cdots +a^{0}\cdot b^{n-1}).
 \end{equation*}
 </div>
-</div> <div class="para" id="p-63">
-<span class="process-math">\(5^{99}\)</span> é múltiplo de <span class="process-math">\(5\)</span> e portanto deixa resto zero.</div> <div class="para" id="p-64">
-<span class="process-math">\(4^{99}+1^{99} = (4+1)(4^{98}-4^{97}+\cdots+1)\text{,}\)</span> deixa resto zero na divisão por <span class="process-math">\(5\text{.}\)</span>
-</div> <div class="para" id="p-65">
-<span class="process-math">\(3^{99}+2^{99} = (3+2)(3^{98}-3^{97}\cdot 2^1+\cdots+2^{98})\text{,}\)</span> também deixa resto zero na divisão por <span class="process-math">\(5\text{.}\)</span>
-</div> <div class="para" id="p-66">Portanto, o número <span class="process-math">\(1^{99}+2^{99}+3^{99}+4^{99}+5^{99}\)</span> é múltiplo de <span class="process-math">\(5\text{.}\)</span>
-</div>
-</div></div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading">
+<p id="p-63">\(5^{99}\) é múltiplo de \(5\) e portanto deixa resto zero.</p>
+<p id="p-64">\(4^{99}+1^{99} = (4+1)(4^{98}-4^{97}+\cdots+1)\text{,}\) deixa resto zero na divisão por \(5\text{.}\)</p>
+<p id="p-65">\(3^{99}+2^{99} = (3+2)(3^{98}-3^{97}\cdot 2^1+\cdots+2^{98})\text{,}\) também deixa resto zero na divisão por \(5\text{.}\)</p>
+<p id="p-66">Portanto, o número \(1^{99}+2^{99}+3^{99}+4^{99}+5^{99}\) é múltiplo de \(5\text{.}\)</p>
+</div></div></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">(OCM 1994).</span>
-</h4>
-<div class="para" id="p-67">Seja <span class="process-math">\(A=777\ldots 777\)</span> um número onde o dígito "<span class="process-math">\(7\)</span>" aparece <span class="process-math">\(1001\)</span> vezes. Determine o quociente e o resto da divisão de <span class="process-math">\(A\)</span> por <span class="process-math">\(1001\text{.}\)</span>
-</div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
-<div class="para logical" id="p-68">
-<div class="para">Observe que <span class="process-math">\(A = 7\frac{10^{1001}-1}{9}\text{,}\)</span> e que <span class="process-math">\(1001 = 10^3+1\text{.}\)</span> Como</div>
-<div class="displaymath process-math" id="md-20">
+</h6>
+<p id="p-67">Seja \(A=777\ldots 777\) um número onde o dígito "\(7\)" aparece \(1001\) vezes. Determine o quociente e o resto da divisão de \(A\) por \(1001\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
+<p id="p-68">Observe que \(A = 7\frac{10^{1001}-1}{9}\text{,}\) e que \(1001 = 10^3+1\text{.}\) Como</p>
+<div class="displaymath">
 \begin{align*}
 (10^{999}+1)=\amp~((10^3)^{333}+1)\\
 =\amp~(10^3+1)((10^3)^{332}-(10^3)^{331}+(10^3)^{330}-\cdots+1),
 \end{align*}
 </div>
-<div class="para">Sabemos que <span class="process-math">\(\frac{10^{999}+1}{10^3+1}\)</span> é um número inteiro. Assim,</div>
-<div class="displaymath process-math" id="md-21">
+<p data-braille="continuation">Sabemos que \(\frac{10^{999}+1}{10^3+1}\) é um número inteiro. Assim,</p>
+<div class="displaymath">
 \begin{align*}
 \frac{10^{1001}-1}{10^3+1} =\amp~100\cdot\frac{10^{999}+1}{10^3+1}-\frac{101}{10^3+1}\\
 =\amp~100\cdot\frac{10^{999}+1}{10^3+1}-\frac{1001-900}{10^3+1}\\
@@ -813,109 +633,100 @@ a^n+b^n = (a+b)(a^{n-1}\cdot b^0 - a^{n-2}\cdot b^1 +\cdots +a^{0}\cdot b^{n-1})
 =\amp~\frac{10^{1001}-901}{10^3+1}+\frac{900}{10^3+1}.
 \end{align*}
 </div>
-<div class="para">Dividindo ambos os membros da igualdade por <span class="process-math">\(9\)</span> e em seguida multiplicando por <span class="process-math">\(7\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" id="md-22">
+<p data-braille="continuation">Dividindo ambos os membros da igualdade por \(9\) e em seguida multiplicando por \(7\text{,}\) obtemos</p>
+<div class="displaymath">
 \begin{align*}
 \frac{10^{1001}-1}{9(10^3+1)} =\amp~\frac{10^{1001}-901}{9(10^3+1)}+\frac{100}{10^3+1}\\
 \frac{7\cdot(10^{1001}-1)}{9(10^3+1)} =\amp~\frac{7\cdot(10^{1001}-901)}{9(10^3+1)}+\frac{700}{10^3+1}.
 \end{align*}
 </div>
-<div class="para">Afirmação: <span class="process-math">\(\frac{7\cdot(10^{1001}-901)}{9(10^3+1)}\)</span> é inteiro e portanto</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Afirmação: \(\frac{7\cdot(10^{1001}-901)}{9(10^3+1)}\) é inteiro e portanto</p>
+<div class="displaymath">
 \begin{equation*}
 A = 1001\cdot \frac{7\cdot(10^{1001}-901)}{9(10^3+1)} + 700.
 \end{equation*}
 </div>
-</div> <div class="para" id="p-69">Para concluir, vamos provar a afirmação acima. Observe que <span class="process-math">\(1001=7\cdot11\cdot13\text{.}\)</span> Então, como <span class="process-math">\(7, 9, 11, 13\)</span> não possuem fatores primos em comum, para mostrar que <span class="process-math">\(9(10^3+1)\)</span> divide <span class="process-math">\(7\cdot(10^{1001}-901)\text{,}\)</span> basta mostrar que cada um dos números <span class="process-math">\(9, 11\)</span> e <span class="process-math">\(13\)</span> divide <span class="process-math">\((10^{1001}-901)\text{.}\)</span>
-</div> <div class="para logical" id="p-70"><ol class="lower-roman">
-<li id="li-7"><div class="para" id="p-derived-li-7">(<span class="process-math">\(9\)</span> divide <span class="process-math">\((10^{1001}-901)\)</span>). Note que <span class="process-math">\(10\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(9\)</span> e que <span class="process-math">\(-901\)</span> deixa resto <span class="process-math">\(8\text{,}\)</span> na divisão por <span class="process-math">\(9\text{.}\)</span> Assim, Pelo Teorema dos Restos, <span class="process-math">\((10^{1001}-901)\)</span> deixa o mesmo resto que <span class="process-math">\((1^{1001}+8)=9\)</span> na divisão por <span class="process-math">\(9\text{,}\)</span> ou seja, o resto é zero.</div></li>
-<li id="li-8"><div class="para" id="p-derived-li-8">(<span class="process-math">\(11\)</span> divide <span class="process-math">\((10^{1001}-901)\)</span>). Como <span class="process-math">\(10^2\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(11\)</span> e <span class="process-math">\(-901\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(11\text{.}\)</span> Pelo Teorema dos restos, <span class="process-math">\((10^{1001}-901)\)</span> deixa o mesmo resto que <span class="process-math">\(((1)^{500}\cdot10+1)=11\text{,}\)</span> na divisão por <span class="process-math">\(11\text{.}\)</span> Portanto o resto é zero.</div></li>
-<li id="li-9"><div class="para" id="p-derived-li-9">(<span class="process-math">\(13\)</span> divide <span class="process-math">\((10^{1001}-901)\)</span>). De fato, <span class="process-math">\(10^6\)</span> deixa resto <span class="process-math">\(1\)</span> na divisão por <span class="process-math">\(13\)</span> e <span class="process-math">\(-901\)</span> deixa resto <span class="process-math">\(9\text{,}\)</span> na divisão por <span class="process-math">\(13\text{.}\)</span> Logo, pelo Teorema dos Restos <span class="process-math">\((10^{1001}-901)\)</span>) deixa o mesmo resto que <span class="process-math">\(((1)^{166}\cdot 10^5+9)=100009\text{.}\)</span> Assim, o resto também é zero.</div></li>
-</ol></div>
-</div></div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-71">Mostre que o número <span class="process-math">\(1^n+8^n-3^n-6^n\)</span> é múltiplo de <span class="process-math">\(10\text{.}\)</span>
-</div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
-<div class="para" id="p-72">Para mostrar que o número é mútiplo de <span class="process-math">\(10\text{,}\)</span> basta mostrar que <span class="process-math">\(2\)</span> e <span class="process-math">\(5\)</span> dividem o número.</div> <div class="para" id="p-73">Como <span class="process-math">\(8^n-3^n\)</span> e <span class="process-math">\(1^n-6^n\)</span> são ímpares, a soma <span class="process-math">\((8^n-3^n) + (1^n-6^n)\)</span> é par, assim, <span class="process-math">\(2\)</span> divide <span class="process-math">\(1^n+8^n-3^n-6^n\text{.}\)</span>
-</div> <div class="para logical" id="p-74">
-<div class="para">Para mostrar <span class="process-math">\(5\)</span> divide <span class="process-math">\(1^n+8^n-3^n-6^n\text{,}\)</span> vamos usar as seguintes fatorações:</div>
-<div class="displaymath process-math" id="md-23">
+<p id="p-69">Para concluir, vamos provar a afirmação acima. Observe que \(1001=7\cdot11\cdot13\text{.}\) Então, como \(7, 9, 11, 13\) não possuem fatores primos em comum, para mostrar que \(9(10^3+1)\) divide \(7\cdot(10^{1001}-901)\text{,}\) basta mostrar que cada um dos números \(9, 11\) e \(13\) divide \((10^{1001}-901)\text{.}\)</p>
+<ol id="p-70" class="lower-roman">
+<li id="li-7">(\(9\) divide \((10^{1001}-901)\)). Note que \(10\) deixa resto \(1\) na divisão por \(9\) e que \(-901\) deixa resto \(8\text{,}\) na divisão por \(9\text{.}\) Assim, Pelo Teorema dos Restos, \((10^{1001}-901)\) deixa o mesmo resto que \((1^{1001}+8)=9\) na divisão por \(9\text{,}\) ou seja, o resto é zero.</li>
+<li id="li-8">(\(11\) divide \((10^{1001}-901)\)). Como \(10^2\) deixa resto \(1\) na divisão por \(11\) e \(-901\) deixa resto \(1\) na divisão por \(11\text{.}\) Pelo Teorema dos restos, \((10^{1001}-901)\) deixa o mesmo resto que \(((1)^{500}\cdot10+1)=11\text{,}\) na divisão por \(11\text{.}\) Portanto o resto é zero.</li>
+<li id="li-9">(\(13\) divide \((10^{1001}-901)\)). De fato, \(10^6\) deixa resto \(1\) na divisão por \(13\) e \(-901\) deixa resto \(9\text{,}\) na divisão por \(13\text{.}\) Logo, pelo Teorema dos Restos \((10^{1001}-901)\)) deixa o mesmo resto que \(((1)^{166}\cdot 10^5+9)=100009\text{.}\) Assim, o resto também é zero.</li>
+</ol>
+</div></div></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-71">Mostre que o número \(1^n+8^n-3^n-6^n\) é múltiplo de \(10\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<p id="p-72">Para mostrar que o número é mútiplo de \(10\text{,}\) basta mostrar que \(2\) e \(5\) dividem o número.</p>
+<p id="p-73">Como \(8^n-3^n\) e \(1^n-6^n\) são ímpares, a soma \((8^n-3^n) + (1^n-6^n)\) é par, assim, \(2\) divide \(1^n+8^n-3^n-6^n\text{.}\)</p>
+<p id="p-74">Para mostrar \(5\) divide \(1^n+8^n-3^n-6^n\text{,}\) vamos usar as seguintes fatorações:</p>
+<div class="displaymath">
 \begin{align*}
 8^n-3^n =\amp~ \underbrace{(8-3)}_{=5}(8^{n-1}+8^{n-2}\cdot 3+8^{n-3}\cdot3^2+\cdots + 3^{n-1})\\
 1^n-6^n =\amp~ \underbrace{(1-6)}_{=-5}(1+6+6^2+\cdots+6^{n-1})
 \end{align*}
 </div>
-<div class="para">Assim, <span class="process-math">\(8^n-3^n\)</span> e <span class="process-math">\(1^n-6^n\)</span> são divisíveis por <span class="process-math">\(5\)</span> e portanto a soma também é.</div>
-</div>
+<p data-braille="continuation">Assim, \(8^n-3^n\) e \(1^n-6^n\) são divisíveis por \(5\) e portanto a soma também é.</p>
 </div></div></article><section class="subsection" id="subsection-1"><h4 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">1.1.1.1</span> <span class="title">Simulados Antigos</span>
 </h4>
-<article class="exercise exercise-like" id="exercise-6"><h5 class="heading">
+<article class="exercise exercise-like" id="exercise-6"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">(2013).</span>
-</h5>
-<div class="para logical" id="p-75">
-<div class="para">O algarismo das unidades do número <span class="process-math">\(1\times 3\times 5\times \cdots\times 97\times 99\)</span> é:</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-75">O algarismo das unidades do número \(1\times 3\times 5\times \cdots\times 97\times 99\) é:</p>
+<div class="displaymath">
 \begin{equation*}
 (a) 2 \quad (b) 3\quad (c) 5 \quad (d) 7 \quad (e) 9
 \end{equation*}
 </div>
-</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><span class="process-math">\((c) 5\)</span></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para" id="p-76">Todo múltiplo de <span class="process-math">\(5\)</span> ímpar termina em <span class="process-math">\(5\text{.}\)</span>
-</div></div></div></article><article class="exercise exercise-like" id="exercise-7"><h5 class="heading">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like">\((c) 5\)</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><p id="p-76">Todo múltiplo de \(5\) ímpar termina em \(5\text{.}\)</p></div></div></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading">
 <span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">(2014 - Problema 1).</span>
-</h5>
-<div class="para logical" id="p-77">
-<div class="para">Paula iniciou um programa de ginástica no qual os dias de treino são separados por dois dias de descanso. Se o primeiro treino foi em uma segunda-feira, em qual dia da semana cairá o centésimo treino?</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-77">Paula iniciou um programa de ginástica no qual os dias de treino são separados por dois dias de descanso. Se o primeiro treino foi em uma segunda-feira, em qual dia da semana cairá o centésimo treino?</p>
+<div class="displaymath">
 \begin{equation*}
 (a) \text{Domingo} ~~~ (b) \text{segunda-feira} ~~~ (c) \text{terça-feira} ~~~ (d) \text{quinita-feira} ~~~ (e) \text{sexta-feira}
 \end{equation*}
 </div>
-</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><span class="process-math">\((d) \text{quinita-feira}\)</span></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
-<div class="para" id="p-78">Como os treinos ocorrem de <span class="process-math">\(3\)</span> em <span class="process-math">\(3\)</span> dias, o segundo treino ocorrerá <span class="process-math">\(3\)</span> dias após o primeiro. O terceiro treino ocorrerá <span class="process-math">\(3\times 2 = 6\)</span> dias após o primeiro e assim sucessivamente. O <span class="process-math">\(n\)</span>-ésimo treino ocorrerá <span class="process-math">\(3\times(n-1)\)</span> dias após o primeiro. Assim, o centésimo treino ocorrerá <span class="process-math">\(3 \times 99 = 297\)</span> dias após o primeiro.</div> <div class="para" id="p-79">A cada <span class="process-math">\(7\)</span> dias repete-se o dia da semana. Como <span class="process-math">\(297\)</span> deixa resto <span class="process-math">\(3\)</span> na divisão por <span class="process-math">\(7\text{,}\)</span> o centésimo treino ocorrerá <span class="process-math">\(3\)</span> dias após uma segunda-feira, ou seja, em uma quinta-feira.</div>
-</div></div></article><article class="exercise exercise-like" id="exercise-8"><h5 class="heading">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like">\((d) \text{quinita-feira}\)</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<p id="p-78">Como os treinos ocorrem de \(3\) em \(3\) dias, o segundo treino ocorrerá \(3\) dias após o primeiro. O terceiro treino ocorrerá \(3\times 2 = 6\) dias após o primeiro e assim sucessivamente. O \(n\)-ésimo treino ocorrerá \(3\times(n-1)\) dias após o primeiro. Assim, o centésimo treino ocorrerá \(3 \times 99 = 297\) dias após o primeiro.</p>
+<p id="p-79">A cada \(7\) dias repete-se o dia da semana. Como \(297\) deixa resto \(3\) na divisão por \(7\text{,}\) o centésimo treino ocorrerá \(3\) dias após uma segunda-feira, ou seja, em uma quinta-feira.</p>
+</div></div></article><article class="exercise exercise-like" id="exercise-8"><h6 class="heading">
 <span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">(2014 - Problema 2).</span>
-</h5>
-<div class="para" id="p-80">No Pentágono <span class="process-math">\(ABCDE\)</span> abaixo, <span class="process-math">\(AB = BC = CD = 2\)</span> metros e <span class="process-math">\(DE = EA = 3\)</span> metros. Uma formiguinha parte do vértice <span class="process-math">\(A\)</span> e caminha com velocidade constante de um metro por segundo ao longo de seus lados sempre no mesmo sentido. Em que ponto estará no <span class="process-math">\(2013°\)</span> segundo?</div>
-<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/formiga.svg" role="img" class="contained"></div>
-<div class="para logical" id="p-81"><div class="displaymath process-math">
+</h6>
+<p id="p-80">No Pentágono \(ABCDE\) abaixo, \(AB = BC = CD = 2\) metros e \(DE = EA = 3\) metros. Uma formiguinha parte do vértice \(A\) e caminha com velocidade constante de um metro por segundo ao longo de seus lados sempre no mesmo sentido. Em que ponto estará no \(2013°\) segundo?</p>
+<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/formiga.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="displaymath" id="p-81">
 \begin{equation*}
 (a) A \quad (b) B\quad (c) C \quad (d) D \quad (e) E
 \end{equation*}
-</div></div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><div class="para" id="p-82"><span class="process-math">\((e) E\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><div class="para" id="p-83">Ao decorrer do Pentágono, a formiga anda <span class="process-math">\(12\)</span> metros em <span class="process-math">\(12\)</span> segundos, então podemos escrever pelo algoritmo da divisão que no segundo <span class="process-math">\(2013\)</span> a formiga andou <span class="process-math">\(12\times 167+9\)</span> metros, ou seja, deu <span class="process-math">\(167\)</span> voltas e andou mais <span class="process-math">\(9\)</span> metros, estando agora no ponto <span class="process-math">\(E\text{.}\)</span>
-</div></div></div></article><article class="exercise exercise-like" id="exercise-9"><h5 class="heading">
+</div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><p id="p-82">\((e) E\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><p id="p-83">Ao decorrer do Pentágono, a formiga anda \(12\) metros em \(12\) segundos, então podemos escrever pelo algoritmo da divisão que no segundo \(2013\) a formiga andou \(12\times 167+9\) metros, ou seja, deu \(167\) voltas e andou mais \(9\) metros, estando agora no ponto \(E\text{.}\)</p></div></div></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading">
 <span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">(2015 - Problema 2).</span>
-</h5>
-<div class="para logical" id="p-84">
-<div class="para">Esmeralda rasgou uma folha em <span class="process-math">\(n\)</span> pedaços e, em seguida, pegou uma dessas partes e rasgou-a também em <span class="process-math">\(n\)</span> pedaços. Não satisfeita, pegou uma dessas últimas partes e rasgou também em <span class="process-math">\(n\)</span> pedaços. Qual dos números a seguir poderia ser o total de pedaços obtidos por Esmeralda no final?</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-84">Esmeralda rasgou uma folha em \(n\) pedaços e, em seguida, pegou uma dessas partes e rasgou-a também em \(n\) pedaços. Não satisfeita, pegou uma dessas últimas partes e rasgou também em \(n\) pedaços. Qual dos números a seguir poderia ser o total de pedaços obtidos por Esmeralda no final?</p>
+<div class="displaymath">
 \begin{equation*}
 (a) 15 \quad (b) 18\quad (c) 24 \quad (d) 26 \quad (e) 28
 \end{equation*}
 </div>
-</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><div class="para" id="p-85"><span class="process-math">\((e) 28\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><div class="para logical" id="p-86">
-<div class="para">Após Esmeralda cortar o papel pela primeira vez ela obteve <span class="process-math">\(n\)</span> pedaços, cujos <span class="process-math">\(n-1\)</span> se mantiveram após ela partir pela segunda vez e desses <span class="process-math">\(n\)</span> novos pedaços, se mantiveram <span class="process-math">\(n-1\)</span> pedaços após ela partir pela terceira vez fazendo mais <span class="process-math">\(n\)</span> pedaços, então ela tinha</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><p id="p-85">\((e) 28\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<p id="p-86">Após Esmeralda cortar o papel pela primeira vez ela obteve \(n\) pedaços, cujos \(n-1\) se mantiveram após ela partir pela segunda vez e desses \(n\) novos pedaços, se mantiveram \(n-1\) pedaços após ela partir pela terceira vez fazendo mais \(n\) pedaços, então ela tinha</p>
+<div class="displaymath">
 \begin{equation*}
 (n-1) +(n-1) + n = 3n-2
 \end{equation*}
 </div>
-<div class="para">pedaços e a única opção que se enquadra nesse formato é o número</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">pedaços e a única opção que se enquadra nesse formato é o número</p>
+<div class="displaymath">
 \begin{equation*}
 28 = 3\cdot 10 - 2\text{.}
 \end{equation*}
 </div>
-<div class="para">Pois,</div>
-<div class="displaymath process-math" id="md-24">
+<p data-braille="continuation">Pois,</p>
+<div class="displaymath">
 \begin{align*}
 15 =\amp~ 3\cdot 5\\
 18 =\amp~ 3\cdot 6\\
@@ -923,15 +734,7 @@ A = 1001\cdot \frac{7\cdot(10^{1001}-901)}{9(10^3+1)} + 700.
 26 =\amp~ 3\cdot 9-1
 \end{align*}
 </div>
-</div></div></div></article></section></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="01-divisibilidade.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-2.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
-</div></main>
-</div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div></div></article></section></section></section></div></main>
 </div>
 </body>
 </html>
