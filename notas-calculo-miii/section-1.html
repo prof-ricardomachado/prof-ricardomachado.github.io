@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM O Espaço Euclidiano \mathbb{R}^n</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo M III">
+<meta property="book:author" content="Eudes Barboza">
+<meta property="book:author" content="Thamires Cruz
+">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo M III:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Eudes Barboza, Thamires Cruz, Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="curvas.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="curvas.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-2.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{ct}[1]{\color{gray}{\text{#1}}}
+\newcommand{ctm}[1]{\color{gray}{#1}}
+
+\newcommand{\doubler}[1]{2#1}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ob}[2]{\color{gray}{\overbrace{\color{black}{#1}}^{#2}}}
+\newcommand{\ub}[2]{\color{gray}{\underbrace{\color{black}{#1}}_{#2}}}
+\newcommand{\integral}[2]{\displaystyle\int {#1}\,\dd {#2}}
+\newcommand{\integrald}[4]{\displaystyle\int_{#2}^{#3} {#1}\,\dd {#4}}
+\DeclareMathOperator{\arcsec}{arc \,sec}
+\DeclareMathOperator{\sin}{sen}
+\DeclareMathOperator{\arcsin}{arc \,sen}
+\DeclareMathOperator{\arccos}{arc \,cos}
+\DeclareMathOperator{\csc}{cossec}
+\DeclareMathOperator{\tan}{tg}
+\DeclareMathOperator{\arctan}{arc\,tg}
+\DeclareMathOperator{\cot}{cotg}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-eudes.html" class="internal"><span class="title">Sobre Eudes Barboza</span></a></div></li>
+<li><div class="toc-item"><a href="prof-thamires.html" class="internal"><span class="title">Sobre Thamires Cruz</span></a></div></li>
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="curvas.html" class="internal"><span class="codenumber">1</span> <span class="title">Curvas</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">O Espaço Euclidiano <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Funções vetoriais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Operações com Funções Vetoriais</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-2.html#exercises-2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-1"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">1.1</span> <span class="title">O Espaço Euclidiano <span class="process-math">\(\mathbb{R}^n\)</span></span>
+</h2>
+<div class="para logical" id="p-8">
+<div class="para">O Espaço Euclidiano <span class="process-math">\(n\)</span>-dimensional é o produto cartesiano de <span class="process-math">\(n\)</span> fatores, com <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> iguais a <span class="process-math">\(\mathbb{R}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{R}^{n}=\mathbb{R}\times \mathbb{R}\times\cdots\times \mathbb{R},
+\end{equation*}
+</div>
+<div class="para">ou ainda,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{R}^n= \{(x_1,\cdots, x_n); x_i\in \mathbb{R} \mbox{ para } i=1,\cdots,n\}.
+\end{equation*}
+</div>
+<div class="para">Assim,  os pontos ou vetores do <span class="process-math">\(\mathbb{R}^{n}\)</span> são representados por <span class="process-math">\(x=(x_{1},\cdots,x_{n})\)</span> cujas coordenadas <span class="process-math">\(x_{1},\cdots,x_{n}\)</span> são números reais.</div>
+</div>
+<article class="definition definition-like" id="definition-1"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-9">
+<div class="para">Dados <span class="process-math">\(x=(x_1,\cdots, x_n), y=(y_1,\cdots, y_n)\)</span> em <span class="process-math">\(\mathbb{R}^n\)</span> e <span class="process-math">\(\lambda\in\mathbb{R}\text{,}\)</span> definimos as seguintes operações:</div>
+<ol class="lower-roman">
+<li id="li-1"><div class="para" id="p-derived-li-1">
+<span class="process-math">\(x+y= (x_1+ y_1,\cdots, x_n+y_n)\)</span> (Soma de vetores);</div></li>
+<li id="li-2"><div class="para" id="p-derived-li-2">
+<span class="process-math">\(\lambda x= (\lambda x_1, \cdots, \lambda x_n)\)</span> (Produto por escalar);</div></li>
+<li id="li-3"><div class="para" id="p-derived-li-3">
+<span class="process-math">\(\langle x, y\rangle = x\cdot y = x_1y_1+\cdots+ x_ny_n\)</span> (Produto interno).</div></li>
+</ol>
+</div></article><article class="remark remark-like" id="remark-1"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-10">
+<div class="para">Definimos a norma euclidiana em <span class="process-math">\(\mathbb{R}^n\)</span> por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\|x\|= \sqrt{x\cdot x} = \sqrt{x_1^2 + \cdots+ x_n^2},
+\end{equation*}
+</div>
+<div class="para">e assim</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x\cdot y = \|x\|\, \|y\| \cos (\theta),
+\end{equation*}
+</div>
+<div class="para">em que <span class="process-math">\(\theta\)</span> é o ângulo entre os vetores <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{.}\)</span>
+</div>
+</div></article><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">1.1.1</span> <span class="title">Funções vetoriais</span>
+</h3>
+<article class="definition definition-like" id="definition-2"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-11">
+<div class="para">Toda função do tipo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rll}
+f:\amp I\rightarrow \mathbb{R}^n\amp\\
+\amp t \mapsto f(t)\amp=(f_1(t), f_2(t), \cdots, f_n(t)),
+\end{array} 
+\end{equation*}
+</div>
+<div class="para">com <span class="process-math">\(I\subset \mathbb{R}\)</span> é chamada de <em class="emphasis">função vetorial a uma variável real</em>.</div>
+<ol class="lower-roman">
+<li id="li-4"><div class="para" id="p-derived-li-4">O domínio de <span class="process-math">\(f\)</span> é denotado por <span class="process-math">\(D(f)\text{;}\)</span>
+</div></li>
+<li id="li-5"><div class="para" id="p-derived-li-5">
+<span class="process-math">\(f\)</span> é regra que associa cada número real <span class="process-math">\(t\)</span> a um único vetor <span class="process-math">\(f(t)\in \mathbb{R}^n.\text{;}\)</span>
+</div></li>
+<li id="li-6"><div class="para" id="p-derived-li-6">Cada <span class="process-math">\(f_i: I \rightarrow \mathbb{R},\)</span> com <span class="process-math">\(i=1, \cdots, n,\)</span> é denominada função componente ou função coordenada de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ol>
+</div></article></section><article class="remark remark-like" id="remark-2"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-12">
+<div class="para">Podemos representar <span class="process-math">\(f:I\rightarrow \mathbb{R}^2\)</span> por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(t)= (f_1(t), f_2(t))  \quad
+\text{ ou } \quad
+f(t)= f_1(t)\vec{i}+ f_2(t)\vec{j},
+\end{equation*}
+</div>
+<div class="para">com <span class="process-math">\(\vec{i}=(1,0), \vec{j}=(0,1).\)</span>
+</div>
+</div> <div class="para logical" id="p-13">
+<div class="para">Já <span class="process-math">\(f:I\rightarrow \mathbb{R}^3\)</span> pode ser representada por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(t)= (f_1(t), f_2(t), f_3(t))  \quad
+\text{ ou } \quad f(t)= f_1(t)\vec{i}+ f_2(t)\vec{j} +  f_3(t)\vec{k},
+\end{equation*}
+</div>
+<div class="para">com  <span class="process-math">\(\vec{i}=(1,0,0), \vec{j}=(0,1,0)\)</span> e <span class="process-math">\(\vec{k}=(0,0,1)\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="example-1"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h3>
+<ol class="decimal">
+<li id="li-7"><div class="para" id="p-derived-li-7"><span class="process-math">\(f:[-2,+\infty)\rightarrow \mathbb{R}^2; f(t)=(t, t^3)\text{;}\)</span></div></li>
+<li id="li-8"><div class="para" id="p-derived-li-8"><span class="process-math">\(g:[0,2\pi]\rightarrow \mathbb{R}^3;  g(t)= \sin(t)\vec{i}+ \cos(t) \vec{j} + 1\vec{k}\text{;}\)</span></div></li>
+<li id="li-9"><div class="para" id="p-derived-li-9"><span class="process-math">\(h:\mathbb{R}\rightarrow \mathbb{R}^3; h(t)= (t, t, t^2)\text{;}\)</span></div></li>
+</ol></article><article class="definition definition-like" id="definition-3"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-14">
+<div class="para">A imagem ou trajetória de uma função vetorial <span class="process-math">\(f:I\rightarrow \mathbb{R}^n\)</span> é o conjunto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Im(f)= \{f(t)\in \mathbb{R}^n; t\in I\}.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-2"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-15"><span class="process-math">\(f:[-2,+3]\rightarrow \mathbb{R}^2; ~f(t)=(t, t^3).\)</span></div> <article class="technology computation-like" id="technology-1"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h4>
+<figure class="figure figure-like" id="figure-1"><iframe id="interactive-cubo" width="600" height="600" src="interactive-cubo-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></article><article class="example example-like" id="example-3"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-16"><span class="process-math">\(g:[0,2\pi]\rightarrow \mathbb{R}^3; ~ g(t)= \sin(t)\vec{i}+ \cos(t) \vec{j} + 1\vec{k}.\)</span></div> <article class="technology computation-like" id="technology-2"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
+</h4>
+<figure class="figure figure-like" id="figure-2"><iframe id="interactive-circ" width="600" height="600" src="interactive-circ-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></article><article class="example example-like" id="example-4"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-17"><span class="process-math">\(h:\mathbb{R}\rightarrow \mathbb{R}^3; ~h(t)= (t, t, t^2).\)</span></div> <article class="technology computation-like" id="technology-3"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span>
+</h4>
+<figure class="figure figure-like" id="figure-3"><iframe id="interactive-parabloa_r3" width="600" height="600" src="interactive-parabloa_r3-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></article><div class="para" id="p-18">Quando não for explicitado o domínio de uma função vetorial <span class="process-math">\(f:I \rightarrow \mathbb{R}^n\text{,}\)</span> consideraremos o domínio máximo em que <span class="process-math">\(f\)</span> esteja definida. Para isso, basta fazer a interseção dos domínios das funções componentes de <span class="process-math">\(f\text{.}\)</span>
+</div>
+<article class="example example-like" id="example-5"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-19">Determine o domínio de <span class="process-math">\(f(t) = t^3\vec{i}+ \sin(t)\vec{j}\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><div class="para logical" id="p-20">
+<div class="para">Observe que <span class="process-math">\(f_1(t)=t^3\text{,}\)</span> logo <span class="process-math">\(D(f_1)= \mathbb{R}\text{,}\)</span> e <span class="process-math">\(f_2(t)= \sin(t)\text{,}\)</span> com <span class="process-math">\(D(f_2)= \mathbb{R}\text{.}\)</span> Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D(f)= D(f_1)\cap D(f_2)= \mathbb{R} \cap \mathbb{R} = \mathbb{R}.
+\end{equation*}
+</div>
+</div></div></div></article><article class="example example-like" id="example-6"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.17</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-21">Determine o domínio de <span class="process-math">\(g(t)= (t^2, \ln(t+2), \sqrt{t+1})\text{.}\)</span>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para logical" id="p-22">
+<div class="para">Note que</div>
+<ol class="decimal">
+<li id="li-10"><div class="para" id="p-derived-li-10"><span class="process-math">\(g_1(t)= t^2,~  D(g_1)= \mathbb{R}\text{;}\)</span></div></li>
+<li id="li-11"><div class="para" id="p-derived-li-11"><span class="process-math">\(\displaystyle g_2(t) =\ln(t+2),~ D(g_2)= \{t\in \mathbb{R}; t+2&gt;0\}= (-2,+\infty);\)</span></div></li>
+<li id="li-12"><div class="para" id="p-derived-li-12"><span class="process-math">\(\displaystyle g_3(t)= \sqrt{t+1},~ D(g_3)= \{t\in\mathbb{R}; t+1\geq 0\}= [-1, +\infty).\)</span></div></li>
+</ol>
+<div class="para">Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D(g) = D(g_1)\cap D(g_2)\cap D(g_3)= \mathbb{R}\cap (-2,+\infty)\cap [-1,+\infty) = [-1,+\infty).
+\end{equation*}
+</div>
+</div></div></div></article><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">1.1.2</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="p-23">
+<div class="para">Em cada um dos itens abaixo determine <span class="process-math">\(\langle u,v\rangle, \|u\|\)</span> e <span class="process-math">\(\|v\|\text{.}\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="li-13"><div class="para" id="p-derived-li-13"><span class="process-math">\(\displaystyle u=(1,8)\ \text{e}\ v=(6,3).\)</span></div></li>
+<li id="li-14"><div class="para" id="p-derived-li-14"><span class="process-math">\(\displaystyle u=\left(-2,4,\frac{5}{3}\right)\ \text{e}\ v=\left(\frac{3}{2},\frac{1}{2},9\right).\)</span></div></li>
+<li id="li-15"><div class="para" id="p-derived-li-15"><span class="process-math">\(\displaystyle u=\left(\sqrt{2},11\right)\ \text{e}\ v=\left(\sqrt{18},-2\right).\)</span></div></li>
+<li id="li-16"><div class="para" id="p-derived-li-16"><span class="process-math">\(u=\left(-\sqrt{24},-5\right)\ \text{e}\ v=\left(7,3\sqrt{6}\right)\text{.}\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-24">
+<div class="para">Esboce a trajetória de uma partícula <span class="process-math">\(P\text{,}\)</span> sabendo que seu movimento é descrito por:</div>
+<ol class="lower-alpha">
+<li id="li-17"><div class="para" id="p-derived-li-17"><span class="process-math">\(\displaystyle f:\mathbb{R}\rightarrow\mathbb{R}^2;\ f(t)=(t,2t^2-1).\)</span></div></li>
+<li id="li-18"><div class="para" id="p-derived-li-18"><span class="process-math">\(\displaystyle f:\mathbb{R}\rightarrow\mathbb{R}^2;\ f(t)=\left(t,\dfrac{1}{t+1}\right).\)</span></div></li>
+<li id="li-19"><div class="para" id="p-derived-li-19"><span class="process-math">\(\displaystyle h:\mathbb{R}\rightarrow\mathbb{R}^3;\ h(t)=(cos(t),\sin(t),t).\)</span></div></li>
+<li id="li-20"><div class="para" id="p-derived-li-20"><span class="process-math">\(\displaystyle r:(0,+\infty)\rightarrow\mathbb{R}^3;\ r(t)=t\vec{i}+t\vec{j}+\frac{1}{t}\vec{k}.\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-25">
+<div class="para">Determine o domínio das seguintes funções vetoriais:</div>
+<ol class="lower-alpha">
+<li id="li-21"><div class="para" id="p-derived-li-21"><span class="process-math">\(\displaystyle f(t)=(t^2,\sqrt{t-1},\sqrt{5-t}).\)</span></div></li>
+<li id="li-22"><div class="para" id="p-derived-li-22"><span class="process-math">\(\displaystyle r(t) = (\sqrt{4-t^2}, e^{-3t}, \ln{t+1}).\)</span></div></li>
+<li id="li-23"><div class="para" id="p-derived-li-23"><span class="process-math">\(\displaystyle g(t)=\dfrac{t-2}{t+2}\vec{i}+\sin(t)\vec{j}+ln(9-t^2)\vec{k}.\)</span></div></li>
+<li id="li-24"><div class="para" id="p-derived-li-24"><span class="process-math">\(\displaystyle s(t)= \dfrac{\sqrt{t+2}}{t+2}\vec{i}+ 2^t \vec{j}+ \ln(9-t^2)\vec{k}.\)</span></div></li>
+<li id="li-25"><div class="para" id="p-derived-li-25"><span class="process-math">\(\displaystyle h(t)= (\ln(t), t, \sqrt{1-t^2}).\)</span></div></li>
+<li id="li-26"><div class="para" id="p-derived-li-26"><span class="process-math">\(\displaystyle F(t)= \left(\ln(5 -t^2), e^{-t}, \sqrt{\frac{t-2}{t+1}}\right).\)</span></div></li>
+<li id="li-27"><div class="para" id="p-derived-li-27"><span class="process-math">\(\displaystyle R(t)= \sqrt{t-4}\vec{i}+ \sqrt{4-t} \vec{j}.\)</span></div></li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="curvas.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-2.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

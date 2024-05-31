@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Limites Laterais</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo M III">
+<meta property="book:author" content="Eudes Barboza">
+<meta property="book:author" content="Thamires Cruz
+">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo M III:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Eudes Barboza, Thamires Cruz, Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-3.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="02limites.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-5.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{ct}[1]{\color{gray}{\text{#1}}}
+\newcommand{ctm}[1]{\color{gray}{#1}}
+
+\newcommand{\doubler}[1]{2#1}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ob}[2]{\color{gray}{\overbrace{\color{black}{#1}}^{#2}}}
+\newcommand{\ub}[2]{\color{gray}{\underbrace{\color{black}{#1}}_{#2}}}
+\newcommand{\integral}[2]{\displaystyle\int {#1}\,\dd {#2}}
+\newcommand{\integrald}[4]{\displaystyle\int_{#2}^{#3} {#1}\,\dd {#4}}
+\DeclareMathOperator{\arcsec}{arc \,sec}
+\DeclareMathOperator{\sin}{sen}
+\DeclareMathOperator{\arcsin}{arc \,sen}
+\DeclareMathOperator{\arccos}{arc \,cos}
+\DeclareMathOperator{\csc}{cossec}
+\DeclareMathOperator{\tan}{tg}
+\DeclareMathOperator{\arctan}{arc\,tg}
+\DeclareMathOperator{\cot}{cotg}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-eudes.html" class="internal"><span class="title">Sobre Eudes Barboza</span></a></div></li>
+<li><div class="toc-item"><a href="prof-thamires.html" class="internal"><span class="title">Sobre Thamires Cruz</span></a></div></li>
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="curvas.html" class="internal"><span class="codenumber">1</span> <span class="title">Curvas</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">O Espaço Euclidiano <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#subsection-1" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Funções vetoriais</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Operações com Funções Vetoriais</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-2.html#exercises-2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02limites.html" class="internal"><span class="codenumber">2</span> <span class="title">Limites e Continuidade</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Limite: Conceito e Noção Intuitiva</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsec-fun_cont" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Função Contínua</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#ididid" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Limite</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercises-3" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Limites Laterais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-4.html#subsec-limites-laterais" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Limites Laterais</span></a></div></li>
+<li><div class="toc-item"><a href="section-4.html#subsection-5" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Limite de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="section-4.html#exercises-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">O Teorema do Confronto</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-5.html#subsec-confronto" class="internal"><span class="codenumber">2.3.1</span> <span class="title">O Teorema do Confronto</span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#subsection-7" class="internal"><span class="codenumber">2.3.2</span> <span class="title">O limite fundamental <span class="process-math">\(\displaystyle\lim_{x\rightarrow 0} \frac{sen~{x}}{x}\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-5.html#exercises-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-6.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Limites no Infinito</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-6.html#subsection-8" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Limites no Infinito</span></a></div></li>
+<li><div class="toc-item"><a href="section-6.html#exercises-6" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">O número <span class="process-math">\(e\)</span></span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-7.html#exercises-7" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-4"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">2.2</span> <span class="title">Limites Laterais</span>
+</h2>
+<section class="subsection" id="subsec-limites-laterais"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.1</span> <span class="title">Limites Laterais</span>
+</h3>
+<article class="definition definition-like" id="def-laterais"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-50">
+<div class="para">Seja <span class="process-math">\(f\)</span> uma função real. Quando for possível aproximar de arbitrariamente de <span class="process-math">\(L\text{,}\)</span> os valores de <span class="process-math">\(f(x)\text{,}\)</span> à medida que <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\)</span> por valores menores que <span class="process-math">\(p\text{,}\)</span> dizemos que o <em class="emphasis">limite de <span class="process-math">\(f(x)\)</span> pela esquerda</em>, quando <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\)</span> é <span class="process-math">\(L\)</span> e indicamos por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\to p^{-}}f(x)=L
+\end{equation*}
+</div>
+<div class="para">Similarmente, dizemos que o <em class="emphasis">limite de <span class="process-math">\(f(x)\)</span> pela direita</em>, quando <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\)</span> é <span class="process-math">\(L\)</span> e denotamos por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\to p^{+}}f(x)=L,
+\end{equation*}
+</div>
+<div class="para">quando for possível aproximar de arbitrariamente de <span class="process-math">\(L\text{,}\)</span> os valores de <span class="process-math">\(f(x)\text{,}\)</span> à medida que <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\)</span> por valores maiores que <span class="process-math">\(p\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-6"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-51">Dada a função <span class="process-math">\(f(x)=\dfrac{|x-2|}{x-2}\)</span> determine:</div> <article class="task exercise-like" id="task-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-52"><span class="process-math">\(\displaystyle\lim_{x\to 2^{-}}f(x)\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><div class="para logical" id="p-53">
+<div class="para">Nota-se no gráfico de <span class="process-math">\(f\)</span> (ver <a href="" class="xref" data-knowl="./knowl/fig5-plot.html" title="Figura 2.2.3">Figura 2.2.3</a>) que quando <span class="process-math">\(x\)</span> tende a <span class="process-math">\(2\)</span> pela esquerda, os valores de <span class="process-math">\(f(x)\)</span> tendem a <span class="process-math">\(-1\text{.}\)</span> Portanto, o limite pela esquerda é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig5-plot.html">
+\begin{equation*}
+\lim_{x\to 2^{-}}\frac{|x-2|}{x-2}=-1.
+\end{equation*}
+</div>
+<div class="para"><figure class="figure figure-like" id="fig5-plot"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image5-sage.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div></div>
+</div></article> <article class="task exercise-like" id="task-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-54"><span class="process-math">\(\displaystyle\lim_{x\to 2^{+}}f(x)\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><div class="para logical" id="p-55">
+<div class="para">Nota-se no gráfico de <span class="process-math">\(f\)</span> (ver <a href="" class="xref" data-knowl="./knowl/fig5-plot.html" title="Figura 2.2.3">Figura 2.2.3</a>) que quando <span class="process-math">\(x\)</span> tende a <span class="process-math">\(2\)</span> pela direita, os valores de <span class="process-math">\(f(x)\)</span> tendem a <span class="process-math">\(1\text{.}\)</span> Portanto, o limite pela direita é</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig5-plot.html">
+\begin{equation*}
+\lim_{x\to 2^{+}}\frac{|x-2|}{x-2}=1.
+\end{equation*}
+</div>
+</div></div></div>
+</div></article></article><article class="theorem theorem-like" id="thm-laterais"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-56">
+<span class="process-math">\(\displaystyle\lim_{x\to p}f(x)=L\)</span> se, e somente se, <span class="process-math">\(\displaystyle\lim_{x\to p^{-}}f(x)=L\)</span> e <span class="process-math">\(\displaystyle\lim_{x\to p^{+}}f(x)=L\text{.}\)</span>
+</div></article><div class="para" id="p-57">Podemos reformular o <a href="" class="xref" data-knowl="./knowl/thm-laterais.html" title="Teorema 2.2.4">Teorema 2.2.4</a> escrevendo: <article class="assemblage assemblage-like" id="assemblage-existe-limite"><h4 class="heading"><span class="title">Existência de um Limite.</span></h4>
+<div class="para logical" id="p-58"><ul class="disc">
+<li id="li-70"><div class="para" id="p-59">Se qualquer um dos limites laterais não existir quando <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\text{,}\)</span> ou se ambos existem, mas forem diferentes, então o limite quando  <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\)</span> não existe.</div></li>
+<li id="li-71"><div class="para" id="p-60">Se o limite  quando <span class="process-math">\(x\)</span> tende a <span class="process-math">\(p\)</span> não existe, então os limites laterais são diferentes ou pelo menos um deles não existe.</div></li>
+</ul></div></article>
+</div>
+<article class="example example-like" id="ex-7"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-61">Para <span class="process-math">\(f(x)=\begin{cases} x^2-\frac{1}{2} \amp \text{se } x \lt 1\\
+x-1 \amp \text{se } x \ge 1
+\end{cases}\)</span> determine:</div> <article class="task exercise-like" id="task-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-62"><span class="process-math">\(\displaystyle\lim_{x\to 1^{-}}f(x)\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><div class="para logical" id="p-63">
+<div class="para">Por definição, se  <span class="process-math">\(x\lt 1\text{,}\)</span> temos <span class="process-math">\(f(x)=x^2-\frac{1}{2}\text{.}\)</span> Na <a href="" class="xref" data-knowl="./knowl/fig6-plot.html" title="Figura 2.2.6">Figura 2.2.6</a> observa-se que <span class="process-math">\(f(x)\)</span> tende a <span class="process-math">\(\frac{1}{2}\)</span> quando <span class="process-math">\(x\)</span> tende a 1 pela esquerda. Portanto,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig6-plot.html">
+\begin{equation*}
+\displaystyle\lim_{x\to 1^{-}}f(x)=\frac{1}{2}
+\end{equation*}
+</div>
+<div class="para"><figure class="figure figure-like" id="fig6-plot"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image6-sage.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div></div>
+</div></article> <article class="task exercise-like" id="task-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-64"><span class="process-math">\(\displaystyle\lim_{x\to 1^{+}}f(x)\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><div class="para logical" id="p-65">
+<div class="para">Por definição, se  <span class="process-math">\(x\ge 1\text{,}\)</span> temos <span class="process-math">\(f(x)=x-1\text{.}\)</span> Na <a href="" class="xref" data-knowl="./knowl/fig6-plot.html" title="Figura 2.2.6">Figura 2.2.6</a> observa-se que <span class="process-math">\(f(x)\)</span> tende a 0 quando <span class="process-math">\(x\)</span> tende a 1 pela direita. Portanto,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig6-plot.html">
+\begin{equation*}
+\displaystyle\lim_{x\to 1^{+}}f(x)=0.
+\end{equation*}
+</div>
+</div></div></div>
+</div></article> <article class="task exercise-like" id="task-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-66">
+<span class="process-math">\(\displaystyle\lim_{x\to 1}f(x)\)</span> existe?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><div class="para" id="p-67">Os limites à esquerda e à direita de 1 são diferentes. Isso contraria regra de  <a href="" class="xref" data-knowl="./knowl/assemblage-existe-limite.html" title="Coleção: Existência de um Limite">Existência de um Limite</a>. Portanto, o limite de <span class="process-math">\(f(x)\)</span> quando <span class="process-math">\(x\)</span> tende a 1 por ambos os lados não existe.</div></div></div>
+</div></article></article><article class="example example-like" id="ex-8"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-68">Seja <span class="process-math">\(f(x)= 2 + |5x-1|\text{.}\)</span> Encontre <span class="process-math">\(\displaystyle\lim_{x\to\frac{1}{5}}f(x)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="para logical" id="p-69">
+<div class="para">Observe que a formação de  <span class="process-math">\(f\)</span> envolve módulo. Então, podemos transformar-lá em uma função definida em duas sentenças. Para isso, note que <span class="process-math">\(5x-1\gt 0\)</span> quando <span class="process-math">\(x\gt \frac{1}{5} \text{,}\)</span> daí <span class="process-math">\(|5x-1|=5x-1\text{.}\)</span> Por outro lado,   <span class="process-math">\(5x-1\le 0\)</span> quando <span class="process-math">\(x\le \frac{1}{5}\text{,}\)</span> daí <span class="process-math">\(|5x-1|=-(5x-1)\text{.}\)</span>  Portanto, podemos escrever</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig7-plot.html ./knowl/thm-laterais.html">
+\begin{equation*}
+f(x)= 2 + |5x-1|=\begin{cases} 1 + 5x \amp \text{se } x\ge \frac{1}{5}\\ 3 - 5x\amp \text{se } x\lt \frac{1}{5} \end{cases}.
+\end{equation*}
+</div>
+<div class="para">Dessa forma, quando <span class="process-math">\(x\ge \frac{1}{5}\text{,}\)</span> <span class="process-math">\(f(x)\)</span> assume <span class="process-math">\(1 + 5x\)</span>  e quando <span class="process-math">\(x\lt \frac{1}{5}\text{,}\)</span> <span class="process-math">\(f\)</span> assume <span class="process-math">\(3 - 5x\text{.}\)</span> Na <a href="" class="xref" data-knowl="./knowl/fig7-plot.html" title="Figura 2.2.8">Figura 2.2.8</a> observa-se que <span class="process-math">\(\displaystyle\lim_{x\to \frac{1}{5}^{-}}f(x)=2\)</span> e que <span class="process-math">\(\displaystyle\lim_{x\to \frac{1}{5}^{+}}f(x)=2\text{.}\)</span> Logo, segue do <a href="" class="xref" data-knowl="./knowl/thm-laterais.html" title="Teorema 2.2.4">Teorema 2.2.4</a> que <span class="process-math">\(\displaystyle\lim_{x\to \frac{1}{5}}f(x)=2.\)</span> <figure class="figure figure-like" id="fig7-plot"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image7-sage.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div>
+</div></div></div>
+</div></article></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.2</span> <span class="title">Limite de Função Composta</span>
+</h3>
+<article class="theorem theorem-like" id="theorem-3"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-70">
+<div class="para">Sejam <span class="process-math">\(f\)</span> e <span class="process-math">\(g\)</span> duas funções tais que <span class="process-math">\(Im_f\subset D_g\text{.}\)</span> Se</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow p}f(x)=a
+\end{equation*}
+</div>
+<div class="para">e <span class="process-math">\(g\)</span> contínua em <span class="process-math">\(a\text{,}\)</span> então,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow p} g(f(x)) = \lim_{u\rightarrow a}g(u).
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="example-17"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-71">
+<div class="para">Calcule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow 1} \sqrt{\frac{x^2-1}{x-1}}
+\end{equation*}
+</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para logical" id="p-72">
+<div class="para">Seja <span class="process-math">\(u=\frac{x^2-1}{x-1}\text{,}\)</span> para <span class="process-math">\(x&gt;-1, x\neq 1\text{,}\)</span> então</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{\frac{x^2-1}{x-1}}=\sqrt{u}.
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(\lim_{x\rightarrow 1} \dfrac{x^2-1}{x-1}=2\)</span> e <span class="process-math">\(g(u)=\sqrt{u}\)</span> é contínua em <span class="process-math">\(2\text{.}\)</span> Assim,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow 1}\sqrt{\frac{x^2-1}{x-1}} = \lim_{u\rightarrow 2}\sqrt{u}=\sqrt{2}.
+\end{equation*}
+</div>
+</div></div></div></article><article class="example example-like" id="example-18"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-73">
+<div class="para">Calcule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x\rightarrow 1} \frac{(3-x^3)^4-16}{x^3-1}
+\end{equation*}
+</div>
+</div> <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
+<div class="para logical" id="p-74">
+<div class="para">Defina <span class="process-math">\(u=3-x^3\text{,}\)</span> logo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(3-x^3)^4-16}{x^3-1} = \frac{u^4-16}{2-u},
+\end{equation*}
+</div>
+<div class="para">com <span class="process-math">\(u=3-x^3, x\neq 1\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-75">
+<div class="para">Quando <span class="process-math">\(x\rightarrow 1\text{,}\)</span> <span class="process-math">\(u\rightarrow 2\text{.}\)</span> Então,</div>
+<div class="displaymath process-math" id="md-1">
+\begin{align*}
+\lim_{x\rightarrow 1} \frac{(3-x^3)^4-16}{x^3-1} =\amp~\lim_{u\rightarrow 2}\frac{u^4-16}{2-u}\\
+=\amp~\lim_{u\rightarrow 2}\frac{(u-2)(u+2)(u^2+4)}{2-u}\\
+=\amp~-\lim_{u\rightarrow 2}(u+2)(u^2+4)\\
+=\amp~-32
+\end{align*}
+</div>
+</div>
+</div></div></article></section><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">2.2.3</span> <span class="title">Exercícios</span>
+</h3>
+<pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">f=(2*x+12)/(abs(x+6))
+lim(f, x=-6, dir='+')
+</script></pre>
+<article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="p-76">
+<div class="para">Calcule o limite, se existir. Se o limite não existir, explique porquê.</div>
+<ol class="lower-alpha cols2">
+<li id="li-72"><div class="para" id="p-derived-li-72"><span class="process-math">\(\displaystyle \lim_{x\rightarrow 3}(2x+|x-3|)\)</span></div></li>
+<li id="li-73"><div class="para" id="p-derived-li-73"><span class="process-math">\(\displaystyle \lim_{x\rightarrow -6}\frac{2x+12}{|x+6|}\)</span></div></li>
+<li id="li-74"><div class="para" id="p-derived-li-74"><span class="process-math">\(\displaystyle \lim_{x\rightarrow \frac{1}{2}^-}\frac{2x-1}{|2x^3-x^2|}\)</span></div></li>
+<li id="li-75"><div class="para" id="p-derived-li-75"><span class="process-math">\(\displaystyle \lim_{x\rightarrow -2}\frac{2-|x|}{2+x}\)</span></div></li>
+<li id="li-76"><div class="para" id="p-derived-li-76"><span class="process-math">\(\displaystyle \lim_{x\rightarrow 0^-}\left(\frac{1}{x}-\frac{1}{|x|}\right)\)</span></div></li>
+<li id="li-77"><div class="para" id="p-derived-li-77"><span class="process-math">\(\displaystyle \lim_{x\rightarrow 0^+}\left(\frac{1}{x}-\frac{1}{|x|}\right)\)</span></div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-77">
+<div class="para">Seja</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\left\{\begin{array}{ll}
+4-x^2, \amp \mbox{se} ~ x\leq 2\\
+x-1, \amp \mbox{se} ~ x&gt;2
+\end{array}\right.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-78"><div class="para" id="p-derived-li-78">Calcule <span class="process-math">\(\displaystyle\lim_{x\rightarrow 2^-}f(x)\)</span> e <span class="process-math">\(\displaystyle\lim_{x\rightarrow 2^+}f(x).\)</span>
+</div></li>
+<li id="li-79"><div class="para" id="p-derived-li-79">Existe <span class="process-math">\(\displaystyle\lim_{x\rightarrow 2}f(x)?\)</span>
+</div></li>
+<li id="li-80"><div class="para" id="p-derived-li-80">Esboce o gráfico de <span class="process-math">\(f.\)</span>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-78">
+<div class="para">Seja</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(x)=\dfrac{x^2-1}{|x-1|}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-81"><div class="para" id="p-derived-li-81">Calcule <span class="process-math">\(\displaystyle\lim_{x\rightarrow 1^+}F(x)\)</span> e <span class="process-math">\(\displaystyle\lim_{x\rightarrow 1^-}F(x)\)</span>
+</div></li>
+<li id="li-82"><div class="para" id="p-derived-li-82">Existe <span class="process-math">\(\displaystyle\lim_{x\rightarrow 1}F(x)?\)</span>
+</div></li>
+<li id="li-83"><div class="para" id="p-derived-li-83">Esboce o gráfico de <span class="process-math">\(F.\)</span>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="p-79">
+<div class="para">Calcule</div>
+<ol class="lower-alpha cols2">
+<li id="li-84"><div class="para" id="p-derived-li-84"><span class="process-math">\(\displaystyle \lim_{x\rightarrow -1} \sqrt[3]{\frac{x^3+1}{x+1}}\)</span></div></li>
+<li id="li-85"><div class="para" id="p-derived-li-85"><span class="process-math">\(\displaystyle \lim_{x\rightarrow 1} \frac{\sqrt{x^2+3}-2}{x^2-1}\)</span></div></li>
+<li id="li-86"><div class="para" id="p-derived-li-86"><span class="process-math">\(\displaystyle \lim_{x\rightarrow 1} \frac{\sqrt[3]{x+7}-2}{x-1}\)</span></div></li>
+<li id="li-87"><div class="para" id="p-derived-li-87"><span class="process-math">\(\displaystyle \lim_{x\rightarrow 1}\frac{\sqrt[3]{3x+5}-2}{x^2-1}\)</span></div></li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-3.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-5.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
