@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2024-12-10T15:16:04-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.3</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Usando o Binômio de Newton Generalizado e a observação anterior para calcular a raiz quadrada de 10. Troque os valores de a, b e termos para obter a raiz quadada de outro número.</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-raiz" width="600" height="480" src="interactive-raiz-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Abaixo, temos o código em SageMath para a função realiza o mesmo cálculo que o SageInteract acima.</p>
+<div class="sagecell-sage" id="sage-5"><script type="text/x-sage">def aproximacao_raiz_quadrada(a, b, termos=5):
+    """
+    Aproxima a raiz quadrada de 'a' usando a expansão binomial da forma generalizada.
+    
+    :param a: O número para o qual queremos encontrar a raiz quadrada.
+    :param b: Um número próximo a 'a' (geralmente uma potência de 10).
+    :param termos: O número de termos na série para usar na aproximação.
+    :return: A aproximação da raiz quadrada de 'a'.
+    """
+    
+    res_text=''
+    # Calcule x
+    x = (a - b) / b
+    
+    res_text = res_text + f'{sqrt(b)}*('
+    
+    for k in range(termos):
+        bi=''
+        j=0
+        for j in range(k):
+            bi = bi + f'(1/2-{j})*'
+        if k==0:
+            bi = bi +'1+'
+        else:
+            bi=bi[:-1]
+            bi = bi+f'/factorial({j+1})*({(a-b)/b})**{j+1}+'
+        res_text = res_text + f'{bi}'
+        
+    res_text = res_text[:-1]+')'
+    
+    print(f'({a})^(1/2) = {sqrt(b)}*({1}+{x})^{1/2}=')
+    print('')
+    print(res_text)
+    print('')
+    print('Realizando o cálculo, obtemos:')
+    print(eval(res_text))
+    
+# Teste a função com a raiz quadrada de 10, usando 9 como b e 5 termos na série
+
+aproximacao_raiz_quadrada(10, 9, termos=5)
+</script></div></article><span class="incontext"><a href="sec-cap-05.html#technology-2">[incontext]</a></span>
+</body>
+</html>

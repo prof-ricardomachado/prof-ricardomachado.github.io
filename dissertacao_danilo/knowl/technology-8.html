@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2024-12-10T14:26:27-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Considere o binômio \((a+b)^n.\) Abaixo, escolha os valores de \(a, b, n\) para obter diversas informações sobre a expansão deste binômio.</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-reta" width="600" height="720" src="interactive-reta-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.</p>
+<div class="sagecell-sage" id="sage-10"><script type="text/x-sage">def termos_binomio_2(a, b, n, formula=false):
+    
+    ltn = []
+    ltf = []
+    for i in range(n+1):
+        ltn.append(binomial(n,i)*a^(n-i)*b^i)
+        ltf.append('C(%s,%s)*(%s)^%s*(%s)^%s' %(n, i, a , i, b, n-i))
+    
+    print(f'A soma dos termos: {sum(ltn).factor()}')
+    
+    vmax = max(ltn)
+    indice_max = ltn.index(vmax)+1
+    print('O termo máximo é:')
+    print('T_%s = %s' %(indice_max, ltf[indice_max-1]))
+    print('     = %s' %vmax)
+    print('     = %s' %(vmax).n())
+    
+    vmin = min(ltn)
+    indice_min = ltn.index(vmin)+1
+    print('O termo mínimo é:')
+    print('T_%s = %s' %(indice_min, ltf[indice_min-1]))
+    print('     = %s' %vmin)
+    print('     = %s' %(vmin).n())
+    
+    l_termos_impar=[]
+    desenvolvimento = ((a*x+b)^n).coefficients()
+    for d in desenvolvimento:
+        if ZZ(d[1])%2==1:
+            l_termos_impar.append(d[0])
+    print(f'A soma dos coeficientes das potências de x com expoentes ímpares:\n {ZZ(sum(l_termos_impar)).factor()}')
+    
+    print('Gráfico dos termos:')
+    show(list_plot(ltn), figsize=[4,3])
+termos_binomio_2(3, 5, 13)
+</script></div></article><span class="incontext"><a href="section-2.html#technology-8">[incontext]</a></span>
+</body>
+</html>
