@@ -1,143 +1,71 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:38-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="pt-BR" dir="ltr">
-<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<html lang="pt-BR">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Permutações Caóticas</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Análise Combinatória e Probabilidade">
-<meta property="book:author" content="Ricardo Machado">
-<meta property="book:author" content="Gabriel Guedes">
-<meta property="book:author" content="Luiz Manoel">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        },
-        ""
-      ]
-    }
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "linkKey": "linked-sage",
-  "autoeval": false,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Executar (Sage)"
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
-<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
-</div>
-<h2 class="search-results-heading">Buscando por: </h2>
-<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
-</div>
-</div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section-inclusao-exclusao.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="ocontagem.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="section-permutacao-caotica-repeticoes.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -151,199 +79,103 @@ sagecell.makeSagecell({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\definecolor{fillinmathshade}{gray}{0.9}
-\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
-\)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter">
-<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-inclusao-exclusao.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="ocontagem.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-permutacao-caotica-repeticoes.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-inclusao-exclusao.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="ocontagem.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-permutacao-caotica-repeticoes.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="prof-gabriel-guedes.html" data-scroll="prof-gabriel-guedes">Sobre Gabriel Araújo Guedes</a></li>
+<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pcontagem-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-3" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-4" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-5" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípios Combinatórios</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="ocontagem.html" data-scroll="ocontagem"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica" class="active">Permutações Caóticas</a></li>
+<li><a href="section-permutacao-caotica-repeticoes.html" data-scroll="section-permutacao-caotica-repeticoes">Permutações Caóticas com Repetições</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="section-13.html" data-scroll="section-13">O Princípio da Reflexão</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-2" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-3" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-circulares.html#section-permutacoes-circulares-9" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html#section-permutacoes-com-repeticoes-11" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-completas.html#section-combinacoes-completas-12" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a><ul>
+<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
+<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
+<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
+<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-2" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-3" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-4" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Outros Casos do Princípio da Inclusão-Exclusão</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-5" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-5" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-6" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ocontagem-8.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-3" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-4" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-5" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-triangulo-pascal.html#section-triangulo-pascal-24" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-binomio-newton.html#section-binomio-newton-11" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-polinomio-leibniz.html#section-polinomio-leibniz-5" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-espacos-probabilidade.html#section-espacos-probabilidade-15" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-14" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-15" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Variáveis Aleatórias: Geométrica e Binomial Negativa</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-4" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
-<li class="toc-item toc-references"><div class="toc-title-box"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-permutacao-caotica"><h2 class="heading hide-type">
-<span class="type">Seção</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Permutações Caóticas</span>
+<li class="link"><a href="calculadora.html" data-scroll="calculadora"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-permutacao-caotica"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span>
 </h2>
-<section class="subsection" id="section-permutacao-caotica-2"><h3 class="heading hide-type">
-<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="space"> </span><span class="title">Nota Histórica</span>
+<section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span>
 </h3>
-<div class="para" id="section-permutacao-caotica-2-2">O primeiro problema notório relacionado a permutações caóticas é conhecido como "O Problema das Cartas Mal Endereçadas". Este enigma matemático tem conexões com figuras ilustres, como Pierre Raymond de Montmort (1678-1719) e Nicholas Bernoulli (1687-1759). Outro eminente matemático que se deparou com esse desafio foi Leonhard Euler (1707-1783). A solução por Euler foi publicada em seu artigo intitulado "Calcul de la probabilité dans le jeu de rencontre" <a href="" class="xref" data-knowl="./knowl/xref/Euler.html" title="Referência bibliográfica 6.21: Calcul de la probabilité dans le jeu de rencontre.">[6.21]</a>, cuja versão em inglês pode ser encontrada em <a href="" class="xref" data-knowl="./knowl/xref/Todhunter.html" title="Referência bibliográfica 6.22: A History of the Mathematical Theory of Probability: From the Time of Pascal to that of Laplace.">[6.22]</a>.</div>
-<div class="para" id="section-permutacao-caotica-2-3">Atualmente, este problema de análise combinatória é intitulado por Permutações Caóticas, também conhecida como Desarranjos ou Desordenamentos, uma Permutação em que nenhum de seus elementos estará presente no seu lugar de origem.</div>
-<figure class="figure figure-like" id="figura-euler"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/Euler.jpg" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Leonarhd Euler, fonte: https://www.phylos.net</figcaption></figure></section><section class="subsection" id="section-permutacao-caotica-3"><h3 class="heading hide-type">
-<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="space"> </span><span class="title">Exemplos introdutórios</span>
+<p id="p-577">O primeiro problema notório relacionado a permutações caóticas é conhecido como "O Problema das Cartas Mal Endereçadas". Este enigma matemático tem conexões com figuras ilustres, como Pierre Raymond de Montmort (1678-1719) e Nicholas Bernoulli (1687-1759). Outro eminente matemático que se deparou com esse desafio foi Leonhard Euler (1707-1783). A solução por Euler foi publicada em seu artigo intitulado "Calcul de la probabilité dans le jeu de rencontre" <a class="xref" data-knowl="./knowl/Euler.html" title="[biblio] 6.21: Calcul de la probabilité dans le jeu de rencontre.">[6.21]</a>, cuja versão em inglês pode ser encontrada em <a class="xref" data-knowl="./knowl/Todhunter.html" title="[biblio] 6.22: A History of the Mathematical Theory of Probability: From the Time of Pascal to that of Laplace.">[6.22]</a>.</p>
+<p id="p-578">Atualmente, este problema de análise combinatória é intitulado por Permutações Caóticas, também conhecida como Desarranjos ou Desordenamentos, uma Permutação em que nenhum de seus elementos estará presente no seu lugar de origem.</p>
+<figure class="figure figure-like" id="figura-euler"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/Euler.jpg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Leonarhd Euler, fonte: https://www.phylos.net</figcaption></figure></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span>
 </h3>
-<div class="para" id="section-permutacao-caotica-3-2">Vamos iniciar este tópico com dois exemplos para facilitar o entendimento do conceito de permutação caótica e também da demonstração.</div>
-<article class="example example-like" id="section-permutacao-caotica-3-3"><h4 class="heading">
+<p id="p-579">Vamos iniciar este tópico com dois exemplos para facilitar o entendimento do conceito de permutação caótica e também da demonstração.</p>
+<article class="example example-like" id="example-32"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-permutacao-caotica-3-3-1">Determine o número de permutações simples dos elementos <span class="process-math">\(a_1, a_2, . . . , a_n\text{,}\)</span> nas quais <span class="process-math">\(a_2\)</span> está na segunda posição ou <span class="process-math">\(a_3\)</span> está em terceira posição.</div> <details id="section-permutacao-caotica-3-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-permutacao-caotica-3-3-2-1">
-<div class="para">Definindo <span class="process-math">\(A_2\)</span> como o conjunto das permutações em que <span class="process-math">\(a_2\)</span> está em segunda posição e <span class="process-math">\(A_3\)</span> como o conjunto das permutações em que <span class="process-math">\(a_3\)</span> está em terceira posição, é fácil ver que</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-580">Determine o número de permutações simples dos elementos \(a_1, a_2, . . . , a_n\text{,}\) nas quais \(a_2\) está na segunda posição ou \(a_3\) está em terceira posição.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like">
+<p id="p-581">Definindo \(A_2\) como o conjunto das permutações em que \(a_2\) está em segunda posição e \(A_3\) como o conjunto das permutações em que \(a_3\) está em terceira posição, é fácil ver que</p>
+<div class="displaymath">
 \begin{equation*}
 \#(A_{2})=\#(A_{3})=(n-1)!
 \end{equation*}
 </div>
-<div class="para">e que</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">e que</p>
+<div class="displaymath">
 \begin{equation*}
 \#(A_{2}\cap A_{3})=(n-2)!.
 \end{equation*}
 </div>
-<div class="para">Assim o número procurado nada mais é do que <span class="process-math">\(\#(A_{2} \cup A_{3})\)</span> que é igual a:</div>
-<div class="displaymath process-math" id="section-permutacao-caotica-3-3-2-1-8">
+<p data-braille="continuation">Assim o número procurado nada mais é do que \(\#(A_{2} \cup A_{3})\) que é igual a:</p>
+<div class="displaymath">
 \begin{align*}
 \#(A_2\cup A_3) = \amp ~ \#(A_2) + \#(A_3) - \#(A_2\cap A_3) \\
 = \amp ~ (n-1)! + (n-1)!-(n-2)! \\
@@ -353,70 +185,70 @@ sagecell.makeSagecell({
 = \amp ~ (2n-3)\cdot(n-2)! 
 \end{align*}
 </div>
-</div></div></details></article><article class="example example-like" id="exem-antes-permut-cao"><h4 class="heading">
+</div></div></article><article class="example example-like" id="exem-antes-permut-cao"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
-</h4>
-<div class="para" id="exem-antes-permut-cao-1">Dentre as permutações simples dos <span class="process-math">\(n\)</span> elementos <span class="process-math">\(a_1, a_2, . . . , a_n\)</span> determine o número daquelas em que <span class="process-math">\(a_2\)</span> não está na segunda posição, <span class="process-math">\(a_3\)</span> não está na terceira posição e nem <span class="process-math">\(a_4\)</span> está na quarta posição.</div> <details id="exem-antes-permut-cao-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="exem-antes-permut-cao-2-1">Definimos <span class="process-math">\(A_i\text{,}\)</span> para <span class="process-math">\(i = 2, 3, 4\text{,}\)</span> como o conjunto das permutações em que <span class="process-math">\(a_i\)</span> está no <span class="process-math">\(i\)</span>-ésima posição, para <span class="process-math">\(i = 2, 3, 4\text{.}\)</span> Queremos encontrar o número de elementos no complementar de <span class="process-math">\(A_2\cup A_3\cup A_4\text{.}\)</span>
-</div> <div class="para" id="exem-antes-permut-cao-2-2">As cardinalidade dos conjuntos <span class="process-math">\(A_i's\)</span> e das interseções dos <span class="process-math">\(A_i's\text{,}\)</span> dois a dois e três a três são:</div> <div class="para" id="exem-antes-permut-cao-2-3"><span class="process-math">\(\#(A_2) = \#(A_3) = \#(A_4) = (n-1)!;\)</span></div> <div class="para" id="exem-antes-permut-cao-2-4"><span class="process-math">\(\#(A_2\cap A_3) = \#(A_2\cap A_4) = \#(A_3\cap A_4) = (n-2)!;\)</span></div> <div class="para" id="exem-antes-permut-cao-2-5"><span class="process-math">\(\#(A_2\cap A_3\cap A_4) = (n-3)!.\)</span></div> <div class="para logical" id="exem-antes-permut-cao-2-6">
-<div class="para">Sabendo que o número total de permutações é <span class="process-math">\(n!\text{,}\)</span> a solução para o questionamento é</div>
-<div class="displaymath process-math" id="exem-antes-permut-cao-2-6-2">
+</h6>
+<p id="p-582">Dentre as permutações simples dos \(n\) elementos \(a_1, a_2, . . . , a_n\) determine o número daquelas em que \(a_2\) não está na segunda posição, \(a_3\) não está na terceira posição e nem \(a_4\) está na quarta posição.</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like">
+<p id="p-583">Definimos \(A_i\text{,}\) para \(i = 2, 3, 4\text{,}\) como o conjunto das permutações em que \(a_i\) está no \(i\)-ésima posição, para \(i = 2, 3, 4\text{.}\) Queremos encontrar o número de elementos no complementar de \(A_2\cup A_3\cup A_4\text{.}\)</p>
+<p id="p-584">As cardinalidade dos conjuntos \(A_i's\) e das interseções dos \(A_i's\text{,}\) dois a dois e três a três são:</p>
+<p id="p-585">\(\#(A_2) = \#(A_3) = \#(A_4) = (n-1)!;\)</p>
+<p id="p-586">\(\#(A_2\cap A_3) = \#(A_2\cap A_4) = \#(A_3\cap A_4) = (n-2)!;\)</p>
+<p id="p-587">\(\#(A_2\cap A_3\cap A_4) = (n-3)!.\)</p>
+<p id="p-588">Sabendo que o número total de permutações é \(n!\text{,}\) a solução para o questionamento é</p>
+<div class="displaymath">
 \begin{gather*}
 n!-\#(A_2)-\#(A_3)-\#(A_4)+\#(A_2\cap A_3)+  \\
 ~~~~~~~~~~~~~ +\#(A_2\cap A_4)+\#(A_3\cap A_4)-\#(A_2\cap A_3\cap A_4)
 \end{gather*}
 </div>
-<div class="para">Que é igual a:</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Que é igual a:</p>
+<div class="displaymath">
 \begin{equation*}
 n!-3\times (n-1)!+3 \times (n-2)!-(n-3)! 
 \end{equation*}
 </div>
-</div>
-</div></details></article></section><section class="subsection" id="section-permutacao-caotica-4"><h3 class="heading hide-type">
-<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="space"> </span><span class="title">Permutações Caóticas</span>
+</div></div></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span>
 </h3>
-<article class="definition definition-like" id="def-permutacao-caotica"><h4 class="heading">
+<article class="definition definition-like" id="def-permutacao-caotica"><h6 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
-</h4>
-<div class="para" id="def-permutacao-caotica-1">Uma permutação de uma lista de <span class="process-math">\(n\)</span> elementos é chamada de <em class="emphasis">permutação caótica</em>, quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de <span class="process-math">\(a_1,a_2, ...,a_n\)</span>  é chamada de caótica quando nenhum dos <span class="process-math">\(a'_{i}s\)</span> se encontra na <span class="process-math">\(i\)</span>-ésima posição.</div> <div class="para logical" id="def-permutacao-caotica-2">
-<div class="para">Notação:</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-589">Uma permutação de uma lista de \(n\) elementos é chamada de <em class="emphasis">permutação caótica</em>, quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de \(a_1,a_2, ...,a_n\)  é chamada de caótica quando nenhum dos \(a'_{i}s\) se encontra na \(i\)-ésima posição.</p>
+<p id="p-590">Notação:</p>
+<div class="displaymath">
 \begin{equation*}
 D_n \text{ ou } D(n) 
 \end{equation*}
-</div>
-</div></article><article class="technology computation-like" id="section-permutacao-caotica-4-3"><h4 class="heading">
+</div></article><article class="technology computation-like" id="technology-17"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
-</h4>As permutações caóticas dos elementos <span class="process-math">\(1, 2, 3, 4\)</span> podem ser geradas no Sage, com o seguinte comando: <pre id="section-permutacao-caotica-4-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Derangements(4).list()
-</script></pre></article><article class="technology computation-like" id="tec-caotica-r-sage"><h4 class="heading">
+</h6>As permutações caóticas dos elementos \(1, 2, 3, 4\) podem ser geradas no Sage, com o seguinte comando: <div class="sagecell-sage" id="sage-23"><script type="text/x-sage">Derangements(4).list()
+</script></div></article><article class="technology computation-like" id="tec-caotica-r-sage"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
-</h4>
-<div class="para" id="tec-caotica-r-sage-1">Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.</div> <pre id="tec-caotica-r-sage-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">D = Derangements(['A', 'M', 'O', 'R'])
+</h6>
+<p id="p-591">Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.</p>
+<div class="sagecell-sage" id="sage-24"><script type="text/x-sage">D = Derangements(['A', 'M', 'O', 'R'])
 print('número de permutações caóticas:', len(D))
 print('todas as permutações caóticas:')
 D.list()
-</script></pre></article><article class="theorem theorem-like" id="teo-pcaotica1"><h4 class="heading">
+</script></div></article><article class="theorem theorem-like" id="teo-pcaotica1"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="teo-pcaotica1-1">
-<div class="para">A quantidade de permutações caóticas de uma lista com <span class="process-math">\(n\)</span> objetos distintos, pode ser calculada da seguinte maneira:</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-592">A quantidade de permutações caóticas de uma lista com \(n\) objetos distintos, pode ser calculada da seguinte maneira:</p>
+<div class="displaymath">
 \begin{equation*}
 D_n=n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!}.
 \end{equation*}
-</div>
-</div></article><details id="teo-pcaotica1-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="teo-pcaotica1-2-1">
-<div class="para">Considere todas as permutações dos elementos <span class="process-math">\(a_1 , a_2 , \ldots , a_n\text{.}\)</span> Indicando por <span class="process-math">\(A_i\)</span> todas as permutações formadas pelos elementos <span class="process-math">\(a_1 , a_2 , \ldots , a_n\)</span> com <span class="process-math">\(a_i\)</span> no <span class="process-math">\(i\)</span>-ésimo lugar, calcularemos <span class="process-math">\(D_n\text{,}\)</span> usando a ideia do <a href="" class="xref" data-knowl="./knowl/xref/exem-antes-permut-cao.html" title="Exemplo 2.2.3">Exemplo 2.2.3</a>:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-antes-permut-cao.html" id="teo-pcaotica1-2-1-8">
+</div></article><article class="hiddenproof" id="proof-15"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><p id="p-593">Considere todas as permutações dos elementos \(a_1 , a_2 , \ldots , a_n\text{.}\) Indicando por \(A_i\) todas as permutações formadas pelos elementos \(a_1 , a_2 , \ldots , a_n\) com \(a_i\) no \(i\)-ésimo lugar, calcularemos \(D_n\text{,}\) usando a ideia do <a class="xref" data-knowl="./knowl/exem-antes-permut-cao.html" title="Exemplo 2.2.3">Exemplo 2.2.3</a>:</p>
+<div class="displaymath">
 \begin{align*}
 D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)\\
 = \amp ~  n! - \sum_{i=1}^{n}\#A_i + \sum_{0\lt i\lt j\leq n}\#(A_i\cap A_j)+\cdots \\
 \amp ~ \quad \cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n). 
 \end{align*}
 </div>
-<div class="para">Visto que existem <span class="process-math">\(n\)</span> termos no primeiro somatório, <span class="process-math">\(C_n^2\)</span> termos no segundo, <span class="process-math">\(C_n^3\)</span> termos no terceiro,<span class="process-math">\(\cdots\text{,}\)</span> <span class="process-math">\(C_n^n=1\)</span> no último e</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-antes-permut-cao.html" id="teo-pcaotica1-2-1-14">
+<p data-braille="continuation">Visto que existem \(n\) termos no primeiro somatório, \(C_n^2\) termos no segundo, \(C_n^3\) termos no terceiro,\(\cdots\text{,}\) \(C_n^n=1\) no último e</p>
+<div class="displaymath">
 \begin{align*}
 \#(A_i) \amp =  (n-1)! \\
 \#(A_i\cap A_j) \amp =  (n-2)! \\
@@ -425,36 +257,38 @@ D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)\\
 \#(A_1\cap A_2\cap\cdots\cap A_n) \amp =  1 
 \end{align*}
 </div>
-<div class="para">temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-antes-permut-cao.html" id="teo-pcaotica1-2-1-15">
+<p data-braille="continuation">temos</p>
+<div class="displaymath">
 \begin{align*}
 D_n \amp = ~ n!-n\cdot(n-1)!+C_n^2\cdot(n-2)!-C_n^3\cdot(n-3)!+\cdots +(-1)^n\cdot 1 \\
 \amp = ~ n!-\dfrac{n!}{1!}+\dfrac{n!}{2!}-\dfrac{n!}{3!}+\cdots
 +(-1)^n\cdot \dfrac{n!}{n!} 
 \end{align*}
 </div>
-<div class="para">evidenciando <span class="process-math">\(n!\text{,}\)</span> obtém-se:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-antes-permut-cao.html" id="teo-pcaotica1-2-1-17">
+<p data-braille="continuation">evidenciando \(n!\text{,}\) obtém-se:</p>
+<div class="displaymath">
 \begin{align*}
 D_n \amp = ~ n!\cdot\left(1-\dfrac{1}{1!}+\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+(-1)^n\cdot \dfrac{1}{n!}\right) \\
 \amp = ~ n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!} 
 \end{align*}
-</div>
-</div></article></details><article class="technology computation-like" id="tec-pcaotica1"><h4 class="heading">
+</div></article></div>
+<article class="technology computation-like" id="tec-pcaotica1"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
-</h4>Calculando o número de permutações caóticas no Sage: <pre id="tec-pcaotica1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def D(n):
+</h6>Calculando o número de permutações caóticas no Sage: <div class="sagecell-sage" id="sage-25"><script type="text/x-sage">def D(n):
     P(i) = factorial(i)
     return P(n)*sum(((-1)^x)/P(x), x, 0, n)
 D(8)
-</script></pre></article><article class="technology computation-like" id="section-permutacao-caotica-4-7"><h4 class="heading">
+</script></div></article><article class="technology computation-like" id="technology-20"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-permutacao-caotica-4-7-1">Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.</div> <figure class="figure figure-like" id="section-permutacao-caotica-4-7-2"><iframe id="interactive-dn" width="600" height="480" src="interactive-dn-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="section-permutacao-caotica-4-8"><h4 class="heading">
+</h6>
+<p id="p-594">Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.</p>
+<figure class="figure figure-like" id="figure-25"><iframe id="interactive-dn" width="600" height="480" src="interactive-dn-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="example-34"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-permutacao-caotica-4-8-1">Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?</div> <details id="section-permutacao-caotica-4-8-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-permutacao-caotica-4-8-2-1">
-<div class="para">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</div>
-<div class="displaymath process-math" id="section-permutacao-caotica-4-8-2-1-1">
+</h6>
+<p id="p-595">Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like">
+<p id="p-596">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</p>
+<div class="displaymath">
 \begin{align*}
 D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) \\
 \amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} \\
@@ -463,43 +297,38 @@ D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\
 \amp =  ~44 
 \end{align*}
 </div>
-</div></div></details></article><article class="example example-like" id="section-permutacao-caotica-4-9"><h4 class="heading">
+</div></div></article><article class="example example-like" id="example-35"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-permutacao-caotica-4-9-1">Quantas são as permutações de <span class="process-math">\((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\)</span> que têm exatamente 4 elementos no seu lugar primitivo?</div> <details id="section-permutacao-caotica-4-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="section-permutacao-caotica-4-9-2-1">O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é <span class="process-math">\(C_{10}^4\text{.}\)</span>
-</div> <div class="para logical" id="section-permutacao-caotica-4-9-2-2">
-<div class="para">Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de <span class="process-math">\(D_6\)</span> formas. A resposta é</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-597">Quantas são as permutações de \((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\) que têm exatamente 4 elementos no seu lugar primitivo?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-99" id="solution-99"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-99"><div class="solution solution-like">
+<p id="p-598">O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é \(C_{10}^4\text{.}\)</p>
+<p id="p-599">Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de \(D_6\) formas. A resposta é</p>
+<div class="displaymath">
 \begin{equation*}
 C_{10}^4\times D_6 = 55650.
 \end{equation*}
 </div>
-</div>
-</div></details></article></section><section class="subsection" id="section-permutacao-caotica-5"><h3 class="heading hide-type">
-<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="space"> </span><span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span>
+</div></div></article></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular \(D_n\)</span>
 </h3>
-<article class="theorem theorem-like" id="teo-pcaotica2"><h4 class="heading">
+<article class="theorem theorem-like" id="teo-pcaotica2"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.13</span><span class="period">.</span>
-</h4>
-<div class="para" id="teo-pcaotica2-1">
-<span class="process-math">\(D_n\)</span> é igual ao inteiro mais próximo de <span class="process-math">\(\dfrac{n!}{e}\text{.}\)</span>
-</div></article><details id="teo-pcaotica2-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="teo-pcaotica2-2-1">
-<div class="para">Para <span class="process-math">\(n=1\)</span> e <span class="process-math">\(n=2\)</span> a verificação é direta. Para <span class="process-math">\(n&gt;2\)</span> vamos usar a expansão em série de portência de <span class="process-math">\(e^x\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-600">\(D_n\) é igual ao inteiro mais próximo de \(\dfrac{n!}{e}\text{.}\)</p></article><article class="hiddenproof" id="proof-16"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><p id="p-601">Para \(n=1\) e \(n=2\) a verificação é direta. Para \(n&gt;2\) vamos usar a expansão em série de portência de \(e^x\text{:}\)</p>
+<div class="displaymath">
 \begin{equation*}
 e^x = \frac{1}{0!} + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!}+\cdots 
 \end{equation*}
 </div>
-<div class="para">para <span class="process-math">\(x = -1\)</span> temos</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">para \(x = -1\) temos</p>
+<div class="displaymath">
 \begin{equation*}
 e^{-1} = \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!}+\cdots 
 \end{equation*}
 </div>
-<div class="para">Calculando</div>
-<div class="displaymath process-math" id="teo-pcaotica2-2-1-8">
+<p data-braille="continuation">Calculando</p>
+<div class="displaymath">
 \begin{align*}
 \left| D_n -\frac{n!}{e} \right| \amp = ~n!\times\left| \frac{(-1)^{n+1}}{(n+1)!} + \frac{(-1)^{n+2}}{(n+2)!} +\cdots \right| \\
 \amp \leq n!\times \left( \frac{1}{(n+1)!} + \frac{1}{(n+2)!}+\cdots \right)   \\
@@ -507,15 +336,15 @@ e^{-1} = \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!}+\cdots
 \amp \leq \frac{1}{(n+1)} + \frac{1}{(n+1)^2} + \cdots  
 \end{align*}
 </div>
-<div class="para">Aplicando a fórmula da soma da PG, ficamos com</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Aplicando a fórmula da soma da PG, ficamos com</p>
+<div class="displaymath">
 \begin{equation*}
 \left| D_n -\frac{n!}{e} \right| \leq \frac{\frac{1}{n+1}}{1-\frac{1}{n+1}} = \frac{1}{n}\lt \frac{1}{2}.
 \end{equation*}
-</div>
-</div></article></details><article class="technology computation-like" id="section-permutacao-caotica-5-3"><h4 class="heading">
+</div></article></div>
+<article class="technology computation-like" id="technology-21"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.14</span><span class="period">.</span>
-</h4>Calculando o número de permutações caóticas no Sage, usando o <a href="" class="xref" data-knowl="./knowl/xref/teo-pcaotica2.html" title="Teorema 2.2.13">Teorema 2.2.13</a>: <pre id="section-permutacao-caotica-5-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def D(n):
+</h6>Calculando o número de permutações caóticas no Sage, usando o <a class="xref" data-knowl="./knowl/teo-pcaotica2.html" title="Teorema 2.2.13">Teorema 2.2.13</a>: <div class="sagecell-sage" id="sage-26"><script type="text/x-sage">def D(n):
     t = (factorial(n)/e).n()
     r = abs(floor(t)-t)
     if r > 1/2:
@@ -523,74 +352,66 @@ e^{-1} = \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!}+\cdots
     else:
         return floor(t)
 D(8)
-</script></pre></article><article class="theorem theorem-like" id="teo-pcaotica3"><h4 class="heading">
+</script></div></article><article class="theorem theorem-like" id="teo-pcaotica3"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.15</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="teo-pcaotica3-1">
-<div class="para">Se <span class="process-math">\(n\geq 2,\)</span>
-</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-602">Se \(n\geq 2,\)</p>
+<div class="displaymath">
 \begin{equation*}
 D_n = n\times D_{n-1} + (-1)^n.
 \end{equation*}
-</div>
-</div></article><details id="teo-pcaotica3-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="teo-pcaotica3-2-1">
-<div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/xref/teo-pcaotica1.html" title="Teorema 2.2.7">Teorema 2.2.7</a> temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-pcaotica1.html">
+</div></article><article class="hiddenproof" id="proof-17"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><p id="p-603">Pelo <a class="xref" data-knowl="./knowl/teo-pcaotica1.html" title="Teorema 2.2.7">Teorema 2.2.7</a> temos</p>
+<div class="displaymath">
 \begin{equation*}
 D_n = n!\times \left( \frac{1}{0!} - \frac{1}{1!} + \cdots + \frac{(-1)^n}{n!} \right).
 \end{equation*}
 </div>
-<div class="para">Isolando a última parcela da soma, ficamos com</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-pcaotica1.html">
+<p data-braille="continuation">Isolando a última parcela da soma, ficamos com</p>
+<div class="displaymath">
 \begin{equation*}
 D_n = n!\times \left( \frac{1}{0!} - \frac{1}{1!} + \cdots + \frac{(-1)^{n-1}}{(n-1)!} \right) + n!\times \frac{(-1)^n}{n!}.
 \end{equation*}
 </div>
-<div class="para">Cancelando <span class="process-math">\(n!\)</span> do último termo e reescrevendo <span class="process-math">\(n!\)</span> como <span class="process-math">\(n\times (n-1)!\text{,}\)</span> obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-pcaotica1.html">
+<p data-braille="continuation">Cancelando \(n!\) do último termo e reescrevendo \(n!\) como \(n\times (n-1)!\text{,}\) obtemos</p>
+<div class="displaymath">
 \begin{equation*}
 D_n = n\times\underbrace{(n-1)!\times \left( \frac{1}{0!} - \frac{1}{1!} + \cdots + \frac{(-1)^{n-1}}{(n-1)!} \right)}_{D_{n-1}} +  (-1)^n,
 \end{equation*}
 </div>
-<div class="para">Ou seja,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-pcaotica1.html">
+<p data-braille="continuation">Ou seja,</p>
+<div class="displaymath">
 \begin{equation*}
 D_n = n\times D_{n-1}+(-1)^n.
 \end{equation*}
-</div>
-</div></article></details><article class="technology computation-like" id="section-permutacao-caotica-5-5"><h4 class="heading">
+</div></article></div>
+<article class="technology computation-like" id="technology-22"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span>
-</h4>Calculando o número de permutações caóticas no Sage, usando o <a href="" class="xref" data-knowl="./knowl/xref/teo-pcaotica3.html" title="Teorema 2.2.15">Teorema 2.2.15</a>: <pre id="section-permutacao-caotica-5-5-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def D(n):
+</h6>Calculando o número de permutações caóticas no Sage, usando o <a class="xref" data-knowl="./knowl/teo-pcaotica3.html" title="Teorema 2.2.15">Teorema 2.2.15</a>: <div class="sagecell-sage" id="sage-27"><script type="text/x-sage">def D(n):
     if n==1:
         return 0
     else:
         return n*D(n-1) + (-1)^n
 D(8)
-</script></pre></article><article class="theorem theorem-like" id="teo-pcaotica4"><h4 class="heading">
+</script></div></article><article class="theorem theorem-like" id="teo-pcaotica4"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.17</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="teo-pcaotica4-1">
-<div class="para">Se <span class="process-math">\(n\geq 3,\)</span>
-</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-604">Se \(n\geq 3,\)</p>
+<div class="displaymath">
 \begin{equation*}
 D_n = (n-1)\times (D_{n-1}+D_{n-2}).
 \end{equation*}
-</div>
-</div></article><details id="teo-pcaotica4-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="teo-pcaotica4-2-1">Vamos separar as permutações caóticas de <span class="process-math">\(1, 2, 3, \ldots, n\)</span> em dois casos.</div> <div class="para" id="teo-pcaotica4-2-2">
-<dfn class="terminology">1º caso:</dfn> permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.</div> <div class="para" id="teo-pcaotica4-2-3">Como temos <span class="process-math">\(n-1\)</span> elementos, diferentes do <span class="process-math">\(1\text{,}\)</span> para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos <span class="process-math">\(n-1\)</span> maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de <span class="process-math">\(D_{n-2}\)</span> formas.</div> <div class="para" id="teo-pcaotica4-2-4">
-<dfn class="terminology">2º caso:</dfn> permutações caóticas em que o elemento que ocupa o primeiro lugar <dfn class="terminology">não</dfn> tem seu lugar original ocupado pelo 1.</div> <div class="para" id="teo-pcaotica4-2-5">Temos <span class="process-math">\(n-1\)</span> formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os <span class="process-math">\(n-1\)</span> elementos nos <span class="process-math">\(n-1\)</span> lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses <span class="process-math">\(n-1\)</span> elementos organizados da seguinte maneira: coloque os <span class="process-math">\(n-2\)</span> elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é <span class="process-math">\(D_{n-1}.\)</span> <div class="para logical" id="teo-pcaotica4-2-5-7">
-<div class="para">Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos</div>
-<div class="displaymath process-math">
+</div></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><p id="p-605">Vamos separar as permutações caóticas de \(1, 2, 3, \ldots, n\) em dois casos.</p>
+<p id="p-606"><dfn class="terminology">1º caso:</dfn> permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.</p>
+<p id="p-607">Como temos \(n-1\) elementos, diferentes do \(1\text{,}\) para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos \(n-1\) maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de \(D_{n-2}\) formas.</p>
+<p id="p-608"><dfn class="terminology">2º caso:</dfn> permutações caóticas em que o elemento que ocupa o primeiro lugar <dfn class="terminology">não</dfn> tem seu lugar original ocupado pelo 1.</p>
+<p id="p-609">Temos \(n-1\) formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os \(n-1\) elementos nos \(n-1\) lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses \(n-1\) elementos organizados da seguinte maneira: coloque os \(n-2\) elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é \(D_{n-1}.\) <p id="p-610">Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos</p><div class="displaymath">
 \begin{equation*}
 D_n = (n-1)\times D_{n-2} + (n-1)\times D_{n-1} = (n-1)\times (D_{n-1}+D_{n-2}).
 \end{equation*}
-</div>
-</div>
-</div></article></details><article class="technology computation-like" id="section-permutacao-caotica-5-7"><h4 class="heading">
+</div></p></article></div>
+<article class="technology computation-like" id="technology-23"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.18</span><span class="period">.</span>
-</h4>Calculando o número de permutações caóticas no Sage, usando o <a href="" class="xref" data-knowl="./knowl/xref/teo-pcaotica4.html" title="Teorema 2.2.17">Teorema 2.2.17</a>: <pre id="section-permutacao-caotica-5-7-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def D(n):
+</h6>Calculando o número de permutações caóticas no Sage, usando o <a class="xref" data-knowl="./knowl/teo-pcaotica4.html" title="Teorema 2.2.17">Teorema 2.2.17</a>: <div class="sagecell-sage" id="sage-28"><script type="text/x-sage">def D(n):
     if n==1:
         return 0
     elif n==2:
@@ -598,116 +419,102 @@ D_n = (n-1)\times D_{n-2} + (n-1)\times D_{n-1} = (n-1)\times (D_{n-1}+D_{n-2}).
     else:
         return (n-1)*(D(n-1)+D(n-2))
 D(8)
-</script></pre></article></section><section class="exercises" id="section-permutacao-caotica-6"><h3 class="heading hide-type">
-<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="space"> </span><span class="title">Exercícios</span>
+</script></div></article></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">2.2.5</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="section-permutacao-caotica-6-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="section-permutacao-caotica-6-2-1-1">Suponha que <span class="process-math">\(\#A=n\text{.}\)</span> Quantas são as funções <span class="process-math">\(f:A\rightarrow A\)</span> para as quais a equação <span class="process-math">\(f(x)=x\)</span> não possui solução? Quantas são as funções <span class="process-math">\(f:A\rightarrow A\)</span> <dfn class="terminology">bijetoras</dfn> para as quais a equação <span class="process-math">\(f(x)=x\)</span> não possui solução?</div>
+<article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-611">Suponha que \(\#A=n\text{.}\) Quantas são as funções \(f:A\rightarrow A\) para as quais a equação \(f(x)=x\) não possui solução? Quantas são as funções \(f:A\rightarrow A\) <dfn class="terminology">bijetoras</dfn> para as quais a equação \(f(x)=x\) não possui solução?</p>
 <div class="solutions">
-<details id="section-permutacao-caotica-6-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-permutacao-caotica-6-2-2-1">a) <span class="process-math">\((n-1)^n\text{,}\)</span> b) <span class="process-math">\(D_n\text{.}\)</span>
-</div></div></details><details id="section-permutacao-caotica-6-2-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="section-permutacao-caotica-6-2-3-1">
-<dfn class="terminology">item a)</dfn> A imagem de cada elemento do domínio pode ser escolhida de <span class="process-math">\(n-1\)</span> maneiras, assim, o total é <span class="process-math">\((n-1)^n\text{.}\)</span>
-</div> <div class="para" id="section-permutacao-caotica-6-2-3-2">
-<dfn class="terminology">item b)</dfn> Como <span class="process-math">\(f\)</span> é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem <span class="process-math">\(D_n\)</span> funções.</div>
-</div></details>
-</div></article><article class="exercise exercise-like" id="section-permutacao-caotica-6-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="section-permutacao-caotica-6-3-1-1">Quantas são as permutações de <span class="process-math">\((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)\)</span> que têm exatamente 5 elementos no seu lugar primitivo?</div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-80" id="answer-80"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-80"><div class="answer solution-like"><p id="p-612">a) \((n-1)^n\text{,}\) b) \(D_n\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-100" id="solution-100"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-100"><div class="solution solution-like">
+<p id="p-613"><dfn class="terminology">item a)</dfn> A imagem de cada elemento do domínio pode ser escolhida de \(n-1\) maneiras, assim, o total é \((n-1)^n\text{.}\)</p>
+<p id="p-614"><dfn class="terminology">item b)</dfn> Como \(f\) é bijetiva, cada elemento do domínio terá uma imagem diferente, e além disso, a imagem precisa ser diferente do argumento da função, então existem \(D_n\) funções.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-615">Quantas são as permutações de \((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)\) que têm exatamente 5 elementos no seu lugar primitivo?</p>
 <div class="solutions">
-<details id="section-permutacao-caotica-6-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-permutacao-caotica-6-3-2-1">1468368</div></div></details><details id="section-permutacao-caotica-6-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-permutacao-caotica-6-3-3-1">
-<div class="para">Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de <span class="process-math">\(C_{12}^5\)</span> maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de <span class="process-math">\(D_7\)</span> maneiras. Logo, o total é</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-81" id="answer-81"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-81"><div class="answer solution-like"><p id="p-616">1468368</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-101" id="solution-101"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-101"><div class="solution solution-like">
+<p id="p-617">Podemos escolher os 5 elementos que ocuparão seus lugares primitivos de \(C_{12}^5\) maneiras. Em seguida, podemos escolher as posições dos 7 elementos restantes de \(D_7\) maneiras. Logo, o total é</p>
+<div class="displaymath">
 \begin{equation*}
 C_{12}^5\times D_7=1468368.
 \end{equation*}
 </div>
-</div></div></details>
-</div></article><article class="exercise exercise-like" id="section-permutacao-caotica-6-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="section-permutacao-caotica-6-4-1-1">Determine o número de permutações caóticas de <span class="process-math">\((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)\)</span> nas quais os números <span class="process-math">\(1, 2, 3, 4, 5\)</span> ocupam, em alguma ordem, os cinco primeiro lugares.</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-618">Determine o número de permutações caóticas de \((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)\) nas quais os números \(1, 2, 3, 4, 5\) ocupam, em alguma ordem, os cinco primeiro lugares.</p>
 <div class="solutions">
-<details id="section-permutacao-caotica-6-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-permutacao-caotica-6-4-2-1">81576</div></div></details><details id="section-permutacao-caotica-6-4-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-permutacao-caotica-6-4-3-1">
-<div class="para">Podemos escolher a posição dos 5 primeiros elementos de <span class="process-math">\(D_5\)</span> maneiras e a posição dos 7 últimos elementos de <span class="process-math">\(D_7\)</span> maneiras. Portanto, o total é</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-82" id="answer-82"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-82"><div class="answer solution-like"><p id="p-619">81576</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-102" id="solution-102"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-102"><div class="solution solution-like">
+<p id="p-620">Podemos escolher a posição dos 5 primeiros elementos de \(D_5\) maneiras e a posição dos 7 últimos elementos de \(D_7\) maneiras. Portanto, o total é</p>
+<div class="displaymath">
 \begin{equation*}
 D_5 \times D_7 = 81576.
 \end{equation*}
 </div>
-</div></div></details>
-</div></article><article class="exercise exercise-like" id="section-permutacao-caotica-6-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="section-permutacao-caotica-6-5-1-1">Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-621">Uma empresa tem sete estagiárias. Cada uma delas deve cumprir três horas de trabalho semanais, sendo duas horas no turno da manhã e uma no turno da tarde. De quantas maneiras o Recursos Humanos pode montar a agenda de trabalho semanal (segunda a domingo) desses estagiárias, de modo que todas cumpram as três horas semanais, trabalhando diariamente apenas em um turno?</p>
 <div class="solutions">
-<details id="section-permutacao-caotica-6-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-permutacao-caotica-6-5-2-1">9344160</div></div></details><details id="section-permutacao-caotica-6-5-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-permutacao-caotica-6-5-3-1">
-<div class="para">O horário do turno da manhã pode ser escolhido de <span class="process-math">\(P_7\)</span> maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de <span class="process-math">\(D_7\)</span> maneiras. O total de maneiras é</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-83" id="answer-83"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-83"><div class="answer solution-like"><p id="p-622">9344160</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like">
+<p id="p-623">O horário do turno da manhã pode ser escolhido de \(P_7\) maneiras, uma vez feita a escolha, o horário do turno da tarde pode ser feito de \(D_7\) maneiras. O total de maneiras é</p>
+<div class="displaymath">
 \begin{equation*}
 P_7\times D_7 = 9344160.
 \end{equation*}
 </div>
-</div></div></details>
-</div></article><article class="exercise exercise-like" id="section-permutacao-caotica-6-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="section-permutacao-caotica-6-6-1">
-<div class="para">(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de <span class="process-math">\(n\)</span> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-624">(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de \(n\) pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:</p>
 <ol class="lower-alpha">
-<li id="section-permutacao-caotica-6-6-1-2-1"><div class="para" id="p-derived-section-permutacao-caotica-6-6-1-2-1">Ninguém pode tirar o próprio nome;</div></li>
-<li id="section-permutacao-caotica-6-6-1-2-2"><div class="para" id="p-derived-section-permutacao-caotica-6-6-1-2-2">Não podem existir duas pessoas <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> tais que <span class="process-math">\(A\)</span> tirou <span class="process-math">\(B\)</span> e <span class="process-math">\(B\)</span> tirou <span class="process-math">\(A\text{.}\)</span>
-</div></li>
+<li id="li-128">Ninguém pode tirar o próprio nome;</li>
+<li id="li-129">Não podem existir duas pessoas \(A\) e \(B\) tais que \(A\) tirou \(B\) e \(B\) tirou \(A\text{.}\)</li>
 </ol>
-<div class="para">De quantas maneiras poderá ser realizado o sorteio?</div>
-</div>
-<details id="section-permutacao-caotica-6-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(\displaystyle D_n + \sum_{k=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^k\cdot \frac{D_{n-2k}}{(n-2k)!}\)</span></div></details><details id="section-permutacao-caotica-6-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="section-permutacao-caotica-6-6-3-1">
-<div class="para">Denote as <span class="process-math">\(n\)</span> pessoas por <span class="process-math">\(P_1, P_2, \ldots, P_n\text{.}\)</span> Sejam <span class="process-math">\(A_{ij}\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq n\text{,}\)</span> os conjuntos das permutações caóticas em que a pessoa <span class="process-math">\(P_i\)</span> tirou a pessoa <span class="process-math">\(P_j\)</span> e a pessoa <span class="process-math">\(P_j\)</span> tirou a pessoa <span class="process-math">\(P_i\text{.}\)</span> A resposta deste problema é dada por</div>
-<div class="displaymath process-math" id="que-cao-obm">
+<p data-braille="continuation">De quantas maneiras poderá ser realizado o sorteio?</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-84" id="answer-84"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-84"><div class="answer solution-like">\(\displaystyle D_n + \sum_{k=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^k\cdot \frac{D_{n-2k}}{(n-2k)!}\)</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like">
+<p id="p-625">Denote as \(n\) pessoas por \(P_1, P_2, \ldots, P_n\text{.}\) Sejam \(A_{ij}\text{,}\) com \(1\leq i\lt j\leq n\text{,}\) os conjuntos das permutações caóticas em que a pessoa \(P_i\) tirou a pessoa \(P_j\) e a pessoa \(P_j\) tirou a pessoa \(P_i\text{.}\) A resposta deste problema é dada por</p>
+<div class="displaymath">
 \begin{equation}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\tag{2.2.1}
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\label{que-cao-obm}\tag{2.2.1}
 \end{equation}
 </div>
-<div class="para">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</div>
-</div> <div class="para logical" id="section-permutacao-caotica-6-6-3-2">
-<div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
+<p data-braille="continuation">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</p>
+<p id="p-626">Observe que \(A_{ij}\) possui a mesma cardinalidade, independetemente dos valores dos índices, assim como \(A_{ij}\cap A_{kl}\) também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos \(A_{ij}\text{,}\) das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</p>
 <ul class="disc">
-<li id="section-permutacao-caotica-6-6-3-2-4-1"><div class="para" id="p-derived-section-permutacao-caotica-6-6-3-2-4-1">
-<span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
-<li id="section-permutacao-caotica-6-6-3-2-4-2"><div class="para" id="p-derived-section-permutacao-caotica-6-6-3-2-4-2">
-<span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
-<li id="section-permutacao-caotica-6-6-3-2-4-3"><div class="para" id="p-derived-section-permutacao-caotica-6-6-3-2-4-3">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+<li id="li-130">\(\#A_{12}=D_{n-2}\) e no total são \(C_n^2\) conjuntos deste tipo, pois para formar um conjunto \(A_{ij}\text{,}\) precisamos escolher duas pessoas de \(n\) disponíveis.</li>
+<li id="li-131">\(\#(A_{12}\cap A_{34})=D_{n-4}\) e no total são \(C_n^2C_{n-2}^2\) conjuntos deste tipo, pois para formar uma interseção \(A_{ij}\cap A_{ls}\text{,}\) precisamos escolher duas pessoas de \(n\) disponíveis e depois mais duas de \(n-2\) disponíveis.</li>
+<li id="li-132">A cardinalidade da interseção de \(k\) conjuntos é \(D_{n-2k}\) e no total são \(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\) conjuntos deste tipo, pois para formar uma interseção de \(k\) conjuntos, precisamos escolher duas pessoas de \(n\) disponíveis e depois mais duas de \(n-2\) disponíveis e assim por diante, até que precisamos escolher duas pessoas de \(n-2k\) disponíveis.</li>
 </ul>
-<div class="para">Antes de escrever o resultado da Expressão <a href="" class="xref" data-knowl="./knowl/xref/que-cao-obm.html" title="Equação 2.2.1">(2.2.1)</a> vamos obter uma expressão para <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html" id="section-permutacao-caotica-6-6-3-2-7">
+<p data-braille="continuation">Antes de escrever o resultado da Expressão <a class="xref" data-knowl="./knowl/que-cao-obm.html" title="[men] 2.2.1">(2.2.1)</a> vamos obter uma expressão para \(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</p>
+<div class="displaymath">
 \begin{align*}
 C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}\\
 =\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.
 \end{align*}
 </div>
-<div class="para">Utilizando essas informações na Expressão <a href="" class="xref" data-knowl="./knowl/xref/que-cao-obm.html" title="Equação 2.2.1">(2.2.1)</a>, obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html">
+<p data-braille="continuation">Utilizando essas informações na Expressão <a class="xref" data-knowl="./knowl/que-cao-obm.html" title="[men] 2.2.1">(2.2.1)</a>, obtemos</p>
+<div class="displaymath">
 \begin{equation*}
 D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html" id="section-permutacao-caotica-6-6-3-2-10">
+<div class="displaymath">
 \begin{align*}
 \quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots\\
 =\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots\\
 =\amp~D_n +\sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} \frac{n!(-1)^{k+1}D_{n-2(k+1)}}{(n-2(k+1))!2^{k+1}}
 \end{align*}
 </div>
-<div class="para">Fazendo a mudança <span class="process-math">\(p=k+1\text{,}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/que-cao-obm.html ./knowl/xref/que-cao-obm.html">
+<p data-braille="continuation">Fazendo a mudança \(p=k+1\text{,}\)</p>
+<div class="displaymath">
 \begin{equation*}
 D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^p \cdot \frac{D_{n-2p}}{(n-2p)!}.
 \end{equation*}
 </div>
-</div>
-</div></details></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="section-inclusao-exclusao.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-permutacao-caotica-repeticoes.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
-</div></main>
-</div>
-<div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div></div></article></section></section></div></main>
 </div>
 </body>
 </html>

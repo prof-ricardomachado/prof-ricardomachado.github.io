@@ -1,143 +1,71 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:42-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="pt-BR" dir="ltr">
-<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<html lang="pt-BR">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Distribuição Binomial</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Análise Combinatória e Probabilidade">
-<meta property="book:author" content="Ricardo Machado">
-<meta property="book:author" content="Gabriel Guedes">
-<meta property="book:author" content="Luiz Manoel">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        },
-        ""
-      ]
-    }
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "linkKey": "linked-sage",
-  "autoeval": false,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Executar (Sage)"
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
-<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
-</div>
-<h2 class="search-results-heading">Buscando por: </h2>
-<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
-</div>
-</div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section-probabilidade-condicional.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="probabilidade.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="section-espaco-infinito.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -151,368 +79,250 @@ sagecell.makeSagecell({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\definecolor{fillinmathshade}{gray}{0.9}
-\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
-\)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter">
-<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-probabilidade-condicional.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="probabilidade.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-espaco-infinito.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-probabilidade-condicional.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="probabilidade.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-espaco-infinito.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="prof-gabriel-guedes.html" data-scroll="prof-gabriel-guedes">Sobre Gabriel Araújo Guedes</a></li>
+<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pcontagem-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-3" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-4" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-5" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípios Combinatórios</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="ocontagem.html" data-scroll="ocontagem"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-permutacao-caotica-repeticoes.html" data-scroll="section-permutacao-caotica-repeticoes">Permutações Caóticas com Repetições</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="section-13.html" data-scroll="section-13">O Princípio da Reflexão</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-2" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-3" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-circulares.html#section-permutacoes-circulares-9" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html#section-permutacoes-com-repeticoes-11" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-completas.html#section-combinacoes-completas-12" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a><ul>
+<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
+<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
+<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial" class="active">Distribuição Binomial</a></li>
+<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-2" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-3" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-4" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Outros Casos do Princípio da Inclusão-Exclusão</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-5" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-5" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-6" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ocontagem-8.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-3" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-4" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-5" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-triangulo-pascal.html#section-triangulo-pascal-24" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-binomio-newton.html#section-binomio-newton-11" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-polinomio-leibniz.html#section-polinomio-leibniz-5" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-espacos-probabilidade.html#section-espacos-probabilidade-15" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-14" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-15" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Variáveis Aleatórias: Geométrica e Binomial Negativa</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-4" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
-<li class="toc-item toc-references"><div class="toc-title-box"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-distribuicao-binomial"><h2 class="heading hide-type">
-<span class="type">Seção</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Distribuição Binomial</span>
+<li class="link"><a href="calculadora.html" data-scroll="calculadora"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-distribuicao-binomial"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span>
 </h2>
-<section class="subsection" id="section-distribuicao-binomial-2"><h3 class="heading hide-type">
-<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="space"> </span><span class="title">Distribuição Binomial</span>
+<section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span>
 </h3>
-<article class="example example-like" id="section-distribuicao-binomial-2-2"><h4 class="heading">
+<article class="example example-like" id="example-78"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-distribuicao-binomial-2-2-1">Jogando uma moeda não viciada 15 vezes. Qual é a probabilidade de obtermos exatamente 7 caras?</div> <details id="section-distribuicao-binomial-2-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="section-distribuicao-binomial-2-2-2-1">Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é <span class="process-math">\(p=\frac{1}{2}\text{.}\)</span>
-</div> <div class="para logical" id="section-distribuicao-binomial-2-2-2-2">
-<div class="para">Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é </div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-1134">Jogando uma moeda não viciada 15 vezes. Qual é a probabilidade de obtermos exatamente 7 caras?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-189" id="solution-189"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-189"><div class="solution solution-like">
+<p id="p-1135">Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é \(p=\frac{1}{2}\text{.}\)</p>
+<p id="p-1136">Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é </p>
+<div class="displaymath">
 \begin{equation*}
 \left(\frac{1}{2}\right)^7 \times \left(1 - \frac{1}{2}\right)^{8},
 \end{equation*}
 </div>
-<div class="para">mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.</div>
-</div> <div class="para" id="section-distribuicao-binomial-2-2-2-3">Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de <span class="process-math">\(C_{15}^{7}\)</span> maneiras.</div> <div class="para logical" id="section-distribuicao-binomial-2-2-2-4">
-<div class="para">Portanto a resposta para nosso problema é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.</p>
+<p id="p-1137">Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de \(C_{15}^{7}\) maneiras.</p>
+<p id="p-1138">Portanto a resposta para nosso problema é</p>
+<div class="displaymath">
 \begin{equation*}
 C_{15}^{7}\times \left(\frac{1}{2}\right)^7 \times \left(\frac{1}{2}\right)^{8}=0.1963 \approx 20\%. 
 \end{equation*}
 </div>
-</div>
-</div></details></article><div class="para" id="section-distribuicao-binomial-2-3">Considere um experimento com apenas dois resultados possíveis, chamados de <em class="emphasis">sucesso</em> e <em class="emphasis">fracasso</em>. Denotaremos por <span class="process-math">\(p\)</span> a probabilidade de sucesso.</div>
-<article class="theorem theorem-like" id="teo-dist-binomial"><h4 class="heading">
+</div></div></article><p id="p-1139">Considere um experimento com apenas dois resultados possíveis, chamados de <em class="emphasis">sucesso</em> e <em class="emphasis">fracasso</em>. Denotaremos por \(p\) a probabilidade de sucesso.</p>
+<article class="theorem theorem-like" id="teo-dist-binomial"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="teo-dist-binomial-1">
-<div class="para">A probabilidade de ocorrerem exatamente <span class="process-math">\(k\)</span> sucessos em uma sequência de <span class="process-math">\(n\)</span> provas independentes, na qual a probabilidade de sucesso em cada etapa é <span class="process-math">\(p\text{,}\)</span> é igual a</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-1140">A probabilidade de ocorrerem exatamente \(k\) sucessos em uma sequência de \(n\) provas independentes, na qual a probabilidade de sucesso em cada etapa é \(p\text{,}\) é igual a</p>
+<div class="displaymath">
 \begin{equation*}
 C_n^k\times p^k\times (1-p)^{n-k}. 
 \end{equation*}
-</div>
-</div></article><details id="teo-dist-binomial-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="teo-dist-binomial-2-1">
-<div class="para">A probabilidade de nessas <span class="process-math">\(n\)</span> provas obtermos <span class="process-math">\(k\)</span> sucessos, e consequentemente, <span class="process-math">\(n-k\)</span> fracassos em uma ordem fixada é</div>
-<div class="displaymath process-math">
+</div></article><article class="hiddenproof" id="proof-45"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-45"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-45"><article class="hiddenproof"><p id="p-1141">A probabilidade de nessas \(n\) provas obtermos \(k\) sucessos, e consequentemente, \(n-k\) fracassos em uma ordem fixada é</p>
+<div class="displaymath">
 \begin{equation*}
 \underbrace{p\cdot p \cdots p}_{k\text{ fatores}}\underbrace{\cdot (1-p)\cdots(1-p)}_{(n-k)\text{ fatores}} = p^k(1-p)^{n-k}, 
 \end{equation*}
 </div>
-<div class="para">pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é <span class="process-math">\(C_n^k\text{,}\)</span> a probabilidade de obtermos <span class="process-math">\(k\)</span> sucessos, em <span class="process-math">\(n\)</span> provas é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é \(C_n^k\text{,}\) a probabilidade de obtermos \(k\) sucessos, em \(n\) provas é</p>
+<div class="displaymath">
 \begin{equation*}
 C_n^k \times p^k\times(1-p)^{n-k}. 
 \end{equation*}
-</div>
-</div></article></details><article class="example example-like" id="section-distribuicao-binomial-2-5"><h4 class="heading">
+</div></article></div>
+<article class="example example-like" id="example-79"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-distribuicao-binomial-2-5-1">Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.</div> <ol class="lower-alpha">
-<li id="section-distribuicao-binomial-2-5-2-1"><div class="para" id="p-derived-section-distribuicao-binomial-2-5-2-1">Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?</div></li>
-<li id="section-distribuicao-binomial-2-5-2-2"><div class="para" id="p-derived-section-distribuicao-binomial-2-5-2-2">Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?</div></li>
-</ol> <details id="section-distribuicao-binomial-2-5-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="section-distribuicao-binomial-2-5-3-1">
-<dfn class="terminology">item a)</dfn> Vamos considerar os eventos:</div> <div class="para" id="section-distribuicao-binomial-2-5-3-2">S: saiu uma face verde <span class="process-math">\(\Rightarrow p = \frac{3}{12} = \frac{1}{4}.\)</span>
-</div> <div class="para" id="section-distribuicao-binomial-2-5-3-3">F: não saiu uma face verde <span class="process-math">\(\Rightarrow p = \frac{9}{12} = \frac{3}{4}.\)</span>
-</div> <div class="para logical" id="section-distribuicao-binomial-2-5-3-4">
-<div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/xref/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> a probabilidade é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-dist-binomial.html">
+</h6>
+<p id="p-1142">Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.</p>
+<ol class="lower-alpha">
+<li id="li-230">Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?</li>
+<li id="li-231">Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?</li>
+</ol>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-190" id="solution-190"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-190"><div class="solution solution-like">
+<p id="p-1143"><dfn class="terminology">item a)</dfn> Vamos considerar os eventos:</p>
+<p id="p-1144">S: saiu uma face verde \(\Rightarrow p = \frac{3}{12} = \frac{1}{4}.\)</p>
+<p id="p-1145">F: não saiu uma face verde \(\Rightarrow p = \frac{9}{12} = \frac{3}{4}.\)</p>
+<p id="p-1146">Pelo <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> a probabilidade é</p>
+<div class="displaymath">
 \begin{equation*}
 C_8^3\times \left( \frac{1}{4} \right)^3 \times \left( \frac{3}{4} \right)^5 = \frac{1701}{8192} \approx 0.20764 \approx 21\%. 
 \end{equation*}
 </div>
-</div> <div class="para" id="section-distribuicao-binomial-2-5-3-5">
-<dfn class="terminology">item b)</dfn> Vamos considerar os eventos:</div> <div class="para" id="section-distribuicao-binomial-2-5-3-6">S: saiu uma face azul <span class="process-math">\(\Rightarrow p = \frac{5}{12}.\)</span>
-</div> <div class="para" id="section-distribuicao-binomial-2-5-3-7">F: não saiu uma face azul <span class="process-math">\(\Rightarrow p = \frac{7}{12}.\)</span>
-</div> <div class="para" id="section-distribuicao-binomial-2-5-3-8">Pelo <a href="" class="xref" data-knowl="./knowl/xref/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> a probabilidade é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-dist-binomial.html ./knowl/xref/teo-dist-binomial.html">
+<p id="p-1147"><dfn class="terminology">item b)</dfn> Vamos considerar os eventos:</p>
+<p id="p-1148">S: saiu uma face azul \(\Rightarrow p = \frac{5}{12}.\)</p>
+<p id="p-1149">F: não saiu uma face azul \(\Rightarrow p = \frac{7}{12}.\)</p>
+<p id="p-1150">Pelo <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> a probabilidade é</p>
+<div class="displaymath">
 \begin{equation*}
 C_8^3\times \left( \frac{5}{12} \right)^3 \times \left( \frac{7}{12} \right)^5 = \frac{14706125}{53747712} \approx 0.27361 \approx 27,4\%. 
 \end{equation*}
 </div>
-</div></details></article></section><section class="subsection" id="section-distribuicao-binomial-3"><h3 class="heading hide-type">
-<span class="type">Subseção</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="space"> </span><span class="title">Variáveis Aleatórias: Geométrica e Binomial Negativa</span>
+</div></div></article></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">4.3.2</span> <span class="title">Variáveis Aleatórias: Geométrica e Binomial Negativa</span>
 </h3>
-<article class="definition definition-like" id="section-distribuicao-binomial-3-2"><h4 class="heading">
+<article class="definition definition-like" id="definition-32"><h6 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-distribuicao-binomial-3-2-1">Dado um experimento aleatório com espaço amostral <span class="process-math">\(\Omega\text{,}\)</span> uma <em class="emphasis">variável aleatória</em> é uma função que associa um número real a cada elemento do espaço amostral.</div></article><article class="example example-like" id="section-distribuicao-binomial-3-3"><h4 class="heading">
+</h6>
+<p id="p-1151">Dado um experimento aleatório com espaço amostral \(\Omega\text{,}\) uma <em class="emphasis">variável aleatória</em> é uma função que associa um número real a cada elemento do espaço amostral.</p></article><article class="example example-like" id="example-80"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="section-distribuicao-binomial-3-3-1">
-<div class="para">No experimento do lançamento de <dfn class="terminology">três moedas</dfn> podemos definir a variável aleatória <span class="process-math">\(X\)</span> como a função que diz o número de caras, por exemplo:</div>
+</h6>
+<p id="p-1152">No experimento do lançamento de <dfn class="terminology">três moedas</dfn> podemos definir a variável aleatória \(X\) como a função que diz o número de caras, por exemplo:</p>
 <ol class="lower-roman">
-<li id="section-distribuicao-binomial-3-3-1-3-1"><div class="para" id="p-derived-section-distribuicao-binomial-3-3-1-3-1"><span class="process-math">\(X(\{cara, cara, cara\}) = 3\text{;}\)</span></div></li>
-<li id="section-distribuicao-binomial-3-3-1-3-2"><div class="para" id="p-derived-section-distribuicao-binomial-3-3-1-3-2"><span class="process-math">\(X(\{cara, coroa, coroa\}) = 1\text{;}\)</span></div></li>
-<li id="section-distribuicao-binomial-3-3-1-3-3"><div class="para" id="p-derived-section-distribuicao-binomial-3-3-1-3-3"><span class="process-math">\(X(\{coroa, cara, cara\}) = 2\text{;}\)</span></div></li>
-<li id="section-distribuicao-binomial-3-3-1-3-4"><div class="para" id="p-derived-section-distribuicao-binomial-3-3-1-3-4"><span class="process-math">\(X(\{coroa, coroa, coroa\}) = 0\text{.}\)</span></div></li>
+<li id="li-232">\(X(\{cara, cara, cara\}) = 3\text{;}\)</li>
+<li id="li-233">\(X(\{cara, coroa, coroa\}) = 1\text{;}\)</li>
+<li id="li-234">\(X(\{coroa, cara, cara\}) = 2\text{;}\)</li>
+<li id="li-235">\(X(\{coroa, coroa, coroa\}) = 0\text{.}\)</li>
 </ol>
-<div class="para">Observe que eventos, ou conjuntos de eventos no espaço amostral podem ser definidos pelas variáveis aleatórias. Por exemplo <span class="process-math">\({ X = 1 }\)</span> é o conjunto de eventos correspondente a sair exatamente uma cara e é igual a:</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Observe que eventos, ou conjuntos de eventos no espaço amostral podem ser definidos pelas variáveis aleatórias. Por exemplo \({ X = 1 }\) é o conjunto de eventos correspondente a sair exatamente uma cara e é igual a:</p>
+<div class="displaymath">
 \begin{equation*}
 \{\{cara, coroa, coroa\}, \{coroa, cara, coroa\}, \{coroa, coroa, cara\}\}.
 \end{equation*}
-</div>
-</div></article><article class="theorem theorem-like" id="teo01"><h4 class="heading">
+</div></article><article class="theorem theorem-like" id="teo01"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="teo01-1">
-<div class="para">Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a <span class="process-math">\(p\)</span> e quaisquer duas etapas são independentes, será repetido até que o primeiro sucesso seja obtido. A probabilidade de que o sucesso seja obtido na <span class="process-math">\(n\)</span>-ésima tentativa é igual a </div>
-<div class="displaymath process-math" id="var_geo">
+</h6>
+<p id="p-1153">Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a \(p\) e quaisquer duas etapas são independentes, será repetido até que o primeiro sucesso seja obtido. A probabilidade de que o sucesso seja obtido na \(n\)-ésima tentativa é igual a </p>
+<div class="displaymath">
 \begin{equation}
-(1-p)^{n-1}p.\tag{4.3.1}
+(1-p)^{n-1}p.\label{var_geo}\tag{4.3.1}
 \end{equation}
-</div>
-</div></article><details id="teo01-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="teo01-2-1">
-<div class="para">Para que o sucesso seja obtido exatamente na <span class="process-math">\(n\)</span>-ésima tentativa é necessário e suficiente que as <span class="process-math">\(p-1\)</span> tentativas seja fracassos e que a <span class="process-math">\(n\)</span>-ésima seja um sucesso. Assim, obtemos a Equação <a href="" class="xref" data-knowl="./knowl/xref/var_geo.html" title="Equação 4.3.1">(4.3.1)</a>. Como</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/var_geo.html">
+</div></article><article class="hiddenproof" id="proof-46"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-46"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><p id="p-1154">Para que o sucesso seja obtido exatamente na \(n\)-ésima tentativa é necessário e suficiente que as \(p-1\) tentativas seja fracassos e que a \(n\)-ésima seja um sucesso. Assim, obtemos a Equação <a class="xref" data-knowl="./knowl/var_geo.html" title="[men] 4.3.1">(4.3.1)</a>. Como</p>
+<div class="displaymath">
 \begin{equation*}
 \sum_{n=1}^\infty (1-p)^{n-1}p = p\sum_{n=1}^\infty (1-p)^{n-1} = \frac{p}{1-(1-p)}=1,
 \end{equation*}
 </div>
-<div class="para">um sucesso acabará ocorrendo, com probabilidade 1.</div>
-</div></article></details><article class="remark remark-like" id="section-distribuicao-binomial-3-5"><h4 class="heading">
-<span class="type">Nota</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
-</h4>Qualquer <em class="emphasis">variável aleatória</em> <span class="process-math">\(X\)</span> cuja função de probabilidade seja dada pela Equação <a href="" class="xref" data-knowl="./knowl/xref/var_geo.html" title="Equação 4.3.1">(4.3.1)</a> é chamada de <em class="emphasis">variável aleatória geométrica</em> com parâmetro <span class="process-math">\(p\text{.}\)</span> No caso do <a href="" class="xref" data-knowl="./knowl/xref/teo01.html" title="Teorema 4.3.6">Teorema 4.3.6</a>, <span class="process-math">\(X\)</span> é o número de tentativas necessárias para obter 1 sucesso.</article><article class="example example-like" id="section-distribuicao-binomial-3-6"><h4 class="heading">
+<p data-braille="continuation">um sucesso acabará ocorrendo, com probabilidade 1.</p></article></div>
+<article class="remark remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
+</h6>Qualquer <em class="emphasis">variável aleatória</em>\(X\) cuja função de probabilidade seja dada pela Equação <a class="xref" data-knowl="./knowl/var_geo.html" title="[men] 4.3.1">(4.3.1)</a> é chamada de <em class="emphasis">variável aleatória geométrica</em> com parâmetro \(p\text{.}\) No caso do <a class="xref" data-knowl="./knowl/teo01.html" title="Teorema 4.3.6">Teorema 4.3.6</a>, \(X\) é o número de tentativas necessárias para obter 1 sucesso.</article><article class="example example-like" id="example-81"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="section-distribuicao-binomial-3-6-1">
-<div class="para">Uma urna contém 5 bolas brancas e 7 bolas pretas. A bolas são selecionadas aleatoriamente, uma de cada vez, até que saia uma bola preta. Se supormos que cada bola selecionada seja substituída por outra de mesma cor, antes que a próxima bola seja retirada, qual é a probabilidade de que</div>
+</h6>
+<p id="p-1155">Uma urna contém 5 bolas brancas e 7 bolas pretas. A bolas são selecionadas aleatoriamente, uma de cada vez, até que saia uma bola preta. Se supormos que cada bola selecionada seja substituída por outra de mesma cor, antes que a próxima bola seja retirada, qual é a probabilidade de que</p>
 <ol class="lower-alpha">
-<li id="section-distribuicao-binomial-3-6-1-1-1"><div class="para" id="p-derived-section-distribuicao-binomial-3-6-1-1-1">sejam necessárias exatamente 4 retiradas?</div></li>
-<li id="section-distribuicao-binomial-3-6-1-1-2"><div class="para" id="p-derived-section-distribuicao-binomial-3-6-1-1-2">sejam necessárias pelo menos 4 retiradas?</div></li>
+<li id="li-236">sejam necessárias exatamente 4 retiradas?</li>
+<li id="li-237">sejam necessárias pelo menos 4 retiradas?</li>
 </ol>
-</div> <details id="section-distribuicao-binomial-3-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="section-distribuicao-binomial-3-6-2-1">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Se <span class="process-math">\(X\)</span> representar o número de retiradas necessárias até que se sele- cione uma bola preta, então <span class="process-math">\(X\)</span> satisfaz a Equação <a href="" class="xref" data-knowl="./knowl/xref/var_geo.html" title="Equação 4.3.1">(4.3.1)</a>, com <span class="process-math">\(p = \frac{7}{7+5} = \frac{7}{12}\text{.}\)</span> Então, a probabilidade é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/var_geo.html">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-191" id="solution-191"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-191"><div class="solution solution-like">
+<p id="p-1156"><dfn class="terminology">item a)</dfn> Se \(X\) representar o número de retiradas necessárias até que se sele- cione uma bola preta, então \(X\) satisfaz a Equação <a class="xref" data-knowl="./knowl/var_geo.html" title="[men] 4.3.1">(4.3.1)</a>, com \(p = \frac{7}{7+5} = \frac{7}{12}\text{.}\) Então, a probabilidade é</p>
+<div class="displaymath">
 \begin{equation*}
 \left(\frac{5}{12}\right)^{3}\frac{7}{12}.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="section-distribuicao-binomial-3-6-2-2">
-<div class="para"><dfn class="terminology">item b)</dfn></div>
-<div class="displaymath process-math" id="section-distribuicao-binomial-3-6-2-2-2">
+<p id="p-1157"><dfn class="terminology">item b)</dfn></p>
+<div class="displaymath">
 \begin{align*}
 \frac{7}{12}\cdot\sum_{n=4}^{\infty}\left(\frac{5}{12}\right)^{n-1} =\amp~ \frac{7}{12}\cdot\frac{\left(\frac{5}{12}\right)^{3}}{1-\frac{5}{12}} \\
 =\amp~ \left(\frac{5}{12}\right)^{3}.
 \end{align*}
 </div>
-</div>
-</div></details></article><article class="theorem theorem-like" id="section-distribuicao-binomial-3-7"><h4 class="heading">
+</div></div></article><article class="theorem theorem-like" id="theorem-42"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="section-distribuicao-binomial-3-7-1">
-<div class="para">Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a <span class="process-math">\(p\)</span> e quaisquer duas etapas são independentes, será repetido até que se acumule um total de <span class="process-math">\(k\)</span> sucessos. A probabilidade de que o <span class="process-math">\(k\)</span>-ésimo sucesso seja obtido na <span class="process-math">\(n\)</span>-ésima tentativa é igual a  </div>
-<div class="displaymath process-math" id="binon_neg_0">
+</h6>
+<p id="p-1158">Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a \(p\) e quaisquer duas etapas são independentes, será repetido até que se acumule um total de \(k\) sucessos. A probabilidade de que o \(k\)-ésimo sucesso seja obtido na \(n\)-ésima tentativa é igual a  </p>
+<div class="displaymath">
 \begin{equation}
-C_{n-1}^{k-1}p^k(1-p)^{n-k}.\tag{4.3.2}
+C_{n-1}^{k-1}p^k(1-p)^{n-k}.\label{binon_neg_0}\tag{4.3.2}
 \end{equation}
-</div>
-</div></article><details id="section-distribuicao-binomial-3-7-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="section-distribuicao-binomial-3-7-2-1">
-<div class="para">Para que o <span class="process-math">\(k\)</span>-ésimo sucesso ocorra na <span class="process-math">\(n\)</span>-ésima tentativa, devem ocorrer <span class="process-math">\(k - 1\)</span> sucessos nas primeiras <span class="process-math">\(n - 1\)</span> tentativas e a <span class="process-math">\(n\)</span>-ésima tentativa deve ser um sucesso. A probabilidade do primeiro evento é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/binon_neg_0.html ./knowl/xref/teo01.html ./knowl/xref/binon_neg_2.html">
+</div></article><article class="hiddenproof" id="proof-47"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><p id="p-1159">Para que o \(k\)-ésimo sucesso ocorra na \(n\)-ésima tentativa, devem ocorrer \(k - 1\) sucessos nas primeiras \(n - 1\) tentativas e a \(n\)-ésima tentativa deve ser um sucesso. A probabilidade do primeiro evento é</p>
+<div class="displaymath">
 \begin{equation*}
 C_{n-1}^{k-1}p^{k-1}(1-p)^{n-k}
 \end{equation*}
 </div>
-<div class="para">e a probabilidade do segundo evento é <span class="process-math">\(p\text{,}\)</span> assim, pela independência dos eventos, obtemos a Equação <a href="" class="xref" data-knowl="./knowl/xref/binon_neg_0.html" title="Equação 4.3.2">(4.3.2)</a>. Ainda precisamos verificar que um total de <span class="process-math">\(k\)</span> sucessos acaba sendo acumulado, ou seja, precisamos verificar que</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/binon_neg_0.html ./knowl/xref/teo01.html ./knowl/xref/binon_neg_2.html" id="binon_neg_2">
+<p data-braille="continuation">e a probabilidade do segundo evento é \(p\text{,}\) assim, pela independência dos eventos, obtemos a Equação <a class="xref" data-knowl="./knowl/binon_neg_0.html" title="[men] 4.3.2">(4.3.2)</a>. Ainda precisamos verificar que um total de \(k\) sucessos acaba sendo acumulado, ou seja, precisamos verificar que</p>
+<div class="displaymath">
 \begin{equation}
-\sum_{n=k}^{\infty} C_{n-1}^{k-1}p^k(1-p)^{n-k}=1.\tag{4.3.3}
+\sum_{n=k}^{\infty} C_{n-1}^{k-1}p^k(1-p)^{n-k}=1.\label{binon_neg_2}\tag{4.3.3}
 \end{equation}
 </div>
-<div class="para">O número de tentativas necessárias para que se obtenham <span class="process-math">\(k\)</span> sucessos pode ser representado como <span class="process-math">\(T_1 + T_2 + \cdots
-+ T_k\text{,}\)</span> na qual, <span class="process-math">\(T_1\)</span> é o número de tentativas necessárias para o primeiro sucesso, <span class="process-math">\(T_2\text{,}\)</span> é o número de tentativas adicionais feitas até que ocorra o segundo sucesso e assim por diante. Tem-se que <span class="process-math">\(T_1, T_2, \ldots, T_k\)</span>  satisfazem o Teorema <a href="" class="xref" data-knowl="./knowl/xref/teo01.html" title="Teorema 4.3.6">Teorema 4.3.6</a>. Portanto, cada uma delas é finita com probabilidade 1, e então <span class="process-math">\(\sum_{i=1}^kT_i\)</span> também deve ser finita, o que estabelece a Equação <a href="" class="xref" data-knowl="./knowl/xref/binon_neg_2.html" title="Equação 4.3.3">(4.3.3)</a>.</div>
-</div></article></details><article class="remark remark-like" id="section-distribuicao-binomial-3-8"><h4 class="heading">
-<span class="type">Nota</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span>
-</h4>
-<div class="para" id="section-distribuicao-binomial-3-8-1">Qualquer variável aleatória cuja função de probabilidade seja dada pela Equação <a href="" class="xref" data-knowl="./knowl/xref/binon_neg_0.html" title="Equação 4.3.2">(4.3.2)</a> é chamada de <em class="emphasis">variável aleatória binomial negativa</em> com parâmetros <span class="process-math">\((k,p)\text{.}\)</span> Observe que uma variável aleatória geométrica é simplesmente uma variável binomial negativa com parâmetros <span class="process-math">\((1,p)\text{.}\)</span>
-</div></article><article class="corollary theorem-like" id="coromorg"><h4 class="heading">
+<p data-braille="continuation">O número de tentativas necessárias para que se obtenham \(k\) sucessos pode ser representado como \(T_1 + T_2 + \cdots
++ T_k\text{,}\) na qual, \(T_1\) é o número de tentativas necessárias para o primeiro sucesso, \(T_2\text{,}\) é o número de tentativas adicionais feitas até que ocorra o segundo sucesso e assim por diante. Tem-se que \(T_1, T_2, \ldots, T_k\)  satisfazem o Teorema <a class="xref" data-knowl="./knowl/teo01.html" title="Teorema 4.3.6">Teorema 4.3.6</a>. Portanto, cada uma delas é finita com probabilidade 1, e então \(\sum_{i=1}^kT_i\) também deve ser finita, o que estabelece a Equação <a class="xref" data-knowl="./knowl/binon_neg_2.html" title="[men] 4.3.3">(4.3.3)</a>.</p></article></div>
+<article class="remark remark-like" id="remark-13"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span>
+</h6>
+<p id="p-1160">Qualquer variável aleatória cuja função de probabilidade seja dada pela Equação <a class="xref" data-knowl="./knowl/binon_neg_0.html" title="[men] 4.3.2">(4.3.2)</a> é chamada de <em class="emphasis">variável aleatória binomial negativa</em> com parâmetros \((k,p)\text{.}\) Observe que uma variável aleatória geométrica é simplesmente uma variável binomial negativa com parâmetros \((1,p)\text{.}\)</p></article><article class="corollary theorem-like" id="coromorg"><h6 class="heading">
 <span class="type">Corolário</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="coromorg-1">
-<div class="para">Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a <span class="process-math">\(p\)</span> e quaisquer duas etapas são independentes. A probabilidade de que <span class="process-math">\(k\)</span> sucessos ocorram antes de <span class="process-math">\(m\)</span> fracassos é </div>
-<div class="displaymath process-math" id="binon_neg">
+</h6>
+<p id="p-1161">Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a \(p\) e quaisquer duas etapas são independentes. A probabilidade de que \(k\) sucessos ocorram antes de \(m\) fracassos é </p>
+<div class="displaymath">
 \begin{equation}
-\sum_{n=k}^{k+m-1} C_{n-1}^{k-1}p^k(1-p)^{n-k}.\tag{4.3.4}
+\sum_{n=k}^{k+m-1} C_{n-1}^{k-1}p^k(1-p)^{n-k}.\label{binon_neg}\tag{4.3.4}
 \end{equation}
-</div>
-</div></article><details id="coromorg-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="coromorg-2-1">Note que ocorrem <span class="process-math">\(k\)</span> sucessos antes de <span class="process-math">\(m\)</span> fracassos se e somente se o <span class="process-math">\(k\)</span>-ésimo sucesso ocorrer até a <span class="process-math">\((k + m -1)\)</span>-ésima tentativa. Tem-se esse resultado porque, se o <span class="process-math">\(k\)</span>-ésimo sucesso tiver ocorrido antes ou na <span class="process-math">\((k + m - 1)\)</span>-ésima tentativa, então ele deve ter ocorrido antes do <span class="process-math">\(m\)</span>-ésimo fracasso, e vice-versa. Portanto, da Equação <a href="" class="xref" data-knowl="./knowl/xref/binon_neg_0.html" title="Equação 4.3.2">(4.3.2)</a>, a probabilidade desejada é dada pela Equação <a href="" class="xref" data-knowl="./knowl/xref/binon_neg.html" title="Equação 4.3.4">(4.3.4)</a>.</div></article></details><article class="example example-like" id="section-distribuicao-binomial-3-10"><h4 class="heading">
+</div></article><article class="hiddenproof" id="proof-48"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><p id="p-1162">Note que ocorrem \(k\) sucessos antes de \(m\) fracassos se e somente se o \(k\)-ésimo sucesso ocorrer até a \((k + m -1)\)-ésima tentativa. Tem-se esse resultado porque, se o \(k\)-ésimo sucesso tiver ocorrido antes ou na \((k + m - 1)\)-ésima tentativa, então ele deve ter ocorrido antes do \(m\)-ésimo fracasso, e vice-versa. Portanto, da Equação <a class="xref" data-knowl="./knowl/binon_neg_0.html" title="[men] 4.3.2">(4.3.2)</a>, a probabilidade desejada é dada pela Equação <a class="xref" data-knowl="./knowl/binon_neg.html" title="[men] 4.3.4">(4.3.4)</a>.</p></article></div>
+<article class="example example-like" id="example-82"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="section-distribuicao-binomial-3-10-1">
-<div class="para">Joga-se uma moeda não viciada. Qual é a probabilidade de serem obtidas</div>
+</h6>
+<p id="p-1163">Joga-se uma moeda não viciada. Qual é a probabilidade de serem obtidas</p>
 <ol class="lower-alpha">
-<li id="section-distribuicao-binomial-3-10-1-1-1"><div class="para" id="p-derived-section-distribuicao-binomial-3-10-1-1-1">3 caras antes de 2 coroas?</div></li>
-<li id="section-distribuicao-binomial-3-10-1-1-2"><div class="para" id="p-derived-section-distribuicao-binomial-3-10-1-1-2">5 caras antes de 3 coroas?</div></li>
+<li id="li-238">3 caras antes de 2 coroas?</li>
+<li id="li-239">5 caras antes de 3 coroas?</li>
 </ol>
-</div> <details id="section-distribuicao-binomial-3-10-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="section-distribuicao-binomial-3-10-2-1">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Pelo <a href="" class="xref" data-knowl="./knowl/xref/coromorg.html" title="Corolário 4.3.11">Corolário 4.3.11</a>, basta aplicar a Fórmula <a href="" class="xref" data-knowl="./knowl/xref/binon_neg.html" title="Equação 4.3.4">(4.3.4)</a> com <span class="process-math">\(k=3\)</span> e <span class="process-math">\(m=2\text{.}\)</span> Portanto, a resposta é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/coromorg.html ./knowl/xref/binon_neg.html" id="section-distribuicao-binomial-3-10-2-1-6">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-192" id="solution-192"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-192"><div class="solution solution-like">
+<p id="p-1164"><dfn class="terminology">item a)</dfn> Pelo <a class="xref" data-knowl="./knowl/coromorg.html" title="Corolário 4.3.11">Corolário 4.3.11</a>, basta aplicar a Fórmula <a class="xref" data-knowl="./knowl/binon_neg.html" title="[men] 4.3.4">(4.3.4)</a> com \(k=3\) e \(m=2\text{.}\) Portanto, a resposta é</p>
+<div class="displaymath">
 \begin{align*}
 \sum_{n=3}^{4} C_{n-1}^{2}\left(\frac{1}{2}\right)^{3}\left(1-\frac{1}{2}\right)^{n-3} = \amp~ C_2^2\left(\frac{1}{2}\right)^{3}\left(\frac{1}{2}\right)^{0}+ C_3^2\left(\frac{1}{2}\right)^{3}\left(\frac{1}{2}\right)^{1}\\
 =\amp~ \left(\frac{1}{2}\right)^{3}+ C_3^2\left(\frac{1}{2}\right)^{4}\\
@@ -520,10 +330,8 @@ C_{n-1}^{k-1}p^{k-1}(1-p)^{n-k}
 =\amp~ 0,3125.
 \end{align*}
 </div>
-</div> <div class="para logical" id="section-distribuicao-binomial-3-10-2-2">
-<div class="para">
-<dfn class="terminology">item b)</dfn> Pelo <a href="" class="xref" data-knowl="./knowl/xref/coromorg.html" title="Corolário 4.3.11">Corolário 4.3.11</a>, basta aplicar a Fórmula <a href="" class="xref" data-knowl="./knowl/xref/binon_neg.html" title="Equação 4.3.4">(4.3.4)</a> com <span class="process-math">\(k=5\)</span> e <span class="process-math">\(m=3\text{.}\)</span> Portanto, a resposta é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/coromorg.html ./knowl/xref/binon_neg.html" id="section-distribuicao-binomial-3-10-2-2-6">
+<p id="p-1165"><dfn class="terminology">item b)</dfn> Pelo <a class="xref" data-knowl="./knowl/coromorg.html" title="Corolário 4.3.11">Corolário 4.3.11</a>, basta aplicar a Fórmula <a class="xref" data-knowl="./knowl/binon_neg.html" title="[men] 4.3.4">(4.3.4)</a> com \(k=5\) e \(m=3\text{.}\) Portanto, a resposta é</p>
+<div class="displaymath">
 \begin{align*}
 \sum_{n=5}^{7} C_{n-1}^{2}\left(\frac{1}{2}\right)^{5}\left(1-\frac{1}{2}\right)^{n-5} = \amp~ C_4^4\left(\frac{1}{2}\right)^{5}\left(\frac{1}{2}\right)^{0}+ \cdots + C_6^4\left(\frac{1}{2}\right)^{5}\left(\frac{1}{2}\right)^{2}\\
 =\amp~ \left(\frac{1}{2}\right)^{5}+ C_5^4\left(\frac{1}{2}\right)^{6}+ C_6^4\left(\frac{1}{2}\right)^{7}\\
@@ -531,85 +339,78 @@ C_{n-1}^{k-1}p^{k-1}(1-p)^{n-k}
 =\amp~ 0,2265625.
 \end{align*}
 </div>
-</div>
-</div></details></article></section><section class="exercises" id="section-distribuicao-binomial-4"><h3 class="heading hide-type">
-<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="space"> </span><span class="title">Exercícios</span>
+</div></div></article></section><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">4.3.3</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="section-distribuicao-binomial-4-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="section-distribuicao-binomial-4-2-1-1">
-<div class="para">Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:</div>
+<article class="exercise exercise-like" id="exercise-143"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-1166">Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:</p>
 <ol class="lower-alpha">
-<li id="section-distribuicao-binomial-4-2-1-1-1-1"><div class="para" id="p-derived-section-distribuicao-binomial-4-2-1-1-1-1">das 4 bolas retiradas serem vermelhas;</div></li>
-<li id="section-distribuicao-binomial-4-2-1-1-1-2"><div class="para" id="p-derived-section-distribuicao-binomial-4-2-1-1-1-2">de somente 2 bolas retiradas serem vermelhas;</div></li>
-<li id="section-distribuicao-binomial-4-2-1-1-1-3"><div class="para" id="p-derived-section-distribuicao-binomial-4-2-1-1-1-3">de pelo menos 2 bolas serem vermelhas.</div></li>
+<li id="li-240">das 4 bolas retiradas serem vermelhas;</li>
+<li id="li-241">de somente 2 bolas retiradas serem vermelhas;</li>
+<li id="li-242">de pelo menos 2 bolas serem vermelhas.</li>
 </ol>
-</div>
-<div class="solutions"><details id="section-distribuicao-binomial-4-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-distribuicao-binomial-4-2-2-1">a) <span class="process-math">\(\dfrac{1}{256}\text{,}\)</span> b) <span class="process-math">\(\dfrac{27}{128}\text{,}\)</span> c) <span class="process-math">\(\dfrac{67}{256}\text{.}\)</span>
-</div></div></details></div></article><article class="exercise exercise-like" id="section-distribuicao-binomial-4-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="section-distribuicao-binomial-4-3-1-1">(ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?</div>
 <div class="solutions">
-<details id="section-distribuicao-binomial-4-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-distribuicao-binomial-4-3-2-1"><span class="process-math">\(P = \frac{53}{3125}\text{.}\)</span></div></div></details><details id="section-distribuicao-binomial-4-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="section-distribuicao-binomial-4-3-3-1">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-dist-binomial.html" id="section-distribuicao-binomial-4-3-3-2">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-135" id="answer-135"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-135"><div class="answer solution-like"><p id="p-1167">a) \(\dfrac{1}{256}\text{,}\) b) \(\dfrac{27}{128}\text{,}\) c) \(\dfrac{67}{256}\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-1168">(ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-136" id="answer-136"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-136"><div class="answer solution-like"><p id="p-1169">\(P = \frac{53}{3125}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-193" id="solution-193"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-193"><div class="solution solution-like">
+<p id="p-1170">Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:</p>
+<div class="displaymath">
 \begin{align*}
 1º: \amp ~ \text{4 conseguem e 2 não conseguem;} \\
 2º: \amp ~ \text{5 conseguem e 1 não conseguem;} \\
 3º: \amp ~ \text{6 conseguem.} 
 \end{align*}
 </div>
-<div class="para" id="section-distribuicao-binomial-4-3-3-3">Aplicando o <a href="" class="xref" data-knowl="./knowl/xref/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-dist-binomial.html">
+<p id="p-1171">Aplicando o <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos que a probabilidade pedida é dada por:</p>
+<div class="displaymath">
 \begin{equation*}
 P = C_6^4\times(20\%)^4\times (80\%)^2 + C_6^5\times(20\%)^5\times (80\%)^1 + C_6^6\times(20\%)^6\times(80\%)^0
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-dist-binomial.html">
+<div class="displaymath">
 \begin{equation*}
 P = \frac{15360 + 1534 + 64}{1000000} \Rightarrow P = \frac{53}{3125}.
 \end{equation*}
 </div>
-<pre id="section-distribuicao-binomial-4-3-3-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C(n, p) = binomial(n,p)
+<div class="hidden-sagecell-sage" id="sage-55"><script type="text/x-sage">C(n, p) = binomial(n,p)
 a = C(6, 4)*(2/10)^4*(8/10)^2
 b = C(6, 5)*(2/10)^5*(8/10)
 c = C(6, 6)*(2/10)^6
 a+b+c
-</script></pre>
-</div></details>
-</div></article><article class="exercise exercise-like" id="section-distribuicao-binomial-4-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="section-distribuicao-binomial-4-4-1-1">(ITA 2010) Um palco possui <span class="process-math">\(6\)</span> refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de <span class="process-math">\(\frac{2}{3}\)</span> a probabilidade de ser aceso. Então, a probabilidade de que,  este instante, <span class="process-math">\(4\)</span> ou <span class="process-math">\(5\)</span> refletores sejam acesos simultaneamente, é igual a</div> <div class="para" id="section-distribuicao-binomial-4-4-1-2">a) <span class="process-math">\(\dfrac{16}{27}~~~~\)</span> b) <span class="process-math">\(\dfrac{49}{81}~~~~\)</span> c) <span class="process-math">\(\dfrac{151}{243}~~~~\)</span> d) <span class="process-math">\(\dfrac{479}{729}~~~~\)</span> e) <span class="process-math">\(\dfrac{2^4}{3^4} + \dfrac{2^5}{3^5}\)</span>
-</div>
+</script></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-145"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-1172">(ITA 2010) Um palco possui \(6\) refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de \(\frac{2}{3}\) a probabilidade de ser aceso. Então, a probabilidade de que,  este instante, \(4\) ou \(5\) refletores sejam acesos simultaneamente, é igual a</p>
+<p id="p-1173">a) \(\dfrac{16}{27}~~~~\) b) \(\dfrac{49}{81}~~~~\) c) \(\dfrac{151}{243}~~~~\) d) \(\dfrac{479}{729}~~~~\) e) \(\dfrac{2^4}{3^4} + \dfrac{2^5}{3^5}\)</p>
 <div class="solutions">
-<details id="section-distribuicao-binomial-4-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-distribuicao-binomial-4-4-2-1">a)</div></div></details><details id="section-distribuicao-binomial-4-4-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="section-distribuicao-binomial-4-4-3-1">
-<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/xref/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-dist-binomial.html">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-137" id="answer-137"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-137"><div class="answer solution-like"><p id="p-1174">a)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-194" id="solution-194"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-194"><div class="solution solution-like">
+<p id="p-1175">Aplicando o <a class="xref" data-knowl="./knowl/teo-dist-binomial.html" title="Teorema 4.3.2">Teorema 4.3.2</a> temos</p>
+<div class="displaymath">
 \begin{equation*}
 P = C_6^4\times \left(\frac{2}{3}\right)^4\times \left(\frac{1}{3}\right)^2 + C_6^5\times \left(\frac{2}{3}\right)^5\times \left(\frac{1}{3}\right)^1 = \frac{16}{27}
 \end{equation*}
 </div>
-</div> <pre id="section-distribuicao-binomial-4-4-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C(n, p) = binomial(n,p)
+<div class="hidden-sagecell-sage" id="sage-56"><script type="text/x-sage">C(n, p) = binomial(n,p)
 a = C(6, 4)*(2/3)^4*(1/3)^2
 b = C(6, 5)*(2/3)^5*(1/3)
 a+b
-</script></pre>
-</div></details>
-</div></article><article class="exercise exercise-like" id="section-distribuicao-binomial-4-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="section-distribuicao-binomial-4-5-1">Dois adversários A e B disputam uma série de partidas. O primeiro que obtiver <span class="process-math">\(10\)</span> vitórias ganha a série. No momento o resultado é <span class="process-math">\(7\times4\)</span> a favor de A. Qual é a probabilidade de A ganhar a série sabendo que em cada partida as probabilidades de A e B vencerem são respectivamente 0,3 e 0,7?</div>
-<details id="section-distribuicao-binomial-4-5-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-distribuicao-binomial-4-5-2-1">
-<div class="para">Basta aplicar o <a href="" class="xref" data-knowl="./knowl/xref/coromorg.html" title="Corolário 4.3.11">Corolário 4.3.11</a>, na qual, A deve obter 3 vitórias antes que 6 derrotas. Logo, a resposta é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/coromorg.html" id="section-distribuicao-binomial-4-5-2-1-2">
+</script></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-146"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1176">Dois adversários A e B disputam uma série de partidas. O primeiro que obtiver \(10\) vitórias ganha a série. No momento o resultado é \(7\times4\) a favor de A. Qual é a probabilidade de A ganhar a série sabendo que em cada partida as probabilidades de A e B vencerem são respectivamente 0,3 e 0,7?</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-195" id="solution-195"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-195"><div class="solution solution-like">
+<p id="p-1177">Basta aplicar o <a class="xref" data-knowl="./knowl/coromorg.html" title="Corolário 4.3.11">Corolário 4.3.11</a>, na qual, A deve obter 3 vitórias antes que 6 derrotas. Logo, a resposta é</p>
+<div class="displaymath">
 \begin{align*}
 \sum_{n=3}^8 C_{n-1}^{3-1}(0,3)^3(0,7)^{n-3}=\amp~ C_2^2(0,3)^3(0,7)^0+\cdots+C_7^2(0,3)^3(0,7)^5\\
 =\amp~ 0.44822619.
 \end{align*}
 </div>
-</div></div></details></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="section-probabilidade-condicional.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-espaco-infinito.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
-</div></main>
-</div>
-<div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div></div></article></section></section></div></main>
 </div>
 </body>
 </html>

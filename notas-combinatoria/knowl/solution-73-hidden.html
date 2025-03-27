@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:45-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -9,24 +12,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">O número de soluções desta equação, com <span class="process-math">\(x_i\in \mathbb{Z} \text{ e } x_i\geq 0, i\in\{1, 2, \ldots, 10\}\)</span>  é o  número de combinações completas de 10 elementos, tomados 20 a 20:</div>
-<div class="displaymath process-math">
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Para contar o total de caminhos até um ponto \(C(m,n)\text{,}\) vamos considerar o \(m\lt n\text{.}\) Quando consideramos \(m\lt n\) isso fará com que no máximo podemos fazer \(m\) movimentos diagonias (para o caso \(m&gt;n\) o número máximo de movimentos diagonais é \(n\)). Assim, teremos um total de \(m+1\) casos para analisarmos:</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Caso 1:</dfn> Contaremos todos os caminhos sem movimentos na direção nordeste, ou seja teremos que contar todas as permutações da palavra \(LLLL\ldots LNNNN\ldots N\text{,}\) onde a letra \(L\) aparece \(m\) vezes e a letra \(N\) aparece \(n\) vezes, totalizando \(m+n\) elementos. Assim obtemos,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-CR_{10}^{20} = PR_{29}^{20,9}=10015005.
+PR^{m,n}_{m+n}.
 \end{equation*}
 </div>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">CR(n, p) = binomial(p+n-1, p) 
-CR(10, 20)
-</script></pre>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Caso 2:</dfn> Contaremos todos os caminhos onde faremos apenas um movimento na direção nordeste, assim, queremos contar as permutações da palavra \(DLL\ldots LNN\ldots N\text{,}\) onde a letra \(L\) aparece \(m-1\) vezes, a letra \(N\) aparece \(n-1\) vezes, e a letra \(D\) uma vez, totalizando \(m+n-1\) elementos. Assim teremos,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR^{m-1,n-1,1}_{m+n-1}.
+\end{equation*}
+</div>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Caso 3:</dfn> Contaremos todos os caminhos onde faremos dois movimentos diagonais (ou na direção nordeste) e \(m-2\) movimentos na direção leste e \(n-2\) movimentos na direção norte. Assim contaremos o número de permutações da palavra \(DDLLL\ldots LNNN\ldots N\text{,}\) onde a letra \(L\) aparece \(m-2\) vezes e a letra \(N\) \(n-2\) vezes. Teremos o total de,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR^{m-2,n-2,2}_{m+n_2}.
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Os casos seguirão, aumentando o número de movimentos diagonais, e assim chegaremos ao caso \(m+1\text{,}\) então:</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Caso \(m+1\text{:}\)</dfn> Contaremos todos os caminhos onde fazemos \(m\) movimentos diagonais. Teremos então que contar todas as permutações da palavra \(DDD\ldots DNN\ldots N\text{,}\)  onde a letra \(D\) aparece \(m\) vezes e a letra \(N\) aparece \(n-m\) vezes, totalizando \(m+(n-m)\) elementos. Obtendo assim,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR^{0,n-m,m}_{m+(n-m)}.
+\end{equation*}
+</div>
+<p>Pelo princípio aditivo, devemos somar todos os casos para que o número total de caminhos possíveis seja encontrado. Portanto,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR^{m,n,0}_{m+n}+PR^{m-1,n-1,1}_{m+n-1}+\cdots+PR^{0,n-m,m}_{m+(m-n)}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Que pode ser reescrito como:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{m}PR^{m-k,n-k,k}_{m+n-k}.
+\end{equation*}
+</div>
 </div></body>
 </html>

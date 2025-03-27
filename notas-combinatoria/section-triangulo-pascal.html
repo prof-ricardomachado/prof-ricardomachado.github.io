@@ -1,143 +1,71 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:40-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="pt-BR" dir="ltr">
-<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<html lang="pt-BR">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Triângulo de Pascal</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Análise Combinatória e Probabilidade">
-<meta property="book:author" content="Ricardo Machado">
-<meta property="book:author" content="Gabriel Guedes">
-<meta property="book:author" content="Luiz Manoel">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        },
-        ""
-      ]
-    }
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "linkKey": "linked-sage",
-  "autoeval": false,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Executar (Sage)"
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
-<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
-</div>
-<h2 class="search-results-heading">Buscando por: </h2>
-<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
-</div>
-</div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="binomiais.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="binomiais.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="section-binomio-newton.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -151,193 +79,98 @@ sagecell.makeSagecell({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\definecolor{fillinmathshade}{gray}{0.9}
-\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
-\)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter">
-<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pcontagem-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-3" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-4" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-5" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-2" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-3" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-circulares.html#section-permutacoes-circulares-9" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html#section-permutacoes-com-repeticoes-11" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-completas.html#section-combinacoes-completas-12" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-2" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-3" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-4" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Outros Casos do Princípio da Inclusão-Exclusão</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-5" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-5" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-6" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ocontagem-8.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-3" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-4" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-5" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-triangulo-pascal.html#section-triangulo-pascal-24" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-binomio-newton.html#section-binomio-newton-11" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-polinomio-leibniz.html#section-polinomio-leibniz-5" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-espacos-probabilidade.html#section-espacos-probabilidade-15" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-14" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-15" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Variáveis Aleatórias: Geométrica e Binomial Negativa</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-4" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
-<li class="toc-item toc-references"><div class="toc-title-box"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-triangulo-pascal"><h2 class="heading hide-type">
-<span class="type">Seção</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Triângulo de Pascal</span>
-</h2>
-<article class="definition definition-like" id="section-triangulo-pascal-2"><h3 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h3>
-<div class="para" id="section-triangulo-pascal-2-1">O <em class="emphasis">Triângulo de Pascal</em> é um triângulo numérico infinito formado por números binomiais <span class="process-math">\(C_n^p\text{,}\)</span> na qual, <span class="process-math">\(n\)</span> representa a linha, e <span class="process-math">\(p\)</span> representa a coluna, com <span class="process-math">\(n,p \geq 0\text{.}\)</span> Abaixo temos duas representações do mesmo triângulo, com <span class="process-math">\(0\leq n \leq 5\text{.}\)</span> </div>  <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>O Triângulo de Pascal.</figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascaln.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>O Triângulo de Pascal.</figcaption></figure></div>
-</div></div></article><article class="technology computation-like" id="section-triangulo-pascal-3"><h3 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
-</h3>
-<div class="para" id="section-triangulo-pascal-3-1">Obtenha o Triângulo de Pascal referente ao intervalo escolhido.</div> <figure class="figure figure-like" id="section-triangulo-pascal-3-2"><iframe id="interact-pascal" width="600" height="420" src="interact-pascal-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><div class="para" id="section-triangulo-pascal-4">A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:</div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_stifel.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span>Relação de Stifel.</figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_stifeln.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Relação de Stifel.</figcaption></figure></div>
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
+</div>
 </div></div>
-<article class="theorem theorem-like" id="section-triangulo-pascal-6"><h3 class="heading">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="binomiais.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-binomio-newton.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="binomiais.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-binomio-newton.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="prof-gabriel-guedes.html" data-scroll="prof-gabriel-guedes">Sobre Gabriel Araújo Guedes</a></li>
+<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípios Combinatórios</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ocontagem.html" data-scroll="ocontagem"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-permutacao-caotica-repeticoes.html" data-scroll="section-permutacao-caotica-repeticoes">Permutações Caóticas com Repetições</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="section-13.html" data-scroll="section-13">O Princípio da Reflexão</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal" class="active">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a><ul>
+<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
+<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
+<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
+<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
+</ul>
+</li>
+<li class="link"><a href="calculadora.html" data-scroll="calculadora"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-triangulo-pascal"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span>
+</h2>
+<article class="definition definition-like" id="definition-26"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-854">O <em class="emphasis">Triângulo de Pascal</em> é um triângulo numérico infinito formado por números binomiais \(C_n^p\text{,}\) na qual, \(n\) representa a linha, e \(p\) representa a coluna, com \(n,p \geq 0\text{.}\) Abaixo temos duas representações do mesmo triângulo, com \(0\leq n \leq 5\text{.}\) </p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>O Triângulo de Pascal.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascaln.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>O Triângulo de Pascal.</figcaption></figure></div>
+</div></div></article><article class="technology computation-like" id="technology-42"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-855">Obtenha o Triângulo de Pascal referente ao intervalo escolhido.</p>
+<figure class="figure figure-like" id="figure-56"><iframe id="interact-pascal" width="600" height="420" src="interact-pascal-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><p id="p-856">A seguir, veremos a relação de Stifel, que afirma que o valor da soma de dois elementos consecutivos de uma linha do triângulo de Pascal é igual ao elemento que está abaixo do segundo elemento dessa soma. Veja a figura abaixo:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_stifel.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span>Relação de Stifel.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_stifeln.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Relação de Stifel.</figcaption></figure></div>
+</div></div>
+<article class="theorem theorem-like" id="theorem-27"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
-</h3>
-<dfn class="terminology">(Relação de Stifel)</dfn><div class="displaymath process-math">
+</h6>
+<dfn class="terminology">(Relação de Stifel)</dfn><div class="displaymath">
 \begin{equation*}
 C_n^p + C_n^{p+1} = C_{n+1}^{p+1}. 
 \end{equation*}
-</div></article><details id="section-triangulo-pascal-6-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="displaymath process-math" id="section-triangulo-pascal-6-3-1">
+</div></article><article class="hiddenproof" id="proof-31"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-31"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><div class="displaymath">
 \begin{align*}
 C_n^p + C_n^{p+1}= \amp ~\frac{n!}{p!\times (n-p)!} + \frac{n!}{(p+1)!\times (n-p-1)!}   \\
 = \amp ~ \frac{(p+1)\times n!}{(p+1)\times p!\times (n-p)!} + \frac{(n-p)\times n!}{(n-p)\times(p+1)!\times (n-p-1)!}  \\
@@ -346,61 +179,60 @@ C_n^p + C_n^{p+1}= \amp ~\frac{n!}{p!\times (n-p)!} + \frac{n!}{(p+1)!\times (n-
 = \amp ~ \frac{(n+1)!}{(p+1)!\times (n-p)!}  \\
 = \amp ~ C_{n+1}^{p+1}  
 \end{align*}
-</div></article></details><article class="theorem theorem-like" id="teo-reolacoes-complementares"><h3 class="heading">
+</div></article></div>
+<article class="theorem theorem-like" id="teo-reolacoes-complementares"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
-</h3>
-<dfn class="terminology">(Relação das Combinações Complementares)</dfn><div class="displaymath process-math">
+</h6>
+<dfn class="terminology">(Relação das Combinações Complementares)</dfn><div class="displaymath">
 \begin{equation*}
 C_n^p = C_n^{n-p}.
 \end{equation*}
-</div></article><details id="teo-reolacoes-complementares-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="displaymath process-math">
+</div></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><div class="displaymath">
 \begin{equation*}
 C_n^p= \frac{n!}{p!\times (n-p)!} = \frac{n!}{(n-p)!\times p!} = C_n^{n-p}.
 \end{equation*}
-</div></article></details><div class="para" id="section-triangulo-pascal-8">A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha <span class="process-math">\(n\)</span> do triângulo de Pascal é igual <span class="process-math">\(2^n\text{.}\)</span> Veja a figura abaixo:</div>
+</div></article></div>
+<p id="p-857">A seguir, veremos o Teorema das Linhas, que afirma que o valor da soma de todos os elementos da linha \(n\) do triângulo de Pascal é igual \(2^n\text{.}\) Veja a figura abaixo:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_linha.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.10<span class="period">.</span></span><span class="space"> </span>Teorema das Linhas.</figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_linhan.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.11<span class="period">.</span></span><span class="space"> </span>Teorema das Linhas.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_linha.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.10<span class="period">.</span></span><span class="space"> </span>Teorema das Linhas.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_linhan.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.11<span class="period">.</span></span><span class="space"> </span>Teorema das Linhas.</figcaption></figure></div>
 </div></div>
-<article class="theorem theorem-like" id="section-triangulo-pascal-10"><h3 class="heading">
+<article class="theorem theorem-like" id="theorem-29"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
-</h3>
-<dfn class="terminology">(Teorema das Linhas)</dfn><div class="displaymath process-math">
+</h6>
+<dfn class="terminology">(Teorema das Linhas)</dfn><div class="displaymath">
 \begin{equation*}
 C_n^0 + C_n^1 +C_n^2 + \cdots + C_n^n = 2^n.
 \end{equation*}
-</div></article><details id="section-triangulo-pascal-10-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="section-triangulo-pascal-10-3-1">Observe que</div>
-<div class="displaymath process-math">
+</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-858">Observe que</p>
+<div class="displaymath">
 \begin{equation*}
 C_n^i \text{ é número de subconjuntos com}~ i ~\text{elementos, de } \{1, 2, \ldots, n\}. 
 \end{equation*}
 </div>
-<div class="para logical" id="section-triangulo-pascal-10-3-3">
-<div class="para">Ou seja, a soma</div>
-<div class="displaymath process-math">
+<p id="p-859">Ou seja, a soma</p>
+<div class="displaymath">
 \begin{equation*}
 C_n^0 + C_n^1 +C_n^2 + \cdots + C_n^n
 \end{equation*}
 </div>
-<div class="para">conta o número de todos os subconjuntos, de um conjunto com n elementos.</div>
-</div> <div class="para logical" id="section-triangulo-pascal-10-3-4">
-<div class="para">Essa quantidade é <span class="process-math">\(2^n\text{,}\)</span> pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">conta o número de todos os subconjuntos, de um conjunto com n elementos.</p>
+<p id="p-860">Essa quantidade é \(2^n\text{,}\) pois para formar um subconjunto, deve-se decidir, para cada elemento do conjunto, se ele pertencerá ou não ao subconjunto. Há dois modos de decidir o que fazer com o primeiro elemento do conjunto, 2 modos com o segundo e assim por diante. Portanto o valor da soma de uma linha do Triângulo de Pascal é</p>
+<div class="displaymath">
 \begin{equation*}
 2^n. 
 \end{equation*}
-</div>
-</div></article></details><article class="example example-like" id="exem-soma1"><h3 class="heading">
+</div></article></div>
+<article class="example example-like" id="exem-soma1"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="exem-soma1-1">
-<div class="para">Qual o valor da soma</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-861">Qual o valor da soma</p>
+<div class="displaymath">
 \begin{equation*}
 S = \frac{1}{2}C_n^1 + \frac{1}{3}C_n^2 + \cdots + \frac{1}{n+1}C_n^n? 
 \end{equation*}
 </div>
-</div> <details id="exem-soma1-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="displaymath process-math" id="exem-soma1-2-1">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like"><div class="displaymath">
 \begin{align*}
 S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
 = \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}  \\
@@ -410,33 +242,32 @@ S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
 = \amp \frac{1}{n+1}\left( -C_{n+1}^0 - C_{n+1}^1 +\underbrace{C_{n+1}^0 + C_{n+1}^1 + \cdots+C_{n+1}^{n+1}}_{=2^{n+1}} \right)  \\
 = \amp \frac{1}{n+1}\left( 2^{n+1} - n -2 \right).  
 \end{align*}
-</div></div></details></article><article class="technology computation-like" id="section-triangulo-pascal-12"><h3 class="heading">
+</div></div></div></article><article class="technology computation-like" id="technology-43"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-triangulo-pascal-12-1">
-<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/xref/exem-soma1.html" title="Exemplo 3.1.13">Exemplo 3.1.13</a> usando o Sage. Primeiramente note que</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-soma1.html">
+</h6>
+<p id="p-862">Vamos resolver o <a class="xref" data-knowl="./knowl/exem-soma1.html" title="Exemplo 3.1.13">Exemplo 3.1.13</a> usando o Sage. Primeiramente note que</p>
+<div class="displaymath">
 \begin{equation*}
 S = \sum_{k=1}^n \frac{1}{k+1}C_n^k.
 \end{equation*}
 </div>
-<div class="para">Definimos as variáveis <span class="process-math">\(\verb|n|\)</span> e <span class="process-math">\(\verb|k|\text{,}\)</span> definimos a função <span class="process-math">\(\verb|C(n,p)=binomial(n,p)|\)</span> e usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório. No final do código do método <span class="process-math">\(\verb|sum|\)</span> foi acrescentado o comando <span class="process-math">\(\verb|.show()|\)</span> apenas para o resultado ser exibido no formato compilado pelo <span class="process-math">\(\LaTeX\text{,}\)</span> ou seja, visualmente mais elegante.</div>
-</div> <pre id="section-triangulo-pascal-12-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n, k = var('n, k')
+<p data-braille="continuation">Definimos as variáveis \(\verb|n|\) e \(\verb|k|\text{,}\) definimos a função \(\verb|C(n,p)=binomial(n,p)|\) e usamos o método \(\verb|sum|\) com a expressão do somatório. No final do código do método \(\verb|sum|\) foi acrescentado o comando \(\verb|.show()|\) apenas para o resultado ser exibido no formato compilado pelo \(\LaTeX\text{,}\) ou seja, visualmente mais elegante.</p>
+<div class="sagecell-sage" id="sage-47"><script type="text/x-sage">n, k = var('n, k')
 C(n, p) = binomial(n, p)
 sum((1/(k+1))*C(n, k), k, 1, n).show()
-</script></pre></article><div class="para" id="section-triangulo-pascal-13">A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna <span class="process-math">\(p\text{,}\)</span> do início até a linha <span class="process-math">\(p+n\)</span> é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:</div>
+</script></div></article><p id="p-863">A seguir, veremos o Teorema das Colunas, que afirma que no triângulo de Pascal, o valor da soma dos elementos da coluna \(p\text{,}\) do início até a linha \(p+n\) é igual ao elemento que está uma linha abaixo e uma coluna à direita. Veja a figura abaixo:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_coluna.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.15<span class="period">.</span></span><span class="space"> </span>Teorema das Colunas.</figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_colunan.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.16<span class="period">.</span></span><span class="space"> </span>Teorema das Colunas.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_coluna.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.15<span class="period">.</span></span><span class="space"> </span>Teorema das Colunas.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_colunan.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.16<span class="period">.</span></span><span class="space"> </span>Teorema das Colunas.</figcaption></figure></div>
 </div></div>
-<article class="theorem theorem-like" id="teo-colunas"><h3 class="heading">
+<article class="theorem theorem-like" id="teo-colunas"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span>
-</h3>
-<dfn class="terminology">(Teorema das Colunas)</dfn><div class="displaymath process-math">
+</h6>
+<dfn class="terminology">(Teorema das Colunas)</dfn><div class="displaymath">
 \begin{equation*}
 C_p^p + C_{p+1}^p + C_{p+2}^p + \cdots + C_{p+n}^p = C_{p+n+1}^{p+1}.
 \end{equation*}
-</div></article><details id="teo-colunas-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof">Vamos aplicar a relação de Stifel aos elementos da coluna <span class="process-math">\(p+1\text{:}\)</span><div class="displaymath process-math" id="teo-colunas-3-2">
+</div></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof">Vamos aplicar a relação de Stifel aos elementos da coluna \(p+1\text{:}\)<div class="displaymath">
 \begin{align*}
 C_{p+1}^{p+1} = \amp C_p^{p+1} + C_p^p  \\
 C_{p+2}^{p+1} = \amp C_{p+1}^{p+1} + C_{p+1}^p  \\
@@ -445,33 +276,33 @@ C_{p+3}^{p+1} = \amp C_{p+2}^{p+1} + C_{p+2}^p   \\
 C_{p+n}^{p+1} = \amp C_{p+n-1}^{p+1} + C_{p+n-1}^p  \\
 C_{p+n+1}^{p+1} = \amp C_{p+n}^{p+1} + C_{p+n}^p  
 \end{align*}
-</div>Somando tudo, ficamos com<div class="displaymath process-math">
+</div>Somando tudo, ficamos com<div class="displaymath">
 \begin{equation*}
 C_{p+n+1}^{p+1} = C_p^{p+1} + C_p^p + C_{p+1}^p + C_{p+2}^p +\cdots + C_{p+n-1}^p + C_{p+n}^p.
 \end{equation*}
-</div>Como <span class="process-math">\(C_p^{p+1} = 0\text{,}\)</span> obtemos o resultado:<div class="displaymath process-math">
+</div>Como \(C_p^{p+1} = 0\text{,}\) obtemos o resultado:<div class="displaymath">
 \begin{equation*}
 C_{p+n+1}^{p+1} = C_p^p + C_{p+1}^p + C_{p+2}^p +\cdots + C_{p+n-1}^p + C_{p+n}^p.
 \end{equation*}
-</div></article></details><article class="example example-like" id="exem-soma2"><h3 class="heading">
+</div></article></div>
+<article class="example example-like" id="exem-soma2"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.18</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="exem-soma2-1">
-<div class="para">Qual o valor da soma</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-864">Qual o valor da soma</p>
+<div class="displaymath">
 \begin{equation*}
 S = 10\cdot 11 + 11\cdot 12+ \cdots + 98\cdot 99? 
 \end{equation*}
 </div>
-</div> <details id="exem-soma2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="displaymath process-math" id="exem-soma2-2-1">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like">
+<div class="displaymath">
 \begin{align*}
 S = \amp \sum_{k=10}^{98} k(k+1)  \\
 = \amp \sum_{k=1}^{98} k(k+1) - \sum_{k=1}^9 k(k+1). \quad \quad\quad \quad\quad 
 \end{align*}
 </div>
-<div class="para" id="exem-soma2-2-2">Observe que <span class="process-math">\(C_{k+1}^2=\displaystyle\frac{(k+1)k(k-1)!}{2!(k-1)!}=\frac{(k+1)k}{2!}\text{,}\)</span> assim <span class="process-math">\(k(k+1)=2!C_{k+1}^2\text{.}\)</span> Portanto,</div>
-<div class="displaymath process-math" id="exem-soma2-2-3">
+<p id="p-865">Observe que \(C_{k+1}^2=\displaystyle\frac{(k+1)k(k-1)!}{2!(k-1)!}=\frac{(k+1)k}{2!}\text{,}\) assim \(k(k+1)=2!C_{k+1}^2\text{.}\) Portanto,</p>
+<div class="displaymath">
 \begin{align*}
 S  = \amp \sum_{k=1}^{98} 2!C_{k+1}^2 - \sum_{k=1}^9 2!C_{k+1}^2  \\
 = \amp 2(C_2^2 + \cdots + C_{99}^2) - 2(C_2^2 + \cdots + C_{10}^2)  \\
@@ -480,44 +311,42 @@ S  = \amp \sum_{k=1}^{98} 2!C_{k+1}^2 - \sum_{k=1}^9 2!C_{k+1}^2  \\
 = \amp 323070  
 \end{align*}
 </div>
-</div></details></article><article class="technology computation-like" id="section-triangulo-pascal-17"><h3 class="heading">
+</div></div></article><article class="technology computation-like" id="technology-44"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-triangulo-pascal-17-1">
-<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/xref/exem-soma2.html" title="Exemplo 3.1.18">Exemplo 3.1.18</a> usando o Sage. Primeiramente note que</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-soma2.html">
+</h6>
+<p id="p-866">Vamos resolver o <a class="xref" data-knowl="./knowl/exem-soma2.html" title="Exemplo 3.1.18">Exemplo 3.1.18</a> usando o Sage. Primeiramente note que</p>
+<div class="displaymath">
 \begin{equation*}
 S = \sum_{k=10}^{98} k(k+1).
 \end{equation*}
 </div>
-<div class="para">Definimos a variável <span class="process-math">\(\verb|n|\text{,}\)</span> usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório.</div>
-</div> <pre id="section-triangulo-pascal-17-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">k = var('k')
+<p data-braille="continuation">Definimos a variável \(\verb|n|\text{,}\) usamos o método \(\verb|sum|\) com a expressão do somatório.</p>
+<div class="sagecell-sage" id="sage-48"><script type="text/x-sage">k = var('k')
 sum(k*(k+1), k, 10, 98)
-</script></pre></article><article class="example example-like" id="exem-soma3"><h3 class="heading">
+</script></div></article><article class="example example-like" id="exem-soma3"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.1.20</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="exem-soma3-1">
-<div class="para">Qual o valor da soma</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-867">Qual o valor da soma</p>
+<div class="displaymath">
 \begin{equation*}
 S = 1^2\cdot2 + 2^2\cdot3+  3^2\cdot4+\cdots+n^2\cdot(n+1)? 
 \end{equation*}
 </div>
-</div> <details id="exem-soma3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">Note que<div class="displaymath process-math" id="exem-soma3-2-1">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-144" id="solution-144"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-144"><div class="solution solution-like">Note que<div class="displaymath">
 \begin{align*}
 S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
 = \amp \sum_{k=1}^{n} k^3+k^2  
 \end{align*}
-</div> Vamos reescrever o polinômio <span class="process-math">\(k^3+k^2\)</span> como um polinômio de grau <span class="process-math">\(3\)</span> que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira:<div class="displaymath process-math">
+</div>Vamos reescrever o polinômio \(k^3+k^2\) como um polinômio de grau \(3\) que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira:<div class="displaymath">
 \begin{equation*}
 k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
 \end{equation*}
-</div>Então, vamos procurar valores para <span class="process-math">\(A, B, C\)</span> e <span class="process-math">\(D\text{,}\)</span> para os quais, vale a igualdade<div class="displaymath process-math" id="exem-soma3-2-7">
+</div>Então, vamos procurar valores para \(A, B, C\) e \(D\text{,}\) para os quais, vale a igualdade<div class="displaymath">
 \begin{align*}
 k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
 = \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D,  
 \end{align*}
-</div>igualando os coeficientes, obtemos<div class="displaymath process-math">
+</div>igualando os coeficientes, obtemos<div class="displaymath">
 \begin{equation*}
 \begin{cases} 
 A = ~ 1 \\
@@ -526,7 +355,7 @@ A = ~ 1 \\
 D = ~ 0 \\
 \end{cases}
 \end{equation*}
-</div>Portanto,  <span class="process-math">\(A= 1, B = -2, C=0\)</span> e <span class="process-math">\(D=0\text{.}\)</span> Agora, podemos terminar o cálculo da soma<div class="displaymath process-math" id="exem-soma3-2-11">
+</div>Portanto,  \(A= 1, B = -2, C=0\) e \(D=0\text{.}\) Agora, podemos terminar o cálculo da soma<div class="displaymath">
 \begin{align*}
 S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
 = \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
@@ -535,57 +364,53 @@ S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
 = \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
 \end{align*}
 </div>
-</div></details></article><article class="technology computation-like" id="section-triangulo-pascal-19"><h3 class="heading">
+</div></div></article><article class="technology computation-like" id="technology-45"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.1.21</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-triangulo-pascal-19-1">
-<div class="para">Vamos resolver o <a href="" class="xref" data-knowl="./knowl/xref/exem-soma3.html" title="Exemplo 3.1.20">Exemplo 3.1.20</a> usando o Sage. Primeiramente note que</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exem-soma3.html">
+</h6>
+<p id="p-868">Vamos resolver o <a class="xref" data-knowl="./knowl/exem-soma3.html" title="Exemplo 3.1.20">Exemplo 3.1.20</a> usando o Sage. Primeiramente note que</p>
+<div class="displaymath">
 \begin{equation*}
 S = \sum_{k=1}^n k^2(k+1).
 \end{equation*}
 </div>
-<div class="para">Definimos as variáveis <span class="process-math">\(\verb|n|\)</span> e <span class="process-math">\(\verb|k|\text{,}\)</span> usamos o método <span class="process-math">\(\verb|sum|\)</span> com a expressão do somatório. No final do código do método <span class="process-math">\(\verb|sum|\)</span> foi acrescentado o comando <span class="process-math">\(\verb|.show()|\)</span> apenas para o resultado ser exibido no formato compilado pelo <span class="process-math">\(\LaTeX\text{,}\)</span> ou seja, visualmente mais elegante.</div>
-</div> <pre id="section-triangulo-pascal-19-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n, k = var('n, k')
+<p data-braille="continuation">Definimos as variáveis \(\verb|n|\) e \(\verb|k|\text{,}\) usamos o método \(\verb|sum|\) com a expressão do somatório. No final do código do método \(\verb|sum|\) foi acrescentado o comando \(\verb|.show()|\) apenas para o resultado ser exibido no formato compilado pelo \(\LaTeX\text{,}\) ou seja, visualmente mais elegante.</p>
+<div class="sagecell-sage" id="sage-49"><script type="text/x-sage">n, k = var('n, k')
 sum((k^2)*(k+1), k, 1, n).show()
-</script></pre></article><div class="para" id="section-triangulo-pascal-20">A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha <span class="process-math">\(n\text{,}\)</span> até a linha <span class="process-math">\(n+p\text{,}\)</span> é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:</div>
+</script></div></article><p id="p-869">A seguir, veremos o Teorema das Diagonais, que afirma que no triângulo de Pascal, o valor da soma dos elementos de uma diagonal, começando na coluna zero e linha \(n\text{,}\) até a linha \(n+p\text{,}\) é igual ao elemento que está uma linha abaixo. Veja a figura abaixo:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_diagonal.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.22<span class="period">.</span></span><span class="space"> </span>Teorema das Diagonais.</figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_diagonaln.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.23<span class="period">.</span></span><span class="space"> </span>Teorema das Diagonais.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-01"><img src="images/triangulopascal_diagonal.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.22<span class="period">.</span></span><span class="space"> </span>Teorema das Diagonais.</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like" id="fig-reflexao-02"><img src="images/triangulopascal_diagonaln.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.23<span class="period">.</span></span><span class="space"> </span>Teorema das Diagonais.</figcaption></figure></div>
 </div></div>
-<article class="theorem theorem-like" id="section-triangulo-pascal-22"><h3 class="heading">
+<article class="theorem theorem-like" id="theorem-31"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.24</span><span class="period">.</span>
-</h3>
-<dfn class="terminology">(Teorema das Diagonais)</dfn><div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-reolacoes-complementares.html ./knowl/xref/teo-colunas.html ./knowl/xref/teo-reolacoes-complementares.html">
+</h6>
+<dfn class="terminology">(Teorema das Diagonais)</dfn><div class="displaymath">
 \begin{equation*}
 C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = C_{n+p+1}^p
 \end{equation*}
-</div></article><details id="section-triangulo-pascal-22-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="section-triangulo-pascal-22-3-1">
-<div class="para">Aplicando o <a href="" class="xref" data-knowl="./knowl/xref/teo-reolacoes-complementares.html" title="Teorema 3.1.9">Teorema 3.1.9</a>, em cada <span class="process-math">\(C_{n+i}^i\)</span> obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/teo-reolacoes-complementares.html ./knowl/xref/teo-colunas.html ./knowl/xref/teo-reolacoes-complementares.html" id="section-triangulo-pascal-22-3-1-3">
+</div></article><article class="hiddenproof" id="proof-35"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-35"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof"><p id="p-870">Aplicando o <a class="xref" data-knowl="./knowl/teo-reolacoes-complementares.html" title="Teorema 3.1.9">Teorema 3.1.9</a>, em cada \(C_{n+i}^i\) obtemos</p>
+<div class="displaymath">
 \begin{align*}
 C_n^0 + C_{n+1}^1 + C_{n+2}^2 + \cdots + C_{n+p}^p = \amp ~ C_{n}^n+C_{n+1}^n+C_{n+2}^n+\cdots+C_{n+p}^n\\
-= \amp~C_{n+p+1}^{n+1}\quad (\text{pelo } \knowl{./knowl/xref/teo-colunas.html}{\text{Teorema 3.1.17}})\\
-= \amp~C_{n+p+1}^{p} \quad(\text{pelo } \knowl{./knowl/xref/teo-reolacoes-complementares.html}{\text{Teorema 3.1.9}}).
+= \amp~C_{n+p+1}^{n+1}\quad (\text{pelo } \knowl{./knowl/teo-colunas.html}{\text{Teorema 3.1.17}})\\
+= \amp~C_{n+p+1}^{p} \quad(\text{pelo } \knowl{./knowl/teo-reolacoes-complementares.html}{\text{Teorema 3.1.9}}).
 \end{align*}
 </div>
-<div class="para"> O que mostra o resultado.</div>
-</div></article></details><article class="theorem theorem-like" id="section-triangulo-pascal-23"><h3 class="heading">
+<p data-braille="continuation"> O que mostra o resultado.</p></article></div>
+<article class="theorem theorem-like" id="theorem-32"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.1.25</span><span class="period">.</span>
-</h3>
-<div class="displaymath process-math">
+</h6>
+<div class="displaymath">
 \begin{equation*}
 \text{a) Se } p\lt \frac{n-1}{2}, \text{ então }  C_n^p\lt C_n^{p+1}. 
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath">
 \begin{equation*}
 \text{b) Se } p&gt; \frac{n-1}{2}, \text{ então }  C_n^p&gt;C_n^{p+1}. 
 \end{equation*}
-</div></article><details id="section-triangulo-pascal-23-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="section-triangulo-pascal-23-3-1">
-<div class="para">Vamos analisar a diferença <span class="process-math">\(C_n^{p+1}-C_n^p\text{:}\)</span>
-</div>
-<div class="displaymath process-math" id="section-triangulo-pascal-23-3-1-2">
+</div></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-871">Vamos analisar a diferença \(C_n^{p+1}-C_n^p\text{:}\)</p>
+<div class="displaymath">
 \begin{align*}
 C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
 = \amp ~ \frac{n!}{(p+1) p!(n-p-1)!} - \frac{n!}{p!(n-p)(n-p-1)!}  \\
@@ -593,55 +418,58 @@ C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
 = \amp ~ \frac{n!(n-2p-1)}{(p+1)! (n-p)!}  
 \end{align*}
 </div>
-<div class="para">Oberve que <span class="process-math">\(n!, (p+1)!\)</span> e <span class="process-math">\((n-p)!\)</span> são positivos, portanto o sinal de <span class="process-math">\(C_n^{p+1}-C_n^p\text{,}\)</span> será determinado pelo sinal de</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Oberve que \(n!, (p+1)!\) e \((n-p)!\) são positivos, portanto o sinal de \(C_n^{p+1}-C_n^p\text{,}\) será determinado pelo sinal de</p>
+<div class="displaymath">
 \begin{equation*}
 n-2p-1.
 \end{equation*}
 </div>
-<div class="para">Logo,</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Logo,</p>
+<div class="displaymath">
 \begin{equation*}
 \text{Se } n-2p-1&gt;0, \text{ então } p\lt\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}&gt;0 \Rightarrow C_n^{p}\lt C_n^{p+1}. 
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath">
 \begin{equation*}
 \text{Se } n-2p-1\lt 0, \text{ então } p&gt;\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}\lt 0 \Rightarrow C_n^{p}&gt;C_n^{p+1}.   
 \end{equation*}
-</div>
-</div></article></details><section class="exercises" id="section-triangulo-pascal-24"><h3 class="heading hide-type">
-<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercícios</span>
+</div></article></div>
+<section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">3.1.1</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="section-triangulo-pascal-24-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="section-triangulo-pascal-24-2-1-1">Tem-se <span class="process-math">\(n\)</span> comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?</div>
-<div class="solutions"><details id="section-triangulo-pascal-24-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-2-2-1"><span class="process-math">\(2^n-1\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="section-triangulo-pascal-24-3-1">Calcule o valor de</div>
+<article class="exercise exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-872">Tem-se \(n\) comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-99" id="answer-99"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-99"><div class="answer solution-like"><p id="p-873">\(2^n-1\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-108"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-874">Calcule o valor de</p>
 <ol class="lower-alpha">
-<li id="section-triangulo-pascal-24-3-2-1"><div class="para" id="p-derived-section-triangulo-pascal-24-3-2-1"><span class="process-math">\(\displaystyle \sum_{k=0}^nkC_n^k.\)</span></div></li>
-<li id="section-triangulo-pascal-24-3-2-2"><div class="para" id="p-derived-section-triangulo-pascal-24-3-2-2"><span class="process-math">\(\displaystyle \sum_{k=0}^nk^2C_n^k.\)</span></div></li>
-<li id="section-triangulo-pascal-24-3-2-3"><div class="para" id="p-derived-section-triangulo-pascal-24-3-2-3"><span class="process-math">\(\displaystyle \sum_{k=0}^nk^3C_n^k.\)</span></div></li>
+<li id="li-157">\(\displaystyle \sum_{k=0}^nkC_n^k.\)</li>
+<li id="li-158">\(\displaystyle \sum_{k=0}^nk^2C_n^k.\)</li>
+<li id="li-159">\(\displaystyle \sum_{k=0}^nk^3C_n^k.\)</li>
 </ol>
-<details id="section-triangulo-pascal-24-3-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><ol class="lower-alpha">
-<li id="section-triangulo-pascal-24-3-3-1-1"><div class="para" id="p-derived-section-triangulo-pascal-24-3-3-1-1"><span class="process-math">\(n2^{n - 1}\text{.}\)</span></div></li>
-<li id="section-triangulo-pascal-24-3-3-1-2"><div class="para" id="p-derived-section-triangulo-pascal-24-3-3-1-2"><span class="process-math">\({\left(n^{2} + n\right)} 2^{n - 2}\text{.}\)</span></div></li>
-<li id="section-triangulo-pascal-24-3-3-1-3"><div class="para" id="p-derived-section-triangulo-pascal-24-3-3-1-3"><span class="process-math">\({\left(n^{3} + 3 \, n^{2}\right)} 2^{n - 3}\text{.}\)</span></div></li>
-</ol></div></details><details id="section-triangulo-pascal-24-3-4" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="lower-alpha">
-<li id="section-triangulo-pascal-24-3-4-1-1"><div class="para" id="p-derived-section-triangulo-pascal-24-3-4-1-1"><div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-1-1">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-100" id="answer-100"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-100"><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-160">\(n2^{n - 1}\text{.}\)</li>
+<li id="li-161">\({\left(n^{2} + n\right)} 2^{n - 2}\text{.}\)</li>
+<li id="li-162">\({\left(n^{3} + 3 \, n^{2}\right)} 2^{n - 3}\text{.}\)</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-145" id="solution-145"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-145"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-163"><div class="displaymath">
 \begin{align*}
 \sum_{k=1}^nkC_n^k = \amp~\sum_{k=1}^n k\cdot \frac{n!}{k(k-1)!(n-k)!}\\
 =\amp~ \sum_{k=1}^n n\cdot \frac{(n-1)!}{(k-1)!(n-k)!}\\
 =\amp~ n\sum_{k=1}^nC_{n-1}^{k-1}\\
 =\amp~ n2^{n-1}
 \end{align*}
-</div></div></li>
-<li id="section-triangulo-pascal-24-3-4-1-2"><div class="para" id="p-derived-section-triangulo-pascal-24-3-4-1-2">
-<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-2-1">
+</div></li>
+<li id="li-164">
+<div class="displaymath">
 \begin{align*}
 \sum_{k=1}^nk^2C_n^k = \amp~ \sum_{k=1}^n k^2\cdot \frac{n!}{k(k-1)!(n-k)!}\\
 =\amp~ n\sum_{k=1}^n kC_{n-1}^{k-1}. \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
 \end{align*}
-</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-2-3">
+</div>Definindo \(k=p+1\text{,}\) obtemos<div class="displaymath">
 \begin{align*}
 \sum_{k=1}^nk^2C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)C_{n-1}^p\\
 =\amp~ n \sum_{p=0}^{n-1}pC_{n-1}^p + n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}} \\
@@ -651,14 +479,14 @@ n-2p-1.
 =\amp~ {\left(n^{2} + n\right)} 2^{n - 2}.
 \end{align*}
 </div>
-</div></li>
-<li id="section-triangulo-pascal-24-3-4-1-3"><div class="para" id="p-derived-section-triangulo-pascal-24-3-4-1-3">
-<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-3-1">
+</li>
+<li id="li-165">
+<div class="displaymath">
 \begin{align*}
 \sum_{k=1}^n k^3C_n^k =\amp~ \sum_{k=1}^nk^2k\cdot \frac{n!}{k(k-1)!(n-k)!} \\
 =\amp~ n\sum_{k=1}^n k^2C_{n-1}^{k-1}.\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
 \end{align*}
-</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math" id="section-triangulo-pascal-24-3-4-1-3-3">
+</div>Definindo \(k=p+1\text{,}\) obtemos<div class="displaymath">
 \begin{align*}
 \sum_{k=1}^nk^3C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)^2C_{n-1}^{k-1}\\
 =\amp~ n\sum_{p=0}^{n-1}(p^2+2p+1)C_{n-1}^p\\
@@ -666,42 +494,41 @@ n-2p-1.
 =\amp~(n^3+3n^2)2^{n-3}.
 \end{align*}
 </div>
-</div></li>
-</ol></div></details></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-4-1-1">
-<div class="para">Calcule o valor da soma</div>
-<div class="displaymath process-math">
+</li>
+</ol></div></div></article><article class="exercise exercise-like" id="exercise-109"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-875">Calcule o valor da soma</p>
+<div class="displaymath">
 \begin{equation*}
 S = 20\cdot21 + 21\cdot 22 +\cdots + 130\cdot 131.
 \end{equation*}
 </div>
-</div>
-<div class="solutions"><details id="section-triangulo-pascal-24-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-4-2-1">746660</div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-5-1-1">
-<div class="para">Calcule o valor de</div>
-<div class="displaymath process-math">
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-101" id="answer-101"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-101"><div class="answer solution-like"><p id="p-876">746660</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-110"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-877">Calcule o valor de</p>
+<div class="displaymath">
 \begin{equation*}
 S = \sum_{k=1}^{n}k(3k+1).
 \end{equation*}
 </div>
-</div>
-<div class="solutions"><details id="section-triangulo-pascal-24-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-5-2-1"><span class="process-math">\(n^{3} + 2 \, n^{2} + n\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-6-1">
-<div class="para">Calcule o valor de</div>
-<div class="displaymath process-math">
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-102" id="answer-102"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-102"><div class="answer solution-like"><p id="p-878">\(n^{3} + 2 \, n^{2} + n\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-111"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-879">Calcule o valor de</p>
+<div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^p kC_{n+k}^{k+1}.
 \end{equation*}
 </div>
-</div>
-<details id="section-triangulo-pascal-24-6-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><span class="process-math">\(\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1\)</span></div></details><details id="section-triangulo-pascal-24-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-1">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-103" id="answer-103"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-103"><div class="answer solution-like">\(\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1\)</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-146" id="solution-146"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-146"><div class="solution solution-like">
+<div class="displaymath">
 \begin{gather*}
 \sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
 \end{gather*}
 </div>
-<div class="para" id="section-triangulo-pascal-24-6-3-2">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
-<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-3">
+<p id="p-880">Vamos calcular \(S_1\) e \(S_2\) separadamente.</p>
+<div class="displaymath">
 \begin{align*}
 S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
 =\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
@@ -711,40 +538,31 @@ S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
 =\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
 \end{align*}
 </div>
-<div class="para logical" id="section-triangulo-pascal-24-6-3-4">
-<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
-</div>
-<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-4-3">
+<p id="p-881">Para usar o Teorema das Diagonais no cálculo de \(S_2\text{,}\) precisamos somar e subtrair \(C_{n-1}^0\text{.}\)</p>
+<div class="displaymath">
 \begin{align*}
 S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
 =\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
 =\amp~ C_{n+p+1}^{p+1}-1.
 \end{align*}
 </div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math" id="section-triangulo-pascal-24-6-3-4-4">
+<p data-braille="continuation">Portanto,</p>
+<div class="displaymath">
 \begin{align*}
 \sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
 =\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
 \end{align*}
 </div>
-</div>
-</div></details></article><article class="exercise exercise-like" id="section-triangulo-pascal-24-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="section-triangulo-pascal-24-7-1-1">
-<div class="para">Calcule</div>
-<div class="displaymath process-math">
+</div></div></article><article class="exercise exercise-like" id="exercise-112"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-882">Calcule</p>
+<div class="displaymath">
 \begin{equation*}
 CR_n^0 + CR_n^1+\cdots+ CR_n^p.
 \end{equation*}
 </div>
-</div>
-<div class="solutions"><details id="section-triangulo-pascal-24-7-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-triangulo-pascal-24-7-2-1"><span class="process-math">\(C_{n+p}^p\)</span></div></div></details></div></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="binomiais.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-binomio-newton.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
-</div></main>
-</div>
-<div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-104" id="answer-104"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-104"><div class="answer solution-like"><p id="p-883">\(C_{n+p}^p\)</p></div></div>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

@@ -1,143 +1,71 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:40-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="pt-BR" dir="ltr">
-<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<html lang="pt-BR">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UFRPE-DM Binômio de Newton</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Análise Combinatória e Probabilidade">
-<meta property="book:author" content="Ricardo Machado">
-<meta property="book:author" content="Gabriel Guedes">
-<meta property="book:author" content="Luiz Manoel">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "extpfeil",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math",
-    "renderActions": {
-      "findScript": [
-        10,
-        function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        },
-        ""
-      ]
-    }
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/extpfeil",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "https://pretextbook.org/js/lib"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "linkKey": "linked-sage",
-  "autoeval": false,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Executar (Sage)"
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
-<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
-</div>
-<h2 class="search-results-heading">Buscando por: </h2>
-<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
-</div>
-</div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="section-triangulo-pascal.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="binomiais.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="section-polinomio-leibniz.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
 \newcommand{\notsubset}{\not\subset}
 \newcommand{\lcm}{\operatorname{lcm}}
@@ -151,567 +79,428 @@ sagecell.makeSagecell({
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\definecolor{fillinmathshade}{gray}{0.9}
-\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
-\)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter">
-<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Nunes Machado Junior</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-gabriel-guedes.html" class="internal"><span class="title">Sobre Gabriel Araújo Guedes</span></a></div></li>
-<li class="toc-item toc-biography"><div class="toc-title-box"><a href="prof-luiz-manoel.html" class="internal"><span class="title">Sobre Luiz Manoel de Santana Neto</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Análise Combinatória e Probabilidade:</span> <span class="subtitle">Com Aplicações no SageMath</span></a></h1>
+<p class="byline">Ricardo Machado, Gabriel Guedes, Luiz Manoel</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-triangulo-pascal.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-polinomio-leibniz.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-triangulo-pascal.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="binomiais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-polinomio-leibniz.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="prof-gabriel-guedes.html" data-scroll="prof-gabriel-guedes">Sobre Gabriel Araújo Guedes</a></li>
+<li><a href="prof-luiz-manoel.html" data-scroll="prof-luiz-manoel">Sobre Luiz Manoel de Santana Neto</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="pcontagem.html" class="internal"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pcontagem-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Conjuntos</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-note-on-proofs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Princípios Combinatórios</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-2" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Princípio Aditivo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-3" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Princípio Multiplicativo</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-4" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Princípio da Bijeção</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-note-on-proofs.html#section-note-on-proofs-5" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="pcontagem.html" data-scroll="pcontagem"><span class="codenumber">1</span> <span class="title">Princípios de Contagem</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Conjuntos</a></li>
+<li><a href="section-note-on-proofs.html" data-scroll="section-note-on-proofs">Princípios Combinatórios</a></li>
+<li><a href="section-permutacoes-simples.html" data-scroll="section-permutacoes-simples">Permutações Simples</a></li>
+<li><a href="section-combinacoes-simples.html" data-scroll="section-combinacoes-simples">Combinações Simples</a></li>
+<li><a href="section-permutacoes-circulares.html" data-scroll="section-permutacoes-circulares">Permutações Circulares</a></li>
+<li><a href="section-permutacoes-com-repeticoes.html" data-scroll="section-permutacoes-com-repeticoes">Permutações com Repetições</a></li>
+<li><a href="section-combinacoes-completas.html" data-scroll="section-combinacoes-completas">Combinações Completas</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-simples.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Permutações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-simples.html#section-permutacoes-simples-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="ocontagem.html" data-scroll="ocontagem"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a><ul>
+<li><a href="section-inclusao-exclusao.html" data-scroll="section-inclusao-exclusao">Princípio da Inclusão-Exclusão</a></li>
+<li><a href="section-permutacao-caotica.html" data-scroll="section-permutacao-caotica">Permutações Caóticas</a></li>
+<li><a href="section-permutacao-caotica-repeticoes.html" data-scroll="section-permutacao-caotica-repeticoes">Permutações Caóticas com Repetições</a></li>
+<li><a href="section-lemas-kaplansky.html" data-scroll="section-lemas-kaplansky">Os Lemas de Kaplansky</a></li>
+<li><a href="section-casa-pombos.html" data-scroll="section-casa-pombos">Princípio da Casa dos Pombos</a></li>
+<li><a href="section-13.html" data-scroll="section-13">O Princípio da Reflexão</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-simples.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Combinações Simples</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-2" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-3" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Combinações Simples</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-simples.html#section-combinacoes-simples-4" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Exercícios</span></a></div></li>
+<li class="link">
+<a href="binomiais.html" data-scroll="binomiais"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a><ul>
+<li><a href="section-triangulo-pascal.html" data-scroll="section-triangulo-pascal">Triângulo de Pascal</a></li>
+<li><a href="section-binomio-newton.html" data-scroll="section-binomio-newton" class="active">Binômio de Newton</a></li>
+<li><a href="section-polinomio-leibniz.html" data-scroll="section-polinomio-leibniz">Polinômio de Leibniz</a></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-circulares.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Permutações Circulares</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-circulares.html#section-permutacoes-circulares-9" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Permutações com Repetições</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacoes-com-repeticoes.html#section-permutacoes-com-repeticoes-11" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-combinacoes-completas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Combinações Completas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-combinacoes-completas.html#section-combinacoes-completas-12" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="probabilidade.html" data-scroll="probabilidade"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a><ul>
+<li><a href="section-espacos-probabilidade.html" data-scroll="section-espacos-probabilidade">Espaços de Probabilidade</a></li>
+<li><a href="section-probabilidade-condicional.html" data-scroll="section-probabilidade-condicional">Probabilidade Condicional</a></li>
+<li><a href="section-distribuicao-binomial.html" data-scroll="section-distribuicao-binomial">Distribuição Binomial</a></li>
+<li><a href="section-espaco-infinito.html" data-scroll="section-espaco-infinito">Espaço Amostral Infinito</a></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ocontagem.html" class="internal"><span class="codenumber">2</span> <span class="title">Outros Métodos de Contagem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-inclusao-exclusao.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Princípio da Inclusão-Exclusão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-2" class="internal"><span class="codenumber">2.1.1</span> <span class="title">O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-3" class="internal"><span class="codenumber">2.1.2</span> <span class="title">O Princípio da Inclusão-Exclusão para <span class="process-math">\(n\)</span> conjuntos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-4" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Outros Casos do Princípio da Inclusão-Exclusão</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-inclusao-exclusao.html#section-inclusao-exclusao-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Permutações Caóticas</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Exemplos introdutórios</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Permutações Caóticas</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-5" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Outras formas de calcular <span class="process-math">\(D_n\)</span></span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica.html#section-permutacao-caotica-6" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Permutações Caóticas com Repetições</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Teorema das Permutações Caóticas com Repetições</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-permutacao-caotica-repeticoes.html#section-permutacao-caotica-repeticoes-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-lemas-kaplansky.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Os Lemas de Kaplansky</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">O 1º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">O 2º Lema de Kaplansky</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-5" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Generalizações dos Lemas de Kaplansky</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-lemas-kaplansky.html#section-lemas-kaplansky-6" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-casa-pombos.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Princípio da Casa dos Pombos</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Nota Histórica</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">1ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">2ª versão do Princípio da Casa dos Pombos</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-casa-pombos.html#section-casa-pombos-5" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="ocontagem-8.html" class="internal"><span class="codenumber">2.6</span> <span class="title">O Princípio da Reflexão</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-2" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Passeios Sobre o Reticulado</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-3" class="internal"><span class="codenumber">2.6.2</span> <span class="title">O Princípio da Reflexão</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-4" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Números de Catalan</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ocontagem-8.html#ocontagem-8-5" class="internal"><span class="codenumber">2.6.4</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="binomiais.html" class="internal"><span class="codenumber">3</span> <span class="title">Números Binomiais</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-triangulo-pascal.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Triângulo de Pascal</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-triangulo-pascal.html#section-triangulo-pascal-24" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="section-binomio-newton.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-binomio-newton.html#section-binomio-newton-11" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-polinomio-leibniz.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Polinômio de Leibniz</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-polinomio-leibniz.html#section-polinomio-leibniz-5" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="probabilidade.html" class="internal"><span class="codenumber">4</span> <span class="title">Probabilidade</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-espacos-probabilidade.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Espaços de Probabilidade</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-espacos-probabilidade.html#section-espacos-probabilidade-15" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-probabilidade-condicional.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Probabilidade Condicional</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-14" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Eventos Independentes</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-probabilidade-condicional.html#section-probabilidade-condicional-15" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-distribuicao-binomial.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Distribuição Binomial</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Distribuição Binomial</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Variáveis Aleatórias: Geométrica e Binomial Negativa</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-distribuicao-binomial.html#section-distribuicao-binomial-4" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercícios</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="section-espaco-infinito.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Espaço Amostral Infinito</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="calculadora.html" class="internal"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></div></li>
-<li class="toc-item toc-references"><div class="toc-title-box"><a href="referencias.html" class="internal"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></div></li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-binomio-newton"><h2 class="heading hide-type">
-<span class="type">Seção</span><span class="space"> </span><span class="codenumber">3.2</span><span class="space"> </span><span class="title">Binômio de Newton</span>
+<li class="link"><a href="calculadora.html" data-scroll="calculadora"><span class="codenumber">5</span> <span class="title">Calculadora</span></a></li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">6</span> <span class="title">Referências Bibliográficas</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-binomio-newton"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3.2</span> <span class="title">Binômio de Newton</span>
 </h2>
-<article class="theorem theorem-like" id="teo-binomio-newton"><h3 class="heading">
+<article class="theorem theorem-like" id="teo-binomio-newton"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="teo-binomio-newton-1">
-<div class="para">Se <span class="process-math">\(x\)</span> e <span class="process-math">\(a\)</span> são número reais e <span class="process-math">\(n\)</span> é um inteiro positivo,</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-884">Se \(x\) e \(a\) são número reais e \(n\) é um inteiro positivo,</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n  = \sum_{k=0}^n C_n^k x^ka^{n-k}.
 \end{equation*}
-</div>
-</div></article><details id="teo-binomio-newton-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="teo-binomio-newton-2-1">
-<div class="para">Observe que</div>
-<div class="displaymath process-math">
+</div></article><article class="hiddenproof" id="proof-37"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><p id="p-885">Observe que</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n  = \overbrace{(x+a)(x+a)\cdots(x+a)}^{n \text{ parcelas}}.
 \end{equation*}
 </div>
-<div class="para">Cada termo, do desenvolvimento, é obtido escolhendo-se em cada parênteses um, <span class="process-math">\(x\)</span> ou um <span class="process-math">\(a\)</span> e multiplicando-se os escolhidos.</div>
-</div> <div class="para logical" id="teo-binomio-newton-2-2">
-<div class="para">Para cada valor de <span class="process-math">\(k, 0\leq k \leq n\text{,}\)</span> se escolhermos <span class="process-math">\(x\)</span> em <span class="process-math">\(k\)</span> dos parênteses, <span class="process-math">\(a\)</span> será escolhido em <span class="process-math">\(n-k\)</span> dos parênteses e o produto será igual a <span class="process-math">\(x^ka^{n-k}\text{.}\)</span> Isto pode ser feito de <span class="process-math">\(C_n^k\)</span> modos. Então <span class="process-math">\((x+a)^n\)</span> é uma soma na qual, para cada <span class="process-math">\(k\in\{0, 1, \ldots, n\}\text{,}\)</span> existem <span class="process-math">\(C_n^k\)</span> parcelas iguais a <span class="process-math">\(x^ka^{n-k}\text{.}\)</span> Portanto</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Cada termo, do desenvolvimento, é obtido escolhendo-se em cada parênteses um, \(x\) ou um \(a\) e multiplicando-se os escolhidos.</p>
+<p id="p-886">Para cada valor de \(k, 0\leq k \leq n\text{,}\) se escolhermos \(x\) em \(k\) dos parênteses, \(a\) será escolhido em \(n-k\) dos parênteses e o produto será igual a \(x^ka^{n-k}\text{.}\) Isto pode ser feito de \(C_n^k\) modos. Então \((x+a)^n\) é uma soma na qual, para cada \(k\in\{0, 1, \ldots, n\}\text{,}\) existem \(C_n^k\) parcelas iguais a \(x^ka^{n-k}\text{.}\) Portanto</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n  = \sum_{k=0}^n C_n^k x^ka^{n-k}.
 \end{equation*}
-</div>
-</div></article></details><article class="remark remark-like" id="section-binomio-newton-3"><h3 class="heading">
-<span class="type">Nota</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
-</h3>
-<div class="para" id="section-binomio-newton-3-1">Destacamos o termo geral e o fato de que o desenvolvimento do Binômio de Newton pode ser desenvolvido na ordem inversa:</div> <div class="para logical" id="section-binomio-newton-3-2">
-<div class="para">1)</div>
-<div class="displaymath process-math">
+</div></article></div>
+<article class="remark remark-like" id="remark-9"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-887">Destacamos o termo geral e o fato de que o desenvolvimento do Binômio de Newton pode ser desenvolvido na ordem inversa:</p>
+<p id="p-888">1)</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n   = \underbrace{C_n^0x^0a^{n-0}}_{\text{1º termo: } T_1} + \underbrace{C_n^1x^1a^{n-1}}_{\text{2º termo: } T_2} + \underbrace{C_n^2x^2a^{n-2}}_{\text{3º termo: } T_3} + \cdots + \underbrace{C_n^nx^na^{n-n}}_{\text{(n+1)º termo: } T_{n+1}}.
 \end{equation*}
 </div>
-<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo <span class="process-math">\((k=1, \ldots, n+1)\)</span> do desenvolvimento é dado por:</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">O \(k\)-ésimo termo \((k=1, \ldots, n+1)\) do desenvolvimento é dado por:</p>
+<div class="displaymath">
 \begin{equation*}
 T_{k} = C_n^{k-1}x^{k-1}a^{n-k+1}. 
 \end{equation*}
 </div>
-<div class="para">2) Observe também que:</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">2) Observe também que:</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n = (a+x)^n.
 \end{equation*}
 </div>
-<div class="para">Portanto</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Portanto</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n = (a+x)^n =  C_n^0a^0x^n+C_n^1a^1x^{n-1}+ C_n^2a^2x^{n-2}+\cdots + C_n^na^nx^0.
 \end{equation*}
-</div>
-</div></article><article class="example example-like" id="section-binomio-newton-4"><h3 class="heading">
+</div></article><article class="example example-like" id="example-58"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-binomio-newton-4-1">
-<div class="para">Considere o binômio de Newton</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-889">Considere o binômio de Newton</p>
+<div class="displaymath">
 \begin{equation*}
 \left(x^4-\frac{1}{x^2}\right)^{11}.
 \end{equation*}
 </div>
-<div class="para">Determine os coeficientes de</div>
+<p data-braille="continuation">Determine os coeficientes de</p>
 <ol class="lower-alpha">
-<li id="section-binomio-newton-4-1-2-1"><div class="para" id="p-derived-section-binomio-newton-4-1-2-1">
-<span class="process-math">\(x^2\)</span> no desenvolvimento do binômio;</div></li>
-<li id="section-binomio-newton-4-1-2-2"><div class="para" id="p-derived-section-binomio-newton-4-1-2-2">
-<span class="process-math">\(x^5\)</span> no desenvolvimento do binômio;</div></li>
-<li id="section-binomio-newton-4-1-2-3"><div class="para" id="p-derived-section-binomio-newton-4-1-2-3">
-<span class="process-math">\(x^8\)</span> no desenvolvimento do binômio.</div></li>
+<li id="li-166">\(x^2\) no desenvolvimento do binômio;</li>
+<li id="li-167">\(x^5\) no desenvolvimento do binômio;</li>
+<li id="li-168">\(x^8\) no desenvolvimento do binômio.</li>
 </ol>
-</div> <details id="section-binomio-newton-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="section-binomio-newton-4-2-1">
-<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo do desenvolvimento é</div>
-<div class="displaymath process-math" id="section-binomio-newton-4-2-1-2">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like">
+<p id="p-890">O \(k\)-ésimo termo do desenvolvimento é</p>
+<div class="displaymath">
 \begin{align*}
 T_k = \amp ~ C_{11}^{k-1}(x^4)^{k-1}\left(-\frac{1}{x^2}\right)^{11-k+1}  \\
 = \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{4(k-1)}x^{-2(12-k)}  \\
 = \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{6k-28}  
 \end{align*}
 </div>
-</div> <div class="para logical" id="section-binomio-newton-4-2-2">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Para que <span class="process-math">\(6k-28 = 2\text{,}\)</span> temos <span class="process-math">\(k=5\text{,}\)</span> logo estamos procurando o 5º termo:</div>
-<div class="displaymath process-math">
+<p id="p-891"><dfn class="terminology">item a)</dfn> Para que \(6k-28 = 2\text{,}\) temos \(k=5\text{,}\) logo estamos procurando o 5º termo:</p>
+<div class="displaymath">
 \begin{equation*}
 T_5 = (-1)^{7}C_{11}^4x^2.
 \end{equation*}
 </div>
-<div class="para">E portanto o coeficiente é <span class="process-math">\((-1)^{7}C_{11}^4 = -330\text{.}\)</span>
-</div>
-</div> <div class="para" id="section-binomio-newton-4-2-3">
-<dfn class="terminology">item b)</dfn> <span class="process-math">\(6k-28 = 5\)</span> não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de <span class="process-math">\(x^5\)</span> é zero.</div> <div class="para logical" id="section-binomio-newton-4-2-4">
-<div class="para">
-<dfn class="terminology">item c)</dfn> Para que <span class="process-math">\(6k-28 = 8\text{,}\)</span> temos <span class="process-math">\(k=6\text{,}\)</span> logo estamos procurando o 6º termo:</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">E portanto o coeficiente é \((-1)^{7}C_{11}^4 = -330\text{.}\)</p>
+<p id="p-892"><dfn class="terminology">item b)</dfn> \(6k-28 = 5\) não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de \(x^5\) é zero.</p>
+<p id="p-893"><dfn class="terminology">item c)</dfn> Para que \(6k-28 = 8\text{,}\) temos \(k=6\text{,}\) logo estamos procurando o 6º termo:</p>
+<div class="displaymath">
 \begin{equation*}
 T_6 = (-1)^{6}C_{11}^5x^8.
 \end{equation*}
 </div>
-<div class="para">E portanto, o coeficiente é <span class="process-math">\((-1)^{6}C_{11}^5 = 462\text{.}\)</span>
-</div>
-</div>
-</div></details></article><article class="technology computation-like" id="section-binomio-newton-5"><h3 class="heading">
+<p data-braille="continuation">E portanto, o coeficiente é \((-1)^{6}C_{11}^5 = 462\text{.}\)</p>
+</div></div></article><article class="technology computation-like" id="technology-46"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
-</h3>
-<div class="para" id="section-binomio-newton-5-1">No Sage, podemos obter a expanção do polinômio da seguinte forma:</div> <pre id="section-binomio-newton-5-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">((x^4 - 1/x^2)^11).expand()
-</script></pre> <div class="para" id="section-binomio-newton-5-3">Os coeficientes do polinômio, podem ser obtidos da seguinte forma:</div> <pre id="section-binomio-newton-5-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">((x^4 - 1/x^2)^11).coefficients()
-</script></pre></article><article class="example example-like" id="section-binomio-newton-6"><h3 class="heading">
+</h6>
+<p id="p-894">No Sage, podemos obter a expanção do polinômio da seguinte forma:</p>
+<div class="sagecell-sage" id="sage-50"><script type="text/x-sage">((x^4 - 1/x^2)^11).expand()
+</script></div>
+<p id="p-895">Os coeficientes do polinômio, podem ser obtidos da seguinte forma:</p>
+<div class="sagecell-sage" id="sage-51"><script type="text/x-sage">((x^4 - 1/x^2)^11).coefficients()
+</script></div></article><article class="example example-like" id="example-59"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-binomio-newton-6-1">
-<div class="para">Determine o termo máximo do desenvolvimento de</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-896">Determine o termo máximo do desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 \left(1 + \frac{1}{4}\right)^{5}.
 \end{equation*}
 </div>
-</div> <details id="section-binomio-newton-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-binomio-newton-6-2-1">
-<div class="para">Como</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like">
+<p id="p-897">Como</p>
+<div class="displaymath">
 \begin{equation*}
 \left(1 + \frac{1}{4}\right)^{5} = \frac{1}{1024} + \frac{5}{256} + \frac{5}{32} + \frac{5}{8} + \frac{5}{4}+ 1.
 \end{equation*}
 </div>
-<div class="para">O termo máximo é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">O termo máximo é</p>
+<div class="displaymath">
 \begin{equation*}
 \frac{5}{4}.
 \end{equation*}
 </div>
-</div></div></details></article><article class="example example-like" id="exem-binomio1"><h3 class="heading">
+</div></div></article><article class="example example-like" id="exem-binomio1"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="exem-binomio1-1">
-<div class="para">Determine o termo máximo do desenvolvimento de</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-898">Determine o termo máximo do desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 \left(1 + \frac{1}{4}\right)^{70}.
 \end{equation*}
 </div>
-</div> <details id="exem-binomio1-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="exem-binomio1-2-1">
-<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo é</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-149" id="solution-149"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like">
+<p id="p-899">O \(k\)-ésimo termo é</p>
+<div class="displaymath">
 \begin{equation*}
 T_{k} = C_{70}^{k-1}1^{k-1}\left(\frac{1}{4}\right)^{71-k} = C_{70}^{k-1}\cdot\frac{1}{4^{71-k}}\text{.}
 \end{equation*}
 </div>
-<div class="para">
-<span class="process-math">\(T_{k+1}&gt; T_{k}\)</span> se</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">\(T_{k+1}&gt; T_{k}\) se</p>
+<div class="displaymath">
 \begin{equation*}
 C_{70}^{k}\cdot\frac{1}{4^{70-k}} &gt; C_{70}^{k-1}\cdot\frac{1}{4^{71-k}} 
 \end{equation*}
 </div>
-<div class="para">Isto é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Isto é</p>
+<div class="displaymath">
 \begin{equation*}
 \frac{70!}{k!(70-k)!}\cdot\frac{1}{4^{70-k}} &gt; \frac{70!}{(k-1)!(71-k)!}\cdot\frac{1}{4^{71-k}}, 
 \end{equation*}
 </div>
-<div class="para">ou seja,</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">ou seja,</p>
+<div class="displaymath">
 \begin{equation*}
 \frac{(71-k)!}{(70-k)!} &gt; \frac{k!}{(k-1)!}\cdot\frac{4^{70-k}}{4^{71-k}}, 
 \end{equation*}
 </div>
-<div class="para">e simplificando temos</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">e simplificando temos</p>
+<div class="displaymath">
 \begin{equation*}
 \frac{(71-k)}{1} &gt; \frac{k}{1}\cdot\frac{1}{4}. 
 \end{equation*}
 </div>
-<div class="para">Portanto, <span class="process-math">\(71-k &gt; k/4 \text{,}\)</span> logo <span class="process-math">\(k\lt 56, 8\text{.}\)</span>
-</div>
-</div> <div class="para logical" id="exem-binomio1-2-2">
-<div class="para">Assim, temos  <span class="process-math">\(T_{k} \lt  T_{k+1}\)</span> para <span class="process-math">\(k = 1, 2, \ldots, 56\)</span> e portanto o maior termo é:</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Portanto, \(71-k &gt; k/4 \text{,}\) logo \(k\lt 56, 8\text{.}\)</p>
+<p id="p-900">Assim, temos  \(T_{k} \lt  T_{k+1}\) para \(k = 1, 2, \ldots, 56\) e portanto o maior termo é:</p>
+<div class="displaymath">
 \begin{equation*}
 T_{57} = C_{70}^{56}\cdot\frac{1}{4^{14}} = \frac{24156719613645}{33554432}.
 \end{equation*}
 </div>
-</div>
-</div></details></article><article class="technology computation-like" id="section-binomio-newton-8"><h3 class="heading">
+</div></div></article><article class="technology computation-like" id="technology-47"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-binomio-newton-8-1">
-<div class="para">O termo máximo do desenvolvimento de</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-901">O termo máximo do desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 \left(1 + \frac{1}{4}\right)^{70}.
 \end{equation*}
 </div>
-<div class="para">Troque os valores de <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(a\)</span> e <span class="process-math">\(n\text{,}\)</span> para obter o termo máximo e o termo mínimo do desenvolvimento de</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Troque os valores de \(x\text{,}\) \(a\) e \(n\text{,}\) para obter o termo máximo e o termo mínimo do desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 (x+a)^n.
 \end{equation*}
 </div>
-</div> <figure class="figure figure-like" id="interactive-binomio"><iframe id="interactive-binomio" width="600" height="720" src="interactive-binomio-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.2.8<span class="period">.</span></span><span class="space"> </span>Os termos máximo e mínimo.</figcaption></figure></article><article class="example example-like" id="section-binomio-newton-9"><h3 class="heading">
+<figure class="figure figure-like" id="interactive-binomio"><iframe id="interactive-binomio" width="600" height="720" src="interactive-binomio-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.2.8<span class="period">.</span></span><span class="space"> </span>Os termos máximo e mínimo.</figcaption></figure></article><article class="example example-like" id="example-61"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.2.9</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-binomio-newton-9-1">
-<div class="para">Qual é a soma dos coeficientes do desenvolvimento de</div>
-<div class="displaymath process-math">
+</h6>
+<p id="p-902">Qual é a soma dos coeficientes do desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 (5x^{11} - 6x^{4})^{25}. 
 \end{equation*}
 </div>
-</div> <details id="section-binomio-newton-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-binomio-newton-9-2-1">
-<div class="para">Seja <span class="process-math">\(p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n\text{,}\)</span> a soma dos coeficientes de <span class="process-math">\(p(x)\)</span> é igual a</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-150" id="solution-150"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like">
+<p id="p-903">Seja \(p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n\text{,}\) a soma dos coeficientes de \(p(x)\) é igual a</p>
+<div class="displaymath">
 \begin{equation*}
 p(1) = a_0 + a_1(1) + a_2(1)^2 + \cdots + a_n(1)^n.
 \end{equation*}
 </div>
-<div class="para">Portanto, a soma dos coeficientes do desenvolvimento de <span class="process-math">\(q(x) = (5x^{11} - 6x^{4})^{25}\)</span> é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Portanto, a soma dos coeficientes do desenvolvimento de \(q(x) = (5x^{11} - 6x^{4})^{25}\) é</p>
+<div class="displaymath">
 \begin{equation*}
 q(1) = (5 - 6)^{25} = -1.
 \end{equation*}
 </div>
-</div></div></details></article><article class="theorem theorem-like" id="section-binomio-newton-10"><h3 class="heading">
+</div></div></article><article class="theorem theorem-like" id="theorem-34"><h6 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="section-binomio-newton-10-1"><div class="displaymath process-math">
+</h6>
+<div class="displaymath" id="p-904">
 \begin{equation*}
 T_{k+1} = \frac{n-k+1}{k}\cdot\frac{x}{a}\cdot T_k
 \end{equation*}
-</div></div></article><details id="section-binomio-newton-10-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="section-binomio-newton-10-2-1">
-<div class="displaymath process-math">
+</div></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="displaymath" id="p-905">
 \begin{equation*}
 T_{k+1} = C_n^kx^ka^{n-k} = \frac{n-k+1}{k}C_n^{k-1}x^ka^{n-k} 
 \end{equation*}
 </div>
-<div class="para">e</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">e</p>
+<div class="displaymath">
 \begin{equation*}
 T_{k} = C_n^{k-1}x^{k-1}a^{n-k+1}. 
 \end{equation*}
 </div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Portanto,</p>
+<div class="displaymath">
 \begin{equation*}
 T_{k+1} = \frac{n-k+1}{k}\cdot\frac{x}{a}\cdot T_k.
 \end{equation*}
-</div>
-</div></article></details><section class="exercises" id="section-binomio-newton-11"><h3 class="heading hide-type">
-<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercícios</span>
+</div></article></div>
+<section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">3.2.1</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="section-binomio-newton-11-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="section-binomio-newton-11-2-1-1">
-<div class="para">Determine o coeficiente de <span class="process-math">\(x^5\)</span> no desenvolvimento de</div>
-<div class="displaymath process-math">
+<article class="exercise exercise-like" id="exercise-113"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-906">Determine o coeficiente de \(x^5\) no desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 \left( x^3 - \frac{1}{x^2} \right)^{15}.
 \end{equation*}
 </div>
-</div>
-<div class="solutions"><details id="section-binomio-newton-11-2-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-binomio-newton-11-2-2-1">6435</div></div></details></div></article><article class="exercise exercise-like" id="section-binomio-newton-11-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para logical" id="section-binomio-newton-11-3-1-1">
-<div class="para">Determine o coeficiente de <span class="process-math">\(x^{50}\)</span> no desenvolvimento de</div>
-<div class="displaymath process-math">
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-105" id="answer-105"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-105"><div class="answer solution-like"><p id="p-907">6435</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-114"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-908">Determine o coeficiente de \(x^{50}\) no desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 (x^2+3)^{10}(x^3-3)^{11}.
 \end{equation*}
 </div>
-</div>
 <div class="solutions">
-<details id="section-binomio-newton-11-3-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-binomio-newton-11-3-2-1">-33</div></div></details><details id="section-binomio-newton-11-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="section-binomio-newton-11-3-3-1">
-<div class="para">O termo geral é dado por</div>
-<div class="displaymath process-math" id="section-binomio-newton-11-3-3-1-1">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-106" id="answer-106"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-106"><div class="answer solution-like"><p id="p-909">-33</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-151" id="solution-151"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like">
+<p id="p-910">O termo geral é dado por</p>
+<div class="displaymath">
 \begin{align*}
 T(p,q)=\amp~C_{10}^p\cdot(x^2)^{10-p}\cdot3^p\cdot C_{11}^q\cdot(x^3)^{11-q}\cdot(-3)^q\\
 =\amp~C_{10}^p\cdot C_{11}^q\cdot x^{53-2p-3q}\cdot 3^p\cdot (-3)^q.
 \end{align*}
 </div>
-<div class="para">Portanto, queremos encontrar valores de <span class="process-math">\(p\)</span> e <span class="process-math">\(q\text{,}\)</span> tais que <span class="process-math">\(53-2p-3q = 50\text{,}\)</span> ou seja, <span class="process-math">\(2p+3q=3\text{,}\)</span> logo <span class="process-math">\(p=0\)</span> e <span class="process-math">\(q=1\text{.}\)</span> Então, precisamos obter o coeficiente de <span class="process-math">\(x^{50}\)</span> de <span class="process-math">\(T(0,1)\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Portanto, queremos encontrar valores de \(p\) e \(q\text{,}\) tais que \(53-2p-3q = 50\text{,}\) ou seja, \(2p+3q=3\text{,}\) logo \(p=0\) e \(q=1\text{.}\) Então, precisamos obter o coeficiente de \(x^{50}\) de \(T(0,1)\text{:}\)</p>
+<div class="displaymath">
 \begin{equation*}
 T(0,1)=C_{10}^0\cdot C_{11}^1\cdot x^{50}\cdot (3)^0\cdot(-3)^1 = -33\cdot x^{50}.
 \end{equation*}
 </div>
-</div></div></details>
-</div></article><article class="exercise exercise-like" id="section-binomio-newton-11-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para logical" id="section-binomio-newton-11-4-1-1">
-<div class="para">Calcule o termo máximo do desenvolvimento de</div>
-<div class="displaymath process-math">
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-115"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-911">Calcule o termo máximo do desenvolvimento de</p>
+<div class="displaymath">
 \begin{equation*}
 \left(1+\frac{1}{5}\right)^{50}.
 \end{equation*}
 </div>
-</div>
-<div class="solutions"><details id="section-binomio-newton-11-4-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-binomio-newton-11-4-2-1"><span class="process-math">\(T_{43} = C_{50}^{42}\left(\dfrac{1}{5}\right)^{8} = \dfrac{21475146}{15625}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="section-binomio-newton-11-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="section-binomio-newton-11-5-1-1">Qual é o maior dos números</div>
-<div class="displaymath process-math">
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-107" id="answer-107"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-107"><div class="answer solution-like"><p id="p-912">\(T_{43} = C_{50}^{42}\left(\dfrac{1}{5}\right)^{8} = \dfrac{21475146}{15625}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-116"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-913">Qual é o maior dos números</p>
+<div class="displaymath">
 \begin{equation*}
 a = 103^{60} \text{ e } b = 102^{60} + 101^{60}? 
 \end{equation*}
 </div>
 <div class="solutions">
-<details id="section-binomio-newton-11-5-2" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-binomio-newton-11-5-2-1">a</div></div></details><details id="section-binomio-newton-11-5-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="section-binomio-newton-11-5-3-1"><div class="displaymath process-math" id="section-binomio-newton-11-5-3-1-1">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-108" id="answer-108"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-108"><div class="answer solution-like"><p id="p-914">a</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-152" id="solution-152"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like">
+<div class="displaymath" id="p-915">
 \begin{align*}
 a = \amp ~(102+1)^{60}\\
 = \amp ~C_{60}^0102^{0}+C_{60}^1102^{1}+C_{60}^2102^{2}+\cdots+C_{60}^j102^{j}+\cdots+C_{60}^{60}102^{60}\quad\quad\quad
 \end{align*}
-</div></div> <div class="para logical" id="section-binomio-newton-11-5-3-2"><div class="displaymath process-math" id="section-binomio-newton-11-5-3-2-1">
+</div>
+<div class="displaymath" id="p-916">
 \begin{align*}
 b = \amp ~102^{60}+(102-1)^{60}\\
 = \amp ~102^{60}+C_{60}^0102^{0}(-1)^{60}+\cdots+C_{60}^j102^{j}(-1)^{60-j}+\cdots+C_{60}^{60}102^{60}(-1)^0
 \end{align*}
-</div></div> <div class="para logical" id="section-binomio-newton-11-5-3-3">
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
+</div>
+<p id="p-917">Portanto,</p>
+<div class="displaymath">
 \begin{equation*}
 a-b = 2C_{60}^1102^1+2C_{60}^3102^3+\cdots+2C_{60}^{59}102^{59}-102^{60}.
 \end{equation*}
 </div>
-<div class="para">Como</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Como</p>
+<div class="displaymath">
 \begin{equation*}
 2C_{60}^{59}102^{59}-102^{60} = 120\cdot102^{59} - 102\cdot 102^{59} = 102^{59}\cdot 18&gt;0,
 \end{equation*}
 </div>
-<div class="para">mostramos que <span class="process-math">\(a-b&gt;0\text{,}\)</span> logo <span class="process-math">\(a&gt;b\text{.}\)</span>
-</div>
-</div>
-</div></details>
-</div></article><article class="exercise exercise-like" id="section-binomio-newton-11-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="section-binomio-newton-11-6-1-1">(UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">mostramos que \(a-b&gt;0\text{,}\) logo \(a&gt;b\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-117"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-918">(UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de</p>
+<div class="displaymath">
 \begin{equation*}
 (3x+5)^{13} 
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="section-binomio-newton-11-6-1-3-1"><div class="para" id="p-derived-section-binomio-newton-11-6-1-3-1">Existem exatamente dois termos com coeficientes que não são divisíveis por 13.</div></li>
-<li id="section-binomio-newton-11-6-1-3-2"><div class="para" id="p-derived-section-binomio-newton-11-6-1-3-2">A soma dos coeficientes é <span class="process-math">\(2^{39}\)</span>
-</div></li>
-<li id="section-binomio-newton-11-6-1-3-3"><div class="para" id="p-derived-section-binomio-newton-11-6-1-3-3">O maior coeficiente é <span class="process-math">\(3^7\cdot 5^8\cdot 11\cdot 13\)</span>
-</div></li>
-<li id="section-binomio-newton-11-6-1-3-4"><div class="para" id="p-derived-section-binomio-newton-11-6-1-3-4">O menor coeficiente é <span class="process-math">\(3^{13}\)</span>
-</div></li>
-<li id="section-binomio-newton-11-6-1-3-5"><div class="para" id="p-derived-section-binomio-newton-11-6-1-3-5">A soma dos coeficientes das potências de <span class="process-math">\(x\)</span> com expoentes ímpares é <span class="process-math">\(2^{38}-2^{12}\text{.}\)</span>
-</div></li>
+<li id="li-169">Existem exatamente dois termos com coeficientes que não são divisíveis por 13.</li>
+<li id="li-170">A soma dos coeficientes é \(2^{39}\)</li>
+<li id="li-171">O maior coeficiente é \(3^7\cdot 5^8\cdot 11\cdot 13\)</li>
+<li id="li-172">O menor coeficiente é \(3^{13}\)</li>
+<li id="li-173">A soma dos coeficientes das potências de \(x\) com expoentes ímpares é \(2^{38}-2^{12}\text{.}\)</li>
 </ol>
 <div class="solutions">
-<details id="section-binomio-newton-11-6-2" class="hint solution-like born-hidden-knowl"><summary><span class="type">Dica</span><span class="period">.</span></summary><div class="hint solution-like">
-<div class="para" id="section-binomio-newton-11-6-2-1">
-<dfn class="terminology">item a)</dfn> Na expanção de <span class="process-math">\((3x+5)^{13}\)</span> apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.</div> <div class="para" id="section-binomio-newton-11-6-2-2">
-<dfn class="terminology">item b)</dfn> Seja <span class="process-math">\(p(x) = (3x+5)^{13}\text{.}\)</span> A soma dos coeficientes de <span class="process-math">\(p(x)\)</span> é exatamente o valor de <span class="process-math">\(p(1) = (3\cdot 1+5)^{13} = 8^{13} = 2^{39}\text{.}\)</span>
-</div> <div class="para" id="section-binomio-newton-11-6-2-3">
-<dfn class="terminology">item c)</dfn> O maior coeficiente de <span class="process-math">\((3x+5)^{13}\)</span> é exatamente o maior termo no desenvolvimento de <span class="process-math">\((3\cdot 1+5)^{13}\text{.}\)</span> Efetuando esse cálculo segundo o <a href="" class="xref" data-knowl="./knowl/xref/exem-binomio1.html" title="Exemplo 3.2.6">Exemplo 3.2.6</a> chegamos que o termo máximo é <span class="process-math">\(3^7\cdot 5^8\cdot 11\cdot 13\)</span>
-</div> <div class="para" id="section-binomio-newton-11-6-2-4">
-<dfn class="terminology">item d)</dfn> O menor coeficiente de <span class="process-math">\((3x+5)^{13}\)</span> é exatamente o menor termo no desenvolvimento de <span class="process-math">\((3\cdot 1+5)^{13}\text{.}\)</span> Efetuando esse cálculo segundo o <a href="" class="xref" data-knowl="./knowl/xref/exem-binomio1.html" title="Exemplo 3.2.6">Exemplo 3.2.6</a> chegamos que o termo máximo é <span class="process-math">\(3^{13}\)</span>
-</div> <div class="para logical" id="section-binomio-newton-11-6-2-5">
-<div class="para">
-<dfn class="terminology">item e)</dfn> Observe que</div>
-<div class="displaymath process-math">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like">
+<p id="p-919"><dfn class="terminology">item a)</dfn> Na expanção de \((3x+5)^{13}\) apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.</p>
+<p id="p-920"><dfn class="terminology">item b)</dfn> Seja \(p(x) = (3x+5)^{13}\text{.}\) A soma dos coeficientes de \(p(x)\) é exatamente o valor de \(p(1) = (3\cdot 1+5)^{13} = 8^{13} = 2^{39}\text{.}\)</p>
+<p id="p-921"><dfn class="terminology">item c)</dfn> O maior coeficiente de \((3x+5)^{13}\) é exatamente o maior termo no desenvolvimento de \((3\cdot 1+5)^{13}\text{.}\) Efetuando esse cálculo segundo o <a class="xref" data-knowl="./knowl/exem-binomio1.html" title="Exemplo 3.2.6">Exemplo 3.2.6</a> chegamos que o termo máximo é \(3^7\cdot 5^8\cdot 11\cdot 13\)</p>
+<p id="p-922"><dfn class="terminology">item d)</dfn> O menor coeficiente de \((3x+5)^{13}\) é exatamente o menor termo no desenvolvimento de \((3\cdot 1+5)^{13}\text{.}\) Efetuando esse cálculo segundo o <a class="xref" data-knowl="./knowl/exem-binomio1.html" title="Exemplo 3.2.6">Exemplo 3.2.6</a> chegamos que o menor termo é \(3^{13}\)</p>
+<p id="p-923"><dfn class="terminology">item e)</dfn> Observe que</p>
+<div class="displaymath">
 \begin{equation*}
 (3x+5)^{13}=\underbrace{C_{13}^0(3x)^05^{13}}_{T_1}+\underbrace{C_{13}^1(3x)^15^{12}}_{T_2}+\cdots+\underbrace{C_{13}^{13}(3x)^{13}5^{0}}_{T_{14}}.
 \end{equation*}
 </div>
-<div class="para">Então, os termos de <span class="process-math">\((3x+5)^{13}\)</span> com expoentes ímpares são os termos de índices pares: <span class="process-math">\(T_2, T_4, \ldots, T_{14}\text{.}\)</span> Note que</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Então, os termos de \((3x+5)^{13}\) com expoentes ímpares são os termos de índices pares: \(T_2, T_4, \ldots, T_{14}\text{.}\) Note que</p>
+<div class="displaymath">
 \begin{equation*}
 (3x+5)^{13} = T_1 + T_2 + \cdots +T_{13} + T_{14}
 \end{equation*}
 </div>
-<div class="para">e</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">e</p>
+<div class="displaymath">
 \begin{equation*}
 (3x-5)^{13} = T_1 - T_2 + \cdots +T_{13} - T_{14}.
 \end{equation*}
 </div>
-<div class="para"> Portanto,</div>
-<div class="displaymath process-math">
+<p data-braille="continuation"> Portanto,</p>
+<div class="displaymath">
 \begin{equation*}
 q(x) = \frac{(3x+5)^{13}+(3x-5)^{13}}{2} = T_2+ T_4 + \cdots + T_{14}.
 \end{equation*}
 </div>
-<div class="para">Então, basta calcular <span class="process-math">\(q(1) = \frac{8^{13} + (-2)^{13}}{2} = 2^{38}-2^{12}\text{.}\)</span>
-</div>
-</div>
-</div></details><details id="section-binomio-newton-11-6-3" class="answer solution-like born-hidden-knowl"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="section-binomio-newton-11-6-3-1">a) V, b) V, c) V, d) V, e) V</div></div></details>
-</div></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="section-triangulo-pascal.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-polinomio-leibniz.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
-</div></main>
-</div>
-<div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<p data-braille="continuation">Então, basta calcular \(q(1) = \frac{8^{13} + (-2)^{13}}{2} = 2^{38}-2^{12}\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-109" id="answer-109"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-109"><div class="answer solution-like"><p id="p-924">a) V, b) V, c) V, d) V, e) V</p></div></div>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

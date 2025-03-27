@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:46-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -9,27 +12,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
 </script>
 </head>
-<body class="ignore-math">
-<article class="technology computation-like"><h4 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
-</h4>
-<div class="para">Aqui temos uma implementação para obter o produto de polinômios de torre. Usamos a ideia apresentada na <a href="" class="xref" data-knowl="./knowl/tech-politorre01.html" title="Tecnologia 2.3.9">Tecnologia 2.3.9</a> para gerar cada polinômio e definimos a função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> que multiplica cada um dos polinômios de torre. As entradas da função <span class="process-math">\(\verb|produto_polinomios_torre|\)</span> são os tamanhos dos tabuleiros. Na linha 8 a função está sendo "chamada" para gerar a polinômio de torre da união disjunta de um tabuleiro <span class="process-math">\(3\times 3\)</span> e 4 tabuleiros <span class="process-math">\(1\times 1\text{.}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage">def produto_polinomios_torre(*lista):
-    R = PolynomialRing(ZZ, 'x')
-    p = R(1)
-    for n in lista:
-        B = matrix.ones(n)
-        p = p*R(B.rook_vector())
-    return show(p)
-produto_polinomios_torre(3, 1, 1, 1, 1)
-</script></pre></article><span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#technology-22" class="internal">em contexto</a></span>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span>
+</h6>Calculando o número de permutações caóticas no Sage, usando o <a class="xref" data-knowl="./knowl/teo-pcaotica3.html" title="Teorema 2.2.15">Teorema 2.2.15</a>: <div class="sagecell-sage" id="sage-27"><script type="text/x-sage">def D(n):
+    if n==1:
+        return 0
+    else:
+        return n*D(n-1) + (-1)^n
+D(8)
+</script></div></article><span class="incontext"><a href="section-permutacao-caotica.html#technology-22">[incontext]</a></span>
 </body>
 </html>

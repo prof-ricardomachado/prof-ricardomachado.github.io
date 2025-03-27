@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-03-27T14:25:50-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -9,57 +12,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
-<body class="ignore-math">
+<body>
 <div class="solution solution-like">
-<h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.16.1</span><span class="period">.</span>
-</h4>
-<div class="para">
-<dfn class="terminology">item a)</dfn>  No caso em que Xantipa tira 5 e 5, Sócrates conquista o território se conseguir três vezes a face 6 ou duas vezes a face 6 e uma vez uma face diferente de 6. Como o segundo caso pode ser ordenado de três formas diferentes, a probabilidade de Sócrates conquistar o território é:</div>
-<div class="displaymath process-math">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.9.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Mais uma vez, usaremos o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</p>
+<p>Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. O número de casos possíveis para os aniversários das 45 pessoas é \(365^{45}\text{.}\) O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{6}\times \frac{1}{6}\times \frac{1}{6} + 3\times \frac{1}{6}\times \frac{1}{6}\times \frac{5}{6} = \frac{2}{27}.
+365\times 364\times 363\times \cdots \times321. 
 \end{equation*}
 </div>
-<div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn> No caso em que Xantipa tira 5 e 4, temos 4 possibilidades para Sócrates conquistar o território. <div class="para logical">
-<div class="para">1º Sócrates tira 6, 6 e 6. Neste caso a probabilidade é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{6}\times \frac{1}{6}\times \frac{1}{6} = \frac{1}{216} 
+\frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. 
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">2ª Sócrates tira 6, 6 e um número menor que 6. Neste caso a probabilidade é</div>
-<div class="displaymath process-math">
+<p data-braille="continuation">Usando o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-3\times\frac{1}{6}\times \frac{1}{6}\times \frac{5}{6} = \frac{15}{216}
+1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. 
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">3º Sócrates tira 6, 5 e 5. Neste caso a probabilidade é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-3\times \frac{1}{6}\times \frac{1}{6}\times \frac{1}{6} = \frac{3}{216}
-\end{equation*}
+<p xmlns:svg="http://www.w3.org/2000/svg">Este cálculo pode ser verificado no Sage, usando o código abaixo:</p>
+<div class="sagecell-sage" id="sage-54"><script type="text/x-sage">pd = prod(i for i in (321..365))
+(1 - pd/365^45).n()
+</script></div>
 </div>
-</div> <div class="para logical">
-<div class="para">4º Sócrates tira 6, 5 e um número menor que 5. Neste caso a probabilidade é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-6\times \frac{1}{6}\times \frac{1}{6}\times \frac{4}{6} = \frac{24}{216}
-\end{equation*}
-</div>
-</div> Portanto a resposta é a soma dos 4 casos possíveis:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{1}{216} + \frac{15}{216} + \frac{3}{216} + \frac{24}{216} = \frac{43}{216}.
-\end{equation*}
-</div>
-</div>
-</div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-157" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-espacos-probabilidade.html#solution-157">[incontext]</a></span>
 </body>
 </html>
