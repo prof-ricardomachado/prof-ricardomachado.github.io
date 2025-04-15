@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-03-27T14:25:49-03:00       *-->
+<!--*       on 2025-04-08T14:36:33-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,44 +12,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.1.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.6.4.6.1</span><span class="period">.</span>
 </h6>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{gather*}
-\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
-\end{gather*}
+<p xmlns:svg="http://www.w3.org/2000/svg">No <a class="xref" data-knowl="./knowl/ex-dyckway.html" title="Exemplo 2.6.20">Exemplo 2.6.20</a>, mostramos que o número de caminhos de Dyck, de comprimento \(2n\text{,}\) é dado por \(C_n\text{.}\) É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo \(n\) pares de parenteses que estão corretamente emparelhados.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Para cada caminho de Dyck, cada vez que o passo for de \((m,n)\) para \((m+1, n+1)\text{,}\) abra um parêntese e cada vez que o passo for de \((m,n)\) para \((m+1, n-1)\) feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo \(x\text{,}\) em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de \(2n\) passos e estão no eixo \(x\text{,}\) portanto a expressão correspondente conterá \(n\) pares de parênteses corretamente emparelhados.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Reciprocamente, para cada expressão corretamente emparelhada contendo \(n\) pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de \((m,n)\) para \((m+1, n+1)\text{,}\) sempre que houver um parêntese abrindo, e dê um passo de \((m,n)\) para \((m+1, n-1)\text{,}\) sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo \(x\text{.}\) O primeiro parêntese será do tipo "(", garantindo que o primeiro passo seja de \((0,0)\) para \((1,1)\text{.}\) Como as expressões estão corretamente emparelhadas e contêm \(n\) pares de parênteses, o último parêntese será do tipo ")" e o caminho correspondente chegará no ponto \((2n,0)\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">Observação:</dfn> No Sage, a lista contendo todas as expressões de \(n\) pares de parênteses corretamente emparelhados pode ser gerada com o método \(\verb|DyckWords|\text{.}\) Para exibir a representação em parênteses, basta usar o método \(\verb|print|\text{:}\)</p>
+<div class="sagecell-sage" id="sage-46"><script type="text/x-sage">for dw in DyckWords(3):
+    print(dw)
+</script></div>
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Vamos calcular \(S_1\) e \(S_2\) separadamente.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
-=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
-=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
-=\amp~n\sum_{k=0}^pC_{n+k}^k\\
-=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
-=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
-\end{align*}
-</div>
-<p>Para usar o Teorema das Diagonais no cálculo de \(S_2\text{,}\) precisamos somar e subtrair \(C_{n-1}^0\text{.}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
-=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
-=\amp~ C_{n+p+1}^{p+1}-1.
-\end{align*}
-</div>
-<p data-braille="continuation">Portanto,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
-=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
-\end{align*}
-</div>
-</div>
-<span class="incontext"><a href="section-triangulo-pascal.html#solution-146">[incontext]</a></span>
+<span class="incontext"><a href="section-13.html#solution-146">[incontext]</a></span>
 </body>
 </html>

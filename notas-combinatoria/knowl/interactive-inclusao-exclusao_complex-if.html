@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-03-27T14:25:45-03:00       *-->
+<!--*       on 2025-04-08T14:36:30-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -60,19 +60,23 @@ MathJax.Hub.Config({
 def _(lista=input_box('COMPLEXA' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3,4] , width=30,  label="Posições fixas:"), Cardinalidades=True, auto_update=False):
 
 
-    lista2=[]
-    if lista not in ZZ and 'invalid' not in str(lista):
-        #print('invalid' in str(lista))
-        
-        lista = str(lista)
-        k=0
-        for i in lista:
-            k += 1
-            if k>6 :
-                if i == "'":
-                    break
-                lista2.append(i)
-        #print(lista2)
+    if type(lista)==type([]):
+      lista2=[]
+      for i in lista:
+        lista2.append(str(i))
+    else:
+      lista2=[]
+      if lista not in ZZ and 'invalid' not in str(lista):
+          #print('invalid' in str(lista))
+          
+          lista = str(lista)
+          k=0
+          for i in lista:
+              k += 1
+              if k>6 :
+                  if i == "'":
+                      break
+                  lista2.append(i)
         
     def anagramas_fix(palavra, pfix):
     

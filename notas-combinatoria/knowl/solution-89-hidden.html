@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-03-27T14:25:46-03:00       *-->
+<!--*       on 2025-04-08T14:36:30-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -17,23 +17,52 @@
 <p>Sejam</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; \\
-A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; \\
-A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}. 
+A_1, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem C em 1º lugar}; \\
+A_2, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem O em 2º lugar}; \\
+A_3, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem M em 3º lugar}; \\
+A_4, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}. 
 \end{align*}
 </div>
-<p data-braille="continuation">Queremos calcular \(\#(A_1\cup A_2\cup A_3)\text{.}\) Note que \(\#A_1=\#A_3=PR_8^3\text{,}\) pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para \(\#A_1\text{,}\) e com a letra T na terceira posição, para \(\#A_3\text{.}\) Note também que \(\#A_2 = PR_8^2\text{.}\)</p>
-<p>Agora, vamos calcular as cardinalidades das interseções \(A_i\cap A_j\text{,}\) com \(1\leq i\lt j\leq 3\text{.}\)</p>
-<ul class="disc">
-<li>\(A_1\cap A_2= PR_7^2\text{,}\) pois P e E ficam fixados;</li>
-<li>\(A_1\cap A_3= PR_7^3\text{,}\) pois P e T ficam fixados;</li>
-<li>\(A_2\cap A_3= PR_7^2\text{,}\) pois E e T ficam fixados.</li>
-</ul>
-<p data-braille="continuation">Finalmente, \(\#(A_1\cap A_2\cap A_3) = PR_6^2\text{.}\) Aplicando o Princípio da Inclusão-Exclusão:</p>
+<p data-braille="continuation"> Assim, \(\#A_i = 7!,\) para  \(i\in \{1, 2, 3, 4\}\text{.}\)</p>
+<p>Observe que \(\#(A_i\cap A_j), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_i\cap A_j) = 6!
+\end{equation*}
+</div>
+<p>Observe que \(\#(A_i\cap A_j\cap A_k), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_i\cap A_j\cap A_k) = 5!
+\end{equation*}
+</div>
+<p>Observe que \(\#(A_1\cap A_2\cap A_3\cap A_4)\) é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P  nas posições \(1, 2, 3, 4\) fixas, logo</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_1\cap A_2\cap A_3\cap A_4) = 4!
+\end{equation*}
+</div>
+<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>),</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2\\
-=\amp~28080.
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~\sum_{i=1}^{4} \#A_i - \sum_{1\leq i\lt j\leq 4} \#(A_i\cap A_j) \\
+\amp ~ +\sum_{1\leq i\lt j\lt k \leq 4} \#(A_i\cap A_j\cap A_k) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<p data-braille="continuation">Organizando, temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times\#A_1 - C_4^2\times\#(A_1\cap A_2) \\
+\amp ~ +C_4^3\times\#(A_1\cap A_2\cap A_3) \\
+\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
+\end{align*}
+</div>
+<p data-braille="continuation">Substituindo, temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times 7! - C_4^2\times 6! +C_4^3\times 5! -4! \\
+=\amp ~ 16296. 
 \end{align*}
 </div>
 </div></body>

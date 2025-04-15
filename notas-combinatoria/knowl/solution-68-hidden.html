@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-03-27T14:25:44-03:00       *-->
+<!--*       on 2025-04-08T14:36:29-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,20 +12,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body><div class="solution solution-like">
-<p>Pense na seguinte lista:</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</p>
+<p>Começando com A, temos um total de \(PR_9^{2, 2, 2}\) anagramas, começando com E, temos um total de \(PR_9^{3, 2, 2}\) anagramas e começando com I, temos um total de \(PR_9^{3, 2, 2}\) anagramas. Portanto a resposta é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-L= [1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3]. 
+PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Para cada permutação da lista \(L\text{,}\) podemos distribuir os estudantes nas salas da seguinte maneira. Use a posição do número para indicar a pessoa e o número para indicar a sala. Desta forma, a resposta é:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-PR_{12}^{4, 5, 3} = 27720. 
-\end{equation*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Por exemplo, a permutação identidade, que é a apresentada na lista \(L\) indica que a 1ª, a 2ª a 3ª e a 4ª pessoa deve ficar na sala 1. A 4ª, a 5ª, a 6ª, a 7ª, e a 8ª pessoa deve ficar na sala 2 e assim por diante.</p>
+<p data-braille="continuation">Este cálculo pode ser efetuado no Sage da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-19"><script type="text/x-sage">def PR(*lista):
+    p = factorial(lista[0])
+    for i in lista[1:]:
+        p = p/factorial(i)
+    return p
+PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
+</script></div>
 </div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-03-27T14:25:49-03:00       *-->
+<!--*       on 2025-04-08T14:36:32-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,21 +14,43 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto \(A(n,k)\) é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S = \amp \sum_{k=10}^{98} k(k+1)  \\
-= \amp \sum_{k=1}^{98} k(k+1) - \sum_{k=1}^9 k(k+1). \quad \quad\quad \quad\quad 
-\end{align*}
+\begin{equation*}
+PR_{n+k}^{n, k}=C_{n+k}^{n}.
+\end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Observe que \(C_{k+1}^2=\displaystyle\frac{(k+1)k(k-1)!}{2!(k-1)!}=\frac{(k+1)k}{2!}\text{,}\) assim \(k(k+1)=2!C_{k+1}^2\text{.}\) Portanto,</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">Quantidade de caminhos bons:</dfn> Observe que a reflexão será em relação a reta \(y=x\text{,}\) portanto a reflexão será \(R_0*A(n,k)=B(k,n)\text{.}\) Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like"><img src="images/reflexao02.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.26<span class="period">.</span></span><span class="space"> </span>Um caminho bom, partindo do ponto \(P(1,0)\text{.}\)</figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-end;"><figure class="figure figure-like"><img src="images/reflexao0.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.27<span class="period">.</span></span><span class="space"> </span>Um caminho ruim, partindo do ponto \(P(1,0)\text{.}\)</figcaption></figure></div>
+</div></div>
+<p>Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto \(P(1,0)\) e chegam no ponto \(A(n,k)\text{,}\) depois vamos contar todos os caminhos ruins que iniciam no ponto \(P(1,0)\) e também chegam no ponto \(A(n,k)\text{.}\) A diferença entre essas quantidades será o número de caminhos bons.</p>
+<ul class="disc">
+<li>O número de caminhos de \(P(1,0)\) até \(A(n,k)\) é<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR_{n+k-1}^{n-1, k} = C_{n+k-1}^{n-1}.
+\end{equation*}
+</div>
+</li>
+<li>O número de caminhos ruins de \(P(1,0)\) até \(A(n,k)\) é igual ao número de caminhos de \(P(1,0)\) até \(R_0*A(n,k)=B(k,n)\text{,}\) ou seja,<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+PR_{n+k-1}^{k-1, n} = C_{n+k-1}^n.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Finalmente, o número de caminhos bons de \(P(1,0)\) até \(A(n,k)\) é igual a</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S  = \amp \sum_{k=1}^{98} 2!C_{k+1}^2 - \sum_{k=1}^9 2!C_{k+1}^2  \\
-= \amp 2(C_2^2 + \cdots + C_{99}^2) - 2(C_2^2 + \cdots + C_{10}^2)  \\
-= \amp 2C_{100}^3 - 2C_{11}^3  \\
-= \amp  323400 - 330\\
-= \amp 323070  
-\end{align*}
+\begin{equation*}
+C_{n+k-1}^{n-1} - C_{n+k-1}^n = \frac{n-k}{k}\cdot C_{n+k-1}^n.
+\end{equation*}
+</div>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Quantidade de caminhos ruins:</dfn> A quantidade de caminhos ruins de \(P(1,0)\) até \(A(n,k)\) é igual a quantidade total de caminhos, menos a quantidade de caminhos bons:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C_{n+k}^n - \frac{n-k}{k}\cdot C_{n+k-1}^n = 2C_{n+k-1}^n.
+\end{equation*}
 </div>
 </div></body>
 </html>

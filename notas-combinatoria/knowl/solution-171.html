@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-03-27T14:25:50-03:00       *-->
+<!--*       on 2025-04-08T14:36:34-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,43 +16,24 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.1.12.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.1.7.1</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">a) Usaremos o Princípio da Inclusão-Exclusão para calcular o número de bolas com números múltiplos de 5 ou 6.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Observe que uma sequência de retiradas na qual o palhaço permanece seco até o fim, quer dizer que, a cada retirada, a quantidade de bolas azuis tem que ser maior ou igual à quantidade de bolas vermelhas.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">A cada vez que o palhaço  retira uma bola, anotamos um \(A\) se ela foi azul e um \(V\) se ela foi vermelha. Com isto, construímos uma sequência formada por \(n\) \(A's\) e \(n\) \(V's\text{.}\) O palhaço ficará seco, se na  sequência correspondente às retiradas, a cada momento o número dos \(A's\) é maior ou igual que o dos \(V's\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Perceba que se trocarmos \(A\) por \(N\) e \(V\) por \(L\) esse é o problema do deslocamento de uma partícula de \(O(0,0)\) até \(A(n,n)\text{,}\) sem que ela ultrapasse a reta \(y=x\text{,}\) ou seja, é o número de Catalan: \(C_n=\displaystyle\frac{1}{n+1}{2n \choose n}\text{.}\)</p>
+<p>A quantidade de maneiras distintas para retirar as \(2n\) bolas é dada pela permutação com repetição:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bullet A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 90 \text{ e } n \text{ é múltiplo de 5}\}
+P_{2n}^{n,n}=\frac{(2n)!}{n!n!}={2n \choose n}.
 \end{equation*}
 </div>
+<p data-braille="continuation">Assim, como esses eventos são equiprováveis, a probabilidade do palhaço permanecer seco é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bullet A_6=\{n\in\mathbb{N}~|~ 1\leq n\leq 90 \text{ e } n \text{ é múltiplo de 6}\}
+P=\frac{C_n}{P_{2n}^{n,n}}=\frac{\frac{1}{n+1}{2n \choose n}}{{2n \choose n}}=\frac{1}{n+1}.
 \end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Note que \(\#(A_5\cup A_6) = \#A_5+\#A_6 - \#(A_5\cap A_6)\) e que \(A_5\cap A_6\) é o conjunto dos múltiplos de \(30\) entre \(1\) e \(90\text{,}\) incluindo o \(90\text{.}\) Observe que \(90 = 5\times 18\text{,}\) \(90 = 6\times 15\) e \(90 = 30\times 3\text{.}\) Portanto a probabilidade é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P = \frac{\#(A_5\cup A_6)}{90} = \frac{18+15-3}{90} = \frac{30}{90} = \frac{1}{3}.
-\end{equation*}
-</div>
-<p>b) Para que o número da segunda bola retirada não seja múltiplo de 6, temos dois casos. 1º caso: primeira bola é um múltiplo de 6 e a segunda não. Essa probabilidade é dada por:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_1 = \frac{15}{90}\times \frac{75}{89}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">2º caso: primeira bola não é um múltiplo de 6 e a segunda também não é. Essa probabilidade é dada por:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_2 = \frac{75}{90}\times \frac{74}{89}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Logo a probabilidade de o número da segunda bola retirada não ser múltiplo de \(6\) é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P = P_1 + P_2 = \frac{15}{90}\times \frac{75}{89} + \frac{75}{90}\times \frac{74}{89}  = \frac{5}{6}.
-\end{equation*}
-</div>
+<p data-braille="continuation">Concluímos que quanto maior a quantidade de bolas, menor a chance dele ficar seco.</p>
 </div>
 <span class="incontext"><a href="section-espacos-probabilidade.html#solution-171">[incontext]</a></span>
 </body>
