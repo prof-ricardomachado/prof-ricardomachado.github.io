@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-08T14:36:30-03:00       *-->
+<!--*       on 2025-04-16T16:29:45-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,26 +14,90 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Sejam</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Sejam</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+A_2=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 2}\}; \\
+A_3=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 3}\}; \\
+A_5=\{n\in\mathbb{N}~|~ 1\leq n\leq 10000 \text{ e } n \text{ é múltiplo de 5}\}. 
+\end{gather*}
+</div>
+<p data-braille="continuation"> A resposta do item a) é a cardinalidade do conjunto:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A_2\cup A_3\cup A_5. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>):</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; \\
-A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; \\
-A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}. 
+\#(A_2\cup A_3\cup A_5) = \amp ~  \#A_2+\#A_3+\#A_5 \\
+\amp ~ - \#(A_2\cap A_3) - \#(A_2\cap A_5) - \#(A_3\cap A_5) \\
+\amp ~ +\#(A_2\cap A_3\cap A_5). 
 \end{align*}
 </div>
-<p data-braille="continuation">Queremos calcular \(\#(A_1\cup A_2\cup A_3)\text{.}\) Note que \(\#A_1=\#A_3=PR_8^3\text{,}\) pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para \(\#A_1\text{,}\) e com a letra T na terceira posição, para \(\#A_3\text{.}\) Note também que \(\#A_2 = PR_8^2\text{.}\)</p>
-<p>Agora, vamos calcular as cardinalidades das interseções \(A_i\cap A_j\text{,}\) com \(1\leq i\lt j\leq 3\text{.}\)</p>
-<ul class="disc">
-<li>\(A_1\cap A_2= PR_7^2\text{,}\) pois P e E ficam fixados;</li>
-<li>\(A_1\cap A_3= PR_7^3\text{,}\) pois P e T ficam fixados;</li>
-<li>\(A_2\cap A_3= PR_7^2\text{,}\) pois E e T ficam fixados.</li>
-</ul>
-<p data-braille="continuation">Finalmente, \(\#(A_1\cap A_2\cap A_3) = PR_6^2\text{.}\) Aplicando o Princípio da Inclusão-Exclusão:</p>
+<p data-braille="continuation">Para obter a cardinalidade de cada um dos conjuntos \(A_i's\text{,}\) vamos dividir 10000 por \(i\text{,}\) pois se obtermos \(10000 = p\times i + r\text{,}\) na divisão Euclideana, significa que \(1\times i, 2\times i, \ldots, p\times i \) são todos múltiplos de \(i\) e são menores que 10000. Fazendo as divisões obtemos:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2\\
-=\amp~28080.
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 2000\times 5 + 0 \Rightarrow \#A_5 = 2000. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de cada uma das interseções \(A_i\cap A_j\text{,}\) vamos dividir 10000 por \(i\times j\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 1000\times 10 + 0 \Rightarrow \#(A_2\cap A_5) = 1000 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_5) = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de \(A_2\cap A_3\cap A_5\text{,}\) vamos dividir 10000 por \(2\times 3\times 5\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_5) = 333. 
+\end{align*}
+</div>
+<p data-braille="continuation">Portanto, pelo Princípio Inclusão-Exclusão temos:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_2\cup A_3\cup A_5) \amp =  5000+3333+2000-1666-1000-666+333 \\
+\amp =  ~ 7334. 
+\end{align*}
+</div>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item b)</dfn> Usando a ideia do item a), queremos calcular a cardinalidade do conjunto:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A_2\cup A_3\cup A_{15}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Vamos começar calculando a cardinalidade de cada conjunto:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 5000\times 2 + 0 \Rightarrow \#A_2 = 5000 \\
+10000 \amp =  ~ 3333\times 3 + 1 \Rightarrow \#A_3 = 3333 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#A_{15} = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Calculando a cardinalidade de cada uma das interseções \(A_i\cap A_j\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 1666\times 6 + 4 \Rightarrow \#(A_2\cap A_3) = 1666 \\
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_{15}) = 333 \\
+10000 \amp =  ~ 666\times 15 + 10 \Rightarrow \#(A_3\cap A_{15}) = 666. 
+\end{align*}
+</div>
+<p data-braille="continuation">Para obter a cardinalidade de \(A_2\cap A_3\cap A_{15}\text{,}\) dividimos \(10000\) pelo \(mmc(2, 3, 15)\text{,}\) logo:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+10000 \amp =  ~ 333\times 30 + 10 \Rightarrow \#(A_2\cap A_3\cap A_{15}) = 333. 
+\end{align*}
+</div>
+<p data-braille="continuation">Portanto, pelo Princípio da Inclusão-Exclusão:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_2\cup A_3\cup A_{15}) =\amp~ 5000+3333+666-1666-333-666+333\\
+=\amp~6667.
 \end{align*}
 </div>
 </div></body>

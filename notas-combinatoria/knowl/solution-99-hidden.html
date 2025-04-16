@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-08T14:36:30-03:00       *-->
+<!--*       on 2025-04-16T16:29:45-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,19 +14,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem \(C_5^1\) maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada \((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\) Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos \(C_5^1\times 5\times 2!\times 8!\) formas distintas de organizarmos esses carros.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos \(C_5^2\) formas de escolhermos essas 2 equipes e podemos colocá-las de \(5\times4\) maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado \(2!\times2\) e das demais \(6\) equipes \(6!\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</p>
+<p>Sejam \(A_k\text{,}\) \(k = 8, 12, 18\text{,}\) os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular \(\#(A_8\cup A_{12}\cup A_{18})\text{.}\) Pelo Princípio da Inclusão-Exclusão, temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
-\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
-\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
-\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
-\amp   ~~~~~~ - 5!\times 2^5\\
-\amp ~ = 2088960. 
+\#(A_8\cup A_{12}\cup A_{18}) =\amp~ \#A_8+\#A_{12}+\#A_{18} \\
+~~~~\amp~ - \#(A_8\cap A_{12}) - \#(A_{8}\cap A_{18})
+- \#(A_{12}\cap A_{18})\\
+~~~~\amp~+ \#(A_8\cap A_{12}\cap A_{18}).
 \end{align*}
 </div>
+<p data-braille="continuation">Como \(\#A_k = k\text{,}\) para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/poligonos_c.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.21<span class="period">.</span></span><span class="space"> </span>Polígonos encolhidos.</figcaption></figure><p>Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de \(A_k\) e assim sucessivamente, de um vértice de \(A_k\) até o seguinte. Desta forma cada conjunto \(A_k\) define \(k\) semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim,  \(\#(A_i\cap A_j) = \text{mdc}(i, j)\text{,}\) para \(i, j \in \{8, 12, 18\}\text{,}\) com \(i\neq j\) e \(\#(A_8\cap A_{12} \cap A_{18}) = \text{mdc}(8, 12, 18)\text{.}\) Logo,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\#(A_8\cup A_{12}\cup A_{18}) 
+= 8+12+18 - 4 - 2 - 6 + 2 = 28.
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/mdc.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.22<span class="period">.</span></span><span class="space"> </span>Verificação das interseções.</figcaption></figure></p>
 </div></body>
 </html>

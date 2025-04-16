@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-08T14:36:33-03:00       *-->
+<!--*       on 2025-04-16T16:29:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,37 +13,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{gather*}
-\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
-\end{gather*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Vamos calcular \(S_1\) e \(S_2\) separadamente.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
-=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
-=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
-=\amp~n\sum_{k=0}^pC_{n+k}^k\\
-=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
-=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
+S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
+= \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}  \\
+= \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}\cdot \frac{n+1}{n+1}  \\
+= \amp \frac{1}{n+1}\sum_{k=1}^n \frac{(n+1)!}{(k+1)!(n-k)!}  \\
+= \amp \frac{1}{n+1}\sum_{k=1}^n C_{n+1}^{k+1}  \\
+= \amp \frac{1}{n+1}\left( -C_{n+1}^0 - C_{n+1}^1 +\underbrace{C_{n+1}^0 + C_{n+1}^1 + \cdots+C_{n+1}^{n+1}}_{=2^{n+1}} \right)  \\
+= \amp \frac{1}{n+1}\left( 2^{n+1} - n -2 \right).  
 \end{align*}
-</div>
-<p>Para usar o Teorema das Diagonais no cálculo de \(S_2\text{,}\) precisamos somar e subtrair \(C_{n-1}^0\text{.}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
-=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
-=\amp~ C_{n+p+1}^{p+1}-1.
-\end{align*}
-</div>
-<p data-braille="continuation">Portanto,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
-=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
-\end{align*}
-</div>
-</div></body>
+</div></div></body>
 </html>

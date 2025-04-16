@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-08T14:36:33-03:00       *-->
+<!--*       on 2025-04-16T16:29:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,18 +13,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>Como</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like">Note que<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
+= \amp \sum_{k=1}^{n} k^3+k^2  
+\end{align*}
+</div>Vamos reescrever o polinômio \(k^3+k^2\) como um polinômio de grau \(3\) que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\left(1 + \frac{1}{4}\right)^{5} = \frac{1}{1024} + \frac{5}{256} + \frac{5}{32} + \frac{5}{8} + \frac{5}{4}+ 1.
+k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
 \end{equation*}
-</div>
-<p data-braille="continuation">O termo máximo é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+</div>Então, vamos procurar valores para \(A, B, C\) e \(D\text{,}\) para os quais, vale a igualdade<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
+= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D,  
+\end{align*}
+</div>igualando os coeficientes, obtemos<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{5}{4}.
+\begin{cases} 
+A = ~ 1 \\
+3A+B  = ~ 1 \\
+2A+B+C  = ~ 0 \\
+D = ~ 0 \\
+\end{cases}
 \end{equation*}
+</div>Portanto,  \(A= 1, B = -2, C=0\) e \(D=0\text{.}\) Agora, podemos terminar o cálculo da soma<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
+= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
+= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
+= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
+= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
+\end{align*}
 </div>
 </div></body>
 </html>
