@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-23T10:57:11-03:00       *-->
+<!--*       on 2025-04-25T09:34:42-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,28 +14,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o \(n\)-ésimo dígito que também temos 3 opções. Portanto a resposta é \(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</p>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item b)</dfn> Agora precisamos subtrair de \(3^n\) a quantidade de números de \(n\) dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina \(A_1\) como o subconjunto dos números de \(n\) dígitos formados pelos dígitos \(1, 2\) e \(3\) tal que o dígito \(1\) não aparece. De maneira análoga defina os subconjuntos \(A_2\) e \(A_3\text{.}\) Desta forma, queremos calcular</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-3^n - \#(A_1\cup A_2 \cup A_3)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão, sabemos que</p>
+<p>Sejam \(A_k\text{,}\) \(k = 8, 12, 18\text{,}\) os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular \(\#(A_8\cup A_{12}\cup A_{18})\text{.}\) Pelo Princípio da Inclusão-Exclusão, temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\#(A_1\cup A_2\cup A_3) = \amp ~\#A_1+\#A_2+\#A_3 \\
-\amp ~ -\#(A_1\cap A_2)-\#(A_1\cap A_3)-\#(A_2\cap A_3) \\
-\amp ~ +\#(A_1\cap A_2\cap A_3). 
+\#(A_8\cup A_{12}\cup A_{18}) =\amp~ \#A_8+\#A_{12}+\#A_{18} \\
+~~~~\amp~ - \#(A_8\cap A_{12}) - \#(A_{8}\cap A_{18})
+- \#(A_{12}\cap A_{18})\\
+~~~~\amp~+ \#(A_8\cap A_{12}\cap A_{18}).
 \end{align*}
 </div>
-<p data-braille="continuation">\(A_1\) possui \(2^n\) elementos, pois o dígito \(1\) não pode figurar no número de \(n\) dígitos, sobrando apenas os dígitos \(2\) e \(3\text{.}\) Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos \(A_2\) e \(A_3\) possuem a mesma quantidade de elementos.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(A_1\cap A_2\) possui apenas \(1\) elemento, pois os dígitos \(1\) e \(2\) não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que \(A_1\cap A_2\) e \(A_2\cap A_3\) também possuem apenas um elemento.</p>
-<p>Finalmente, \(A_1\cap A_2\cap A_3\)  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</p>
+<p data-braille="continuation">Como \(\#A_k = k\text{,}\) para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/poligonos_c.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.21<span class="period">.</span></span><span class="space"> </span>Polígonos encolhidos.</figcaption></figure><p>Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de \(A_k\) e assim sucessivamente, de um vértice de \(A_k\) até o seguinte. Desta forma cada conjunto \(A_k\) define \(k\) semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim,  \(\#(A_i\cap A_j) = \text{mdc}(i, j)\text{,}\) para \(i, j \in \{8, 12, 18\}\text{,}\) com \(i\neq j\) e \(\#(A_8\cap A_{12} \cap A_{18}) = \text{mdc}(8, 12, 18)\text{.}\) Logo,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.
+\#(A_8\cup A_{12}\cup A_{18}) 
+= 8+12+18 - 4 - 2 - 6 + 2 = 28.
 \end{equation*}
 </div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/mdc.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.22<span class="period">.</span></span><span class="space"> </span>Verificação das interseções.</figcaption></figure></p>
 </div></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-23T10:57:11-03:00       *-->
+<!--*       on 2025-04-25T09:34:42-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,26 +14,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Sejam \(A_k\text{,}\) \(k = 8, 12, 18\text{,}\) os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular \(\#(A_8\cup A_{12}\cup A_{18})\text{.}\) Pelo Princípio da Inclusão-Exclusão, temos</p>
+<p>Sejam</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\#(A_8\cup A_{12}\cup A_{18}) =\amp~ \#A_8+\#A_{12}+\#A_{18} \\
-~~~~\amp~ - \#(A_8\cap A_{12}) - \#(A_{8}\cap A_{18})
-- \#(A_{12}\cap A_{18})\\
-~~~~\amp~+ \#(A_8\cap A_{12}\cap A_{18}).
+A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; \\
+A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; \\
+A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}. 
 \end{align*}
 </div>
-<p data-braille="continuation">Como \(\#A_k = k\text{,}\) para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/poligonos_c.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.21<span class="period">.</span></span><span class="space"> </span>Polígonos encolhidos.</figcaption></figure><p>Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de \(A_k\) e assim sucessivamente, de um vértice de \(A_k\) até o seguinte. Desta forma cada conjunto \(A_k\) define \(k\) semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim,  \(\#(A_i\cap A_j) = \text{mdc}(i, j)\text{,}\) para \(i, j \in \{8, 12, 18\}\text{,}\) com \(i\neq j\) e \(\#(A_8\cap A_{12} \cap A_{18}) = \text{mdc}(8, 12, 18)\text{.}\) Logo,</p>
+<p data-braille="continuation">Queremos calcular \(\#(A_1\cup A_2\cup A_3)\text{.}\) Note que \(\#A_1=\#A_3=PR_8^3\text{,}\) pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para \(\#A_1\text{,}\) e com a letra T na terceira posição, para \(\#A_3\text{.}\) Note também que \(\#A_2 = PR_8^2\text{.}\)</p>
+<p>Agora, vamos calcular as cardinalidades das interseções \(A_i\cap A_j\text{,}\) com \(1\leq i\lt j\leq 3\text{.}\)</p>
+<ul class="disc">
+<li>\(A_1\cap A_2= PR_7^2\text{,}\) pois P e E ficam fixados;</li>
+<li>\(A_1\cap A_3= PR_7^3\text{,}\) pois P e T ficam fixados;</li>
+<li>\(A_2\cap A_3= PR_7^2\text{,}\) pois E e T ficam fixados.</li>
+</ul>
+<p data-braille="continuation">Finalmente, \(\#(A_1\cap A_2\cap A_3) = PR_6^2\text{.}\) Aplicando o Princípio da Inclusão-Exclusão:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#(A_8\cup A_{12}\cup A_{18}) 
-= 8+12+18 - 4 - 2 - 6 + 2 = 28.
-\end{equation*}
+\begin{align*}
+\#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2\\
+=\amp~28080.
+\end{align*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/mdc.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.22<span class="period">.</span></span><span class="space"> </span>Verificação das interseções.</figcaption></figure></p>
 </div></body>
 </html>

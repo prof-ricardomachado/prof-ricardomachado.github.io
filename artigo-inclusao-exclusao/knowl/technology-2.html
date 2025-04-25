@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-04-25T09:37:21-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Falta texto</p>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">def anagramas_fix(palavra, pfix):
+    
+    total_inter=len(pfix)
+    pfix.sort()
+    pfix.reverse()
+    
+    comb=Combinations(pfix).list()
+    subpalavra=0
+    lista_inter=[]
+    lista=[]
+    for i in comb:
+        subpalavra = copy(palavra)
+        for j in i:
+            subpalavra = copy(subpalavra)
+            subpalavra.pop(j-1)
+        #print(i, subpalavra)
+        lista_inter.append(i)
+        lista.append(subpalavra)
+    
+    #print(lista_inter)
+    #print(lista)
+    
+    lS=[]
+    soma=0
+    for i in range(len(lista_inter)):
+        
+        if len(lista_inter[i])>0:
+            #print(Permutations(lista[i]))
+            soma = soma + Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1)
+            lS.append( Permutations(lista[i]).cardinality() )
+    #print(comb)   
+    #print(lS)
+    
+    dic={}
+    for i in range(len(pfix)+1):
+        dic.update({i:[]})
+    
+    
+    for i in comb:
+        j=copy(i)
+        j.reverse()
+        dic[len(i)].append(j)
+
+    for i in dic:
+        dic[i].reverse()
+    
+    #print(dic)
+    
+    lS2=[]
+    comb2=[]
+    for i in dic:
+        if i > 0:
+            for j in dic[i]:
+                comb2.append(copy(j))
+                
+                j.reverse()
+                lS2.append(lS[comb.index(j)-1])
+                
+    #print(comb2)
+    lstring=[]
+    for i in range( len(comb2)):
+        temp=''
+        for j in comb2[i]:
+            temp=temp + 'A' + str(j) + '∩'
+        temp=temp[0:-1]
+        lstring.append(temp)
+    #print(lstring)
+    
+    for i in range(len(lstring)):
+        print('#%s = %d' %(lstring[i] , lS2[i]))
+    uni=''
+    pfix.sort()
+    for i in pfix:
+        uni = uni + 'A' + str(i) + '∪'
+    uni = uni[0:-1]
+    
+    print('\n#%s = %d'  %(uni, soma))
+
+anagramas_fix(['P','R','I','N','C','I','P','I','O'], [1,2,3])
+</script></div></article><span class="incontext"><a href="sec_inclusao_exclusao_01.html#technology-2">[incontext]</a></span>
+</body>
+</html>

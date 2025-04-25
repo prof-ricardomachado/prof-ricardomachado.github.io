@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-23T10:57:02-03:00       *-->
+<!--*       on 2025-04-25T09:34:33-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -241,33 +241,54 @@ C_4^2\times C_7^4 + C_4^3\times C_7^3 + C_4^4\times C_7^2 = 371.
 <div class="hidden-sagecell-sage" id="sage-10"><script type="text/x-sage">C(n, p) = binomial(n, p)
 C(4,2)*C(7,4) + C(4,3)*C(7,3) + C(4,4)*C(7,2)
 </script></div>
-</div></div></article><article class="example example-like" id="example-16"><h6 class="heading">
+</div></div></article><p id="p-303">O exemplo a seguir já foi resolvido na seção anterior (<a href="section-permutacoes-simples.html" class="internal" title="Seção 1.3: Permutações Simples">Seção 1.3</a>); entretanto, nesta seção, a solução será desenvolvida com foco no conceito de combinação simples.</p>
+<article class="example example-like" id="example-16"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.4.9</span><span class="period">.</span>
 </h6>
-<p id="p-303">De quantos modos podemos dividir 12 pessoas em três grupos de quatro pessoas cada?</p>
+<p id="p-304">De quantos modos podemos dividir \(12\) pessoas?</p>
+<ol class="lower-alpha">
+<li id="li-70">Em três grupos, um grupo com 5 pessoas, um grupo com 4 pessoas e um grupo com 3 pessoas;</li>
+<li id="li-71">Em três grupos, grupo azul, grupo verde e grupo amarelo, cada grupo com 4 pessoas;</li>
+<li id="li-72">Em três grupos, cada grupo com 4 pessoas.</li>
+</ol>
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like">
-<p id="p-304">Para o primeiro grupo, temos um total de \(C_{12}^4 \) maneiras de selecionar as 4 pessoas.</p>
-<p id="p-305">Para o segundo grupo temos um total de \(C_8^4 \) maneiras de selecionar as 4 pessoas.</p>
-<p id="p-306">Para o terceiro grupo temos um total de \(C_4^4 \) maneiras de selecionar as 4 pessoas.</p>
-<p id="p-307">Como a ordem dos grupos não importa, precisamos dividir por \(3!\) Portanto a resposta é</p>
+<p id="p-305"><dfn class="terminology">item a.</dfn> Para o primeiro grupo, temos um total de \(C_{12, 5}\) maneiras de selecionar as 5 pessoas.</p>
+<p id="p-306">Para o segundo grupo, como 5 pessoas já foram escolhidas, temos 7 pessoas para escolher 4, no total são \(C_{7, 4} \) maneiras de escolher essas pessoas.</p>
+<p id="p-307">Para o terceiro grupo temos um total de \(C_{3,3} \) maneiras de selecionar as 3 pessoas. Portanto a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{C_{12}^4\times C_8^4\times C_4^4}{3!} = 5775.
+C_{12,5}\times C_{7,4}\times C_{3,3} = 27720.
 \end{equation*}
 </div>
-<div class="hidden-sagecell-sage" id="sage-11"><script type="text/x-sage">C(n, p) = binomial(n, p)
-P(n) = factorial(n)
-C(12, 4)*C(8,4)*C(4, 4)/P(3)
-</script></div>
+<p id="p-308"><dfn class="terminology">item b.</dfn> Podemos aplicar a mesma ideia do item anterior, só que os grupos são todos com quatro pessoas. Logo, a resposta é dada por</p>
+<div class="displaymath">
+\begin{equation*}
+C_{12,4}\times C_{8,4}\times C_{4,4}=34650 .
+\end{equation*}
+</div>
+<p id="p-309"><dfn class="terminology">item c.</dfn> Podemos aplicar a mesma ideia do item b., porém, a ordem dos grupos não importa. Logo, precisamos dividir pelo número de maneiras de ordenar os grupos. Portanto, a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{C_{12,4}\times C_{8,4}\times C_{4,4}}{3!} = 5775.
+\end{equation*}
+</div>
 </div></div></article></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercícios</span> <span class="codenumber">1.4.3</span> <span class="title">Exercícios</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-308">Quantas diagonais possuem um polígono de \(n\) lados?</p>
+<p id="p-310">Quantas diagonais possuem um polígono de \(n\) lados?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-35" id="answer-35"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-35"><div class="answer solution-like"><p id="p-309">\(\dfrac{n(n-3)}{2} \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-49" id="solution-49"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like">
-<p id="p-310">Cada vértice pode ser ligado a \(n-3\) outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são \(n\) vértices ficamos com \(n(n-3)\) diagonais, mas elas foram contadas duas vezes, portanto a resposta é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-35" id="answer-35"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-35"><div class="answer solution-like"><p id="p-311">\(\dfrac{n(n-3)}{2} \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-49" id="solution-49"><span class="type">Solução</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like">
+<p id="p-312">Inicialmente, podemos contar o número total de maneiras de ligar quaisquer dois vértices, depois basta subtrair o número de arestas do polígono. Portanto a resposta é</p>
+<div class="displaymath">
+\begin{equation*}
+C_{n,2}-n = \frac{n(n-1)(n-2)!}{2!(n-2)!}-n = \frac{n(n-1)}{2}-n = \frac{n(n-3)}{2}.
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solução</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like">
+<p id="p-313">Cada vértice pode ser ligado a \(n-3\) outros vértices por meio uma diagonal, pois o vértice nem pode ser ligado a ele mesmo, nem aos seus dois vértices adjacentes, usando diagonais. Como são \(n\) vértices ficamos com \(n(n-3)\) diagonais, mas elas foram contadas duas vezes, portanto a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{n(n-3)}{2}.
@@ -275,10 +296,10 @@ C(12, 4)*C(8,4)*C(4, 4)/P(3)
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-311">Em uma reunião social, cada pessoa cumprimentou todas as outras, havendo ao todo \(45\) apertos de mão. Quantas pessoas havia na reunião?</p>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-36" id="answer-36"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-36"><div class="answer solution-like"><p id="p-312">\(10.\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like">
-<p id="p-313">Precisamos descobrir o valor de \(n\) para o qual, \(C_n^2=45.\) Assim, como \(C_n^2=\frac{n(n-1)}{2}\text{,}\) precisamos resolver a equação:</p>
+<p id="p-314">Em uma reunião social, cada pessoa cumprimentou todas as outras, havendo ao todo \(45\) apertos de mão. Quantas pessoas havia na reunião?</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-36" id="answer-36"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-36"><div class="answer solution-like"><p id="p-315">\(10.\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like">
+<p id="p-316">Precisamos descobrir o valor de \(n\) para o qual, \(C_n^2=45.\) Assim, como \(C_n^2=\frac{n(n-1)}{2}\text{,}\) precisamos resolver a equação:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{n(n-1)}{2}=45.
@@ -286,47 +307,47 @@ C(12, 4)*C(8,4)*C(4, 4)/P(3)
 </div>
 <p data-braille="continuation">Ou seja, \(n^2-n-90=0\text{.}\) As soluções são \(n=-9\) ou \(n=10\text{.}\) Como o número de pessoas precisa ser positivo, a resposta é \(n=10.\)</p>
 </div></div></article><article class="exercise exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-314">Doze atletas disputam uma prova. Serão premiados os cinco primeiros colocados com prêmios diferentes para cada um deles. De quantas maneiras pode ser feita a premiação?</p>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-37" id="answer-37"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-37"><div class="answer solution-like"><p id="p-315">\(95040.\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like">
-<p id="p-316">Precisamos contar o números de maneiras de "separar" das \(12\) pessoas, as \(5\) que ficarão entre os \(5\) primeiros lugares. Depois disso, como os prêmios são diferentes, precisamos contar o número de maneiras de ordenar essas \(5\) pessoas. Portanto, a resposta é</p>
+<p id="p-317">Doze atletas disputam uma prova. Serão premiados os cinco primeiros colocados com prêmios diferentes para cada um deles. De quantas maneiras pode ser feita a premiação?</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-37" id="answer-37"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-37"><div class="answer solution-like"><p id="p-318">\(95040.\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
+<p id="p-319">Precisamos contar o números de maneiras de "separar" das \(12\) pessoas, as \(5\) que ficarão entre os \(5\) primeiros lugares. Depois disso, como os prêmios são diferentes, precisamos contar o número de maneiras de ordenar essas \(5\) pessoas. Portanto, a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{12}^5\times 5! = 95040.
 \end{equation*}
 </div>
 </div></div></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-317">Dentre \(6\) números positivos e \(6\) números negativos, de quantos modos podemos escolher \(4\) números cujo produto seja positivo?</p>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-38" id="answer-38"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-38"><div class="answer solution-like"><p id="p-318">255.</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
-<p id="p-319">Para que o produto de \(4\) números seja positivo, precisamos que sejam \(4\) números positivos, ou \(4\) números negativos, ou \(2\) positivos e \(2\) negativos. O total de maneiras de fazer essas escolhas é dado por</p>
+<p id="p-320">Dentre \(6\) números positivos e \(6\) números negativos, de quantos modos podemos escolher \(4\) números cujo produto seja positivo?</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-38" id="answer-38"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-38"><div class="answer solution-like"><p id="p-321">255.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
+<p id="p-322">Para que o produto de \(4\) números seja positivo, precisamos que sejam \(4\) números positivos, ou \(4\) números negativos, ou \(2\) positivos e \(2\) negativos. O total de maneiras de fazer essas escolhas é dado por</p>
 <div class="displaymath">
 \begin{equation*}
 C_6^4+ C_6^4 + C_6^2\times C_6^2=255.
 \end{equation*}
 </div>
 </div></div></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-320">Dez amigos pretendiam viajar de férias, mas apenas dispõem de um automóvel de cinco lugares. Chegaram a um acordo de sortear os cinco que iriam de carro, enquanto os demais iriam de ônibus. Quantos grupos distintos podem ser formados para ocuparem o carro, admitindo-se que:</p>
+<p id="p-323">Dez amigos pretendiam viajar de férias, mas apenas dispõem de um automóvel de cinco lugares. Chegaram a um acordo de sortear os cinco que iriam de carro, enquanto os demais iriam de ônibus. Quantos grupos distintos podem ser formados para ocuparem o carro, admitindo-se que:</p>
 <ol class="lower-alpha">
-<li id="li-70">qualquer uma das dez pessoas pode dirigir.</li>
-<li id="li-71">apenas 3 pessos possuem habilitação.</li>
+<li id="li-73">qualquer uma das dez pessoas pode dirigir.</li>
+<li id="li-74">apenas 3 pessos possuem habilitação.</li>
 </ol>
 <a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-39" id="answer-39"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-39"><div class="answer solution-like"><ol class="lower-alpha">
-<li id="li-72">\(\displaystyle 252.\)</li>
-<li id="li-73">\(\displaystyle 231.\)</li>
+<li id="li-75">\(\displaystyle 252.\)</li>
+<li id="li-76">\(\displaystyle 231.\)</li>
 </ol></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
-<p id="p-321"><dfn class="terminology">item a)</dfn> Basta escolher as \(5\) pessoas que irão de carro, as demais irão de ônibus. A resposta é</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
+<p id="p-324"><dfn class="terminology">item a)</dfn> Basta escolher as \(5\) pessoas que irão de carro, as demais irão de ônibus. A resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{10}^5=252.
 \end{equation*}
 </div>
-<p id="p-322"><dfn class="terminology">item b)</dfn> Neste caso, podemos escolher as pessoas que irão no carro das seguintes maneiras:</p>
+<p id="p-325"><dfn class="terminology">item b)</dfn> Neste caso, podemos escolher as pessoas que irão no carro das seguintes maneiras:</p>
 <ul class="disc">
-<li id="li-74">1 pessoa com habilitação e 4 sem habilitação, ou</li>
-<li id="li-75">2 pessoas com habilitação e 3 sem habilitação, ou</li>
-<li id="li-76">3 pessoas com habilitação e 2 sem habilitação.</li>
+<li id="li-77">1 pessoa com habilitação e 4 sem habilitação, ou</li>
+<li id="li-78">2 pessoas com habilitação e 3 sem habilitação, ou</li>
+<li id="li-79">3 pessoas com habilitação e 2 sem habilitação.</li>
 </ul>
 <p data-braille="continuation">Isto pode ser contato da seguinte forma:</p>
 <div class="displaymath">
@@ -335,11 +356,11 @@ C_3^1\times C_7^4 + C_3^2\times C_7^3+C_3^3\times C_7^2=231.
 \end{equation*}
 </div>
 </div></div></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-323">Quantas são as pedras de um dominó comum?</p>
+<p id="p-326">Quantas são as pedras de um dominó comum?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-40" id="answer-40"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-40"><div class="answer solution-like"><p id="p-324">28</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
-<p id="p-325">As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_7^2\) modos de escolher os números. Portanto o número de pedras de um dominó comum é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-40" id="answer-40"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-40"><div class="answer solution-like"><p id="p-327">28</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
+<p id="p-328">As pedras de um dominó possuem dois números que podem ter valores de 0 até 6. Dessas pedras, 7 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_7^2\) modos de escolher os números. Portanto o número de pedras de um dominó comum é</p>
 <div class="displaymath">
 \begin{equation*}
 7 + C_7^2 = 28.
@@ -347,12 +368,12 @@ C_3^1\times C_7^4 + C_3^2\times C_7^3+C_3^3\times C_7^2=231.
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-326">(UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.</p>
+<p id="p-329">(UFPE 2012) As pedras de um dominó usual são compostas por dois quadrados, com 7 possíveis marcas (de zero pontos até 6 pontos). Quantas pedras terá um dominó se cada quadrado puder ter até 9 pontos? Veja no desenho abaixo um exemplo de uma nova pedra do dominó.</p>
 <div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/domino.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><p id="p-327">55</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
-<p id="p-328">As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_{10}^2\) modos de escolher os números. Portanto o número de pedros desse dominó é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><p id="p-330">55</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
+<p id="p-331">As pedras desse dominó possuem dois números que podem ter valores de 0 até 9. Dessas pedras, 10 possuem os dois números iguais. Para formar uma pedra com dois números diferentes, temos \(C_{10}^2\) modos de escolher os números. Portanto o número de pedros desse dominó é</p>
 <div class="displaymath">
 \begin{equation*}
 10 + C_{10}^2 = 55.
@@ -360,14 +381,14 @@ C_3^1\times C_7^4 + C_3^2\times C_7^3+C_3^3\times C_7^2=231.
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-329">(UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.</p>
+<p id="p-332">(UFPE 2001) Quantos são os paralelogramos com lados sobre os segmentos da figura seguinte, onde os segmentos que não se interceptam são paralelos.</p>
 <div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/paralelogramos.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><p id="p-330">90</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
-<p id="p-331">Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><p id="p-333">90</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
+<p id="p-334">Podemos prolongar os segmentos que definem os lados dos paralelogramos conforme a figura abaixo:</p>
 <figure class="figure figure-like" id="fig-paralelogramos2"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/paralelogramos2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.4.10<span class="period">.</span></span><span class="space"> </span>Paralelogramos com prolongamento de segmentos.</figcaption></figure><p id="p-332">Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:</p>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.4.10<span class="period">.</span></span><span class="space"> </span>Paralelogramos com prolongamento de segmentos.</figcaption></figure><p id="p-335">Observe que escolher dois segmentos em cima e dois segmentos do lado esquerdo define um único paralelogramo. Observe também que cada paralelogramo da figura corresponde a dois segmentos na parte de cima e dois segmentos do lado esquerdo. Portanto, a resposta é o número de maneiras de escolher 2 dentre 6 segmentos na parte de cima, multiplicado pelo número de maneiras de escolher 2 dentre 4 segmentos no lado esquerdo:</p>
 <div class="displaymath">
 \begin{equation*}
 C_6^2\times C_4^2 = 90.
@@ -375,18 +396,18 @@ C_6^2\times C_4^2 = 90.
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-333">Seja \(P\) um polígono convexo de \(n\) lados, tal que não há três diagonais que se intersectam no mesmo ponto. Qual o número total de pontos de interseções dessas diagonais.</p>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><p id="p-334">\(C_{n}^{4}\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
-<p id="p-335">Vamos analisar o que acontece no caso \(n=4\text{.}\) Num polígono convexo com \(4\) vértices, do total de \(C_4^2=6\) segmentos, temos \(4\) lados e \(2\) diagonais que se intersectam num único ponto. Perceba que para quaisquer \(4\) vértices de um polígono de \(n\) lados teremos um único par de diagonais que se encontram num único ponto. <figure class="figure figure-like" id="fig-poligono-comb"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/poli.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.4.11<span class="period">.</span></span><span class="space"> </span>Quatro vértices do polígono convexo \(P\text{.}\)</figcaption></figure></p>
-<p id="p-336">Assim, defina uma função que associa cada quádrupla de vértices do polígono \(P\) ao par de diagonais que se intersectam num único ponto. Observe que, por construção, esta função é sobrejetiva. Ela também é injetiva, pois a única forma dela não ser injetiva seria termos três diagonais que se intersectassem num único ponto, mas por hipótese isto não acontece. Dessa maneira, temos uma bijeção que associa cada \(4\) vértices de \(P\) em um ponto de interseção das diagonais, determinado por eles. Aplicando o Princípio da Bijeção (<a class="xref" data-knowl="./knowl/teo-prin-bij.html" title="Teorema 1.2.12: (Princípio da Bijeção)">Teorema 1.2.12</a>), a quantidade de pontos das interseções das diagonais é o mesmo que o número de maneiras de escolher \(4\) vértices em um polígono com \(n\) vértices, e este número é dado por \(C_{n}^{4}\text{.}\)</p>
-</div></div></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-337">(PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><p id="p-338">\(736\)</p></div></div>
+<p id="p-336">Seja \(P\) um polígono convexo de \(n\) lados, tal que não há três diagonais que se intersectam no mesmo ponto. Qual o número total de pontos de interseções dessas diagonais.</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><p id="p-337">\(C_{n}^{4}\)</p></div></div>
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like">
-<p id="p-339">Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é</p>
+<p id="p-338">Vamos analisar o que acontece no caso \(n=4\text{.}\) Num polígono convexo com \(4\) vértices, do total de \(C_4^2=6\) segmentos, temos \(4\) lados e \(2\) diagonais que se intersectam num único ponto. Perceba que para quaisquer \(4\) vértices de um polígono de \(n\) lados teremos um único par de diagonais que se encontram num único ponto. <figure class="figure figure-like" id="fig-poligono-comb"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/poli.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.4.11<span class="period">.</span></span><span class="space"> </span>Quatro vértices do polígono convexo \(P\text{.}\)</figcaption></figure></p>
+<p id="p-339">Assim, defina uma função que associa cada quádrupla de vértices do polígono \(P\) ao par de diagonais que se intersectam num único ponto. Observe que, por construção, esta função é sobrejetiva. Ela também é injetiva, pois a única forma dela não ser injetiva seria termos três diagonais que se intersectassem num único ponto, mas por hipótese isto não acontece. Dessa maneira, temos uma bijeção que associa cada \(4\) vértices de \(P\) em um ponto de interseção das diagonais, determinado por eles. Aplicando o Princípio da Bijeção (<a class="xref" data-knowl="./knowl/teo-prin-bij.html" title="Teorema 1.2.12: (Princípio da Bijeção)">Teorema 1.2.12</a>), a quantidade de pontos das interseções das diagonais é o mesmo que o número de maneiras de escolher \(4\) vértices em um polígono com \(n\) vértices, e este número é dado por \(C_{n}^{4}\text{.}\)</p>
+</div></div></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-340">(PROFMAT 2015) Uma escola de educação básica possui 12 professores de matemática, sendo que 8 atuam exclusivamente no Ensino Fundamental e 4 atuam exclusivamente no Ensino Médio. Para a organização da 1ª Olimpíada de Matemática da escola, será formada uma comissão de 5 professores de matemática, de modo que pelo menos um deles seja professor do Ensino Médio. De quantas maneiras essa comissão poderá ser formada?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><p id="p-341">\(736\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like">
+<p id="p-342">Vamos contar o total de modos de escolher 5 professores dentre os 12, depois subtraímos o número de casos em que nenhum professor do ensino médio foi selecionado. O número de soluções é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{12}^5 - C_8^5 = 736.
@@ -394,11 +415,11 @@ C_{12}^5 - C_8^5 = 736.
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<p id="p-340">(UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.</p>
+<p id="p-343">(UFBA 2006) Durante uma reunião, ocorreu uma divergência quanto à formação de uma comissão gestora, a ser escolhida entre os presentes. Um grupo defendia uma comissão com três membros, sendo um presidente, um vice-presidente e um secretário. Outro grupo queria uma comissão com três membros sem cargos definidos. A primeira alternativa oferece 280 possibilidades de escolha a mais que a segunda. Determine o número de pessoas presentes à reunião, sabendo-se que esse número é maior que 5.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><p id="p-341">8</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like">
-<p id="p-342">Seja \(n\) a quantidade de pessoas na reunião. No primeiro caso temos \(n\times(n-1)\times (n-2)\) modos de escolher a comissão. No segundo caso temos \(C_n^3\) modos de escolher a comissão. Como a primeira alternativa oferece \(280\) possibilidades de escolha a mais que a segunda, temos</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><p id="p-344">8</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<p id="p-345">Seja \(n\) a quantidade de pessoas na reunião. No primeiro caso temos \(n\times(n-1)\times (n-2)\) modos de escolher a comissão. No segundo caso temos \(C_n^3\) modos de escolher a comissão. Como a primeira alternativa oferece \(280\) possibilidades de escolha a mais que a segunda, temos</p>
 <div class="displaymath">
 \begin{equation*}
 n\times(n-1)\times (n-2) = C_n^3+280.
@@ -425,75 +446,75 @@ n\times(n-1)\times (n-2) = \frac{6\times 280}{5} = 336.\label{eq-ufba2006}\tag{1
 <p data-braille="continuation">Portanto, \(n-2 = 6, n-1 = 7\) e \(n=8\text{.}\)</p>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
-<p id="p-343">Considere tabuleiros, como os de xadrez, mas com dimensões \(m\times n\text{.}\)</p>
+<p id="p-346">Considere tabuleiros, como os de xadrez, mas com dimensões \(m\times n\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-77">De quantos modos podemos colocar 5 torres iguais em um tabuleiro \(8\times 8\text{,}\) de modo que haja uma única em cada linha e em cada coluna?</li>
-<li id="li-78">De quantos modos podemos colocar 5 torres iguais em um tabuleiro \(9\times 6\text{,}\) de modo que haja uma única em cada linha e em cada coluna?</li>
-<li id="li-79">De quantos modos podemos colocar \(p\) torres iguais em um tabuleiro \(m\times n\text{,}\) de modo que haja uma única em cada linha e em cada coluna?</li>
+<li id="li-80">De quantos modos podemos colocar 5 torres iguais em um tabuleiro \(8\times 8\text{,}\) de modo que haja uma única em cada linha e em cada coluna?</li>
+<li id="li-81">De quantos modos podemos colocar 5 torres iguais em um tabuleiro \(9\times 6\text{,}\) de modo que haja uma única em cada linha e em cada coluna?</li>
+<li id="li-82">De quantos modos podemos colocar \(p\) torres iguais em um tabuleiro \(m\times n\text{,}\) de modo que haja uma única em cada linha e em cada coluna?</li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><p id="p-344">a) \((C_{8}^5)^2\times 5!~~~~\) b) \(C_{9}^5\times C_6^5\times 5!~~~~\) c) \(C_{m}^p\times C_n^p\times p!\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like"><ol class="lower-alpha">
-<li id="li-80">Precisamos selecionar as linhas e as colunas que colocaremos as torres, em seguida procedemos como no <a class="xref" data-knowl="./knowl/exer-xadrez.html" title="Exercício 1.3.3.6">Exercício 1.3.3.6</a>. Para selecionar as linhas que serão utilizadas, temos \(C_8^5\) opções. Para selecionar as colunas que serão utilizadas, também temos \(C_8^5\) opções. Portanto, a resposta é<div class="displaymath">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><p id="p-347">a) \((C_{8}^5)^2\times 5!~~~~\) b) \(C_{9}^5\times C_6^5\times 5!~~~~\) c) \(C_{m}^p\times C_n^p\times p!\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-83">Precisamos selecionar as linhas e as colunas que colocaremos as torres, em seguida procedemos como no <a class="xref" data-knowl="./knowl/exer-xadrez.html" title="Exercício 1.3.3.6">Exercício 1.3.3.6</a>. Para selecionar as linhas que serão utilizadas, temos \(C_8^5\) opções. Para selecionar as colunas que serão utilizadas, também temos \(C_8^5\) opções. Portanto, a resposta é<div class="displaymath">
 \begin{equation*}
 (C_{8}^5)^2\times 5!.
 \end{equation*}
 </div>
 </li>
-<li id="li-81">Seguindo com a ideia do item a, para selecionar as linhas que serão utilizadas, temos \(C_9^5\) opções. Para selecionar as colunas que serão utilizadas, temos \(C_6^5\) opções. Logo, a resposta é<div class="displaymath">
+<li id="li-84">Seguindo com a ideia do item a, para selecionar as linhas que serão utilizadas, temos \(C_9^5\) opções. Para selecionar as colunas que serão utilizadas, temos \(C_6^5\) opções. Logo, a resposta é<div class="displaymath">
 \begin{equation*}
 C_{9}^5\times C_6^5\times 5!.
 \end{equation*}
 </div>
 </li>
-<li id="li-82">Observe que para ter solução, é necessário que \(p\leq \min\{m,n\}\text{.}\) Se isto for verdade, procedendo de modo análogo ao item anterior, a resposta é<div class="displaymath">
+<li id="li-85">Observe que para ter solução, é necessário que \(p\leq \min\{m,n\}\text{.}\) Se isto for verdade, procedendo de modo análogo ao item anterior, a resposta é<div class="displaymath">
 \begin{equation*}
 C_{m}^p\times C_n^p\times p!.
 \end{equation*}
 </div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>(OBM 2004 - 2ª fase do nível 3) <p id="p-345">Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?</p>
+</div></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>(OBM 2004 - 2ª fase do nível 3) <p id="p-348">Os doze alunos de uma turma de olimpíada saíam para jogar futebol todos os dias após a aula de matemática, formando dois times de 6 jogadores cada e jogando entre si. A cada dia eles formavam dois times diferentes dos times formados em dias anteriores. Ao final do ano, eles verificaram que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Quantos times diferentes foram formados ao longo do ano?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><p id="p-346">\(132 \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
-<p id="p-347">Note que para cada 5 alunos fixados temos 7 times possíveis e que o número total maneiras de formar um time de 6 jogadores, tendo 12 disponíveis, é \(C_{12}^6\text{.}\)  Assim, \(C_{12}^6\) é 7 vezes o total de times formados, já que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Portanto, a resposta é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><p id="p-349">\(132 \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
+<p id="p-350">Note que para cada 5 alunos fixados temos 7 times possíveis e que o número total maneiras de formar um time de 6 jogadores, tendo 12 disponíveis, é \(C_{12}^6\text{.}\)  Assim, \(C_{12}^6\) é 7 vezes o total de times formados, já que cada 5 alunos haviam jogado juntos num mesmo time exatamente uma vez. Portanto, a resposta é</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{C_{12}^6}{7}=132.
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>(OBM 2006 - 2ª fase do nível 3) <p id="p-348">Seja \(n\) inteiro positivo. De quantas maneiras podemos distribuir \(n+1\) brinquedos distintos para \(n\) crianças de modo que toda criança receba pelo menos um brinquedo?</p>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>(OBM 2006 - 2ª fase do nível 3) <p id="p-351">Seja \(n\) inteiro positivo. De quantas maneiras podemos distribuir \(n+1\) brinquedos distintos para \(n\) crianças de modo que toda criança receba pelo menos um brinquedo?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-349">Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.</p></div></div>
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><p id="p-350">\(n\times \dfrac{(n+1)!}{2}. \)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>(OBM 2013 - 2ª fase do nível 3) <p id="p-351">Para cobrir um tabuleiro de dimensões \(1\times112\text{,}\) podemos utilizar heptaminós amarelos, de dimensões \(1\times7\text{,}\) e octaminós vermelhos, de dimensões \(1\times8\text{.}\) De quantos modos podemos cobrir completamente o tabuleiro?</p>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Dica</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-352">Escolha uma criança para receber dois brinquedos, em seguida escolha os dois brinquedos dessa criança. Agora distribua um brinquedo para cada criança que restou.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><p id="p-353">\(n\times \dfrac{(n+1)!}{2}. \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>(OBM 2013 - 2ª fase do nível 3) <p id="p-354">Para cobrir um tabuleiro de dimensões \(1\times112\text{,}\) podemos utilizar heptaminós amarelos, de dimensões \(1\times7\text{,}\) e octaminós vermelhos, de dimensões \(1\times8\text{.}\) De quantos modos podemos cobrir completamente o tabuleiro?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><p id="p-352">\(6437 \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
-<p id="p-353">Suponha que vamos usar \(x\) heptaminós e \(y\) octaminós. Para cobrir tudo, temos \(7x + 8y = 112\text{.}\)</p>
-<p id="p-354">Observe que \(112 = 2\times7\times8\) é múltiplo de \(7\) e de \(8\text{.}\) Assim, \(7x\) é múltiplo de 8, pois \(7x = 112 - 8y = 8(14 - y)\text{.}\) Analogamente, \(8y\) é múltiplo de 7, pois \(8y = 112 – 7x = 7(16 – x)\text{.}\) Como \(7\) e \(8\) são primos entre si, \(x\) é múltiplo de \(8\) e \(y\) é múltiplo de \(7\text{.}\)</p>
-<p id="p-355">Sendo \(x = 8t\) e \(y = 7u\text{,}\) temos \(7\times8t + 8\times7u = 112 \Leftrightarrow  t + u = 2\text{.}\) Assim, os valores de \((t,u)\) são \((0,2), (1,1)\) e \((2,0)\text{,}\) que correspondem a \((x,y)\) sendo \((0,14), (8,7)\) e \((16,0)\text{.}\)</p>
-<p id="p-356">Analisando os três casos:</p>
-<p id="p-357">1º: \((x, y) = (0, 14)\text{,}\) apenas uma maneira de cobrir, pois todas as peças são octaminós.</p>
-<p id="p-358">2º: \((x, y) = (8, 7)\text{,}\) temos no total \(8+7=15\) peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><p id="p-355">\(6437 \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like">
+<p id="p-356">Suponha que vamos usar \(x\) heptaminós e \(y\) octaminós. Para cobrir tudo, temos \(7x + 8y = 112\text{.}\)</p>
+<p id="p-357">Observe que \(112 = 2\times7\times8\) é múltiplo de \(7\) e de \(8\text{.}\) Assim, \(7x\) é múltiplo de 8, pois \(7x = 112 - 8y = 8(14 - y)\text{.}\) Analogamente, \(8y\) é múltiplo de 7, pois \(8y = 112 – 7x = 7(16 – x)\text{.}\) Como \(7\) e \(8\) são primos entre si, \(x\) é múltiplo de \(8\) e \(y\) é múltiplo de \(7\text{.}\)</p>
+<p id="p-358">Sendo \(x = 8t\) e \(y = 7u\text{,}\) temos \(7\times8t + 8\times7u = 112 \Leftrightarrow  t + u = 2\text{.}\) Assim, os valores de \((t,u)\) são \((0,2), (1,1)\) e \((2,0)\text{,}\) que correspondem a \((x,y)\) sendo \((0,14), (8,7)\) e \((16,0)\text{.}\)</p>
+<p id="p-359">Analisando os três casos:</p>
+<p id="p-360">1º: \((x, y) = (0, 14)\text{,}\) apenas uma maneira de cobrir, pois todas as peças são octaminós.</p>
+<p id="p-361">2º: \((x, y) = (8, 7)\text{,}\) temos no total \(8+7=15\) peças que colocaremos no tabuleiro. Como as peças de tamanho diferente possuem cores distintas e o tabuleiro ficará sem ''buracos'', precisamos escolher as posições que serão colocados os heptaminós, ou as posições que serão colocados os octaminós, pois estes dois valores são iguais. O número de maneiras de fazer isto é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{15}^{7} = C_{15}^{8} = 6435.
 \end{equation*}
 </div>
-<p id="p-359">3º: \((x, y) = (16, 0)\text{,}\) análogo ao primeiro caso, apenas uma maneira.</p>
-<p id="p-360">No total temos \(1+C_{15}^{7}+1 = 1+6435+1 = 6437\) maneiras de cobrir completamente o tabuleiro.</p>
+<p id="p-362">3º: \((x, y) = (16, 0)\text{,}\) análogo ao primeiro caso, apenas uma maneira.</p>
+<p id="p-363">No total temos \(1+C_{15}^{7}+1 = 1+6435+1 = 6437\) maneiras de cobrir completamente o tabuleiro.</p>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>(OBM 2015 - 2ª fase do nível 3) <p id="p-361">Um subconjunto de \(5\) elementos do conjunto \(\{1,2,3, ... , 20\}\) é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que \(1\text{,}\) do terceiro para o segundo é maior que \(2\text{,}\) do quarto para o terceiro é maior que \(3\) e do quinto para o quarto é maior que \(4\text{.}\) Existem quantos subconjuntos largos?</p>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>(OBM 2015 - 2ª fase do nível 3) <p id="p-364">Um subconjunto de \(5\) elementos do conjunto \(\{1,2,3, ... , 20\}\) é dito largo se ao colocar os seus elementos em ordem crescente tivermos a propriedade de que a diferença do segundo menos o primeiro é maior que \(1\text{,}\) do terceiro para o segundo é maior que \(2\text{,}\) do quarto para o terceiro é maior que \(3\) e do quinto para o quarto é maior que \(4\text{.}\) Existem quantos subconjuntos largos?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><p id="p-362">\(252 \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like">
-<p id="p-363">Vamos mostrar uma bijeção entre os subconjuntos largos do enunciado e os subconjuntos de \(\{1,2,3,\ldots, 10\}\) com 5 elementos.</p>
-<p id="p-364">Sejam \(a \lt b \lt c \lt d \lt e\) os elementos de um conjunto largo. Assim, \(b &gt; a + 1, c &gt; b + 2, d &gt; c + 3\) e \(e &gt; d + 4\text{,}\) ou seja, \(1 ≤ a \lt b − 1 \lt c - 3 \lt d - 6 \lt e - 10 ≤ 10\text{.}\)</p>
-<p id="p-365">Desta forma, \(\{a, b - 1, c - 3, d - 6, e - 10\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\text{.}\) Reciprocamente, se \(\{x, y, z, w, t\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\) com \(x \lt y \lt z \lt w \lt t\) então \(\{x, y + 1, z + 3, w + 6, t + 10\}\) é um conjunto largo, pois \(y + 1 - x &gt; 1, z + 3 - (y + 1) &gt; 2, w + 6 - (z + 3) &gt; 3\) e \(t + 10 - (w + 6) &gt; 4\text{.}\)</p>
-<p id="p-366">Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de \(5\) elementos de \(\{1,2,3,\ldots,10\}\text{,}\) que é</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><p id="p-365">\(252 \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like">
+<p id="p-366">Vamos mostrar uma bijeção entre os subconjuntos largos do enunciado e os subconjuntos de \(\{1,2,3,\ldots, 10\}\) com 5 elementos.</p>
+<p id="p-367">Sejam \(a \lt b \lt c \lt d \lt e\) os elementos de um conjunto largo. Assim, \(b &gt; a + 1, c &gt; b + 2, d &gt; c + 3\) e \(e &gt; d + 4\text{,}\) ou seja, \(1 ≤ a \lt b − 1 \lt c - 3 \lt d - 6 \lt e - 10 ≤ 10\text{.}\)</p>
+<p id="p-368">Desta forma, \(\{a, b - 1, c - 3, d - 6, e - 10\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\text{.}\) Reciprocamente, se \(\{x, y, z, w, t\}\) é um subconjunto de \(\{1,2,3,\ldots,10\}\) com \(x \lt y \lt z \lt w \lt t\) então \(\{x, y + 1, z + 3, w + 6, t + 10\}\) é um conjunto largo, pois \(y + 1 - x &gt; 1, z + 3 - (y + 1) &gt; 2, w + 6 - (z + 3) &gt; 3\) e \(t + 10 - (w + 6) &gt; 4\text{.}\)</p>
+<p id="p-369">Com isso, a quantidade de subconjuntos largos é igual à quantidade de subconjuntos de \(5\) elementos de \(\{1,2,3,\ldots,10\}\text{,}\) que é</p>
 <div class="displaymath">
 \begin{equation*}
 C_{10}^5 = \frac{10!}{5!5!} = 252.
@@ -501,46 +522,46 @@ C_{10}^5 = \frac{10!}{5!5!} = 252.
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="quest-fuvest2020comb"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
-<p id="p-367">(FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.</p>
+<p id="p-370">(FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.</p>
 <ol class="lower-alpha">
-<li id="li-83">Quantas são as possíveis coleções que um jogador pode receber?</li>
-<li id="li-84">A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?</li>
+<li id="li-86">Quantas são as possíveis coleções que um jogador pode receber?</li>
+<li id="li-87">A regra do jogo estabelece pontuações para as peças, da seguinte forma: círculo = 1 ponto, triângulo = 2 pontos, quadrado = 3 pontos e estrela = 4 pontos. Quantas são as possíveis coleções que valem 26 pontos ou mais?</li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><p id="p-368">a) \(12870 ~~~~\) b) \(85\)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like">
-<p id="p-369"><dfn class="terminology">item a)</dfn> O número de possíveis coleções é dado por:</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><p id="p-371">a) \(12870 ~~~~\) b) \(85\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
+<p id="p-372"><dfn class="terminology">item a)</dfn> O número de possíveis coleções é dado por:</p>
 <div class="displaymath">
 \begin{equation*}
 C_{16}^8 = 12870. 
 \end{equation*}
 </div>
-<p id="p-370"><dfn class="terminology">item b)</dfn> As coleções possíveis são:</p>
-<p id="p-371">1) 4 estrelas e 4 quadrados totalizando 28 pontos:</p>
+<p id="p-373"><dfn class="terminology">item b)</dfn> As coleções possíveis são:</p>
+<p id="p-374">1) 4 estrelas e 4 quadrados totalizando 28 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^4 = 1
 \end{equation*}
 </div>
-<p id="p-372">2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:</p>
+<p id="p-375">2) 4 estrelas, 3 quadrados e 1 triângulo totalizando 27 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^3\times C_4^1 = 1\times 4\times 4 = 16
 \end{equation*}
 </div>
-<p id="p-373">3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:</p>
+<p id="p-376">3) 4 estrelas, 3 quadrados e 1 círculo totalizando 26 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^3\times C_4^1 = 1\times 4\times 4 = 16
 \end{equation*}
 </div>
-<p id="p-374">4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:</p>
+<p id="p-377">4) 4 estrelas, 2 quadrados e 2 triângulos totalizando 26 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^4\times C_4^2\times C_4^2 = 1\times 6\times 4 = 36
 \end{equation*}
 </div>
-<p id="p-375">5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos:</p>
+<p id="p-378">5) 3 estrelas, 4 quadrados e 1 triângulo totalizando 26 pontos:</p>
 <div class="displaymath">
 \begin{equation*}
 C_4^3\times C_4^4\times C_4^1 = 4\times 1\times 4 = 16
@@ -549,12 +570,12 @@ C_4^3\times C_4^4\times C_4^1 = 4\times 1\times 4 = 16
 <p data-braille="continuation">Portanto existem \(1+16+16+36+16 = 85\) coleções possíveis.</p>
 </div></div>
 </div></article><article class="exercise exercise-like" id="quest-fuvest2018comb"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
-<p id="p-376">(FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há \(2n\) participantes. Na primeira rodada, há \(n\) jogos. Calcule, em função de \(n\text{,}\) o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.</p>
+<p id="p-379">(FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há \(2n\) participantes. Na primeira rodada, há \(n\) jogos. Calcule, em função de \(n\text{,}\) o número de possibilidades para se fazer o emparceiramento da primeira rodada, sem levar em conta a cor das peças.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><p id="p-377">\(\dfrac{(2n)!}{2^n\times n!} \)</p></div></div>
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
-<p id="p-378">Para o primeiro jogo, temos um total de \(C_{2n}^2\) maneiras de escolher os participantes. Para o segundo jogo, temos um total de \(C_{2n-2}^2\) maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com \(C_2^2\) maneiras de escolher os participantes.</p>
-<p id="p-379">Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Resposta</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><p id="p-380">\(\dfrac{(2n)!}{2^n\times n!} \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like">
+<p id="p-381">Para o primeiro jogo, temos um total de \(C_{2n}^2\) maneiras de escolher os participantes. Para o segundo jogo, temos um total de \(C_{2n-2}^2\) maneiras de escolher os participantes e assim sucessivamente, até que para o último jogo ficamos com \(C_2^2\) maneiras de escolher os participantes.</p>
+<p id="p-382">Observe que a ordem os jogos não importa. Portanto, precisamos dividir pela quantidade de maneiras de ordenar esses jogos. A resposta é dada por:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{C_{2n}^2\times C_{2n-2}^2\times \cdots \times C_{2}^2}{n!} = \frac{(2n)!}{2^n\times n!}.

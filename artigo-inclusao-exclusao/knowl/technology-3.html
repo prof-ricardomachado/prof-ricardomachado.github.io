@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-04-25T09:37:21-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="technology computation-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
+</h6>
+<p>Escolha os valores dos campos, Vmin ,Vmax, lista e p, para determinar os valores de \(S_i\text{,}\) \(a_p\text{,}\) \(b_p\) e a cardinalidade do conjunto \(C\text{,}\) definido abaixo:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
+\end{equation*}
+</div>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Falta texto</p>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def numeros_de_multiplos2(lista, ini, fim):
+    card_omega = fim-ini+1
+    l=[]
+    for i in lista:
+        l = l+[x for x in [ini..fim] if x%i == 0]   
+        
+    #combinacoes = {}
+    listax=[]
+    for i in range(len(lista)):
+        listax.append(Combinations(lista, i+1).list())
+        #combinacoes.update({i+1:Combinations(lista, i+1).list()})
+    
+    listax2=[]
+    for i in listax:
+        temp=[]
+        for j in range(len(i)):
+            temp.append(lcm(i[j]))
+            #print(i[j])
+        listax2.append(temp)
+            
+    lSi=[]
+    for j in listax2:
+        temp=[]
+        for i in j:
+            temp = temp+[x for x in [ini..fim] if x%i == 0] 
+        lSi.append(len(temp))
+    #print(lSi)
+    
+    soma = 0
+    for i in range(len(lSi)):
+        #print(lSi[i])
+        soma = soma +(-1)^i*lSi[i]
+    
+    S0 = card_omega
+    lSi.insert(0, S0)
+    return (soma, lSi)
+
+def inclu_exclu_geral(lista, ini, fim, p):
+    
+    multi, lS = numeros_de_multiplos2(lista, ini, fim)
+    
+    ap = 0
+    k=0
+    for i in range(p, len(lS)):
+        ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
+        k=k+1
+        
+    #print(ap)
+    
+    bp = 0
+    k=0
+    for i in range(p, len(lS)):
+        bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
+        k=k+1
+    #print(bp)
+    
+    for i in range(len(lS)):
+        print('S%d = %d' %(i,lS[i]))    
+
+    print('a%d = %d' %(p, ap)) 
+    print('b%d = %d' %(p, bp))
+    
+    lprint=''
+    for i in lista:
+        
+        lprint=lprint+str(i)+','
+    lprint=lprint[0:len(lprint)-1]
+
+    print('#C = %d' %multi)
+
+inclu_exclu_geral([6,15,21], 100, 1000, 2)
+</script></div></article><span class="incontext"><a href="section-2.html#technology-3">[incontext]</a></span>
+</body>
+</html>
