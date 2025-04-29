@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:34:46-03:00       *-->
+<!--*       on 2025-04-29T08:24:41-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,18 +12,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.13.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.9.1</span><span class="period">.</span>
 </h6>
-<p>O espaço amostral \(\Omega\) é constituido por todas as formas de ordenar os 23 celulares. Os casos favoráveis é constituído por todas as permutações caóticas com os 23 celulares. Portanto a resposta é</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Mais uma vez, usaremos o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</p>
+<p>Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. O número de casos possíveis para os aniversários das 45 pessoas é \(365^{45}\text{.}\) O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P = \frac{D_{23}}{P_{23}} \approx 0.367879441171442 \approx 36,8\% 
+365\times 364\times 363\times \cdots \times321. 
 \end{equation*}
 </div>
+<p data-braille="continuation">Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Usando o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. 
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Este cálculo pode ser verificado no Sage, usando o código abaixo:</p>
+<div class="sagecell-sage" id="sage-52"><script type="text/x-sage">pd = prod(i for i in (321..365))
+(1 - pd/365^45).n()
+</script></div>
 </div>
 <span class="incontext"><a href="section-espacos-probabilidade.html#solution-168">[incontext]</a></span>
 </body>

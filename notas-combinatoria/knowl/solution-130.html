@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:34:44-03:00       *-->
+<!--*       on 2025-04-29T08:24:39-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,19 +12,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.8.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.7.1</span><span class="period">.</span>
 </h6>
-<p>Primeiro, contamos o número de maneiras de escolher as 6 cadeiras que serão usadas, dentre as 20 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 6 pessoas que irão sentar nas cadeiras. Isto pode ser feito de</p>
+<p>O atleta pode escolher treinar \(5, 6\) ou \(7\) vezes, pois \(gK(28, 8, 3)=0\text{.}\) Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-gKC(20, 6, 2)\times P_6 = 50400
-\end{equation*}
+\begin{align*}
+{\small\sum_{k=5}^7 3^k\times gK(28, k, 3)=}\amp~{\small  3^5\times gK(28, 5, 3)+3^6\times gK(28, 6, 3)+3^7\times gK(28, 7, 3)}\\
+=\amp~ 3^5\times 4368+3^6\times 1716 + 3^7 \times 120\\
+=\amp~2574828.
+\end{align*}
 </div>
-<p data-braille="continuation">maneiras.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">No Sage o cálculo pode ser feito da seguinte maneira:</p>
+<div class="sagecell-sage" id="sage-40"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+(3^5)*gK(28, 5, 3)+(3^6)*gK(28, 6, 3)+(3^7)*gK(28, 7, 3)
+</script></div>
 </div>
 <span class="incontext"><a href="section-lemas-kaplansky.html#solution-130">[incontext]</a></span>
 </body>

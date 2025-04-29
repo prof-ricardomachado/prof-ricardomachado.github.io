@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:34:45-03:00       *-->
+<!--*       on 2025-04-29T08:24:40-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,23 +12,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
-<body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">No <a class="xref" data-knowl="./knowl/ex-dyckway.html" title="Exemplo 2.6.20">Exemplo 2.6.20</a>, mostramos que o número de caminhos de Dyck, de comprimento \(2n\text{,}\) é dado por \(C_n\text{.}\) É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo \(n\) pares de parenteses que estão corretamente emparelhados.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Para cada caminho de Dyck, cada vez que o passo for de \((m,n)\) para \((m+1, n+1)\text{,}\) abra um parêntese e cada vez que o passo for de \((m,n)\) para \((m+1, n-1)\) feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo \(x\text{,}\) em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de \(2n\) passos e estão no eixo \(x\text{,}\) portanto a expressão correspondente conterá \(n\) pares de parênteses corretamente emparelhados.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Reciprocamente, para cada expressão corretamente emparelhada contendo \(n\) pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de \((m,n)\) para \((m+1, n+1)\text{,}\) sempre que houver um parêntese abrindo, e dê um passo de \((m,n)\) para \((m+1, n-1)\text{,}\) sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo \(x\text{.}\) O primeiro parêntese será do tipo "(", garantindo que o primeiro passo seja de \((0,0)\) para \((1,1)\text{.}\) Como as expressões estão corretamente emparelhadas e contêm \(n\) pares de parênteses, o último parêntese será do tipo ")" e o caminho correspondente chegará no ponto \((2n,0)\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">Observação:</dfn> No Sage, a lista contendo todas as expressões de \(n\) pares de parênteses corretamente emparelhados pode ser gerada com o método \(\verb|DyckWords|\text{.}\) Para exibir a representação em parênteses, basta usar o método \(\verb|print|\text{:}\)</p>
-<div class="sagecell-sage" id="sage-44"><script type="text/x-sage">for dw in DyckWords(3):
-    print(dw)
-</script></div>
-</div></body>
+<body><div class="solution solution-like"><ol class="lower-alpha">
+<li>O número de marchas possíveis é dado por \(PR_{a+b}^{a, b}\text{.}\)</li>
+<li>O número de marchas, na qual o cadidato \(A\) permanece sempre em vantagem ou empatado com o candidato \(B\) é dado pelo número de caminhos bons da origem até o ponto \(P(a,b)\text{,}\) ou seja, é<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{a-b+1}{a+1}C_{a+b}^a.
+\end{equation*}
+</div>
+</li>
+<li>Usando a ideia do <a class="xref" data-knowl="./knowl/exer-pr-y=x.html" title="Exercício 2.6.4.3">Exercício 2.6.4.3</a>, o número de marchas, na qual o cadidato \(A\) permanece sempre em vantagem em relação o candidato \(B\) é dado pelo número de caminhos bons do ponto \(P(1,0)\) até o ponto \(Q(a,b)\text{,}\) sem que o caminho toque na reta \(y=x\text{.}\) Pelo <a class="xref" data-knowl="./knowl/exer-pr-y=x.html" title="Exercício 2.6.4.3">Exercício 2.6.4.3</a>, a resposta é<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{a-b}{b}\cdot C_{a+b-1}^a.
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
 </html>
