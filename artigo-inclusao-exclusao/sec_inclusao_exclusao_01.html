@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:37:21-03:00       *-->
+<!--*       on 2025-04-30T17:43:17-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -124,140 +124,174 @@ MathJax.Hub.Config({
 C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="interactive-inclu-exclu"><iframe id="interactive-inclusao-exclusao" width="600" height="480" src="interactive-inclusao-exclusao-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-6">Falta texto</p>
+<figure class="figure figure-like" id="interactive-inclu-exclu"><iframe id="interactive-inclusao-exclusao" width="600" height="480" src="interactive-inclusao-exclusao-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-6">A seguir, apresentamos a função numeros_de_multiplos em SageMath, que reproduz integralmente os mesmos cálculos feitos pelo widget de contagem de múltiplos via Princípio da Inclusão–Exclusão. Nesse código, geramos todas as combinações de divisores, calculamos o MMC de cada interseção, contamos quantos inteiros em [𝑉min,𝑉max] são múltiplos de cada MMC e, por fim, aplicamos a soma alternada de termos positivos e negativos para chegar ao valor de #C. Basta apertar em <dfn class="terminology">Evaluate (Sage)</dfn> para obter, em forma de saída de texto, exatamente as mesmas estatísticas exibidas no painel interativo.</p>
 <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">def numeros_de_multiplos(lista, ini, fim):
-    cardinalidade_omega = fim-ini+1
+    """
+    Calcula o número de inteiros entre ini e fim que são múltiplos de
+    elementos em 'lista', usando o Princípio da Inclusão–Exclusão e exibindo
+    a contribuição de cada interseção.
+    Args:
+        lista (list): lista de divisores (inteiros).
+        ini (int): valor inicial do intervalo (inclusivo).
+        fim (int): valor final do intervalo (inclusivo).
+    """
 
-    #combinacoes = {}
-    lista_combinacoes=[]
+    # cardinalidade do universo Ω = {ini, ini+1, ..., fim}
+    cardinalidade_omega = fim - ini + 1
+
+    # gera todas as combinações não-vazias de elementos em 'lista'
+    lista_combinacoes = []
     for i in range(len(lista)):
+        # Combinations(lista, i+1).list() retorna tuplas de tamanho i+1
         lista_combinacoes.append(Combinations(lista, i+1).list())
-    
-    #MMC
-    lista_mmc=[]
-    for i in lista_combinacoes:
-        temp=[]
-        for j in range(len(i)):
-            temp.append(lcm(i[j]))
+
+    # para cada combinação, calcula o MMC dos elementos
+    lista_mmc = []
+    for comb in lista_combinacoes:
+        temp = []
+        for tup in comb:
+            # lcm() devolve o mínimo múltiplo comum da tupla
+            temp.append(lcm(tup))
         lista_mmc.append(temp)
-    
-    #soma por interseções (Si)
-    lSi=[]
-    card_Ai_inter=[]
-    for j in lista_mmc:
-        temp=[]
-        for i in j:
-            temp.append(len([x for x in [ini..fim] if x%i == 0]))
+
+    # para cada MMC, conta quantos números em [ini..fim] são divisíveis por ele
+    lSi = []             # soma das contagens para cada tamanho de combinação
+    card_Ai_inter = []   # lista de listas das contagens individuais
+    for mmc_list in lista_mmc:
+        temp = []
+        for m in mmc_list:
+            # percorre o intervalo e conta x ≡ 0 mod m
+            temp.append(len([x for x in [ini..fim] if x % m == 0]))
         card_Ai_inter.append(temp)
         lSi.append(sum(temp))
-    
-    # aplicando o princípio da inclusão-exclusão
+
+    # aplica o Princípio da Inclusão–Exclusão:
+    # soma alternada das somas parciais lSi
     soma = 0
     for i in range(len(lSi)):
-        soma = soma +(-1)^i*lSi[i]
-    
-    k=0
-    for c in lista_combinacoes:
-        for i in range(len(c)):
-            s=''
-            for j in c[i]:
-                s = s+'A'+str(j)+'∩'
-            s=s[:-1]
-            print(f'#{s} = {card_Ai_inter[k][i]}')
-        k=k+1
-    
-    #print(soma, lSi)
-    s2 = ''
-    for i in lista:
-        s2 = s2+'A'+str(i)+'∪'
-    s2=s2[:-1]
-    print(f'\n#{s2} = {soma}')
-    
+        # (-1)^i: + se i par, - se i ímpar
+        soma += (-1)**i * lSi[i]
 
-numeros_de_multiplos([6,15,21], 100, 1000)
+    # imprime cada termo de interseção A_{i1}∩A_{i2}... = contagem
+    k = 0
+    for comb in lista_combinacoes:
+        for idx in range(len(comb)):
+            # formata a descrição da interseção
+            s = ''
+            for divisor in comb[idx]:
+                s += 'A' + str(divisor) + '∩'
+            s = s[:-1]  # retira o último '∩'
+            print(f'#{s} = {card_Ai_inter[k][idx]}')
+        k += 1
+
+    # monta a expressão de união total A6∪A15∪A21...
+    s2 = ''
+    for d in lista:
+        s2 += 'A' + str(d) + '∪'
+    s2 = s2[:-1]  # retira o último '∪'
+
+    # imprime o resultado final do PIE
+    print(f'\n#{s2} = {soma}')
+
+
+# Exemplo de uso: conta múltiplos de 6, 15 e 21 no intervalo [100, 1000]
+numeros_de_multiplos([6, 15, 21], 100, 1000)
 </script></div></article><article class="technology computation-like" id="technology-2"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
 </h6>
 <p id="p-7">Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.</p>
-<figure class="figure figure-like" id="interactive-inclu-exclu-complexa"><iframe id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-8">Falta texto</p>
+<figure class="figure figure-like" id="interactive-inclu-exclu-complexa"><iframe id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-8">Em seguida, apresentamos uma função em SageMath, que implementa passo a passo o cálculo de anagramas com posições fixas. O código gera todas as subpalavras resultantes de "remover" temporariamente os caracteres fixos, conta as permutações de cada subpalavra e aplica o Princípio da Inclusão–Exclusão para combinar os resultados parciais. Assim, você pode executar diretamente no Sage, sem interface gráfica, e verificar as mesmas contagens de \[ A_{i_1}\cap \cdots \cap A_{i_r} \] e o total final de anagramas, exatamente como no widget interativo.</p>
 <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">def anagramas_fix(palavra, pfix):
+    """
+    Calcula via Princípio da Inclusão–Exclusão o número de anagramas de 'palavra'
+    que mantêm fixas as posições listadas em 'pfix' (1-based).
+    """
     
-    total_inter=len(pfix)
+    # total de posições fixas (pode ser útil para extensões, mas não é usado diretamente)
+    total_inter = len(pfix)
+    
+    # ordena pfix em ordem crescente e depois inverte, para remover índices do fim ao início
     pfix.sort()
     pfix.reverse()
     
-    comb=Combinations(pfix).list()
-    subpalavra=0
-    lista_inter=[]
-    lista=[]
+    # gera todas as combinações de posições fixas de todos os tamanhos
+    comb = Combinations(pfix).list()
+    
+    # listas auxiliares para armazenar:
+    #   lista_inter = cada combinação de índices fixos
+    #   lista       = subpalavra obtida ao remover esses índices
+    lista_inter = []
+    lista = []
+    
     for i in comb:
+        # copia a palavra original para cada combinação
         subpalavra = copy(palavra)
         for j in i:
+            # copia antes de cada remoção para não alterar versões anteriores
             subpalavra = copy(subpalavra)
-            subpalavra.pop(j-1)
-        #print(i, subpalavra)
+            # remove o caractere na posição j-1 (conversão 1-based → 0-based)
+            subpalavra.pop(j - 1)
+        # armazena a combinação e a subpalavra resultante
         lista_inter.append(i)
         lista.append(subpalavra)
     
-    #print(lista_inter)
-    #print(lista)
+    # prepara listas para o cálculo PIE:
+    lS = []    # contagens de permutações de cada subpalavra
+    soma = 0   # soma alternada conforme o PIE
     
-    lS=[]
-    soma=0
-    for i in range(len(lista_inter)):
-        
-        if len(lista_inter[i])>0:
-            #print(Permutations(lista[i]))
-            soma = soma + Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1)
-            lS.append( Permutations(lista[i]).cardinality() )
-    #print(comb)   
-    #print(lS)
+    for idx in range(len(lista_inter)):
+        # só interessa combinações não-vazias
+        if len(lista_inter[idx]) > 0:
+            # número de permutações da subpalavra
+            qt = Permutations(lista[idx]).cardinality()
+            # soma alternada: + para tamanho ímpar, - para par
+            soma += qt * (-1) ** (len(lista_inter[idx]) - 1)
+            lS.append(qt)
     
-    dic={}
-    for i in range(len(pfix)+1):
-        dic.update({i:[]})
-    
-    
+    # constrói um dicionário para agrupar combinações pelo seu tamanho
+    dic = {i: [] for i in range(len(pfix) + 1)}
     for i in comb:
-        j=copy(i)
-        j.reverse()
+        j = copy(i)
+        j.reverse()               # inverte para alinhar à ordem desejada mais tarde
         dic[len(i)].append(j)
-
-    for i in dic:
-        dic[i].reverse()
+    for k in dic:
+        dic[k].reverse()          # ajusta a ordem interna de cada grupo
     
-    #print(dic)
+    # agora reconstrói a ordem linear de interseções e associa lS2 para impressão
+    comb2 = []
+    lS2 = []
+    for tamanho in dic:
+        if tamanho > 0:
+            for seq in dic[tamanho]:
+                comb2.append(copy(seq))
+                # para mapear qt correto, reconverte seq ao formato original e busca índice
+                seq.reverse()
+                lS2.append(lS[comb.index(seq)-1])           #associa o valor de lS correspondente
     
-    lS2=[]
-    comb2=[]
-    for i in dic:
-        if i > 0:
-            for j in dic[i]:
-                comb2.append(copy(j))
-                
-                j.reverse()
-                lS2.append(lS[comb.index(j)-1])
-                
-    #print(comb2)
-    lstring=[]
-    for i in range( len(comb2)):
-        temp=''
-        for j in comb2[i]:
-            temp=temp + 'A' + str(j) + '∩'
-        temp=temp[0:-1]
-        lstring.append(temp)
-    #print(lstring)
+    # formata cada interseção como string "A1∩A3∩..." para exibição
+    lstring = []
+    for seq in comb2:
+        temp = ''
+        for j in seq:
+            temp += 'A' + str(j) + '∩'
+        lstring.append(temp[:-1])  # retira o último '∩'
     
+    # imprime cada termo de interseção com sua contagem de permutações
     for i in range(len(lstring)):
-        print('#%s = %d' %(lstring[i] , lS2[i]))
-    uni=''
-    pfix.sort()
-    for i in pfix:
-        uni = uni + 'A' + str(i) + '∪'
-    uni = uni[0:-1]
+        print(f'#{lstring[i]} = {lS2[i]}')
     
-    print('\n#%s = %d'  %(uni, soma))
+    # monta a expressão de união total dos eventos fixos
+    uni = ''
+    pfix.sort()  # volta pfix a ordem crescente para exibição
+    for i in pfix:
+        uni += 'A' + str(i) + '∪'
+    uni = uni[:-1]  # retira o último '∪'
+    
+    # imprime o resultado final do Princípio da Inclusão–Exclusão
+    print(f'\n#{uni} = {soma}')
 
+
+# Exemplo de uso:
 anagramas_fix(['P','R','I','N','C','I','P','I','O'], [1,2,3])
 </script></div></article></section></div></main>
 </div>

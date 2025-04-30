@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:37:21-03:00       *-->
+<!--*       on 2025-04-30T17:43:17-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -140,149 +140,208 @@ b_p \amp=~ C_{p-1}^0S_{p} - C_{p}^1S_{p+1}+C_{p+1}^2S_{p+2}+ \cdots +(-1)^nC_{n-
 C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="interactive-inclu-exclu_geral"><iframe id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-12">Falta texto</p>
+<figure class="figure figure-like" id="interactive-inclu-exclu_geral"><iframe id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-12">O código a seguir corresponde exatamente à função implementada dentro do widget acima. Ele foi escrito em \(\texttt{SageMath}\) e realiza, passo a passo, os mesmos cálculos que são executados interativamente: geração das combinações, aplicação do Princípio da Inclusão-Exclusão generalizado e cálculo dos valores \(S_i, a_p, b_p\) e \(\#C\text{.}\) Essa versão em código permite que o leitor explore o algoritmo em um ambiente computacional, modifique parâmetros livremente e compreenda de forma mais detalhada a lógica por trás do painel interativo.</p>
 <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def numeros_de_multiplos2(lista, ini, fim):
-    card_omega = fim-ini+1
-    l=[]
+    """
+    Retorna o total de múltiplos e a lista de contagens S₀, S₁, ..., Sₙ
+    para o intervalo [ini, fim] e a lista de divisores dada.
+    """
+    # cardinalidade do universo Ω = {ini, ..., fim}
+    card_omega = fim - ini + 1
+
+    # lista de todos os múltiplos de cada divisor em 'lista'
+    l = []
     for i in lista:
-        l = l+[x for x in [ini..fim] if x%i == 0]   
-        
-    #combinacoes = {}
-    listax=[]
+        l = l + [x for x in [ini..fim] if x % i == 0]
+
+    # gera todas as combinações não-vazias dos divisores
+    listax = []
     for i in range(len(lista)):
         listax.append(Combinations(lista, i+1).list())
-        #combinacoes.update({i+1:Combinations(lista, i+1).list()})
-    
-    listax2=[]
-    for i in listax:
-        temp=[]
-        for j in range(len(i)):
-            temp.append(lcm(i[j]))
-            #print(i[j])
+
+    # para cada combinação, calcula o mínimo múltiplo comum (MMC)
+    listax2 = []
+    for comb in listax:
+        temp = []
+        for tup in comb:
+            temp.append(lcm(tup))
         listax2.append(temp)
-            
-    lSi=[]
-    for j in listax2:
-        temp=[]
-        for i in j:
-            temp = temp+[x for x in [ini..fim] if x%i == 0] 
+
+    # para cada MMC, conta quantos números em [ini..fim] são divisíveis por ele
+    lSi = []
+    for mmc_list in listax2:
+        temp = []
+        for m in mmc_list:
+            temp = temp + [x for x in [ini..fim] if x % m == 0]
+        # armazena a quantidade de múltiplos dessa ordem de interseção
         lSi.append(len(temp))
-    #print(lSi)
-    
+
+    # aplica o Princípio da Inclusão–Exclusão para o total de múltiplos
     soma = 0
     for i in range(len(lSi)):
-        #print(lSi[i])
-        soma = soma +(-1)^i*lSi[i]
-    
+        # alterna sinal conforme o nível de interseção
+        soma += (-1)**i * lSi[i]
+
+    # S₀ corresponde ao tamanho do universo Ω
     S0 = card_omega
     lSi.insert(0, S0)
+
+    # retorna o total de múltiplos e a lista [S₀, S₁, S₂, ...]
     return (soma, lSi)
 
+
 def inclu_exclu_geral(lista, ini, fim, p):
-    
+    """
+    Para um dado p, calcula:
+      - a_p: elementos exatamente em p conjuntos
+      - b_p: elementos em pelo menos p conjuntos
+    e imprime S₀, S₁, ..., Sₙ, a_p, b_p e o total de múltiplos (C).
+    """
+    # obtém o total de múltiplos (multi) e a lista de Sᵢ
     multi, lS = numeros_de_multiplos2(lista, ini, fim)
-    
+
+    # cálculo de a_p (exatamente p)
     ap = 0
-    k=0
+    k = 0
     for i in range(p, len(lS)):
-        ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
-        k=k+1
-        
-    #print(ap)
-    
+        ap += (-1)**k * binomial(p + k, k) * lS[p + k]
+        k += 1
+
+    # cálculo de b_p (pelo menos p)
     bp = 0
-    k=0
+    k = 0
     for i in range(p, len(lS)):
-        bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
-        k=k+1
-    #print(bp)
-    
+        bp += (-1)**k * binomial(p + k - 1, k) * lS[p + k]
+        k += 1
+
+    # imprime as Sᵢ
     for i in range(len(lS)):
-        print('S%d = %d' %(i,lS[i]))    
+        print('S%d = %d' % (i, lS[i]))
 
-    print('a%d = %d' %(p, ap)) 
-    print('b%d = %d' %(p, bp))
-    
-    lprint=''
-    for i in lista:
-        
-        lprint=lprint+str(i)+','
-    lprint=lprint[0:len(lprint)-1]
+    # imprime a_p e b_p
+    print('a%d = %d' % (p, ap))
+    print('b%d = %d' % (p, bp))
 
-    print('#C = %d' %multi)
+    # formata e imprime o total de múltiplos C
+    divisores = ','.join(str(i) for i in lista)
+    print('#C = %d' % multi)
 
-inclu_exclu_geral([6,15,21], 100, 1000, 2)
+
+# Exemplo de uso:
+inclu_exclu_geral([6, 15, 21], 100, 1000, 2)
 </script></div></article><article class="technology computation-like" id="technology-4"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
 </h6>
 <p id="p-13">Escolha os valores dos campos, Palavra, Posições fixas e p, para determinar os valores de \(S_i\text{,}\) \(a_p\) e \(b_p\text{.}\) De acordo com o enunciado do exemplo anterior.</p>
-<figure class="figure figure-like" id="interactive-inclu-exclu_geral"><iframe id="interactive-inclusao-exclusao_geral_2" width="600" height="480" src="interactive-inclusao-exclusao_geral_2-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><p id="p-14">Falta texto</p>
+<figure class="figure figure-like" id="interactive-inclu-exclu_geral"><iframe id="interactive-inclusao-exclusao_geral_2" width="600" height="480" src="interactive-inclusao-exclusao_geral_2-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-14">A função apresentada a seguir representa o código-fonte completo que está por trás do funcionamento do widget anterior. Escrito em \(\texttt{SageMath}\text{,}\) esse código realiza os mesmos cálculos de forma transparente, permitindo acompanhar cada etapa do processo computacional. Ao estudar essa função, o leitor pode compreender em detalhes como o Princípio da Inclusão-Exclusão generalizado é aplicado no contexto da contagem de anagramas com posições fixas.</p>
 <div class="sagecell-sage" id="sage-4"><script type="text/x-sage">def anagramas_fix_2(palavra, pfix):
+    """
+    Calcula o total de permutações de 'palavra' e, para cada nível de interseção
+    definido por pfix, armazena a soma das permutações das subpalavras resultantes.
+    """
     
+    # total de permutações possíveis da palavra inteira
     tot_permut = len(Permutations(palavra))
     
-    total_inter=len(pfix)
+    # número de posições a fixar
+    total_inter = len(pfix)
+    # ordena em ordem crescente e inverte para remoções do fim ao início
     pfix.sort()
     pfix.reverse()
     
-    comb=Combinations(pfix).list()
-    subpalavra=0
-    lista_inter=[]
-    lista=[]
+    # gera todas as combinações de índices fixos
+    comb = Combinations(pfix).list()
+    subpalavra = 0
+    lista_inter = []  # armazena cada combinação de índices
+    lista = []        # armazena as subpalavras após remoção
+    
     for i in comb:
+        # copia a palavra original
         subpalavra = copy(palavra)
         for j in i:
+            # copia antes de cada remoção para não alterar versões anteriores
             subpalavra = copy(subpalavra)
+            # remove o caractere na posição j-1 (índice 1-based → 0-based)
             subpalavra.pop(j-1)
         lista_inter.append(i)
         lista.append(subpalavra)
     
-    lSi=[0]*(len(pfix))
-    soma=0
+    # inicializa lista de somas por nível de interseção
+    lSi = [0] * (len(pfix))
+    soma = 0  # não usado diretamente aqui
+    
+    # acumula em lSi a quantidade de permutações de cada subpalavra
     for i in range(len(lista_inter)):
-        if len(lista_inter[i])>0:
-            lSi[len(lista_inter[i])-1] = lSi[len(lista_inter[i])-1]+Permutations(lista[i]).cardinality()
-            
-
-    dic={}
-    for i in range(len(pfix)+1):
-        dic.update({i:[]})
+        if len(lista_inter[i]) > 0:
+            # índice em lSi corresponde ao nível de interseção - 1
+            lSi[len(lista_inter[i]) - 1] += Permutations(lista[i]).cardinality()
     
+    # prepara dicionário para grupos de combinações por tamanho
+    dic = {}
+    for i in range(len(pfix) + 1):
+        dic.update({i: []})
     
+    # agrupa e inverte cada tupla de índices para formatação
     for i in comb:
-        j=copy(i)
+        j = copy(i)
         j.reverse()
         dic[len(i)].append(j)
-
     for i in dic:
         dic[i].reverse()
     
+    # retorna o total de permutações e a lista lSi
     return tot_permut, lSi
 
-def inclu_exclu_geral_2(palavra, pfix, p):
-    
-    multi, lS = anagramas_fix_2(palavra, pfix)
-    lS.insert(0, multi)
-    ap = 0
-    k=0
-    for i in range(p, len(lS)):
-        ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
-        k=k+1
-    
-    bp = 0
-    k=0
-    for i in range(p, len(lS)):
-        bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
-        k=k+1
-    
-    for i in range(len(lS)):
-        print('S%d = %d' %(i,lS[i]))    
-    
-    print('\na%d = %d' %(p, ap))
-    print('b%d = %d' %(p, bp))
 
-inclu_exclu_geral_2(['P','R','I','N','C','I','P','I','O'], [1,2,3], 1)
-</script></div></section></div></main>
+def inclu_exclu_geral_2(palavra, pfix, p, expressao=False):
+    """
+    Usa anagramas_fix_2 para obter S₀, S₁, ..., Sₙ e calcula:
+      - a_p: número de elementos exatamente em p conjuntos
+      - b_p: número de elementos em pelo menos p conjuntos
+    Se expressao=True, também exibe a expressão de cada soma.
+    """
+    
+    # total de permutações e lista de Sᵢ
+    multi, lS = anagramas_fix_2(palavra, pfix)
+    # insere S₀ = total de permutações no início da lista
+    lS.insert(0, multi)
+    
+    # cálculo de a_p (exatamente p)
+    ap = 0
+    k = 0
+    sa = ''  # string para a expressão de a_p
+    for i in range(p, len(lS)):
+        ap += (-1)**k * binomial(p+k, k) * lS[p+k]
+        sa += f'(-1)^{k}*C({p+k},{k})*{lS[p+k]} + '
+        k += 1
+    sa = sa[:-2]  # remove o último " + "
+    
+    # cálculo de b_p (pelo menos p)
+    bp = 0
+    k = 0
+    sb = ''  # string para a expressão de b_p
+    for i in range(p, len(lS)):
+        bp += (-1)**k * binomial(p+k-1, k) * lS[p+k]
+        sb += f'(-1)^{k}*C({p+k-1},{k})*{lS[p+k]} + '
+        k += 1
+    sb = sb[:-2]  # remove o último " + "
+    
+    # imprime os valores de S₀, S₁, ..., Sₙ
+    for i in range(len(lS)):
+        print('S%d = %d' % (i, lS[i]))
+    
+    # imprime a_p e b_p, com ou sem expressão detalhada
+    if expressao:
+        print('\na%d = %s = %d' % (p, sa, ap))
+        print('b%d = %s = %d' % (p, sb, bp))
+    else:
+        print('\na%d = %d' % (p, ap))
+        print('b%d = %d' % (p, bp))
+
+
+# Exemplo de uso: calcula para a palavra e fixações dadas, p=1
+inclu_exclu_geral_2(['P','R','I','N','C','I','P','I','O'], [1,2,3], 1, expressao=False)
+</script></div></article></section></div></main>
 </div>
 </body>
 </html>

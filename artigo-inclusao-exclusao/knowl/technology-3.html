@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:37:21-03:00       *-->
+<!--*       on 2025-04-30T17:43:17-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,78 +32,95 @@
 C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
 \end{equation*}
 </div>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Falta texto</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O código a seguir corresponde exatamente à função implementada dentro do widget acima. Ele foi escrito em \(\texttt{SageMath}\) e realiza, passo a passo, os mesmos cálculos que são executados interativamente: geração das combinações, aplicação do Princípio da Inclusão-Exclusão generalizado e cálculo dos valores \(S_i, a_p, b_p\) e \(\#C\text{.}\) Essa versão em código permite que o leitor explore o algoritmo em um ambiente computacional, modifique parâmetros livremente e compreenda de forma mais detalhada a lógica por trás do painel interativo.</p>
 <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def numeros_de_multiplos2(lista, ini, fim):
-    card_omega = fim-ini+1
-    l=[]
+    """
+    Retorna o total de múltiplos e a lista de contagens S₀, S₁, ..., Sₙ
+    para o intervalo [ini, fim] e a lista de divisores dada.
+    """
+    # cardinalidade do universo Ω = {ini, ..., fim}
+    card_omega = fim - ini + 1
+
+    # lista de todos os múltiplos de cada divisor em 'lista'
+    l = []
     for i in lista:
-        l = l+[x for x in [ini..fim] if x%i == 0]   
-        
-    #combinacoes = {}
-    listax=[]
+        l = l + [x for x in [ini..fim] if x % i == 0]
+
+    # gera todas as combinações não-vazias dos divisores
+    listax = []
     for i in range(len(lista)):
         listax.append(Combinations(lista, i+1).list())
-        #combinacoes.update({i+1:Combinations(lista, i+1).list()})
-    
-    listax2=[]
-    for i in listax:
-        temp=[]
-        for j in range(len(i)):
-            temp.append(lcm(i[j]))
-            #print(i[j])
+
+    # para cada combinação, calcula o mínimo múltiplo comum (MMC)
+    listax2 = []
+    for comb in listax:
+        temp = []
+        for tup in comb:
+            temp.append(lcm(tup))
         listax2.append(temp)
-            
-    lSi=[]
-    for j in listax2:
-        temp=[]
-        for i in j:
-            temp = temp+[x for x in [ini..fim] if x%i == 0] 
+
+    # para cada MMC, conta quantos números em [ini..fim] são divisíveis por ele
+    lSi = []
+    for mmc_list in listax2:
+        temp = []
+        for m in mmc_list:
+            temp = temp + [x for x in [ini..fim] if x % m == 0]
+        # armazena a quantidade de múltiplos dessa ordem de interseção
         lSi.append(len(temp))
-    #print(lSi)
-    
+
+    # aplica o Princípio da Inclusão–Exclusão para o total de múltiplos
     soma = 0
     for i in range(len(lSi)):
-        #print(lSi[i])
-        soma = soma +(-1)^i*lSi[i]
-    
+        # alterna sinal conforme o nível de interseção
+        soma += (-1)**i * lSi[i]
+
+    # S₀ corresponde ao tamanho do universo Ω
     S0 = card_omega
     lSi.insert(0, S0)
+
+    # retorna o total de múltiplos e a lista [S₀, S₁, S₂, ...]
     return (soma, lSi)
 
+
 def inclu_exclu_geral(lista, ini, fim, p):
-    
+    """
+    Para um dado p, calcula:
+      - a_p: elementos exatamente em p conjuntos
+      - b_p: elementos em pelo menos p conjuntos
+    e imprime S₀, S₁, ..., Sₙ, a_p, b_p e o total de múltiplos (C).
+    """
+    # obtém o total de múltiplos (multi) e a lista de Sᵢ
     multi, lS = numeros_de_multiplos2(lista, ini, fim)
-    
+
+    # cálculo de a_p (exatamente p)
     ap = 0
-    k=0
+    k = 0
     for i in range(p, len(lS)):
-        ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
-        k=k+1
-        
-    #print(ap)
-    
+        ap += (-1)**k * binomial(p + k, k) * lS[p + k]
+        k += 1
+
+    # cálculo de b_p (pelo menos p)
     bp = 0
-    k=0
+    k = 0
     for i in range(p, len(lS)):
-        bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
-        k=k+1
-    #print(bp)
-    
+        bp += (-1)**k * binomial(p + k - 1, k) * lS[p + k]
+        k += 1
+
+    # imprime as Sᵢ
     for i in range(len(lS)):
-        print('S%d = %d' %(i,lS[i]))    
+        print('S%d = %d' % (i, lS[i]))
 
-    print('a%d = %d' %(p, ap)) 
-    print('b%d = %d' %(p, bp))
-    
-    lprint=''
-    for i in lista:
-        
-        lprint=lprint+str(i)+','
-    lprint=lprint[0:len(lprint)-1]
+    # imprime a_p e b_p
+    print('a%d = %d' % (p, ap))
+    print('b%d = %d' % (p, bp))
 
-    print('#C = %d' %multi)
+    # formata e imprime o total de múltiplos C
+    divisores = ','.join(str(i) for i in lista)
+    print('#C = %d' % multi)
 
-inclu_exclu_geral([6,15,21], 100, 1000, 2)
+
+# Exemplo de uso:
+inclu_exclu_geral([6, 15, 21], 100, 1000, 2)
 </script></div></article><span class="incontext"><a href="section-2.html#technology-3">[incontext]</a></span>
 </body>
 </html>

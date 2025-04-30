@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-25T09:37:21-03:00       *-->
+<!--*       on 2025-04-30T17:43:17-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -27,85 +27,98 @@
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
 </h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.</p>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Falta texto</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Em seguida, apresentamos uma função em SageMath, que implementa passo a passo o cálculo de anagramas com posições fixas. O código gera todas as subpalavras resultantes de "remover" temporariamente os caracteres fixos, conta as permutações de cada subpalavra e aplica o Princípio da Inclusão–Exclusão para combinar os resultados parciais. Assim, você pode executar diretamente no Sage, sem interface gráfica, e verificar as mesmas contagens de \[ A_{i_1}\cap \cdots \cap A_{i_r} \] e o total final de anagramas, exatamente como no widget interativo.</p>
 <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">def anagramas_fix(palavra, pfix):
+    """
+    Calcula via Princípio da Inclusão–Exclusão o número de anagramas de 'palavra'
+    que mantêm fixas as posições listadas em 'pfix' (1-based).
+    """
     
-    total_inter=len(pfix)
+    # total de posições fixas (pode ser útil para extensões, mas não é usado diretamente)
+    total_inter = len(pfix)
+    
+    # ordena pfix em ordem crescente e depois inverte, para remover índices do fim ao início
     pfix.sort()
     pfix.reverse()
     
-    comb=Combinations(pfix).list()
-    subpalavra=0
-    lista_inter=[]
-    lista=[]
+    # gera todas as combinações de posições fixas de todos os tamanhos
+    comb = Combinations(pfix).list()
+    
+    # listas auxiliares para armazenar:
+    #   lista_inter = cada combinação de índices fixos
+    #   lista       = subpalavra obtida ao remover esses índices
+    lista_inter = []
+    lista = []
+    
     for i in comb:
+        # copia a palavra original para cada combinação
         subpalavra = copy(palavra)
         for j in i:
+            # copia antes de cada remoção para não alterar versões anteriores
             subpalavra = copy(subpalavra)
-            subpalavra.pop(j-1)
-        #print(i, subpalavra)
+            # remove o caractere na posição j-1 (conversão 1-based → 0-based)
+            subpalavra.pop(j - 1)
+        # armazena a combinação e a subpalavra resultante
         lista_inter.append(i)
         lista.append(subpalavra)
     
-    #print(lista_inter)
-    #print(lista)
+    # prepara listas para o cálculo PIE:
+    lS = []    # contagens de permutações de cada subpalavra
+    soma = 0   # soma alternada conforme o PIE
     
-    lS=[]
-    soma=0
-    for i in range(len(lista_inter)):
-        
-        if len(lista_inter[i])>0:
-            #print(Permutations(lista[i]))
-            soma = soma + Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1)
-            lS.append( Permutations(lista[i]).cardinality() )
-    #print(comb)   
-    #print(lS)
+    for idx in range(len(lista_inter)):
+        # só interessa combinações não-vazias
+        if len(lista_inter[idx]) > 0:
+            # número de permutações da subpalavra
+            qt = Permutations(lista[idx]).cardinality()
+            # soma alternada: + para tamanho ímpar, - para par
+            soma += qt * (-1) ** (len(lista_inter[idx]) - 1)
+            lS.append(qt)
     
-    dic={}
-    for i in range(len(pfix)+1):
-        dic.update({i:[]})
-    
-    
+    # constrói um dicionário para agrupar combinações pelo seu tamanho
+    dic = {i: [] for i in range(len(pfix) + 1)}
     for i in comb:
-        j=copy(i)
-        j.reverse()
+        j = copy(i)
+        j.reverse()               # inverte para alinhar à ordem desejada mais tarde
         dic[len(i)].append(j)
-
-    for i in dic:
-        dic[i].reverse()
+    for k in dic:
+        dic[k].reverse()          # ajusta a ordem interna de cada grupo
     
-    #print(dic)
+    # agora reconstrói a ordem linear de interseções e associa lS2 para impressão
+    comb2 = []
+    lS2 = []
+    for tamanho in dic:
+        if tamanho > 0:
+            for seq in dic[tamanho]:
+                comb2.append(copy(seq))
+                # para mapear qt correto, reconverte seq ao formato original e busca índice
+                seq.reverse()
+                lS2.append(lS[comb.index(seq)-1])           #associa o valor de lS correspondente
     
-    lS2=[]
-    comb2=[]
-    for i in dic:
-        if i > 0:
-            for j in dic[i]:
-                comb2.append(copy(j))
-                
-                j.reverse()
-                lS2.append(lS[comb.index(j)-1])
-                
-    #print(comb2)
-    lstring=[]
-    for i in range( len(comb2)):
-        temp=''
-        for j in comb2[i]:
-            temp=temp + 'A' + str(j) + '∩'
-        temp=temp[0:-1]
-        lstring.append(temp)
-    #print(lstring)
+    # formata cada interseção como string "A1∩A3∩..." para exibição
+    lstring = []
+    for seq in comb2:
+        temp = ''
+        for j in seq:
+            temp += 'A' + str(j) + '∩'
+        lstring.append(temp[:-1])  # retira o último '∩'
     
+    # imprime cada termo de interseção com sua contagem de permutações
     for i in range(len(lstring)):
-        print('#%s = %d' %(lstring[i] , lS2[i]))
-    uni=''
-    pfix.sort()
-    for i in pfix:
-        uni = uni + 'A' + str(i) + '∪'
-    uni = uni[0:-1]
+        print(f'#{lstring[i]} = {lS2[i]}')
     
-    print('\n#%s = %d'  %(uni, soma))
+    # monta a expressão de união total dos eventos fixos
+    uni = ''
+    pfix.sort()  # volta pfix a ordem crescente para exibição
+    for i in pfix:
+        uni += 'A' + str(i) + '∪'
+    uni = uni[:-1]  # retira o último '∪'
+    
+    # imprime o resultado final do Princípio da Inclusão–Exclusão
+    print(f'\n#{uni} = {soma}')
 
+
+# Exemplo de uso:
 anagramas_fix(['P','R','I','N','C','I','P','I','O'], [1,2,3])
 </script></div></article><span class="incontext"><a href="sec_inclusao_exclusao_01.html#technology-2">[incontext]</a></span>
 </body>
