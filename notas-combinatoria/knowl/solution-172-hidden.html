@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-30T16:20:56-03:00       *-->
+<!--*       on 2025-05-15T14:19:44-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,19 +14,41 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas</p>
+<p>O \(k\)-ésimo termo é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\#\Omega = 8^8, 
+T_{k} = C_{70}^{k-1}1^{k-1}\left(\frac{1}{4}\right)^{71-k} = C_{70}^{k-1}\cdot\frac{1}{4^{71-k}}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é \(C_8^2\text{.}\) A quantidade de formas de arrumar o restante das bolas é \((8-2)!\text{.}\)</p>
-<p>Portanto o número de casos favoráveis é \(8\cdot 7 \cdot C_8^2\cdot 6! = 8!C_8^2\text{.}\) A resposta do problema é</p>
+<p data-braille="continuation">\(T_{k+1}&gt; T_{k}\) se</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{8!C_8^2}{8^8} \approx 0.0672912597656250 \approx 6,7\%. 
+C_{70}^{k}\cdot\frac{1}{4^{70-k}} &gt; C_{70}^{k-1}\cdot\frac{1}{4^{71-k}} 
+\end{equation*}
+</div>
+<p data-braille="continuation">Isto é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{70!}{k!(70-k)!}\cdot\frac{1}{4^{70-k}} &gt; \frac{70!}{(k-1)!(71-k)!}\cdot\frac{1}{4^{71-k}}, 
+\end{equation*}
+</div>
+<p data-braille="continuation">ou seja,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{(71-k)!}{(70-k)!} &gt; \frac{k!}{(k-1)!}\cdot\frac{4^{70-k}}{4^{71-k}}, 
+\end{equation*}
+</div>
+<p data-braille="continuation">e simplificando temos</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{(71-k)}{1} &gt; \frac{k}{1}\cdot\frac{1}{4}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Portanto, \(71-k &gt; k/4 \text{,}\) logo \(k\lt 56, 8\text{.}\)</p>
+<p>Assim, temos  \(T_{k} \lt  T_{k+1}\) para \(k = 1, 2, \ldots, 56\) e portanto o maior termo é:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+T_{57} = C_{70}^{56}\cdot\frac{1}{4^{14}} = \frac{24156719613645}{33554432}.
 \end{equation*}
 </div>
 </div></body>

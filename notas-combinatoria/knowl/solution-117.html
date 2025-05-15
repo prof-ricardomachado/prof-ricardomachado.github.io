@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-30T16:20:52-03:00       *-->
+<!--*       on 2025-05-15T14:19:41-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,48 +16,23 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.5.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.12.1</span><span class="period">.</span>
 </h6>
-<p>Denote as \(n\) pessoas por \(P_1, P_2, \ldots, P_n\text{.}\) Sejam \(A_{ij}\text{,}\) com \(1\leq i\lt j\leq n\text{,}\) os conjuntos das permutações caóticas em que a pessoa \(P_i\) tirou a pessoa \(P_j\) e a pessoa \(P_j\) tirou a pessoa \(P_i\text{.}\) A resposta deste problema é dada por</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\tag{2.2.1}
-\end{equation}
-</div>
-<p data-braille="continuation">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</p>
-<p>Observe que \(A_{ij}\) possui a mesma cardinalidade, independetemente dos valores dos índices, assim como \(A_{ij}\cap A_{kl}\) também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos \(A_{ij}\text{,}\) das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</p>
-<ul class="disc">
-<li>\(\#A_{12}=D_{n-2}\) e no total são \(C_n^2\) conjuntos deste tipo, pois para formar um conjunto \(A_{ij}\text{,}\) precisamos escolher duas pessoas de \(n\) disponíveis.</li>
-<li>\(\#(A_{12}\cap A_{34})=D_{n-4}\) e no total são \(C_n^2C_{n-2}^2\) conjuntos deste tipo, pois para formar uma interseção \(A_{ij}\cap A_{ls}\text{,}\) precisamos escolher duas pessoas de \(n\) disponíveis e depois mais duas de \(n-2\) disponíveis.</li>
-<li>A cardinalidade da interseção de \(k\) conjuntos é \(D_{n-2k}\) e no total são \(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\) conjuntos deste tipo, pois para formar uma interseção de \(k\) conjuntos, precisamos escolher duas pessoas de \(n\) disponíveis e depois mais duas de \(n-2\) disponíveis e assim por diante, até que precisamos escolher duas pessoas de \(n-2k\) disponíveis.</li>
-</ul>
-<p data-braille="continuation">Antes de escrever o resultado da Expressão <a class="xref" data-knowl="./knowl/que-cao-obm.html" title="[men] 2.2.1">(2.2.1)</a> vamos obter uma expressão para \(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem \(C_5^1\) maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada \((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\) Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos \(C_5^1\times 5\times 2!\times 8!\) formas distintas de organizarmos esses carros.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos \(C_5^2\) formas de escolhermos essas 2 equipes e podemos colocá-las de \(5\times4\) maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado \(2!\times2\) e das demais \(6\) equipes \(6!\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}\\
-=\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.
+10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
+\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
+\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
+\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
+\amp   ~~~~~~ - 5!\times 2^5\\
+\amp ~ = 2088960. 
 \end{align*}
 </div>
-<p data-braille="continuation">Utilizando essas informações na Expressão <a class="xref" data-knowl="./knowl/que-cao-obm.html" title="[men] 2.2.1">(2.2.1)</a>, obtemos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
-\end{equation*}
 </div>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots\\
-=\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots\\
-=\amp~D_n +\sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} \frac{n!(-1)^{k+1}D_{n-2(k+1)}}{(n-2(k+1))!2^{k+1}}
-\end{align*}
-</div>
-<p data-braille="continuation">Fazendo a mudança \(p=k+1\text{,}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^p \cdot \frac{D_{n-2p}}{(n-2p)!}.
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="section-permutacao-caotica.html#solution-117">[incontext]</a></span>
+<span class="incontext"><a href="section-inclusao-exclusao.html#solution-117">[incontext]</a></span>
 </body>
 </html>
