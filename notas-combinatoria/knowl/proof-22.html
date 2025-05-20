@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-15T14:19:42-03:00       *-->
+<!--*       on 2025-05-20T11:52:19-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,12 +15,33 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Demonstração</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Deseja-se formar subconjuntos formados por \(p\) elementos não consecutivos de \(A\text{.}\) Da mesma forma que o <a class="xref" data-knowl="./knowl/exemplo1-kaplansky.html" title="Exemplo 2.4.2">Exemplo 2.4.2</a>, os elementos de \(A\) que figuram nos subconjuntos serão representados com o símbolo \((+)\) e os elementos de \(A\) que não figuram nos subconjuntos são representados com o símbolo \((-)\text{.}\) Desta forma teremos \((n-p)\) elementos que serão representados com o símbolo \((-)\text{.}\) Entre os símbolos \((-)\) existirão \((n-p+1)\) espaços vazios disponíveis, pois o espaço antes do primeiro símbolo \((-)\text{,}\) assim como o espaço depois do último símbolo \((-)\) estão disponíveis, veja a <a class="xref" data-knowl="./knowl/fig-kaplansky1.html" title="Figura 2.4.4">Figura 2.4.4</a></p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/kaplanskydiagram.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4.4<span class="period">.</span></span><span class="space"> </span>Distribuição de símbolos \((-)\) e espaços para os símbolos \((+)\text{.}\)</figcaption></figure><p>Desta forma, resta escolher entre os \((n-p+1)\) espaços vazios aqueles que serão ocupados pelos símbolos \((+)\text{.}\) Logo,</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">O problema será dividido em dois casos:</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">1º caso:</dfn> O elemento 1 pertencendo ao subconjunto composto por \(p\) elementos. Neste caso, será feito a análise de quantos formas poderá serão escolhidos os outros \(p-1\) elementos do conjunto \(\{3,4,5,\cdots,n-1\}\text{,}\) pois os elementos 1 e \(n\) não podem pertencer ao conjunto. Dessa forma, utilizando o 1º lema de Kaplansky, o número de maneiras que isso pode ocorrer é:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-K(n,p)=C_{n-p+1}^p.
+K(n-3,p-1)=C^{p-1}_{n-p-1}=\dfrac{(n-p-1)!}{(n-2p)!\cdot(p-1)!}.
+\end{equation*}
+</div>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">2º caso:</dfn> O elemento 1 não pertencendo ao subconjunto composto por \(p\) elementos. Nesse caso a escolha de \(p\) elementos será realizado entre os elementos do conjunto \(\{2,3,4,...n\}\text{.}\) No entanto pelo primeiro lema de Kaplansky a escolha será determinada por</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+K(n-1,p)=C^p_{n-p}=\dfrac{(n-p)!}{(n-2p)!\cdot p!}
+\end{equation*}
+</div>
+<p>Pelo Princípio Aditivo, somando os resultados do 1º e do 2º caso, a solução do problema será dado por:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+KC(n,p) = \amp ~\dfrac{(n-p-1)!}{(n-2p)!\cdot(p-1)!}+\dfrac{(n-p)!}{(n-2p)!\cdot p!} \\
+=\amp ~ \dfrac{p\cdot (n-p-1)!+(n-p)\cdot(n-p-1)!}{{(n-2p)!\cdot p!}} \\
+=\amp ~ \dfrac{(n-p-1)!n}{{(n-2p)!\cdot p!}} \\
+=\amp ~ \dfrac{n-p}{n-p}\cdot\dfrac{(n-p-1)!n}{(n-2p)!\cdot p!} \\
+=\amp ~ \dfrac{n}{n-p}\cdot\dfrac{(n-p)!}{(n-2p)!\cdot p!}. 
+\end{align*}
+</div>
+<p data-braille="continuation">Finalmente,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+KC(n,p)=\dfrac{n}{n-p}\cdot C^p_{n-p}.
 \end{equation*}
 </div></article><span class="incontext"><a href="section-lemas-kaplansky.html#proof-22">[incontext]</a></span>
 </body>

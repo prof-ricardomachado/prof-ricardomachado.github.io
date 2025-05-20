@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-15T14:19:41-03:00       *-->
+<!--*       on 2025-05-20T11:52:18-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,19 +14,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem \(C_5^1\) maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada \((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\) Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos \(C_5^1\times 5\times 2!\times 8!\) formas distintas de organizarmos esses carros.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos \(C_5^2\) formas de escolhermos essas 2 equipes e podemos colocá-las de \(5\times4\) maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado \(2!\times2\) e das demais \(6\) equipes \(6!\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
-\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
-\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
-\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
-\amp   ~~~~~~ - 5!\times 2^5\\
-\amp ~ = 2088960. 
-\end{align*}
-</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Considere que as exposições do museu estão numeradas de \(1\) até \(n\text{.}\) Podemos representar cada maneira de visitar o museu com uma \(n\)-úpla. Usando \(A, M\) e \(N\) como entradas da \(n\)-úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a \(i\)-ésima exposição.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Podemos formar um total de \(3^n\) \(n\)-úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo \(A\) ou que não possuem o símbolo \(M\text{.}\) Note que podem ser formadas \(2^n\) \(n\)-úplas com apenas os símbolos \(M\) e \(N\) (sem o símbolo A) e também podem ser formadas \(2^n\) \(n\)-úplas com apenas os símbolos \(A\) e \(N\) (sem o símbolo M). E pode ser formada somente 1 \(n\)-úpla com apenas o símbolo \(N\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Portanto, o número de maneiras de visitar o museu é \(3^n - 2^{n+1} + 1\text{.}\)</p>
 </div></body>
 </html>
