@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-20T11:52:19-03:00       *-->
+<!--*       on 2025-05-21T22:40:33-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,11 +13,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Precisamos escolher \(k\) linhas e \(k\) colunas no tabuleiro \(T\text{,}\) \(n\times n\text{,}\) para colocar as torres, de modo que uma torre não possa atacar a outra, isto pode ser feito de \(\left(C_n^k\right)^2\) maneiras. Agora precisamos escolher a posição da linha 1 na qual será colocada a primeira torre, isso pode ser feito de \(k\) maneiras, em seguida, precisamos escolher a posição da linha 2 na qual será colocada a segunda torre, o que pode ser feito de \((k-1)\) maneiras, e assim por diante, até ficarmos com uma maneira de escolher a \(k\)-ésima torre.</p>
-<p>Assim, pelo princípio multiplicativo, o número de maneiras de colocar \(k\) torres em \(T\text{,}\) de modo que uma torre não possa atacar a outra é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Vamos separar as permutações caóticas de \(1, 2, 3, \ldots, n\) em dois casos.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">1º caso:</dfn> permutações caóticas em que o elemento que ocupa o primeiro lugar tem seu lugar original ocupado pelo 1.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Como temos \(n-1\) elementos, diferentes do \(1\text{,}\) para cada um deles podemos colocar o elemento na 1ª posição e o número 1 na posição deste número, ou seja, temos \(n-1\) maneiras de fazer isto. Depois disto, os outros elementos podem ser distribuídos de \(D_{n-2}\) formas.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">2º caso:</dfn> permutações caóticas em que o elemento que ocupa o primeiro lugar <dfn class="terminology">não</dfn> tem seu lugar original ocupado pelo 1.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Temos \(n-1\) formas de escolher o elemento que ocupará o primeiro lugar, já que o número 1 não pode ocupar esta posição. Depois disto precisamos contar o número de maneiras de distribuir (de forma caótica) os \(n-1\) elementos nos \(n-1\) lugares, de forma que o número 1 não fique na posição original do número que está na 1ª posição. Para contar esta quantidade, podemos contar o número de permutações caóticas desses \(n-1\) elementos organizados da seguinte maneira: coloque os \(n-2\) elementos em suas posições originais e o número 1 na posição do elemento que está na 1ª posição. O número dessas permutações caóticas é \(D_{n-1}.\) <p>Como os dois casos são excludentes e cobrem todas as possibilidades, pelo princípio aditivo, temos</p><div class="displaymath">
 \begin{equation*}
-\left(C_n^k\right)^2\cdot k!.
+D_n = (n-1)\times D_{n-2} + (n-1)\times D_{n-1} = (n-1)\times (D_{n-1}+D_{n-2}).
 \end{equation*}
-</div></article></body>
+</div></p></article></body>
 </html>

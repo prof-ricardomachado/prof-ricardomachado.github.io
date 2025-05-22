@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-20T11:52:18-03:00       *-->
+<!--*       on 2025-05-21T22:40:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,37 +13,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Considere todas as permutações dos elementos \(a_1 , a_2 , \ldots , a_n\text{.}\) Indicando por \(A_i\) todas as permutações formadas pelos elementos \(a_1 , a_2 , \ldots , a_n\) com \(a_i\) no \(i\)-ésimo lugar, calcularemos \(D_n\text{,}\) usando a ideia do <a class="xref" data-knowl="./knowl/exem-antes-permut-cao.html" title="Exemplo 2.2.3">Exemplo 2.2.3</a>:</p>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Suponha que o elemento \(a\) pertence a exatamente \(r\) (\(1\leq r\leq n\)) dos conjuntos \(A_1, A_2, \ldots, A_n\text{.}\) Será mostrado que \(a\) é contado exatamente uma vez pelo lado direito da Expressão <a class="xref" data-knowl="./knowl/eq-inclusao-exclusao-n.html" title="[men] 2.1.2">(2.1.2)</a>.</p>
+<p>No somatório:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)\\
-= \amp ~  n! - \sum_{i=1}^{n}\#A_i + \sum_{0\lt i\lt j\leq n}\#(A_i\cap A_j)+\cdots \\
-\amp ~ \quad \cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n). 
-\end{align*}
+\begin{equation*}
+\sum_{i=1}^{n}\#A_i,
+\end{equation*}
 </div>
-<p data-braille="continuation">Visto que existem \(n\) termos no primeiro somatório, \(C_n^2\) termos no segundo, \(C_n^3\) termos no terceiro,\(\cdots\text{,}\) \(C_n^n=1\) no último e</p>
+<p data-braille="continuation">observa-se que \(a\) é contado \(C_r^1=r\) vezes, pois \(a\) pertence a exatamente \(r\) dos conjuntos. No somatório</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_i) \amp =  (n-1)! \\
-\#(A_i\cap A_j) \amp =  (n-2)! \\
-\#(A_i\cap A_j\cap A_k) \amp =  (n-3)! \\
-\vdots ~~~~~ \amp = ~~ \vdots \\
-\#(A_1\cap A_2\cap\cdots\cap A_n) \amp =  1 
-\end{align*}
+\begin{equation*}
+\sum_{0\lt i \lt j\leq n}\#(A_i\cap A_j),
+\end{equation*}
 </div>
-<p data-braille="continuation">temos</p>
+<p data-braille="continuation">nota-se que \(a\) é contado \(C_r^2\) vezes, pois, em cada termo do somatório, para que \(a\) seja contado, \(a\) precisa pertencer aos dois conjuntos. Se separarmos os \(r\) conjuntos que contém \(a\text{,}\) existem \(C_r^2\) interseções contendo \(a\text{.}\) No caso geral, \(a\) será contado \(C_r^m\) vezes, pelo somatório envolvendo \(m\) dos conjuntos \(A_i, i\in \{1, 2, \ldots, n\}\text{.}\)</p>
+<p>Desta forma, o elemento \(a\) será contado exatamente</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-D_n \amp = ~ n!-n\cdot(n-1)!+C_n^2\cdot(n-2)!-C_n^3\cdot(n-3)!+\cdots +(-1)^n\cdot 1 \\
-\amp = ~ n!-\dfrac{n!}{1!}+\dfrac{n!}{2!}-\dfrac{n!}{3!}+\cdots
-+(-1)^n\cdot \dfrac{n!}{n!} 
-\end{align*}
+\begin{equation*}
+C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r
+\end{equation*}
 </div>
-<p data-braille="continuation">evidenciando \(n!\text{,}\) obtém-se:</p>
+<p data-braille="continuation">vezes pelo lado direito de <a class="xref" data-knowl="./knowl/eq-inclusao-exclusao-n.html" title="[men] 2.1.2">(2.1.2)</a>. Usando a Expansão do Binômio de Newton (veja <a class="xref" data-knowl="./knowl/teo-binomio-newton.html" title="Teorema 3.2.1">Teorema 3.2.1</a>), temos</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-D_n \amp = ~ n!\cdot\left(1-\dfrac{1}{1!}+\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+(-1)^n\cdot \dfrac{1}{n!}\right) \\
-\amp = ~ n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!} 
-\end{align*}
-</div></article></body>
+\begin{equation*}
+0 = (1-1)^p = C_r^0 -\left(C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r\right). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Portanto,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r = C_r^0 = 1. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Isto mostra que o elemento \(a\) é contado exatamente uma vez pelo lado direito de <a class="xref" data-knowl="./knowl/eq-inclusao-exclusao-n.html" title="[men] 2.1.2">(2.1.2)</a>.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Como o elemento \(a\) é arbitrário e a quantidade \(r\text{,}\) também é arbitrária, esse argumento serve para cada um dos elementos de <a class="xref" data-knowl="./knowl/eq-uniao.html" title="[men] 2.1.1">(2.1.1)</a>, o que prova o teorema.</p></article></body>
 </html>

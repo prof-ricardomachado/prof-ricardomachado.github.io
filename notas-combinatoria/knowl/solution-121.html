@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-20T11:52:18-03:00       *-->
+<!--*       on 2025-05-21T22:40:32-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,27 +16,32 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.3.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.9.1</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Definimos \(A_i\text{,}\) para \(i = 2, 3, 4\text{,}\) como o conjunto das permutações em que \(a_i\) está no \(i\)-ésima posição, para \(i = 2, 3, 4\text{.}\) Queremos encontrar o número de elementos no complementar de \(A_2\cup A_3\cup A_4\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">As cardinalidade dos conjuntos \(A_i's\) e das interseções dos \(A_i's\text{,}\) dois a dois e três a três são:</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\#(A_2) = \#(A_3) = \#(A_4) = (n-1)!;\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\#(A_2\cap A_3) = \#(A_2\cap A_4) = \#(A_3\cap A_4) = (n-2)!;\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\#(A_2\cap A_3\cap A_4) = (n-3)!.\)</p>
-<p>Sabendo que o número total de permutações é \(n!\text{,}\) a solução para o questionamento é</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{gather*}
-n!-\#(A_2)-\#(A_3)-\#(A_4)+\#(A_2\cap A_3)+  \\
-~~~~~~~~~~~~~ +\#(A_2\cap A_4)+\#(A_3\cap A_4)-\#(A_2\cap A_3\cap A_4)
-\end{gather*}
-</div>
-<p data-braille="continuation">Que é igual a:</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o \(n\)-ésimo dígito que também temos 3 opções. Portanto a resposta é \(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item b)</dfn> Agora precisamos subtrair de \(3^n\) a quantidade de números de \(n\) dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina \(A_1\) como o subconjunto dos números de \(n\) dígitos formados pelos dígitos \(1, 2\) e \(3\) tal que o dígito \(1\) não aparece. De maneira análoga defina os subconjuntos \(A_2\) e \(A_3\text{.}\) Desta forma, queremos calcular</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-n!-3\times (n-1)!+3 \times (n-2)!-(n-3)! 
+3^n - \#(A_1\cup A_2 \cup A_3)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão, sabemos que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3) = \amp ~\#A_1+\#A_2+\#A_3 \\
+\amp ~ -\#(A_1\cap A_2)-\#(A_1\cap A_3)-\#(A_2\cap A_3) \\
+\amp ~ +\#(A_1\cap A_2\cap A_3). 
+\end{align*}
+</div>
+<p data-braille="continuation">\(A_1\) possui \(2^n\) elementos, pois o dígito \(1\) não pode figurar no número de \(n\) dígitos, sobrando apenas os dígitos \(2\) e \(3\text{.}\) Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos \(A_2\) e \(A_3\) possuem a mesma quantidade de elementos.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">\(A_1\cap A_2\) possui apenas \(1\) elemento, pois os dígitos \(1\) e \(2\) não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que \(A_1\cap A_2\) e \(A_2\cap A_3\) também possuem apenas um elemento.</p>
+<p>Finalmente, \(A_1\cap A_2\cap A_3\)  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.
 \end{equation*}
 </div>
 </div>
-<span class="incontext"><a href="section-permutacao-caotica.html#solution-121">[incontext]</a></span>
+<span class="incontext"><a href="section-inclusao-exclusao.html#solution-121">[incontext]</a></span>
 </body>
 </html>

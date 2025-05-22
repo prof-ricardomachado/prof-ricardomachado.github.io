@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-20T11:52:17-03:00       *-->
+<!--*       on 2025-05-21T22:40:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,60 +16,38 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.7.1.6.1</span><span class="period">.</span>
 </h6>
-<p>Sejam</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-A_1, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem C em 1º lugar}; \\
-A_2, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem O em 2º lugar}; \\
-A_3, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem M em 3º lugar}; \\
-A_4, ~\amp \text{o conjunto dos anagramas de COMPLEXA que tem P em 4º lugar}. 
-\end{align*}
-</div>
-<p data-braille="continuation"> Assim, \(\#A_i = 7!,\) para  \(i\in \{1, 2, 3, 4\}\text{.}\)</p>
-<p>Observe que \(\#(A_i\cap A_j), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
+<p>Precisamos separar em casos.</p>
+<ul class="disc">
+<li>Caso \(x_2=0\text{,}\) \(x_1\geq 1\text{,}\) fazendo a mudança de variável \(x_1=a+1\text{,}\) ficamos com a equação: \((a+1) +0+ x_3+x_4+x_5 = 8\) que é equivalente a<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a+ x_3+x_4+x_5 = 7.
+\end{equation*}
+</div>O número de soluções inteiras e não negativas é \(PR_{10}^{7, 3}.\)</li>
+<li>Caso \(x_2=1\text{,}\) \(x_1\geq 2\text{,}\) fazendo a mudança de variável \(x_1=a+2\text{,}\) ficamos com a equação: \((a+2) +1+ x_3+x_4+x_5 = 8\) que é equivalente a<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a+ x_3+x_4+x_5 = 5.
+\end{equation*}
+</div>O número de soluções inteiras e não negativas é \(PR_{8}^{5, 3}.\)</li>
+<li>Caso \(x_2=2\text{,}\) \(x_1\geq 3\text{,}\) fazendo a mudança de variável \(x_1=a+3\text{,}\) ficamos com a equação: \((a+3) +2+ x_3+x_4+x_5 = 8\) que é equivalente a<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a+ x_3+x_4+x_5 = 3.
+\end{equation*}
+</div>O número de soluções inteiras e não negativas é \(PR_{6}^{3, 3}.\)</li>
+<li>Caso \(x_2=3\text{,}\) \(x_1\geq 4\text{,}\) fazendo a mudança de variável \(x_1=a+4\text{,}\) ficamos com a equação: \((a+4) +3+ x_3+x_4+x_5 = 8\) que é equivalente a<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a+ x_3+x_4+x_5 = 1.
+\end{equation*}
+</div>O número de soluções inteiras e não negativas é \(PR_{4}^{3,1}.\)</li>
+</ul>
+<p data-braille="continuation">Portanto, somando os resultados de cada caso obtemos:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\#(A_i\cap A_j) = 6!
+PR_{10}^{7, 3} + PR_{8}^{5, 3} + PR_{6}^{3, 3} + PR_{4}^{3,1} = 200.
 \end{equation*}
 </div>
-<p>Observe que \(\#(A_i\cap A_j\cap A_k), 1\leq i\lt j\leq 4\) é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos \(A_i's, i\in\{1, 2, 3, 4\}\text{,}\) logo</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#(A_i\cap A_j\cap A_k) = 5!
-\end{equation*}
 </div>
-<p>Observe que \(\#(A_1\cap A_2\cap A_3\cap A_4)\) é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P  nas posições \(1, 2, 3, 4\) fixas, logo</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\#(A_1\cap A_2\cap A_3\cap A_4) = 4!
-\end{equation*}
-</div>
-<p data-braille="continuation">Pelo Princípio da Inclusão-Exclusão (<a class="xref" data-knowl="./knowl/teo-inclusao-exclusao-n.html" title="Teorema 2.1.6">Teorema 2.1.6</a>),</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~\sum_{i=1}^{4} \#A_i - \sum_{1\leq i\lt j\leq 4} \#(A_i\cap A_j) \\
-\amp ~ +\sum_{1\leq i\lt j\lt k \leq 4} \#(A_i\cap A_j\cap A_k) \\
-\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
-\end{align*}
-</div>
-<p data-braille="continuation">Organizando, temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times\#A_1 - C_4^2\times\#(A_1\cap A_2) \\
-\amp ~ +C_4^3\times\#(A_1\cap A_2\cap A_3) \\
-\amp ~ -\#(A_1\cap A_2\cap A_3\cap A_4). 
-\end{align*}
-</div>
-<p data-braille="continuation">Substituindo, temos</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\#(A_1\cup A_2\cup A_3\cup A_4) = \amp ~ 4\times 7! - C_4^2\times 6! +C_4^3\times 5! -4! \\
-=\amp ~ 16296. 
-\end{align*}
-</div>
-</div>
-<span class="incontext"><a href="section-inclusao-exclusao.html#solution-107">[incontext]</a></span>
+<span class="incontext"><a href="section-combinacoes-completas.html#solution-107">[incontext]</a></span>
 </body>
 </html>

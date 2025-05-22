@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-20T11:52:18-03:00       *-->
+<!--*       on 2025-05-21T22:40:32-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,32 +14,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">Note que, no total, exitem \(m^n\) funções \(f:A\rightarrow B\text{,}\) pois existem \(m\) maneiras de escolher a imagem de cada um dos \(n\) elementos de \(A\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Sejam \(y_1, y_2, \ldots, y_m\) os elementos do conjunto \(B\text{.}\) Defina \(F_j\) o conjunto das funções \(f_{j,l}:A\rightarrow B\text{,}\) tais que \(y_j\) não pertence a imagem de \(f_{j,l}\text{.}\) Logo, \(j\in \{1, 2, \ldots, m\}\) e \(l=(m-1)^n\text{.}\)</p>
-<p>As funções que não são sobrejetivas são as que pertencem a</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-F_1\cup F_2\cup\cdots\cup F_m\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Então, o número de funções sobrejetoras é dado por</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)\text{.}
-\end{equation*}
-</div>
-<p>Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos \(F_j\text{,}\) a cardinalidade das interseções \(p\) a \(p\) desses conjuntos, com \(2\leq p \leq m\) e a quantidade de interseções \(p\) a \(p\) desses conjuntos:</p>
-<ul class="disc">
-<li>Para o caso de apenas um conjunto, já sabemos que \(\#F_j=(m-1)^n\) e no total existem \(m\) conjuntos;</li>
-<li>Para o caso das interseções de dois conjuntos, temos \(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\) e no total existem \(C_m^2\) dessas interseções;</li>
-<li>Para o caso das interseções de \(p\) conjuntos, temos \(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\) e no total existem \(C_m^p\) dessas interseções.</li>
-</ul>
-<p data-braille="continuation">Aplicando o Princípio da Inclusão-Exclusão, a resposta é</p>
+<p>Sejam</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
-=\amp~m^n - C_m^1(m-1)^n+C_m^2(m-2)^n-\cdots+(-1)^mC_m^m(m-m)^n\\
-=\amp~\sum_{k=0}^m (-1)^kC_m^k(m-k)^n.
+A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; \\
+A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; \\
+A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}. 
+\end{align*}
+</div>
+<p data-braille="continuation">Queremos calcular \(\#(A_1\cup A_2\cup A_3)\text{.}\) Note que \(\#A_1=\#A_3=PR_8^3\text{,}\) pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para \(\#A_1\text{,}\) e com a letra T na terceira posição, para \(\#A_3\text{.}\) Note também que \(\#A_2 = PR_8^2\text{.}\)</p>
+<p>Agora, vamos calcular as cardinalidades das interseções \(A_i\cap A_j\text{,}\) com \(1\leq i\lt j\leq 3\text{.}\)</p>
+<ul class="disc">
+<li>\(A_1\cap A_2= PR_7^2\text{,}\) pois P e E ficam fixados;</li>
+<li>\(A_1\cap A_3= PR_7^3\text{,}\) pois P e T ficam fixados;</li>
+<li>\(A_2\cap A_3= PR_7^2\text{,}\) pois E e T ficam fixados.</li>
+</ul>
+<p data-braille="continuation">Finalmente, \(\#(A_1\cap A_2\cap A_3) = PR_6^2\text{.}\) Aplicando o Princípio da Inclusão-Exclusão:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2\\
+=\amp~28080.
 \end{align*}
 </div>
 </div></body>
