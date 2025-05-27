@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-05-26T11:02:09-03:00       *-->
+<!--*       on 2025-05-27T10:20:23-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,24 +16,45 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.6.1.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.6.1.6.1</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Observe que precisamos separar em dois casos.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">1º Caso:</dfn> José, Cléber, Márcia e Luíza não participam do debate. Neste caso temos \(C_8^6\) maneiras de escolher as pessoas que vão participar do debate e \(PC_6\) maneiras de organizar as pessoas na mesa circular. No total não \(C_8^6\times PC_6 = 28\times 120=3360\) maneiras.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">2º Caso:</dfn> José, Cléber, Márcia e Luíza participam do debate. Neste caso, vamos contar sem a restrição de José e Cléber não sentarem juntos e subtrair dos casos em que eles sentam juntos. Em ambos os casos precisamos escolher 2 pessoas de 8 disponíveis para completar a mesa.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Sem a restrição de José e Cléber não sentarem juntos temos duas maneiras de colocar Márcia e Luíza juntas na mesa e temos mais 4 pessoas para colocar na mesa. Então, são \(2\times PC_5\) maneiras de organizar essas 6 pessoas.</p>
-<p>Contando os casos em que José e Cléber sentam juntos, temos duas maneiras de colocar Márcia e Luíza e duas maneiras de colocar José e Cléber juntos na mesa. Uma vez feita esssa escolhas, ficamos com o equivalente a 4 pessoas para serem organizadas numa mesa circular, ou seja, são \(2\times 2\times PC_4\) maneiras. Assim, a quantidade de maneiras do 2º caso é dada por:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-C_8^2\times(2\times PC_5-2\times 2\times PC_4)=\amp~ 2\times C_8^2(P_4-2\times P_3)\\
-=\amp~2\times 28(24-2\times 6)\\
-=\amp~672.
-\end{align*}
-</div>
-<p data-braille="continuation">Portanto, juntando os dois casos, o número total de maneiras é</p>
+<p>Vamos separar a contagem em três casos:</p>
+<ol class="decimal">
+<li>Um dos quadrados pintados de amarelo é o quadrado central;</li>
+<li>Os dois quadrados pintados de amarelo são simetricos;</li>
+<li>Os dois quadrados pintados de amarelo não são semétricos (sem o central pintado de amarelo).</li>
+</ol>
+<p xmlns:svg="http://www.w3.org/2000/svg">Agora, vamos calcuar o total de maneiras de pintar os dois quadrados de amarelo em cada caso.</p>
+<ol class="decimal">
+<li>
+<p>No primeiro caso, como o central é amarelo, o outro quadrado amarelo pode ocupar qualquer um dos 48 quadrados do tabuleiro. Como são quatro posições equivalentes por rotação, precisamos dividir por 4. Assim, o total de maneiras de pintar duas casas de amarelo é:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-3360+672=4032.
+\frac{48}{4} = 12.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>No segundo caso, como os dois quadrados amarelos precisam ser simétricos, o quadrado central não pode ser pintado. O primeiro quadrado pode ser escolhido de 48 maneiras, uma vez feita essa escolha, o segundo já está determinado. Agora, precisamos "descontar" a ordem dos quadrados amarelos e a simetria do tabuleiro. São dois quadrados e neste caso as posições equivalentes por rotação são duas. Portanto, precisamos dividir por \(2!\cdot 2\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{48}{2!\cdot 2} = 12
+\end{equation*}
+</div>
+</li>
+<li>
+<p>No terceiro caso, o primeiro quadrado amarelo pode ser escolhido de 48 maneiras e o segundo de 46 maneiras (nem pode ser o central, nem o simétrico ao primeiro). Como são dois quadrados e as posições equivalentes por rotação são 4, precisamos dividir por \(2!\cdot 4\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{48\cdot 46}{8} = 276
+\end{equation*}
+</div>
+</li>
+</ol>
+<p>Como os três casos são excludentes e cobrem todas as posibilidades, a resposta é:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+12+12+276 = 300.
 \end{equation*}
 </div>
 </div>
