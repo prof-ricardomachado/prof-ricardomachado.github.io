@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-30T17:43:17-03:00       *-->
+<!--*       on 2025-08-01T13:43:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,8 +32,8 @@
 C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
 \end{equation*}
 </div>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O código a seguir corresponde exatamente à função implementada dentro do widget acima. Ele foi escrito em \(\texttt{SageMath}\) e realiza, passo a passo, os mesmos cálculos que são executados interativamente: geração das combinações, aplicação do Princípio da Inclusão-Exclusão generalizado e cálculo dos valores \(S_i, a_p, b_p\) e \(\#C\text{.}\) Essa versão em código permite que o leitor explore o algoritmo em um ambiente computacional, modifique parâmetros livremente e compreenda de forma mais detalhada a lógica por trás do painel interativo.</p>
-<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def numeros_de_multiplos2(lista, ini, fim):
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">O código a seguir corresponde exatamente à função implementada dentro do <em class="emphasis">widget</em> acima.  Essa versão em código permite que o leitor explore o algoritmo em um ambiente computacional, modifique parâmetros livremente e compreenda de forma mais detalhada a lógica por trás do painel interativo. </p>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">def numeros_de_multiplos(lista, ini, fim):
     """
     Retorna o total de múltiplos e a lista de contagens S₀, S₁, ..., Sₙ
     para o intervalo [ini, fim] e a lista de divisores dada.
@@ -81,7 +81,6 @@ C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{
     # retorna o total de múltiplos e a lista [S₀, S₁, S₂, ...]
     return (soma, lSi)
 
-
 def inclu_exclu_geral(lista, ini, fim, p):
     """
     Para um dado p, calcula:
@@ -90,7 +89,7 @@ def inclu_exclu_geral(lista, ini, fim, p):
     e imprime S₀, S₁, ..., Sₙ, a_p, b_p e o total de múltiplos (C).
     """
     # obtém o total de múltiplos (multi) e a lista de Sᵢ
-    multi, lS = numeros_de_multiplos2(lista, ini, fim)
+    multi, lS = numeros_de_multiplos(lista, ini, fim)
 
     # cálculo de a_p (exatamente p)
     ap = 0
@@ -118,9 +117,13 @@ def inclu_exclu_geral(lista, ini, fim, p):
     divisores = ','.join(str(i) for i in lista)
     print('#C = %d' % multi)
 
-
 # Exemplo de uso:
-inclu_exclu_geral([6, 15, 21], 100, 1000, 2)
+#inclu_exclu_geral([6, 15, 21], 100, 1000, 2)
+
+@interact
+def _(n_min=input_box(100, width=25,  label="Vmin:"), n_max=input_box(1000, width=25,  label="Vmax:"), l_m=input_box([6,15,21] , width=25, label="lista:"), p=input_box(2, width=25,  label="p:"), auto_update=False ):
+
+    inclu_exclu_geral(l_m, n_min, n_max, p)
 </script></div></article><span class="incontext"><a href="section-2.html#technology-3">[incontext]</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-07-08T10:29:29-03:00       *-->
+<!--*       on 2025-08-01T10:58:31-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,29 +16,28 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.11.1</span><span class="period">.</span>
 </h6>
-<p>Existem nove primos menores ou iguais a \(23\text{:}\) \(2, 3, 5, 7, 11, 13, 17, 19\) e \(23\text{.}\)  Considere uma lista, com \(9\) entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Numere os vértices do polígono de \(1\) a \(2007\text{.}\) O que queremos descobir é o menor valor de \(k\text{,}\) tal que, qualquer conjunto com \(k\) vértices possua pelo menos \(4\) vértices consecutivos.</p>
+<p>Considere o conjunto das \(4\)-tuplas de vértices consecutivos:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-2128793535 = 2^0\times3^3\times5^1\times7^0\times11^2\times13^0\times 17^0\times19^4\times 23^0
+T_4=\{(1, 2, 3, 4), (2, 3, 4, 5), \ldots, (2007, 1, 2, 3)\}.
 \end{equation*}
 </div>
-<p data-braille="continuation">estiver entre os 1985 números, a lista dele será:</p>
+<p data-braille="continuation">Cada vértice do polígono está presente em 4 elementos do conjunto \(T_4\text{.}\) Desse modo, cada vértice escolhido no polígono correspondem a 4 elementos de \(T_4\text{.}\) Como \(T_4\) possui \(2007\) elementos, escreva uma lista \(L\) com os números de todas as \(4\)-tuplas de forma consecutiva, formando uma lista com \(4\times 2007\) números.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-L_{2128793535}= 0, 3, 1, 0, 2, 0, 0, 4, 0.
+L = \underbrace{1, 2, 3, 4}_{1º}, \underbrace{2, 3, 4, 5}_{2º}, \ldots, \underbrace{2007, 1,2,3}_{2007º}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.</p>
-<p>Para cada uma das 1985 listas \(L_n\text{,}\) considere uma nova lista \(L_n^2\text{,}\) na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:</p>
+<p data-braille="continuation">Na lista \(L\) podemos escolher até \(3\times 2007\) números, de forma que não tenham \(4\) elementos consecutivos. Então, como cada vértice do polígono correspondem a \(4\) elementos de \(L\text{,}\) se \(4k&gt;3\times 2007\text{,}\) teremos a condição satisfeita: qualquer conjunto de \(k\) vértices possui pelo menos \(4\) vértices consecutivos. Fazendo as contas,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-L_{2128793535}^2= 0, 1, 1, 0, 0, 0, 0, 0, 0.
+k&gt; \frac{3\times 2007}{4} = 1505,25 ~~~ \Rightarrow k\geq 1506. 
 \end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Assim, cada nova lista \(L_n^2\) estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas \(L_n^2\text{,}\) haverão duas idênticas. Considere quaiquer 513 listas \(L_n^2\text{,}\) separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Para cada um dos 737 pares, considere uma lista \(L_{n+m}^2\) formada pela soma \(L_n^2+L_m^2\text{.}\) Observe que cada entrada das 737 listas \(L_{n+m}^2\) é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas \(L_{n+m}^2\) serão idênticas. Digamos que  \(L_{n+m}^2\) e \(L_{p+q}^2\text{,}\) então o número \(n\times m\times p\times q\) é a quarta potência de um inteiro.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Agora precisamos monstrar que o menor valor de \(k\) é \(1506\text{.}\) Vamos escolher \(1505\) vértices de forma que não tenham \(4\) vértices consecutivos. Considere todos os vértices do polígono, menos o vértice \(2007\) e os vértices que são múltiplos de \(4\text{.}\) Como \(2007 = 501\times 4+3\text{,}\) temos \(501\) múltiplos de \(4\text{,}\) dessa forma temos \(2007-501-1 = 1505\) vértices sem que \(4\) deles sejam consecutivos.</p>
 </div>
 <span class="incontext"><a href="section-casa-pombos.html#solution-165">[incontext]</a></span>
 </body>

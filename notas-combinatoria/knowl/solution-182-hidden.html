@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-07-08T10:29:30-03:00       *-->
+<!--*       on 2025-08-01T10:58:33-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,28 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{gather*}
-\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
-\end{gather*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Vamos calcular \(S_1\) e \(S_2\) separadamente.</p>
+<p>O \(k\)-ésimo termo do desenvolvimento é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
-=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
-=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
-=\amp~n\sum_{k=0}^pC_{n+k}^k\\
-=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
-=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
+T_k = \amp ~ C_{11}^{k-1}(x^4)^{k-1}\left(-\frac{1}{x^2}\right)^{11-k+1}  \\
+= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{4(k-1)}x^{-2(12-k)}  \\
+= \amp ~ (-1)^{12-k}C_{11}^{k-1}x^{6k-28}  
 \end{align*}
 </div>
-<p>Para usar o Teorema das Diagonais no cálculo de \(S_2\text{,}\) precisamos somar e subtrair \(C_{n-1}^0\text{.}\)</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item a)</dfn> Para que \(6k-28 = 2\text{,}\) temos \(k=5\text{,}\) logo estamos procurando o 5º termo:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
-=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
-=\amp~ C_{n+p+1}^{p+1}-1.
-\end{align*}
+\begin{equation*}
+T_5 = (-1)^{7}C_{11}^4x^2.
+\end{equation*}
 </div>
-<p data-braille="continuation">Portanto,</p>
+<p data-braille="continuation">E portanto o coeficiente é \((-1)^{7}C_{11}^4 = -330\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item b)</dfn> \(6k-28 = 5\) não possui solução no conjunto dos inteiros positivos, portanto o coeficiente de \(x^5\) é zero.</p>
+<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">item c)</dfn> Para que \(6k-28 = 8\text{,}\) temos \(k=6\text{,}\) logo estamos procurando o 6º termo:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
-=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
-\end{align*}
+\begin{equation*}
+T_6 = (-1)^{6}C_{11}^5x^8.
+\end{equation*}
 </div>
+<p data-braille="continuation">E portanto, o coeficiente é \((-1)^{6}C_{11}^5 = 462\text{.}\)</p>
 </div></body>
 </html>

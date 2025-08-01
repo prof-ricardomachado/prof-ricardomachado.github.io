@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-30T17:43:17-03:00       *-->
+<!--*       on 2025-08-01T13:43:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -27,7 +27,7 @@
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
 </h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.</p>
-<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Em seguida, apresentamos uma função em SageMath, que implementa passo a passo o cálculo de anagramas com posições fixas. O código gera todas as subpalavras resultantes de "remover" temporariamente os caracteres fixos, conta as permutações de cada subpalavra e aplica o Princípio da Inclusão–Exclusão para combinar os resultados parciais. Assim, você pode executar diretamente no Sage, sem interface gráfica, e verificar as mesmas contagens de \[ A_{i_1}\cap \cdots \cap A_{i_r} \] e o total final de anagramas, exatamente como no widget interativo.</p>
+<figure class="figure figure-like"><iframe xmlns:svg="http://www.w3.org/2000/svg" id="interactive-inclusao-exclusao_complex" width="600" height="480" src="interactive-inclusao-exclusao_complex-if.html"></iframe><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Em seguida, apresentamos uma função em SageMath, que implementa passo a passo o cálculo de anagramas com posições fixas. O código gera todas as subpalavras resultantes de "remover" temporariamente os caracteres fixos, conta as permutações de cada subpalavra e aplica o Princípio da Inclusão–Exclusão para combinar os resultados parciais. Ao apertar em <dfn class="terminology">Evaluate (Sage)</dfn> o <em class="emphasis">widget</em> é criado.</p>
 <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">def anagramas_fix(palavra, pfix):
     """
     Calcula via Princípio da Inclusão–Exclusão o número de anagramas de 'palavra'
@@ -114,12 +114,51 @@
         uni += 'A' + str(i) + '∪'
     uni = uni[:-1]  # retira o último '∪'
     
-    # imprime o resultado final do Princípio da Inclusão–Exclusão
-    print(f'\n#{uni} = {soma}')
-
+    
+    return soma
 
 # Exemplo de uso:
-anagramas_fix(['P','R','I','N','C','I','P','I','O'], [1,2,3])
+#anagramas_fix(['P','R','I','N','C','I','P','I','O'], [1,2,3])
+
+@interact
+def _(lista=input_box('PRINCIPIO' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3] , width=30,  label="Posições fixas:"), Cardinalidades=True, auto_update=False):
+
+
+    if type(lista)==type([]):
+      lista2=[]
+      for i in lista:
+        lista2.append(str(i))
+    else:
+      lista2=[]
+      if lista not in ZZ and 'invalid' not in str(lista):
+          #print('invalid' in str(lista))
+          
+          lista = str(lista)
+          k=0
+          for i in lista:
+              k += 1
+              if k>6 :
+                  if i == "'":
+                      break
+                  lista2.append(i)
+
+
+
+
+    resp = anagramas_fix(lista2, pos_fixas)
+    
+    s=''
+    for l in lista2:
+        s = s + l
+    
+    pos_fixas.reverse()
+
+    uni=''
+    for i in pos_fixas:
+        uni = uni + 'A' + str(i) + '∪'
+    uni = uni[0:-1]
+    
+    print('#%s = %d'  %(uni, resp))
 </script></div></article><span class="incontext"><a href="sec_inclusao_exclusao_01.html#technology-2">[incontext]</a></span>
 </body>
 </html>

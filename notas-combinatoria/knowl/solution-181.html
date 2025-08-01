@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-07-08T10:29:30-03:00       *-->
+<!--*       on 2025-08-01T10:58:32-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,50 +16,39 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.1.2.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.1.5.1</span><span class="period">.</span>
 </h6>
-<ol class="lower-alpha">
-<li><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=1}^nkC_n^k = \amp~\sum_{k=1}^n k\cdot \frac{n!}{k(k-1)!(n-k)!}\\
-=\amp~ \sum_{k=1}^n n\cdot \frac{(n-1)!}{(k-1)!(n-k)!}\\
-=\amp~ n\sum_{k=1}^nC_{n-1}^{k-1}\\
-=\amp~ n2^{n-1}
-\end{align*}
-</div></li>
-<li>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
+\end{gather*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Vamos calcular \(S_1\) e \(S_2\) separadamente.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\sum_{k=1}^nk^2C_n^k = \amp~ \sum_{k=1}^n k^2\cdot \frac{n!}{k(k-1)!(n-k)!}\\
-=\amp~ n\sum_{k=1}^n kC_{n-1}^{k-1}. \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
-\end{align*}
-</div>Definindo \(k=p+1\text{,}\) obtemos<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=1}^nk^2C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)C_{n-1}^p\\
-=\amp~ n \sum_{p=0}^{n-1}pC_{n-1}^p + n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}} \\
-=\amp~ n\sum_{p=1}^{n-1} p\cdot \frac{(n-1)!}{p(p-1)!(n-p-1)!}+n2^{n-1}\\
-=\amp~ n(n-1)\sum_{p=1}^{n-1}C_{n-2}^{p-1}+ n2^{n-1}\\
-=\amp~ n(n-1)2^{n-2}+n2^{n-1}\\
-=\amp~ {\left(n^{2} + n\right)} 2^{n - 2}.
+S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
+=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
+=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
+=\amp~n\sum_{k=0}^pC_{n+k}^k\\
+=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
+=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
 \end{align*}
 </div>
-</li>
-<li>
+<p>Para usar o Teorema das Diagonais no cálculo de \(S_2\text{,}\) precisamos somar e subtrair \(C_{n-1}^0\text{.}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\sum_{k=1}^n k^3C_n^k =\amp~ \sum_{k=1}^nk^2k\cdot \frac{n!}{k(k-1)!(n-k)!} \\
-=\amp~ n\sum_{k=1}^n k^2C_{n-1}^{k-1}.\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
-\end{align*}
-</div>Definindo \(k=p+1\text{,}\) obtemos<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=1}^nk^3C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)^2C_{n-1}^{k-1}\\
-=\amp~ n\sum_{p=0}^{n-1}(p^2+2p+1)C_{n-1}^p\\
-=\amp~ n\underbrace{\sum_{p=0}^{n-1}p^2C_{n-1}^p}_{=(n-1)n2^{n-3}} +2n\underbrace{\sum_{p=0}^{n-1}pC_{n-1}^p}_{=(n-1)2^{n-2}}+n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}}\\
-=\amp~(n^3+3n^2)2^{n-3}.
+S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
+=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
+=\amp~ C_{n+p+1}^{p+1}-1.
 \end{align*}
 </div>
-</li>
-</ol>
+<p data-braille="continuation">Portanto,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
+=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="section-triangulo-pascal.html#solution-181">[incontext]</a></span>
 </body>

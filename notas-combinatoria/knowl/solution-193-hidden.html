@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-07-08T10:29:31-03:00       *-->
+<!--*       on 2025-08-01T10:58:34-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,26 +12,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg">Primeiro, vamos calcular a probabilidade de que todos os chocolates sejam do tipo <em class="emphasis">ao leite</em>. Em seguida, vamos usar o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>) para chegar na resposta deste problema.</p>
-<p>cardinalidade do espaço amostral é dada pelo número de maneiras de pegar 8 chocolates dentre 40 disponívies, portanto</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Mais uma vez, usaremos o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>).</p>
+<p>Vamos, inicialmente, calcular a probabilidade de que todas as 45 pessoas façam aniversários em dias diferentes. O número de casos possíveis para os aniversários das 45 pessoas é \(365^{45}\text{.}\) O número de casos em que todas as 45 pessoas fazem aniversários em dias diferentes é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\#\Omega = C_{40}^{8}.
+365\times 364\times 363\times \cdots \times321. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Agora queremos contar quantas são as formas de pegar 8 chocolates do tipo <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">ao leite</em>. Como existem 30 disponíveis a resposta é:</p>
+<p data-braille="continuation">Então, a probabilidade de que todas as 45 pessoas façam aniversário em dias diferentes é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C_{30}^{8}. 
+\frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 0.0590241005342251 \approx 6\%. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Usando o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que ao menos um seja do tipo <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">amargo</em> é</p>
+<p data-braille="continuation">Usando o item a) do (<a class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia é</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-1 - \frac{C_{30}^{8}}{C_{40}^{8}} \approx 0.923893778382943 \approx 92,4\% 
+1 - \frac{365\times 364\times 363\times \cdots \times321}{365^{45}}= 1-0.0590241005342251 \approx 94\%. 
 \end{equation*}
 </div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Este cálculo pode ser verificado no Sage, usando o código abaixo:</p>
+<div class="sagecell-sage" id="sage-51"><script type="text/x-sage">pd = prod(i for i in (321..365))
+(1 - pd/365^45).n()
+</script></div>
 </div></body>
 </html>
