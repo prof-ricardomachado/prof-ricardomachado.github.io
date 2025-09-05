@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-09-03T09:05:29-03:00       *-->
+<!--*       on 2025-09-04T17:56:28-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -43,7 +43,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -118,7 +126,250 @@ MathJax.Hub.Config({
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-10"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">2.6</span> <span class="title">Soluções de um Sistema Linear</span>
-</h2></section></div></main>
+</h2>
+<article class="definition definition-like" id="definition-20"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
+</h6>
+<dfn class="terminology">(Soluções de um Sistema Linear)</dfn> Considere um sistema de equações lineares da forma \(Ax = b\text{.}\) Então, temos três casos possíveis: <ol class="lower-roman">
+<li id="li-54">O sistema possui uma única solução. Neste caso, diz-se que o sistema é possível e determinado.</li>
+<li id="li-55">O sistema possui infinitas soluções. Neste caso, diz-se que o sistema é possível e indeterminado.</li>
+<li id="li-56">O sistema não possui solução. Neste caso, diz-se que o sistema é impossível.</li>
+</ol></article><article class="remark remark-like" id="remark-16"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
+</h6>Se \(b = 0\text{,}\) dizemos que o sistema \(Ax = 0\) é <dfn class="terminology">homogêneo</dfn>. Note que um sistema homogêneo sempre admite solução, a saber, a <dfn class="terminology">solução trivial</dfn>\(~x =0\text{.}\)</article><article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
+</h6>Considere um sistema de equações lineares da forma<div class="displaymath">
+\begin{equation}
+A x =  b,\label{sistema_lin}\tag{2.6.1}
+\end{equation}
+</div>na qual, \(A\in\mathcal M_{m\times n}\text{,}\) \(x\in\mathcal M_{n\times 1}\) e \(b\in\mathcal M_{m\times 1}\text{.}\) Seja \((A|b)\in\mathcal M_{m\times (n+1)}\) a matriz ampliada do sistema. <p id="p-25">Denote \(p_c = \mathcal R[A]\text{,}\) ou seja, o posto da matriz dos coeficientes. E denote \(p_a = \mathcal R[(A|b)]\text{,}\) ou seja, o posto da matriz ampliada.</p>
+<p id="p-26">Então, o Sistema Linear <a class="xref" data-knowl="./knowl/sistema_lin.html" title="[men] 2.6.1">(2.6.1)</a> satisfaz as seguintes condições:</p>
+<ol class="lower-roman">
+<li id="li-57">Possui solução se, e somente se, \(p_c = p_a\text{.}\)</li>
+<li id="li-58">Possui uma única solução se, e somente se, \(p_c = p_a = n\text{.}\)</li>
+<li id="li-59">Possui infinitas soluções se, e somente se, \(p_c = p_a \lt n\text{.}\)</li>
+</ol></article><article class="remark remark-like" id="remark-17"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
+</h6>No caso <em class="emphasis">iii.</em>, dizemos que o sistema possui \(n-p_c~\)<dfn class="terminology">graus de liberdade</dfn>. Intuitivamente, isso significa que podemos escolher \(n-p_c\) variáveis como sendo <dfn class="terminology">variáveis livres</dfn> e as demais \(p_c\) variáveis do sistema podem ser expressas em função destas.</article><article class="example example-like" id="example-17"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span>
+</h6>Resolva o sistema de equações lineares<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x+3y+z \amp= 0\\
+2x+6y + 2z \amp= 0\\
+-x-3y -z \amp= 0
+\end{cases}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">A matriz ampliada associada ao sistema é<div class="displaymath">
+\begin{equation*}
+(A| b) = \left[
+\begin{array}{rrrr}
+1 \amp 3 \amp 1 \amp 0\\
+2 \amp 6 \amp 2 \amp 0\\
+-1 \amp -3 \amp -1 \amp 0
+\end{array}
+\right].
+\end{equation*}
+</div>Pode-se mostrar que a matriz acima pode ser linha reduzida à forma escada<div class="displaymath">
+\begin{equation*}
+B = \left[
+\begin{array}{rrrr}
+1 \amp 3 \amp 1 \amp 0\\
+0 \amp 0 \amp 0 \amp 0\\
+0 \amp 0 \amp 0 \amp 0
+\end{array}
+\right].
+\end{equation*}
+</div>Note que \(p_c = p_a = 1 \lt 3\) Logo o sistema é possível, porém indeterminado. O número de graus de liberdade do sistema é \(3- p_c = 2\text{.}\) Assim, podemos escolher duas incógnitas como variáveis livres, obtendo o sistema<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x \amp= -3r -s\\
+y \amp= r \\
+z \amp= s
+\end{cases}
+\end{equation*}
+</div>Portanto, as soluções básicas do sistema tem a forma<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{r}
+x \\
+y \\
+z
+\end{array}
+\right] = r\left[
+\begin{array}{r}
+-3 \\
+1 \\
+0
+\end{array}
+\right] + s\left[
+\begin{array}{r}
+-1 \\
+0 \\
+1
+\end{array}
+\right].
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="technology computation-like" id="technology-7"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
+</h6>
+<p id="p-27">Obtendo a forma escada da matriz ampliada:</p>
+<div class="sagecell-sage" id="sage-7"><script type="text/x-sage">A = matrix([[1,3,1],[2,6,2],[-1,-3,-1]])
+b = vector([0,0,0])
+Ab = A.augment(b)
+show(Ab.rref())
+</script></div></article><article class="example example-like" id="example-18"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span>
+</h6>Resolva o sistema de equações lineares<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x+2y+z+t \amp= 1\\
+x+3y - z +2t \amp= 3.
+\end{cases}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">A matriz ampliada associada ao sistema é<div class="displaymath">
+\begin{equation*}
+(A|b) = \left[
+\begin{array}{rrrrr}
+1 \amp 2 \amp  1 \amp 1 \amp 1\\
+1 \amp 3 \amp -1 \amp 2 \amp 3
+\end{array}
+\right].
+\end{equation*}
+</div>Pode-se mostrar que a matriz acima pode ser linha reduzida à forma escada<div class="displaymath">
+\begin{equation*}
+B = \left[
+\begin{array}{rrrrr}
+1 \amp 0 \amp  5 \amp -1 \amp -3\\
+0 \amp 1 \amp -2 \amp  1 \amp 2
+\end{array}
+\right].
+\end{equation*}
+</div>Reinterpretando em termos de um sistema de equações lineares,<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x + 5z - w \amp= -3\\
+y - 2z + w \amp= 2.
+\end{cases}
+\end{equation*}
+</div>Note que \(p_c = p_a = 2 \lt 4\text{.}\) Logo o sistema é possível, porém indeterminado. O número de graus de liberdade do sistema é \(4- p_c = 2\text{.}\) Assim, podemos escolher duas incógnitas como variáveis livres, obtendo o sistema<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x \amp= -3 - 5r + s\\ 
+y \amp= 2 + 2r - s\\
+z \amp= r\\
+w \amp= s
+\end{cases}
+\end{equation*}
+</div>Portanto, as soluções básicas do sistema tem a forma<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{r}
+x \\
+y \\
+z \\
+w 
+\end{array}
+\right] = 
+\left[
+\begin{array}{r}
+-3 \\
+2 \\
+0 \\
+0 
+\end{array}
+\right] +
+r\left[
+\begin{array}{r}
+-5\\
+2 \\
+1 \\
+0
+\end{array}
+\right] + s\left[
+\begin{array}{r}
+1 \\
+-1 \\
+0 \\
+1
+\end{array}
+\right].
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="technology computation-like" id="technology-8"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
+</h6>
+<p id="p-28">Obtendo a forma escada da matriz ampliada:</p>
+<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">A = matrix([[1,2,1,1],[1,3,-1,2]])
+b = vector([1,3])
+Ab = A.augment(b)
+show(Ab.rref())
+</script></div></article><article class="example example-like" id="example-19"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span>
+</h6>Resolva o sistema de equações lineares<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x+7z \amp= -10 \\
+y+5z \amp= -6 \\
+-x-y-12z \amp= 18
+\end{cases}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-29">A matriz ampliada associada ao sistema é</p>
+<div class="displaymath">
+\begin{equation*}
+(A|b) = \left[
+\begin{array}{rrrr}
+1 \amp  0 \amp   7 \amp -10\\
+0 \amp  1 \amp   5 \amp  -6\\
+-1 \amp -1 \amp -12 \amp 18
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p data-braille="continuation">Pode-se mostrar que a matriz acima pode ser linha reduzida à forma escada</p>
+<div class="displaymath">
+\begin{equation*}
+B = \left[
+\begin{array}{rrrr}
+1 \amp  0 \amp   7 \amp -10\\
+0 \amp  1 \amp   5 \amp  -6\\
+0 \amp  0 \amp   0 \amp  2\\
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p data-braille="continuation">Note que \(p_c = 2\) e \(p_a = 3\text{.}\) Logo o sistema é impossível.</p>
+<p id="p-30">Reinterpretando em termos de um sistema de equações lineares,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{cases}
+x + 7z \amp= -10\\
+y + 5z \amp= -6\\
+0 \amp = 2.
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Portanto, o conjunto solução do sistema é vazio, ou seja, \(\mathcal S = \varnothing\text{.}\)</p>
+</div></div>
+</div></article><article class="technology computation-like" id="technology-9"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span>
+</h6>
+<p id="p-31">Obtendo a forma escada da matriz ampliada:</p>
+<div class="sagecell-sage" id="sage-9"><script type="text/x-sage">A = matrix([[1,0,7],[0,1,5],[-1,-1,-12]])
+b = vector([-10,-6,18])
+Ab = A.augment(b)
+show(Ab.rref())
+</script></div></article></section></div></main>
 </div>
 </body>
 </html>
