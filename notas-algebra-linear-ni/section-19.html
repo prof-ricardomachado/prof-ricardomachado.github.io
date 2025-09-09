@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-09-09T11:31:48-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Subespaços Vetoriais</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Álgebra Linear NI</span></a></h1>
+<p class="byline">Daniel Cassimiro, Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="espacos-vetoriais.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="04_espacos_vetoriais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-20.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="espacos-vetoriais.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="04_espacos_vetoriais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-20.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="matrizes.html" data-scroll="matrizes"><span class="codenumber">1</span> <span class="title">Matrizes</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Introdução</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Tipos Especiais de Matrizes</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Operações com Matrizes</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sistemas.html" data-scroll="sistemas"><span class="codenumber">2</span> <span class="title">Sistemas Lineares</span></a><ul>
+<li><a href="section-5.html" data-scroll="section-5">Sistemas Lineares</a></li>
+<li><a href="section-6.html" data-scroll="section-6">Sistemas Lineares e Matrizes</a></li>
+<li><a href="section-7.html" data-scroll="section-7">Operações Elementares</a></li>
+<li><a href="section-8.html" data-scroll="section-8">A Forma Escada</a></li>
+<li><a href="section-9.html" data-scroll="section-9">Posto e Nulidade</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Soluções de um Sistema Linear</a></li>
+<li><a href="section-11.html" data-scroll="section-11">A Inversa de uma Matriz</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="03_determinante.html" data-scroll="03_determinante"><span class="codenumber">3</span> <span class="title">Sistemas Lineares</span></a><ul>
+<li><a href="section-13.html" data-scroll="section-13">Determinante de uma Matriz</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Desenvolvimento de Laplace</a></li>
+<li><a href="section-15.html" data-scroll="section-15">A Adjunta Clássica</a></li>
+<li><a href="section-16.html" data-scroll="section-16">A Regra de Cramer</a></li>
+<li><a href="section-17.html" data-scroll="section-17">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="04_espacos_vetoriais.html" data-scroll="04_espacos_vetoriais"><span class="codenumber">4</span> <span class="title">Espaços Vetoriais</span></a><ul>
+<li><a href="espacos-vetoriais.html" data-scroll="espacos-vetoriais">Espaços Vetoriais</a></li>
+<li><a href="section-19.html" data-scroll="section-19" class="active">Subespaços Vetoriais</a></li>
+<li><a href="section-20.html" data-scroll="section-20">Operando com Subespaços Vetoriais</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Exercícios</a></li>
+<li><a href="comb-linear.html" data-scroll="comb-linear">Combinações Lineares</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Independência Linear</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Base</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Dimensão</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Coordenadas</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-19"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">4.2</span> <span class="title">Subespaços Vetoriais</span>
+</h2>
+<article class="definition definition-like" id="def-subespacos-vetoriais"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Subespaços vetoriais.</span>
+</h6>Seja \(V\) um espaço vetorial real e \(W\) um subconjunto não-vazio de \(V\text{.}\) Dizemos que \(W\) é um <dfn class="terminology">subespaço vetorial</dfn> de \(V\) se:<ol class="lower-roman">
+<li id="li-100">Para todos \(\mathbf{u}, \mathbf{v} \in W\text{,}\) tem-se que \(\mathbf{u} + \mathbf{v} \in W\text{.}\)</li>
+<li id="li-101">Para todo \(\mathbf{u} \in W\) e todo \(\alpha \in \mathbb{R}\text{,}\) \(\alpha \mathbf{u} \in W\text{.}\)</li>
+</ol></article><article class="remark remark-like" id="obs-subespacos"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h6>Se \(W \subset V\) é um subespaço vetorial de \(V\text{,}\) então:<ul class="disc">
+<li id="li-102">As condições (i) e (ii) implicam que, ao operarmos em \(W\text{,}\) permanecemos em \(W\text{.}\) Nesse sentido, \(W\) é um espaço vetorial contido em \(V\text{.}\) No entanto, não é necessário verificar os axiomas (i) à (viii) de um espaço vetorial para \(W\text{,}\) pois estes já foram verificados para \(V\text{.}\)</li>
+<li id="li-103">Tem-se que \(\mathbf{0} \in W\text{,}\) qualquer que seja o subespaço vetorial \(W\text{.}\)</li>
+<li id="li-104">Todo espaço vetorial \(V\) admite ao menos dois subespaços triviais: \(W = \{\mathbf{0}\}\) e \(W = V\text{.}\)</li>
+</ul></article><article class="example example-like" id="ex-subespaco-matrizes"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+</h6>Considere o espaço vetorial real \(\mathcal{M}_{2 \times 2}\) das matrizes \(2 \times 2\text{.}\) Seja<div class="displaymath">
+\begin{equation*}
+W = \left\{
+\begin{bmatrix}
+a \amp 0 \\
+0 \amp d
+\end{bmatrix}
+\in \mathcal{M}_{2 \times 2} : a,d \in \mathbb{R}
+\right\}.
+\end{equation*}
+</div>Mostre que \(W\) é um subespaço vetorial de \(\mathcal{M}_{2 \times 2}\text{.}\)<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">Note que \(W \neq \varnothing\text{,}\) pois \(\mathbf{0} \in W\text{.}\) Sejam<div class="displaymath">
+\begin{align*}
+\mathbf{A} =
+\begin{bmatrix}
+a_1 \amp 0 \\
+0 \amp d_1
+\end{bmatrix}
+\quad \text{e} \quad
+\mathbf{B} =
+\begin{bmatrix}
+a_2 \amp 0 \\
+0 \amp d_2
+\end{bmatrix}.
+\end{align*}
+</div>Então,<div class="displaymath">
+\begin{align*}
+\mathbf{A} + \mathbf{B} =
+\begin{bmatrix}
+a_1 \amp 0 \\
+0 \amp d_1
+\end{bmatrix}
++
+\begin{bmatrix}
+a_2 \amp 0 \\
+0 \amp d_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_1 + a_2 \amp 0 \\
+0 \amp d_1 + d_2
+\end{bmatrix}.
+\end{align*}
+</div>Logo, \(\mathbf{A}+\mathbf{B} \in W\text{.}\) Além disso, se \(\alpha \in \mathbb{R}\text{,}\)<div class="displaymath">
+\begin{align*}
+\alpha \mathbf{A} =
+\alpha
+\begin{bmatrix}
+a_1 \amp 0 \\
+0 \amp d_1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\alpha a_1 \amp 0 \\
+0 \amp \alpha d_1
+\end{bmatrix}.
+\end{align*}
+</div>Logo, \(\alpha \mathbf{A} \in W\text{.}\) Assim, \(W\) é um subespaço vetorial de \(\mathcal{M}_{2 \times 2}\text{.}\)</div></div>
+</div></article><article class="example example-like" id="ex-subespaco-r3"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h6>Considere o espaço vetorial real \(\mathbb{R}^3\text{.}\) Seja<div class="displaymath">
+\begin{gather*}
+W = \{(x,y,0): x,y \in \mathbb{R}\}.
+\end{gather*}
+</div>Mostre que \(W\) é um subespaço vetorial de \(\mathbb{R}^3\text{.}\)<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<p id="p-45">Note que \(W \neq \varnothing\text{,}\) pois \(\mathbf{0} = (0,0,0) \in W\text{.}\) Sejam \(\mathbf{w}_1 = (x_1,y_1,0)\) e \(\mathbf{w}_2 = (x_2,y_2,0)\text{.}\) Então,</p>
+<div class="displaymath">
+\begin{gather*}
+\mathbf{w}_1 + \mathbf{w}_2 = (x_1,y_1,0) + (x_2,y_2,0) = (x_1+x_2, \; y_1+y_2, \; 0).
+\end{gather*}
+</div>
+<p id="p-46">Logo, \(\mathbf{w}_1 + \mathbf{w}_2 \in W\text{.}\) Além disso, se \(\alpha \in \mathbb{R}\text{,}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\alpha \mathbf{w}_1 = \alpha(x_1,y_1,0) = (\alpha x_1, \; \alpha y_1, \; 0).
+\end{gather*}
+</div>
+<p id="p-47">Portanto, \(\alpha \mathbf{w}_1 \in W\text{.}\) Assim, \(W\) é um subespaço vetorial de \(V\text{.}\)</p>
+</div></div>
+</div></article><article class="example example-like" id="ex-subespaco-pn"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h6>Considere o espaço vetorial real \(\mathcal{P}_n\text{.}\) Seja<div class="displaymath">
+\begin{gather*}
+W = \{ p \in \mathcal{P}_n : p(x) = p(-x) \}.
+\end{gather*}
+</div>Mostre que \(W\) é um subespaço vetorial de \(\mathcal{P}_n\text{.}\)</article><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like">
+<p id="p-48">Note que \(W\) é o subconjunto de \(\mathcal{P}_n\) dos polinômios pares. Além disso, \(W \neq \varnothing\text{,}\) pois o polinômio nulo é par. Sejam \(f, g \in W\text{.}\) Então \(f(x) = f(-x)\) e \(g(x) = g(-x)\text{.}\) Logo,</p>
+<div class="displaymath">
+\begin{gather*}
+(f+g)(-x) = f(-x) + g(-x) = f(x) + g(x) = (f+g)(x),
+\end{gather*}
+</div>
+<p id="p-49">portanto \(f+g \in W\text{.}\) Ainda, se \(\alpha \in \mathbb{R}\text{,}\)</p>
+<div class="displaymath">
+\begin{gather*}
+(\alpha f)(-x) = \alpha f(-x) = \alpha f(x) = (\alpha f)(x).
+\end{gather*}
+</div>
+<p id="p-50">Logo \(\alpha f \in W\text{.}\) Portanto, \(W\) é um subespaço vetorial de \(\mathcal{P}_n\text{.}\)</p>
+</div></div>
+<article class="example example-like" id="ex-r2-nao-subespaco"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-51">Considere o espaço vetorial real \(\mathbb{R}^2\text{.}\) Seja</p>
+<div class="displaymath">
+\begin{gather*}
+W = \{(x, x^2) : x \in \mathbb{R}\}.
+\end{gather*}
+</div>
+<p id="p-52">Mostre que \(W\) não é um subespaço vetorial de \(\mathbb{R}^2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like">
+<p id="p-53">Seja \(\mathbf{u} = (1,1)\) e \(\mathbf{v} = (2,4)\text{.}\) Então, claramente, \(\mathbf{u}, \mathbf{v} \in W\text{.}\) Porém,</p>
+<div class="displaymath">
+\begin{gather*}
+\mathbf{u} + \mathbf{v} = (3,5) \notin W.
+\end{gather*}
+</div>
+<p id="p-54">Logo, \(W\) não é subespaço vetorial de \(\mathbb{R}^2\text{.}\)</p>
+</div></div>
+</div></article></section></div></main>
+</div>
+</body>
+</html>

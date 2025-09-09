@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-09-01T09:37:04-03:00       *-->
+<!--*       on 2025-09-09T11:31:48-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,34 +12,59 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body><div class="solution solution-like">
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item a.</dfn></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Como os números foram escritos em ordem crescente, os que começam com \(2, 3\) e \(5\) aparecem antes do número \(653289\text{.}\) Existem \(5!\) números que começam com cada um destes algarismos, ou seja \(3\times 5!\) números.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Existem \(4!\) números que começam com \(62\text{,}\) e a mesma quantidade que começam com \(63\text{,}\) ou seja \(2\times 4!\) números.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Existem \(3!\) números que começam com \(652\text{.}\)</p>
-<p>O próximo número já que o que queremos. Portanto, a resposta é</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Precisamos determinar se existem \(\alpha_1, \alpha_2, \alpha_3 \in \mathbb{R}\) tais que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+3t^2 + 5t - 5 = \alpha_1 (t^2 + 2t + 1) + \alpha_2 (2t^2 + 5t + 4) + \alpha_3 (t^2 + 3t + 6)
+\end{gather*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Podemos reescrever a equação como:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+3t^2 + 5t - 5 = (\alpha_1 + 2\alpha_2 + \alpha_3) t^2 + (2\alpha_1 + 5\alpha_2 + 3\alpha_3) t + (\alpha_1 + 4\alpha_2 + 6\alpha_3)
+\end{gather*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Igualando os coeficientes de mesmas potências de \(t\text{,}\) obtemos o sistema:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-3\times 5! + 2\times 4! +3! +1 = 415.
+\begin{cases}
+\alpha_1 + 2\alpha_2 + \alpha_3 = 3 \\
+2\alpha_1 + 5\alpha_2 + 3\alpha_3 = 5 \\
+\alpha_1 + 4\alpha_2 + 6\alpha_3 = -5
+\end{cases}
 \end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">item b.</dfn></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Começando com \(2, 3, 5\) e \(6\) temos um total de \(4\times 5! = 480\) números. Se considerarmos também, todos que começam com \(8\text{,}\) teremos mais \(120\) números, ultrapassando a posição \(500\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Já sabemos que o número que ocupa a posição \(500\) começa com o algarismo \(8\) e que o primeiro número com o algarismo \(8\) ocupa a posição \(481\text{.}\) Precisamos encontrar o número que começa com o algarismo \(8\) e está na posição \(20\text{,}\) dentre estes números que começam com \(8\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Começando com \(823, 825\) e \(826\text{,}\) são \(3\times 3! = 18\) números. Dessa forma, o número seguinte está na posição \(19\text{,}\) dentre os que começam com o algarismo \(8\text{.}\) Assim, o número \(829356\) está na posição \(499\) e o número \(829365\) está na posição \(500\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><dfn class="terminology">(Usando o Sage)</dfn></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Quando calculamos todas as permutações no Sage, a saída é exibida em ordem crescente. Como as listas no Sage começam a ser contadas a partir do <dfn class="terminology">zero</dfn>, podemos consultar a permutação de posição 500 com o comando abaixo:</p>
-<div class="sagecell-sage" id="sage-6"><script type="text/x-sage">Permutations([2, 3, 5, 6, 8, 9]).list()[499]
-</script></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">A matriz ampliada do sistema é:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left[
+\begin{array}{rrrr}
+1 \amp 2 \amp 1 \amp 3\\
+2 \amp 5 \amp 3 \amp 5\\
+1 \amp 4 \amp 6 \amp -5
+\end{array}
+\right]
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">A matriz-linha reduzida à forma escada da matriz ampliada é:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left[
+\begin{array}{rrrr}
+1 \amp 0 \amp 0 \amp 3\\
+0 \amp 1 \amp 0 \amp 1\\
+0 \amp 0 \amp 1 \amp -2
+\end{array}
+\right]
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Portanto, o sistema admite uma única solução \(\alpha_1 = 3\text{,}\) \(\alpha_2 = 1\) e \(\alpha_3 = -2\text{.}\) Logo,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+p = 3p_1 + 1p_2 - 2p_3
+\end{gather*}
+</div>
 </div></body>
 </html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-09-09T11:31:48-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Espaços Vetoriais</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Álgebra Linear NI</span></a></h1>
+<p class="byline">Daniel Cassimiro, Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="04_espacos_vetoriais.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="04_espacos_vetoriais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-19.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="04_espacos_vetoriais.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="04_espacos_vetoriais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-19.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="matrizes.html" data-scroll="matrizes"><span class="codenumber">1</span> <span class="title">Matrizes</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Introdução</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Tipos Especiais de Matrizes</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Operações com Matrizes</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sistemas.html" data-scroll="sistemas"><span class="codenumber">2</span> <span class="title">Sistemas Lineares</span></a><ul>
+<li><a href="section-5.html" data-scroll="section-5">Sistemas Lineares</a></li>
+<li><a href="section-6.html" data-scroll="section-6">Sistemas Lineares e Matrizes</a></li>
+<li><a href="section-7.html" data-scroll="section-7">Operações Elementares</a></li>
+<li><a href="section-8.html" data-scroll="section-8">A Forma Escada</a></li>
+<li><a href="section-9.html" data-scroll="section-9">Posto e Nulidade</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Soluções de um Sistema Linear</a></li>
+<li><a href="section-11.html" data-scroll="section-11">A Inversa de uma Matriz</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="03_determinante.html" data-scroll="03_determinante"><span class="codenumber">3</span> <span class="title">Sistemas Lineares</span></a><ul>
+<li><a href="section-13.html" data-scroll="section-13">Determinante de uma Matriz</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Desenvolvimento de Laplace</a></li>
+<li><a href="section-15.html" data-scroll="section-15">A Adjunta Clássica</a></li>
+<li><a href="section-16.html" data-scroll="section-16">A Regra de Cramer</a></li>
+<li><a href="section-17.html" data-scroll="section-17">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="04_espacos_vetoriais.html" data-scroll="04_espacos_vetoriais"><span class="codenumber">4</span> <span class="title">Espaços Vetoriais</span></a><ul>
+<li><a href="espacos-vetoriais.html" data-scroll="espacos-vetoriais" class="active">Espaços Vetoriais</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Subespaços Vetoriais</a></li>
+<li><a href="section-20.html" data-scroll="section-20">Operando com Subespaços Vetoriais</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Exercícios</a></li>
+<li><a href="comb-linear.html" data-scroll="comb-linear">Combinações Lineares</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Independência Linear</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Base</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Dimensão</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Coordenadas</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="espacos-vetoriais"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">4.1</span> <span class="title">Espaços Vetoriais</span>
+</h2>
+<article class="definition definition-like" id="definition-27"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>Um <dfn class="terminology">espaço vetorial real</dfn> é um conjunto \(V\text{,}\) não-vazio, com duas operações:<ul class="disc">
+<li id="li-90">a <dfn class="terminology">adição de vetores</dfn> \(+ : V \times V \to V\text{,}\) que associa a cada par de elementos \(\mathbf{v}, \mathbf{w} \in V\) o elemento \(\mathbf{v} + \mathbf{w}\text{,}\) chamado a soma de \(\mathbf{v}\) e \(\mathbf{w}\text{;}\)</li>
+<li id="li-91">a <dfn class="terminology">multiplicação por escalar</dfn> \(\cdot : \mathbb{R} \times V \to V\text{,}\) que associa a cada elemento \(\alpha \in \mathbb{R}\) e a cada elemento \(\mathbf{v} \in V\) o elemento \(\alpha \mathbf{v}\text{,}\) chamado o produto de \(\alpha\) e \(\mathbf{v}\text{;}\)</li>
+</ul>Essas operações satisfazem os axiomas (i) a (viii), listados a seguir.</article><article class="remark remark-like" id="remark-26"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h6>Os elementos de \(V\) são frequentemente chamados de <dfn class="terminology">vetores</dfn>, e os elementos de \(\mathbb{R}\) são denominados, nesse contexto, de <dfn class="terminology">escalares</dfn>.</article><article class="axiom theorem-like" id="axiom-1"><h6 class="heading">
+<span class="type">Axioma</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">(Axiomas de um Espaço Vetorial.</span>
+</h6>Seja \(V\) um espaço vetorial real. Então:<ol class="lower-roman">
+<li id="li-92">Para todos \(\mathbf{u}, \mathbf{v}, \mathbf{w} \in V\text{,}\) vale:<div class="displaymath">
+\begin{equation*}
+(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w}).
+\end{equation*}
+</div>
+</li>
+<li id="li-93">Para todos \(\mathbf{u}, \mathbf{v} \in V\text{,}\) vale:<div class="displaymath">
+\begin{equation*}
+\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}.
+\end{equation*}
+</div>
+</li>
+<li id="li-94">Existe \(\mathbf{0} \in V\text{,}\) chamado de <dfn class="terminology">vetor nulo</dfn>, tal que para todo \(\mathbf{v} \in V\text{:}\)<div class="displaymath">
+\begin{equation*}
+\mathbf{v} + \mathbf{0} = \mathbf{v}.
+\end{equation*}
+</div>
+</li>
+<li id="li-95">Para todo \(\mathbf{v} \in V\text{,}\) existe \(-\mathbf{v} \in V\text{,}\) chamado de <dfn class="terminology">simétrico</dfn> de \(\mathbf{v}\text{,}\) tal que:<div class="displaymath">
+\begin{equation*}
+\mathbf{v} + (-\mathbf{v}) = \mathbf{0}.
+\end{equation*}
+</div>
+</li>
+<li id="li-96">Para todos \(\alpha, \beta \in \mathbb{R}\) e \(\mathbf{v} \in V\text{:}\)<div class="displaymath">
+\begin{equation*}
+(\alpha \beta)\mathbf{v} = \alpha(\beta \mathbf{v}).
+\end{equation*}
+</div>
+</li>
+<li id="li-97">Para todo \(\mathbf{v} \in V\text{:}\)<div class="displaymath">
+\begin{equation*}
+1 \mathbf{v} = \mathbf{v}.
+\end{equation*}
+</div>
+</li>
+<li id="li-98">Para todos \(\mathbf{u}, \mathbf{v} \in V\) e todo \(\alpha \in \mathbb{R}\text{:}\)<div class="displaymath">
+\begin{equation*}
+\alpha(\mathbf{u} + \mathbf{v}) = \alpha \mathbf{u} + \alpha \mathbf{v}.
+\end{equation*}
+</div>
+</li>
+<li id="li-99">Para todo \(\mathbf{v} \in V\) e todos \(\alpha, \beta \in \mathbb{R}\text{:}\)<div class="displaymath">
+\begin{equation*}
+(\alpha + \beta)\mathbf{v} = \alpha \mathbf{v} + \beta \mathbf{v}.
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="example example-like" id="example-31"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">(O Espaço Vetorial \(\mathbb{R}^n\)).</span>
+</h6>Seja \(V\) o conjunto:<div class="displaymath">
+\begin{equation*}
+V = \mathbb{R}^n = \{(x_1, \ldots, x_n) : x_i \in \mathbb{R}\}.
+\end{equation*}
+</div>Se \(\mathbf{u} = (x_1, \ldots, x_n)\) e \(\mathbf{v} = (y_1, \ldots, y_n)\text{,}\) então definimos a <dfn class="terminology">adição de vetores</dfn> em \(V\) por:<div class="displaymath">
+\begin{equation*}
+\mathbf{u} + \mathbf{v} 
+= (x_1, \ldots, x_n) + (y_1, \ldots, y_n) 
+= (x_1+y_1, \ldots, x_n+y_n).
+\end{equation*}
+</div>Se \(\alpha \in \mathbb{R}\text{,}\) então a <dfn class="terminology">multiplicação por escalar</dfn> em \(V\) é definida por:<div class="displaymath">
+\begin{equation*}
+\alpha \mathbf{v} 
+= \alpha (x_1, \ldots, x_n) 
+= (\alpha x_1, \ldots, \alpha x_n).
+\end{equation*}
+</div>O elemento neutro de \(V\) é o <dfn class="terminology">vetor nulo</dfn>:<div class="displaymath">
+\begin{equation*}
+\mathbf{0} = (0, \ldots, 0).
+\end{equation*}
+</div></article><article class="example example-like" id="exemplo-espaco-vetorial-mmn"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">(O Espaço Vetorial \(\mathcal{M}_{m \times n}\)).</span>
+</h6>Seja \(V\) o conjunto:<div class="displaymath">
+\begin{equation*}
+V = \mathcal{M}_{m \times n} = \{(a_{ij})_{m \times n} : a_{ij} \in \mathbb{R}\}.
+\end{equation*}
+</div>Se \(\mathbf{A} = (a_{ij})_{m \times n}\) e \(\mathbf{B} = (b_{ij})_{m \times n}\text{,}\) então definimos a <dfn class="terminology">adição de vetores</dfn> em \(V\) por:<div class="displaymath">
+\begin{equation*}
+\mathbf{A} + \mathbf{B} = (a_{ij} + b_{ij})_{m \times n}.
+\end{equation*}
+</div>Se \(\alpha \in \mathbb{R}\text{,}\) então a <dfn class="terminology">multiplicação por escalar</dfn> em \(V\) é definida por:<div class="displaymath">
+\begin{equation*}
+\alpha \mathbf{A} = (\alpha a_{ij})_{m \times n}.
+\end{equation*}
+</div>O elemento neutro de \(V\) é a <dfn class="terminology">matriz nula</dfn> \(\mathbf{0}\) de dimensão \(m \times n\text{.}\)</article><article class="example example-like" id="exemplo-espaco-vetorial-pn"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">(O Espaço Vetorial \(\mathcal{P}_n\)).</span>
+</h6>Seja \(V\) o conjunto:<div class="displaymath">
+\begin{equation*}
+V = \mathcal{P}_n = \{a_nx^n + \cdots + a_1x + a_0 : a_i \in \mathbb{R},\ i = 0,\ldots,n\}.
+\end{equation*}
+</div>Se<div class="displaymath">
+\begin{equation*}
+p = \sum_{i=0}^n a_i x^i \quad \text{e} \quad q = \sum_{i=0}^n b_i x^i,
+\end{equation*}
+</div>então definimos a <dfn class="terminology">adição de vetores</dfn> em \(V\) por:<div class="displaymath">
+\begin{equation*}
+p + q = \sum_{i=0}^n (a_i + b_i)x^i.
+\end{equation*}
+</div>Se \(\alpha \in \mathbb{R}\text{,}\) então a <dfn class="terminology">multiplicação por escalar</dfn> em \(V\) é definida por:<div class="displaymath">
+\begin{equation*}
+\alpha p = \sum_{i=0}^n (\alpha a_i)x^i.
+\end{equation*}
+</div>O elemento neutro de \(V\) é o <dfn class="terminology">polinômio nulo</dfn> \(0 = 0x^n + \cdots + 0x + 0\text{.}\)</article></section></div></main>
+</div>
+</body>
+</html>

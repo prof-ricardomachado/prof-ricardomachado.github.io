@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2025-09-09T11:31:48-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Operando com Subespaços Vetoriais</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">[skip-to-content]</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Álgebra Linear NI</span></a></h1>
+<p class="byline">Daniel Cassimiro, Ricardo Machado</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Sumário</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-19.html" title="Anterior">Anterior</a><a id="upbutton" class="up-button button toolbar-item" href="04_espacos_vetoriais.html" title="Acima">Acima</a><a id="nextbutton" class="next-button button toolbar-item" href="section-21.html" title="Próximo">Próximo</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Sumário</button><a class="previous-button toolbar-item button" href="section-19.html" title="Anterior">Anterior</a><a class="up-button button toolbar-item" href="04_espacos_vetoriais.html" title="Acima">Acima</a><a class="next-button button toolbar-item" href="section-21.html" title="Próximo">Próximo</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Pré-textual</span></a><ul>
+<li><a href="prof-ricardo-machado.html" data-scroll="prof-ricardo-machado">Sobre Ricardo Nunes Machado Junior</a></li>
+<li><a href="preface.html" data-scroll="preface">Prefácio</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="matrizes.html" data-scroll="matrizes"><span class="codenumber">1</span> <span class="title">Matrizes</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Introdução</a></li>
+<li><a href="section-2.html" data-scroll="section-2">Tipos Especiais de Matrizes</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Operações com Matrizes</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="sistemas.html" data-scroll="sistemas"><span class="codenumber">2</span> <span class="title">Sistemas Lineares</span></a><ul>
+<li><a href="section-5.html" data-scroll="section-5">Sistemas Lineares</a></li>
+<li><a href="section-6.html" data-scroll="section-6">Sistemas Lineares e Matrizes</a></li>
+<li><a href="section-7.html" data-scroll="section-7">Operações Elementares</a></li>
+<li><a href="section-8.html" data-scroll="section-8">A Forma Escada</a></li>
+<li><a href="section-9.html" data-scroll="section-9">Posto e Nulidade</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Soluções de um Sistema Linear</a></li>
+<li><a href="section-11.html" data-scroll="section-11">A Inversa de uma Matriz</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="03_determinante.html" data-scroll="03_determinante"><span class="codenumber">3</span> <span class="title">Sistemas Lineares</span></a><ul>
+<li><a href="section-13.html" data-scroll="section-13">Determinante de uma Matriz</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Desenvolvimento de Laplace</a></li>
+<li><a href="section-15.html" data-scroll="section-15">A Adjunta Clássica</a></li>
+<li><a href="section-16.html" data-scroll="section-16">A Regra de Cramer</a></li>
+<li><a href="section-17.html" data-scroll="section-17">Exercícios</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="04_espacos_vetoriais.html" data-scroll="04_espacos_vetoriais"><span class="codenumber">4</span> <span class="title">Espaços Vetoriais</span></a><ul>
+<li><a href="espacos-vetoriais.html" data-scroll="espacos-vetoriais">Espaços Vetoriais</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Subespaços Vetoriais</a></li>
+<li><a href="section-20.html" data-scroll="section-20" class="active">Operando com Subespaços Vetoriais</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Exercícios</a></li>
+<li><a href="comb-linear.html" data-scroll="comb-linear">Combinações Lineares</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Independência Linear</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Base</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Dimensão</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Coordenadas</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-20"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">4.3</span> <span class="title">Operando com Subespaços Vetoriais</span>
+</h2>
+<article class="theorem theorem-like" id="teo-5.1"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-55">Seja \(U\) e \(W\) subespaços vetoriais de um espaço vetorial \(V\text{.}\) Então:</p>
+<ol class="lower-roman">
+<li id="li-105">O conjunto \(U \cap W = \{\mathbf{v} : \mathbf{v} \in U \text{ e } \mathbf{v} \in W\}\) é um subespaço vetorial de \(V\text{.}\)</li>
+<li id="li-106">O conjunto \(U + W = \{\mathbf{u} + \mathbf{w} : \mathbf{u} \in U \text{ e } \mathbf{w} \in W\}\) é um subespaço vetorial de \(V\text{.}\)</li>
+</ol></article><article class="remark remark-like" id="remark-28"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-56">Observação: Se \(U\) e \(W\) são subespaços vetoriais de um espaço vetorial \(V\text{,}\) então, geralmente, \(U \cup W\) não é um subespaço vetorial de \(V\text{.}\)</p></article><article class="definition definition-like" id="def-soma-direta"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Soma Direta de Subespaços.</span>
+</h6>
+<p id="p-57">Seja \(U\) e \(W\) subespaços vetoriais de um espaço vetorial \(V\text{.}\) Dizemos que \(V\) é a <em class="emphasis">soma direta</em> de \(U\) e \(W\text{,}\) e escrevemos \(V = U \oplus W\text{,}\) se, e somente se:</p>
+<ol class="lower-roman">
+<li id="li-107">\(V = U + W\text{;}\)</li>
+<li id="li-108">\(U \cap W = \{\mathbf{0}\}\text{.}\)</li>
+</ol></article><article class="example example-like" id="ex-soma-direta-matrizes"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
+</h6>
+<p id="p-58">Considere o espaço vetorial real \(V\) das matrizes \(2\times 2\text{.}\) Seja</p>
+<div class="displaymath">
+\begin{align*}
+U \amp= \left\{
+\left[
+\begin{array}{cc}
+a \amp b \\
+0 \amp 0
+\end{array}
+\right] \in \mathcal M_{2\times 2} : a,b \in \mathbb R
+\right\}\\
+W \amp= \left\{
+\left[
+\begin{array}{cc}
+0 \amp 0 \\
+c \amp d
+\end{array}
+\right] \in \mathcal M_{2\times 2} : c,d \in \mathbb R
+\right\}
+\end{align*}
+</div>
+<p id="p-59">Mostre que \(V = U \oplus W\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like">
+<p id="p-60">Com efeito, dado \(\mathbf{A} = 
+\left[
+\begin{array}{rr}
+a \amp b \\
+c \amp d
+\end{array}
+\right]
+\in \mathcal M_{2\times 2}\text{,}\) então</p>
+<div class="displaymath">
+\begin{align*}
+\mathbf{A} \amp= 
+\left[
+\begin{array}{rr}
+a \amp b \\
+c \amp d
+\end{array}
+\right]
+=
+\left[
+\begin{array}{rr}
+a \amp b \\
+0 \amp 0
+\end{array}
+\right]
++
+\left[
+\begin{array}{rr}
+0 \amp 0 \\
+c \amp d
+\end{array}
+\right]
+= \mathbf{A}_1 + \mathbf{A}_2
+\end{align*}
+</div>
+<p id="p-61">onde \(\mathbf{A}_1 \in U\) e \(\mathbf{A}_2 \in W\text{.}\) Logo, \(V = U + W\text{.}\) Além disso,</p>
+<div class="displaymath">
+\begin{align*}
+U \cap W \amp= 
+\left\{
+\left[
+\begin{array}{cc}
+a \amp b \\
+0 \amp 0
+\end{array}
+\right] : a,b \in \mathbb R
+\right\}
+\cap 
+\left\{
+\left[
+\begin{array}{cc}
+0 \amp 0 \\
+c \amp d
+\end{array}
+\right] : c,d \in \mathbb R
+\right\}
+=
+\left\{
+\left[
+\begin{array}{cc}
+0 \amp 0 \\
+0 \amp 0
+\end{array}
+\right]
+\right\}
+\end{align*}
+</div>
+<p id="p-62">Como \(U \cap W = \{\mathbf{0}\}\text{,}\) resulta do <a class="xref" data-knowl="./knowl/teo-5.1.html" title="Teorema 4.3.1">Teorema 4.3.1</a> que \(V = U \oplus W\text{.}\)</p>
+</div></div>
+</div></article></section></div></main>
+</div>
+</body>
+</html>
