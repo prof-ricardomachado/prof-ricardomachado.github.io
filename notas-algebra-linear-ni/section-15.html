@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-09-09T11:31:48-03:00       *-->
+<!--*       on 2025-09-10T20:54:39-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -43,7 +43,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -133,7 +141,10 @@ MathJax.Hub.Config({
 <li><a href="section-23.html" data-scroll="section-23">Independência Linear</a></li>
 <li><a href="section-24.html" data-scroll="section-24">Base</a></li>
 <li><a href="section-25.html" data-scroll="section-25">Dimensão</a></li>
-<li><a href="section-26.html" data-scroll="section-26">Coordenadas</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Exercícios</a></li>
+<li><a href="section-27.html" data-scroll="section-27">Coordenadas</a></li>
+<li><a href="section-28.html" data-scroll="section-28">Mudança de Base</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Exercícios</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -183,14 +194,20 @@ MathJax.Hub.Config({
 \end{align*}
 </div>
 </div></div>
-</div></article><article class="theorem theorem-like" id="teo-inversa-adjunta"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</div></article><article class="technology computation-like" id="technology-13"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-46">Calculando a adjunta de uma matriz:</p>
+<div class="sagecell-sage" id="sage-14"><script type="text/x-sage">A = matrix([[2,3],[1,4]])
+show(A.adjugate())
+</script></div></article><article class="theorem theorem-like" id="teo-inversa-adjunta"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
 </h6>Seja \(\mathbf{A} \in \mathcal{M}_{n\times n}\text{.}\) Então, \(\mathbf{A}\) é não singular se, e somente se, \(\det(\mathbf{A}) \neq 0\text{.}\) Em caso afirmativo,<div class="displaymath">
 \begin{gather*}
 \mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})}\mathrm{adj}(\mathbf{A})
 \end{gather*}
 </div></article><article class="example example-like" id="exemplo-inversa-2x2"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
 </h6>Seja \(\mathbf{A} = (a_{ij})_{2\times 2}\) dada por<div class="displaymath">
 \begin{align*}
 \mathbf{A} =

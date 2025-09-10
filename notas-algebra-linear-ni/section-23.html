@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-09-09T11:31:48-03:00       *-->
+<!--*       on 2025-09-10T20:54:39-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -43,7 +43,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -133,7 +141,10 @@ MathJax.Hub.Config({
 <li><a href="section-23.html" data-scroll="section-23" class="active">Independência Linear</a></li>
 <li><a href="section-24.html" data-scroll="section-24">Base</a></li>
 <li><a href="section-25.html" data-scroll="section-25">Dimensão</a></li>
-<li><a href="section-26.html" data-scroll="section-26">Coordenadas</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Exercícios</a></li>
+<li><a href="section-27.html" data-scroll="section-27">Coordenadas</a></li>
+<li><a href="section-28.html" data-scroll="section-28">Mudança de Base</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Exercícios</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -144,17 +155,17 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="indep-lin"><h6 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span>
 </h6>
-<p id="p-94">Sejam \(V\) um espaço vetorial e \(\mathbf{v}_1, \ldots, \mathbf{v}_n \in V\text{.}\) Dizemos que o conjunto \(\{\mathbf{v}_1, \ldots, \mathbf{v}_n\}\) é <em class="emphasis">linearmente independente</em> se</p>
+<p id="p-100">Sejam \(V\) um espaço vetorial e \(\mathbf{v}_1, \ldots, \mathbf{v}_n \in V\text{.}\) Dizemos que o conjunto \(\{\mathbf{v}_1, \ldots, \mathbf{v}_n\}\) é <em class="emphasis">linearmente independente</em> se</p>
 <div class="displaymath">
 \begin{gather*}
 \alpha_1 \mathbf{v}_1 + \cdots + \alpha_n \mathbf{v}_n = \mathbf{0}
 \end{gather*}
 </div>
-<p id="p-95">implica que \(\alpha_1 = \cdots = \alpha_n = 0\text{.}\)</p>
-<p id="p-96">Se \(\alpha_i \neq 0\) para algum \(i = 1, \ldots, n\text{,}\) então dizemos que o conjunto \(\{\mathbf{v}_1, \ldots, \mathbf{v}_n\}\) é <em class="emphasis">linearmente dependente</em>.</p></article><article class="remark remark-like" id="remark-31"><h6 class="heading">
+<p id="p-101">implica que \(\alpha_1 = \cdots = \alpha_n = 0\text{.}\)</p>
+<p id="p-102">Se \(\alpha_i \neq 0\) para algum \(i = 1, \ldots, n\text{,}\) então dizemos que o conjunto \(\{\mathbf{v}_1, \ldots, \mathbf{v}_n\}\) é <em class="emphasis">linearmente dependente</em>.</p></article><article class="remark remark-like" id="remark-31"><h6 class="heading">
 <span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
 </h6>
-<p id="p-97">Decorre da definição que:</p>
+<p id="p-103">Decorre da definição que:</p>
 <ol class="lower-roman">
 <li id="li-128">O conjunto \(\{\mathbf{v}_1, \ldots, \mathbf{0}, \ldots, \mathbf{v}_n\}\) é linearmente dependente, quaisquer que sejam os vetores \(\mathbf{v}_i\text{.}\)</li>
 <li id="li-129">Se \(\mathbf{v} \neq \mathbf{0}\text{,}\) então \(\{\mathbf{v}\}\) é linearmente independente.</li>
@@ -163,23 +174,22 @@ MathJax.Hub.Config({
 </ol></article><article class="example example-like" id="ex-6-4"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
 </h6>
-<p id="p-98">Verifique se os vetores</p>
+<p id="p-104">Verifique se os vetores</p>
 <div class="displaymath">
 \begin{gather*}
 \mathbf{u} = (1,1,0), \quad
 \mathbf{v} = (1,3,2), \quad
 \mathbf{w} = (4,9,5)
 \end{gather*}
-</div>
-<div class="solutions">
+</div>são linearmente independentes.<div class="solutions">
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like">
-<p id="p-99">Suponha que</p>
+<p id="p-105">Suponha que</p>
 <div class="displaymath">
 \begin{gather*}
 \alpha_1 (1,1,0) + \alpha_2 (1,3,2) + \alpha_3 (4,9,5) = (0,0,0)
 \end{gather*}
 </div>
-<p id="p-100">Isto nos dá o seguinte sistema homogêneo:</p>
+<p id="p-106">Isto nos dá o seguinte sistema homogêneo:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{cases}
@@ -189,7 +199,7 @@ MathJax.Hub.Config({
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-101">A matriz dos coeficientes do sistema é</p>
+<p id="p-107">A matriz dos coeficientes do sistema é</p>
 <div class="displaymath">
 \begin{align*}
 \mathbf{A} = 
@@ -202,27 +212,45 @@ MathJax.Hub.Config({
 \right]
 \end{align*}
 </div>
-<p id="p-102">Como \(\det(\mathbf{A}) = 0\text{,}\) o sistema é indeterminado. Assim, existem \(\alpha_1,\alpha_2,\alpha_3\) não todos nulos tais que</p>
+<p id="p-108">Como \(\det(\mathbf{A}) = 0\text{,}\) o sistema é indeterminado. Assim, existem \(\alpha_1,\alpha_2,\alpha_3\) não todos nulos tais que</p>
 <div class="displaymath">
 \begin{equation*}
-\alpha_1 (1,1,0) = \alpha_2(1,3,2)+\alpha_3(4,9,5) = (0,0,0)
+\alpha_1 (1,1,0) + \alpha_2(1,3,2)+\alpha_3(4,9,5) = (0,0,0)
 \end{equation*}
 </div>
 <p data-braille="continuation">Logo, \(\{\mathbf{u}, \mathbf{v}, \mathbf{w}\}\) é linearmente dependente.</p>
 </div></div>
-</div></article><article class="theorem theorem-like" id="teo-6-2"><h6 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span>
+</div></article><article class="technology computation-like" id="technology-17"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span>
 </h6>
-<p id="p-103">O conjunto \(\{\mathbf{v}_1,\ldots,\mathbf{v}_n\}\) é linearmente dependente se, e somente se, existir um \(i=1,\ldots,n\) tal que</p>
+<p id="p-109">Calculando o determinante de \(A\)</p>
+<div class="sagecell-sage" id="sage-18"><script type="text/x-sage">A = matrix([[1,1,4],[1,3,9],[0,2,5]])
+det(A)
+</script></div>
+<p id="p-110">Calculando o subespaço gerado pelos três vetores dados:</p>
+<div class="sagecell-sage" id="sage-19"><script type="text/x-sage">V = AA^3
+W = V.subspace([[1,1,0],[1,3,2],[4,9,5]])
+W
+</script></div>
+<p id="p-111">Resolvendo o sistema dado na solução do problema anterior:</p>
+<div class="sagecell-sage" id="sage-20"><script type="text/x-sage">var('a1,a2,a3')
+eq1 = a1 + a2 +4*a3 == 0
+eq2 = a1 + 3*a2 + 9*a3 == 0
+eq3 = 2*a2 + 5*a3 == 0
+solve([eq1, eq2, eq3], a1, a2, a3)
+</script></div></article><article class="theorem theorem-like" id="teo-6-2"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span>
+</h6>
+<p id="p-112">O conjunto \(\{\mathbf{v}_1,\ldots,\mathbf{v}_n\}\) é linearmente dependente se, e somente se, existir um \(i=1,\ldots,n\) tal que</p>
 <div class="displaymath">
 \begin{gather*}
 \mathbf{v}_i = \beta_1 \mathbf{v}_1 + \cdots + \beta_{i-1} \mathbf{v}_{i-1} + \beta_{i+1} \mathbf{v}_{i+1} + \cdots + \beta_n \mathbf{v}_n
 \end{gather*}
 </div>
-<p id="p-104">Em outras palavras, o conjunto é linearmente dependente se algum dos vetores puder ser escrito como combinação linear dos outros.</p></article><article class="example example-like" id="ex-6-5"><h6 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span>
+<p id="p-113">Em outras palavras, o conjunto é linearmente dependente se algum dos vetores puder ser escrito como combinação linear dos outros.</p></article><article class="example example-like" id="ex-6-5"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span>
 </h6>
-<p id="p-105">Mostre que o conjunto</p>
+<p id="p-114">Mostre que o conjunto</p>
 <div class="displaymath">
 \begin{align*}
 \left\{
@@ -279,7 +307,7 @@ MathJax.Hub.Config({
 \end{array}
 \right].
 \end{equation*}
-</div>Pelo <a class="xref" data-knowl="./knowl/teo-6-2.html" title="Teorema 4.6.4">Teorema 4.6.4</a>, o conjunto é linearmente dependente, pois um dos vetores é combinação linear dos demais.</div></div>
+</div>Pelo <a class="xref" data-knowl="./knowl/teo-6-2.html" title="Teorema 4.6.5">Teorema 4.6.5</a>, o conjunto é linearmente dependente, pois um dos vetores é combinação linear dos demais.</div></div>
 </div></article></section></div></main>
 </div>
 </body>

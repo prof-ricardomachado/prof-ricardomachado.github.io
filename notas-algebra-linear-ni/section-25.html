@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-09-09T11:31:48-03:00       *-->
+<!--*       on 2025-09-10T20:54:40-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -43,7 +43,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -133,14 +141,137 @@ MathJax.Hub.Config({
 <li><a href="section-23.html" data-scroll="section-23">Independência Linear</a></li>
 <li><a href="section-24.html" data-scroll="section-24">Base</a></li>
 <li><a href="section-25.html" data-scroll="section-25" class="active">Dimensão</a></li>
-<li><a href="section-26.html" data-scroll="section-26">Coordenadas</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Exercícios</a></li>
+<li><a href="section-27.html" data-scroll="section-27">Coordenadas</a></li>
+<li><a href="section-28.html" data-scroll="section-28">Mudança de Base</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Exercícios</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Feito com PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-25"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">4.8</span> <span class="title">Dimensão</span>
-</h2></section></div></main>
+</h2>
+<article class="definition definition-like" id="def-dimensao"><h6 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">4.8.1</span><span class="period">.</span>
+</h6>
+<p id="p-153">Seja \(V\) um espaço vetorial. A <em class="alert">dimensão</em> de \(V\) é o número de elementos de uma base de \(V\text{,}\) denotado por \(\dim V\text{.}\)</p></article><article class="remark remark-like" id="obs-bases-canonicas"><h6 class="heading">
+<span class="type">Observação</span><span class="space"> </span><span class="codenumber">4.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Observações.</span>
+</h6>
+<ul class="disc">
+<li id="li-134"><p id="p-154">O conjunto \(B = \{\mathbf{e}_1,\ldots,\mathbf{e}_n\}\text{,}\) onde \(\mathbf{e}_i\) (\(i=1,\ldots,n\)) é o vetor com \(i\)-ésima coordenada 1 e demais coordenadas iguais a zero, é base de \(\mathbb{R}^n\text{,}\) denominada de <em class="alert">base canônica</em> do \(\mathbb{R}^n\text{.}\) Resulta que \(\dim \mathbb{R}^n = n\text{.}\)</p></li>
+<li id="li-135"><p id="p-155">O conjunto \(B = \{1,x,x^2,\ldots,x^n\}\text{,}\) é uma base de \(\mathcal{P}_n\text{,}\) denominada de <em class="alert">base canônica</em> do \(\mathcal{P}_n\text{.}\) Logo, \(\dim \mathcal{P}_n = n+1\text{.}\)</p></li>
+<li id="li-136"><p id="p-156">O conjunto \(B = \{\mathbf{E}_{11},\ldots,\mathbf{E}_{mn}\}\text{,}\) onde \(\mathbf{E}_{ij}\) é a matriz cuja entrada \((i,j)\) é igual a 1 e demais entradas iguais a zero, é uma base de \(\mathcal{M}_{m\times n}\text{,}\) denominada de <em class="alert">base canônica</em> do \(\mathcal{M}_{m\times n}\text{.}\) Portanto, \(\dim \mathcal{M}_{m\times n} = m \cdot n\text{.}\)</p></li>
+<li id="li-137"><p id="p-157">Alguns espaços vetoriais possuem dimensão infinita. Por exemplo, considere o espaço vetorial \(\mathcal{P}\) dos polinômios com coeficientes reais. Uma base para \(\mathcal{P}\) é o conjunto \(B = \{1,x,x^2,\ldots,x^n,\ldots\}\text{.}\) Assim, \(\mathcal{P}\) possui dimensão infinita. Neste curso, os espaços considerados terão sempre <em class="alert">dimensão finita</em>.</p></li>
+</ul></article><article class="theorem theorem-like" id="teo-7-3"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.8.3</span><span class="period">.</span>
+</h6>
+<p id="p-158">Seja \(V\) um espaço vetorial de dimensão finita. Se \(S \subset V\) é linearmente independente, então existe um conjunto \(B \subset V\) tal que \(B \supset S\) e \(B\) é uma base de \(V\text{.}\)</p>
+<p id="p-159">Em outras palavras, podemos estender um conjunto \(S\) linearmente independente de vetores de \(V\) à uma base \(B\) de \(V\text{.}\)</p></article><article class="theorem theorem-like" id="teo-7-4"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.8.4</span><span class="period">.</span>
+</h6>
+<p id="p-160">Suponha que \(V\) é um espaço vetorial de dimensão \(n\text{.}\) Então:</p>
+<ol class="lower-roman">
+<li id="li-138"><p id="p-161">Um conjunto \(B \subset V\) de \(n\) vetores é linearmente independente se, e somente se, é uma base de \(V\text{.}\)</p></li>
+<li id="li-139"><p id="p-162">Um conjunto \(B \subset V\) de \(n\) vetores gera \(V\) se, e somente se, é uma base de \(V\text{.}\)</p></li>
+</ol></article><article class="example example-like" id="ex-7-4"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.8.5</span><span class="period">.</span>
+</h6>
+<p id="p-163">Mostre que \(B = \{(2,3),(3,4)\}\) é uma base de \(V = \mathbb{R}^2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like">
+<p id="p-164">Como \(\dim \mathbb{R}^2 = 2\) e \(B\) possui dois elementos, então é suficiente mostrar que \(B\) é linearmente independente ou que \(B\) gera \(\mathbb{R}^2\text{.}\)</p>
+<p id="p-165">Mostremos que \(B\) é linearmente independente. Ora, mas já observamos que um conjunto com dois elementos é linearmente dependente se, e somente se, um vetor é múltiplo do outro. Como se vê facilmente, não existe \(\alpha \in \mathbb{R}\) tal que \((3,4) = \alpha (2,3)\text{.}\)</p>
+<p id="p-166">Logo, \(B\) é linearmente independente e, portanto, uma base de \(\mathbb{R}^2\text{.}\)</p>
+</div></div>
+</div></article><article class="theorem theorem-like" id="thm-7-5"><h6 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">4.8.6</span><span class="period">.</span>
+</h6>
+<p id="p-167">Sejam \(U\) e \(W\) subespaços vetoriais de um espaço vetorial \(V\) de dimensão finita. Então, \(\dim U \leq \dim V\) e \(\dim W \leq \dim V\text{.}\) Além disso,</p>
+<div class="displaymath">
+\begin{equation*}
+\dim(U+W) = \dim U + \dim W - \dim(U \cap W)\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex-7-5"><h6 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">4.8.7</span><span class="period">.</span>
+</h6>
+<p id="p-168">Considere os subespaços vetoriais de \(\mathbb{R}^3\text{,}\)</p>
+<div class="displaymath">
+\begin{gather*}
+U = \{(x,y,z): x+y-z=0\} \quad \text{e} \quad W = \{(x,y,z): x=y\}
+\end{gather*}
+</div>
+<p id="p-169">Determine os subespaços \(U+W\) e \(U\cap W\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-sol-7-5" id="sol-7-5"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-sol-7-5"><div class="solution solution-like">
+<p id="p-170">Note que</p>
+<div class="displaymath">
+\begin{align*}
+U =\amp \{(x,y,x+y): x,y \in \mathbb{R}\} \\
+=\amp
+\{x(1,0,1) + y(0,1,1): x,y \in \mathbb{R}\} \\
+=\amp
+\langle (1,0,1),(0,1,1) \rangle,
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+W =\amp \{(z,z,t): z,t \in \mathbb{R}\} \\
+=\amp
+\{z(1,1,0) + t(0,0,1): z,t \in \mathbb{R}\}\\
+=\amp
+\langle (1,1,0),(0,0,1) \rangle.
+\end{align*}
+</div>
+<p id="p-171">Então,</p>
+<div class="displaymath">
+\begin{align*}
+U+W =\amp \{ \mathbf{u} + \mathbf{w} : \mathbf{u} \in U, \mathbf{w} \in W \} \\
+=\amp
+\{ x(1,0,1) + y(0,1,1) + z(1,1,0) + t(0,0,1) : x,y,z,t \in \mathbb{R} \} \\
+=\amp
+\langle (1,0,1),(0,1,1),(1,1,0),(0,0,1) \rangle.
+\end{align*}
+</div>
+<p id="p-172">Agora, dado \(\mathbf{v}=(x,y,z)\in \mathbb{R}^3\text{,}\)</p>
+<div class="displaymath">
+\begin{gather*}
+(x,y,z) = \alpha_1(1,0,1) + \alpha_2(0,1,1) + \alpha_3(1,1,0) + \alpha_4(0,0,1)
+\end{gather*}
+</div>
+<div class="displaymath">
+\begin{gather*}
+\alpha_1 = x, \quad
+\alpha_2 = y, \quad
+\alpha_3 = 0, \quad
+\alpha_4 = z - x - y
+\end{gather*}
+</div>
+<p id="p-173">Logo, o sistema possui infinitas soluções. Portanto, \(U+W = \mathbb{R}^3\text{.}\)</p>
+<p id="p-174">Além disso, pelo <a class="xref" data-knowl="./knowl/thm-7-5.html" title="Teorema 4.8.6">Teorema 4.8.6</a>,</p>
+<div class="displaymath">
+\begin{gather*}
+\dim(U \cap W) = \dim U + \dim W - \dim(U+W) = 2 + 2 - 3 = 1
+\end{gather*}
+</div>
+<div class="displaymath">
+\begin{align*}
+U \cap W =\amp \{(x,y,z): x+y-z=0 \text{ e } x=y\} \\
+=\amp \{(x,x,2x): x \in \mathbb{R}\} \\
+=\amp \langle (1,1,2) \rangle
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="technology computation-like" id="technology-21"><h6 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">4.8.8</span><span class="period">.</span>
+</h6>
+<p id="p-175">Calculando o determinante de uma matriz:</p>
+<div class="sagecell-sage" id="sage-24"><script type="text/x-sage">V = SR^3
+U = V.subspace([[1,0,1],[0,1,1]])
+W = V.subspace([[1,1,0],[0,0,1]])
+print('U+W = \n%s' %(U+W))
+print('\nU.intersection(W) = \n%s' %U.intersection(W))
+</script></div></article></section></div></main>
 </div>
 </body>
 </html>
