@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-09-10T20:54:39-03:00       *-->
+<!--*       on 2025-09-11T10:24:37-03:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -123,7 +123,7 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="03_determinante.html" data-scroll="03_determinante"><span class="codenumber">3</span> <span class="title">Sistemas Lineares</span></a><ul>
+<a href="03_determinante.html" data-scroll="03_determinante"><span class="codenumber">3</span> <span class="title">Determinantes</span></a><ul>
 <li><a href="section-13.html" data-scroll="section-13">Determinante de uma Matriz</a></li>
 <li><a href="section-14.html" data-scroll="section-14">Desenvolvimento de Laplace</a></li>
 <li><a href="section-15.html" data-scroll="section-15" class="active">A Adjunta Clássica</a></li>
@@ -155,10 +155,10 @@ MathJax.Hub.Config({
 <article class="definition definition-like" id="definition-26"><h6 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">(A Adjunta de uma Matriz).</span>
 </h6>Seja \(\mathbf{A} = (a_{ij})_{n\times n}\text{.}\) A adjunta da matriz \(\mathbf{A}\text{,}\) denotada por \(\mathrm{adj}(\mathbf{A})\text{,}\) é definida por<div class="displaymath">
-\begin{gather*}
-\mathrm{adj}(\mathbf{A}) = (\Delta_{ji})_{n\times n}
-\end{gather*}
-</div>onde \(\Delta_{ij} = (-1)^{i+j}\det(\mathbf{A}_{ij})\) é o cofator do elemento \(a_{ij}\text{.}\)Em outras palavras, se \(\bar{\mathbf{A}} = (\Delta_{ij})_{n\times n}\) é a <dfn class="terminology">matriz dos cofatores</dfn> de \(\mathbf{A}\text{,}\) então a adjunta de \(\mathbf{A}\) é dada por \(\mathrm{adj}(\mathbf{A}) = (\bar{\mathbf{A}})^T\text{.}\)</article><article class="example example-like" id="exemplo-adjunta-2x2"><h6 class="heading">
+\begin{equation*}
+\mathrm{adj}(\mathbf{A}) = (\Delta_{ji})_{n\times n},
+\end{equation*}
+</div>na qual, \(\Delta_{ij} = (-1)^{i+j}\det(\mathbf{A}_{ij})\) é o cofator do elemento \(a_{ij}\text{.}\) Em outras palavras, se \(\bar{\mathbf{A}} = (\Delta_{ij})_{n\times n}\) é a <dfn class="terminology">matriz dos cofatores</dfn> de \(\mathbf{A}\text{,}\) então a adjunta de \(\mathbf{A}\) é dada por \(\mathrm{adj}(\mathbf{A}) = (\bar{\mathbf{A}})^T\text{.}\)</article><article class="example example-like" id="exemplo-adjunta-2x2"><h6 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
 </h6>Seja \(\mathbf{A} = (a_{ij})_{2\times 2}\) dada por<div class="displaymath">
 \begin{align*}
@@ -170,12 +170,12 @@ MathJax.Hub.Config({
 \end{align*}
 </div>Calcule a adjunta de \(\mathbf{A}\text{.}\)<div class="solutions">
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">Calculemos os cofatores de cada um dos elementos de \(\mathbf{A}\text{:}\)<div class="displaymath">
-\begin{gather*}
-\Delta_{11} = (-1)^{1+1} a_{22} = 4 \quad 
-\Delta_{12} = (-1)^{1+2} a_{21} = -1\\
-\Delta_{21} = (-1)^{2+1} a_{12} = -3 \quad 
-\Delta_{22} = (-1)^{2+2} a_{11} = 2
-\end{gather*}
+\begin{align*}
+\Delta_{11} =\amp (-1)^{1+1} a_{22} = 4 \\
+\Delta_{12} =\amp (-1)^{1+2} a_{21} = -1\\
+\Delta_{21} =\amp (-1)^{2+1} a_{12} = -3\\
+\Delta_{22} =\amp (-1)^{2+2} a_{11} = 2
+\end{align*}
 </div>Assim, a matriz dos cofatores de \(\mathbf{A}\) é dada por<div class="displaymath">
 \begin{align*}
 \bar{\mathbf{A}} = 
@@ -197,7 +197,7 @@ MathJax.Hub.Config({
 </div></article><article class="technology computation-like" id="technology-13"><h6 class="heading">
 <span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h6>
-<p id="p-46">Calculando a adjunta de uma matriz:</p>
+<p id="p-47">Calculando a adjunta de uma matriz:</p>
 <div class="sagecell-sage" id="sage-14"><script type="text/x-sage">A = matrix([[2,3],[1,4]])
 show(A.adjugate())
 </script></div></article><article class="theorem theorem-like" id="teo-inversa-adjunta"><h6 class="heading">
@@ -226,7 +226,7 @@ show(A.adjugate())
 \end{vmatrix}
 = 2 \cdot 4 - 3 \cdot 1 = 5
 \end{align*}
-</div>Assim, \(\mathbf{A}\) é não singular. Por outro lado, vimos no Exemplo 4.5 que<div class="displaymath">
+</div>Assim, \(\mathbf{A}\) é não singular. Por outro lado, vimos no <a class="xref" data-knowl="./knowl/exemplo-adjunta-2x2.html" title="Exemplo 3.3.2">Exemplo 3.3.2</a> que<div class="displaymath">
 \begin{align*}
 \mathrm{adj}(\mathbf{A}) = (\bar{\mathbf{A}})^T =  
 \begin{bmatrix}
