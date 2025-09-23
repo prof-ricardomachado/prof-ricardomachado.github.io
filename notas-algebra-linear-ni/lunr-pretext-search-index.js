@@ -1438,7 +1438,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.2",
   "title": "Subespaços Vetoriais",
-  "body": " Subespaços Vetoriais   Subespaços vetoriais  Seja um espaço vetorial real e um subconjunto não-vazio de . Dizemos que é um subespaço vetorial de se:   Para todos , tem-se que .  Para todo e todo , .     Se é um subespaço vetorial de , então:   As condições i. e ii. implicam que, ao operarmos em , permanecemos em . Nesse sentido, é um espaço vetorial contido em . No entanto, não é necessário verificar os axiomas i. à viii. de um espaço vetorial para , pois estes já foram verificados para .  Tem-se que , qualquer que seja o subespaço vetorial .  Todo espaço vetorial admite ao menos dois subespaços triviais: e .      Considere o espaço vetorial real das matrizes . Seja   Mostre que é um subespaço vetorial de .    Note que , pois . Sejam   Então,   Logo, . Além disso, se ,   Logo, . Assim, é um subespaço vetorial de .      Considere o espaço vetorial real . Seja   Mostre que é um subespaço vetorial de .    Note que , pois . Sejam e . Então,   Logo, . Além disso, se ,   Portanto, . Assim, é um subespaço vetorial de .      Considere o espaço vetorial real . Seja   Mostre que é um subespaço vetorial de .    Note que é o subconjunto de dos polinômios pares. Além disso, , pois o polinômio nulo é par. Sejam . Então e . Logo,   portanto . Ainda, se ,   Logo . Portanto, é um subespaço vetorial de .      Considere o espaço vetorial real . Seja   Mostre que não é um subespaço vetorial de .    Seja e . Então, claramente, . Porém,   Logo, não é subespaço vetorial de .    "
+  "body": " Subespaços Vetoriais   Subespaços vetoriais  Seja um espaço vetorial real e um subconjunto não-vazio de . Dizemos que é um subespaço vetorial de se:   Para todos , tem-se que .  Para todo e todo , .     Se é um subespaço vetorial de , então:   As condições i. e ii. implicam que, ao operarmos em , permanecemos em . Nesse sentido, é um espaço vetorial contido em . No entanto, não é necessário verificar os axiomas i. à viii. de um espaço vetorial para , pois estes já foram verificados para .  Tem-se que , qualquer que seja o subespaço vetorial .  Todo espaço vetorial admite ao menos dois subespaços triviais: e .      Considere o espaço vetorial real das matrizes . Seja   Mostre que é um subespaço vetorial de .    Note que , pois . Sejam   Então,   Logo, . Além disso, se ,   Logo, . Assim, é um subespaço vetorial de .     Considere o espaço vetorial real . Seja Mostre que é um subespaço vetorial de .  O espaço vetorial e o subespaço vetorial .      Note que , pois . Sejam e . Então,   Logo, . Além disso, se ,   Portanto, . Assim, é um subespaço vetorial de .      Considere o espaço vetorial real . Seja   Mostre que é um subespaço vetorial de .    Note que é o subconjunto de dos polinômios pares. Além disso, , pois o polinômio nulo é par. Sejam . Então e . Logo,   portanto . Ainda, se ,   Logo . Portanto, é um subespaço vetorial de .      Considere o espaço vetorial real . Seja   Mostre que não é um subespaço vetorial de .    Seja e . Então, claramente, . Porém,   Logo, não é subespaço vetorial de .    "
 },
 {
   "id": "def-subespacos-vetoriais",
@@ -1474,14 +1474,14 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "4.2.4",
   "title": "",
-  "body": "  Considere o espaço vetorial real . Seja   Mostre que é um subespaço vetorial de .    Note que , pois . Sejam e . Então,   Logo, . Além disso, se ,   Portanto, . Assim, é um subespaço vetorial de .   "
+  "body": " Considere o espaço vetorial real . Seja Mostre que é um subespaço vetorial de .  O espaço vetorial e o subespaço vetorial .      Note que , pois . Sejam e . Então,   Logo, . Além disso, se ,   Portanto, . Assim, é um subespaço vetorial de .   "
 },
 {
   "id": "ex-subespaco-pn",
   "level": "2",
   "url": "section-19.html#ex-subespaco-pn",
   "type": "Exemplo",
-  "number": "4.2.5",
+  "number": "4.2.6",
   "title": "",
   "body": "  Considere o espaço vetorial real . Seja   Mostre que é um subespaço vetorial de .    Note que é o subconjunto de dos polinômios pares. Além disso, , pois o polinômio nulo é par. Sejam . Então e . Logo,   portanto . Ainda, se ,   Logo . Portanto, é um subespaço vetorial de .   "
 },
@@ -1490,7 +1490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-19.html#ex-r2-nao-subespaco",
   "type": "Exemplo",
-  "number": "4.2.6",
+  "number": "4.2.7",
   "title": "",
   "body": "  Considere o espaço vetorial real . Seja   Mostre que não é um subespaço vetorial de .    Seja e . Então, claramente, . Porém,   Logo, não é subespaço vetorial de .   "
 },
@@ -1708,7 +1708,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.6",
   "title": "Independência Linear",
-  "body": " Independência Linear    Sejam um espaço vetorial e . Dizemos que o conjunto é linearmente independente se   implica que .  Se para algum , então dizemos que o conjunto é linearmente dependente .      Decorre da definição que:   O conjunto é linearmente dependente, quaisquer que sejam os vetores .  Se , então é linearmente independente.  Dois vetores são linearmente dependentes se, e somente se, .  Se é um conjunto linearmente independente de vetores e , então é linearmente independente. Reciprocamente, se é um conjunto linearmente dependente e , então é linearmente dependente.       Verifique se os vetores  são linearmente independentes.   Suponha que   Isto nos dá o seguinte sistema homogêneo:   A matriz dos coeficientes do sistema é   Como , o sistema é indeterminado. Assim, existem não todos nulos tais que Logo, é linearmente dependente.     Calculando o determinante de   Calculando o subespaço gerado pelos três vetores dados:   Resolvendo o sistema dado na solução do problema anterior:      O conjunto é linearmente dependente se, e somente se, existir um tal que   Em outras palavras, o conjunto é linearmente dependente se algum dos vetores puder ser escrito como combinação linear dos outros.      Mostre que o conjunto  é linearmente dependente.  Note que Pelo , o conjunto é linearmente dependente, pois um dos vetores é combinação linear dos demais.   "
+  "body": " Independência Linear    Sejam um espaço vetorial e . Dizemos que o conjunto é linearmente independente (L.I.) se   implica que .  Se para algum , então dizemos que o conjunto é linearmente dependente (L.D.) .      Decorre da definição que:   O conjunto é linearmente dependente, quaisquer que sejam os vetores .  Se , então é linearmente independente.  Dois vetores são linearmente dependentes se, e somente se, .  Se é um conjunto linearmente independente de vetores e , então é linearmente independente. Reciprocamente, se é um conjunto linearmente dependente e , então é linearmente dependente.       Verifique se os vetores  são linearmente independentes.   Suponha que   Isto nos dá o seguinte sistema homogêneo:   A matriz dos coeficientes do sistema é   Como , o sistema é indeterminado. Assim, existem não todos nulos tais que Logo, é linearmente dependente.     Calculando o determinante de   Calculando o subespaço gerado pelos três vetores dados:   Resolvendo o sistema dado na solução do problema anterior:      O conjunto é linearmente dependente se, e somente se, existir um tal que   Em outras palavras, o conjunto é linearmente dependente se algum dos vetores puder ser escrito como combinação linear dos outros.      Mostre que o conjunto  é linearmente dependente.  Note que Pelo , o conjunto é linearmente dependente, pois um dos vetores é combinação linear dos demais.   "
 },
 {
   "id": "indep-lin",
@@ -1717,7 +1717,7 @@ var ptx_lunr_docs = [
   "type": "Definição",
   "number": "4.6.1",
   "title": "",
-  "body": "  Sejam um espaço vetorial e . Dizemos que o conjunto é linearmente independente se   implica que .  Se para algum , então dizemos que o conjunto é linearmente dependente .   "
+  "body": "  Sejam um espaço vetorial e . Dizemos que o conjunto é linearmente independente (L.I.) se   implica que .  Se para algum , então dizemos que o conjunto é linearmente dependente (L.D.) .   "
 },
 {
   "id": "remark-31",
@@ -1770,89 +1770,62 @@ var ptx_lunr_docs = [
   "url": "section-24.html",
   "type": "Seção",
   "number": "4.7",
-  "title": "Base",
-  "body": " Base   Base de um espaço vetorial   Seja um espaço vetorial. Um conjunto é uma base de se:    O conjunto é linearmente independente:  se , então para .    O conjunto gera :  para todo , existem tais que         Mostre que   é uma base para .    Mostremos que é linearmente independente. Sejam tais que   Isto equivale ao sistema   Logo, é linearmente independente.  Mostremos que gera . Dado , precisamos mostrar que existem tais que   Basta tomar , e . Logo, gera e, portanto, é uma base de .     Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:      Determine se   é uma base para .    Mostremos que gera . Dado , precisamos mostrar que existem tais que   Isto equivale ao sistema   A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes. Portanto, gera .   Vamos verificar se é linearmente independente. Suponha que   Precisamos mostrar que o sistema associado   admite apenas a solução trivial. A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes.  Porém, o sistema é indeterminado, pois o posto da matriz ampliada é menor que 4. Assim, o sistema admite infinitas soluções além da solução trivial.  Segue que é linearmente dependente. Portanto, não é base de .     Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:      Determine se   é uma base para .    O conjunto não é base de , pois não gera o espaço. Se , então   equivale ao sistema impossível   Logo, não pertence ao subespaço gerado por , mas . Assim, não gera .     Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:     Se gera e os vetores são não-nulos, então existe tal que é uma base de .  Em outras palavras, todo conjunto de geradores não-nulos de contém uma base.    Se gera e é linearmente independente, então .  De maneira equivalente, se é gerado por vetores, então qualquer conjunto com vetores ( ) é linearmente dependente.   "
+  "title": "Exercícios",
+  "body": " Exercícios    O vetor é combinação linear dos vetores e ?    Verifique se os seguintes conjuntos são L.I. ou L.D.   .  .  .  .  .  .     Considere o subespaço de descrito por  .  ?  Encontre um valor para de forma que o vetor pertença a .     Considere os vetores e . Se (espaço gerado pelos vetores e ), qual o valor de ?    Mostre que os vetores e geram o espaço euclidiano .    Verifique que o vetor pertence ao subespaço de gerado pelos vetores e .    "
 },
 {
-  "id": "def-base",
+  "id": "exercise-42",
   "level": "2",
-  "url": "section-24.html#def-base",
-  "type": "Definição",
+  "url": "section-24.html#exercise-42",
+  "type": "Exercício",
   "number": "4.7.1",
-  "title": "Base de um espaço vetorial.",
-  "body": " Base de um espaço vetorial   Seja um espaço vetorial. Um conjunto é uma base de se:    O conjunto é linearmente independente:  se , então para .    O conjunto gera :  para todo , existem tais que      "
+  "title": "",
+  "body": " O vetor é combinação linear dos vetores e ?  "
 },
 {
-  "id": "ex-base-r3",
+  "id": "exercise-43",
   "level": "2",
-  "url": "section-24.html#ex-base-r3",
-  "type": "Exemplo",
+  "url": "section-24.html#exercise-43",
+  "type": "Exercício",
   "number": "4.7.2",
   "title": "",
-  "body": "  Mostre que   é uma base para .    Mostremos que é linearmente independente. Sejam tais que   Isto equivale ao sistema   Logo, é linearmente independente.  Mostremos que gera . Dado , precisamos mostrar que existem tais que   Basta tomar , e . Logo, gera e, portanto, é uma base de .   "
+  "body": " Verifique se os seguintes conjuntos são L.I. ou L.D.   .  .  .  .  .  .   "
 },
 {
-  "id": "technology-18",
+  "id": "exercise-44",
   "level": "2",
-  "url": "section-24.html#technology-18",
-  "type": "Tecnologia",
+  "url": "section-24.html#exercise-44",
+  "type": "Exercício",
   "number": "4.7.3",
   "title": "",
-  "body": " Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:   "
+  "body": " Considere o subespaço de descrito por  .  ?  Encontre um valor para de forma que o vetor pertença a .   "
 },
 {
-  "id": "exemplo-7-2",
+  "id": "exercise-45",
   "level": "2",
-  "url": "section-24.html#exemplo-7-2",
-  "type": "Exemplo",
+  "url": "section-24.html#exercise-45",
+  "type": "Exercício",
   "number": "4.7.4",
   "title": "",
-  "body": "  Determine se   é uma base para .    Mostremos que gera . Dado , precisamos mostrar que existem tais que   Isto equivale ao sistema   A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes. Portanto, gera .   Vamos verificar se é linearmente independente. Suponha que   Precisamos mostrar que o sistema associado   admite apenas a solução trivial. A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes.  Porém, o sistema é indeterminado, pois o posto da matriz ampliada é menor que 4. Assim, o sistema admite infinitas soluções além da solução trivial.  Segue que é linearmente dependente. Portanto, não é base de .   "
+  "body": " Considere os vetores e . Se (espaço gerado pelos vetores e ), qual o valor de ?  "
 },
 {
-  "id": "technology-19",
+  "id": "exercise-46",
   "level": "2",
-  "url": "section-24.html#technology-19",
-  "type": "Tecnologia",
+  "url": "section-24.html#exercise-46",
+  "type": "Exercício",
   "number": "4.7.5",
   "title": "",
-  "body": " Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:   "
+  "body": " Mostre que os vetores e geram o espaço euclidiano .  "
 },
 {
-  "id": "exemplo-7-3",
+  "id": "exercise-47",
   "level": "2",
-  "url": "section-24.html#exemplo-7-3",
-  "type": "Exemplo",
+  "url": "section-24.html#exercise-47",
+  "type": "Exercício",
   "number": "4.7.6",
   "title": "",
-  "body": "  Determine se   é uma base para .    O conjunto não é base de , pois não gera o espaço. Se , então   equivale ao sistema impossível   Logo, não pertence ao subespaço gerado por , mas . Assim, não gera .   "
-},
-{
-  "id": "technology-20",
-  "level": "2",
-  "url": "section-24.html#technology-20",
-  "type": "Tecnologia",
-  "number": "4.7.7",
-  "title": "",
-  "body": " Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:   "
-},
-{
-  "id": "teo-7.1",
-  "level": "2",
-  "url": "section-24.html#teo-7.1",
-  "type": "Teorema",
-  "number": "4.7.8",
-  "title": "",
-  "body": " Se gera e os vetores são não-nulos, então existe tal que é uma base de .  Em outras palavras, todo conjunto de geradores não-nulos de contém uma base.  "
-},
-{
-  "id": "teo-7.2",
-  "level": "2",
-  "url": "section-24.html#teo-7.2",
-  "type": "Teorema",
-  "number": "4.7.9",
-  "title": "",
-  "body": " Se gera e é linearmente independente, então .  De maneira equivalente, se é gerado por vetores, então qualquer conjunto com vetores ( ) é linearmente dependente.  "
+  "body": " Verifique que o vetor pertence ao subespaço de gerado pelos vetores e .  "
 },
 {
   "id": "section-25",
@@ -1860,80 +1833,89 @@ var ptx_lunr_docs = [
   "url": "section-25.html",
   "type": "Seção",
   "number": "4.8",
-  "title": "Dimensão",
-  "body": " Dimensão     Seja um espaço vetorial. A dimensão de é o número de elementos de uma base de , denotado por .     Observações    O conjunto , onde ( ) é o vetor com -ésima coordenada 1 e demais coordenadas iguais a zero, é base de , denominada de base canônica do . Resulta que .    O conjunto , é uma base de , denominada de base canônica do . Logo, .    O conjunto , onde é a matriz cuja entrada é igual a 1 e demais entradas iguais a zero, é uma base de , denominada de base canônica do . Portanto, .    Alguns espaços vetoriais possuem dimensão infinita. Por exemplo, considere o espaço vetorial dos polinômios com coeficientes reais. Uma base para é o conjunto . Assim, possui dimensão infinita. Neste curso, os espaços considerados terão sempre dimensão finita .       Seja um espaço vetorial de dimensão finita. Se é linearmente independente, então existe um conjunto tal que e é uma base de .  Em outras palavras, podemos estender um conjunto linearmente independente de vetores de à uma base de .      Suponha que é um espaço vetorial de dimensão . Então:    Um conjunto de vetores é linearmente independente se, e somente se, é uma base de .    Um conjunto de vetores gera se, e somente se, é uma base de .        Mostre que é uma base de .    Como e possui dois elementos, então é suficiente mostrar que é linearmente independente ou que gera .  Mostremos que é linearmente independente. Ora, mas já observamos que um conjunto com dois elementos é linearmente dependente se, e somente se, um vetor é múltiplo do outro. Como se vê facilmente, não existe tal que .  Logo, é linearmente independente e, portanto, uma base de .     Sejam e subespaços vetoriais de um espaço vetorial de dimensão finita. Então, e . Além disso, .     Considere os subespaços vetoriais de ,   Determine os subespaços e .    Note que    Então,   Agora, dado ,    Logo, o sistema possui infinitas soluções. Portanto, .  Além disso, pelo ,       Calculando o determinante de uma matriz:    "
+  "title": "Base",
+  "body": " Base   Base de um espaço vetorial   Seja um espaço vetorial. Um conjunto é uma base de se:    O conjunto é linearmente independente:  se , então para .    O conjunto gera :  para todo , existem tais que         Mostre que   é uma base para .    Mostremos que é linearmente independente. Sejam tais que   Isto equivale ao sistema   Logo, é linearmente independente.  Mostremos que gera . Dado , precisamos mostrar que existem tais que   Basta tomar , e . Logo, gera e, portanto, é uma base de .     Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:      Determine se   é uma base para .    Mostremos que gera . Dado , precisamos mostrar que existem tais que   Isto equivale ao sistema   A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes. Portanto, gera .   Vamos verificar se é linearmente independente. Suponha que   Precisamos mostrar que o sistema associado   admite apenas a solução trivial. A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes.  Porém, o sistema é indeterminado, pois o posto da matriz ampliada é menor que 4. Assim, o sistema admite infinitas soluções além da solução trivial.  Segue que é linearmente dependente. Portanto, não é base de .     Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:      Determine se   é uma base para .    O conjunto não é base de , pois não gera o espaço. Se , então   equivale ao sistema impossível   Logo, não pertence ao subespaço gerado por , mas . Assim, não gera .     Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:     Se gera e os vetores são não-nulos, então existe tal que é uma base de .  Em outras palavras, todo conjunto de geradores não-nulos de contém uma base.    Se gera e é linearmente independente, então .  De maneira equivalente, se é gerado por vetores, então qualquer conjunto com vetores ( ) é linearmente dependente.   "
 },
 {
-  "id": "def-dimensao",
+  "id": "def-base",
   "level": "2",
-  "url": "section-25.html#def-dimensao",
+  "url": "section-25.html#def-base",
   "type": "Definição",
   "number": "4.8.1",
-  "title": "",
-  "body": "   Seja um espaço vetorial. A dimensão de é o número de elementos de uma base de , denotado por .   "
+  "title": "Base de um espaço vetorial.",
+  "body": " Base de um espaço vetorial   Seja um espaço vetorial. Um conjunto é uma base de se:    O conjunto é linearmente independente:  se , então para .    O conjunto gera :  para todo , existem tais que      "
 },
 {
-  "id": "obs-bases-canonicas",
+  "id": "ex-base-r3",
   "level": "2",
-  "url": "section-25.html#obs-bases-canonicas",
-  "type": "Nota",
+  "url": "section-25.html#ex-base-r3",
+  "type": "Exemplo",
   "number": "4.8.2",
-  "title": "Observações.",
-  "body": " Observações    O conjunto , onde ( ) é o vetor com -ésima coordenada 1 e demais coordenadas iguais a zero, é base de , denominada de base canônica do . Resulta que .    O conjunto , é uma base de , denominada de base canônica do . Logo, .    O conjunto , onde é a matriz cuja entrada é igual a 1 e demais entradas iguais a zero, é uma base de , denominada de base canônica do . Portanto, .    Alguns espaços vetoriais possuem dimensão infinita. Por exemplo, considere o espaço vetorial dos polinômios com coeficientes reais. Uma base para é o conjunto . Assim, possui dimensão infinita. Neste curso, os espaços considerados terão sempre dimensão finita .    "
+  "title": "",
+  "body": "  Mostre que   é uma base para .    Mostremos que é linearmente independente. Sejam tais que   Isto equivale ao sistema   Logo, é linearmente independente.  Mostremos que gera . Dado , precisamos mostrar que existem tais que   Basta tomar , e . Logo, gera e, portanto, é uma base de .   "
 },
 {
-  "id": "teo-7-3",
+  "id": "technology-18",
   "level": "2",
-  "url": "section-25.html#teo-7-3",
-  "type": "Teorema",
+  "url": "section-25.html#technology-18",
+  "type": "Tecnologia",
   "number": "4.8.3",
   "title": "",
-  "body": "  Seja um espaço vetorial de dimensão finita. Se é linearmente independente, então existe um conjunto tal que e é uma base de .  Em outras palavras, podemos estender um conjunto linearmente independente de vetores de à uma base de .   "
+  "body": " Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:   "
 },
 {
-  "id": "teo-7-4",
+  "id": "exemplo-7-2",
   "level": "2",
-  "url": "section-25.html#teo-7-4",
-  "type": "Teorema",
+  "url": "section-25.html#exemplo-7-2",
+  "type": "Exemplo",
   "number": "4.8.4",
   "title": "",
-  "body": "  Suponha que é um espaço vetorial de dimensão . Então:    Um conjunto de vetores é linearmente independente se, e somente se, é uma base de .    Um conjunto de vetores gera se, e somente se, é uma base de .     "
+  "body": "  Determine se   é uma base para .    Mostremos que gera . Dado , precisamos mostrar que existem tais que   Isto equivale ao sistema   A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes. Portanto, gera .   Vamos verificar se é linearmente independente. Suponha que   Precisamos mostrar que o sistema associado   admite apenas a solução trivial. A matriz ampliada do sistema é   A matriz-linha reduzida à forma escada da matriz ampliada é   Assim, o sistema é possível, pois o posto da matriz ampliada é igual ao posto da matriz dos coeficientes.  Porém, o sistema é indeterminado, pois o posto da matriz ampliada é menor que 4. Assim, o sistema admite infinitas soluções além da solução trivial.  Segue que é linearmente dependente. Portanto, não é base de .   "
 },
 {
-  "id": "ex-7-4",
+  "id": "technology-19",
   "level": "2",
-  "url": "section-25.html#ex-7-4",
-  "type": "Exemplo",
+  "url": "section-25.html#technology-19",
+  "type": "Tecnologia",
   "number": "4.8.5",
   "title": "",
-  "body": "  Mostre que é uma base de .    Como e possui dois elementos, então é suficiente mostrar que é linearmente independente ou que gera .  Mostremos que é linearmente independente. Ora, mas já observamos que um conjunto com dois elementos é linearmente dependente se, e somente se, um vetor é múltiplo do outro. Como se vê facilmente, não existe tal que .  Logo, é linearmente independente e, portanto, uma base de .   "
+  "body": " Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:   "
 },
 {
-  "id": "thm-7-5",
+  "id": "exemplo-7-3",
   "level": "2",
-  "url": "section-25.html#thm-7-5",
-  "type": "Teorema",
+  "url": "section-25.html#exemplo-7-3",
+  "type": "Exemplo",
   "number": "4.8.6",
   "title": "",
-  "body": " Sejam e subespaços vetoriais de um espaço vetorial de dimensão finita. Então, e . Além disso, .  "
+  "body": "  Determine se   é uma base para .    O conjunto não é base de , pois não gera o espaço. Se , então   equivale ao sistema impossível   Logo, não pertence ao subespaço gerado por , mas . Assim, não gera .   "
 },
 {
-  "id": "ex-7-5",
+  "id": "technology-20",
   "level": "2",
-  "url": "section-25.html#ex-7-5",
-  "type": "Exemplo",
+  "url": "section-25.html#technology-20",
+  "type": "Tecnologia",
   "number": "4.8.7",
   "title": "",
-  "body": "  Considere os subespaços vetoriais de ,   Determine os subespaços e .    Note que    Então,   Agora, dado ,    Logo, o sistema possui infinitas soluções. Portanto, .  Além disso, pelo ,     "
+  "body": " Obtendo uma base para o subespaço gerado pelos vetores do conjunto B:   "
 },
 {
-  "id": "technology-21",
+  "id": "teo-7.1",
   "level": "2",
-  "url": "section-25.html#technology-21",
-  "type": "Tecnologia",
+  "url": "section-25.html#teo-7.1",
+  "type": "Teorema",
   "number": "4.8.8",
   "title": "",
-  "body": " Calculando o determinante de uma matriz:   "
+  "body": " Se gera e os vetores são não-nulos, então existe tal que é uma base de .  Em outras palavras, todo conjunto de geradores não-nulos de contém uma base.  "
+},
+{
+  "id": "teo-7.2",
+  "level": "2",
+  "url": "section-25.html#teo-7.2",
+  "type": "Teorema",
+  "number": "4.8.9",
+  "title": "",
+  "body": " Se gera e é linearmente independente, então .  De maneira equivalente, se é gerado por vetores, então qualquer conjunto com vetores ( ) é linearmente dependente.  "
 },
 {
   "id": "section-26",
@@ -1941,188 +1923,80 @@ var ptx_lunr_docs = [
   "url": "section-26.html",
   "type": "Seção",
   "number": "4.9",
-  "title": "Exercícios",
-  "body": " Exercícios    O vetor é combinação linear dos vetores e ?    Verifique se os seguintes conjuntos são L.I. ou L.D.   .  .  .  .  .  .     Considere o subespaço de descrito por  .  ?  Encontre um valor para de forma que o vetor pertença a .     Considere os vetores e . Se (espaço gerado pelos vetores e ), qual o valor de ?    Mostre que os vetores e geram o espaço euclidiano .    Verifique que o vetor pertence ao subespaço de gerado pelos vetores e .    Mostre que é base de .    Determine uma base para o espaço vetorial das matrizes . Qual a dimensão deste espaço?    Determine uma base para . Qual a dimensão deste espaço?    Mostre que o conjunto é base de .    Mostre que os polinômios e formam uma base para o espaço dos polinômios de grau ≤ 3 na variável .    Mostre que os vetores e geram o espaço e encontre uma base dentre os vetores e .    Seja e o conjunto .   Mostre que não é base de .  Determine uma base de que possua dois elementos de .     Sejam os vetores e do espaço euclidiano .   Mostre que é base de .  Escreva como combinação linear dos vetores da base .     Seja .   Qual a dimensão de ?  O conjunto é uma base de ?     Seja o espaço das matrizes sobre e seja o subespaço gerado por  . Determine uma base para e sua dimensão.    Considere o subespaço de gerado pelos vetores e .   O vetor ?  Exiba uma base para e determine sua dimensão.  ?     Considere o sistema linear   Seja .   Que condições devemos impor a para que seja subespaço de ?  Encontre uma base para .  Qual a relação entre a dimensão de e o grau de liberdade do sistema?     Definimos como a soma direta dos subespaços e . Se  e .  Exiba uma base para e .  Exiba uma base para .  Exiba uma base para .  é soma direta?  ?     Sejam e subespaços de .   Determine e exiba uma base.  Determine . Tal soma é direta? Vale ?     "
+  "title": "Dimensão",
+  "body": " Dimensão     Seja um espaço vetorial. A dimensão de é o número de elementos de uma base de , denotado por .     Observações    O conjunto , onde ( ) é o vetor com -ésima coordenada 1 e demais coordenadas iguais a zero, é base de , denominada de base canônica do . Resulta que .    O conjunto , é uma base de , denominada de base canônica do . Logo, .    O conjunto , onde é a matriz cuja entrada é igual a 1 e demais entradas iguais a zero, é uma base de , denominada de base canônica do . Portanto, .    Alguns espaços vetoriais possuem dimensão infinita. Por exemplo, considere o espaço vetorial dos polinômios com coeficientes reais. Uma base para é o conjunto . Assim, possui dimensão infinita. Neste curso, os espaços considerados terão sempre dimensão finita .       Seja um espaço vetorial de dimensão finita. Se é linearmente independente, então existe um conjunto tal que e é uma base de .  Em outras palavras, podemos estender um conjunto linearmente independente de vetores de à uma base de .      Suponha que é um espaço vetorial de dimensão . Então:    Um conjunto de vetores é linearmente independente se, e somente se, é uma base de .    Um conjunto de vetores gera se, e somente se, é uma base de .        Mostre que é uma base de .    Como e possui dois elementos, então é suficiente mostrar que é linearmente independente ou que gera .  Mostremos que é linearmente independente. Ora, mas já observamos que um conjunto com dois elementos é linearmente dependente se, e somente se, um vetor é múltiplo do outro. Como se vê facilmente, não existe tal que .  Logo, é linearmente independente e, portanto, uma base de .     Sejam e subespaços vetoriais de um espaço vetorial de dimensão finita. Então, e . Além disso, .     Considere os subespaços vetoriais de ,   Determine os subespaços e .    Note que    Então,   Agora, dado ,    Logo, o sistema possui infinitas soluções. Portanto, .  Além disso, pelo ,       Calculando o determinante de uma matriz:    "
 },
 {
-  "id": "exercise-42",
+  "id": "def-dimensao",
   "level": "2",
-  "url": "section-26.html#exercise-42",
-  "type": "Exercício",
+  "url": "section-26.html#def-dimensao",
+  "type": "Definição",
   "number": "4.9.1",
   "title": "",
-  "body": " O vetor é combinação linear dos vetores e ?  "
+  "body": "   Seja um espaço vetorial. A dimensão de é o número de elementos de uma base de , denotado por .   "
 },
 {
-  "id": "exercise-43",
+  "id": "obs-bases-canonicas",
   "level": "2",
-  "url": "section-26.html#exercise-43",
-  "type": "Exercício",
+  "url": "section-26.html#obs-bases-canonicas",
+  "type": "Nota",
   "number": "4.9.2",
-  "title": "",
-  "body": " Verifique se os seguintes conjuntos são L.I. ou L.D.   .  .  .  .  .  .   "
+  "title": "Observações.",
+  "body": " Observações    O conjunto , onde ( ) é o vetor com -ésima coordenada 1 e demais coordenadas iguais a zero, é base de , denominada de base canônica do . Resulta que .    O conjunto , é uma base de , denominada de base canônica do . Logo, .    O conjunto , onde é a matriz cuja entrada é igual a 1 e demais entradas iguais a zero, é uma base de , denominada de base canônica do . Portanto, .    Alguns espaços vetoriais possuem dimensão infinita. Por exemplo, considere o espaço vetorial dos polinômios com coeficientes reais. Uma base para é o conjunto . Assim, possui dimensão infinita. Neste curso, os espaços considerados terão sempre dimensão finita .    "
 },
 {
-  "id": "exercise-44",
+  "id": "teo-7-3",
   "level": "2",
-  "url": "section-26.html#exercise-44",
-  "type": "Exercício",
+  "url": "section-26.html#teo-7-3",
+  "type": "Teorema",
   "number": "4.9.3",
   "title": "",
-  "body": " Considere o subespaço de descrito por  .  ?  Encontre um valor para de forma que o vetor pertença a .   "
+  "body": "  Seja um espaço vetorial de dimensão finita. Se é linearmente independente, então existe um conjunto tal que e é uma base de .  Em outras palavras, podemos estender um conjunto linearmente independente de vetores de à uma base de .   "
 },
 {
-  "id": "exercise-45",
+  "id": "teo-7-4",
   "level": "2",
-  "url": "section-26.html#exercise-45",
-  "type": "Exercício",
+  "url": "section-26.html#teo-7-4",
+  "type": "Teorema",
   "number": "4.9.4",
   "title": "",
-  "body": " Considere os vetores e . Se (espaço gerado pelos vetores e ), qual o valor de ?  "
+  "body": "  Suponha que é um espaço vetorial de dimensão . Então:    Um conjunto de vetores é linearmente independente se, e somente se, é uma base de .    Um conjunto de vetores gera se, e somente se, é uma base de .     "
 },
 {
-  "id": "exercise-46",
+  "id": "ex-7-4",
   "level": "2",
-  "url": "section-26.html#exercise-46",
-  "type": "Exercício",
+  "url": "section-26.html#ex-7-4",
+  "type": "Exemplo",
   "number": "4.9.5",
   "title": "",
-  "body": " Mostre que os vetores e geram o espaço euclidiano .  "
+  "body": "  Mostre que é uma base de .    Como e possui dois elementos, então é suficiente mostrar que é linearmente independente ou que gera .  Mostremos que é linearmente independente. Ora, mas já observamos que um conjunto com dois elementos é linearmente dependente se, e somente se, um vetor é múltiplo do outro. Como se vê facilmente, não existe tal que .  Logo, é linearmente independente e, portanto, uma base de .   "
 },
 {
-  "id": "exercise-47",
+  "id": "thm-7-5",
   "level": "2",
-  "url": "section-26.html#exercise-47",
-  "type": "Exercício",
+  "url": "section-26.html#thm-7-5",
+  "type": "Teorema",
   "number": "4.9.6",
   "title": "",
-  "body": " Verifique que o vetor pertence ao subespaço de gerado pelos vetores e .  "
+  "body": " Sejam e subespaços vetoriais de um espaço vetorial de dimensão finita. Então, e . Além disso, .  "
 },
 {
-  "id": "exercise-48",
+  "id": "ex-7-5",
   "level": "2",
-  "url": "section-26.html#exercise-48",
-  "type": "Exercício",
+  "url": "section-26.html#ex-7-5",
+  "type": "Exemplo",
   "number": "4.9.7",
   "title": "",
-  "body": " Mostre que é base de .  "
+  "body": "  Considere os subespaços vetoriais de ,   Determine os subespaços e .    Note que    Então,   Agora, dado ,    Logo, o sistema possui infinitas soluções. Portanto, .  Além disso, pelo ,     "
 },
 {
-  "id": "exercise-49",
+  "id": "technology-21",
   "level": "2",
-  "url": "section-26.html#exercise-49",
-  "type": "Exercício",
+  "url": "section-26.html#technology-21",
+  "type": "Tecnologia",
   "number": "4.9.8",
   "title": "",
-  "body": " Determine uma base para o espaço vetorial das matrizes . Qual a dimensão deste espaço?  "
-},
-{
-  "id": "exercise-50",
-  "level": "2",
-  "url": "section-26.html#exercise-50",
-  "type": "Exercício",
-  "number": "4.9.9",
-  "title": "",
-  "body": " Determine uma base para . Qual a dimensão deste espaço?  "
-},
-{
-  "id": "exercise-51",
-  "level": "2",
-  "url": "section-26.html#exercise-51",
-  "type": "Exercício",
-  "number": "4.9.10",
-  "title": "",
-  "body": " Mostre que o conjunto é base de .  "
-},
-{
-  "id": "exercise-52",
-  "level": "2",
-  "url": "section-26.html#exercise-52",
-  "type": "Exercício",
-  "number": "4.9.11",
-  "title": "",
-  "body": " Mostre que os polinômios e formam uma base para o espaço dos polinômios de grau ≤ 3 na variável .  "
-},
-{
-  "id": "exercise-53",
-  "level": "2",
-  "url": "section-26.html#exercise-53",
-  "type": "Exercício",
-  "number": "4.9.12",
-  "title": "",
-  "body": " Mostre que os vetores e geram o espaço e encontre uma base dentre os vetores e .  "
-},
-{
-  "id": "exercise-54",
-  "level": "2",
-  "url": "section-26.html#exercise-54",
-  "type": "Exercício",
-  "number": "4.9.13",
-  "title": "",
-  "body": " Seja e o conjunto .   Mostre que não é base de .  Determine uma base de que possua dois elementos de .   "
-},
-{
-  "id": "exercise-55",
-  "level": "2",
-  "url": "section-26.html#exercise-55",
-  "type": "Exercício",
-  "number": "4.9.14",
-  "title": "",
-  "body": " Sejam os vetores e do espaço euclidiano .   Mostre que é base de .  Escreva como combinação linear dos vetores da base .   "
-},
-{
-  "id": "exercise-56",
-  "level": "2",
-  "url": "section-26.html#exercise-56",
-  "type": "Exercício",
-  "number": "4.9.15",
-  "title": "",
-  "body": " Seja .   Qual a dimensão de ?  O conjunto é uma base de ?   "
-},
-{
-  "id": "exercise-57",
-  "level": "2",
-  "url": "section-26.html#exercise-57",
-  "type": "Exercício",
-  "number": "4.9.16",
-  "title": "",
-  "body": " Seja o espaço das matrizes sobre e seja o subespaço gerado por  . Determine uma base para e sua dimensão.  "
-},
-{
-  "id": "exercise-58",
-  "level": "2",
-  "url": "section-26.html#exercise-58",
-  "type": "Exercício",
-  "number": "4.9.17",
-  "title": "",
-  "body": " Considere o subespaço de gerado pelos vetores e .   O vetor ?  Exiba uma base para e determine sua dimensão.  ?   "
-},
-{
-  "id": "exercise-59",
-  "level": "2",
-  "url": "section-26.html#exercise-59",
-  "type": "Exercício",
-  "number": "4.9.18",
-  "title": "",
-  "body": " Considere o sistema linear   Seja .   Que condições devemos impor a para que seja subespaço de ?  Encontre uma base para .  Qual a relação entre a dimensão de e o grau de liberdade do sistema?   "
-},
-{
-  "id": "exercise-60",
-  "level": "2",
-  "url": "section-26.html#exercise-60",
-  "type": "Exercício",
-  "number": "4.9.19",
-  "title": "",
-  "body": " Definimos como a soma direta dos subespaços e . Se  e .  Exiba uma base para e .  Exiba uma base para .  Exiba uma base para .  é soma direta?  ?   "
-},
-{
-  "id": "exercise-61",
-  "level": "2",
-  "url": "section-26.html#exercise-61",
-  "type": "Exercício",
-  "number": "4.9.20",
-  "title": "",
-  "body": " Sejam e subespaços de .   Determine e exiba uma base.  Determine . Tal soma é direta? Vale ?   "
+  "body": " Calculando o determinante de uma matriz:   "
 },
 {
   "id": "section-27",
@@ -2130,44 +2004,134 @@ var ptx_lunr_docs = [
   "url": "section-27.html",
   "type": "Seção",
   "number": "4.10",
-  "title": "Coordenadas",
-  "body": " Coordenadas   Seja espaço vetorial e uma base de . Então, dado , existem únicos tais que .    Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por     Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .    É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada .  "
+  "title": "Exercícios",
+  "body": " Exercícios     Mostre que é base de .    Determine uma base para o espaço vetorial das matrizes . Qual a dimensão deste espaço?    Determine uma base para . Qual a dimensão deste espaço?    Mostre que o conjunto é base de .    Mostre que os polinômios e formam uma base para o espaço dos polinômios de grau ≤ 3 na variável .    Mostre que os vetores e geram o espaço e encontre uma base dentre os vetores e .    Seja e o conjunto .   Mostre que não é base de .  Determine uma base de que possua dois elementos de .     Sejam os vetores e do espaço euclidiano .   Mostre que é base de .  Escreva como combinação linear dos vetores da base .     Seja .   Qual a dimensão de ?  O conjunto é uma base de ?     Seja o espaço das matrizes sobre e seja o subespaço gerado por  . Determine uma base para e sua dimensão.    Considere o subespaço de gerado pelos vetores e .   O vetor ?  Exiba uma base para e determine sua dimensão.  ?     Considere o sistema linear   Seja .   Que condições devemos impor a para que seja subespaço de ?  Encontre uma base para .  Qual a relação entre a dimensão de e o grau de liberdade do sistema?     Definimos como a soma direta dos subespaços e . Se  e .  Exiba uma base para e .  Exiba uma base para .  Exiba uma base para .  é soma direta?  ?     Sejam e subespaços de .   Determine e exiba uma base.  Determine . Tal soma é direta? Vale ?     "
 },
 {
-  "id": "thm-7-6",
+  "id": "exercise-48",
   "level": "2",
-  "url": "section-27.html#thm-7-6",
-  "type": "Teorema",
+  "url": "section-27.html#exercise-48",
+  "type": "Exercício",
   "number": "4.10.1",
   "title": "",
-  "body": " Seja espaço vetorial e uma base de . Então, dado , existem únicos tais que .  "
+  "body": " Mostre que é base de .  "
 },
 {
-  "id": "definition-34",
+  "id": "exercise-49",
   "level": "2",
-  "url": "section-27.html#definition-34",
-  "type": "Definição",
+  "url": "section-27.html#exercise-49",
+  "type": "Exercício",
   "number": "4.10.2",
   "title": "",
-  "body": " Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por   "
+  "body": " Determine uma base para o espaço vetorial das matrizes . Qual a dimensão deste espaço?  "
 },
 {
-  "id": "example-49",
+  "id": "exercise-50",
   "level": "2",
-  "url": "section-27.html#example-49",
-  "type": "Exemplo",
+  "url": "section-27.html#exercise-50",
+  "type": "Exercício",
   "number": "4.10.3",
   "title": "",
-  "body": " Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .   "
+  "body": " Determine uma base para . Qual a dimensão deste espaço?  "
 },
 {
-  "id": "remark-33",
+  "id": "exercise-51",
   "level": "2",
-  "url": "section-27.html#remark-33",
-  "type": "Nota",
+  "url": "section-27.html#exercise-51",
+  "type": "Exercício",
   "number": "4.10.4",
   "title": "",
-  "body": "É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada . "
+  "body": " Mostre que o conjunto é base de .  "
+},
+{
+  "id": "exercise-52",
+  "level": "2",
+  "url": "section-27.html#exercise-52",
+  "type": "Exercício",
+  "number": "4.10.5",
+  "title": "",
+  "body": " Mostre que os polinômios e formam uma base para o espaço dos polinômios de grau ≤ 3 na variável .  "
+},
+{
+  "id": "exercise-53",
+  "level": "2",
+  "url": "section-27.html#exercise-53",
+  "type": "Exercício",
+  "number": "4.10.6",
+  "title": "",
+  "body": " Mostre que os vetores e geram o espaço e encontre uma base dentre os vetores e .  "
+},
+{
+  "id": "exercise-54",
+  "level": "2",
+  "url": "section-27.html#exercise-54",
+  "type": "Exercício",
+  "number": "4.10.7",
+  "title": "",
+  "body": " Seja e o conjunto .   Mostre que não é base de .  Determine uma base de que possua dois elementos de .   "
+},
+{
+  "id": "exercise-55",
+  "level": "2",
+  "url": "section-27.html#exercise-55",
+  "type": "Exercício",
+  "number": "4.10.8",
+  "title": "",
+  "body": " Sejam os vetores e do espaço euclidiano .   Mostre que é base de .  Escreva como combinação linear dos vetores da base .   "
+},
+{
+  "id": "exercise-56",
+  "level": "2",
+  "url": "section-27.html#exercise-56",
+  "type": "Exercício",
+  "number": "4.10.9",
+  "title": "",
+  "body": " Seja .   Qual a dimensão de ?  O conjunto é uma base de ?   "
+},
+{
+  "id": "exercise-57",
+  "level": "2",
+  "url": "section-27.html#exercise-57",
+  "type": "Exercício",
+  "number": "4.10.10",
+  "title": "",
+  "body": " Seja o espaço das matrizes sobre e seja o subespaço gerado por  . Determine uma base para e sua dimensão.  "
+},
+{
+  "id": "exercise-58",
+  "level": "2",
+  "url": "section-27.html#exercise-58",
+  "type": "Exercício",
+  "number": "4.10.11",
+  "title": "",
+  "body": " Considere o subespaço de gerado pelos vetores e .   O vetor ?  Exiba uma base para e determine sua dimensão.  ?   "
+},
+{
+  "id": "exercise-59",
+  "level": "2",
+  "url": "section-27.html#exercise-59",
+  "type": "Exercício",
+  "number": "4.10.12",
+  "title": "",
+  "body": " Considere o sistema linear   Seja .   Que condições devemos impor a para que seja subespaço de ?  Encontre uma base para .  Qual a relação entre a dimensão de e o grau de liberdade do sistema?   "
+},
+{
+  "id": "exercise-60",
+  "level": "2",
+  "url": "section-27.html#exercise-60",
+  "type": "Exercício",
+  "number": "4.10.13",
+  "title": "",
+  "body": " Definimos como a soma direta dos subespaços e . Se  e .  Exiba uma base para e .  Exiba uma base para .  Exiba uma base para .  é soma direta?  ?   "
+},
+{
+  "id": "exercise-61",
+  "level": "2",
+  "url": "section-27.html#exercise-61",
+  "type": "Exercício",
+  "number": "4.10.14",
+  "title": "",
+  "body": " Sejam e subespaços de .   Determine e exiba uma base.  Determine . Tal soma é direta? Vale ?   "
 },
 {
   "id": "section-28",
@@ -2175,44 +2139,44 @@ var ptx_lunr_docs = [
   "url": "section-28.html",
   "type": "Seção",
   "number": "4.11",
-  "title": "Mudança de Base",
-  "body": " Mudança de Base   (Matriz de Mudança de Base)  Sejam e duas bases ordenadas de um mesmo espaço vetorial . Dado , e Então, as coordenadas de com relação às bases e são, respectivamente, Como é base de e então Substituindo em , obtemos Igualando a , temos Isto corresponde ao sistema linear O sistema pode ser escrito na sua forma matricial como  A matriz   é chamada matriz de mudança de base da base para a base . Assim, a relação anterior pode ser escrita como   Note que é a matriz cuja i -ésima coluna são as coordenadas de na base .      Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,      Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale     Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .   "
+  "title": "Coordenadas",
+  "body": " Coordenadas   Seja espaço vetorial e uma base de . Então, dado , existem únicos tais que .    Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por     Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .    É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada .  "
 },
 {
-  "id": "remark-34",
+  "id": "thm-7-6",
   "level": "2",
-  "url": "section-28.html#remark-34",
-  "type": "Nota",
+  "url": "section-28.html#thm-7-6",
+  "type": "Teorema",
   "number": "4.11.1",
-  "title": "(Matriz de Mudança de Base).",
-  "body": " (Matriz de Mudança de Base)  Sejam e duas bases ordenadas de um mesmo espaço vetorial . Dado , e Então, as coordenadas de com relação às bases e são, respectivamente, Como é base de e então Substituindo em , obtemos Igualando a , temos Isto corresponde ao sistema linear O sistema pode ser escrito na sua forma matricial como  A matriz   é chamada matriz de mudança de base da base para a base . Assim, a relação anterior pode ser escrita como   Note que é a matriz cuja i -ésima coluna são as coordenadas de na base .   "
+  "title": "",
+  "body": " Seja espaço vetorial e uma base de . Então, dado , existem únicos tais que .  "
 },
 {
-  "id": "example-50",
+  "id": "definition-34",
   "level": "2",
-  "url": "section-28.html#example-50",
-  "type": "Exemplo",
+  "url": "section-28.html#definition-34",
+  "type": "Definição",
   "number": "4.11.2",
   "title": "",
-  "body": "  Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,    "
+  "body": " Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por   "
 },
 {
-  "id": "teo_8.1",
+  "id": "example-49",
   "level": "2",
-  "url": "section-28.html#teo_8.1",
-  "type": "Teorema",
+  "url": "section-28.html#example-49",
+  "type": "Exemplo",
   "number": "4.11.3",
   "title": "",
-  "body": " Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale   "
+  "body": " Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .   "
 },
 {
-  "id": "example-51",
+  "id": "remark-33",
   "level": "2",
-  "url": "section-28.html#example-51",
-  "type": "Exemplo",
+  "url": "section-28.html#remark-33",
+  "type": "Nota",
   "number": "4.11.4",
   "title": "",
-  "body": " Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .  "
+  "body": "É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada . "
 },
 {
   "id": "section-29",
@@ -2220,96 +2184,141 @@ var ptx_lunr_docs = [
   "url": "section-29.html",
   "type": "Seção",
   "number": "4.12",
+  "title": "Mudança de Base",
+  "body": " Mudança de Base   (Matriz de Mudança de Base)  Sejam e duas bases ordenadas de um mesmo espaço vetorial . Dado , e Então, as coordenadas de com relação às bases e são, respectivamente, Como é base de e então Substituindo em , obtemos Igualando a , temos Isto corresponde ao sistema linear O sistema pode ser escrito na sua forma matricial como  A matriz   é chamada matriz de mudança de base da base para a base . Assim, a relação anterior pode ser escrita como   Note que é a matriz cuja i -ésima coluna são as coordenadas de na base .      Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,      Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale     Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .   "
+},
+{
+  "id": "remark-34",
+  "level": "2",
+  "url": "section-29.html#remark-34",
+  "type": "Nota",
+  "number": "4.12.1",
+  "title": "(Matriz de Mudança de Base).",
+  "body": " (Matriz de Mudança de Base)  Sejam e duas bases ordenadas de um mesmo espaço vetorial . Dado , e Então, as coordenadas de com relação às bases e são, respectivamente, Como é base de e então Substituindo em , obtemos Igualando a , temos Isto corresponde ao sistema linear O sistema pode ser escrito na sua forma matricial como  A matriz   é chamada matriz de mudança de base da base para a base . Assim, a relação anterior pode ser escrita como   Note que é a matriz cuja i -ésima coluna são as coordenadas de na base .   "
+},
+{
+  "id": "example-50",
+  "level": "2",
+  "url": "section-29.html#example-50",
+  "type": "Exemplo",
+  "number": "4.12.2",
+  "title": "",
+  "body": "  Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,    "
+},
+{
+  "id": "teo_8.1",
+  "level": "2",
+  "url": "section-29.html#teo_8.1",
+  "type": "Teorema",
+  "number": "4.12.3",
+  "title": "",
+  "body": " Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale   "
+},
+{
+  "id": "example-51",
+  "level": "2",
+  "url": "section-29.html#example-51",
+  "type": "Exemplo",
+  "number": "4.12.4",
+  "title": "",
+  "body": " Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .  "
+},
+{
+  "id": "section-30",
+  "level": "1",
+  "url": "section-30.html",
+  "type": "Seção",
+  "number": "4.13",
   "title": "Exercícios",
   "body": " Exercícios   Sejam e subespaços vetoriais de um espaço vetorial , demonstre que   Sejam e dois planos no passando pela origem (isto é, dois subespaços de dimensão ). Determine quando:  .  .    Determine o vetor coordenada de em relação à base nos seguintes casos:  .  .  .    Considere a base do espaço vetorial euclidiano . Determine o vetor coordenada de em relação à base , onde:  .  .  .    Seja uma base de . Determine o vetor coordenada de em relação à base .  Sejam os vetores , e do espaço euclidiano .  Mostre que é base de .  Escreva , e como combinação linear dos vetores da base .    Seja uma base de .  Mostre que é uma base de .  Encontre as coordenadas de em relação à base .  Encontre a matriz de mudança da base para a base canônica .    Determine as coordenadas do vetor em relação às seguintes bases de :          Sejam , , .  Encontre as seguintes matrizes de mudança de base:  .  .  .    Quais são as coordenadas do vetor em relação à base:   .  .  .    As coordenadas de um vetor em relação à base são dadas por . Quais são as coordenadas de em relação às bases e .    Seja o espaço vetorial das matrizes triangulares inferiores. Considere as seguintes bases: , . Determine as matrizes de mudança de base e .   "
 },
 {
   "id": "exercise-62",
   "level": "2",
-  "url": "section-29.html#exercise-62",
+  "url": "section-30.html#exercise-62",
   "type": "Exercício",
-  "number": "4.12.1",
+  "number": "4.13.1",
   "title": "",
   "body": "Sejam e subespaços vetoriais de um espaço vetorial , demonstre que  "
 },
 {
   "id": "exercise-63",
   "level": "2",
-  "url": "section-29.html#exercise-63",
+  "url": "section-30.html#exercise-63",
   "type": "Exercício",
-  "number": "4.12.2",
+  "number": "4.13.2",
   "title": "",
   "body": "Sejam e dois planos no passando pela origem (isto é, dois subespaços de dimensão ). Determine quando:  .  .   "
 },
 {
   "id": "exercise-64",
   "level": "2",
-  "url": "section-29.html#exercise-64",
+  "url": "section-30.html#exercise-64",
   "type": "Exercício",
-  "number": "4.12.3",
+  "number": "4.13.3",
   "title": "",
   "body": "Determine o vetor coordenada de em relação à base nos seguintes casos:  .  .  .   "
 },
 {
   "id": "exercise-65",
   "level": "2",
-  "url": "section-29.html#exercise-65",
+  "url": "section-30.html#exercise-65",
   "type": "Exercício",
-  "number": "4.12.4",
+  "number": "4.13.4",
   "title": "",
   "body": "Considere a base do espaço vetorial euclidiano . Determine o vetor coordenada de em relação à base , onde:  .  .  .   "
 },
 {
   "id": "exercise-66",
   "level": "2",
-  "url": "section-29.html#exercise-66",
+  "url": "section-30.html#exercise-66",
   "type": "Exercício",
-  "number": "4.12.5",
+  "number": "4.13.5",
   "title": "",
   "body": "Seja uma base de . Determine o vetor coordenada de em relação à base . "
 },
 {
   "id": "exercise-67",
   "level": "2",
-  "url": "section-29.html#exercise-67",
+  "url": "section-30.html#exercise-67",
   "type": "Exercício",
-  "number": "4.12.6",
+  "number": "4.13.6",
   "title": "",
   "body": "Sejam os vetores , e do espaço euclidiano .  Mostre que é base de .  Escreva , e como combinação linear dos vetores da base .   "
 },
 {
   "id": "exercise-68",
   "level": "2",
-  "url": "section-29.html#exercise-68",
+  "url": "section-30.html#exercise-68",
   "type": "Exercício",
-  "number": "4.12.7",
+  "number": "4.13.7",
   "title": "",
   "body": "Seja uma base de .  Mostre que é uma base de .  Encontre as coordenadas de em relação à base .  Encontre a matriz de mudança da base para a base canônica .   "
 },
 {
   "id": "exercise-69",
   "level": "2",
-  "url": "section-29.html#exercise-69",
+  "url": "section-30.html#exercise-69",
   "type": "Exercício",
-  "number": "4.12.8",
+  "number": "4.13.8",
   "title": "",
   "body": "Determine as coordenadas do vetor em relação às seguintes bases de :         "
 },
 {
   "id": "exercise-70",
   "level": "2",
-  "url": "section-29.html#exercise-70",
+  "url": "section-30.html#exercise-70",
   "type": "Exercício",
-  "number": "4.12.9",
+  "number": "4.13.9",
   "title": "",
   "body": "Sejam , , .  Encontre as seguintes matrizes de mudança de base:  .  .  .    Quais são as coordenadas do vetor em relação à base:   .  .  .    As coordenadas de um vetor em relação à base são dadas por . Quais são as coordenadas de em relação às bases e .   "
 },
 {
   "id": "exercise-71",
   "level": "2",
-  "url": "section-29.html#exercise-71",
+  "url": "section-30.html#exercise-71",
   "type": "Exercício",
-  "number": "4.12.10",
+  "number": "4.13.10",
   "title": "",
   "body": "Seja o espaço vetorial das matrizes triangulares inferiores. Considere as seguintes bases: , . Determine as matrizes de mudança de base e . "
 },
@@ -2413,9 +2422,9 @@ var ptx_lunr_docs = [
   "body": "  Determine a transformação linear tal que     Seja . Então,   Logo,   Logo, para todo .   "
 },
 {
-  "id": "section-31",
+  "id": "section-32",
   "level": "1",
-  "url": "section-31.html",
+  "url": "section-32.html",
   "type": "Seção",
   "number": "5.2",
   "title": "Núcleo e Imagem",
@@ -2424,7 +2433,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-36",
   "level": "2",
-  "url": "section-31.html#definition-36",
+  "url": "section-32.html#definition-36",
   "type": "Definição",
   "number": "5.2.1",
   "title": "Núcleo e Imagem de uma Transformação.",
@@ -2433,7 +2442,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-36",
   "level": "2",
-  "url": "section-31.html#remark-36",
+  "url": "section-32.html#remark-36",
   "type": "Nota",
   "number": "5.2.2",
   "title": "Observação.",
@@ -2442,7 +2451,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-nucleo-imagem-exemplo",
   "level": "2",
-  "url": "section-31.html#ex-nucleo-imagem-exemplo",
+  "url": "section-32.html#ex-nucleo-imagem-exemplo",
   "type": "Exemplo",
   "number": "5.2.3",
   "title": "",
@@ -2451,7 +2460,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-37",
   "level": "2",
-  "url": "section-31.html#definition-37",
+  "url": "section-32.html#definition-37",
   "type": "Definição",
   "number": "5.2.4",
   "title": "Transformações Injetivas e Sobrejetivas.",
@@ -2460,7 +2469,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-injetora-sobrejetora",
   "level": "2",
-  "url": "section-31.html#ex-injetora-sobrejetora",
+  "url": "section-32.html#ex-injetora-sobrejetora",
   "type": "Exemplo",
   "number": "5.2.5",
   "title": "",
@@ -2469,7 +2478,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-nucleo-nulo",
   "level": "2",
-  "url": "section-31.html#thm-nucleo-nulo",
+  "url": "section-32.html#thm-nucleo-nulo",
   "type": "Teorema",
   "number": "5.2.6",
   "title": "",
@@ -2478,7 +2487,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-nucleo-imagem",
   "level": "2",
-  "url": "section-31.html#thm-nucleo-imagem",
+  "url": "section-32.html#thm-nucleo-imagem",
   "type": "Teorema",
   "number": "5.2.7",
   "title": "(Teorema do núcleo e imagem).",
@@ -2487,7 +2496,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-injetora-sobrejetora",
   "level": "2",
-  "url": "section-31.html#cor-injetora-sobrejetora",
+  "url": "section-32.html#cor-injetora-sobrejetora",
   "type": "Corolário",
   "number": "5.2.8",
   "title": "",
@@ -2496,7 +2505,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-injetora-base",
   "level": "2",
-  "url": "section-31.html#cor-injetora-base",
+  "url": "section-32.html#cor-injetora-base",
   "type": "Corolário",
   "number": "5.2.9",
   "title": "",
@@ -2674,9 +2683,9 @@ var ptx_lunr_docs = [
   "body": "  Considere a transformação linear dada por cuja matriz em relação a base canônica é   Determine , onde .    Calculando as matrizes de mudança de base, obtemos   Portanto,    "
 },
 {
-  "id": "section-33",
+  "id": "section-34",
   "level": "1",
-  "url": "section-33.html",
+  "url": "section-34.html",
   "type": "Seção",
   "number": "5.4",
   "title": "Autovalores e Autovetores",
@@ -2685,7 +2694,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-38",
   "level": "2",
-  "url": "section-33.html#definition-38",
+  "url": "section-34.html#definition-38",
   "type": "Definição",
   "number": "5.4.1",
   "title": "Autovetor de um Operador Linear.",
@@ -2694,7 +2703,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-41",
   "level": "2",
-  "url": "section-33.html#remark-41",
+  "url": "section-34.html#remark-41",
   "type": "Nota",
   "number": "5.4.2",
   "title": "",
@@ -2703,7 +2712,7 @@ var ptx_lunr_docs = [
 {
   "id": "example-69",
   "level": "2",
-  "url": "section-33.html#example-69",
+  "url": "section-34.html#example-69",
   "type": "Exemplo",
   "number": "5.4.3",
   "title": "Exemplo 1.1.",
@@ -2712,7 +2721,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-39",
   "level": "2",
-  "url": "section-33.html#definition-39",
+  "url": "section-34.html#definition-39",
   "type": "Definição",
   "number": "5.4.5",
   "title": "Autovetor de uma Matriz.",
@@ -2721,7 +2730,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-43",
   "level": "2",
-  "url": "section-33.html#remark-43",
+  "url": "section-34.html#remark-43",
   "type": "Nota",
   "number": "5.4.6",
   "title": "",
@@ -2730,16 +2739,16 @@ var ptx_lunr_docs = [
 {
   "id": "example-70",
   "level": "2",
-  "url": "section-33.html#example-70",
+  "url": "section-34.html#example-70",
   "type": "Exemplo",
   "number": "5.4.7",
   "title": "",
   "body": "  Seja dada por   Determine se os seguintes vetores coluna abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Sendo ,   Logo, é autovetor de com autovalor associado .    (ii) Sendo ,   Logo, não é autovetor de .     "
 },
 {
-  "id": "section-34",
+  "id": "section-35",
   "level": "1",
-  "url": "section-34.html",
+  "url": "section-35.html",
   "type": "Seção",
   "number": "5.5",
   "title": "Polinômio característico",
@@ -2748,7 +2757,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-40",
   "level": "2",
-  "url": "section-34.html#definition-40",
+  "url": "section-35.html#definition-40",
   "type": "Definição",
   "number": "5.5.1",
   "title": "Polinômio característico de um operador linear.",
@@ -2757,7 +2766,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-44",
   "level": "2",
-  "url": "section-34.html#remark-44",
+  "url": "section-35.html#remark-44",
   "type": "Nota",
   "number": "5.5.2",
   "title": "",
@@ -2766,7 +2775,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-45",
   "level": "2",
-  "url": "section-34.html#remark-45",
+  "url": "section-35.html#remark-45",
   "type": "Nota",
   "number": "5.5.3",
   "title": "Observações.",
@@ -2775,7 +2784,7 @@ var ptx_lunr_docs = [
 {
   "id": "exe_1_3",
   "level": "2",
-  "url": "section-34.html#exe_1_3",
+  "url": "section-35.html#exe_1_3",
   "type": "Exemplo",
   "number": "5.5.4",
   "title": "",
@@ -2784,7 +2793,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-41",
   "level": "2",
-  "url": "section-34.html#definition-41",
+  "url": "section-35.html#definition-41",
   "type": "Definição",
   "number": "5.5.5",
   "title": "Polinômio característico de uma matriz.",
@@ -2793,7 +2802,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-46",
   "level": "2",
-  "url": "section-34.html#remark-46",
+  "url": "section-35.html#remark-46",
   "type": "Nota",
   "number": "5.5.6",
   "title": "",
@@ -2802,7 +2811,7 @@ var ptx_lunr_docs = [
 {
   "id": "exe_1_4",
   "level": "2",
-  "url": "section-34.html#exe_1_4",
+  "url": "section-35.html#exe_1_4",
   "type": "Exemplo",
   "number": "5.5.7",
   "title": "",
@@ -2811,7 +2820,7 @@ var ptx_lunr_docs = [
 {
   "id": "teo_autovalor_l_raiz",
   "level": "2",
-  "url": "section-34.html#teo_autovalor_l_raiz",
+  "url": "section-35.html#teo_autovalor_l_raiz",
   "type": "Teorema",
   "number": "5.5.8",
   "title": "",
@@ -2820,7 +2829,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-47",
   "level": "2",
-  "url": "section-34.html#remark-47",
+  "url": "section-35.html#remark-47",
   "type": "Nota",
   "number": "5.5.9",
   "title": "",
@@ -2829,16 +2838,16 @@ var ptx_lunr_docs = [
 {
   "id": "exe_1_5",
   "level": "2",
-  "url": "section-34.html#exe_1_5",
+  "url": "section-35.html#exe_1_5",
   "type": "Exemplo",
   "number": "5.5.10",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .     "
 },
 {
-  "id": "section-35",
+  "id": "section-36",
   "level": "1",
-  "url": "section-35.html",
+  "url": "section-36.html",
   "type": "Seção",
   "number": "5.6",
   "title": "Propriedades dos autovetores",
@@ -2847,7 +2856,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-24",
   "level": "2",
-  "url": "section-35.html#theorem-24",
+  "url": "section-36.html#theorem-24",
   "type": "Teorema",
   "number": "5.6.1",
   "title": "Propriedades dos autovetores.",
@@ -2856,7 +2865,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-42",
   "level": "2",
-  "url": "section-35.html#definition-42",
+  "url": "section-36.html#definition-42",
   "type": "Definição",
   "number": "5.6.2",
   "title": "Autoespaço associado a um autovalor.",
@@ -2865,16 +2874,16 @@ var ptx_lunr_docs = [
 {
   "id": "remark-48",
   "level": "2",
-  "url": "section-35.html#remark-48",
+  "url": "section-36.html#remark-48",
   "type": "Nota",
   "number": "5.6.3",
   "title": "",
   "body": " O autoespaço contém, além do vetor nulo, os autovetores de associados à . Segue das propriedades dos autovetores, (i) e (ii), que é um subespaço vetorial Um subespaço vetorial  de é qualquer subconjunto tal que e para todos e todos . de .  "
 },
 {
-  "id": "section-36",
+  "id": "section-37",
   "level": "1",
-  "url": "section-36.html",
+  "url": "section-37.html",
   "type": "Seção",
   "number": "5.7",
   "title": "Multiplicidades algébrica e geométrica",
@@ -2883,7 +2892,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-43",
   "level": "2",
-  "url": "section-36.html#definition-43",
+  "url": "section-37.html#definition-43",
   "type": "Definição",
   "number": "5.7.1",
   "title": "Multiplicidades algébrica e geométrica.",
@@ -2892,7 +2901,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-49",
   "level": "2",
-  "url": "section-36.html#remark-49",
+  "url": "section-37.html#remark-49",
   "type": "Nota",
   "number": "5.7.2",
   "title": "",
@@ -2901,16 +2910,16 @@ var ptx_lunr_docs = [
 {
   "id": "example-74",
   "level": "2",
-  "url": "section-36.html#example-74",
+  "url": "section-37.html#example-74",
   "type": "Exemplo",
   "number": "5.7.3",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .   "
 },
 {
-  "id": "section-37",
+  "id": "section-38",
   "level": "1",
-  "url": "section-37.html",
+  "url": "section-38.html",
   "type": "Seção",
   "number": "5.8",
   "title": "Exercícios",
@@ -2919,7 +2928,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-72",
   "level": "2",
-  "url": "section-37.html#exercise-72",
+  "url": "section-38.html#exercise-72",
   "type": "Exercício",
   "number": "5.8.1",
   "title": "",
@@ -2928,7 +2937,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-73",
   "level": "2",
-  "url": "section-37.html#exercise-73",
+  "url": "section-38.html#exercise-73",
   "type": "Exercício",
   "number": "5.8.2",
   "title": "",
@@ -2937,7 +2946,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-74",
   "level": "2",
-  "url": "section-37.html#exercise-74",
+  "url": "section-38.html#exercise-74",
   "type": "Exercício",
   "number": "5.8.3",
   "title": "",
@@ -2946,7 +2955,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-75",
   "level": "2",
-  "url": "section-37.html#exercise-75",
+  "url": "section-38.html#exercise-75",
   "type": "Exercício",
   "number": "5.8.4",
   "title": "",
@@ -2955,7 +2964,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-76",
   "level": "2",
-  "url": "section-37.html#exercise-76",
+  "url": "section-38.html#exercise-76",
   "type": "Exercício",
   "number": "5.8.5",
   "title": "",
@@ -2964,7 +2973,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-77",
   "level": "2",
-  "url": "section-37.html#exercise-77",
+  "url": "section-38.html#exercise-77",
   "type": "Exercício",
   "number": "5.8.6",
   "title": "",
@@ -2973,7 +2982,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-78",
   "level": "2",
-  "url": "section-37.html#exercise-78",
+  "url": "section-38.html#exercise-78",
   "type": "Exercício",
   "number": "5.8.7",
   "title": "",
@@ -2982,7 +2991,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-79",
   "level": "2",
-  "url": "section-37.html#exercise-79",
+  "url": "section-38.html#exercise-79",
   "type": "Exercício",
   "number": "5.8.8",
   "title": "",
@@ -2991,7 +3000,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-80",
   "level": "2",
-  "url": "section-37.html#exercise-80",
+  "url": "section-38.html#exercise-80",
   "type": "Exercício",
   "number": "5.8.9",
   "title": "",
@@ -3000,7 +3009,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-81",
   "level": "2",
-  "url": "section-37.html#exercise-81",
+  "url": "section-38.html#exercise-81",
   "type": "Exercício",
   "number": "5.8.10",
   "title": "",
@@ -3009,7 +3018,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-82",
   "level": "2",
-  "url": "section-37.html#exercise-82",
+  "url": "section-38.html#exercise-82",
   "type": "Exercício",
   "number": "5.8.11",
   "title": "",
@@ -3018,7 +3027,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-83",
   "level": "2",
-  "url": "section-37.html#exercise-83",
+  "url": "section-38.html#exercise-83",
   "type": "Exercício",
   "number": "5.8.12",
   "title": "",
@@ -3027,16 +3036,16 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-84",
   "level": "2",
-  "url": "section-37.html#exercise-84",
+  "url": "section-38.html#exercise-84",
   "type": "Exercício",
   "number": "5.8.13",
   "title": "",
   "body": " Seja e seja uma matriz fixada em . Se   verifique que é uma transformação linear de em .  "
 },
 {
-  "id": "section-38",
+  "id": "section-39",
   "level": "1",
-  "url": "section-38.html",
+  "url": "section-39.html",
   "type": "Seção",
   "number": "6.1",
   "title": "Diagonalização de operadores",
@@ -3045,7 +3054,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-44",
   "level": "2",
-  "url": "section-38.html#definition-44",
+  "url": "section-39.html#definition-44",
   "type": "Definição",
   "number": "6.1.1",
   "title": "(Operadores diagonalizáveis).",
@@ -3054,7 +3063,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-25",
   "level": "2",
-  "url": "section-38.html#theorem-25",
+  "url": "section-39.html#theorem-25",
   "type": "Teorema",
   "number": "6.1.2",
   "title": "",
@@ -3063,16 +3072,16 @@ var ptx_lunr_docs = [
 {
   "id": "exe_2_1",
   "level": "2",
-  "url": "section-38.html#exe_2_1",
+  "url": "section-39.html#exe_2_1",
   "type": "Exemplo",
   "number": "6.1.3",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine se é um operador diagonalizável. Em caso afirmativo, exiba uma base de na qual é uma matriz diagonal.    Vimos no que possui dois autovalores distintos e . Os autoespaços associados a cada um destes autovalores são, respectivamente,   Além disso,   Tomando , é fácil ver que é base de (Verifique!). Como é formada por autovetores de , é diagonalizável.  Com relação à base , a matriz de é a matriz diagonal   pois    "
 },
 {
-  "id": "section-39",
+  "id": "section-40",
   "level": "1",
-  "url": "section-39.html",
+  "url": "section-40.html",
   "type": "Seção",
   "number": "6.2",
   "title": "Diagonalização de matrizes",
@@ -3081,7 +3090,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-45",
   "level": "2",
-  "url": "section-39.html#definition-45",
+  "url": "section-40.html#definition-45",
   "type": "Definição",
   "number": "6.2.1",
   "title": "(Matrizes diagonalizáveis).",
@@ -3090,7 +3099,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-26",
   "level": "2",
-  "url": "section-39.html#theorem-26",
+  "url": "section-40.html#theorem-26",
   "type": "Teorema",
   "number": "6.2.2",
   "title": "",
@@ -3099,16 +3108,16 @@ var ptx_lunr_docs = [
 {
   "id": "example-76",
   "level": "2",
-  "url": "section-39.html#example-76",
+  "url": "section-40.html#example-76",
   "type": "Exemplo",
   "number": "6.2.3",
   "title": "",
   "body": "  Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.   "
 },
 {
-  "id": "section-40",
+  "id": "section-41",
   "level": "1",
-  "url": "section-40.html",
+  "url": "section-41.html",
   "type": "Seção",
   "number": "6.3",
   "title": "Autovetores e independência linear",
@@ -3117,7 +3126,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-27",
   "level": "2",
-  "url": "section-40.html#theorem-27",
+  "url": "section-41.html#theorem-27",
   "type": "Teorema",
   "number": "6.3.1",
   "title": "",
@@ -3126,7 +3135,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor_2_4",
   "level": "2",
-  "url": "section-40.html#cor_2_4",
+  "url": "section-41.html#cor_2_4",
   "type": "Corolário",
   "number": "6.3.2",
   "title": "",
@@ -3135,7 +3144,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-50",
   "level": "2",
-  "url": "section-40.html#remark-50",
+  "url": "section-41.html#remark-50",
   "type": "Nota",
   "number": "6.3.3",
   "title": "",
@@ -3144,16 +3153,16 @@ var ptx_lunr_docs = [
 {
   "id": "example-77",
   "level": "2",
-  "url": "section-40.html#example-77",
+  "url": "section-41.html#example-77",
   "type": "Exemplo",
   "number": "6.3.4",
   "title": "",
   "body": "  Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . Pelo , é diagonalizável.   "
 },
 {
-  "id": "section-41",
+  "id": "section-42",
   "level": "1",
-  "url": "section-41.html",
+  "url": "section-42.html",
   "type": "Seção",
   "number": "6.4",
   "title": "Uma caracterização para operadores diagonalizáveis",
@@ -3162,7 +3171,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-28",
   "level": "2",
-  "url": "section-41.html#theorem-28",
+  "url": "section-42.html#theorem-28",
   "type": "Teorema",
   "number": "6.4.1",
   "title": "",
@@ -3171,16 +3180,16 @@ var ptx_lunr_docs = [
 {
   "id": "example-78",
   "level": "2",
-  "url": "section-41.html#example-78",
+  "url": "section-42.html#example-78",
   "type": "Exemplo",
   "number": "6.4.2",
   "title": "",
   "body": "  Seja dado por   Determine se é diagonalizável.    Seja base canônica do . A matriz de com relação à é   Segue que o polinômio característico de é   ou seja,   Pelo Teorema 1.1, é o único autovalor de . Logo, será diagonalizável se .  Os autovetores associados à são os vetores não nulos tais que de , o que fornece o sistema   O sistema acima equivale à . Assim, o autoespaço associado à é   Portanto, . Logo, não é diagonalizável.   "
 },
 {
-  "id": "section-42",
+  "id": "section-43",
   "level": "1",
-  "url": "section-42.html",
+  "url": "section-43.html",
   "type": "Seção",
   "number": "6.5",
   "title": "Exercícios",
@@ -3189,7 +3198,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-85",
   "level": "2",
-  "url": "section-42.html#exercise-85",
+  "url": "section-43.html#exercise-85",
   "type": "Exercício",
   "number": "6.5.1",
   "title": "",
@@ -3198,7 +3207,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-86",
   "level": "2",
-  "url": "section-42.html#exercise-86",
+  "url": "section-43.html#exercise-86",
   "type": "Exercício",
   "number": "6.5.2",
   "title": "",
@@ -3207,7 +3216,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-87",
   "level": "2",
-  "url": "section-42.html#exercise-87",
+  "url": "section-43.html#exercise-87",
   "type": "Exercício",
   "number": "6.5.3",
   "title": "",
@@ -3216,7 +3225,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-88",
   "level": "2",
-  "url": "section-42.html#exercise-88",
+  "url": "section-43.html#exercise-88",
   "type": "Exercício",
   "number": "6.5.4",
   "title": "",
@@ -3225,7 +3234,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-89",
   "level": "2",
-  "url": "section-42.html#exercise-89",
+  "url": "section-43.html#exercise-89",
   "type": "Exercício",
   "number": "6.5.5",
   "title": "",
@@ -3234,7 +3243,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-90",
   "level": "2",
-  "url": "section-42.html#exercise-90",
+  "url": "section-43.html#exercise-90",
   "type": "Exercício",
   "number": "6.5.6",
   "title": "",
@@ -3243,7 +3252,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-91",
   "level": "2",
-  "url": "section-42.html#exercise-91",
+  "url": "section-43.html#exercise-91",
   "type": "Exercício",
   "number": "6.5.7",
   "title": "",
@@ -3252,7 +3261,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-92",
   "level": "2",
-  "url": "section-42.html#exercise-92",
+  "url": "section-43.html#exercise-92",
   "type": "Exercício",
   "number": "6.5.8",
   "title": "",
@@ -3261,7 +3270,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-93",
   "level": "2",
-  "url": "section-42.html#exercise-93",
+  "url": "section-43.html#exercise-93",
   "type": "Exercício",
   "number": "6.5.9",
   "title": "",
@@ -3270,7 +3279,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-94",
   "level": "2",
-  "url": "section-42.html#exercise-94",
+  "url": "section-43.html#exercise-94",
   "type": "Exercício",
   "number": "6.5.10",
   "title": "",
@@ -3279,7 +3288,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-95",
   "level": "2",
-  "url": "section-42.html#exercise-95",
+  "url": "section-43.html#exercise-95",
   "type": "Exercício",
   "number": "6.5.11",
   "title": "",
@@ -3288,7 +3297,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-96",
   "level": "2",
-  "url": "section-42.html#exercise-96",
+  "url": "section-43.html#exercise-96",
   "type": "Exercício",
   "number": "6.5.12",
   "title": "",
@@ -3297,7 +3306,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-97",
   "level": "2",
-  "url": "section-42.html#exercise-97",
+  "url": "section-43.html#exercise-97",
   "type": "Exercício",
   "number": "6.5.13",
   "title": "",
@@ -3306,7 +3315,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-98",
   "level": "2",
-  "url": "section-42.html#exercise-98",
+  "url": "section-43.html#exercise-98",
   "type": "Exercício",
   "number": "6.5.14",
   "title": "",
@@ -3315,7 +3324,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-99",
   "level": "2",
-  "url": "section-42.html#exercise-99",
+  "url": "section-43.html#exercise-99",
   "type": "Exercício",
   "number": "6.5.15",
   "title": "",
@@ -3324,7 +3333,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-100",
   "level": "2",
-  "url": "section-42.html#exercise-100",
+  "url": "section-43.html#exercise-100",
   "type": "Exercício",
   "number": "6.5.16",
   "title": "",
@@ -3333,7 +3342,7 @@ var ptx_lunr_docs = [
 {
   "id": "exercise-101",
   "level": "2",
-  "url": "section-42.html#exercise-101",
+  "url": "section-43.html#exercise-101",
   "type": "Exercício",
   "number": "6.5.17",
   "title": "",
