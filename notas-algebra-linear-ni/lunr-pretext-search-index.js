@@ -2140,23 +2140,14 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.11",
   "title": "Coordenadas",
-  "body": " Coordenadas   Seja espaço vetorial e uma base de . Então, dado , existem únicos tais que .    Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por     Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .    É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada .  "
-},
-{
-  "id": "thm-7-6",
-  "level": "2",
-  "url": "section-28.html#thm-7-6",
-  "type": "Teorema",
-  "number": "4.11.1",
-  "title": "",
-  "body": " Seja espaço vetorial e uma base de . Então, dado , existem únicos tais que .  "
+  "body": " Coordenadas    Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por     Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .     É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada .  "
 },
 {
   "id": "definition-34",
   "level": "2",
   "url": "section-28.html#definition-34",
   "type": "Definição",
-  "number": "4.11.2",
+  "number": "4.11.1",
   "title": "",
   "body": " Seja um espaço vetorial de dimensão e uma base de . Dado , existem únicos tais que . Os números são denominados de coordenadas de em relação à base e são denotados por   "
 },
@@ -2165,7 +2156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-28.html#example-49",
   "type": "Exemplo",
-  "number": "4.11.3",
+  "number": "4.11.2",
   "title": "",
   "body": " Seja uma base para . Determine as coordenadas de em relação à base .  As coordenadas de na base são os únicos números tais que , ou seja, . Temos, então, o sistema Logo, . Portanto, as coordenadas de na base são dadas por .   "
 },
@@ -2174,7 +2165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-28.html#remark-33",
   "type": "Nota",
-  "number": "4.11.4",
+  "number": "4.11.3",
   "title": "",
   "body": "É importante notar que a ordem dos elementos de uma base também influi nas coordenadas de um vetor em relação a esta base. Por exemplo, se , então . Por este motivo, nos referiremos a uma base de como uma base ordenada . "
 },
@@ -2185,7 +2176,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.12",
   "title": "Mudança de Base",
-  "body": " Mudança de Base   (Matriz de Mudança de Base)  Sejam e duas bases ordenadas de um mesmo espaço vetorial . Dado , e Então, as coordenadas de com relação às bases e são, respectivamente, Como é base de e então Substituindo em , obtemos Igualando a , temos Isto corresponde ao sistema linear O sistema pode ser escrito na sua forma matricial como  A matriz   é chamada matriz de mudança de base da base para a base . Assim, a relação anterior pode ser escrita como   Note que é a matriz cuja i -ésima coluna são as coordenadas de na base .      Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,      Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale     Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .   "
+  "body": " Mudança de Base   (Matriz de Mudança de Base)  Sejam e duas bases ordenadas de um mesmo espaço vetorial . Dado , e Então, as coordenadas de com relação às bases e são, respectivamente, Como é base de e então Substituindo em , obtemos Igualando a , temos Isto corresponde ao sistema linear O sistema pode ser escrito na sua forma matricial como  A matriz   é chamada matriz de mudança de base da base para a base . Assim, a relação anterior pode ser escrita como   Note que é a matriz cuja i -ésima coluna são as coordenadas de na base .      Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,      Obtendo a matriz de mudança de base:     Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale     Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .    Obtendo a matriz de mudança de base:    "
 },
 {
   "id": "remark-34",
@@ -2206,11 +2197,20 @@ var ptx_lunr_docs = [
   "body": "  Sejam e bases de . Determine e utilize-a para calcular as coordenadas do vetor na base .    Suponha que . O sistema linear correspondente é Logo, e . Analogamente, se , implica em e .  Portanto, a matriz da mudança de base de para é   Por outro lado, se , então Como é a base canônica,   Portanto, ou seja,    "
 },
 {
+  "id": "technology-22",
+  "level": "2",
+  "url": "section-29.html#technology-22",
+  "type": "Tecnologia",
+  "number": "4.12.3",
+  "title": "",
+  "body": " Obtendo a matriz de mudança de base:   "
+},
+{
   "id": "teo_8.1",
   "level": "2",
   "url": "section-29.html#teo_8.1",
   "type": "Teorema",
-  "number": "4.12.3",
+  "number": "4.12.4",
   "title": "",
   "body": " Sejam e duas bases ordenadas de um mesmo espaço vetorial . Então a matriz de mudança de base da base para , , é não singular e vale   "
 },
@@ -2219,9 +2219,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-29.html#example-51",
   "type": "Exemplo",
-  "number": "4.12.4",
+  "number": "4.12.5",
   "title": "",
   "body": " Sejam e bases de . Determine .  Note que e . Logo, . Pelo  .  "
+},
+{
+  "id": "technology-23",
+  "level": "2",
+  "url": "section-29.html#technology-23",
+  "type": "Tecnologia",
+  "number": "4.12.6",
+  "title": "",
+  "body": " Obtendo a matriz de mudança de base:   "
 },
 {
   "id": "section-30",
@@ -2230,7 +2239,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "4.13",
   "title": "Exercícios",
-  "body": " Exercícios   Sejam e subespaços vetoriais de um espaço vetorial , demonstre que   Sejam e dois planos no passando pela origem (isto é, dois subespaços de dimensão ). Determine quando:  .  .    Determine o vetor coordenada de em relação à base nos seguintes casos:  .  .  .    Considere a base do espaço vetorial euclidiano . Determine o vetor coordenada de em relação à base , onde:  .  .  .    Seja uma base de . Determine o vetor coordenada de em relação à base .  Sejam os vetores , e do espaço euclidiano .  Mostre que é base de .  Escreva , e como combinação linear dos vetores da base .    Seja uma base de .  Mostre que é uma base de .  Encontre as coordenadas de em relação à base .  Encontre a matriz de mudança da base para a base canônica .    Determine as coordenadas do vetor em relação às seguintes bases de :          Sejam , , .  Encontre as seguintes matrizes de mudança de base:  .  .  .    Quais são as coordenadas do vetor em relação à base:   .  .  .    As coordenadas de um vetor em relação à base são dadas por . Quais são as coordenadas de em relação às bases e .    Seja o espaço vetorial das matrizes triangulares inferiores. Considere as seguintes bases: , . Determine as matrizes de mudança de base e .   "
+  "body": " Exercícios    Sejam e dois planos no passando pela origem (isto é, dois subespaços de dimensão ). Determine quando:  .  .    Determine o vetor coordenada de em relação à base nos seguintes casos:  .  .  .    Considere a base do espaço vetorial euclidiano . Determine o vetor coordenada de em relação à base , onde:  .  .  .    Seja uma base de . Determine o vetor coordenada de em relação à base .  Sejam os vetores , e do espaço euclidiano .  Mostre que é base de .  Escreva , e como combinação linear dos vetores da base .    Seja uma base de .  Mostre que é uma base de .  Encontre as coordenadas de em relação à base .  Encontre a matriz de mudança da base para a base canônica .    Determine as coordenadas do vetor em relação às seguintes bases de :          Sejam , , .  Encontre as seguintes matrizes de mudança de base:  .  .  .    Quais são as coordenadas do vetor em relação à base:   .  .  .    As coordenadas de um vetor em relação à base são dadas por . Quais são as coordenadas de em relação às bases e .    Seja o espaço vetorial das matrizes triangulares inferiores. Considere as seguintes bases: , . Determine as matrizes de mudança de base e .   "
 },
 {
   "id": "exercise-62",
@@ -2239,7 +2248,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.1",
   "title": "",
-  "body": "Sejam e subespaços vetoriais de um espaço vetorial , demonstre que  "
+  "body": "Sejam e dois planos no passando pela origem (isto é, dois subespaços de dimensão ). Determine quando:  .  .   "
 },
 {
   "id": "exercise-63",
@@ -2248,7 +2257,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.2",
   "title": "",
-  "body": "Sejam e dois planos no passando pela origem (isto é, dois subespaços de dimensão ). Determine quando:  .  .   "
+  "body": "Determine o vetor coordenada de em relação à base nos seguintes casos:  .  .  .   "
 },
 {
   "id": "exercise-64",
@@ -2257,7 +2266,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.3",
   "title": "",
-  "body": "Determine o vetor coordenada de em relação à base nos seguintes casos:  .  .  .   "
+  "body": "Considere a base do espaço vetorial euclidiano . Determine o vetor coordenada de em relação à base , onde:  .  .  .   "
 },
 {
   "id": "exercise-65",
@@ -2266,7 +2275,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.4",
   "title": "",
-  "body": "Considere a base do espaço vetorial euclidiano . Determine o vetor coordenada de em relação à base , onde:  .  .  .   "
+  "body": "Seja uma base de . Determine o vetor coordenada de em relação à base . "
 },
 {
   "id": "exercise-66",
@@ -2275,7 +2284,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.5",
   "title": "",
-  "body": "Seja uma base de . Determine o vetor coordenada de em relação à base . "
+  "body": "Sejam os vetores , e do espaço euclidiano .  Mostre que é base de .  Escreva , e como combinação linear dos vetores da base .   "
 },
 {
   "id": "exercise-67",
@@ -2284,7 +2293,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.6",
   "title": "",
-  "body": "Sejam os vetores , e do espaço euclidiano .  Mostre que é base de .  Escreva , e como combinação linear dos vetores da base .   "
+  "body": "Seja uma base de .  Mostre que é uma base de .  Encontre as coordenadas de em relação à base .  Encontre a matriz de mudança da base para a base canônica .   "
 },
 {
   "id": "exercise-68",
@@ -2293,7 +2302,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.7",
   "title": "",
-  "body": "Seja uma base de .  Mostre que é uma base de .  Encontre as coordenadas de em relação à base .  Encontre a matriz de mudança da base para a base canônica .   "
+  "body": "Determine as coordenadas do vetor em relação às seguintes bases de :         "
 },
 {
   "id": "exercise-69",
@@ -2302,7 +2311,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "4.13.8",
   "title": "",
-  "body": "Determine as coordenadas do vetor em relação às seguintes bases de :         "
+  "body": "Sejam , , .  Encontre as seguintes matrizes de mudança de base:  .  .  .    Quais são as coordenadas do vetor em relação à base:   .  .  .    As coordenadas de um vetor em relação à base são dadas por . Quais são as coordenadas de em relação às bases e .   "
 },
 {
   "id": "exercise-70",
@@ -2310,15 +2319,6 @@ var ptx_lunr_docs = [
   "url": "section-30.html#exercise-70",
   "type": "Exercício",
   "number": "4.13.9",
-  "title": "",
-  "body": "Sejam , , .  Encontre as seguintes matrizes de mudança de base:  .  .  .    Quais são as coordenadas do vetor em relação à base:   .  .  .    As coordenadas de um vetor em relação à base são dadas por . Quais são as coordenadas de em relação às bases e .   "
-},
-{
-  "id": "exercise-71",
-  "level": "2",
-  "url": "section-30.html#exercise-71",
-  "type": "Exercício",
-  "number": "4.13.10",
   "title": "",
   "body": "Seja o espaço vetorial das matrizes triangulares inferiores. Considere as seguintes bases: , . Determine as matrizes de mudança de base e . "
 },
@@ -2575,9 +2575,9 @@ var ptx_lunr_docs = [
   "body": " Exemplo 10.3   Sejam base de e base de . Determine a transformação linear cuja matriz é     Interpretando a matriz, temos:   Escrevendo agora   vem que   Logo, é dada por .   "
 },
 {
-  "id": "theorem-20",
+  "id": "theorem-19",
   "level": "2",
-  "url": "subsec-transformacoes-matrizes.html#theorem-20",
+  "url": "subsec-transformacoes-matrizes.html#theorem-19",
   "type": "Teorema",
   "number": "5.3.7",
   "title": "",
@@ -2602,9 +2602,9 @@ var ptx_lunr_docs = [
   "body": " Exemplo 10.4   Considere a transformação linear dada por   em que é base de e é base de . Calcule .    Temos que   Logo,   Logo,    "
 },
 {
-  "id": "theorem-21",
+  "id": "theorem-20",
   "level": "2",
-  "url": "subsec-transformacoes-matrizes.html#theorem-21",
+  "url": "subsec-transformacoes-matrizes.html#theorem-20",
   "type": "Teorema",
   "number": "5.3.10",
   "title": "",
@@ -2620,9 +2620,9 @@ var ptx_lunr_docs = [
   "body": "  Seja dada por   Determine a dimensão do núcleo e da imagem de .    Seja a base canônica do . Então,   Note que está na forma escada. Concluímos que o posto de é 2 e a nulidade de é . Logo, e .   "
 },
 {
-  "id": "theorem-22",
+  "id": "theorem-21",
   "level": "2",
-  "url": "subsec-transformacoes-matrizes.html#theorem-22",
+  "url": "subsec-transformacoes-matrizes.html#theorem-21",
   "type": "Teorema",
   "number": "5.3.12",
   "title": "",
@@ -2854,9 +2854,9 @@ var ptx_lunr_docs = [
   "body": " Propriedades dos autovetores   Propriedades dos autovetores   Seja espaço vetorial, operador linear e um autovalor de . Então,    (i) se e são autovetores de associados à , então também é autovetor associado à .   Com efeito, .     (ii) se é autovetor de associado à e , então também é autovetor associado à .   De fato, .        Autoespaço associado a um autovalor   Sejam espaço vetorial, operador linear e um autovalor de . Definimos o autoespaço de T associado à como o conjunto      O autoespaço contém, além do vetor nulo, os autovetores de associados à . Segue das propriedades dos autovetores, (i) e (ii), que é um subespaço vetorial Um subespaço vetorial  de é qualquer subconjunto tal que e para todos e todos . de .   "
 },
 {
-  "id": "theorem-24",
+  "id": "theorem-23",
   "level": "2",
-  "url": "section-36.html#theorem-24",
+  "url": "section-36.html#theorem-23",
   "type": "Teorema",
   "number": "5.6.1",
   "title": "Propriedades dos autovetores.",
@@ -2926,117 +2926,117 @@ var ptx_lunr_docs = [
   "body": " Exercícios     Determine quais das seguintes funções são aplicações lineares:   (i) definida por  (ii) definida por  (iii) definida por  (iv) definida por  (v)  (vi)  (vii)  (viii)  (ix)     Dê um exemplo, se possível, de uma transformação linear tal que e .    Existe uma transformação linear de tal que e ?    Se   existe uma transformação linear de em tal que para e ?    Descreva explicitamente uma transformação linear de em tal que e .    Seja uma transformação linear dada por   determine para que valores de a transformação linear não é sobrejetiva.    Seja uma transformação linear tal que    (i) Encontre uma expressão explícita para a transformação linear . Tal expressão é única?  (ii) Determine a imagem de .     Considere a função definida por onde   observando que para que a esteja bem definida.   (i) é transformação linear?  (ii) é injetiva?  (iii) é sobrejetiva?     Considere a transformação linear definida por    (i) Determine e determine sua dimensão.  (ii) Uma base para a imagem de .     Considere a transformação linear definido por    (i) Determine uma base para e sua dimensão.  (ii) Determine uma base para e sua dimensão.     Considere uma função de definida por    (i) Verifique que é uma transformação linear.  (ii) Se é um vetor de quais as condições sobre e para que o vetor esteja na imagem de ? Qual a dimensão da imagem?  (iii) Quais condições sobre e para que esteja no núcleo de ? Qual a dimensão do núcleo?     Descreva explicitamente uma transformação linear de em que tem sua imagem gerada pelos vetores e .    Seja e seja uma matriz fixada em . Se   verifique que é uma transformação linear de em .    "
 },
 {
-  "id": "exercise-72",
+  "id": "exercise-71",
   "level": "2",
-  "url": "section-38.html#exercise-72",
+  "url": "section-38.html#exercise-71",
   "type": "Exercício",
   "number": "5.8.1",
   "title": "",
   "body": " Determine quais das seguintes funções são aplicações lineares:   (i) definida por  (ii) definida por  (iii) definida por  (iv) definida por  (v)  (vi)  (vii)  (viii)  (ix)   "
 },
 {
-  "id": "exercise-73",
+  "id": "exercise-72",
   "level": "2",
-  "url": "section-38.html#exercise-73",
+  "url": "section-38.html#exercise-72",
   "type": "Exercício",
   "number": "5.8.2",
   "title": "",
   "body": " Dê um exemplo, se possível, de uma transformação linear tal que e .  "
 },
 {
-  "id": "exercise-74",
+  "id": "exercise-73",
   "level": "2",
-  "url": "section-38.html#exercise-74",
+  "url": "section-38.html#exercise-73",
   "type": "Exercício",
   "number": "5.8.3",
   "title": "",
   "body": " Existe uma transformação linear de tal que e ?  "
 },
 {
-  "id": "exercise-75",
+  "id": "exercise-74",
   "level": "2",
-  "url": "section-38.html#exercise-75",
+  "url": "section-38.html#exercise-74",
   "type": "Exercício",
   "number": "5.8.4",
   "title": "",
   "body": " Se   existe uma transformação linear de em tal que para e ?  "
 },
 {
-  "id": "exercise-76",
+  "id": "exercise-75",
   "level": "2",
-  "url": "section-38.html#exercise-76",
+  "url": "section-38.html#exercise-75",
   "type": "Exercício",
   "number": "5.8.5",
   "title": "",
   "body": " Descreva explicitamente uma transformação linear de em tal que e .  "
 },
 {
-  "id": "exercise-77",
+  "id": "exercise-76",
   "level": "2",
-  "url": "section-38.html#exercise-77",
+  "url": "section-38.html#exercise-76",
   "type": "Exercício",
   "number": "5.8.6",
   "title": "",
   "body": " Seja uma transformação linear dada por   determine para que valores de a transformação linear não é sobrejetiva.  "
 },
 {
-  "id": "exercise-78",
+  "id": "exercise-77",
   "level": "2",
-  "url": "section-38.html#exercise-78",
+  "url": "section-38.html#exercise-77",
   "type": "Exercício",
   "number": "5.8.7",
   "title": "",
   "body": " Seja uma transformação linear tal que    (i) Encontre uma expressão explícita para a transformação linear . Tal expressão é única?  (ii) Determine a imagem de .   "
 },
 {
-  "id": "exercise-79",
+  "id": "exercise-78",
   "level": "2",
-  "url": "section-38.html#exercise-79",
+  "url": "section-38.html#exercise-78",
   "type": "Exercício",
   "number": "5.8.8",
   "title": "",
   "body": " Considere a função definida por onde   observando que para que a esteja bem definida.   (i) é transformação linear?  (ii) é injetiva?  (iii) é sobrejetiva?   "
 },
 {
-  "id": "exercise-80",
+  "id": "exercise-79",
   "level": "2",
-  "url": "section-38.html#exercise-80",
+  "url": "section-38.html#exercise-79",
   "type": "Exercício",
   "number": "5.8.9",
   "title": "",
   "body": " Considere a transformação linear definida por    (i) Determine e determine sua dimensão.  (ii) Uma base para a imagem de .   "
 },
 {
-  "id": "exercise-81",
+  "id": "exercise-80",
   "level": "2",
-  "url": "section-38.html#exercise-81",
+  "url": "section-38.html#exercise-80",
   "type": "Exercício",
   "number": "5.8.10",
   "title": "",
   "body": " Considere a transformação linear definido por    (i) Determine uma base para e sua dimensão.  (ii) Determine uma base para e sua dimensão.   "
 },
 {
-  "id": "exercise-82",
+  "id": "exercise-81",
   "level": "2",
-  "url": "section-38.html#exercise-82",
+  "url": "section-38.html#exercise-81",
   "type": "Exercício",
   "number": "5.8.11",
   "title": "",
   "body": " Considere uma função de definida por    (i) Verifique que é uma transformação linear.  (ii) Se é um vetor de quais as condições sobre e para que o vetor esteja na imagem de ? Qual a dimensão da imagem?  (iii) Quais condições sobre e para que esteja no núcleo de ? Qual a dimensão do núcleo?   "
 },
 {
-  "id": "exercise-83",
+  "id": "exercise-82",
   "level": "2",
-  "url": "section-38.html#exercise-83",
+  "url": "section-38.html#exercise-82",
   "type": "Exercício",
   "number": "5.8.12",
   "title": "",
   "body": " Descreva explicitamente uma transformação linear de em que tem sua imagem gerada pelos vetores e .  "
 },
 {
-  "id": "exercise-84",
+  "id": "exercise-83",
   "level": "2",
-  "url": "section-38.html#exercise-84",
+  "url": "section-38.html#exercise-83",
   "type": "Exercício",
   "number": "5.8.13",
   "title": "",
@@ -3061,9 +3061,9 @@ var ptx_lunr_docs = [
   "body": " (Operadores diagonalizáveis)   Sejam um espaço vetorial e um operador linear. Dizemos que é diagonalizável se existir uma base de formada por autovetores de .   "
 },
 {
-  "id": "theorem-25",
+  "id": "theorem-24",
   "level": "2",
-  "url": "section-39.html#theorem-25",
+  "url": "section-39.html#theorem-24",
   "type": "Teorema",
   "number": "6.1.2",
   "title": "",
@@ -3097,9 +3097,9 @@ var ptx_lunr_docs = [
   "body": " (Matrizes diagonalizáveis)   Seja . Dizemos que é diagonalizável se for semelhante à uma matriz diagonal.  Em outras palavra, é diagonalizável se existirem matrizes , com inversível e diagonal tais que    "
 },
 {
-  "id": "theorem-26",
+  "id": "theorem-25",
   "level": "2",
-  "url": "section-40.html#theorem-26",
+  "url": "section-40.html#theorem-25",
   "type": "Teorema",
   "number": "6.2.2",
   "title": "",
@@ -3124,9 +3124,9 @@ var ptx_lunr_docs = [
   "body": " Autovetores e independência linear    Seja um operador linear. Se for um autovetor associado au autovalor , e se para , então o conjunto é linearmente independente (LI).  Em outras palavras, autovetores associados a autovalores distintos são LI.      Sejam espaço vetorial de dimensão e um operador linear. Se possui autovalores distintos, então é diagonalizável.     A recíproca do não é verdadeira. Com efeito, o operador do é diagonalizável, porém possui apenas dois autovalores distintos.     Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . Pelo , é diagonalizável.    "
 },
 {
-  "id": "theorem-27",
+  "id": "theorem-26",
   "level": "2",
-  "url": "section-41.html#theorem-27",
+  "url": "section-41.html#theorem-26",
   "type": "Teorema",
   "number": "6.3.1",
   "title": "",
@@ -3169,9 +3169,9 @@ var ptx_lunr_docs = [
   "body": " Uma caracterização para operadores diagonalizáveis    Suponha que é espaço vetorial de dimensão e Seja operador linear. Então é diagonalizável se, e somente se, valem as seguintes condições:    (i) O polinômio característico de se decompõe em fatores lineares:     (ii) para todo .        Seja dado por   Determine se é diagonalizável.    Seja base canônica do . A matriz de com relação à é   Segue que o polinômio característico de é   ou seja,   Pelo Teorema 1.1, é o único autovalor de . Logo, será diagonalizável se .  Os autovetores associados à são os vetores não nulos tais que de , o que fornece o sistema   O sistema acima equivale à . Assim, o autoespaço associado à é   Portanto, . Logo, não é diagonalizável.    "
 },
 {
-  "id": "theorem-28",
+  "id": "theorem-27",
   "level": "2",
-  "url": "section-42.html#theorem-28",
+  "url": "section-42.html#theorem-27",
   "type": "Teorema",
   "number": "6.4.1",
   "title": "",
@@ -3196,153 +3196,153 @@ var ptx_lunr_docs = [
   "body": " Exercícios    Encontre a transformação linear tal que:   Encontre tal que .      (i) Determine a transformação linear tal que   Calcule e .    (ii) Determine a transformação tal que     (iii) Determine a transformação linear tal que .      Dados transformação linear injetiva. Mostre que se é um conjunto L.I., então também o é.    Dada uma transformação linear tal que e calcule em função de e :   (i)  (ii)  (iii)     Determine uma transformação linear tal que     Mostre que as seguintes transformações lineares são sobrejetivas.   (i)  (ii)  (iii)     Encontre uma transformação linear tal que .    Encontre uma transformação linear cuja imagem é gerada por e .    Considere a transformação linear descrita por:    (i) Determine , onde é a base canônica de ;  (ii) Determine uma base do núcleo de ;  (iii) Determine a dimensão da imagem de ;  (iv) é sobrejetiva?     Determine se as seguintes afirmações são verdadeiras ou falsas.   (i) Se é tal que , então ;  (ii) Se , então ;  (iii) Se é combinação linear de , então é combinação linear de .     Dados os vetores .  Determine se existe uma transformação linear tal que .    Considere tal que e . Determine a matriz da transformação associada às bases canônicas de e .    Determine a matriz do operador derivada relativamente à base canônica .    Sejam e transformações lineares de em . Considere a base canônica do . Se   determine tal que .    Se e . Considere e são as bases canônicas de e respectivamente, determine:   (i) ;  (ii) ;  (iii) e explicitamente.     Seja e considere a base canônica deste espaço descrita por   Seja descrita por     (i) Encontre , onde é a base canônica do espaço .    (ii) Se é tal que , determine explicitamente e, se possível, tal que .      Sejam e bases de e respectivamente. Se   determine explicitamente.    "
 },
 {
-  "id": "exercise-85",
+  "id": "exercise-84",
   "level": "2",
-  "url": "section-43.html#exercise-85",
+  "url": "section-43.html#exercise-84",
   "type": "Exercício",
   "number": "6.5.1",
   "title": "",
   "body": " Encontre a transformação linear tal que:   Encontre tal que .  "
 },
 {
-  "id": "exercise-86",
+  "id": "exercise-85",
   "level": "2",
-  "url": "section-43.html#exercise-86",
+  "url": "section-43.html#exercise-85",
   "type": "Exercício",
   "number": "6.5.2",
   "title": "",
   "body": "   (i) Determine a transformação linear tal que   Calcule e .    (ii) Determine a transformação tal que     (iii) Determine a transformação linear tal que .    "
 },
 {
-  "id": "exercise-87",
+  "id": "exercise-86",
   "level": "2",
-  "url": "section-43.html#exercise-87",
+  "url": "section-43.html#exercise-86",
   "type": "Exercício",
   "number": "6.5.3",
   "title": "",
   "body": " Dados transformação linear injetiva. Mostre que se é um conjunto L.I., então também o é.  "
 },
 {
-  "id": "exercise-88",
+  "id": "exercise-87",
   "level": "2",
-  "url": "section-43.html#exercise-88",
+  "url": "section-43.html#exercise-87",
   "type": "Exercício",
   "number": "6.5.4",
   "title": "",
   "body": " Dada uma transformação linear tal que e calcule em função de e :   (i)  (ii)  (iii)   "
 },
 {
-  "id": "exercise-89",
+  "id": "exercise-88",
   "level": "2",
-  "url": "section-43.html#exercise-89",
+  "url": "section-43.html#exercise-88",
   "type": "Exercício",
   "number": "6.5.5",
   "title": "",
   "body": " Determine uma transformação linear tal que   "
 },
 {
-  "id": "exercise-90",
+  "id": "exercise-89",
   "level": "2",
-  "url": "section-43.html#exercise-90",
+  "url": "section-43.html#exercise-89",
   "type": "Exercício",
   "number": "6.5.6",
   "title": "",
   "body": " Mostre que as seguintes transformações lineares são sobrejetivas.   (i)  (ii)  (iii)   "
 },
 {
-  "id": "exercise-91",
+  "id": "exercise-90",
   "level": "2",
-  "url": "section-43.html#exercise-91",
+  "url": "section-43.html#exercise-90",
   "type": "Exercício",
   "number": "6.5.7",
   "title": "",
   "body": " Encontre uma transformação linear tal que .  "
 },
 {
-  "id": "exercise-92",
+  "id": "exercise-91",
   "level": "2",
-  "url": "section-43.html#exercise-92",
+  "url": "section-43.html#exercise-91",
   "type": "Exercício",
   "number": "6.5.8",
   "title": "",
   "body": " Encontre uma transformação linear cuja imagem é gerada por e .  "
 },
 {
-  "id": "exercise-93",
+  "id": "exercise-92",
   "level": "2",
-  "url": "section-43.html#exercise-93",
+  "url": "section-43.html#exercise-92",
   "type": "Exercício",
   "number": "6.5.9",
   "title": "",
   "body": " Considere a transformação linear descrita por:    (i) Determine , onde é a base canônica de ;  (ii) Determine uma base do núcleo de ;  (iii) Determine a dimensão da imagem de ;  (iv) é sobrejetiva?   "
 },
 {
-  "id": "exercise-94",
+  "id": "exercise-93",
   "level": "2",
-  "url": "section-43.html#exercise-94",
+  "url": "section-43.html#exercise-93",
   "type": "Exercício",
   "number": "6.5.10",
   "title": "",
   "body": " Determine se as seguintes afirmações são verdadeiras ou falsas.   (i) Se é tal que , então ;  (ii) Se , então ;  (iii) Se é combinação linear de , então é combinação linear de .   "
 },
 {
-  "id": "exercise-95",
+  "id": "exercise-94",
   "level": "2",
-  "url": "section-43.html#exercise-95",
+  "url": "section-43.html#exercise-94",
   "type": "Exercício",
   "number": "6.5.11",
   "title": "",
   "body": " Dados os vetores .  Determine se existe uma transformação linear tal que .  "
 },
 {
-  "id": "exercise-96",
+  "id": "exercise-95",
   "level": "2",
-  "url": "section-43.html#exercise-96",
+  "url": "section-43.html#exercise-95",
   "type": "Exercício",
   "number": "6.5.12",
   "title": "",
   "body": " Considere tal que e . Determine a matriz da transformação associada às bases canônicas de e .  "
 },
 {
-  "id": "exercise-97",
+  "id": "exercise-96",
   "level": "2",
-  "url": "section-43.html#exercise-97",
+  "url": "section-43.html#exercise-96",
   "type": "Exercício",
   "number": "6.5.13",
   "title": "",
   "body": " Determine a matriz do operador derivada relativamente à base canônica .  "
 },
 {
-  "id": "exercise-98",
+  "id": "exercise-97",
   "level": "2",
-  "url": "section-43.html#exercise-98",
+  "url": "section-43.html#exercise-97",
   "type": "Exercício",
   "number": "6.5.14",
   "title": "",
   "body": " Sejam e transformações lineares de em . Considere a base canônica do . Se   determine tal que .  "
 },
 {
-  "id": "exercise-99",
+  "id": "exercise-98",
   "level": "2",
-  "url": "section-43.html#exercise-99",
+  "url": "section-43.html#exercise-98",
   "type": "Exercício",
   "number": "6.5.15",
   "title": "",
   "body": " Se e . Considere e são as bases canônicas de e respectivamente, determine:   (i) ;  (ii) ;  (iii) e explicitamente.   "
 },
 {
-  "id": "exercise-100",
+  "id": "exercise-99",
   "level": "2",
-  "url": "section-43.html#exercise-100",
+  "url": "section-43.html#exercise-99",
   "type": "Exercício",
   "number": "6.5.16",
   "title": "",
   "body": " Seja e considere a base canônica deste espaço descrita por   Seja descrita por     (i) Encontre , onde é a base canônica do espaço .    (ii) Se é tal que , determine explicitamente e, se possível, tal que .    "
 },
 {
-  "id": "exercise-101",
+  "id": "exercise-100",
   "level": "2",
-  "url": "section-43.html#exercise-101",
+  "url": "section-43.html#exercise-100",
   "type": "Exercício",
   "number": "6.5.17",
   "title": "",
