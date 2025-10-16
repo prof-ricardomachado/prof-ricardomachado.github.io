@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Aula 6 - Jogos</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Combinatória">
+<meta property="book:author" content="Ricardo Machado">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Combinatória:</span> <span class="subtitle">notas de aula (PTOM/POTI)</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="jogos.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="jogos.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="tabuleiros.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="jogos.html" class="internal"><span class="codenumber">1</span> <span class="title">Jogos</span></a></div>
+<ul class="structural"><li class="active">
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Aula 6 - Jogos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#section-2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">1. Simetria</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#section-3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">2. Posições Vencedoras</span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="tabuleiros.html" class="internal"><span class="codenumber">2</span> <span class="title">Tabuleiros</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="section-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Aula 9: Tabuleiros</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-4.html#exemplos" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-4.html#worksheet-1" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Problemas Propostos</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-1"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">1.1</span> <span class="title">Aula 6 - Jogos</span>
+</h2>
+<section class="introduction" id="introduction-2"><div class="para" id="p-6">Quando falamos em jogos, pensamos em vários conhecidos como: xadrez, as damas e os jogos com baralho.  Porém, não são desses jogos que iremos falar neste material. Imagine que exista algum tipo de jogo em que você pudesse ganhar sempre, independente de como seu adversário jogasse?  Seria uma boa, não?! Pois esses jogos existem e são um dos assuntos mais abordados em provas de olimpíada. Nesta aula vamos mostrar vários destes jogos e as principais estratégias vencedoras: a simetria e o uso das posições vencedoras.</div></section><section class="section" id="section-2"><h3 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">1.1.1</span> <span class="title">1. Simetria</span>
+</h3>
+<div class="para" id="p-7">Uma das estratégias mais simples é o uso de alguma simetria que pode ocorrer durante o jogo em vantagem de um dos jogadores, forçando sempre uma nova rodada para o jogador "destinado à derrota". Para entender melhor veja o seguinte exemplo:</div>
+<article class="example example-like" id="example-1"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-8">Pedro e Mônica jogam em um tabuleiro <span class="process-math">\(1 \times 11\text{.}\)</span> Cada um, em sua vez, pode pintar um dos quadrados (que não foram pintados anteriormente), ou dois quadrados consecutivos (se ambos estiverem brancos). Quem não puder mais jogar perde. Sabe-se que Pedro será o primeiro a jogar. Quem pode sempre garantir a vitória?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-1" id="solution-1"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<div class="para" id="p-9">Pedro sempre poderá ganhar se seguir a seguinte estratégia:</div> <ol class="decimal">
+<li id="li-1"><div class="para" id="p-10">Inicialmente, Pedro deve pintar o quadrado do meio. <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/aula_06_fig_01.png" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div></li>
+<li id="li-2">
+<div class="para" id="p-11">Agora, depois que Mônica fizer sua jogada, Pedro deve jogar sempre simetricamente em relação ao centro do tabuleiro (i.e. sempre deixando o tabuleiro simétrico). Por exemplo, se Mônica jogar nas casas 9 e 10, Pedro deve jogar nas casas 2 e 3.</div>
+<figure class="figure figure-like" id="aula_06_fig_02"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/aula_06_fig_02.png" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</li>
+<li id="li-3"><div class="para" id="p-12">Assim, Mônica nunca poderá ganhar, pois na sua jogada ela "quebra a simetria" e a configuração final do jogo todas as casas estarão pintadas, ou seja, a configuração é simétrica.</div></li>
+</ol>
+</div></div>
+</div></article><div class="para" id="p-13">O próximo exemplo é um dos problemas que apareceu na prova da OBM de 2004.  Vamos apresentar uma solução diferente da solução proposta na Eureka! 22, usando simetria:</div>
+<article class="example example-like" id="example-2"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-14">Arnaldo e Bernardo disputam um jogo em um tabuleiro <span class="process-math">\(2 \times n\text{:}\)</span> <figure class="figure figure-like" id="aula_06_fig_03"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/aula_06_fig_03.png" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure> As peças do jogo são dominós <span class="process-math">\(2 \times 1\text{.}\)</span>  Inicialmente Arnaldo coloca um dominó cobrindo exatamente duas casas do tabuleiro, na horizontal ou na vertical. Os jogadores se revezam colocando uma peça no tabuleiro, na horizontal ou na vertical, sempre cobrindo exatamente duas casas do tabuleiro. Não é permitido colocar uma peça sobre outra já colocada anteriormente. Quem não conseguir colocar uma peça no tabuleiro perde.  Qual dos dois jogadores tem uma estratégia vencedora, ou seja, uma estratégia que o leva à vitória quaisquer que sejam as jogadas de seu adversário, para:</div> <ol class="lower-alpha">
+<li id="li-4"><div class="para" id="p-15"><span class="process-math">\(n=2004\text{?}\)</span></div></li>
+<li id="li-5"><div class="para" id="p-16"><span class="process-math">\(n=2005\text{?}\)</span></div></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para" id="p-17">Quando <span class="process-math">\(n=2005\)</span> o primeiro jogador garante a vitória. Ele pode fazer isto colocando um dominó na vertical no meio do tabuleiro e, em seguida, jogar simetricamente ao segundo jogador. Quando <span class="process-math">\(n=2004\)</span> o tabuleiro possui um número par de colunas. Desse modo, o segundo ganha jogando simetricamente ao primeiro jogador.</div></div></div>
+</div></article><div class="para" id="p-18">Como você deve ter visto, usar a simetria é realmente uma técnica muito eficiente. Porém, às vezes, usar apenas a simetria não é suficiente para resolver o problema. Observe o próximo exemplo retirado da olímpiada da Bielorússia de 2000.</div>
+<article class="example example-like" id="example-3"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-19">Tom e Jerry jogam o seguinte jogo. Eles colocam alternadamente pinos idênticos em casas vazias de um tabuleiro <span class="process-math">\(20 \times 20\)</span> (um pino de cada vez). Tom é o primeiro a jogar. Vence quem, em sua jogada, formar um bloco de quatro pinos vizinhos. Dois pinos são vizinhos se estiverem em casas com um lado em comum. Determine quem possui a estratégia vencedora.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><div class="para" id="p-20">Observe que os pinos são idênticos, não há distinção entre os pinos. Jerry deve jogar simetricamente em relação ao centro do tabuleiro. Assim que Tom formar um bloco de três pinos vizinhos, Jerry deve abandonar a estratégia simétrica e completar o bloco de quatro pinos vizinhos, garantindo a vitória.</div></div></div>
+</div></article></section><section class="section" id="section-3"><h3 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">1.1.2</span> <span class="title">2. Posições Vencedoras</span>
+</h3>
+<div class="para" id="p-21">Alguns tipos de jogos possuem certas configurações que sempre levam um jogador à vitória. Essas configurações são chamadas de posições vencedoras. O próximo exemplo é um jogo bastante simples em que essa estratégia aparece facilmente.</div>
+<article class="example example-like" id="example-4"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-22">Na primeira casa de um tabuleiro <span class="process-math">\(1 \times 13\)</span> está uma moeda. Tiago e Maria movem a moeda alternadamente. Em cada turno é permitido avançar 1, 2, 3, 4 ou 5 casas. Quem colocar a moeda na última casa é o vencedor. Se Maria começar jogando, ela pode ter certeza da vitória?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<div class="para" id="p-23">Como em muitos problemas de olimpíada, vamos analisar alguns casos pequenos. Vamos supor que em vez de 13 casas o tabuleiro tivesse apenas quatro. Neste caso, fica fácil ver que quem começa ganha basta avançar três casas. O mesmo iria ocorrer se o tabuleiro tivesse 2, 3, 4, 5 ou 6 casas. Porém, em um tabuleiro <span class="process-math">\(7 \times 1\)</span> o primeiro jogador perde. Veja que após a primeira jogada a moeda estará em uma das casas 2, 3, 4, 5 ou 6. E já sabemos que essas casas levam o jogador à vitória.</div> <figure class="figure figure-like" id="aula_06_fig_04"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/aula_06_fig_04.png" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="p-24">Desse modo, vamos dizer que 7 é uma posição perdedora e 6,5,4,3 e 2 são posições vencedoras. Assim, se um jogador estiver em uma das casas 8,9,10,11 ou 12, ele pode garantir a vitória movendo a moeda para a casa 7, deixando o seu adversário em uma posição perdedora. Com isso, podemos afirmar que as posições 8, 9, 10, 11 e 12 também são posições vencedoras. Resta analisar a <span class="process-math">\(13^{a}\)</span> casa. Observe que a partir desta casa podemos mover a moeda apenas para uma das casas 8, 9, 10, 11 ou 12 que são vencedoras. Daí, quem começar perde pelo simples fato de iniciar em uma posição perdedora.</div>
+</div></div>
+</div></article><div class="para" id="p-25">A grande dificuldade para a maioria dos alunos é descobrir quais são as posições vencedoras de um jogo. Para evitar esse tipo de problema, tenha sempre em mente as seguintes definições:</div>
+<article class="definition definition-like" id="definition-1"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h4>
+<ol class="decimal">
+<li id="li-6"><div class="para" id="p-derived-li-6">
+<dfn class="terminology">Posição vencedora:</dfn> A partir dela, podemos escolher um movimento e repassar uma posição perdedora para o adversário.</div></li>
+<li id="li-7"><div class="para" id="p-derived-li-7">
+<dfn class="terminology">Posição perdedora:</dfn> A partir dela, é impossível escolher um movimento e repassar uma posição perdedora para o adversário. Ou seja, não importa o movimento escolhido, o adversário irá receber uma posição vencedora.</div></li>
+</ol></article><article class="example example-like" id="example-5"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-26">Em um tabuleiro <span class="process-math">\(8 \times 8\)</span> uma torre está na casa a1. Dois jogadores movem a torre com objetivo de colocar a torre na casa h8. Sabendo que a torre pode mover-se apenas para cima ou para direita (quantas casas o jogador desejar) e que não pode-se passar a vez, determine qual jogador tem a estratégia vencedora.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
+<div class="para" id="p-27">Primeiramente note que todas as casas da última linha e da última coluna (exceto a h8) são vencedoras pois, a partir delas podemos escolher um movimento que nos leve à vitória. Com isso, a casa g7 se torna perdedora pois, a partir dela qualquer movimento leva o outro jogador a uma posição vencedora (veja a figura 1).</div> <figure class="figure figure-like" id="aula_06_fig_05"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/tabuleiro_8x8.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="p-28">Agora, como g7 é perdedora, as demais casas da sétima linha e da sétima coluna são vencedoras, pois basta levar a torre para a casa g7. Mais ainda, a casa f6 também deve ser perdedora (figura 2). Continuando de maneira análoga, obtemos que a casa a1 é perdedora (figura 3). Logo, quem começar, perde.</div>
+</div></div>
+</div></article></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">1.1.3</span> <span class="title">Problemas Propostos</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-29">Sobre uma mesa existem duas pilhas (uma com 15 e outra com 16 pedras). Em um jogo cada jogador pode, em sua vez, retirar qualquer quantidade de pedras de apenas uma pilha. Quem não puder mais jogar perde. Quem possui a estratégia vencedora?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><div class="para" id="p-30">O jogador 1 deve retirar uma pedra da pilha com 16. Em seguida, deve jogar simetricamente em relação ao jogador 2.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-31">Dois jogadores colocam alternadamente bispos (da mesma cor) em um tabuleiro <span class="process-math">\(8 \times 8\text{,}\)</span> de forma que nenhum bispo ataque outro. Quem não puder mais jogar perde.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><div class="para" id="p-32">Divida o tabuleiro em duas partes, uma formada pelas 4 linhas de cima e a outra parte com as 4 linhas de baixo. O jogador 2 deve jogar então simetricamente.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-33">Dois jogadores colocam alternadamente reis (da mesma cor) em um tabuleiro <span class="process-math">\(9 \times 9\text{,}\)</span> de forma que nenhum rei ataque outro. Quem não puder mais jogar perde.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="para" id="p-34">O primeiro jogador deve colocar um rei no centro, e depois jogar simetricamente em relação ao centro do tabuleiro.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-35">São dados um tabuleiro de xadrez (<span class="process-math">\(8 \times 8\)</span>) e palitinhos do tamanho dos lados das casas do tabuleiro.  Dois jogadores jogam alternadamente e, em cada rodada, um dos jogadores coloca um palitinho sobre um lado de uma das casas do tabuleiro, sendo proibido sobrepor os palitinhos. Vence o jogador que conseguir completar primeiro um quadrado <span class="process-math">\(1 \times 1\)</span> de palitinhos. Supondo que nenhum dos jogadores cometa erros, qual dos dois tem a estratégia vencedora?</div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-36">(Rússia 1997) Os números <span class="process-math">\(1, 2, 3,\ldots, 1000\)</span> são escritos no quadro. Dois jogadores apagam alternadamente um dos números da lista até que só restem dois números. Se a soma desses números for divisível por <span class="process-math">\(3\text{,}\)</span> o primeiro jogador vence, caso contrário vence o segundo. Quem tem a estratégia vencedora?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><div class="para" id="p-37">Observe que a soma de dois elementos opostos sempre é 1001, que deixa resto 2 na divisão por 3.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para" id="p-38">O Jogador 2 tem a seguinte estratégia vencedora. Para cada número apagado pelo Jogador 1, o Jogador 2 apaga o número que falta para que a soma seja 1001. Assim, no final, os dois últimos número terão soma igual a 1001, garantindo a vitória para o Jogador 2.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-39">Uma pilha de 500 pedras é dada. Dois jogadores jogam o seguinte jogo: Em cada turno, o jogador pode retirar <span class="process-math">\(1, 2, 4, 8,...\)</span> (qualquer potência de 2) pedras da pilha. O jogador que não puder mais jogar perde.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><div class="para" id="p-40">Pense nos múltiplos de 3. Nenhuma potência de 2 é múltiplo de 3.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><div class="para logical" id="p-41">
+<div class="para">A estratégia do primeiro jogador é sempre deixar para o segundo jogador um número de pedras que seja múltiplo de 3.</div>
+<ul class="disc">
+<li id="li-8"><div class="para" id="p-derived-li-8">Primeira Jogada: A pilha tem <span class="process-math">\(500\)</span> pedras <span class="process-math">\((500 \equiv 2 \mod 3)\text{.}\)</span> Para deixar um múltiplo de 3, o Jogador 1 deve subtrair um número com resto 2. Ele deve retirar 2 pedras. A pilha fica com 498 pedras (4+9+8=21, que é divisível por 3).</div></li>
+<li id="li-9"><div class="para" id="p-derived-li-9">Jogadas Subsequentes: O Jogador 2 agora tem 498 pedras (uma Posição Perdedora). Qualquer jogada que ele faça (subtraindo 1, 2, 4, 8, etc.) deixará um número de pedras que não é mais divisível por 3.</div></li>
+<li id="li-10"><div class="para" id="p-derived-li-10">O Jogador 1, em sua vez, receberá uma pilha que não é múltiplo de 3. Ele então retira 1 ou 2 pedras para novamente deixar um múltiplo de 3 para o Jogador 2.</div></li>
+</ul>
+<div class="para">Este ciclo continua até que a pilha chegue a 0. Como o Jogador 1 sempre deixa um múltiplo de 3 para o oponente, o Jogador 2 nunca poderá deixar 0 (que é um múltiplo de 3). Portanto, o Jogador 1 fará a jogada final.</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-42">Em uma caixa existem 300 bolinhas. Cada jogador pode retirar não mais do que a metade das bolinhas que estão na caixa. O jogador que não puder mais jogar perde.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like"><div class="para" id="p-43">Pense nas potências de 2.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
+<div class="para" id="p-44">O Jogador 1 deve retirar uma quantidade de modo que o que sobre seja a maior potencia de 2 menos 1. Assim, o Jogador 2 receberá as Posições Perderoras: <span class="process-math">\((255, 127, 63, 31, 15, 7, 3, 1)\text{.}\)</span> No final o Jogador 2 ficará com apenas uma bolinha, perdendo o jogo.</div> <div class="para logical" id="p-45">
+<div class="para">Vamos verificar algumas Posições e separar entre Perderoras e Vencedoras.</div>
+<ol class="decimal">
+<li id="li-11"><div class="para" id="p-derived-li-11">n = 1: O máximo de bolinhas que se pode retirar é n/2 = 0.5. Como é preciso retirar pelo menos 1, não há movimentos possíveis. O jogador que enfrenta 1 bolinha perde. <dfn class="terminology">1 é uma Posição Perdedora</dfn>.</div></li>
+<li id="li-12"><div class="para" id="p-derived-li-12">n = 2: Pode-se retirar no máximo 2/2 = 1 bolinha. A única jogada é retirar 1, deixando 1. Como se pode mover para a Posição (1), <dfn class="terminology">2 é uma Posição Vencedora</dfn>.</div></li>
+<li id="li-13"><div class="para" id="p-derived-li-13">n = 3: Pode-se retirar no máximo 3/2 = 1.5, ou seja, 1 bolinha. A única jogada é deixar 2. A posição 2 é P. Como todos os movimentos levam a uma Posição P, <dfn class="terminology">3 é uma Posição Perdedora</dfn>.</div></li>
+<li id="li-14"><div class="para" id="p-derived-li-14">n = 4: Pode-se retirar no máximo 4/2 = 2 bolinhas. Pode-se retirar 1 (deixando 3) ou 2 (deixando 2). Como é possível mover para 3 (uma Posição L), <dfn class="terminology">4 é uma Posição Vencedora</dfn>.</div></li>
+<li id="li-15"><div class="para" id="p-derived-li-15">n = 5: Pode-se retirar 1 ou 2. Deixando 4 ou 3. Como se pode mover para 3, <dfn class="terminology">5 é uma Posição Vencedora</dfn>.</div></li>
+<li id="li-16"><div class="para" id="p-derived-li-16">n = 6: Pode-se retirar 1, 2 ou 3. Deixando 5, 4 ou 3. Como se pode mover para 3, <dfn class="terminology">6 é uma Posição Vencedora</dfn>
+</div></li>
+<li id="li-17"><div class="para" id="p-derived-li-17">n = 7: Pode-se retirar 1, 2 ou 3. Deixando 6, 5 ou 4. Todos os movimentos levam a Posições Vencedoras. <dfn class="terminology">7 é uma Posição Perdedora</dfn>.</div></li>
+</ol>
+<div class="para">As Posições Perdedoras que encontramos são 1, 3, 7... O padrão é claro: as posições perdedoras são números da forma <span class="process-math">\(2^k - 1\text{.}\)</span>
+</div>
+</div>
+</div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="jogos.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="tabuleiros.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
