@@ -2921,132 +2921,6 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "section-35.html",
   "type": "Seção",
-  "number": "5.5",
-  "title": "Exercícios",
-  "body": " Exercícios     Determine quais das seguintes funções são aplicações lineares:   (i) definida por  (ii) definida por  (iii) definida por  (iv) definida por  (v)  (vi)  (vii)  (viii)  (ix)     Dê um exemplo, se possível, de uma transformação linear tal que e .    Existe uma transformação linear de tal que e ?    Se   existe uma transformação linear de em tal que para e ?    Descreva explicitamente uma transformação linear de em tal que e .    Seja uma transformação linear dada por   determine para que valores de a transformação linear não é sobrejetiva.    Seja uma transformação linear tal que    (i) Encontre uma expressão explícita para a transformação linear . Tal expressão é única?  (ii) Determine a imagem de .     Considere a função definida por onde   observando que para que a esteja bem definida.   (i) é transformação linear?  (ii) é injetiva?  (iii) é sobrejetiva?     Considere a transformação linear definida por    (i) Determine e determine sua dimensão.  (ii) Uma base para a imagem de .     Considere a transformação linear definido por    (i) Determine uma base para e sua dimensão.  (ii) Determine uma base para e sua dimensão.     Considere uma função de definida por    (i) Verifique que é uma transformação linear.  (ii) Se é um vetor de quais as condições sobre e para que o vetor esteja na imagem de ? Qual a dimensão da imagem?  (iii) Quais condições sobre e para que esteja no núcleo de ? Qual a dimensão do núcleo?     Descreva explicitamente uma transformação linear de em que tem sua imagem gerada pelos vetores e .    Seja e seja uma matriz fixada em . Se   verifique que é uma transformação linear de em .    "
-},
-{
-  "id": "exercise-96",
-  "level": "2",
-  "url": "section-35.html#exercise-96",
-  "type": "Exercício",
-  "number": "5.5.1",
-  "title": "",
-  "body": " Determine quais das seguintes funções são aplicações lineares:   (i) definida por  (ii) definida por  (iii) definida por  (iv) definida por  (v)  (vi)  (vii)  (viii)  (ix)   "
-},
-{
-  "id": "exercise-97",
-  "level": "2",
-  "url": "section-35.html#exercise-97",
-  "type": "Exercício",
-  "number": "5.5.2",
-  "title": "",
-  "body": " Dê um exemplo, se possível, de uma transformação linear tal que e .  "
-},
-{
-  "id": "exercise-98",
-  "level": "2",
-  "url": "section-35.html#exercise-98",
-  "type": "Exercício",
-  "number": "5.5.3",
-  "title": "",
-  "body": " Existe uma transformação linear de tal que e ?  "
-},
-{
-  "id": "exercise-99",
-  "level": "2",
-  "url": "section-35.html#exercise-99",
-  "type": "Exercício",
-  "number": "5.5.4",
-  "title": "",
-  "body": " Se   existe uma transformação linear de em tal que para e ?  "
-},
-{
-  "id": "exercise-100",
-  "level": "2",
-  "url": "section-35.html#exercise-100",
-  "type": "Exercício",
-  "number": "5.5.5",
-  "title": "",
-  "body": " Descreva explicitamente uma transformação linear de em tal que e .  "
-},
-{
-  "id": "exercise-101",
-  "level": "2",
-  "url": "section-35.html#exercise-101",
-  "type": "Exercício",
-  "number": "5.5.6",
-  "title": "",
-  "body": " Seja uma transformação linear dada por   determine para que valores de a transformação linear não é sobrejetiva.  "
-},
-{
-  "id": "exercise-102",
-  "level": "2",
-  "url": "section-35.html#exercise-102",
-  "type": "Exercício",
-  "number": "5.5.7",
-  "title": "",
-  "body": " Seja uma transformação linear tal que    (i) Encontre uma expressão explícita para a transformação linear . Tal expressão é única?  (ii) Determine a imagem de .   "
-},
-{
-  "id": "exercise-103",
-  "level": "2",
-  "url": "section-35.html#exercise-103",
-  "type": "Exercício",
-  "number": "5.5.8",
-  "title": "",
-  "body": " Considere a função definida por onde   observando que para que a esteja bem definida.   (i) é transformação linear?  (ii) é injetiva?  (iii) é sobrejetiva?   "
-},
-{
-  "id": "exercise-104",
-  "level": "2",
-  "url": "section-35.html#exercise-104",
-  "type": "Exercício",
-  "number": "5.5.9",
-  "title": "",
-  "body": " Considere a transformação linear definida por    (i) Determine e determine sua dimensão.  (ii) Uma base para a imagem de .   "
-},
-{
-  "id": "exercise-105",
-  "level": "2",
-  "url": "section-35.html#exercise-105",
-  "type": "Exercício",
-  "number": "5.5.10",
-  "title": "",
-  "body": " Considere a transformação linear definido por    (i) Determine uma base para e sua dimensão.  (ii) Determine uma base para e sua dimensão.   "
-},
-{
-  "id": "exercise-106",
-  "level": "2",
-  "url": "section-35.html#exercise-106",
-  "type": "Exercício",
-  "number": "5.5.11",
-  "title": "",
-  "body": " Considere uma função de definida por    (i) Verifique que é uma transformação linear.  (ii) Se é um vetor de quais as condições sobre e para que o vetor esteja na imagem de ? Qual a dimensão da imagem?  (iii) Quais condições sobre e para que esteja no núcleo de ? Qual a dimensão do núcleo?   "
-},
-{
-  "id": "exercise-107",
-  "level": "2",
-  "url": "section-35.html#exercise-107",
-  "type": "Exercício",
-  "number": "5.5.12",
-  "title": "",
-  "body": " Descreva explicitamente uma transformação linear de em que tem sua imagem gerada pelos vetores e .  "
-},
-{
-  "id": "exercise-108",
-  "level": "2",
-  "url": "section-35.html#exercise-108",
-  "type": "Exercício",
-  "number": "5.5.13",
-  "title": "",
-  "body": " Seja e seja uma matriz fixada em . Se   verifique que é uma transformação linear de em .  "
-},
-{
-  "id": "section-36",
-  "level": "1",
-  "url": "section-36.html",
-  "type": "Seção",
   "number": "6.1",
   "title": "Autovalores e Autovetores",
   "body": " Autovalores e Autovetores   Autovetor de um Operador Linear   Seja um espaço vetorial Salvo menção em contrário, todos os espaços vetoriais considerados neste material possuem dimensão finita e estão sobre o corpo dos reais. e um operador linear. Dizemos que um vetor não-nulo é um autovetor de se existir tal que   O escalar é chamado de autovalor de associado ao autovetor .     O vetor nulo, por definição, não é autovetor de nenhuma matriz.     Seja dado por   Determine se os seguintes vetores abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)  (iii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Se , então   Logo, é autovetor com autovalor associado .    (ii) Se , então   Logo, é autovetor com autovalor associado .    (iii) Se , então   Logo, não existe tal que .       Autovetor de uma Matriz   Seja uma matriz Salvo menção em contrário, todas as matrizes consideradas neste material terão entradas reais . Dizemos que um vetor não-nulo é um autovetor de se existir tal que   O escalar é chamado de autovalor de associado ao autovetor .     O vetor nulo, por definição, não é autovetor de nenhuma matriz.     Seja dada por   Determine se os seguintes vetores coluna abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Sendo ,   Logo, é autovetor de com autovalor associado .    (ii) Sendo ,   Logo, não é autovetor de .       Propriedades dos autovetores   Propriedades dos autovetores   Seja espaço vetorial, operador linear e um autovalor de . Então,    (i) se e são autovetores de associados à , então também é autovetor associado à .   Com efeito, .     (ii) se é autovetor de associado à e , então também é autovetor associado à .   De fato, .        Autoespaço associado a um autovalor   Sejam espaço vetorial, operador linear e um autovalor de . Definimos o autoespaço de T associado à como o conjunto      O autoespaço contém, além do vetor nulo, os autovetores de associados à . Segue das propriedades dos autovetores, (i) e (ii), que é um subespaço vetorial Um subespaço vetorial  de é qualquer subconjunto tal que e para todos e todos . de .     Multiplicidades algébrica e geométrica   Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .       Mostraremos adiante que para todo autovalor de , vale      Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .     "
@@ -3054,7 +2928,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-38",
   "level": "2",
-  "url": "section-36.html#definition-38",
+  "url": "section-35.html#definition-38",
   "type": "Definição",
   "number": "6.1.1",
   "title": "Autovetor de um Operador Linear.",
@@ -3063,7 +2937,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-41",
   "level": "2",
-  "url": "section-36.html#remark-41",
+  "url": "section-35.html#remark-41",
   "type": "Nota",
   "number": "6.1.2",
   "title": "",
@@ -3072,7 +2946,7 @@ var ptx_lunr_docs = [
 {
   "id": "example-69",
   "level": "2",
-  "url": "section-36.html#example-69",
+  "url": "section-35.html#example-69",
   "type": "Exemplo",
   "number": "6.1.3",
   "title": "",
@@ -3081,7 +2955,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-39",
   "level": "2",
-  "url": "section-36.html#definition-39",
+  "url": "section-35.html#definition-39",
   "type": "Definição",
   "number": "6.1.4",
   "title": "Autovetor de uma Matriz.",
@@ -3090,7 +2964,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-42",
   "level": "2",
-  "url": "section-36.html#remark-42",
+  "url": "section-35.html#remark-42",
   "type": "Nota",
   "number": "6.1.5",
   "title": "",
@@ -3099,7 +2973,7 @@ var ptx_lunr_docs = [
 {
   "id": "example-70",
   "level": "2",
-  "url": "section-36.html#example-70",
+  "url": "section-35.html#example-70",
   "type": "Exemplo",
   "number": "6.1.6",
   "title": "",
@@ -3108,7 +2982,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-22",
   "level": "2",
-  "url": "section-36.html#theorem-22",
+  "url": "section-35.html#theorem-22",
   "type": "Teorema",
   "number": "6.1.7",
   "title": "Propriedades dos autovetores.",
@@ -3117,7 +2991,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-40",
   "level": "2",
-  "url": "section-36.html#definition-40",
+  "url": "section-35.html#definition-40",
   "type": "Definição",
   "number": "6.1.8",
   "title": "Autoespaço associado a um autovalor.",
@@ -3126,7 +3000,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-43",
   "level": "2",
-  "url": "section-36.html#remark-43",
+  "url": "section-35.html#remark-43",
   "type": "Nota",
   "number": "6.1.9",
   "title": "",
@@ -3135,7 +3009,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-41",
   "level": "2",
-  "url": "section-36.html#definition-41",
+  "url": "section-35.html#definition-41",
   "type": "Definição",
   "number": "6.1.10",
   "title": "Multiplicidades algébrica e geométrica.",
@@ -3144,7 +3018,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-44",
   "level": "2",
-  "url": "section-36.html#remark-44",
+  "url": "section-35.html#remark-44",
   "type": "Nota",
   "number": "6.1.11",
   "title": "",
@@ -3153,16 +3027,16 @@ var ptx_lunr_docs = [
 {
   "id": "example-71",
   "level": "2",
-  "url": "section-36.html#example-71",
+  "url": "section-35.html#example-71",
   "type": "Exemplo",
   "number": "6.1.12",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .   "
 },
 {
-  "id": "section-37",
+  "id": "section-36",
   "level": "1",
-  "url": "section-37.html",
+  "url": "section-36.html",
   "type": "Seção",
   "number": "6.2",
   "title": "Polinômio característico",
@@ -3171,7 +3045,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-42",
   "level": "2",
-  "url": "section-37.html#definition-42",
+  "url": "section-36.html#definition-42",
   "type": "Definição",
   "number": "6.2.1",
   "title": "Polinômio característico de um operador linear.",
@@ -3180,7 +3054,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-45",
   "level": "2",
-  "url": "section-37.html#remark-45",
+  "url": "section-36.html#remark-45",
   "type": "Nota",
   "number": "6.2.2",
   "title": "",
@@ -3189,7 +3063,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-46",
   "level": "2",
-  "url": "section-37.html#remark-46",
+  "url": "section-36.html#remark-46",
   "type": "Nota",
   "number": "6.2.3",
   "title": "Observações.",
@@ -3198,7 +3072,7 @@ var ptx_lunr_docs = [
 {
   "id": "exe_1_3",
   "level": "2",
-  "url": "section-37.html#exe_1_3",
+  "url": "section-36.html#exe_1_3",
   "type": "Exemplo",
   "number": "6.2.4",
   "title": "",
@@ -3207,7 +3081,7 @@ var ptx_lunr_docs = [
 {
   "id": "definition-43",
   "level": "2",
-  "url": "section-37.html#definition-43",
+  "url": "section-36.html#definition-43",
   "type": "Definição",
   "number": "6.2.5",
   "title": "Polinômio característico de uma matriz.",
@@ -3216,7 +3090,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-47",
   "level": "2",
-  "url": "section-37.html#remark-47",
+  "url": "section-36.html#remark-47",
   "type": "Nota",
   "number": "6.2.6",
   "title": "",
@@ -3225,7 +3099,7 @@ var ptx_lunr_docs = [
 {
   "id": "exe_1_4",
   "level": "2",
-  "url": "section-37.html#exe_1_4",
+  "url": "section-36.html#exe_1_4",
   "type": "Exemplo",
   "number": "6.2.7",
   "title": "",
@@ -3234,7 +3108,7 @@ var ptx_lunr_docs = [
 {
   "id": "teo_autovalor_l_raiz",
   "level": "2",
-  "url": "section-37.html#teo_autovalor_l_raiz",
+  "url": "section-36.html#teo_autovalor_l_raiz",
   "type": "Teorema",
   "number": "6.2.8",
   "title": "",
@@ -3243,7 +3117,7 @@ var ptx_lunr_docs = [
 {
   "id": "remark-48",
   "level": "2",
-  "url": "section-37.html#remark-48",
+  "url": "section-36.html#remark-48",
   "type": "Nota",
   "number": "6.2.9",
   "title": "",
@@ -3252,43 +3126,133 @@ var ptx_lunr_docs = [
 {
   "id": "exe_1_5",
   "level": "2",
-  "url": "section-37.html#exe_1_5",
+  "url": "section-36.html#exe_1_5",
   "type": "Exemplo",
   "number": "6.2.10",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .     "
 },
 {
+  "id": "section-37",
+  "level": "1",
+  "url": "section-37.html",
+  "type": "Seção",
+  "number": "6.3",
+  "title": "Exercícios",
+  "body": " Exercícios    Seja    Mostre que é um autovalor de T e vetores da forma (x, 2x) são os autovetores correspondentes.    Ache os autovalores e autovetores correspondentes das transformações lineares dadas:   tal que  tal que  tal que  tal que  tal que (Isto é, T é a transformação que leva uma matriz na sua transposta.)  tal que  Encontre a transformação linear , tal que T tenha autovalores e associados aos autovetores e respectivamente.     Ache os autovalores e autovetores correspondentes das matrizes:                Seja   Quais são os autovalores e autovetores de A de um espaço vetorial:   Real  Complexo     Se é autovalor da transformação linear e é autovetor associado a ele, mostre que   é outro autovetor associado a se  O conjunto formado pelos autovetores associados a e o vetor nulo é subespaço de V.    Suponha que e sejam autovalores distintos e diferentes de zero de . Mostre que  Os autovetores e correspondentes são LI.  e são LI.     Seja    Ache os autovalores de A e de  Quais são os autovetores correspondentes?     Suponha que seja autovalor de com autovetor v e um número não nulo. Ache os autovalores e autovetores de .    Suponha que seja autovetor de e , ao mesmo tempo com autovalores e respectivamente. Ache autovetores e autovalores de        Seja linear   Se é autovalor de T, mostre que T não é injetora.  A recíproca é verdadeira? Ou seja, se T não é injetora, é autovalor de T?     Sejam   matrizes inversíveis.   Calcule AB e BA e observe que estes produtos são distintos.  Encontre os autovalores de AB e os de BA. O que você observa?  Encontre os autovetores de AB e os de BA. O que você nota?  Motivado pelos itens anteriores, mostre que: se A e B são matrizes inversíveis de mesma ordem, os autovalores de AB e BA são os mesmos. Mostre mais ainda: se é um autovalor de AB com autovetor v, então é autovalor de BA com autovetor Bv. Da mesma forma, se é um autovalor de BA com autovetor w, então é autovalor de AB com autovetor Aw.     "
+},
+{
+  "id": "exercise-96",
+  "level": "2",
+  "url": "section-37.html#exercise-96",
+  "type": "Exercício",
+  "number": "6.3.1",
+  "title": "",
+  "body": " Seja    Mostre que é um autovalor de T e vetores da forma (x, 2x) são os autovetores correspondentes.  "
+},
+{
+  "id": "exercise-97",
+  "level": "2",
+  "url": "section-37.html#exercise-97",
+  "type": "Exercício",
+  "number": "6.3.2",
+  "title": "",
+  "body": " Ache os autovalores e autovetores correspondentes das transformações lineares dadas:   tal que  tal que  tal que  tal que  tal que (Isto é, T é a transformação que leva uma matriz na sua transposta.)  tal que  Encontre a transformação linear , tal que T tenha autovalores e associados aos autovetores e respectivamente.   "
+},
+{
+  "id": "exercise-98",
+  "level": "2",
+  "url": "section-37.html#exercise-98",
+  "type": "Exercício",
+  "number": "6.3.3",
+  "title": "",
+  "body": " Ache os autovalores e autovetores correspondentes das matrizes:              "
+},
+{
+  "id": "exercise-99",
+  "level": "2",
+  "url": "section-37.html#exercise-99",
+  "type": "Exercício",
+  "number": "6.3.4",
+  "title": "",
+  "body": " Seja   Quais são os autovalores e autovetores de A de um espaço vetorial:   Real  Complexo   "
+},
+{
+  "id": "exercise-100",
+  "level": "2",
+  "url": "section-37.html#exercise-100",
+  "type": "Exercício",
+  "number": "6.3.5",
+  "title": "",
+  "body": " Se é autovalor da transformação linear e é autovetor associado a ele, mostre que   é outro autovetor associado a se  O conjunto formado pelos autovetores associados a e o vetor nulo é subespaço de V.   "
+},
+{
+  "id": "exercise-101",
+  "level": "2",
+  "url": "section-37.html#exercise-101",
+  "type": "Exercício",
+  "number": "6.3.6",
+  "title": "",
+  "body": "Suponha que e sejam autovalores distintos e diferentes de zero de . Mostre que  Os autovetores e correspondentes são LI.  e são LI.   "
+},
+{
+  "id": "exercise-102",
+  "level": "2",
+  "url": "section-37.html#exercise-102",
+  "type": "Exercício",
+  "number": "6.3.7",
+  "title": "",
+  "body": " Seja    Ache os autovalores de A e de  Quais são os autovetores correspondentes?   "
+},
+{
+  "id": "exercise-103",
+  "level": "2",
+  "url": "section-37.html#exercise-103",
+  "type": "Exercício",
+  "number": "6.3.8",
+  "title": "",
+  "body": " Suponha que seja autovalor de com autovetor v e um número não nulo. Ache os autovalores e autovetores de .  "
+},
+{
+  "id": "exercise-104",
+  "level": "2",
+  "url": "section-37.html#exercise-104",
+  "type": "Exercício",
+  "number": "6.3.9",
+  "title": "",
+  "body": " Suponha que seja autovetor de e , ao mesmo tempo com autovalores e respectivamente. Ache autovetores e autovalores de      "
+},
+{
+  "id": "exercise-105",
+  "level": "2",
+  "url": "section-37.html#exercise-105",
+  "type": "Exercício",
+  "number": "6.3.10",
+  "title": "",
+  "body": " Seja linear   Se é autovalor de T, mostre que T não é injetora.  A recíproca é verdadeira? Ou seja, se T não é injetora, é autovalor de T?   "
+},
+{
+  "id": "exercise-106",
+  "level": "2",
+  "url": "section-37.html#exercise-106",
+  "type": "Exercício",
+  "number": "6.3.11",
+  "title": "",
+  "body": " Sejam   matrizes inversíveis.   Calcule AB e BA e observe que estes produtos são distintos.  Encontre os autovalores de AB e os de BA. O que você observa?  Encontre os autovetores de AB e os de BA. O que você nota?  Motivado pelos itens anteriores, mostre que: se A e B são matrizes inversíveis de mesma ordem, os autovalores de AB e BA são os mesmos. Mostre mais ainda: se é um autovalor de AB com autovetor v, então é autovalor de BA com autovetor Bv. Da mesma forma, se é um autovalor de BA com autovetor w, então é autovalor de AB com autovetor Aw.   "
+},
+{
   "id": "section-38",
   "level": "1",
   "url": "section-38.html",
   "type": "Seção",
-  "number": "6.3",
-  "title": "Exercícios",
-  "body": " Exercícios   Falta adicionar esta lista.   "
-},
-{
-  "id": "exercise-109",
-  "level": "2",
-  "url": "section-38.html#exercise-109",
-  "type": "Exercício",
-  "number": "6.3.1",
-  "title": "",
-  "body": "Falta adicionar esta lista. "
-},
-{
-  "id": "section-39",
-  "level": "1",
-  "url": "section-39.html",
-  "type": "Seção",
   "number": "6.4",
-  "title": "Diagonalização de operadores",
-  "body": " Diagonalização de operadores   (Operadores diagonalizáveis)   Sejam um espaço vetorial e um operador linear. Dizemos que é diagonalizável se existir uma base de formada por autovetores de .      Sejam espaço vetorial de dimensão e um operador linear. Então, é diagonalizável se, e somente se, existe uma base de tal que é diagonal.      Considere o operador linear dado por   Determine se é um operador diagonalizável. Em caso afirmativo, exiba uma base de na qual é uma matriz diagonal.    Vimos no que possui dois autovalores distintos e . Os autoespaços associados a cada um destes autovalores são, respectivamente,   Além disso,   Tomando , é fácil ver que é base de (Verifique!). Como é formada por autovetores de , é diagonalizável.  Com relação à base , a matriz de é a matriz diagonal   pois     "
+  "title": "Diagonalização de Operadores e de Matrizes",
+  "body": " Diagonalização de Operadores e de Matrizes   Diagonalização de Operadores   (Operadores diagonalizáveis)   Sejam um espaço vetorial e um operador linear. Dizemos que é diagonalizável se existir uma base de formada por autovetores de .      Sejam espaço vetorial de dimensão e um operador linear. Então, é diagonalizável se, e somente se, existe uma base de tal que é diagonal.      Considere o operador linear dado por   Determine se é um operador diagonalizável. Em caso afirmativo, exiba uma base de na qual é uma matriz diagonal.    Vimos no que possui dois autovalores distintos e . Os autoespaços associados a cada um destes autovalores são, respectivamente,   Além disso,   Tomando , é fácil ver que é base de (Verifique!). Como é formada por autovetores de , é diagonalizável.  Com relação à base , a matriz de é a matriz diagonal   pois       Diagonalização de matrizes   (Matrizes diagonalizáveis)   Seja . Dizemos que é diagonalizável se for semelhante à uma matriz diagonal.  Em outras palavra, é diagonalizável se existirem matrizes , com inversível e diagonal tais que       Seja . Então é diagonalizável se, e somente se, possui autovetores linearmente independentes. Neste caso, , onde    são autovetores linearmente independentes de e são os autovalores correspondentes, na mesma ordem.      Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.     "
 },
 {
   "id": "definition-44",
   "level": "2",
-  "url": "section-39.html#definition-44",
+  "url": "section-38.html#definition-44",
   "type": "Definição",
   "number": "6.4.1",
   "title": "(Operadores diagonalizáveis).",
@@ -3297,7 +3261,7 @@ var ptx_lunr_docs = [
 {
   "id": "theorem-24",
   "level": "2",
-  "url": "section-39.html#theorem-24",
+  "url": "section-38.html#theorem-24",
   "type": "Teorema",
   "number": "6.4.2",
   "title": "",
@@ -3306,281 +3270,200 @@ var ptx_lunr_docs = [
 {
   "id": "exe_2_1",
   "level": "2",
-  "url": "section-39.html#exe_2_1",
+  "url": "section-38.html#exe_2_1",
   "type": "Exemplo",
   "number": "6.4.3",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine se é um operador diagonalizável. Em caso afirmativo, exiba uma base de na qual é uma matriz diagonal.    Vimos no que possui dois autovalores distintos e . Os autoespaços associados a cada um destes autovalores são, respectivamente,   Além disso,   Tomando , é fácil ver que é base de (Verifique!). Como é formada por autovetores de , é diagonalizável.  Com relação à base , a matriz de é a matriz diagonal   pois    "
 },
 {
-  "id": "section-40",
-  "level": "1",
-  "url": "section-40.html",
-  "type": "Seção",
-  "number": "6.5",
-  "title": "Diagonalização de matrizes",
-  "body": " Diagonalização de matrizes   (Matrizes diagonalizáveis)   Seja . Dizemos que é diagonalizável se for semelhante à uma matriz diagonal.  Em outras palavra, é diagonalizável se existirem matrizes , com inversível e diagonal tais que       Seja . Então é diagonalizável se, e somente se, possui autovetores linearmente independentes. Neste caso, , onde    são autovetores linearmente independentes de e são os autovalores correspondentes, na mesma ordem.      Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.    "
-},
-{
   "id": "definition-45",
   "level": "2",
-  "url": "section-40.html#definition-45",
+  "url": "section-38.html#definition-45",
   "type": "Definição",
-  "number": "6.5.1",
+  "number": "6.4.4",
   "title": "(Matrizes diagonalizáveis).",
   "body": " (Matrizes diagonalizáveis)   Seja . Dizemos que é diagonalizável se for semelhante à uma matriz diagonal.  Em outras palavra, é diagonalizável se existirem matrizes , com inversível e diagonal tais que    "
 },
 {
   "id": "theorem-25",
   "level": "2",
-  "url": "section-40.html#theorem-25",
+  "url": "section-38.html#theorem-25",
   "type": "Teorema",
-  "number": "6.5.2",
+  "number": "6.4.5",
   "title": "",
   "body": "  Seja . Então é diagonalizável se, e somente se, possui autovetores linearmente independentes. Neste caso, , onde    são autovetores linearmente independentes de e são os autovalores correspondentes, na mesma ordem.   "
 },
 {
   "id": "example-76",
   "level": "2",
-  "url": "section-40.html#example-76",
+  "url": "section-38.html#example-76",
   "type": "Exemplo",
-  "number": "6.5.3",
+  "number": "6.4.6",
   "title": "",
   "body": "  Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.   "
 },
 {
-  "id": "section-41",
+  "id": "section-39",
   "level": "1",
-  "url": "section-41.html",
+  "url": "section-39.html",
   "type": "Seção",
-  "number": "6.6",
+  "number": "6.5",
   "title": "Autovetores e independência linear",
-  "body": " Autovetores e independência linear    Seja um operador linear. Se for um autovetor associado au autovalor , e se para , então o conjunto é linearmente independente (LI).  Em outras palavras, autovetores associados a autovalores distintos são LI.      Sejam espaço vetorial de dimensão e um operador linear. Se possui autovalores distintos, então é diagonalizável.     A recíproca do não é verdadeira. Com efeito, o operador do é diagonalizável, porém possui apenas dois autovalores distintos.     Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . Pelo , é diagonalizável.    "
+  "body": " Autovetores e independência linear    Seja um operador linear. Se for um autovetor associado au autovalor , e se para , então o conjunto é linearmente independente (LI).  Em outras palavras, autovetores associados a autovalores distintos são LI.      Sejam espaço vetorial de dimensão e um operador linear. Se possui autovalores distintos, então é diagonalizável.     A recíproca do não é verdadeira. Com efeito, o operador do é diagonalizável, porém possui apenas dois autovalores distintos.     Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . Pelo , é diagonalizável.     Uma caracterização para operadores diagonalizáveis    Suponha que é espaço vetorial de dimensão e Seja operador linear. Então é diagonalizável se, e somente se, valem as seguintes condições:    (i) O polinômio característico de se decompõe em fatores lineares:     (ii) para todo .        Seja dado por   Determine se é diagonalizável.    Seja base canônica do . A matriz de com relação à é   Segue que o polinômio característico de é   ou seja,   Pelo Teorema 1.1, é o único autovalor de . Logo, será diagonalizável se .  Os autovetores associados à são os vetores não nulos tais que de , o que fornece o sistema   O sistema acima equivale à . Assim, o autoespaço associado à é   Portanto, . Logo, não é diagonalizável.     "
 },
 {
   "id": "theorem-26",
   "level": "2",
-  "url": "section-41.html#theorem-26",
+  "url": "section-39.html#theorem-26",
   "type": "Teorema",
-  "number": "6.6.1",
+  "number": "6.5.1",
   "title": "",
   "body": "  Seja um operador linear. Se for um autovetor associado au autovalor , e se para , então o conjunto é linearmente independente (LI).  Em outras palavras, autovetores associados a autovalores distintos são LI.   "
 },
 {
   "id": "cor_2_4",
   "level": "2",
-  "url": "section-41.html#cor_2_4",
+  "url": "section-39.html#cor_2_4",
   "type": "Corolário",
-  "number": "6.6.2",
+  "number": "6.5.2",
   "title": "",
   "body": "  Sejam espaço vetorial de dimensão e um operador linear. Se possui autovalores distintos, então é diagonalizável.   "
 },
 {
   "id": "remark-49",
   "level": "2",
-  "url": "section-41.html#remark-49",
+  "url": "section-39.html#remark-49",
   "type": "Nota",
-  "number": "6.6.3",
+  "number": "6.5.3",
   "title": "",
   "body": " A recíproca do não é verdadeira. Com efeito, o operador do é diagonalizável, porém possui apenas dois autovalores distintos.  "
 },
 {
   "id": "example-77",
   "level": "2",
-  "url": "section-41.html#example-77",
+  "url": "section-39.html#example-77",
   "type": "Exemplo",
-  "number": "6.6.4",
+  "number": "6.5.4",
   "title": "",
   "body": "  Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . Pelo , é diagonalizável.   "
 },
 {
-  "id": "section-42",
-  "level": "1",
-  "url": "section-42.html",
-  "type": "Seção",
-  "number": "6.7",
-  "title": "Uma caracterização para operadores diagonalizáveis",
-  "body": " Uma caracterização para operadores diagonalizáveis    Suponha que é espaço vetorial de dimensão e Seja operador linear. Então é diagonalizável se, e somente se, valem as seguintes condições:    (i) O polinômio característico de se decompõe em fatores lineares:     (ii) para todo .        Seja dado por   Determine se é diagonalizável.    Seja base canônica do . A matriz de com relação à é   Segue que o polinômio característico de é   ou seja,   Pelo Teorema 1.1, é o único autovalor de . Logo, será diagonalizável se .  Os autovetores associados à são os vetores não nulos tais que de , o que fornece o sistema   O sistema acima equivale à . Assim, o autoespaço associado à é   Portanto, . Logo, não é diagonalizável.    "
-},
-{
   "id": "theorem-27",
   "level": "2",
-  "url": "section-42.html#theorem-27",
+  "url": "section-39.html#theorem-27",
   "type": "Teorema",
-  "number": "6.7.1",
+  "number": "6.5.5",
   "title": "",
   "body": "  Suponha que é espaço vetorial de dimensão e Seja operador linear. Então é diagonalizável se, e somente se, valem as seguintes condições:    (i) O polinômio característico de se decompõe em fatores lineares:     (ii) para todo .     "
 },
 {
   "id": "example-78",
   "level": "2",
-  "url": "section-42.html#example-78",
+  "url": "section-39.html#example-78",
   "type": "Exemplo",
-  "number": "6.7.2",
+  "number": "6.5.6",
   "title": "",
   "body": "  Seja dado por   Determine se é diagonalizável.    Seja base canônica do . A matriz de com relação à é   Segue que o polinômio característico de é   ou seja,   Pelo Teorema 1.1, é o único autovalor de . Logo, será diagonalizável se .  Os autovetores associados à são os vetores não nulos tais que de , o que fornece o sistema   O sistema acima equivale à . Assim, o autoespaço associado à é   Portanto, . Logo, não é diagonalizável.   "
 },
 {
-  "id": "section-43",
+  "id": "section-40",
   "level": "1",
-  "url": "section-43.html",
+  "url": "section-40.html",
   "type": "Seção",
-  "number": "6.8",
+  "number": "6.6",
   "title": "Exercícios",
-  "body": " Exercícios    Encontre a transformação linear tal que:   Encontre tal que .      (i) Determine a transformação linear tal que   Calcule e .    (ii) Determine a transformação tal que     (iii) Determine a transformação linear tal que .      Dados transformação linear injetiva. Mostre que se é um conjunto L.I., então também o é.    Dada uma transformação linear tal que e calcule em função de e :   (i)  (ii)  (iii)     Determine uma transformação linear tal que     Mostre que as seguintes transformações lineares são sobrejetivas.   (i)  (ii)  (iii)     Encontre uma transformação linear tal que .    Encontre uma transformação linear cuja imagem é gerada por e .    Considere a transformação linear descrita por:    (i) Determine , onde é a base canônica de ;  (ii) Determine uma base do núcleo de ;  (iii) Determine a dimensão da imagem de ;  (iv) é sobrejetiva?     Determine se as seguintes afirmações são verdadeiras ou falsas.   (i) Se é tal que , então ;  (ii) Se , então ;  (iii) Se é combinação linear de , então é combinação linear de .     Dados os vetores .  Determine se existe uma transformação linear tal que .    Considere tal que e . Determine a matriz da transformação associada às bases canônicas de e .    Determine a matriz do operador derivada relativamente à base canônica .    Sejam e transformações lineares de em . Considere a base canônica do . Se   determine tal que .    Se e . Considere e são as bases canônicas de e respectivamente, determine:   (i) ;  (ii) ;  (iii) e explicitamente.     Seja e considere a base canônica deste espaço descrita por   Seja descrita por     (i) Encontre , onde é a base canônica do espaço .    (ii) Se é tal que , determine explicitamente e, se possível, tal que .      Sejam e bases de e respectivamente. Se   determine explicitamente.    "
+  "body": " Exercícios    Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.    Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?     Para quais valores de a as matrizes abaixo são diagonalizáveis?        Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.       Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)     Mostre que a matriz   é semelhante à matriz       Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .     Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.     Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.       Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?     "
+},
+{
+  "id": "exercise-107",
+  "level": "2",
+  "url": "section-40.html#exercise-107",
+  "type": "Exercício",
+  "number": "6.6.1",
+  "title": "",
+  "body": " Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.  "
+},
+{
+  "id": "exercise-108",
+  "level": "2",
+  "url": "section-40.html#exercise-108",
+  "type": "Exercício",
+  "number": "6.6.2",
+  "title": "",
+  "body": " Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?   "
+},
+{
+  "id": "exercise-109",
+  "level": "2",
+  "url": "section-40.html#exercise-109",
+  "type": "Exercício",
+  "number": "6.6.3",
+  "title": "",
+  "body": " Para quais valores de a as matrizes abaixo são diagonalizáveis?      "
 },
 {
   "id": "exercise-110",
   "level": "2",
-  "url": "section-43.html#exercise-110",
+  "url": "section-40.html#exercise-110",
   "type": "Exercício",
-  "number": "6.8.1",
+  "number": "6.6.4",
   "title": "",
-  "body": " Encontre a transformação linear tal que:   Encontre tal que .  "
+  "body": " Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.   "
 },
 {
   "id": "exercise-111",
   "level": "2",
-  "url": "section-43.html#exercise-111",
+  "url": "section-40.html#exercise-111",
   "type": "Exercício",
-  "number": "6.8.2",
+  "number": "6.6.5",
   "title": "",
-  "body": "   (i) Determine a transformação linear tal que   Calcule e .    (ii) Determine a transformação tal que     (iii) Determine a transformação linear tal que .    "
+  "body": "   Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)   "
 },
 {
   "id": "exercise-112",
   "level": "2",
-  "url": "section-43.html#exercise-112",
+  "url": "section-40.html#exercise-112",
   "type": "Exercício",
-  "number": "6.8.3",
+  "number": "6.6.6",
   "title": "",
-  "body": " Dados transformação linear injetiva. Mostre que se é um conjunto L.I., então também o é.  "
+  "body": " Mostre que a matriz   é semelhante à matriz   "
 },
 {
   "id": "exercise-113",
   "level": "2",
-  "url": "section-43.html#exercise-113",
+  "url": "section-40.html#exercise-113",
   "type": "Exercício",
-  "number": "6.8.4",
+  "number": "6.6.7",
   "title": "",
-  "body": " Dada uma transformação linear tal que e calcule em função de e :   (i)  (ii)  (iii)   "
+  "body": "   Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .   "
 },
 {
   "id": "exercise-114",
   "level": "2",
-  "url": "section-43.html#exercise-114",
+  "url": "section-40.html#exercise-114",
   "type": "Exercício",
-  "number": "6.8.5",
+  "number": "6.6.8",
   "title": "",
-  "body": " Determine uma transformação linear tal que   "
+  "body": " Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.   "
 },
 {
   "id": "exercise-115",
   "level": "2",
-  "url": "section-43.html#exercise-115",
+  "url": "section-40.html#exercise-115",
   "type": "Exercício",
-  "number": "6.8.6",
+  "number": "6.6.9",
   "title": "",
-  "body": " Mostre que as seguintes transformações lineares são sobrejetivas.   (i)  (ii)  (iii)   "
+  "body": " Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.   "
 },
 {
   "id": "exercise-116",
   "level": "2",
-  "url": "section-43.html#exercise-116",
+  "url": "section-40.html#exercise-116",
   "type": "Exercício",
-  "number": "6.8.7",
+  "number": "6.6.10",
   "title": "",
-  "body": " Encontre uma transformação linear tal que .  "
-},
-{
-  "id": "exercise-117",
-  "level": "2",
-  "url": "section-43.html#exercise-117",
-  "type": "Exercício",
-  "number": "6.8.8",
-  "title": "",
-  "body": " Encontre uma transformação linear cuja imagem é gerada por e .  "
-},
-{
-  "id": "exercise-118",
-  "level": "2",
-  "url": "section-43.html#exercise-118",
-  "type": "Exercício",
-  "number": "6.8.9",
-  "title": "",
-  "body": " Considere a transformação linear descrita por:    (i) Determine , onde é a base canônica de ;  (ii) Determine uma base do núcleo de ;  (iii) Determine a dimensão da imagem de ;  (iv) é sobrejetiva?   "
-},
-{
-  "id": "exercise-119",
-  "level": "2",
-  "url": "section-43.html#exercise-119",
-  "type": "Exercício",
-  "number": "6.8.10",
-  "title": "",
-  "body": " Determine se as seguintes afirmações são verdadeiras ou falsas.   (i) Se é tal que , então ;  (ii) Se , então ;  (iii) Se é combinação linear de , então é combinação linear de .   "
-},
-{
-  "id": "exercise-120",
-  "level": "2",
-  "url": "section-43.html#exercise-120",
-  "type": "Exercício",
-  "number": "6.8.11",
-  "title": "",
-  "body": " Dados os vetores .  Determine se existe uma transformação linear tal que .  "
-},
-{
-  "id": "exercise-121",
-  "level": "2",
-  "url": "section-43.html#exercise-121",
-  "type": "Exercício",
-  "number": "6.8.12",
-  "title": "",
-  "body": " Considere tal que e . Determine a matriz da transformação associada às bases canônicas de e .  "
-},
-{
-  "id": "exercise-122",
-  "level": "2",
-  "url": "section-43.html#exercise-122",
-  "type": "Exercício",
-  "number": "6.8.13",
-  "title": "",
-  "body": " Determine a matriz do operador derivada relativamente à base canônica .  "
-},
-{
-  "id": "exercise-123",
-  "level": "2",
-  "url": "section-43.html#exercise-123",
-  "type": "Exercício",
-  "number": "6.8.14",
-  "title": "",
-  "body": " Sejam e transformações lineares de em . Considere a base canônica do . Se   determine tal que .  "
-},
-{
-  "id": "exercise-124",
-  "level": "2",
-  "url": "section-43.html#exercise-124",
-  "type": "Exercício",
-  "number": "6.8.15",
-  "title": "",
-  "body": " Se e . Considere e são as bases canônicas de e respectivamente, determine:   (i) ;  (ii) ;  (iii) e explicitamente.   "
-},
-{
-  "id": "exercise-125",
-  "level": "2",
-  "url": "section-43.html#exercise-125",
-  "type": "Exercício",
-  "number": "6.8.16",
-  "title": "",
-  "body": " Seja e considere a base canônica deste espaço descrita por   Seja descrita por     (i) Encontre , onde é a base canônica do espaço .    (ii) Se é tal que , determine explicitamente e, se possível, tal que .    "
-},
-{
-  "id": "exercise-126",
-  "level": "2",
-  "url": "section-43.html#exercise-126",
-  "type": "Exercício",
-  "number": "6.8.17",
-  "title": "",
-  "body": " Sejam e bases de e respectivamente. Se   determine explicitamente.  "
+  "body": " Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?  "
 }
 ]
 
