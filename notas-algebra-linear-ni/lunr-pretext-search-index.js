@@ -2923,7 +2923,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "6.1",
   "title": "Autovalores e Autovetores",
-  "body": " Autovalores e Autovetores   Autovetor de um Operador Linear   Seja um espaço vetorial Salvo menção em contrário, todos os espaços vetoriais considerados neste material possuem dimensão finita e estão sobre o corpo dos reais. e um operador linear. Dizemos que um vetor não-nulo é um autovetor de se existir tal que   O escalar é chamado de autovalor de associado ao autovetor .     O vetor nulo, por definição, não é autovetor de nenhuma matriz.     Seja dado por   Determine se os seguintes vetores abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)  (iii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Se , então   Logo, é autovetor com autovalor associado .    (ii) Se , então   Logo, é autovetor com autovalor associado .    (iii) Se , então   Logo, não existe tal que .       Autovetor de uma Matriz   Seja uma matriz Salvo menção em contrário, todas as matrizes consideradas neste material terão entradas reais . Dizemos que um vetor não-nulo é um autovetor de se existir tal que   O escalar é chamado de autovalor de associado ao autovetor .     O vetor nulo, por definição, não é autovetor de nenhuma matriz.     Seja dada por   Determine se os seguintes vetores coluna abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Sendo ,   Logo, é autovetor de com autovalor associado .    (ii) Sendo ,   Logo, não é autovetor de .       Propriedades dos autovetores   Propriedades dos autovetores   Seja espaço vetorial, operador linear e um autovalor de . Então,    (i) se e são autovetores de associados à , então também é autovetor associado à .   Com efeito, .     (ii) se é autovetor de associado à e , então também é autovetor associado à .   De fato, .        Autoespaço associado a um autovalor   Sejam espaço vetorial, operador linear e um autovalor de . Definimos o autoespaço de T associado à como o conjunto      O autoespaço contém, além do vetor nulo, os autovetores de associados à . Segue das propriedades dos autovetores, (i) e (ii), que é um subespaço vetorial Um subespaço vetorial  de é qualquer subconjunto tal que e para todos e todos . de .     Multiplicidades algébrica e geométrica   Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .       Mostraremos adiante que para todo autovalor de , vale      Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .     "
+  "body": " Autovalores e Autovetores   Autovetor de um Operador Linear   Seja um espaço vetorial Salvo menção em contrário, todos os espaços vetoriais considerados neste material possuem dimensão finita e estão sobre o corpo dos reais. e um operador linear. Dizemos que um vetor não-nulo é um autovetor de se existir tal que   O escalar é chamado de autovalor de associado ao autovetor .     O vetor nulo, por definição, não é autovetor de nenhuma matriz.     Seja dado por   Determine se os seguintes vetores abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)  (iii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Se , então   Logo, é autovetor com autovalor associado .    (ii) Se , então   Logo, é autovetor com autovalor associado .    (iii) Se , então   Logo, não existe tal que .       Autovetor de uma Matriz   Seja uma matriz Salvo menção em contrário, todas as matrizes consideradas neste material terão entradas reais . Dizemos que um vetor não-nulo é um autovetor de se existir tal que   O escalar é chamado de autovalor de associado ao autovetor .     O vetor nulo, por definição, não é autovetor de nenhuma matriz.     Seja dada por   Determine se os seguintes vetores coluna abaixo são autovetores de . Em caso afirmativo, exiba o autovalor associado.   (i)  (ii)     Basta verificar a definição para cada um dos vetores dados. Vejamos:    (i) Sendo ,   Logo, é autovetor de com autovalor associado .    (ii) Sendo ,   Logo, não é autovetor de .       Propriedades dos autovetores   Propriedades dos autovetores   Seja espaço vetorial, operador linear e um autovalor de . Então,    (i) se e são autovetores de associados à , então também é autovetor associado à .   Com efeito, .     (ii) se é autovetor de associado à e , então também é autovetor associado à .   De fato, .        Autoespaço associado a um autovalor   Sejam espaço vetorial, operador linear e um autovalor de . Definimos o autoespaço de T associado à como o conjunto      O autoespaço contém, além do vetor nulo, os autovetores de associados à . Segue das propriedades dos autovetores, (i) e (ii), que é um subespaço vetorial Um subespaço vetorial  de é qualquer subconjunto tal que e para todos e todos . de .    "
 },
 {
   "id": "definition-38",
@@ -3007,63 +3007,36 @@ var ptx_lunr_docs = [
   "body": " O autoespaço contém, além do vetor nulo, os autovetores de associados à . Segue das propriedades dos autovetores, (i) e (ii), que é um subespaço vetorial Um subespaço vetorial  de é qualquer subconjunto tal que e para todos e todos . de .  "
 },
 {
-  "id": "definition-41",
-  "level": "2",
-  "url": "section-35.html#definition-41",
-  "type": "Definição",
-  "number": "6.1.10",
-  "title": "Multiplicidades algébrica e geométrica.",
-  "body": " Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .     "
-},
-{
-  "id": "remark-44",
-  "level": "2",
-  "url": "section-35.html#remark-44",
-  "type": "Nota",
-  "number": "6.1.11",
-  "title": "",
-  "body": " Mostraremos adiante que para todo autovalor de , vale   "
-},
-{
-  "id": "example-71",
-  "level": "2",
-  "url": "section-35.html#example-71",
-  "type": "Exemplo",
-  "number": "6.1.12",
-  "title": "",
-  "body": "  Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .   "
-},
-{
   "id": "section-36",
   "level": "1",
   "url": "section-36.html",
   "type": "Seção",
   "number": "6.2",
   "title": "Polinômio característico",
-  "body": " Polinômio característico   Polinômio característico de um operador linear   Sejam um espaço vetorial de dimensão e um operador linear. O polinômio característico associado à é definido por   onde é base de e é a matriz identidade .     Pode-se mostrar que a definição acima independe da escolha da base para .    Observações  As seguintes propriedades decorrem diretamente da definição de polinômio característico e das propriedades dos determinantes:    O polinômio característico é mônico Um polinômio é dito mônico se .    O grau de é igual a .    O termo independente de é igual a .       Considere o operador linear dado por   Calcule o polinômio característico de .    Seja a base canônica de . A matriz de com relação à é dada por   Logo,   Assim,   Resulta que   Portanto, o polinômio característico de é dado por      Polinômio característico de uma matriz   Seja . O polinômio característico associado à é definido por   onde é a matriz identidade .     Pode-se mostrar que duas matrizes semelhantes Duas matrizes são ditas semelhantes se existir matriz inversível tal que . possuem o mesmo polinômio característico.     Considere a matriz dada por   Calcule o polinômio característico de .    Note que   Logo, o polinômio característico de é   Calculando o determinante, vem que   Portanto, o polinômio característico de é       Sejam espaço vetorial e operador linear com polinômio característico associado .  Então, é autovalor de se, e somente se, é raiz de .     O continua válido para matrizes.     Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .      "
+  "body": " Polinômio característico   Polinômio característico de um operador linear   Sejam um espaço vetorial de dimensão e um operador linear. O polinômio característico associado à é definido por   onde é base de e é a matriz identidade .     Pode-se mostrar que a definição acima independe da escolha da base para .    Observações  As seguintes propriedades decorrem diretamente da definição de polinômio característico e das propriedades dos determinantes:    O polinômio característico é mônico Um polinômio é dito mônico se .    O grau de é igual a .    O termo independente de é igual a .       Considere o operador linear dado por   Calcule o polinômio característico de .    Seja a base canônica de . A matriz de com relação à é dada por   Logo,   Assim,   Resulta que   Portanto, o polinômio característico de é dado por      Polinômio característico de uma matriz   Seja . O polinômio característico associado à é definido por   onde é a matriz identidade .     Pode-se mostrar que duas matrizes semelhantes Duas matrizes são ditas semelhantes se existir matriz inversível tal que . possuem o mesmo polinômio característico.     Considere a matriz dada por   Calcule o polinômio característico de .    Note que   Logo, o polinômio característico de é   Calculando o determinante, vem que   Portanto, o polinômio característico de é       Sejam espaço vetorial e operador linear com polinômio característico associado .  Então, é autovalor de se, e somente se, é raiz de .     O continua válido para matrizes.     Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .       Multiplicidades algébrica e geométrica   Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .       Mostraremos adiante que para todo autovalor de , vale      Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .     "
 },
 {
-  "id": "definition-42",
+  "id": "definition-41",
   "level": "2",
-  "url": "section-36.html#definition-42",
+  "url": "section-36.html#definition-41",
   "type": "Definição",
   "number": "6.2.1",
   "title": "Polinômio característico de um operador linear.",
   "body": " Polinômio característico de um operador linear   Sejam um espaço vetorial de dimensão e um operador linear. O polinômio característico associado à é definido por   onde é base de e é a matriz identidade .   "
 },
 {
-  "id": "remark-45",
+  "id": "remark-44",
   "level": "2",
-  "url": "section-36.html#remark-45",
+  "url": "section-36.html#remark-44",
   "type": "Nota",
   "number": "6.2.2",
   "title": "",
   "body": " Pode-se mostrar que a definição acima independe da escolha da base para .  "
 },
 {
-  "id": "remark-46",
+  "id": "remark-45",
   "level": "2",
-  "url": "section-36.html#remark-46",
+  "url": "section-36.html#remark-45",
   "type": "Nota",
   "number": "6.2.3",
   "title": "Observações.",
@@ -3079,18 +3052,18 @@ var ptx_lunr_docs = [
   "body": "  Considere o operador linear dado por   Calcule o polinômio característico de .    Seja a base canônica de . A matriz de com relação à é dada por   Logo,   Assim,   Resulta que   Portanto, o polinômio característico de é dado por    "
 },
 {
-  "id": "definition-43",
+  "id": "definition-42",
   "level": "2",
-  "url": "section-36.html#definition-43",
+  "url": "section-36.html#definition-42",
   "type": "Definição",
   "number": "6.2.5",
   "title": "Polinômio característico de uma matriz.",
   "body": " Polinômio característico de uma matriz   Seja . O polinômio característico associado à é definido por   onde é a matriz identidade .   "
 },
 {
-  "id": "remark-47",
+  "id": "remark-46",
   "level": "2",
-  "url": "section-36.html#remark-47",
+  "url": "section-36.html#remark-46",
   "type": "Nota",
   "number": "6.2.6",
   "title": "",
@@ -3115,9 +3088,9 @@ var ptx_lunr_docs = [
   "body": "  Sejam espaço vetorial e operador linear com polinômio característico associado .  Então, é autovalor de se, e somente se, é raiz de .   "
 },
 {
-  "id": "remark-48",
+  "id": "remark-47",
   "level": "2",
-  "url": "section-36.html#remark-48",
+  "url": "section-36.html#remark-47",
   "type": "Nota",
   "number": "6.2.9",
   "title": "",
@@ -3131,6 +3104,33 @@ var ptx_lunr_docs = [
   "number": "6.2.10",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .     "
+},
+{
+  "id": "definition-43",
+  "level": "2",
+  "url": "section-36.html#definition-43",
+  "type": "Definição",
+  "number": "6.2.11",
+  "title": "Multiplicidades algébrica e geométrica.",
+  "body": " Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .     "
+},
+{
+  "id": "remark-48",
+  "level": "2",
+  "url": "section-36.html#remark-48",
+  "type": "Nota",
+  "number": "6.2.12",
+  "title": "",
+  "body": " Mostraremos adiante que para todo autovalor de , vale   "
+},
+{
+  "id": "example-74",
+  "level": "2",
+  "url": "section-36.html#example-74",
+  "type": "Exemplo",
+  "number": "6.2.13",
+  "title": "",
+  "body": "  Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .   "
 },
 {
   "id": "section-37",
