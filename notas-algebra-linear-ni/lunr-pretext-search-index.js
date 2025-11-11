@@ -3464,6 +3464,159 @@ var ptx_lunr_docs = [
   "number": "6.6.10",
   "title": "",
   "body": " Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?  "
+},
+{
+  "id": "sec-avaliacao-polinomio-operador",
+  "level": "1",
+  "url": "sec-avaliacao-polinomio-operador.html",
+  "type": "Seção",
+  "number": "6.7",
+  "title": "Avaliação de um polinômio em um operador linear",
+  "body": " Avaliação de um polinômio em um operador linear    Considere um polinômio Aqui denota o anel de polinômios com coeficientes reais.  dado por Se é operador linear, então definimos o operador por onde e é o operador identidade, definido por para todo . Tem-se, para todo ,       Seja dado por . Determine o operador , onde .    Como , vem que Logo, Assim, é o operador .     Avaliação de um polinômio em uma matriz   Considere um polinômio dado por Seja . Definimos a matriz pondo onde e é a matriz identidade.      Seja dada por Calcule onde .    Sendo , então Logo,       Sejam um operador linear e . Então, onde é uma base de .      Seja dado por . Determine o operador , onde .    Seja a base canônica de . Então, Pelo Teorema 13.1, Logo, é dado por .      Sejam , e . Então,           O também pode ser enunciado no contexto de operadores lineares.    (Teorema de Cayley-Hamilton)   Seja operador linear. Se é o polinômio característico de , então .    O Teorema de Cayley-Hamilton também pode ser apresentado na forma matricial.    "
+},
+{
+  "id": "definition-46",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#definition-46",
+  "type": "Definição",
+  "number": "6.7.1",
+  "title": "",
+  "body": "  Considere um polinômio Aqui denota o anel de polinômios com coeficientes reais.  dado por Se é operador linear, então definimos o operador por onde e é o operador identidade, definido por para todo . Tem-se, para todo ,    "
+},
+{
+  "id": "ex-13-1",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#ex-13-1",
+  "type": "Exemplo",
+  "number": "6.7.2",
+  "title": "",
+  "body": "  Seja dado por . Determine o operador , onde .    Como , vem que Logo, Assim, é o operador .   "
+},
+{
+  "id": "def-avaliacao-polinomio-matriz",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#def-avaliacao-polinomio-matriz",
+  "type": "Definição",
+  "number": "6.7.3",
+  "title": "Avaliação de um polinômio em uma matriz.",
+  "body": " Avaliação de um polinômio em uma matriz   Considere um polinômio dado por Seja . Definimos a matriz pondo onde e é a matriz identidade.   "
+},
+{
+  "id": "ex-13-2",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#ex-13-2",
+  "type": "Exemplo",
+  "number": "6.7.4",
+  "title": "",
+  "body": "  Seja dada por Calcule onde .    Sendo , então Logo,    "
+},
+{
+  "id": "thm-13-1",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#thm-13-1",
+  "type": "Teorema",
+  "number": "6.7.5",
+  "title": "",
+  "body": "  Sejam um operador linear e . Então, onde é uma base de .   "
+},
+{
+  "id": "ex-13-3",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#ex-13-3",
+  "type": "Exemplo",
+  "number": "6.7.6",
+  "title": "",
+  "body": "  Seja dado por . Determine o operador , onde .    Seja a base canônica de . Então, Pelo Teorema 13.1, Logo, é dado por .   "
+},
+{
+  "id": "thm-13-2",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#thm-13-2",
+  "type": "Teorema",
+  "number": "6.7.7",
+  "title": "",
+  "body": "  Sejam , e . Então,         "
+},
+{
+  "id": "remark-50",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#remark-50",
+  "type": "Nota",
+  "number": "6.7.8",
+  "title": "",
+  "body": " O também pode ser enunciado no contexto de operadores lineares.  "
+},
+{
+  "id": "thm-cayley-hamilton",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#thm-cayley-hamilton",
+  "type": "Teorema",
+  "number": "6.7.9",
+  "title": "(Teorema de Cayley-Hamilton).",
+  "body": " (Teorema de Cayley-Hamilton)   Seja operador linear. Se é o polinômio característico de , então .    O Teorema de Cayley-Hamilton também pode ser apresentado na forma matricial.   "
+},
+{
+  "id": "sec-polinomio-minimo",
+  "level": "1",
+  "url": "sec-polinomio-minimo.html",
+  "type": "Seção",
+  "number": "6.8",
+  "title": "O polinômio mínimo",
+  "body": " O polinômio mínimo   O polinômio mínimo de um operador linear   Seja um operador linear. O polinômio mínimo de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .      A definição de um polinômio mínimo de uma matriz é análoga e será omitida aqui.     Seja o polinômio mínimo e o polinômio característico de um operador linear . Então, divide .      Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .    Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.     Observações  Sejam e o polinômio característico e o polinômio mínimo de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo Teorema 13.5, e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então      Seja dado por Determine o polinômio mínimo de .    Vimos, no Exemplo 1.3, que o polinômio característico de é Assim, temos duas possibilidades para o polinômio mínimo de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio mínimo de .    "
+},
+{
+  "id": "def-polinomio-minimo-operador",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#def-polinomio-minimo-operador",
+  "type": "Definição",
+  "number": "6.8.1",
+  "title": "O polinômio mínimo de um operador linear.",
+  "body": " O polinômio mínimo de um operador linear   Seja um operador linear. O polinômio mínimo de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .    "
+},
+{
+  "id": "remark-52",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#remark-52",
+  "type": "Nota",
+  "number": "6.8.3",
+  "title": "",
+  "body": " A definição de um polinômio mínimo de uma matriz é análoga e será omitida aqui.  "
+},
+{
+  "id": "thm-13-4",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#thm-13-4",
+  "type": "Teorema",
+  "number": "6.8.4",
+  "title": "",
+  "body": "  Seja o polinômio mínimo e o polinômio característico de um operador linear . Então, divide .   "
+},
+{
+  "id": "thm-13-5",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#thm-13-5",
+  "type": "Teorema",
+  "number": "6.8.5",
+  "title": "",
+  "body": "  Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .    Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.   "
+},
+{
+  "id": "remark-54",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#remark-54",
+  "type": "Nota",
+  "number": "6.8.7",
+  "title": "Observações.",
+  "body": " Observações  Sejam e o polinômio característico e o polinômio mínimo de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo Teorema 13.5, e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então   "
+},
+{
+  "id": "ex-13-4",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#ex-13-4",
+  "type": "Exemplo",
+  "number": "6.8.8",
+  "title": "",
+  "body": "  Seja dado por Determine o polinômio mínimo de .    Vimos, no Exemplo 1.3, que o polinômio característico de é Assim, temos duas possibilidades para o polinômio mínimo de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio mínimo de .   "
 }
 ]
 
