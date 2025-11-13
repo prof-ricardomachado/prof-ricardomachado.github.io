@@ -19,16 +19,12 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </head>
 <body class="ignore-math">
 <article class="technology computation-like"><h3 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">4.12.6</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">6.7.9</span><span class="period">.</span>
 </h3>
-<div class="para">Obtendo a matriz de mudança de base:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">V = SR^2             # trocar para SR^3 se for R^3
-B1 = [(1,0),(0,1)]   # trocar aqui, Base B'
-B2 = [(2,-1),(3,4)]  # trocar aqui, Base B
-V = V.subspace_with_basis(B1)
-W = V.subspace_with_basis(B2)
-s(x,y) = [x,y]       # adicionar z se for R^3
-T = linear_transformation(W, V, s)
-show(T.matrix(side='right'))
-</script></pre></article><span class="incontext"><a href="section-29.html#technology-24" class="internal">em contexto</a></span>
+<div class="para">Obtendo o polinômio minimal</div> <pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">x,y,z = var('x, y, z')
+s(x,y,z) = (2*x-z, 2*y+2*z, -z)
+T = linear_transformation(QQ^3, QQ^3, s)
+T.minpoly().factor()
+</script></pre></article><span class="incontext"><a href="sec-polinomio-minimo.html#technology-24" class="internal">em contexto</a></span>
 </body>
 </html>

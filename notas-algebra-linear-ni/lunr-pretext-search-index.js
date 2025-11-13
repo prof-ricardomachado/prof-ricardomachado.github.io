@@ -3367,119 +3367,20 @@ var ptx_lunr_docs = [
   "body": "  Seja dado por   Determine se é diagonalizável.    Seja base canônica do . A matriz de com relação à é   Segue que o polinômio característico de é   ou seja,   Pelo Teorema 1.1, é o único autovalor de . Logo, será diagonalizável se .  Os autovetores associados à são os vetores não nulos tais que de , o que fornece o sistema   O sistema acima equivale à . Assim, o autoespaço associado à é   Portanto, . Logo, não é diagonalizável.   "
 },
 {
-  "id": "section-40",
-  "level": "1",
-  "url": "section-40.html",
-  "type": "Seção",
-  "number": "6.6",
-  "title": "Exercícios",
-  "body": " Exercícios    Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.    Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?     Para quais valores de a as matrizes abaixo são diagonalizáveis?        Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.       Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)     Mostre que a matriz   é semelhante à matriz       Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .     Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.     Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.       Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?     "
-},
-{
-  "id": "exercise-107",
-  "level": "2",
-  "url": "section-40.html#exercise-107",
-  "type": "Exercício",
-  "number": "6.6.1",
-  "title": "",
-  "body": " Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.  "
-},
-{
-  "id": "exercise-108",
-  "level": "2",
-  "url": "section-40.html#exercise-108",
-  "type": "Exercício",
-  "number": "6.6.2",
-  "title": "",
-  "body": " Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?   "
-},
-{
-  "id": "exercise-109",
-  "level": "2",
-  "url": "section-40.html#exercise-109",
-  "type": "Exercício",
-  "number": "6.6.3",
-  "title": "",
-  "body": " Para quais valores de a as matrizes abaixo são diagonalizáveis?      "
-},
-{
-  "id": "exercise-110",
-  "level": "2",
-  "url": "section-40.html#exercise-110",
-  "type": "Exercício",
-  "number": "6.6.4",
-  "title": "",
-  "body": " Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.   "
-},
-{
-  "id": "exercise-111",
-  "level": "2",
-  "url": "section-40.html#exercise-111",
-  "type": "Exercício",
-  "number": "6.6.5",
-  "title": "",
-  "body": "   Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)   "
-},
-{
-  "id": "exercise-112",
-  "level": "2",
-  "url": "section-40.html#exercise-112",
-  "type": "Exercício",
-  "number": "6.6.6",
-  "title": "",
-  "body": " Mostre que a matriz   é semelhante à matriz   "
-},
-{
-  "id": "exercise-113",
-  "level": "2",
-  "url": "section-40.html#exercise-113",
-  "type": "Exercício",
-  "number": "6.6.7",
-  "title": "",
-  "body": "   Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .   "
-},
-{
-  "id": "exercise-114",
-  "level": "2",
-  "url": "section-40.html#exercise-114",
-  "type": "Exercício",
-  "number": "6.6.8",
-  "title": "",
-  "body": " Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.   "
-},
-{
-  "id": "exercise-115",
-  "level": "2",
-  "url": "section-40.html#exercise-115",
-  "type": "Exercício",
-  "number": "6.6.9",
-  "title": "",
-  "body": " Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.   "
-},
-{
-  "id": "exercise-116",
-  "level": "2",
-  "url": "section-40.html#exercise-116",
-  "type": "Exercício",
-  "number": "6.6.10",
-  "title": "",
-  "body": " Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?  "
-},
-{
   "id": "sec-avaliacao-polinomio-operador",
   "level": "1",
   "url": "sec-avaliacao-polinomio-operador.html",
   "type": "Seção",
-  "number": "6.7",
+  "number": "6.6",
   "title": "Avaliação de um polinômio em um operador linear",
-  "body": " Avaliação de um polinômio em um operador linear    Considere um polinômio Aqui denota o anel de polinômios com coeficientes reais.  dado por Se é operador linear, então definimos o operador por onde e é o operador identidade, definido por para todo . Tem-se, para todo ,       Seja dado por . Determine o operador , onde .    Como , vem que Logo, Assim, é o operador .     Avaliação de um polinômio em uma matriz   Considere um polinômio dado por Seja . Definimos a matriz pondo onde e é a matriz identidade.      Seja dada por Calcule onde .    Sendo , então Logo,       Sejam um operador linear e . Então, onde é uma base de .      Seja dado por . Determine o operador , onde .    Seja a base canônica de . Então, Pelo Teorema 13.1, Logo, é dado por .      Sejam , e . Então,           O também pode ser enunciado no contexto de operadores lineares.    (Teorema de Cayley-Hamilton)   Seja operador linear. Se é o polinômio característico de , então .    O Teorema de Cayley-Hamilton também pode ser apresentado na forma matricial.    "
+  "body": " Avaliação de um polinômio em um operador linear    Considere um polinômio Aqui denota o anel de polinômios com coeficientes reais.  dado por Se é operador linear, então definimos o operador por onde e é o operador identidade, definido por para todo . Tem-se, para todo ,       Seja dado por . Determine o operador , onde .    Como , vem que Logo, Assim, é o operador .     Avaliação de um polinômio em uma matriz   Considere um polinômio dado por Seja . Definimos a matriz pondo onde e é a matriz identidade.      Seja dada por Calcule onde .    Sendo , então Logo,       Sejam um operador linear e . Então, onde é uma base de .      Seja dado por . Determine o operador , onde .    Seja a base canônica de . Então, Pelo , Logo, é dado por .      Sejam , e . Então,           O também pode ser enunciado no contexto de operadores lineares.    (Teorema de Cayley-Hamilton)   Seja operador linear. Se é o polinômio característico de , então .     O Teorema de Cayley-Hamilton também pode ser apresentado na forma matricial.   "
 },
 {
   "id": "definition-46",
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#definition-46",
   "type": "Definição",
-  "number": "6.7.1",
+  "number": "6.6.1",
   "title": "",
   "body": "  Considere um polinômio Aqui denota o anel de polinômios com coeficientes reais.  dado por Se é operador linear, então definimos o operador por onde e é o operador identidade, definido por para todo . Tem-se, para todo ,    "
 },
@@ -3488,7 +3389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#ex-13-1",
   "type": "Exemplo",
-  "number": "6.7.2",
+  "number": "6.6.2",
   "title": "",
   "body": "  Seja dado por . Determine o operador , onde .    Como , vem que Logo, Assim, é o operador .   "
 },
@@ -3497,7 +3398,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#def-avaliacao-polinomio-matriz",
   "type": "Definição",
-  "number": "6.7.3",
+  "number": "6.6.3",
   "title": "Avaliação de um polinômio em uma matriz.",
   "body": " Avaliação de um polinômio em uma matriz   Considere um polinômio dado por Seja . Definimos a matriz pondo onde e é a matriz identidade.   "
 },
@@ -3506,7 +3407,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#ex-13-2",
   "type": "Exemplo",
-  "number": "6.7.4",
+  "number": "6.6.4",
   "title": "",
   "body": "  Seja dada por Calcule onde .    Sendo , então Logo,    "
 },
@@ -3515,7 +3416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#thm-13-1",
   "type": "Teorema",
-  "number": "6.7.5",
+  "number": "6.6.5",
   "title": "",
   "body": "  Sejam um operador linear e . Então, onde é uma base de .   "
 },
@@ -3524,16 +3425,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#ex-13-3",
   "type": "Exemplo",
-  "number": "6.7.6",
+  "number": "6.6.6",
   "title": "",
-  "body": "  Seja dado por . Determine o operador , onde .    Seja a base canônica de . Então, Pelo Teorema 13.1, Logo, é dado por .   "
+  "body": "  Seja dado por . Determine o operador , onde .    Seja a base canônica de . Então, Pelo , Logo, é dado por .   "
 },
 {
   "id": "thm-13-2",
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#thm-13-2",
   "type": "Teorema",
-  "number": "6.7.7",
+  "number": "6.6.7",
   "title": "",
   "body": "  Sejam , e . Então,         "
 },
@@ -3542,7 +3443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#remark-50",
   "type": "Nota",
-  "number": "6.7.8",
+  "number": "6.6.8",
   "title": "",
   "body": " O também pode ser enunciado no contexto de operadores lineares.  "
 },
@@ -3551,72 +3452,225 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-avaliacao-polinomio-operador.html#thm-cayley-hamilton",
   "type": "Teorema",
-  "number": "6.7.9",
+  "number": "6.6.9",
   "title": "(Teorema de Cayley-Hamilton).",
-  "body": " (Teorema de Cayley-Hamilton)   Seja operador linear. Se é o polinômio característico de , então .    O Teorema de Cayley-Hamilton também pode ser apresentado na forma matricial.   "
+  "body": " (Teorema de Cayley-Hamilton)   Seja operador linear. Se é o polinômio característico de , então .   "
+},
+{
+  "id": "remark-51",
+  "level": "2",
+  "url": "sec-avaliacao-polinomio-operador.html#remark-51",
+  "type": "Nota",
+  "number": "6.6.10",
+  "title": "",
+  "body": " O Teorema de Cayley-Hamilton também pode ser apresentado na forma matricial.  "
 },
 {
   "id": "sec-polinomio-minimo",
   "level": "1",
   "url": "sec-polinomio-minimo.html",
   "type": "Seção",
-  "number": "6.8",
-  "title": "O polinômio mínimo",
-  "body": " O polinômio mínimo   O polinômio mínimo de um operador linear   Seja um operador linear. O polinômio mínimo de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .      A definição de um polinômio mínimo de uma matriz é análoga e será omitida aqui.     Seja o polinômio mínimo e o polinômio característico de um operador linear . Então, divide .      Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .    Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.     Observações  Sejam e o polinômio característico e o polinômio mínimo de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo Teorema 13.5, e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então      Seja dado por Determine o polinômio mínimo de .    Vimos, no Exemplo 1.3, que o polinômio característico de é Assim, temos duas possibilidades para o polinômio mínimo de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio mínimo de .    "
+  "number": "6.7",
+  "title": "O polinômio minimal",
+  "body": " O polinômio minimal   O polinômio minimal de um operador linear   Seja um operador linear. O polinômio minimal de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .      A definição de um polinômio minimal de uma matriz é análoga e será omitida aqui.     Seja o polinômio minimal e o polinômio característico de um operador linear . Então, divide .      Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .  Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.     Observações  Sejam e o polinômio característico e o polinômio minimal de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo , e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então      Seja dado por Determine o polinômio minimal de .    Vimos, no , que o polinômio característico de é Assim, temos duas possibilidades para o polinômio minimal de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio minimal de .     Sejam todos os autovalores distintos de um operador linear . Então, será diagonalizável se, e somente se, o polinômio anular (ou a a matriz de ).    Seja definido por . é diagonalizável?    Obtendo o polinômio minimal     Obtendo a matriz de um operador linear em relação a base canônica.     Obtendo as matrizes e , tais que    "
 },
 {
   "id": "def-polinomio-minimo-operador",
   "level": "2",
   "url": "sec-polinomio-minimo.html#def-polinomio-minimo-operador",
   "type": "Definição",
-  "number": "6.8.1",
-  "title": "O polinômio mínimo de um operador linear.",
-  "body": " O polinômio mínimo de um operador linear   Seja um operador linear. O polinômio mínimo de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .    "
+  "number": "6.7.1",
+  "title": "O polinômio minimal de um operador linear.",
+  "body": " O polinômio minimal de um operador linear   Seja um operador linear. O polinômio minimal de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .    "
 },
 {
   "id": "remark-52",
   "level": "2",
   "url": "sec-polinomio-minimo.html#remark-52",
   "type": "Nota",
-  "number": "6.8.3",
+  "number": "6.7.2",
   "title": "",
-  "body": " A definição de um polinômio mínimo de uma matriz é análoga e será omitida aqui.  "
+  "body": " A definição de um polinômio minimal de uma matriz é análoga e será omitida aqui.  "
 },
 {
   "id": "thm-13-4",
   "level": "2",
   "url": "sec-polinomio-minimo.html#thm-13-4",
   "type": "Teorema",
-  "number": "6.8.4",
+  "number": "6.7.3",
   "title": "",
-  "body": "  Seja o polinômio mínimo e o polinômio característico de um operador linear . Então, divide .   "
+  "body": "  Seja o polinômio minimal e o polinômio característico de um operador linear . Então, divide .   "
 },
 {
   "id": "thm-13-5",
   "level": "2",
   "url": "sec-polinomio-minimo.html#thm-13-5",
   "type": "Teorema",
-  "number": "6.8.5",
+  "number": "6.7.4",
   "title": "",
-  "body": "  Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .    Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.   "
+  "body": "  Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .  Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.   "
 },
 {
-  "id": "remark-54",
+  "id": "remark-53",
   "level": "2",
-  "url": "sec-polinomio-minimo.html#remark-54",
+  "url": "sec-polinomio-minimo.html#remark-53",
   "type": "Nota",
-  "number": "6.8.7",
+  "number": "6.7.5",
   "title": "Observações.",
-  "body": " Observações  Sejam e o polinômio característico e o polinômio mínimo de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo Teorema 13.5, e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então   "
+  "body": " Observações  Sejam e o polinômio característico e o polinômio minimal de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo , e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então   "
 },
 {
   "id": "ex-13-4",
   "level": "2",
   "url": "sec-polinomio-minimo.html#ex-13-4",
   "type": "Exemplo",
+  "number": "6.7.6",
+  "title": "",
+  "body": "  Seja dado por Determine o polinômio minimal de .    Vimos, no , que o polinômio característico de é Assim, temos duas possibilidades para o polinômio minimal de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio minimal de .   "
+},
+{
+  "id": "theorem-33",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#theorem-33",
+  "type": "Teorema",
+  "number": "6.7.7",
+  "title": "",
+  "body": " Sejam todos os autovalores distintos de um operador linear . Então, será diagonalizável se, e somente se, o polinômio anular (ou a a matriz de ).  "
+},
+{
+  "id": "example-83",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#example-83",
+  "type": "Exemplo",
+  "number": "6.7.8",
+  "title": "",
+  "body": " Seja definido por . é diagonalizável?  "
+},
+{
+  "id": "technology-24",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#technology-24",
+  "type": "Tecnologia",
+  "number": "6.7.9",
+  "title": "",
+  "body": " Obtendo o polinômio minimal   "
+},
+{
+  "id": "technology-25",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#technology-25",
+  "type": "Tecnologia",
+  "number": "6.7.10",
+  "title": "",
+  "body": " Obtendo a matriz de um operador linear em relação a base canônica.   "
+},
+{
+  "id": "technology-26",
+  "level": "2",
+  "url": "sec-polinomio-minimo.html#technology-26",
+  "type": "Tecnologia",
+  "number": "6.7.11",
+  "title": "",
+  "body": " Obtendo as matrizes e , tais que   "
+},
+{
+  "id": "section-42",
+  "level": "1",
+  "url": "section-42.html",
+  "type": "Seção",
+  "number": "6.8",
+  "title": "Exercícios",
+  "body": " Exercícios    Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.    Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?     Para quais valores de a as matrizes abaixo são diagonalizáveis?        Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.       Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)     Mostre que a matriz   é semelhante à matriz       Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .     Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.     Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.       Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?     "
+},
+{
+  "id": "exercise-107",
+  "level": "2",
+  "url": "section-42.html#exercise-107",
+  "type": "Exercício",
+  "number": "6.8.1",
+  "title": "",
+  "body": " Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.  "
+},
+{
+  "id": "exercise-108",
+  "level": "2",
+  "url": "section-42.html#exercise-108",
+  "type": "Exercício",
+  "number": "6.8.2",
+  "title": "",
+  "body": " Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?   "
+},
+{
+  "id": "exercise-109",
+  "level": "2",
+  "url": "section-42.html#exercise-109",
+  "type": "Exercício",
+  "number": "6.8.3",
+  "title": "",
+  "body": " Para quais valores de a as matrizes abaixo são diagonalizáveis?      "
+},
+{
+  "id": "exercise-110",
+  "level": "2",
+  "url": "section-42.html#exercise-110",
+  "type": "Exercício",
+  "number": "6.8.4",
+  "title": "",
+  "body": " Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.   "
+},
+{
+  "id": "exercise-111",
+  "level": "2",
+  "url": "section-42.html#exercise-111",
+  "type": "Exercício",
+  "number": "6.8.5",
+  "title": "",
+  "body": "   Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)   "
+},
+{
+  "id": "exercise-112",
+  "level": "2",
+  "url": "section-42.html#exercise-112",
+  "type": "Exercício",
+  "number": "6.8.6",
+  "title": "",
+  "body": " Mostre que a matriz   é semelhante à matriz   "
+},
+{
+  "id": "exercise-113",
+  "level": "2",
+  "url": "section-42.html#exercise-113",
+  "type": "Exercício",
+  "number": "6.8.7",
+  "title": "",
+  "body": "   Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .   "
+},
+{
+  "id": "exercise-114",
+  "level": "2",
+  "url": "section-42.html#exercise-114",
+  "type": "Exercício",
   "number": "6.8.8",
   "title": "",
-  "body": "  Seja dado por Determine o polinômio mínimo de .    Vimos, no Exemplo 1.3, que o polinômio característico de é Assim, temos duas possibilidades para o polinômio mínimo de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio mínimo de .   "
+  "body": " Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.   "
+},
+{
+  "id": "exercise-115",
+  "level": "2",
+  "url": "section-42.html#exercise-115",
+  "type": "Exercício",
+  "number": "6.8.9",
+  "title": "",
+  "body": " Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.   "
+},
+{
+  "id": "exercise-116",
+  "level": "2",
+  "url": "section-42.html#exercise-116",
+  "type": "Exercício",
+  "number": "6.8.10",
+  "title": "",
+  "body": " Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?  "
 }
 ]
 
