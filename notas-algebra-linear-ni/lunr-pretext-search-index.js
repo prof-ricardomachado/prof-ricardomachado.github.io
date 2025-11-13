@@ -2518,7 +2518,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "5.3",
   "title": "Transformações Lineares e Matrizes",
-  "body": " Transformações Lineares e Matrizes    Seja . Podemos associar à uma transformação linear da seguinte forma: para todo ,      Vimos no que a função acima é uma transformação linear.     Seja   Determine a transformação associada à matriz .    Seja . Então, é dada por   Portanto, para todo .      Seja uma transformação linear, base de e base de . Então, existe uma única matriz tal que . Tal matriz será denotada por . Além disso, se   então,   ou seja, é a matriz cujas colunas são as coordenadas dos vetores .      Seja dado por   Se é uma base de e é uma base de , então determine .    Temos   Logo,       Sejam base de e base de . Determine a transformação linear cuja matriz é     Interpretando a matriz, temos:   Escrevendo agora   vem que   Logo, é dada por .      Sejam e espaços vetoriais, base de , base de e transformação linear. Então, para todo , vale      Se e for o operador identidade, definido por , para todo , então a igualdade acima se torna      Considere a transformação linear dada por   em que é base de e é base de . Calcule .    Temos que   Logo,   Logo,       Seja uma transformação linear e e bases de e , respectivamente. Então,    O posto de é igual a ;    A nulidade Recorde que a nulidade de uma matriz é a diferença entre o seu número de colunas e o seu posto. de é igual a .        Seja dada por   Determine a dimensão do núcleo e da imagem de .    Seja a base canônica do . Então,   Note que está na forma escada. Concluímos que o posto de é 2 e a nulidade de é . Logo, e .      Sejam e transformações lineares e , e bases de , e , respectivamente. Então, a composta é linear e       Sejam e dadas respectivamente por   Determine a transformação linear composta .    Se é a base canônica de , então   Logo,   Logo, é dado por para todo .      Seja uma transformação linear inversível Uma função é inversível se, e somente se, é injetora e sobrejetora. e e bases de e , respectivamente. Então é um operador linear e      Uma transformação linear inversível é chamada de isomorfismo . Dizemos ainda que e são espaços vetoriais isomorfos . Decorre do resultado acima que é um isomorfismo se, e somente se, .     Seja uma transformação linear dada por   onde é a base canônica. Determine .    Como , é inversível. Além disso,   Logo, é dado por para todo .      Seja uma transformação linear, e bases de e e bases de . Então,       Considere a transformação linear dada por cuja matriz em relação a base canônica é   Determine , onde .    Calculando as matrizes de mudança de base, obtemos   Portanto,     "
+  "body": " Transformações Lineares e Matrizes    Seja . Podemos associar à uma transformação linear da seguinte forma: para todo ,      Vimos no que a função acima é uma transformação linear.     Seja   Determine a transformação associada à matriz .    Seja . Então, é dada por   Portanto, para todo .      Seja uma transformação linear, base de e base de . Então, existe uma única matriz tal que . Tal matriz será denotada por . Além disso, se   então,   ou seja, é a matriz cujas colunas são as coordenadas dos vetores .      Seja dado por   Se é uma base de e é uma base de , então determine .    Temos   Logo,      Obtendo a matrix do operador linear em relação as bases do domínio e contradomínio.      Sejam base de e base de . Determine a transformação linear cuja matriz é     Interpretando a matriz, temos:   Escrevendo agora   vem que   Logo, é dada por .     Obtendo a matrix do operador linear em relação as bases do domínio e contradomínio.      Sejam e espaços vetoriais, base de , base de e transformação linear. Então, para todo , vale      Se e for o operador identidade, definido por , para todo , então a igualdade acima se torna      Considere a transformação linear dada por   em que é base de e é base de . Calcule .    Temos que   Logo,   Logo,       Seja uma transformação linear e e bases de e , respectivamente. Então,    O posto de é igual a ;    A nulidade Recorde que a nulidade de uma matriz é a diferença entre o seu número de colunas e o seu posto. de é igual a .        Seja dada por   Determine a dimensão do núcleo e da imagem de .    Seja a base canônica do . Então,   Note que está na forma escada. Concluímos que o posto de é 2 e a nulidade de é . Logo, e .      Sejam e transformações lineares e , e bases de , e , respectivamente. Então, a composta é linear e       Sejam e dadas respectivamente por   Determine a transformação linear composta .    Se é a base canônica de , então   Logo,   Logo, é dado por para todo .      Seja uma transformação linear inversível Uma função é inversível se, e somente se, é injetora e sobrejetora. e e bases de e , respectivamente. Então é um operador linear e      Uma transformação linear inversível é chamada de isomorfismo . Dizemos ainda que e são espaços vetoriais isomorfos . Decorre do resultado acima que é um isomorfismo se, e somente se, .     Seja uma transformação linear dada por   onde é a base canônica. Determine .    Como , é inversível. Além disso,   Logo, é dado por para todo .      Seja uma transformação linear, e bases de e e bases de . Então,       Considere a transformação linear dada por cuja matriz em relação a base canônica é   Determine , onde .    Calculando as matrizes de mudança de base, obtemos   Portanto,     "
 },
 {
   "id": "remark-37",
@@ -2566,20 +2566,38 @@ var ptx_lunr_docs = [
   "body": "  Seja dado por   Se é uma base de e é uma base de , então determine .    Temos   Logo,    "
 },
 {
+  "id": "technology-24",
+  "level": "2",
+  "url": "subsec-transformacoes-matrizes.html#technology-24",
+  "type": "Tecnologia",
+  "number": "5.3.6",
+  "title": "",
+  "body": " Obtendo a matrix do operador linear em relação as bases do domínio e contradomínio.   "
+},
+{
   "id": "example-63",
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#example-63",
   "type": "Exemplo",
-  "number": "5.3.6",
+  "number": "5.3.7",
   "title": "",
   "body": "  Sejam base de e base de . Determine a transformação linear cuja matriz é     Interpretando a matriz, temos:   Escrevendo agora   vem que   Logo, é dada por .   "
+},
+{
+  "id": "technology-25",
+  "level": "2",
+  "url": "subsec-transformacoes-matrizes.html#technology-25",
+  "type": "Tecnologia",
+  "number": "5.3.8",
+  "title": "",
+  "body": " Obtendo a matrix do operador linear em relação as bases do domínio e contradomínio.   "
 },
 {
   "id": "theorem-19",
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#theorem-19",
   "type": "Teorema",
-  "number": "5.3.7",
+  "number": "5.3.9",
   "title": "",
   "body": "  Sejam e espaços vetoriais, base de , base de e transformação linear. Então, para todo , vale    "
 },
@@ -2588,7 +2606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#remark-39",
   "type": "Nota",
-  "number": "5.3.8",
+  "number": "5.3.10",
   "title": "",
   "body": " Se e for o operador identidade, definido por , para todo , então a igualdade acima se torna   "
 },
@@ -2597,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#example-64",
   "type": "Exemplo",
-  "number": "5.3.9",
+  "number": "5.3.11",
   "title": "",
   "body": "  Considere a transformação linear dada por   em que é base de e é base de . Calcule .    Temos que   Logo,   Logo,    "
 },
@@ -2606,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#theorem-20",
   "type": "Teorema",
-  "number": "5.3.10",
+  "number": "5.3.12",
   "title": "",
   "body": "  Seja uma transformação linear e e bases de e , respectivamente. Então,    O posto de é igual a ;    A nulidade Recorde que a nulidade de uma matriz é a diferença entre o seu número de colunas e o seu posto. de é igual a .     "
 },
@@ -2615,7 +2633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#example-65",
   "type": "Exemplo",
-  "number": "5.3.11",
+  "number": "5.3.13",
   "title": "",
   "body": "  Seja dada por   Determine a dimensão do núcleo e da imagem de .    Seja a base canônica do . Então,   Note que está na forma escada. Concluímos que o posto de é 2 e a nulidade de é . Logo, e .   "
 },
@@ -2624,7 +2642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#theorem-21",
   "type": "Teorema",
-  "number": "5.3.12",
+  "number": "5.3.14",
   "title": "",
   "body": "  Sejam e transformações lineares e , e bases de , e , respectivamente. Então, a composta é linear e    "
 },
@@ -2633,7 +2651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#example-66",
   "type": "Exemplo",
-  "number": "5.3.13",
+  "number": "5.3.15",
   "title": "",
   "body": "  Sejam e dadas respectivamente por   Determine a transformação linear composta .    Se é a base canônica de , então   Logo,   Logo, é dado por para todo .   "
 },
@@ -2642,7 +2660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#corollary-4",
   "type": "Corolário",
-  "number": "5.3.14",
+  "number": "5.3.16",
   "title": "",
   "body": "  Seja uma transformação linear inversível Uma função é inversível se, e somente se, é injetora e sobrejetora. e e bases de e , respectivamente. Então é um operador linear e    "
 },
@@ -2651,7 +2669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#remark-40",
   "type": "Nota",
-  "number": "5.3.15",
+  "number": "5.3.17",
   "title": "",
   "body": " Uma transformação linear inversível é chamada de isomorfismo . Dizemos ainda que e são espaços vetoriais isomorfos . Decorre do resultado acima que é um isomorfismo se, e somente se, .  "
 },
@@ -2660,7 +2678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#example-67",
   "type": "Exemplo",
-  "number": "5.3.16",
+  "number": "5.3.18",
   "title": "",
   "body": "  Seja uma transformação linear dada por   onde é a base canônica. Determine .    Como , é inversível. Além disso,   Logo, é dado por para todo .   "
 },
@@ -2669,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#corollary-5",
   "type": "Corolário",
-  "number": "5.3.17",
+  "number": "5.3.19",
   "title": "",
   "body": "  Seja uma transformação linear, e bases de e e bases de . Então,    "
 },
@@ -2678,7 +2696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "subsec-transformacoes-matrizes.html#example-68",
   "type": "Exemplo",
-  "number": "5.3.18",
+  "number": "5.3.20",
   "title": "",
   "body": "  Considere a transformação linear dada por cuja matriz em relação a base canônica é   Determine , onde .    Calculando as matrizes de mudança de base, obtemos   Portanto,    "
 },
@@ -3013,7 +3031,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "6.2",
   "title": "Polinômio característico",
-  "body": " Polinômio característico   Polinômio característico de um operador linear   Sejam um espaço vetorial de dimensão e um operador linear. O polinômio característico associado à é definido por   onde é base de e é a matriz identidade .     Pode-se mostrar que a definição acima independe da escolha da base para .    Observações  As seguintes propriedades decorrem diretamente da definição de polinômio característico e das propriedades dos determinantes:    O polinômio característico é mônico Um polinômio é dito mônico se .    O grau de é igual a .    O termo independente de é igual a .       Considere o operador linear dado por   Calcule o polinômio característico de .    Seja a base canônica de . A matriz de com relação à é dada por   Logo,   Assim,   Resulta que   Portanto, o polinômio característico de é dado por      Polinômio característico de uma matriz   Seja . O polinômio característico associado à é definido por   onde é a matriz identidade .     Pode-se mostrar que duas matrizes semelhantes Duas matrizes são ditas semelhantes se existir matriz inversível tal que . possuem o mesmo polinômio característico.     Considere a matriz dada por   Calcule o polinômio característico de .    Note que   Logo, o polinômio característico de é   Calculando o determinante, vem que   Portanto, o polinômio característico de é       Sejam espaço vetorial e operador linear com polinômio característico associado .  Então, é autovalor de se, e somente se, é raiz de .     O continua válido para matrizes.     Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .       Multiplicidades algébrica e geométrica   Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .       Mostraremos adiante que para todo autovalor de , vale      Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .     "
+  "body": " Polinômio característico   Polinômio característico de um operador linear   Sejam um espaço vetorial de dimensão e um operador linear. O polinômio característico associado à é definido por   onde é base de e é a matriz identidade .     Pode-se mostrar que a definição acima independe da escolha da base para .    Observações  As seguintes propriedades decorrem diretamente da definição de polinômio característico e das propriedades dos determinantes:    O polinômio característico é mônico Um polinômio é dito mônico se .    O grau de é igual a .    O termo independente de é igual a .       Considere o operador linear dado por   Calcule o polinômio característico de .    Seja a base canônica de . A matriz de com relação à é dada por   Logo,   Assim,   Resulta que   Portanto, o polinômio característico de é dado por      Obtendo o polinômio característico de um operador linear.     Polinômio característico de uma matriz   Seja . O polinômio característico associado à é definido por   onde é a matriz identidade .     Pode-se mostrar que duas matrizes semelhantes Duas matrizes são ditas semelhantes se existir matriz inversível tal que . possuem o mesmo polinômio característico.     Considere a matriz dada por   Calcule o polinômio característico de .    Note que   Logo, o polinômio característico de é   Calculando o determinante, vem que   Portanto, o polinômio característico de é       Sejam espaço vetorial e operador linear com polinômio característico associado .  Então, é autovalor de se, e somente se, é raiz de .     O continua válido para matrizes.     Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .       Obtendo os autovalores e autovetores de um operador linear.     Multiplicidades algébrica e geométrica   Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .       Mostraremos adiante que para todo autovalor de , vale      Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .     "
 },
 {
   "id": "definition-41",
@@ -3052,11 +3070,20 @@ var ptx_lunr_docs = [
   "body": "  Considere o operador linear dado por   Calcule o polinômio característico de .    Seja a base canônica de . A matriz de com relação à é dada por   Logo,   Assim,   Resulta que   Portanto, o polinômio característico de é dado por    "
 },
 {
+  "id": "technology-26",
+  "level": "2",
+  "url": "section-36.html#technology-26",
+  "type": "Tecnologia",
+  "number": "6.2.5",
+  "title": "",
+  "body": " Obtendo o polinômio característico de um operador linear.   "
+},
+{
   "id": "definition-42",
   "level": "2",
   "url": "section-36.html#definition-42",
   "type": "Definição",
-  "number": "6.2.5",
+  "number": "6.2.6",
   "title": "Polinômio característico de uma matriz.",
   "body": " Polinômio característico de uma matriz   Seja . O polinômio característico associado à é definido por   onde é a matriz identidade .   "
 },
@@ -3065,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#remark-46",
   "type": "Nota",
-  "number": "6.2.6",
+  "number": "6.2.7",
   "title": "",
   "body": " Pode-se mostrar que duas matrizes semelhantes Duas matrizes são ditas semelhantes se existir matriz inversível tal que . possuem o mesmo polinômio característico.  "
 },
@@ -3074,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#exe_1_4",
   "type": "Exemplo",
-  "number": "6.2.7",
+  "number": "6.2.8",
   "title": "",
   "body": "  Considere a matriz dada por   Calcule o polinômio característico de .    Note que   Logo, o polinômio característico de é   Calculando o determinante, vem que   Portanto, o polinômio característico de é    "
 },
@@ -3083,7 +3110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#teo_autovalor_l_raiz",
   "type": "Teorema",
-  "number": "6.2.8",
+  "number": "6.2.9",
   "title": "",
   "body": "  Sejam espaço vetorial e operador linear com polinômio característico associado .  Então, é autovalor de se, e somente se, é raiz de .   "
 },
@@ -3092,7 +3119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#remark-47",
   "type": "Nota",
-  "number": "6.2.9",
+  "number": "6.2.10",
   "title": "",
   "body": " O continua válido para matrizes.  "
 },
@@ -3101,16 +3128,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#exe_1_5",
   "type": "Exemplo",
-  "number": "6.2.10",
+  "number": "6.2.11",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine os autovalores e os autovetores correspondentes de .    Vimos no que o polinômio característico de é   Note que possui duas raízes distintas em e . Pelo Teorema 1.1, possui dois autovalores distintos: (i) ; (ii) .  Para determinar os autovetores associados a cada um dos autovalores de , procedemos da seguinte forma:    (i) Queremos determinar os vetores não-nulos que satisfazem   Logo,   Isto equivale ao sistema   Do sistema acima, obtemos . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .    (ii) Queremos determinar os vetores não-nulos que satisfazem   Isto equivale ao sistema   Do sistema acima, obtemos e . Assim, o conjunto solução do sistema tem a forma   Qualquer vetor não nulo é autovetor de associado ao autovalor .     "
+},
+{
+  "id": "technology-27",
+  "level": "2",
+  "url": "section-36.html#technology-27",
+  "type": "Tecnologia",
+  "number": "6.2.12",
+  "title": "",
+  "body": " Obtendo os autovalores e autovetores de um operador linear.   "
 },
 {
   "id": "definition-43",
   "level": "2",
   "url": "section-36.html#definition-43",
   "type": "Definição",
-  "number": "6.2.11",
+  "number": "6.2.13",
   "title": "Multiplicidades algébrica e geométrica.",
   "body": " Multiplicidades algébrica e geométrica   Sejam espaço vetorial, operador linear e um autovalor de .    A multiplicidade algébrica de , denotada aqui por , é a multiplicidade Formalmente, de como raiz de .    A multiplicidade geométrica de , denotada aqui por , é igual a dimensão do autoespaço .     "
 },
@@ -3119,7 +3155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#remark-48",
   "type": "Nota",
-  "number": "6.2.12",
+  "number": "6.2.14",
   "title": "",
   "body": " Mostraremos adiante que para todo autovalor de , vale   "
 },
@@ -3128,7 +3164,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-36.html#example-74",
   "type": "Exemplo",
-  "number": "6.2.13",
+  "number": "6.2.15",
   "title": "",
   "body": "  Considere o operador linear dado por   Determine as multiplicidades algébrica e geométrica dos autovalores de .    Vimos, no , que o polinômio característico de é dado por   Assim,   e   pois possui multiplicidade 2 como raiz de e possui multiplicidade 1 como raiz de .  Por outro lado, vimos no Exemplo 1.5 que os autoespaços associados à e são dados, respectivamente por   e   Note que e . Resulta que e .   "
 },
@@ -3247,7 +3283,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "6.4",
   "title": "Diagonalização de Operadores e de Matrizes",
-  "body": " Diagonalização de Operadores e de Matrizes   Diagonalização de Operadores   (Operadores diagonalizáveis)   Sejam um espaço vetorial e um operador linear. Dizemos que é diagonalizável se existir uma base de formada por autovetores de .      Sejam espaço vetorial de dimensão e um operador linear. Então, é diagonalizável se, e somente se, existe uma base de tal que é diagonal.      Considere o operador linear dado por   Determine se é um operador diagonalizável. Em caso afirmativo, exiba uma base de na qual é uma matriz diagonal.    Vimos no que possui dois autovalores distintos e . Os autoespaços associados a cada um destes autovalores são, respectivamente,   Além disso,   Tomando , é fácil ver que é base de (Verifique!). Como é formada por autovetores de , é diagonalizável.  Com relação à base , a matriz de é a matriz diagonal   pois       Diagonalização de matrizes   (Matrizes diagonalizáveis)   Seja . Dizemos que é diagonalizável se for semelhante à uma matriz diagonal.  Em outras palavra, é diagonalizável se existirem matrizes , com inversível e diagonal tais que       Seja . Então é diagonalizável se, e somente se, possui autovetores linearmente independentes. Neste caso, , onde    são autovetores linearmente independentes de e são os autovalores correspondentes, na mesma ordem.      Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.     "
+  "body": " Diagonalização de Operadores e de Matrizes   Diagonalização de Operadores   (Operadores diagonalizáveis)   Sejam um espaço vetorial e um operador linear. Dizemos que é diagonalizável se existir uma base de formada por autovetores de .      Sejam espaço vetorial de dimensão e um operador linear. Então, é diagonalizável se, e somente se, existe uma base de tal que é diagonal.      Considere o operador linear dado por   Determine se é um operador diagonalizável. Em caso afirmativo, exiba uma base de na qual é uma matriz diagonal.    Vimos no que possui dois autovalores distintos e . Os autoespaços associados a cada um destes autovalores são, respectivamente,   Além disso,   Tomando , é fácil ver que é base de (Verifique!). Como é formada por autovetores de , é diagonalizável.  Com relação à base , a matriz de é a matriz diagonal   pois       Diagonalização de matrizes   (Matrizes diagonalizáveis)   Seja . Dizemos que é diagonalizável se for semelhante à uma matriz diagonal.  Em outras palavra, é diagonalizável se existirem matrizes , com inversível e diagonal tais que       Seja . Então é diagonalizável se, e somente se, possui autovetores linearmente independentes. Neste caso, , onde    são autovetores linearmente independentes de e são os autovalores correspondentes, na mesma ordem.      Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.     Obtendo as matrizes e , tais que     "
 },
 {
   "id": "definition-44",
@@ -3302,6 +3338,15 @@ var ptx_lunr_docs = [
   "number": "6.4.6",
   "title": "",
   "body": "  Seja a matriz   Determine se é diagonalizável.    Vimos no que o polinômio característico de é   Pelo , possui três autovalores distintos: , e . A seguir, determinemos os autovetores de associados à cada um destes autovalores.  Para , os autovetores de são os vetores não-nulos tais que , ou seja,   A equação matricial ao sistema   O sistema é equivalente à e . Logo, o autoespaço associado à tem a forma   Para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Por fim, para , queremos achar vetores não-nulos tais que . Isto corresponde ao sistema   O sistema é equivalente às equações e . Logo, o autoespaço associado à tem a forma   Pondo , pode-se mostrar que é base de (Verifique!).  Defina Note que é a matriz de mudança de base de para a base canônica. como a matriz cujas colunas são os elementos de :   Temos que é inversível, pois suas colunas são vetores LI. Um cálculo simples mostra que   Como,   resulta que é semelhante à uma matriz diagonal . Assim, é diagonalizável.   "
+},
+{
+  "id": "technology-28",
+  "level": "2",
+  "url": "section-38.html#technology-28",
+  "type": "Tecnologia",
+  "number": "6.4.7",
+  "title": "",
+  "body": " Obtendo as matrizes e , tais que   "
 },
 {
   "id": "section-39",
@@ -3472,7 +3517,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "6.7",
   "title": "O polinômio minimal",
-  "body": " O polinômio minimal   O polinômio minimal de um operador linear   Seja um operador linear. O polinômio minimal de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .      A definição de um polinômio minimal de uma matriz é análoga e será omitida aqui.     Seja o polinômio minimal e o polinômio característico de um operador linear . Então, divide .      Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .  Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.     Observações  Sejam e o polinômio característico e o polinômio minimal de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo , e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então      Seja dado por Determine o polinômio minimal de .    Vimos, no , que o polinômio característico de é Assim, temos duas possibilidades para o polinômio minimal de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio minimal de .     Sejam todos os autovalores distintos de um operador linear . Então, será diagonalizável se, e somente se, o polinômio anular (ou a a matriz de ).    Seja definido por . é diagonalizável?    Obtendo o polinômio minimal     Obtendo a matriz de um operador linear em relação a base canônica.     Obtendo as matrizes e , tais que    "
+  "body": " O polinômio minimal   O polinômio minimal de um operador linear   Seja um operador linear. O polinômio minimal de é o polinômio que satisfaz as seguintes condições:   é mônico;  ;  Se , então .      A definição de um polinômio minimal de uma matriz é análoga e será omitida aqui.     Seja o polinômio minimal e o polinômio característico de um operador linear . Então, divide .      Sejam espaço vetorial e um operador linear. Então é autovalor de se, e somente se, é raiz de .  Mais ainda, e possuem os mesmos fatores irredutíveis. Este fato mais geral não será demonstrado aqui.     Observações  Sejam e o polinômio característico e o polinômio minimal de um operador linear , respectivamente. Se é a matriz de com respeito à alguma base , então o polinômio característico de é dado por Pelo Teorema de Cayley-Hamilton, divide e, além disso, pelo , e possuem as mesmas raízes. Embora não haja um método para calcular precisamente as raízes de um polinômio (exceto no caso de seu grau ser pequeno), se puder ser fatorado como onde são reais distintos e , então      Seja dado por Determine o polinômio minimal de .    Vimos, no , que o polinômio característico de é Assim, temos duas possibilidades para o polinômio minimal de : ou   Tomando como a base canônica de , temos que Assim, Assim, é o polinômio minimal de .     Sejam todos os autovalores distintos de um operador linear . Então, será diagonalizável se, e somente se, o polinômio anular (ou a a matriz de ).    Seja definido por . é diagonalizável?    Obtendo o polinômio minimal      Obtendo as matrizes e , tais que    "
 },
 {
   "id": "def-polinomio-minimo-operador",
@@ -3547,29 +3592,20 @@ var ptx_lunr_docs = [
   "body": " Seja definido por . é diagonalizável?  "
 },
 {
-  "id": "technology-24",
+  "id": "technology-29",
   "level": "2",
-  "url": "sec-polinomio-minimo.html#technology-24",
+  "url": "sec-polinomio-minimo.html#technology-29",
   "type": "Tecnologia",
   "number": "6.7.9",
   "title": "",
   "body": " Obtendo o polinômio minimal   "
 },
 {
-  "id": "technology-25",
+  "id": "technology-30",
   "level": "2",
-  "url": "sec-polinomio-minimo.html#technology-25",
+  "url": "sec-polinomio-minimo.html#technology-30",
   "type": "Tecnologia",
   "number": "6.7.10",
-  "title": "",
-  "body": " Obtendo a matriz de um operador linear em relação a base canônica.   "
-},
-{
-  "id": "technology-26",
-  "level": "2",
-  "url": "sec-polinomio-minimo.html#technology-26",
-  "type": "Tecnologia",
-  "number": "6.7.11",
   "title": "",
   "body": " Obtendo as matrizes e , tais que   "
 },
@@ -3580,7 +3616,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "6.8",
   "title": "Exercícios",
-  "body": " Exercícios    Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.    Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?     Para quais valores de a as matrizes abaixo são diagonalizáveis?        Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.       Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)     Mostre que a matriz   é semelhante à matriz       Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .     Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.     Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.       Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?     "
+  "body": " Exercícios    Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.     Seja A uma matriz triangular superior, com todos os seus elementos acima da diagonal distintos e não nulos.    Quais são os autovalores e autovetores de A?  Qual é o polinomio minimal de A?     Para quais valores de a as matrizes abaixo são diagonalizáveis?        Sejam T: linear, , a base canônica de , e    Encontre o polinômio característico de T, os autovalores de T e os autovetores correspondentes.  Ache e o polinômio característico. Que observação você faz a este respeito?  Encontre uma base de , se for possível, tal que seja diagonal.       Sejam um operador linear (V de dimensão finita) e e bases distintas de T. Mostre que   Se é diagonalizável, mostre que o determinante de A é o produto de seus autovalores. (Sugestão: considere , observando que a matriz de na base canônica é exatamente A. Use então o resultado do item (a) considerando como a base canônica e a base de autovetores.)     Mostre que a matriz   é semelhante à matriz       Mostre que um operador linear T (num espaço de dimensão finita) que comuta com qualquer operador linear diagonalizável é diagonalizável.  Nas condições do item (a) mostre que na verdade T é um múltiplo escalar do operador identidade, isto é, existe um númeror tal que .     Diz-se que um operador linear é nilpotente se existir um número inteiro positivo n, tal que (isto é, para todo ).   Seja nilpotente. Encontre seus autovalores.  Encontre uma matriz tal que seja nilpotente.  Mostre que um operador linear nilpotente, não nulo, não é diagonalizável.     Diz-se que um operador linear é idempotente se (isto é, se para todo ).   Seja T idempotente. Ache seus autovalores.  Encontre uma matriz tal que seja idempotente.  Mostre que um operador linear idempotente é diagonalizável.       Utilize a forma diagonal para encontrar nos seguintes casos ( natural):       Você pode generalizar o seu procedimento para o caso de uma matriz quadrada qualquer? Quais são as condições?     "
 },
 {
   "id": "exercise-107",
@@ -3589,7 +3625,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "6.8.1",
   "title": "",
-  "body": " Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.  "
+  "body": " Dada a matriz    A é diagonalizável?  Encontre seu polinomio minimal.   "
 },
 {
   "id": "exercise-108",
