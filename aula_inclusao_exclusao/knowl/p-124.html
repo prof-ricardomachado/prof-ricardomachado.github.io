@@ -13,11 +13,40 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Parágrafo</span></h5>
 <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn>  Como <span class="process-math">\(\#(B\setminus C) = 3\times \#C = 12\text{,}\)</span> temos</div>
-<div class="displaymath process-math">
+<div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
+<li><div class="para">
+<span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
+<li><div class="para">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+</ul>
+<div class="para">Antes de escrever o resultado da Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 1.6">(1.6)</a> vamos obter uma expressão para <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
+\begin{align*}
+C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}\\
+=\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.
+\end{align*}
+</div>
+<div class="para">Utilizando essas informações na Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 1.6">(1.6)</a>, obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
 \begin{equation*}
-\#\mathcal{P}(B\setminus C) = 2^{\#(B\setminus C)} = 2^{12} = 4096.
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
+\begin{align*}
+\quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots\\
+=\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots\\
+=\amp~D_n +\sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} \frac{n!(-1)^{k+1}D_{n-2(k+1)}}{(n-2(k+1))!2^{k+1}}
+\end{align*}
+</div>
+<div class="para">Fazendo a mudança <span class="process-math">\(p=k+1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
+\begin{equation*}
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^p \cdot \frac{D_{n-2p}}{(n-2p)!}.
 \end{equation*}
 </div>
 </div>

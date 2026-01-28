@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Pré-textual",
   "number": "",
   "title": "Pré-textual",
-  "body": "     Ricardo Nunes Machado Junior   Departamento de Matemática    Universidade Federal Rural de Pernambuco - UFRPE  Recife, Pernambuco, Brasil   ricardo.machadojunior@ufrpe.br       Sejam todas e todos bem-vindas e bem-vindos ao complemento do artigo: \"Criação de tecnologias com o Software SageMath para Teoria dos Números\", submetido à Revista Professor de Matemática Online (PMO). Se você chegou até aqui através de nosso trabalho, descobrirá um complemento da parte computacional que desenvolvemos para a construção de nosso artigo.  Destacamos dentre as ferramentas computacionais disponibilizadas:  O Algoritmo de Euclides para o cálculo de MDC;  A solução geral para uma equação diofantina linear (em qualquer dimensão).  Gráfico com algumas soluções de Equações Diofantinas Lineares de dimensão 2.  A solução do número de Frobenius em dimensão 2.  Estas tecnologias podem auxiliar bastante o estudo no tema das Equações Diofantinas uma vez que permitem não apenas rápidas soluções para o problema, mas também processos intermediários detalhadamente escritos.  Esperamos que vocês gostem, usem e abusem da tecnologia disponibilizada!    "
+  "body": "     Ricardo Nunes Machado Junior   Departamento de Matemática    Universidade Federal Rural de Pernambuco - UFRPE  Recife, Pernambuco, Brasil   ricardo.machadojunior@ufrpe.br        "
 },
 {
   "id": "sec_introducao",
@@ -406,103 +406,13 @@ var ptx_lunr_docs = [
   "body": " Seja uma permutação do conjunto . Se então o par é chamado de uma sucessão da permutação.  Exemplo:  Considere as permutações do conjunto . Estas 24 permutações podem ser classificadas de acordo com suas sucessões da seguinte forma:    As permutações sem nenhuma sucessão são as seguintes 11:      As permutações com uma sucessão são as seguintes 9:      As permutações com duas sucessões são as seguintes 3:     A permutação é a única permutação com três sucessões.    Mostre que   O número de permutações do conjunto sem uma sucessão é igual a   O número de permutações do conjunto com exatamente sucessões é igual a onde representa o número de permutações de um conjunto de elementos que não possuem nenhuma sucessão.   "
 },
 {
-  "id": "section-2",
-  "level": "1",
-  "url": "section-2.html",
-  "type": "Seção",
-  "number": "2",
-  "title": "Equações Diofantinas Lineares",
-  "body": " Equações Diofantinas Lineares   Seja uma solução particular da Equação Diofantina Linear  , na qual, . Então, o seu conjunto solução, é composto pelos pares em tais que     No SageMath existe um método para resolver equações diofantinas. Para utiliza-lo é necessário declarar cada variável que será usada na equação. Abaixo, declaramos as variáveis e e escrevemos os comandos para resolver a equação diofantina      Resolvendo o problema das Ternas Pitagóricas no SageMath:   Abaixo, podemos ver graficamente as soluções, podendo rotacionar o gráfico para melhor entendimento e visualização.        Escolha os valores , e para obter algumas soluções inteiras no plano, da Equação Diofantina:       Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.    Não entraremos em detalhes, mas ressaltamos que a função \"solve_diophantine\" se estende para uma maior quantidade de variáveis e não está restrita ao caso linear. Experimente a equação abaixo e depois substitua a equação por outra.   "
-},
-{
-  "id": "proposition-2",
-  "level": "2",
-  "url": "section-2.html#proposition-2",
-  "type": "Proposição",
-  "number": "2.1",
-  "title": "",
-  "body": " Seja uma solução particular da Equação Diofantina Linear  , na qual, . Então, o seu conjunto solução, é composto pelos pares em tais que   "
-},
-{
-  "id": "technology-8",
-  "level": "2",
-  "url": "section-2.html#technology-8",
-  "type": "Tecnologia",
-  "number": "2.2",
-  "title": "",
-  "body": " No SageMath existe um método para resolver equações diofantinas. Para utiliza-lo é necessário declarar cada variável que será usada na equação. Abaixo, declaramos as variáveis e e escrevemos os comandos para resolver a equação diofantina    "
-},
-{
-  "id": "technology-9",
-  "level": "2",
-  "url": "section-2.html#technology-9",
-  "type": "Tecnologia",
-  "number": "2.3",
-  "title": "",
-  "body": " Resolvendo o problema das Ternas Pitagóricas no SageMath:   Abaixo, podemos ver graficamente as soluções, podendo rotacionar o gráfico para melhor entendimento e visualização.      "
-},
-{
-  "id": "technology-10",
-  "level": "2",
-  "url": "section-2.html#technology-10",
-  "type": "Tecnologia",
-  "number": "2.5",
-  "title": "",
-  "body": " Escolha os valores , e para obter algumas soluções inteiras no plano, da Equação Diofantina:       Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.   "
-},
-{
-  "id": "section-3",
-  "level": "1",
-  "url": "section-3.html",
-  "type": "Seção",
-  "number": "3",
-  "title": "O Problema do Número de Frobenius",
-  "body": " O Problema do Número de Frobenius   O Número de Frobenius para \"duas moedas\"   Sejam e inteiros positivos com . Considere a expressão , com . O maior inteiro , tal que não admite solução, mas admite solução sempre que e , é dado por     Número de Frobenius para \"duas moedas\".      O código para calcular o número de Frobenius para \"duas moedas\" e uma parametrização para a solução geral segue abaixo:      O Número de Frobenius para \"três moedas\"    (Teorema 2.3.2 de ) Sejam inteiros com . Se , , e existem inteiros com . Então,     Número de Frobenius para \"três moedas\".      O código para calcular o número de Frobenius para \"três moedas\" segue abaixo:      "
-},
-{
-  "id": "theorem-5",
-  "level": "2",
-  "url": "section-3.html#theorem-5",
-  "type": "Teorema",
-  "number": "3.1",
-  "title": "",
-  "body": " Sejam e inteiros positivos com . Considere a expressão , com . O maior inteiro , tal que não admite solução, mas admite solução sempre que e , é dado por   "
-},
-{
-  "id": "technology-11",
-  "level": "2",
-  "url": "section-3.html#technology-11",
-  "type": "Tecnologia",
-  "number": "3.2",
-  "title": "",
-  "body": " Número de Frobenius para \"duas moedas\".      O código para calcular o número de Frobenius para \"duas moedas\" e uma parametrização para a solução geral segue abaixo:   "
-},
-{
-  "id": "theorem-6",
-  "level": "2",
-  "url": "section-3.html#theorem-6",
-  "type": "Teorema",
-  "number": "3.4",
-  "title": "",
-  "body": " (Teorema 2.3.2 de ) Sejam inteiros com . Se , , e existem inteiros com . Então,   "
-},
-{
-  "id": "technology-12",
-  "level": "2",
-  "url": "section-3.html#technology-12",
-  "type": "Tecnologia",
-  "number": "3.5",
-  "title": "",
-  "body": " Número de Frobenius para \"três moedas\".      O código para calcular o número de Frobenius para \"três moedas\" segue abaixo:   "
-},
-{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
   "type": "Referêcias",
-  "number": "4",
+  "number": "2",
   "title": "Referências Bibliográficas",
-  "body": "    Referências Bibliográficas     ALFONSÍN, JORGE L. RAMÍREZ. The diophantine Frobenius problem. OUP Oxford, 2005.    HEFEZ, A. Aritmética . Coleção PROFMAT, SBM, 2ed., 2016.    LEMOS, M. Criptografia, Números Primos e Algoritmos . IMPA, 4ed., 2010.    SILVA, L. D.; SANTOS, M. P.; MACHADO J. R. N., Elementos de Computação Matemática com SageMath , SBM, 2019.    NASCIMENTO, E. C. A.; TANAKA, T. Y.; SILVA, B. C., Equações diofantinas lineares e não lineares: uma abordagem por meio de questões de Olimpíadas de Matemática . PMO v. 10, n.3, 2022.  "
+  "body": "    Referências Bibliográficas     Carlos Shine Aula 5 do POTI, nível 3 .    Nunes Machado Junior, R., Araujo Guedes, G. (2023). POLINÔMIOS DE TORRE E APLICAÇÕES COM IMPLEMENTAÇÕES NO SAGEMATH. Revista Sergipana De Matemática E Educação Matemática, 8(1), 1–36.     Ricardo Nunes Machado Junior. Caos Permutações e Tabuleiros. É Matemática, Oxente!.     MACHADO J. R. N., GUEDES G. A. O Princípio da Inclusao-Exclusão, pensamento computacional e implementações em SageMath , PMO, 2025.   "
 }
 ]
 
