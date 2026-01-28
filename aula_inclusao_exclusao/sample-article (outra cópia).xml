@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2013 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!--
+To process this file, at the command-line issue:
+
+xsltproc /path/to/mathbook/xsl/pretext-html.xsl /path/to/mathbook/examples/sample-article.xml
+
+then find  "derivatives.html"  in the current working directory
+and use a web browser to view.  For PDF/print, issue:
+
+xsltproc -o derivatives.tex /path/to/mathbook/xsl/mathbook-latex.xsl /path/to/mathbook/examples/sample-article.xml
+
+and apply  pdflatex  or  xelatex  to  "derivatives.tex"  in
+the current working directory.
+
+Ignore any warnings, they are part of testing the warning system.
+
+To see images in your results, copy the examples/images directory
+so that your working directory has the images subdirectory.  See
+the  pretextbook.org  website for information on installing
+the xsltproc executable.
+-->
+
+<!-- Overall element for a Mathbook XML document; mandatory, always  -->
+<!-- Experiment with the "xml:lang" attribute to see localization    -->
+<!-- changes, the  xsl/localizations  directory has more information -->
+<pretext xml:lang="pt-BR">
+<!-- <pretext xml:lang="pt-BR"> -->
+<!-- <pretext xml:lang="fr-FR"> -->
+<!-- <pretext xml:lang="cs-CZ"> -->
+<!-- <pretext xml:lang="af-ZA"> -->
+
+    <!--
+    "docinfo" is like metadata, it is necessary technical
+    information which a reader mostly will never see.  LaTeX
+    macros and Web analytics project numbers are good examples.
+    If you are getting started, you do not need any of this initially.
+    So on a first reading, skip ahead to the article tag.
+    -->
+    <docinfo>
+        <!--
+        In the HTML version there is room for a picture or logo
+        in the upper left corner.  An image of a cover for a
+        physical version is a good choice to go here.  We use
+        16th Century Art Book Cover, 176x240 pixels, Public Domain, due to age
+        http://commons.wikimedia.org/wiki/File:Book_Cover_-_Google_Art_Project.jpg
+        -->
+        <!--<brandlogo url="https://pretextbook.org" source="images/book-cover-google-art-project.jpg" />-->
+        <!--
+        LaTeX packages that are also implemented as MathJax extensions
+        may be specified here and any macros they have in common may be
+        used within mathematics.  See below in the "Mathematics" section
+        an example of the use of the "\cancelto{}{}" macro from
+        the "cancel" package.
+        -->
+        <latex-preamble>
+            <package>cancel</package>
+        </latex-preamble>
+        <!--
+        TeX/LaTeX macros can be written in the usual way.
+        Whitespace and line breaks are irrelevant here.
+        These are "write once, use everywhere".
+        -->
+        <macros>
+        \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+        \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+        % comments anywhere get stripped, with or without faux % comment \% characters
+        \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+        \newcommand{\testingescapedpercent}{ \% } % just testing
+        </macros>
+        <!-- We control the appearance of the text of cross-references here           -->
+        <!-- (these are the "xref" elements).  Because this changes the words         -->
+        <!-- that appear in your output, it is a decision with stays with the source. -->
+        <!-- Experiment here with different choices and a few different "xref"        -->
+        <!-- elements before you decide on a final choice.  We set this to 'global',  -->
+        <!-- not because we think it is a good choice, but for historical reasons.    -->
+        <!-- The default is 'type-global', which produces text like "Theorem 5.2",    -->
+        <!-- where "Theorem" will be translated into the document language            -->
+        <cross-references text="global" />
+        <!--
+        Extra packages, package options, and package settings for latex-based images.
+        Inserted in the preamble for LaTeX output.
+        Inserted in the preamble to each standalone latex-based image for HMTL SVG output.
+        -->
+        <latex-image-preamble>
+        \usepackage{pgfplots}               % loads tikz package
+        \usepackage{smartdiagram}           % for a circular diagram
+        \pgfplotsset{axis x line = middle,
+                     axis y line = middle}
+        \usetikzlibrary{backgrounds}
+        \usetikzlibrary{arrows,matrix}
+        \usetikzlibrary{positioning}        % for Dave R's worksheet
+        \usepackage{circuitikz}             % for Virgil P's worksheet
+        </latex-image-preamble>
+        <!--
+        The Sage Notebook has its own interface and worksheet list.
+        To use the sorting features optimally, it helps to have subdivisions
+        begin with the same short prefix.  An "initialism" (nee acronym)
+        here will be used for that purpose if present.  This is only employed
+        for producing Sage notebook versions and in the title shown in the
+        browser. (If not present, you will get a harmless warning just for
+        Sage worksheet production.)
+        -->
+        <initialism>REVISTA</initialism>
+        <!-- For various purposes, it is helpful to have a unique identifier    -->
+        <!-- for your entire document.  As of 2019-01-02 this will be used as   -->
+        <!-- the HTML id attribute on the body element of *every* page created  -->
+        <!-- by the HTML conversion.                                            -->
+        <!--                                                                    -->
+        <!--   * Start with a letter                                            -->
+        <!--   * No strange characters, just 52 Latin letters, and 10 digits    -->
+        <!--   * No spaces                                                      -->
+        <!--   * Use only a hyphen (-) to separate words                        -->
+        <!--                                                                    -->
+        <!-- Make it so there is a reasonable expectation of being unique.      -->
+        <!-- "my-book" is a poor choice, "beezer-first-course-linear-algebra"   -->
+        <!-- is better.  And maybe something in-between is best: "beezer-FCLA". -->
+        <document-id>pretext-SA</document-id>
+        <!-- Items peculiar to an HTML output -->
+        <html>
+            <!-- Expects favicon/favicon-32x32.png, and favicon/favicon-16x16.png -->
+            <favicon/>
+            <!-- There does not need to be a trailing / on the URL             -->
+            <!-- NB Eventually a publisher option will exist to overrule this, -->
+            <!-- so a given source can be installed more than one place        -->
+            <baseurl href="https://pretextbook.org/examples/sample-article/html" />
+        </html>
+        <!--
+        With a <feedback> element, in the HTML version, you get a button
+        for reporting typos and errors.  You might link to a Google Docs
+        spreadsheet or something similar.  Default is to get a button
+        labeled "Feedback", which will be localized to your target language.
+        You can override this with some text of your choosing, but then you
+        lose the localization feature.
+        -->
+        <feedback>
+            <url>not-implemented.html</url>
+             <!-- <text>My Button Text</text>  -->
+        </feedback>
+
+        <!--
+        "Names" for various parts of a document are determined exactly
+        once for each language, ensuring consistency and saving you the
+        bother of always typing them in.  These can be found in the
+        files in the  xsl/localizations  directory.
+
+        You can make a document-specific, global override.  Here we
+        decide we have no need for any "proposition"s and repurpose
+        that environment as a "Conundrum."
+
+        The specification of a language is optional, if you do not
+        have a multilingual project.  Otherwise you can supply an
+        @xml:lang attribute so the rename only applies for a specific
+        language.  See the localization file for more on language codes.
+        -->
+        <rename element="proposition">Conundrum</rename>
+
+        <!-- Images in HTML output may carry a discreet list of links    -->
+        <!-- to "archival" versions of images in a variety of formats.   -->
+        <!-- Authors have complete freedom to do this as they choose,    -->
+        <!-- along with complete responsibility to provide the actual    -->
+        <!-- files, with proper filenames and suffices.  Search this     -->
+        <!-- source file for "archive=" to see particular examples.      -->
+        <!-- The following demonstrates a global specification, which    -->
+        <!-- we just use for testing - it just makes totally fake links. -->
+        <!--
+        <images>
+            <archive>One Two Three</archive>
+        </images>
+        -->
+
+        <!-- Demonstration of subtree specifications for archive formats -->
+        <!-- (Do not use in concert with above global test)              -->
+        <!-- Chapter on graphics, fake "A B" links throughout            -->
+        <!-- No other part of the @archive scheme is affected            -->
+        <!-- Two images, inside figures, within graphics chapter         -->
+        <!--   1) one has "A B" links turned off                         -->
+        <!--   2) single link "exceptional"                              -->
+        <!--
+        <images>
+            <archive from="graphics">A B</archive>
+            <archive from="figure-asymptote-levers" />
+            <archive from="figure-asymptote-contour-plot">exceptional</archive>
+        </images>
+        -->
+
+        <latex-output>
+            <!-- turn this on once it is easier to make   -->
+            <!-- standalone worksheets, uncomment to test -->
+            <!-- <worksheet top="3cm" left="4cm" margin="12cm"/> -->
+        </latex-output>
+
+    </docinfo>
+
+    <!--
+    The article element is top-level for anything short of a book.
+    There is a book element, which is not demonstrated here.
+    The "xml:id" attribute will be used for the filename of the
+    HTML output.
+    -->
+    <article xml:id="polinomios-torre-aplicacoes">
+        <title>Polinômios de Torre e Aplicações com Implementações no SageMath (Complemento)</title>
+        
+
+        <!--
+        The frontmatter contains a variety of items that precede
+        the actual content.  They should be placed in the proper order,
+        here the title material should precede a table of contents.
+        They differ from "docinfo" items in that they will be *content*
+        that a reader will actually see.
+        -->
+
+        <frontmatter xml:id="frontmatter">
+            <!--
+            Items typically on the main title page of a book,
+            but here as an article they are handled more compactly
+             -->
+
+            <titlepage>
+
+               <!-- There can be several authors here -->
+                <author>
+                    <personname>Ricardo Nunes Machado Junior</personname>
+                    <!-- department here is one line, so unstructured -->
+                    <department>Departamento de Matemática</department>
+                    <!-- institution uses two lines, so structured as such -->
+                    <institution>
+                        <line>Universidade Federal Rural de Pernambuco - UFRPE</line>
+                        <line>Recife, Pernambuco, Brasil</line>
+                    </institution>
+                    <email>ricardo.machadojunior@ufrpe.br</email>
+                </author>      
+
+                <author>
+                    <personname>Gabriel Araújo Guedes</personname>
+                    <!-- department here is one line, so unstructured -->
+                    <department>Departamento de Matemática</department>
+                    <!-- institution uses two lines, so structured as such -->
+                    <institution>
+                        <line>Universidade Federal Rural de Pernambuco - UFRPE</line>
+                        <line>Recife, Pernambuco, Brasil</line>
+                    </institution>
+                    <email>gabriel.guedes@ufrpe.br</email>
+                </author>
+
+                
+
+          
+
+                <!-- Can set date manually or use the "today" element -->
+                <date><today /></date>
+
+            </titlepage>
+
+            <abstract>
+                <p>Sejam todas e todos bem-vindas e bem-vindos ao complemento do artigo: "Polinômios de Torre e Aplicações com Implementações no SageMath", submetido à Revista Sergipana de Matemática e Educação Matemática (ReviSeM). Se você chegou até aqui através de nosso trabalho, descobrirá um complemento da parte computacional que desenvolvemos para a construção de nosso artigo. </p>
+
+                <p>No intuito de enriquecermos cada vez mais esta nossa página, ela sempre terá um espaço para complementos e contribuições, então se quiserem contribuir com ideias, basta enviar um e-mail para um de nós.</p>
+
+                <p>Esperamos que vocês gostem, usem e abusem da tecnologia disponibilizada!</p>
+            </abstract>
+            <!--
+            Acknowledgements, dedications, colophon (ISBN, copyright, etc)
+            are supported in the book document type.  Such a diverse range
+            is not yet available for articles.  Send requests.
+             -->
+        </frontmatter>
+
+        <!--
+        Articles have sections, which have subsections,
+        which have subsubsections.These are all "containers"
+        and so line breaks and extraneous whitespace gets
+        scrubbed.  Use indentation and line breaks liberally
+        within containers to make the structure of your
+        source readable.
+        -->
+
+ 
+
+        <!--
+        Note above: Subdivisions always have titles, and these
+        are not containers.  Line breaks and whitespace will
+        bleed into output, which is especially a problem for TeX,
+        since it may render as a blank line.  So keep the title
+        element "tight" around the content.
+
+        The "p" element is a paragraph, and also not a container,
+        so keep it wrapped tight.  Lots can go on in a paragraph.
+        -->
+
+
+        <!--
+        Sage Code: Next section has Sage code examples.
+        For HTML it renders as Sage Cells, with no sample output.
+        For LaTeX it renders as input/output, suggestively typeset.
+        A separate XSL transform isolates code and produces a file
+        for doctesting.
+
+        Note: These small examples are wrapped "tight" in the
+        input and output elements.  For multiline code snippets,
+        the left margin is determined by the whitespace preceding
+        the first non-trivial character.
+        -->
+
+<!--       <section  xml:id="section-sage-cells">
+            <title>Gráficos de EDOs de Sistemas Lineares</title>
+            
+          
+
+    <introduction>
+   	<p>Nesta seção deixamos disponíveis modelos interativos dos gráficos apresentados no artigo XXX</p>
+   	</introduction>
+
+<p>Uma vez que as informações sejam alteradas, o gráfico será atualizado ao apertar em Tab ou quando for "clicado" fora do campo alterado.</p>
+
+<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-binomio">
+<caption>Teste</caption>
+<p>Gráfico das trajetórias do sistema:
+<me> x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+1 \amp 1 \\
+4 \amp 1
+\end{array}\right)x. </me>
+</p>
+    <interactive xml:id="interactive-teste" platform="sage" aspect="1:1.3" >
+    <slate surface="sage">                    
+@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
+passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:"), vetores=False):
+            
+    t = var('t')
+    x=function('x')(t)
+    y=function('y')(t)
+    edo = [diff(x, t) == edox[0][0]*x+edox[0][1]*y, diff(y, t) == edox[1][0]*x+edox[1][1]*y]
+
+    G = Graphics()
+    for i in srange(imin, imax, passo):
+        sol = desolve_system(edo, [x, y], [0,i,0])
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax))
+
+    for i in srange(imin, imax, passo):
+        sol = desolve_system(edo, [x, y], [0,0,i])
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4, frame=True)
+
+    if vetores==False:
+        return (G).show(xmin=-4, xmax=4, figsize=[4,4])
+    elif vetores==True:
+        u, v = var('u v')
+        x0 = edo[0].rhs().subs(x==u, y==v)
+        x1 = edo[1].rhs().subs(x==u, y==v)
+        
+        P = plot_vector_field(vector((x0, x1))/norm(vector((x0, x1))), (u, -4, 4), (v, -4, 4))
+    
+        return (P+G).show(xmin=-4, xmax=4, figsize=[4,4])
+
+
+    </slate>
+    </interactive>        
+</figure>
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>t = var('t')
+x=function('x')(t)
+y=function('y')(t)
+G = Graphics()
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,i,0])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5))
+    
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,0,i])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5), color='green', ymin=-4, ymax=4)
+(G).show(xmin=-4, xmax=4, figsize=5)  
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+
+<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-binomio2">
+<caption></caption>
+<p>Gráficos de <m>x_i</m> em função de <m>t</m>, do sistema:
+<me> x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+1 \amp 1 \\
+4 \amp 1
+\end{array}\right)x. </me>
+</p>
+    <interactive xml:id="interactive-teste2" platform="sage" aspect="1:0.8" >
+    <slate surface="sage">                    
+@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), passo=input_box(0.4 , width=10,  label="passo:")):
+    t, x, y = polygens(RR, 't, x, y')
+    
+    G = Graphics()
+    for j in srange(-3, 3, passo):
+        G = G + eulers_method_2x2_plot(edox[0][0]*x+edox[0][1]*y, edox[1][0]*x+edox[1][1]*y, 0, j, 1.5, 0.01, 1)[0]
+    return G.show(figsize=4.2)
+
+
+    </slate>
+    </interactive>        
+</figure>
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>t, x, y = polygens(RR, 't, x, y')
+G = Graphics()
+for j in srange(-3, 3, 0.4):
+    G = G + eulers_method_2x2_plot(x + y, 4*x + y, 0, j, 1.5, 0.01, 1)[0]
+G.show(figsize=5)
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+        </section>
+-->
+
+
+
+<section  xml:id="sec-polinomios-torre">
+            <title>Polinômios de torre.</title>
+            <!-- Index testing, semi-realistic -->
+          
+
+    <introduction>
+    <p>Nesta seção, usando matrizes, podemos obter os respectivos tabuleiros e polinômios de torre.</p>
+    </introduction>
+
+
+
+<technology>
+
+<p>Escolha uma matriz <m>m\times n</m> do tipo
+<men xml:id="sistema_pvp">T_{m\times n} = \begin{pmatrix}
+a_{11} \amp  a_{12} \amp \cdots \amp a_{1n}\\
+a_{21} \amp  a_{22} \amp \cdots \amp a_{2n}\\
+\vdots \amp  \vdots \amp  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp \cdots \amp a_{mn}
+\end{pmatrix}</men>
+com <m>a_{ij}\in \{0, 1\}</m> e escreva no campo T: dentro de colchetes, cada linha, também dentro de colchetes, da seguinte forma:
+<me> [[a_{11},a_{12},...,a_{1n}],\ldots,[a_{m1},a_{m2},...,a_{mn}]] </me>
+as entradas devem ser iguais a 0 ou 1.
+</p>
+
+    <interactive xml:id="interactive-polinomio-torre" platform="sage" aspect="1:1" >
+    <slate surface="sage">                    
+def tabuleiro(mat):
+    
+
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    
+    vlinhas = mat.rows()
+    
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+@interact
+def _(matriz=input_box([[1, 0, 1, 1],[1, 1, 1, 0],[0, 1, 1, 0],[1, 1, 1, 1]] , width=45,  label="T:"), Complementar=False ):
+
+    
+    k=0
+    for i in matriz:
+        for j in i:
+            if j not in [0,1]:
+                k = 5
+
+
+    if k != 0:
+        show('Erro: Entrada Inválida')
+    else:
+
+        mat = matrix(matriz)
+        if Complementar==True:
+            nlinha = mat.nrows()
+            ncol = mat.ncols()
+            for i in range(nlinha):
+                for j in range(ncol):
+                    if mat[i,j]==0:
+                        mat[i,j]=1
+                    else:
+                        mat[i,j]=0
+
+
+
+        R = PolynomialRing(ZZ, 'x')
+        show('R(x,T) = ', R(mat.rook_vector()))
+
+        tabuleiro(mat).show(figsize=5)
+
+    </slate>
+    </interactive>        
+
+
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>def tabuleiro(mat):
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    vlinhas = mat.rows()
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+A = matrix([[1, 0, 1, 1], [1, 1, 1, 0], [0, 1, 1, 0], [1, 1, 1, 1]])
+R = PolynomialRing(ZZ, 'x')
+show(R(A.rook_vector()))
+tabuleiro(A)
+</input>
+<output>
+</output>
+</sage>
+
+</technology>
+
+
+
+</section>
+
+
+
+
+
+<section  xml:id="sec-permutacao-restricao">
+            <title>Permutações com restrições</title>
+            <!-- Index testing, semi-realistic -->
+          
+
+    <introduction>
+    <p>Nesta seção é possível usar o SageMath para calcular o número de permutações com diversos tipos de restições. </p>
+
+    <p>Os códigos que estão disponíveis podem ser modificados e executados (apertando o botão "Evaluate (Sage)"). Estes códigos são enviados a um servidor e dentro de poucos segundos o resultado é retornado.</p>
+    </introduction>
+
+
+<subsection>
+<title>Caso Geral</title>
+
+
+<technology>
+<p>Polinômios de torre para tabuleiros <m>m \times n</m> especificando 
+<m>m, n</m> e as posições proibidas.
+</p>
+<interactive xml:id="interactive-restricoes" platform="sage" aspect="1:1.2" >
+    <slate surface="sage">                    
+def tabuleiro(mat):
+    
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    
+    vlinhas = mat.rows()
+    
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+@interact
+def _(linhas=input_box(4 , width=10,  label="linhas:"), colunas=input_box(4, width=10,  label="colunas:"), forbiden=input_box([(1,2),(2,4),(3,1), (3,4)] , width=45,  label="F:"), Complementar=False ):
+
+    mat = matrix.ones(linhas,colunas)
+    
+    for f in forbiden:
+        mat[f[0]-1, f[1]-1] = 0
+
+    if Complementar==True:
+        nlinha = mat.nrows()
+        ncol = mat.ncols()
+        for i in range(nlinha):
+            for j in range(ncol):
+                if mat[i,j]==0:
+                    mat[i,j]=1
+                else:
+                    mat[i,j]=0
+
+
+    R = PolynomialRing(ZZ, 'x')
+    show('R(x,T) = ', R(mat.rook_vector()))
+
+    tabuleiro(mat).show(figsize=5)
+
+    </slate>
+    </interactive>       
+
+</technology>
+
+<technology>
+<p>Os códigos no Sage, para o retrato de fase do sistema não linear, são os seguintes:</p>
+
+<sage>
+<input>def tabuleiro(mat):
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    vlinhas = mat.rows()
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+
+def rook_forbiden(m, n, lpos, invert=False):
+    lista = lpos
+    if invert == False:
+        mat = matrix.zero(m, n)
+        for i in lista:
+            mat[i[0]-1, i[1]-1] = 1
+    else:
+        mat = matrix.ones(m, n)
+        for i in lista:
+            mat[i[0]-1, i[1]-1] = 0
+        
+    vetor = mat.rook_vector()                            ### coeficientes do polinômio de torre
+    
+    total = len(vetor) - 1                             ### a é o numerador da contagem
+    cont = 0                                           ###
+    a = 0                                              ###
+    for i in vetor:                                    ###
+        a = a + i*((-1)^cont)*factorial(total-cont)    ###
+        cont = cont+1                                  ###
+    
+    print(lista)
+    print('coeficientes do polinômio de torre:')
+    print(vetor)
+    print('o número de permutações caóticas é:')
+    print(a)
+    
+    return tabuleiro(mat)
+
+rook_forbiden(9, 9, [(1,1),(3,3), (5, 5), (7, 7), (9,9)])    
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+
+</subsection>
+
+
+<subsection>
+<title>Permutações Caóticas</title>
+
+<technology>
+
+
+<p>Calculando o número de permutações caóticas através de polinômios de torre.
+</p>
+<interactive xml:id="interactive-permutacoes-caoticas" platform="sage" aspect="1:1.1" >
+    <slate surface="sage">                    
+def tabuleiro(mat):
+    
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    
+    vlinhas = mat.rows()
+    
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+@interact
+def _(n=input_box(5 , width=10,  label="n:"), Complementar=False ):
+
+    mat = matrix.identity(n)
+    
+
+    if Complementar==False:
+        nlinha = mat.nrows()
+        ncol = mat.ncols()
+        for i in range(nlinha):
+            for j in range(ncol):
+                if mat[i,j]==0:
+                    mat[i,j]=1
+                else:
+                    mat[i,j]=0
+
+
+    R = PolynomialRing(ZZ, 'x')
+    v = R(mat.rook_vector())
+    show('R(x,T) = ', v)
+    show('Dn=', v[n])
+    tabuleiro(mat).show(figsize=5)
+
+    </slate>
+    </interactive>       
+
+<p>Os códigos no Sage, para o caso não linear, são os seguintes:</p>
+<sage>
+<input>
+</input>
+<output>
+</output>
+</sage>
+
+</technology>
+
+</subsection>
+
+<definition>
+<p>
+Chamaremos de  permutação quase caótica, ou quase desarranjo, uma permutação na qual, pelo menos um elemento não podem ficar em sua posição original e no máximo o total de elementos menos um, não podem ficar em suas posições originais. 
+</p>
+
+</definition>
+
+<technology>
+
+
+<p>Calculando o número de permutações quase caóticas.
+</p>
+<interactive xml:id="interactive-permutacoes-quase-caoticas" platform="sage" aspect="1:1.2" >
+    <slate surface="sage">                    
+def tabuleiro(mat):
+    
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    
+    vlinhas = mat.rows()
+    
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+@interact
+def _(n=input_box(6 , width=10,  label="n:"), m=input_box(4 , width=10,  label="m:"),  Complementar=False ):
+
+    mat = matrix.ones(n)
+    for i in range(m):
+        mat[i,i] = 0
+
+    if Complementar==True:
+        nlinha = mat.nrows()
+        ncol = mat.ncols()
+        for i in range(nlinha):
+            for j in range(ncol):
+                if mat[i,j]==0:
+                    mat[i,j]=1
+                else:
+                    mat[i,j]=0
+
+
+    R = PolynomialRing(ZZ, 'x')
+    v = R(mat.rook_vector())
+    show('R(x,T) = ', v)
+    show('QDn,m=', v[n])
+    tabuleiro(mat).show(figsize=5)
+
+    </slate>
+    </interactive>     
+
+</technology>
+
+<subsection>
+<title>Permutação Caótica com elementos repetidos</title>
+
+
+<technology>
+
+
+<p>Calculando o número permutações caóticas com elementos repetidos. 
+
+</p>
+<interactive xml:id="interactive-permutacoes-caoticas-repeticao" platform="sage" aspect="1:1.1" >
+    <slate surface="sage">                    
+def tabuleiro(mat):
+    
+    linhas = list(range(mat.nrows()+1))
+    colunas = list(range(mat.ncols()+1))
+    
+    vlinhas = mat.rows()
+    
+    for i in vlinhas:
+        for j in i:
+            if j==0:
+                return mat.plot(frame=false, cmap=['#ff5454', '#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+            
+    return mat.plot(frame=false, cmap=['#54c8ff'], subdivisions=True, subdivision_boundaries=[linhas,colunas], subdivision_style=[dict(color='black'),dict(color='black')] )
+@interact
+def _(texto=input_box(['POLINOMIO'] , width=35,  label="texto:"),  Complementar=False ):
+
+    lista = list(texto[0])
+    lista.sort()
+    quantidades=[]
+    anterior = []
+    
+    for i in lista:                    # conta 
+        c = lista.count(i)             # quantas vezes                
+        if i != anterior:              # cada letra            
+            quantidades.append(c)      # aparece              
+            anterior = i               #                          
+    denominador = prod(factorial(i) for i in quantidades)
+    
+    bloco=[]                ### contrução dos blocos de matrizes
+    for i in quantidades:                                        
+        bloco.append(matrix.ones(i))                   
+    mat = block_diagonal_matrix(bloco, subdivide=false)  
+    
+    #vetor = m.rook_vector(complement=True)
+    #return vetor[-1]/denominador
+
+    if Complementar==False:
+        nlinha = mat.nrows()
+        ncol = mat.ncols()
+        for i in range(nlinha):
+            for j in range(ncol):
+                if mat[i,j]==0:
+                    mat[i,j]=1
+                else:
+                    mat[i,j]=0
+
+    
+    R = PolynomialRing(ZZ, 'x')
+    v=mat.rook_vector()
+    pol = R(v)
+    #show('Coeficientes: ', v)
+    show( 'Número de Permut. Caóticas: %d/%d = %d' %(v[-1],denominador, v[-1]/denominador))
+    
+    show('Nova ordem:', lista)
+    tabuleiro(mat).show(figsize=5)
+
+    </slate>
+    </interactive>     
+
+</technology>
+</subsection>
+
+
+</section>
+
+
+
+
+
+<section  xml:id="sec-problema-menages">
+            <title>Problème des Ménages</title>
+            <!-- Index testing, semi-realistic -->
+          
+
+    <introduction>
+    <p>Nesta seção, através de uma matriz, o tabuleiro e o respectivo polinômio de torre pode ser obtido.</p>
+    </introduction>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+    </article>
+</pretext>

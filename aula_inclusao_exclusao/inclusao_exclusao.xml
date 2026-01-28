@@ -1,0 +1,3103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2013 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!--
+To process this file, at the command-line issue:
+
+xsltproc /path/to/mathbook/xsl/pretext-html.xsl /path/to/mathbook/examples/sample-article.xml
+
+then find  "derivatives.html"  in the current working directory
+and use a web browser to view.  For PDF/print, issue:
+
+xsltproc -o derivatives.tex /path/to/mathbook/xsl/mathbook-latex.xsl /path/to/mathbook/examples/sample-article.xml
+
+and apply  pdflatex  or  xelatex  to  "derivatives.tex"  in
+the current working directory.
+
+Ignore any warnings, they are part of testing the warning system.
+
+To see images in your results, copy the examples/images directory
+so that your working directory has the images subdirectory.  See
+the  pretextbook.org  website for information on installing
+the xsltproc executable.
+-->
+
+<!-- Overall element for a Mathbook XML document; mandatory, always  -->
+<!-- Experiment with the "xml:lang" attribute to see localization    -->
+<!-- changes, the  xsl/localizations  directory has more information -->
+<pretext xml:lang="pt-BR">
+<!-- <pretext xml:lang="pt-BR"> -->
+<!-- <pretext xml:lang="fr-FR"> -->
+<!-- <pretext xml:lang="cs-CZ"> -->
+<!-- <pretext xml:lang="af-ZA"> -->
+
+    <!--
+    "docinfo" is like metadata, it is necessary technical
+    information which a reader mostly will never see.  LaTeX
+    macros and Web analytics project numbers are good examples.
+    If you are getting started, you do not need any of this initially.
+    So on a first reading, skip ahead to the article tag.
+    -->
+    <docinfo>
+        <!--
+        In the HTML version there is room for a picture or logo
+        in the upper left corner.  An image of a cover for a
+        physical version is a good choice to go here.  We use
+        16th Century Art Book Cover, 176x240 pixels, Public Domain, due to age
+        http://commons.wikimedia.org/wiki/File:Book_Cover_-_Google_Art_Project.jpg
+        -->
+        <!--<brandlogo url="https://pretextbook.org" source="images/book-cover-google-art-project.jpg" />-->
+        <!--
+        LaTeX packages that are also implemented as MathJax extensions
+        may be specified here and any macros they have in common may be
+        used within mathematics.  See below in the "Mathematics" section
+        an example of the use of the "\cancelto{}{}" macro from
+        the "cancel" package.
+        -->
+        <latex-preamble>
+            <package>cancel</package>
+        </latex-preamble>
+        <!--
+        TeX/LaTeX macros can be written in the usual way.
+        Whitespace and line breaks are irrelevant here.
+        These are "write once, use everywhere".
+        -->
+        <macros>
+        \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+        \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+        % comments anywhere get stripped, with or without faux % comment \% characters
+        \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+        \newcommand{\testingescapedpercent}{ \% } % just testing
+        </macros>
+        <!-- We control the appearance of the text of cross-references here           -->
+        <!-- (these are the "xref" elements).  Because this changes the words         -->
+        <!-- that appear in your output, it is a decision with stays with the source. -->
+        <!-- Experiment here with different choices and a few different "xref"        -->
+        <!-- elements before you decide on a final choice.  We set this to 'global',  -->
+        <!-- not because we think it is a good choice, but for historical reasons.    -->
+        <!-- The default is 'type-global', which produces text like "Theorem 5.2",    -->
+        <!-- where "Theorem" will be translated into the document language            -->
+        <cross-references text="global" />
+        <!--
+        Extra packages, package options, and package settings for latex-based images.
+        Inserted in the preamble for LaTeX output.
+        Inserted in the preamble to each standalone latex-based image for HMTL SVG output.
+        -->
+        <latex-image-preamble>
+        \usepackage{pgfplots}               % loads tikz package
+        \usepackage{smartdiagram}           % for a circular diagram
+        \pgfplotsset{axis x line = middle,
+                     axis y line = middle}
+        \usetikzlibrary{backgrounds}
+        \usetikzlibrary{arrows,matrix}
+        \usetikzlibrary{positioning}        % for Dave R's worksheet
+        \usepackage{circuitikz}             % for Virgil P's worksheet
+        </latex-image-preamble>
+        <!--
+        The Sage Notebook has its own interface and worksheet list.
+        To use the sorting features optimally, it helps to have subdivisions
+        begin with the same short prefix.  An "initialism" (nee acronym)
+        here will be used for that purpose if present.  This is only employed
+        for producing Sage notebook versions and in the title shown in the
+        browser. (If not present, you will get a harmless warning just for
+        Sage worksheet production.)
+        -->
+        <initialism>REVISTA</initialism>
+        <!-- For various purposes, it is helpful to have a unique identifier    -->
+        <!-- for your entire document.  As of 2019-01-02 this will be used as   -->
+        <!-- the HTML id attribute on the body element of *every* page created  -->
+        <!-- by the HTML conversion.                                            -->
+        <!--                                                                    -->
+        <!--   * Start with a letter                                            -->
+        <!--   * No strange characters, just 52 Latin letters, and 10 digits    -->
+        <!--   * No spaces                                                      -->
+        <!--   * Use only a hyphen (-) to separate words                        -->
+        <!--                                                                    -->
+        <!-- Make it so there is a reasonable expectation of being unique.      -->
+        <!-- "my-book" is a poor choice, "beezer-first-course-linear-algebra"   -->
+        <!-- is better.  And maybe something in-between is best: "beezer-FCLA". -->
+        <document-id>pretext-SA</document-id>
+        <!-- Items peculiar to an HTML output -->
+        <html>
+            <!-- Expects favicon/favicon-32x32.png, and favicon/favicon-16x16.png -->
+            <favicon/>
+            <!-- There does not need to be a trailing / on the URL             -->
+            <!-- NB Eventually a publisher option will exist to overrule this, -->
+            <!-- so a given source can be installed more than one place        -->
+            <baseurl href="https://pretextbook.org/examples/sample-article/html" />
+        </html>
+        <!--
+        With a <feedback> element, in the HTML version, you get a button
+        for reporting typos and errors.  You might link to a Google Docs
+        spreadsheet or something similar.  Default is to get a button
+        labeled "Feedback", which will be localized to your target language.
+        You can override this with some text of your choosing, but then you
+        lose the localization feature.
+        -->
+        <feedback>
+            <url>not-implemented.html</url>
+             <!-- <text>My Button Text</text>  -->
+        </feedback>
+
+        <!--
+        "Names" for various parts of a document are determined exactly
+        once for each language, ensuring consistency and saving you the
+        bother of always typing them in.  These can be found in the
+        files in the  xsl/localizations  directory.
+
+        You can make a document-specific, global override.  Here we
+        decide we have no need for any "proposition"s and repurpose
+        that environment as a "Conundrum."
+
+        The specification of a language is optional, if you do not
+        have a multilingual project.  Otherwise you can supply an
+        @xml:lang attribute so the rename only applies for a specific
+        language.  See the localization file for more on language codes.
+        -->
+        <!-- <rename element="proposition">Conundrum</rename> -->
+
+        <!-- Images in HTML output may carry a discreet list of links    -->
+        <!-- to "archival" versions of images in a variety of formats.   -->
+        <!-- Authors have complete freedom to do this as they choose,    -->
+        <!-- along with complete responsibility to provide the actual    -->
+        <!-- files, with proper filenames and suffices.  Search this     -->
+        <!-- source file for "archive=" to see particular examples.      -->
+        <!-- The following demonstrates a global specification, which    -->
+        <!-- we just use for testing - it just makes totally fake links. -->
+        <!--
+        <images>
+            <archive>One Two Three</archive>
+        </images>
+        -->
+
+        <!-- Demonstration of subtree specifications for archive formats -->
+        <!-- (Do not use in concert with above global test)              -->
+        <!-- Chapter on graphics, fake "A B" links throughout            -->
+        <!-- No other part of the @archive scheme is affected            -->
+        <!-- Two images, inside figures, within graphics chapter         -->
+        <!--   1) one has "A B" links turned off                         -->
+        <!--   2) single link "exceptional"                              -->
+        <!--
+        <images>
+            <archive from="graphics">A B</archive>
+            <archive from="figure-asymptote-levers" />
+            <archive from="figure-asymptote-contour-plot">exceptional</archive>
+        </images>
+        -->
+
+        <latex-output>
+            <!-- turn this on once it is easier to make   -->
+            <!-- standalone worksheets, uncomment to test -->
+            <!-- <worksheet top="3cm" left="4cm" margin="12cm"/> -->
+        </latex-output>
+
+    </docinfo>
+
+    <!--
+    The article element is top-level for anything short of a book.
+    There is a book element, which is not demonstrated here.
+    The "xml:id" attribute will be used for the filename of the
+    HTML output.
+    -->
+    <article xml:id="aula_inclusao_exclusao">
+        <title>O Princípio da Inclusão-Exclusão</title>
+        <!-- <subtitle>Uma abordagem Olímpica e Computacional</subtitle> -->
+
+        <!--
+        The frontmatter contains a variety of items that precede
+        the actual content.  They should be placed in the proper order,
+        here the title material should precede a table of contents.
+        They differ from "docinfo" items in that they will be *content*
+        that a reader will actually see.
+        -->
+
+        <frontmatter xml:id="frontmatter">
+            <!--
+            Items typically on the main title page of a book,
+            but here as an article they are handled more compactly
+             -->
+
+            <titlepage>
+
+               <!-- There can be several authors here -->
+                
+                
+                
+              
+
+                <author>
+                    <personname>Ricardo Nunes Machado Junior</personname>
+                    <!-- department here is one line, so unstructured -->
+                    <department>Departamento de Matemática</department>
+                    <!-- institution uses two lines, so structured as such -->
+                    <institution>
+                        <line>Universidade Federal Rural de Pernambuco - UFRPE</line>
+                        <line>Recife, Pernambuco, Brasil</line>
+                    </institution>
+                    <email>ricardo.machadojunior@ufrpe.br</email>
+                </author>  
+                
+              
+          
+
+                <!-- Can set date manually or use the "today" element -->
+                <date><today /></date>
+
+            </titlepage>
+
+            <abstract>
+                <p>Sejam todas e todos bem-vindas e bem-vindos ao complemento do artigo: "Criação de tecnologias com o Software SageMath para
+Teoria dos Números", submetido à Revista Professor de Matemática Online (PMO). Se você chegou até aqui através de nosso trabalho, descobrirá um complemento da parte computacional que desenvolvemos para a construção de nosso artigo. </p>
+
+                <p>Destacamos dentre as ferramentas computacionais disponibilizadas:
+                <ol>
+                <li>O Algoritmo de Euclides para o cálculo de MDC;</li>
+                <li>A solução geral para uma equação diofantina linear (em qualquer dimensão).</li>
+                <li>Gráfico com algumas soluções de Equações Diofantinas Lineares de dimensão 2.</li>
+                <li>A solução do número de Frobenius em dimensão 2.</li>
+                </ol> 
+                Estas tecnologias podem auxiliar bastante o estudo no tema das Equações Diofantinas uma vez que permitem não apenas rápidas soluções para o problema, mas também processos intermediários detalhadamente escritos.</p>
+
+                <p>Esperamos que vocês gostem, usem e abusem da tecnologia disponibilizada!</p>
+            </abstract>
+            <!--
+            Acknowledgements, dedications, colophon (ISBN, copyright, etc)
+            are supported in the book document type.  Such a diverse range
+            is not yet available for articles.  Send requests.
+             -->
+        </frontmatter>
+
+        <!--
+        Articles have sections, which have subsections,
+        which have subsubsections.These are all "containers"
+        and so line breaks and extraneous whitespace gets
+        scrubbed.  Use indentation and line breaks liberally
+        within containers to make the structure of your
+        source readable.
+        -->
+
+ 
+
+        <!--
+        Note above: Subdivisions always have titles, and these
+        are not containers.  Line breaks and whitespace will
+        bleed into output, which is especially a problem for TeX,
+        since it may render as a blank line.  So keep the title
+        element "tight" around the content.
+
+        The "p" element is a paragraph, and also not a container,
+        so keep it wrapped tight.  Lots can go on in a paragraph.
+        -->
+
+
+        <!--
+        Sage Code: Next section has Sage code examples.
+        For HTML it renders as Sage Cells, with no sample output.
+        For LaTeX it renders as input/output, suggestively typeset.
+        A separate XSL transform isolates code and produces a file
+        for doctesting.
+
+        Note: These small examples are wrapped "tight" in the
+        input and output elements.  For multiline code snippets,
+        the left margin is determined by the whitespace preceding
+        the first non-trivial character.
+        -->
+
+<!--       <section  xml:id="section-sage-cells">
+            <title>Gráficos de EDOs de Sistemas Lineares</title>
+            
+          
+
+    <introduction>
+   	<p>Nesta seção deixamos disponíveis modelos interativos dos gráficos apresentados no artigo XXX</p>
+   	</introduction>
+
+<p>Uma vez que as informações sejam alteradas, o gráfico será atualizado ao apertar em Tab ou quando for "clicado" fora do campo alterado.</p>
+
+<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-binomio">
+<caption>Teste</caption>
+<p>Gráfico das trajetórias do sistema:
+<me> x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+1 \amp 1 \\
+4 \amp 1
+\end{array}\right)x. </me>
+</p>
+    <interactive xml:id="interactive-teste" platform="sage" aspect="1:1.3" >
+    <slate surface="sage">                    
+@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
+passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:"), vetores=False):
+            
+    t = var('t')
+    x=function('x')(t)
+    y=function('y')(t)
+    edo = [diff(x, t) == edox[0][0]*x+edox[0][1]*y, diff(y, t) == edox[1][0]*x+edox[1][1]*y]
+
+    G = Graphics()
+    for i in srange(imin, imax, passo):
+        sol = desolve_system(edo, [x, y], [0,i,0])
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax))
+
+    for i in srange(imin, imax, passo):
+        sol = desolve_system(edo, [x, y], [0,0,i])
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4, frame=True)
+
+    if vetores==False:
+        return (G).show(xmin=-4, xmax=4, figsize=[4,4])
+    elif vetores==True:
+        u, v = var('u v')
+        x0 = edo[0].rhs().subs(x==u, y==v)
+        x1 = edo[1].rhs().subs(x==u, y==v)
+        
+        P = plot_vector_field(vector((x0, x1))/norm(vector((x0, x1))), (u, -4, 4), (v, -4, 4))
+    
+        return (P+G).show(xmin=-4, xmax=4, figsize=[4,4])
+
+
+    </slate>
+    </interactive>        
+</figure>
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>t = var('t')
+x=function('x')(t)
+y=function('y')(t)
+G = Graphics()
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,i,0])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5))
+    
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,0,i])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5), color='green', ymin=-4, ymax=4)
+(G).show(xmin=-4, xmax=4, figsize=5)  
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+
+<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-binomio2">
+<caption></caption>
+<p>Gráficos de <m>x_i</m> em função de <m>t</m>, do sistema:
+<me> x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+1 \amp 1 \\
+4 \amp 1
+\end{array}\right)x. </me>
+</p>
+    <interactive xml:id="interactive-teste2" platform="sage" aspect="1:0.8" >
+    <slate surface="sage">                    
+@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), passo=input_box(0.4 , width=10,  label="passo:")):
+    t, x, y = polygens(RR, 't, x, y')
+    
+    G = Graphics()
+    for j in srange(-3, 3, passo):
+        G = G + eulers_method_2x2_plot(edox[0][0]*x+edox[0][1]*y, edox[1][0]*x+edox[1][1]*y, 0, j, 1.5, 0.01, 1)[0]
+    return G.show(figsize=4.2)
+
+
+    </slate>
+    </interactive>        
+</figure>
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>t, x, y = polygens(RR, 't, x, y')
+G = Graphics()
+for j in srange(-3, 3, 0.4):
+    G = G + eulers_method_2x2_plot(x + y, 4*x + y, 0, j, 1.5, 0.01, 1)[0]
+G.show(figsize=5)
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+        </section>
+-->
+
+
+
+<section  xml:id="sec_introducao">
+            <title>O Princípio da Inclusão-Exclusão</title>
+            <!-- Index testing, semi-realistic -->
+          
+
+<introduction>
+<p>
+O Princípio da Inclusão-Exclusão é uma ferramenta fundamental da Combinatória, utilizada para realizar a contagem precisa de elementos pertencentes a vários conjuntos. Apresentamos esse princípio combinando teoria e exemplos, com atenção especial à integração de recursos tecnológicos desenvolvidos com o auxílio do <em>SageMath</em>.
+</p>
+</introduction>
+
+
+<remark>
+<ul>
+<li>Usaremos o símbolo <m>\#A</m> para representar o número de elementos do conjunto <m>A</m>, isto é, a cardinalidade de <m>A</m>. </li>
+<li>Dizemos que dois conjuntos <m>A</m> e <m>B</m> são disjuntos quando <m>A\cap B=\varnothing</m>.</li>
+</ul>
+</remark>
+
+
+    <subsection >
+        <title>O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos</title>
+
+
+
+<theorem xml:id="teo-inclusao-exclusao-2">
+    <statement>
+<p>Sejam  <m>A</m>  e  <m>B</m>  conjuntos finitos, então
+<me> \#(A\cup B) = \#A + \# B - \#(A\cap B). </me></p>
+
+    <figure xml:id="inclusao-exclusao-2">
+        <caption>Diagrama de Venn para <m>(A\cup B)</m>.</caption>            
+        <image source="images/inclusaoexclusao2novo" width="80%"/> 
+    </figure>
+
+<p>Ou seja, a cardinalidade de <m>A\cup B</m> é igual a cardinalidade de <m>A</m> mais a cardinalidade de <m>B</m> menos a cardinalidade de <m>A\cap B</m>. </p>
+</statement>
+<!-- <proof>
+
+<p>Sejam <m>A</m> e <m>B</m> conjuntos finitos, <m>T_1</m> a tarefa de selecionar um elemento de <m>A</m> e <m>T_2</m> a tarefa de selecionar um elemento de <m>B</m>. </p>
+
+<p>Existem <m>\#A</m> maneiras de realizar <m>T_1</m> e <m>\#B</m> maneiras de realizar <m>T_2</m>. O número de maneiras de executar <m>T_1</m> ou <m>T_2</m> é a soma do número de maneiras de executar <m>T_1</m> com o número de maneiras de executar <m>T_2</m> menos o número  de maneiras de  executar ambos <m>T_1</m> e <m>T_2</m>, pois esta quantidade já foi contada duas vezes. </p>
+
+<p>Como existem <m>\#(A\cup B)</m> maneiras de realizar <m>T_1</m> ou <m>T_2</m> e <m>\#(A\cap B)</m> maneiras de realizar <m>T_1</m> e <m>T_2</m>, temos:
+<me>\#(A\cup B)=\#A+\#B-\#(A\cap B).</me>
+</p>
+</proof>   --> 
+
+</theorem>    
+
+
+<example xml:id='poti3_modif'><title>(POTI Nível 3 - modificado)</title>
+<statement>
+    <p>Um retângulo <m>20 \times 32</m> é feito de quadrados unitários. Por quantos
+quadrados unitários a diagonal do retângulo passa?</p> 
+</statement> 
+<solution>
+<p>  
+A diagonal corta cada um dos <m>20+32</m> quadrados? A resposta é não.
+De fato, pode ocorrer de haver repetições na "mudança". Veja o
+seguinte exemplo bidimensional, num retângulo <m>6 \times 9</m>. 
+<!-- A significa mudança na horizontal e B, mudança na vertical. -->
+</p> 
+<p>
+Note que há três repetições. Opa!
+<m>mdc(6, 9) = 3</m> e <m>(6, 9) = 3 \cdot (2, 3)</m>. 
+O que acontece é que se <m>mdc(a, b) = d</m>, ocorrem <m>d</m> blocos de repetições.
+Logo, devemos subtrair <m>mdc(a, b)</m>. A resposta é <m>a + b - mdc(a, b)</m>.
+</p>
+<p>
+No nosso caso, a resposta é <m>20+32-mdc(20,32)=20+32-4 = 48.</m>
+</p>
+</solution>    
+</example>
+
+
+<technology>
+<p>Escolha os valores dos campos, m (número de linhas) e n (número de colunas)
+ para determinar quantos quadrados unitários a diagonal do retângulo passa.
+</p>    
+<figure xml:id="interactive-inclu-exclu-001">
+<!-- <caption>Cardinalidade do conjunto <m>C</m>.</caption> -->
+<interactive xml:id="interactive-inclusao-exclusao-001" platform="sage" aspect="1:0.8" >
+<slate surface="sage">                    
+@interact
+def _(l=input_box(6, width=25,  label="m:"), c=input_box(9, width=25,  label="n:"),auto_update=False ):
+    
+    
+    def visualizar_diagonal_retangulo_completo(m, n):
+    # Cálculo exato
+        num_quadrados = m + n - gcd(m,n)
+        slope = QQ(n) / QQ(m)
+    
+        # Lista para armazenar as formas (mais rápido que somar p += ...)
+        elementos = []
+    
+        # 1. Desenhar TODOS os quadrados do retângulo (Grid completo)
+        for i in range(m):
+            for j in range(n):
+                # Lógica de interseção: a diagonal entra no interior do quadrado?
+                y_inicio = i * slope
+                y_fim = (i + 1) * slope
+            
+                # Condição matemática para passar por dentro do quadrado (i, j)
+                if j + 1 > y_inicio  and y_fim > j:
+                    cor = '#FF8C00' # Laranja escuro
+                else:
+                    cor = 'white'
+                
+                elementos.append(polygon([(i, j), (i+1, j), (i+1, j+1), (i, j+1)], 
+                                     color=cor, edgecolor='gray', thickness=0.5))
+    
+        # 2. Desenhar a diagonal principal
+        elementos.append(line([(0, 0), (m, n)], color='red', thickness=1, figsize=5))
+    
+        # Criar o gráfico final
+        grafico = sum(elementos)
+        grafico.set_aspect_ratio(1)
+    
+        print(f"Dimensões: {n}x{m}")
+        print(f"Quadrados que a diagonal atravessa: {num_quadrados}")
+    
+        return grafico.show(frame=False, axes=False)
+
+    # Teste com dimensões menores para ver o grid completo
+    visualizar_diagonal_retangulo_completo(c,l)
+    </slate>
+    </interactive>
+</figure>
+</technology>
+
+
+<theorem>
+<p>Sejam  <m>A, B</m> e  <m>C</m>  conjuntos finitos, então
+</p>
+
+<md>
+  <mrow> \#(A\cup B\cup C) = \amp ~\#(A)+\#(B)+\#(C) </mrow>
+  <mrow>  \amp ~ -\#(A\cap B)-\#(A\cap C)-\#(B\cap C) </mrow>
+  <mrow>  \amp ~ +\#(A\cap B\cap C). </mrow>
+</md>
+
+    <figure xml:id="inclusao-exclusao-3">
+        <caption>Diagrama de Venn para <m>(A\cup B\cup C)</m>.</caption>            
+        <image source="images/inclusaoexclusao3novo2" width="80%"/> 
+    </figure>
+<!-- <proof>
+
+<p>
+
+Considere <m>(A\cup B)</m> como um conjunto, usando o (<xref ref="teo-inclusao-exclusao-2" />) temos:
+
+ 
+<md>
+  <mrow> \#[A\cup B\cup C] = \amp~\#[(A\cup B)\cup C] </mrow>
+  <mrow>   = \amp ~\#(A\cup B)+\#C-\#[(A\cup B)\cap C] </mrow>
+  <mrow>   = \amp ~ \#A+\#B-\#(A\cap B)+\#C-\#[(A\cup B)\cap C]. </mrow>
+</md>
+
+Usando a igualdade:
+
+<me> (A\cup B)\cap C = (A\cap C)\cup (B\cap C), </me>
+
+temos
+
+<me>\#[A\cup B\cup C] = \#A+\#B-\#(A\cap B)+\#C-\#[(A\cap C)\cup (B\cap C)]. </me>
+
+Aplicando o (<xref ref="teo-inclusao-exclusao-2" />) na união <m>[(A\cap C)\cup (B\cap C)]</m>, concluímos a demonstração:
+
+
+<md>
+  <mrow> \#(A\cup B\cup C) = \amp ~\#A+\#B-\#(A\cap B)+\#C </mrow>
+  <mrow>  \amp ~ -\#(A\cap C)-\#(B\cap C) </mrow>
+  <mrow>  \amp ~ +\#(A\cap B\cap C). </mrow>
+</md>
+
+</p>    
+</proof>    -->
+
+</theorem>  
+
+
+<example xml:id='ex_multiplos_001'>
+<statement>
+Determine o número de elementos do conjunto:
+<me>A = \{ n\in \mathbb{N}~|~ n \text{ é múltiplo de } 6, \text{ ou } 15, \text{ ou } 21 \text{ e } 100\leq n\leq 1000\}.</me>
+</statement>
+<solution>
+<p>
+  Inicialmente defina os conjuntos
+  <md>
+    <mrow>A_6 \amp = \{n\in\mathbb{N} \mid 100\leq n\leq 1000 \text{ e } n \text{ é múltiplo de 6}\};</mrow>
+    <mrow>A_{15} \amp = \{n\in\mathbb{N} \mid 100\leq n\leq 1000 \text{ e } n \text{ é múltiplo de 15}\};</mrow>
+    <mrow>A_{21} \amp = \{n\in\mathbb{N} \mid 100\leq n\leq 1000 \text{ e } n \text{ é múltiplo de 21}\}.</mrow>
+  </md>
+</p>
+
+<p>
+  Note que <me>\#A = \#(A_6\cup A_{15}\cup A_{21}).</me>
+  O número de múltiplos de um número natural <m>n</m>, entre 1 e 1000, inclusive, é dado pelo quociente da divisão Euclideana de 1000 por <m>n</m>, pois, se <m>1000 = n\cdot q + r</m>, com <m>0\leq r \lt n</m>, então os números <m>1\cdot n, 2\cdot n, \ldots, q\cdot n</m> são múltiplos de <m>n</m> e estão entre 1 e 1000. Porém, no exemplo, a contagem dos múltiplos deve ser entre 100 e 1000, inclusive. Para contornar esta situação, definimos os conjuntos
+  <md>
+    <mrow>A_6' \amp = \{n\in\mathbb{N} \mid 1\leq n\leq 99 \text{ e } n \text{ é múltiplo de 6}\};</mrow>
+    <mrow>A_{15}' \amp = \{n\in\mathbb{N} \mid 1\leq n\leq 99 \text{ e } n \text{ é múltiplo de 15}\};</mrow>
+    <mrow>A_{21}' \amp = \{n\in\mathbb{N} \mid 1\leq n\leq 99 \text{ e } n \text{ é múltiplo de 21}\}.</mrow>
+  </md>
+  e os conjuntos
+  <md>
+    <mrow>A_6'' \amp = \{n\in\mathbb{N} \mid 1\leq n\leq 1000 \text{ e } n \text{ é múltiplo de 6}\};</mrow>
+    <mrow>A_{15}'' \amp = \{n\in\mathbb{N} \mid 1\leq n\leq 1000 \text{ e } n \text{ é múltiplo de 15}\};</mrow>
+    <mrow>A_{21}'' \amp = \{n\in\mathbb{N} \mid 1\leq n\leq 1000 \text{ e } n \text{ é múltiplo de 21}\}.</mrow>
+  </md>
+</p>
+
+<p>
+  Assim,
+  <md>
+    <mrow>\#A_i \amp = \#A_i''-\#A_i',</mrow>
+    <mrow>\#(A_i\cap A_j) \amp = \#(A_i''\cap A_j'') - \#(A_i'\cap A_j'),</mrow>
+    <mrow>\#(A_i\cap A_j\cap A_k) \amp = \#(A_i''\cap A_j'' \cap A_k'') - \#(A_i'\cap A_j'\cap A_k'),</mrow>
+  </md>
+  Portanto, <me>\#A_6 = \#A_6'' - \#A_6' = 166-16 = 150,</me> pois <m>1000 = 6\times 166 + 4</m> e <m>99 = 6\times 16 + 3</m>.
+</p>
+
+<p>
+  Analogamente,
+  <md>
+    <mrow>\#A_{15} \amp = \#A_{15}''-\#A_{15}' = 66 - 6 = 60,</mrow>
+    <mrow>\#A_{21} \amp = \#A_{21}''-\#A_{21}' = 47 - 4 = 43.</mrow>
+  </md>
+</p>
+
+<p>
+  Para o caso das interseções <m>A_{n_1}\cap A_{n_2}\cap \cdots \cap A_{n_k}</m>, devemos usar o quociente da divisão Euclideana pelo <m>\mathrm{MMC}(n_1, n_2, \ldots, n_k)</m>. Pois, o MMC é o menor múltiplo desses números, por definição. Logo,
+  <me>\#(A_6\cap A_{15}) = \#(A_6''\cap A_{15}'') - \#(A_6'\cap A_{15}') = 33-3 = 30,</me>
+  pois <m>\mathrm{MMC}(6,15) = 30</m>, <m>1000 = 30\cdot 33 + 10</m> e <m>99 = 30\cdot 3+9</m>. Analogamente,
+  <md>
+    <mrow>\#(A_6\cap A_{21}) \amp = \#(A_6''\cap A_{21}'') - \#(A_6'\cap A_{21}') = 23 -1= 21,</mrow>
+    <mrow>\#(A_{15}\cap A_{21}) \amp = \#(A_{15}''\cap A_{21}'') - \#(A_{15}'\cap A_{21}') = 9-0 = 9.</mrow>
+  </md>
+</p>
+
+<p>
+  Na interseção dos três conjuntos temos,
+  <me>\#(A_6\cap A_{15}\cap A_{21}) = \#(A_6''\cap A_{15}''\cap A_{21}'')-\#(A_6'\cap A_{15}'\cap A_{21}') = 4-0= 4,</me>
+  pois <m>\mathrm{MMC}(6,15,21) = 210</m>, <m>1000 = 210\cdot 4 + 160</m> e <m>99 = 210\cdot 0+99</m>.
+</p>
+
+<p>
+  Finalmente, pelo Princípio da Inclusão-Exclusão:
+  <me>\#A = \#(A_6 \cup A_{15} \cup A_{21}) = 150+60+43-30-21-9+4 = 197.</me>
+</p>
+</solution>
+</example>
+
+
+
+<technology>
+<p>Escolha os valores dos campos, Vmin ,Vmax e lista,
+ para determinar a cardinalidade do conjunto abaixo:
+<me>C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.</me>
+</p>    
+<figure xml:id="interactive-inclu-exclu-002">
+<!-- <caption>Cardinalidade do conjunto <m>C</m>.</caption> -->
+<interactive xml:id="interactive-inclusao-exclusao-002" platform="sage" aspect="1:0.8" >
+<slate surface="sage">                    
+@interact
+def _(n_min=input_box(100, width=25,  label="Vmin:"), n_max=input_box(1000, width=25,  label="Vmax:"), l_m=input_box([6,15,21] , width=25, label="lista:"),auto_update=False ):
+          
+  def numeros_de_multiplos2(lista, ini, fim):
+      cardinalidade_omega = fim-ini+1
+
+      #combinacoes = {}
+      lista_combinacoes=[]
+      for i in range(len(lista)):
+          lista_combinacoes.append(Combinations(lista, i+1).list())
+      
+      #MMC
+      lista_mmc=[]
+      for i in lista_combinacoes:
+          temp=[]
+          for j in range(len(i)):
+              temp.append(lcm(i[j]))
+          lista_mmc.append(temp)
+      
+      #soma por interseções (Si)
+      lSi=[]
+      card_Ai_inter=[]
+      for j in lista_mmc:
+          temp=[]
+          for i in j:
+              temp.append(len([x for x in [ini..fim] if x%i == 0]))
+          card_Ai_inter.append(temp)
+          lSi.append(sum(temp))
+      
+      # aplicando o princípio da inclusão-exclusão
+      soma = 0
+      for i in range(len(lSi)):
+          soma = soma +(-1)^i*lSi[i]
+      
+      k=0
+      for c in lista_combinacoes:
+          for i in range(len(c)):
+              s=''
+              for j in c[i]:
+                  s = s+'A'+str(j)+'∩'
+              s=s[:-1]
+              print(f'#{s} = {card_Ai_inter[k][i]}')
+          k=k+1
+       
+      s2 = ''
+      for i in lista:
+          s2 = s2+'A'+str(i)+'∪'
+      s2=s2[:-1]
+      print(f'\n#{s2} = {soma}')
+  
+  numeros_de_multiplos2(l_m, n_min, n_max)
+    </slate>
+    </interactive>
+</figure>
+
+
+
+</technology>
+
+
+
+
+
+</subsection>
+
+<subsection >
+    <title>O Princípio da Inclusão-Exclusão para <m>n</m> conjuntos</title>
+
+
+<theorem xml:id="teo-inclusao-exclusao-n">
+<p> 
+Sejam <m>A_1,A_2,\cdots,A_n</m> conjuntos finitos. A cardinalidade de 
+
+<men xml:id="eq-uniao">
+\bigcup_{i=1}^{n}A_i =  A_1 \cup A_2 \cup \cdots \cup A_n 
+</men>
+é dada por:
+
+<men xml:id="eq-inclusao-exclusao-n">\begin{cases} \displaystyle\#\bigcup_{i=1}^{n}A_i \amp \displaystyle=  \sum_{i=1}^{n}\#A_i-\sum_{0 \lt  i \lt j   \leq n}\#(A_i\cap A_j)+\cdots\\
+            \amp ~~~~~ \displaystyle\cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n) \end{cases}</men>
+
+<!-- 
+<md>
+  <mrow> \#\bigcup_{i=1}^{n}A_i \amp =  \sum_{i=1}^{n}\#A_i-\sum_{0 \lt  i \lt j   \leq n}\#(A_i\cap A_j)+\cdots </mrow>
+  <mrow>  \amp ~~~~~ \cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n) </mrow>
+</md>
+-->
+
+</p>
+<proof>
+
+<!--<p>Vamos verificar que a fórmula é verdadeira mostrando que um elemento da união <xref ref="eq-uniao"/> é contada exatamente uma vez pelo lado direito da Expressão <xref ref="eq-inclusao-exclusao-n"/>.</p> 
+
+<p>Suponha que o elemento <m>a</m> pertence a exatamente <m>r</m> (<m>1\leq r\leq n</m>) dos conjuntos <m>A_1, A_2, \ldots, A_n</m>. Vamos mostrar que <m>a</m> será contado exatamente uma vez  </p> -->
+
+<p>Suponha que o elemento <m>a</m> pertence a exatamente <m>r</m> (<m>1\leq r\leq n</m>) dos conjuntos <m>A_1, A_2, \ldots, A_n</m>. Será mostrado que <m>a</m> é contado exatamente uma vez pelo lado direito da Expressão <xref ref="eq-inclusao-exclusao-n"/>. </p> 
+    
+
+<p>No somatório:
+<me>\sum_{i=1}^{n}\#A_i,</me> 
+observa-se que <m>a</m> é contado <m>C_r^1=r</m> vezes, pois <m>a</m> pertence a exatamente <m>r</m> dos conjuntos. No somatório 
+<me>\sum_{0\lt i \lt j\leq n}\#(A_i\cap A_j),</me> 
+nota-se que <m>a</m> é contado <m>C_r^2</m> vezes, pois, em cada termo do somatório, para que <m>a</m> seja contado, <m>a</m> precisa pertencer aos dois conjuntos. Se separarmos os <m>r</m> conjuntos que contém <m>a</m>, existem <m>C_r^2</m> interseções contendo <m>a</m>. No caso geral, <m>a</m> será contado <m>C_r^m</m> vezes, pelo somatório envolvendo <m>m</m> dos conjuntos <m>A_i, i\in \{1, 2, \ldots, n\}</m>. </p>
+
+
+
+<!--<p>O elemento <m>a</m> é contado <m>C_r^1=r</m> vezes por <m>\sum_{i=1}^{n}\#A_i</m>. <m>C_r^2</m> vezes por <m>\sum_{0\lt i \lt j\leq n}\#(A_i\cap A_j)</m>, e de forma geral <m>C_r^m</m> vezes, pelo somatório envolvendo <m>m</m> dos conjuntos <m>A_i</m>.-->
+
+<p> Desta forma, o elemento <m>a</m> será contado exatamente 
+    
+<me>C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r</me>
+
+vezes pelo lado direito de <xref ref="eq-inclusao-exclusao-n"/>. Usando a Expansão do Binômio de Newton (veja <xref ref="teo-binomio-newton"/>), temos
+
+<me> 0 = (1-1)^p = C_r^0 -\left(C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r\right). </me>
+
+Portanto,
+
+<me> C_r^1-C_r^2+C_r^3-\cdots+(-1)^{r+1}C_r^r = C_r^0 = 1. </me>
+
+Isto mostra que o elemento <m>a</m> é contado exatamente uma vez pelo lado direito de <xref ref="eq-inclusao-exclusao-n"/>.</p>
+
+<p>Como o elemento <m>a</m> é arbitrário e a quantidade <m>r</m>, também é arbitrária, esse argumento serve para cada um dos elementos de <xref ref="eq-uniao"/>, o que prova o teorema.</p> 
+</proof>   
+
+</theorem>  
+
+
+<example><title>(POTI Nível 3)</title>
+<statement>
+Quantos são os primos menores ou iguais a <m>111</m>?
+</statement>
+<solution>
+<p>
+Podemos listar todos os exemplos (não são muitos!), mas vamos mostrar um
+método que serve no caso geral. Basta eliminar os compostos e o número 1, que não é
+primo nem composto. Assim, sendo t a quantidade de compostos entre 1 e 111, a resposta
+é <m>111 − 1 − t</m>.
+</p>
+<p>
+Note que <m>10\lt \sqrt{111} \lt 11</m>. Os primos menos que 11 são: <m>2,3,5,7</m>.
+Vamos aplicar o mesmo procedimento do Exemplo <xref  ref= 'ex_multiplos_001'/> para descobrir o número de múltiplos desses números.
+</p>
+<figure xml:id="interactive-inclu-exclu-002">
+<!-- <caption>Cardinalidade do conjunto <m>C</m>.</caption> -->
+<interactive xml:id="interactive-inclusao-exclusao-002" platform="sage" aspect="1:0.8" >
+<slate surface="sage">                    
+@interact
+def _(n_min=input_box(1, width=25,  label="Vmin:"), n_max=input_box(111, width=25,  label="Vmax:"), l_m=input_box([2,3,5,7] , width=25, label="lista:"),auto_update=False ):
+          
+  def numeros_de_multiplos2(lista, ini, fim):
+      cardinalidade_omega = fim-ini+1
+
+      #combinacoes = {}
+      lista_combinacoes=[]
+      for i in range(len(lista)):
+          lista_combinacoes.append(Combinations(lista, i+1).list())
+      
+      #MMC
+      lista_mmc=[]
+      for i in lista_combinacoes:
+          temp=[]
+          for j in range(len(i)):
+              temp.append(lcm(i[j]))
+          lista_mmc.append(temp)
+      
+      #soma por interseções (Si)
+      lSi=[]
+      card_Ai_inter=[]
+      for j in lista_mmc:
+          temp=[]
+          for i in j:
+              temp.append(len([x for x in [ini..fim] if x%i == 0]))
+          card_Ai_inter.append(temp)
+          lSi.append(sum(temp))
+      
+      # aplicando o princípio da inclusão-exclusão
+      soma = 0
+      for i in range(len(lSi)):
+          soma = soma +(-1)^i*lSi[i]
+      
+      k=0
+      for c in lista_combinacoes:
+          for i in range(len(c)):
+              s=''
+              for j in c[i]:
+                  s = s+'A'+str(j)+'∩'
+              s=s[:-1]
+              print(f'#{s} = {card_Ai_inter[k][i]}')
+          k=k+1
+       
+      s2 = ''
+      for i in lista:
+          s2 = s2+'A'+str(i)+'∪'
+      s2=s2[:-1]
+      print(f'\n#{s2} = {soma}')
+  
+  numeros_de_multiplos2(l_m, n_min, n_max)
+    </slate>
+    </interactive>
+</figure>
+<p>Portanto, a resposta é <m>111 - 1 - (85-4) = 29</m>. </p>
+</solution>
+</example>
+
+
+
+<example xml:id="exem_complexa">
+<statement>
+<p>Quantos são os anagramas da palavra PRINCIPIO que tem P em 1º lugar, ou R em 2º lugar, ou
+I em 3º lugar, ou N em 4º lugar? </p>
+</statement>
+
+</example>    
+
+
+<technology>
+<p>Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.
+</p>    
+<figure xml:id="interactive-inclu-exclu-complexa">
+<!-- <caption>Cardinalidade do conjunto <m>C</m>.</caption> -->
+<interactive xml:id="interactive-inclusao-exclusao_complex" platform="sage" aspect="1:0.7" >
+<slate surface="sage">                    
+@interact
+def _(lista=input_box('PRINCIPIO' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3,4] , width=30,  label="Posições fixas:"), Cardinalidades=True, auto_update=False):
+
+
+    if type(lista)==type([]):
+      lista2=[]
+      for i in lista:
+        lista2.append(str(i))
+    else:
+      lista2=[]
+      if lista not in ZZ and 'invalid' not in str(lista):
+          #print('invalid' in str(lista))
+          
+          lista = str(lista)
+          k=0
+          for i in lista:
+              k += 1
+              if k>6 :
+                  if i == "'":
+                      break
+                  lista2.append(i)
+        
+    def anagramas_fix(palavra, pfix):
+    
+        total_inter=len(pfix)
+        pfix.sort()
+        pfix.reverse()
+    
+        comb=Combinations(pfix).list()
+        subpalavra=0
+        lista_inter=[]
+        lista=[]
+        for i in comb:
+            subpalavra = copy(palavra)
+            for j in i:
+                subpalavra = copy(subpalavra)
+                subpalavra.pop(j-1)
+        #print(i, card)
+            lista_inter.append(i)
+            lista.append(subpalavra)
+    
+    #print(lista_inter)
+    #print(lista)
+    
+        lS=[]
+        soma=0
+        for i in range(len(lista_inter)):
+        
+            if len(lista_inter[i])>0:
+                soma = soma + Permutations(lista[i]).cardinality()*(-1)^(len(lista_inter[i])-1)
+                lS.append( Permutations(lista[i]).cardinality() )
+        
+
+        if Cardinalidades==True:
+            dic={}
+            for i in range(len(pfix)+1):
+                dic.update({i:[]})
+            
+            
+            for i in comb:
+                j=copy(i)
+                j.reverse()
+                dic[len(i)].append(j)
+
+            for i in dic:
+                dic[i].reverse()
+            
+            #print(dic)
+            
+            lS2=[]
+            comb2=[]
+            for i in dic:
+                if i > 0:
+                    for j in dic[i]:
+                        comb2.append(copy(j))
+                        
+                        j.reverse()
+                        lS2.append(lS[comb.index(j)-1])
+                        
+            #print(comb2)
+            lstring=[]
+            for i in range( len(comb2)):
+                temp=''
+                for j in comb2[i]:
+                    temp=temp + 'A' + str(j) + '∩'
+                temp=temp[0:-1]
+                lstring.append(temp)
+            #print(lstring)
+        
+        
+            for i in range(len(lstring)):
+                print('#%s = %d' %(lstring[i] , lS2[i]))
+            print('')
+        return soma
+    resp = anagramas_fix(lista2, pos_fixas)
+    
+    s=''
+    for l in lista2:
+        s = s + l
+    
+    pos_fixas.reverse()
+
+    uni=''
+    for i in pos_fixas:
+        uni = uni + 'A' + str(i) + '∪'
+    uni = uni[0:-1]
+    
+    print('#%s = %d'  %(uni, resp))
+
+    <!-- print('O número de anagramas da palavra %s, \n na qual pelo menos uma das letras das posições\n %s está na posição original é %d' %(s, pos_fixas,  resp)) -->
+  
+
+    </slate>
+    </interactive>
+</figure>
+</technology>
+
+
+<example><title>(POTI Nível 3)</title>
+<statement>
+No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em
+grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham ou novo
+vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?
+</statement>
+<solution>
+<p>
+Considere o conjunto <m>\Omega</m> das permutações <m>(j_1, j_2, \ldots, j_{20})</m> do conjunto <m>\{1,2,\ldots, 20\}</m> e seja <m>A_r</m> o conjunto destas permutações, na qual, o par <m>(j_r, j_{r+1})</m> é uma sucessão, <m>r=1,2,\ldots, 19</m>. O número de fotos possíveis é dado por 
+<me>S_{20} = n! - \#(A_1\cup A_2 \cup \cdots \cup A_{19})</me>.
+Vamos precisar do PIE para calcular <m>\#(A_1\cup A_2 \cup \cdots \cup A_{19})</m>. </p>
+
+<ul>
+<li>
+Observe que <m>\#A_r = (20-1)!</m>, para qualquer <m>r = 1, 2, \ldots, 19</m>. Pois, olhamos para o par <m>(j_r, j_{r+1})</m> como um elemento e ficamos com um conjunto de <m>19</m> elementos para contar o número de permutações.
+</li>
+
+<li>
+<p>O caso de <m>\#(A_r\cap A_s)</m>, vamos separar em duas situações. </p>
+<ol>
+<li>(<m>r</m> e <m>l</m> não são consecutivos) Neste caso, Olhamos para o par <m>(j_r, j_{r+1})</m> como apenas um elemento e o par <m>(j_s, j_{s+1})</m> como um elemento também, ficamos com <m>20-2</m> elementos para contar o número de permutações.</li>
+<li>(<m>r</m> e <m>s</m> são consecutivos) Neste caso olhamos para a tripla <m>(j_r, j_{r+1}, j_{r+2})</m> como apenas um elemento e também ficamos com <m>20-2</m> elementos para contar o número de permutações.
+</li> 
+
+</ol>
+<p>Nos dois casos o número de permutações é <m>(20-2)!=18!</m>. E o número de interseções 2 a 2 é <m>\binom{19}{2}</m></p>
+</li>
+
+<li>
+<p>O caso de <m>\#(A_r\cap A_s \cap A_p)</m>, vamos separar em três situações. </p>
+<ol>
+<li>(<m>r</m>, <m>s</m> e <m>p</m> não são consecutivos) Neste caso, Olhamos para os pares <m>(j_i, j_{i+1})</m> como apenas um elemento, ficamos com <m>20-3</m> elementos para contar o número de permutações.</li>
+<li>(<m>r</m>, <m>s</m> e <m>p</m> apenas dois são consecutivos) Neste caso olhamos para a tripla <m>(j_r, j_{r+1}, j_{r+2})</m> como apenas um elemento e um par <m>(j_i, j_{i+1})</m> como um elementos. Também ficamos com <m>20-3</m> elementos para contar o número de permutações.
+</li> 
+<li>(<m>r</m>, <m>s</m> e <m>p</m> os três são consecutivos) Neste caso olhamos para a tripla <m>(j_r, j_{r+1}, j_{r+2},j_{r+3})</m> como apenas um elemento. Também ficamos com <m>20-3</m> elementos para contar o número de permutações.
+</li> 
+</ol>
+<p>Nos três casos o número de permutações é <m>(20-3)!=17!</m>. E o número de interseções 2 a 2 é <m>\binom{19}{3}</m></p>
+</li>
+</ul>
+<p>
+Seguindo com essa ideia, obtemos
+<md>
+<mrow>S_{20} =~\amp 20! - 19\cdot19! + \binom{19}{2}18! - \binom{19}{3}17! + \binom{19}{4}16! \cdots + \binom{19}{19}1!</mrow>
+<mrow> =\amp 20! - 19\cdot 19! + 18\cdot \frac{19!}{2!} -17\cdot \frac{19!}{3!}  \cdots</mrow>
+<mrow> =\amp 19!\left(20 - \frac{19}{1!} + \frac{18}{2!} - \cdots - \frac{1}{19!} \right)</mrow>
+<mrow> =\amp  939765362752547227.</mrow>
+</md>
+</p>
+<p>
+Calcule o número de permutações sem sucessores.
+</p>
+<sage>
+<input>
+s=0
+n=20
+for k in range(n):
+    s = s + (-1)^k*binomial(n-1,k)*factorial(n-k) 
+s
+</input>
+<output>    
+</output>
+</sage>
+
+
+</solution>
+</example>
+
+
+
+
+<!-- 
+def numeros_de_multiplos(lista, ini, fim):
+      l=[]
+      for i in lista:
+          l = l+[x for x in [ini..fim] if x%i == 0]   
+      print('#C = %d' %len(set(l)))
+      
+      
+
+  numeros_de_multiplos(l_m, n_min, n_max) -->
+
+
+</subsection>
+
+<subsection>
+<title>Aplicação: Permutações Caóticas</title>
+
+<definition xml:id="def-permutacao-caotica">
+<p>
+Uma permutação de uma lista de <m>n</m> elementos é chamada de <em>permutação caótica</em>, quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de <m>a_1,a_2, ...,a_n</m>  é chamada de caótica quando nenhum dos <m>a'_{i}s</m> se encontra na <m>i</m>-ésima posição.</p>
+
+<p> Notação:    
+<me> D_n \text{ ou } D(n) </me>
+</p>
+</definition>    
+
+<technology>
+As permutações caóticas dos elementos <m>1, 2, 3, 4</m> podem ser geradas no Sage, com o seguinte comando:
+<sage>
+<input>Derangements(4).list()
+</input>
+<output>[[2, 3, 4, 1],
+ [4, 3, 1, 2],
+ [2, 4, 1, 3],
+ [3, 4, 2, 1],
+ [3, 1, 4, 2],
+ [4, 1, 2, 3],
+ [4, 3, 2, 1],
+ [3, 4, 1, 2],
+ [2, 1, 4, 3]]</output>
+</sage>
+</technology>
+
+<!--<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-caotica">
+<caption>Todas as permutações caóticas de <m>\{1,2,3,\cdots,n\}</m>.</caption>
+<p>Escolha o valor para <m>n</m> para obter as permutações caóticas de <m>\{1,2,3,\cdots,n\}</m>.</p>
+    <interactive xml:id="interactive-caotica" platform="sage" aspect="1:0.6" >
+    <slate surface="sage">                    
+    @interact
+    def _(n=input_box(4 , width=10,  label="n:")):
+
+            pl = Permutations(n).list()
+            for i in Permutations(n):
+                for j in i:
+                    if i.index(j) == j-1:
+                        pl.remove(i)
+                        break
+            print('o número de permutações caóticas é:', len(pl))
+            print('As permutações caóticas são:')
+            for i in pl:
+                print(i)                                    
+            
+
+    </slate>
+    </interactive>
+</figure>
+</technology>-->
+
+
+<technology xml:id="tec-caotica-r-sage">
+<p>Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.</p>
+<sage>
+<input>D = Derangements(['A', 'M', 'O', 'R'])
+print('número de permutações caóticas:', len(D))
+print('todas as permutações caóticas:')
+D.list()
+</input>
+<output>número de permutações caóticas: 9
+todas as permutações caóticas:
+[['M', 'O', 'R', 'A'],
+ ['R', 'O', 'A', 'M'],
+ ['M', 'R', 'A', 'O'],
+ ['O', 'R', 'M', 'A'],
+ ['O', 'A', 'R', 'M'],
+ ['R', 'A', 'M', 'O'],
+ ['R', 'O', 'M', 'A'],
+ ['O', 'R', 'A', 'M'],
+ ['M', 'A', 'R', 'O']]</output>
+</sage>
+</technology>
+
+<!--<technology xml:id="tec-caotica-r-lenta">
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-caotica-x">
+<caption>Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original.</caption>
+<p>Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.</p>
+    <interactive xml:id="interactive-caotica-x" platform="sage" aspect="1:0.6" >
+    <slate surface="sage">                    
+    @interact
+    def _(lista=input_box(['A', 'M', 'O', 'R'] , width=40,  label="lista:")):
+
+            px = Permutations(lista)
+            pl = px.list()
+            for i in px:
+                for j in range(len(lista)):
+                    if i[j] == lista[j]:
+                        pl.remove(i)
+                        break
+            print('o número de permutações caóticas é:', len(pl))
+            print('As permutações caóticas são:')
+            for i in pl:
+                print(i)
+
+    </slate>
+    </interactive>
+</figure>
+</technology>-->
+
+<theorem xml:id="teo-pcaotica1">
+<p>A quantidade de permutações caóticas de uma lista com <m>n</m> objetos distintos,
+pode ser calculada da seguinte maneira:
+<me> D_n=n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!}.</me></p>
+<proof>
+<p>
+Considere todas as permutações dos elementos <m>a_1 , a_2 , \ldots , a_n</m>.
+Indicando por <m>A_i</m> todas as permutações formadas pelos elementos <m>a_1 , a_2 , \ldots , a_n</m> com <m>a_i</m> no <m>i</m>-ésimo lugar, calcularemos <m>D_n</m>:
+
+<md>
+  <mrow>D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)</mrow>
+  <mrow> = \amp ~  n! - \sum_{i=1}^{n}\#A_i + \sum_{0\lt i\lt j\leq n}\#(A_i\cap A_j)+\cdots </mrow>
+  <mrow>  \amp ~ \quad \cdots  +(-1)^{n-1}\#(A_1\cap A_2\cap \cdots\cap A_n). </mrow>
+</md>
+
+Visto que existem <m>n</m> termos no primeiro somatório, <m>C_n^2</m> termos no segundo, <m>C_n^3</m> termos no terceiro,<m>\cdots</m>, <m>C_n^n=1</m> no último e
+
+
+<md>
+  <mrow> \#(A_i) \amp =  (n-1)! </mrow>
+  <mrow> \#(A_i\cap A_j) \amp =  (n-2)! </mrow>
+  <mrow> \#(A_i\cap A_j\cap A_k) \amp =  (n-3)! </mrow>
+  <mrow>  \vdots ~~~~~ \amp = ~~ \vdots </mrow>
+  <mrow> \#(A_1\cap A_2\cap\cdots\cap A_n) \amp =  1 </mrow>
+</md>
+
+temos
+
+
+<md>
+  <mrow> D_n \amp = ~ n!-n\cdot(n-1)!+C_n^2\cdot(n-2)!-C_n^3\cdot(n-3)!+\cdots +(-1)^n\cdot 1 </mrow>
+  <mrow>  \amp = ~ n!-\dfrac{n!}{1!}+\dfrac{n!}{2!}-\dfrac{n!}{3!}+\cdots
++(-1)^n\cdot \dfrac{n!}{n!} </mrow>
+</md>
+
+evidenciando <m>n!</m>, obtém-se:
+
+
+<md>
+  <mrow> D_n \amp = ~ n!\cdot\left(1-\dfrac{1}{1!}+\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+(-1)^n\cdot \dfrac{1}{n!}\right) </mrow>
+  <mrow>  \amp = ~ n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!} </mrow>
+</md>
+
+</p>  
+</proof>    
+</theorem>    
+
+
+<technology xml:id="tec-pcaotica1">
+Calculando o número de permutações caóticas no Sage:
+
+<sage>
+<input>def D(n):
+    P(i) = factorial(i)
+    return P(n)*sum(((-1)^x)/P(x), x, 0, n)
+D(8)
+</input>
+<output>14833</output>
+</sage>
+</technology>
+
+
+
+<example>
+<statement>
+Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso.
+De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?
+</statement>
+<solution>
+<p>
+Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:
+
+<md>
+  <mrow> D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) </mrow>
+  <mrow>  \amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} </mrow>
+  <mrow>  \amp =  ~5\cdot 4 \cdot 3 -5\cdot 4 + 5 - 1 </mrow>
+  <mrow>  \amp = ~60-20+5-1 </mrow>
+  <mrow>  \amp =  ~44 </mrow>
+</md>
+</p>    
+</solution>    
+</example>    
+
+
+<example>
+<statement>
+Quantas são as permutações de <m>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)</m> que têm exatamente 4 elementos no seu lugar primitivo?
+</statement>
+<solution>
+<p>
+O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é <m>C_{10}^4</m>. 
+</p>
+<p>
+Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de <m>D_6</m> formas.
+
+A resposta é 
+<me>C_{10}^4\times D_6 = 55650.</me>
+</p>    
+</solution>    
+</example>   
+
+
+<example>
+<statement>
+(Canadá) Seja <m>n</m> um inteiro positivo, e <m>S = {1, 2, \ldots , n}</m>. Mostre que o número de
+permutações de <m>S</m> sem pontos fixos e o número de permutações de <m>S</m> com exatamente
+um ponto fixo tem diferença exatamente <m>1</m>.
+</statement>
+<solution>
+<p>
+O número de permutações sem ponto fixo é exatamente 
+<me>D_n = n!\left(\frac{1}{0!} - \frac{1}{1!}+\frac{1}{2!} - \frac{1}{3!} + \cdots +\frac{(-1)^{n-1}}{(n-1)!} +\frac{(-1)^n}{n!} \right)</me>.
+</p>
+<p>
+O número de permutações com exatamente um ponto fixo é <m>\binom{n}{1}D_{n-1}.</m> 
+<me>\binom{n}{1}D_{n-1} = n\cdot(n-1)!\left(\frac{1}{0!} - \frac{1}{1!}+\frac{1}{2!} - \frac{1}{3!} + \cdots +\frac{(-1)^{n-1}}{(n-1)!} \right)</me>.   
+</p>
+
+<p>
+<me>D_n - n D_{n-1} = n!\frac{(-1)^n}{n!} =(-1)^n</me>.
+</p>
+</solution>
+</example>
+
+
+<definition>
+<p>
+Sejam <m>\Omega</m> um conjunto, <m>A_1, A_2, \ldots, A_n</m> subconjuntos de <m>\Omega</m>. Definimos os números <m>S_0, S_1, S_2, \ldots, S_n</m> da seguinte maneira:
+<md>
+<mrow>S_0=\amp~\#\Omega;</mrow>
+<mrow>S_1=\amp~\sum_{i=1}^n\#A_i;</mrow>
+<mrow>S_2=\amp~\sum_{1\leq i\lt j\leq n}^n\#(A_i\cap A_j);</mrow>
+<mrow>\vdots</mrow>
+<mrow>S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).</mrow>
+</md>
+</p>
+</definition>
+
+
+<example>
+<statement>
+Quantas são as permutações dos elementos <m>1,2,3,\ldots, 9</m>, na qual, nenhum número ímpar ocupa o seu lugar primitivo?
+</statement>
+<solution>
+<p>
+Vamos calcular o número total de permutações e subtrair o número de permutações, na qual, algum número ímpar ocupa a posição original. 
+Seja <m>A_i</m> o conjunto das permutações, na qual, o número <m>i</m> ocupa a posição original. Precisamos calcular
+<me>9! - \#(A_1\cup A_3\cup A_5 \cup A_7 \cup A_9)</me>.
+Para aplicar o PIE, precisamos calcular os valores de <m>S_1, S_2, \ldots, S_5</m>.
+</p>
+<p>
+Observe que <m>\#A_i = 8!</m>, pois o número ímpar <m>i</m> ocupa sua posição original, os demais podem ocupar qualquer posição. Assim, <m>S_1 = 5\cdot 8!</m>, pois são <m>5</m> números ímpares.
+</p>
+<p>
+<m>\#(A_i\cap A_j) = 7!</m>, pois dois números estão em suas posições originais, os demais podem ocupar qualquer posição. 
+Para calcular <m>S_2</m>, basta multiplicar o valor pelo número de maneiras de escolher os dois números ímpares, ou seja, <m>S_2 = \binom{5}{2}7!</m>
+</p>
+<p>Seguindo com o mesmo raciocínio, obtemos <m>S_3 = \binom{5}{3}6!, S_4 = \binom{5}{4}5!</m> e <m>S_5 = \binom{5}{5}4!</m></p>
+<p>
+Portanto, pelo PIE, a resposta é
+<me>9! - 5\cdot 8! + \binom{5}{2}7! -  \binom{5}{3}6! +  \binom{5}{4}5! - \binom{5}{5}4! = 205056.</me>
+</p>
+</solution>
+</example>
+
+<example>
+<statement>
+Quantos são os anagramas da palavra SAGAZ, na qual, nenhuma letra está em sua posição original?
+</statement>
+<solution>
+<p>
+Vamos contar o total de permutações e subtrair o número de permutações que possuem alguma letra na posição original.
+O total de permutações é <m>PR_5^2 = \frac{5!}{2!} = 60.</m>
+A resposta será dada por
+<me>60 - \#(A_S\cup A_A \cup A_G \cup A_A \cup A_Z).</me>
+Na qual, o conjunto <m>A_I</m> é o conjunto das permutações com a letra <m>I</m> na posição original.
+</p>
+<p>
+Neste caso, vamos contar separadamente o número de permutações que tem alguma letra na posição original. Primeiro vamos contar 1 a 1, ou seja, fixamos a letra na posição original e calculamos o número de permutações das outras letras:
+<ul>
+<li>S: <m>PR_4^2 = 12</m></li>
+<li>A: <m>P_4 = 24</m></li>
+<li>G: <m>PR_4^2 = 12</m></li>
+<li>A: <m>P_4 = 24</m></li>
+<li>Z: <m>PR_4^2 = 12</m></li>
+</ul>
+Assim, <m>S_1 = 84.</m>
+</p>
+<p>
+Interseções 2 a 2, fixamos as letras nas posições originais e calculamos o número de permutações das outras letras:
+<ul>
+<li>SA: <m>P_3 = 6</m></li>
+<li>SG: <m>PR_3^2 = 3</m></li>
+<li>SA: <m>P_3 = 6</m></li>
+<li>SZ: <m>PR_3^2 = 3</m></li>
+<li>AG: <m>P_3 = 6</m></li>
+<li>AA: <m>P_3 = 6</m></li>
+<li>AZ: <m>P_3 = 6</m></li>
+<li>GA: <m>P_3 = 6</m></li>
+<li>GZ: <m>PR_3^2 = 3</m></li>
+<li>AZ: <m>P_3 = 6</m></li>
+</ul>
+Logo, <m>S_2 = 51</m>
+</p>
+<p>
+Interseções 3 a 3:
+<ul>
+<li>SAG: <m>2</m></li>
+<li>SAA: <m>2</m></li>
+<li>SAZ: <m>2</m></li>
+<li>SGA: <m>2</m></li>
+<li>SGZ: <m>1</m></li>
+<li>SAZ: <m>2</m></li>
+<li>AGA: <m>2</m></li>
+<li>AGZ: <m>2</m></li>
+<li>AAZ: <m>2</m></li>
+<li>GAZ: <m>2</m></li>
+</ul>
+Logo, <m>S_3 = 19.</m>
+</p>
+
+<p>
+Interseções 4 a 4:
+<ul>
+<li>AGAZ: <m>1</m></li>
+<li>SGAZ: <m>1</m></li>
+<li>SAAZ: <m>1</m></li>
+<li>SAGZ: <m>1</m></li>
+<li>SAGA: <m>1</m></li>
+</ul>
+Logo, <m>S_4 = 5.</m>
+</p>
+<p>
+No caso 5 a 5, só temos uma maneira. <m>S_5=1.</m>
+</p>
+<p>A resposta é
+<me>60 - (84-51+19-5+1) = 60-48 = 12.</me>
+</p>
+<figure xml:id="interactive-inclu-exclu_geral_SAGAZ">
+<!-- <caption>Cardinalidade do conjunto <m>C</m>.</caption> -->
+<interactive xml:id="interactive-inclusao-exclusao_geral_2_SAGAZ" platform="sage" aspect="1:0.8" >
+<slate surface="sage">                    
+@interact
+def _(lista=input_box('SAGAZ' , width=30,  label="Palavra:"), pos_fixas=input_box([1,2,3,4,5] , width=30,  label="Posições fixas:"), p=input_box(0 , width=30,  label="p:"), auto_update=False):
+
+    if type(lista)==type([]):
+      lista2 = lista
+    else:
+      lista2=[]
+      if lista not in ZZ and 'invalid' not in str(lista):
+          #print('invalid' in str(lista))
+          
+          lista = str(lista)
+          k=0
+          for i in lista:
+              k += 1
+              if k>6 :
+                  if i == "'":
+                      break
+                  lista2.append(i)
+    
+
+
+    def anagramas_fix_2(palavra, pfix):
+        
+        tot_permut = len(Permutations(palavra))
+        
+        total_inter=len(pfix)
+        pfix.sort()
+        pfix.reverse()
+        
+        comb=Combinations(pfix).list()
+        subpalavra=0
+        lista_inter=[]
+        lista=[]
+        for i in comb:
+            subpalavra = copy(palavra)
+            for j in i:
+                subpalavra = copy(subpalavra)
+                subpalavra.pop(j-1)
+            lista_inter.append(i)
+            lista.append(subpalavra)
+        
+        lSi=[0]*(len(pfix))
+        soma=0
+        for i in range(len(lista_inter)):
+            if len(lista_inter[i])>0:
+                lSi[len(lista_inter[i])-1] = lSi[len(lista_inter[i])-1]+Permutations(lista[i]).cardinality()
+                
+
+        dic={}
+        for i in range(len(pfix)+1):
+            dic.update({i:[]})
+        
+        
+        for i in comb:
+            j=copy(i)
+            j.reverse()
+            dic[len(i)].append(j)
+
+        for i in dic:
+            dic[i].reverse()
+        
+        return tot_permut, lSi
+
+    def inclu_exclu_geral_2(palavra, pfix, p):
+        
+        multi, lS = anagramas_fix_2(palavra, pfix)
+        lS.insert(0, multi)
+        ap = 0
+        k=0
+        for i in range(p, len(lS)):
+            ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
+            k=k+1
+        
+        bp = 0
+        k=0
+        for i in range(p, len(lS)):
+            bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
+            k=k+1
+        
+        for i in range(len(lS)):
+            print('S%d = %d' %(i,lS[i]))    
+        
+        print('\na%d = %d' %(p, ap))
+        print('b%d = %d' %(p, bp))
+
+    inclu_exclu_geral_2(lista2, pos_fixas, p)
+
+    </slate>
+    </interactive>
+</figure>
+</solution>
+</example>
+
+<example>
+<statement>
+Qual o número de permutações de <m>(1,2,3,4)</m>, na qual, o número <m>1</m> não pode ocupar o segundo lugar, o número <m>2</m> não pode ocupar o quarto lugar e o número <m>3</m> não pode ocupar nem o primeiro nem o quarto lugar?
+</statement>
+<solution>
+<p>
+Vamos calcular o número de permutações de 4 elementos e subtrair o número de permutações em que pelo menos uma das condições acontece. 
+</p>
+<p>
+<ul>
+<li>1 no 2º lugar: <m>P_3=6</m></li>
+<li>2 no 4º lugar: <m>P_3=6</m></li>
+<li>3 no 1º lugar: <m>P_3=6</m></li>
+<li>3 no 4º lugar: <m>P_3=6</m></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>1 no 2º lugar e 2 no 4º lugar: <m>P_2=2</m></li>
+<li>1 no 2º lugar e 3 no 1º lugar: <m>P_2=2</m></li>
+<li>1 no 2º lugar e 3 no 4º lugar: <m>P_2=2</m></li>
+<li>2 no 4º lugar e 3 no 1º lugar: <m>P_2=2</m></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>1 no 2º lugar e 2 no 4º lugar e 3 no 1º lugar: <m>P_1=1</m></li>
+</ul>
+</p>
+
+<p>Resposta:
+<me>4! - 4\cdot 6 + 4\cdot 2 -1 = 24-24+8-1=7.</me>
+</p>
+</solution>
+</example>
+
+
+</subsection>
+
+
+<subsection>
+<title>Generalização do Princípio da Inclusão-Exclusão</title>
+
+
+
+<proposition xml:id="apbp" >
+<p>
+Sejam <m>A_1, A_2,\ldots,A_n</m> subconjuntos de um conjunto <m>\Omega</m>. 
+<ol label='a'>
+<li>O número de elementos de <m>\Omega</m> que pertencem a exatamente <m>p</m> desses subconjuntos é dado por:
+<md>
+<mrow>a_p \amp=~ C_p^0S_p - C_{p+1}^1S_{p+1}+C_{p+2}^2S_{p+2}+ \cdots +(-1)^nC_{n}^{n-p}S_{n}</mrow>
+<mrow>\amp=~ \sum_{k=0}^{n-p}(-1)^kC_{p+k}^kS_{p+k};</mrow>
+</md>
+<!-- <me>a_p = \sum_{k=0}^{n-p}(-1)^kC_{p+k}^kS_{p+k};</me> -->
+</li>
+<li>O número de elementos de <m>\Omega</m> que pertencem a pelo menos <m>p</m> desses subconjuntos é dado por:
+<md>
+<mrow>b_p \amp=~ C_{p-1}^0S_{p} - C_{p}^1S_{p+1}+C_{p+1}^2S_{p+2}+ \cdots +(-1)^nC_{n-1}^{n-p}S_{n}</mrow>
+<mrow>\amp=~ \sum_{k=0}^{n-p}(-1)^kC_{p+k-1}^kS_{p+k}.</mrow>
+</md>
+<!-- <me>b_p = \sum_{k=0}^{n-p}(-1)^kC_{p+k-1}^kS_{p+k}.</me> -->
+</li>
+</ol>
+</p>
+</proposition>
+
+<example>
+<statement>
+<p>
+Determine quantos inteiros estão compreendidos entre <m>100</m> e <m>1000</m> inclusive, e são múltiplos de 
+<ol label='a'>
+<li>exatamente dois dos números: <m>6, 15</m> e <m>21</m>;</li>
+<li>pelo menos dois dos números: <m>6, 15</m> e <m>21</m>.</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+Observe que <m>\Omega</m> é o conjunto dos números inteiros entre 100 e 1000 inclusive. Portanto, <m>S_0 = \#\Omega = 1000-100+1 = 901.</m>
+Utilizando as informações da solução do Exemplo \ref{exe_01}, temos:
+<ul>
+    <li><m>S_0 = 901;</m></li>
+    <li><m>S_1 = 150+60+43 = 253;</m></li>
+    <li><m>S_2 = 30+21+9 = 60;</m></li>
+    <li><m>S_3 = 4.</m></li>
+</ul>
+Agora, basta aplicar os itens <m>a.</m> e <m>b.</m> do Teorema \ref{teo_fim} para obtermos as respostas dos itens <m>a.</m> e <m>b.</m>, respectivamente.
+<md>
+ <mrow>a_2 =~\amp (-1)^0C_{2+0}^0S_2 + (-1)^1C_{2+1}^1S_{2+1}</mrow>
+  <mrow>=~\amp 1\cdot 1 \cdot 60 + (-1)\cdot 3\cdot 4</mrow>
+  <mrow>=~\amp 48.</mrow>
+
+ <mrow>b_2 =~\amp (-1)^0C_{2+0-1}^0S_2 + (-1)^1C_{2+1-1}^1S_{2+1}</mrow>
+  <mrow>=~\amp 1\cdot 1 \cdot 60 + (-1)\cdot 2\cdot 4</mrow>
+  <mrow>=~\amp 52.</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+
+<technology>
+<p>Escolha os valores dos campos, Vmin ,Vmax, lista e p,
+ para determinar os valores de <m>S_i</m>, <m>a_p</m>, <m>b_p</m> e a cardinalidade do conjunto <m>C</m>, definido abaixo:
+<me>C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.</me>
+</p>    
+<figure xml:id="interactive-inclu-exclu_geral">
+<!-- <caption>Cardinalidade do conjunto <m>C</m>.</caption> -->
+<interactive xml:id="interactive-inclusao-exclusao_geral" platform="sage" aspect="1:0.8" >
+<slate surface="sage">                    
+@interact
+def _(n_min=input_box(100, width=25,  label="Vmin:"), n_max=input_box(1000, width=25,  label="Vmax:"), l_m=input_box([6,15,21] , width=25, label="lista:"), p=input_box(2, width=25,  label="p:"), auto_update=False ):
+          
+    def numeros_de_multiplos2(lista, ini, fim):
+        card_omega = fim-ini+1
+        l=[]
+        for i in lista:
+            l = l+[x for x in [ini..fim] if x%i == 0]   
+            
+        #combinacoes = {}
+        listax=[]
+        for i in range(len(lista)):
+            listax.append(Combinations(lista, i+1).list())
+            #combinacoes.update({i+1:Combinations(lista, i+1).list()})
+        
+        listax2=[]
+        for i in listax:
+            temp=[]
+            for j in range(len(i)):
+                temp.append(lcm(i[j]))
+                #print(i[j])
+            listax2.append(temp)
+                
+        lSi=[]
+        for j in listax2:
+            temp=[]
+            for i in j:
+                temp = temp+[x for x in [ini..fim] if x%i == 0] 
+            lSi.append(len(temp))
+        #print(lSi)
+        
+        soma = 0
+        for i in range(len(lSi)):
+            #print(lSi[i])
+            soma = soma +(-1)^i*lSi[i]
+            
+        #print(soma)
+        
+        #comb2 = Combinations(lista, 2)
+        #print(listax2)
+        #print(combinacoes)
+        
+        #for i in range(len(lSi)):
+            #print('S%d = %d' %(i+1,lSi[i]))
+        
+        #print('A cardinalidade de C é: %d' %soma)
+        
+        S0 = card_omega
+        lSi.insert(0, S0)
+        return (soma, lSi)
+
+    def inclu_exclu_geral(lista, ini, fim, p):
+        
+        multi, lS = numeros_de_multiplos2(lista, ini, fim)
+        
+        ap = 0
+        k=0
+        for i in range(p, len(lS)):
+            ap = ap + (-1)^k*binomial(p+k, k)*lS[(p)+k]
+            k=k+1
+            
+        #print(ap)
+        
+        bp = 0
+        k=0
+        for i in range(p, len(lS)):
+            bp = bp + (-1)^k*binomial(p+k-1, k)*lS[(p)+k]
+            k=k+1
+        #print(bp)
+        
+        for i in range(len(lS)):
+            print('S%d = %d' %(i,lS[i]))    
+
+        print('a%d = %d' %(p, ap))
+        
+        print('b%d = %d' %(p, bp))
+        
+        lprint=''
+        for i in l_m:
+            
+            lprint=lprint+str(i)+','
+        lprint=lprint[0:len(lprint)-1]
+
+        print('#C = %d' %multi)
+
+        #print('O número de múltiplos\n dos números %s é: %d' %(lprint,multi))
+      
+      
+
+    inclu_exclu_geral(l_m, n_min, n_max, p)
+  
+
+    </slate>
+    </interactive>
+</figure>
+</technology>
+
+
+
+
+
+</subsection>
+
+
+<exercises>
+<title>Exercícios</title>
+ 
+
+<exercise>
+<p>
+Considere os conjuntos
+<me>\displaystyle B = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, \text{ ou } 3, \text{ ou } 15 \text{ e } 100\leq b\leq 1000\}</me> e
+<me>\displaystyle B' = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, \text{ ou } 3, \text{ ou } 15 \text{ e } 1\leq b\leq 901\}.</me>
+Os conjuntos <m>B</m> e <m>B'</m> possuem a mesma cardinalidade?
+</p>
+<answer>
+<p><m>\#B = 601</m> e <m>\#B' = 600</m>. Portanto, a resposta é não.</p>
+</answer>
+</exercise>
+
+
+
+<exercise ><title>(POTI Nível 3)</title>
+<statement>
+Um paralelepipedo <m>150 \times 324 \times 375</m> é feito de cubos unitários. Por quantos
+cubos unitários a diagonal do paralelepı́pedo passa?
+</statement>
+<hint>
+<p>
+Use a mesma ideia do Exemplo <xref ref='poti3_modif'/>.
+</p>
+<sage>
+<input>
+def visualizar_diagonal_3d_final(a, b, c):
+    # 1. Cálculo matemático exato
+    g_ab = gcd(a, b)
+    g_bc = gcd(b, c)
+    g_ca = gcd(c, a)
+    g_abc = gcd([a, b, c])
+    num_cubos = a + b + c - (g_ab + g_bc + g_ca) + g_abc
+    
+    print(f"Dimensões: {a}x{b}x{c}")
+    print(f"Cálculo: {a} + {b} + {c} - ({g_ab} + {g_bc} + {g_ca}) + {g_abc}")
+    print(f"Total de cubos atravessados: {num_cubos}")
+    
+    # Trava de segurança para não travar o Sage
+    if a * b * c > 4000:
+        print("\nO volume é muito grande para renderizar. Use valores menores (ex: 5x5x5) para ver o gráfico.")
+        return
+    
+    # 2. Construção do Gráfico
+    grafico = Graphics()
+    
+    # Razões exatas para evitar erros de precisão
+    slope_y = QQ(b) / QQ(a)
+    slope_z = QQ(c) / QQ(a)
+    slope_zy = QQ(c) / QQ(b)
+    
+    # 3. Gerar os cubos atravessados
+    for i in range(a):
+        y_start, y_end = i * slope_y, (i + 1) * slope_y
+        z_start, z_end = i * slope_z, (i + 1) * slope_z
+        
+        for j in range(floor(y_start), ceil(y_end)):
+            for k in range(floor(z_start), ceil(z_end)):
+                # Critério de interseção interior:
+                if (j + 1> y_start  and y_end > j) and \
+                   (k + 1 > z_start  and z_end > k) and \
+                   (k + 1 > slope_zy * j  and slope_zy * (j + 1) > k):
+                    
+                    grafico += cube(center=(i + 0.5, j + 0.5, k + 0.5), 
+                                   size=1, color='orange', opacity=0.6, frame=True)
+
+    # 4. Desenhar a diagonal e a moldura externa (frame)
+    grafico += line3d([(0, 0, 0), (a, b, c)], color='red', thickness=4)
+    
+    # Moldura simples do paralelepípedo
+    grafico += line3d([(0,0,0), (a,0,0), (a,b,0), (0,b,0), (0,0,0)], color='black')
+    grafico += line3d([(0,0,c), (a,0,c), (a,b,c), (0,b,c), (0,0,c)], color='black')
+    grafico += line3d([(0,0,0), (0,0,c)], color='black')
+    grafico += line3d([(a,0,0), (a,0,c)], color='black')
+    grafico += line3d([(a,b,0), (a,b,c)], color='black')
+    grafico += line3d([(0,b,0), (0,b,c)], color='black')
+    
+    return grafico.show(aspect_ratio=1, frame=False)
+
+# Teste com dimensões pequenas
+visualizar_diagonal_3d_final(4, 6, 10)
+</input>
+<output>
+</output>
+</sage>
+
+</hint>
+</exercise>
+
+
+
+
+<exercise>
+<p>
+Quantos são os anagramas da palavra PETELECOS que possuem a letra P na 1ª posição, ou a letra E na 2ª posição, ou a letra T na 3ª posição?
+</p>
+<answer>
+<p><m>28080</m></p>
+</answer>
+<solution>
+<p>
+Sejam
+
+<md>
+  <mrow> A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; </mrow>
+  <mrow> A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; </mrow>
+  <mrow> A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}. </mrow>
+</md>
+Queremos calcular <m>\#(A_1\cup A_2\cup A_3)</m>. Note que <m>\#A_1=\#A_3=PR_8^3</m>, pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para <m>\#A_1</m>, e com a letra T na terceira posição, para <m>\#A_3</m>. Note também que <m>\#A_2 = PR_8^2</m>.
+</p>
+<p>
+Agora, vamos calcular as cardinalidades das interseções <m>A_i\cap A_j</m>, com <m>1\leq i\lt j\leq 3</m>.
+<ul>
+<li><m>A_1\cap A_2= PR_7^2</m>, pois P e E ficam fixados;</li>
+<li><m>A_1\cap A_3= PR_7^3</m>, pois P e T ficam fixados;</li>
+<li><m>A_2\cap A_3= PR_7^2</m>, pois E e T ficam fixados.</li>
+</ul>
+Finalmente, <m>\#(A_1\cap A_2\cap A_3) = PR_6^2</m>. Aplicando o Princípio da Inclusão-Exclusão:
+<md>
+<mrow>\#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2</mrow>
+<mrow>=\amp~28080.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+
+<exercise>
+<p>
+Quantos inteiros entre 1 e 10000 inclusive:
+<ol>
+  <li>são divisíveis por pelo menos dois dos números <m>3, 5, 8, 15</m>?</li>
+  <li>não são divisíveis por nenhum dos números <m>3, 5, 8, 15</m>?</li>
+  <li>são divisíveis por exatamente um dos números <m>3, 5, 8, 15</m>?</li>
+  <li>são divisíveis por pelo menos um dos números <m>3, 5, 8, 15</m>?</li>
+</ol>
+</p>
+<answer>
+<ol>
+  <li><m>b_2 = 1166</m></li>
+  <li><m>a_0 = 4666</m></li>
+  <li><m>a_1 = 4168</m></li>
+  <li><m>b_1 = 5334</m></li>
+</ol>
+</answer>
+</exercise>
+
+
+
+<exercise>
+<p>
+Sejam <m>\mathcal{P}, \mathcal{R}</m> e <m>\mathcal{I}</m> os conjuntos dos anagramas da palavra PRINCIPIO que possuem a letra P em primeiro lugar, a letra R em segundo lugar e a letra I em terceiro lugar, respectivamente. 
+<ol>
+    <li>Quantos são os anagramas de PRINCIPIO que estão em exatamente um dos conjuntos <m>\mathcal{P}, \mathcal{R}</m> e <m>\mathcal{I}</m>?</li>
+    <li>Quantos são os anagramas de PRINCIPIO que estão em pelo menos um dos conjuntos <m>\mathcal{P}, \mathcal{R}</m> e <m>\mathcal{I}</m>?</li>
+</ol>
+</p>
+<answer>
+<ol>
+<li><m>12000</m></li>
+<li><m>15900</m></li>
+</ol>
+</answer>
+<solution>
+<p>
+De acordo com a <xref ref="apbp"/>, a resposta do item a) é o valor de <m>a_1</m> e o do item b) é o valor de <m>b_1</m>.
+
+Note que o número total de anagramas da palavra PRINCIPIO é <m>PR_{9}^{3,2}=30240</m>, que o valor de <m>S_0</m>. 
+Para calcular os valores de 
+<m>S_1, S_2, S_3</m> e  <m>S_4</m>, precisamos dos seguintes valores:
+<ul>
+<li><m>\#A_1 = 6720</m></li>
+<li><m>\#A_2 = 3360</m></li>
+<li><m>\#A_3 = 10080</m></li>
+<li><m>\#A_1\cap A_2 = 840</m></li>
+<li><m>\#A_1\cap A_3 = 2520</m></li>
+<li><m>\#A_2\cap A_3 = 1260</m></li>
+<li><m>\#A_1\cap A_2\cap A_3 = 360</m></li>
+</ul>
+Portanto, 
+<ul>
+<li><m>S_0 = 30240</m></li>
+<li><m>S_1 = 20160</m></li>
+<li><m>S_2 = 4620</m></li>
+<li><m>S_3 = 360</m></li>
+</ul>
+
+Aplicando a <xref ref="apbp"/>, obtemos as respostas dos itens a) e b)
+<md>
+<mrow>a_1 =\amp (-1)^0C_{1,0}\cdot 20160 + (-1)^1C_{2,1}\cdot 4620 + (-1)^2C_{3,2}\cdot360</mrow>
+<mrow>=\amp 12000</mrow>
+</md>
+e
+<md>
+<mrow>b_1 =\amp (-1)^0C_{0,0}\cdot 20160 + (-1)^1C_{1,1}\cdot4620 + (-1)^2C_{2,2}\cdot360</mrow>
+<mrow>=\amp 15900</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+    <exercise >
+        <statement>
+            <p>Determine o número de permutações de <m>(1, 2, 3, 4, 5, 6, 7, 8)</m> nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?</p>
+        </statement>
+        <answer>
+            <p><m>27240</m></p>
+        </answer>
+        <solution>
+        <p>
+          <ul>
+          <li><m>\#A_2 = \#A_3 = \#A_4 = 5040</m></li>
+          <li><m>\#A_2\cap A_3 = \#A_2\cap A_4 = \#A_3\cap A_4 = 720</m></li>
+          <li><m>\#A_2\cap A_3\cap A_4 = 120</m></li>
+          </ul>
+</p>
+Calculando os valores de <m>S_0, S_1, S_2</m> e <m>S_3</m>:
+<p>
+<ul>
+<li><m>S_0 = 8! = 40320</m></li>
+<li><m>S_1 = 15120</m></li>
+<li><m>S_2 = 2160</m></li>
+<li><m>S_3 = 120</m></li>
+</ul>
+Queremos o número de permutações na qual, os valores 2, 3 e 4 não estão em suas posições originais. Então, precisamos calcular o valor de <m>a_0</m>:
+<md>
+<mrow>a_0 =\amp (-1)^0 C_{0,0}\cdot40320 + (-1)^1C_{1,1}\cdot15120 + (-1)^2C_{2,2}\cdot2160 + (-1)^3C_{3,3}\cdot120 </mrow>
+<mrow>=\amp  27240</mrow>
+</md>
+        </p>
+        </solution>
+    </exercise>
+
+
+<exercise>
+<p>
+Quantos são os anagramas das palavras abaixo, na qual, nenhuma letra está em sua posição original?
+<ol>
+<li>TERMO;</li>
+<li>SAGAZ.</li>
+</ol>
+</p>
+<answer>
+<ol>
+<li><m>44</m></li>
+<li><m>12</m></li>
+</ol>
+</answer>
+</exercise>
+
+
+<exercise>
+<p>
+Quantas são as permutações de <m>(1, 2, 3, 4, 5, 6, 7)</m> que têm exatamente 3 elementos no seu lugar primitivo?
+</p>
+<answer>
+<m>315</m>
+</answer>
+<solution>
+<p>
+<ul>
+<li><m>S_0 = 5040</m></li>
+<li><m>S_1 = 5040</m></li>
+<li><m>S_2 = 2520</m></li>
+<li><m>S_3 = 840</m></li>
+<li><m>S_4 = 210</m></li>
+<li><m>S_5 = 42</m></li>
+<li><m>S_6 = 7</m></li>
+<li><m>S_7 = 1</m></li>
+</ul>
+<md>
+<mrow>a_3 =\amp (-1)^0C_{3,0}\cdot840 + (-1)^1C_{4,1}\cdot210 + (-1)^2C_{5,2}\cdot42 + (-1)^3C_{6,3}\cdot7 + (-1)^4C_{7,4}\cdot1  </mrow>
+<mrow>=\amp 315</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+
+    <exercise >
+        <statement>
+            <p>(OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?</p>
+        </statement>
+        <hint>
+            <p>Sendo <m>A_k</m> a quantidade de pontos do polı́gono de <m>k</m> vértices, queremos calcular <m>\#(A_8 \cup A_{12} \cup A_{18})</m>. Note que <m>\#(A_{i_1} \cap A_{i_2} \cap\ldots \cap A_{i_n}) = mdc(i_1 , i_2 , \ldots , i_n)</m>.</p>
+        </hint>
+        <answer>
+            <p>28</p>
+        </answer>
+        <solution>
+        <p>
+        Sejam <m>A_k</m>, <m>k = 8, 12, 18</m>, os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular <m>\#(A_8\cup A_{12}\cup A_{18})</m>. Pelo Princípio da Inclusão-Exclusão, temos
+<md>
+<mrow>\#(A_8\cup A_{12}\cup A_{18}) =\amp~ \#A_8+\#A_{12}+\#A_{18} </mrow>
+<mrow> ~~~~\amp~ - \#(A_8\cap A_{12}) - \#(A_{8}\cap A_{18})
+  - \#(A_{12}\cap A_{18})</mrow>
+  <mrow> ~~~~\amp~+ \#(A_8\cap A_{12}\cap A_{18}).</mrow>
+</md>
+Como <m>\#A_k = k</m>, para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção. </p>
+<p>
+Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.
+</p>
+
+    <figure xml:id="poligonos_c">
+        <caption>Polígonos encolhidos.</caption>            
+        <image source="images/poligonos_c" width="30%"/> 
+    </figure>
+
+<p>
+Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de <m>A_k</m> e assim sucessivamente, de um vértice de <m>A_k</m> até o seguinte. Desta forma cada conjunto <m>A_k</m> define <m>k</m> semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim,  <m>\#(A_i\cap A_j) = \text{mdc}(i, j)</m>, para <m>i, j \in \{8, 12, 18\}</m>, com <m>i\neq j</m> e <m>\#(A_8\cap A_{12} \cap A_{18}) = \text{mdc}(8, 12, 18)</m>. Logo, 
+<me>
+\#(A_8\cup A_{12}\cup A_{18}) 
+ = 8+12+18 - 4 - 2 - 6 + 2 = 28.</me>
+</p>
+
+<p>
+Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs.
+    <figure xml:id="poligonos_c">
+        <caption>Verificação das interseções.</caption>            
+        <image source="images/mdc" width="60%"/> 
+    </figure>
+</p>
+        </solution>
+    </exercise>
+
+
+
+
+
+
+
+
+    <exercise >
+        <statement>
+            <p>Quantos são os inteiros de <m>n</m> dígitos, que têm todos os dígitos pertencentes ao conjunto <m>\{1, 2, 3\}</m>? Em quantos deles os inteiros <m>1, 2</m> e <m>3</m> figuram todos?</p>
+        </statement>
+        <answer>
+            <p>a) <m>3^n</m> , b) <m>3^n-3\cdot 2^n+3</m>. </p>
+        </answer>
+        <solution>
+            <p><term>item a)</term> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o <m>n</m>-ésimo dígito que também temos 3 opções. Portanto a resposta é <m>\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n</m>.</p>
+            <p><term>item b)</term> Agora precisamos subtrair de <m>3^n</m> a quantidade de números de <m>n</m> dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina <m>A_1</m> como o subconjunto dos números de <m>n</m> dígitos formados pelos dígitos <m>1, 2</m> e <m>3</m> tal que o dígito <m>1</m> não aparece. De maneira análoga defina os subconjuntos <m>A_2</m> e <m>A_3</m>. Desta forma, queremos calcular 
+            <me>3^n - \#(A_1\cup A_2 \cup A_3)</me>.  
+            Pelo Princípio da Inclusão-Exclusão, sabemos que
+            <md>
+              <mrow> \#(A_1\cup A_2\cup A_3) = \amp ~\#A_1+\#A_2+\#A_3 </mrow>
+              <mrow>  \amp ~ -\#(A_1\cap A_2)-\#(A_1\cap A_3)-\#(A_2\cap A_3) </mrow>
+              <mrow>  \amp ~ +\#(A_1\cap A_2\cap A_3). </mrow>
+            </md>
+            <m>A_1</m> possui <m>2^n</m> elementos, pois o dígito <m>1</m> não pode figurar no número de <m>n</m> dígitos, sobrando apenas os dígitos <m>2</m> e <m>3</m>. Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos <m>A_2</m> e <m>A_3</m> possuem a mesma quantidade de elementos. 
+        </p>
+        <p><m>A_1\cap A_2</m> possui apenas <m>1</m> elemento, pois os dígitos <m>1</m> e <m>2</m> não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que <m>A_1\cap A_2</m> e <m>A_2\cap A_3</m> também possuem apenas um elemento. </p>
+        <p>Finalmente, <m>A_1\cap A_2\cap A_3</m>  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é  
+        <me>3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.</me>
+        </p>
+        </solution>
+    </exercise>
+
+
+
+  <!--  <exercise number="5">
+        <statement>
+            <p>Quantos inteiros entre 1 e 876.548.794 não são nem quadrados perfeitos nem cubos perfeitos? (Use uma calculadora ou o próprio Sage para fazer as contas).</p>
+        </statement>
+        <answer>
+            <p>876518261 </p>
+        </answer>
+    </exercise>-->
+
+
+
+<exercise >
+<p>
+Se <m>\#A = n</m> e <m>\#B=m</m> (<m>n\geq m</m>), quantas são as funções 
+<m>f:A\rightarrow B</m>
+sobrejetoras?
+</p>
+<answer>
+<p><m>\displaystyle\sum_{k=0}^m (-1)^kC_m^k(m-k)^n</m> </p>
+</answer>
+<solution>
+<p>
+Note que, no total, exitem <m>m^n</m> funções <m>f:A\rightarrow B</m>, pois existem <m>m</m> maneiras de escolher a imagem de cada um dos <m>n</m> elementos de <m>A</m>. </p>
+<p>Sejam <m>y_1, y_2, \ldots, y_m</m> os elementos do conjunto <m>B</m>.
+ Defina <m>F_j</m> o conjunto das funções <m>f_{j,l}:A\rightarrow B</m>, tais que <m>y_j</m> não pertence a imagem de <m>f_{j,l}</m>. Logo, <m>j\in \{1, 2, \ldots, m\}</m> e <m>l=(m-1)^n</m>.
+</p>
+<p>As funções que não são sobrejetivas são as que pertencem a <me>F_1\cup F_2\cup\cdots\cup F_m</me>. Então, o número de funções sobrejetoras é dado por
+<me>m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)</me>.</p>
+
+<p>Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos <m>F_j</m>, a cardinalidade das interseções <m>p</m> a <m>p</m> desses conjuntos, com <m>2\leq p \leq m</m> e a quantidade de interseções <m>p</m> a <m>p</m> desses conjuntos:
+<ul>
+<li>Para o caso de apenas um conjunto, já sabemos que <m>\#F_j=(m-1)^n</m> e no total existem <m>m</m> conjuntos;</li>
+<li>Para o caso das interseções de dois conjuntos, temos <m>\#(F_{j_1}\cap F_{j_2})=(m-2)^n</m> e no total existem <m>C_m^2</m> dessas interseções;</li>
+<li>Para o caso das interseções de <m>p</m> conjuntos, temos <m>\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n</m> e no total existem <m>C_m^p</m> dessas interseções.</li>
+</ul>
+Aplicando o Princípio da Inclusão-Exclusão, a resposta é
+<md>
+<mrow>m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=</mrow>
+<mrow>=\amp~m^n - C_m^1(m-1)^n+C_m^2(m-2)^n-\cdots+(-1)^mC_m^m(m-m)^n</mrow>
+<mrow>=\amp~\sum_{k=0}^m (-1)^kC_m^k(m-k)^n.</mrow>
+</md>
+</p>
+</solution>
+</exercise>
+
+
+<exercise >
+    <statement>
+        <p>(OMU 2024 - Prova Individual - Item b)
+         Andrês decidiu visitar um museu com <m>n</m> exposições.
+Andrês e Marcelo são rivais. De quantas maneiras Andrês e Marcelo podem visitar exposições, de modo que eles nunca visitem uma mesma exposição, mas cada um visite pelo menos uma? 
+        </p>
+    </statement>
+    <answer>
+        <p><m>3^n - 2^{n+1} + 1</m>.</p>
+    </answer>
+    <solution>
+    <p>
+    Considere que as exposições do museu estão numeradas de <m>1</m> até <m>n</m>. Podemos representar cada maneira de visitar o museu com uma <m>n</m>-úpla.
+    Usando <m>A, M</m> e <m>N</m> como entradas da <m>n</m>-úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a <m>i</m>-ésima exposição.</p>
+
+<p>
+Podemos formar um total de <m>3^n</m> <m>n</m>-úplas dessa maneira.
+Depois, precisamos excluir as
+que não possuem o símbolo <m>A</m> ou que não possuem o símbolo <m>M</m>. Note que podem ser formadas <m>2^n</m> <m>n</m>-úplas com apenas os símbolos <m>M</m> e <m>N</m> (sem o símbolo A) e também podem ser formadas <m>2^n</m> <m>n</m>-úplas com apenas os símbolos <m>A</m> e <m>N</m> (sem o símbolo M).
+E pode ser formada somente 1 <m>n</m>-úpla com apenas o símbolo <m>N</m>.
+</p>
+<p> 
+Portanto, o número de maneiras de visitar o museu é <m>3^n - 2^{n+1} + 1</m>.
+    </p>
+    </solution>
+  </exercise>
+
+
+    <exercise >
+        <statement>
+            <p>(IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada
+equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a
+lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna
+da esquerda, um carro de outra equipe. Determine o número de formações possı́veis
+para a largada.</p>
+        </statement>
+        <!-- <hint>
+            <p>Seja <m>A_k, k\in\{1, 2, \ldots, 5\} </m>, o conjunto das possibilidades, na qual, temos no mínimo <m>k</m> equipes com pilotos ocupando a mesma linha. Queremos calcular o seguinte:</p>
+            <me>10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5).</me>
+            <p>Pelo Princípio da Inclusão-Exclusão temos</p>
+            <md>
+            <mrow> 10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - 5\times 5\times 2\times 8!   </mrow>
+            <mrow>  \amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!</mrow>
+            <mrow>  \amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  </mrow>
+            <mrow>  \amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   </mrow>
+            <mrow>  \amp   ~~~~~~ - 5!\times 2^5</mrow>
+            <mrow>  \amp ~ = 2088960. </mrow>
+            </md>
+        </hint> -->
+        <answer>
+            <p>2088960</p>
+        </answer>
+        <solution>
+    <p>
+    Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <m>C_5^1</m> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <m>(1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})</m>. 
+    Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <m>C_5^1\times 5\times 2!\times 8!</m> formas distintas de organizarmos esses carros.</p>
+
+    <p> Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</p> 
+
+    <p>Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <m>C_5^2</m> formas de escolhermos essas 2 equipes e podemos colocá-las de <m>5\times4</m> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <m>2!\times2</m> e das demais <m>6</m> equipes <m>6!</m>.</p>
+<p>
+    Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</p>
+            <md>
+            <mrow> 10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   </mrow>
+            <mrow>  \amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!</mrow>
+            <mrow>  \amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  </mrow>
+            <mrow>  \amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   </mrow>
+            <mrow>  \amp   ~~~~~~ - 5!\times 2^5</mrow>
+            <mrow>  \amp ~ = 2088960. </mrow>
+            </md>
+        </solution>
+    </exercise>
+
+    <exercise >
+        <statement>
+            <p>(ITA 2010) Sejam <m>A, B</m> e <m>C</m> conjuntos tais que 
+            <ul>
+            <li><m>C\subset B</m>,</li>
+            <li><m>\#(B\setminus C) = 3\times\#(B\cap C) = 6\times\#(A\cap B)</m>,</li>
+            <li><m>\#(A\cup B) = 22</m></li>
+            </ul>
+              e <m>(\#C, \#A, \#B)</m> é uma progressão geométrica de razão <m>r>0</m>. </p>
+            <ol label="a">
+              <li>Determine <m>\#C</m></li>
+              <li>Determine <m>\#(\mathcal{P}(B\setminus C)).</m></li>
+            </ol>
+        </statement>
+        <answer>
+            <p>a) <m>\#C = 4~~~~</m> b) <m>\#(\mathcal{P}(B\setminus C)) = 4096</m>.</p>
+        </answer>
+        <solution>
+            <p><term>item a)</term> Como <m>C\subset B</m>, temos <m>B\cap C = C</m>, logo <m>\#(B\cap C) = \#C</m> e <m>\#(B\setminus C) = \#B - \#C</m>. Logo
+            <me> \#B - \#C = \overbrace{\#(B\setminus C) = 3\times \#(B\cap C)}^{\text{por hipótese}} = 3\times\#C. </me>
+            Ou seja, 
+          <men xml:id='ita-ie01'>\#B = 4\times\#C.</men>
+        </p>
+        <p>Usando que <m>(\#C, \#A, \#B)</m> é uma P.G.,
+        podemos escrever <m>\#C=a_0r^0, \#A=a_0r^1</m> e <m>\#B=a_0r^2</m>. Logo, 
+        <!-- <me>\underbrace{(a_0r^1)^2}_{(\#A)^2} = \underbrace{(a_0r^0)}_{\#C}\underbrace{(a_0r^2)}_{\#B}</me>, obtemos -->
+        <md>
+          <mrow>(a_0r^1)^2 =\amp~ (a_0r^0)(a_0r^2)</mrow>
+        <mrow>( \#A )^2 =\amp~ \#C\times \#B</mrow>
+        <mrow>( \#A )^2 =\amp~\#C\times 4\times\#C. </mrow>
+        </md>
+        <!-- <me>\left( \#A \right)^2 = \#C\times \#B = \#C\times 4\times\#C \Rightarrow \#A = 2\times \#C.</me>  -->
+        Portanto, <men  xml:id='ita-ie02'>\#A=2\times \#C</men>.
+        </p>
+        <p>Por hipótese, <m>3\times\#(B\cap C) = 6\times\#(A\cap B)</m>, mas <m>\#(B\cap C) = \#C</m>, assim
+        <!-- <me> \#C = 2\#(A\cap B),</me>
+        Portanto, -->
+        <men  xml:id='ita-ie03'>\#C = 2\#(A\cap B) \quad \Rightarrow \quad \#(A\cap B) = \frac{\#C}{2}.</men>
+      </p>
+        <p>Finalmente, usando as igualdades <xref ref="ita-ie01"/>, <xref ref="ita-ie02"/>, <xref ref="ita-ie03"/> e o Princípio da Inclusão-Exclusão (<xref ref="teo-inclusao-exclusao-2"/>), obtemos
+        <me> \underbrace{\#(A\cup B)}_{22} = \underbrace{\#A}_{2\times \#C} + \underbrace{\#B}_{4\times \#C} -\underbrace{\#(A\cap B)}_{\#C/2}.</me>
+        Efetuando o cálculo, <m>\#C = 4</m>. </p>
+        <p><term>item b)</term>  Como <m>\#(B\setminus C) = 3\times \#C = 12</m>, temos
+        <me>\#\mathcal{P}(B\setminus C) = 2^{\#(B\setminus C)} = 2^{12} = 4096.</me></p>
+        </solution>
+    </exercise>
+
+
+<exercise>
+<p>
+(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado)
+ Um grupo de <m>n</m> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:
+<ol>
+<li>Ninguém pode tirar o próprio nome;</li>
+<li>Não podem existir duas pessoas <m>A</m> e <m>B</m> tais que <m>A</m> tirou <m>B</m> e <m>B</m> tirou <m>A</m>.</li>
+</ol>
+De quantas maneiras poderá ser realizado o sorteio?
+</p>
+<answer>
+<m>\displaystyle D_n + \sum_{k=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^k\cdot \frac{D_{n-2k}}{(n-2k)!}</m>
+</answer>
+<solution>
+<p>
+Denote as <m>n</m> pessoas por <m>P_1, P_2, \ldots, P_n</m>.
+Sejam <m>A_{ij}</m>, com <m>1\leq i\lt j\leq n</m>, os conjuntos das permutações caóticas em que a pessoa <m>P_i</m> tirou a pessoa <m>P_j</m> e a pessoa <m>P_j</m> tirou a pessoa <m>P_i</m>. 
+A resposta deste problema é dada por
+<men xml:id='que-cao-obm'>D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).</men>
+Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.
+</p>
+<p>
+Observe que <m>A_{ij}</m> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <m>A_{ij}\cap A_{kl}</m> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante.
+Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <m>A_{ij}</m>, das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:
+<ul>
+<li><m>\#A_{12}=D_{n-2}</m> e no total são <m>C_n^2</m> conjuntos deste tipo, pois para formar um conjunto <m>A_{ij}</m>, precisamos escolher duas pessoas de <m>n</m> disponíveis.</li>
+<li><m>\#(A_{12}\cap A_{34})=D_{n-4}</m> e no total são <m>C_n^2C_{n-2}^2</m> conjuntos deste tipo, pois para formar uma interseção <m>A_{ij}\cap A_{ls}</m>, precisamos escolher duas pessoas de <m>n</m> disponíveis e depois mais duas de <m>n-2</m> disponíveis.</li>
+<li>A cardinalidade da interseção de <m>k</m> conjuntos é <m>D_{n-2k}</m> e no total são <m>C_n^2C_{n-2}^2\cdots C_{n-2k}^2</m> conjuntos deste tipo, pois para formar uma interseção de <m>k</m> conjuntos, precisamos escolher duas pessoas de <m>n</m> disponíveis e depois mais duas de <m>n-2</m> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <m>n-2k</m> disponíveis.</li>
+</ul>
+Antes de escrever o resultado da Expressão <xref ref='que-cao-obm'/> vamos obter uma expressão para <m>C_n^2C_{n-2}^2\cdots C_{n-2k}^2</m>.
+<md>
+<mrow>C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}</mrow>
+<mrow>=\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.</mrow>
+</md>
+Utilizando essas informações na Expressão <xref ref='que-cao-obm'/>, obtemos
+<me>D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad</me>
+<md>
+<mrow> \quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots</mrow>
+<mrow>=\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots</mrow>
+<mrow>=\amp~D_n +\sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} \frac{n!(-1)^{k+1}D_{n-2(k+1)}}{(n-2(k+1))!2^{k+1}}</mrow>
+</md>
+Fazendo a mudança <m>p=k+1</m>, 
+<me>D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^p \cdot \frac{D_{n-2p}}{(n-2p)!}.</me>
+</p>
+</solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Seja <m>(j_1, j_2, \dots, j_n)</m> uma permutação do conjunto <m>\{1, 2, \dots, n\}</m>. 
+      Se
+      <me>
+        j_{r+1} = j_r + 1, \quad 1 \le r \le n - 1,
+      </me>
+      então o par <m>(j_r, j_{r+1})</m> é chamado de uma <term>sucessão</term> da permutação.
+    </p>
+
+
+
+<term>Exemplo:</term>
+<p>
+  Considere as permutações <m>(j_1, j_2, j_3, j_4)</m> do conjunto <m>\{1, 2, 3, 4\}</m>. 
+  Estas 24 permutações podem ser classificadas de acordo com suas sucessões da seguinte forma:
+</p>
+
+<ol label="0">
+  <li>
+    <p>
+      As permutações sem nenhuma sucessão são as seguintes 11:
+      <me>
+        (4,3,2,1), (4,2,3,1), (3,4,1,2), (3,1,4,2), (2,4,1,3),</me> 
+        <me>(2,1,4,3), 
+        (4,1,3,2), (2,3,1,4), (3,2,4,1), (4,3,1,2), (3,2,1,4)
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      As permutações com uma sucessão são as seguintes 9:
+      <me>
+        (1,2,4,3), (3,1,2,4), (4,3,1,2), (2,3,4,1), (3,2,3,1), </me>
+        <me>
+        (4,1,2,3), (3,4,2,1), (1,3,4,2), (2,1,3,4)
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      As permutações com duas sucessões são as seguintes 3:
+      <me>
+        (2,3,4,1), (4,1,2,3), (1,2,3,4)
+      </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      A permutação
+      <me>
+        (1,2,3,4)
+      </me>
+      é a única permutação com três sucessões.
+    </p>
+  </li>
+</ol>
+
+<term>Mostre que</term>
+<ol>
+<li><p>
+      O número <m>S_n</m> de permutações do conjunto <m>\{1, 2, \dots, n\}</m> sem 
+      uma sucessão é igual a
+      <me>
+        S_n = \sum_{k=0}^{n-1} (-1)^k \binom{n-1}{k} (n-k)!
+      </me>
+    </p></li>
+
+    <li><p>
+      O número <m>S_{n,k}</m> de permutações do conjunto <m>\{1, 2, \dots, n\}</m> com 
+      exatamente <m>k</m> sucessões é igual a
+      <me>
+        S_{n,k} = \binom{n-1}{k} S_{n-k}
+      </me>
+      onde <m>S_{n-k}</m> representa o número de permutações de um conjunto de 
+      <m>n-k</m> elementos que não possuem nenhuma sucessão.
+    </p></li>
+</ol>
+  </statement>
+</exercise>
+
+
+
+
+
+
+</exercises>
+
+</section>
+
+<section>
+    <title>Equações Diofantinas Lineares</title>
+
+
+<proposition>
+<p>
+Seja <m>(x_0, y_0)</m> uma solução particular da <em>Equação Diofantina Linear</em> <m>ax+by=c</m>, na qual, <m>mdc(a,b)=1</m>. Então, o seu conjunto solução, é composto pelos pares <m>(x,y)</m> em <m>\mathbb{Z}^2</m> tais que 
+<me>x=x_0+tb, \quad y=y_0-ta; \quad t\in \mathbb{Z}.</me>
+</p>
+</proposition>
+
+<technology>
+<p>No SageMath existe um método para resolver equações diofantinas. Para utiliza-lo é necessário declarar cada variável que será usada na equação. Abaixo, declaramos as variáveis <m>x</m> e <m>y</m> e escrevemos os comandos para resolver a equação diofantina
+<me> 3x+8y=13. </me>
+</p>
+<sage>
+<input>x,y = var('x,y')
+eq = 3*x+8*y==13
+show(solve_diophantine(eq))
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+<technology>
+
+<p>
+Resolvendo o problema das Ternas Pitagóricas no SageMath:
+</p>
+
+<sage>
+<input>x,y,z = var('x,y,z') 
+show(solve_diophantine(x^2+y^2==z^2))
+</input>
+<output>
+</output>
+</sage>
+
+<p>
+Abaixo, podemos ver graficamente as soluções, podendo rotacionar o gráfico para melhor entendimento e visualização.
+</p>
+
+<figure width="100%">
+    <caption></caption>
+    <interactive xml:id="interactive-sol-pita" platform="sage"  aspect="1:1.2" >
+    <slate surface="sage">                    
+from sage.plot.plot3d.shapes import *
+@interact
+def _sols_pitagoricas():
+    l=[]
+    for i in range(-7,8):
+        for j in range(-7,8):
+            s = (2*i*j, i^2-j^2, i^2+j^2)
+            if 50>=i^2+j^2 and s not in l:
+                l.append(s)
+
+
+
+    S = Sphere(0, color='red')
+    for s in l:
+        S += Sphere(0.8, color='red').translate(s)
+
+
+    var('r,t,z')
+    C = (r*cos(t), r*sin(t), z, [t, z])
+    p3 = plot3d(z, (t, 0, 2*pi), (z, 0, 50), transformation=C, opacity=0.7)
+    show(S+p3+polygon([(0,0,20), (0,0,60)]))
+
+    print('As solução em vermelho são:')
+    for s in l:
+        print(s)
+
+    </slate>
+    </interactive>        
+</figure>
+
+</technology>
+
+
+<technology>
+
+<p>
+Escolha os valores <m>a</m>, <m>b</m> e <m>c</m> para obter algumas soluções inteiras no plano, da Equação Diofantina:
+<me>ax+by=c.</me>
+</p>
+<figure width="100%">
+    <caption></caption>
+    <interactive xml:id="interactive-reta" platform="sage"  aspect="1:1.2" >
+    <slate surface="sage">                    
+@interact
+def _(a=input_box(3 , width=10,  label="a:"), b=input_box(8 , width=10,  label="b:"), c=input_box(13 , width=10,  label="c:"), auto_update=False):
+
+    def grafDiof(a1,b1,c1, sols=6):
+        y, t_0=var('y, t_0')
+        if c1%gcd(a1, b1)!=0:
+            print('O mcd(%d, %d) não divide %d' %(a1, b1, c1))
+        else:
+            l=[]
+            temp = solve_diophantine(a1*x+b1*y==c1)
+            lt=[temp[0], temp[1]]
+            yzero = solve(temp[1]==0, t_0)
+            yzero = ceil(yzero[0].rhs())
+            for i in range(yzero, yzero+ceil(sols/2)):
+                l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+            for i in range(yzero-1, yzero-ceil(sols/2)-1, -1):
+                l.append((lt[0].subs(t_0=(i)), lt[1].subs(t_0=(i))))
+            
+            l.sort()
+            pe = l[0]
+            pd = l[-1]
+            p2=line((pe, pd))
+            p1=list_plot(l, size=30, color='red')
+            (p2+p1).show(figsize=4)
+            print('As soluções destacadas de %dx + %dy = %d são:' %(a1, b1, c1))
+            for i in l:
+                print(i)
+    grafDiof(a, b, c)
+
+    </slate>
+    </interactive>        
+</figure>
+<p>
+Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis. 
+</p>
+<sage>
+<input>def graf_diof_lin(a,b,c,n_sols=6):
+    x,y,t_0=var('x,y,t_0')
+    if c%gcd(a, b)!=0:   #verifica se o mdc(a,b) não divide c
+        print('O mcd(%d, %d) não divide %d' %(a, b, c))  #caso divida, mens. de erro
+    else:   #caso mdc(a,b)|c, o código continua na linha 6
+        l=[]   #cria a lista vazia l, onde guardaremos as soluções inteiras
+        sd = solve_diophantine(a*x+b*y==c)  #obtendo a solução geral da eq. diof.  
+        t0 = solve(sd[0]==0, t_0)  #obtendo o valor de t_0 que a reta cruza o eixo y
+        t0 = ceil(t0[0].rhs())     #arredondando t0 para um valor inteiro 
+        for i in range(t0, t0+ceil(n_sols/2)):  
+            #guarda soluções inteiras depois de t0
+            l.append((sd[0].subs(t_0=(i)), sd[1].subs(t_0=(i))))
+        for i in range(t0-1, t0-ceil(n_sols/2)-1, -1): 
+            #guarda soluções inteiras antes de t0
+            l.append((sd[0].subs(t_0=(i)), sd[1].subs(t_0=(i))))
+        l.sort()   #ordena l
+        ps = l[0]  #guarda em ps a primeira solução da lista l           
+        us = l[-1] #guarda em us a última solução da lista l           
+        p2=line((ps, us))  #gráfico da reta que liga ps até us
+        p1=list_plot(l, size=30, color='red') #gráfico com as soluções inteiras
+        (p2+p1).show(figsize=4) #exibe os gráficos guardados em p2 e p1 sobrepostos
+        print('As soluções destacadas de %dx + %dy = %d são:' %(a, b, c))
+        for i in l:
+            print(i)  #exibe as soluções inteiras
+graf_diof_lin(3, 8, 13)
+</input>
+<output>
+</output>
+</sage>
+
+
+</technology>
+
+
+<p>
+Não entraremos em detalhes, mas ressaltamos que a função "solve_diophantine" se estende para uma maior quantidade de variáveis e não está restrita ao caso linear. Experimente a equação abaixo e depois substitua a equação por outra.
+</p>
+<sage>
+<input>x,y,z = var('x,y,z') 
+eq = 5*x + 9*y + 7*z ==31
+show(solve_diophantine(eq))
+</input>
+<output>
+</output>
+</sage>
+
+
+
+</section>
+
+<section>
+    <title>O Problema do Número de Frobenius</title>
+
+
+<subsection>
+<title>O Número de Frobenius para "duas moedas"</title>
+
+
+<theorem>
+<p>
+Sejam <m>a</m> e <m>b</m> inteiros positivos com <m>mdc(a,b)=1</m>. Considere a expressão <m>ax+by</m>, com <m>x,y\in\mathbb{Z}_+</m>. O maior inteiro <m>g=g(a,b)</m>, tal que <m>ax+by=g</m> não admite solução, mas <m>ax+by=d</m> admite solução sempre que <m>d\in \mathbb{Z}</m> e <m>d>g</m>, é dado por
+<me> g=ab-a-b. </me>
+</p>
+</theorem>
+
+
+<technology>
+
+<p>
+Número de Frobenius para "duas moedas".
+</p>
+<figure width="100%">
+    <caption></caption>
+    <interactive xml:id="interactive-frobenius" platform="sage"  aspect="1:0.7" >
+    <slate surface="sage">                    
+@interact
+def _(a=input_box(3 , width=10,  label="a:"), b=input_box(8 , width=10,  label="b:"), auto_update=False):
+
+        def num_frob(a,b):
+            if gcd(a, b)!=1:
+                print('Insira valores tais que o mdc seja igual a 1.')
+            else:
+                g = a*b-a-b
+                print('g = %d*%d-%d-%d=%d' %(a, b, a, b, g))
+                m = min([a,b])
+                M = max([a,b])
+                l=[]
+                dic={}
+                temp=0
+                
+                print('Abaixo, sendo t inteiro não negativo, temos uma')
+                print('parametrização para obter qualquer valor inteiro,') 
+                print('maior ou igual a %d que pode ser obtido pela' %(g+1)) 
+                print('expressão: %dx+%dy.\n' %(m, M))
+
+                for j in range(m):
+                    for i in range(m):
+                        temp = solve(m*x + M*j==g+i+1, x)[0].rhs()
+                        if temp in ZZ:
+                            dic.update({(g+i+1):[temp, j]})
+                    
+                for j in range(g+1, g+m+1):
+                    print('%d*(%d+t) + %d*%d = %d + %d*t' %(m,dic[j][0],M,dic[j][1],j,m))
+        num_frob(a,b)
+
+    </slate>
+    </interactive>        
+</figure>
+<p>
+O código para calcular o número de Frobenius para "duas moedas" e uma parametrização para a solução geral segue abaixo:
+</p>
+<sage>
+<input>def num_frob(a,b):
+    if gcd(a, b)!=1:
+        print('Insira valores tais que o mdc seja igual a 1.')
+    else:
+        g = a*b-a-b
+        print('g = %d*%d-%d-%d=%d' %(a, b, a, b, g))
+        m = min([a,b])
+        M = max([a,b])
+        l=[]
+        dic={}
+        temp=0
+        
+        print('Abaixo, sendo t inteiro não negativo, temos uma')
+        print('parametrização para obter qualquer valor inteiro,') 
+        print('maior ou igual a %d que pode ser obtido pela' %(g+1)) 
+        print('expressão: %dx+%dy.\n' %(m, M))
+
+        for j in range(m):
+            for i in range(m):
+                temp = solve(m*x + M*j==g+i+1, x)[0].rhs()
+                if temp in ZZ:
+                    dic.update({(g+i+1):[temp, j]})
+            
+        for j in range(g+1, g+m+1):
+            print('%d*(%d+t) + %d*%d = %d + %d*t' %(m,dic[j][0],M,dic[j][1],j,m))
+num_frob(3,8)
+</input>
+<output>
+</output>
+</sage>
+
+</technology>
+
+</subsection>
+
+
+
+<subsection>
+<title>O Número de Frobenius para "três moedas"</title>
+
+<!-- <p>
+O Número de Frobenius para "três moedas" não admite uma fórmula simples como no caso de "duas moedas". No livro <xref ref="ALFONSIN"/> possui diversos algoritmos e teoremas sobre o número de Frobenius. Usamos o Algoritmo de Rødseth (pag. 3) e o Teorema 2.3.2 para formular o widget abaixo:
+</p> -->
+
+<theorem>
+<p><term>(Teorema 2.3.2 de <xref ref="ALFONSIN"/>)</term>
+Sejam <m>a_1, a_2, a_3</m> inteiros com <m>mdc(a_1, a_2, a_3)=1</m>.
+Se <m>mdc(a_1, a_2)=d</m>, <m>a_1=a_1'd</m>, <m>a_2 = a_2'd</m> e existem inteiros <m>x_1, x_2\geq 0</m> com <m>a_3 = x_1a_1'+x_2a_2'</m>. Então,
+<me> g(a_1, a_2, a_3) = \frac{a_1a_2}{d} - a_1-a_2 + (d-1)a_3. </me>
+</p>
+</theorem>
+
+<technology>
+<p>
+Número de Frobenius para "três moedas".
+</p>
+<figure width="100%">
+    <caption></caption>
+    <interactive xml:id="interactive-frobenius-3" platform="sage"  aspect="1:0.6" >
+    <slate surface="sage">                    
+@interact
+def _(a1=input_box(6 , width=10,  label="a1:"), b1=input_box(9 , width=10,  label="a2:"), c1=input_box(20 , width=10,  label="a3:"), auto_update=False):
+
+    def teste_teo_2_3_1(a,b):
+        a1 = min([a,b])
+        b1 = max([a,b])
+        l=[]
+        for y in range(1,a1):
+            for i in range(1,int(y*b1/a1)+1):
+                l.append(b1*y-a1*i)
+            l.sort()
+        return l
+    def frobenius_3(a1, a2, a3): 
+        
+        d = gcd(a1, gcd(a2,a3))
+        if d>1:
+            return 'Escolha 3 números relativamente primos'
+        
+        d=gcd(a1, a2)       # caso mdc(a1,a2)>1
+        if d>1:             # precisamos aplicar
+            a1=a1/d         # Theorem 2.3.1, pag. 36
+            a2=a2/d         # da referência
+        
+        lista_n_sol =  teste_teo_2_3_1(a1, a2)
+        if a3 not in lista_n_sol:   
+            g = d*(a1*a2-a1-a2)+(d-1)*a3
+            print(f'Pelo Teorema 2.3.2, g = a1*a2/d - a1 - a2 + (d-1)*a3')
+            return g
+        
+        ### Algoritmo de Rødseth ###
+        s0 = ZZ(solve_mod([a2*x==a3], a1)[0][0])   #cálculo do s0
+
+        s={0:s0}   # cria o dicionário dos si's    
+        q={}       # cria o dicionário dos qi's    
+
+        q.update({1:((int(a1/s[0]))+1)})       # adiciona q1 no dic q
+        s.update({1:(q[1]*s[0]-a1)})           # adiciona s1 no dic q
+
+        i=1                                                  #
+        while s[i]!=0:                                       #
+            if (int(s[i-1]/s[i]))!= (s[i-1]/s[i]):           # calcula e guarda
+                q.update({(i+1):(int((s[i-1]/s[i]))+1)})     # nos respectivos
+                s.update({(i+1):(q[i+1]*s[i]-s[i-1])})       # dicionários
+                i=i+1                                        # os valores de qi e si
+            else:                                            # para i >= 2
+                q.update({(i+1):(int(s[i-1]/s[i]))})         #
+                s.update({(i+1):(0)})                        #
+                i=i+1                                        #
+            
+        p = {-1:0, 0:1, 1:(q[1]*1 - 0)}  # cria o dicionário dos pi's com i=-1, 0, 1 
+        r={0:(s[0]*a2-p[0]*a3)/a1}       # cria o dicionário dos ri's
+        if 0>=r[0]:                                          #
+            v=0                                              # calcula e guarda
+        else:                                                # nos respectivos
+            i=1                                              # dicionários
+            while r[i-1]>0:                                  # os valores de pi e ri
+                p.update({i+1:(q[i+1]*p[i] - p[i-1])})       # i>=2 para pi e
+                r.update({i:((s[i]*a2-p[i]*a3)/a1)})         # i>=1 para ri
+                i+=1                                         # 
+            v=i-2                                            # 
+
+        g = -a1+a2*(s[v]-1) +a3*(p[v+1]-1) - min([a2*s[v+1], a3*p[v]])  # calcula o valor de g
+        if d==1:                      # caso mdc(a1, a2) = 1 o valor de g já está pronto
+            print('Pelo algoritmo de Rødseth')
+            return g
+        else:                         # caso mdc(a1, a2) > 1 aplicamos Theorem 2.3.1, pag. 36
+            print('Pelo algoritmo de Rødseth')
+            return d*g +(d-1)*a3       
+    print(f'g({a1}, {b1}, {c1}) = {frobenius_3(a1,b1,c1)}' )
+
+    </slate>
+    </interactive>        
+</figure>
+<p>
+O código para calcular o número de Frobenius para "três moedas" segue abaixo:
+</p>
+<sage>
+<input>def teste_teo_2_3_1(a,b):                   #
+    a1 = min([a,b])                         # calcula os valores
+    b1 = max([a,b])                         # que não podem ser 
+    l=[]                                    # obtidos por
+    for y in range(1,a1):                   # a1'*x1+a2'*x2 com
+        for i in range(1,int(y*b1/a1)+1):   # x, y >= 0
+            l.append(b1*y-a1*i)             # 
+    return l                                #
+def frobenius_3(a1, a2, a3): 
+    
+    d = gcd(a1, gcd(a2,a3))
+    if d>1:
+        return 'Escolha 3 números relativamente primos'
+    
+    d=gcd(a1, a2)       # caso mdc(a1,a2)>1
+    if d>1:             # precisamos aplicar
+        a1=a1/d         # Theorem 2.3.1, pag. 36
+        a2=a2/d         # da referência
+    
+    lista_n_sol =  teste_teo_2_3_1(a1, a2)
+    if a3 not in lista_n_sol:   
+        g = d*(a1*a2-a1-a2)+(d-1)*a3
+        print(f'Pelo Teorema 2.3.2, g = a1*a2/d - a1 - a2 + (d-1)*a3')
+        return print(f'g({a1*d},{a2*d},{a3}) = {g}')
+    
+    ### Algoritmo de Rødseth ###
+    s0 = ZZ(solve_mod([a2*x==a3], a1)[0][0])   #cálculo do s0
+
+    s={0:s0}   # cria o dicionário dos si's    
+    q={}       # cria o dicionário dos qi's    
+
+    q.update({1:((int(a1/s[0]))+1)})       # adiciona q1 no dic q
+    s.update({1:(q[1]*s[0]-a1)})           # adiciona s1 no dic q
+
+    i=1                                                  #
+    while s[i]!=0:                                       #
+        if (int(s[i-1]/s[i]))!= (s[i-1]/s[i]):           # calcula e guarda
+            q.update({(i+1):(int((s[i-1]/s[i]))+1)})     # nos respectivos
+            s.update({(i+1):(q[i+1]*s[i]-s[i-1])})       # dicionários
+            i=i+1                                        # os valores de qi e si
+        else:                                            # para i >= 2
+            q.update({(i+1):(int(s[i-1]/s[i]))})         #
+            s.update({(i+1):(0)})                        #
+            i=i+1                                        #
+        
+    p = {-1:0, 0:1, 1:(q[1]*1 - 0)}  # cria o dicionário dos pi's com i=-1, 0, 1 
+    r={0:(s[0]*a2-p[0]*a3)/a1}       # cria o dicionário dos ri's
+    if 0>=r[0]:                                          #
+        v=0                                              # calcula e guarda
+    else:                                                # nos respectivos
+        i=1                                              # dicionários
+        while r[i-1]>0:                                  # os valores de pi e ri
+            p.update({i+1:(q[i+1]*p[i] - p[i-1])})       # i>=2 para pi e
+            r.update({i:((s[i]*a2-p[i]*a3)/a1)})         # i>=1 para ri
+            i+=1                                         # 
+        v=i-2                                            # 
+
+    g = -a1+a2*(s[v]-1) +a3*(p[v+1]-1) - min([a2*s[v+1], a3*p[v]])  # calcula g
+    if d==1:              # caso mdc(a1, a2) = 1 o valor de g já está pronto
+        print('Pelo algoritmo de Rødseth')
+        return print(f'g({a1},{a2},{a3}) = {g}')
+    else:                 # caso mdc(a1, a2) > 1 aplicamos Theorem 2.3.1, pag. 36
+        print('Pelo algoritmo de Rødseth')
+        g = d*g +(d-1)*a3  
+        return print(f'g({a1*d},{a2*d},{a3}) = {g}')
+frobenius_3(45,96,74)
+</input>
+<output>
+</output>
+</sage>
+
+</technology>
+
+
+</subsection>
+
+
+<!-- <technology>
+
+<p>
+Número de Frobenius para 3 variáveis.
+</p>
+<figure width="100%">
+    <caption></caption>
+    <interactive xml:id="interactive-frobenius3" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(a=input_box(6 , width=10,  label="a:"), b=input_box(9 , width=10,  label="b:"), c=input_box(20 , width=10,  label="b:")):
+
+    def sol_frob_3(a,b,c):
+        x,y,z = var('x,y,z')
+        l = [a,b,c]
+        l.sort()
+        dic={}
+        lista_min=[]
+        i=0
+        while l[0]>len(dic):
+            for y in range(l[0]):
+                for z in range(l[0]):
+                    temp  = solve_diophantine(l[0]*x+l[1]*y+l[2]*z == i, x)
+                    if temp in ZZ and temp>=0 and ((i) not in dic.keys()):
+                        if len(dic)==0:
+                            dic.update({(i):[temp, y, z]})
+                        elif i==max(dic.keys())+1:
+                            dic.update({(i):[temp, y, z]})
+                        else:
+                            dic={}
+                        
+            i=i+1
+        
+        frob = min(dic.keys())-1
+        print('O último valor sem solução é %d.' %frob)
+        print('\n')
+        print('Abaixo, sendo t inteiro não negativo, temos uma \nparametrização para obter qualquer valor inteiro, \nmaior ou igual a %d, que pode ser obtido pela \nexpressão: %dx+%dy+%dz.' %(frob+1, l[0], l[1], l[2]))
+        print('\n')
+        for k in dic.keys():
+            print('%d*(%d+t)+%d*%d+%d*%d = %d + %d*t' %(l[0], dic[k][0], l[1], dic[k][1], l[2], dic[k][2], k, l[0]))
+        
+        #return dic
+    sol_frob_3(a,b,c)
+    
+
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+
+<proposition>
+<p>
+Dados os inteiros positivos <m>a</m> e <m>b</m> com <m>mdc(a, b) = 1</m>, existem exatamente
+<me> \frac{(a-1)(b-1)}{2}. </me>
+números inteiros não negativos que não são da forma <m>ax + by</m> com <m>x, y \geq 0</m>.
+</p>
+</proposition>
+
+<technology>
+
+<p>Implementação para calcular a quantidade de valores e os valores que não são da forma <m>ax + by</m> com <m>x, y \geq 0</m>.
+</p>
+<figure width="100%">
+    <caption></caption>
+    <interactive xml:id="interactive-naosol" platform="sage"  aspect="1:0.6" >
+    <slate surface="sage">                    
+@interact
+def _(a1=input_box(5 , width=10,  label="a:"), b1=input_box(9 , width=10,  label="b:")):
+
+
+    def proposicao_3_6(a,b):
+        if (gcd(a,b)==1):
+            t = (a-1)*(b-1)/2
+            print('Quantidade que não pode ser obtida: \n(%d-1)(%d-1)/2 = %d' %(a,b,t))
+
+            a1 = min([a,b])
+            b1 = max([a,b])
+            print('\nVariando y de %d até %d:' %(1,a1-1))
+            l=[]
+            for y in range(1,a1):
+                for i in range(1,y*b1//a1+1):
+                    l.append(b1*y-a1*i)
+                l.sort()
+                print('y=%d, %d>=x>0: %dy-%dx sols: %s' %(y, y*b1//a1,b1,a1 ,l))
+                l=[]
+        else:
+            print('Insira valores tais que o mdc seja igual a 1.')
+    proposicao_3_6(a1,b1)
+    
+
+    </slate>
+    </interactive>        
+</figure>
+
+<sage>
+<input>def proposicao_3_6(a,b):
+    if (gcd(a,b)==1):
+        t = (a-1)*(b-1)/2
+        print('Quantidade que não pode ser obtida: \n(%d-1)(%d-1)/2 = %d' %(a,b,t))
+
+        a1 = min([a,b])
+        b1 = max([a,b])
+        print('\nVariando y de %d até %d:' %(1,a1-1))
+        l=[]
+        for y in range(1,a1):
+            for i in range(1,y*b1//a1+1):
+                l.append(b1*y-a1*i)
+            l.sort()
+            print('y=%d, %d>=x>0: %dy-%dx sols: %s' %(y, y*b1//a1,b1,a1 ,l))
+            l=[]
+    else:
+        print('Insira valores tais que o mdc seja igual a 1.')
+proposicao_3_6(5,9)
+</input>
+<output>
+</output>
+</sage>
+
+</technology> -->
+
+
+</section>
+
+
+
+
+
+
+
+
+<references xml:id="referencias" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- % TWJ, 2010/03/31 -->
+<!-- % Chapters now begin with Chapter 1 -->
+
+<!--<title>Referências</title>-->
+
+
+
+    
+        <title>Referências Bibliográficas</title>
+        <!--
+        <p>The following list contains references suitable for further reading.  With the exception of [8] and [9] and perhaps [1] and [3], all of these books are more or less  at the same level as this text.  Interesting applications of algebra  can be found in [2], [5], [10], and [11].</p>
+        -->
+
+
+
+        
+
+        <biblio xml:id="ALFONSIN" type="raw" > <!-- was [1] -->
+        <!-- Reference updated 5/4/2010 - TWJ -->
+        ALFONSÍN, JORGE L. RAMÍREZ. <term>The diophantine Frobenius problem.</term> OUP Oxford, 2005. </biblio>
+
+
+        <biblio xml:id="HEFEZ" type="raw" > <!-- was [1] -->
+        <!-- Reference updated 5/4/2010 - TWJ -->
+        HEFEZ, A. <term>Aritmética</term>. Coleção PROFMAT, SBM, 2ed., 2016.
+        </biblio>
+        
+
+        <biblio xml:id="LEMOS" type="raw" > <!-- was [1] -->
+        <!-- Reference updated 5/4/2010 - TWJ -->
+        LEMOS, M. <term>Criptografia, Números Primos e Algoritmos</term>. IMPA, 4ed., 2010.
+        </biblio>
+
+        <biblio xml:id="LEMOS" type="raw" > <!-- was [1] -->
+        <!-- Reference updated 5/4/2010 - TWJ -->
+        SILVA, L. D.; SANTOS, M. P.; MACHADO J. R. N., <term>Elementos de Computação Matemática com <em>SageMath</em></term>, SBM, 2019.
+        </biblio>
+
+
+
+        <biblio xml:id="tanaka" type="raw" > <!-- was [1] -->
+        <!-- Reference updated 5/4/2010 - TWJ -->
+        NASCIMENTO, E. C. A.; TANAKA, T. Y.; SILVA, B. C., <term>Equações diofantinas lineares e não lineares: uma abordagem por meio de questões de Olimpíadas de Matemática</term>. PMO v. 10, n.3, 2022.
+        </biblio>
+
+
+</references>
+
+
+
+
+
+
+
+</article>
+</pretext>

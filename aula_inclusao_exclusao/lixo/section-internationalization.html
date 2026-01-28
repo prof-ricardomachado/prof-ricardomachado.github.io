@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-02T16:19:49-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Internationalization</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+<script src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body id="pretext-SA" class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://pretextbook.org" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals:</span> <span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-cross-referencing.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-20.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-cross-referencing.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-20.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span> <span class="title">Introduction</span></a></li>
+<li class="link"><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span> <span class="title">The Fundamental Theorem</span></a></li>
+<li class="link"><a href="section-sage-cells.html" data-scroll="Abc"><span class="codenumber">3</span> <span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li class="link">
+<a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span> <span class="title">An Interesting Corollary</span></a><ul>
+<li><a href="interesting-corollary.html#subsection-second-FTC" data-scroll="subsection-second-FTC">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note about Subsection 4.1</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-5.html" data-scroll="Bcd"><span class="codenumber">5</span> <span class="title">Some Facts and Figures</span></a></li>
+<li class="link"><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span> <span class="title">Some Advanced Ideas</span></a></li>
+<li class="link">
+<a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span> <span class="title">Mathematics</span></a><ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+<li><a href="section-7.html#commutative-diagrams" data-scroll="commutative-diagrams">Commutative Diagrams</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="text-in-paragraphs.html" data-scroll="text-in-paragraphs"><span class="codenumber">8</span> <span class="title">Text in Paragraphs</span></a><ul>
+<li><a href="text-in-paragraphs.html#subsection-xml-escape" data-scroll="subsection-xml-escape">Special <abbr class="initialism">XML</abbr> characters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-15" data-scroll="subsection-15">Quotations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-16" data-scroll="subsection-16">Groupings</a></li>
+<li><a href="text-in-paragraphs.html#subsection-17" data-scroll="subsection-17">Characters, Symbols, and Constructions</a></li>
+<li><a href="text-in-paragraphs.html#subsection-18" data-scroll="subsection-18">Currency</a></li>
+<li><a href="text-in-paragraphs.html#subsection-icons-in-text" data-scroll="subsection-icons-in-text">Icons in Text</a></li>
+<li><a href="text-in-paragraphs.html#subsection-keyboard" data-scroll="subsection-keyboard">Keyboard Keys</a></li>
+<li><a href="text-in-paragraphs.html#section-urls" data-scroll="section-urls">URLs, such as <code class="code-inline tex2jax_ignore">http://example.com</code></a></li>
+<li><a href="text-in-paragraphs.html#subsection-22" data-scroll="subsection-22">Biological Names</a></li>
+<li><a href="text-in-paragraphs.html#subsection-23" data-scroll="subsection-23">Verbatim in titles, <code class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</code>, OK</a></li>
+<li><a href="text-in-paragraphs.html#subsection-special-situations" data-scroll="subsection-special-situations">Special Situations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-jupyter-dollars" data-scroll="subsection-jupyter-dollars">Jupyter Notebook, Markdown, MathJax, Delimiters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-26" data-scroll="subsection-26"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Characters, Ligatures, and More</a></li>
+<li><a href="text-in-paragraphs.html#subsection-27" data-scroll="subsection-27"><abbr class="initialism">HTML</abbr> and accidental mathematics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span> <span class="title">Graphics</span></a><ul>
+<li><a href="graphics.html#subsection-28" data-scroll="subsection-28">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-29" data-scroll="subsection-29"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-30" data-scroll="subsection-30">Asymptote, 2D</a></li>
+<li><a href="graphics.html#graphics-asymptote-webgl" data-scroll="graphics-asymptote-webgl">Asymptote, 3D via WebGL</a></li>
+<li><a href="graphics.html#subsection-32" data-scroll="subsection-32">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-33" data-scroll="subsection-33">Inkscape Images</a></li>
+<li><a href="graphics.html#subsection-34" data-scroll="subsection-34">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-35" data-scroll="subsection-35">Caption Testing</a></li>
+<li><a href="graphics.html#captionless-images" data-scroll="captionless-images">Captionless Images</a></li>
+<li><a href="graphics.html#subsection-37" data-scroll="subsection-37">Technical Details</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span> <span class="title">Demonstrations</span></a></li>
+<li class="link">
+<a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span> <span class="title">Further Reading</span></a><ul>
+<li><a href="section-11.html#subsection-38" data-scroll="subsection-38">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">Exercises</a></li>
+<li><a href="section-11.html#exercises-section-multiple" data-scroll="exercises-section-multiple">More Exercises</a></li>
+<li><a href="section-11.html#references-section" data-scroll="references-section">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="lists.html" data-scroll="lists"><span class="codenumber">12</span> <span class="title">List Calisthenics</span></a><ul>
+<li><a href="lists.html#subsection-39" data-scroll="subsection-39">Lists, Generally</a></li>
+<li><a href="lists.html#subsection-40" data-scroll="subsection-40">List Spacing, I</a></li>
+<li><a href="lists.html#subsection-41" data-scroll="subsection-41">List Spacing, II</a></li>
+<li><a href="lists.html#test-second" data-scroll="test-second">List items containing only inline math</a></li>
+<li><a href="lists.html#subsection-43" data-scroll="subsection-43">Description Lists</a></li>
+<li><a href="lists.html#subsection-44" data-scroll="subsection-44">Named Lists</a></li>
+<li><a href="lists.html#subsection-45" data-scroll="subsection-45">Testing List Decompositions</a></li>
+<li><a href="lists.html#exercises-5" data-scroll="exercises-5">Exercises (with lists)</a></li>
+<li><a href="lists.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span> <span class="title">Table Calisthenics</span></a></li>
+<li class="link">
+<a href="section-interactive-authored.html" data-scroll="section-interactive-authored"><span class="codenumber">14</span> <span class="title">Interactive Elements, Authored</span></a><ul>
+<li><a href="section-interactive-authored.html#interactive-html5-canvas" data-scroll="interactive-html5-canvas">HTML5 Canvas</a></li>
+<li><a href="section-interactive-authored.html#subsection-47" data-scroll="subsection-47">D3.js</a></li>
+<li><a href="section-interactive-authored.html#subsection-48" data-scroll="subsection-48">SVG</a></li>
+<li><a href="section-interactive-authored.html#subsection-49" data-scroll="subsection-49">JSXGraph</a></li>
+<li><a href="section-interactive-authored.html#subsection-50" data-scroll="subsection-50">Sage Interacts</a></li>
+<li><a href="section-interactive-authored.html#subsection-51" data-scroll="subsection-51">Geogebra</a></li>
+<li><a href="section-interactive-authored.html#subsection-52" data-scroll="subsection-52">threejs</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-interactive-server.html" data-scroll="section-interactive-server"><span class="codenumber">15</span> <span class="title">Interactive Elements, Server</span></a><ul>
+<li><a href="section-interactive-server.html#subsection-geogebra-server" data-scroll="subsection-geogebra-server">GeoGebra</a></li>
+<li><a href="section-interactive-server.html#subsection-54" data-scroll="subsection-54">Desmos Graphs</a></li>
+<li><a href="section-interactive-server.html#subsection-55" data-scroll="subsection-55">CalcPlot3D</a></li>
+<li><a href="section-interactive-server.html#subsection-56" data-scroll="subsection-56">Wolfram CDF</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-audio.html" data-scroll="section-audio"><span class="codenumber">16</span> <span class="title">Audio</span></a></li>
+<li class="link">
+<a href="section-video.html" data-scroll="section-video"><span class="codenumber">17</span> <span class="title">Video</span></a><ul>
+<li><a href="section-video.html#subsection-57" data-scroll="subsection-57">Video Files</a></li>
+<li><a href="section-video.html#subsection-58" data-scroll="subsection-58">YouTube</a></li>
+<li><a href="section-video.html#subsection-59" data-scroll="subsection-59">Vimeo</a></li>
+<li><a href="section-video.html#subsection-60" data-scroll="subsection-60">Captions and Subtitles</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">18</span> <span class="title">Cross-Referencing</span></a></li>
+<li class="link active"><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">19</span> <span class="title">Internationalization</span></a></li>
+<li class="link"><a href="section-20.html" data-scroll="section-20"><span class="codenumber">20</span> <span class="title">Pre-Formatted Text</span></a></li>
+<li class="link"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">21</span> <span class="title">Program Listings</span></a></li>
+<li class="link"><a href="section-22.html" data-scroll="section-22"><span class="codenumber">22</span> <span class="title">Units of Measure</span></a></li>
+<li class="link">
+<a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">23</span> <span class="title">Side-By-Side Panels</span></a><ul>
+<li><a href="section-side-by-side.html#subsection-61" data-scroll="subsection-61">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-62" data-scroll="subsection-62">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-63" data-scroll="subsection-63">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-64" data-scroll="subsection-64">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-65" data-scroll="subsection-65">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-66" data-scroll="subsection-66">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-67" data-scroll="subsection-67">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-68" data-scroll="subsection-68">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-69" data-scroll="subsection-69">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-70" data-scroll="subsection-70">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-71" data-scroll="subsection-71">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#stacking-side-by-side" data-scroll="stacking-side-by-side">Stacking: Back to Vertical Flow</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-74" data-scroll="subsection-74">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-76" data-scroll="subsection-76">Testing a Side-By-Side First</a></li>
+<li><a href="section-side-by-side.html#subsection-77" data-scroll="subsection-77">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-24.html" data-scroll="section-24"><span class="codenumber">24</span> <span class="title">Side-by-Side Gallery</span></a></li>
+<li class="link"><a href="poetry.html" data-scroll="poetry"><span class="codenumber">25</span> <span class="title">Poetry</span></a></li>
+<li class="link">
+<a href="atomic-items.html" data-scroll="atomic-items"><span class="codenumber">26</span> <span class="title">Atomic Objects</span></a><ul>
+<li><a href="atomic-items.html#atomic-image" data-scroll="atomic-image"><code class="code-inline tex2jax_ignore">&lt;image&gt;</code></a></li>
+<li><a href="atomic-items.html#atomic-video" data-scroll="atomic-video"><code class="code-inline tex2jax_ignore">&lt;video&gt;</code></a></li>
+</ul>
+</li>
+<li class="link">
+<a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">27</span> <span class="title">Advanced Numbering</span></a><ul>
+<li><a href="advanced-numbering.html#subsection-80" data-scroll="subsection-80">One</a></li>
+<li><a href="advanced-numbering.html#subsection-81" data-scroll="subsection-81">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-82" data-scroll="subsection-82">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-83" data-scroll="subsection-83">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-84" data-scroll="subsection-84">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-with-an-exercise" data-scroll="subsection-with-an-exercise">A Title with ] a Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-87" data-scroll="subsection-87">A Title with } a Right Brace</a></li>
+<li><a href="advanced-numbering.html#subsection-88" data-scroll="subsection-88">A Title with \(a]b\) a Math Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-89" data-scroll="subsection-89">Just an Exercise</a></li>
+<li><a href="advanced-numbering.html#solutions-2" data-scroll="solutions-2">Solutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-28.html" data-scroll="section-28"><span class="codenumber">28</span> <span class="title">Customizations</span></a><ul><li><a href="section-28.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts, Plus This Is A Really Long Title So That We Can Test How Well It Reacts To The Right Margin And Wraps Around To Form A Couple Of Lines, Plus How It Sits Relative To The Number Of The Subsection</a></li></ul>
+</li>
+<li class="link"><a href="section-myopenmath.html" data-scroll="section-myopenmath"><span class="codenumber">29</span> <span class="title">MyOpenMath Interactive Problems</span></a></li>
+<li class="link"><a href="ancillaries.html" data-scroll="ancillaries"><span class="codenumber">30</span> <span class="title">Ancillaries</span></a></li>
+<li class="link">
+<a href="worksheets.html" data-scroll="worksheets"><span class="codenumber">31</span> <span class="title">Worksheets</span></a><ul>
+<li><a href="worksheets.html#subsection-91" data-scroll="subsection-91">About Worksheets</a></li>
+<li><a href="worksheets.html#worksheet-1" data-scroll="worksheet-1">A Geometric Prelude</a></li>
+<li><a href="worksheets.html#worksheet-2" data-scroll="worksheet-2">Networks Worksheet</a></li>
+<li><a href="worksheets.html#worksheet-3" data-scroll="worksheet-3">Worksheet</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-single.html" data-scroll="exercises-single"><span class="codenumber">32</span> <span class="title">Exercises, One Subsection</span></a><ul>
+<li><a href="exercises-single.html#exercises-6" data-scroll="exercises-6">Exercise Collection</a></li>
+<li><a href="exercises-single.html#references-3" data-scroll="references-3">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises-7.html" data-scroll="exercises-7"><span class="codenumber">33</span> <span class="title">Exercise Section, Structured</span></a></li>
+<li class="link">
+<a href="exercises-multiple.html" data-scroll="exercises-multiple"><span class="codenumber">34</span> <span class="title">Exercises, Multiple Subsections</span></a><ul>
+<li><a href="exercises-multiple.html#subsection-92" data-scroll="subsection-92">Faux Subsection</a></li>
+<li><a href="exercises-multiple.html#exercises-drill" data-scroll="exercises-drill">Drill Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-9" data-scroll="exercises-9">Challenging Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-10" data-scroll="exercises-10">Impossible Exercises</a></li>
+<li><a href="exercises-multiple.html#references-4" data-scroll="references-4">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises.html" data-scroll="exercises"><span class="codenumber">35</span> <span class="title">Exercises, Top-Level</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="solutions-backmatter.html" data-scroll="solutions-backmatter"><span class="codenumber">B</span> <span class="title">Solutions to Selected Exercises</span></a></li>
+<li class="link"><a href="solutions-4.html" data-scroll="solutions-4"><span class="codenumber">C</span> <span class="title">Solutions to a Single Exercises Division</span></a></li>
+<li class="link"><a href="appendix-results.html" data-scroll="appendix-results"><span class="codenumber">D</span> <span class="title">List of Results</span></a></li>
+<li class="link">
+<a href="appendix-3.html" data-scroll="appendix-3"><span class="codenumber">E</span> <span class="title">A Structured Appendix</span></a><ul><li><a href="appendix-3.html#subsection-93" data-scroll="subsection-93">A Subsection in an Appendix</a></li></ul>
+</li>
+<li class="link"><a href="appendix-4.html" data-scroll="appendix-4"><span class="codenumber">F</span> <span class="title">Index</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">References</span></a></li>
+<li class="link">
+<a href="references.html" data-scroll="references"><span class="codenumber">G</span> <span class="title">Multiple References</span></a><ul>
+<li><a href="references.html#subsection-94" data-scroll="subsection-94">Multiple Specialized References</a></li>
+<li><a href="references.html#references-6" data-scroll="references-6">General References</a></li>
+<li><a href="references.html#references-7" data-scroll="references-7">Specialized References</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-internationalization"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">19</span> <span class="title">Internationalization</span>
+</h2>
+<p id="p-871">Supporting a multitude of possible characters, across many languages and across many output formats can be a challenge.  One of our goals is to make this much easier for authors.  Fortunately, the Unicode standard has led to improvements from the 7-bit ASCII standard of old.</p>
+<article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Unicode Characters for HTML Output.</span></h5>
+<p id="p-872">First, we discuss HTML output.  If you include Unicode characters in your PreTeXt source, they should survive just fine <i class="foreign" lang="fr-FR">en route</i> to a web browser or e-reader.  Here are the caveats for HTML output:</p>
+<ul class="disc">
+<li id="li-310"><p id="p-873">So that you can continue to get the best results with print and PDF output, use available empty elements for obscure characters, even if targeting HTML output, before resorting to a Unicode character.  For example, use <code class="code-inline tex2jax_ignore">&lt;copyright/&gt;</code> for the copyright symbol in text before resorting to the Unicode character <code class="code-inline tex2jax_ignore">U+00A9</code>.  It is a bit more work, but you will get better results with other conversions, even if you initially are only fascinated by <abbr class="initialism">HTML</abbr>.</p></li>
+<li id="li-311"><p id="p-874">How you actually enter Unicode characters into your source file is dependent on your editor and operating system, and is therefore outside the scope of our documentation.  You can cut-and-paste characters and text from the source of our examples for initial testing and experimentation.</p></li>
+<li id="li-312"><p id="p-875">Always, always identify your source as having Unicode characters by including the incantation <code class="code-inline tex2jax_ignore">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</code> as the first line of your source file. (You <em class="emphasis">may</em> be able to accurately cut-and-paste this version here.  But if the copy has non-standard characters in it, go back to the top of this source file for a copy.)</p></li>
+<li id="li-313"><p id="p-876">Alan Wood’s <a class="external" href="http://www.alanwood.net/unicode/unicode_samples.html" target="_blank">Unicode Resources</a> has a plethora of samples of various groups of Unicode characters.  If you, or your readers, are “missing” characters in a web browser, this is a good place to start testing the local setup.</p></li>
+</ul></article><article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Characters in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>, PDF, print.</span></h5>
+<p id="p-877">The situation for <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> is a bit more complicated, since <span class="latex-logo">T<span class="E">e</span>X</span> pre-dates Unicode's widespread adoption.</p>
+<p id="p-878">This sample article is intended to work well, out-of-the-box, for authors just starting with PreTeXt.  So we only include here examples that we know are likely to convert to <abbr class="initialism">PDF</abbr> without any errors.  For more extensive examples and experiments, we provide the sample document <code class="code-inline tex2jax_ignore">examples/fonts/fonts-and-characters.xml</code>, so be aware of that example as you look to see what is possible.</p>
+<p id="p-879">Similarly, you should be able to process this sample article successfully with various <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> engines.  We test regularly with <code class="code-inline tex2jax_ignore">pdflatex</code> and <code class="code-inline tex2jax_ignore">xelatex</code> and provide online sample PDF output of this document processed by <code class="code-inline tex2jax_ignore">pdflatex</code>.  In principle, you should be able to use <code class="code-inline tex2jax_ignore">latex</code> (to produce a DVI), and possibly other (unsupported) engines, such as <code class="code-inline tex2jax_ignore">lualatex</code>.</p>
+<p id="p-880">Once you get beyond the Latin alphabet, with accents common in Western Europe and the Western Hemisphere, you will almost assuredly need to restrict your attention to producing <abbr class="initialism">PDF</abbr> output with the <code class="code-inline tex2jax_ignore">xelatex</code> engine.  This is discussed and tested in <code class="code-inline tex2jax_ignore">examples/fonts/fonts-and-characters.xml</code>.</p></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">Basic Latin, <code class="code-inline tex2jax_ignore">U+0000</code>–<code class="code-inline tex2jax_ignore">U+007F</code>.</span></h5>
+<p id="p-881">Unicode uses multiple 8-bit bytes to represent characters, and these are typically expressed in hexadecimal (base 16) notation.  Using just a single byte, we can get 256 values, and the first 128 (hex <code class="code-inline tex2jax_ignore">00</code> to <code class="code-inline tex2jax_ignore">7F</code>) are the “usual” Latin characters with some values used as control codes.  These 95 characters are the most basic, and will all render using <code class="code-inline tex2jax_ignore">pdflatex</code> or <code class="code-inline tex2jax_ignore">xelatex</code> with no special setup (and will render easily in HTML).  <code class="code-inline tex2jax_ignore">U+0000</code> to <code class="code-inline tex2jax_ignore">U+001F</code> are control codes and not used here.  <code class="code-inline tex2jax_ignore">U+007F</code> is also a control code and so is excluded, while <code class="code-inline tex2jax_ignore">U+0020</code> is a space, so appears invisible in the table.  In the source we have authored each character by its escaped version using its Unicode number (in hexadecimal).  So, for example, capital-B is authored as <code class="code-inline tex2jax_ignore">&amp;#x0042;</code>.</p>
+<figure class="table table-like" id="table-25"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">19.1<span class="period">.</span></span><span class="space"> </span>Basic Latin, Regular</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">0</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">1</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">2</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">3</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">4</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">5</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">6</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">7</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">8</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">9</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">A</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">B</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">C</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">D</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">E</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">F</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">002_</code></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">!</td>
+<td class="l m b0 r0 l0 t0 lines">"</td>
+<td class="l m b0 r0 l0 t0 lines">#</td>
+<td class="l m b0 r0 l0 t0 lines">$</td>
+<td class="l m b0 r0 l0 t0 lines">%</td>
+<td class="l m b0 r0 l0 t0 lines">&amp;</td>
+<td class="l m b0 r0 l0 t0 lines">'</td>
+<td class="l m b0 r0 l0 t0 lines">(</td>
+<td class="l m b0 r0 l0 t0 lines">)</td>
+<td class="l m b0 r0 l0 t0 lines">*</td>
+<td class="l m b0 r0 l0 t0 lines">+</td>
+<td class="l m b0 r0 l0 t0 lines">,</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">.</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">/</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">003_</code></td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">:</td>
+<td class="l m b0 r0 l0 t0 lines">;</td>
+<td class="l m b0 r0 l0 t0 lines">&lt;</td>
+<td class="l m b0 r0 l0 t0 lines">=</td>
+<td class="l m b0 r0 l0 t0 lines">&gt;</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">?</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">004_</code></td>
+<td class="l m b0 r0 l0 t0 lines">@</td>
+<td class="l m b0 r0 l0 t0 lines">A</td>
+<td class="l m b0 r0 l0 t0 lines">B</td>
+<td class="l m b0 r0 l0 t0 lines">C</td>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines">E</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">G</td>
+<td class="l m b0 r0 l0 t0 lines">H</td>
+<td class="l m b0 r0 l0 t0 lines">I</td>
+<td class="l m b0 r0 l0 t0 lines">J</td>
+<td class="l m b0 r0 l0 t0 lines">K</td>
+<td class="l m b0 r0 l0 t0 lines">L</td>
+<td class="l m b0 r0 l0 t0 lines">M</td>
+<td class="l m b0 r0 l0 t0 lines">N</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">O</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">005_</code></td>
+<td class="l m b0 r0 l0 t0 lines">P</td>
+<td class="l m b0 r0 l0 t0 lines">Q</td>
+<td class="l m b0 r0 l0 t0 lines">R</td>
+<td class="l m b0 r0 l0 t0 lines">S</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">U</td>
+<td class="l m b0 r0 l0 t0 lines">V</td>
+<td class="l m b0 r0 l0 t0 lines">W</td>
+<td class="l m b0 r0 l0 t0 lines">X</td>
+<td class="l m b0 r0 l0 t0 lines">Y</td>
+<td class="l m b0 r0 l0 t0 lines">Z</td>
+<td class="l m b0 r0 l0 t0 lines">[</td>
+<td class="l m b0 r0 l0 t0 lines">\</td>
+<td class="l m b0 r0 l0 t0 lines">]</td>
+<td class="l m b0 r0 l0 t0 lines">^</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">_</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">006_</code></td>
+<td class="l m b0 r0 l0 t0 lines">`</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">d</td>
+<td class="l m b0 r0 l0 t0 lines">e</td>
+<td class="l m b0 r0 l0 t0 lines">f</td>
+<td class="l m b0 r0 l0 t0 lines">g</td>
+<td class="l m b0 r0 l0 t0 lines">h</td>
+<td class="l m b0 r0 l0 t0 lines">i</td>
+<td class="l m b0 r0 l0 t0 lines">j</td>
+<td class="l m b0 r0 l0 t0 lines">k</td>
+<td class="l m b0 r0 l0 t0 lines">l</td>
+<td class="l m b0 r0 l0 t0 lines">m</td>
+<td class="l m b0 r0 l0 t0 lines">n</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">o</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">007_</code></td>
+<td class="l m b0 r0 l0 t0 lines">p</td>
+<td class="l m b0 r0 l0 t0 lines">q</td>
+<td class="l m b0 r0 l0 t0 lines">r</td>
+<td class="l m b0 r0 l0 t0 lines">s</td>
+<td class="l m b0 r0 l0 t0 lines">t</td>
+<td class="l m b0 r0 l0 t0 lines">u</td>
+<td class="l m b0 r0 l0 t0 lines">v</td>
+<td class="l m b0 r0 l0 t0 lines">w</td>
+<td class="l m b0 r0 l0 t0 lines">x</td>
+<td class="l m b0 r0 l0 t0 lines">y</td>
+<td class="l m b0 r0 l0 t0 lines">z</td>
+<td class="l m b0 r0 l0 t0 lines">{</td>
+<td class="l m b0 r0 l0 t0 lines">|</td>
+<td class="l m b0 r0 l0 t0 lines">}</td>
+<td class="l m b0 r0 l0 t0 lines">~</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+</table></figure></article><article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Latin-1 Supplement, <code class="code-inline tex2jax_ignore">U+0080</code>–<code class="code-inline tex2jax_ignore">U+00FF</code>.</span></h5>
+<p id="p-882">Now we are interested in the next 128 possible bytes,  (hex <code class="code-inline tex2jax_ignore">80</code> to <code class="code-inline tex2jax_ignore">FF</code>).  The first 32 are again control codes and <code class="code-inline tex2jax_ignore">U+00A0</code> is a non-breaking space, so is invisible, while <code class="code-inline tex2jax_ignore">U+00AD</code> is a soft hyphen (which we have not implemented and so is excluded).  We have taken care to see that the remainder will render using <code class="code-inline tex2jax_ignore">pdflatex</code> or <code class="code-inline tex2jax_ignore">xelatex</code> with no special setup (and HTML).  In the source we have authored each character by its escaped version using its Unicode number (in hexadecimal).  So, for example, a copyright symbol is authored as <code class="code-inline tex2jax_ignore">&amp;#x00A9;</code>.</p>
+<figure class="table table-like" id="table-26"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">19.2<span class="period">.</span></span><span class="space"> </span>Latin-1 Supplement, Regular</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">0</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">1</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">2</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">3</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">4</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">5</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">6</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">7</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">8</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">9</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">A</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">B</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">C</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">D</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">E</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">F</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00A_</code></td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines">¡</td>
+<td class="l m b0 r0 l0 t0 lines">¢</td>
+<td class="l m b0 r0 l0 t0 lines">£</td>
+<td class="l m b0 r0 l0 t0 lines">¤</td>
+<td class="l m b0 r0 l0 t0 lines">¥</td>
+<td class="l m b0 r0 l0 t0 lines">¦</td>
+<td class="l m b0 r0 l0 t0 lines">§</td>
+<td class="l m b0 r0 l0 t0 lines">¨</td>
+<td class="l m b0 r0 l0 t0 lines">©</td>
+<td class="l m b0 r0 l0 t0 lines">ª</td>
+<td class="l m b0 r0 l0 t0 lines">«</td>
+<td class="l m b0 r0 l0 t0 lines">¬</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">®</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">¯</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00B_</code></td>
+<td class="l m b0 r0 l0 t0 lines">°</td>
+<td class="l m b0 r0 l0 t0 lines">±</td>
+<td class="l m b0 r0 l0 t0 lines">²</td>
+<td class="l m b0 r0 l0 t0 lines">³</td>
+<td class="l m b0 r0 l0 t0 lines">´</td>
+<td class="l m b0 r0 l0 t0 lines">µ</td>
+<td class="l m b0 r0 l0 t0 lines">¶</td>
+<td class="l m b0 r0 l0 t0 lines">·</td>
+<td class="l m b0 r0 l0 t0 lines">¸</td>
+<td class="l m b0 r0 l0 t0 lines">¹</td>
+<td class="l m b0 r0 l0 t0 lines">º</td>
+<td class="l m b0 r0 l0 t0 lines">»</td>
+<td class="l m b0 r0 l0 t0 lines">¼</td>
+<td class="l m b0 r0 l0 t0 lines">½</td>
+<td class="l m b0 r0 l0 t0 lines">¾</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">¿</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00C_</code></td>
+<td class="l m b0 r0 l0 t0 lines">À</td>
+<td class="l m b0 r0 l0 t0 lines">Á</td>
+<td class="l m b0 r0 l0 t0 lines">Â</td>
+<td class="l m b0 r0 l0 t0 lines">Ã</td>
+<td class="l m b0 r0 l0 t0 lines">Ä</td>
+<td class="l m b0 r0 l0 t0 lines">Å</td>
+<td class="l m b0 r0 l0 t0 lines">Æ</td>
+<td class="l m b0 r0 l0 t0 lines">Ç</td>
+<td class="l m b0 r0 l0 t0 lines">È</td>
+<td class="l m b0 r0 l0 t0 lines">É</td>
+<td class="l m b0 r0 l0 t0 lines">Ê</td>
+<td class="l m b0 r0 l0 t0 lines">Ë</td>
+<td class="l m b0 r0 l0 t0 lines">Ì</td>
+<td class="l m b0 r0 l0 t0 lines">Í</td>
+<td class="l m b0 r0 l0 t0 lines">Î</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Ï</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00D_</code></td>
+<td class="l m b0 r0 l0 t0 lines">Ð</td>
+<td class="l m b0 r0 l0 t0 lines">Ñ</td>
+<td class="l m b0 r0 l0 t0 lines">Ò</td>
+<td class="l m b0 r0 l0 t0 lines">Ó</td>
+<td class="l m b0 r0 l0 t0 lines">Ô</td>
+<td class="l m b0 r0 l0 t0 lines">Õ</td>
+<td class="l m b0 r0 l0 t0 lines">Ö</td>
+<td class="l m b0 r0 l0 t0 lines">×</td>
+<td class="l m b0 r0 l0 t0 lines">Ø</td>
+<td class="l m b0 r0 l0 t0 lines">Ù</td>
+<td class="l m b0 r0 l0 t0 lines">Ú</td>
+<td class="l m b0 r0 l0 t0 lines">Û</td>
+<td class="l m b0 r0 l0 t0 lines">Ü</td>
+<td class="l m b0 r0 l0 t0 lines">Ý</td>
+<td class="l m b0 r0 l0 t0 lines">Þ</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">ß</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00E_</code></td>
+<td class="l m b0 r0 l0 t0 lines">à</td>
+<td class="l m b0 r0 l0 t0 lines">á</td>
+<td class="l m b0 r0 l0 t0 lines">â</td>
+<td class="l m b0 r0 l0 t0 lines">ã</td>
+<td class="l m b0 r0 l0 t0 lines">ä</td>
+<td class="l m b0 r0 l0 t0 lines">å</td>
+<td class="l m b0 r0 l0 t0 lines">æ</td>
+<td class="l m b0 r0 l0 t0 lines">ç</td>
+<td class="l m b0 r0 l0 t0 lines">è</td>
+<td class="l m b0 r0 l0 t0 lines">é</td>
+<td class="l m b0 r0 l0 t0 lines">ê</td>
+<td class="l m b0 r0 l0 t0 lines">ë</td>
+<td class="l m b0 r0 l0 t0 lines">ì</td>
+<td class="l m b0 r0 l0 t0 lines">í</td>
+<td class="l m b0 r0 l0 t0 lines">î</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">ï</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00F_</code></td>
+<td class="l m b0 r0 l0 t0 lines">ð</td>
+<td class="l m b0 r0 l0 t0 lines">ñ</td>
+<td class="l m b0 r0 l0 t0 lines">ò</td>
+<td class="l m b0 r0 l0 t0 lines">ó</td>
+<td class="l m b0 r0 l0 t0 lines">ô</td>
+<td class="l m b0 r0 l0 t0 lines">õ</td>
+<td class="l m b0 r0 l0 t0 lines">ö</td>
+<td class="l m b0 r0 l0 t0 lines">÷</td>
+<td class="l m b0 r0 l0 t0 lines">ø</td>
+<td class="l m b0 r0 l0 t0 lines">ù</td>
+<td class="l m b0 r0 l0 t0 lines">ú</td>
+<td class="l m b0 r0 l0 t0 lines">û</td>
+<td class="l m b0 r0 l0 t0 lines">ü</td>
+<td class="l m b0 r0 l0 t0 lines">ý</td>
+<td class="l m b0 r0 l0 t0 lines">þ</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">ÿ</td>
+</tr>
+</table></figure></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Monospace, Basic Latin and Latin-1 Supplement, <code class="code-inline tex2jax_ignore">U+0000</code>–<code class="code-inline tex2jax_ignore">U+00FF</code>.</span></h5>
+<p id="p-883">A monospace font is critical for samples of keyboard input and to distinguish exact technical input from running commentary.  We list here all of the reasonable characters from the first 256 Unicode code points.  (We skip the same 65 control characters from above, and the soft hyphen.)  These should all render fine in HTML and when processed with <code class="code-inline tex2jax_ignore">xelatex</code>, however our focus with this sample article for PDF output is the capabilities when processed with <code class="code-inline tex2jax_ignore">pdflatex</code>.  First, characters from <code class="code-inline tex2jax_ignore">U+0000</code>–<code class="code-inline tex2jax_ignore">U+007F</code>.</p>
+<figure class="table table-like" id="table-27"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">19.3<span class="period">.</span></span><span class="space"> </span>Basic Latin, Monospace</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">0</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">1</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">2</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">3</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">4</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">5</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">6</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">7</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">8</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">9</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">A</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">B</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">C</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">D</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">E</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">F</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">002_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore"> </code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">!</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">"</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">#</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">$</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">%</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">&amp;</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">'</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">(</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">)</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">*</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">+</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">,</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">-</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">.</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">/</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">003_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">0</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">1</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">2</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">3</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">4</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">5</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">6</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">7</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">8</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">9</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">:</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">;</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">&lt;</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">=</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">&gt;</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">?</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">004_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">@</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">A</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">B</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">C</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">D</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">E</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">F</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">G</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">H</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">I</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">J</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">K</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">L</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">M</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">N</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">O</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">005_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">P</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Q</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">R</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">S</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">T</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">U</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">V</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">W</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">X</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Y</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Z</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">[</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">\</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">]</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">^</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">_</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">006_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">`</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">a</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">b</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">c</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">d</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">e</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">f</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">g</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">h</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">i</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">j</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">k</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">l</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">m</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">n</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">o</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">007_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">p</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">q</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">r</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">s</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">t</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">u</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">v</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">w</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">x</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">y</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">z</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">{</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">|</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">}</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">~</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+</table></figure><p id="p-884">Note that the single and double quotes are upright and dumb, not curly and smart: <code class="code-inline tex2jax_ignore">' " ' " ' "</code>.  And a backtick is a backtick: <code class="code-inline tex2jax_ignore">` ` `</code>.  The zero is distinguished from the capital “oh”: <code class="code-inline tex2jax_ignore">0 O 0 O 0 O</code>.  And the numeral one is slightly different from the lower-case “ell”: <code class="code-inline tex2jax_ignore">1 l 1 l 1 l</code>.  The hyphen should be short and not expanded into some other kind of dash: <code class="code-inline tex2jax_ignore">- - -</code>.  These characters should all cut/paste out of a PDF into a text editor with no conversion to other characters.</p>
+<p id="p-885">Now the remaining characters from <code class="code-inline tex2jax_ignore">U+0080</code>–<code class="code-inline tex2jax_ignore">U+00FF</code>.  The <code class="code-inline tex2jax_ignore">program</code> tag is implemented in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> via the <code class="code-inline tex2jax_ignore">listing</code> package and these characters require ad-hoc replacements for processing by <code class="code-inline tex2jax_ignore">pdflatex</code>.  (You can see the replacements in the preamble of the <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> source for this document.)  The replacement mechanism provided by the <code class="code-inline tex2jax_ignore">listing</code> package will cause the characters below to produce a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> compilation error if processed by <code class="code-inline tex2jax_ignore">pdflatex</code> and in a table cell in certain situations (which we have avoided in the table below).  The only workaround in this case is to switch to <code class="code-inline tex2jax_ignore">xelatex</code>.</p>
+<figure class="table table-like" id="table-28"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">19.4<span class="period">.</span></span><span class="space"> </span>Latin-1 Supplement, Monospace</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">0</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">1</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">2</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">3</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">4</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">5</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">6</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">7</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">8</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">9</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">A</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">B</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">C</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">D</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">E</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">F</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00A_</code></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¡</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¢</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">£</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¤</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¥</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¦</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">§</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¨</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">©</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ª</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">«</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¬</code></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">®</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">¯</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00B_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">°</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">±</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">²</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">³</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">´</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">µ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¶</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">·</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¸</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¹</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">º</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">»</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¼</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">½</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">¾</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">¿</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00C_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">À</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Á</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Â</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ã</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ä</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Å</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Æ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ç</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">È</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">É</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ê</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ë</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ì</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Í</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Î</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">Ï</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00D_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ð</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ñ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ò</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ó</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ô</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Õ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ö</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">×</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ø</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ù</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ú</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Û</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ü</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Ý</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">Þ</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">ß</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00E_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">à</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">á</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">â</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ã</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ä</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">å</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">æ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ç</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">è</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">é</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ê</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ë</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ì</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">í</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">î</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">ï</code></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">00F_</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ð</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ñ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ò</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ó</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ô</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">õ</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ö</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">÷</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ø</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ù</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ú</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">û</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ü</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">ý</code></td>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">þ</code></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">ÿ</code></td>
+</tr>
+</table></figure><p id="p-886">The <code class="code-inline tex2jax_ignore">pre</code> tag is implemented in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> with the <code class="code-inline tex2jax_ignore">fancyvrb</code> package.  You can compare results here with the table above, lines here are rows above.</p>
+<pre class="code-block tex2jax_ignore">  ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬   ® ¯
+° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿
+À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï
+Ð Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü Ý Þ ß
+à á â ã ä å æ ç è é ê ë ì í î ï
+ð ñ ò ó ô õ ö ÷ ø ù ú û ü ý þ ÿ
+</pre>
+<p id="p-887">The <code class="code-inline tex2jax_ignore">console</code> tag is also implemented with <code class="code-inline tex2jax_ignore">fancyvrb</code>, with adjustments for the input lines.  It will not look like it, but these are 8 such inputs, with similar results to above, but now bolded.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><pre class="console"><b>¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬   ® ¯
+</b><b>° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿
+</b><b>À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï
+</b><b>Ð Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü Ý Þ ß
+</b><b>à á â ã ä å æ ç è é ê ë ì í î ï
+</b><b>ð ñ ò ó ô õ ö ÷ ø ù ú û ü ý þ ÿ
+</b></pre></div></div></div>
+<p id="p-888">We take care to render the <code class="code-inline tex2jax_ignore">U+0080</code>–<code class="code-inline tex2jax_ignore">U+00FF</code> characters in Sage cells.  This would allow some flexibility in comments and strings employed.  The following is just a test of these characters in the <code class="code-inline tex2jax_ignore">input</code> and <code class="code-inline tex2jax_ignore">output</code> of a <code class="code-inline tex2jax_ignore">sage</code> element.  This is not functional code.</p>
+<div class="sagecell-sage" id="sage-24"><script type="text/x-sage">  ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬   ® ¯
+° ± ² ³ ´ µ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿
+À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï
+Ð Ñ Ò Ó Ô Õ Ö × Ø Ù Ú Û Ü Ý Þ ß
+à á â ã ä å æ ç è é ê ë ì í î ï
+ð ñ ò ó ô õ ö ÷ ø ù ú û ü ý þ ÿ
+</script></div></article><p id="p-889">The table below has a single column, and each cell of the table has a string of 10 characters inside a <code class="code-inline tex2jax_ignore">c</code> element.  It is meant to test if the font is monospace in this situation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><figure class="table table-like" id="table-29"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">19.5<span class="period">.</span></span><span class="space"> </span>Alignment Test</figcaption><table>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">0123456789</code></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">9876543210</code></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">iiiiiiiiii</code></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">mmmmmmmmmm</code></td></tr>
+</table></figure></div></div></div>
+<p id="p-890">Again, more examples and more thorough explanations can be found in the sample: <code class="code-inline tex2jax_ignore">examples/fonts/fonts-and-characters.xml</code>.  Be aware that the nature of the more advanced sample is that it will likely produce many errors when processed with <code class="code-inline tex2jax_ignore">pdflatex</code>.  Adding <code class="code-inline tex2jax_ignore">-interaction batchmode</code> or <code class="code-inline tex2jax_ignore">-interaction nonstopmode</code> to the <code class="code-inline tex2jax_ignore">pdflatex</code> command-line will sometimes be less painless than acknowledging each error.  The more advanced sample will perform well when processed with <code class="code-inline tex2jax_ignore">xelatex</code>.</p></section></div></main>
+</div>
+<script>createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>

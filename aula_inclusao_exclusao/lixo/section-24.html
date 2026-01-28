@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-02T16:19:55-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Side-by-Side Gallery</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+<script src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body id="pretext-SA" class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://pretextbook.org" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals:</span> <span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-side-by-side.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="poetry.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-side-by-side.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="poetry.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span> <span class="title">Introduction</span></a></li>
+<li class="link"><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span> <span class="title">The Fundamental Theorem</span></a></li>
+<li class="link"><a href="section-sage-cells.html" data-scroll="Abc"><span class="codenumber">3</span> <span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li class="link">
+<a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span> <span class="title">An Interesting Corollary</span></a><ul>
+<li><a href="interesting-corollary.html#subsection-second-FTC" data-scroll="subsection-second-FTC">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note about Subsection 4.1</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-5.html" data-scroll="Bcd"><span class="codenumber">5</span> <span class="title">Some Facts and Figures</span></a></li>
+<li class="link"><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span> <span class="title">Some Advanced Ideas</span></a></li>
+<li class="link">
+<a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span> <span class="title">Mathematics</span></a><ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+<li><a href="section-7.html#commutative-diagrams" data-scroll="commutative-diagrams">Commutative Diagrams</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="text-in-paragraphs.html" data-scroll="text-in-paragraphs"><span class="codenumber">8</span> <span class="title">Text in Paragraphs</span></a><ul>
+<li><a href="text-in-paragraphs.html#subsection-xml-escape" data-scroll="subsection-xml-escape">Special <abbr class="initialism">XML</abbr> characters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-15" data-scroll="subsection-15">Quotations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-16" data-scroll="subsection-16">Groupings</a></li>
+<li><a href="text-in-paragraphs.html#subsection-17" data-scroll="subsection-17">Characters, Symbols, and Constructions</a></li>
+<li><a href="text-in-paragraphs.html#subsection-18" data-scroll="subsection-18">Currency</a></li>
+<li><a href="text-in-paragraphs.html#subsection-icons-in-text" data-scroll="subsection-icons-in-text">Icons in Text</a></li>
+<li><a href="text-in-paragraphs.html#subsection-keyboard" data-scroll="subsection-keyboard">Keyboard Keys</a></li>
+<li><a href="text-in-paragraphs.html#section-urls" data-scroll="section-urls">URLs, such as <code class="code-inline tex2jax_ignore">http://example.com</code></a></li>
+<li><a href="text-in-paragraphs.html#subsection-22" data-scroll="subsection-22">Biological Names</a></li>
+<li><a href="text-in-paragraphs.html#subsection-23" data-scroll="subsection-23">Verbatim in titles, <code class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</code>, OK</a></li>
+<li><a href="text-in-paragraphs.html#subsection-special-situations" data-scroll="subsection-special-situations">Special Situations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-jupyter-dollars" data-scroll="subsection-jupyter-dollars">Jupyter Notebook, Markdown, MathJax, Delimiters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-26" data-scroll="subsection-26"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Characters, Ligatures, and More</a></li>
+<li><a href="text-in-paragraphs.html#subsection-27" data-scroll="subsection-27"><abbr class="initialism">HTML</abbr> and accidental mathematics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span> <span class="title">Graphics</span></a><ul>
+<li><a href="graphics.html#subsection-28" data-scroll="subsection-28">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-29" data-scroll="subsection-29"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-30" data-scroll="subsection-30">Asymptote, 2D</a></li>
+<li><a href="graphics.html#graphics-asymptote-webgl" data-scroll="graphics-asymptote-webgl">Asymptote, 3D via WebGL</a></li>
+<li><a href="graphics.html#subsection-32" data-scroll="subsection-32">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-33" data-scroll="subsection-33">Inkscape Images</a></li>
+<li><a href="graphics.html#subsection-34" data-scroll="subsection-34">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-35" data-scroll="subsection-35">Caption Testing</a></li>
+<li><a href="graphics.html#captionless-images" data-scroll="captionless-images">Captionless Images</a></li>
+<li><a href="graphics.html#subsection-37" data-scroll="subsection-37">Technical Details</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span> <span class="title">Demonstrations</span></a></li>
+<li class="link">
+<a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span> <span class="title">Further Reading</span></a><ul>
+<li><a href="section-11.html#subsection-38" data-scroll="subsection-38">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">Exercises</a></li>
+<li><a href="section-11.html#exercises-section-multiple" data-scroll="exercises-section-multiple">More Exercises</a></li>
+<li><a href="section-11.html#references-section" data-scroll="references-section">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="lists.html" data-scroll="lists"><span class="codenumber">12</span> <span class="title">List Calisthenics</span></a><ul>
+<li><a href="lists.html#subsection-39" data-scroll="subsection-39">Lists, Generally</a></li>
+<li><a href="lists.html#subsection-40" data-scroll="subsection-40">List Spacing, I</a></li>
+<li><a href="lists.html#subsection-41" data-scroll="subsection-41">List Spacing, II</a></li>
+<li><a href="lists.html#test-second" data-scroll="test-second">List items containing only inline math</a></li>
+<li><a href="lists.html#subsection-43" data-scroll="subsection-43">Description Lists</a></li>
+<li><a href="lists.html#subsection-44" data-scroll="subsection-44">Named Lists</a></li>
+<li><a href="lists.html#subsection-45" data-scroll="subsection-45">Testing List Decompositions</a></li>
+<li><a href="lists.html#exercises-5" data-scroll="exercises-5">Exercises (with lists)</a></li>
+<li><a href="lists.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span> <span class="title">Table Calisthenics</span></a></li>
+<li class="link">
+<a href="section-interactive-authored.html" data-scroll="section-interactive-authored"><span class="codenumber">14</span> <span class="title">Interactive Elements, Authored</span></a><ul>
+<li><a href="section-interactive-authored.html#interactive-html5-canvas" data-scroll="interactive-html5-canvas">HTML5 Canvas</a></li>
+<li><a href="section-interactive-authored.html#subsection-47" data-scroll="subsection-47">D3.js</a></li>
+<li><a href="section-interactive-authored.html#subsection-48" data-scroll="subsection-48">SVG</a></li>
+<li><a href="section-interactive-authored.html#subsection-49" data-scroll="subsection-49">JSXGraph</a></li>
+<li><a href="section-interactive-authored.html#subsection-50" data-scroll="subsection-50">Sage Interacts</a></li>
+<li><a href="section-interactive-authored.html#subsection-51" data-scroll="subsection-51">Geogebra</a></li>
+<li><a href="section-interactive-authored.html#subsection-52" data-scroll="subsection-52">threejs</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-interactive-server.html" data-scroll="section-interactive-server"><span class="codenumber">15</span> <span class="title">Interactive Elements, Server</span></a><ul>
+<li><a href="section-interactive-server.html#subsection-geogebra-server" data-scroll="subsection-geogebra-server">GeoGebra</a></li>
+<li><a href="section-interactive-server.html#subsection-54" data-scroll="subsection-54">Desmos Graphs</a></li>
+<li><a href="section-interactive-server.html#subsection-55" data-scroll="subsection-55">CalcPlot3D</a></li>
+<li><a href="section-interactive-server.html#subsection-56" data-scroll="subsection-56">Wolfram CDF</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-audio.html" data-scroll="section-audio"><span class="codenumber">16</span> <span class="title">Audio</span></a></li>
+<li class="link">
+<a href="section-video.html" data-scroll="section-video"><span class="codenumber">17</span> <span class="title">Video</span></a><ul>
+<li><a href="section-video.html#subsection-57" data-scroll="subsection-57">Video Files</a></li>
+<li><a href="section-video.html#subsection-58" data-scroll="subsection-58">YouTube</a></li>
+<li><a href="section-video.html#subsection-59" data-scroll="subsection-59">Vimeo</a></li>
+<li><a href="section-video.html#subsection-60" data-scroll="subsection-60">Captions and Subtitles</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">18</span> <span class="title">Cross-Referencing</span></a></li>
+<li class="link"><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">19</span> <span class="title">Internationalization</span></a></li>
+<li class="link"><a href="section-20.html" data-scroll="section-20"><span class="codenumber">20</span> <span class="title">Pre-Formatted Text</span></a></li>
+<li class="link"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">21</span> <span class="title">Program Listings</span></a></li>
+<li class="link"><a href="section-22.html" data-scroll="section-22"><span class="codenumber">22</span> <span class="title">Units of Measure</span></a></li>
+<li class="link">
+<a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">23</span> <span class="title">Side-By-Side Panels</span></a><ul>
+<li><a href="section-side-by-side.html#subsection-61" data-scroll="subsection-61">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-62" data-scroll="subsection-62">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-63" data-scroll="subsection-63">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-64" data-scroll="subsection-64">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-65" data-scroll="subsection-65">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-66" data-scroll="subsection-66">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-67" data-scroll="subsection-67">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-68" data-scroll="subsection-68">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-69" data-scroll="subsection-69">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-70" data-scroll="subsection-70">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-71" data-scroll="subsection-71">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#stacking-side-by-side" data-scroll="stacking-side-by-side">Stacking: Back to Vertical Flow</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-74" data-scroll="subsection-74">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-76" data-scroll="subsection-76">Testing a Side-By-Side First</a></li>
+<li><a href="section-side-by-side.html#subsection-77" data-scroll="subsection-77">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li class="link active"><a href="section-24.html" data-scroll="section-24"><span class="codenumber">24</span> <span class="title">Side-by-Side Gallery</span></a></li>
+<li class="link"><a href="poetry.html" data-scroll="poetry"><span class="codenumber">25</span> <span class="title">Poetry</span></a></li>
+<li class="link">
+<a href="atomic-items.html" data-scroll="atomic-items"><span class="codenumber">26</span> <span class="title">Atomic Objects</span></a><ul>
+<li><a href="atomic-items.html#atomic-image" data-scroll="atomic-image"><code class="code-inline tex2jax_ignore">&lt;image&gt;</code></a></li>
+<li><a href="atomic-items.html#atomic-video" data-scroll="atomic-video"><code class="code-inline tex2jax_ignore">&lt;video&gt;</code></a></li>
+</ul>
+</li>
+<li class="link">
+<a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">27</span> <span class="title">Advanced Numbering</span></a><ul>
+<li><a href="advanced-numbering.html#subsection-80" data-scroll="subsection-80">One</a></li>
+<li><a href="advanced-numbering.html#subsection-81" data-scroll="subsection-81">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-82" data-scroll="subsection-82">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-83" data-scroll="subsection-83">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-84" data-scroll="subsection-84">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-with-an-exercise" data-scroll="subsection-with-an-exercise">A Title with ] a Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-87" data-scroll="subsection-87">A Title with } a Right Brace</a></li>
+<li><a href="advanced-numbering.html#subsection-88" data-scroll="subsection-88">A Title with \(a]b\) a Math Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-89" data-scroll="subsection-89">Just an Exercise</a></li>
+<li><a href="advanced-numbering.html#solutions-2" data-scroll="solutions-2">Solutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-28.html" data-scroll="section-28"><span class="codenumber">28</span> <span class="title">Customizations</span></a><ul><li><a href="section-28.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts, Plus This Is A Really Long Title So That We Can Test How Well It Reacts To The Right Margin And Wraps Around To Form A Couple Of Lines, Plus How It Sits Relative To The Number Of The Subsection</a></li></ul>
+</li>
+<li class="link"><a href="section-myopenmath.html" data-scroll="section-myopenmath"><span class="codenumber">29</span> <span class="title">MyOpenMath Interactive Problems</span></a></li>
+<li class="link"><a href="ancillaries.html" data-scroll="ancillaries"><span class="codenumber">30</span> <span class="title">Ancillaries</span></a></li>
+<li class="link">
+<a href="worksheets.html" data-scroll="worksheets"><span class="codenumber">31</span> <span class="title">Worksheets</span></a><ul>
+<li><a href="worksheets.html#subsection-91" data-scroll="subsection-91">About Worksheets</a></li>
+<li><a href="worksheets.html#worksheet-1" data-scroll="worksheet-1">A Geometric Prelude</a></li>
+<li><a href="worksheets.html#worksheet-2" data-scroll="worksheet-2">Networks Worksheet</a></li>
+<li><a href="worksheets.html#worksheet-3" data-scroll="worksheet-3">Worksheet</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-single.html" data-scroll="exercises-single"><span class="codenumber">32</span> <span class="title">Exercises, One Subsection</span></a><ul>
+<li><a href="exercises-single.html#exercises-6" data-scroll="exercises-6">Exercise Collection</a></li>
+<li><a href="exercises-single.html#references-3" data-scroll="references-3">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises-7.html" data-scroll="exercises-7"><span class="codenumber">33</span> <span class="title">Exercise Section, Structured</span></a></li>
+<li class="link">
+<a href="exercises-multiple.html" data-scroll="exercises-multiple"><span class="codenumber">34</span> <span class="title">Exercises, Multiple Subsections</span></a><ul>
+<li><a href="exercises-multiple.html#subsection-92" data-scroll="subsection-92">Faux Subsection</a></li>
+<li><a href="exercises-multiple.html#exercises-drill" data-scroll="exercises-drill">Drill Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-9" data-scroll="exercises-9">Challenging Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-10" data-scroll="exercises-10">Impossible Exercises</a></li>
+<li><a href="exercises-multiple.html#references-4" data-scroll="references-4">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises.html" data-scroll="exercises"><span class="codenumber">35</span> <span class="title">Exercises, Top-Level</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="solutions-backmatter.html" data-scroll="solutions-backmatter"><span class="codenumber">B</span> <span class="title">Solutions to Selected Exercises</span></a></li>
+<li class="link"><a href="solutions-4.html" data-scroll="solutions-4"><span class="codenumber">C</span> <span class="title">Solutions to a Single Exercises Division</span></a></li>
+<li class="link"><a href="appendix-results.html" data-scroll="appendix-results"><span class="codenumber">D</span> <span class="title">List of Results</span></a></li>
+<li class="link">
+<a href="appendix-3.html" data-scroll="appendix-3"><span class="codenumber">E</span> <span class="title">A Structured Appendix</span></a><ul><li><a href="appendix-3.html#subsection-93" data-scroll="subsection-93">A Subsection in an Appendix</a></li></ul>
+</li>
+<li class="link"><a href="appendix-4.html" data-scroll="appendix-4"><span class="codenumber">F</span> <span class="title">Index</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">References</span></a></li>
+<li class="link">
+<a href="references.html" data-scroll="references"><span class="codenumber">G</span> <span class="title">Multiple References</span></a><ul>
+<li><a href="references.html#subsection-94" data-scroll="subsection-94">Multiple Specialized References</a></li>
+<li><a href="references.html#references-6" data-scroll="references-6">General References</a></li>
+<li><a href="references.html#references-7" data-scroll="references-7">Specialized References</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-24"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">24</span> <span class="title">Side-by-Side Gallery</span>
+</h2>
+<p id="p-1038">This subsection attempts to survey all the possible items that can be placed into a <code class="code-inline tex2jax_ignore">sidebyside</code> element, in various combinations.  While intended to be exhaustive across contents, it does not test all possibilities, and is not meant to be instructive (see <a href="section-side-by-side.html" class="internal" title="Section 23: Side-By-Side Panels">Section 23</a> for that). The layout is identical for each <code class="code-inline tex2jax_ignore">sidebyside</code>, 5% margins, panel widths of 40% and 45%, leaving 5% for the space between the panels.  The vertical alignment is left at the default, <code class="code-inline tex2jax_ignore">top</code>.</p>
+<p id="p-1039">We begin with “simpler” atomic items.  If necessary, comments follow each.</p>
+<figure class="figure figure-like" id="figure-152"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><p id="p-1040">Vestibulum sit amet est non lacus accumsan iaculis aliquam nec leo. Maecenas placerat consequat quam, a lobortis odio convallis vitae. Curabitur sagittis, risus non suscipit pulvinar, enim tortor posuere purus, id dignissim sapien sapien non dui. Vestibulum ultrices, enim a ornare consectetur, nisl est iaculis arcu, eget scelerisque nunc magna a nisl. Vestibulum vestibulum ante sit amet ex vulputate, eu facilisis sapien tempor.</p></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;">
+<p id="p-1041">Aliquam dui nisi, pharetra id enim vel, imperdiet laoreet risus. Nunc convallis elit eu erat imperdiet tincidunt. Sed eget augue et nunc mollis tempor. Suspendisse luctus elit non lorem scelerisque, nec lacinia lectus dictum.</p>
+<p id="p-1042">Vivamus ut orci nisl. Donec eleifend ultricies tortor, a pellentesque neque dignissim in. Praesent maximus, augue eu pretium auctor, dolor quam feugiat augue, ut vulputate nunc eros vitae massa. Phasellus quis ante quis est venenatis dapibus eget luctus ipsum.</p>
+</div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.1<span class="period">.</span></span><span class="space"> </span>Single <code class="code-inline tex2jax_ignore">&lt;p&gt;</code> (left), <code class="code-inline tex2jax_ignore">&lt;stack&gt;</code> (right)</figcaption></figure><figure class="figure figure-like" id="figure-153"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><ol class="decimal">
+<li id="li-363">Blue</li>
+<li id="li-364">Red</li>
+<li id="li-365">Green</li>
+<li id="li-366">Purple</li>
+<li id="li-367">Violet</li>
+<li id="li-368">Brown</li>
+</ol></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><ul class="disc">
+<li id="li-369">
+<p id="p-1043">Vestibulum sit amet est non lacus accumsan iaculis aliquam nec leo. Maecenas placerat consequat quam, a lobortis odio convallis vitae.</p>
+<p id="p-1044">Curabitur sagittis, risus non suscipit pulvinar, enim tortor posuere purus, id dignissim sapien sapien non dui.</p>
+</li>
+<li id="li-370">
+<p id="p-1045">Vestibulum ultrices, enim a ornare consectetur, nisl est iaculis arcu, eget scelerisque nunc magna a nisl.</p>
+<p id="p-1046">Vestibulum vestibulum ante sit amet ex vulputate, eu facilisis sapien tempor.</p>
+</li>
+</ul></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.2<span class="period">.</span></span><span class="space"> </span>An <code class="code-inline tex2jax_ignore">&lt;ol&gt;</code> with simple items, a <code class="code-inline tex2jax_ignore">&lt;ul&gt;</code> with items with paragraphs</figcaption></figure><figure class="figure figure-like" id="figure-154"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><pre class="prettyprint lang-r">n_loops &lt;- 10
+x.means &lt;- numeric(n_loops)
+for (i in 1:n_loops){
+    x &lt;- as.integer(runif(100, 1, 7))
+    x.means[i] &lt;- mean(x)
+}
+x.means
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="console"><span class="prompt unselectable">pi@rpi ~$ </span><b>gcc -o intAndFloat intAndFloat.c
+</b><span class="prompt unselectable">pi@rpi ~$ </span><b>./intAndFloat
+</b>19088743 (integer) and 19088.742188 (float)
+<span class="prompt unselectable">pi@rpi ~$ </span><b>
+</b></pre></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.3<span class="period">.</span></span><span class="space"> </span>A <code class="code-inline tex2jax_ignore">&lt;program&gt;</code> and a <code class="code-inline tex2jax_ignore">&lt;console&gt;</code></figcaption></figure><p id="p-1047">Note that these two chunks of verbatim text will very likely exceed the right side of a too-skinny panel.  We have severly edited these two examples from previous appearances just to fit here.</p>
+<figure class="figure figure-like" id="figure-155"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><article class="poem" id="poem-8"><h6 class="heading"><span class="title">To A Friend Whose Work Has Come To Nothing</span></h6>
+<div class="stanza">
+<div class="line left">Now all the truth is out,</div>
+<div class="line left">Be secret and take defeat</div>
+<div class="line left">From any brazen throat,</div>
+<div class="line left">For how can you compete,</div>
+<div class="line left">Being honour bred, with one</div>
+<div class="line left">Who, were it proved he lies,</div>
+<div class="line left">Were neither shamed in his own</div>
+<div class="line left">Nor in his neighbours' eyes?</div>
+<div class="line left">Bred to a harder thing</div>
+<div class="line left">Than Triumph, turn away</div>
+<div class="line left">And like a laughing string</div>
+<div class="line left">Whereon mad fingers play</div>
+<div class="line left">Amid a place of stone,</div>
+<div class="line left">Be secret and exult,</div>
+<div class="line left">Because of all things known</div>
+<div class="line left">That is most difficult.</div>
+</div>
+<div class="author left">William Butler Yeats</div></article></div>
+<div class="sbspanel fixed-width" style="width:50%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Organism</td>
+<td class="l m b3 r0 l0 t0 lines" data-braille="last-cell">Classification</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Trout</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Fish</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Monkey</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Mammal</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Crow</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Bird</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Crimini</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Fungus</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bee</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Insect</td>
+</tr>
+</table></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.4<span class="period">.</span></span><span class="space"> </span>An <code class="code-inline tex2jax_ignore">&lt;poem&gt;</code> and a <code class="code-inline tex2jax_ignore">&lt;tabular&gt;</code></figcaption></figure><p id="p-1048">A <code class="code-inline tex2jax_ignore">tabular</code> can exceed the width of its panel in print, while in <code class="code-inline tex2jax_ignore">HTML</code> it may reflow individual cells to stay within a panel, depending on their contents.</p>
+<figure class="figure figure-like" id="figure-156"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><pre class="code-block tex2jax_ignore">Vestibulum sit amet est non
+    lacus accumsan iaculis
+aliquam nec leo. Maecenas
+placerat consequat quam, a
+lobortis odio convallis
+vitae.
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="code-block tex2jax_ignore">Vestibulum sit amet est non
+    lacus accumsan iaculis
+aliquam nec leo. Maecenas
+    placerat consequat quam,
+a lobortis odio convallis
+        vitae.
+</pre></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.5<span class="period">.</span></span><span class="space"> </span>A <code class="code-inline tex2jax_ignore">&lt;pre&gt;</code>, and a <code class="code-inline tex2jax_ignore">&lt;pre&gt;</code> employing <code class="code-inline tex2jax_ignore">&lt;cline&gt;</code></figcaption></figure><p id="p-1049">Be aware that the lines of <code class="code-inline tex2jax_ignore">pre</code> can spill outside of its panel without any word-wrapping.  So you may need to vary panel widths or rearrange line breaks manually.  Page width is a scarce resource.</p>
+<figure class="figure figure-like" id="figure-157"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="images/cross-rectangle.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/cross-rectangle.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.6<span class="period">.</span></span><span class="space"> </span>An identical <code class="code-inline tex2jax_ignore">&lt;image&gt;</code>, twice</figcaption></figure><p id="p-1050">Images will scale to fill their panel's width.  We provide no services to change the aspect ratio of your images, that is your responsibility to accomplish elsewhere.  This rectangular image will have slightly different widths, and so will be slightly deeper in the right panel (at a 45:40 ratio).  Remember, vertical alignment is at the top.</p>
+<p id="p-1051">Now we turn to “captioned” items: <code class="code-inline tex2jax_ignore">figure</code>, <code class="code-inline tex2jax_ignore">table</code>, <code class="code-inline tex2jax_ignore">listing</code>, and the anomalous “named list”, <code class="code-inline tex2jax_ignore">list</code>, whose future is uncertain.  We test subcaptions here.  Note that many different atomic items can go in a figure, and largely they will behave in a <code class="code-inline tex2jax_ignore">sidebyside</code> much as they do when placed in a panel all by themselves (i.e. captionless).</p>
+<figure class="figure figure-like" id="figure-158"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-159"><img src="images/cross-rectangle.png" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(a)</span><span class="space"> </span>A Rectangular Test Image</figcaption></figure></div>
+<div class="sbspanel fixed-width" style="width:50%;justify-content:flex-start;"><figure class="table table-like" id="table-41"><table>
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Organism</td>
+<td class="l m b3 r0 l0 t0 lines" data-braille="last-cell">Classification</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Trout</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Fish</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Monkey</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Mammal</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Crow</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Bird</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Crimini</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Fungus</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bee</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Insect</td>
+</tr>
+</table></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.7<span class="period">.</span></span><span class="space"> </span>A <code class="code-inline tex2jax_ignore">&lt;figure&gt;</code> and a <code class="code-inline tex2jax_ignore">&lt;table&gt;</code></figcaption></figure><figure class="figure figure-like" id="figure-160"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="listing figure-like" id="listing-7"><pre class="prettyprint lang-r">n_loops &lt;- 10
+x.means &lt;- numeric(n_loops)
+for (i in 1:n_loops){
+    x &lt;- as.integer(runif(100, 1, 7))
+    x.means[i] &lt;- mean(x)
+}
+x.means
+</pre>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span>A statistical computation</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="list table-like" id="list-8"><div class="named-list-content">
+<div class="introduction" id="introduction-31"><p id="p-1052">We have named list of colors.</p></div>
+<ol class="decimal">
+<li id="li-371">Blue</li>
+<li id="li-372">Red</li>
+<li id="li-373">Green</li>
+<li id="li-374">Purple</li>
+<li id="li-375">Violet</li>
+<li id="li-376">Brown</li>
+</ol>
+<div class="conclusion" id="conclusion-23"><p id="p-1053">That was nice.</p></div>
+</div>
+<figcaption><span class="codenumber">(b)</span><span class="space"> </span>Colors Again</figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.8<span class="period">.</span></span><span class="space"> </span>A <code class="code-inline tex2jax_ignore">&lt;listing&gt;</code> and a <code class="code-inline tex2jax_ignore">&lt;list&gt;</code></figcaption></figure><p id="p-1054">Now we have some more interactive elements.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><div class="video-box" style="width: 80%;padding-top: 45%; margin-left: 10%; margin-right: 10%;"><video id="video-36" class="video" controls="" poster="images/ups-promo-frame-one.jpg"><source src="images/ups-visitor-guide-360.ogv" type="video/ogg"></source><source src="images/ups-visitor-guide-360.webm" type="video/webm"></source><source src="images/ups-visitor-guide-360.mp4" type="video/mp4"></source><source src="images/ups-visitor-guide-360.ogg" type="video/ogg"></source>Your browser does not support the &lt;video&gt; tag.</video></div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="airborne-midnight-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/UYPoMjR6-Ao?&amp;modestbranding=1&amp;rel=0"></iframe></div></div>
+</div></div>
+<p id="p-1055">Videos can be placed quite compactly for HTML output, but we display a fair amount of information for a YouTube video in print, and therefore two videos side-by-side gets pretty crowded.  The examples above have the bare minimum amount of information attached (not in an overarching <code class="code-inline tex2jax_ignore">figure</code>), and the bare amount which which is displayed in print.  We could relax our common spacing to make it a bit better.  For other examples see <a href="section-video.html" class="internal" title="Section 17: Video">Section 17</a>.</p>
+<figure class="figure figure-like" id="figure-161"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-162"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="airborne-midnight-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/UYPoMjR6-Ao?&amp;modestbranding=1&amp;rel=0&amp;start=48&amp;end=100"></iframe></div>
+<figcaption><span class="codenumber">(a)</span><span class="space"> </span><span class="booktitle">Sometime Around Midnight</span>, Airborne Toxic Event, 2009</figcaption></figure></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">24.9<span class="period">.</span></span><span class="space"> </span>A <code class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</code> with one large panel</figcaption></figure><p id="p-1056">We make an exception to our common layout and put one YouTube video, with a start and end time into a single panel of a <code class="code-inline tex2jax_ignore">sidebyside</code> as a <code class="code-inline tex2jax_ignore">figure</code> with a <code class="code-inline tex2jax_ignore">title</code> and a <code class="code-inline tex2jax_ignore">caption</code> that is rendered as a sub-caption.  Read about “side-by-side” groups (<code class="code-inline tex2jax_ignore">sbsgroup</code>) and experiment with stacking several sub-captioned videos into an overall captioned figure (<a href="section-side-by-side.html#subsection-sbsgroup" class="internal" title="Subsection 23.15: Side-By-Side Groups">Subsection 23.15</a>).</p></section></div></main>
+</div>
+<script>createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<div class="hint solution-like">
+<h4 class="heading">
+<span class="type">Dica</span><span class="space"> </span><span class="codenumber">1.5.2.1</span><span class="period">.</span>
+</h4>
+<div class="para">Use a mesma ideia do Exemplo <a href="" class="xref" data-knowl="./knowl/poti3_modif.html" title="Exemplo 1.4: (POTI Nível 3 - modificado)">1.4</a>.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-5"><script type="text/x-sage">def visualizar_diagonal_3d_final(a, b, c):
+    # 1. Cálculo matemático exato
+    g_ab = gcd(a, b)
+    g_bc = gcd(b, c)
+    g_ca = gcd(c, a)
+    g_abc = gcd([a, b, c])
+    num_cubos = a + b + c - (g_ab + g_bc + g_ca) + g_abc
+    
+    print(f"Dimensões: {a}x{b}x{c}")
+    print(f"Cálculo: {a} + {b} + {c} - ({g_ab} + {g_bc} + {g_ca}) + {g_abc}")
+    print(f"Total de cubos atravessados: {num_cubos}")
+    
+    # Trava de segurança para não travar o Sage
+    if a * b * c > 4000:
+        print("\nO volume é muito grande para renderizar. Use valores menores (ex: 5x5x5) para ver o gráfico.")
+        return
+    
+    # 2. Construção do Gráfico
+    grafico = Graphics()
+    
+    # Razões exatas para evitar erros de precisão
+    slope_y = QQ(b) / QQ(a)
+    slope_z = QQ(c) / QQ(a)
+    slope_zy = QQ(c) / QQ(b)
+    
+    # 3. Gerar os cubos atravessados
+    for i in range(a):
+        y_start, y_end = i * slope_y, (i + 1) * slope_y
+        z_start, z_end = i * slope_z, (i + 1) * slope_z
+        
+        for j in range(floor(y_start), ceil(y_end)):
+            for k in range(floor(z_start), ceil(z_end)):
+                # Critério de interseção interior:
+                if (j + 1> y_start  and y_end > j) and \
+                   (k + 1 > z_start  and z_end > k) and \
+                   (k + 1 > slope_zy * j  and slope_zy * (j + 1) > k):
+                    
+                    grafico += cube(center=(i + 0.5, j + 0.5, k + 0.5), 
+                                   size=1, color='orange', opacity=0.6, frame=True)
+
+    # 4. Desenhar a diagonal e a moldura externa (frame)
+    grafico += line3d([(0, 0, 0), (a, b, c)], color='red', thickness=4)
+    
+    # Moldura simples do paralelepípedo
+    grafico += line3d([(0,0,0), (a,0,0), (a,b,0), (0,b,0), (0,0,0)], color='black')
+    grafico += line3d([(0,0,c), (a,0,c), (a,b,c), (0,b,c), (0,0,c)], color='black')
+    grafico += line3d([(0,0,0), (0,0,c)], color='black')
+    grafico += line3d([(a,0,0), (a,0,c)], color='black')
+    grafico += line3d([(a,b,0), (a,b,c)], color='black')
+    grafico += line3d([(0,b,0), (0,b,c)], color='black')
+    
+    return grafico.show(aspect_ratio=1, frame=False)
+
+# Teste com dimensões pequenas
+visualizar_diagonal_3d_final(4, 6, 10)
+</script></pre>
+</div>
+<span class="incontext"><a href="sec_introducao.html#hint-1" class="internal">em contexto</a></span>
+</body>
+</html>

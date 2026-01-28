@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-02T16:19:43-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Table Calisthenics</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+<script src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body id="pretext-SA" class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://pretextbook.org" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals:</span> <span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="lists.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-interactive-authored.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="lists.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-interactive-authored.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span> <span class="title">Introduction</span></a></li>
+<li class="link"><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span> <span class="title">The Fundamental Theorem</span></a></li>
+<li class="link"><a href="section-sage-cells.html" data-scroll="Abc"><span class="codenumber">3</span> <span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li class="link">
+<a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span> <span class="title">An Interesting Corollary</span></a><ul>
+<li><a href="interesting-corollary.html#subsection-second-FTC" data-scroll="subsection-second-FTC">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note about Subsection 4.1</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-5.html" data-scroll="Bcd"><span class="codenumber">5</span> <span class="title">Some Facts and Figures</span></a></li>
+<li class="link"><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span> <span class="title">Some Advanced Ideas</span></a></li>
+<li class="link">
+<a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span> <span class="title">Mathematics</span></a><ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+<li><a href="section-7.html#commutative-diagrams" data-scroll="commutative-diagrams">Commutative Diagrams</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="text-in-paragraphs.html" data-scroll="text-in-paragraphs"><span class="codenumber">8</span> <span class="title">Text in Paragraphs</span></a><ul>
+<li><a href="text-in-paragraphs.html#subsection-xml-escape" data-scroll="subsection-xml-escape">Special <abbr class="initialism">XML</abbr> characters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-15" data-scroll="subsection-15">Quotations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-16" data-scroll="subsection-16">Groupings</a></li>
+<li><a href="text-in-paragraphs.html#subsection-17" data-scroll="subsection-17">Characters, Symbols, and Constructions</a></li>
+<li><a href="text-in-paragraphs.html#subsection-18" data-scroll="subsection-18">Currency</a></li>
+<li><a href="text-in-paragraphs.html#subsection-icons-in-text" data-scroll="subsection-icons-in-text">Icons in Text</a></li>
+<li><a href="text-in-paragraphs.html#subsection-keyboard" data-scroll="subsection-keyboard">Keyboard Keys</a></li>
+<li><a href="text-in-paragraphs.html#section-urls" data-scroll="section-urls">URLs, such as <code class="code-inline tex2jax_ignore">http://example.com</code></a></li>
+<li><a href="text-in-paragraphs.html#subsection-22" data-scroll="subsection-22">Biological Names</a></li>
+<li><a href="text-in-paragraphs.html#subsection-23" data-scroll="subsection-23">Verbatim in titles, <code class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</code>, OK</a></li>
+<li><a href="text-in-paragraphs.html#subsection-special-situations" data-scroll="subsection-special-situations">Special Situations</a></li>
+<li><a href="text-in-paragraphs.html#subsection-jupyter-dollars" data-scroll="subsection-jupyter-dollars">Jupyter Notebook, Markdown, MathJax, Delimiters</a></li>
+<li><a href="text-in-paragraphs.html#subsection-26" data-scroll="subsection-26"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Characters, Ligatures, and More</a></li>
+<li><a href="text-in-paragraphs.html#subsection-27" data-scroll="subsection-27"><abbr class="initialism">HTML</abbr> and accidental mathematics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span> <span class="title">Graphics</span></a><ul>
+<li><a href="graphics.html#subsection-28" data-scroll="subsection-28">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-29" data-scroll="subsection-29"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-30" data-scroll="subsection-30">Asymptote, 2D</a></li>
+<li><a href="graphics.html#graphics-asymptote-webgl" data-scroll="graphics-asymptote-webgl">Asymptote, 3D via WebGL</a></li>
+<li><a href="graphics.html#subsection-32" data-scroll="subsection-32">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-33" data-scroll="subsection-33">Inkscape Images</a></li>
+<li><a href="graphics.html#subsection-34" data-scroll="subsection-34">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-35" data-scroll="subsection-35">Caption Testing</a></li>
+<li><a href="graphics.html#captionless-images" data-scroll="captionless-images">Captionless Images</a></li>
+<li><a href="graphics.html#subsection-37" data-scroll="subsection-37">Technical Details</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span> <span class="title">Demonstrations</span></a></li>
+<li class="link">
+<a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span> <span class="title">Further Reading</span></a><ul>
+<li><a href="section-11.html#subsection-38" data-scroll="subsection-38">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">Exercises</a></li>
+<li><a href="section-11.html#exercises-section-multiple" data-scroll="exercises-section-multiple">More Exercises</a></li>
+<li><a href="section-11.html#references-section" data-scroll="references-section">References</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="lists.html" data-scroll="lists"><span class="codenumber">12</span> <span class="title">List Calisthenics</span></a><ul>
+<li><a href="lists.html#subsection-39" data-scroll="subsection-39">Lists, Generally</a></li>
+<li><a href="lists.html#subsection-40" data-scroll="subsection-40">List Spacing, I</a></li>
+<li><a href="lists.html#subsection-41" data-scroll="subsection-41">List Spacing, II</a></li>
+<li><a href="lists.html#test-second" data-scroll="test-second">List items containing only inline math</a></li>
+<li><a href="lists.html#subsection-43" data-scroll="subsection-43">Description Lists</a></li>
+<li><a href="lists.html#subsection-44" data-scroll="subsection-44">Named Lists</a></li>
+<li><a href="lists.html#subsection-45" data-scroll="subsection-45">Testing List Decompositions</a></li>
+<li><a href="lists.html#exercises-5" data-scroll="exercises-5">Exercises (with lists)</a></li>
+<li><a href="lists.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li class="link active"><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span> <span class="title">Table Calisthenics</span></a></li>
+<li class="link">
+<a href="section-interactive-authored.html" data-scroll="section-interactive-authored"><span class="codenumber">14</span> <span class="title">Interactive Elements, Authored</span></a><ul>
+<li><a href="section-interactive-authored.html#interactive-html5-canvas" data-scroll="interactive-html5-canvas">HTML5 Canvas</a></li>
+<li><a href="section-interactive-authored.html#subsection-47" data-scroll="subsection-47">D3.js</a></li>
+<li><a href="section-interactive-authored.html#subsection-48" data-scroll="subsection-48">SVG</a></li>
+<li><a href="section-interactive-authored.html#subsection-49" data-scroll="subsection-49">JSXGraph</a></li>
+<li><a href="section-interactive-authored.html#subsection-50" data-scroll="subsection-50">Sage Interacts</a></li>
+<li><a href="section-interactive-authored.html#subsection-51" data-scroll="subsection-51">Geogebra</a></li>
+<li><a href="section-interactive-authored.html#subsection-52" data-scroll="subsection-52">threejs</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-interactive-server.html" data-scroll="section-interactive-server"><span class="codenumber">15</span> <span class="title">Interactive Elements, Server</span></a><ul>
+<li><a href="section-interactive-server.html#subsection-geogebra-server" data-scroll="subsection-geogebra-server">GeoGebra</a></li>
+<li><a href="section-interactive-server.html#subsection-54" data-scroll="subsection-54">Desmos Graphs</a></li>
+<li><a href="section-interactive-server.html#subsection-55" data-scroll="subsection-55">CalcPlot3D</a></li>
+<li><a href="section-interactive-server.html#subsection-56" data-scroll="subsection-56">Wolfram CDF</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-audio.html" data-scroll="section-audio"><span class="codenumber">16</span> <span class="title">Audio</span></a></li>
+<li class="link">
+<a href="section-video.html" data-scroll="section-video"><span class="codenumber">17</span> <span class="title">Video</span></a><ul>
+<li><a href="section-video.html#subsection-57" data-scroll="subsection-57">Video Files</a></li>
+<li><a href="section-video.html#subsection-58" data-scroll="subsection-58">YouTube</a></li>
+<li><a href="section-video.html#subsection-59" data-scroll="subsection-59">Vimeo</a></li>
+<li><a href="section-video.html#subsection-60" data-scroll="subsection-60">Captions and Subtitles</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">18</span> <span class="title">Cross-Referencing</span></a></li>
+<li class="link"><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">19</span> <span class="title">Internationalization</span></a></li>
+<li class="link"><a href="section-20.html" data-scroll="section-20"><span class="codenumber">20</span> <span class="title">Pre-Formatted Text</span></a></li>
+<li class="link"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">21</span> <span class="title">Program Listings</span></a></li>
+<li class="link"><a href="section-22.html" data-scroll="section-22"><span class="codenumber">22</span> <span class="title">Units of Measure</span></a></li>
+<li class="link">
+<a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">23</span> <span class="title">Side-By-Side Panels</span></a><ul>
+<li><a href="section-side-by-side.html#subsection-61" data-scroll="subsection-61">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-62" data-scroll="subsection-62">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-63" data-scroll="subsection-63">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-64" data-scroll="subsection-64">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-65" data-scroll="subsection-65">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-66" data-scroll="subsection-66">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-67" data-scroll="subsection-67">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-68" data-scroll="subsection-68">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-69" data-scroll="subsection-69">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-70" data-scroll="subsection-70">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-71" data-scroll="subsection-71">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#stacking-side-by-side" data-scroll="stacking-side-by-side">Stacking: Back to Vertical Flow</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-74" data-scroll="subsection-74">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-76" data-scroll="subsection-76">Testing a Side-By-Side First</a></li>
+<li><a href="section-side-by-side.html#subsection-77" data-scroll="subsection-77">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li class="link"><a href="section-24.html" data-scroll="section-24"><span class="codenumber">24</span> <span class="title">Side-by-Side Gallery</span></a></li>
+<li class="link"><a href="poetry.html" data-scroll="poetry"><span class="codenumber">25</span> <span class="title">Poetry</span></a></li>
+<li class="link">
+<a href="atomic-items.html" data-scroll="atomic-items"><span class="codenumber">26</span> <span class="title">Atomic Objects</span></a><ul>
+<li><a href="atomic-items.html#atomic-image" data-scroll="atomic-image"><code class="code-inline tex2jax_ignore">&lt;image&gt;</code></a></li>
+<li><a href="atomic-items.html#atomic-video" data-scroll="atomic-video"><code class="code-inline tex2jax_ignore">&lt;video&gt;</code></a></li>
+</ul>
+</li>
+<li class="link">
+<a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">27</span> <span class="title">Advanced Numbering</span></a><ul>
+<li><a href="advanced-numbering.html#subsection-80" data-scroll="subsection-80">One</a></li>
+<li><a href="advanced-numbering.html#subsection-81" data-scroll="subsection-81">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-82" data-scroll="subsection-82">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-83" data-scroll="subsection-83">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-84" data-scroll="subsection-84">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-with-an-exercise" data-scroll="subsection-with-an-exercise">A Title with ] a Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-87" data-scroll="subsection-87">A Title with } a Right Brace</a></li>
+<li><a href="advanced-numbering.html#subsection-88" data-scroll="subsection-88">A Title with \(a]b\) a Math Right Bracket</a></li>
+<li><a href="advanced-numbering.html#subsection-89" data-scroll="subsection-89">Just an Exercise</a></li>
+<li><a href="advanced-numbering.html#solutions-2" data-scroll="solutions-2">Solutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-28.html" data-scroll="section-28"><span class="codenumber">28</span> <span class="title">Customizations</span></a><ul><li><a href="section-28.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts, Plus This Is A Really Long Title So That We Can Test How Well It Reacts To The Right Margin And Wraps Around To Form A Couple Of Lines, Plus How It Sits Relative To The Number Of The Subsection</a></li></ul>
+</li>
+<li class="link"><a href="section-myopenmath.html" data-scroll="section-myopenmath"><span class="codenumber">29</span> <span class="title">MyOpenMath Interactive Problems</span></a></li>
+<li class="link"><a href="ancillaries.html" data-scroll="ancillaries"><span class="codenumber">30</span> <span class="title">Ancillaries</span></a></li>
+<li class="link">
+<a href="worksheets.html" data-scroll="worksheets"><span class="codenumber">31</span> <span class="title">Worksheets</span></a><ul>
+<li><a href="worksheets.html#subsection-91" data-scroll="subsection-91">About Worksheets</a></li>
+<li><a href="worksheets.html#worksheet-1" data-scroll="worksheet-1">A Geometric Prelude</a></li>
+<li><a href="worksheets.html#worksheet-2" data-scroll="worksheet-2">Networks Worksheet</a></li>
+<li><a href="worksheets.html#worksheet-3" data-scroll="worksheet-3">Worksheet</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="exercises-single.html" data-scroll="exercises-single"><span class="codenumber">32</span> <span class="title">Exercises, One Subsection</span></a><ul>
+<li><a href="exercises-single.html#exercises-6" data-scroll="exercises-6">Exercise Collection</a></li>
+<li><a href="exercises-single.html#references-3" data-scroll="references-3">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises-7.html" data-scroll="exercises-7"><span class="codenumber">33</span> <span class="title">Exercise Section, Structured</span></a></li>
+<li class="link">
+<a href="exercises-multiple.html" data-scroll="exercises-multiple"><span class="codenumber">34</span> <span class="title">Exercises, Multiple Subsections</span></a><ul>
+<li><a href="exercises-multiple.html#subsection-92" data-scroll="subsection-92">Faux Subsection</a></li>
+<li><a href="exercises-multiple.html#exercises-drill" data-scroll="exercises-drill">Drill Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-9" data-scroll="exercises-9">Challenging Exercises</a></li>
+<li><a href="exercises-multiple.html#exercises-10" data-scroll="exercises-10">Impossible Exercises</a></li>
+<li><a href="exercises-multiple.html#references-4" data-scroll="references-4">More Reading</a></li>
+</ul>
+</li>
+<li class="link"><a href="exercises.html" data-scroll="exercises"><span class="codenumber">35</span> <span class="title">Exercises, Top-Level</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Notation</span></a></li>
+<li class="link"><a href="solutions-backmatter.html" data-scroll="solutions-backmatter"><span class="codenumber">B</span> <span class="title">Solutions to Selected Exercises</span></a></li>
+<li class="link"><a href="solutions-4.html" data-scroll="solutions-4"><span class="codenumber">C</span> <span class="title">Solutions to a Single Exercises Division</span></a></li>
+<li class="link"><a href="appendix-results.html" data-scroll="appendix-results"><span class="codenumber">D</span> <span class="title">List of Results</span></a></li>
+<li class="link">
+<a href="appendix-3.html" data-scroll="appendix-3"><span class="codenumber">E</span> <span class="title">A Structured Appendix</span></a><ul><li><a href="appendix-3.html#subsection-93" data-scroll="subsection-93">A Subsection in an Appendix</a></li></ul>
+</li>
+<li class="link"><a href="appendix-4.html" data-scroll="appendix-4"><span class="codenumber">F</span> <span class="title">Index</span></a></li>
+<li class="link"><a href="references-backmatter.html" data-scroll="references-backmatter"><span class="title">References</span></a></li>
+<li class="link">
+<a href="references.html" data-scroll="references"><span class="codenumber">G</span> <span class="title">Multiple References</span></a><ul>
+<li><a href="references.html#subsection-94" data-scroll="subsection-94">Multiple Specialized References</a></li>
+<li><a href="references.html#references-6" data-scroll="references-6">General References</a></li>
+<li><a href="references.html#references-7" data-scroll="references-7">Specialized References</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-13"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">13</span> <span class="title">Table Calisthenics</span>
+</h2>
+<p id="p-631">A very minimal table, hence with left-justified cells, no borders.  We do wrap the tabular element in a table element to get centering, numbering and a caption.</p>
+<figure class="table table-like" id="table-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.1<span class="period">.</span></span><span class="space"> </span>Some Colors</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Red</td>
+<td class="l m b0 r0 l0 t0 lines">Green</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Yellow</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Blue</td>
+<td class="l m b0 r0 l0 t0 lines">White</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Pink</td>
+</tr>
+</table></figure><p id="p-632">Note that tables may be constructed using the <a class="external" href="http://www.latex-tables.com/" target="_blank"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Complex Table Editor</a> tool online at <code class="code-inline tex2jax_ignore">latex-tables.com</code>and then exported in PreTeXt syntax.</p>
+<p id="p-633">Tables can be used and abused many ways.  We describe long division of polynomials by using vertical and horizontal borders on individual entries of a <code class="code-inline tex2jax_ignore">&lt;tabular&gt;</code>.  The division lines are slightly thicker than the subtraction lines.  This is a good example of the typical abuse of tables for horizontal and vertical layout.  At least we have called it a “Figure,” not a “Table”.</p>
+<figure class="figure figure-like" id="figure-23"><table>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines"></td>
+<td class="r m b2 r0 l0 t0 lines">\(x\)</td>
+<td class="r m b2 r0 l0 t0 lines">\(-\)</td>
+<td class="r m b2 r0 l0 t0 lines" data-braille="last-cell">\(5\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">\(x\)</td>
+<td class="r m b0 r0 l0 t0 lines">\(+\)</td>
+<td class="r m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="r m b0 r0 l0 t0 lines">\(x^2\)</td>
+<td class="r m b0 r0 l0 t0 lines">\(-\)</td>
+<td class="r m b0 r0 l0 t0 lines">\(3x\)</td>
+<td class="r m b0 r0 l0 t0 lines">\(-\)</td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">\(8\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b1 r0 l0 t0 lines">\(x^2\)</td>
+<td class="r m b1 r0 l0 t0 lines">\(+\)</td>
+<td class="r m b1 r0 l0 t0 lines">\(2x\)</td>
+<td class="r m b1 r0 l0 t0 lines"></td>
+<td class="r m b1 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">\(-5x\)</td>
+<td class="r m b0 r0 l0 t0 lines">\(-\)</td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">\(8\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b1 r0 l0 t0 lines">\(-5x\)</td>
+<td class="r m b1 r0 l0 t0 lines">\(-\)</td>
+<td class="r m b1 r0 l0 t0 lines" data-braille="last-cell">\(10\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.2<span class="period">.</span></span><span class="space"> </span>Polynomial Long Division</figcaption></figure><p id="p-634">The next table describes how to construct tables via the <code class="code-inline tex2jax_ignore">tabular</code> element.  The <code class="code-inline tex2jax_ignore">table</code> element may be used to enclose the raw table, so as to associate a caption and get vertical separation with horizontal centering.</p>
+<p id="p-635">The <code class="code-inline tex2jax_ignore">tabular</code> element contains a sequence of <code class="code-inline tex2jax_ignore">row</code> elements, and must contain at least one.  Each <code class="code-inline tex2jax_ignore">row</code> contains a sequence of <code class="code-inline tex2jax_ignore">cell</code> elements and must have the same number in each row (acccounting for the use of the <code class="code-inline tex2jax_ignore">colspan</code> attribute).  The contents of the <code class="code-inline tex2jax_ignore">cell</code> elements are the text to appear in entries of the table.</p>
+<p id="p-636">A sequence of <code class="code-inline tex2jax_ignore">col</code> elements may optionally be used.  But if one appears, then there must be the right number for the width of the table.  They are empty elements always, and just carry information about their respective column.</p>
+<p id="p-637">Where the body of the table below has an entry, it means the attribute may be used on the element, and affects the range of the tabular described by the element.  Employment of an attribute on elements to the right in the table will supersede use on elements to the left.  Generally, every cell has right and bottom borders, but only cells at the left side of the table have a left border and only cells across the top have a top border.  Only one cell has four borders.</p>
+<figure class="table table-like" id="table-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.3<span class="period">.</span></span><span class="space"> </span>Tabular Elements and Attributes (p = planned)</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Attributes</td>
+<td class="c m b0 r0 l0 t3 lines" colspan="4">Elements</td>
+<td class="l m b0 r0 l0 t3 lines" data-braille="last-cell">Values</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">tabular</code></td>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">col</code></td>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">row</code></td>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">cell</code></td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">* = default</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">top</code></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">none*, minor, medium, major</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">left</code></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">none*, minor, medium, major</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">bottom</code></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">none*, minor, medium, major</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">right</code></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">none*, minor, medium, major</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">halign</code></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">left*, center, right, justify</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">halign</code></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">decimal, character</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">header</code></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">yes/no*</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">footer</code></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">yes/no*</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">valign</code></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">top, middle, bottom</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">colspan</code></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">1*, integer</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">rowspan</code></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">1*, integer</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">width</code></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\times\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">percentage</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">colors</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="c m b0 r0 l0 t0 lines">p</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+</table></figure><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Bully Pulpit: Vertical Rules in Tables.</span></h5>
+<p id="p-638">One of the goals of PreTeXt is to gently guide authors towards good choices in the design of their documents, even if we do not claim to know it all ourselves.  Take a close look at that table about tables.  What's missing?  No vertical rules.  Try living without them, you will not really miss them.  If you think you need to divide a table into two halves, maybe you really need two tables (and then see the “side-by-side” capabilities, Section <a href="section-side-by-side.html" class="internal" title="Section 23: Side-By-Side Panels">23</a>).</p>
+<p id="p-639">In the documentation for his excellent <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> package, <a class="external" href="https://www.ctan.org/pkg/booktabs" target="_blank">booktabs</a>, Simon Fear gives two rules for what he calls “formal tables”: (1) Never, ever use vertical rules, and (2) Never use double rules.  We have resisted the temptation to enforce the former and have provided an alternative to the second (three thicknesses).  He refers to using tables for layout as creating “tableau.”  If you are finicky about the look of your work, the first three pages of the documentation is recommended reading.</p>
+<p id="p-640">That all said, we now give several examples in order to stress and demonstrate our code.</p></article><p id="p-641">An example of aligning table cells' contents horizontally. See the source for comments.</p>
+<figure class="table table-like" id="table-13"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.4<span class="period">.</span></span><span class="space"> </span>Horizontal Alignment Example</figcaption><table>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1234567890</td>
+<td class="c m b0 r0 l0 t0 lines">1234567890</td>
+<td class="c m b0 r0 l0 t0 lines">1234567890</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">1234567890</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">[First</td>
+<td class="r m b0 r0 l0 t0 lines">Second</td>
+<td class="c m b0 r0 l0 t0 lines">Third</td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">Fourth</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">A</td>
+<td class="r m b0 r0 l0 t0 lines">B</td>
+<td class="c m b0 r0 l0 t0 lines">C</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">D</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+</table></figure><p id="p-642">Example from above, but now with horizontal rules, plus an extra row to test the bottom border.  See the source for comments.</p>
+<figure class="table table-like" id="table-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.5<span class="period">.</span></span><span class="space"> </span>Horizontal Rules Example</figcaption><table>
+<tr>
+<td class="c m b1 r0 l0 t1 lines">1234567890</td>
+<td class="c m b1 r0 l0 t3 lines">1234567890</td>
+<td class="c m b1 r0 l0 t0 lines">1234567890</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">1234567890</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">First</td>
+<td class="r m b3 r0 l0 t0 lines">Second</td>
+<td class="c m b3 r0 l0 t0 lines">Third</td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">Fourth</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">A</td>
+<td class="r m b2 r0 l0 t0 lines">B</td>
+<td class="c m b2 r0 l0 t0 lines">C</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">D</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+<tr>
+<td class="r m b2 r0 l0 t0 lines">1</td>
+<td class="r m b2 r0 l0 t0 lines">2</td>
+<td class="c m b2 r0 l0 t0 lines">3</td>
+<td class="r m b2 r0 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+</table></figure><p id="p-643">For a table without a caption, create a <code class="code-inline tex2jax_ignore">&lt;tabular&gt;</code> and place it inside a <code class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</code>.  This will allow control over the horizontal placment, but without a caption, there is no number, and the tabular cannot be cross-referenced.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table><tr><td class="l m b2 r1 l1 t2 lines" data-braille="last-cell">One</td></tr></table></div></div></div>
+<p id="p-644">Same example as before, but now with vertical rules.  See the source for comments.</p>
+<figure class="table table-like" id="table-15"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.6<span class="period">.</span></span><span class="space"> </span>Vertical Rules Example</figcaption><table>
+<tr>
+<td class="c m b1 r2 l3 t1 lines">1234567890</td>
+<td class="c m b1 r2 l0 t3 lines">1234567890</td>
+<td class="c m b1 r1 l0 t0 lines">1234567890</td>
+<td class="c m b1 r2 l0 t3 lines" data-braille="last-cell">1234567890</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l3 t0 lines">First</td>
+<td class="r m b3 r2 l0 t0 lines">Second</td>
+<td class="c m b3 r2 l0 t0 lines">Third</td>
+<td class="r m b0 r2 l0 t0 lines" data-braille="last-cell">Fourth</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l3 t0 lines">A</td>
+<td class="r m b2 r2 l0 t0 lines">B</td>
+<td class="c m b2 r0 l0 t0 lines">C</td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">D</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="c m b1 r2 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b1 r3 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+<tr>
+<td class="r m b2 r0 l3 t0 lines">1</td>
+<td class="r m b2 r2 l0 t0 lines">2</td>
+<td class="c m b2 r0 l0 t0 lines">3</td>
+<td class="r m b2 r2 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+</table></figure><figure class="table table-like" id="table-16"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.7<span class="period">.</span></span><span class="space"> </span>Progressively Thicker Rules Example</figcaption><table>
+<tr>
+<td class="c m b2 r2 l1 t1 lines">1111</td>
+<td class="c m b2 r3 l0 t1 lines">2222</td>
+<td class="c m b2 r1 l0 t1 lines" data-braille="last-cell">3333</td>
+</tr>
+<tr>
+<td class="c m b3 r2 l1 t0 lines">aaaa</td>
+<td class="c m b3 r3 l0 t0 lines">bbbb</td>
+<td class="c m b3 r2 l0 t0 lines" data-braille="last-cell">cccc</td>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines">AAAA</td>
+<td class="c m b2 r3 l0 t0 lines">BBBB</td>
+<td class="c m b3 r3 l0 t0 lines" data-braille="last-cell">CCCC</td>
+</tr>
+</table></figure><figure class="table table-like" id="table-17"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.8<span class="period">.</span></span><span class="space"> </span>Column Span Example</figcaption><table>
+<tr>
+<td class="c m b2 r3 l1 t1 lines" colspan="2">1111, 2222</td>
+<td class="c m b2 r1 l0 t1 lines" data-braille="last-cell">3333</td>
+</tr>
+<tr>
+<td class="c m b3 r2 l1 t0 lines">aaaa</td>
+<td class="c m b3 r2 l0 t0 lines" data-braille="last-cell" colspan="2">bbbb,cccc</td>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines">AAAA</td>
+<td class="c m b2 r3 l0 t0 lines">BBBB</td>
+<td class="c m b3 r3 l0 t0 lines" data-braille="last-cell">CCCC</td>
+</tr>
+</table></figure><p id="p-645">A list whose first item is a table.  In <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output a <code class="code-inline tex2jax_ignore">\leavevmode</code> is necessary to keep this organized (item number, <em class="emphasis">then</em> table as content).</p>
+<ol id="p-646" class="decimal"><li id="li-224"><figure class="table table-like" id="table-18"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.9<span class="period">.</span></span><span class="space"> </span>Table Alignment Example</figcaption><table>
+<tr>
+<td class="c m b2 r3 l1 t1 lines" colspan="2">1111, 2222</td>
+<td class="c m b2 r1 l0 t1 lines" data-braille="last-cell">3333</td>
+</tr>
+<tr>
+<td class="c m b3 r2 l1 t0 lines">aaaa</td>
+<td class="c m b3 r2 l0 t0 lines" data-braille="last-cell" colspan="2">bbbb,cccc</td>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines">AAAA</td>
+<td class="c m b2 r3 l0 t0 lines">BBBB</td>
+<td class="c m b3 r3 l0 t0 lines" data-braille="last-cell">CCCC</td>
+</tr>
+</table></figure></li></ol>
+<article class="example example-like" id="example-5"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.10</span><span class="period">.</span><span class="space"> </span><span class="title">Example Environment with Leading Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><figure class="table table-like" id="table-19"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.11<span class="period">.</span></span><span class="space"> </span>Column Spans, No <code class="code-inline tex2jax_ignore">col</code> Elements, Nine Columns</figcaption><table>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines" colspan="2">2+3</td>
+<td class="l m b0 r1 l0 t0 lines">4</td>
+<td class="l m b0 r2 l0 t0 lines" colspan="3">5+6+7</td>
+<td class="l m b0 r3 l0 t0 lines" data-braille="last-cell" colspan="2">8+9</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines">2</td>
+<td class="l m b0 r1 l0 t0 lines">3</td>
+<td class="l m b0 r1 l0 t0 lines">4</td>
+<td class="l m b0 r1 l0 t0 lines">5</td>
+<td class="l m b0 r1 l0 t0 lines">6</td>
+<td class="l m b0 r1 l0 t0 lines" colspan="2">7+8</td>
+<td class="l m b0 r1 l0 t0 lines" data-braille="last-cell">9</td>
+</tr>
+<tr>
+<td class="l m b0 r1 l1 t0 lines">1</td>
+<td class="l m b0 r1 l0 t0 lines">2</td>
+<td class="l m b0 r1 l0 t0 lines">3</td>
+<td class="l m b0 r1 l0 t0 lines">4</td>
+<td class="l m b0 r1 l0 t0 lines">5</td>
+<td class="l m b0 r1 l0 t0 lines">6</td>
+<td class="l m b0 r1 l0 t0 lines">7</td>
+<td class="l m b0 r1 l0 t0 lines">8</td>
+<td class="l m b0 r1 l0 t0 lines" data-braille="last-cell">9</td>
+</tr>
+</table></figure><p id="p-647">This example tests several things.  In <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output, figures, tables, listings and side-by-sides are “floats” whose placement can migrate, but we have tries to supress this behavior.  However, a float that is the first item of an “environment” (like a theorem or an example) can still float to a position <em class="emphasis">before</em> its title.  If that does not happen here, then our additional defenses are working.</p>
+<p id="p-648">This example also checks that the total number of columns is correctly computed from the first row, which features several <code class="code-inline tex2jax_ignore">colspan</code> attributes.</p></article></div>
+<p id="p-649">A bare minimum table (one row with one cell) to test edge cases:</p>
+<figure class="table table-like" id="table-minimal"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.12<span class="period">.</span></span><span class="space"> </span>One entry table</figcaption><table><tr><td class="l m b2 r1 l1 t2 lines" data-braille="last-cell">One</td></tr></table></figure><p id="p-650">Table cells with a fixed width where text wraps are known as “paragraph cells”. A cell will be created as a paragraph cell if and only if it has <code class="code-inline tex2jax_ignore">&lt;p&gt;</code> children. And such cells should <em class="emphasis">only</em> have <code class="code-inline tex2jax_ignore">&lt;p&gt;</code> children. The width of a paragraph cell is determined by a <code class="code-inline tex2jax_ignore">width</code> attribute on the corresponding <code class="code-inline tex2jax_ignore">&lt;col&gt;</code> (as a percentage). If no <code class="code-inline tex2jax_ignore">width</code> is specified (or there isn't even a <code class="code-inline tex2jax_ignore">&lt;col&gt;</code> in the first place) then <code class="code-inline tex2jax_ignore">xsltproc</code> will abort. If the column has a non-paragraph cell with contents that are wider than the paragraph cells, results will be undesirable. There is presently no implementation for a paragraph cell that has a <code class="code-inline tex2jax_ignore">colspan</code> greater than \(1\text{,}\) although cells with <code class="code-inline tex2jax_ignore">colspan</code> greater than \(1\) that are above or below a paragraph cell will behave. Setting <code class="code-inline tex2jax_ignore">width</code> on a <code class="code-inline tex2jax_ignore">&lt;col&gt;</code> that has no paragraph cells may produce unexpected results. A <code class="code-inline tex2jax_ignore">valign</code> for the parent <code class="code-inline tex2jax_ignore">&lt;row&gt;</code> (or the ambient <code class="code-inline tex2jax_ignore">&lt;tabular&gt;</code>) can control vertical alignment (top, middle, or bottom). A paragraph cell's <code class="code-inline tex2jax_ignore">halign</code> attribute (left, center, right, or justify) controls how the text is justfied. Cells inherit <code class="code-inline tex2jax_ignore">halign</code> from <code class="code-inline tex2jax_ignore">&lt;row&gt;</code>, <code class="code-inline tex2jax_ignore">&lt;col&gt;</code>, and <code class="code-inline tex2jax_ignore">&lt;tabular&gt;</code> in that order of preference. In a non-paragraph cell where <code class="code-inline tex2jax_ignore">halign='justify'</code>, the horizontal alignment will match the behavior of <code class="code-inline tex2jax_ignore">halign='left'</code>.</p>
+<figure class="table table-like" id="table-time-units"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.13<span class="period">.</span></span><span class="space"> </span>Time Units</figcaption><table>
+<tr>
+<td class="l t b2 r0 l0 t3 lines">Unit</td>
+<td class="l t b2 r0 l0 t3 lines">Stands For</td>
+<td class="l t b2 r0 l0 t3 lines">Definition</td>
+<td class="l t b2 r0 l0 t3 lines" data-braille="last-cell">Roughly</td>
+</tr>
+<tr>
+<td class="l t b1 r0 l0 t0 lines"><span class="quantity">s</span></td>
+<td class="l t b1 r0 l0 t0 lines">second</td>
+<td class="l t b1 r0 l0 t0" style="max-width:240px;">
+<p id="p-651">the duration of <span class="quantity">9192631770</span> periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the cesium-133 atom</p>
+<p id="p-652">an extraneous paragraph just to demonstrate the inter-paragraph formatting.</p>
+</td>
+<td class="l t b1 r0 l0 t0" data-braille="last-cell" style="max-width:150px;"><p id="p-653">the time it takes you to say the phrase “differential calculus”</p></td>
+</tr>
+<tr>
+<td class="l t b1 r0 l0 t0 lines"><span class="quantity">min</span></td>
+<td class="l t b1 r0 l0 t0 lines">minute</td>
+<td class="l t b1 r0 l0 t0" style="max-width:240px;"><p id="p-654">exactly \(60\) seconds</p></td>
+<td class="l t b1 r0 l0 t0" data-braille="last-cell" style="max-width:150px;"><p id="p-655">how long it takes to microwave a full dinner plate from the refrigerator</p></td>
+</tr>
+<tr>
+<td class="l t b3 r0 l0 t0 lines"><span class="quantity">h</span></td>
+<td class="l t b3 r0 l0 t0 lines">hour</td>
+<td class="l t b3 r0 l0 t0" style="max-width:240px;"><p id="p-656">exactly \(3600\) seconds; exaclty \(60\) minutes</p></td>
+<td class="l t b3 r0 l0 t0" data-braille="last-cell" style="max-width:150px;"><p id="p-657">the length of one episode of a premium cable television show</p></td>
+</tr>
+</table></figure><p id="p-658">Table cells can have multiline content using <code class="code-inline tex2jax_ignore">&lt;line&gt;</code> elements. This is not the same thing as a paragraph cell—line breaking will happen precisely where the author tells it to. A <code class="code-inline tex2jax_ignore">&lt;line&gt;</code> will not break, even on a narrow screen. If a cell uses a <code class="code-inline tex2jax_ignore">&lt;line&gt;</code>, it must only use a sequence of <code class="code-inline tex2jax_ignore">&lt;line&gt;</code>s and no other content. As with paragraph cells, you can use a <code class="code-inline tex2jax_ignore">valign</code> attribute for the row.</p>
+<figure class="table table-like" id="table-multiline-cells"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.14<span class="period">.</span></span><span class="space"> </span><abbr class="abbreviation">Dr.</abbr> Seuss lines</figcaption><table><tr>
+<td class="l b b2 r2 l2 t2 lines">One Fish<br>Two Fish<br>Red Fish<br>Blue Fish</td>
+<td class="l b b2 r2 l0 t2 lines">I am the Lorax.<br>I speak for the trees.<br>Self-referential: <a class="xref" data-knowl="./knowl/table-multiline-cells.html" title="Table 13.14: Dr. Seuss lines">Table 13.14</a>
+</td>
+<td class="l b b2 r2 l0 t2 lines" data-braille="last-cell">Look at me!<br>Look at me!<br>Look at me NOW!<br>It is fun to have fun.<br>But you have<br>to know how.</td>
+</tr></table></figure><p id="p-659">This is a table torture test with many combinations of <code class="code-inline tex2jax_ignore">halign</code>, <code class="code-inline tex2jax_ignore">valign</code>, <code class="code-inline tex2jax_ignore">colspan</code>, <code class="code-inline tex2jax_ignore">&lt;p&gt;</code> children, and <code class="code-inline tex2jax_ignore">&lt;line&gt;</code> children.</p>
+<figure class="table table-like" id="table-23"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.15<span class="period">.</span></span><span class="space"> </span>Table Torture Test</figcaption><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines"></td>
+<td class="l m b1 r1 l0 t1 lines"></td>
+<td class="r m b1 r1 l0 t1 lines"></td>
+<td class="r m b1 r1 l0 t1 lines"></td>
+<td class="c m b1 r1 l0 t1 lines"></td>
+<td class="c m b1 r1 l0 t1 lines"></td>
+<td class="l m b1 r1 l0 t1 lines"></td>
+<td class="l m b1 r1 l0 t1 lines">Cell too wide</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">Lf md</td>
+<td class="l m b1 r1 l0 t0" style="max-width:60px;"><p id="p-660">Lef mid par cel</p></td>
+<td class="r m b1 r1 l0 t0 lines">Rt md</td>
+<td class="r m b1 r1 l0 t0" style="max-width:60px;"><p id="p-661">Rig mid par cel</p></td>
+<td class="c m b1 r1 l0 t0 lines">Cn md</td>
+<td class="c m b1 r1 l0 t0" style="max-width:60px;"><p id="p-662">Cen mid par cel</p></td>
+<td class="l m b1 r1 l0 t0 lines">Js md</td>
+<td class="j m b1 r1 l0 t0" style="max-width:60px;"><p id="p-663">Jus mid par cel jus mid par cel</p></td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">
+<br><br><br><br><br>
+</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines" colspan="2">Colspan=2<br>lef mid<br>with lines</td>
+<td class="r m b1 r1 l0 t0 lines" colspan="3">Colspan=3 rig mid</td>
+<td class="c m b1 r1 l0 t0 lines">Lines<br>Between<br>Par</td>
+<td class="l m b1 r1 l0 t0 lines">Lines<br>Between<br>No Par</td>
+<td class="j m b1 r1 l0 t0" style="max-width:60px;"><p id="p-664">Par in row with lines</p></td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">
+<br><br><br><br><br>
+</td>
+</tr>
+<tr>
+<td class="l t b1 r1 l1 t0 lines">L t</td>
+<td class="l t b1 r1 l0 t0" style="max-width:60px;"><p id="p-665">Lef top par cel</p></td>
+<td class="r t b1 r1 l0 t0 lines">R t</td>
+<td class="r t b1 r1 l0 t0" style="max-width:60px;"><p id="p-666">Rig top par cel</p></td>
+<td class="c t b1 r1 l0 t0 lines">C t</td>
+<td class="c t b1 r1 l0 t0" style="max-width:60px;"><p id="p-667">Cen top par cel</p></td>
+<td class="l t b1 r1 l0 t0 lines">J t</td>
+<td class="j t b1 r1 l0 t0" style="max-width:60px;"><p id="p-668">Jus top par cel jus top par cel</p></td>
+<td class="l t b1 r1 l0 t0 lines" data-braille="last-cell">
+<br><br><br><br><br>
+</td>
+</tr>
+<tr>
+<td class="l b b1 r1 l1 t0 lines">L b</td>
+<td class="l b b1 r1 l0 t0" style="max-width:60px;"><p id="p-669">Lef bot par cel</p></td>
+<td class="r b b1 r1 l0 t0 lines">R b</td>
+<td class="r b b1 r1 l0 t0" style="max-width:60px;"><p id="p-670">Rig bot par cel</p></td>
+<td class="c b b1 r1 l0 t0 lines">C b</td>
+<td class="c b b1 r1 l0 t0" style="max-width:60px;"><p id="p-671">Cen bot par cel</p></td>
+<td class="l b b1 r1 l0 t0 lines">J b</td>
+<td class="j b b1 r1 l0 t0" style="max-width:60px;"><p id="p-672">Jus bot par cel jus bot par cel</p></td>
+<td class="l b b1 r1 l0 t0 lines" data-braille="last-cell">
+<br><br><br><br><br>
+</td>
+</tr>
+<tr>
+<td class="l b b1 r1 l1 t0 lines" colspan="3">Colspan=3 lef bot</td>
+<td class="r b b1 r1 l0 t0 lines" colspan="2">Colspan=2<br>rig bot<br>with lines</td>
+<td class="c b b1 r1 l0 t0 lines">Lines<br>Under<br>Par</td>
+<td class="l b b1 r1 l0 t0 lines">Lines<br>Under<br>No Par</td>
+<td class="j b b1 r1 l0 t0" style="max-width:60px;"><p id="p-673">Par in row with lines</p></td>
+<td class="l b b1 r1 l0 t0 lines" data-braille="last-cell">
+<br><br><br><br><br>
+</td>
+</tr>
+</table></figure><p id="p-674">And now a <code class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</code> with a <code class="code-inline tex2jax_ignore">&lt;table&gt;</code> and a <code class="code-inline tex2jax_ignore">&lt;tabular&gt;</code> to check that width is scaled appropriately. See <a href="section-side-by-side.html" class="internal" title="Section 23: Side-By-Side Panels">Section 23</a> to learn about <code class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</code>s.</p>
+<figure class="figure figure-like" id="table-consitution-text"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width" style="width:45%;justify-content:flex-start;"><table><tr>
+<td class="l t b1 r1 l1 t1 lines">A1.S1</td>
+<td class="l t b1 r1 l0 t1" data-braille="last-cell" style="max-width:135px;">
+<p id="p-675">All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives.</p>
+<p id="p-676">Should be 50% of 45% except perhaps on small screens.</p>
+</td>
+</tr></table></div>
+<div class="sbspanel fixed-width" style="width:55%;justify-content:flex-start;"><table><tr>
+<td class="l t b1 r1 l1 t1 lines">A1.S2.C1</td>
+<td class="l t b1 r1 l0 t1" data-braille="last-cell" style="max-width:165px;">
+<p id="p-677">The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature.</p>
+<p id="p-678">Should be 50% of 55% except perhaps on small screens.</p>
+</td>
+</tr></table></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">13.16<span class="period">.</span></span><span class="space"> </span>Some text from the US Constitution</figcaption></figure><p id="p-679">Tables are formed in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output with copious use of the <code class="code-inline tex2jax_ignore">\multicolumn</code> macro to override more global alignment settings, and to spread the content of one cell across several columns.  However, sometimes <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>'s special characters have behaved badly in this situation.  So the table below, two items per row, is just designed for <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> testing.  But of course, it should still render fine in other formats.  The three test cases are from <a href="text-in-paragraphs.html#section-urls" class="internal" title="Subsection 8.8: URLs, such as http://example.com">8.8</a>, but without 50 alphabetic characters and 8 digits, which should not be problems in this context.  In order to test the use of a percent sign (<code class="code-inline tex2jax_ignore">%</code>) in a URL, we follow it by two hex digits, specifically, <code class="code-inline tex2jax_ignore">58</code>, which is a way to represent the character <code class="code-inline tex2jax_ignore">X</code> in a <abbr class="initialism">URL</abbr>.  The first column's entries are <em class="emphasis">forced</em> to be wrapped in a <code class="code-inline tex2jax_ignore">\multicolumn</code> by specifying their horizontal alignment.  The second column's entries <em class="emphasis">will not</em> be wrapped in a <code class="code-inline tex2jax_ignore">\multicolumn</code>.So the two columns will look identical, other than the first having a left alignment, and the second has the default center alignment.  (This table is known to render poorly in a Jupyter notebook.  The cause is four dollar signs present in rows 1 and 3, and is explained in <a href="text-in-paragraphs.html#subsection-jupyter-dollars" class="internal" title="Subsection 8.12: Jupyter Notebook, Markdown, MathJax, Delimiters">Subsection 8.12</a>.)</p>
+<figure class="table table-like" id="table-latex-problems"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">13.17<span class="period">.</span></span><span class="space"> </span>Problematic Table Cells for <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span></figcaption><table>
+<tr>
+<td class="c m b2 r2 l2 t2 lines">1</td>
+<td class="l m b2 r2 l0 t2 lines"><code class="code-inline tex2jax_ignore">09az%-._~:/?#[]@!$&amp;'()*+,;=</code></td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell"><code class="code-inline tex2jax_ignore">09az%-._~:/?#[]@!$&amp;'()*+,;=</code></td>
+</tr>
+<tr>
+<td class="c m b2 r2 l2 t0 lines">2</td>
+<td class="l m b2 r2 l0 t0 lines"><a class="external" href="http://example.com/09az%58-._~:/?#%5B%5D@!%24&amp;'()*+,;=" target="_blank">http://example.com/09az%58-._~:/?#[]@!$&amp;'()*+,;=</a></td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell"><a class="external" href="http://example.com/09az%58-._~:/?#%5B%5D@!%24&amp;'()*+,;=" target="_blank">http://example.com/09az%58-._~:/?#[]@!$&amp;'()*+,;=</a></td>
+</tr>
+<tr>
+<td class="c m b2 r2 l2 t0 lines">3</td>
+<td class="l m b2 r2 l0 t0 lines"><a class="external" href="http://example.com/09az%58-._~:/?#%5B%5D@!%24&amp;'()*+,;=" target="_blank"><code class="code-inline tex2jax_ignore">http://example.com/09az%58-._~:/?#[]@!$&amp;'()*+,;=</code></a></td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell"><a class="external" href="http://example.com/09az%58-._~:/?#%5B%5D@!%24&amp;'()*+,;=" target="_blank"><code class="code-inline tex2jax_ignore">http://example.com/09az%58-._~:/?#[]@!$&amp;'()*+,;=</code></a></td>
+</tr>
+</table></figure></section></div></main>
+</div>
+<script>createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>

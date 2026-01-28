@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2013 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!--
+To process this file, at the command-line issue:
+
+xsltproc /path/to/mathbook/xsl/pretext-html.xsl /path/to/mathbook/examples/sample-article.xml
+
+then find  "derivatives.html"  in the current working directory
+and use a web browser to view.  For PDF/print, issue:
+
+xsltproc -o derivatives.tex /path/to/mathbook/xsl/mathbook-latex.xsl /path/to/mathbook/examples/sample-article.xml
+
+and apply  pdflatex  or  xelatex  to  "derivatives.tex"  in
+the current working directory.
+
+Ignore any warnings, they are part of testing the warning system.
+
+To see images in your results, copy the examples/images directory
+so that your working directory has the images subdirectory.  See
+the  pretextbook.org  website for information on installing
+the xsltproc executable.
+-->
+
+<!-- Overall element for a Mathbook XML document; mandatory, always  -->
+<!-- Experiment with the "xml:lang" attribute to see localization    -->
+<!-- changes, the  xsl/localizations  directory has more information -->
+<pretext xml:lang="pt-BR">
+<!-- <pretext xml:lang="pt-BR"> -->
+<!-- <pretext xml:lang="fr-FR"> -->
+<!-- <pretext xml:lang="cs-CZ"> -->
+<!-- <pretext xml:lang="af-ZA"> -->
+
+    <!--
+    "docinfo" is like metadata, it is necessary technical
+    information which a reader mostly will never see.  LaTeX
+    macros and Web analytics project numbers are good examples.
+    If you are getting started, you do not need any of this initially.
+    So on a first reading, skip ahead to the article tag.
+    -->
+    <docinfo>
+        <!--
+        In the HTML version there is room for a picture or logo
+        in the upper left corner.  An image of a cover for a
+        physical version is a good choice to go here.  We use
+        16th Century Art Book Cover, 176x240 pixels, Public Domain, due to age
+        http://commons.wikimedia.org/wiki/File:Book_Cover_-_Google_Art_Project.jpg
+        -->
+        <!--<brandlogo url="https://pretextbook.org" source="images/book-cover-google-art-project.jpg" />-->
+        <!--
+        LaTeX packages that are also implemented as MathJax extensions
+        may be specified here and any macros they have in common may be
+        used within mathematics.  See below in the "Mathematics" section
+        an example of the use of the "\cancelto{}{}" macro from
+        the "cancel" package.
+        -->
+        <latex-preamble>
+            <package>cancel</package>
+        </latex-preamble>
+        <!--
+        TeX/LaTeX macros can be written in the usual way.
+        Whitespace and line breaks are irrelevant here.
+        These are "write once, use everywhere".
+        -->
+        <macros>
+        \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} % this comment will be stripped
+        \newcommand{\myequation}[2]{#1\amp =#2} % testing alignment override
+        % comments anywhere get stripped, with or without faux % comment \% characters
+        \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+        \newcommand{\testingescapedpercent}{ \% } % just testing
+        </macros>
+        <!-- We control the appearance of the text of cross-references here           -->
+        <!-- (these are the "xref" elements).  Because this changes the words         -->
+        <!-- that appear in your output, it is a decision with stays with the source. -->
+        <!-- Experiment here with different choices and a few different "xref"        -->
+        <!-- elements before you decide on a final choice.  We set this to 'global',  -->
+        <!-- not because we think it is a good choice, but for historical reasons.    -->
+        <!-- The default is 'type-global', which produces text like "Theorem 5.2",    -->
+        <!-- where "Theorem" will be translated into the document language            -->
+        <cross-references text="global" />
+        <!--
+        Extra packages, package options, and package settings for latex-based images.
+        Inserted in the preamble for LaTeX output.
+        Inserted in the preamble to each standalone latex-based image for HMTL SVG output.
+        -->
+        <latex-image-preamble>
+        \usepackage{pgfplots}               % loads tikz package
+        \usepackage{smartdiagram}           % for a circular diagram
+        \pgfplotsset{axis x line = middle,
+                     axis y line = middle}
+        \usetikzlibrary{backgrounds}
+        \usetikzlibrary{arrows,matrix}
+        \usetikzlibrary{positioning}        % for Dave R's worksheet
+        \usepackage{circuitikz}             % for Virgil P's worksheet
+        </latex-image-preamble>
+        <!--
+        The Sage Notebook has its own interface and worksheet list.
+        To use the sorting features optimally, it helps to have subdivisions
+        begin with the same short prefix.  An "initialism" (nee acronym)
+        here will be used for that purpose if present.  This is only employed
+        for producing Sage notebook versions and in the title shown in the
+        browser. (If not present, you will get a harmless warning just for
+        Sage worksheet production.)
+        -->
+        <initialism>REVISTA</initialism>
+        <!-- For various purposes, it is helpful to have a unique identifier    -->
+        <!-- for your entire document.  As of 2019-01-02 this will be used as   -->
+        <!-- the HTML id attribute on the body element of *every* page created  -->
+        <!-- by the HTML conversion.                                            -->
+        <!--                                                                    -->
+        <!--   * Start with a letter                                            -->
+        <!--   * No strange characters, just 52 Latin letters, and 10 digits    -->
+        <!--   * No spaces                                                      -->
+        <!--   * Use only a hyphen (-) to separate words                        -->
+        <!--                                                                    -->
+        <!-- Make it so there is a reasonable expectation of being unique.      -->
+        <!-- "my-book" is a poor choice, "beezer-first-course-linear-algebra"   -->
+        <!-- is better.  And maybe something in-between is best: "beezer-FCLA". -->
+        <document-id>pretext-SA</document-id>
+        <!-- Items peculiar to an HTML output -->
+        <html>
+            <!-- Expects favicon/favicon-32x32.png, and favicon/favicon-16x16.png -->
+            <favicon/>
+            <!-- There does not need to be a trailing / on the URL             -->
+            <!-- NB Eventually a publisher option will exist to overrule this, -->
+            <!-- so a given source can be installed more than one place        -->
+            <baseurl href="https://pretextbook.org/examples/sample-article/html" />
+        </html>
+        <!--
+        With a <feedback> element, in the HTML version, you get a button
+        for reporting typos and errors.  You might link to a Google Docs
+        spreadsheet or something similar.  Default is to get a button
+        labeled "Feedback", which will be localized to your target language.
+        You can override this with some text of your choosing, but then you
+        lose the localization feature.
+        -->
+        <feedback>
+            <url>not-implemented.html</url>
+             <!-- <text>My Button Text</text>  -->
+        </feedback>
+
+        <!--
+        "Names" for various parts of a document are determined exactly
+        once for each language, ensuring consistency and saving you the
+        bother of always typing them in.  These can be found in the
+        files in the  xsl/localizations  directory.
+
+        You can make a document-specific, global override.  Here we
+        decide we have no need for any "proposition"s and repurpose
+        that environment as a "Conundrum."
+
+        The specification of a language is optional, if you do not
+        have a multilingual project.  Otherwise you can supply an
+        @xml:lang attribute so the rename only applies for a specific
+        language.  See the localization file for more on language codes.
+        -->
+        <rename element="proposition">Conundrum</rename>
+
+        <!-- Images in HTML output may carry a discreet list of links    -->
+        <!-- to "archival" versions of images in a variety of formats.   -->
+        <!-- Authors have complete freedom to do this as they choose,    -->
+        <!-- along with complete responsibility to provide the actual    -->
+        <!-- files, with proper filenames and suffices.  Search this     -->
+        <!-- source file for "archive=" to see particular examples.      -->
+        <!-- The following demonstrates a global specification, which    -->
+        <!-- we just use for testing - it just makes totally fake links. -->
+        <!--
+        <images>
+            <archive>One Two Three</archive>
+        </images>
+        -->
+
+        <!-- Demonstration of subtree specifications for archive formats -->
+        <!-- (Do not use in concert with above global test)              -->
+        <!-- Chapter on graphics, fake "A B" links throughout            -->
+        <!-- No other part of the @archive scheme is affected            -->
+        <!-- Two images, inside figures, within graphics chapter         -->
+        <!--   1) one has "A B" links turned off                         -->
+        <!--   2) single link "exceptional"                              -->
+        <!--
+        <images>
+            <archive from="graphics">A B</archive>
+            <archive from="figure-asymptote-levers" />
+            <archive from="figure-asymptote-contour-plot">exceptional</archive>
+        </images>
+        -->
+
+        <latex-output>
+            <!-- turn this on once it is easier to make   -->
+            <!-- standalone worksheets, uncomment to test -->
+            <!-- <worksheet top="3cm" left="4cm" margin="12cm"/> -->
+        </latex-output>
+
+    </docinfo>
+
+    <!--
+    The article element is top-level for anything short of a book.
+    There is a book element, which is not demonstrated here.
+    The "xml:id" attribute will be used for the filename of the
+    HTML output.
+    -->
+    <article xml:id="artigo-palhaco-catalao">
+        <title>Um Palhaço Catalão (Complemento)</title>
+        
+
+        <!--
+        The frontmatter contains a variety of items that precede
+        the actual content.  They should be placed in the proper order,
+        here the title material should precede a table of contents.
+        They differ from "docinfo" items in that they will be *content*
+        that a reader will actually see.
+        -->
+
+        <frontmatter xml:id="frontmatter">
+            <!--
+            Items typically on the main title page of a book,
+            but here as an article they are handled more compactly
+             -->
+
+            <titlepage>
+
+               <!-- There can be several authors here -->
+                
+                <author>
+                    <personname>Gabriel Araújo Guedes</personname>
+                    <!-- department here is one line, so unstructured -->
+                    <department>Departamento de Matemática</department>
+                    <!-- institution uses two lines, so structured as such -->
+                    <institution>
+                        <line>Universidade Federal Rural de Pernambuco - UFRPE</line>
+                        <line>Recife, Pernambuco, Brasil</line>
+                    </institution>
+                    <email>gabriel.guedes@ufrpe.br</email>
+                </author>
+
+                <author>
+                    <personname>Ricardo Nunes Machado Junior</personname>
+                    <!-- department here is one line, so unstructured -->
+                    <department>Departamento de Matemática</department>
+                    <!-- institution uses two lines, so structured as such -->
+                    <institution>
+                        <line>Universidade Federal Rural de Pernambuco - UFRPE</line>
+                        <line>Recife, Pernambuco, Brasil</line>
+                    </institution>
+                    <email>ricardo.machadojunior@ufrpe.br</email>
+                </author>  
+                
+
+          
+
+                <!-- Can set date manually or use the "today" element -->
+                <date><today /></date>
+
+            </titlepage>
+
+            <abstract>
+                <p>Sejam todas e todos bem-vindas e bem-vindos ao complemento do artigo: "Um Palhaço Catalão", submetido à Revista Professor de Matemática Online (PMO). Se você chegou até aqui através de nosso trabalho, descobrirá um complemento da parte computacional que desenvolvemos para a construção de nosso artigo. </p>
+
+                <p>No intuito de enriquecermos cada vez mais esta nossa página, ela sempre terá um espaço para complementos e contribuições, então se quiserem contribuir com ideias, basta enviar um e-mail para um de nós.</p>
+
+                <p>Esperamos que vocês gostem, usem e abusem da tecnologia disponibilizada!</p>
+            </abstract>
+            <!--
+            Acknowledgements, dedications, colophon (ISBN, copyright, etc)
+            are supported in the book document type.  Such a diverse range
+            is not yet available for articles.  Send requests.
+             -->
+        </frontmatter>
+
+        <!--
+        Articles have sections, which have subsections,
+        which have subsubsections.These are all "containers"
+        and so line breaks and extraneous whitespace gets
+        scrubbed.  Use indentation and line breaks liberally
+        within containers to make the structure of your
+        source readable.
+        -->
+
+ 
+
+        <!--
+        Note above: Subdivisions always have titles, and these
+        are not containers.  Line breaks and whitespace will
+        bleed into output, which is especially a problem for TeX,
+        since it may render as a blank line.  So keep the title
+        element "tight" around the content.
+
+        The "p" element is a paragraph, and also not a container,
+        so keep it wrapped tight.  Lots can go on in a paragraph.
+        -->
+
+
+        <!--
+        Sage Code: Next section has Sage code examples.
+        For HTML it renders as Sage Cells, with no sample output.
+        For LaTeX it renders as input/output, suggestively typeset.
+        A separate XSL transform isolates code and produces a file
+        for doctesting.
+
+        Note: These small examples are wrapped "tight" in the
+        input and output elements.  For multiline code snippets,
+        the left margin is determined by the whitespace preceding
+        the first non-trivial character.
+        -->
+
+<!--       <section  xml:id="section-sage-cells">
+            <title>Gráficos de EDOs de Sistemas Lineares</title>
+            
+          
+
+    <introduction>
+   	<p>Nesta seção deixamos disponíveis modelos interativos dos gráficos apresentados no artigo XXX</p>
+   	</introduction>
+
+<p>Uma vez que as informações sejam alteradas, o gráfico será atualizado ao apertar em Tab ou quando for "clicado" fora do campo alterado.</p>
+
+<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-binomio">
+<caption>Teste</caption>
+<p>Gráfico das trajetórias do sistema:
+<me> x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+1 \amp 1 \\
+4 \amp 1
+\end{array}\right)x. </me>
+</p>
+    <interactive xml:id="interactive-teste" platform="sage" aspect="1:1.3" >
+    <slate surface="sage">                    
+@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), imin=input_box(-5 , width=10,  label="imin:"), imax=input_box(5 , width=10,  label="imxn:"),
+passo=input_box(0.5 , width=10,  label="passo:"), tmin=input_box(-1.5 , width=10,  label="tmin:"), tmax=input_box(1.5 , width=10,  label="imax:"), vetores=False):
+            
+    t = var('t')
+    x=function('x')(t)
+    y=function('y')(t)
+    edo = [diff(x, t) == edox[0][0]*x+edox[0][1]*y, diff(y, t) == edox[1][0]*x+edox[1][1]*y]
+
+    G = Graphics()
+    for i in srange(imin, imax, passo):
+        sol = desolve_system(edo, [x, y], [0,i,0])
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax))
+
+    for i in srange(imin, imax, passo):
+        sol = desolve_system(edo, [x, y], [0,0,i])
+        G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, tmin, tmax), color='green', ymin=-4, ymax=4, frame=True)
+
+    if vetores==False:
+        return (G).show(xmin=-4, xmax=4, figsize=[4,4])
+    elif vetores==True:
+        u, v = var('u v')
+        x0 = edo[0].rhs().subs(x==u, y==v)
+        x1 = edo[1].rhs().subs(x==u, y==v)
+        
+        P = plot_vector_field(vector((x0, x1))/norm(vector((x0, x1))), (u, -4, 4), (v, -4, 4))
+    
+        return (P+G).show(xmin=-4, xmax=4, figsize=[4,4])
+
+
+    </slate>
+    </interactive>        
+</figure>
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>t = var('t')
+x=function('x')(t)
+y=function('y')(t)
+G = Graphics()
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,i,0])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5))
+    
+for i in srange(-5, 5, 0.5):
+    sol = desolve_system([diff(x, t) == x+y, diff(y, t) == 4*x+y], [x, y], [0,0,i])
+    G = G + parametric_plot((sol[0].rhs(), sol[1].rhs()), (t, -1.5, 1.5), color='green', ymin=-4, ymax=4)
+(G).show(xmin=-4, xmax=4, figsize=5)  
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+
+<technology>
+    <title>Faça você mesmo</title>
+<figure xml:id="interactive-binomio2">
+<caption></caption>
+<p>Gráficos de <m>x_i</m> em função de <m>t</m>, do sistema:
+<me> x' = \newcommand{\Bold}[1]{\mathbf{#1}}\left(\begin{array}{rr}
+1 \amp 1 \\
+4 \amp 1
+\end{array}\right)x. </me>
+</p>
+    <interactive xml:id="interactive-teste2" platform="sage" aspect="1:0.8" >
+    <slate surface="sage">                    
+@interact
+def _(edox=input_box([[1,1],[4,1]] , width=40,  label="matriz:"), passo=input_box(0.4 , width=10,  label="passo:")):
+    t, x, y = polygens(RR, 't, x, y')
+    
+    G = Graphics()
+    for j in srange(-3, 3, passo):
+        G = G + eulers_method_2x2_plot(edox[0][0]*x+edox[0][1]*y, edox[1][0]*x+edox[1][1]*y, 0, j, 1.5, 0.01, 1)[0]
+    return G.show(figsize=4.2)
+
+
+    </slate>
+    </interactive>        
+</figure>
+<p>Os códigos no Sage são os seguintes:</p>
+<sage>
+<input>t, x, y = polygens(RR, 't, x, y')
+G = Graphics()
+for j in srange(-3, 3, 0.4):
+    G = G + eulers_method_2x2_plot(x + y, 4*x + y, 0, j, 1.5, 0.01, 1)[0]
+G.show(figsize=5)
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+        </section>
+-->
+
+
+
+<section  xml:id="sec-permutacoes">
+            <title>Permutações com Repetição de Elementos</title>
+            <!-- Index testing, semi-realistic -->
+          
+
+   <!-- <introduction>
+    <p>Usando matrizes, podemos obter os respectivos tabuleiros e polinômios de torre. </p>
+    </introduction> -->
+
+<subsection>
+<title>Arranjos com Elementos Repetidos</title>
+<technology>
+
+<p>Digite uma palavra no campo "Palavra:" e clique em uma das opções para obter a lista com todos os anagramas, ou o total do anagramas ou um anagrama aleatório.
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-permutacao" platform="sage"  aspect="1:0.8" >
+    <slate surface="sage">                    
+@interact
+def _(lista=input_box('AMAR' , width=45,  label="Palavra:"), opcao = ['Todas as Permutações', 'Cardinalidade','Elemento Aleatório']):
+
+
+    lista2=[]
+    if lista not in ZZ and 'invalid' not in str(lista):
+        #print('invalid' in str(lista))
+        
+        lista = str(lista)
+        k=0
+        for i in lista:
+            k += 1
+            if k>6 :
+                if i == "'":
+                    break
+                lista2.append(i)
+        p = Permutations(lista2)
+        if opcao == 'Todas as Permutações':
+            for i in p:
+                print(i)
+        elif opcao == 'Cardinalidade':
+            print(p.cardinality())
+        elif opcao == 'Elemento Aleatório':
+            print(p.random_element())
+
+    elif lista in ZZ:
+        lista = str(lista)
+        for i in lista:
+            lista2.append(i)
+        p = Permutations(lista2)
+        if opcao == 'Todas as Permutações':
+            for i in p:
+                print(i)
+        elif opcao == 'Cardinalidade':
+            print(p.cardinality())
+        elif opcao == 'Elemento Aleatório':
+            print(p.random_element())        
+    
+    else:
+        show('Digite uma palavra ou número.')
+    
+
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+<p>Listando todos os anagramas da palavra AMAR, usando o método Permutations.</p>
+<sage>
+<input>Permutations(['A', 'M', 'A', 'R']).list()
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+<technology>
+<p>Extraindo a permutação de posição 5, da palavra AMAR.</p>
+<sage>
+<input>Permutations(['A', 'M', 'A', 'R'])[5-1]
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+<technology>
+<p>Obtendo o número de anagramas da palavra AMAR.</p>
+<sage>
+<input>Permutations(['A', 'M', 'A', 'R']).cardinality()
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+<technology>
+<p>Obtendo um anagrama aleatório da palavra AMAR.</p>
+<sage>
+<input>Permutations(['A', 'M', 'A', 'R']).random_element()
+</input>
+<output>
+</output>
+</sage>
+</technology>
+
+</subsection>
+
+
+<subsection>
+<title>Número de Permutações com Repetições</title>
+<technology>
+
+<p>Calcule o número de permutações com repetições, digitando nos campos abaixo os valores de <m>n, \beta_1, \beta_2, \ldots, \beta_k</m> da expressão: 
+<men xml:id="form-perm">P_n^{\beta_1,\beta_2,\ldots,\beta_k}=\dfrac{n!}{\beta_1!\beta_2!\cdots\beta_k!}.</men>
+Em seguida, clique no botão "Update".
+</p>
+<figure width="100%">
+    <caption>Número de permutações com repetições.</caption>
+    <interactive xml:id="interactive-numero-permutacao" platform="sage"  aspect="1:0.5" >
+    <slate surface="sage">                    
+@interact
+def _(n=input_box(10 , width=45,  label="n:"), betas=input_box(3 , width=45,  label="betas:"), auto_update=False):
+
+    
+    
+    def PR(lista):
+        numerador = factorial(lista[0])                       # cálculo do numerador
+        denominador = prod(factorial(i) for i in lista[1:])   # cálculo do denominador
+        return numerador/denominador
+    
+    if betas in ZZ:
+        betas = [betas]
+    #print(betas)
+
+    l = [n]
+    for i in betas:
+        l.append(i)
+
+    show(PR(l))
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+<p>Calculando o número de permutações com repetições usando 
+a função PR definida no bloco que códigos abaixo, que é uma implementação da Fórmula <xref ref="form-perm" />.</p>
+<sage>
+<input>def PR(lista):
+    numerador = factorial(lista[0])                       # cálculo do numerador
+    denominador = prod(factorial(i) for i in lista[1:])   # cálculo do denominador
+    return numerador/denominador
+PR([10, 3, 4])
+</input>
+<output>
+25200
+</output>
+</sage>
+</technology>
+
+
+
+</subsection>
+
+
+</section>
+
+
+
+
+
+<section  xml:id="sec-reticulado">
+            <title>Reticulado</title>
+            <!-- Index testing, semi-realistic -->
+          
+
+  <!--  <introduction>
+    <p>Falta </p>
+    </introduction>-->
+
+<subsection>
+<title>Reticulado</title>
+<technology>
+
+<p>Digite uma sequência de D's e C's e clique no botão "Update" para obter o respectivo caminho no reticulado.
+</p>
+<figure width="100%">
+    <caption>Um caminho no reticulado.</caption>
+    <interactive xml:id="interactive-reticulado" platform="sage"  aspect="1:1.2" >
+    <slate surface="sage">    
+def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
+    xr = range(lcoord[0], rcoord[0]+1)
+    yr = range(lcoord[1], rcoord[1]+1)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
+            
+    return R
+
+
+
+
+@interact
+def _(lista=input_box('DDCCDCDCC' , width=45,  label="Palavra:"), Pontos=True, auto_update=False):
+
+    
+    lista = str(lista)
+    
+    lista2=[]
+    k=0
+    for i in lista:
+        k += 1
+        if k>6 :
+            if i == "'":
+                break
+            lista2.append(i)
+
+
+
+    def caminho(texto):
+        
+        nc = texto.count('C')
+        nd = texto.count('D')
+        
+        
+        ret = reticulado((-1,-1), (nd+1, nc+1), pontos=Pontos)
+        
+        cam = Graphics()
+        p0 = vector((0,0))
+        for i in texto:
+            if i=='D':
+                cam = cam+arrow(p0, p0+vector((1,0)), color='red', arrowsize=3)
+                p0 = p0+vector((1,0))
+                
+            elif i=='C':
+                cam = cam+arrow(p0, p0+vector((0,1)), color='red', arrowsize=3)
+                p0 = p0+vector((0,1))
+            
+            
+    
+        return (ret+cam, p0)
+   
+    
+    ok = 0
+    for i in lista2:
+        if i not in ['C', 'D']:
+            ok = 0
+            break
+        else:
+            ok = 1
+
+    if ok == 1:
+        cam = caminho(lista2)
+        nPerm = Permutations(lista2).cardinality()
+        print('Existem %s caminhos da origem até o ponto %s.' %(nPerm, cam[1]))
+        show(cam[0], figsize=6.2)
+    else:
+        print('Digite um caminho válido.')
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+</subsection>
+
+<subsection>
+<title>Caminhos de Delannoy</title>
+<technology>
+
+<p>Digite um ponto <m>(n,k)</m> e clique no botão "Update", para obter o número de caminhos de Delannoy até este ponto e um caminho de Delannoy, gerado aleatoriamente.
+</p>
+<figure width="100%">
+    <caption>Um caminho de Delannoy no reticulado.</caption>
+    <interactive xml:id="interactive-reticulado-delannoy" platform="sage"  aspect="1:1.2" >
+    <slate surface="sage">    
+def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
+    xr = range(lcoord[0], rcoord[0]+1)
+    yr = range(lcoord[1], rcoord[1]+1)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
+            
+    return R
+
+
+def delannoy(n,k):
+    
+    M = max(n, k)
+    m = min(n, k)
+    
+    lista=[]
+    temp=[]
+    for i in range(m+1):
+        temp = (n-i)*['D'] + (k-i)*['C'] + i*['S']
+        lista.append(temp)
+
+    soma = 0
+    for l in lista:
+        soma = soma + Permutations(l).cardinality()
+    
+    
+    aleatorio = randint(0, len(lista)-1)
+    caminho = Permutations(lista[aleatorio]).random_element()
+    return (soma, caminho)
+
+
+
+@interact
+def _(pos=input_box((5,4) , width=45,  label="Posição:"), Pontos=True, auto_update=False):
+
+    
+    posicao = delannoy(pos[0],pos[1])
+
+    texto=''
+    for i in posicao[1]:
+        texto = texto+i
+
+
+    def caminho(texto):
+        
+        #nc = texto.count('C')
+        #nd = texto.count('D')
+        
+        
+        
+        
+        cam = Graphics()
+        p0 = vector((0,0))
+        for i in texto:
+            if i=='D':
+                cam = cam+arrow(p0, p0+vector((1,0)), color='red', arrowsize=3)
+                p0 = p0+vector((1,0))
+                
+            elif i=='C':
+                cam = cam+arrow(p0, p0+vector((0,1)), color='red', arrowsize=3)
+                p0 = p0+vector((0,1))
+            elif i=='S':
+                cam = cam+arrow(p0, p0+vector((1,1)), color='red', arrowsize=3)
+                p0 = p0+vector((1,1))
+        
+        
+        ret = reticulado((-1,-1), (p0[0]+1, p0[1]+1), pontos=Pontos)
+    
+        return (ret+cam, p0)
+    #print(posicao[1])
+    
+    ok = 0
+    for i in posicao[1]:
+        if i not in ['C', 'D', 'S']:
+            ok = 0
+            break
+        else:
+            ok = 1
+
+    if ok == 1:
+        cam = caminho(posicao[1])
+        
+        print('Existem %s caminhos de Delannoy até o ponto informado.' %(posicao[0]))
+        show(cam[0], figsize=6.2)
+    else:
+        print('Digite um caminho válido.')
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+
+</subsection>
+
+
+</section>
+
+
+<section xml:id="sec-reflexao">
+    <title>O Princípio da Reflexão</title>
+
+
+<subsection>
+    <title>O Princípio da Reflexão</title>
+<technology>
+
+<p>Digite uma sequência de D's e C's e clique no botão "Update" para obter um reticulado, o respectivo caminho e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta <m>y=x+1</m>, a partir do primeiro ponto que toca nessa reta.
+</p>
+<figure width="100%">
+    <caption>Reticulado, caminho e reflexão.</caption>
+    <interactive xml:id="interactive-reflexao" platform="sage"  aspect="1:1.3" >
+    <slate surface="sage">    
+def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
+    xr = range(lcoord[0], rcoord[0]+1)
+    yr = range(lcoord[1], rcoord[1]+1)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
+            
+    return R
+
+
+
+
+@interact
+def _(lista=input_box('DCCDDCDD' , width=45,  label="Caminho:"), Pontos=True, auto_update=False):
+
+    
+
+    
+    lista = str(lista)
+    
+    lista2=[]
+    k=0
+    for i in lista:
+        k += 1
+        if k>6 :
+            if i == "'":
+                break
+            lista2.append(i)
+    
+    n = lista2.count('D')
+    k = lista2.count('C')
+    ruins = binomial(n+k, n+1)
+    reflex = ((n-k+1)/(n+1))*binomial(n+k, n)
+    total = Permutations(lista2).cardinality()
+
+    
+
+    ok = 0
+    for i in lista2:
+        if i not in ['C', 'D']:
+            ok = 0
+            break
+        else:
+            ok = 1
+            
+    
+
+    def reflexao(texto, Pontos):
+        
+
+
+        nc = texto.count('C')
+        nd = texto.count('D')
+        xFinal = max(nd+1, nc+1)
+        retaxy = plot(x, (-1, xFinal), color='gray', thickness=2.5)
+        retaxy1 = plot(x+1, (-1, xFinal-1), color='red', thickness=2.5)
+        
+
+        ruim = ''
+        diferenca=0
+        lista=[]
+        for l in texto:
+            if l == 'D' and diferenca > -1:
+                diferenca = diferenca + 1
+                lista.append(diferenca)
+                
+            else:
+                diferenca = diferenca - 1
+                lista.append(diferenca)
+            
+            
+        for i in range(len(lista)):
+            if lista[i]>-2:
+                ruim = ruim+texto[i]
+            elif texto[i]=='D':
+                ruim = ruim + 'C'
+            else:
+                ruim = ruim + 'D'
+            
+
+        
+        
+        
+        ret = reticulado((-1,-1), (xFinal, xFinal), pontos=Pontos)
+        
+        cam = Graphics()
+        p0 = vector((0,0))
+        for i in texto:
+            if i=='D':
+                cam = cam+arrow(p0, p0+vector((1,0)), color='#ff6600', arrowsize=3)
+                p0 = p0+vector((1,0))
+                    
+            elif i=='C':
+                cam = cam+arrow(p0, p0+vector((0,1)), color='#ff6600', arrowsize=3)
+                p0 = p0+vector((0,1))
+        
+        
+        cam2 = Graphics()
+        p0 = vector((0,0))
+        for i in range(len(ruim)):
+            if ruim[i]=='D':
+                if lista[i]>-2:
+                    cor='#ff6600'
+                else:
+                    cor='green'
+                cam2 = cam2+arrow(p0, p0+vector((1,0)), color=cor, arrowsize=3)
+                p0 = p0+vector((1,0))
+                
+                
+                
+            elif ruim[i]=='C':
+                if lista[i]>-2:
+                    cor='#ff6600'
+                else:
+                    cor='green'            
+                cam2 = cam2+arrow(p0, p0+vector((0,1)), color=cor, arrowsize=3)
+                p0 = p0+vector((0,1))
+                
+        return (ret+cam+cam2+retaxy+retaxy1)
+    
+    if ok ==1:
+        print('O caminho chega em (%s, %s).' %(n, k))
+        print('Existem %s caminhos no total.'  %total)
+        print('Existem %s caminhos ruins.'  %ruins)
+        print('Existem %s caminhos bons.'  %reflex)
+        cam = reflexao(lista2, Pontos)
+    
+        show(cam, figsize=6.2)
+    else:
+        print('Digite um caminho válido')
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+<p>Calculando o número de caminhos bons de ponto <m>O(0,0)</m> até o ponto <m>A(n,k)</m>.</p>
+<sage>
+<input>def reflex(n,k):
+    if n>=k:
+        return ((n-k+1)/(n+1))*binomial(n+k, n)
+    else:
+        return 0
+reflex(5,3)
+</input>
+<output>
+ 28
+</output>
+</sage>
+</technology>
+
+<technology>
+
+<p>Digite uma posição no reticulado e clique no botão "Update" para gerar um reticulado, um caminho aleatório e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta <m>y=x+1</m>, a partir do primeiro ponto que toca nessa reta.
+</p>
+<figure width="100%">
+    <caption>Reticulado, caminho aleatório e respectiva reflexão.</caption>
+    <interactive xml:id="interactive-reflexao2" platform="sage"  aspect="1:1.3" >
+    <slate surface="sage">    
+def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
+    xr = range(lcoord[0], rcoord[0]+1)
+    yr = range(lcoord[1], rcoord[1]+1)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
+            
+    return R
+
+
+
+@interact
+def _(destino=input_box((5,3) , width=45,  label="Destino:"), Pontos=True, auto_update=False):
+
+    
+    
+    
+<!--
+    total = destino[0]+destino[1]
+    lista3=[]
+    for i in range(total):
+        if randint(0,1) == 0 and destino[1]>lista3.count('C'):
+            lista3.append('C')
+        else:
+            if destino[0]>lista3.count('D'):
+                lista3.append('D')
+            else:
+                lista3.append('C')-->
+
+    nD = destino[0]
+    nC = destino[1]
+    lista3=[]
+    
+    for i in range(nC):
+        lista3.append('C')
+    for i in range(nD):
+        lista3.append('D')
+
+    lista3 = Permutations(lista3).random_element()
+    lista3 = Permutations(lista3).random_element()
+    #print(lista3)
+    n = lista3.count('D')
+    k = lista3.count('C')
+    ruins = binomial(n+k, n+1)
+    reflex = ((n-k+1)/(n+1))*binomial(n+k, n)
+    total = Permutations(lista3).cardinality()
+    
+    print('Existem %s caminhos no total.'  %total)
+    print('Existem %s caminhos ruins.'  %ruins)
+    print('Existem %s caminhos bons.'  %reflex)
+
+
+    lista2=lista3
+
+    def reflexao(texto, Pontos):
+        
+        nc = texto.count('C')
+        nd = texto.count('D')
+        xFinal = max(nd+1, nc+1)
+        retaxy = plot(x, (-1, xFinal), color='gray', thickness=2.5)
+        retaxy1 = plot(x+1, (-1, xFinal-1), color='red', thickness=2.5)
+        
+
+        ruim = ''
+        diferenca=0
+        lista=[]
+        for l in texto:
+            if l == 'D' and diferenca > -1:
+                diferenca = diferenca + 1
+                lista.append(diferenca)
+                
+            else:
+                diferenca = diferenca - 1
+                lista.append(diferenca)
+            
+            
+        for i in range(len(lista)):
+            if lista[i]>-2:
+                ruim = ruim+texto[i]
+            elif texto[i]=='D':
+                ruim = ruim + 'C'
+            else:
+                ruim = ruim + 'D'
+            
+        #print(ruim)
+        bom=''
+        for i in lista3:
+            bom += i
+        if ruim == bom:
+            print('O caminho da figura abaixo é bom.')
+        else:
+            print('O caminho da figura abaixo é ruim.')
+            
+
+        
+        
+        ret = reticulado((-1,-1), (xFinal, xFinal), pontos=Pontos)
+        
+        cam = Graphics()
+        p0 = vector((0,0))
+        for i in texto:
+            if i=='D':
+                cam = cam+arrow(p0, p0+vector((1,0)), color='#ff6600', arrowsize=3)
+                p0 = p0+vector((1,0))
+                    
+            elif i=='C':
+                cam = cam+arrow(p0, p0+vector((0,1)), color='#ff6600', arrowsize=3)
+                p0 = p0+vector((0,1))
+        
+        
+        cam2 = Graphics()
+        p0 = vector((0,0))
+        for i in range(len(ruim)):
+            if ruim[i]=='D':
+                if lista[i]>-2:
+                    cor='#ff6600'
+                else:
+                    cor='green'
+                cam2 = cam2+arrow(p0, p0+vector((1,0)), color=cor, arrowsize=3)
+                p0 = p0+vector((1,0))
+                
+                
+                
+            elif ruim[i]=='C':
+                if lista[i]>-2:
+                    cor='#ff6600'
+                else:
+                    cor='green'            
+                cam2 = cam2+arrow(p0, p0+vector((0,1)), color=cor, arrowsize=3)
+                p0 = p0+vector((0,1))
+                
+        return (ret+cam+cam2+retaxy+retaxy1)
+    
+    
+    cam = reflexao(lista2, Pontos)
+    
+    show(cam, figsize=6.2)
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+</subsection>
+
+</section>
+
+
+<section>
+    <title>Números de Catalan</title>
+
+<subsection>
+    <title>Números de Catalan</title>
+
+
+<technology>
+
+<p>Digite um valor para <m>n</m> e clique no botão "Update" para obter o respectivo número de Catalan:
+<me>C_n = \frac{1}{n+1}\binom{2n}{n}.</me>
+Além disso, o Sage retornará um caminho bom da origem <m>O(0,0)</m> até o ponto <m>A(n,n)</m>.
+</p>
+<figure width="100%">
+    <caption>Reticulado, caminho aleatório e respectiva reflexão.</caption>
+    <interactive xml:id="interactive-catalan2" platform="sage"  aspect="1:1.3" >
+    <slate surface="sage">    
+def reticulado(lcoord, rcoord, pontos=True ,coord_proib=False):
+    xr = range(lcoord[0], rcoord[0]+1)
+    yr = range(lcoord[1], rcoord[1]+1)
+    if pontos == True:
+        
+        tamanho = (rcoord[0]-lcoord[0])
+        R = Graphics()
+        for xi in xr:
+            for yi in yr:
+                if coord_proib == False:
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi), pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho, aspect_ratio=1)
+                elif coord_proib != (xi, yi):
+                    #R = R + circle((xi, yi), 0.05, fill=True, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+                    R = R + point((xi, yi),  pointsize=26, gridlines=[xr,yr], ticks=[1,1], figsize=tamanho)
+    else:
+        R = point((lcoord[0], lcoord[1]), color='white', gridlines=[xr,yr], ticks=[1,1])+point((rcoord[0], rcoord[1]), color='white', aspect_ratio=1)
+            
+    return R
+
+
+
+@interact
+def _(destino=input_box(5 , width=45,  label="Destino:"), Pontos=True, auto_update=False):
+
+    
+    
+    
+    lista = DyckWords(destino).random_element()
+
+    
+
+    nD = 0
+    nC = 0
+    lista3 = []
+    for i in lista:
+        #print(i)
+        if i == 1:
+            nD = nD + 1
+            lista3.append('D')
+        else:
+            nC = nC + 1
+            lista3.append('C')
+
+
+    
+    
+
+    
+    #print(lista3)
+    n = lista3.count('D')
+    k = lista3.count('C')
+    #ruins = binomial(n+k, n+1)
+    reflex = ((n-k+1)/(n+1))*binomial(n+k, n)
+    #total = Permutations(lista3).cardinality()
+    
+    #print('Existem %s caminhos no total.'  %total)
+    #print('Existem %s caminhos ruins.'  %ruins)
+    print('Cn = %s.'  %reflex)
+
+
+    lista2=lista3
+
+    def reflexao(texto, Pontos):
+        
+        nc = texto.count('C')
+        nd = texto.count('D')
+        xFinal = max(nd+1, nc+1)
+        retaxy = plot(x, (-1, xFinal), color='gray', thickness=2.5)
+        #retaxy1 = plot(x+1, (-1, xFinal-1), color='red', thickness=2.5)
+        
+
+        ruim = ''
+        diferenca=0
+        lista=[]
+        for l in texto:
+            if l == 'D' and diferenca > -1:
+                diferenca = diferenca + 1
+                lista.append(diferenca)
+                
+            else:
+                diferenca = diferenca - 1
+                lista.append(diferenca)
+            
+            
+        for i in range(len(lista)):
+            if lista[i]>-2:
+                ruim = ruim+texto[i]
+            elif texto[i]=='D':
+                ruim = ruim + 'C'
+            else:
+                ruim = ruim + 'D'
+            
+        #print(ruim)
+        
+        print('Um caminho gerado aleatoriamente:')
+            
+
+        
+        
+        ret = reticulado((-1,-1), (xFinal, xFinal), pontos=Pontos)
+        
+        cam = Graphics()
+        p0 = vector((0,0))
+        for i in texto:
+            if i=='D':
+                cam = cam+arrow(p0, p0+vector((1,0)), color='#ff6600', arrowsize=3)
+                p0 = p0+vector((1,0))
+                    
+            elif i=='C':
+                cam = cam+arrow(p0, p0+vector((0,1)), color='#ff6600', arrowsize=3)
+                p0 = p0+vector((0,1))
+        
+        
+        cam2 = Graphics()
+        p0 = vector((0,0))
+        for i in range(len(ruim)):
+            if ruim[i]=='D':
+                if lista[i]>-2:
+                    cor='#ff6600'
+                else:
+                    cor='green'
+                cam2 = cam2+arrow(p0, p0+vector((1,0)), color=cor, arrowsize=3)
+                p0 = p0+vector((1,0))
+                
+                
+                
+            elif ruim[i]=='C':
+                if lista[i]>-2:
+                    cor='#ff6600'
+                else:
+                    cor='green'            
+                cam2 = cam2+arrow(p0, p0+vector((0,1)), color=cor, arrowsize=3)
+                p0 = p0+vector((0,1))
+                
+        return (ret+cam+cam2+retaxy)
+    
+    
+    cam = reflexao(lista2, Pontos)
+    
+    show(cam, figsize=6.2)
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+<p>Calculando o número de Catalan.</p>
+<sage>
+<input>catalan_number(7)
+</input>
+<output>
+429
+</output>
+</sage>
+</technology>
+
+
+
+<!-- <technology>
+
+<p>Digite um valor de <m>n</m> para obter o número de Catalan, <m>C_n</m>. Além disso, o Sage retornará um caminho bom da origem <m>O(0,0)</m> até o ponto <m>A(n,n)</m>.
+</p>
+
+</technology>-->
+
+
+</subsection> 
+
+
+</section>
+
+
+<!--
+
+<section  xml:id="sec-catalan">
+            <title>Número de Catalan</title>
+            
+          
+
+    <introduction>
+    <p>Nesta seção é possível usar o SageMath para calcular o número de permutações com diversos tipos de restições. </p>
+
+    <p>Os códigos que estão disponíveis podem ser modificados e executados (apertando o botão "Evaluate (Sage)"). Estes códigos são enviados a um servidor e dentro de poucos segundos o resultado é retornado.</p>
+    </introduction>
+
+
+
+
+
+<subsection>
+<title>Número de Catalan</title>
+
+
+
+
+
+<technology>
+<p>Calculando o número de Catalan <m>C_7</m></p>
+<sage>
+<input>catalan_number(7)
+</input>
+<output>
+429
+</output>
+</sage>
+</technology>
+
+
+
+</subsection>
+
+
+<subsection>
+<title>Palavras de Dyck</title>
+
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-dyck" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(n=input_box(4 , width=45,  label="n:"), opcao = ['Todas as Palavras de Dyck', 'Cardinalidade','Elemento Aleatório']):
+
+    
+    dw = DyckWords(n)
+    
+
+
+    if opcao == 'Todas as Palavras de Dyck':
+        for i in dw:
+            print(i)
+    elif opcao == 'Cardinalidade':
+        print(dw.cardinality())
+    elif opcao == 'Elemento Aleatório':
+        print(dw.random_element())
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+
+
+
+</subsection>
+
+<subsection>
+<title>Caminhos de Dyck</title>
+
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-caminho-dick1" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(n=input_box(4 , width=45,  label="n:"), opcao = ['Todas as Palavras de Dyck', 'Elemento Aleatório']):
+
+    
+    dw = DyckWords(n)
+    
+
+
+    if opcao == 'Todas as Palavras de Dyck':
+        for i in dw:
+            show(i.plot(aspect_ratio=1, figsize=4))
+    elif opcao == 'Elemento Aleatório':
+        show(dw.random_element().plot(aspect_ratio=1, figsize=5))
+
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-caminho-dyck2" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(palavra=input_box([1, 0, 1, 1, 0, 1, 0, 0] , width=45,  label="palavra:")):
+
+    
+    dw = DyckWord(palavra)
+    show(dw.plot(aspect_ratio=1, figsize=5))
+
+
+ 
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+</subsection>
+
+
+
+
+<subsection>
+<title>Árvores Ordenadas</title>
+
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-arvore-ordenada1" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(n=input_box(4 , width=45,  label="n:"), opcao = ['Todas as Palavras de Dyck', 'Elemento Aleatório']):
+
+    
+    dw = DyckWords(n)
+    
+
+
+    if opcao == 'Todas as Palavras de Dyck':
+        for i in dw:
+            show(i.to_ordered_tree().plot(), figsize=4)
+    elif opcao == 'Elemento Aleatório':
+        show(dw.random_element().to_ordered_tree().plot(), figsize=4)
+
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-arvore-ordenada2" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(palavra=input_box([1, 0, 1, 1, 0, 1, 0, 0] , width=45,  label="palavra:")):
+
+    
+    dw = DyckWord(palavra)
+    show(dw.to_ordered_tree().plot(), figsize=4)
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+</subsection>
+
+
+<subsection>
+<title>Triangulação</title>
+
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-triangulacao1" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(n=input_box(4 , width=45,  label="n:"), opcao = ['Todas as Palavras de Dyck', 'Elemento Aleatório']):
+
+    
+    dw = DyckWords(n)
+    
+
+
+    if opcao == 'Todas as Palavras de Dyck':
+        for i in dw:
+            tri = i.to_triangulation_as_graph()
+            tri.show(vertex_size=0, vertex_labels=False, figsize=3)
+    elif opcao == 'Elemento Aleatório':
+        tri = dw.random_element().to_triangulation_as_graph()
+        tri.show(vertex_size=0, vertex_labels=False, figsize=4)
+
+    
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+<technology>
+
+<p>Falta Texto
+</p>
+<figure width="100%">
+    <caption>Permutação.</caption>
+    <interactive xml:id="interactive-triangulacao2" platform="sage"  aspect="1:1" >
+    <slate surface="sage">                    
+@interact
+def _(palavra=input_box([1, 0, 1, 1, 0, 1, 0, 0] , width=45,  label="palavra:")):
+
+    
+    dw = DyckWord(palavra)
+    tri = dw.to_triangulation_as_graph()
+    tri.show(vertex_size=0, vertex_labels=False, figsize=4)
+
+    </slate>
+    </interactive>        
+</figure>
+</technology>
+
+</subsection>
+
+
+</section>-->
+
+
+
+
+
+
+    </article>
+</pretext>
