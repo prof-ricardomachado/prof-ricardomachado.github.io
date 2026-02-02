@@ -15,33 +15,35 @@
 <h4 class="heading">
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.10.1</span><span class="period">.</span>
 </h4>
-<div class="para">
-<dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o <span class="process-math">\(n\)</span>-ésimo dígito que também temos 3 opções. Portanto a resposta é <span class="process-math">\(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</span>
+<div class="para">Note que, no total, exitem <span class="process-math">\(m^n\)</span> funções <span class="process-math">\(f:A\rightarrow B\text{,}\)</span> pois existem <span class="process-math">\(m\)</span> maneiras de escolher a imagem de cada um dos <span class="process-math">\(n\)</span> elementos de <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para">Sejam <span class="process-math">\(y_1, y_2, \ldots, y_m\)</span> os elementos do conjunto <span class="process-math">\(B\text{.}\)</span> Defina <span class="process-math">\(F_j\)</span> o conjunto das funções <span class="process-math">\(f_{j,l}:A\rightarrow B\text{,}\)</span> tais que <span class="process-math">\(y_j\)</span> não pertence a imagem de <span class="process-math">\(f_{j,l}\text{.}\)</span> Logo, <span class="process-math">\(j\in \{1, 2, \ldots, m\}\)</span> e <span class="process-math">\(l\in \{1, 2, \ldots, (m-1)^n\}\text{,}\)</span> ou seja, o total de funções deste tipo é <span class="process-math">\((m-1)^n\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn> Agora precisamos subtrair de <span class="process-math">\(3^n\)</span> a quantidade de números de <span class="process-math">\(n\)</span> dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina <span class="process-math">\(A_1\)</span> como o subconjunto dos números de <span class="process-math">\(n\)</span> dígitos formados pelos dígitos <span class="process-math">\(1, 2\)</span> e <span class="process-math">\(3\)</span> tal que o dígito <span class="process-math">\(1\)</span> não aparece. De maneira análoga defina os subconjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\text{.}\)</span> Desta forma, queremos calcular</div>
+<div class="para">As funções que <dfn class="terminology">não</dfn> são sobrejetivas são as que pertencem a</div>
 <div class="displaymath process-math">
 \begin{equation*}
-3^n - \#(A_1\cup A_2 \cup A_3)\text{.}
+F_1\cup F_2\cup\cdots\cup F_m\text{.}
 \end{equation*}
 </div>
-<div class="para">Pelo Princípio da Inclusão-Exclusão, sabemos que</div>
+<div class="para">Então, o número de funções sobrejetoras é dado por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos <span class="process-math">\(F_j\text{,}\)</span> a cardinalidade das interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos, com <span class="process-math">\(2\leq p \leq m\)</span> e a quantidade de interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos:</div>
+<ul class="disc">
+<li><div class="para">Para o caso de apenas um conjunto, já sabemos que <span class="process-math">\(\#F_j=(m-1)^n\)</span> e no total existem <span class="process-math">\(m\)</span> conjuntos;</div></li>
+<li><div class="para">Para o caso das interseções de dois conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\)</span> e no total existem <span class="process-math">\(C_m^2\)</span> dessas interseções;</div></li>
+<li><div class="para">Para o caso das interseções de <span class="process-math">\(p\)</span> conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\)</span> e no total existem <span class="process-math">\(C_m^p\)</span> dessas interseções.</div></li>
+</ul>
+<div class="para">Aplicando o Princípio da Inclusão-Exclusão, a resposta é</div>
 <div class="displaymath process-math">
 \begin{align*}
-\#(A_1\cup A_2\cup A_3) = \amp ~\#A_1+\#A_2+\#A_3 \\
-\amp ~ -\#(A_1\cap A_2)-\#(A_1\cap A_3)-\#(A_2\cap A_3) \\
-\amp ~ +\#(A_1\cap A_2\cap A_3). 
+m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
+=\amp~m^n - C_m^1(m-1)^n+C_m^2(m-2)^n-\cdots+(-1)^mC_m^m(m-m)^n\\
+=\amp~\sum_{k=0}^m (-1)^kC_m^k(m-k)^n.
 \end{align*}
-</div>
-<div class="para">
-<span class="process-math">\(A_1\)</span> possui <span class="process-math">\(2^n\)</span> elementos, pois o dígito <span class="process-math">\(1\)</span> não pode figurar no número de <span class="process-math">\(n\)</span> dígitos, sobrando apenas os dígitos <span class="process-math">\(2\)</span> e <span class="process-math">\(3\text{.}\)</span> Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\)</span> possuem a mesma quantidade de elementos.</div>
-</div> <div class="para">
-<span class="process-math">\(A_1\cap A_2\)</span> possui apenas <span class="process-math">\(1\)</span> elemento, pois os dígitos <span class="process-math">\(1\)</span> e <span class="process-math">\(2\)</span> não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que <span class="process-math">\(A_1\cap A_2\)</span> e <span class="process-math">\(A_2\cap A_3\)</span> também possuem apenas um elemento.</div> <div class="para logical">
-<div class="para">Finalmente, <span class="process-math">\(A_1\cap A_2\cap A_3\)</span>  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.
-\end{equation*}
 </div>
 </div>
 </div>

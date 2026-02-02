@@ -15,8 +15,17 @@
 <h4 class="heading">
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.12.1</span><span class="period">.</span>
 </h4>
-<div class="para">Considere que as exposições do museu estão numeradas de <span class="process-math">\(1\)</span> até <span class="process-math">\(n\text{.}\)</span> Podemos representar cada maneira de visitar o museu com uma <span class="process-math">\(n\)</span>-úpla. Usando <span class="process-math">\(A, M\)</span> e <span class="process-math">\(N\)</span> como entradas da <span class="process-math">\(n\)</span>-úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a <span class="process-math">\(i\)</span>-ésima exposição.</div> <div class="para">Podemos formar um total de <span class="process-math">\(3^n\)</span> <span class="process-math">\(n\)</span>-úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo <span class="process-math">\(A\)</span> ou que não possuem o símbolo <span class="process-math">\(M\text{.}\)</span> Note que podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(M\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo A) e também podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(A\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo M). E pode ser formada somente 1 <span class="process-math">\(n\)</span>-úpla com apenas o símbolo <span class="process-math">\(N\text{.}\)</span>
-</div> <div class="para">Portanto, o número de maneiras de visitar o museu é <span class="process-math">\(3^n - 2^{n+1} + 1\text{.}\)</span>
+<div class="para">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <span class="process-math">\(C_5^1\)</span> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <span class="process-math">\((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\)</span> Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <span class="process-math">\(C_5^1\times 5\times 2!\times 8!\)</span> formas distintas de organizarmos esses carros.</div> <div class="para">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</div> <div class="para">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <span class="process-math">\(C_5^2\)</span> formas de escolhermos essas 2 equipes e podemos colocá-las de <span class="process-math">\(5\times4\)</span> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <span class="process-math">\(2!\times2\)</span> e das demais <span class="process-math">\(6\)</span> equipes <span class="process-math">\(6!\text{.}\)</span>
+</div> <div class="para">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</div>
+<div class="displaymath process-math">
+\begin{align*}
+10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
+\amp   ~~~~~~ + C_5^2\times 5\times 4\times 2^2\times 6!\\
+\amp   ~~~~~~ -C_5^3\times 5\times 4\times 3\times2^3\times 4!  \\
+\amp   ~~~~~~ +C_5^4\times 5\times 4\times 3\times 2\times 2^4\times 2!   \\
+\amp   ~~~~~~ - 5!\times 2^5\\
+\amp ~ = 2088960. 
+\end{align*}
 </div>
 </div>
 <span class="incontext"><a href="sec_introducao.html#solution-19" class="internal">em contexto</a></span>
