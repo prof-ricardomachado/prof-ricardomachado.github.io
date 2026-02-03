@@ -13,38 +13,35 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.3.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">De acordo com a <a href="" class="xref" data-knowl="./knowl/apbp.html" title="Proposição 1.31">1.31</a>, a resposta do item a) é o valor de <span class="process-math">\(a_1\)</span> e o do item b) é o valor de <span class="process-math">\(b_1\text{.}\)</span> Note que o número total de anagramas da palavra PRINCIPIO é <span class="process-math">\(PR_{9}^{3,2}=30240\text{,}\)</span> que o valor de <span class="process-math">\(S_0\text{.}\)</span> Para calcular os valores de <span class="process-math">\(S_1, S_2, S_3\)</span> e  <span class="process-math">\(S_4\text{,}\)</span> precisamos dos seguintes valores:</div>
-<ul class="disc">
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_1 = 6720\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_2 = 3360\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_3 = 10080\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_1\cap A_2 = 840\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_1\cap A_3 = 2520\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_2\cap A_3 = 1260\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \#A_1\cap A_2\cap A_3 = 360\)</span></div></li>
-</ul>
-<div class="para">Portanto,</div>
-<ul class="disc">
-<li><div class="para"><span class="process-math">\(\displaystyle S_0 = 30240\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle S_1 = 20160\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle S_2 = 4620\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle S_3 = 360\)</span></div></li>
-</ul>
-<div class="para">Aplicando a <a href="" class="xref" data-knowl="./knowl/apbp.html" title="Proposição 1.31">1.31</a>, obtemos as respostas dos itens a) e b)</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/apbp.html ./knowl/apbp.html">
+<div class="para">Sejam</div>
+<div class="displaymath process-math">
 \begin{align*}
-a_1 =\amp (-1)^0C_{1,0}\cdot 20160 + (-1)^1C_{2,1}\cdot 4620 + (-1)^2C_{3,2}\cdot360\\
-=\amp 12000
+A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; \\
+A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; \\
+A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}. 
 \end{align*}
 </div>
-<div class="para">e</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/apbp.html ./knowl/apbp.html">
+<div class="para">Queremos calcular <span class="process-math">\(\#(A_1\cup A_2\cup A_3)\text{.}\)</span> Note que <span class="process-math">\(\#A_1=\#A_3=PR_8^3\text{,}\)</span> pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para <span class="process-math">\(\#A_1\text{,}\)</span> e com a letra T na terceira posição, para <span class="process-math">\(\#A_3\text{.}\)</span> Note também que <span class="process-math">\(\#A_2 = PR_8^2\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Agora, vamos calcular as cardinalidades das interseções <span class="process-math">\(A_i\cap A_j\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq 3\text{.}\)</span>
+</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(A_1\cap A_2= PR_7^2\text{,}\)</span> pois P e E ficam fixados;</div></li>
+<li><div class="para">
+<span class="process-math">\(A_1\cap A_3= PR_7^3\text{,}\)</span> pois P e T ficam fixados;</div></li>
+<li><div class="para">
+<span class="process-math">\(A_2\cap A_3= PR_7^2\text{,}\)</span> pois E e T ficam fixados.</div></li>
+</ul>
+<div class="para">Finalmente, <span class="process-math">\(\#(A_1\cap A_2\cap A_3) = PR_6^2\text{.}\)</span> Aplicando o Princípio da Inclusão-Exclusão:</div>
+<div class="displaymath process-math">
 \begin{align*}
-b_1 =\amp (-1)^0C_{0,0}\cdot 20160 + (-1)^1C_{1,1}\cdot4620 + (-1)^2C_{2,2}\cdot360\\
-=\amp 15900
+\#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2\\
+=\amp~28080.
 \end{align*}
 </div>
 </div>

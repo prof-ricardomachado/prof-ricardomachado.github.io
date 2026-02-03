@@ -9,24 +9,65 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.23.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.21.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</div>
+<div class="para">Considere o conjunto <span class="process-math">\(\Omega\)</span> das permutações <span class="process-math">\((j_1, j_2, \ldots, j_{20})\)</span> do conjunto <span class="process-math">\(\{1,2,\ldots, 20\}\)</span> e seja <span class="process-math">\(A_r\)</span> o conjunto destas permutações, na qual, o par <span class="process-math">\((j_r, j_{r+1})\)</span> é uma sucessão, <span class="process-math">\(r=1,2,\ldots, 19\text{.}\)</span> O número de fotos possíveis é dado por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{20} = n! - \#(A_1\cup A_2 \cup \cdots \cup A_{19})\text{.}
+\end{equation*}
+</div>
+<div class="para">Vamos precisar do PIE para calcular <span class="process-math">\(\#(A_1\cup A_2 \cup \cdots \cup A_{19})\text{.}\)</span>
+</div>
+</div> <ul class="disc">
+<li><div class="para">Observe que <span class="process-math">\(\#A_r = (20-1)!\text{,}\)</span> para qualquer <span class="process-math">\(r = 1, 2, \ldots, 19\text{.}\)</span> Pois, olhamos para o par <span class="process-math">\((j_r, j_{r+1})\)</span> como um elemento e ficamos com um conjunto de <span class="process-math">\(19\)</span> elementos para contar o número de permutações.</div></li>
+<li>
+<div class="para">O caso de <span class="process-math">\(\#(A_r\cap A_s)\text{,}\)</span> vamos separar em duas situações.</div>
+<ol class="decimal">
+<li><div class="para">(<span class="process-math">\(r\)</span> e <span class="process-math">\(l\)</span> não são consecutivos) Neste caso, Olhamos para o par <span class="process-math">\((j_r, j_{r+1})\)</span> como apenas um elemento e o par <span class="process-math">\((j_s, j_{s+1})\)</span> como um elemento também, ficamos com <span class="process-math">\(20-2\)</span> elementos para contar o número de permutações.</div></li>
+<li><div class="para">(<span class="process-math">\(r\)</span> e <span class="process-math">\(s\)</span> são consecutivos) Neste caso olhamos para a tripla <span class="process-math">\((j_r, j_{r+1}, j_{r+2})\)</span> como apenas um elemento e também ficamos com <span class="process-math">\(20-2\)</span> elementos para contar o número de permutações.</div></li>
+</ol>
+<div class="para">Nos dois casos o número de permutações é <span class="process-math">\((20-2)!=18!\text{.}\)</span> E o número de interseções 2 a 2 é <span class="process-math">\(\binom{19}{2}\)</span>
+</div>
+</li>
+<li>
+<div class="para">O caso de <span class="process-math">\(\#(A_r\cap A_s \cap A_p)\text{,}\)</span> vamos separar em três situações.</div>
+<ol class="decimal">
+<li><div class="para">(<span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(s\)</span> e <span class="process-math">\(p\)</span> não são consecutivos) Neste caso, Olhamos para os pares <span class="process-math">\((j_i, j_{i+1})\)</span> como apenas um elemento, ficamos com <span class="process-math">\(20-3\)</span> elementos para contar o número de permutações.</div></li>
+<li><div class="para">(<span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(s\)</span> e <span class="process-math">\(p\)</span> apenas dois são consecutivos) Neste caso olhamos para a tripla <span class="process-math">\((j_r, j_{r+1}, j_{r+2})\)</span> como apenas um elemento e um par <span class="process-math">\((j_i, j_{i+1})\)</span> como um elementos. Também ficamos com <span class="process-math">\(20-3\)</span> elementos para contar o número de permutações.</div></li>
+<li><div class="para">(<span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(s\)</span> e <span class="process-math">\(p\)</span> os três são consecutivos) Neste caso olhamos para a tripla <span class="process-math">\((j_r, j_{r+1}, j_{r+2},j_{r+3})\)</span> como apenas um elemento. Também ficamos com <span class="process-math">\(20-3\)</span> elementos para contar o número de permutações.</div></li>
+</ol>
+<div class="para">Nos três casos o número de permutações é <span class="process-math">\((20-3)!=17!\text{.}\)</span> E o número de interseções 2 a 2 é <span class="process-math">\(\binom{19}{3}\)</span>
+</div>
+</li>
+</ul> <div class="para logical">
+<div class="para">Seguindo com essa ideia, obtemos</div>
 <div class="displaymath process-math">
 \begin{align*}
-D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) \\
-\amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} \\
-\amp =  ~5\cdot 4 \cdot 3 -5\cdot 4 + 5 - 1 \\
-\amp = ~60-20+5-1 \\
-\amp =  ~44 
+S_{20} =~\amp 20! - 19\cdot19! + \binom{19}{2}18! - \binom{19}{3}17! + \binom{19}{4}16! \cdots + \binom{19}{19}1!\\
+=\amp 20! - 19\cdot 19! + 18\cdot \frac{19!}{2!} -17\cdot \frac{19!}{3!}  \cdots\\
+=\amp 19!\left(20 - \frac{19}{1!} + \frac{18}{2!} - \cdots - \frac{1}{19!} \right)\\
+=\amp  939765362752547227.
 \end{align*}
 </div>
-</div>
+</div> <div class="para">Calcule o número de permutações sem sucessores.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">s=0
+n=20
+for k in range(n):
+    s = s + (-1)^k*binomial(n-1,k)*factorial(n-k) 
+s
+</script></pre>
 </div>
 <span class="incontext"><a href="sec_introducao.html#solution-5" class="internal">em contexto</a></span>
 </body>

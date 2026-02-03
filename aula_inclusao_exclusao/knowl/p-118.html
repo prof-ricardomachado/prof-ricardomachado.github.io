@@ -13,13 +13,29 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Parágrafo</span></h5>
 <div class="para logical">
-<div class="para">(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de <span class="process-math">\(n\)</span> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:</div>
-<ol class="lower-alpha">
-<li><div class="para">Ninguém pode tirar o próprio nome;</div></li>
-<li><div class="para">Não podem existir duas pessoas <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> tais que <span class="process-math">\(A\)</span> tirou <span class="process-math">\(B\)</span> e <span class="process-math">\(B\)</span> tirou <span class="process-math">\(A\text{.}\)</span>
-</div></li>
-</ol>
-<div class="para">De quantas maneiras poderá ser realizado o sorteio?</div>
+<div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
+<li><div class="para">
+<span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
+<li><div class="para">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+</ul>
+<div class="para"> Utilizando essas informações na Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 1.6">(1.6)</a>, obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html">
+\begin{equation*}
+D_8 - \#\left( \bigcup_{1\leq i \lt j \leq 8} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html">
+\begin{align*}
+\quad\quad=\amp~ D_8 - C_8^2D_{8-2} +C_8^2C_{8-2}^2D_{8-4} - \cdots\\
+\quad\quad=\amp~ D_8 - C_8^2D_{6} +C_8^2C_{6}^2D_{4} - C_8^2C_{6}^2C_{4}^2D_{2}+C_8^2C_{6}^2C_{4}^2C_{2}^2D_{0}\\
+\quad\quad=\amp~D_8 - 28\cdot D_6 + 420\cdot D_4 - 2520\cdot D_2 + 2520\cdot D_0\\
+\quad\quad=\amp~14833 - 28\cdot 265 + 420\cdot 9 - 2520\cdot 1 + 2520\cdot 1\\
+\quad\quad=\amp~11193.
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="sec_introducao.html#p-118" class="internal">em contexto</a></span>
 </body>

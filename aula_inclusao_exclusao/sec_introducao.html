@@ -222,7 +222,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </ul>
 </li>
 <li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">2</span> <span class="title">Referências Bibliográficas</span></a></div></li>
-<li><div class="toc-item"><a href="subsection-5.html" class="internal"><span class="codenumber">2</span> <span class="title">QR CODE</span></a></div></li>
+<li><div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">3</span> <span class="title">QR CODE</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_introducao"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">1</span> <span class="title">O Princípio da Inclusão-Exclusão</span>
@@ -455,11 +455,68 @@ P(A\cup B) = P(A)+P(B) - P(A\cap B)\text{.}
 \end{equation*}
 </div></article><article class="example example-like" id="example-4"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.16</span><span class="period">.</span><span class="space"> </span><span class="title">(OBM).</span>
-</h4>Um quadrado de lado 3 é dividido em 9 quadrados de lado unitário, formando um quadriculado. Cada quadrado unitário é pintado de azul ou vermelho. Cada cor tem probabilidade 1/2 de ser escolhida e a cor de cada quadrado é escolhida independentemente das demais. Qual a probabilidade de obtermos, após colorirmos todos os quadrados unitários, um quadrado de lado 2 pintado inteiramente de uma mesma cor?</article><article class="example example-like" id="example-5"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.17</span><span class="period">.</span><span class="space"> </span><span class="title">(POTI Nível 3).</span>
-</h4>No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham um novo vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+</h4>Um quadrado de lado 3 é dividido em 9 quadrados de lado unitário, formando um quadriculado. Cada quadrado unitário é pintado de azul ou vermelho. Cada cor tem probabilidade 1/2 de ser escolhida e a cor de cada quadrado é escolhida independentemente das demais. Qual a probabilidade de obtermos, após colorirmos todos os quadrados unitários, um quadrado de lado 2 pintado inteiramente de uma mesma cor?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
 <div class="para logical" id="p-26">
+<div class="para">Vamos utilizar a fórmula</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(A_1\cup A_2 \cup A_3 \cup A_4) = 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\small= \sum P(A_i) -\sum P(A_i\cap A_j)+\sum P(A_i\cap A_j\cap A_k) - P(A_1\cap A_2\cap A_3\cap A_4)
+\end{equation*}
+</div>
+<div class="para">Para o primeiro somatório, temos os 4 casos abaixo. A primeira cor do quadrado pode ser qualquer uma. Depois as outras 3 cores precisam ser iguais a do primeiro quadrado, a probabilidade disto acontecer é <span class="process-math">\(\frac{1}{2^3}\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-27">Como são 4 termos na soma e todos são iguais, o resultado do primeiro somatório é <span class="process-math">\(4\cdot \frac{1}{2^3}=\frac{1}{2}\text{.}\)</span> <figure class="figure figure-like" id="inclusao-exclusao-quadrado"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/9x9.svg" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.17<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <div class="para logical" id="p-28">
+<div class="para">Nas interseções 2 a 2, temos duas situações diferentes, como pode ser visto na figura abaixo. Somando tudo, ficamos com</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4\cdot \frac{1}{2^3}\cdot \frac{1}{2^2} + 2\cdot \frac{1}{2^3}\cdot \frac{1}{2^3} = \frac{2^2}{2^5} + \frac{1}{2^5} = \frac{5}{2^5}
+\end{equation*}
+</div>
+<div class="para"><figure class="figure figure-like" id="inclusao-exclusao-quadrado"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/9x9_2.svg" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.18<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div> <div class="para logical" id="p-29">
+<div class="para">Nas interseções 3 a 3, temos apenas uma situação, como pode ser visto na figura abaixo. Somando tudo, ficamos com</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4\cdot \frac{1}{2^7} = \frac{1}{2^5}
+\end{equation*}
+</div>
+<div class="para"><figure class="figure figure-like" id="inclusao-exclusao-quadrado"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/9x9_3.svg" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div> <div class="para logical" id="p-30">
+<div class="para">Na interseção 4 a 4, temos apenas uma situação, como pode ser visto na figura abaixo. Ficamos com</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2^8}
+\end{equation*}
+</div>
+<div class="para"><figure class="figure figure-like" id="inclusao-exclusao-quadrado"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/9x9_4.svg" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div> <div class="para logical" id="p-31">
+<div class="para">Aplicando a fórmula:</div>
+<div class="displaymath process-math" id="md-8">
+\begin{align*}
+P(A_1\cup A_2 \cup A_3 \cup A_4) =~\amp\frac{1}{2} - \frac{5}{2^5} + \frac{1}{2^5} - \frac{1}{2^8}\\
+=~\amp\frac{1}{2} - \frac{2^2}{2^5} - \frac{1}{2^8}\\
+=~\amp\frac{2^7}{2^8} -\frac{2^5}{2^8} - \frac{1}{2^8} \\
+=~\amp \frac{95}{256}.
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="example example-like" id="example-5"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.21</span><span class="period">.</span><span class="space"> </span><span class="title">(POTI Nível 3).</span>
+</h4>No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham um novo vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
+<div class="para logical" id="p-32">
 <div class="para">Considere o conjunto <span class="process-math">\(\Omega\)</span> das permutações <span class="process-math">\((j_1, j_2, \ldots, j_{20})\)</span> do conjunto <span class="process-math">\(\{1,2,\ldots, 20\}\)</span> e seja <span class="process-math">\(A_r\)</span> o conjunto destas permutações, na qual, o par <span class="process-math">\((j_r, j_{r+1})\)</span> é uma sucessão, <span class="process-math">\(r=1,2,\ldots, 19\text{.}\)</span> O número de fotos possíveis é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -471,27 +528,27 @@ S_{20} = n! - \#(A_1\cup A_2 \cup \cdots \cup A_{19})\text{.}
 </div> <ul class="disc">
 <li id="li-3"><div class="para" id="p-derived-li-3">Observe que <span class="process-math">\(\#A_r = (20-1)!\text{,}\)</span> para qualquer <span class="process-math">\(r = 1, 2, \ldots, 19\text{.}\)</span> Pois, olhamos para o par <span class="process-math">\((j_r, j_{r+1})\)</span> como um elemento e ficamos com um conjunto de <span class="process-math">\(19\)</span> elementos para contar o número de permutações.</div></li>
 <li id="li-4">
-<div class="para" id="p-27">O caso de <span class="process-math">\(\#(A_r\cap A_s)\text{,}\)</span> vamos separar em duas situações.</div>
+<div class="para" id="p-33">O caso de <span class="process-math">\(\#(A_r\cap A_s)\text{,}\)</span> vamos separar em duas situações.</div>
 <ol class="decimal">
 <li id="li-5"><div class="para" id="p-derived-li-5">(<span class="process-math">\(r\)</span> e <span class="process-math">\(l\)</span> não são consecutivos) Neste caso, Olhamos para o par <span class="process-math">\((j_r, j_{r+1})\)</span> como apenas um elemento e o par <span class="process-math">\((j_s, j_{s+1})\)</span> como um elemento também, ficamos com <span class="process-math">\(20-2\)</span> elementos para contar o número de permutações.</div></li>
 <li id="li-6"><div class="para" id="p-derived-li-6">(<span class="process-math">\(r\)</span> e <span class="process-math">\(s\)</span> são consecutivos) Neste caso olhamos para a tripla <span class="process-math">\((j_r, j_{r+1}, j_{r+2})\)</span> como apenas um elemento e também ficamos com <span class="process-math">\(20-2\)</span> elementos para contar o número de permutações.</div></li>
 </ol>
-<div class="para" id="p-28">Nos dois casos o número de permutações é <span class="process-math">\((20-2)!=18!\text{.}\)</span> E o número de interseções 2 a 2 é <span class="process-math">\(\binom{19}{2}\)</span>
+<div class="para" id="p-34">Nos dois casos o número de permutações é <span class="process-math">\((20-2)!=18!\text{.}\)</span> E o número de interseções 2 a 2 é <span class="process-math">\(\binom{19}{2}\)</span>
 </div>
 </li>
 <li id="li-7">
-<div class="para" id="p-29">O caso de <span class="process-math">\(\#(A_r\cap A_s \cap A_p)\text{,}\)</span> vamos separar em três situações.</div>
+<div class="para" id="p-35">O caso de <span class="process-math">\(\#(A_r\cap A_s \cap A_p)\text{,}\)</span> vamos separar em três situações.</div>
 <ol class="decimal">
 <li id="li-8"><div class="para" id="p-derived-li-8">(<span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(s\)</span> e <span class="process-math">\(p\)</span> não são consecutivos) Neste caso, Olhamos para os pares <span class="process-math">\((j_i, j_{i+1})\)</span> como apenas um elemento, ficamos com <span class="process-math">\(20-3\)</span> elementos para contar o número de permutações.</div></li>
 <li id="li-9"><div class="para" id="p-derived-li-9">(<span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(s\)</span> e <span class="process-math">\(p\)</span> apenas dois são consecutivos) Neste caso olhamos para a tripla <span class="process-math">\((j_r, j_{r+1}, j_{r+2})\)</span> como apenas um elemento e um par <span class="process-math">\((j_i, j_{i+1})\)</span> como um elementos. Também ficamos com <span class="process-math">\(20-3\)</span> elementos para contar o número de permutações.</div></li>
 <li id="li-10"><div class="para" id="p-derived-li-10">(<span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(s\)</span> e <span class="process-math">\(p\)</span> os três são consecutivos) Neste caso olhamos para a tripla <span class="process-math">\((j_r, j_{r+1}, j_{r+2},j_{r+3})\)</span> como apenas um elemento. Também ficamos com <span class="process-math">\(20-3\)</span> elementos para contar o número de permutações.</div></li>
 </ol>
-<div class="para" id="p-30">Nos três casos o número de permutações é <span class="process-math">\((20-3)!=17!\text{.}\)</span> E o número de interseções 2 a 2 é <span class="process-math">\(\binom{19}{3}\)</span>
+<div class="para" id="p-36">Nos três casos o número de permutações é <span class="process-math">\((20-3)!=17!\text{.}\)</span> E o número de interseções 2 a 2 é <span class="process-math">\(\binom{19}{3}\)</span>
 </div>
 </li>
-</ul> <div class="para logical" id="p-31">
+</ul> <div class="para logical" id="p-37">
 <div class="para">Seguindo com essa ideia, obtemos</div>
-<div class="displaymath process-math" id="md-8">
+<div class="displaymath process-math" id="md-9">
 \begin{align*}
 S_{20} =~\amp 20! - 19\cdot19! + \binom{19}{2}18! - \binom{19}{3}17! + \binom{19}{4}16! \cdots + \binom{19}{19}1!\\
 =\amp 20! - 19\cdot 19! + 18\cdot \frac{19!}{2!} -17\cdot \frac{19!}{3!}  \cdots\\
@@ -499,7 +556,7 @@ S_{20} =~\amp 20! - 19\cdot19! + \binom{19}{2}18! - \binom{19}{3}17! + \binom{19
 =\amp  939765362752547227.
 \end{align*}
 </div>
-</div> <div class="para" id="p-32">Calcule o número de permutações sem sucessores.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-1"><script type="text/x-sage">s=0
+</div> <div class="para" id="p-38">Calcule o número de permutações sem sucessores.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-1"><script type="text/x-sage">s=0
 n=20
 for k in range(n):
     s = s + (-1)^k*binomial(n-1,k)*factorial(n-k) 
@@ -510,9 +567,9 @@ s
 <span class="type">Subseção</span> <span class="codenumber">1.3</span> <span class="title">Aplicação: Permutações Caóticas</span>
 </h3>
 <article class="definition definition-like" id="def-permutacao-caotica"><h4 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.18</span><span class="period">.</span>
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-33">Uma permutação de uma lista de <span class="process-math">\(n\)</span> elementos é chamada de <em class="emphasis">permutação caótica</em>, quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de <span class="process-math">\(a_1,a_2, ...,a_n\)</span>  é chamada de caótica quando nenhum dos <span class="process-math">\(a'_{i}s\)</span> se encontra na <span class="process-math">\(i\)</span>-ésima posição.</div> <div class="para logical" id="p-34">
+<div class="para" id="p-39">Uma permutação de uma lista de <span class="process-math">\(n\)</span> elementos é chamada de <em class="emphasis">permutação caótica</em>, quando nenhum dos elementos da permutação está na posição original, ou seja, uma permutação de <span class="process-math">\(a_1,a_2, ...,a_n\)</span>  é chamada de caótica quando nenhum dos <span class="process-math">\(a'_{i}s\)</span> se encontra na <span class="process-math">\(i\)</span>-ésima posição.</div> <div class="para logical" id="p-40">
 <div class="para">Notação:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -520,29 +577,29 @@ D_n \text{ ou } D(n)
 \end{equation*}
 </div>
 </div></article><article class="technology computation-like" id="technology-3"><h4 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.19</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.23</span><span class="period">.</span>
 </h4>As permutações caóticas dos elementos <span class="process-math">\(1, 2, 3, 4\)</span> podem ser geradas no Sage, com o seguinte comando: <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">Derangements(4).list()
 </script></pre></article><article class="technology computation-like" id="tec-caotica-r-sage"><h4 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.20</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.24</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-35">Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">D = Derangements(['A', 'M', 'O', 'R'])
+<div class="para" id="p-41">Todos os anagramas de AMOR, de forma que nenhuma letra fique na posição original. Troque as informações da lista para obter o número de permutações caóticas e as permutações caóticas da sua lista.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">D = Derangements(['A', 'M', 'O', 'R'])
 print('número de permutações caóticas:', len(D))
 print('todas as permutações caóticas:')
 D.list()
 </script></pre></article><article class="theorem theorem-like" id="teo-pcaotica1"><h4 class="heading">
-<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.21</span><span class="period">.</span>
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.25</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-36">
+<div class="para logical" id="p-42">
 <div class="para">A quantidade de permutações caóticas de uma lista com <span class="process-math">\(n\)</span> objetos distintos, pode ser calculada da seguinte maneira:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 D_n=n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!}.
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><div class="para logical" id="p-37">
+</div></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><div class="para logical" id="p-43">
 <div class="para">Considere todas as permutações dos elementos <span class="process-math">\(a_1 , a_2 , \ldots , a_n\text{.}\)</span> Indicando por <span class="process-math">\(A_i\)</span> todas as permutações formadas pelos elementos <span class="process-math">\(a_1 , a_2 , \ldots , a_n\)</span> com <span class="process-math">\(a_i\)</span> no <span class="process-math">\(i\)</span>-ésimo lugar, calcularemos <span class="process-math">\(D_n\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="md-9">
+<div class="displaymath process-math" id="md-10">
 \begin{align*}
 D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)\\
 = \amp ~  n! - \sum_{i=1}^{n}\#A_i + \sum_{0\lt i\lt j\leq n}\#(A_i\cap A_j)+\cdots \\
@@ -550,7 +607,7 @@ D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)\\
 \end{align*}
 </div>
 <div class="para">Visto que existem <span class="process-math">\(n\)</span> termos no primeiro somatório, <span class="process-math">\(C_n^2\)</span> termos no segundo, <span class="process-math">\(C_n^3\)</span> termos no terceiro,<span class="process-math">\(\cdots\text{,}\)</span> <span class="process-math">\(C_n^n=1\)</span> no último e</div>
-<div class="displaymath process-math" id="md-10">
+<div class="displaymath process-math" id="md-11">
 \begin{align*}
 \#(A_i) \amp =  (n-1)! \\
 \#(A_i\cap A_j) \amp =  (n-2)! \\
@@ -560,7 +617,7 @@ D_n = \amp~n! - \#(A_1\cup A_2\cup \cdots \cup A_n)\\
 \end{align*}
 </div>
 <div class="para">temos</div>
-<div class="displaymath process-math" id="md-11">
+<div class="displaymath process-math" id="md-12">
 \begin{align*}
 D_n \amp = ~ n!-n\cdot(n-1)!+C_n^2\cdot(n-2)!-C_n^3\cdot(n-3)!+\cdots +(-1)^n\cdot 1 \\
 \amp = ~ n!-\dfrac{n!}{1!}+\dfrac{n!}{2!}-\dfrac{n!}{3!}+\cdots
@@ -568,7 +625,7 @@ D_n \amp = ~ n!-n\cdot(n-1)!+C_n^2\cdot(n-2)!-C_n^3\cdot(n-3)!+\cdots +(-1)^n\cd
 \end{align*}
 </div>
 <div class="para">evidenciando <span class="process-math">\(n!\text{,}\)</span> obtém-se:</div>
-<div class="displaymath process-math" id="md-12">
+<div class="displaymath process-math" id="md-13">
 \begin{align*}
 D_n \amp = ~ n!\cdot\left(1-\dfrac{1}{1!}+\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+(-1)^n\cdot \dfrac{1}{n!}\right) \\
 \amp = ~ n!\cdot\sum_{i=0}^{n}\dfrac{(-1)^i}{i!} 
@@ -576,17 +633,17 @@ D_n \amp = ~ n!\cdot\left(1-\dfrac{1}{1!}+\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+(-1
 </div>
 </div></article></div>
 <article class="technology computation-like" id="tec-pcaotica1"><h4 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.22</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.26</span><span class="period">.</span>
 </h4>Calculando o número de permutações caóticas no Sage: <pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">def D(n):
     P(i) = factorial(i)
     return P(n)*sum(((-1)^x)/P(x), x, 0, n)
 D(8)
 </script></pre></article><article class="example example-like" id="example-6"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.23</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.27</span><span class="period">.</span>
 </h4>Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para logical" id="p-38">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para logical" id="p-44">
 <div class="para">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</div>
-<div class="displaymath process-math" id="md-13">
+<div class="displaymath process-math" id="md-14">
 \begin{align*}
 D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) \\
 \amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} \\
@@ -597,11 +654,11 @@ D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\
 </div>
 </div></div></div>
 </div></article><article class="example example-like" id="example-7"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.24</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.28</span><span class="period">.</span>
 </h4>Quantas são as permutações de <span class="process-math">\((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\)</span> que têm exatamente 4 elementos no seu lugar primitivo?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
-<div class="para" id="p-39">O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é <span class="process-math">\(C_{10}^4\text{.}\)</span>
-</div> <div class="para logical" id="p-40">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<div class="para" id="p-45">O número de modos de escolher os quatro elementos que ocuparão o seu lugar primitivo é <span class="process-math">\(C_{10}^4\text{.}\)</span>
+</div> <div class="para logical" id="p-46">
 <div class="para">Com estes elementos em seus lugares, os outros seis elementos devem ser arrumados de forma caótica. o que pode ser feito de <span class="process-math">\(D_6\)</span> formas. A resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -611,17 +668,17 @@ C_{10}^4\times D_6 = 55650.
 </div>
 </div></div>
 </div></article><article class="example example-like" id="example-8"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.25</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.29</span><span class="period">.</span>
 </h4>(Canadá) Seja <span class="process-math">\(n\)</span> um inteiro positivo, e <span class="process-math">\(S = {1, 2, \ldots , n}\text{.}\)</span> Mostre que o número de permutações de <span class="process-math">\(S\)</span> sem pontos fixos e o número de permutações de <span class="process-math">\(S\)</span> com exatamente um ponto fixo tem diferença exatamente <span class="process-math">\(1\text{.}\)</span><div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
-<div class="para logical" id="p-41">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
+<div class="para logical" id="p-47">
 <div class="para">O número de permutações sem ponto fixo é exatamente</div>
 <div class="displaymath process-math">
 \begin{equation*}
 D_n = n!\left(\frac{1}{0!} - \frac{1}{1!}+\frac{1}{2!} - \frac{1}{3!} + \cdots +\frac{(-1)^{n-1}}{(n-1)!} +\frac{(-1)^n}{n!} \right)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-42">
+</div> <div class="para logical" id="p-48">
 <div class="para">O número de permutações com exatamente um ponto fixo é <span class="process-math">\(\binom{n}{1}D_{n-1}.\)</span>
 </div>
 <div class="displaymath process-math">
@@ -629,18 +686,18 @@ D_n = n!\left(\frac{1}{0!} - \frac{1}{1!}+\frac{1}{2!} - \frac{1}{3!} + \cdots +
 \binom{n}{1}D_{n-1} = n\cdot(n-1)!\left(\frac{1}{0!} - \frac{1}{1!}+\frac{1}{2!} - \frac{1}{3!} + \cdots +\frac{(-1)^{n-1}}{(n-1)!} \right)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-43"><div class="displaymath process-math">
+</div> <div class="para logical" id="p-49"><div class="displaymath process-math">
 \begin{equation*}
 D_n - n D_{n-1} = n!\frac{(-1)^n}{n!} =(-1)^n\text{.}
 \end{equation*}
 </div></div>
 </div></div>
 </div></article><article class="definition definition-like" id="definition-2"><h4 class="heading">
-<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.26</span><span class="period">.</span>
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">1.30</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-44">
+<div class="para logical" id="p-50">
 <div class="para">Sejam <span class="process-math">\(\Omega\)</span> um conjunto, <span class="process-math">\(A_1, A_2, \ldots, A_n\)</span> subconjuntos de <span class="process-math">\(\Omega\text{.}\)</span> Definimos os números <span class="process-math">\(S_0, S_1, S_2, \ldots, S_n\)</span> da seguinte maneira:</div>
-<div class="displaymath process-math" id="md-14">
+<div class="displaymath process-math" id="md-15">
 \begin{align*}
 S_0=\amp~\#\Omega;\\
 S_1=\amp~\sum_{i=1}^n\#A_i;\\
@@ -650,10 +707,10 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 \end{align*}
 </div>
 </div></article><article class="example example-like" id="example-9"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.27</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.31</span><span class="period">.</span>
 </h4>Quantas são as permutações dos elementos <span class="process-math">\(1,2,3,\ldots, 9\text{,}\)</span> na qual, nenhum número ímpar ocupa o seu lugar primitivo?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
-<div class="para logical" id="p-45">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<div class="para logical" id="p-51">
 <div class="para">Vamos calcular o número total de permutações e subtrair o número de permutações, na qual, algum número ímpar ocupa a posição original. Seja <span class="process-math">\(A_i\)</span> o conjunto das permutações, na qual, o número <span class="process-math">\(i\)</span> ocupa a posição original. Precisamos calcular</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -662,10 +719,10 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </div>
 <div class="para">Para aplicar o PIE, precisamos calcular os valores de <span class="process-math">\(S_1, S_2, \ldots, S_5\text{.}\)</span>
 </div>
-</div> <div class="para" id="p-46">Observe que <span class="process-math">\(\#A_i = 8!\text{,}\)</span> pois o número ímpar <span class="process-math">\(i\)</span> ocupa sua posição original, os demais podem ocupar qualquer posição. Assim, <span class="process-math">\(S_1 = 5\cdot 8!\text{,}\)</span> pois são <span class="process-math">\(5\)</span> números ímpares.</div> <div class="para" id="p-47">
+</div> <div class="para" id="p-52">Observe que <span class="process-math">\(\#A_i = 8!\text{,}\)</span> pois o número ímpar <span class="process-math">\(i\)</span> ocupa sua posição original, os demais podem ocupar qualquer posição. Assim, <span class="process-math">\(S_1 = 5\cdot 8!\text{,}\)</span> pois são <span class="process-math">\(5\)</span> números ímpares.</div> <div class="para" id="p-53">
 <span class="process-math">\(\#(A_i\cap A_j) = 7!\text{,}\)</span> pois dois números estão em suas posições originais, os demais podem ocupar qualquer posição. Para calcular <span class="process-math">\(S_2\text{,}\)</span> basta multiplicar o valor pelo número de maneiras de escolher os dois números ímpares, ou seja, <span class="process-math">\(S_2 = \binom{5}{2}7!\)</span>
-</div> <div class="para" id="p-48">Seguindo com o mesmo raciocínio, obtemos <span class="process-math">\(S_3 = \binom{5}{3}6!, S_4 = \binom{5}{4}5!\)</span> e <span class="process-math">\(S_5 = \binom{5}{5}4!\)</span>
-</div> <div class="para logical" id="p-49">
+</div> <div class="para" id="p-54">Seguindo com o mesmo raciocínio, obtemos <span class="process-math">\(S_3 = \binom{5}{3}6!, S_4 = \binom{5}{4}5!\)</span> e <span class="process-math">\(S_5 = \binom{5}{5}4!\)</span>
+</div> <div class="para logical" id="p-55">
 <div class="para">Portanto, pelo PIE, a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -675,10 +732,10 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </div>
 </div></div>
 </div></article><article class="example example-like" id="example-10"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.28</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.32</span><span class="period">.</span>
 </h4>(Veja <a href="" class="xref" data-knowl="./knowl/ric02.html" title="Referência bibliográfica 2.3">[2.3]</a> e <a href="" class="xref" data-knowl="./knowl/ric01.html" title="Referência bibliográfica 2.2">[2.2]</a>) Quantos são os anagramas da palavra SAGAZ, na qual, nenhuma letra está em sua posição original?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original has-interactive" data-refid="hk-solution-9" id="solution-9"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
-<div class="para logical" id="p-50">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-interactive" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<div class="para logical" id="p-56">
 <div class="para">Vamos contar o total de permutações e subtrair o número de permutações que possuem alguma letra na posição original. O total de permutações é <span class="process-math">\(PR_5^2 = \frac{5!}{2!} = 60.\)</span> A resposta será dada por</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -686,7 +743,7 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 \end{equation*}
 </div>
 <div class="para">Na qual, o conjunto <span class="process-math">\(A_I\)</span> é o conjunto das permutações com a letra <span class="process-math">\(I\)</span> na posição original.</div>
-</div> <div class="para logical" id="p-51">
+</div> <div class="para logical" id="p-57">
 <div class="para">Neste caso, vamos contar separadamente o número de permutações que tem alguma letra na posição original. Primeiro vamos contar 1 a 1, ou seja, fixamos a letra na posição original e calculamos o número de permutações das outras letras:</div>
 <ul class="disc">
 <li id="li-11"><div class="para" id="p-derived-li-11">S: <span class="process-math">\(PR_4^2 = 12\)</span>
@@ -702,7 +759,7 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </ul>
 <div class="para">Assim, <span class="process-math">\(S_1 = 84.\)</span>
 </div>
-</div> <div class="para logical" id="p-52">
+</div> <div class="para logical" id="p-58">
 <div class="para">Interseções 2 a 2, fixamos as letras nas posições originais e calculamos o número de permutações das outras letras:</div>
 <ul class="disc">
 <li id="li-16"><div class="para" id="p-derived-li-16">SA: <span class="process-math">\(P_3 = 6\)</span>
@@ -728,7 +785,7 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </ul>
 <div class="para">Logo, <span class="process-math">\(S_2 = 51\)</span>
 </div>
-</div> <div class="para logical" id="p-53">
+</div> <div class="para logical" id="p-59">
 <div class="para">Interseções 3 a 3:</div>
 <ul class="disc">
 <li id="li-26"><div class="para" id="p-derived-li-26">SAG: <span class="process-math">\(2\)</span>
@@ -754,7 +811,7 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </ul>
 <div class="para">Logo, <span class="process-math">\(S_3 = 19.\)</span>
 </div>
-</div> <div class="para logical" id="p-54">
+</div> <div class="para logical" id="p-60">
 <div class="para">Interseções 4 a 4:</div>
 <ul class="disc">
 <li id="li-36"><div class="para" id="p-derived-li-36">AGAZ: <span class="process-math">\(1\)</span>
@@ -770,21 +827,21 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </ul>
 <div class="para">Logo, <span class="process-math">\(S_4 = 5.\)</span>
 </div>
-</div> <div class="para" id="p-55">No caso 5 a 5, só temos uma maneira. <span class="process-math">\(S_5=1.\)</span>
-</div> <div class="para logical" id="p-56">
+</div> <div class="para" id="p-61">No caso 5 a 5, só temos uma maneira. <span class="process-math">\(S_5=1.\)</span>
+</div> <div class="para logical" id="p-62">
 <div class="para">A resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
 60 - (84-51+19-5+1) = 60-48 = 12.
 \end{equation*}
 </div>
-</div> <figure class="figure figure-like" id="interactive-inclu-exclu_geral_SAGAZ"><iframe id="interactive-inclusao-exclusao_geral_2_SAGAZ" width="600" height="480" src="interactive-inclusao-exclusao_geral_2_SAGAZ-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.29<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div> <figure class="figure figure-like" id="interactive-inclu-exclu_geral_SAGAZ"><iframe id="interactive-inclusao-exclusao_geral_2_SAGAZ" width="600" height="480" src="interactive-inclusao-exclusao_geral_2_SAGAZ-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.33<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div></div>
 </div></article><article class="example example-like" id="example-11"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.30</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.34</span><span class="period">.</span>
 </h4>(Veja <a href="" class="xref" data-knowl="./knowl/ric01.html" title="Referência bibliográfica 2.2">[2.2]</a>) Qual o número de permutações de <span class="process-math">\((1,2,3,4)\text{,}\)</span> na qual, o número <span class="process-math">\(1\)</span> não pode ocupar o segundo lugar, o número <span class="process-math">\(2\)</span> não pode ocupar o quarto lugar e o número <span class="process-math">\(3\)</span> não pode ocupar nem o primeiro nem o quarto lugar?<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
-<div class="para" id="p-57">Vamos calcular o número de permutações de 4 elementos e subtrair o número de permutações em que pelo menos uma das condições acontece.</div> <div class="para logical" id="p-58"><ul class="disc">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<div class="para" id="p-63">Vamos calcular o número de permutações de 4 elementos e subtrair o número de permutações em que pelo menos uma das condições acontece.</div> <div class="para logical" id="p-64"><ul class="disc">
 <li id="li-41"><div class="para" id="p-derived-li-41">1 no 2º lugar: <span class="process-math">\(P_3=6\)</span>
 </div></li>
 <li id="li-42"><div class="para" id="p-derived-li-42">2 no 4º lugar: <span class="process-math">\(P_3=6\)</span>
@@ -793,7 +850,7 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </div></li>
 <li id="li-44"><div class="para" id="p-derived-li-44">3 no 4º lugar: <span class="process-math">\(P_3=6\)</span>
 </div></li>
-</ul></div> <div class="para logical" id="p-59"><ul class="disc">
+</ul></div> <div class="para logical" id="p-65"><ul class="disc">
 <li id="li-45"><div class="para" id="p-derived-li-45">1 no 2º lugar e 2 no 4º lugar: <span class="process-math">\(P_2=2\)</span>
 </div></li>
 <li id="li-46"><div class="para" id="p-derived-li-46">1 no 2º lugar e 3 no 1º lugar: <span class="process-math">\(P_2=2\)</span>
@@ -802,8 +859,8 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 </div></li>
 <li id="li-48"><div class="para" id="p-derived-li-48">2 no 4º lugar e 3 no 1º lugar: <span class="process-math">\(P_2=2\)</span>
 </div></li>
-</ul></div> <div class="para logical" id="p-60"><ul class="disc"><li id="li-49"><div class="para" id="p-derived-li-49">1 no 2º lugar e 2 no 4º lugar e 3 no 1º lugar: <span class="process-math">\(P_1=1\)</span>
-</div></li></ul></div> <div class="para logical" id="p-61">
+</ul></div> <div class="para logical" id="p-66"><ul class="disc"><li id="li-49"><div class="para" id="p-derived-li-49">1 no 2º lugar e 2 no 4º lugar e 3 no 1º lugar: <span class="process-math">\(P_1=1\)</span>
+</div></li></ul></div> <div class="para logical" id="p-67">
 <div class="para">Resposta:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -816,20 +873,20 @@ S_n=\amp~\#(A_1\cap A_2\cap \ldots\cap A_n).
 <span class="type">Subseção</span> <span class="codenumber">1.4</span> <span class="title">Generalização do Princípio da Inclusão-Exclusão</span>
 </h3>
 <article class="proposition theorem-like" id="apbp"><h4 class="heading">
-<span class="type">Proposição</span><span class="space"> </span><span class="codenumber">1.31</span><span class="period">.</span>
+<span class="type">Proposição</span><span class="space"> </span><span class="codenumber">1.35</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-62">
+<div class="para logical" id="p-68">
 <div class="para">Sejam <span class="process-math">\(A_1, A_2,\ldots,A_n\)</span> subconjuntos de um conjunto <span class="process-math">\(\Omega\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="li-50"><div class="para" id="p-derived-li-50">O número de elementos de <span class="process-math">\(\Omega\)</span> que pertencem a exatamente <span class="process-math">\(p\)</span> desses subconjuntos é dado por:<div class="displaymath process-math" id="md-15">
+<li id="li-50"><div class="para" id="p-derived-li-50">O número de elementos de <span class="process-math">\(\Omega\)</span> que pertencem a exatamente <span class="process-math">\(p\)</span> desses subconjuntos é dado por:<div class="displaymath process-math" id="md-16">
 \begin{align*}
 a_p \amp=~ C_p^0S_p - C_{p+1}^1S_{p+1}+C_{p+2}^2S_{p+2}+ \cdots +(-1)^nC_{n}^{n-p}S_{n}\\
 \amp=~ \sum_{k=0}^{n-p}(-1)^kC_{p+k}^kS_{p+k};
 \end{align*}
 </div>
 </div></li>
-<li id="li-51"><div class="para" id="p-derived-li-51">O número de elementos de <span class="process-math">\(\Omega\)</span> que pertencem a pelo menos <span class="process-math">\(p\)</span> desses subconjuntos é dado por:<div class="displaymath process-math" id="md-16">
+<li id="li-51"><div class="para" id="p-derived-li-51">O número de elementos de <span class="process-math">\(\Omega\)</span> que pertencem a pelo menos <span class="process-math">\(p\)</span> desses subconjuntos é dado por:<div class="displaymath process-math" id="md-17">
 \begin{align*}
 b_p \amp=~ C_{p-1}^0S_{p} - C_{p}^1S_{p+1}+C_{p+1}^2S_{p+2}+ \cdots +(-1)^nC_{n-1}^{n-p}S_{n}\\
 \amp=~ \sum_{k=0}^{n-p}(-1)^kC_{p+k-1}^kS_{p+k}.
@@ -838,9 +895,9 @@ b_p \amp=~ C_{p-1}^0S_{p} - C_{p}^1S_{p+1}+C_{p+1}^2S_{p+2}+ \cdots +(-1)^nC_{n-
 </div></li>
 </ol>
 </div></article><article class="example example-like" id="example-12"><h4 class="heading">
-<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.32</span><span class="period">.</span>
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.36</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-63">
+<div class="para logical" id="p-69">
 <div class="para">Determine quantos inteiros estão compreendidos entre <span class="process-math">\(100\)</span> e <span class="process-math">\(1000\)</span> inclusive, e são múltiplos de</div>
 <ol class="lower-alpha">
 <li id="li-52"><div class="para" id="p-derived-li-52">exatamente dois dos números: <span class="process-math">\(6, 15\)</span> e <span class="process-math">\(21\text{;}\)</span>
@@ -850,7 +907,7 @@ b_p \amp=~ C_{p-1}^0S_{p} - C_{p}^1S_{p+1}+C_{p+1}^2S_{p+2}+ \cdots +(-1)^nC_{n-
 </ol>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><div class="para logical" id="p-64">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="para logical" id="p-70">
 <div class="para">Observe que <span class="process-math">\(\Omega\)</span> é o conjunto dos números inteiros entre 100 e 1000 inclusive. Portanto, <span class="process-math">\(S_0 = \#\Omega = 1000-100+1 = 901.\)</span> Utilizando as informações da solução do Exemplo \ref{exe_01}, temos:</div>
 <ul class="disc">
 <li id="li-54"><div class="para" id="p-derived-li-54"><span class="process-math">\(\displaystyle S_0 = 901;\)</span></div></li>
@@ -859,7 +916,7 @@ b_p \amp=~ C_{p-1}^0S_{p} - C_{p}^1S_{p+1}+C_{p+1}^2S_{p+2}+ \cdots +(-1)^nC_{n-
 <li id="li-57"><div class="para" id="p-derived-li-57"><span class="process-math">\(\displaystyle S_3 = 4.\)</span></div></li>
 </ul>
 <div class="para">Agora, basta aplicar os itens <span class="process-math">\(a.\)</span> e <span class="process-math">\(b.\)</span> do Teorema \ref{teo_fim} para obtermos as respostas dos itens <span class="process-math">\(a.\)</span> e <span class="process-math">\(b.\text{,}\)</span> respectivamente.</div>
-<div class="displaymath process-math" id="md-17">
+<div class="displaymath process-math" id="md-18">
 \begin{align*}
 a_2 =~\amp (-1)^0C_{2+0}^0S_2 + (-1)^1C_{2+1}^1S_{2+1}\\
 =~\amp 1\cdot 1 \cdot 60 + (-1)\cdot 3\cdot 4\\
@@ -871,40 +928,34 @@ b_2 =~\amp (-1)^0C_{2+0-1}^0S_2 + (-1)^1C_{2+1-1}^1S_{2+1}\\
 </div>
 </div></div></div>
 </div></article><article class="technology computation-like" id="technology-6"><h4 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.33</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.37</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-65">
+<div class="para logical" id="p-71">
 <div class="para">Escolha os valores dos campos, Vmin ,Vmax, lista e p, para determinar os valores de <span class="process-math">\(S_i\text{,}\)</span> <span class="process-math">\(a_p\text{,}\)</span> <span class="process-math">\(b_p\)</span> e a cardinalidade do conjunto <span class="process-math">\(C\text{,}\)</span> definido abaixo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
 \end{equation*}
 </div>
-</div> <figure class="figure figure-like" id="interactive-inclu-exclu_geral"><iframe id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.34<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+</div> <figure class="figure figure-like" id="interactive-inclu-exclu_geral"><iframe id="interactive-inclusao-exclusao_geral" width="600" height="480" src="interactive-inclusao-exclusao_geral-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.38<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
 <span class="type">Exercícios</span> <span class="codenumber">1.5</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para logical" id="p-66">
-<div class="para">Considere os conjuntos</div>
-<div class="displaymath process-math">
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>Considere os conjuntos<div class="displaymath process-math">
 \begin{equation*}
 \displaystyle B = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, \text{ ou } 3, \text{ ou } 15 \text{ e } 100\leq b\leq 1000\}
 \end{equation*}
-</div>
-<div class="para">e</div>
-<div class="displaymath process-math">
+</div>e<div class="displaymath process-math">
 \begin{equation*}
 \displaystyle B' = \{ b\in \mathbb{N}~|~ b \text{ é múltiplo de } 2, \text{ ou } 3, \text{ ou } 15 \text{ e } 1\leq b\leq 901\}.
 \end{equation*}
-</div>
-<div class="para">Os conjuntos <span class="process-math">\(B\)</span> e <span class="process-math">\(B'\)</span> possuem a mesma cardinalidade?</div>
-</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="para" id="p-67">
-<span class="process-math">\(\#B = 601\)</span> e <span class="process-math">\(\#B' = 600\text{.}\)</span> Portanto, a resposta é não.</div></div></div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
+</div>Os conjuntos <span class="process-math">\(B\)</span> e <span class="process-math">\(B'\)</span> possuem a mesma cardinalidade?<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="para" id="p-72">
+<span class="process-math">\(\#B = 601\)</span> e <span class="process-math">\(\#B' = 600\text{.}\)</span> Portanto, a resposta é não.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">(POTI Nível 3).</span>
 </h4>Um paralelepipedo <span class="process-math">\(150 \times 324 \times 375\)</span> é feito de cubos unitários. Por quantos cubos unitários a diagonal do paralelepı́pedo passa?<div class="solutions">
 <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like">
-<div class="para" id="p-68">Use a mesma ideia do Exemplo <a href="" class="xref" data-knowl="./knowl/poti3_modif.html" title="Exemplo 1.4: (POTI Nível 3 - modificado)">1.4</a>.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-5"><script type="text/x-sage">def visualizar_diagonal_3d_final(a, b, c):
+<div class="para" id="p-73">Use a mesma ideia do Exemplo <a href="" class="xref" data-knowl="./knowl/poti3_modif.html" title="Exemplo 1.4: (POTI Nível 3 - modificado)">1.4</a>.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-5"><script type="text/x-sage">def visualizar_diagonal_3d_final(a, b, c):
     # 1. Cálculo matemático exato
     g_ab = gcd(a, b)
     g_bc = gcd(b, c)
@@ -961,13 +1012,12 @@ C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{
 visualizar_diagonal_3d_final(4, 6, 10)
 </script></pre>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-69">Quantos são os anagramas da palavra PETELECOS que possuem a letra P na 1ª posição, ou a letra E na 2ª posição, ou a letra T na 3ª posição?</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><div class="para" id="p-70"><span class="process-math">\(28080\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
-<div class="para logical" id="p-71">
+</div></article><article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>Quantos são os anagramas da palavra PETELECOS que possuem a letra P na 1ª posição, ou a letra E na 2ª posição, ou a letra T na 3ª posição?<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><div class="para" id="p-74"><span class="process-math">\(28080\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<div class="para logical" id="p-75">
 <div class="para">Sejam</div>
-<div class="displaymath process-math" id="md-18">
+<div class="displaymath process-math" id="md-19">
 \begin{align*}
 A_1, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem P em 1º lugar}; \\
 A_2, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem E em 2º lugar}; \\
@@ -976,7 +1026,7 @@ A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}.
 </div>
 <div class="para">Queremos calcular <span class="process-math">\(\#(A_1\cup A_2\cup A_3)\text{.}\)</span> Note que <span class="process-math">\(\#A_1=\#A_3=PR_8^3\text{,}\)</span> pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para <span class="process-math">\(\#A_1\text{,}\)</span> e com a letra T na terceira posição, para <span class="process-math">\(\#A_3\text{.}\)</span> Note também que <span class="process-math">\(\#A_2 = PR_8^2\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-72">
+</div> <div class="para logical" id="p-76">
 <div class="para">Agora, vamos calcular as cardinalidades das interseções <span class="process-math">\(A_i\cap A_j\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq 3\text{.}\)</span>
 </div>
 <ul class="disc">
@@ -988,17 +1038,15 @@ A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}.
 <span class="process-math">\(A_2\cap A_3= PR_7^2\text{,}\)</span> pois E e T ficam fixados.</div></li>
 </ul>
 <div class="para">Finalmente, <span class="process-math">\(\#(A_1\cap A_2\cap A_3) = PR_6^2\text{.}\)</span> Aplicando o Princípio da Inclusão-Exclusão:</div>
-<div class="displaymath process-math" id="md-19">
+<div class="displaymath process-math" id="md-20">
 \begin{align*}
 \#(A_1\cup A_2\cup A_3) =\amp~ PR_8^3\times 2 + PR_8^2 - PR_7^2\times 2 - PR_7^3 + PR_6^2\\
 =\amp~28080.
 \end{align*}
 </div>
 </div>
-</div></div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para logical" id="p-73">
-<div class="para">Quantos inteiros entre 1 e 10000 inclusive:</div>
-<ol class="lower-alpha">
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>Quantos inteiros entre 1 e 10000 inclusive: <ol class="lower-alpha">
 <li id="li-61"><div class="para" id="p-derived-li-61">são divisíveis por pelo menos dois dos números <span class="process-math">\(3, 5, 8, 15\text{?}\)</span>
 </div></li>
 <li id="li-62"><div class="para" id="p-derived-li-62">não são divisíveis por nenhum dos números <span class="process-math">\(3, 5, 8, 15\text{?}\)</span>
@@ -1008,28 +1056,26 @@ A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}.
 <li id="li-64"><div class="para" id="p-derived-li-64">são divisíveis por pelo menos um dos números <span class="process-math">\(3, 5, 8, 15\text{?}\)</span>
 </div></li>
 </ol>
-</div>
+<div class="solutions">
 <a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><ol class="lower-alpha">
 <li id="li-65"><div class="para" id="p-derived-li-65"><span class="process-math">\(\displaystyle b_2 = 1166\)</span></div></li>
 <li id="li-66"><div class="para" id="p-derived-li-66"><span class="process-math">\(\displaystyle a_0 = 4666\)</span></div></li>
 <li id="li-67"><div class="para" id="p-derived-li-67"><span class="process-math">\(\displaystyle a_1 = 4168\)</span></div></li>
 <li id="li-68"><div class="para" id="p-derived-li-68"><span class="process-math">\(\displaystyle b_1 = 5334\)</span></div></li>
-</ol></div></div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para logical" id="p-74">
-<div class="para">Sejam <span class="process-math">\(\mathcal{P}, \mathcal{R}\)</span> e <span class="process-math">\(\mathcal{I}\)</span> os conjuntos dos anagramas da palavra PRINCIPIO que possuem a letra P em primeiro lugar, a letra R em segundo lugar e a letra I em terceiro lugar, respectivamente.</div>
-<ol class="lower-alpha">
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>Sejam <span class="process-math">\(\mathcal{P}, \mathcal{R}\)</span> e <span class="process-math">\(\mathcal{I}\)</span> os conjuntos dos anagramas da palavra PRINCIPIO que possuem a letra P em primeiro lugar, a letra R em segundo lugar e a letra I em terceiro lugar, respectivamente. <ol class="lower-alpha">
 <li id="li-69"><div class="para" id="p-derived-li-69">Quantos são os anagramas de PRINCIPIO que estão em exatamente um dos conjuntos <span class="process-math">\(\mathcal{P}, \mathcal{R}\)</span> e <span class="process-math">\(\mathcal{I}\text{?}\)</span>
 </div></li>
 <li id="li-70"><div class="para" id="p-derived-li-70">Quantos são os anagramas de PRINCIPIO que estão em pelo menos um dos conjuntos <span class="process-math">\(\mathcal{P}, \mathcal{R}\)</span> e <span class="process-math">\(\mathcal{I}\text{?}\)</span>
 </div></li>
 </ol>
-</div>
+<div class="solutions">
 <a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><ol class="lower-alpha">
 <li id="li-71"><div class="para" id="p-derived-li-71"><span class="process-math">\(\displaystyle 12000\)</span></div></li>
 <li id="li-72"><div class="para" id="p-derived-li-72"><span class="process-math">\(\displaystyle 15900\)</span></div></li>
 </ol></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para logical" id="p-75">
-<div class="para">De acordo com a <a href="" class="xref" data-knowl="./knowl/apbp.html" title="Proposição 1.31">1.31</a>, a resposta do item a) é o valor de <span class="process-math">\(a_1\)</span> e o do item b) é o valor de <span class="process-math">\(b_1\text{.}\)</span> Note que o número total de anagramas da palavra PRINCIPIO é <span class="process-math">\(PR_{9}^{3,2}=30240\text{,}\)</span> que o valor de <span class="process-math">\(S_0\text{.}\)</span> Para calcular os valores de <span class="process-math">\(S_1, S_2, S_3\)</span> e  <span class="process-math">\(S_4\text{,}\)</span> precisamos dos seguintes valores:</div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para logical" id="p-77">
+<div class="para">De acordo com a <a href="" class="xref" data-knowl="./knowl/apbp.html" title="Proposição 1.35">1.35</a>, a resposta do item a) é o valor de <span class="process-math">\(a_1\)</span> e o do item b) é o valor de <span class="process-math">\(b_1\text{.}\)</span> Note que o número total de anagramas da palavra PRINCIPIO é <span class="process-math">\(PR_{9}^{3,2}=30240\text{,}\)</span> que o valor de <span class="process-math">\(S_0\text{.}\)</span> Para calcular os valores de <span class="process-math">\(S_1, S_2, S_3\)</span> e  <span class="process-math">\(S_4\text{,}\)</span> precisamos dos seguintes valores:</div>
 <ul class="disc">
 <li id="li-73"><div class="para" id="p-derived-li-73"><span class="process-math">\(\displaystyle \#A_1 = 6720\)</span></div></li>
 <li id="li-74"><div class="para" id="p-derived-li-74"><span class="process-math">\(\displaystyle \#A_2 = 3360\)</span></div></li>
@@ -1046,59 +1092,29 @@ A_3, ~\amp \text{o conjunto dos anagramas de PETELECOS que tem T em 3º lugar}.
 <li id="li-82"><div class="para" id="p-derived-li-82"><span class="process-math">\(\displaystyle S_2 = 4620\)</span></div></li>
 <li id="li-83"><div class="para" id="p-derived-li-83"><span class="process-math">\(\displaystyle S_3 = 360\)</span></div></li>
 </ul>
-<div class="para">Aplicando a <a href="" class="xref" data-knowl="./knowl/apbp.html" title="Proposição 1.31">1.31</a>, obtemos as respostas dos itens a) e b)</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/apbp.html ./knowl/apbp.html" id="md-20">
+<div class="para">Aplicando a <a href="" class="xref" data-knowl="./knowl/apbp.html" title="Proposição 1.35">1.35</a>, obtemos as respostas dos itens a) e b)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/apbp.html ./knowl/apbp.html" id="md-21">
 \begin{align*}
 a_1 =\amp (-1)^0C_{1,0}\cdot 20160 + (-1)^1C_{2,1}\cdot 4620 + (-1)^2C_{3,2}\cdot360\\
 =\amp 12000
 \end{align*}
 </div>
 <div class="para">e</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/apbp.html ./knowl/apbp.html" id="md-21">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/apbp.html ./knowl/apbp.html" id="md-22">
 \begin{align*}
 b_1 =\amp (-1)^0C_{0,0}\cdot 20160 + (-1)^1C_{1,1}\cdot4620 + (-1)^2C_{2,2}\cdot360\\
 =\amp 15900
 \end{align*}
 </div>
-</div></div></div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para logical" id="p-76">
-<div class="para">Quantos são os anagramas das palavras abaixo, na qual, nenhuma letra está em sua posição original?</div>
-<ol class="lower-alpha">
-<li id="li-84"><div class="para" id="p-derived-li-84">TERMO;</div></li>
-<li id="li-85"><div class="para" id="p-derived-li-85">SAGAZ.</div></li>
-</ol>
-</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-5" id="answer-5"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><ol class="lower-alpha">
-<li id="li-86"><div class="para" id="p-derived-li-86"><span class="process-math">\(\displaystyle 44\)</span></div></li>
-<li id="li-87"><div class="para" id="p-derived-li-87"><span class="process-math">\(\displaystyle 12\)</span></div></li>
-</ol></div></div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-77">Quantas são as permutações de <span class="process-math">\((1, 2, 3, 4, 5, 6, 7)\)</span> que têm exatamente 3 elementos no seu lugar primitivo?</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-6" id="answer-6"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like"><span class="process-math">\(315\)</span></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para logical" id="p-78">
-<ul class="disc">
-<li id="li-88"><div class="para" id="p-derived-li-88"><span class="process-math">\(\displaystyle S_0 = 5040\)</span></div></li>
-<li id="li-89"><div class="para" id="p-derived-li-89"><span class="process-math">\(\displaystyle S_1 = 5040\)</span></div></li>
-<li id="li-90"><div class="para" id="p-derived-li-90"><span class="process-math">\(\displaystyle S_2 = 2520\)</span></div></li>
-<li id="li-91"><div class="para" id="p-derived-li-91"><span class="process-math">\(\displaystyle S_3 = 840\)</span></div></li>
-<li id="li-92"><div class="para" id="p-derived-li-92"><span class="process-math">\(\displaystyle S_4 = 210\)</span></div></li>
-<li id="li-93"><div class="para" id="p-derived-li-93"><span class="process-math">\(\displaystyle S_5 = 42\)</span></div></li>
-<li id="li-94"><div class="para" id="p-derived-li-94"><span class="process-math">\(\displaystyle S_6 = 7\)</span></div></li>
-<li id="li-95"><div class="para" id="p-derived-li-95"><span class="process-math">\(\displaystyle S_7 = 1\)</span></div></li>
-</ul>
-<div class="displaymath process-math" id="md-22">
-\begin{align*}
-a_3 =\amp (-1)^0C_{3,0}\cdot840 + (-1)^1C_{4,1}\cdot210 + (-1)^2C_{5,2}\cdot42 + (-1)^3C_{6,3}\cdot7 + (-1)^4C_{7,4}\cdot1  \\
-=\amp 315
-\end{align*}
-</div>
-</div></div></div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-79">(OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><div class="para" id="p-80">Sendo <span class="process-math">\(A_k\)</span> a quantidade de pontos do polı́gono de <span class="process-math">\(k\)</span> vértices, queremos calcular <span class="process-math">\(\#(A_8 \cup A_{12} \cup A_{18})\text{.}\)</span> Note que <span class="process-math">\(\#(A_{i_1} \cap A_{i_2} \cap\ldots \cap A_{i_n}) = mdc(i_1 , i_2 , \ldots , i_n)\text{.}\)</span>
 </div></div></div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-7" id="answer-7"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><div class="para" id="p-81">28</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-78">(OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><div class="para" id="p-79">Sendo <span class="process-math">\(A_k\)</span> a quantidade de pontos do polı́gono de <span class="process-math">\(k\)</span> vértices, queremos calcular <span class="process-math">\(\#(A_8 \cup A_{12} \cup A_{18})\text{.}\)</span> Note que <span class="process-math">\(\#(A_{i_1} \cap A_{i_2} \cap\ldots \cap A_{i_n}) = mdc(i_1 , i_2 , \ldots , i_n)\text{.}\)</span>
+</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-5" id="answer-5"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><div class="para" id="p-80">28</div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-15" id="solution-15"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
-<div class="para logical" id="p-82">
+<div class="para logical" id="p-81">
 <div class="para">Sejam <span class="process-math">\(A_k\text{,}\)</span> <span class="process-math">\(k = 8, 12, 18\text{,}\)</span> os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular <span class="process-math">\(\#(A_8\cup A_{12}\cup A_{18})\text{.}\)</span> Pelo Princípio da Inclusão-Exclusão, temos</div>
 <div class="displaymath process-math" id="md-23">
 \begin{align*}
@@ -1109,8 +1125,8 @@ a_3 =\amp (-1)^0C_{3,0}\cdot840 + (-1)^1C_{4,1}\cdot210 + (-1)^2C_{5,2}\cdot42 +
 \end{align*}
 </div>
 <div class="para">Como <span class="process-math">\(\#A_k = k\text{,}\)</span> para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.</div>
-</div> <div class="para" id="p-83">Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.</div> <figure class="figure figure-like" id="poligonos_c"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/poligonos_c.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.35<span class="period">.</span></span><span class="space"> </span>Polígonos encolhidos.</figcaption></figure> <div class="para logical" id="p-84">
+</div> <div class="para" id="p-82">Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.</div> <figure class="figure figure-like" id="poligonos_c"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/poligonos_c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.39<span class="period">.</span></span><span class="space"> </span>Polígonos encolhidos.</figcaption></figure> <div class="para logical" id="p-83">
 <div class="para">Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de <span class="process-math">\(A_k\)</span> e assim sucessivamente, de um vértice de <span class="process-math">\(A_k\)</span> até o seguinte. Desta forma cada conjunto <span class="process-math">\(A_k\)</span> define <span class="process-math">\(k\)</span> semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim,  <span class="process-math">\(\#(A_i\cap A_j) = \text{mdc}(i, j)\text{,}\)</span> para <span class="process-math">\(i, j \in \{8, 12, 18\}\text{,}\)</span> com <span class="process-math">\(i\neq j\)</span> e <span class="process-math">\(\#(A_8\cap A_{12} \cap A_{18}) = \text{mdc}(8, 12, 18)\text{.}\)</span> Logo,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1118,19 +1134,19 @@ a_3 =\amp (-1)^0C_{3,0}\cdot840 + (-1)^1C_{4,1}\cdot210 + (-1)^2C_{5,2}\cdot42 +
 = 8+12+18 - 4 - 2 - 6 + 2 = 28.
 \end{equation*}
 </div>
-</div> <div class="para" id="p-85">Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs. <figure class="figure figure-like" id="poligonos_c"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/mdc.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.36<span class="period">.</span></span><span class="space"> </span>Verificação das interseções.</figcaption></figure>
+</div> <div class="para" id="p-84">Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs. <figure class="figure figure-like" id="poligonos_c"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/mdc.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">1.40<span class="period">.</span></span><span class="space"> </span>Verificação das interseções.</figcaption></figure>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-86">Quantos são os inteiros de <span class="process-math">\(n\)</span> dígitos, que têm todos os dígitos pertencentes ao conjunto <span class="process-math">\(\{1, 2, 3\}\text{?}\)</span> Em quantos deles os inteiros <span class="process-math">\(1, 2\)</span> e <span class="process-math">\(3\)</span> figuram todos?</div>
+</div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-85">Quantos são os inteiros de <span class="process-math">\(n\)</span> dígitos, que têm todos os dígitos pertencentes ao conjunto <span class="process-math">\(\{1, 2, 3\}\text{?}\)</span> Em quantos deles os inteiros <span class="process-math">\(1, 2\)</span> e <span class="process-math">\(3\)</span> figuram todos?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-8" id="answer-8"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like"><div class="para" id="p-87">a) <span class="process-math">\(3^n\)</span> , b) <span class="process-math">\(3^n-3\cdot 2^n+3\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-6" id="answer-6"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like"><div class="para" id="p-86">a) <span class="process-math">\(3^n\)</span> , b) <span class="process-math">\(3^n-3\cdot 2^n+3\text{.}\)</span>
 </div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
-<div class="para" id="p-88">
+<div class="para" id="p-87">
 <dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o <span class="process-math">\(n\)</span>-ésimo dígito que também temos 3 opções. Portanto a resposta é <span class="process-math">\(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</span>
-</div> <div class="para logical" id="p-89">
+</div> <div class="para logical" id="p-88">
 <div class="para">
 <dfn class="terminology">item b)</dfn> Agora precisamos subtrair de <span class="process-math">\(3^n\)</span> a quantidade de números de <span class="process-math">\(n\)</span> dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina <span class="process-math">\(A_1\)</span> como o subconjunto dos números de <span class="process-math">\(n\)</span> dígitos formados pelos dígitos <span class="process-math">\(1, 2\)</span> e <span class="process-math">\(3\)</span> tal que o dígito <span class="process-math">\(1\)</span> não aparece. De maneira análoga defina os subconjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\text{.}\)</span> Desta forma, queremos calcular</div>
 <div class="displaymath process-math">
@@ -1148,8 +1164,8 @@ a_3 =\amp (-1)^0C_{3,0}\cdot840 + (-1)^1C_{4,1}\cdot210 + (-1)^2C_{5,2}\cdot42 +
 </div>
 <div class="para">
 <span class="process-math">\(A_1\)</span> possui <span class="process-math">\(2^n\)</span> elementos, pois o dígito <span class="process-math">\(1\)</span> não pode figurar no número de <span class="process-math">\(n\)</span> dígitos, sobrando apenas os dígitos <span class="process-math">\(2\)</span> e <span class="process-math">\(3\text{.}\)</span> Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\)</span> possuem a mesma quantidade de elementos.</div>
-</div> <div class="para" id="p-90">
-<span class="process-math">\(A_1\cap A_2\)</span> possui apenas <span class="process-math">\(1\)</span> elemento, pois os dígitos <span class="process-math">\(1\)</span> e <span class="process-math">\(2\)</span> não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que <span class="process-math">\(A_1\cap A_2\)</span> e <span class="process-math">\(A_2\cap A_3\)</span> também possuem apenas um elemento.</div> <div class="para logical" id="p-91">
+</div> <div class="para" id="p-89">
+<span class="process-math">\(A_1\cap A_2\)</span> possui apenas <span class="process-math">\(1\)</span> elemento, pois os dígitos <span class="process-math">\(1\)</span> e <span class="process-math">\(2\)</span> não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que <span class="process-math">\(A_1\cap A_2\)</span> e <span class="process-math">\(A_2\cap A_3\)</span> também possuem apenas um elemento.</div> <div class="para logical" id="p-90">
 <div class="para">Finalmente, <span class="process-math">\(A_1\cap A_2\cap A_3\)</span>  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1158,12 +1174,12 @@ a_3 =\amp (-1)^0C_{3,0}\cdot840 + (-1)^1C_{4,1}\cdot210 + (-1)^2C_{5,2}\cdot42 +
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>Se <span class="process-math">\(\#A = n\)</span> e <span class="process-math">\(\#B=m\)</span> (<span class="process-math">\(n\geq m\)</span>), quantas são as funções <span class="process-math">\(f:A\rightarrow B\)</span> sobrejetoras?<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-9" id="answer-9"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-9"><div class="answer solution-like"><div class="para" id="p-92"><span class="process-math">\(\displaystyle\sum_{k=0}^m (-1)^kC_m^k(m-k)^n\)</span></div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>Se <span class="process-math">\(\#A = n\)</span> e <span class="process-math">\(\#B=m\)</span> (<span class="process-math">\(n\geq m\)</span>), quantas são as funções <span class="process-math">\(f:A\rightarrow B\)</span> sobrejetoras?<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-7" id="answer-7"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><div class="para" id="p-91"><span class="process-math">\(\displaystyle\sum_{k=0}^m (-1)^kC_m^k(m-k)^n\)</span></div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
-<div class="para" id="p-93">Note que, no total, exitem <span class="process-math">\(m^n\)</span> funções <span class="process-math">\(f:A\rightarrow B\text{,}\)</span> pois existem <span class="process-math">\(m\)</span> maneiras de escolher a imagem de cada um dos <span class="process-math">\(n\)</span> elementos de <span class="process-math">\(A\text{.}\)</span>
-</div> <div class="para" id="p-94">Sejam <span class="process-math">\(y_1, y_2, \ldots, y_m\)</span> os elementos do conjunto <span class="process-math">\(B\text{.}\)</span> Defina <span class="process-math">\(F_j\)</span> o conjunto das funções <span class="process-math">\(f_{j,l}:A\rightarrow B\text{,}\)</span> tais que <span class="process-math">\(y_j\)</span> não pertence a imagem de <span class="process-math">\(f_{j,l}\text{.}\)</span> Logo, <span class="process-math">\(j\in \{1, 2, \ldots, m\}\)</span> e <span class="process-math">\(l\in \{1, 2, \ldots, (m-1)^n\}\text{,}\)</span> ou seja, o total de funções deste tipo é <span class="process-math">\((m-1)^n\text{.}\)</span>
-</div> <div class="para logical" id="p-95">
+<div class="para" id="p-92">Note que, no total, exitem <span class="process-math">\(m^n\)</span> funções <span class="process-math">\(f:A\rightarrow B\text{,}\)</span> pois existem <span class="process-math">\(m\)</span> maneiras de escolher a imagem de cada um dos <span class="process-math">\(n\)</span> elementos de <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para" id="p-93">Sejam <span class="process-math">\(y_1, y_2, \ldots, y_m\)</span> os elementos do conjunto <span class="process-math">\(B\text{.}\)</span> Defina <span class="process-math">\(F_j\)</span> o conjunto das funções <span class="process-math">\(f_{j,l}:A\rightarrow B\text{,}\)</span> tais que <span class="process-math">\(y_j\)</span> não pertence a imagem de <span class="process-math">\(f_{j,l}\text{.}\)</span> Logo, <span class="process-math">\(j\in \{1, 2, \ldots, m\}\)</span> e <span class="process-math">\(l\in \{1, 2, \ldots, (m-1)^n\}\text{,}\)</span> ou seja, o total de funções deste tipo é <span class="process-math">\((m-1)^n\text{.}\)</span>
+</div> <div class="para logical" id="p-94">
 <div class="para">As funções que <dfn class="terminology">não</dfn> são sobrejetivas são as que pertencem a</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1176,12 +1192,12 @@ F_1\cup F_2\cup\cdots\cup F_m\text{.}
 m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-96">
+</div> <div class="para logical" id="p-95">
 <div class="para">Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos <span class="process-math">\(F_j\text{,}\)</span> a cardinalidade das interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos, com <span class="process-math">\(2\leq p \leq m\)</span> e a quantidade de interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos:</div>
 <ul class="disc">
-<li id="li-96"><div class="para" id="p-derived-li-96">Para o caso de apenas um conjunto, já sabemos que <span class="process-math">\(\#F_j=(m-1)^n\)</span> e no total existem <span class="process-math">\(m\)</span> conjuntos;</div></li>
-<li id="li-97"><div class="para" id="p-derived-li-97">Para o caso das interseções de dois conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\)</span> e no total existem <span class="process-math">\(C_m^2\)</span> dessas interseções;</div></li>
-<li id="li-98"><div class="para" id="p-derived-li-98">Para o caso das interseções de <span class="process-math">\(p\)</span> conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\)</span> e no total existem <span class="process-math">\(C_m^p\)</span> dessas interseções.</div></li>
+<li id="li-84"><div class="para" id="p-derived-li-84">Para o caso de apenas um conjunto, já sabemos que <span class="process-math">\(\#F_j=(m-1)^n\)</span> e no total existem <span class="process-math">\(m\)</span> conjuntos;</div></li>
+<li id="li-85"><div class="para" id="p-derived-li-85">Para o caso das interseções de dois conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\)</span> e no total existem <span class="process-math">\(C_m^2\)</span> dessas interseções;</div></li>
+<li id="li-86"><div class="para" id="p-derived-li-86">Para o caso das interseções de <span class="process-math">\(p\)</span> conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\)</span> e no total existem <span class="process-math">\(C_m^p\)</span> dessas interseções.</div></li>
 </ul>
 <div class="para">Aplicando o Princípio da Inclusão-Exclusão, a resposta é</div>
 <div class="displaymath process-math" id="md-25">
@@ -1193,22 +1209,22 @@ m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
-<div class="para" id="p-97">(OMU 2024 - Prova Individual - Item b) Andrês decidiu visitar um museu com <span class="process-math">\(n\)</span> exposições. Andrês e Marcelo são rivais. De quantas maneiras Andrês e Marcelo podem visitar exposições, de modo que eles nunca visitem uma mesma exposição, mas cada um visite pelo menos uma?</div>
+</div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-96">(OMU 2024 - Prova Individual - Item b) Andrês decidiu visitar um museu com <span class="process-math">\(n\)</span> exposições. Andrês e Marcelo são rivais. De quantas maneiras Andrês e Marcelo podem visitar exposições, de modo que eles nunca visitem uma mesma exposição, mas cada um visite pelo menos uma?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-10" id="answer-10"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><div class="para" id="p-98"><span class="process-math">\(3^n - 2^{n+1} + 1\text{.}\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-8" id="answer-8"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like"><div class="para" id="p-97"><span class="process-math">\(3^n - 2^{n+1} + 1\text{.}\)</span></div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
-<div class="para" id="p-99">Considere que as exposições do museu estão numeradas de <span class="process-math">\(1\)</span> até <span class="process-math">\(n\text{.}\)</span> Podemos representar cada maneira de visitar o museu com uma <span class="process-math">\(n\)</span>-úpla. Usando <span class="process-math">\(A, M\)</span> e <span class="process-math">\(N\)</span> como entradas da <span class="process-math">\(n\)</span>-úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a <span class="process-math">\(i\)</span>-ésima exposição.</div> <div class="para" id="p-100">Podemos formar um total de <span class="process-math">\(3^n\)</span> <span class="process-math">\(n\)</span>-úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo <span class="process-math">\(A\)</span> ou que não possuem o símbolo <span class="process-math">\(M\text{.}\)</span> Note que podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(M\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo A) e também podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(A\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo M). E pode ser formada somente 1 <span class="process-math">\(n\)</span>-úpla com apenas o símbolo <span class="process-math">\(N\text{.}\)</span>
-</div> <div class="para" id="p-101">Portanto, o número de maneiras de visitar o museu é <span class="process-math">\(3^n - 2^{n+1} + 1\text{.}\)</span>
+<div class="para" id="p-98">Considere que as exposições do museu estão numeradas de <span class="process-math">\(1\)</span> até <span class="process-math">\(n\text{.}\)</span> Podemos representar cada maneira de visitar o museu com uma <span class="process-math">\(n\)</span>-úpla. Usando <span class="process-math">\(A, M\)</span> e <span class="process-math">\(N\)</span> como entradas da <span class="process-math">\(n\)</span>-úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a <span class="process-math">\(i\)</span>-ésima exposição.</div> <div class="para" id="p-99">Podemos formar um total de <span class="process-math">\(3^n\)</span> <span class="process-math">\(n\)</span>-úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo <span class="process-math">\(A\)</span> ou que não possuem o símbolo <span class="process-math">\(M\text{.}\)</span> Note que podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(M\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo A) e também podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(A\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo M). E pode ser formada somente 1 <span class="process-math">\(n\)</span>-úpla com apenas o símbolo <span class="process-math">\(N\text{.}\)</span>
+</div> <div class="para" id="p-100">Portanto, o número de maneiras de visitar o museu é <span class="process-math">\(3^n - 2^{n+1} + 1\text{.}\)</span>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="p-102">(IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.</div>
+</div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-101">(IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-11" id="answer-11"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like"><div class="para" id="p-103">2088960</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-9" id="answer-9"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-9"><div class="answer solution-like"><div class="para" id="p-102">2088960</div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
-<div class="para" id="p-104">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <span class="process-math">\(C_5^1\)</span> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <span class="process-math">\((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\)</span> Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <span class="process-math">\(C_5^1\times 5\times 2!\times 8!\)</span> formas distintas de organizarmos esses carros.</div> <div class="para" id="p-105">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</div> <div class="para" id="p-106">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <span class="process-math">\(C_5^2\)</span> formas de escolhermos essas 2 equipes e podemos colocá-las de <span class="process-math">\(5\times4\)</span> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <span class="process-math">\(2!\times2\)</span> e das demais <span class="process-math">\(6\)</span> equipes <span class="process-math">\(6!\text{.}\)</span>
-</div> <div class="para" id="p-107">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</div>
+<div class="para" id="p-103">Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem <span class="process-math">\(C_5^1\)</span> maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada <span class="process-math">\((1^{a}, 2^{a}, 3^{a}, 4^{a} \  ou \  5^{a})\text{.}\)</span> Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos <span class="process-math">\(C_5^1\times 5\times 2!\times 8!\)</span> formas distintas de organizarmos esses carros.</div> <div class="para" id="p-104">Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.</div> <div class="para" id="p-105">Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos <span class="process-math">\(C_5^2\)</span> formas de escolhermos essas 2 equipes e podemos colocá-las de <span class="process-math">\(5\times4\)</span> maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado <span class="process-math">\(2!\times2\)</span> e das demais <span class="process-math">\(6\)</span> equipes <span class="process-math">\(6!\text{.}\)</span>
+</div> <div class="para" id="p-106">Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos</div>
 <div class="displaymath process-math" id="md-26">
 \begin{align*}
 10! - \#(A_1\cup A_2\cup A_3\cup A_4\cup A_5) \amp =  ~ 10! - C_5^1\times 5\times 2\times 8!   \\
@@ -1220,27 +1236,27 @@ m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
 \end{align*}
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para logical" id="p-108">
+</div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para logical" id="p-107">
 <div class="para">(ITA 2010) Sejam <span class="process-math">\(A, B\)</span> e <span class="process-math">\(C\)</span> conjuntos tais que</div>
 <ul class="disc">
-<li id="li-99"><div class="para" id="p-derived-li-99"><span class="process-math">\(C\subset B\text{,}\)</span></div></li>
-<li id="li-100"><div class="para" id="p-derived-li-100"><span class="process-math">\(\#(B\setminus C) = 3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\)</span></div></li>
-<li id="li-101"><div class="para" id="p-derived-li-101"><span class="process-math">\(\displaystyle \#(A\cup B) = 22\)</span></div></li>
+<li id="li-87"><div class="para" id="p-derived-li-87"><span class="process-math">\(C\subset B\text{,}\)</span></div></li>
+<li id="li-88"><div class="para" id="p-derived-li-88"><span class="process-math">\(\#(B\setminus C) = 3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\)</span></div></li>
+<li id="li-89"><div class="para" id="p-derived-li-89"><span class="process-math">\(\displaystyle \#(A\cup B) = 22\)</span></div></li>
 </ul>
 <div class="para">e <span class="process-math">\((\#C, \#A, \#B)\)</span> é uma progressão geométrica de razão <span class="process-math">\(r&gt;0\text{.}\)</span>
 </div>
 </div> <ol class="lower-alpha">
-<li id="li-102"><div class="para" id="p-derived-li-102">Determine <span class="process-math">\(\#C\)</span>
+<li id="li-90"><div class="para" id="p-derived-li-90">Determine <span class="process-math">\(\#C\)</span>
 </div></li>
-<li id="li-103"><div class="para" id="p-derived-li-103">Determine <span class="process-math">\(\#(\mathcal{P}(B\setminus C)).\)</span>
+<li id="li-91"><div class="para" id="p-derived-li-91">Determine <span class="process-math">\(\#(\mathcal{P}(B\setminus C)).\)</span>
 </div></li>
 </ol>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-12" id="answer-12"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like"><div class="para" id="p-109">a) <span class="process-math">\(\#C = 4~~~~\)</span> b) <span class="process-math">\(\#(\mathcal{P}(B\setminus C)) = 4096\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-10" id="answer-10"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><div class="para" id="p-108">a) <span class="process-math">\(\#C = 4~~~~\)</span> b) <span class="process-math">\(\#(\mathcal{P}(B\setminus C)) = 4096\text{.}\)</span>
 </div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
-<div class="para logical" id="p-110">
+<div class="para logical" id="p-109">
 <div class="para">
 <dfn class="terminology">item a)</dfn> Como <span class="process-math">\(C\subset B\text{,}\)</span> temos <span class="process-math">\(B\cap C = C\text{,}\)</span> logo <span class="process-math">\(\#(B\cap C) = \#C\)</span> e <span class="process-math">\(\#(B\setminus C) = \#B - \#C\text{.}\)</span> Logo</div>
 <div class="displaymath process-math">
@@ -1254,7 +1270,7 @@ m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
 \#B = 4\times\#C.\tag{1.3}
 \end{equation}
 </div>
-</div> <div class="para logical" id="p-111">
+</div> <div class="para logical" id="p-110">
 <div class="para">Usando que <span class="process-math">\((\#C, \#A, \#B)\)</span> é uma P.G., podemos escrever <span class="process-math">\(\#C=a_0r^0, \#A=a_0r^1\)</span> e <span class="process-math">\(\#B=a_0r^2\text{.}\)</span> Logo, </div>
 <div class="displaymath process-math" id="md-27">
 \begin{align*}
@@ -1269,14 +1285,14 @@ m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
 \#A=2\times \#C\text{.}\tag{1.4}
 \end{equation}
 </div>
-</div> <div class="para logical" id="p-112">
+</div> <div class="para logical" id="p-111">
 <div class="para">Por hipótese, <span class="process-math">\(3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\)</span> mas <span class="process-math">\(\#(B\cap C) = \#C\text{,}\)</span> assim </div>
 <div class="displaymath process-math" id="ita-ie03">
 \begin{equation}
 \#C = 2\#(A\cap B) \quad \Rightarrow \quad \#(A\cap B) = \frac{\#C}{2}.\tag{1.5}
 \end{equation}
 </div>
-</div> <div class="para logical" id="p-113">
+</div> <div class="para logical" id="p-112">
 <div class="para">Finalmente, usando as igualdades <a href="" class="xref" data-knowl="./knowl/ita-ie01.html" title="Equação 1.3">(1.3)</a>, <a href="" class="xref" data-knowl="./knowl/ita-ie02.html" title="Equação 1.4">(1.4)</a>, <a href="" class="xref" data-knowl="./knowl/ita-ie03.html" title="Equação 1.5">(1.5)</a> e o Princípio da Inclusão-Exclusão (<a href="" class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 1.2">1.2</a>), obtemos</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ita-ie01.html ./knowl/ita-ie02.html ./knowl/ita-ie03.html ./knowl/teo-inclusao-exclusao-2.html">
 \begin{equation*}
@@ -1285,7 +1301,7 @@ m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
 </div>
 <div class="para">Efetuando o cálculo, <span class="process-math">\(\#C = 4\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-114">
+</div> <div class="para logical" id="p-113">
 <div class="para">
 <dfn class="terminology">item b)</dfn>  Como <span class="process-math">\(\#(B\setminus C) = 3\times \#C = 12\text{,}\)</span> temos</div>
 <div class="displaymath process-math">
@@ -1295,44 +1311,80 @@ m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="prob-urna-coincidencia"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
-<div class="para" id="p-115">Considere uma urna contendo <span class="process-math">\(7\)</span> bolas numeradas de <span class="process-math">\(1\)</span> a <span class="process-math">\(7\)</span> e assuma que as bolas são retiradas uma após a outra, sem reposição. Esta série de sorteios é encerrada com a ocorrência da primeira coincidência, ou seja, a bola número <span class="process-math">\(k\)</span> é sorteada na <span class="process-math">\(k\)</span>-ésima retirada. Calcule o número de séries de sorteios com uma duração dada de <span class="process-math">\(4\)</span> retiradas.</div>
+</div></article><article class="exercise exercise-like" id="prob-urna-coincidencia"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-114">Considere uma urna contendo <span class="process-math">\(7\)</span> bolas numeradas de <span class="process-math">\(1\)</span> a <span class="process-math">\(7\)</span> e assuma que as bolas são retiradas uma após a outra, sem reposição. Esta série de sorteios é encerrada com a ocorrência da primeira coincidência, ou seja, a bola número <span class="process-math">\(k\)</span> é sorteada na <span class="process-math">\(k\)</span>-ésima retirada. Calcule o número de séries de sorteios com uma duração dada de <span class="process-math">\(4\)</span> retiradas.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-13" id="answer-13"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-13"><div class="answer solution-like"><div class="para" id="p-116"><span class="process-math">\(426\text{.}\)</span></div></div></div>
-</div></article><article class="exercise exercise-like" id="ex-mesa-redonda"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>Considere seis representantes participando de uma conferência em mesa redonda programada para continuar por vários dias. Decide-se que, a cada dia, eles se sentarão ao redor da mesa de modo que cada um tenha à sua direita uma pessoa diferente. A conferência pode durar no máximo quantos dias para que isso seja possível?<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-14" id="answer-14"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-14"><div class="answer solution-like"><div class="para" id="p-117"><span class="process-math">\(36\text{.}\)</span></div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
-<div class="para logical" id="p-118">
-<div class="para">(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de <span class="process-math">\(n\)</span> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições:</div>
-<ol class="lower-alpha">
-<li id="li-104"><div class="para" id="p-derived-li-104">Ninguém pode tirar o próprio nome;</div></li>
-<li id="li-105"><div class="para" id="p-derived-li-105">Não podem existir duas pessoas <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> tais que <span class="process-math">\(A\)</span> tirou <span class="process-math">\(B\)</span> e <span class="process-math">\(B\)</span> tirou <span class="process-math">\(A\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-11" id="answer-11"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like"><div class="para" id="p-115"><span class="process-math">\(426\text{.}\)</span></div></div></div>
+</div></article><article class="exercise exercise-like" id="ex-mesa-redonda"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>Considere seis representantes participando de uma conferência em mesa redonda programada para continuar por vários dias. Decide-se que, a cada dia, eles se sentarão ao redor da mesa de modo que cada um tenha à sua direita uma pessoa diferente. A conferência pode durar no máximo quantos dias para que isso seja possível?<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-12" id="answer-12"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like"><div class="para" id="p-116"><span class="process-math">\(36\text{.}\)</span></div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de <span class="process-math">\(8\)</span> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições: <ol class="lower-alpha">
+<li id="li-92"><div class="para" id="p-derived-li-92">Ninguém pode tirar o próprio nome;</div></li>
+<li id="li-93"><div class="para" id="p-derived-li-93">Não podem existir duas pessoas <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> tais que <span class="process-math">\(A\)</span> tirou <span class="process-math">\(B\)</span> e <span class="process-math">\(B\)</span> tirou <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-</ol>
-<div class="para">De quantas maneiras poderá ser realizado o sorteio?</div>
-</div>
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-15" id="answer-15"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-15"><div class="answer solution-like"><span class="process-math">\(\displaystyle D_n + \sum_{k=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^k\cdot \frac{D_{n-2k}}{(n-2k)!}\)</span></div></div>
+</ol> De quantas maneiras poderá ser realizado o sorteio?<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-13" id="answer-13"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-13"><div class="answer solution-like"><span class="process-math">\(11193.\)</span></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
+<div class="para logical" id="p-117">
+<div class="para">Denote as <span class="process-math">\(n\)</span> pessoas por <span class="process-math">\(P_1, P_2, \ldots, P_n\text{.}\)</span> Sejam <span class="process-math">\(A_{ij}\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq n\text{,}\)</span> os conjuntos das permutações caóticas em que a pessoa <span class="process-math">\(P_i\)</span> tirou a pessoa <span class="process-math">\(P_j\)</span> e a pessoa <span class="process-math">\(P_j\)</span> tirou a pessoa <span class="process-math">\(P_i\text{.}\)</span> A resposta deste problema é dada por</div>
+<div class="displaymath process-math" id="que-cao-obm">
+\begin{equation}
+D_8 - \#\left( \bigcup_{1\leq i \lt j \leq 8} A_{ij} \right).\tag{1.6}
+\end{equation}
+</div>
+<div class="para">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</div>
+</div> <div class="para logical" id="p-118">
+<div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
+<ul class="disc">
+<li id="li-94"><div class="para" id="p-derived-li-94">
+<span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
+<li id="li-95"><div class="para" id="p-derived-li-95">
+<span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
+<li id="li-96"><div class="para" id="p-derived-li-96">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+</ul>
+<div class="para"> Utilizando essas informações na Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 1.6">(1.6)</a>, obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html">
+\begin{equation*}
+D_8 - \#\left( \bigcup_{1\leq i \lt j \leq 8} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html" id="md-28">
+\begin{align*}
+\quad\quad=\amp~ D_8 - C_8^2D_{8-2} +C_8^2C_{8-2}^2D_{8-4} - \cdots\\
+\quad\quad=\amp~ D_8 - C_8^2D_{6} +C_8^2C_{6}^2D_{4} - C_8^2C_{6}^2C_{4}^2D_{2}+C_8^2C_{6}^2C_{4}^2C_{2}^2D_{0}\\
+\quad\quad=\amp~D_8 - 28\cdot D_6 + 420\cdot D_4 - 2520\cdot D_2 + 2520\cdot D_0\\
+\quad\quad=\amp~14833 - 28\cdot 265 + 420\cdot 9 - 2520\cdot 1 + 2520\cdot 1\\
+\quad\quad=\amp~11193.
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-15"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>(OBM 2019 - Nível Universitário 2ª Fase Q6 - Modificado) Um grupo de <span class="process-math">\(n\)</span> pessoas fará um amigo oculto e o sorteio dos nomes deverá satisfazer duas condições: <ol class="lower-alpha">
+<li id="li-97"><div class="para" id="p-derived-li-97">Ninguém pode tirar o próprio nome;</div></li>
+<li id="li-98"><div class="para" id="p-derived-li-98">Não podem existir duas pessoas <span class="process-math">\(A\)</span> e <span class="process-math">\(B\)</span> tais que <span class="process-math">\(A\)</span> tirou <span class="process-math">\(B\)</span> e <span class="process-math">\(B\)</span> tirou <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+</ol> De quantas maneiras poderá ser realizado o sorteio?<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-14" id="answer-14"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-14"><div class="answer solution-like"><span class="process-math">\(\displaystyle D_n + \sum_{k=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^k\cdot \frac{D_{n-2k}}{(n-2k)!}\)</span></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
 <div class="para logical" id="p-119">
 <div class="para">Denote as <span class="process-math">\(n\)</span> pessoas por <span class="process-math">\(P_1, P_2, \ldots, P_n\text{.}\)</span> Sejam <span class="process-math">\(A_{ij}\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq n\text{,}\)</span> os conjuntos das permutações caóticas em que a pessoa <span class="process-math">\(P_i\)</span> tirou a pessoa <span class="process-math">\(P_j\)</span> e a pessoa <span class="process-math">\(P_j\)</span> tirou a pessoa <span class="process-math">\(P_i\text{.}\)</span> A resposta deste problema é dada por</div>
 <div class="displaymath process-math" id="que-cao-obm">
 \begin{equation}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\tag{1.6}
+D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\tag{1.7}
 \end{equation}
 </div>
 <div class="para">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</div>
 </div> <div class="para logical" id="p-120">
 <div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
 <ul class="disc">
-<li id="li-106"><div class="para" id="p-derived-li-106">
+<li id="li-99"><div class="para" id="p-derived-li-99">
 <span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
-<li id="li-107"><div class="para" id="p-derived-li-107">
+<li id="li-100"><div class="para" id="p-derived-li-100">
 <span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
-<li id="li-108"><div class="para" id="p-derived-li-108">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+<li id="li-101"><div class="para" id="p-derived-li-101">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
 </ul>
 <div class="para">Antes de escrever o resultado da Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 1.6">(1.6)</a> vamos obter uma expressão para <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html" id="md-28">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html" id="md-29">
 \begin{align*}
 C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}\\
 =\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.
@@ -1344,7 +1396,7 @@ C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!
 D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
 \end{equation*}
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html" id="md-29">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html" id="md-30">
 \begin{align*}
 \quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots\\
 =\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots\\
@@ -1359,7 +1411,8 @@ D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{
 \end{equation*}
 </div>
 </div>
-</div></div></article><article class="exercise exercise-like" id="exercise-17"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
 <div class="para logical" id="p-121">
 <div class="para">Seja <span class="process-math">\((j_1, j_2, \dots, j_n)\)</span> uma permutação do conjunto <span class="process-math">\(\{1, 2, \dots, n\}\text{.}\)</span> Se</div>
 <div class="displaymath process-math">
@@ -1369,7 +1422,7 @@ j_{r+1} = j_r + 1, \quad 1 \le r \le n - 1,
 </div>
 <div class="para">então o par <span class="process-math">\((j_r, j_{r+1})\)</span> é chamado de uma <dfn class="terminology">sucessão</dfn> da permutação.</div>
 </div> <dfn class="terminology">Exemplo:</dfn> <div class="para" id="p-122">Considere as permutações <span class="process-math">\((j_1, j_2, j_3, j_4)\)</span> do conjunto <span class="process-math">\(\{1, 2, 3, 4\}\text{.}\)</span> Estas 24 permutações podem ser classificadas de acordo com suas sucessões da seguinte forma:</div> <ol start="0" class="decimal">
-<li id="li-109"><div class="para logical" id="p-123">
+<li id="li-102"><div class="para logical" id="p-123">
 <div class="para">As permutações sem nenhuma sucessão são as seguintes 11:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1383,7 +1436,7 @@ j_{r+1} = j_r + 1, \quad 1 \le r \le n - 1,
 \end{equation*}
 </div>
 </div></li>
-<li id="li-110"><div class="para logical" id="p-124">
+<li id="li-103"><div class="para logical" id="p-124">
 <div class="para">As permutações com uma sucessão são as seguintes 9:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1396,7 +1449,7 @@ j_{r+1} = j_r + 1, \quad 1 \le r \le n - 1,
 \end{equation*}
 </div>
 </div></li>
-<li id="li-111"><div class="para logical" id="p-125">
+<li id="li-104"><div class="para logical" id="p-125">
 <div class="para">As permutações com duas sucessões são as seguintes 3:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1404,7 +1457,7 @@ j_{r+1} = j_r + 1, \quad 1 \le r \le n - 1,
 \end{equation*}
 </div>
 </div></li>
-<li id="li-112"><div class="para logical" id="p-126">
+<li id="li-105"><div class="para logical" id="p-126">
 <div class="para">A permutação</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1414,7 +1467,7 @@ j_{r+1} = j_r + 1, \quad 1 \le r \le n - 1,
 <div class="para">é a única permutação com três sucessões.</div>
 </div></li>
 </ol> <dfn class="terminology">Mostre que</dfn> <ol class="lower-alpha">
-<li id="li-113"><div class="para logical" id="p-127">
+<li id="li-106"><div class="para logical" id="p-127">
 <div class="para">O número <span class="process-math">\(S_n\)</span> de permutações do conjunto <span class="process-math">\(\{1, 2, \dots, n\}\)</span> sem uma sucessão é igual a</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1422,7 +1475,7 @@ S_n = \sum_{k=0}^{n-1} (-1)^k \binom{n-1}{k} (n-k)!
 \end{equation*}
 </div>
 </div></li>
-<li id="li-114"><div class="para logical" id="p-128">
+<li id="li-107"><div class="para logical" id="p-128">
 <div class="para">O número <span class="process-math">\(S_{n,k}\)</span> de permutações do conjunto <span class="process-math">\(\{1, 2, \dots, n\}\)</span> com exatamente <span class="process-math">\(k\)</span> sucessões é igual a</div>
 <div class="displaymath process-math">
 \begin{equation*}
