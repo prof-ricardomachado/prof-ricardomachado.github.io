@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Mudança de Variável para Integração</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo NII">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NII:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="01integral.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01integral.html" class="internal"><span class="codenumber">1</span> <span class="title">Integrais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Integral Indefinida</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-metodo-substituicao.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Mudança de Variável para Integração</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#subsec-exemplos-subst" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#exercicios-6-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">2</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-metodo-substituicao"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">1.2</span> <span class="title">Mudança de Variável para Integração</span>
+</h2>
+<article class="theorem theorem-like" id="thm-mudanca-variavel"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-40">
+<div class="para">Seja <span class="process-math">\(F\)</span> uma primitiva de <span class="process-math">\(f\text{,}\)</span> ou seja, <span class="process-math">\(F'(x) = f(x)\text{.}\)</span> Suponhamos que <span class="process-math">\(g\)</span> seja uma função derivável tal que a imagem de <span class="process-math">\(g\)</span> esteja contida no domínio de <span class="process-math">\(F\text{.}\)</span> Então, a integral da função composta multiplicada pela derivada da função interna é dada por:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int f(g(x)) \cdot g'(x) dx = F(g(x)) + c\text{.}
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para logical" id="p-41">
+<div class="para">Consideremos a função composta <span class="process-math">\(F \circ g\text{.}\)</span> Pela regra da cadeia para derivação, temos que a derivada dessa composição é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[F(g(x))]' = F'(g(x)) \cdot g'(x)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-42">
+<div class="para">Como, por hipótese, <span class="process-math">\(F'(x) = f(x)\text{,}\)</span> podemos substituir <span class="process-math">\(F'\)</span> por <span class="process-math">\(f\)</span> na expressão anterior, obtendo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[F(g(x))]' = f(g(x)) \cdot g'(x)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-43">
+<div class="para">Por definição de primitiva, isso significa que <span class="process-math">\(F(g(x))\)</span> é uma primitiva de <span class="process-math">\(f(g(x)) \cdot g'(x)\text{.}\)</span> Portanto:</div>
+<div class="displaymath process-math" id="eq-subst-dem">
+\begin{equation}
+\int f(g(x)) \cdot g'(x) dx = F(g(x)) + c\text{.}\tag{1.2.1}
+\end{equation}
+</div>
+</div> <div class="para logical" id="p-44">
+<div class="para">Para simplificar o cálculo na prática, fazemos a mudança de variável <span class="process-math">\(u = g(x)\text{,}\)</span> o que implica no diferencial <span class="process-math">\(du = g'(x)dx\text{.}\)</span> Substituindo esses termos em <a href="" class="xref" data-knowl="./knowl/eq-subst-dem.html" title="Equação 1.2.1">(1.2.1)</a>, a integral assume a forma básica:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-subst-dem.html">
+\begin{equation*}
+\int f(u) du = F(u) + c\text{.}
+\end{equation*}
+</div>
+</div></article></div>
+<div class="para" id="p-45">Na prática, o objetivo é definir uma função <span class="process-math">\(u = g(x)\)</span> conveniente, de tal forma que a integral obtida seja mais simples que a original.</div>
+<section class="subsection" id="subsec-exemplos-subst"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">1.2.1</span> <span class="title">Exemplos</span>
+</h3>
+<div class="para" id="p-46">Calcule as integrais:</div>
+<article class="example example-like" id="example-1"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\displaystyle\int \frac{2x}{1+x^2} dx\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><div class="para logical" id="p-47">
+<div class="para">Fazemos <span class="process-math">\(u = 1+x^2\text{.}\)</span> Então, <span class="process-math">\(du = 2x dx\text{.}\)</span> Temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \frac{2x}{1+x^2} dx = \int \frac{du}{u} = \ln|u| + c = \ln(1+x^2) + c\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="example example-like" id="example-2"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\displaystyle\int \operatorname{sen}^2 x \cos x dx\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para logical" id="p-48">
+<div class="para">Se fizermos <span class="process-math">\(u = \operatorname{sen} x\text{,}\)</span> então <span class="process-math">\(du = \cos x dx\text{.}\)</span> Assim:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \operatorname{sen}^2 x \cos x dx = \int u^2 du = \frac{u^3}{3} + c = \frac{\operatorname{sen}^3 x}{3} + c\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="example example-like" id="example-3"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\displaystyle\int \operatorname{sen}(x+7) dx\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><div class="para logical" id="p-49">
+<div class="para">Fazendo <span class="process-math">\(u = x+7\text{,}\)</span> temos <span class="process-math">\(du = dx\text{.}\)</span> Então,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \operatorname{sen}(x+7) dx = \int \operatorname{sen} u du = -\cos u + c = -\cos(x+7) + c\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="example example-like" id="example-4"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\int \operatorname{tg} x dx\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><div class="para logical" id="p-50">
+<div class="para">Podemos escrever <span class="process-math">\(\int \operatorname{tg} x dx = \int \frac{\operatorname{sen} x}{\cos x} dx\text{.}\)</span> Fazendo <span class="process-math">\(u = \cos x\text{,}\)</span> temos <span class="process-math">\(du = -\operatorname{sen} x dx\)</span> e então <span class="process-math">\(\operatorname{sen} x dx = -du\text{.}\)</span> Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \operatorname{tg} x dx = \int \frac{-du}{u} = -\int \frac{du}{u} = -\ln|u| + c = -\ln|\cos x| + c\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="example example-like" id="example-5"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\displaystyle\int \frac{dx}{(3x-5)^8}\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para logical" id="p-51">
+<div class="para">Fazendo <span class="process-math">\(u = 3x-5\text{,}\)</span> temos <span class="process-math">\(du = 3dx\)</span> ou <span class="process-math">\(dx = 1/3 du\text{.}\)</span> Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \frac{dx}{(3x-5)^8} = \int \frac{1/3 du}{u^8} = \frac{1}{3} \int u^{-8} du = \frac{1}{3} \frac{u^{-7}}{-7} + c = \frac{-1}{21(3x-5)^7} + c\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="example example-like" id="example-6"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\displaystyle\int (x + \sec^2 3x) dx\text{.}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para logical" id="p-52">
+<div class="para">Podemos escrever: <span class="process-math">\(\int x dx + \int \sec^2 3x dx = \frac{x^2}{2} + \int \sec^2 3x dx\text{.}\)</span> Para resolver <span class="process-math">\(\int \sec^2 3x dx\text{,}\)</span> fazemos <span class="process-math">\(u = 3x\text{,}\)</span> <span class="process-math">\(du = 3dx\text{.}\)</span> Obtemos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x^2}{2} + \frac{1}{3}\operatorname{tg} 3x + c\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="example example-like" id="example-7"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h4>
+<span class="process-math">\(\displaystyle\int \frac{dx}{x^2+6x+13}\)</span><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><div class="para" id="p-53">Completando o quadrado: <span class="process-math">\(x^2+6x+13 = (x+3)^2+4\text{.}\)</span> Fazendo <span class="process-math">\(u = x+3\text{,}\)</span> obtemos <span class="process-math">\(\frac{1}{2}\operatorname{arc\,tg} \frac{x+3}{2} + c\text{.}\)</span>
+</div></div></div>
+</div></article></section><section class="exercises" id="exercicios-6-4"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">1.2.2</span> <span class="title">Exercícios</span>
+</h3>
+<article class="technology computation-like" id="technology-2"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-54">Use o Sage para calcular as integrais propostas nos exercícios e confira com as suas respostas.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">f=((2*x^2+2*x-3)^10)*(2*x+1)
+show(integral(f, x))
+</script></pre></article><section class="introduction" id="introduction-1"><div class="para" id="p-55">Calcular as integrais seguintes usando o método da substituição.</div></section><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-56"><span class="process-math">\(\displaystyle\int (2x^2+2x-3)^{10}(2x+1) dx\)</span></div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-57"><span class="process-math">\(\displaystyle\int (x^3-2)^{1/7}x^2 dx\)</span></div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-58"><span class="process-math">\(\displaystyle\int \frac{x dx}{\sqrt[5]{x^2-1}}\)</span></div></article><article class="exercise exercise-like" id="exercise-7"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-59"><span class="process-math">\(\displaystyle\int 5x\sqrt{4-3x^2} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-60"><span class="process-math">\(\displaystyle\int \sqrt{x^2+2x^4} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-61"><span class="process-math">\(\displaystyle\int (e^{2t}+2)^{1/3}e^{2t} dt\)</span></div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-62"><span class="process-math">\(\displaystyle\int \frac{e^t dt}{e^t+4}\)</span></div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-63"><span class="process-math">\(\displaystyle\int \frac{e^{1/x}+2}{x^2} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-12"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-64"><span class="process-math">\(\displaystyle\int \operatorname{tg} x \sec^2 x dx\)</span></div></article><article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-65"><span class="process-math">\(\displaystyle\int \operatorname{sen}^4 x \cos x dx\)</span></div></article><article class="exercise exercise-like" id="exercise-14"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-66"><span class="process-math">\(\displaystyle\int \frac{\operatorname{sen} x}{\cos^5 x} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-15"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-67"><span class="process-math">\(\displaystyle\int \frac{2\operatorname{sen} x - 5\cos x}{\cos x} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="p-68"><span class="process-math">\(\displaystyle\int e^x \cos(2e^x) dx\)</span></div></article><article class="exercise exercise-like" id="exercise-17"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="p-69"><span class="process-math">\(\displaystyle\int \frac{x}{2} \cos x^2 dx\)</span></div></article><article class="exercise exercise-like" id="exercise-18"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="p-70"><span class="process-math">\(\displaystyle\int \operatorname{sen}(5\theta - \pi) d\theta\)</span></div></article><article class="exercise exercise-like" id="exercise-19"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para" id="p-71"><span class="process-math">\(\displaystyle\int \frac{\operatorname{arc\,sen} y}{2\sqrt{1-y^2}} dy\)</span></div></article><article class="exercise exercise-like" id="exercise-20"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="p-72"><span class="process-math">\(\displaystyle\int \frac{2\sec^2 \theta}{a + b\operatorname{tg} \theta} d\theta\)</span></div></article><article class="exercise exercise-like" id="exercise-21"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="p-73"><span class="process-math">\(\displaystyle\int \frac{dx}{16+x^2}\)</span></div></article><article class="exercise exercise-like" id="exercise-22"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
+<div class="para" id="p-74"><span class="process-math">\(\displaystyle\int \frac{dy}{y^2-4y+4}\)</span></div></article><article class="exercise exercise-like" id="exercise-23"><h4 class="heading"><span class="codenumber">20<span class="period">.</span></span></h4>
+<div class="para" id="p-75"><span class="process-math">\(\displaystyle\int \sqrt[3]{\operatorname{sen} \theta} \cos \theta d\theta\)</span></div></article><article class="exercise exercise-like" id="exercise-24"><h4 class="heading"><span class="codenumber">21<span class="period">.</span></span></h4>
+<div class="para" id="p-76"><span class="process-math">\(\displaystyle\int \frac{\ln x^2}{x} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-25"><h4 class="heading"><span class="codenumber">22<span class="period">.</span></span></h4>
+<div class="para" id="p-77"><span class="process-math">\(\displaystyle\int (e^{ax} + e^{-ax})^2 dx\)</span></div></article><article class="exercise exercise-like" id="exercise-26"><h4 class="heading"><span class="codenumber">23<span class="period">.</span></span></h4>
+<div class="para" id="p-78"><span class="process-math">\(\displaystyle\int \sqrt{3t^4+t^2} dt\)</span></div></article><article class="exercise exercise-like" id="exercise-27"><h4 class="heading"><span class="codenumber">24<span class="period">.</span></span></h4>
+<div class="para" id="p-79"><span class="process-math">\(\displaystyle\int \frac{4dx}{4x^2+20x+34}\)</span></div></article><article class="exercise exercise-like" id="exercise-28"><h4 class="heading"><span class="codenumber">25<span class="period">.</span></span></h4>
+<div class="para" id="p-80"><span class="process-math">\(\displaystyle\int \frac{3 dx}{x^2-4x+1}\)</span></div></article><article class="exercise exercise-like" id="exercise-29"><h4 class="heading"><span class="codenumber">26<span class="period">.</span></span></h4>
+<div class="para" id="p-81"><span class="process-math">\(\displaystyle\int \frac{e^x dx}{e^{2x}+16}\)</span></div></article><article class="exercise exercise-like" id="exercise-30"><h4 class="heading"><span class="codenumber">27<span class="period">.</span></span></h4>
+<div class="para" id="p-82"><span class="process-math">\(\displaystyle\int \frac{\sqrt{x+3}}{x-1} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading"><span class="codenumber">28<span class="period">.</span></span></h4>
+<div class="para" id="p-83"><span class="process-math">\(\displaystyle\int \frac{3 dx}{x \ln^2 3x}\)</span></div></article><article class="exercise exercise-like" id="exercise-32"><h4 class="heading"><span class="codenumber">29<span class="period">.</span></span></h4>
+<div class="para" id="p-84"><span class="process-math">\(\displaystyle\int (\operatorname{sen} 4x + \cos 2\pi) dx\)</span></div></article><article class="exercise exercise-like" id="exercise-33"><h4 class="heading"><span class="codenumber">30<span class="period">.</span></span></h4>
+<div class="para" id="p-85"><span class="process-math">\(\displaystyle\int 2^{x^2+1} x dx\)</span></div></article><article class="exercise exercise-like" id="exercise-34"><h4 class="heading"><span class="codenumber">31<span class="period">.</span></span></h4>
+<div class="para" id="p-86"><span class="process-math">\(\displaystyle\int x e^{3x^2} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-35"><h4 class="heading"><span class="codenumber">32<span class="period">.</span></span></h4>
+<div class="para" id="p-87"><span class="process-math">\(\displaystyle\int \frac{dt}{(2+t)^2}\)</span></div></article><article class="exercise exercise-like" id="exercise-36"><h4 class="heading"><span class="codenumber">33<span class="period">.</span></span></h4>
+<div class="para" id="p-88"><span class="process-math">\(\displaystyle\int \frac{dt}{t \ln t}\)</span></div></article><article class="exercise exercise-like" id="exercise-37"><h4 class="heading"><span class="codenumber">34<span class="period">.</span></span></h4>
+<div class="para" id="p-89"><span class="process-math">\(\displaystyle\int 8x\sqrt{1-2x^2} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-38"><h4 class="heading"><span class="codenumber">35<span class="period">.</span></span></h4>
+<div class="para" id="p-90"><span class="process-math">\(\displaystyle\int (e^{2x}+2)^5 e^{2x} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-39"><h4 class="heading"><span class="codenumber">36<span class="period">.</span></span></h4>
+<div class="para" id="p-91"><span class="process-math">\(\displaystyle\int \frac{4t dt}{\sqrt{4t^2+5}}\)</span></div></article><article class="exercise exercise-like" id="exercise-40"><h4 class="heading"><span class="codenumber">37<span class="period">.</span></span></h4>
+<div class="para" id="p-92"><span class="process-math">\(\displaystyle\int \frac{\cos x}{3 - \operatorname{sen} x} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-41"><h4 class="heading"><span class="codenumber">38<span class="period">.</span></span></h4>
+<div class="para" id="p-93"><span class="process-math">\(\displaystyle\int \frac{dv}{\sqrt{v}(1+\sqrt{v})^5}\)</span></div></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">39<span class="period">.</span></span></h4>
+<div class="para" id="p-94"><span class="process-math">\(\displaystyle\int x^2\sqrt{1+x} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">40<span class="period">.</span></span></h4>
+<div class="para" id="p-95"><span class="process-math">\(\displaystyle\int x^4 e^{-x^5} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">41<span class="period">.</span></span></h4>
+<div class="para" id="p-96"><span class="process-math">\(\displaystyle\int t \cos t^2 dt\)</span></div></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">42<span class="period">.</span></span></h4>
+<div class="para" id="p-97"><span class="process-math">\(\displaystyle\int 8x^2\sqrt{6x^3+5} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">43<span class="period">.</span></span></h4>
+<div class="para" id="p-98"><span class="process-math">\(\displaystyle\int \operatorname{sen}^{1/2} 2\theta \cos 2\theta d\theta\)</span></div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">44<span class="period">.</span></span></h4>
+<div class="para" id="p-99"><span class="process-math">\(\displaystyle\displaystyle\int \sec^2(5x+3) dx\)</span></div></article><article class="exercise exercise-like" id="exercise-48"><h4 class="heading"><span class="codenumber">45<span class="period">.</span></span></h4>
+<div class="para" id="p-100"><span class="process-math">\(\displaystyle\int \frac{\operatorname{sen} \theta d\theta}{(5-\cos \theta)^3}\)</span></div></article><article class="exercise exercise-like" id="exercise-49"><h4 class="heading"><span class="codenumber">46<span class="period">.</span></span></h4>
+<div class="para" id="p-101"><span class="process-math">\(\displaystyle\int \operatorname{cotg} u du\)</span></div></article><article class="exercise exercise-like" id="exercise-50"><h4 class="heading"><span class="codenumber">47<span class="period">.</span></span></h4>
+<div class="para" id="p-102"><span class="process-math">\(\displaystyle\int (1+e^{-at})^{3/2} e^{-at} dt, a &gt; 0\)</span></div></article><article class="exercise exercise-like" id="exercise-51"><h4 class="heading"><span class="codenumber">48<span class="period">.</span></span></h4>
+<div class="para" id="p-103"><span class="process-math">\(\displaystyle\int \frac{\cos \sqrt{x}}{\sqrt{x}} dx\)</span></div></article><article class="exercise exercise-like" id="exercise-52"><h4 class="heading"><span class="codenumber">49<span class="period">.</span></span></h4>
+<div class="para" id="p-104"><span class="process-math">\(\displaystyle\int t\sqrt{t-4} dt\)</span></div></article><article class="exercise exercise-like" id="exercise-53"><h4 class="heading"><span class="codenumber">50<span class="period">.</span></span></h4>
+<div class="para" id="p-105"><span class="process-math">\(\displaystyle\int x^2(\operatorname{sen} 2x^3 + 4x) dx\)</span></div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
