@@ -196,7 +196,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="01integral.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="01integral.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-3.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
@@ -236,6 +236,13 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-metodo-substituicao.html#subsec-exemplos-subst" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Exemplos</span></a></div></li>
 <li><div class="toc-item"><a href="sec-metodo-substituicao.html#exercicios-6-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Método de Integração por Partes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsec-exemplos-partes" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercicios-6-6" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -330,7 +337,13 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </h4>
 <span class="process-math">\(\int \operatorname{tg} x dx\)</span><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><div class="para logical" id="p-50">
-<div class="para">Podemos escrever <span class="process-math">\(\int \operatorname{tg} x dx = \int \frac{\operatorname{sen} x}{\cos x} dx\text{.}\)</span> Fazendo <span class="process-math">\(u = \cos x\text{,}\)</span> temos <span class="process-math">\(du = -\operatorname{sen} x dx\)</span> e então <span class="process-math">\(\operatorname{sen} x dx = -du\text{.}\)</span> Portanto,</div>
+<div class="para">Podemos escrever</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \operatorname{tg} x dx = \int \frac{\operatorname{sen} x}{\cos x} dx\text{.}
+\end{equation*}
+</div>
+<div class="para">Fazendo <span class="process-math">\(u = \cos x\text{,}\)</span> temos <span class="process-math">\(du = -\operatorname{sen} x dx\)</span> e então <span class="process-math">\(\operatorname{sen} x dx = -du\text{.}\)</span> Portanto,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int \operatorname{tg} x dx = \int \frac{-du}{u} = -\int \frac{du}{u} = -\ln|u| + c = -\ln|\cos x| + c\text{.}
@@ -343,10 +356,13 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <span class="process-math">\(\displaystyle\int \frac{dx}{(3x-5)^8}\text{.}\)</span><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="para logical" id="p-51">
 <div class="para">Fazendo <span class="process-math">\(u = 3x-5\text{,}\)</span> temos <span class="process-math">\(du = 3dx\)</span> ou <span class="process-math">\(dx = 1/3 du\text{.}\)</span> Portanto,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int \frac{dx}{(3x-5)^8} = \int \frac{1/3 du}{u^8} = \frac{1}{3} \int u^{-8} du = \frac{1}{3} \frac{u^{-7}}{-7} + c = \frac{-1}{21(3x-5)^7} + c\text{.}
-\end{equation*}
+<div class="displaymath process-math" id="md-1">
+\begin{align*}
+\int \frac{dx}{(3x-5)^8} =\amp~ \int \frac{1/3 du}{u^8}\\
+=\amp~ \frac{1}{3} \int u^{-8} du\\
+=\amp~ \frac{1}{3} \frac{u^{-7}}{-7} + c\\
+=\amp~ \frac{-1}{21(3x-5)^7} + c
+\end{align*}
 </div>
 </div></div></div>
 </div></article><article class="example example-like" id="example-6"><h4 class="heading">
@@ -354,7 +370,13 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </h4>
 <span class="process-math">\(\displaystyle\int (x + \sec^2 3x) dx\text{.}\)</span><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="para logical" id="p-52">
-<div class="para">Podemos escrever: <span class="process-math">\(\int x dx + \int \sec^2 3x dx = \frac{x^2}{2} + \int \sec^2 3x dx\text{.}\)</span> Para resolver <span class="process-math">\(\int \sec^2 3x dx\text{,}\)</span> fazemos <span class="process-math">\(u = 3x\text{,}\)</span> <span class="process-math">\(du = 3dx\text{.}\)</span> Obtemos:</div>
+<div class="para">Podemos escrever:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int x dx + \int \sec^2 3x dx = \frac{x^2}{2} + \int \sec^2 3x dx\text{.}
+\end{equation*}
+</div>
+<div class="para">Para resolver <span class="process-math">\(\int \sec^2 3x dx\text{,}\)</span> fazemos <span class="process-math">\(u = 3x\text{,}\)</span> <span class="process-math">\(du = 3dx\text{.}\)</span> Obtemos:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{x^2}{2} + \frac{1}{3}\operatorname{tg} 3x + c\text{.}
@@ -427,7 +449,7 @@ show(integral(f, x))
 <div class="para" id="p-104"><span class="process-math">\(\displaystyle\int t\sqrt{t-4} dt\)</span></div></article><article class="exercise exercise-like" id="exercise-53"><h4 class="heading"><span class="codenumber">50<span class="period">.</span></span></h4>
 <div class="para" id="p-105"><span class="process-math">\(\displaystyle\int x^2(\operatorname{sen} 2x^3 + 4x) dx\)</span></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-3.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">
