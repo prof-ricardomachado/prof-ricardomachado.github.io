@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.1",
   "title": "Integral Indefinida",
-  "body": " Integral Indefinida   Exercícios   Use o Sage para calcular as integrais propostas nos exercícios e confira com as suas respostas.    Nos itens a seguir, calcular a integral e, em seguida, derivar as respostas para conferir os resultados                 Nos itens a seguir, calcular as integrais indefinidas.                   , onde é constante.               , onde .     Encontrar uma primitiva , da função , que satisfaça .    "
+  "body": " Integral Indefinida   Exercícios   Use o Sage para calcular as integrais propostas nos exercícios e confira com as suas respostas.    Nos itens a seguir, calcular a integral e, em seguida, derivar as respostas para conferir os resultados                 Nos itens a seguir, calcular as integrais indefinidas.                  , onde é constante.               , onde .     Encontrar uma primitiva , da função , que satisfaça .    "
 },
 {
   "id": "technology-1",
@@ -52,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "1.1.2",
   "title": "",
-  "body": "Nos itens a seguir, calcular as integrais indefinidas.                   , onde é constante.               , onde .   "
+  "body": "Nos itens a seguir, calcular as integrais indefinidas.                  , onde é constante.               , onde .   "
 },
 {
   "id": "exercise-3",
@@ -982,6 +982,384 @@ var ptx_lunr_docs = [
   "body": ""
 },
 {
+  "id": "sec-formalizacao-riemann",
+  "level": "1",
+  "url": "sec-formalizacao-riemann.html",
+  "type": "Seção",
+  "number": "1.4",
+  "title": "O Conceito de Área sob uma Curva",
+  "body": " O Conceito de Área sob uma Curva  O problema central consiste em definir a área de uma região plana , limitada pelo gráfico de uma função contínua não negativa , pelo eixo e pelas retas verticais e . with its area divided into n rectangles of width delta x and height f(ci)] Para quantificar essa área de maneira rigorosa, aplicamos o seguinte processo de discretização:   Construção da Partição e Amostragem      Partição do Intervalo: Dividimos o intervalo em subintervalos, escolhendo pontos tais que .     Largura das Bases: Cada subintervalo possui um comprimento definido por .     Escolha das Alturas: Em cada subintervalo , selecionamos um ponto arbitrário . A altura do retângulo correspondente será dada pelo valor da função nesse ponto, .       Partição e área aproximada.   Os termos máximo e mínimo.      Soma de Riemann   A soma das áreas dos retângulos resultantes é denominada Soma de Riemann da função :     À medida que refinamos a partição (aumentando o valor de e fazendo com que a largura de cada tenda a zero), a soma dessas áreas retangulares converge para o valor intuitivo da área total da região .   Área como Limite   A área sob a curva de até é definida formalmente pelo limite:      É importante notar que, para funções contínuas, este limite sempre existe e resulta em um número não negativo.   "
+},
+{
+  "id": "technology-4",
+  "level": "2",
+  "url": "sec-formalizacao-riemann.html#technology-4",
+  "type": "Tecnologia",
+  "number": "1.4.1",
+  "title": "",
+  "body": " Partição e área aproximada.   Os termos máximo e mínimo.    "
+},
+{
+  "id": "def-soma-riemann",
+  "level": "2",
+  "url": "sec-formalizacao-riemann.html#def-soma-riemann",
+  "type": "Definição",
+  "number": "1.4.3",
+  "title": "Soma de Riemann.",
+  "body": " Soma de Riemann   A soma das áreas dos retângulos resultantes é denominada Soma de Riemann da função :    "
+},
+{
+  "id": "def-area-limite",
+  "level": "2",
+  "url": "sec-formalizacao-riemann.html#def-area-limite",
+  "type": "Definição",
+  "number": "1.4.4",
+  "title": "Área como Limite.",
+  "body": " Área como Limite   A área sob a curva de até é definida formalmente pelo limite:    "
+},
+{
+  "id": "note-1",
+  "level": "2",
+  "url": "sec-formalizacao-riemann.html#note-1",
+  "type": "Nota",
+  "number": "1.4.5",
+  "title": "",
+  "body": " É importante notar que, para funções contínuas, este limite sempre existe e resulta em um número não negativo.  "
+},
+{
+  "id": "sec-integral-definida",
+  "level": "1",
+  "url": "sec-integral-definida.html",
+  "type": "Seção",
+  "number": "1.5",
+  "title": "A Integral Definida",
+  "body": " A Integral Definida   A integral definida é o alicerce matemático que formaliza a transição de aproximações finitas para valores exatos. Ela surge historicamente para resolver o problema de determinar áreas sob curvas e grandezas físicas acumuladas, como o deslocamento de um corpo com velocidade variável.    Integral Definida como Limite   Seja uma função definida em um intervalo fechado e uma partição desse intervalo. A integral definida de de até é denotada por: e definida pelo limite das somas de Riemann: contanto que este limite exista. Nesse caso, dizemos que a função é integrável em .    Os valores e são conhecidos como os limites de integração, representando os pontos de início (inferior) e fim (superior) do intervalo. Uma característica importante desta notação é que a variável é \"muda\", podendo ser substituída por qualquer outro símbolo sem alterar o valor da integral.   Propriedades Fundamentais  Para funções integráveis, valem as seguintes convenções e propriedades operacionais:   Convenções de Limites     Inversão:  .    Intervalo Nulo: Se , então .      Além disso, a integral definida satisfaz propriedades de linearidade e aditividade:   Linearidade   Se e são integráveis e é uma constante real:  .  .       Aditividade de Intervalo   Se é integrável em um intervalo que contém e , então: .      Teoremas de Comparação e Valor Médio  A integral definida preserva desigualdades e possui uma interpretação de valor médio para funções contínuas:      Preservação de Sinal: Se em , então .     Comparação: Se em , então .     Desigualdade Triangular:  .      Teorema do Valor Médio para Integrais   Se é contínua em , existe pelo menos um ponto tal que: .   Geometricamente, se , isso indica que a área sob a curva é igual à área de um retângulo de base e altura .       "
+},
+{
+  "id": "def-integral-definida",
+  "level": "2",
+  "url": "sec-integral-definida.html#def-integral-definida",
+  "type": "Definição",
+  "number": "1.5.1",
+  "title": "Integral Definida como Limite.",
+  "body": " Integral Definida como Limite   Seja uma função definida em um intervalo fechado e uma partição desse intervalo. A integral definida de de até é denotada por: e definida pelo limite das somas de Riemann: contanto que este limite exista. Nesse caso, dizemos que a função é integrável em .   "
+},
+{
+  "id": "prop-linearidade-definida",
+  "level": "2",
+  "url": "sec-integral-definida.html#prop-linearidade-definida",
+  "type": "Proposição",
+  "number": "1.5.2",
+  "title": "Linearidade.",
+  "body": " Linearidade   Se e são integráveis e é uma constante real:  .  .     "
+},
+{
+  "id": "prop-aditividade-intervalo",
+  "level": "2",
+  "url": "sec-integral-definida.html#prop-aditividade-intervalo",
+  "type": "Proposição",
+  "number": "1.5.3",
+  "title": "Aditividade de Intervalo.",
+  "body": " Aditividade de Intervalo   Se é integrável em um intervalo que contém e , então: .   "
+},
+{
+  "id": "thm-valor-medio-integral",
+  "level": "2",
+  "url": "sec-integral-definida.html#thm-valor-medio-integral",
+  "type": "Teorema",
+  "number": "1.5.4",
+  "title": "Teorema do Valor Médio para Integrais.",
+  "body": " Teorema do Valor Médio para Integrais   Se é contínua em , existe pelo menos um ponto tal que: .   Geometricamente, se , isso indica que a área sob a curva é igual à área de um retângulo de base e altura .     "
+},
+{
+  "id": "sec-teorema-fundamental-calculo",
+  "level": "1",
+  "url": "sec-teorema-fundamental-calculo.html",
+  "type": "Seção",
+  "number": "1.6",
+  "title": "O Teorema Fundamental do Cálculo",
+  "body": " O Teorema Fundamental do Cálculo   O Teorema Fundamental do Cálculo é uma das ferramentas mais poderosas da matemática, pois estabelece a conexão entre a derivação e a integração. Ele permite que, ao conhecermos uma primitiva de uma função contínua , possamos calcular sua integral definida de forma simplificada.    Teorema Fundamental do Cálculo   Se for uma função contínua no intervalo e for uma primitiva de em , então:        Exemplos  Calcular as integrais definidas:    .   Uma primitiva de é . Assim: .      .   Uma primitiva de é . Temos: .      .   Como é primitiva de , vem: .      .   Uma primitiva é . .      .   Fazendo a primitiva por substituição, obtemos . .      Exercícios   Use o Sage para calcular as integrais propostas nos exercícios e confira com as suas respostas.     Calcular as seguintes integrais definidas:                            "
+},
+{
+  "id": "thm-fundamental",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#thm-fundamental",
+  "type": "Teorema",
+  "number": "1.6.1",
+  "title": "Teorema Fundamental do Cálculo.",
+  "body": " Teorema Fundamental do Cálculo   Se for uma função contínua no intervalo e for uma primitiva de em , então:    "
+},
+{
+  "id": "example-14",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#example-14",
+  "type": "Exemplo",
+  "number": "1.6.2",
+  "title": "",
+  "body": "  .   Uma primitiva de é . Assim: .   "
+},
+{
+  "id": "example-15",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#example-15",
+  "type": "Exemplo",
+  "number": "1.6.3",
+  "title": "",
+  "body": "  .   Uma primitiva de é . Temos: .   "
+},
+{
+  "id": "example-16",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#example-16",
+  "type": "Exemplo",
+  "number": "1.6.4",
+  "title": "",
+  "body": "  .   Como é primitiva de , vem: .   "
+},
+{
+  "id": "example-17",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#example-17",
+  "type": "Exemplo",
+  "number": "1.6.5",
+  "title": "",
+  "body": "  .   Uma primitiva é . .   "
+},
+{
+  "id": "example-18",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#example-18",
+  "type": "Exemplo",
+  "number": "1.6.6",
+  "title": "",
+  "body": "  .   Fazendo a primitiva por substituição, obtemos . .   "
+},
+{
+  "id": "technology-5",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#technology-5",
+  "type": "Tecnologia",
+  "number": "1.6.7",
+  "title": "",
+  "body": " Use o Sage para calcular as integrais propostas nos exercícios e confira com as suas respostas.   "
+},
+{
+  "id": "exercise-87",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-87",
+  "type": "Exercício",
+  "number": "1.6.2.1",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-88",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-88",
+  "type": "Exercício",
+  "number": "1.6.2.2",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-89",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-89",
+  "type": "Exercício",
+  "number": "1.6.2.3",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-90",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-90",
+  "type": "Exercício",
+  "number": "1.6.2.4",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-91",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-91",
+  "type": "Exercício",
+  "number": "1.6.2.5",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-92",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-92",
+  "type": "Exercício",
+  "number": "1.6.2.6",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-93",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-93",
+  "type": "Exercício",
+  "number": "1.6.2.7",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-94",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-94",
+  "type": "Exercício",
+  "number": "1.6.2.8",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-95",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-95",
+  "type": "Exercício",
+  "number": "1.6.2.9",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-96",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-96",
+  "type": "Exercício",
+  "number": "1.6.2.10",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-97",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-97",
+  "type": "Exercício",
+  "number": "1.6.2.11",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-98",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-98",
+  "type": "Exercício",
+  "number": "1.6.2.12",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-99",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-99",
+  "type": "Exercício",
+  "number": "1.6.2.13",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-100",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-100",
+  "type": "Exercício",
+  "number": "1.6.2.14",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-101",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-101",
+  "type": "Exercício",
+  "number": "1.6.2.15",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-102",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-102",
+  "type": "Exercício",
+  "number": "1.6.2.16",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-103",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-103",
+  "type": "Exercício",
+  "number": "1.6.2.17",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-104",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-104",
+  "type": "Exercício",
+  "number": "1.6.2.18",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-105",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-105",
+  "type": "Exercício",
+  "number": "1.6.2.19",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-106",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-106",
+  "type": "Exercício",
+  "number": "1.6.2.20",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-107",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-107",
+  "type": "Exercício",
+  "number": "1.6.2.21",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-108",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-108",
+  "type": "Exercício",
+  "number": "1.6.2.22",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-109",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-109",
+  "type": "Exercício",
+  "number": "1.6.2.23",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-110",
+  "level": "2",
+  "url": "sec-teorema-fundamental-calculo.html#exercise-110",
+  "type": "Exercício",
+  "number": "1.6.2.24",
+  "title": "",
+  "body": ""
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
@@ -991,18 +1369,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-160",
+  "id": "p-224",
   "level": "2",
-  "url": "referencias.html#p-160",
+  "url": "referencias.html#p-224",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-161",
+  "id": "p-225",
   "level": "2",
-  "url": "referencias.html#p-161",
+  "url": "referencias.html#p-225",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
