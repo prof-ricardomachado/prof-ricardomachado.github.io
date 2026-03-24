@@ -1360,6 +1360,492 @@ var ptx_lunr_docs = [
   "body": ""
 },
 {
+  "id": "sec-calculo-areas",
+  "level": "1",
+  "url": "sec-calculo-areas.html",
+  "type": "Seção",
+  "number": "1.7",
+  "title": "Cálculo de Áreas",
+  "body": " Cálculo de Áreas   A integral definida é a ferramenta fundamental para o cálculo de áreas de figuras planas. Dependendo da posição da curva em relação ao eixo ou da interação entre duas curvas, dividimos o estudo em casos específicos.    6.12 Cálculo da Área em Relação ao Eixo x    Caso 1: Função Positiva  Se é contínua e em , a área sob o gráfico é dada por:    Área sob parábola   Encontre a área limitada pela curva e o eixo .    A curva intercepta o eixo em e . Como a função é positiva neste intervalo:     Caso 2: Função Negativa  Se em , a integral resultará em um valor negativo. Como área é sempre positiva, usamos o valor absoluto:     Determine a área da região limitada por e o eixo , no intervalo .    Como a função assume valores positivos e negativos no intervalo, devemos calcular a área absoluta dividindo a integral no ponto de intersecção :   Calculando a primitiva :   Para o primeiro intervalo:     Para o segundo intervalo:      A área total é a soma dos valores absolutos:       6.13 Área entre Duas Curvas  Sejam e funções contínuas em tais que . A área da região limitada pelos gráficos de e e pelas retas e é:    Área entre parábola e reta  Determine a área da região limitada por e .   Igualando as funções , encontramos os pontos de intersecção e . No intervalo , a reta está acima da parábola .      Área com Inversão de Curvas   Calcule a área da região delimitada por e entre e .    Primeiro, determinamos os pontos de intersecção igualando as funções: As intersecções ocorrem em , e .  Devido à simetria e à inversão das funções no ponto médio, dividimos a área em duas partes:     No intervalo , temos :      No intervalo , temos :       A área total é a soma das áreas das duas regiões:       6.14 Exercícios: Áreas   Determine a área da região limitada pelas curvas dadas:   , eixo , e .  , eixo , e .  , eixo e .  , eixo , de a .  , eixo , e .  e .  e .  e , de a .  e .  , , e .  e o eixo .  e .  , e .  , , e .  e .   "
+},
+{
+  "id": "p-226",
+  "level": "2",
+  "url": "sec-calculo-areas.html#p-226",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Caso 1: Função Positiva "
+},
+{
+  "id": "example-19",
+  "level": "2",
+  "url": "sec-calculo-areas.html#example-19",
+  "type": "Exemplo",
+  "number": "1.7.1",
+  "title": "Área sob parábola.",
+  "body": " Área sob parábola   Encontre a área limitada pela curva e o eixo .    A curva intercepta o eixo em e . Como a função é positiva neste intervalo:    "
+},
+{
+  "id": "p-230",
+  "level": "2",
+  "url": "sec-calculo-areas.html#p-230",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Caso 2: Função Negativa "
+},
+{
+  "id": "ex-area-cos3x",
+  "level": "2",
+  "url": "sec-calculo-areas.html#ex-area-cos3x",
+  "type": "Exemplo",
+  "number": "1.7.2",
+  "title": "",
+  "body": "  Determine a área da região limitada por e o eixo , no intervalo .    Como a função assume valores positivos e negativos no intervalo, devemos calcular a área absoluta dividindo a integral no ponto de intersecção :   Calculando a primitiva :   Para o primeiro intervalo:     Para o segundo intervalo:      A área total é a soma dos valores absolutos:    "
+},
+{
+  "id": "example-21",
+  "level": "2",
+  "url": "sec-calculo-areas.html#example-21",
+  "type": "Exemplo",
+  "number": "1.7.3",
+  "title": "Área entre parábola e reta.",
+  "body": " Área entre parábola e reta  Determine a área da região limitada por e .   Igualando as funções , encontramos os pontos de intersecção e . No intervalo , a reta está acima da parábola .    "
+},
+{
+  "id": "ex-area-inversao",
+  "level": "2",
+  "url": "sec-calculo-areas.html#ex-area-inversao",
+  "type": "Exemplo",
+  "number": "1.7.4",
+  "title": "Área com Inversão de Curvas.",
+  "body": " Área com Inversão de Curvas   Calcule a área da região delimitada por e entre e .    Primeiro, determinamos os pontos de intersecção igualando as funções: As intersecções ocorrem em , e .  Devido à simetria e à inversão das funções no ponto médio, dividimos a área em duas partes:     No intervalo , temos :      No intervalo , temos :       A área total é a soma das áreas das duas regiões:    "
+},
+{
+  "id": "exercise-111",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-111",
+  "type": "Exercício",
+  "number": "1.7.3.1",
+  "title": "",
+  "body": ", eixo , e . "
+},
+{
+  "id": "exercise-112",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-112",
+  "type": "Exercício",
+  "number": "1.7.3.2",
+  "title": "",
+  "body": ", eixo , e . "
+},
+{
+  "id": "exercise-113",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-113",
+  "type": "Exercício",
+  "number": "1.7.3.3",
+  "title": "",
+  "body": ", eixo e . "
+},
+{
+  "id": "exercise-114",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-114",
+  "type": "Exercício",
+  "number": "1.7.3.4",
+  "title": "",
+  "body": ", eixo , de a . "
+},
+{
+  "id": "exercise-115",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-115",
+  "type": "Exercício",
+  "number": "1.7.3.5",
+  "title": "",
+  "body": ", eixo , e . "
+},
+{
+  "id": "exercise-116",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-116",
+  "type": "Exercício",
+  "number": "1.7.3.6",
+  "title": "",
+  "body": "e . "
+},
+{
+  "id": "exercise-117",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-117",
+  "type": "Exercício",
+  "number": "1.7.3.7",
+  "title": "",
+  "body": "e . "
+},
+{
+  "id": "exercise-118",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-118",
+  "type": "Exercício",
+  "number": "1.7.3.8",
+  "title": "",
+  "body": "e , de a . "
+},
+{
+  "id": "exercise-119",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-119",
+  "type": "Exercício",
+  "number": "1.7.3.9",
+  "title": "",
+  "body": "e . "
+},
+{
+  "id": "exercise-120",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-120",
+  "type": "Exercício",
+  "number": "1.7.3.10",
+  "title": "",
+  "body": ", , e . "
+},
+{
+  "id": "exercise-121",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-121",
+  "type": "Exercício",
+  "number": "1.7.3.11",
+  "title": "",
+  "body": "e o eixo . "
+},
+{
+  "id": "exercise-122",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-122",
+  "type": "Exercício",
+  "number": "1.7.3.12",
+  "title": "",
+  "body": "e . "
+},
+{
+  "id": "exercise-123",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-123",
+  "type": "Exercício",
+  "number": "1.7.3.13",
+  "title": "",
+  "body": ", e . "
+},
+{
+  "id": "exercise-124",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-124",
+  "type": "Exercício",
+  "number": "1.7.3.14",
+  "title": "",
+  "body": ", , e . "
+},
+{
+  "id": "exercise-125",
+  "level": "2",
+  "url": "sec-calculo-areas.html#exercise-125",
+  "type": "Exercício",
+  "number": "1.7.3.15",
+  "title": "",
+  "body": "e . "
+},
+{
+  "id": "sec-integrais-improprias",
+  "level": "1",
+  "url": "sec-integrais-improprias.html",
+  "type": "Seção",
+  "number": "1.8",
+  "title": "Integrais Impróprias",
+  "body": " Integrais Impróprias   Até agora, estudamos integrais definidas em intervalos fechados para funções contínuas. No entanto, em diversas aplicações (como na Estatística), precisamos calcular a área de regiões que se estendem indefinidamente. Essas são as chamadas Integrais Impróprias .    Intervalos de Integração Infinitos  Dizemos que uma integral é imprópria quando pelo menos um dos limites de integração é infinito. O cálculo é feito utilizando o conceito de limite:     Se é contínua em , então:     Se é contínua em , então:      Dizemos que a integral converge se o limite existe e é um número finito. Caso contrário, a integral diverge .   Convergência da função exponencial   Investigue a integral .      Como o limite é 1, a integral converge .      Integrandos com Descontinuidades Infinitas  Outro caso de integral imprópria ocorre quando a função tende ao infinito em algum ponto do intervalo de integração .  Se é contínua em e , então:    Função com assíntota vertical  Calcule . Note que a função é descontínua em .     A integral converge para 2.      Exercícios Propostos   Determine se as seguintes integrais impróprias convergem ou divergem. Se convergirem, calcule seu valor.            Um poço de petróleo produz óleo a uma taxa de mil barris\/mês. Determine o potencial total de produção do poço (integre de 0 a ).     "
+},
+{
+  "id": "p-264",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#p-264",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Integrais Impróprias "
+},
+{
+  "id": "p-269",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#p-269",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "converge diverge "
+},
+{
+  "id": "example-23",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#example-23",
+  "type": "Exemplo",
+  "number": "1.8.1",
+  "title": "Convergência da função exponencial.",
+  "body": " Convergência da função exponencial   Investigue a integral .      Como o limite é 1, a integral converge .   "
+},
+{
+  "id": "example-24",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#example-24",
+  "type": "Exemplo",
+  "number": "1.8.2",
+  "title": "Função com assíntota vertical.",
+  "body": " Função com assíntota vertical  Calcule . Note que a função é descontínua em .     A integral converge para 2.   "
+},
+{
+  "id": "exercise-126",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-126",
+  "type": "Exercício",
+  "number": "1.8.3.1",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-127",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-127",
+  "type": "Exercício",
+  "number": "1.8.3.2",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-128",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-128",
+  "type": "Exercício",
+  "number": "1.8.3.3",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-129",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-129",
+  "type": "Exercício",
+  "number": "1.8.3.4",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-130",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-130",
+  "type": "Exercício",
+  "number": "1.8.3.5",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-131",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-131",
+  "type": "Exercício",
+  "number": "1.8.3.6",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-132",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-132",
+  "type": "Exercício",
+  "number": "1.8.3.7",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-133",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-133",
+  "type": "Exercício",
+  "number": "1.8.3.8",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "exercise-134",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-134",
+  "type": "Exercício",
+  "number": "1.8.3.9",
+  "title": "",
+  "body": " Um poço de petróleo produz óleo a uma taxa de mil barris\/mês. Determine o potencial total de produção do poço (integre de 0 a ).  "
+},
+{
+  "id": "exercise-135",
+  "level": "2",
+  "url": "sec-integrais-improprias.html#exercise-135",
+  "type": "Exercício",
+  "number": "1.8.3.10",
+  "title": "",
+  "body": ""
+},
+{
+  "id": "sec-teoria-aplicacoes-integrais",
+  "level": "1",
+  "url": "sec-teoria-aplicacoes-integrais.html",
+  "type": "Seção",
+  "number": "1.9",
+  "title": "Aplicações Multidisciplinares da Integral",
+  "body": " Aplicações Multidisciplinares da Integral   A integração definida não é apenas uma soma de áreas, mas o processo de acumular os efeitos de uma taxa que varia continuamente[cite: 46, 491]. Seja para calcular o deslocamento de um corpo, a probabilidade de um evento ou a carga em uma estrutura, a integral conecta funções instantâneas aos seus resultados totais acumulados.    1. Física: O Acúmulo de Efeitos Variáveis  Na física clássica, muitas grandezas são produtos de taxas por tempo ou espaço (como ). Quando a taxa é variável, utilizamos a integral para somar fatias infinitesimais do evento.     Deslocamento com Velocidade Variável   Um objeto move-se com velocidade m\/s. Determine o deslocamento total entre e segundos.    O deslocamento é a integral da velocidade no tempo: . Teoricamente, o deslocamento zero indica que o objeto retornou à sua posição inicial após o intervalo.     Trabalho Mecânico de uma Mola   Calcule o trabalho necessário para comprimir uma mola em 0,2m, onde a força segue a Lei de Hooke Newtons.    O trabalho é o acúmulo da força ao longo do deslocamento: .      2. Computação: Modelagem de Incertezas e Sinais  A computação utiliza integrais para processar dados contínuos. Em estatística computacional e aprendizado de máquina, as Integrais Impróprias permitem calcular probabilidades em intervalos que se estendem ao infinito.     Probabilidade em Sistemas (Integral Imprópria)   O tempo de resposta de um servidor segue a densidade para . Qual a probabilidade de uma requisição durar mais de 1 segundo?    Como o tempo pode ser indefinido, usamos o limite da integral imprópria: . Isso significa que há aproximadamente 36,8% de chance da tarefa exceder 1 segundo.     Acúmulo de Carga Elétrica em Sinais   A corrente em um circuito digital oscila como . Calcule a carga total acumulada de a .    A carga é a integral da corrente no tempo: .      3. Engenharia: Estática e Distribuição de Cargas  Na engenharia, a integral substitui cargas distribuídas por forças resultantes únicas e ajuda a localizar o centro geométrico (centroide) de superfícies complexas.   Força Resultante em Vigas   Uma viga de 4 metros suporta uma carga que aumenta linearmente conforme N\/m. Determine a força total vertical exercida.    A força total é a integral da distribuição de carga ao longo do comprimento: .     Localização de Centroide   Determine a coordenada horizontal do centroide da região sob no intervalo .    O centroide depende do momento da área dividido pela área total ( ): .      Lista de Exercícios: Aplicações da Integral  Física: Cinemática  A velocidade de um veículo em frenagem é dada por (em m\/s). Calcule o deslocamento do veículo entre os instantes e segundos.   O deslocamento é a integral da velocidade em relação ao tempo:  . O deslocamento negativo indica que a posição final está 9 metros no sentido oposto ao referencial adotado.   Física: Trabalho Mecânico  Uma mola exige uma força de Newtons para ser esticada metros além de seu comprimento natural. Calcule o trabalho realizado para esticar a mola de até metros.   O trabalho é a integral da força ao longo do deslocamento:  .   Geometria: Área entre Curvas  Determine a área da região delimitada pelas curvas e .   Primeiro, encontramos os pontos de intersecção igualando as funções: As curvas se cruzam em e . No intervalo , .     Computação: Integral Imprópria (PDF)  Verifique se a função para é uma Função de Densidade de Probabilidade (PDF) válida, mostrando que a integral de a é igual a 1.   Calculamos a integral imprópria através de um limite:  Como quando , temos: . Como a área total é 1, é uma PDF válida.   Engenharia: Força de Carga Distribuída  Uma viga de 5 metros de comprimento suporta uma carga que varia linearmente dada por (em N\/m). Determine a força resultante total que atua sobre a viga.   A força total é a integral da carga distribuída ao longo da viga:  .   Estatística: Cálculo de Probabilidade  O tempo de carregamento de uma página web (em segundos) segue a densidade . Calcule a probabilidade da página carregar em um tempo entre 0 e 5 segundos.   A probabilidade é a área sob a curva de densidade no intervalo desejado:  . A probabilidade é de aproximadamente 63,2%.   Engenharia: Centroide Geométrico  Encontre a coordenada horizontal do centroide de uma placa triangular delimitada pelas retas , e o eixo .   A área do triângulo é . A coordenada é dada por :  .   Física: Trabalho com Força Gravitacional  O trabalho realizado contra a gravidade para mover uma carga pode ser modelado por . Calcule o trabalho realizado ao mover a carga da posição até .     .   Geometria: Área Simétrica  Calcule a área da região limitada pela parábola e a reta horizontal .   Encontrando as intersecções com o eixo (onde ): .     Matemática: Volume de Tráfego de Dados (Imprópria)  O tráfego residual de um servidor é modelado por para . Calcule a área total sob essa curva de até o infinito para achar o volume de dados residuais.     Como quando , a integral converge para: .     "
+},
+{
+  "id": "ex-fisica-1",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-fisica-1",
+  "type": "Exemplo",
+  "number": "1.9.1",
+  "title": "Deslocamento com Velocidade Variável.",
+  "body": " Deslocamento com Velocidade Variável   Um objeto move-se com velocidade m\/s. Determine o deslocamento total entre e segundos.    O deslocamento é a integral da velocidade no tempo: . Teoricamente, o deslocamento zero indica que o objeto retornou à sua posição inicial após o intervalo.   "
+},
+{
+  "id": "ex-fisica-2",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-fisica-2",
+  "type": "Exemplo",
+  "number": "1.9.2",
+  "title": "Trabalho Mecânico de uma Mola.",
+  "body": " Trabalho Mecânico de uma Mola   Calcule o trabalho necessário para comprimir uma mola em 0,2m, onde a força segue a Lei de Hooke Newtons.    O trabalho é o acúmulo da força ao longo do deslocamento: .   "
+},
+{
+  "id": "ex-comp-1",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-comp-1",
+  "type": "Exemplo",
+  "number": "1.9.3",
+  "title": "Probabilidade em Sistemas (Integral Imprópria).",
+  "body": " Probabilidade em Sistemas (Integral Imprópria)   O tempo de resposta de um servidor segue a densidade para . Qual a probabilidade de uma requisição durar mais de 1 segundo?    Como o tempo pode ser indefinido, usamos o limite da integral imprópria: . Isso significa que há aproximadamente 36,8% de chance da tarefa exceder 1 segundo.   "
+},
+{
+  "id": "ex-comp-2",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-comp-2",
+  "type": "Exemplo",
+  "number": "1.9.4",
+  "title": "Acúmulo de Carga Elétrica em Sinais.",
+  "body": " Acúmulo de Carga Elétrica em Sinais   A corrente em um circuito digital oscila como . Calcule a carga total acumulada de a .    A carga é a integral da corrente no tempo: .   "
+},
+{
+  "id": "ex-eng-1",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-eng-1",
+  "type": "Exemplo",
+  "number": "1.9.5",
+  "title": "Força Resultante em Vigas.",
+  "body": " Força Resultante em Vigas   Uma viga de 4 metros suporta uma carga que aumenta linearmente conforme N\/m. Determine a força total vertical exercida.    A força total é a integral da distribuição de carga ao longo do comprimento: .   "
+},
+{
+  "id": "ex-eng-2",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-eng-2",
+  "type": "Exemplo",
+  "number": "1.9.6",
+  "title": "Localização de Centroide.",
+  "body": " Localização de Centroide   Determine a coordenada horizontal do centroide da região sob no intervalo .    O centroide depende do momento da área dividido pela área total ( ): .   "
+},
+{
+  "id": "exercise-136",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-136",
+  "type": "Exercício",
+  "number": "1.9.4.1",
+  "title": "Física: Cinemática.",
+  "body": "Física: Cinemática  A velocidade de um veículo em frenagem é dada por (em m\/s). Calcule o deslocamento do veículo entre os instantes e segundos.   O deslocamento é a integral da velocidade em relação ao tempo:  . O deslocamento negativo indica que a posição final está 9 metros no sentido oposto ao referencial adotado.  "
+},
+{
+  "id": "exercise-137",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-137",
+  "type": "Exercício",
+  "number": "1.9.4.2",
+  "title": "Física: Trabalho Mecânico.",
+  "body": "Física: Trabalho Mecânico  Uma mola exige uma força de Newtons para ser esticada metros além de seu comprimento natural. Calcule o trabalho realizado para esticar a mola de até metros.   O trabalho é a integral da força ao longo do deslocamento:  .  "
+},
+{
+  "id": "exercise-138",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-138",
+  "type": "Exercício",
+  "number": "1.9.4.3",
+  "title": "Geometria: Área entre Curvas.",
+  "body": "Geometria: Área entre Curvas  Determine a área da região delimitada pelas curvas e .   Primeiro, encontramos os pontos de intersecção igualando as funções: As curvas se cruzam em e . No intervalo , .    "
+},
+{
+  "id": "exercise-139",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-139",
+  "type": "Exercício",
+  "number": "1.9.4.4",
+  "title": "Computação: Integral Imprópria (PDF).",
+  "body": "Computação: Integral Imprópria (PDF)  Verifique se a função para é uma Função de Densidade de Probabilidade (PDF) válida, mostrando que a integral de a é igual a 1.   Calculamos a integral imprópria através de um limite:  Como quando , temos: . Como a área total é 1, é uma PDF válida.  "
+},
+{
+  "id": "exercise-140",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-140",
+  "type": "Exercício",
+  "number": "1.9.4.5",
+  "title": "Engenharia: Força de Carga Distribuída.",
+  "body": "Engenharia: Força de Carga Distribuída  Uma viga de 5 metros de comprimento suporta uma carga que varia linearmente dada por (em N\/m). Determine a força resultante total que atua sobre a viga.   A força total é a integral da carga distribuída ao longo da viga:  .  "
+},
+{
+  "id": "exercise-141",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-141",
+  "type": "Exercício",
+  "number": "1.9.4.6",
+  "title": "Estatística: Cálculo de Probabilidade.",
+  "body": "Estatística: Cálculo de Probabilidade  O tempo de carregamento de uma página web (em segundos) segue a densidade . Calcule a probabilidade da página carregar em um tempo entre 0 e 5 segundos.   A probabilidade é a área sob a curva de densidade no intervalo desejado:  . A probabilidade é de aproximadamente 63,2%.  "
+},
+{
+  "id": "exercise-142",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-142",
+  "type": "Exercício",
+  "number": "1.9.4.7",
+  "title": "Engenharia: Centroide Geométrico.",
+  "body": "Engenharia: Centroide Geométrico  Encontre a coordenada horizontal do centroide de uma placa triangular delimitada pelas retas , e o eixo .   A área do triângulo é . A coordenada é dada por :  .  "
+},
+{
+  "id": "exercise-143",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-143",
+  "type": "Exercício",
+  "number": "1.9.4.8",
+  "title": "Física: Trabalho com Força Gravitacional.",
+  "body": "Física: Trabalho com Força Gravitacional  O trabalho realizado contra a gravidade para mover uma carga pode ser modelado por . Calcule o trabalho realizado ao mover a carga da posição até .     .  "
+},
+{
+  "id": "exercise-144",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-144",
+  "type": "Exercício",
+  "number": "1.9.4.9",
+  "title": "Geometria: Área Simétrica.",
+  "body": "Geometria: Área Simétrica  Calcule a área da região limitada pela parábola e a reta horizontal .   Encontrando as intersecções com o eixo (onde ): .    "
+},
+{
+  "id": "exercise-145",
+  "level": "2",
+  "url": "sec-teoria-aplicacoes-integrais.html#exercise-145",
+  "type": "Exercício",
+  "number": "1.9.4.10",
+  "title": "Matemática: Volume de Tráfego de Dados (Imprópria).",
+  "body": "Matemática: Volume de Tráfego de Dados (Imprópria)  O tráfego residual de um servidor é modelado por para . Calcule a área total sob essa curva de até o infinito para achar o volume de dados residuais.     Como quando , a integral converge para: .  "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
@@ -1369,18 +1855,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-224",
+  "id": "p-325",
   "level": "2",
-  "url": "referencias.html#p-224",
+  "url": "referencias.html#p-325",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-225",
+  "id": "p-326",
   "level": "2",
-  "url": "referencias.html#p-225",
+  "url": "referencias.html#p-326",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
