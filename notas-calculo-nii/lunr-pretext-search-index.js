@@ -1699,7 +1699,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "1.9",
   "title": "Aplicações Multidisciplinares da Integral",
-  "body": " Aplicações Multidisciplinares da Integral   A integração definida não é apenas uma soma de áreas, mas o processo de acumular os efeitos de uma taxa que varia continuamente. Seja para calcular o deslocamento de um corpo, a probabilidade de um evento ou a carga em uma estrutura, a integral conecta funções instantâneas aos seus resultados totais acumulados.    1. Física: O Acúmulo de Efeitos Variáveis  Na física clássica, muitas grandezas são produtos de taxas por tempo ou espaço (como ). Quando a taxa é variável, utilizamos a integral para somar fatias infinitesimais do evento.     Deslocamento com Velocidade Variável   Um objeto move-se com velocidade m\/s. Determine o deslocamento total entre e segundos.    O deslocamento é a integral da velocidade no tempo: . Teoricamente, o deslocamento zero indica que o objeto retornou à sua posição inicial após o intervalo.     Trabalho Mecânico de uma Mola   Calcule o trabalho necessário para comprimir uma mola em 0,2m, onde a força segue a Lei de Hooke Newtons.    O trabalho é o acúmulo da força ao longo do deslocamento: .      2. Computação: Modelagem de Incertezas e Sinais  A computação utiliza integrais para processar dados contínuos. Em estatística computacional e aprendizado de máquina, as Integrais Impróprias permitem calcular probabilidades em intervalos que se estendem ao infinito.     Probabilidade em Sistemas (Integral Imprópria)   O tempo de resposta de um servidor segue a densidade para . Qual a probabilidade de uma requisição durar mais de 1 segundo?    Como o tempo pode ser indefinido, usamos o limite da integral imprópria: . Isso significa que há aproximadamente 36,8% de chance da tarefa exceder 1 segundo.     Acúmulo de Carga Elétrica em Sinais   A corrente em um circuito digital oscila como . Calcule a carga total acumulada de a .    A carga é a integral da corrente no tempo: .      3. Engenharia: Estática e Distribuição de Cargas  Na engenharia, a integral substitui cargas distribuídas por forças resultantes únicas e ajuda a localizar o centro geométrico (centroide) de superfícies complexas.   Força Resultante em Vigas   Uma viga de 4 metros suporta uma carga que aumenta linearmente conforme N\/m. Determine a força total vertical exercida.    A força total é a integral da distribuição de carga ao longo do comprimento: .     Localização de Centroide   Determine a coordenada horizontal do centroide da região sob no intervalo .    O centroide depende do momento da área dividido pela área total ( ): .      Lista de Exercícios: Aplicações da Integral  Física: Cinemática  A velocidade de um veículo em frenagem é dada por (em m\/s). Calcule o deslocamento do veículo entre os instantes e segundos.   O deslocamento é a integral da velocidade em relação ao tempo:  . O deslocamento negativo indica que a posição final está 9 metros no sentido oposto ao referencial adotado.   Física: Trabalho Mecânico  Uma mola exige uma força de Newtons para ser esticada metros além de seu comprimento natural. Calcule o trabalho realizado para esticar a mola de até metros.   O trabalho é a integral da força ao longo do deslocamento:  .   Geometria: Área entre Curvas  Determine a área da região delimitada pelas curvas e .   Primeiro, encontramos os pontos de intersecção igualando as funções: As curvas se cruzam em e . No intervalo , .     Computação: Integral Imprópria (PDF)  Verifique se a função para é uma Função de Densidade de Probabilidade (PDF) válida, mostrando que a integral de a é igual a 1.   Calculamos a integral imprópria através de um limite:  Como quando , temos: . Como a área total é 1, é uma PDF válida.   Engenharia: Força de Carga Distribuída  Uma viga de 5 metros de comprimento suporta uma carga que varia linearmente dada por (em N\/m). Determine a força resultante total que atua sobre a viga.   A força total é a integral da carga distribuída ao longo da viga:  .   Estatística: Cálculo de Probabilidade  O tempo de carregamento de uma página web (em segundos) segue a densidade . Calcule a probabilidade da página carregar em um tempo entre 0 e 5 segundos.   A probabilidade é a área sob a curva de densidade no intervalo desejado:  . A probabilidade é de aproximadamente 63,2%.   Engenharia: Centroide Geométrico  Encontre a coordenada horizontal do centroide de uma placa triangular delimitada pelas retas , e o eixo .   A área do triângulo é . A coordenada é dada por :  .   Física: Trabalho com Força Gravitacional  O trabalho realizado contra a gravidade para mover uma carga pode ser modelado por . Calcule o trabalho realizado ao mover a carga da posição até .     .   Geometria: Área Simétrica  Calcule a área da região limitada pela parábola e a reta horizontal .   Encontrando as intersecções com o eixo (onde ): .     Matemática: Volume de Tráfego de Dados (Imprópria)  O tráfego residual de um servidor é modelado por para . Calcule a área total sob essa curva de até o infinito para achar o volume de dados residuais.     Como quando , a integral converge para: .     "
+  "body": " Aplicações Multidisciplinares da Integral   A integração definida não é apenas uma soma de áreas, mas o processo de acumular os efeitos de uma taxa que varia continuamente. Seja para calcular o deslocamento de um corpo, a probabilidade de um evento ou a carga em uma estrutura, a integral conecta funções instantâneas aos seus resultados totais acumulados.    Física: O Acúmulo de Efeitos Variáveis  Na física clássica, muitas grandezas são produtos de taxas por tempo ou espaço (como ). Quando a taxa é variável, utilizamos a integral para somar fatias infinitesimais do evento.     Deslocamento com Velocidade Variável   Um objeto move-se com velocidade m\/s. Determine o deslocamento total entre e segundos.    O deslocamento é a integral da velocidade no tempo: . Teoricamente, o deslocamento zero indica que o objeto retornou à sua posição inicial após o intervalo.     Trabalho Mecânico de uma Mola   Calcule o trabalho necessário para comprimir uma mola em 0,2m, onde a força segue a Lei de Hooke Newtons.    O trabalho é o acúmulo da força ao longo do deslocamento: .      Computação: Modelagem de Incertezas e Sinais  A computação utiliza integrais para processar dados contínuos. Em estatística computacional e aprendizado de máquina, as Integrais Impróprias permitem calcular probabilidades em intervalos que se estendem ao infinito.     Probabilidade em Sistemas (Integral Imprópria)   O tempo de resposta de um servidor segue a densidade para . Qual a probabilidade de uma requisição durar mais de 1 segundo?    Como o tempo pode ser indefinido, usamos o limite da integral imprópria: . Isso significa que há aproximadamente 36,8% de chance da tarefa exceder 1 segundo.     Acúmulo de Carga Elétrica em Sinais   A corrente em um circuito digital oscila como . Calcule a carga total acumulada de a .    A carga é a integral da corrente no tempo: .      Engenharia: Engenharia Elétrica\/Eletrônica.   Acúmulo de Carga em Circuitos (Integral Imprópria)   Em um microprocessador, quando um transistor muda para o estado lógico alto (1), a corrente que flui para carregar a trilha do circuito decai exponencialmente segundo a função , onde é a corrente de pico inicial e (tau) é a constante de tempo do circuito (na casa dos picossegundos). Calcule a carga total acumulada na trilha desde o instante até o infinito (quando o circuito estabiliza).  Nota de realismo: Na prática, seria algo como ( ) e seria algo como ( ). A carga daria na casa dos picocoulombs, o que é perfeito para a microeletrônica.    A carga total é a integral da corrente de zero ao infinito:   Resolvendo a integral, obtemos:      Corrente Alternada em Equipamentos Domésticos   Um equipamento doméstico é ligado a uma rede elétrica de 60 Hz. A corrente alternada que flui por ele é modelada pela função , onde a corrente de pico é 10 A e o tempo é dado em segundos. Calcule a quantidade de carga elétrica que flui pelo circuito durante um único semiciclo positivo (antes da corrente inverter de sentido).    Para 60 Hz, um ciclo completo leva de segundo. Um semiciclo positivo vai de até de segundo. A integral fica:   A integral de é :        Lista de Exercícios: Aplicações da Integral  Física: Cinemática  A velocidade de um veículo em frenagem é dada por (em m\/s). Calcule o deslocamento do veículo entre os instantes e segundos.   O deslocamento é a integral da velocidade em relação ao tempo:  . O deslocamento negativo indica que a posição final está 9 metros no sentido oposto ao referencial adotado.   Física: Trabalho Mecânico  Uma mola exige uma força de Newtons para ser esticada metros além de seu comprimento natural. Calcule o trabalho realizado para esticar a mola de até metros.   O trabalho é a integral da força ao longo do deslocamento:  .   Geometria: Área entre Curvas  Determine a área da região delimitada pelas curvas e .   Primeiro, encontramos os pontos de intersecção igualando as funções: As curvas se cruzam em e . No intervalo , .     Computação: Integral Imprópria (PDF)  Verifique se a função para é uma Função de Densidade de Probabilidade (PDF) válida, mostrando que a integral de a é igual a 1.   Calculamos a integral imprópria através de um limite:  Como quando , temos: . Como a área total é 1, é uma PDF válida.   Engenharia: Força de Carga Distribuída  Uma viga de 5 metros de comprimento suporta uma carga que varia linearmente dada por (em N\/m). Determine a força resultante total que atua sobre a viga.   A força total é a integral da carga distribuída ao longo da viga:  .   Estatística: Cálculo de Probabilidade  O tempo de carregamento de uma página web (em segundos) segue a densidade . Calcule a probabilidade da página carregar em um tempo entre 0 e 5 segundos.   A probabilidade é a área sob a curva de densidade no intervalo desejado:  . A probabilidade é de aproximadamente 63,2%.   Engenharia: Centroide Geométrico  Encontre a coordenada horizontal do centroide de uma placa triangular delimitada pelas retas , e o eixo .   A área do triângulo é . A coordenada é dada por :  .   Física: Trabalho com Força Gravitacional  O trabalho realizado contra a gravidade para mover uma carga pode ser modelado por . Calcule o trabalho realizado ao mover a carga da posição até .     .   Geometria: Área Simétrica  Calcule a área da região limitada pela parábola e a reta horizontal .   Encontrando as intersecções com o eixo (onde ): .     Matemática: Volume de Tráfego de Dados (Imprópria)  O tráfego residual de um servidor é modelado por para . Calcule a área total sob essa curva de até o infinito para achar o volume de dados residuais.     Como quando , a integral converge para: .     "
 },
 {
   "id": "ex-fisica-1",
@@ -1738,22 +1738,22 @@ var ptx_lunr_docs = [
   "body": " Acúmulo de Carga Elétrica em Sinais   A corrente em um circuito digital oscila como . Calcule a carga total acumulada de a .    A carga é a integral da corrente no tempo: .   "
 },
 {
-  "id": "ex-eng-1",
+  "id": "ex-carga-capacitor",
   "level": "2",
-  "url": "sec-teoria-aplicacoes-integrais.html#ex-eng-1",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-carga-capacitor",
   "type": "Exemplo",
   "number": "1.9.5",
-  "title": "Força Resultante em Vigas.",
-  "body": " Força Resultante em Vigas   Uma viga de 4 metros suporta uma carga que aumenta linearmente conforme N\/m. Determine a força total vertical exercida.    A força total é a integral da distribuição de carga ao longo do comprimento: .   "
+  "title": "Acúmulo de Carga em Circuitos (Integral Imprópria).",
+  "body": " Acúmulo de Carga em Circuitos (Integral Imprópria)   Em um microprocessador, quando um transistor muda para o estado lógico alto (1), a corrente que flui para carregar a trilha do circuito decai exponencialmente segundo a função , onde é a corrente de pico inicial e (tau) é a constante de tempo do circuito (na casa dos picossegundos). Calcule a carga total acumulada na trilha desde o instante até o infinito (quando o circuito estabiliza).  Nota de realismo: Na prática, seria algo como ( ) e seria algo como ( ). A carga daria na casa dos picocoulombs, o que é perfeito para a microeletrônica.    A carga total é a integral da corrente de zero ao infinito:   Resolvendo a integral, obtemos:    "
 },
 {
-  "id": "ex-eng-2",
+  "id": "ex-corrente-alternada",
   "level": "2",
-  "url": "sec-teoria-aplicacoes-integrais.html#ex-eng-2",
+  "url": "sec-teoria-aplicacoes-integrais.html#ex-corrente-alternada",
   "type": "Exemplo",
   "number": "1.9.6",
-  "title": "Localização de Centroide.",
-  "body": " Localização de Centroide   Determine a coordenada horizontal do centroide da região sob no intervalo .    O centroide depende do momento da área dividido pela área total ( ): .   "
+  "title": "Corrente Alternada em Equipamentos Domésticos.",
+  "body": " Corrente Alternada em Equipamentos Domésticos   Um equipamento doméstico é ligado a uma rede elétrica de 60 Hz. A corrente alternada que flui por ele é modelada pela função , onde a corrente de pico é 10 A e o tempo é dado em segundos. Calcule a quantidade de carga elétrica que flui pelo circuito durante um único semiciclo positivo (antes da corrente inverter de sentido).    Para 60 Hz, um ciclo completo leva de segundo. Um semiciclo positivo vai de até de segundo. A integral fica:   A integral de é :    "
 },
 {
   "id": "exercise-136",
@@ -1846,27 +1846,189 @@ var ptx_lunr_docs = [
   "body": "Matemática: Volume de Tráfego de Dados (Imprópria)  O tráfego residual de um servidor é modelado por para . Calcule a área total sob essa curva de até o infinito para achar o volume de dados residuais.     Como quando , a integral converge para: .  "
 },
 {
+  "id": "sec-dominio-imagem-varias-variaveis",
+  "level": "1",
+  "url": "sec-dominio-imagem-varias-variaveis.html",
+  "type": "Seção",
+  "number": "2.1",
+  "title": "Funções de Várias Variáveis: Domínio e Imagem",
+  "body": " Funções de Várias Variáveis: Domínio e Imagem   Assim como no cálculo de uma variável, uma função de várias variáveis é frequentemente definida apenas pela sua regra algébrica. O domínio dessa função é o conjunto de todos os pontos no espaço (como o ou ) que não geram indefinições matemáticas. A imagem é o conjunto de todos os valores reais resultantes da aplicação da função.    Restrições com Radicais  Quando uma função envolve uma raiz de índice par (como a raiz quadrada), o radicando deve ser maior ou igual a zero.   Função de Duas Variáveis com Raiz  Considere a função que modela a espessura de uma lente circular:    Domínio: Para que seja um número real, precisamos que , o que equivale a . Geometricamente, o domínio é um disco fechado de raio 3 centrado na origem do plano .       Imagem: O valor máximo do radicando é 9 (quando ) e o mínimo é 0 (na borda do disco). Logo, os valores de variam de 0 a 3.     Função de Três Variáveis com Raiz  Seja . A restrição implica que . O domínio é uma esfera maciça de raio 5 no espaço .     Restrições com Logaritmos e Denominadores  Logaritmos exigem argumentos estritamente positivos, e frações exigem denominadores diferentes de zero.   Domínio com Logaritmo  Encontre o domínio de .   Solução: O argumento do logaritmo natural deve ser maior que zero: . Geometricamente, o domínio é a região estritamente \"dentro\" (acima) da parábola . A fronteira (a própria parábola) não faz parte do domínio.       Domínio com Denominador e Raiz  Determine o domínio de .   Solução: O termo dentro da raiz deve ser positivo e não pode ser nulo (pois está no denominador). Portanto, . Fatorando, temos . Isso representa as regiões do plano onde , parecendo duas \"fatias de pizza\" infinitas centradas no eixo .        Funções N-Dimensionais e Limitações Práticas  Para funções com mais de três variáveis independentes, perdemos a capacidade de representação gráfica visual, mas a análise algébrica permanece a mesma.   Função Custo (4 Variáveis)  Um algoritmo calcula o fator de penalidade de uma rede neural através da função: onde são os custos computacionais de 4 processadores.   Domínio Matemático: A soma não pode ser zero.    Domínio Físico\/Prático: Como custos computacionais não podem ser negativos, a restrição real imposta pelo problema é e pelo menos um .     Funções Derivadas de Equações Implícitas  Muitas vezes, uma superfície é dada por uma equação da qual podemos extrair múltiplas funções isolando variáveis específicas.   Hemisférios de um Elipsoide  Considere a equação do elipsoide: .  Isolando o , obtemos duas funções distintas de duas variáveis:  A calota superior:  A calota inferior:  Ambas as funções compartilham o mesmo domínio projetado no plano : a região elíptica .        Exercícios   Encontre o domínio e a imagem da função . Descreva geometricamente o domínio.    Determine o domínio da função e descreva a região do plano que o representa.    Determine o domínio da função de três variáveis .    Dada a função , determine o seu domínio e simplifique a expressão da função para os pontos que pertencem a este domínio.    Determine o domínio de .    Seja . Calcule para uma constante .    "
+},
+{
+  "id": "example-31",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#example-31",
+  "type": "Exemplo",
+  "number": "2.1.1",
+  "title": "Função de Duas Variáveis com Raiz.",
+  "body": " Função de Duas Variáveis com Raiz  Considere a função que modela a espessura de uma lente circular:    Domínio: Para que seja um número real, precisamos que , o que equivale a . Geometricamente, o domínio é um disco fechado de raio 3 centrado na origem do plano .       Imagem: O valor máximo do radicando é 9 (quando ) e o mínimo é 0 (na borda do disco). Logo, os valores de variam de 0 a 3.   "
+},
+{
+  "id": "example-32",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#example-32",
+  "type": "Exemplo",
+  "number": "2.1.3",
+  "title": "Função de Três Variáveis com Raiz.",
+  "body": " Função de Três Variáveis com Raiz  Seja . A restrição implica que . O domínio é uma esfera maciça de raio 5 no espaço .  "
+},
+{
+  "id": "example-33",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#example-33",
+  "type": "Exemplo",
+  "number": "2.1.4",
+  "title": "Domínio com Logaritmo.",
+  "body": " Domínio com Logaritmo  Encontre o domínio de .   Solução: O argumento do logaritmo natural deve ser maior que zero: . Geometricamente, o domínio é a região estritamente \"dentro\" (acima) da parábola . A fronteira (a própria parábola) não faz parte do domínio.     "
+},
+{
+  "id": "example-34",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#example-34",
+  "type": "Exemplo",
+  "number": "2.1.6",
+  "title": "Domínio com Denominador e Raiz.",
+  "body": " Domínio com Denominador e Raiz  Determine o domínio de .   Solução: O termo dentro da raiz deve ser positivo e não pode ser nulo (pois está no denominador). Portanto, . Fatorando, temos . Isso representa as regiões do plano onde , parecendo duas \"fatias de pizza\" infinitas centradas no eixo .     "
+},
+{
+  "id": "example-35",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#example-35",
+  "type": "Exemplo",
+  "number": "2.1.8",
+  "title": "Função Custo (4 Variáveis).",
+  "body": " Função Custo (4 Variáveis)  Um algoritmo calcula o fator de penalidade de uma rede neural através da função: onde são os custos computacionais de 4 processadores.   Domínio Matemático: A soma não pode ser zero.    Domínio Físico\/Prático: Como custos computacionais não podem ser negativos, a restrição real imposta pelo problema é e pelo menos um .  "
+},
+{
+  "id": "example-36",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#example-36",
+  "type": "Exemplo",
+  "number": "2.1.9",
+  "title": "Hemisférios de um Elipsoide.",
+  "body": " Hemisférios de um Elipsoide  Considere a equação do elipsoide: .  Isolando o , obtemos duas funções distintas de duas variáveis:  A calota superior:  A calota inferior:  Ambas as funções compartilham o mesmo domínio projetado no plano : a região elíptica .     "
+},
+{
+  "id": "exercise-146",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#exercise-146",
+  "type": "Exercício",
+  "number": "2.1.5.1",
+  "title": "",
+  "body": " Encontre o domínio e a imagem da função . Descreva geometricamente o domínio.  "
+},
+{
+  "id": "exercise-147",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#exercise-147",
+  "type": "Exercício",
+  "number": "2.1.5.2",
+  "title": "",
+  "body": " Determine o domínio da função e descreva a região do plano que o representa.  "
+},
+{
+  "id": "exercise-148",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#exercise-148",
+  "type": "Exercício",
+  "number": "2.1.5.3",
+  "title": "",
+  "body": " Determine o domínio da função de três variáveis .  "
+},
+{
+  "id": "exercise-149",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#exercise-149",
+  "type": "Exercício",
+  "number": "2.1.5.4",
+  "title": "",
+  "body": " Dada a função , determine o seu domínio e simplifique a expressão da função para os pontos que pertencem a este domínio.  "
+},
+{
+  "id": "exercise-150",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#exercise-150",
+  "type": "Exercício",
+  "number": "2.1.5.5",
+  "title": "",
+  "body": " Determine o domínio de .  "
+},
+{
+  "id": "exercise-151",
+  "level": "2",
+  "url": "sec-dominio-imagem-varias-variaveis.html#exercise-151",
+  "type": "Exercício",
+  "number": "2.1.5.6",
+  "title": "",
+  "body": " Seja . Calcule para uma constante .  "
+},
+{
+  "id": "sec-curvas-de-nivel",
+  "level": "1",
+  "url": "sec-curvas-de-nivel.html",
+  "type": "Seção",
+  "number": "2.2",
+  "title": "Curvas de Nível",
+  "body": " Curvas de Nível   Representar graficamente uma função de duas variáveis exige o desenho de uma superfície no espaço tridimensional ( ), o que nem sempre é uma tarefa simples. Para contornar essa dificuldade e compreender o comportamento da função usando apenas o plano bidimensional ( ), utilizamos a técnica das curvas de nível .    O que são Curvas de Nível?  Dada uma função e uma constante pertencente à imagem da função, a curva de nível é o conjunto de todos os pontos no domínio de que satisfazem a equação:   Geometricamente, fazer equivale a fatiar a superfície 3D com um plano horizontal na altura . A curva resultante dessa interseção é então projetada no plano (o \"chão\"). O mapa formado por várias dessas curvas para diferentes valores de é chamado de mapa de contorno .   Aplicações Práticas    Topografia: Mapas topográficos usam curvas de nível para representar a altitude (relevo) de montanhas e vales em um mapa plano.  Meteorologia: As isotermas são curvas de nível que unem pontos de mesma temperatura; as isóbaras unem pontos de mesma pressão atmosférica.  Eletromagnetismo: As curvas equipotenciais unem pontos do espaço que possuem o mesmo potencial elétrico.       Exemplos Práticos   Curvas de Nível de um Paraboloide   Descreva e esboce as curvas de nível da função para .    Igualamos a função à constante :   Analisando para os valores dados:  Para : . A única solução real é o ponto (origem) .  Para : . É uma circunferência centrada na origem com raio 1.  Para : . É uma circunferência centrada na origem com raio 2.  Para : . É uma circunferência centrada na origem com raio 3.    O mapa de contorno é formado por circunferências concêntricas. Quanto maior o raio, maior a \"altura\" ( ) da superfície.     Curvas de Nível de um Plano   Encontre a equação das curvas de nível para a função linear .    Igualamos a expressão a uma constante genérica :   Para qualquer valor de , a equação representa uma reta com coeficiente angular . Portanto, as curvas de nível são uma família de retas paralelas entre si. Superfícies planas sempre produzem curvas de nível que são retas paralelas.      Exercícios Propostos   Determine e descreva geometricamente as curvas de nível da função para e .   Igualamos a função a :   Substituindo os valores de :  Para : (Circunferência de raio 10).  Para : (Circunferência de raio 8).  Para : (Apenas o ponto ).    A superfície geométrica é um hemisfério superior. As curvas de nível são circunferências concêntricas que diminuem de raio à medida que a altura ( ) aumenta.    Descreva a família de curvas de nível da função . O que acontece especificamente quando ?   Igualamos a função a uma constante (note que a imagem da exponencial é sempre positiva, então ):   Para , temos que é uma constante diferente de zero. A equação (onde ) representa uma família de hipérboles .  Especificamente quando : Para que o produto seja zero, devemos ter ou . Portanto, a curva de nível é a união dos eixos coordenados (o eixo e o eixo inteiros).    "
+},
+{
+  "id": "example-37",
+  "level": "2",
+  "url": "sec-curvas-de-nivel.html#example-37",
+  "type": "Exemplo",
+  "number": "2.2.1",
+  "title": "Curvas de Nível de um Paraboloide.",
+  "body": " Curvas de Nível de um Paraboloide   Descreva e esboce as curvas de nível da função para .    Igualamos a função à constante :   Analisando para os valores dados:  Para : . A única solução real é o ponto (origem) .  Para : . É uma circunferência centrada na origem com raio 1.  Para : . É uma circunferência centrada na origem com raio 2.  Para : . É uma circunferência centrada na origem com raio 3.    O mapa de contorno é formado por circunferências concêntricas. Quanto maior o raio, maior a \"altura\" ( ) da superfície.   "
+},
+{
+  "id": "example-38",
+  "level": "2",
+  "url": "sec-curvas-de-nivel.html#example-38",
+  "type": "Exemplo",
+  "number": "2.2.2",
+  "title": "Curvas de Nível de um Plano.",
+  "body": " Curvas de Nível de um Plano   Encontre a equação das curvas de nível para a função linear .    Igualamos a expressão a uma constante genérica :   Para qualquer valor de , a equação representa uma reta com coeficiente angular . Portanto, as curvas de nível são uma família de retas paralelas entre si. Superfícies planas sempre produzem curvas de nível que são retas paralelas.   "
+},
+{
+  "id": "exercise-152",
+  "level": "2",
+  "url": "sec-curvas-de-nivel.html#exercise-152",
+  "type": "Exercício",
+  "number": "2.2.3.1",
+  "title": "",
+  "body": " Determine e descreva geometricamente as curvas de nível da função para e .   Igualamos a função a :   Substituindo os valores de :  Para : (Circunferência de raio 10).  Para : (Circunferência de raio 8).  Para : (Apenas o ponto ).    A superfície geométrica é um hemisfério superior. As curvas de nível são circunferências concêntricas que diminuem de raio à medida que a altura ( ) aumenta.  "
+},
+{
+  "id": "exercise-153",
+  "level": "2",
+  "url": "sec-curvas-de-nivel.html#exercise-153",
+  "type": "Exercício",
+  "number": "2.2.3.2",
+  "title": "",
+  "body": " Descreva a família de curvas de nível da função . O que acontece especificamente quando ?   Igualamos a função a uma constante (note que a imagem da exponencial é sempre positiva, então ):   Para , temos que é uma constante diferente de zero. A equação (onde ) representa uma família de hipérboles .  Especificamente quando : Para que o produto seja zero, devemos ter ou . Portanto, a curva de nível é a união dos eixos coordenados (o eixo e o eixo inteiros).  "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
   "type": "Referêcias",
-  "number": "2",
+  "number": "3",
   "title": "Referências Bibliográficas",
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-327",
+  "id": "p-384",
   "level": "2",
-  "url": "referencias.html#p-327",
+  "url": "referencias.html#p-384",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-328",
+  "id": "p-385",
   "level": "2",
-  "url": "referencias.html#p-328",
+  "url": "referencias.html#p-385",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
