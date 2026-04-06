@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+    inputLocation: ".sage-interact",
+    autoeval: 'true',
+    hide: ["editor", "evalButton", "permalink"]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="pretext ignore-math"><div style="width:600px; height:660px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
+def _(palavra=input_box(default=['MATEMATICA'] , width=50,  label="Palavra:"), auto_update=False):    
+
+     
+
+    lista=[]
+    
+    for i in palavra[0]:
+    
+        lista.append(i)
+    
+    
+
+    def pt(n): #Polinômio de Torre
+        
+        s = 0
+        for k in range(n+1):
+            s = s + binomial(n, k)^2*factorial(k)*x^k
+        
+        return s
+
+    def ptf(*lista): #Polinômio de Torre Full
+        
+        p = 1
+        
+        for i in lista:
+            
+            p = p*pt(i)
+        
+
+        #show('Polinômio de torre:')
+        #show(p)
+
+        #p = p.expand()
+
+        ##show('Polinômio de torre expandido:')
+        ##show(p)
+        #print('Coeficientes da expansão')
+        #c = p.coefficients()
+        #for x in c:
+        #    print(x , end="\n")
+
+        return p
+
+          
+    
+    def dr(*lista):  #Derangement with Repetition
+        
+        p = ptf(*lista)
+        c = p.coefficients()
+        total = sum(lista)
+        
+        s = 0
+        for i in c:
+            if i[1] > 0:
+                #print(i[0]*factorial(total-i[1])*(-1)^i[1])
+                s = s + i[0]*factorial(total-i[1])*(-1)^i[1]
+        d = 1
+        for k in lista:
+            d = d*factorial(k)
+            
+        resp = (factorial(total) + s)
+        
+        return resp, d, p
+
+    lista = list(lista)
+    lista.sort()
+    
+    l=[]
+    anterior = []
+    
+    for i in lista:
+        c = lista.count(i)
+        if i != anterior:
+            l.append(c)
+            anterior = i
+        
+    num , permut, p = dr(*l)
+    
+    #show('O número de permutações caóticas é:')
+    #show('%d/%d = %d' %(num, permut, num/permut))
+    print('O número de permutações caóticas é:')
+    print('%d/%d = %d\n' %(num, permut, num/permut))
+
+    print('O polinômio de torre é:')
+    show(p)
+
+    p = p.expand()
+
+    #show('Polinômio de torre expandido:')
+    #show(p)
+    
+    coef = p.coefficients()
+    lista_coef=[]
+    for i in coef:
+        lista_coef.append([x^(i[1]), i[0]])
+
+
+    l=['$x^i$', 'Coeficiente de $x^i$']
+    
+    show(table(lista_coef, header_row=l))
+</script></pre></div></body>
+</html>

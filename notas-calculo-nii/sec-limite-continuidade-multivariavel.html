@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Limite e Continuidade de Funções de Duas Variáveis</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo NII">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NII:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-topologia-r2.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="02limites.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01integral.html" class="internal"><span class="codenumber">1</span> <span class="title">Integrais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Integral Indefinida</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-metodo-substituicao.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Mudança de Variável para Integração</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#subsec-exemplos-subst" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#exercicios-6-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Método de Integração por Partes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsec-exemplos-partes" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercicios-6-6" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-formalizacao-riemann.html" class="internal"><span class="codenumber">1.4</span> <span class="title">O Conceito de Área sob uma Curva</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-integral-definida.html" class="internal"><span class="codenumber">1.5</span> <span class="title">A Integral Definida</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-integral-definida.html#subsec-propriedades-definida" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Propriedades Fundamentais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integral-definida.html#subsec-teoremas-comparacao" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Teoremas de Comparação e Valor Médio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-fundamental-calculo.html" class="internal"><span class="codenumber">1.6</span> <span class="title">O Teorema Fundamental do Cálculo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-fundamental-calculo.html#subsec-exemplos-6-10" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental-calculo.html#exercises-6-11" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-calculo-areas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Cálculo de Áreas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-calculo-areas.html#subsec-area-eixo-x" class="internal"><span class="codenumber">1.7.1</span> <span class="title">6.12 Cálculo da Área em Relação ao Eixo x</span></a></div></li>
+<li><div class="toc-item"><a href="sec-calculo-areas.html#sec-area-entre-curvas" class="internal"><span class="codenumber">1.7.2</span> <span class="title">6.13 Área entre Duas Curvas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-calculo-areas.html#exercicios-areas" class="internal"><span class="codenumber">1.7.3</span> <span class="title">6.14 Exercícios: Áreas</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-integrais-improprias.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Integrais Impróprias</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#subsec-limites-infinitos" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Intervalos de Integração Infinitos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#subsec-descontinuidades-infinitas" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Integrandos com Descontinuidades Infinitas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#exercicios-integrais-improprias" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exercícios Propostos</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Aplicações Multidisciplinares da Integral</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-fisica-teoria" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Física: O Acúmulo de Efeitos Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-computacao-teoria" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Computação: Modelagem de Incertezas e Sinais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-engenharia-teoria" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Engenharia: Engenharia Elétrica/Eletrônica.</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#lista-geral-aplicacoes" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Lista de Exercícios: Aplicações da Integral</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02limites.html" class="internal"><span class="codenumber">2</span> <span class="title">Funções com Várias Variáveis</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Funções de Várias Variáveis: Domínio e Imagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-restricoes-radicais" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Restrições com Radicais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-restricoes-logaritmos-fracoes" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Restrições com Logaritmos e Denominadores</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-n-dimensoes" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Funções N-Dimensionais e Limitações Práticas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-superficies-implicitas" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Funções Derivadas de Equações Implícitas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#lista-dominio-imagem-varias-var" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-curvas-nivel-detalhada.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Curvas de Nível e Representação de Superfícies</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-curvas-nivel-detalhada.html#subsec-exemplos-curvas" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exemplos de Modelagem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-curvas-nivel-detalhada.html#exer-curvas-nivel-16" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Lista de Exercícios: Curvas de Nível</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-topologia-r2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Topologia do <span class="process-math">\(\mathbb{R}^2\)</span> para Limites</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-metrica-distancia" class="internal"><span class="codenumber">2.3.1</span> <span class="title">A Métrica do Plano: Distância Euclidiana</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-bola-aberta" class="internal"><span class="codenumber">2.3.2</span> <span class="title">A Bola Aberta (Vizinhança)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-pontos-interiores-abertos" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Ponto Interior e Conjunto Aberto</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-ponto-acumulacao" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Ponto de Acumulação (O Coração do Limite)</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-limite-continuidade-multivariavel.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Limite e Continuidade de Funções de Duas Variáveis</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-limite-continuidade-multivariavel.html#subsec-definicao-limite" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Definição de Limite de uma Função de Duas Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-continuidade-multivariavel.html#subsec-inexistencia-limite" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Inexistência de Limite e Caminhos Diferentes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-continuidade-multivariavel.html#subsec-propriedades-limite" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Propriedades e Operações Algébricas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-continuidade-multivariavel.html#subsec-continuidade" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Continuidade de Funções Compostas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-continuidade-multivariavel.html#lista-limites-continuidade-20" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Lista de Exercícios: Limites e Continuidade (Seções 3.2 e 3.3)</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">3</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-limite-continuidade-multivariavel"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">2.4</span> <span class="title">Limite e Continuidade de Funções de Duas Variáveis</span>
+</h2>
+<section class="introduction" id="introduction-15"><div class="para" id="p-403">Neste capítulo, estendemos os conceitos de limite e continuidade para funções de duas variáveis. A transição do cálculo em <span class="process-math">\(\mathbb{R}\)</span> para <span class="process-math">\(\mathbb{R}^2\)</span> exige um rigor topológico maior, uma vez que a aproximação a um ponto <span class="process-math">\(P_0(x_0, y_0)\)</span> pode ocorrer através de infinitos caminhos no plano.</div></section><section class="subsection" id="subsec-definicao-limite"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.4.1</span> <span class="title">Definição de Limite de uma Função de Duas Variáveis</span>
+</h3>
+<div class="para" id="p-404">Intuitivamente, dizemos que uma função <span class="process-math">\(f(x,y)\)</span> tende a um valor <span class="process-math">\(L\)</span> quando <span class="process-math">\((x, y)\)</span> se aproxima de <span class="process-math">\((x_0, y_0)\)</span> se for possível tornar <span class="process-math">\(f(x,y)\)</span> arbitrariamente próximo de <span class="process-math">\(L\text{,}\)</span> desde que tomemos pontos no domínio suficientemente próximos do ponto de acumulação alvo.</div>
+<article class="definition definition-like" id="def-limite-formal"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Definição Formal de Limite (Épsilon-Delta).</span>
+</h4> <div class="para logical" id="p-405">
+<div class="para">Seja <span class="process-math">\(f: A \subset \mathbb{R}^2 \to \mathbb{R}\)</span> e <span class="process-math">\((x_0, y_0)\)</span> um ponto de acumulação de <span class="process-math">\(A\text{.}\)</span> Dizemos que o limite de <span class="process-math">\(f(x,y)\)</span> quando <span class="process-math">\((x,y) \to (x_0, y_0)\)</span> é o número real <span class="process-math">\(L\)</span> se, para todo <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> existir um <span class="process-math">\(\delta &gt; 0\)</span> tal que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f(x,y) - L| \lt \epsilon
+\end{equation*}
+</div>
+<div class="para">sempre que <span class="process-math">\((x,y) \in A\)</span> e <span class="process-math">\(0 \lt \sqrt{(x-x_0)^2 + (y-y_0)^2} \lt \delta\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-prova-limite-linear"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Prova por Definição: Função Linear.</span>
+</h4>
+<div class="para" id="p-406">Mostrar que <span class="process-math">\(\lim_{(x,y) \to (1,2)} (3x + 2y) = 7\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like"><div class="para logical" id="p-407">
+<div class="para">Devemos provar que <span class="process-math">\(|3x + 2y - 7| \lt \epsilon\)</span> quando <span class="process-math">\(0 \lt \sqrt{(x-1)^2 + (y-2)^2} \lt \delta\text{.}\)</span> Manipulando a expressão:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|3(x-1) + 2(y-2)| \le 3|x-1| + 2|y-2|
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(|x-1| \le \sqrt{(x-1)^2 + (y-2)^2}\)</span> e <span class="process-math">\(|y-2| \le \sqrt{(x-1)^2 + (y-2)^2}\text{,}\)</span> temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3|x-1| + 2|y-2| \lt 3\delta + 2\delta = 5\delta
+\end{equation*}
+</div>
+<div class="para">Assim, ao escolher <span class="process-math">\(\delta = \epsilon/5\text{,}\)</span> a definição é satisfeita.</div>
+</div></div></div>
+</div></article></section><section class="subsection" id="subsec-inexistencia-limite"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.4.2</span> <span class="title">Inexistência de Limite e Caminhos Diferentes</span>
+</h3>
+<div class="para" id="p-408">Uma propriedade fundamental é que, para o limite existir, <span class="process-math">\(f(x,y)\)</span> deve aproximar-se do mesmo valor <span class="process-math">\(L\)</span> independentemente do caminho tomado para chegar a <span class="process-math">\((x_0, y_0)\text{.}\)</span>
+</div>
+<article class="assemblage assemblage-like" id="prop-caminhos"><h4 class="heading"><span class="title">Proposição 3.2.3.</span></h4>
+<div class="para" id="p-409">Se <span class="process-math">\(f(x,y)\)</span> tem limites diferentes quando <span class="process-math">\((x,y)\)</span> tende a <span class="process-math">\((x_0, y_0)\)</span> através de caminhos distintos, então o limite não existe.</div></article><article class="example example-like" id="ex-inexistencia-curvas"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Limite dependente do caminho.</span>
+</h4>
+<div class="para" id="p-410">Verificar a existência de <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like">
+<div class="para" id="p-411">1. Aproximação por retas <span class="process-math">\(y = mx\text{:}\)</span> O limite resulta em 0 para qualquer inclinação <span class="process-math">\(m\text{.}\)</span>
+</div> <div class="para logical" id="p-412">
+<div class="para">2. Aproximação pela parábola <span class="process-math">\(x = y^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{y \to 0} \frac{y^2 \cdot y^2}{(y^2)^2 + y^4} = \lim_{y \to 0} \frac{y^4}{2y^4} = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(0 \neq 1/2\text{,}\)</span> o limite não existe.</div>
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsec-propriedades-limite"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.4.3</span> <span class="title">Propriedades e Operações Algébricas</span>
+</h3>
+<div class="para" id="p-413">As propriedades de limites de uma variável estendem-se para várias variáveis, incluindo a soma, diferença, produto e quociente (desde que o denominador seja não nulo).</div>
+<article class="example example-like" id="ex-calculo-direto"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cálculo por Substituição.</span>
+</h4>
+<div class="para" id="p-414">Calcular <span class="process-math">\(\lim_{(x,y) \to (2, -1)} (x^3y + x^2y^3 - 2xy + 4)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like"><div class="para logical" id="p-415">
+<div class="para">Aplicando as propriedades de limite de potências e somas:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2^3(-1) + 2^2(-1)^3 - 2(2)(-1) + 4 = -8 - 4 + 4 + 4 = -4\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="assemblage assemblage-like" id="prop-anulamento"><h4 class="heading"><span class="title">Teorema do Anulamento (Proposição 3.3.6).</span></h4>
+<div class="para logical" id="p-416">
+<div class="para">Se <span class="process-math">\(\lim_{(x,y) \to (x_0, y_0)} f(x,y) = 0\)</span> e <span class="process-math">\(g(x,y)\)</span> é uma função limitada numa vizinhança de <span class="process-math">\((x_0, y_0)\text{,}\)</span> então:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{(x,y) \to (x_0, y_0)} f(x,y) \cdot g(x,y) = 0\text{.}
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ex-anulamento-polares"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Aplicação do Teorema do Anulamento.</span>
+</h4>
+<div class="para" id="p-417">Mostrar que <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^2y}{x^2 + y^2} = 0\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-49" id="solution-49"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like"><div class="para logical" id="p-418">
+<div class="para">Podemos escrever a função como <span class="process-math">\(x \cdot \left( \frac{xy}{x^2 + y^2} \right)\text{.}\)</span> A função <span class="process-math">\(f(x,y) = x\)</span> tende a 0. A função <span class="process-math">\(g(x,y) = \frac{xy}{x^2 + y^2}\)</span> é limitada, o que pode ser verificado em coordenadas polares:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(r\cos\theta, r\sin\theta) = \frac{r^2\cos\theta\sin\theta}{r^2} = \cos\theta\sin\theta
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(|\cos\theta\sin\theta| \le 1\text{,}\)</span> a função é limitada e o limite total é 0.</div>
+</div></div></div>
+</div></article></section><section class="subsection" id="subsec-continuidade"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.4.4</span> <span class="title">Continuidade de Funções Compostas</span>
+</h3>
+<div class="para" id="p-419">Uma função composta <span class="process-math">\(f(g(x,y))\)</span> é contínua se <span class="process-math">\(g\)</span> tem limite <span class="process-math">\(a\)</span> e <span class="process-math">\(f\)</span> é contínua em <span class="process-math">\(a\text{.}\)</span>
+</div>
+<article class="example example-like" id="ex-continuidade-log"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limite de Função Logarítmica Composta.</span>
+</h4>
+<div class="para" id="p-420">Calcular <span class="process-math">\(\lim_{(x,y) \to (1,2)} \ln(x^2 + xy - 1)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><div class="para logical" id="p-421">
+<div class="para">O limite da função interna é <span class="process-math">\(1^2 + 1(2) - 1 = 2\text{.}\)</span> Como a função logaritmo é contínua para <span class="process-math">\(u=2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ln(\lim_{(x,y) \to (1,2)} (x^2 + xy - 1)) = \ln(2)\text{.}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article></section><section class="exercises" id="lista-limites-continuidade-20"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">2.4.5</span> <span class="title">Lista de Exercícios: Limites e Continuidade (Seções 3.2 e 3.3)</span>
+</h3>
+<section class="introduction" id="introduction-16"><div class="para" id="p-422">Esta lista aborda o cálculo direto, simplificação algébrica, inexistência de limites através da Proposição 3.2.3 e o uso do Teorema do Anulamento (Proposição 3.3.6).</div></section><article class="exercise exercise-like" id="exercise-177"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-423">Calcule <span class="process-math">\(\lim_{(x,y) \to (1,2)} (3x^2y - 5y + 1)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like"><div class="para logical" id="p-424">
+<div class="para">Como é uma função polinomial (contínua em todo o <span class="process-math">\(\mathbb{R}^2\)</span>), basta fazer a substituição direta:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3(1)^2(2) - 5(2) + 1 = 6 - 10 + 1 = -3
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-178"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-425">Calcule <span class="process-math">\(\lim_{(x,y) \to (0, \ln 2)} e^{x-y}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like"><div class="para logical" id="p-426">
+<div class="para">Substituição direta na função exponencial contínua:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^{0 - \ln 2} = e^{-\ln 2} = (e^{\ln 2})^{-1} = 2^{-1} = \frac{1}{2}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-179"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-427">Calcule <span class="process-math">\(\lim_{(x,y) \to (2,1)} \frac{x^2 - y}{x + y}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like"><div class="para logical" id="p-428">
+<div class="para">Verificando o denominador: <span class="process-math">\(2 + 1 = 3 \neq 0\text{.}\)</span> Podemos substituir diretamente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{2^2 - 1}{2 + 1} = \frac{4 - 1}{3} = \frac{3}{3} = 1
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-180"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-429">Calcule o limite da função composta <span class="process-math">\(\lim_{(x,y) \to (\pi/2, 2)} y \sin(xy)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like"><div class="para logical" id="p-430">
+<div class="para">As funções seno e polinomiais são contínuas. Substituindo <span class="process-math">\(x = \pi/2\)</span> e <span class="process-math">\(y = 2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2 \cdot \sin\left(\frac{\pi}{2} \cdot 2\right) = 2 \sin(\pi) = 2(0) = 0
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-181"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-431">Calcule <span class="process-math">\(\lim_{(x,y) \to (1,1)} \frac{x^2 - y^2}{x - y}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like"><div class="para logical" id="p-432">
+<div class="para">A substituição direta gera a indeterminação <span class="process-math">\(0/0\text{.}\)</span> Fatorando o numerador (diferença de quadrados):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{(x,y) \to (1,1)} \frac{(x-y)(x+y)}{x-y} = \lim_{(x,y) \to (1,1)} (x+y)
+\end{equation*}
+</div>
+<div class="para">Agora, substituindo: <span class="process-math">\(1 + 1 = 2\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-182"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-433">Calcule <span class="process-math">\(\lim_{(x,y) \to (2,0)} \frac{xy - 2y}{x^2 - 4}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like"><div class="para logical" id="p-434">
+<div class="para">Gera <span class="process-math">\(0/0\text{.}\)</span> Fatorando numerador e denominador:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{(x,y) \to (2,0)} \frac{y(x - 2)}{(x - 2)(x + 2)} = \lim_{(x,y) \to (2,0)} \frac{y}{x + 2}
+\end{equation*}
+</div>
+<div class="para">Substituindo <span class="process-math">\((2,0)\text{:}\)</span> <span class="process-math">\(\frac{0}{2 + 2} = 0\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-183"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-435">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^2 + y^2}{\sqrt{x^2 + y^2 + 1} - 1}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like"><div class="para logical" id="p-436">
+<div class="para">Gera <span class="process-math">\(0/0\text{.}\)</span> Multiplicando numerador e denominador pelo conjugado <span class="process-math">\(\sqrt{x^2 + y^2 + 1} + 1\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{(x,y) \to (0,0)} \frac{(x^2 + y^2)(\sqrt{x^2 + y^2 + 1} + 1)}{(x^2 + y^2 + 1) - 1}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \lim_{(x,y) \to (0,0)} (\sqrt{x^2 + y^2 + 1} + 1)
+\end{equation*}
+</div>
+<div class="para">Substituindo <span class="process-math">\((0,0)\text{:}\)</span> <span class="process-math">\(\sqrt{1} + 1 = 2\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-184"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-437">Mostre que não existe <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^2 - y^2}{x^2 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like"><div class="para" id="p-438">Usamos a Proposição 3.2.3 testando caminhos. Pelo eixo <span class="process-math">\(x\)</span> (<span class="process-math">\(y=0\)</span>): <span class="process-math">\(\lim_{x \to 0} \frac{x^2}{x^2} = 1\text{.}\)</span> Pelo eixo <span class="process-math">\(y\)</span> (<span class="process-math">\(x=0\)</span>): <span class="process-math">\(\lim_{y \to 0} \frac{-y^2}{y^2} = -1\text{.}\)</span> Como os limites são diferentes (1 e -1), o limite geral não existe.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-185"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-439">Mostre que não existe <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like"><div class="para logical" id="p-440">
+<div class="para">Aproximando pelas retas <span class="process-math">\(y = mx\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x \to 0} \frac{x(mx)}{x^2 + (mx)^2} = \lim_{x \to 0} \frac{m x^2}{x^2(1 + m^2)} = \frac{m}{1 + m^2}
+\end{equation*}
+</div>
+<div class="para">O resultado depende do coeficiente angular <span class="process-math">\(m\)</span> (ex: dá 0 se <span class="process-math">\(m=0\text{,}\)</span> dá 1/2 se <span class="process-math">\(m=1\)</span>). Pela Proposição 3.2.3, o limite não existe.</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-186"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-441">Mostre que não existe <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^2 y}{x^4 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like"><div class="para logical" id="p-442">
+<div class="para">Testando <span class="process-math">\(y = mx\text{,}\)</span> o limite dá 0. Porém, testando a parábola <span class="process-math">\(y = x^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x \to 0} \frac{x^2(x^2)}{x^4 + (x^2)^2} = \lim_{x \to 0} \frac{x^4}{2x^4} = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(0 \neq 1/2\text{,}\)</span> o limite não existe.</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-187"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="p-443">Mostre que não existe <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^3 y}{x^6 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like"><div class="para logical" id="p-444">
+<div class="para">Para obter potências iguais no denominador, testamos a curva <span class="process-math">\(y = x^3\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x \to 0} \frac{x^3(x^3)}{x^6 + (x^3)^2} = \lim_{x \to 0} \frac{x^6}{2x^6} = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">Pelo eixo <span class="process-math">\(x\)</span> (<span class="process-math">\(y=0\)</span>), o limite é 0. Logo, não existe.</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-188"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="p-445">Verifique se existe <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x y^3}{x^2 + y^6}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like"><div class="para logical" id="p-446">
+<div class="para">Testando o caminho <span class="process-math">\(x = y^3\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{y \to 0} \frac{(y^3)y^3}{(y^3)^2 + y^6} = \lim_{y \to 0} \frac{y^6}{2y^6} = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">Testando pelo eixo <span class="process-math">\(y\)</span> (<span class="process-math">\(x=0\)</span>), o limite é 0. O limite não existe.</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-189"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="p-447">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^3}{x^2 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like"><div class="para" id="p-448">Reescrevendo a expressão: <span class="process-math">\(x \cdot \left(\frac{x^2}{x^2 + y^2}\right)\text{.}\)</span> A função <span class="process-math">\(f(x,y) = x \to 0\text{.}\)</span> A função <span class="process-math">\(g(x,y) = \frac{x^2}{x^2 + y^2}\)</span> é limitada (seu valor máximo é 1, pois <span class="process-math">\(x^2 \le x^2 + y^2\)</span>). Pela Proposição 3.3.6 (Teorema do Anulamento), o limite é 0.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-190"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="p-449">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} y^2 \cos\left(\frac{1}{xy}\right)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><div class="para" id="p-450">Temos <span class="process-math">\(f(x,y) = y^2 \to 0\)</span> quando <span class="process-math">\((x,y) \to (0,0)\text{.}\)</span> A função <span class="process-math">\(g(x,y) = \cos\left(\frac{1}{xy}\right)\)</span> é sempre limitada entre -1 e 1. Pelo Teorema do Anulamento, o limite é 0.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-191"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="p-451">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^2 y^2}{x^2 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like"><div class="para" id="p-452">Reescrevendo: <span class="process-math">\(x^2 \cdot \left(\frac{y^2}{x^2 + y^2}\right)\text{.}\)</span> O primeiro fator tende a 0. O segundo é limitado entre 0 e 1. Pela Proposição 3.3.6, o limite é 0.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-192"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para" id="p-453">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} x \sin\left(\frac{1}{x^2 + y^2}\right)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like"><div class="para" id="p-454">Novamente, <span class="process-math">\(x \to 0\)</span> e a função seno é estritamente limitada (<span class="process-math">\(|\sin(u)| \le 1\)</span>). O limite do produto é 0.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-193"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="p-455">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x y^3}{x^2 + y^2}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like"><div class="para" id="p-456">Reescrevendo: <span class="process-math">\(xy \cdot \left(\frac{y^2}{x^2 + y^2}\right)\text{.}\)</span> O fator <span class="process-math">\(xy \to 0\)</span> e a fração é limitada <span class="process-math">\(\le 1\text{.}\)</span> O resultado é 0.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-194"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="p-457">Calcule <span class="process-math">\(\lim_{(x,y) \to (0,0)} \frac{x^3 + y^3}{x^2 + y^2}\)</span> usando coordenadas polares.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like"><div class="para logical" id="p-458">
+<div class="para">Em coordenadas polares (<span class="process-math">\(x = r\cos\theta\text{,}\)</span> <span class="process-math">\(y = r\sin\theta\)</span>):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{r \to 0} \frac{r^3\cos^3\theta + r^3\sin^3\theta}{r^2} = \lim_{r \to 0} r(\cos^3\theta + \sin^3\theta)
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(r \to 0\)</span> e a expressão trigonométrica é limitada, o limite é 0.</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-195"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
+<div class="para" id="p-459">Calcule o limite da função composta <span class="process-math">\(\lim_{(x,y) \to (0,0)} \ln(1 + x^2 + y^2)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like"><div class="para logical" id="p-460">
+<div class="para">Como <span class="process-math">\(u(x,y) = 1 + x^2 + y^2\)</span> tende a 1 quando <span class="process-math">\((x,y) \to (0,0)\text{,}\)</span> e a função logarítmica é contínua em <span class="process-math">\(u=1\text{,}\)</span> temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ln(\lim_{(x,y) \to (0,0)} (1 + x^2 + y^2)) = \ln(1) = 0
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-196"><h4 class="heading"><span class="codenumber">20<span class="period">.</span></span></h4>
+<div class="para" id="p-461">Use a definição formal (Épsilon-Delta) para provar que <span class="process-math">\(\lim_{(x,y) \to (1,1)} 2x = 2\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like"><div class="para logical" id="p-462">
+<div class="para">Dado <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> queremos <span class="process-math">\(|2x - 2| \lt \epsilon\text{.}\)</span> Manipulando:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2|x - 1| \lt \epsilon \implies |x - 1| \lt \frac{\epsilon}{2}
+\end{equation*}
+</div>
+<div class="para">Como a distância é <span class="process-math">\(\sqrt{(x-1)^2 + (y-1)^2}\text{,}\)</span> sabemos que <span class="process-math">\(|x-1| \le \sqrt{(x-1)^2 + (y-1)^2}\text{.}\)</span> Basta escolher <span class="process-math">\(\delta = \frac{\epsilon}{2}\text{.}\)</span>
+</div>
+</div></div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-topologia-r2.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
