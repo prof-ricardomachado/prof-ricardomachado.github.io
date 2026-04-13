@@ -13,26 +13,58 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.35.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="displaymath process-math">
-\begin{align*}
-\frac{n^k-1}{(n-1)^2}=\amp~\frac{(n-1)(n^{k-1}+n^{k-2}+\cdots+n+1)}{(n-1)^2}\\
-=\amp~\underbrace{\frac{n^{k-1}}{n-1}+\frac{n^{k-2}}{n-1}+\cdots+\frac{n}{n-1}}_{k-1\text{ termos}}+\frac{1}{n-1}.\\
-
-\end{align*}
-</div>
-<div class="para">Somando <span class="process-math">\(\frac{-1}{n-1}\)</span> em cada termo exceto o último e subtraindo <span class="process-math">\(\frac{-1}{n-1}\cdot(k-1)\)</span> no último termo:</div>
+<div class="para">A prova é construída em duas etapas lógicas. Primeiro, estabelecemos uma propriedade sobre cada face individual do cubo (argumento local). Em seguida, usamos esse resultado para chegar a uma conclusão sobre o cubo inteiro (argumento global).</div> <div class="para"><dfn class="terminology">Etapa 1: A Paridade das Saídas de uma Única Face</dfn></div> <ol class="lower-alpha">
+<li><div class="para">Seja <span class="process-math">\(S\)</span> o número de tiras dobradas que “saem” de uma face específica (ou seja, que têm um quadrado nessa face e o outro em uma face adjacente).</div></li>
+<li><div class="para">A área de qualquer face do cubo 9x9x9 é <span class="process-math">\(9 \times 9 = 81\text{,}\)</span> um número <dfn class="terminology">ÍMPAR</dfn>.</div></li>
+<li><div class="para logical">
+<div class="para">Essa área de 81 quadrados é coberta por tiras inteiramente contidas na face (planas) e por tiras que saem da face (dobradas). Isso nos dá a equação:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{n^k-1}{(n-1)^2}=\frac{n^{k-1}-1}{n-1}+\frac{n^{k-2}-1}{n-1}+\cdots+\frac{n-1}{n-1}+\frac{k}{n-1}.
+81 = 2 \times (\text{nº de tiras planas}) + S
 \end{equation*}
 </div>
-<div class="para">Como <span class="process-math">\(n-1\)</span> divide <span class="process-math">\(n^{\alpha}-1\text{,}\)</span> se <span class="process-math">\(\alpha\geq 1\text{,}\)</span> <span class="process-math">\((n-1)^2|(n^k-1)\)</span> se, e somente se, <span class="process-math">\((n-1)|k\text{.}\)</span>
+</div></li>
+<li><div class="para">Analisando a paridade da equação, temos <span class="process-math">\((\text{ÍMPAR}) = (\text{PAR}) + S\text{.}\)</span> A única forma de esta equação ser verdadeira é se <span class="process-math">\(S\text{,}\)</span> o número de tiras que saem de uma face, for <dfn class="terminology">ÍMPAR</dfn>. Este resultado é válido para cada uma das 6 faces do cubo.</div></li>
+</ol> <div class="para"><dfn class="terminology">Etapa 2: A Soma de Todas as Saídas e a Conclusão</dfn></div> <ol class="lower-alpha">
+<li><div class="para">Seja <span class="process-math">\(F_{\text{total}}\)</span> o número total de tiras dobradas em todo o cubo.</div></li>
+<li><div class="para logical">
+<div class="para">Somamos o número de saídas de todas as 6 faces do cubo. Como sabemos da Etapa 1 que o número de saídas de cada face é ímpar, a soma total é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Soma Total das Saídas} = 6 \times (\text{ÍMPAR})
+\end{equation*}
 </div>
+</div></li>
+<li><div class="para">Cada tira dobrada, por definição, conecta duas faces. Portanto, ao somar as saídas de todas as faces, contamos cada tira dobrada exatamente duas vezes: uma vez para cada face que ela toca.</div></li>
+<li><div class="para logical">
+<div class="para">Assim, a “Soma Total das Saídas” é exatamente o dobro do número total de tiras dobradas:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Soma Total das Saídas} = 2 \times F_{\text{total}}
+\end{equation*}
 </div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Juntando os resultados, temos a equação final:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+6 \times (\text{ÍMPAR}) = 2 \times F_{\text{total}}
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-4.html#solution-54" class="internal">em contexto</a></span>
+</div></li>
+<li><div class="para logical">
+<div class="para">Resolvendo para <span class="process-math">\(F_{\text{total}}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_{\text{total}} = \frac{6 \times (\text{ÍMPAR})}{2} = 3 \times (\text{ÍMPAR})
+\end{equation*}
+</div>
+</div></li>
+</ol> <div class="para">O produto de dois números ímpares (3 e o número de saídas de uma face) é necessariamente <dfn class="terminology">ÍMPAR</dfn>. Assim, está provado que <span class="process-math">\(F_{\text{total}}\text{,}\)</span> o número total de tiras dobradas, é ímpar.</div>
+</div>
+<span class="incontext"><a href="section-10.html#solution-54" class="internal">em contexto</a></span>
 </body>
 </html>
