@@ -2737,27 +2737,1152 @@ var ptx_lunr_docs = [
   "body": " Avalie a continuidade da função mista composta:   "
 },
 {
+  "id": "sec-derivadas-parciais",
+  "level": "1",
+  "url": "sec-derivadas-parciais.html",
+  "type": "Seção",
+  "number": "3.1",
+  "title": "Derivadas Parciais",
+  "body": " Derivadas Parciais   Nesta seção, apresentaremos o conceito de derivadas parciais para funções de várias variáveis. A ideia principal para derivar funções com duas ou mais variáveis é fazer uma análise considerando que apenas uma variável se modifica, enquanto todas as outras são mantidas constantes.  Para motivar este estudo, considere um parabolóide dado por e um plano . A intersecção destas superfícies resulta em uma curva cuja equação é (com ). A derivada parcial nos ajudará a calcular a inclinação da reta tangente a essa curva em um ponto específico.   Curva resultante da intersecção do parabolóide com um plano    Outro exemplo prático envolve curvas de nível da temperatura , onde é o tempo e é a altitude. Podemos nos perguntar como a temperatura varia em relação ao tempo mantendo a altitude fixa, ou como ela varia em relação à altitude em um instante de tempo fixo.    Definição Formal e Notações    Seja uma função de duas variáveis e .  A derivada parcial de em relação a no ponto , denotada por , é definida pelo limite: ou, equivalentemente, usando acréscimos ( ): se o limite existir.  Analogamente, a derivada parcial de em relação a no ponto é definida por: se o limite existir.     Notações Alternativas  Diversas notações são comumente utilizadas na literatura para representar as derivadas parciais de primeira ordem. Para a derivada em relação a : E para a derivada em relação a :      Como Calcular Derivadas Parciais  Na prática, podemos calcular as derivadas parciais usando as regras de derivação conhecidas para funções de uma variável. Para calcular , tratamos a variável como uma constante matemática e derivamos a função em relação a . Da mesma forma, para calcular , mantemos constante e derivamos em relação a .    Encontre as derivadas parciais de 1ª ordem da função .    Mantendo constante e derivando em relação a : .  Agora, mantendo constante e derivando em relação a : .      Calcule as derivadas parciais da função .    Utilizando a regra da cadeia para funções de uma variável:   Analogamente para : .      Determine as derivadas parciais de 1ª ordem de .           Seja a função definida por partes: Calcule e na origem.    Para calcular as derivadas parciais na origem, devemos obrigatoriamente usar a definição através do limite.         Verifique se a função satisfaz a equação .    Primeiro, calculamos as derivadas parciais:    Substituindo na equação: Portanto, a equação é satisfeita.      Interpretação Geométrica  A interpretação geométrica das derivadas parciais está intimamente ligada às inclinações das retas tangentes às curvas de intersecção da superfície com planos coordenados paralelos.  Ao fixarmos , a função representa uma curva resultante da intersecção da superfície com o plano . A inclinação (coeficiente angular) da reta tangente a esta curva no ponto é dada por:    Interpretação geométrica da derivada parcial em relação a x    De maneira análoga, ao fixarmos , obtemos uma curva . A inclinação da reta tangente a no ponto é dada por:    Interpretação geométrica da derivada parcial em relação a y      Derivadas Parciais de Funções com Mais de Duas Variáveis  O conceito se estende naturalmente para funções de variáveis . Para encontrar a derivada parcial em relação a , mantemos todas as outras variáveis constantes e derivamos normalmente em relação a .    Calcule as derivadas parciais de 1ª ordem da função .    A função possui 5 variáveis, portanto, 5 derivadas parciais. Para calcular , usamos a regra do produto e consideramos constantes.         Lista de Exercícios   Usando a definição de limites, calcule as derivadas parciais de 1ª ordem para .    Usando a definição, encontre as derivadas parciais de .    Calcule as derivadas parciais de 1ª ordem para .    Determine e da função .    Calcule as derivadas parciais de .    Encontre as derivadas parciais de 1ª ordem de .    Determine as derivadas parciais de .    Calcule as derivadas parciais de .    Encontre as derivadas parciais de .    Determine as derivadas parciais de .    Calcule as derivadas parciais de .    Calcule as derivadas parciais de 1ª ordem para a função de três variáveis .    Determine para a função .    Encontre as derivadas parciais da função de quatro variáveis .    Verifique se a função satisfaz a equação diferencial parcial .    "
+},
+{
+  "id": "fig-paraboloide-interseccao",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#fig-paraboloide-interseccao",
+  "type": "Figura",
+  "number": "3.1.1",
+  "title": "",
+  "body": " Curva resultante da intersecção do parabolóide com um plano   "
+},
+{
+  "id": "def-derivada-parcial",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#def-derivada-parcial",
+  "type": "Definição",
+  "number": "3.1.2",
+  "title": "",
+  "body": "  Seja uma função de duas variáveis e .  A derivada parcial de em relação a no ponto , denotada por , é definida pelo limite: ou, equivalentemente, usando acréscimos ( ): se o limite existir.  Analogamente, a derivada parcial de em relação a no ponto é definida por: se o limite existir.   "
+},
+{
+  "id": "remark-1",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#remark-1",
+  "type": "Nota",
+  "number": "3.1.3",
+  "title": "Notações Alternativas.",
+  "body": " Notações Alternativas  Diversas notações são comumente utilizadas na literatura para representar as derivadas parciais de primeira ordem. Para a derivada em relação a : E para a derivada em relação a :   "
+},
+{
+  "id": "ex-calculo-polinomio",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#ex-calculo-polinomio",
+  "type": "Exemplo",
+  "number": "3.1.4",
+  "title": "",
+  "body": "  Encontre as derivadas parciais de 1ª ordem da função .    Mantendo constante e derivando em relação a : .  Agora, mantendo constante e derivando em relação a : .   "
+},
+{
+  "id": "ex-calculo-raiz",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#ex-calculo-raiz",
+  "type": "Exemplo",
+  "number": "3.1.5",
+  "title": "",
+  "body": "  Calcule as derivadas parciais da função .    Utilizando a regra da cadeia para funções de uma variável:   Analogamente para : .   "
+},
+{
+  "id": "ex-calculo-trigonometrica",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#ex-calculo-trigonometrica",
+  "type": "Exemplo",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  Determine as derivadas parciais de 1ª ordem de .        "
+},
+{
+  "id": "ex-definicao-origem",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#ex-definicao-origem",
+  "type": "Exemplo",
+  "number": "3.1.7",
+  "title": "",
+  "body": "  Seja a função definida por partes: Calcule e na origem.    Para calcular as derivadas parciais na origem, devemos obrigatoriamente usar a definição através do limite.      "
+},
+{
+  "id": "ex-verificacao-equacao",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#ex-verificacao-equacao",
+  "type": "Exemplo",
+  "number": "3.1.8",
+  "title": "",
+  "body": "  Verifique se a função satisfaz a equação .    Primeiro, calculamos as derivadas parciais:    Substituindo na equação: Portanto, a equação é satisfeita.   "
+},
+{
+  "id": "fig-interpretacao-dx",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#fig-interpretacao-dx",
+  "type": "Figura",
+  "number": "3.1.9",
+  "title": "",
+  "body": " Interpretação geométrica da derivada parcial em relação a x   "
+},
+{
+  "id": "fig-interpretacao-dy",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#fig-interpretacao-dy",
+  "type": "Figura",
+  "number": "3.1.10",
+  "title": "",
+  "body": " Interpretação geométrica da derivada parcial em relação a y   "
+},
+{
+  "id": "ex-cinco-variaveis",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#ex-cinco-variaveis",
+  "type": "Exemplo",
+  "number": "3.1.11",
+  "title": "",
+  "body": "  Calcule as derivadas parciais de 1ª ordem da função .    A função possui 5 variáveis, portanto, 5 derivadas parciais. Para calcular , usamos a regra do produto e consideramos constantes.      "
+},
+{
+  "id": "exercise-192",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-192",
+  "type": "Exercício",
+  "number": "3.1.5.1",
+  "title": "",
+  "body": " Usando a definição de limites, calcule as derivadas parciais de 1ª ordem para .  "
+},
+{
+  "id": "exercise-193",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-193",
+  "type": "Exercício",
+  "number": "3.1.5.2",
+  "title": "",
+  "body": " Usando a definição, encontre as derivadas parciais de .  "
+},
+{
+  "id": "exercise-194",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-194",
+  "type": "Exercício",
+  "number": "3.1.5.3",
+  "title": "",
+  "body": " Calcule as derivadas parciais de 1ª ordem para .  "
+},
+{
+  "id": "exercise-195",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-195",
+  "type": "Exercício",
+  "number": "3.1.5.4",
+  "title": "",
+  "body": " Determine e da função .  "
+},
+{
+  "id": "exercise-196",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-196",
+  "type": "Exercício",
+  "number": "3.1.5.5",
+  "title": "",
+  "body": " Calcule as derivadas parciais de .  "
+},
+{
+  "id": "exercise-197",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-197",
+  "type": "Exercício",
+  "number": "3.1.5.6",
+  "title": "",
+  "body": " Encontre as derivadas parciais de 1ª ordem de .  "
+},
+{
+  "id": "exercise-198",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-198",
+  "type": "Exercício",
+  "number": "3.1.5.7",
+  "title": "",
+  "body": " Determine as derivadas parciais de .  "
+},
+{
+  "id": "exercise-199",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-199",
+  "type": "Exercício",
+  "number": "3.1.5.8",
+  "title": "",
+  "body": " Calcule as derivadas parciais de .  "
+},
+{
+  "id": "exercise-200",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-200",
+  "type": "Exercício",
+  "number": "3.1.5.9",
+  "title": "",
+  "body": " Encontre as derivadas parciais de .  "
+},
+{
+  "id": "exercise-201",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-201",
+  "type": "Exercício",
+  "number": "3.1.5.10",
+  "title": "",
+  "body": " Determine as derivadas parciais de .  "
+},
+{
+  "id": "exercise-202",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-202",
+  "type": "Exercício",
+  "number": "3.1.5.11",
+  "title": "",
+  "body": " Calcule as derivadas parciais de .  "
+},
+{
+  "id": "exercise-203",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-203",
+  "type": "Exercício",
+  "number": "3.1.5.12",
+  "title": "",
+  "body": " Calcule as derivadas parciais de 1ª ordem para a função de três variáveis .  "
+},
+{
+  "id": "exercise-204",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-204",
+  "type": "Exercício",
+  "number": "3.1.5.13",
+  "title": "",
+  "body": " Determine para a função .  "
+},
+{
+  "id": "exercise-205",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-205",
+  "type": "Exercício",
+  "number": "3.1.5.14",
+  "title": "",
+  "body": " Encontre as derivadas parciais da função de quatro variáveis .  "
+},
+{
+  "id": "exercise-206",
+  "level": "2",
+  "url": "sec-derivadas-parciais.html#exercise-206",
+  "type": "Exercício",
+  "number": "3.1.5.15",
+  "title": "",
+  "body": " Verifique se a função satisfaz a equação diferencial parcial .  "
+},
+{
+  "id": "sec-conceito-diferenciabilidade",
+  "level": "1",
+  "url": "sec-conceito-diferenciabilidade.html",
+  "type": "Seção",
+  "number": "3.2",
+  "title": "O Conceito de Diferenciabilidade",
+  "body": " O Conceito de Diferenciabilidade  Para uma função de uma variável ser derivável, seu gráfico deve ser uma curva suave, sem pontos angulosos, possuindo uma única reta tangente em cada ponto. A ideia de diferenciabilidade para uma função de duas variáveis, , estende esse conceito: buscamos caracterizar a \"suavidade\" de seu gráfico.  Essa suavidade é traduzida pela existência de um único plano tangente em cada ponto , que funciona como uma \"boa aproximação\" da função nas proximidades de .  Relembrando o caso de uma variável, se é derivável em , a equação da reta tangente é . A definição de derivada pode ser reescrita como: .  Isso indica que, à medida que se aproxima de , a diferença entre a função e a reta tangente aproxima-se de zero de uma forma mais rápida.  Para funções de duas variáveis, a mera existência das derivadas parciais não assegura a existência de um plano tangente. Se o plano tangente existir, ele será dado pela equação: .   Definição Formal   Dizemos que a função é diferenciável no ponto se as derivadas parciais e existem e se: .  A expressão no denominador, , representa a distância de a .     Diferenciabilidade implica Continuidade   Se é diferenciável no ponto , então é contínua nesse ponto.       Diferenciabilidade de polinômios simples   Prove que é diferenciável em .    As derivadas parciais existem e são dadas por e .  Substituindo no limite da definição, obtemos: .  O numerador se simplifica exatamente para .  O limite torna-se , o que prova que a função é diferenciável em todo o .     Ponto anguloso na origem   Verifique se é diferenciável na origem.    Calculando a derivada parcial em relação a na origem pela definição: .  Os limites laterais são diferentes ( pela direita e pela esquerda), logo o limite não existe.  Como não existe, a função não é diferenciável na origem.     Falta de continuidade   Analise a função se e se .    Se pelo eixo , o limite é . Se pelo eixo , o limite é .  Como não existe o limite de quando , a função não é contínua nesse ponto.  Pelo teorema estabelecido, como não é contínua, ela não é diferenciável na origem.     Derivadas parciais existem, mas não é diferenciável   Analise a função se e na origem.    As derivadas parciais na origem existem e valem e .  Ao montar o limite da definição de diferenciabilidade, obtemos: .  Aproximando-se pela reta , o limite dá . Pelo eixo , o limite é .  Como o limite não existe, a função não é diferenciável na origem.       Condição Suficiente para Diferenciabilidade  Como utilizar a definição com limites pode ser muito trabalhoso, utilizamos um critério prático.   Condição Suficiente   Se possui derivadas parciais e em um conjunto aberto que contém e se essas derivadas parciais são contínuas em , então é diferenciável em .     Funções Polinomiais   Verifique que é diferenciável em .    As derivadas parciais são funções polinomiais e, portanto, são contínuas em todo o . Pela proposição, concluímos que funções polinomiais são diferenciáveis em .     Funções Trigonométricas Compostas   Verifique que é diferenciável em .    As derivadas parciais são e . Como essas derivadas são contínuas em , a função é diferenciável em todo o .     Funções Racionais   Verifique onde é diferenciável.    As derivadas parciais são e . Ambas são contínuas em todos os pontos do , exceto na origem. Logo, a função é diferenciável em .      Exercícios   Parte 1: Uso da Definição Formal   Resolva utilizando a definição formal de diferenciabilidade.    Usando a definição, verificar que a função é diferenciável em .    Usando a definição, verificar que a função é diferenciável em .     Parte 2: Análise de Diferenciabilidade na Origem   Verificar se as funções dadas são diferenciáveis na origem :    .    para , e para .    .    para , e para .    para , e para .     Parte 3: Identificação de Regiões de Diferenciabilidade   Identifique a região de onde as funções dadas são diferenciáveis, utilizando o teorema da condição suficiente:    .    .    .     "
+},
+{
+  "id": "def-diferenciabilidade",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#def-diferenciabilidade",
+  "type": "Definição",
+  "number": "3.2.1",
+  "title": "Definição Formal.",
+  "body": " Definição Formal   Dizemos que a função é diferenciável no ponto se as derivadas parciais e existem e se: .  A expressão no denominador, , representa a distância de a .   "
+},
+{
+  "id": "teo-diferenciavel-implica-continua",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#teo-diferenciavel-implica-continua",
+  "type": "Teorema",
+  "number": "3.2.2",
+  "title": "Diferenciabilidade implica Continuidade.",
+  "body": " Diferenciabilidade implica Continuidade   Se é diferenciável no ponto , então é contínua nesse ponto.   "
+},
+{
+  "id": "ex-diferenciavel-polinomio",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-diferenciavel-polinomio",
+  "type": "Exemplo",
+  "number": "3.2.3",
+  "title": "Diferenciabilidade de polinômios simples.",
+  "body": " Diferenciabilidade de polinômios simples   Prove que é diferenciável em .    As derivadas parciais existem e são dadas por e .  Substituindo no limite da definição, obtemos: .  O numerador se simplifica exatamente para .  O limite torna-se , o que prova que a função é diferenciável em todo o .   "
+},
+{
+  "id": "ex-nao-diferenciavel-raiz",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-nao-diferenciavel-raiz",
+  "type": "Exemplo",
+  "number": "3.2.4",
+  "title": "Ponto anguloso na origem.",
+  "body": " Ponto anguloso na origem   Verifique se é diferenciável na origem.    Calculando a derivada parcial em relação a na origem pela definição: .  Os limites laterais são diferentes ( pela direita e pela esquerda), logo o limite não existe.  Como não existe, a função não é diferenciável na origem.   "
+},
+{
+  "id": "ex-nao-continua-origem",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-nao-continua-origem",
+  "type": "Exemplo",
+  "number": "3.2.5",
+  "title": "Falta de continuidade.",
+  "body": " Falta de continuidade   Analise a função se e se .    Se pelo eixo , o limite é . Se pelo eixo , o limite é .  Como não existe o limite de quando , a função não é contínua nesse ponto.  Pelo teorema estabelecido, como não é contínua, ela não é diferenciável na origem.   "
+},
+{
+  "id": "ex-derivadas-existem-nao-diferenciavel",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-derivadas-existem-nao-diferenciavel",
+  "type": "Exemplo",
+  "number": "3.2.6",
+  "title": "Derivadas parciais existem, mas não é diferenciável.",
+  "body": " Derivadas parciais existem, mas não é diferenciável   Analise a função se e na origem.    As derivadas parciais na origem existem e valem e .  Ao montar o limite da definição de diferenciabilidade, obtemos: .  Aproximando-se pela reta , o limite dá . Pelo eixo , o limite é .  Como o limite não existe, a função não é diferenciável na origem.   "
+},
+{
+  "id": "teo-condicao-suficiente-dif",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#teo-condicao-suficiente-dif",
+  "type": "Teorema",
+  "number": "3.2.7",
+  "title": "Condição Suficiente.",
+  "body": " Condição Suficiente   Se possui derivadas parciais e em um conjunto aberto que contém e se essas derivadas parciais são contínuas em , então é diferenciável em .   "
+},
+{
+  "id": "ex-diferenciavel-polinomio-criterio",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-diferenciavel-polinomio-criterio",
+  "type": "Exemplo",
+  "number": "3.2.8",
+  "title": "Funções Polinomiais.",
+  "body": " Funções Polinomiais   Verifique que é diferenciável em .    As derivadas parciais são funções polinomiais e, portanto, são contínuas em todo o . Pela proposição, concluímos que funções polinomiais são diferenciáveis em .   "
+},
+{
+  "id": "ex-diferenciavel-trig",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-diferenciavel-trig",
+  "type": "Exemplo",
+  "number": "3.2.9",
+  "title": "Funções Trigonométricas Compostas.",
+  "body": " Funções Trigonométricas Compostas   Verifique que é diferenciável em .    As derivadas parciais são e . Como essas derivadas são contínuas em , a função é diferenciável em todo o .   "
+},
+{
+  "id": "ex-diferenciavel-racional",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#ex-diferenciavel-racional",
+  "type": "Exemplo",
+  "number": "3.2.10",
+  "title": "Funções Racionais.",
+  "body": " Funções Racionais   Verifique onde é diferenciável.    As derivadas parciais são e . Ambas são contínuas em todos os pontos do , exceto na origem. Logo, a função é diferenciável em .   "
+},
+{
+  "id": "exercise-207",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-207",
+  "type": "Exercício",
+  "number": "3.2.2.1",
+  "title": "",
+  "body": " Usando a definição, verificar que a função é diferenciável em .  "
+},
+{
+  "id": "exercise-208",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-208",
+  "type": "Exercício",
+  "number": "3.2.2.2",
+  "title": "",
+  "body": " Usando a definição, verificar que a função é diferenciável em .  "
+},
+{
+  "id": "exercise-209",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-209",
+  "type": "Exercício",
+  "number": "3.2.2.3",
+  "title": "",
+  "body": " .  "
+},
+{
+  "id": "exercise-210",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-210",
+  "type": "Exercício",
+  "number": "3.2.2.4",
+  "title": "",
+  "body": " para , e para .  "
+},
+{
+  "id": "exercise-211",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-211",
+  "type": "Exercício",
+  "number": "3.2.2.5",
+  "title": "",
+  "body": " .  "
+},
+{
+  "id": "exercise-212",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-212",
+  "type": "Exercício",
+  "number": "3.2.2.6",
+  "title": "",
+  "body": " para , e para .  "
+},
+{
+  "id": "exercise-213",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-213",
+  "type": "Exercício",
+  "number": "3.2.2.7",
+  "title": "",
+  "body": " para , e para .  "
+},
+{
+  "id": "exercise-214",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-214",
+  "type": "Exercício",
+  "number": "3.2.2.8",
+  "title": "",
+  "body": " .  "
+},
+{
+  "id": "exercise-215",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-215",
+  "type": "Exercício",
+  "number": "3.2.2.9",
+  "title": "",
+  "body": " .  "
+},
+{
+  "id": "exercise-216",
+  "level": "2",
+  "url": "sec-conceito-diferenciabilidade.html#exercise-216",
+  "type": "Exercício",
+  "number": "3.2.2.10",
+  "title": "",
+  "body": " .  "
+},
+{
+  "id": "sec-conteudo-unico",
+  "level": "1",
+  "url": "sec-conteudo-unico.html",
+  "type": "Seção",
+  "number": "3.3",
+  "title": "O Plano Tangente, O Vetor Gradiente e Interpretação Geométrica",
+  "body": " O Plano Tangente, O Vetor Gradiente e Interpretação Geométrica   O Plano Tangente  A existência de derivadas parciais num ponto não garante que o gráfico de uma função admita um plano tangente nesse ponto. Funções que apresentam \"bicos\", pontos angulosos ou descontinuidades podem não possuir plano tangente, mesmo que as derivadas parciais existam na origem ou no ponto analisado. Para que o plano represente uma aproximação válida da superfície, a função precisa ser diferenciável.   Plano Tangente   Seja diferenciável no ponto . Chamamos de plano tangente ao gráfico de no ponto o plano dado pela equação: .     Plano tangente a um paraboloide   Determine o plano tangente ao gráfico de no ponto .    A função é diferenciável em todos os pontos do . Suas derivadas parciais são: .  No ponto , as derivadas valem e , respectivamente.  Substituindo na equação do plano tangente, obtemos: .  Essa é a equação do plano tangente no ponto .     Inexistência de plano tangente   Determine, se existir, o plano tangente a no ponto .    A função dada não tem derivadas parciais em . Portanto, ela não é diferenciável nesse ponto e seu gráfico não admite plano tangente na origem.      O Vetor Gradiente  Podemos reescrever a equação do plano tangente utilizando a notação de vetores.   Vetor Gradiente   Seja uma função que admite derivadas parciais de 1ª ordem no ponto . O gradiente de no ponto , denotado por ou , é o vetor cujas componentes são as derivadas parciais de 1ª ordem de nesse ponto: .  Geometricamente, interpretamos o como um vetor aplicado no ponto do plano .  Para funções de três variáveis , o vetor gradiente é estendido de forma análoga: .     Cálculo do vetor gradiente   Determine o vetor gradiente da função no ponto .    Calculamos as derivadas parciais para encontrar o vetor gradiente genérico: .  Avaliando no ponto , temos: .      Interpretação Geométrica do Gradiente  Uma das mais importantes propriedades do gradiente de é a sua relação com as curvas de nível da função.   Ortogonalidade às curvas de nível   Seja uma função tal que, pelo ponto , passa uma curva de nível de . Se não for nulo, então ele é perpendicular à curva em , isto é, ele é perpendicular à reta tangente à curva no ponto .     Reta perpendicular a uma curva de nível   Encontre a equação da reta perpendicular à curva no ponto .    A curva dada é uma curva de nível da função e passa pelo ponto . Pela propriedade geométrica, o vetor é perpendicular à curva nesse ponto.  Calculando o gradiente: .  A inclinação da reta procurada coincide com o coeficiente angular do vetor : .  Conhecendo a inclinação e sabendo que a reta passa pelo ponto , a equação da reta é: .     Reta tangente a uma curva de nível   Utilize o vetor gradiente para encontrar a equação da reta tangente à curva no ponto .    A curva dada é uma curva de nível da função associada ao valor . Sabemos pela Proposição de Ortogonalidade que o gradiente é um vetor normal (perpendicular) à curva de nível e, consequentemente, é perpendicular à reta tangente nesse ponto.  Primeiro, calculamos o vetor gradiente de : .  Avaliando o gradiente no ponto : .  A equação da reta tangente que passa por com vetor normal é dada por . Substituindo e : .  Simplificando a equação, obtemos: .     Reta normal a uma elipse   Encontre a equação da reta normal (perpendicular) à elipse no ponto .    A reta normal a uma curva de nível num ponto é a reta que tem a mesma direção do vetor gradiente nesse ponto. Seja . A elipse é a curva de nível .  Calculamos o vetor gradiente: .  Avaliando no ponto : .  O vetor fornece a direção da reta normal. Para facilitar, podemos usar um vetor paralelo mais simples, dividindo suas componentes por 4: .  A equação paramétrica da reta que passa por com direção é: .  Se for solicitada a equação geral, podemos isolar o parâmetro em ambas as equações e igualá-las: .      Exercícios  Com base nos conceitos da Seção de Planos Tangentes e Vetores Gradientes, resolva os exercícios abaixo.   Parte 1: Planos Tangentes   Determine, se existir, o plano tangente ao gráfico das funções dadas nos pontos indicados:    ; no ponto .    ; no ponto .    ; nos pontos e .    ; nos pontos e .     Parte 2: Vetor Gradiente em um Ponto   Determine o vetor gradiente das funções dadas nos pontos indicados:    ; no ponto .    ; no ponto .    ; no ponto .    ; no ponto .     Parte 3: Propriedades Geométricas   Encontrar a equação da reta perpendicular à curva nos pontos e .    Determinar o plano que contém os pontos e e que seja tangente ao gráfico de .     "
+},
+{
+  "id": "def-plano-tangente",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#def-plano-tangente",
+  "type": "Definição",
+  "number": "3.3.1",
+  "title": "Plano Tangente.",
+  "body": " Plano Tangente   Seja diferenciável no ponto . Chamamos de plano tangente ao gráfico de no ponto o plano dado pela equação: .   "
+},
+{
+  "id": "ex-plano-tangente-paraboloide",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#ex-plano-tangente-paraboloide",
+  "type": "Exemplo",
+  "number": "3.3.2",
+  "title": "Plano tangente a um paraboloide.",
+  "body": " Plano tangente a um paraboloide   Determine o plano tangente ao gráfico de no ponto .    A função é diferenciável em todos os pontos do . Suas derivadas parciais são: .  No ponto , as derivadas valem e , respectivamente.  Substituindo na equação do plano tangente, obtemos: .  Essa é a equação do plano tangente no ponto .   "
+},
+{
+  "id": "ex-plano-tangente-cone",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#ex-plano-tangente-cone",
+  "type": "Exemplo",
+  "number": "3.3.3",
+  "title": "Inexistência de plano tangente.",
+  "body": " Inexistência de plano tangente   Determine, se existir, o plano tangente a no ponto .    A função dada não tem derivadas parciais em . Portanto, ela não é diferenciável nesse ponto e seu gráfico não admite plano tangente na origem.   "
+},
+{
+  "id": "def-vetor-gradiente",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#def-vetor-gradiente",
+  "type": "Definição",
+  "number": "3.3.4",
+  "title": "Vetor Gradiente.",
+  "body": " Vetor Gradiente   Seja uma função que admite derivadas parciais de 1ª ordem no ponto . O gradiente de no ponto , denotado por ou , é o vetor cujas componentes são as derivadas parciais de 1ª ordem de nesse ponto: .  Geometricamente, interpretamos o como um vetor aplicado no ponto do plano .  Para funções de três variáveis , o vetor gradiente é estendido de forma análoga: .   "
+},
+{
+  "id": "ex-calculo-gradiente",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#ex-calculo-gradiente",
+  "type": "Exemplo",
+  "number": "3.3.5",
+  "title": "Cálculo do vetor gradiente.",
+  "body": " Cálculo do vetor gradiente   Determine o vetor gradiente da função no ponto .    Calculamos as derivadas parciais para encontrar o vetor gradiente genérico: .  Avaliando no ponto , temos: .   "
+},
+{
+  "id": "prop-ortogonalidade-gradiente",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#prop-ortogonalidade-gradiente",
+  "type": "Proposição",
+  "number": "3.3.6",
+  "title": "Ortogonalidade às curvas de nível.",
+  "body": " Ortogonalidade às curvas de nível   Seja uma função tal que, pelo ponto , passa uma curva de nível de . Se não for nulo, então ele é perpendicular à curva em , isto é, ele é perpendicular à reta tangente à curva no ponto .   "
+},
+{
+  "id": "ex-reta-perpendicular",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#ex-reta-perpendicular",
+  "type": "Exemplo",
+  "number": "3.3.7",
+  "title": "Reta perpendicular a uma curva de nível.",
+  "body": " Reta perpendicular a uma curva de nível   Encontre a equação da reta perpendicular à curva no ponto .    A curva dada é uma curva de nível da função e passa pelo ponto . Pela propriedade geométrica, o vetor é perpendicular à curva nesse ponto.  Calculando o gradiente: .  A inclinação da reta procurada coincide com o coeficiente angular do vetor : .  Conhecendo a inclinação e sabendo que a reta passa pelo ponto , a equação da reta é: .   "
+},
+{
+  "id": "ex-reta-tangente-curva-nivel",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#ex-reta-tangente-curva-nivel",
+  "type": "Exemplo",
+  "number": "3.3.8",
+  "title": "Reta tangente a uma curva de nível.",
+  "body": " Reta tangente a uma curva de nível   Utilize o vetor gradiente para encontrar a equação da reta tangente à curva no ponto .    A curva dada é uma curva de nível da função associada ao valor . Sabemos pela Proposição de Ortogonalidade que o gradiente é um vetor normal (perpendicular) à curva de nível e, consequentemente, é perpendicular à reta tangente nesse ponto.  Primeiro, calculamos o vetor gradiente de : .  Avaliando o gradiente no ponto : .  A equação da reta tangente que passa por com vetor normal é dada por . Substituindo e : .  Simplificando a equação, obtemos: .   "
+},
+{
+  "id": "ex-reta-normal-elipse",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#ex-reta-normal-elipse",
+  "type": "Exemplo",
+  "number": "3.3.9",
+  "title": "Reta normal a uma elipse.",
+  "body": " Reta normal a uma elipse   Encontre a equação da reta normal (perpendicular) à elipse no ponto .    A reta normal a uma curva de nível num ponto é a reta que tem a mesma direção do vetor gradiente nesse ponto. Seja . A elipse é a curva de nível .  Calculamos o vetor gradiente: .  Avaliando no ponto : .  O vetor fornece a direção da reta normal. Para facilitar, podemos usar um vetor paralelo mais simples, dividindo suas componentes por 4: .  A equação paramétrica da reta que passa por com direção é: .  Se for solicitada a equação geral, podemos isolar o parâmetro em ambas as equações e igualá-las: .   "
+},
+{
+  "id": "exercise-217",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-217",
+  "type": "Exercício",
+  "number": "3.3.4.1",
+  "title": "",
+  "body": " ; no ponto .  "
+},
+{
+  "id": "exercise-218",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-218",
+  "type": "Exercício",
+  "number": "3.3.4.2",
+  "title": "",
+  "body": " ; no ponto .  "
+},
+{
+  "id": "exercise-219",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-219",
+  "type": "Exercício",
+  "number": "3.3.4.3",
+  "title": "",
+  "body": " ; nos pontos e .  "
+},
+{
+  "id": "exercise-220",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-220",
+  "type": "Exercício",
+  "number": "3.3.4.4",
+  "title": "",
+  "body": " ; nos pontos e .  "
+},
+{
+  "id": "exercise-221",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-221",
+  "type": "Exercício",
+  "number": "3.3.4.5",
+  "title": "",
+  "body": " ; no ponto .  "
+},
+{
+  "id": "exercise-222",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-222",
+  "type": "Exercício",
+  "number": "3.3.4.6",
+  "title": "",
+  "body": " ; no ponto .  "
+},
+{
+  "id": "exercise-223",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-223",
+  "type": "Exercício",
+  "number": "3.3.4.7",
+  "title": "",
+  "body": " ; no ponto .  "
+},
+{
+  "id": "exercise-224",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-224",
+  "type": "Exercício",
+  "number": "3.3.4.8",
+  "title": "",
+  "body": " ; no ponto .  "
+},
+{
+  "id": "exercise-225",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-225",
+  "type": "Exercício",
+  "number": "3.3.4.9",
+  "title": "",
+  "body": " Encontrar a equação da reta perpendicular à curva nos pontos e .  "
+},
+{
+  "id": "exercise-226",
+  "level": "2",
+  "url": "sec-conteudo-unico.html#exercise-226",
+  "type": "Exercício",
+  "number": "3.3.4.10",
+  "title": "",
+  "body": " Determinar o plano que contém os pontos e e que seja tangente ao gráfico de .  "
+},
+{
+  "id": "sec-diferencial",
+  "level": "1",
+  "url": "sec-diferencial.html",
+  "type": "Seção",
+  "number": "3.4",
+  "title": "Diferencial",
+  "body": " Diferencial   O Conceito de Diferencial  A diferencial de uma função de uma variável, , é aproximadamente igual ao acréscimo da variável dependente . De forma análoga, a diferencial de uma função de duas variáveis, , é uma função ou transformação linear que melhor aproxima o acréscimo da variável dependente nas proximidades de um ponto.  Geometricamente, enquanto o plano tangente à superfície em nos fornece a \"melhor aproximação\" plana da superfície perto desse ponto, a diferencial quantifica exatamente a variação de altura (no eixo z) sobre esse plano tangente quando nos deslocamos de para um ponto próximo .   Diferencial Total   Seja uma função diferenciável no ponto . Em uma notação clássica, definimos as diferenciais das variáveis independentes e como seus próprios acréscimos, isto é, e .  A diferencial de em , relativa aos acréscimos e , é denotada por (ou ) e é definida por: .      Aproximações e Erros  O acréscimo exato da variável dependente, denotado por , é a diferença de altura real na superfície: .  Para valores pequenos de e , a diferencial total aproxima muito bem a variação exata . Portanto, temos a fórmula de aproximação linear: .  Essa propriedade torna a diferencial uma ferramenta poderosa para calcular propagações de erros e valores numéricos aproximados de expressões complexas.    Extensão para Três ou Mais Variáveis  A definição pode ser estendida naturalmente para funções de três ou mais variáveis. Para uma função de três variáveis , a diferencial total é dada por: .    Exemplos Resolvidos   Cálculo da Diferencial e do Acréscimo   Dada a função :  a) Determinar um valor aproximado para o acréscimo da variável dependente quando passa de para .  b) Calcular o acréscimo exato para a mesma variação.    Solução (a): O valor aproximado do acréscimo é a diferencial .  As derivadas parciais são e .  Avaliando no ponto , temos e .  As variações são e .  Logo, .  Solução (b): O valor exato é .  .  .  . Note como o erro de aproximação é pequeno (apenas ).     Aplicação Geométrica (Variação de Área)   Calcular um valor aproximado para a variação da área de um retângulo quando os lados são modificados de e para e , respectivamente.    A área de um retângulo é dada pela função de duas variáveis .  A diferencial da área é .  Substituindo os valores iniciais , , e as variações , :  .  A área sofre um acréscimo de aproximadamente .     Aproximação Numérica   Encontrar um valor aproximado para a expressão usando diferencial.    Consideramos a função .  O ponto \"fácil\" mais próximo de é .  As variações são e .  Calculamos as derivadas parciais e as avaliamos no ponto :  .  .  A diferencial total é .  Sabemos que .  Como , temos que .      Exercícios   Parte 1: Cálculo da Diferencial Total   Calcule a diferencial total ( ou ) das seguintes funções:                              Parte 2: Propagação de Erros e Variações Aproximadas   Utilize o conceito de diferencial para resolver os problemas aplicados:    As dimensões de uma caixa retangular fechada mudam de um comprimento de , largura de e altura de para , e . Use diferenciais para aproximar a variação no volume da caixa.   A função volume é . A diferencial é .  Ponto base: . Variações: , , .   . O volume diminui aproximadamente .    A energia consumida em um resistor elétrico é dada por . Se diminui de para e aumenta de para , use diferenciais para estimar a variação na potência consumida.   .  Ponto base: , . Variações: , .  .    Um terreno tem forma retangular. Estima-se que seus lados medem e , com um erro máximo de medição de e , respectivamente. Determine o possível erro máximo no cálculo da área do terreno.   Área . Diferencial .  Valores: , . Erros: , (consideramos positivos para obter o erro máximo).  .     Parte 3: Aproximações Numéricas   Use a diferencial total para encontrar um valor numérico aproximado para as expressões dadas:      Função: . Ponto base: . , .  .  .  Valor aproximado: .      Função: . Ponto base: . , .  .  .  Valor aproximado: .      Função: . Ponto base: . , .  .  .  Valor aproximado: .     "
+},
+{
+  "id": "def-diferencial",
+  "level": "2",
+  "url": "sec-diferencial.html#def-diferencial",
+  "type": "Definição",
+  "number": "3.4.1",
+  "title": "Diferencial Total.",
+  "body": " Diferencial Total   Seja uma função diferenciável no ponto . Em uma notação clássica, definimos as diferenciais das variáveis independentes e como seus próprios acréscimos, isto é, e .  A diferencial de em , relativa aos acréscimos e , é denotada por (ou ) e é definida por: .   "
+},
+{
+  "id": "ex-diferencial-polinomio",
+  "level": "2",
+  "url": "sec-diferencial.html#ex-diferencial-polinomio",
+  "type": "Exemplo",
+  "number": "3.4.2",
+  "title": "Cálculo da Diferencial e do Acréscimo.",
+  "body": " Cálculo da Diferencial e do Acréscimo   Dada a função :  a) Determinar um valor aproximado para o acréscimo da variável dependente quando passa de para .  b) Calcular o acréscimo exato para a mesma variação.    Solução (a): O valor aproximado do acréscimo é a diferencial .  As derivadas parciais são e .  Avaliando no ponto , temos e .  As variações são e .  Logo, .  Solução (b): O valor exato é .  .  .  . Note como o erro de aproximação é pequeno (apenas ).   "
+},
+{
+  "id": "ex-diferencial-geometria",
+  "level": "2",
+  "url": "sec-diferencial.html#ex-diferencial-geometria",
+  "type": "Exemplo",
+  "number": "3.4.3",
+  "title": "Aplicação Geométrica (Variação de Área).",
+  "body": " Aplicação Geométrica (Variação de Área)   Calcular um valor aproximado para a variação da área de um retângulo quando os lados são modificados de e para e , respectivamente.    A área de um retângulo é dada pela função de duas variáveis .  A diferencial da área é .  Substituindo os valores iniciais , , e as variações , :  .  A área sofre um acréscimo de aproximadamente .   "
+},
+{
+  "id": "ex-diferencial-potencia",
+  "level": "2",
+  "url": "sec-diferencial.html#ex-diferencial-potencia",
+  "type": "Exemplo",
+  "number": "3.4.4",
+  "title": "Aproximação Numérica.",
+  "body": " Aproximação Numérica   Encontrar um valor aproximado para a expressão usando diferencial.    Consideramos a função .  O ponto \"fácil\" mais próximo de é .  As variações são e .  Calculamos as derivadas parciais e as avaliamos no ponto :  .  .  A diferencial total é .  Sabemos que .  Como , temos que .   "
+},
+{
+  "id": "exercise-227",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-227",
+  "type": "Exercício",
+  "number": "3.4.5.1",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "exercise-228",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-228",
+  "type": "Exercício",
+  "number": "3.4.5.2",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "exercise-229",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-229",
+  "type": "Exercício",
+  "number": "3.4.5.3",
+  "title": "",
+  "body": "     "
+},
+{
+  "id": "exercise-230",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-230",
+  "type": "Exercício",
+  "number": "3.4.5.4",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "exercise-231",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-231",
+  "type": "Exercício",
+  "number": "3.4.5.5",
+  "title": "",
+  "body": " As dimensões de uma caixa retangular fechada mudam de um comprimento de , largura de e altura de para , e . Use diferenciais para aproximar a variação no volume da caixa.   A função volume é . A diferencial é .  Ponto base: . Variações: , , .   . O volume diminui aproximadamente .  "
+},
+{
+  "id": "exercise-232",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-232",
+  "type": "Exercício",
+  "number": "3.4.5.6",
+  "title": "",
+  "body": " A energia consumida em um resistor elétrico é dada por . Se diminui de para e aumenta de para , use diferenciais para estimar a variação na potência consumida.   .  Ponto base: , . Variações: , .  .  "
+},
+{
+  "id": "exercise-233",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-233",
+  "type": "Exercício",
+  "number": "3.4.5.7",
+  "title": "",
+  "body": " Um terreno tem forma retangular. Estima-se que seus lados medem e , com um erro máximo de medição de e , respectivamente. Determine o possível erro máximo no cálculo da área do terreno.   Área . Diferencial .  Valores: , . Erros: , (consideramos positivos para obter o erro máximo).  .  "
+},
+{
+  "id": "exercise-234",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-234",
+  "type": "Exercício",
+  "number": "3.4.5.8",
+  "title": "",
+  "body": "   Função: . Ponto base: . , .  .  .  Valor aproximado: .  "
+},
+{
+  "id": "exercise-235",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-235",
+  "type": "Exercício",
+  "number": "3.4.5.9",
+  "title": "",
+  "body": "   Função: . Ponto base: . , .  .  .  Valor aproximado: .  "
+},
+{
+  "id": "exercise-236",
+  "level": "2",
+  "url": "sec-diferencial.html#exercise-236",
+  "type": "Exercício",
+  "number": "3.4.5.10",
+  "title": "",
+  "body": "   Função: . Ponto base: . , .  .  .  Valor aproximado: .  "
+},
+{
+  "id": "sec-conteudo-regra-cadeia",
+  "level": "1",
+  "url": "sec-conteudo-regra-cadeia.html",
+  "type": "Seção",
+  "number": "3.5",
+  "title": "Regra da Cadeia",
+  "body": " Regra da Cadeia   Casos Específicos de Função Composta  No estudo de funções de uma variável, usamos a regra da cadeia para derivar funções compostas. Para funções de várias variáveis, a ideia é semelhante, mas precisamos levar em conta todas as variáveis intermediárias envolvidas.   Caso I (Uma variável independente final): Seja uma função de duas variáveis e sejam e funções de uma variável . A função composta depende apenas de .   Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão usando o vetor gradiente: na qual e, consequentemente, .     Caso II (Duas ou mais variáveis independentes finais): Sejam e as variáveis intermediárias dadas por e . A função composta é .   Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações podem ser reescritas de forma compacta em uma forma matricial: .    Essas regras podem ser generalizadas naturalmente para qualquer número de variáveis intermediárias e finais, bastando somar os produtos das derivadas ao longo de todos os \"caminhos\" que ligam a variável dependente à variável independente em questão.    Exemplos Resolvidos   Aplicação do Caso I   Dada a função , com e , encontre a derivada para .    Usando a regra da cadeia do Caso I:   .  Calculando as derivadas:    e    Substituindo e :  .     Mudança para Coordenadas Polares (Caso II)   Dada , com e , encontre as derivadas parciais e .    Usando a regra da cadeia (Caso II):   .   .   .   .      Exercícios  Baseado nos conceitos da Regra da Cadeia, resolva os exercícios a seguir.   Derivadas de Funções de Uma Variável Independente (Caso I)   Determine usando a regra da cadeia:    , onde e .    , onde e .    , onde e .    , onde e .     Derivadas Parciais de Funções Compostas (Caso II e Generalizações)   Determine as derivadas parciais solicitadas usando a regra da cadeia:    Seja , com e . Calcule e .    Determine e para , com e .    Dada a função com e , encontre e .    Determine e para , com e .    Determine as derivadas parciais e para , onde , e .     Aplicações Teóricas   Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e calcule e . Depois substitua na equação fornecida.     "
+},
+{
+  "id": "teo-regra-cadeia-caso1",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#teo-regra-cadeia-caso1",
+  "type": "Teorema",
+  "number": "3.5.1",
+  "title": "Regra da Cadeia - Caso I.",
+  "body": " Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão usando o vetor gradiente: na qual e, consequentemente, .   "
+},
+{
+  "id": "teo-regra-cadeia-caso2",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#teo-regra-cadeia-caso2",
+  "type": "Teorema",
+  "number": "3.5.2",
+  "title": "Regra da Cadeia - Caso II.",
+  "body": " Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações podem ser reescritas de forma compacta em uma forma matricial: .   "
+},
+{
+  "id": "ex-cadeia-caso1",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-caso1",
+  "type": "Exemplo",
+  "number": "3.5.3",
+  "title": "Aplicação do Caso I.",
+  "body": " Aplicação do Caso I   Dada a função , com e , encontre a derivada para .    Usando a regra da cadeia do Caso I:   .  Calculando as derivadas:    e    Substituindo e :  .   "
+},
+{
+  "id": "ex-cadeia-polar",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-polar",
+  "type": "Exemplo",
+  "number": "3.5.4",
+  "title": "Mudança para Coordenadas Polares (Caso II).",
+  "body": " Mudança para Coordenadas Polares (Caso II)   Dada , com e , encontre as derivadas parciais e .    Usando a regra da cadeia (Caso II):   .   .   .   .   "
+},
+{
+  "id": "exercise-237",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-237",
+  "type": "Exercício",
+  "number": "3.5.3.1",
+  "title": "",
+  "body": " , onde e .  "
+},
+{
+  "id": "exercise-238",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-238",
+  "type": "Exercício",
+  "number": "3.5.3.2",
+  "title": "",
+  "body": " , onde e .  "
+},
+{
+  "id": "exercise-239",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-239",
+  "type": "Exercício",
+  "number": "3.5.3.3",
+  "title": "",
+  "body": " , onde e .  "
+},
+{
+  "id": "exercise-240",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-240",
+  "type": "Exercício",
+  "number": "3.5.3.4",
+  "title": "",
+  "body": " , onde e .  "
+},
+{
+  "id": "exercise-241",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-241",
+  "type": "Exercício",
+  "number": "3.5.3.5",
+  "title": "",
+  "body": " Seja , com e . Calcule e .  "
+},
+{
+  "id": "exercise-242",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-242",
+  "type": "Exercício",
+  "number": "3.5.3.6",
+  "title": "",
+  "body": " Determine e para , com e .  "
+},
+{
+  "id": "exercise-243",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-243",
+  "type": "Exercício",
+  "number": "3.5.3.7",
+  "title": "",
+  "body": " Dada a função com e , encontre e .  "
+},
+{
+  "id": "exercise-244",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-244",
+  "type": "Exercício",
+  "number": "3.5.3.8",
+  "title": "",
+  "body": " Determine e para , com e .  "
+},
+{
+  "id": "exercise-245",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-245",
+  "type": "Exercício",
+  "number": "3.5.3.9",
+  "title": "",
+  "body": " Determine as derivadas parciais e para , onde , e .  "
+},
+{
+  "id": "exercise-246",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-246",
+  "type": "Exercício",
+  "number": "3.5.3.10",
+  "title": "",
+  "body": " Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e calcule e . Depois substitua na equação fornecida.  "
+},
+{
+  "id": "sec-conteudo-derivacao-implicita",
+  "level": "1",
+  "url": "sec-conteudo-derivacao-implicita.html",
+  "type": "Seção",
+  "number": "3.6",
+  "title": "Derivação Implícita",
+  "body": " Derivação Implícita   Derivada de definida por  Muitas vezes, uma função não é dada explicitamente, mas sim definida de forma implícita por uma equação da forma . Se substituirmos por na equação, ela se torna uma identidade.  Supondo que é diferenciável e que , podemos encontrar a derivada usando a regra da cadeia. Derivando a equação em relação a , obtemos: .  Como , isolando , chegamos à fórmula fundamental: .   Cálculo da derivada implícita   Sabendo que a função diferenciável é definida implicitamente pela equação , determine sua derivada .    Definimos . Calculamos as derivadas parciais de : .  Aplicando a fórmula, temos: .      Derivadas Parciais de definida por  De maneira análoga, se uma função de duas variáveis é dada implicitamente pela equação , podemos encontrar suas derivadas parciais.  Derivando a equação em relação a (mantendo constante) e usando a regra da cadeia: .  Seguindo o mesmo raciocínio para , obtemos o par de fórmulas (válidas se ): .   Superfície implícita   Determine e para a função definida por .    Definimos . As derivadas parciais de são:       Portanto, aplicando as fórmulas:  .      Sistemas de Equações e Jacobianos  Quando temos duas equações definindo implicitamente duas variáveis, por exemplo, o sistema e definindo e , utilizamos a Regra de Cramer e determinantes chamados de Jacobianos.  O determinante Jacobiano de duas funções e em relação a duas variáveis, digamos e , é denotado e definido por: .  Aplicando isso ao sistema, as derivadas são dadas por: . Tudo isso é válido desde que o Jacobiano do denominador seja não nulo. As condições rigorosas para a existência dessas funções são garantidas pelo Teorema da Função Implícita.    Exercícios  Com base na Seção 4.7 de Derivação Implícita, resolva os seguintes exercícios.   Derivada Ordinária Implícita   Supondo que a função diferenciável seja definida implicitamente pelas equações abaixo, determine .      Defina .  e .  (para ).      Defina .  e .  .     Derivadas Parciais Implícitas   Supondo que a função diferenciável é definida pela equação dada, determine e .      Seja .  .  .  .  e .      Seja .  , , .  .  .      Seja .  , , .  e .      Seja .  .  .  .  .  .     Derivação Implícita em Sistemas (Jacobianos)   Supondo que as funções diferenciáveis e sejam definidas implicitamente pelo sistema dado, determine e .        Sejam e .  Calculamos os Jacobianos:  .  .  .  .  .        Sejam e .  .  .  .  .  .     Sistemas Definindo Duas Variáveis (Funções de Duas Variáveis)   Determine as derivadas parciais de 1ª ordem das funções e definidas implicitamente pelo sistema dado.        Sejam e .  .  .  (se ).  (As outras derivadas seguem o mesmo padrão: , , ).        Sejam e .  .  .  .  Podemos confirmar facilmente derivando diretamente , o que dá .     "
+},
+{
+  "id": "ex-implicita-yx",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#ex-implicita-yx",
+  "type": "Exemplo",
+  "number": "3.6.1",
+  "title": "Cálculo da derivada implícita.",
+  "body": " Cálculo da derivada implícita   Sabendo que a função diferenciável é definida implicitamente pela equação , determine sua derivada .    Definimos . Calculamos as derivadas parciais de : .  Aplicando a fórmula, temos: .   "
+},
+{
+  "id": "ex-implicita-zxy",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#ex-implicita-zxy",
+  "type": "Exemplo",
+  "number": "3.6.2",
+  "title": "Superfície implícita.",
+  "body": " Superfície implícita   Determine e para a função definida por .    Definimos . As derivadas parciais de são:       Portanto, aplicando as fórmulas:  .   "
+},
+{
+  "id": "exercise-247",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-247",
+  "type": "Exercício",
+  "number": "3.6.4.1",
+  "title": "",
+  "body": "   Defina .  e .  (para ).  "
+},
+{
+  "id": "exercise-248",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-248",
+  "type": "Exercício",
+  "number": "3.6.4.2",
+  "title": "",
+  "body": "   Defina .  e .  .  "
+},
+{
+  "id": "exercise-249",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-249",
+  "type": "Exercício",
+  "number": "3.6.4.3",
+  "title": "",
+  "body": "   Seja .  .  .  .  e .  "
+},
+{
+  "id": "exercise-250",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-250",
+  "type": "Exercício",
+  "number": "3.6.4.4",
+  "title": "",
+  "body": "   Seja .  , , .  .  .  "
+},
+{
+  "id": "exercise-251",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-251",
+  "type": "Exercício",
+  "number": "3.6.4.5",
+  "title": "",
+  "body": "   Seja .  , , .  e .  "
+},
+{
+  "id": "exercise-252",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-252",
+  "type": "Exercício",
+  "number": "3.6.4.6",
+  "title": "",
+  "body": "   Seja .  .  .  .  .  .  "
+},
+{
+  "id": "exercise-253",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-253",
+  "type": "Exercício",
+  "number": "3.6.4.7",
+  "title": "",
+  "body": "     Sejam e .  Calculamos os Jacobianos:  .  .  .  .  .  "
+},
+{
+  "id": "exercise-254",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-254",
+  "type": "Exercício",
+  "number": "3.6.4.8",
+  "title": "",
+  "body": "     Sejam e .  .  .  .  .  .  "
+},
+{
+  "id": "exercise-255",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-255",
+  "type": "Exercício",
+  "number": "3.6.4.9",
+  "title": "",
+  "body": "     Sejam e .  .  .  (se ).  (As outras derivadas seguem o mesmo padrão: , , ).  "
+},
+{
+  "id": "exercise-256",
+  "level": "2",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-256",
+  "type": "Exercício",
+  "number": "3.6.4.10",
+  "title": "",
+  "body": "     Sejam e .  .  .  .  Podemos confirmar facilmente derivando diretamente , o que dá .  "
+},
+{
+  "id": "sec-conteudo-derivadas-sucessivas",
+  "level": "1",
+  "url": "sec-conteudo-derivadas-sucessivas.html",
+  "type": "Seção",
+  "number": "3.7",
+  "title": "Derivadas Parciais Sucessivas",
+  "body": " Derivadas Parciais Sucessivas   Definição e Notações  Se é uma função de duas variáveis, então, em geral, suas derivadas parciais de 1ª ordem, e , são também funções de duas variáveis. Se as derivadas parciais dessas novas funções existirem, elas são chamadas de derivadas parciais de 2ª ordem de .  Para uma função , existem quatro derivadas parciais de 2ª ordem. A partir da derivada , obtemos: .  A partir da derivada , obtemos: .   Outras Notações: É muito comum o uso de notações com subíndices para simplificar a escrita.         Atenção à ordem: Na notação de subíndice ( ), a ordem de derivação é lida da esquerda para a direita (primeiro em , depois em ). Na notação de fração ( ), a ordem operacional é da direita para a esquerda (primeiro em , depois em ).    O Teorema de Schwartz (Clairaut)  As derivadas e são chamadas de derivadas parciais mistas. Na maioria das funções práticas, essas derivadas são iguais. Essa igualdade é garantida pelo Teorema de Schwartz.   Teorema de Schwartz   Seja uma função com derivadas parciais de 2ª ordem contínuas em um conjunto aberto . Então, para todo : .    O Teorema de Schwartz pode ser generalizado para derivadas de ordem mais alta (3ª ordem, 4ª ordem, etc.). Se todas as derivadas em questão forem contínuas, a ordem da derivação não altera o resultado final (exemplo: ).    Exemplos Resolvidos   Derivadas de 2ª ordem de um polinômio   Dada a função , determine suas derivadas parciais de 2ª ordem.    Primeiro, calculamos as derivadas de 1ª ordem: .  Agora, derivamos novamente para obter as de 2ª ordem:        Observe que , confirmando o Teorema de Schwartz.     Derivadas de 3ª ordem   Dada a função , calcule e .    Derivando em sucessivamente:   .  Para a derivada mista , derivamos a primeira parcial duas vezes em relação a :  .  Logo, .      Exercícios  Baseado nos conceitos da Seção 4.8 de Derivadas Parciais Sucessivas, resolva os seguintes exercícios.   Cálculo de Derivadas de 2ª Ordem   Encontre todas as derivadas parciais de 2ª ordem ( ) das seguintes funções:      e .          e .         e .         e .         Teorema de Schwartz e Derivadas Mistas Específicas   Dada a função , verifique que .   e .  Calculando a mista a partir de : .  Calculando a mista a partir de : .  Como os resultados são iguais, o Teorema de Schwartz é verificado.    Verifique o Teorema de Schwartz para a função .   .  .  Derivando em relação a : .  Derivando em relação a : .  Os resultados coincidem.    Verifique o Teorema de Schwartz para a função .   .  .  .  .  As derivadas mistas são iguais.     Derivadas de 3ª Ordem e Aplicações   Dada a função , determine a derivada parcial de 3ª ordem .   .  .  Agora, derivamos em relação a : .  Simplificando: .    Dada a função , determine .   .  .  Simplificando: .    Seja uma função com derivadas de 2ª ordem contínuas. Ela é dita uma função harmônica se satisfaz a equação . Mostre que a função é harmônica.   .  .  Somando as derivadas de segunda ordem: .  Logo, a função é harmônica.     "
+},
+{
+  "id": "teo-schwartz",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#teo-schwartz",
+  "type": "Teorema",
+  "number": "3.7.1",
+  "title": "Teorema de Schwartz.",
+  "body": " Teorema de Schwartz   Seja uma função com derivadas parciais de 2ª ordem contínuas em um conjunto aberto . Então, para todo : .   "
+},
+{
+  "id": "ex-sucessivas-polinomio",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#ex-sucessivas-polinomio",
+  "type": "Exemplo",
+  "number": "3.7.2",
+  "title": "Derivadas de 2ª ordem de um polinômio.",
+  "body": " Derivadas de 2ª ordem de um polinômio   Dada a função , determine suas derivadas parciais de 2ª ordem.    Primeiro, calculamos as derivadas de 1ª ordem: .  Agora, derivamos novamente para obter as de 2ª ordem:        Observe que , confirmando o Teorema de Schwartz.   "
+},
+{
+  "id": "ex-sucessivas-terceira-ordem",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#ex-sucessivas-terceira-ordem",
+  "type": "Exemplo",
+  "number": "3.7.3",
+  "title": "Derivadas de 3ª ordem.",
+  "body": " Derivadas de 3ª ordem   Dada a função , calcule e .    Derivando em sucessivamente:   .  Para a derivada mista , derivamos a primeira parcial duas vezes em relação a :  .  Logo, .   "
+},
+{
+  "id": "exercise-257",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-257",
+  "type": "Exercício",
+  "number": "3.7.4.1",
+  "title": "",
+  "body": "   e .      "
+},
+{
+  "id": "exercise-258",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-258",
+  "type": "Exercício",
+  "number": "3.7.4.2",
+  "title": "",
+  "body": "   e .     "
+},
+{
+  "id": "exercise-259",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-259",
+  "type": "Exercício",
+  "number": "3.7.4.3",
+  "title": "",
+  "body": "   e .     "
+},
+{
+  "id": "exercise-260",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-260",
+  "type": "Exercício",
+  "number": "3.7.4.4",
+  "title": "",
+  "body": "   e .      "
+},
+{
+  "id": "exercise-261",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-261",
+  "type": "Exercício",
+  "number": "3.7.4.5",
+  "title": "",
+  "body": " Dada a função , verifique que .   e .  Calculando a mista a partir de : .  Calculando a mista a partir de : .  Como os resultados são iguais, o Teorema de Schwartz é verificado.  "
+},
+{
+  "id": "exercise-262",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-262",
+  "type": "Exercício",
+  "number": "3.7.4.6",
+  "title": "",
+  "body": " Verifique o Teorema de Schwartz para a função .   .  .  Derivando em relação a : .  Derivando em relação a : .  Os resultados coincidem.  "
+},
+{
+  "id": "exercise-263",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-263",
+  "type": "Exercício",
+  "number": "3.7.4.7",
+  "title": "",
+  "body": " Verifique o Teorema de Schwartz para a função .   .  .  .  .  As derivadas mistas são iguais.  "
+},
+{
+  "id": "exercise-264",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-264",
+  "type": "Exercício",
+  "number": "3.7.4.8",
+  "title": "",
+  "body": " Dada a função , determine a derivada parcial de 3ª ordem .   .  .  Agora, derivamos em relação a : .  Simplificando: .  "
+},
+{
+  "id": "exercise-265",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-265",
+  "type": "Exercício",
+  "number": "3.7.4.9",
+  "title": "",
+  "body": " Dada a função , determine .   .  .  Simplificando: .  "
+},
+{
+  "id": "exercise-266",
+  "level": "2",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-266",
+  "type": "Exercício",
+  "number": "3.7.4.10",
+  "title": "",
+  "body": " Seja uma função com derivadas de 2ª ordem contínuas. Ela é dita uma função harmônica se satisfaz a equação . Mostre que a função é harmônica.   .  .  Somando as derivadas de segunda ordem: .  Logo, a função é harmônica.  "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
   "type": "Referêcias",
-  "number": "3",
+  "number": "4",
   "title": "Referências Bibliográficas",
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-554",
+  "id": "p-955",
   "level": "2",
-  "url": "referencias.html#p-554",
+  "url": "referencias.html#p-955",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-555",
+  "id": "p-956",
   "level": "2",
-  "url": "referencias.html#p-555",
+  "url": "referencias.html#p-956",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Derivação Implícita</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo NII">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NII:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-conteudo-regra-cadeia.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="03derivadas.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="sec-conteudo-derivadas-sucessivas.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01integral.html" class="internal"><span class="codenumber">1</span> <span class="title">Integrais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Integral Indefinida</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-metodo-substituicao.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Mudança de Variável para Integração</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#subsec-exemplos-subst" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#exercicios-6-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Método de Integração por Partes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsec-exemplos-partes" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercicios-6-6" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-formalizacao-riemann.html" class="internal"><span class="codenumber">1.4</span> <span class="title">O Conceito de Área sob uma Curva</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-integral-definida.html" class="internal"><span class="codenumber">1.5</span> <span class="title">A Integral Definida</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-integral-definida.html#subsec-propriedades-definida" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Propriedades Fundamentais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integral-definida.html#subsec-teoremas-comparacao" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Teoremas de Comparação e Valor Médio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-fundamental-calculo.html" class="internal"><span class="codenumber">1.6</span> <span class="title">O Teorema Fundamental do Cálculo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-fundamental-calculo.html#subsec-exemplos-6-10" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental-calculo.html#exercises-6-11" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-calculo-areas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Cálculo de Áreas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-calculo-areas.html#subsec-area-eixo-x" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Cálculo da Área em Relação ao Eixo x</span></a></div></li>
+<li><div class="toc-item"><a href="sec-calculo-areas.html#sec-area-entre-curvas" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Área entre Duas Curvas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-calculo-areas.html#exercicios-areas" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-integrais-improprias.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Integrais Impróprias</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#subsec-limites-infinitos" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Intervalos de Integração Infinitos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#subsec-descontinuidades-infinitas" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Integrandos com Descontinuidades Infinitas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#exercicios-integrais-improprias" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exercícios Propostos</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Aplicações Multidisciplinares da Integral</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-fisica-teoria" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Física: O Acúmulo de Efeitos Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-computacao-teoria" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Computação: Modelagem de Incertezas e Sinais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-engenharia-teoria" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Engenharia: Engenharia Elétrica/Eletrônica.</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#lista-geral-aplicacoes" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Lista de Exercícios: Aplicações da Integral</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02limites.html" class="internal"><span class="codenumber">2</span> <span class="title">Funções com Várias Variáveis</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Funções de Várias Variáveis: Domínio e Imagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-restricoes-radicais" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Restrições com Radicais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-restricoes-logaritmos-fracoes" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Restrições com Logaritmos e Denominadores</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-n-dimensoes" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Funções N-Dimensionais e Limitações Práticas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-superficies-implicitas" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Funções Derivadas de Equações Implícitas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#lista-dominio-imagem-varias-var" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-curvas-nivel-detalhada.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Curvas de Nível e Representação de Superfícies</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-curvas-nivel-detalhada.html#subsec-exemplos-curvas" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exemplos de Modelagem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-curvas-nivel-detalhada.html#exer-curvas-nivel-16" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Lista de Exercícios: Curvas de Nível</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-topologia-r2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Topologia do <span class="process-math">\(\mathbb{R}^2\)</span> para Limites</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-metrica-distancia" class="internal"><span class="codenumber">2.3.1</span> <span class="title">A Métrica do Plano: Distância Euclidiana</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-bola-aberta" class="internal"><span class="codenumber">2.3.2</span> <span class="title">A Bola Aberta (Vizinhança)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-pontos-interiores-abertos" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Ponto Interior e Conjunto Aberto</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-ponto-acumulacao" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Ponto de Acumulação (O Coração do Limite)</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Limite de Funções de Duas Variáveis: Definições e Propriedades</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-definicao-formal-limite" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Limite de uma Função de Duas Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-inexistencia-limite-caminho" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Inexistência de Limite e Dependência de Caminho</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-propriedades-limites" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Propriedades dos Limites</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-funcao-composta" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Limite de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-teorema-anulamento" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Teorema do Anulamento (Zero vezes Limitada)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-indeterminacoes" class="internal"><span class="codenumber">2.4.6</span> <span class="title">Cálculo de Limites Envolvendo Indeterminações</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#lista-limites-continuidade-20" class="internal"><span class="codenumber">2.4.7</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-continuidade.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Continuidade</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-continuidade.html#subsec-propriedades-continuidade" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Propriedades de Continuidade</span></a></div></li>
+<li><div class="toc-item"><a href="sec-continuidade.html#lista-continuidade" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="03derivadas.html" class="internal"><span class="codenumber">3</span> <span class="title">Derivadas Parciais e Funções Diferenciáveis</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-derivadas-parciais.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivadas Parciais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-definicao-derivada-parcial" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definição Formal e Notações</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-calculo-derivadas-parciais" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Como Calcular Derivadas Parciais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-interpretacao-geometrica" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Interpretação Geométrica</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-mais-variaveis" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Derivadas Parciais de Funções com Mais de Duas Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#exercicios-derivadas-parciais" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Lista de Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conceito-diferenciabilidade.html" class="internal"><span class="codenumber">3.2</span> <span class="title">O Conceito de Diferenciabilidade</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conceito-diferenciabilidade.html#sec-condicao-suficiente" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Condição Suficiente para Diferenciabilidade</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conceito-diferenciabilidade.html#lista-exercicios-diferenciabilidade" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-unico.html" class="internal"><span class="codenumber">3.3</span> <span class="title">O Plano Tangente, O Vetor Gradiente e Interpretação Geométrica</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#subsec-plano-tangente" class="internal"><span class="codenumber">3.3.1</span> <span class="title">O Plano Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#subsec-vetor-gradiente" class="internal"><span class="codenumber">3.3.2</span> <span class="title">O Vetor Gradiente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#subsec-interpretacao-geometrica-gradiente" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Interpretação Geométrica do Gradiente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#lista-exercicios-plano-gradiente" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-diferencial.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Diferencial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-conceito-diferencial" class="internal"><span class="codenumber">3.4.1</span> <span class="title">O Conceito de Diferencial</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-aproximacoes-erros" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Aproximações e Erros</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-diferencial-tres-variaveis" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Extensão para Três ou Mais Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-exemplos-resolvidos-diferencial" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#lista-exercicios-diferenciais" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-regra-cadeia.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Regra da Cadeia</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-regra-cadeia.html#subsec-casos-composicao" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Casos Específicos de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-regra-cadeia.html#subsec-exemplos-resolvidos-cadeia" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-regra-cadeia.html#lista-exercicios-regra-cadeia" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Derivação Implícita</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#subsec-funcao-implicita-yx" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Derivada de <span class="process-math">\(y = f(x)\)</span> definida por <span class="process-math">\(F(x,y) = 0\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#subsec-funcao-implicita-zxy" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Derivadas Parciais de <span class="process-math">\(z = f(x,y)\)</span> definida por <span class="process-math">\(F(x,y,z) = 0\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#subsec-sistemas-jacobianos" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Sistemas de Equações e Jacobianos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#lista-exercicios-implicita" class="internal"><span class="codenumber">3.6.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Derivadas Parciais Sucessivas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#subsec-definicao-notacao" class="internal"><span class="codenumber">3.7.1</span> <span class="title">Definição e Notações</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#subsec-teorema-schwartz" class="internal"><span class="codenumber">3.7.2</span> <span class="title">O Teorema de Schwartz (Clairaut)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#subsec-exemplos-resolvidos-sucessivas" class="internal"><span class="codenumber">3.7.3</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#lista-exercicios-derivadas-sucessivas" class="internal"><span class="codenumber">3.7.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-conteudo-derivacao-implicita"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3.6</span> <span class="title">Derivação Implícita</span>
+</h2>
+<section class="subsection" id="subsec-funcao-implicita-yx"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.6.1</span> <span class="title">Derivada de <span class="process-math">\(y = f(x)\)</span> definida por <span class="process-math">\(F(x,y) = 0\)</span></span>
+</h3>
+<div class="para" id="p-807">Muitas vezes, uma função <span class="process-math">\(y = f(x)\)</span> não é dada explicitamente, mas sim definida de forma implícita por uma equação da forma <span class="process-math">\(F(x,y) = 0\text{.}\)</span> Se substituirmos <span class="process-math">\(y\)</span> por <span class="process-math">\(f(x)\)</span> na equação, ela se torna uma identidade.</div>
+<div class="para logical" id="p-808">
+<div class="para">Supondo que <span class="process-math">\(F\)</span> é diferenciável e que <span class="process-math">\(\frac{\partial F}{\partial y} \neq 0\text{,}\)</span> podemos encontrar a derivada <span class="process-math">\(\frac{dy}{dx}\)</span> usando a regra da cadeia. Derivando a equação <span class="process-math">\(F(x,y) = 0\)</span> em relação a <span class="process-math">\(x\text{,}\)</span> obtemos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial F}{\partial x} \cdot \frac{dx}{dx} + \frac{\partial F}{\partial y} \cdot \frac{dy}{dx} = 0\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-809">
+<div class="para">Como <span class="process-math">\(\frac{dx}{dx} = 1\text{,}\)</span> isolando <span class="process-math">\(\frac{dy}{dx}\text{,}\)</span> chegamos à fórmula fundamental:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{dy}{dx} = - \frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="example example-like" id="ex-implicita-yx"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Cálculo da derivada implícita.</span>
+</h4>
+<div class="para" id="p-810">Sabendo que a função diferenciável <span class="process-math">\(y = f(x)\)</span> é definida implicitamente pela equação <span class="process-math">\(x^2 + y^2 = 1\text{,}\)</span> determine sua derivada <span class="process-math">\(\frac{dy}{dx}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<div class="para logical" id="p-811">
+<div class="para">Definimos <span class="process-math">\(F(x,y) = x^2 + y^2 - 1 = 0\text{.}\)</span> Calculamos as derivadas parciais de <span class="process-math">\(F\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial F}{\partial x} = 2x \quad \text{e} \quad \frac{\partial F}{\partial y} = 2y\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-812">
+<div class="para">Aplicando a fórmula, temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{dy}{dx} = - \frac{2x}{2y} = - \frac{x}{y}, \quad y \neq 0\text{.}
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsec-funcao-implicita-zxy"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.6.2</span> <span class="title">Derivadas Parciais de <span class="process-math">\(z = f(x,y)\)</span> definida por <span class="process-math">\(F(x,y,z) = 0\)</span></span>
+</h3>
+<div class="para" id="p-813">De maneira análoga, se uma função de duas variáveis <span class="process-math">\(z = f(x,y)\)</span> é dada implicitamente pela equação <span class="process-math">\(F(x,y,z) = 0\text{,}\)</span> podemos encontrar suas derivadas parciais.</div>
+<div class="para logical" id="p-814">
+<div class="para">Derivando a equação em relação a <span class="process-math">\(x\)</span> (mantendo <span class="process-math">\(y\)</span> constante) e usando a regra da cadeia:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial F}{\partial x} \cdot 1 + \frac{\partial F}{\partial y} \cdot 0 + \frac{\partial F}{\partial z} \cdot \frac{\partial z}{\partial x} = 0 \implies \frac{\partial z}{\partial x} = - \frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-815">
+<div class="para">Seguindo o mesmo raciocínio para <span class="process-math">\(y\text{,}\)</span> obtemos o par de fórmulas (válidas se <span class="process-math">\(\frac{\partial F}{\partial z} \neq 0\)</span>):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial z}{\partial x} = - \frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}} \quad \text{e} \quad \frac{\partial z}{\partial y} = - \frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}}\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="example example-like" id="ex-implicita-zxy"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Superfície implícita.</span>
+</h4>
+<div class="para" id="p-816">Determine <span class="process-math">\(\frac{\partial z}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y}\)</span> para a função <span class="process-math">\(z = f(x,y)\)</span> definida por <span class="process-math">\(x^4y + y^3 + z^3 + z = 5\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like">
+<div class="para logical" id="p-817">
+<div class="para">Definimos <span class="process-math">\(F(x,y,z) = x^4y + y^3 + z^3 + z - 5 = 0\text{.}\)</span> As derivadas parciais de <span class="process-math">\(F\)</span> são:</div>
+<ul class="disc">
+<li id="li-95"><div class="para" id="p-derived-li-95"><span class="process-math">\(\displaystyle \frac{\partial F}{\partial x} = 4x^3y\)</span></div></li>
+<li id="li-96"><div class="para" id="p-derived-li-96"><span class="process-math">\(\displaystyle \frac{\partial F}{\partial y} = x^4 + 3y^2\)</span></div></li>
+<li id="li-97"><div class="para" id="p-derived-li-97"><span class="process-math">\(\displaystyle \frac{\partial F}{\partial z} = 3z^2 + 1\)</span></div></li>
+</ul>
+</div> <div class="para logical" id="p-818">
+<div class="para">Portanto, aplicando as fórmulas:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial z}{\partial x} = - \frac{4x^3y}{3z^2 + 1}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial z}{\partial y} = - \frac{x^4 + 3y^2}{3z^2 + 1}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsec-sistemas-jacobianos"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.6.3</span> <span class="title">Sistemas de Equações e Jacobianos</span>
+</h3>
+<div class="para" id="p-819">Quando temos duas equações definindo implicitamente duas variáveis, por exemplo, o sistema <span class="process-math">\(F(x,y,z) = 0\)</span> e <span class="process-math">\(G(x,y,z) = 0\)</span> definindo <span class="process-math">\(y = y(x)\)</span> e <span class="process-math">\(z = z(x)\text{,}\)</span> utilizamos a Regra de Cramer e determinantes chamados de Jacobianos.</div>
+<div class="para logical" id="p-820">
+<div class="para">O determinante Jacobiano de duas funções <span class="process-math">\(F\)</span> e <span class="process-math">\(G\)</span> em relação a duas variáveis, digamos <span class="process-math">\(y\)</span> e <span class="process-math">\(z\text{,}\)</span> é denotado e definido por:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial(F,G)}{\partial(y,z)} = \det \begin{bmatrix} \frac{\partial F}{\partial y} \amp \frac{\partial F}{\partial z} \\ \frac{\partial G}{\partial y} \amp \frac{\partial G}{\partial z} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-821">
+<div class="para">Aplicando isso ao sistema, as derivadas são dadas por:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{dy}{dx} = - \frac{\frac{\partial(F,G)}{\partial(x,z)}}{\frac{\partial(F,G)}{\partial(y,z)}} \quad \text{e} \quad \frac{dz}{dx} = - \frac{\frac{\partial(F,G)}{\partial(y,x)}}{\frac{\partial(F,G)}{\partial(y,z)}}\text{.}
+\end{equation*}
+</div>
+<div class="para">Tudo isso é válido desde que o Jacobiano do denominador seja não nulo. As condições rigorosas para a existência dessas funções são garantidas pelo Teorema da Função Implícita.</div>
+</div></section><section class="exercises" id="lista-exercicios-implicita"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">3.6.4</span> <span class="title">Exercícios</span>
+</h3>
+<div class="para" id="p-822">Com base na Seção 4.7 de Derivação Implícita, resolva os seguintes exercícios.</div>
+<div class="exercisegroup" id="exercisegroup-17">
+<h4 class="heading"><span class="title">Derivada Ordinária Implícita.</span></h4>
+<div class="introduction" id="introduction-34"><div class="para" id="p-823">Supondo que a função diferenciável <span class="process-math">\(y = y(x)\)</span> seja definida implicitamente pelas equações abaixo, determine <span class="process-math">\(\frac{dy}{dx}\text{.}\)</span>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-247"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="p-824"><span class="process-math">\(9x^2 + 4y^2 = 36\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
+<div class="para" id="p-825">Defina <span class="process-math">\(F(x,y) = 9x^2 + 4y^2 - 36 = 0\text{.}\)</span>
+</div> <div class="para" id="p-826">
+<span class="process-math">\(\frac{\partial F}{\partial x} = 18x\)</span> e <span class="process-math">\(\frac{\partial F}{\partial y} = 8y\text{.}\)</span>
+</div> <div class="para" id="p-827">
+<span class="process-math">\(\frac{dy}{dx} = - \frac{18x}{8y} = - \frac{9x}{4y}\)</span> (para <span class="process-math">\(y \neq 0\)</span>).</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-248"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="p-828"><span class="process-math">\(2x^3 - 3y^2 - 5xy = 0\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like">
+<div class="para" id="p-829">Defina <span class="process-math">\(F(x,y) = 2x^3 - 3y^2 - 5xy = 0\text{.}\)</span>
+</div> <div class="para" id="p-830">
+<span class="process-math">\(\frac{\partial F}{\partial x} = 6x^2 - 5y\)</span> e <span class="process-math">\(\frac{\partial F}{\partial y} = -6y - 5x\text{.}\)</span>
+</div> <div class="para" id="p-831"><span class="process-math">\(\frac{dy}{dx} = - \frac{6x^2 - 5y}{-6y - 5x} = \frac{6x^2 - 5y}{6y + 5x}\text{.}\)</span></div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-18">
+<h4 class="heading"><span class="title">Derivadas Parciais Implícitas.</span></h4>
+<div class="introduction" id="introduction-35"><div class="para" id="p-832">Supondo que a função diferenciável <span class="process-math">\(z = f(x,y)\)</span> é definida pela equação dada, determine <span class="process-math">\(\frac{\partial z}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y}\text{.}\)</span>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-249"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="p-833"><span class="process-math">\(x^3y^2 + x^3 + z^3 - z = 1\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like">
+<div class="para" id="p-834">Seja <span class="process-math">\(F(x,y,z) = x^3y^2 + x^3 + z^3 - z - 1 = 0\text{.}\)</span>
+</div> <div class="para" id="p-835"><span class="process-math">\(F_x = 3x^2y^2 + 3x^2\text{.}\)</span></div> <div class="para" id="p-836"><span class="process-math">\(F_y = 2x^3y\text{.}\)</span></div> <div class="para" id="p-837"><span class="process-math">\(F_z = 3z^2 - 1\text{.}\)</span></div> <div class="para" id="p-838">
+<span class="process-math">\(\frac{\partial z}{\partial x} = - \frac{3x^2(y^2 + 1)}{3z^2 - 1}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y} = - \frac{2x^3y}{3z^2 - 1}\text{.}\)</span>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-250"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="p-839"><span class="process-math">\(x^2 + y^2 - z^2 - xy = 0\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like">
+<div class="para" id="p-840">Seja <span class="process-math">\(F(x,y,z) = x^2 + y^2 - z^2 - xy = 0\text{.}\)</span>
+</div> <div class="para" id="p-841">
+<span class="process-math">\(F_x = 2x - y\text{,}\)</span> <span class="process-math">\(F_y = 2y - x\text{,}\)</span> <span class="process-math">\(F_z = -2z\text{.}\)</span>
+</div> <div class="para" id="p-842"><span class="process-math">\(\frac{\partial z}{\partial x} = - \frac{2x - y}{-2z} = \frac{2x - y}{2z}\text{.}\)</span></div> <div class="para" id="p-843"><span class="process-math">\(\frac{\partial z}{\partial y} = - \frac{2y - x}{-2z} = \frac{2y - x}{2z}\text{.}\)</span></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-251"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="p-844"><span class="process-math">\(xyz - x - y + z^2 = 3\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like">
+<div class="para" id="p-845">Seja <span class="process-math">\(F(x,y,z) = xyz - x - y + z^2 - 3 = 0\text{.}\)</span>
+</div> <div class="para" id="p-846">
+<span class="process-math">\(F_x = yz - 1\text{,}\)</span> <span class="process-math">\(F_y = xz - 1\text{,}\)</span> <span class="process-math">\(F_z = xy + 2z\text{.}\)</span>
+</div> <div class="para" id="p-847">
+<span class="process-math">\(\frac{\partial z}{\partial x} = - \frac{yz - 1}{xy + 2z}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y} = - \frac{xz - 1}{xy + 2z}\text{.}\)</span>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-252"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="p-848"><span class="process-math">\(e^{xyz} + x^2y - z\ln(y) = 2\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like">
+<div class="para" id="p-849">Seja <span class="process-math">\(F(x,y,z) = e^{xyz} + x^2y - z\ln(y) - 2 = 0\text{.}\)</span>
+</div> <div class="para" id="p-850"><span class="process-math">\(F_x = yz e^{xyz} + 2xy\text{.}\)</span></div> <div class="para" id="p-851"><span class="process-math">\(F_y = xz e^{xyz} + x^2 - \frac{z}{y}\text{.}\)</span></div> <div class="para" id="p-852"><span class="process-math">\(F_z = xy e^{xyz} - \ln(y)\text{.}\)</span></div> <div class="para" id="p-853"><span class="process-math">\(\frac{\partial z}{\partial x} = - \frac{yz e^{xyz} + 2xy}{xy e^{xyz} - \ln(y)}\text{.}\)</span></div> <div class="para" id="p-854"><span class="process-math">\(\frac{\partial z}{\partial y} = - \frac{xz e^{xyz} + x^2 - \frac{z}{y}}{xy e^{xyz} - \ln(y)}\text{.}\)</span></div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-19">
+<h4 class="heading"><span class="title">Derivação Implícita em Sistemas (Jacobianos).</span></h4>
+<div class="introduction" id="introduction-36"><div class="para" id="p-855">Supondo que as funções diferenciáveis <span class="process-math">\(y = y(x)\)</span> e <span class="process-math">\(z = z(x)\)</span> sejam definidas implicitamente pelo sistema dado, determine <span class="process-math">\(\frac{dy}{dx}\)</span> e <span class="process-math">\(\frac{dz}{dx}\text{.}\)</span>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-253"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="p-856"><span class="process-math">\(\begin{cases}
+x^2 + y^2 + z^2 = 4 \\
+x + y + z = 2
+\end{cases}\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like">
+<div class="para" id="p-857">Sejam <span class="process-math">\(F = x^2 + y^2 + z^2 - 4\)</span> e <span class="process-math">\(G = x + y + z - 2\text{.}\)</span>
+</div> <div class="para" id="p-858">Calculamos os Jacobianos:</div> <div class="para" id="p-859"><span class="process-math">\(\frac{\partial(F,G)}{\partial(y,z)} = \det \begin{bmatrix} 2y \amp 2z \\ 1 \amp 1 \end{bmatrix} = 2y - 2z\text{.}\)</span></div> <div class="para" id="p-860"><span class="process-math">\(\frac{\partial(F,G)}{\partial(x,z)} = \det \begin{bmatrix} 2x \amp 2z \\ 1 \amp 1 \end{bmatrix} = 2x - 2z\text{.}\)</span></div> <div class="para" id="p-861"><span class="process-math">\(\frac{\partial(F,G)}{\partial(y,x)} = \det \begin{bmatrix} 2y \amp 2x \\ 1 \amp 1 \end{bmatrix} = 2y - 2x\text{.}\)</span></div> <div class="para" id="p-862"><span class="process-math">\(\frac{dy}{dx} = - \frac{2x - 2z}{2y - 2z} = - \frac{x - z}{y - z}\text{.}\)</span></div> <div class="para" id="p-863"><span class="process-math">\(\frac{dz}{dx} = - \frac{2y - 2x}{2y - 2z} = - \frac{y - x}{y - z}\text{.}\)</span></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-254"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="p-864"><span class="process-math">\(\begin{cases}
+2x^2 - y^2 = z \\
+x + y = 2
+\end{cases}\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like">
+<div class="para" id="p-865">Sejam <span class="process-math">\(F = 2x^2 - y^2 - z\)</span> e <span class="process-math">\(G = x + y - 2\text{.}\)</span>
+</div> <div class="para" id="p-866"><span class="process-math">\(\frac{\partial(F,G)}{\partial(y,z)} = \det \begin{bmatrix} -2y \amp -1 \\ 1 \amp 0 \end{bmatrix} = (0) - (-1) = 1\text{.}\)</span></div> <div class="para" id="p-867"><span class="process-math">\(\frac{\partial(F,G)}{\partial(x,z)} = \det \begin{bmatrix} 4x \amp -1 \\ 1 \amp 0 \end{bmatrix} = (0) - (-1) = 1\text{.}\)</span></div> <div class="para" id="p-868"><span class="process-math">\(\frac{\partial(F,G)}{\partial(y,x)} = \det \begin{bmatrix} -2y \amp 4x \\ 1 \amp 1 \end{bmatrix} = -2y - 4x\text{.}\)</span></div> <div class="para" id="p-869"><span class="process-math">\(\frac{dy}{dx} = - \frac{1}{1} = -1\text{.}\)</span></div> <div class="para" id="p-870"><span class="process-math">\(\frac{dz}{dx} = - \frac{-2y - 4x}{1} = 4x + 2y\text{.}\)</span></div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-20">
+<h4 class="heading"><span class="title">Sistemas Definindo Duas Variáveis (Funções de Duas Variáveis).</span></h4>
+<div class="introduction" id="introduction-37"><div class="para" id="p-871">Determine as derivadas parciais de 1ª ordem das funções <span class="process-math">\(x = x(u,v)\)</span> e <span class="process-math">\(y = y(u,v)\)</span> definidas implicitamente pelo sistema dado.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-255"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="p-872"><span class="process-math">\(\begin{cases}
+x^3 + u^2 + y^2 = 0 \\
+x^2 + y^2 + v^2 = 0
+\end{cases}\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like">
+<div class="para" id="p-873">Sejam <span class="process-math">\(F = x^3 + u^2 + y^2\)</span> e <span class="process-math">\(G = x^2 + y^2 + v^2\text{.}\)</span>
+</div> <div class="para" id="p-874"><span class="process-math">\(\frac{\partial(F,G)}{\partial(x,y)} = \det \begin{bmatrix} 3x^2 \amp 2y \\ 2x \amp 2y \end{bmatrix} = 6x^2y - 4xy\text{.}\)</span></div> <div class="para" id="p-875"><span class="process-math">\(\frac{\partial(F,G)}{\partial(u,y)} = \det \begin{bmatrix} 2u \amp 2y \\ 0 \amp 2y \end{bmatrix} = 4uy\text{.}\)</span></div> <div class="para" id="p-876">
+<span class="process-math">\(\frac{\partial x}{\partial u} = - \frac{4uy}{6x^2y - 4xy} = - \frac{4u}{6x^2 - 4x}\)</span> (se <span class="process-math">\(y \neq 0\)</span>).</div> <div class="para" id="p-877">(As outras derivadas seguem o mesmo padrão: <span class="process-math">\(\frac{\partial x}{\partial v}\text{,}\)</span> <span class="process-math">\(\frac{\partial y}{\partial u}\text{,}\)</span> <span class="process-math">\(\frac{\partial y}{\partial v}\)</span>).</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-256"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="p-878"><span class="process-math">\(\begin{cases}
+x + u - v = 3 \\
+y - 3uv + x^2 = 0
+\end{cases}\)</span></div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like">
+<div class="para" id="p-879">Sejam <span class="process-math">\(F = x + u - v - 3\)</span> e <span class="process-math">\(G = y - 3uv + x^2\text{.}\)</span>
+</div> <div class="para" id="p-880"><span class="process-math">\(\frac{\partial(F,G)}{\partial(x,y)} = \det \begin{bmatrix} 1 \amp 0 \\ 2x \amp 1 \end{bmatrix} = 1\text{.}\)</span></div> <div class="para" id="p-881"><span class="process-math">\(\frac{\partial(F,G)}{\partial(u,y)} = \det \begin{bmatrix} 1 \amp 0 \\ -3v \amp 1 \end{bmatrix} = 1\text{.}\)</span></div> <div class="para" id="p-882"><span class="process-math">\(\frac{\partial x}{\partial u} = - \frac{1}{1} = -1\text{.}\)</span></div> <div class="para" id="p-883">Podemos confirmar facilmente derivando diretamente <span class="process-math">\(x = 3 - u + v\text{,}\)</span> o que dá <span class="process-math">\(\frac{\partial x}{\partial u} = -1\text{.}\)</span>
+</div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-conteudo-regra-cadeia.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-conteudo-derivadas-sucessivas.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
