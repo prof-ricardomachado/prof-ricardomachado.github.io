@@ -2743,23 +2743,14 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Derivadas Parciais",
-  "body": " Derivadas Parciais   Nesta seção, apresentaremos o conceito de derivadas parciais para funções de várias variáveis. A ideia principal para derivar funções com duas ou mais variáveis é fazer uma análise considerando que apenas uma variável se modifica, enquanto todas as outras são mantidas constantes.  Para motivar este estudo, considere um parabolóide dado por e um plano . A intersecção destas superfícies resulta em uma curva cuja equação é (com ). A derivada parcial nos ajudará a calcular a inclinação da reta tangente a essa curva em um ponto específico.   Curva resultante da intersecção do parabolóide com um plano    Outro exemplo prático envolve curvas de nível da temperatura , onde é o tempo e é a altitude. Podemos nos perguntar como a temperatura varia em relação ao tempo mantendo a altitude fixa, ou como ela varia em relação à altitude em um instante de tempo fixo.    Definição Formal e Notações    Seja uma função de duas variáveis e .  A derivada parcial de em relação a no ponto , denotada por , é definida pelo limite: ou, equivalentemente, usando acréscimos ( ): se o limite existir.  Analogamente, a derivada parcial de em relação a no ponto é definida por: se o limite existir.     Notações Alternativas  Diversas notações são comumente utilizadas na literatura para representar as derivadas parciais de primeira ordem. Para a derivada em relação a : E para a derivada em relação a :      Como Calcular Derivadas Parciais  Na prática, podemos calcular as derivadas parciais usando as regras de derivação conhecidas para funções de uma variável. Para calcular , tratamos a variável como uma constante matemática e derivamos a função em relação a . Da mesma forma, para calcular , mantemos constante e derivamos em relação a .    Encontre as derivadas parciais de 1ª ordem da função .    Mantendo constante e derivando em relação a : .  Agora, mantendo constante e derivando em relação a : .      Calcule as derivadas parciais da função .    Utilizando a regra da cadeia para funções de uma variável:   Analogamente para : .      Determine as derivadas parciais de 1ª ordem de .           Seja a função definida por partes: Calcule e na origem.    Para calcular as derivadas parciais na origem, devemos obrigatoriamente usar a definição através do limite.         Verifique se a função satisfaz a equação .    Primeiro, calculamos as derivadas parciais:    Substituindo na equação: Portanto, a equação é satisfeita.      Interpretação Geométrica  A interpretação geométrica das derivadas parciais está intimamente ligada às inclinações das retas tangentes às curvas de intersecção da superfície com planos coordenados paralelos.  Ao fixarmos , a função representa uma curva resultante da intersecção da superfície com o plano . A inclinação (coeficiente angular) da reta tangente a esta curva no ponto é dada por:    Interpretação geométrica da derivada parcial em relação a x    De maneira análoga, ao fixarmos , obtemos uma curva . A inclinação da reta tangente a no ponto é dada por:    Interpretação geométrica da derivada parcial em relação a y      Derivadas Parciais de Funções com Mais de Duas Variáveis  O conceito se estende naturalmente para funções de variáveis . Para encontrar a derivada parcial em relação a , mantemos todas as outras variáveis constantes e derivamos normalmente em relação a .    Calcule as derivadas parciais de 1ª ordem da função .    A função possui 5 variáveis, portanto, 5 derivadas parciais. Para calcular , usamos a regra do produto e consideramos constantes.         Lista de Exercícios   Usando a definição de limites, calcule as derivadas parciais de 1ª ordem para .    Usando a definição, encontre as derivadas parciais de .    Calcule as derivadas parciais de 1ª ordem para .    Determine e da função .    Calcule as derivadas parciais de .    Encontre as derivadas parciais de 1ª ordem de .    Determine as derivadas parciais de .    Calcule as derivadas parciais de .    Encontre as derivadas parciais de .    Determine as derivadas parciais de .    Calcule as derivadas parciais de .    Calcule as derivadas parciais de 1ª ordem para a função de três variáveis .    Determine para a função .    Encontre as derivadas parciais da função de quatro variáveis .    Verifique se a função satisfaz a equação diferencial parcial .    "
-},
-{
-  "id": "fig-paraboloide-interseccao",
-  "level": "2",
-  "url": "sec-derivadas-parciais.html#fig-paraboloide-interseccao",
-  "type": "Figura",
-  "number": "3.1.1",
-  "title": "",
-  "body": " Curva resultante da intersecção do parabolóide com um plano   "
+  "body": " Derivadas Parciais   Nesta seção, apresentaremos o conceito de derivadas parciais para funções de várias variáveis. A ideia principal para derivar funções com duas ou mais variáveis é fazer uma análise considerando que apenas uma variável se modifica, enquanto todas as outras são mantidas constantes.     Definição Formal e Notações    Seja uma função de duas variáveis e .  A derivada parcial de em relação a no ponto , denotada por , é definida pelo limite: ou, equivalentemente, usando acréscimos ( ): se o limite existir.  Analogamente, a derivada parcial de em relação a no ponto é definida por: se o limite existir.     Notações Alternativas  Diversas notações são comumente utilizadas na literatura para representar as derivadas parciais de primeira ordem. Para a derivada em relação a : E para a derivada em relação a :      Como Calcular Derivadas Parciais  Na prática, podemos calcular as derivadas parciais usando as regras de derivação conhecidas para funções de uma variável. Para calcular , tratamos a variável como uma constante matemática e derivamos a função em relação a . Da mesma forma, para calcular , mantemos constante e derivamos em relação a .    Encontre as derivadas parciais de 1ª ordem da função .    Mantendo constante e derivando em relação a : .  Agora, mantendo constante e derivando em relação a : .      Calcule as derivadas parciais da função .    Utilizando a regra da cadeia para funções de uma variável:   Analogamente para : .      Determine as derivadas parciais de 1ª ordem de .           Seja a função definida por partes: Calcule e na origem.    Para calcular as derivadas parciais na origem, devemos obrigatoriamente usar a definição através do limite.         Verifique se a função satisfaz a equação .    Primeiro, calculamos as derivadas parciais:    Substituindo na equação: Portanto, a equação é satisfeita.      Interpretação Geométrica  A interpretação geométrica das derivadas parciais está intimamente ligada às inclinações das retas tangentes às curvas de intersecção da superfície com planos coordenados paralelos.  Ao fixarmos , a função representa uma curva resultante da intersecção da superfície com o plano . A inclinação (coeficiente angular) da reta tangente a esta curva no ponto é dada por:    De maneira análoga, ao fixarmos , obtemos uma curva . A inclinação da reta tangente a no ponto é dada por:      Derivadas Parciais de Funções com Mais de Duas Variáveis  O conceito se estende naturalmente para funções de variáveis . Para encontrar a derivada parcial em relação a , mantemos todas as outras variáveis constantes e derivamos normalmente em relação a .    Calcule as derivadas parciais de 1ª ordem da função .    A função possui 5 variáveis, portanto, 5 derivadas parciais. Para calcular , usamos a regra do produto e consideramos constantes.         Lista de Exercícios   Usando a definição de limites, calcule as derivadas parciais de 1ª ordem para .    Usando a definição, encontre as derivadas parciais de .    Calcule as derivadas parciais de 1ª ordem para .    Determine e da função .    Calcule as derivadas parciais de .    Encontre as derivadas parciais de 1ª ordem de .    Determine as derivadas parciais de .    Calcule as derivadas parciais de .    Encontre as derivadas parciais de .    Determine as derivadas parciais de .    Calcule as derivadas parciais de .    Calcule as derivadas parciais de 1ª ordem para a função de três variáveis .    Determine para a função .    Encontre as derivadas parciais da função de quatro variáveis .    Verifique se a função satisfaz a equação diferencial parcial .    "
 },
 {
   "id": "def-derivada-parcial",
   "level": "2",
   "url": "sec-derivadas-parciais.html#def-derivada-parcial",
   "type": "Definição",
-  "number": "3.1.2",
+  "number": "3.1.1",
   "title": "",
   "body": "  Seja uma função de duas variáveis e .  A derivada parcial de em relação a no ponto , denotada por , é definida pelo limite: ou, equivalentemente, usando acréscimos ( ): se o limite existir.  Analogamente, a derivada parcial de em relação a no ponto é definida por: se o limite existir.   "
 },
@@ -2768,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivadas-parciais.html#remark-1",
   "type": "Nota",
-  "number": "3.1.3",
+  "number": "3.1.2",
   "title": "Notações Alternativas.",
   "body": " Notações Alternativas  Diversas notações são comumente utilizadas na literatura para representar as derivadas parciais de primeira ordem. Para a derivada em relação a : E para a derivada em relação a :   "
 },
@@ -2777,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivadas-parciais.html#ex-calculo-polinomio",
   "type": "Exemplo",
-  "number": "3.1.4",
+  "number": "3.1.3",
   "title": "",
   "body": "  Encontre as derivadas parciais de 1ª ordem da função .    Mantendo constante e derivando em relação a : .  Agora, mantendo constante e derivando em relação a : .   "
 },
@@ -2786,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivadas-parciais.html#ex-calculo-raiz",
   "type": "Exemplo",
-  "number": "3.1.5",
+  "number": "3.1.4",
   "title": "",
   "body": "  Calcule as derivadas parciais da função .    Utilizando a regra da cadeia para funções de uma variável:   Analogamente para : .   "
 },
@@ -2795,7 +2786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivadas-parciais.html#ex-calculo-trigonometrica",
   "type": "Exemplo",
-  "number": "3.1.6",
+  "number": "3.1.5",
   "title": "",
   "body": "  Determine as derivadas parciais de 1ª ordem de .        "
 },
@@ -2804,7 +2795,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivadas-parciais.html#ex-definicao-origem",
   "type": "Exemplo",
-  "number": "3.1.7",
+  "number": "3.1.6",
   "title": "",
   "body": "  Seja a função definida por partes: Calcule e na origem.    Para calcular as derivadas parciais na origem, devemos obrigatoriamente usar a definição através do limite.      "
 },
@@ -2813,34 +2804,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-derivadas-parciais.html#ex-verificacao-equacao",
   "type": "Exemplo",
-  "number": "3.1.8",
+  "number": "3.1.7",
   "title": "",
   "body": "  Verifique se a função satisfaz a equação .    Primeiro, calculamos as derivadas parciais:    Substituindo na equação: Portanto, a equação é satisfeita.   "
-},
-{
-  "id": "fig-interpretacao-dx",
-  "level": "2",
-  "url": "sec-derivadas-parciais.html#fig-interpretacao-dx",
-  "type": "Figura",
-  "number": "3.1.9",
-  "title": "",
-  "body": " Interpretação geométrica da derivada parcial em relação a x   "
-},
-{
-  "id": "fig-interpretacao-dy",
-  "level": "2",
-  "url": "sec-derivadas-parciais.html#fig-interpretacao-dy",
-  "type": "Figura",
-  "number": "3.1.10",
-  "title": "",
-  "body": " Interpretação geométrica da derivada parcial em relação a y   "
 },
 {
   "id": "ex-cinco-variaveis",
   "level": "2",
   "url": "sec-derivadas-parciais.html#ex-cinco-variaveis",
   "type": "Exemplo",
-  "number": "3.1.11",
+  "number": "3.1.8",
   "title": "",
   "body": "  Calcule as derivadas parciais de 1ª ordem da função .    A função possui 5 variáveis, portanto, 5 derivadas parciais. Para calcular , usamos a regra do produto e consideramos constantes.      "
 },
@@ -3871,18 +3844,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-955",
+  "id": "p-953",
   "level": "2",
-  "url": "referencias.html#p-955",
+  "url": "referencias.html#p-953",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-956",
+  "id": "p-954",
   "level": "2",
-  "url": "referencias.html#p-956",
+  "url": "referencias.html#p-954",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
