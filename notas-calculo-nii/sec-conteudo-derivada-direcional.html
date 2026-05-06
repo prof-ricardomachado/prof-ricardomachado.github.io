@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM Derivada Direcional</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo NII">
+<meta property="book:author" content="Ricardo Machado">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo NII:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Ricardo Machado</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-conteudo-regra-cadeia.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="03derivadas.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="sec-conteudo-derivacao-implicita.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01integral.html" class="internal"><span class="codenumber">1</span> <span class="title">Integrais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Integral Indefinida</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-1.html#exercises-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-metodo-substituicao.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Mudança de Variável para Integração</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#subsec-exemplos-subst" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-metodo-substituicao.html#exercicios-6-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Método de Integração por Partes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-3.html#subsec-exemplos-partes" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="section-3.html#exercicios-6-6" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-formalizacao-riemann.html" class="internal"><span class="codenumber">1.4</span> <span class="title">O Conceito de Área sob uma Curva</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-integral-definida.html" class="internal"><span class="codenumber">1.5</span> <span class="title">A Integral Definida</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-integral-definida.html#subsec-propriedades-definida" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Propriedades Fundamentais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integral-definida.html#subsec-teoremas-comparacao" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Teoremas de Comparação e Valor Médio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-fundamental-calculo.html" class="internal"><span class="codenumber">1.6</span> <span class="title">O Teorema Fundamental do Cálculo</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-fundamental-calculo.html#subsec-exemplos-6-10" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental-calculo.html#exercises-6-11" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-calculo-areas.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Cálculo de Áreas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-calculo-areas.html#subsec-area-eixo-x" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Cálculo da Área em Relação ao Eixo x</span></a></div></li>
+<li><div class="toc-item"><a href="sec-calculo-areas.html#sec-area-entre-curvas" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Área entre Duas Curvas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-calculo-areas.html#exercicios-areas" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-integrais-improprias.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Integrais Impróprias</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#subsec-limites-infinitos" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Intervalos de Integração Infinitos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#subsec-descontinuidades-infinitas" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Integrandos com Descontinuidades Infinitas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-integrais-improprias.html#exercicios-integrais-improprias" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Exercícios Propostos</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Aplicações Multidisciplinares da Integral</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-fisica-teoria" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Física: O Acúmulo de Efeitos Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-computacao-teoria" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Computação: Modelagem de Incertezas e Sinais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#sub-engenharia-teoria" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Engenharia: Engenharia Elétrica/Eletrônica.</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teoria-aplicacoes-integrais.html#lista-geral-aplicacoes" class="internal"><span class="codenumber">1.9.4</span> <span class="title">Lista de Exercícios: Aplicações da Integral</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02limites.html" class="internal"><span class="codenumber">2</span> <span class="title">Funções com Várias Variáveis</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Funções de Várias Variáveis: Domínio e Imagem</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-restricoes-radicais" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Restrições com Radicais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-restricoes-logaritmos-fracoes" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Restrições com Logaritmos e Denominadores</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-n-dimensoes" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Funções N-Dimensionais e Limitações Práticas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#subsec-superficies-implicitas" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Funções Derivadas de Equações Implícitas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-dominio-imagem-varias-variaveis.html#lista-dominio-imagem-varias-var" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-curvas-nivel-detalhada.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Curvas de Nível e Representação de Superfícies</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-curvas-nivel-detalhada.html#subsec-exemplos-curvas" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Exemplos de Modelagem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-curvas-nivel-detalhada.html#exer-curvas-nivel-16" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Lista de Exercícios: Curvas de Nível</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-topologia-r2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Topologia do <span class="process-math">\(\mathbb{R}^2\)</span> para Limites</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-metrica-distancia" class="internal"><span class="codenumber">2.3.1</span> <span class="title">A Métrica do Plano: Distância Euclidiana</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-bola-aberta" class="internal"><span class="codenumber">2.3.2</span> <span class="title">A Bola Aberta (Vizinhança)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-pontos-interiores-abertos" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Ponto Interior e Conjunto Aberto</span></a></div></li>
+<li><div class="toc-item"><a href="sec-topologia-r2.html#subsec-ponto-acumulacao" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Ponto de Acumulação (O Coração do Limite)</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Limite de Funções de Duas Variáveis: Definições e Propriedades</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-definicao-formal-limite" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Limite de uma Função de Duas Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-inexistencia-limite-caminho" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Inexistência de Limite e Dependência de Caminho</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-propriedades-limites" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Propriedades dos Limites</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-funcao-composta" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Limite de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-teorema-anulamento" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Teorema do Anulamento (Zero vezes Limitada)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#subsec-indeterminacoes" class="internal"><span class="codenumber">2.4.6</span> <span class="title">Cálculo de Limites Envolvendo Indeterminações</span></a></div></li>
+<li><div class="toc-item"><a href="sec-limite-multivariavel-detalhado.html#lista-limites-continuidade-20" class="internal"><span class="codenumber">2.4.7</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-continuidade.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Continuidade</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-continuidade.html#subsec-propriedades-continuidade" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Propriedades de Continuidade</span></a></div></li>
+<li><div class="toc-item"><a href="sec-continuidade.html#lista-continuidade" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="03derivadas.html" class="internal"><span class="codenumber">3</span> <span class="title">Derivadas Parciais e Funções Diferenciáveis</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-derivadas-parciais.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivadas Parciais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-definicao-derivada-parcial" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definição Formal e Notações</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-calculo-derivadas-parciais" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Como Calcular Derivadas Parciais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-interpretacao-geometrica" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Interpretação Geométrica</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#subsec-mais-variaveis" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Derivadas Parciais de Funções com Mais de Duas Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-derivadas-parciais.html#exercicios-derivadas-parciais" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Lista de Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conceito-diferenciabilidade.html" class="internal"><span class="codenumber">3.2</span> <span class="title">O Conceito de Diferenciabilidade</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conceito-diferenciabilidade.html#sec-condicao-suficiente" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Condição Suficiente para Diferenciabilidade</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conceito-diferenciabilidade.html#lista-exercicios-diferenciabilidade" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-unico.html" class="internal"><span class="codenumber">3.3</span> <span class="title">O Plano Tangente, O Vetor Gradiente e Interpretação Geométrica</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#subsec-plano-tangente" class="internal"><span class="codenumber">3.3.1</span> <span class="title">O Plano Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#subsec-vetor-gradiente" class="internal"><span class="codenumber">3.3.2</span> <span class="title">O Vetor Gradiente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#subsec-interpretacao-geometrica-gradiente" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Interpretação Geométrica do Gradiente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-unico.html#lista-exercicios-plano-gradiente" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-diferencial.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Diferencial</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-conceito-diferencial" class="internal"><span class="codenumber">3.4.1</span> <span class="title">O Conceito de Diferencial</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-aproximacoes-erros" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Aproximações e Erros</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-diferencial-tres-variaveis" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Extensão para Três ou Mais Variáveis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#subsec-exemplos-resolvidos-diferencial" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-diferencial.html#lista-exercicios-diferenciais" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-regra-cadeia.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Regra da Cadeia</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-regra-cadeia.html#subsec-casos-composicao" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Casos Específicos de Função Composta</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-regra-cadeia.html#subsec-exemplos-resolvidos-cadeia" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-regra-cadeia.html#lista-exercicios-regra-cadeia" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-conteudo-derivada-direcional.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Derivada Direcional</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-derivada-direcional.html#subsec-conceito-direcional" class="internal"><span class="codenumber">3.6.1</span> <span class="title">O Conceito de Derivada Direcional</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivada-direcional.html#subsec-relacao-gradiente" class="internal"><span class="codenumber">3.6.2</span> <span class="title">A Relação com o Vetor Gradiente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivada-direcional.html#subsec-taxa-maxima-variacao" class="internal"><span class="codenumber">3.6.3</span> <span class="title">A Taxa Máxima de Variação</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivada-direcional.html#lista-exercicios-derivada-direcional" class="internal"><span class="codenumber">3.6.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Derivação Implícita</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#subsec-funcao-implicita-yx" class="internal"><span class="codenumber">3.7.1</span> <span class="title">Derivada de <span class="process-math">\(y = f(x)\)</span> definida por <span class="process-math">\(F(x,y) = 0\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#subsec-funcao-implicita-zxy" class="internal"><span class="codenumber">3.7.2</span> <span class="title">Derivadas Parciais de <span class="process-math">\(z = f(x,y)\)</span> definida por <span class="process-math">\(F(x,y,z) = 0\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#subsec-sistemas-jacobianos" class="internal"><span class="codenumber">3.7.3</span> <span class="title">Sistemas de Equações e Jacobianos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivacao-implicita.html#lista-exercicios-implicita" class="internal"><span class="codenumber">3.7.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html" class="internal"><span class="codenumber">3.8</span> <span class="title">Derivadas Parciais Sucessivas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#subsec-definicao-notacao" class="internal"><span class="codenumber">3.8.1</span> <span class="title">Definição e Notações</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#subsec-teorema-schwartz" class="internal"><span class="codenumber">3.8.2</span> <span class="title">O Teorema de Schwartz (Clairaut)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#subsec-exemplos-resolvidos-sucessivas" class="internal"><span class="codenumber">3.8.3</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-conteudo-derivadas-sucessivas.html#lista-exercicios-derivadas-sucessivas" class="internal"><span class="codenumber">3.8.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-conteudo-derivada-direcional"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3.6</span> <span class="title">Derivada Direcional</span>
+</h2>
+<section class="subsection" id="subsec-conceito-direcional"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.6.1</span> <span class="title">O Conceito de Derivada Direcional</span>
+</h3>
+<div class="para" id="p-805">Até o momento no estudo do cálculo de várias variáveis, utilizamos as derivadas parciais <span class="process-math">\(\frac{\partial f}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> para medir a taxa de variação de uma função <span class="process-math">\(z = f(x,y)\)</span> quando nos movemos paralelamente aos eixos <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{,}\)</span> respectivamente.</div>
+<div class="para" id="p-806">No entanto, em muitas aplicações práticas (como o fluxo de calor, a variação de pressão atmosférica ou a inclinação de um terreno), precisamos saber a taxa de variação da função em qualquer direção arbitrária, e não apenas nas direções dos eixos coordenados. Para isso, introduzimos o conceito de derivada direcional.</div>
+<article class="definition definition-like" id="def-derivada-direcional"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">3.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Derivada Direcional.</span>
+</h4> <div class="para logical" id="p-807">
+<div class="para">A derivada direcional de uma função <span class="process-math">\(f(x,y)\)</span> no ponto <span class="process-math">\((x_0, y_0)\)</span> na direção de um vetor unitário <span class="process-math">\(\vec{u} = (a,b)\)</span> é denotada por <span class="process-math">\(D_{\vec{u}}f(x_0, y_0)\)</span> e definida pelo limite:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(x_0, y_0) = \lim_{h \to 0} \frac{f(x_0 + ah, y_0 + bh) - f(x_0, y_0)}{h}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-808">Se o limite existir, ele nos dará a taxa de variação de <span class="process-math">\(f\)</span> quando avançamos a partir de <span class="process-math">\((x_0, y_0)\)</span> exatamente na direção e sentido apontados pelo vetor <span class="process-math">\(\vec{u}\text{.}\)</span>
+</div></article><article class="example example-like" id="exem-derivada-direcional-limite-1"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-809">Utilizando a definição por limite, calcule a derivada direcional da função <span class="process-math">\(f(x,y) = xy\)</span> no ponto <span class="process-math">\((1, 2)\)</span> na direção do vetor unitário <span class="process-math">\(\vec{u} = \left(\frac{3}{5}, \frac{4}{5}\right)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<div class="para" id="p-810">De acordo com a Definição 3.6.1, a derivada direcional é calculada pelo limite:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(x_0, y_0) = \lim_{h \to 0} \frac{f(x_0 + ah, y_0 + bh) - f(x_0, y_0)}{h}
+\end{equation*}
+</div>
+<div class="para" id="p-811">Primeiro, identificamos os elementos do nosso problema de acordo com a fórmula:</div> <ul class="disc">
+<li id="li-95"><div class="para" id="p-812">Ponto inicial: <span class="process-math">\(x_0 = 1\)</span> e <span class="process-math">\(y_0 = 2\)</span>
+</div></li>
+<li id="li-96"><div class="para" id="p-813">Componentes do vetor unitário: <span class="process-math">\(a = \frac{3}{5}\)</span> e <span class="process-math">\(b = \frac{4}{5}\)</span>
+</div></li>
+<li id="li-97"><div class="para" id="p-814">Função avaliada no ponto inicial: <span class="process-math">\(f(1, 2) = (1)(2) = 2\)</span>
+</div></li>
+</ul> <div class="para" id="p-815">Agora, calculamos o valor da função no ponto deslocado <span class="process-math">\((x_0 + ah, y_0 + bh)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-10">
+\begin{align*}
+f\left(1 + \frac{3}{5}h, 2 + \frac{4}{5}h\right) \amp = \left(1 + \frac{3}{5}h\right)\left(2 + \frac{4}{5}h\right)\\
+\amp = 2 + \frac{4}{5}h + \frac{6}{5}h + \frac{12}{25}h^2\\
+\amp = 2 + \frac{10}{5}h + \frac{12}{25}h^2\\
+\amp = 2 + 2h + \frac{12}{25}h^2
+\end{align*}
+</div>
+<div class="para" id="p-816">Substituindo esses valores no limite:</div>
+<div class="displaymath process-math" id="md-11">
+\begin{align*}
+D_{\vec{u}}f(1, 2) \amp = \lim_{h \to 0} \frac{\left(2 + 2h + \frac{12}{25}h^2\right) - 2}{h}\\
+\amp = \lim_{h \to 0} \frac{2h + \frac{12}{25}h^2}{h}\\
+\amp = \lim_{h \to 0} \frac{h\left(2 + \frac{12}{25}h\right)}{h}
+\end{align*}
+</div>
+<div class="para" id="p-817">Cancelando o <span class="process-math">\(h\)</span> do numerador e denominador (pois <span class="process-math">\(h \neq 0\)</span> no cálculo do limite), obtemos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(1, 2) = \lim_{h \to 0} \left(2 + \frac{12}{25}h\right)
+\end{equation*}
+</div>
+<div class="para" id="p-818">Quando <span class="process-math">\(h\)</span> tende a zero, o termo que contém <span class="process-math">\(h\)</span> desaparece, indicando a taxa de variação exata da função se avançarmos a partir do ponto inicial na direção de <span class="process-math">\(\vec{u}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(1, 2) = 2
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsec-relacao-gradiente"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.6.2</span> <span class="title">A Relação com o Vetor Gradiente</span>
+</h3>
+<div class="para" id="p-819">Calcular a derivada direcional usando a definição por limite pode ser extremamente trabalhoso. Felizmente, se a função <span class="process-math">\(f\)</span> for diferenciável, podemos usar o vetor gradiente para calcular essa taxa de variação de forma muito mais simples.</div>
+<div class="para logical" id="p-820">
+<div class="para">Lembrando que o gradiente de <span class="process-math">\(f(x,y)\text{,}\)</span> denotado por <span class="process-math">\(\nabla f\text{,}\)</span> é o vetor formado pelas derivadas parciais da função:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(x,y) = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)
+\end{equation*}
+</div>
+</div>
+<article class="theorem theorem-like" id="teo-derivada-direcional-gradiente"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Cálculo via Vetor Gradiente.</span>
+</h4>
+<div class="para logical" id="p-821">
+<div class="para">Se <span class="process-math">\(f\)</span> é uma função diferenciável, então a derivada direcional de <span class="process-math">\(f\)</span> na direção de um vetor unitário <span class="process-math">\(\vec{u}\)</span> é o produto escalar do vetor gradiente de <span class="process-math">\(f\)</span> pelo vetor <span class="process-math">\(\vec{u}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(x,y) = \nabla f(x,y) \cdot \vec{u}
+\end{equation*}
+</div>
+</div></article><div class="para" id="p-822">
+<em class="emphasis">Nota essencial:</em> O vetor <span class="process-math">\(\vec{u}\)</span> na fórmula deve ser unitário (ter módulo igual a 1). Se o problema fornecer um vetor <span class="process-math">\(\vec{v}\)</span> qualquer, você deve primeiro normalizá-lo: <span class="process-math">\(\vec{u} = \frac{\vec{v}}{\|\vec{v}\|}\text{.}\)</span>
+</div>
+<div class="para logical" id="p-823">
+<div class="para">Para funções de três ou mais variáveis, como <span class="process-math">\(w = f(x,y,z)\text{,}\)</span> o raciocínio é idêntico. O gradiente passa a ter três componentes e o vetor unitário também:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(x,y,z) = \nabla f(x,y,z) \cdot \vec{u}
+\end{equation*}
+</div>
+</div>
+<article class="example example-like" id="ex-calculo-basico"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-824">Encontre a derivada direcional de <span class="process-math">\(f(x,y) = x^2 y^3 - 4y\)</span> no ponto <span class="process-math">\(P(2,-1)\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (2,5)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like">
+<div class="para logical" id="p-825">
+<div class="para">1. Calcular o gradiente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f = \left( 2xy^3, 3x^2y^2 - 4 \right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-826">
+<div class="para">2. Avaliar o gradiente no ponto <span class="process-math">\((2,-1)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(2,-1) = (2(2)(-1)^3, 3(2)^2(-1)^2 - 4) = (-4, 8)
+\end{equation*}
+</div>
+</div> <div class="para" id="p-827">3. Normalizar o vetor direção: O vetor <span class="process-math">\(\vec{v} = (2,5)\)</span> não é unitário. Seu módulo é <span class="process-math">\(\|\vec{v}\| = \sqrt{2^2 + 5^2} = \sqrt{29}\text{.}\)</span> O vetor unitário é <span class="process-math">\(\vec{u} = \left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)\text{.}\)</span>
+</div> <div class="para logical" id="p-828">
+<div class="para">4. Calcular o produto escalar:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(2,-1) = \nabla f(2,-1) \cdot \vec{u} = (-4, 8) \cdot \left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(2,-1) = \frac{-8}{\sqrt{29}} + \frac{40}{\sqrt{29}} = \frac{32}{\sqrt{29}}
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="example example-like" id="exem-derivada-direcional-1"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-829">Calcule a derivada direcional da função <span class="process-math">\(f(x,y) = x^2y + 3y^2\)</span> no ponto <span class="process-math">\((1, 2)\)</span> na direção do vetor unitário que forma um ângulo de <span class="process-math">\(\frac{\pi}{3}\)</span> com o eixo <span class="process-math">\(x\)</span> positivo.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
+<div class="para" id="p-830">Primeiro, calculamos o vetor gradiente de <span class="process-math">\(f\text{.}\)</span> As derivadas parciais são:</div>
+<div class="displaymath process-math" id="md-12">
+\begin{align*}
+f_x(x,y) \amp = 2xy\\
+f_y(x,y) \amp = x^2 + 6y
+\end{align*}
+</div>
+<div class="para" id="p-831">Avaliando no ponto <span class="process-math">\((1, 2)\text{,}\)</span> obtemos o gradiente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(1,2) = (2(1)(2), 1^2 + 6(2)) = (4, 13)
+\end{equation*}
+</div>
+<div class="para" id="p-832">O vetor unitário <span class="process-math">\(\vec{u}\)</span> associado ao ângulo <span class="process-math">\(\theta = \frac{\pi}{3}\)</span> é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{u} = \left(\cos\left(\frac{\pi}{3}\right), \sin\left(\frac{\pi}{3}\right)\right) = \left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right)
+\end{equation*}
+</div>
+<div class="para" id="p-833">Pelo Teorema 3.6.2, a derivada direcional é o produto escalar do gradiente pelo vetor unitário:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(1,2) = \nabla f(1,2) \cdot \vec{u} = (4, 13) \cdot \left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right) = 2 + \frac{13\sqrt{3}}{2}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="exem-derivada-direcional-2"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-834">Determine a derivada direcional da função <span class="process-math">\(f(x,y) = e^x \sin(y)\)</span> no ponto <span class="process-math">\((0, \frac{\pi}{4})\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (3, 4)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like">
+<div class="para" id="p-835">Como destacado na nota essencial, o vetor direção deve ser unitário. Primeiro, calculamos o módulo de <span class="process-math">\(\vec{v}\)</span> e o normalizamos para encontrar <span class="process-math">\(\vec{u}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-13">
+\begin{align*}
+||\vec{v}|| \amp = \sqrt{3^2 + 4^2} = \sqrt{25} = 5\\
+\vec{u} \amp = \frac{\vec{v}}{||\vec{v}||} = \left(\frac{3}{5}, \frac{4}{5}\right)
+\end{align*}
+</div>
+<div class="para" id="p-836">Em seguida, calculamos o vetor gradiente de <span class="process-math">\(f\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(x,y) = (e^x \sin(y), e^x \cos(y))
+\end{equation*}
+</div>
+<div class="para" id="p-837">Avaliando o gradiente no ponto <span class="process-math">\((0, \frac{\pi}{4})\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f\left(0, \frac{\pi}{4}\right) = \left(e^0 \sin\left(\frac{\pi}{4}\right), e^0 \cos\left(\frac{\pi}{4}\right)\right) = \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)
+\end{equation*}
+</div>
+<div class="para" id="p-838">Por fim, calculamos a derivada direcional fazendo o produto escalar:</div>
+<div class="displaymath process-math" id="md-14">
+\begin{align*}
+D_{\vec{u}}f\left(0, \frac{\pi}{4}\right) =\amp \nabla f\left(0, \frac{\pi}{4}\right) \cdot \vec{u}\\
+=\amp \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) \cdot \left(\frac{3}{5}, \frac{4}{5}\right)\\
+=\amp \frac{3\sqrt{2}}{10} + \frac{4\sqrt{2}}{10} = \frac{7\sqrt{2}}{10}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="example example-like" id="exem-derivada-direcional-3"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-839">Calcule a derivada direcional da função de três variáveis <span class="process-math">\(w = f(x,y,z) = xy^2z^3\)</span> no ponto <span class="process-math">\(P(1, -1, 2)\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (1, 2, -2)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like">
+<div class="para" id="p-840">Como estamos trabalhando com três variáveis, o raciocínio é idêntico. Primeiro, precisamos normalizar o vetor <span class="process-math">\(\vec{v}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-15">
+\begin{align*}
+||\vec{v}|| \amp = \sqrt{1^2 + 2^2 + (-2)^2} = \sqrt{1 + 4 + 4} = \sqrt{9} = 3\\
+\vec{u} \amp = \frac{\vec{v}}{||\vec{v}||} = \left(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3}\right)
+\end{align*}
+</div>
+<div class="para" id="p-841">Agora, calculamos as derivadas parciais para encontrar o gradiente <span class="process-math">\(\nabla f(x,y,z)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-16">
+\begin{align*}
+f_x(x,y,z) \amp = y^2z^3\\
+f_y(x,y,z) \amp = 2xyz^3\\
+f_z(x,y,z) \amp = 3xy^2z^2
+\end{align*}
+</div>
+<div class="para" id="p-842">Avaliando essas derivadas no ponto <span class="process-math">\((1, -1, 2)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-17">
+\begin{align*}
+f_x(1, -1, 2) \amp = (-1)^2(2)^3 = 8\\
+f_y(1, -1, 2) \amp = 2(1)(-1)(2)^3 = -16\\
+f_z(1, -1, 2) \amp = 3(1)(-1)^2(2)^2 = 12
+\end{align*}
+</div>
+<div class="para" id="p-843">O gradiente no ponto é <span class="process-math">\(\nabla f(1, -1, 2) = (8, -16, 12)\text{.}\)</span>
+</div> <div class="para" id="p-844">Finalmente, calculamos a derivada direcional efetuando o produto escalar:</div>
+<div class="displaymath process-math" id="md-18">
+\begin{align*}
+D_{\vec{u}}f(1, -1, 2) \amp = \nabla f(1, -1, 2) \cdot \vec{u}\\
+\amp = (8, -16, 12) \cdot \left(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3}\right)\\
+\amp = \frac{8}{3} - \frac{32}{3} - \frac{24}{3}\\
+\amp = -\frac{48}{3} = -16
+\end{align*}
+</div>
+</div></div>
+</div></article></section><section class="subsection" id="subsec-taxa-maxima-variacao"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.6.3</span> <span class="title">A Taxa Máxima de Variação</span>
+</h3>
+<div class="para logical" id="p-845">
+<div class="para">A relação entre a derivada direcional e o gradiente revela a propriedade geométrica mais importante do vetor gradiente. Pela definição de produto escalar, sabemos que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f = \nabla f \cdot \vec{u} = \|\nabla f\| \|\vec{u}\| \cos \theta
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-846">
+<div class="para">Como <span class="process-math">\(\vec{u}\)</span> é unitário (<span class="process-math">\(\|\vec{u}\| = 1\)</span>), a equação se reduz a:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f = \|\nabla f\| \cos \theta
+\end{equation*}
+</div>
+</div>
+<div class="para" id="p-847">Onde <span class="process-math">\(\theta\)</span> é o ângulo entre o gradiente e o vetor direção <span class="process-math">\(\vec{u}\text{.}\)</span> Como o valor máximo do cosseno é 1 (quando <span class="process-math">\(\theta = 0\)</span>), tiramos duas conclusões valiosas:</div>
+<ol class="decimal">
+<li id="li-98"><div class="para" id="p-derived-li-98">Direção de maior crescimento: A taxa máxima de variação de <span class="process-math">\(f\)</span> num ponto ocorre na mesma direção e sentido do vetor gradiente <span class="process-math">\(\nabla f\text{.}\)</span>
+</div></li>
+<li id="li-99"><div class="para" id="p-derived-li-99">Valor máximo: O valor dessa taxa máxima de variação é exatamente o módulo do vetor gradiente, <span class="process-math">\(\|\nabla f\|\text{.}\)</span>
+</div></li>
+</ol>
+<article class="example example-like" id="ex-taxa-maxima-2d"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-848">Seja a função <span class="process-math">\(f(x,y) = x^2 e^y\text{.}\)</span> Determine a taxa máxima de variação de <span class="process-math">\(f\)</span> no ponto <span class="process-math">\(P(2,0)\)</span> e a direção em que ela ocorre.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like">
+<div class="para logical" id="p-849">
+<div class="para">Primeiro, calculamos o vetor gradiente de <span class="process-math">\(f\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(x,y) = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) = \left( 2xe^y, x^2e^y \right)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-850">
+<div class="para">Avaliando o gradiente no ponto <span class="process-math">\(P(2,0)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(2,0) = (2(2)e^0, 2^2e^0) = (4, 4)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-851">Pelas propriedades da taxa máxima de variação, a direção de maior crescimento é apontada pelo próprio vetor gradiente <span class="process-math">\(\nabla f(2,0) = (4, 4)\text{.}\)</span> Caso queiramos a direção descrita por um vetor unitário, basta dividi-lo pelo seu módulo: <span class="process-math">\(\vec{u} = \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)\text{.}\)</span>
+</div> <div class="para logical" id="p-852">
+<div class="para">O valor dessa taxa máxima de variação é o módulo do gradiente neste ponto:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\|\nabla f(2,0)\| = \sqrt{4^2 + 4^2} = \sqrt{16 + 16} = \sqrt{32} = 4\sqrt{2}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="example example-like" id="ex-taxa-maxima-temperatura"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-853">A temperatura em um ponto <span class="process-math">\((x,y,z)\)</span> do espaço é modelada pela função <span class="process-math">\(T(x,y,z) = 20 - x^2 - y^2 - 2z^2\text{.}\)</span> A partir do ponto <span class="process-math">\(P(1, -1, 2)\text{,}\)</span> em qual direção a temperatura aumenta mais rapidamente? Qual é essa taxa máxima de aumento?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like">
+<div class="para" id="p-854">A direção de aumento máximo da temperatura é dada pelo vetor gradiente <span class="process-math">\(\nabla T\)</span> avaliado no ponto <span class="process-math">\(P\text{.}\)</span>
+</div> <div class="para logical" id="p-855">
+<div class="para">Calculando o gradiente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla T(x,y,z) = \left( \frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z} \right) = (-2x, -2y, -4z)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-856">
+<div class="para">Avaliando em <span class="process-math">\(P(1, -1, 2)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla T(1, -1, 2) = (-2(1), -2(-1), -4(2)) = (-2, 2, -8)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-857">Portanto, a temperatura aumenta mais rapidamente quando nos movemos a partir de <span class="process-math">\(P\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (-2, 2, -8)\text{.}\)</span>
+</div> <div class="para logical" id="p-858">
+<div class="para">A taxa máxima de aumento é o módulo do gradiente nesse ponto:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\|\nabla T(1, -1, 2)\| = \sqrt{(-2)^2 + 2^2 + (-8)^2} = \sqrt{4 + 4 + 64} = \sqrt{72} = 6\sqrt{2}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-859">Isso significa que, na direção de maior aquecimento, a temperatura aumenta a uma taxa de <span class="process-math">\(6\sqrt{2}\)</span> graus por unidade de distância percorrida.</div>
+</div></div>
+</div></article><article class="example example-like" id="ex-taxa-maxima-3var"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.6.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-860">Dada a função <span class="process-math">\(f(x,y,z) = x \ln(yz)\text{,}\)</span> determine a taxa máxima de variação no ponto <span class="process-math">\(P(1, 2, 1/2)\)</span> e a direção em que ela ocorre.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like">
+<div class="para logical" id="p-861">
+<div class="para">1. Calcular o gradiente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial f}{\partial x} = \ln(yz)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial f}{\partial y} = x \left( \frac{1}{yz} \right) z = \frac{x}{y}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial f}{\partial z} = x \left( \frac{1}{yz} \right) y = \frac{x}{z}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f = \left( \ln(yz), \frac{x}{y}, \frac{x}{z} \right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-862">
+<div class="para">2. Avaliar no ponto <span class="process-math">\((1, 2, 1/2)\text{:}\)</span> Note que <span class="process-math">\(yz = 2(1/2) = 1\text{.}\)</span> Como <span class="process-math">\(\ln(1) = 0\text{,}\)</span> temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(1, 2, 1/2) = \left( 0, \frac{1}{2}, \frac{1}{1/2} \right) = \left( 0, \frac{1}{2}, 2 \right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-863">
+<div class="para">3. Taxa máxima de variação: É o módulo do gradiente neste ponto.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\|\nabla f\| = \sqrt{0^2 + (1/2)^2 + 2^2} = \sqrt{\frac{1}{4} + 4} = \sqrt{\frac{17}{4}} = \frac{\sqrt{17}}{2}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-864">4. Direção: Ocorre na direção do vetor gradiente <span class="process-math">\(\left( 0, \frac{1}{2}, 2 \right)\text{.}\)</span>
+</div>
+</div></div>
+</div></article></section><section class="exercises" id="lista-exercicios-derivada-direcional"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">3.6.4</span> <span class="title">Exercícios</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-17">
+<h4 class="heading"><span class="title">Parte 1: Cálculo da Derivada Direcional.</span></h4>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-247"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="p-865">Determine a derivada direcional de <span class="process-math">\(f(x,y) = 1 + 2x\sqrt{y}\)</span> no ponto <span class="process-math">\((3, 4)\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (4, -3)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-248"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="p-866">Calcule a derivada direcional de <span class="process-math">\(g(x,y) = e^x \cos y\)</span> no ponto <span class="process-math">\((0, \pi/4)\)</span> na direção que forma um ângulo de <span class="process-math">\(\theta = \pi/6\)</span> com o eixo <span class="process-math">\(x\)</span> positivo. <em class="emphasis">(Dica: o vetor unitário é <span class="process-math">\(\vec{u} = (\cos\theta, \sin\theta)\)</span>)</em>.</div></article><article class="exercise exercise-like" id="exercise-249"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="p-867">Encontre a derivada direcional de <span class="process-math">\(h(x,y,z) = \sqrt{x^2 + y^2 + z^2}\)</span> no ponto <span class="process-math">\((1, 2, -2)\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (-6, 2, -3)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-250"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="p-868">Calcule a derivada direcional de <span class="process-math">\(f(x,y) = \ln(x^2 + y^2)\)</span> no ponto <span class="process-math">\((1, 1)\)</span> na direção do vetor que aponta desse ponto para a origem <span class="process-math">\((0,0)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-251"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="p-869">Encontre a derivada direcional de <span class="process-math">\(w(x,y,z) = x^2y + y^2z\)</span> no ponto <span class="process-math">\((1, 2, 3)\)</span> na direção do vetor <span class="process-math">\(\vec{v} = 2\vec{i} - \vec{j} + 2\vec{k}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-252"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="p-870">Determine a derivada direcional de <span class="process-math">\(f(x,y) = x \sin(xy)\)</span> no ponto <span class="process-math">\((2, 0)\)</span> na direção que forma um ângulo de <span class="process-math">\(\theta = \pi/3\)</span> com o eixo <span class="process-math">\(x\)</span> positivo.</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-18">
+<h4 class="heading"><span class="title">Parte 2: Taxa Máxima de Variação.</span></h4>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-253"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="p-871">Dada a função <span class="process-math">\(f(x,y) = y e^{-x} + x e^{-y}\text{,}\)</span> encontre a taxa máxima de variação no ponto <span class="process-math">\((0, 0)\)</span> e a direção em que ela ocorre.</div></article><article class="exercise exercise-like" id="exercise-254"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="p-872">A temperatura num ponto <span class="process-math">\((x, y, z)\)</span> de uma sala é dada por <span class="process-math">\(T(x,y,z) = 200e^{-x^2-3y^2-9z^2}\text{.}\)</span> Em qual direção a temperatura aumenta mais rapidamente a partir do ponto <span class="process-math">\((2, -1, 2)\text{?}\)</span> Qual é a taxa máxima de aumento?</div></article><article class="exercise exercise-like" id="exercise-255"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="p-873">Para a função <span class="process-math">\(f(x,y) = \sin(xy)\text{,}\)</span> determine a direção de maior crescimento no ponto <span class="process-math">\((1, \pi/2)\)</span> e calcule o valor dessa taxa máxima.</div></article><article class="exercise exercise-like" id="exercise-256"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="p-874">O relevo de uma montanha é modelado pela função <span class="process-math">\(h(x,y) = 5000 - 0.01x^2 - 0.02y^2\text{.}\)</span> Se um alpinista está localizado no ponto <span class="process-math">\((10, 10)\text{,}\)</span> em que direção (dada por um vetor unitário) ele deve caminhar para subir o mais rapidamente possível?</div></article><article class="exercise exercise-like" id="exercise-257"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para" id="p-875">Considere <span class="process-math">\(f(x,y,z) = \frac{x+y}{z}\text{.}\)</span> Encontre a taxa máxima de variação no ponto <span class="process-math">\((1, 1, -1)\)</span> e a direção em que ela ocorre.</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-19">
+<h4 class="heading"><span class="title">Parte 3: Análise Geométrica e Propriedades.</span></h4>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-258"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div class="para" id="p-876">Suponha que o vetor gradiente de uma função <span class="process-math">\(f\)</span> no ponto <span class="process-math">\(P\)</span> seja <span class="process-math">\(\nabla f(P) = (3, 4)\text{.}\)</span>
+</div> <ol class="lower-alpha">
+<li id="li-100"><div class="para" id="p-derived-li-100">Existe alguma direção <span class="process-math">\(\vec{u}\)</span> na qual a derivada direcional <span class="process-math">\(D_{\vec{u}}f(P)\)</span> seja igual a 6? Justifique.</div></li>
+<li id="li-101"><div class="para" id="p-derived-li-101">Determine uma direção (um vetor unitário) na qual a taxa de variação de <span class="process-math">\(f\)</span> seja zero.</div></li>
+</ol></article><article class="exercise exercise-like" id="exercise-259"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div class="para" id="p-877">Se uma função <span class="process-math">\(f(x,y)\)</span> tem sua taxa máxima de variação igual a 5 no ponto <span class="process-math">\((1,2)\)</span> ocorrendo exatamente na direção do vetor <span class="process-math">\((3,4)\text{,}\)</span> qual é o vetor gradiente <span class="process-math">\(\nabla f(1,2)\text{?}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-260"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
+<div class="para" id="p-878">Sabendo que a derivada direcional de <span class="process-math">\(f(x,y)\)</span> no ponto <span class="process-math">\(P(0,0)\)</span> na direção do vetor <span class="process-math">\(\vec{v}_1 = (1,1)\)</span> é <span class="process-math">\(2\sqrt{2}\)</span> e na direção do vetor <span class="process-math">\(\vec{v}_2 = (1,-1)\)</span> é <span class="process-math">\(-3\sqrt{2}\text{,}\)</span> determine o vetor gradiente <span class="process-math">\(\nabla f(0,0)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-261"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
+<div class="para" id="p-879">Seja <span class="process-math">\(f(x,y)\)</span> uma função diferenciável. Prove ou dê um contraexemplo: Se a derivada direcional <span class="process-math">\(D_{\vec{u}}f(P) = 0\)</span> para <em class="emphasis">todos</em> os vetores unitários <span class="process-math">\(\vec{u}\text{,}\)</span> então obrigatoriamente <span class="process-math">\(\nabla f(P) = \vec{0}\text{.}\)</span>
+</div></article>
+</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-conteudo-regra-cadeia.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-conteudo-derivacao-implicita.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

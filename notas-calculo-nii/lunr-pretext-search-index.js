@@ -3592,11 +3592,245 @@ var ptx_lunr_docs = [
   "body": " Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e calcule e . Depois substitua na equação fornecida.  "
 },
 {
+  "id": "sec-conteudo-derivada-direcional",
+  "level": "1",
+  "url": "sec-conteudo-derivada-direcional.html",
+  "type": "Seção",
+  "number": "3.6",
+  "title": "Derivada Direcional",
+  "body": " Derivada Direcional   O Conceito de Derivada Direcional  Até o momento no estudo do cálculo de várias variáveis, utilizamos as derivadas parciais e para medir a taxa de variação de uma função quando nos movemos paralelamente aos eixos e , respectivamente.  No entanto, em muitas aplicações práticas (como o fluxo de calor, a variação de pressão atmosférica ou a inclinação de um terreno), precisamos saber a taxa de variação da função em qualquer direção arbitrária , e não apenas nas direções dos eixos coordenados. Para isso, introduzimos o conceito de derivada direcional .   Derivada Direcional   A derivada direcional de uma função no ponto na direção de um vetor unitário é denotada por e definida pelo limite:   Se o limite existir, ele nos dará a taxa de variação de quando avançamos a partir de exatamente na direção e sentido apontados pelo vetor .      Utilizando a definição por limite, calcule a derivada direcional da função no ponto na direção do vetor unitário .    De acordo com a Definição 3.6.1, a derivada direcional é calculada pelo limite:   Primeiro, identificamos os elementos do nosso problema de acordo com a fórmula:   Ponto inicial: e  Componentes do vetor unitário: e  Função avaliada no ponto inicial:   Agora, calculamos o valor da função no ponto deslocado :   Substituindo esses valores no limite:   Cancelando o do numerador e denominador (pois no cálculo do limite), obtemos:   Quando tende a zero, o termo que contém desaparece, indicando a taxa de variação exata da função se avançarmos a partir do ponto inicial na direção de :       A Relação com o Vetor Gradiente  Calcular a derivada direcional usando a definição por limite pode ser extremamente trabalhoso. Felizmente, se a função for diferenciável, podemos usar o vetor gradiente para calcular essa taxa de variação de forma muito mais simples.  Lembrando que o gradiente de , denotado por , é o vetor formado pelas derivadas parciais da função:    Cálculo via Vetor Gradiente   Se é uma função diferenciável, então a derivada direcional de na direção de um vetor unitário é o produto escalar do vetor gradiente de pelo vetor :      Nota essencial: O vetor na fórmula deve ser unitário (ter módulo igual a 1). Se o problema fornecer um vetor qualquer, você deve primeiro normalizá-lo: .  Para funções de três ou mais variáveis, como , o raciocínio é idêntico. O gradiente passa a ter três componentes e o vetor unitário também:     Encontre a derivada direcional de no ponto na direção do vetor .     1. Calcular o gradiente:     2. Avaliar o gradiente no ponto :     3. Normalizar o vetor direção: O vetor não é unitário. Seu módulo é . O vetor unitário é .   4. Calcular o produto escalar:         Calcule a derivada direcional da função no ponto na direção do vetor unitário que forma um ângulo de com o eixo positivo.    Primeiro, calculamos o vetor gradiente de . As derivadas parciais são:   Avaliando no ponto , obtemos o gradiente:   O vetor unitário associado ao ângulo é:   Pelo Teorema 3.6.2, a derivada direcional é o produto escalar do gradiente pelo vetor unitário:       Determine a derivada direcional da função no ponto na direção do vetor .    Como destacado na nota essencial, o vetor direção deve ser unitário. Primeiro, calculamos o módulo de e o normalizamos para encontrar :   Em seguida, calculamos o vetor gradiente de :   Avaliando o gradiente no ponto :   Por fim, calculamos a derivada direcional fazendo o produto escalar:       Calcule a derivada direcional da função de três variáveis no ponto na direção do vetor .    Como estamos trabalhando com três variáveis, o raciocínio é idêntico. Primeiro, precisamos normalizar o vetor :   Agora, calculamos as derivadas parciais para encontrar o gradiente :   Avaliando essas derivadas no ponto :   O gradiente no ponto é .  Finalmente, calculamos a derivada direcional efetuando o produto escalar:       A Taxa Máxima de Variação  A relação entre a derivada direcional e o gradiente revela a propriedade geométrica mais importante do vetor gradiente. Pela definição de produto escalar, sabemos que:   Como é unitário ( ), a equação se reduz a:   Onde é o ângulo entre o gradiente e o vetor direção . Como o valor máximo do cosseno é 1 (quando ), tiramos duas conclusões valiosas:    Direção de maior crescimento: A taxa máxima de variação de num ponto ocorre na mesma direção e sentido do vetor gradiente .   Valor máximo: O valor dessa taxa máxima de variação é exatamente o módulo do vetor gradiente, .      Seja a função . Determine a taxa máxima de variação de no ponto e a direção em que ela ocorre.    Primeiro, calculamos o vetor gradiente de : .  Avaliando o gradiente no ponto : .  Pelas propriedades da taxa máxima de variação, a direção de maior crescimento é apontada pelo próprio vetor gradiente . Caso queiramos a direção descrita por um vetor unitário, basta dividi-lo pelo seu módulo: .  O valor dessa taxa máxima de variação é o módulo do gradiente neste ponto: .       A temperatura em um ponto do espaço é modelada pela função . A partir do ponto , em qual direção a temperatura aumenta mais rapidamente? Qual é essa taxa máxima de aumento?    A direção de aumento máximo da temperatura é dada pelo vetor gradiente avaliado no ponto .  Calculando o gradiente: .  Avaliando em : .  Portanto, a temperatura aumenta mais rapidamente quando nos movemos a partir de na direção do vetor .  A taxa máxima de aumento é o módulo do gradiente nesse ponto: .  Isso significa que, na direção de maior aquecimento, a temperatura aumenta a uma taxa de graus por unidade de distância percorrida.       Dada a função , determine a taxa máxima de variação no ponto e a direção em que ela ocorre.     1. Calcular o gradiente:        2. Avaliar no ponto : Note que . Como , temos:    3. Taxa máxima de variação: É o módulo do gradiente neste ponto.    4. Direção: Ocorre na direção do vetor gradiente .      Exercícios    Parte 1: Cálculo da Derivada Direcional    Determine a derivada direcional de no ponto na direção do vetor .    Calcule a derivada direcional de no ponto na direção que forma um ângulo de com o eixo positivo. (Dica: o vetor unitário é ) .    Encontre a derivada direcional de no ponto na direção do vetor .     Calcule a derivada direcional de no ponto na direção do vetor que aponta desse ponto para a origem .    Encontre a derivada direcional de no ponto na direção do vetor .    Determine a derivada direcional de no ponto na direção que forma um ângulo de com o eixo positivo.     Parte 2: Taxa Máxima de Variação    Dada a função , encontre a taxa máxima de variação no ponto e a direção em que ela ocorre.    A temperatura num ponto de uma sala é dada por . Em qual direção a temperatura aumenta mais rapidamente a partir do ponto ? Qual é a taxa máxima de aumento?     Para a função , determine a direção de maior crescimento no ponto e calcule o valor dessa taxa máxima.    O relevo de uma montanha é modelado pela função . Se um alpinista está localizado no ponto , em que direção (dada por um vetor unitário) ele deve caminhar para subir o mais rapidamente possível?    Considere . Encontre a taxa máxima de variação no ponto e a direção em que ela ocorre.     Parte 3: Análise Geométrica e Propriedades    Suponha que o vetor gradiente de uma função no ponto seja .   Existe alguma direção na qual a derivada direcional seja igual a 6? Justifique.  Determine uma direção (um vetor unitário) na qual a taxa de variação de seja zero.      Se uma função tem sua taxa máxima de variação igual a 5 no ponto ocorrendo exatamente na direção do vetor , qual é o vetor gradiente ?    Sabendo que a derivada direcional de no ponto na direção do vetor é e na direção do vetor é , determine o vetor gradiente .    Seja uma função diferenciável. Prove ou dê um contraexemplo: Se a derivada direcional para todos os vetores unitários , então obrigatoriamente .     "
+},
+{
+  "id": "def-derivada-direcional",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#def-derivada-direcional",
+  "type": "Definição",
+  "number": "3.6.1",
+  "title": "Derivada Direcional.",
+  "body": " Derivada Direcional   A derivada direcional de uma função no ponto na direção de um vetor unitário é denotada por e definida pelo limite:   Se o limite existir, ele nos dará a taxa de variação de quando avançamos a partir de exatamente na direção e sentido apontados pelo vetor .   "
+},
+{
+  "id": "exem-derivada-direcional-limite-1",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exem-derivada-direcional-limite-1",
+  "type": "Exemplo",
+  "number": "3.6.2",
+  "title": "",
+  "body": "  Utilizando a definição por limite, calcule a derivada direcional da função no ponto na direção do vetor unitário .    De acordo com a Definição 3.6.1, a derivada direcional é calculada pelo limite:   Primeiro, identificamos os elementos do nosso problema de acordo com a fórmula:   Ponto inicial: e  Componentes do vetor unitário: e  Função avaliada no ponto inicial:   Agora, calculamos o valor da função no ponto deslocado :   Substituindo esses valores no limite:   Cancelando o do numerador e denominador (pois no cálculo do limite), obtemos:   Quando tende a zero, o termo que contém desaparece, indicando a taxa de variação exata da função se avançarmos a partir do ponto inicial na direção de :    "
+},
+{
+  "id": "teo-derivada-direcional-gradiente",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#teo-derivada-direcional-gradiente",
+  "type": "Teorema",
+  "number": "3.6.3",
+  "title": "Cálculo via Vetor Gradiente.",
+  "body": " Cálculo via Vetor Gradiente   Se é uma função diferenciável, então a derivada direcional de na direção de um vetor unitário é o produto escalar do vetor gradiente de pelo vetor :    "
+},
+{
+  "id": "ex-calculo-basico",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#ex-calculo-basico",
+  "type": "Exemplo",
+  "number": "3.6.4",
+  "title": "",
+  "body": "  Encontre a derivada direcional de no ponto na direção do vetor .     1. Calcular o gradiente:     2. Avaliar o gradiente no ponto :     3. Normalizar o vetor direção: O vetor não é unitário. Seu módulo é . O vetor unitário é .   4. Calcular o produto escalar:      "
+},
+{
+  "id": "exem-derivada-direcional-1",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exem-derivada-direcional-1",
+  "type": "Exemplo",
+  "number": "3.6.5",
+  "title": "",
+  "body": "  Calcule a derivada direcional da função no ponto na direção do vetor unitário que forma um ângulo de com o eixo positivo.    Primeiro, calculamos o vetor gradiente de . As derivadas parciais são:   Avaliando no ponto , obtemos o gradiente:   O vetor unitário associado ao ângulo é:   Pelo Teorema 3.6.2, a derivada direcional é o produto escalar do gradiente pelo vetor unitário:    "
+},
+{
+  "id": "exem-derivada-direcional-2",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exem-derivada-direcional-2",
+  "type": "Exemplo",
+  "number": "3.6.6",
+  "title": "",
+  "body": "  Determine a derivada direcional da função no ponto na direção do vetor .    Como destacado na nota essencial, o vetor direção deve ser unitário. Primeiro, calculamos o módulo de e o normalizamos para encontrar :   Em seguida, calculamos o vetor gradiente de :   Avaliando o gradiente no ponto :   Por fim, calculamos a derivada direcional fazendo o produto escalar:    "
+},
+{
+  "id": "exem-derivada-direcional-3",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exem-derivada-direcional-3",
+  "type": "Exemplo",
+  "number": "3.6.7",
+  "title": "",
+  "body": "  Calcule a derivada direcional da função de três variáveis no ponto na direção do vetor .    Como estamos trabalhando com três variáveis, o raciocínio é idêntico. Primeiro, precisamos normalizar o vetor :   Agora, calculamos as derivadas parciais para encontrar o gradiente :   Avaliando essas derivadas no ponto :   O gradiente no ponto é .  Finalmente, calculamos a derivada direcional efetuando o produto escalar:    "
+},
+{
+  "id": "ex-taxa-maxima-2d",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#ex-taxa-maxima-2d",
+  "type": "Exemplo",
+  "number": "3.6.8",
+  "title": "",
+  "body": "   Seja a função . Determine a taxa máxima de variação de no ponto e a direção em que ela ocorre.    Primeiro, calculamos o vetor gradiente de : .  Avaliando o gradiente no ponto : .  Pelas propriedades da taxa máxima de variação, a direção de maior crescimento é apontada pelo próprio vetor gradiente . Caso queiramos a direção descrita por um vetor unitário, basta dividi-lo pelo seu módulo: .  O valor dessa taxa máxima de variação é o módulo do gradiente neste ponto: .   "
+},
+{
+  "id": "ex-taxa-maxima-temperatura",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#ex-taxa-maxima-temperatura",
+  "type": "Exemplo",
+  "number": "3.6.9",
+  "title": "",
+  "body": "   A temperatura em um ponto do espaço é modelada pela função . A partir do ponto , em qual direção a temperatura aumenta mais rapidamente? Qual é essa taxa máxima de aumento?    A direção de aumento máximo da temperatura é dada pelo vetor gradiente avaliado no ponto .  Calculando o gradiente: .  Avaliando em : .  Portanto, a temperatura aumenta mais rapidamente quando nos movemos a partir de na direção do vetor .  A taxa máxima de aumento é o módulo do gradiente nesse ponto: .  Isso significa que, na direção de maior aquecimento, a temperatura aumenta a uma taxa de graus por unidade de distância percorrida.   "
+},
+{
+  "id": "ex-taxa-maxima-3var",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#ex-taxa-maxima-3var",
+  "type": "Exemplo",
+  "number": "3.6.10",
+  "title": "",
+  "body": "   Dada a função , determine a taxa máxima de variação no ponto e a direção em que ela ocorre.     1. Calcular o gradiente:        2. Avaliar no ponto : Note que . Como , temos:    3. Taxa máxima de variação: É o módulo do gradiente neste ponto.    4. Direção: Ocorre na direção do vetor gradiente .   "
+},
+{
+  "id": "exercise-247",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-247",
+  "type": "Exercício",
+  "number": "3.6.4.1",
+  "title": "",
+  "body": " Determine a derivada direcional de no ponto na direção do vetor .  "
+},
+{
+  "id": "exercise-248",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-248",
+  "type": "Exercício",
+  "number": "3.6.4.2",
+  "title": "",
+  "body": " Calcule a derivada direcional de no ponto na direção que forma um ângulo de com o eixo positivo. (Dica: o vetor unitário é ) .  "
+},
+{
+  "id": "exercise-249",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-249",
+  "type": "Exercício",
+  "number": "3.6.4.3",
+  "title": "",
+  "body": " Encontre a derivada direcional de no ponto na direção do vetor .  "
+},
+{
+  "id": "exercise-250",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-250",
+  "type": "Exercício",
+  "number": "3.6.4.4",
+  "title": "",
+  "body": " Calcule a derivada direcional de no ponto na direção do vetor que aponta desse ponto para a origem .  "
+},
+{
+  "id": "exercise-251",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-251",
+  "type": "Exercício",
+  "number": "3.6.4.5",
+  "title": "",
+  "body": " Encontre a derivada direcional de no ponto na direção do vetor .  "
+},
+{
+  "id": "exercise-252",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-252",
+  "type": "Exercício",
+  "number": "3.6.4.6",
+  "title": "",
+  "body": " Determine a derivada direcional de no ponto na direção que forma um ângulo de com o eixo positivo.  "
+},
+{
+  "id": "exercise-253",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-253",
+  "type": "Exercício",
+  "number": "3.6.4.7",
+  "title": "",
+  "body": " Dada a função , encontre a taxa máxima de variação no ponto e a direção em que ela ocorre.  "
+},
+{
+  "id": "exercise-254",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-254",
+  "type": "Exercício",
+  "number": "3.6.4.8",
+  "title": "",
+  "body": " A temperatura num ponto de uma sala é dada por . Em qual direção a temperatura aumenta mais rapidamente a partir do ponto ? Qual é a taxa máxima de aumento?  "
+},
+{
+  "id": "exercise-255",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-255",
+  "type": "Exercício",
+  "number": "3.6.4.9",
+  "title": "",
+  "body": " Para a função , determine a direção de maior crescimento no ponto e calcule o valor dessa taxa máxima.  "
+},
+{
+  "id": "exercise-256",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-256",
+  "type": "Exercício",
+  "number": "3.6.4.10",
+  "title": "",
+  "body": " O relevo de uma montanha é modelado pela função . Se um alpinista está localizado no ponto , em que direção (dada por um vetor unitário) ele deve caminhar para subir o mais rapidamente possível?  "
+},
+{
+  "id": "exercise-257",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-257",
+  "type": "Exercício",
+  "number": "3.6.4.11",
+  "title": "",
+  "body": " Considere . Encontre a taxa máxima de variação no ponto e a direção em que ela ocorre.  "
+},
+{
+  "id": "exercise-258",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-258",
+  "type": "Exercício",
+  "number": "3.6.4.12",
+  "title": "",
+  "body": " Suponha que o vetor gradiente de uma função no ponto seja .   Existe alguma direção na qual a derivada direcional seja igual a 6? Justifique.  Determine uma direção (um vetor unitário) na qual a taxa de variação de seja zero.   "
+},
+{
+  "id": "exercise-259",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-259",
+  "type": "Exercício",
+  "number": "3.6.4.13",
+  "title": "",
+  "body": " Se uma função tem sua taxa máxima de variação igual a 5 no ponto ocorrendo exatamente na direção do vetor , qual é o vetor gradiente ?  "
+},
+{
+  "id": "exercise-260",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-260",
+  "type": "Exercício",
+  "number": "3.6.4.14",
+  "title": "",
+  "body": " Sabendo que a derivada direcional de no ponto na direção do vetor é e na direção do vetor é , determine o vetor gradiente .  "
+},
+{
+  "id": "exercise-261",
+  "level": "2",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-261",
+  "type": "Exercício",
+  "number": "3.6.4.15",
+  "title": "",
+  "body": " Seja uma função diferenciável. Prove ou dê um contraexemplo: Se a derivada direcional para todos os vetores unitários , então obrigatoriamente .  "
+},
+{
   "id": "sec-conteudo-derivacao-implicita",
   "level": "1",
   "url": "sec-conteudo-derivacao-implicita.html",
   "type": "Seção",
-  "number": "3.6",
+  "number": "3.7",
   "title": "Derivação Implícita",
   "body": " Derivação Implícita   Derivada de definida por  Muitas vezes, uma função não é dada explicitamente, mas sim definida de forma implícita por uma equação da forma . Se substituirmos por na equação, ela se torna uma identidade.  Supondo que é diferenciável e que , podemos encontrar a derivada usando a regra da cadeia. Derivando a equação em relação a , obtemos: .  Como , isolando , chegamos à fórmula fundamental: .   Cálculo da derivada implícita   Sabendo que a função diferenciável é definida implicitamente pela equação , determine sua derivada .    Definimos . Calculamos as derivadas parciais de : .  Aplicando a fórmula, temos: .      Derivadas Parciais de definida por  De maneira análoga, se uma função de duas variáveis é dada implicitamente pela equação , podemos encontrar suas derivadas parciais.  Derivando a equação em relação a (mantendo constante) e usando a regra da cadeia: .  Seguindo o mesmo raciocínio para , obtemos o par de fórmulas (válidas se ): .   Superfície implícita   Determine e para a função definida por .    Definimos . As derivadas parciais de são:       Portanto, aplicando as fórmulas:  .      Sistemas de Equações e Jacobianos  Quando temos duas equações definindo implicitamente duas variáveis, por exemplo, o sistema e definindo e , utilizamos a Regra de Cramer e determinantes chamados de Jacobianos.  O determinante Jacobiano de duas funções e em relação a duas variáveis, digamos e , é denotado e definido por: .  Aplicando isso ao sistema, as derivadas são dadas por: . Tudo isso é válido desde que o Jacobiano do denominador seja não nulo. As condições rigorosas para a existência dessas funções são garantidas pelo Teorema da Função Implícita.    Exercícios  Com base na Seção 4.7 de Derivação Implícita, resolva os seguintes exercícios.   Derivada Ordinária Implícita   Supondo que a função diferenciável seja definida implicitamente pelas equações abaixo, determine .      Defina .  e .  (para ).      Defina .  e .  .     Derivadas Parciais Implícitas   Supondo que a função diferenciável é definida pela equação dada, determine e .      Seja .  .  .  .  e .      Seja .  , , .  .  .      Seja .  , , .  e .      Seja .  .  .  .  .  .     Derivação Implícita em Sistemas (Jacobianos)   Supondo que as funções diferenciáveis e sejam definidas implicitamente pelo sistema dado, determine e .        Sejam e .  Calculamos os Jacobianos:  .  .  .  .  .        Sejam e .  .  .  .  .  .     Sistemas Definindo Duas Variáveis (Funções de Duas Variáveis)   Determine as derivadas parciais de 1ª ordem das funções e definidas implicitamente pelo sistema dado.        Sejam e .  .  .  (se ).  (As outras derivadas seguem o mesmo padrão: , , ).        Sejam e .  .  .  .  Podemos confirmar facilmente derivando diretamente , o que dá .     "
 },
@@ -3605,7 +3839,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-conteudo-derivacao-implicita.html#ex-implicita-yx",
   "type": "Exemplo",
-  "number": "3.6.1",
+  "number": "3.7.1",
   "title": "Cálculo da derivada implícita.",
   "body": " Cálculo da derivada implícita   Sabendo que a função diferenciável é definida implicitamente pela equação , determine sua derivada .    Definimos . Calculamos as derivadas parciais de : .  Aplicando a fórmula, temos: .   "
 },
@@ -3614,97 +3848,97 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-conteudo-derivacao-implicita.html#ex-implicita-zxy",
   "type": "Exemplo",
-  "number": "3.6.2",
+  "number": "3.7.2",
   "title": "Superfície implícita.",
   "body": " Superfície implícita   Determine e para a função definida por .    Definimos . As derivadas parciais de são:       Portanto, aplicando as fórmulas:  .   "
 },
 {
-  "id": "exercise-247",
+  "id": "exercise-262",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-247",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-262",
   "type": "Exercício",
-  "number": "3.6.4.1",
+  "number": "3.7.4.1",
   "title": "",
   "body": "   Defina .  e .  (para ).  "
 },
 {
-  "id": "exercise-248",
+  "id": "exercise-263",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-248",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-263",
   "type": "Exercício",
-  "number": "3.6.4.2",
+  "number": "3.7.4.2",
   "title": "",
   "body": "   Defina .  e .  .  "
 },
 {
-  "id": "exercise-249",
+  "id": "exercise-264",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-249",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-264",
   "type": "Exercício",
-  "number": "3.6.4.3",
+  "number": "3.7.4.3",
   "title": "",
   "body": "   Seja .  .  .  .  e .  "
 },
 {
-  "id": "exercise-250",
+  "id": "exercise-265",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-250",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-265",
   "type": "Exercício",
-  "number": "3.6.4.4",
+  "number": "3.7.4.4",
   "title": "",
   "body": "   Seja .  , , .  .  .  "
 },
 {
-  "id": "exercise-251",
+  "id": "exercise-266",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-251",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-266",
   "type": "Exercício",
-  "number": "3.6.4.5",
+  "number": "3.7.4.5",
   "title": "",
   "body": "   Seja .  , , .  e .  "
 },
 {
-  "id": "exercise-252",
+  "id": "exercise-267",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-252",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-267",
   "type": "Exercício",
-  "number": "3.6.4.6",
+  "number": "3.7.4.6",
   "title": "",
   "body": "   Seja .  .  .  .  .  .  "
 },
 {
-  "id": "exercise-253",
+  "id": "exercise-268",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-253",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-268",
   "type": "Exercício",
-  "number": "3.6.4.7",
+  "number": "3.7.4.7",
   "title": "",
   "body": "     Sejam e .  Calculamos os Jacobianos:  .  .  .  .  .  "
 },
 {
-  "id": "exercise-254",
+  "id": "exercise-269",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-254",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-269",
   "type": "Exercício",
-  "number": "3.6.4.8",
+  "number": "3.7.4.8",
   "title": "",
   "body": "     Sejam e .  .  .  .  .  .  "
 },
 {
-  "id": "exercise-255",
+  "id": "exercise-270",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-255",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-270",
   "type": "Exercício",
-  "number": "3.6.4.9",
+  "number": "3.7.4.9",
   "title": "",
   "body": "     Sejam e .  .  .  (se ).  (As outras derivadas seguem o mesmo padrão: , , ).  "
 },
 {
-  "id": "exercise-256",
+  "id": "exercise-271",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-256",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-271",
   "type": "Exercício",
-  "number": "3.6.4.10",
+  "number": "3.7.4.10",
   "title": "",
   "body": "     Sejam e .  .  .  .  Podemos confirmar facilmente derivando diretamente , o que dá .  "
 },
@@ -3713,7 +3947,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-conteudo-derivadas-sucessivas.html",
   "type": "Seção",
-  "number": "3.7",
+  "number": "3.8",
   "title": "Derivadas Parciais Sucessivas",
   "body": " Derivadas Parciais Sucessivas   Definição e Notações  Se é uma função de duas variáveis, então, em geral, suas derivadas parciais de 1ª ordem, e , são também funções de duas variáveis. Se as derivadas parciais dessas novas funções existirem, elas são chamadas de derivadas parciais de 2ª ordem de .  Para uma função , existem quatro derivadas parciais de 2ª ordem. A partir da derivada , obtemos: .  A partir da derivada , obtemos: .   Outras Notações: É muito comum o uso de notações com subíndices para simplificar a escrita.         Atenção à ordem: Na notação de subíndice ( ), a ordem de derivação é lida da esquerda para a direita (primeiro em , depois em ). Na notação de fração ( ), a ordem operacional é da direita para a esquerda (primeiro em , depois em ).    O Teorema de Schwartz (Clairaut)  As derivadas e são chamadas de derivadas parciais mistas. Na maioria das funções práticas, essas derivadas são iguais. Essa igualdade é garantida pelo Teorema de Schwartz.   Teorema de Schwartz   Seja uma função com derivadas parciais de 2ª ordem contínuas em um conjunto aberto . Então, para todo : .    O Teorema de Schwartz pode ser generalizado para derivadas de ordem mais alta (3ª ordem, 4ª ordem, etc.). Se todas as derivadas em questão forem contínuas, a ordem da derivação não altera o resultado final (exemplo: ).    Exemplos Resolvidos   Derivadas de 2ª ordem de um polinômio   Dada a função , determine suas derivadas parciais de 2ª ordem.    Primeiro, calculamos as derivadas de 1ª ordem: .  Agora, derivamos novamente para obter as de 2ª ordem:        Observe que , confirmando o Teorema de Schwartz.     Derivadas de 3ª ordem   Dada a função , calcule e .    Derivando em sucessivamente:   .  Para a derivada mista , derivamos a primeira parcial duas vezes em relação a :  .  Logo, .      Exercícios  Baseado nos conceitos da Seção 4.8 de Derivadas Parciais Sucessivas, resolva os seguintes exercícios.   Cálculo de Derivadas de 2ª Ordem   Encontre todas as derivadas parciais de 2ª ordem ( ) das seguintes funções:      e .          e .         e .         e .         Teorema de Schwartz e Derivadas Mistas Específicas   Dada a função , verifique que .   e .  Calculando a mista a partir de : .  Calculando a mista a partir de : .  Como os resultados são iguais, o Teorema de Schwartz é verificado.    Verifique o Teorema de Schwartz para a função .   .  .  Derivando em relação a : .  Derivando em relação a : .  Os resultados coincidem.    Verifique o Teorema de Schwartz para a função .   .  .  .  .  As derivadas mistas são iguais.     Derivadas de 3ª Ordem e Aplicações   Dada a função , determine a derivada parcial de 3ª ordem .   .  .  Agora, derivamos em relação a : .  Simplificando: .    Dada a função , determine .   .  .  Simplificando: .    Seja uma função com derivadas de 2ª ordem contínuas. Ela é dita uma função harmônica se satisfaz a equação . Mostre que a função é harmônica.   .  .  Somando as derivadas de segunda ordem: .  Logo, a função é harmônica.     "
 },
@@ -3722,7 +3956,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-conteudo-derivadas-sucessivas.html#teo-schwartz",
   "type": "Teorema",
-  "number": "3.7.1",
+  "number": "3.8.1",
   "title": "Teorema de Schwartz.",
   "body": " Teorema de Schwartz   Seja uma função com derivadas parciais de 2ª ordem contínuas em um conjunto aberto . Então, para todo : .   "
 },
@@ -3731,7 +3965,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-conteudo-derivadas-sucessivas.html#ex-sucessivas-polinomio",
   "type": "Exemplo",
-  "number": "3.7.2",
+  "number": "3.8.2",
   "title": "Derivadas de 2ª ordem de um polinômio.",
   "body": " Derivadas de 2ª ordem de um polinômio   Dada a função , determine suas derivadas parciais de 2ª ordem.    Primeiro, calculamos as derivadas de 1ª ordem: .  Agora, derivamos novamente para obter as de 2ª ordem:        Observe que , confirmando o Teorema de Schwartz.   "
 },
@@ -3740,97 +3974,97 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-conteudo-derivadas-sucessivas.html#ex-sucessivas-terceira-ordem",
   "type": "Exemplo",
-  "number": "3.7.3",
+  "number": "3.8.3",
   "title": "Derivadas de 3ª ordem.",
   "body": " Derivadas de 3ª ordem   Dada a função , calcule e .    Derivando em sucessivamente:   .  Para a derivada mista , derivamos a primeira parcial duas vezes em relação a :  .  Logo, .   "
 },
 {
-  "id": "exercise-257",
+  "id": "exercise-272",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-257",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-272",
   "type": "Exercício",
-  "number": "3.7.4.1",
+  "number": "3.8.4.1",
   "title": "",
   "body": "   e .      "
 },
 {
-  "id": "exercise-258",
+  "id": "exercise-273",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-258",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-273",
   "type": "Exercício",
-  "number": "3.7.4.2",
+  "number": "3.8.4.2",
   "title": "",
   "body": "   e .     "
 },
 {
-  "id": "exercise-259",
+  "id": "exercise-274",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-259",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-274",
   "type": "Exercício",
-  "number": "3.7.4.3",
+  "number": "3.8.4.3",
   "title": "",
   "body": "   e .     "
 },
 {
-  "id": "exercise-260",
+  "id": "exercise-275",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-260",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-275",
   "type": "Exercício",
-  "number": "3.7.4.4",
+  "number": "3.8.4.4",
   "title": "",
   "body": "   e .      "
 },
 {
-  "id": "exercise-261",
+  "id": "exercise-276",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-261",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-276",
   "type": "Exercício",
-  "number": "3.7.4.5",
+  "number": "3.8.4.5",
   "title": "",
   "body": " Dada a função , verifique que .   e .  Calculando a mista a partir de : .  Calculando a mista a partir de : .  Como os resultados são iguais, o Teorema de Schwartz é verificado.  "
 },
 {
-  "id": "exercise-262",
+  "id": "exercise-277",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-262",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-277",
   "type": "Exercício",
-  "number": "3.7.4.6",
+  "number": "3.8.4.6",
   "title": "",
   "body": " Verifique o Teorema de Schwartz para a função .   .  .  Derivando em relação a : .  Derivando em relação a : .  Os resultados coincidem.  "
 },
 {
-  "id": "exercise-263",
+  "id": "exercise-278",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-263",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-278",
   "type": "Exercício",
-  "number": "3.7.4.7",
+  "number": "3.8.4.7",
   "title": "",
   "body": " Verifique o Teorema de Schwartz para a função .   .  .  .  .  As derivadas mistas são iguais.  "
 },
 {
-  "id": "exercise-264",
+  "id": "exercise-279",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-264",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-279",
   "type": "Exercício",
-  "number": "3.7.4.8",
+  "number": "3.8.4.8",
   "title": "",
   "body": " Dada a função , determine a derivada parcial de 3ª ordem .   .  .  Agora, derivamos em relação a : .  Simplificando: .  "
 },
 {
-  "id": "exercise-265",
+  "id": "exercise-280",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-265",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-280",
   "type": "Exercício",
-  "number": "3.7.4.9",
+  "number": "3.8.4.9",
   "title": "",
   "body": " Dada a função , determine .   .  .  Simplificando: .  "
 },
 {
-  "id": "exercise-266",
+  "id": "exercise-281",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-266",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-281",
   "type": "Exercício",
-  "number": "3.7.4.10",
+  "number": "3.8.4.10",
   "title": "",
   "body": " Seja uma função com derivadas de 2ª ordem contínuas. Ela é dita uma função harmônica se satisfaz a equação . Mostre que a função é harmônica.   .  .  Somando as derivadas de segunda ordem: .  Logo, a função é harmônica.  "
 },
@@ -3844,18 +4078,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-953",
+  "id": "p-1028",
   "level": "2",
-  "url": "referencias.html#p-953",
+  "url": "referencias.html#p-1028",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-954",
+  "id": "p-1029",
   "level": "2",
-  "url": "referencias.html#p-954",
+  "url": "referencias.html#p-1029",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
