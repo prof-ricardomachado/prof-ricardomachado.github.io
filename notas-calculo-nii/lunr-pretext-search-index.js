@@ -4069,27 +4069,675 @@ var ptx_lunr_docs = [
   "body": " Seja uma função com derivadas de 2ª ordem contínuas. Ela é dita uma função harmônica se satisfaz a equação . Mostre que a função é harmônica.   .  .  Somando as derivadas de segunda ordem: .  Logo, a função é harmônica.  "
 },
 {
+  "id": "sec-maximos-minimos-completa",
+  "level": "1",
+  "url": "sec-maximos-minimos-completa.html",
+  "type": "Seção",
+  "number": "4.1",
+  "title": "Conceitos Fundamentais e Exercícios",
+  "body": " Conceitos Fundamentais e Exercícios   Extremos Absolutos (Globais)  A análise de máximos e mínimos de funções de várias variáveis é essencial para a resolução de diversos problemas de otimização, sejam eles de natureza geométrica, física ou econômica. Um valor extremo pode ocorrer no interior de uma região do domínio ou na sua fronteira.   Ponto de Máximo Absoluto   Seja uma função de duas variáveis. Dizemos que o ponto é um ponto de máximo absoluto (ou global) de se, para todo e qualquer ponto , a condição for satisfeita. O valor é chamado de valor máximo absoluto da função.     Máximo Absoluto Deslocado   Determine o ponto de máximo absoluto e o valor máximo da função .    Sabemos que qualquer número real elevado ao quadrado resulta em um valor não negativo. Portanto, os termos e são sempre maiores ou iguais a zero.  Como esses termos estão sendo subtraídos de 10, o maior valor possível para a função ocorrerá exatamente quando as parcelas subtraídas forem iguais a zero. Isso acontece quando:    Logo, o ponto é o ponto de máximo absoluto de . O valor máximo da função é .      Ponto de Mínimo Absoluto   De forma análoga, seja uma função de duas variáveis. Dizemos que é ponto de mínimo absoluto (ou global) de se, para todo , tivermos . O valor é chamado de valor mínimo absoluto da função.     Mínimo Absoluto de um Paraboloide Elíptico   Encontre o mínimo absoluto da função .    Observando a estrutura da função, os termos quadrados e assumem sempre valores maiores ou iguais a zero. A soma desses valores com resultará no menor valor possível quando ambos os quadrados se anularem.  Isso ocorre quando e .  Portanto, o ponto é o ponto de mínimo absoluto. Avaliando a função nesse ponto, o valor mínimo absoluto obtido é .       Extremos Relativos (Locais)   Pontos de Máximo e Mínimo Locais   Em muitas situações, um ponto pode não ser o maior ou menor de todo o domínio, mas sim o extremo de uma pequena vizinhança. Seja uma função de duas variáveis. Dizemos que:   a) é ponto de máximo relativo ou local de se existir uma bola aberta (um disco) ao redor do ponto tal que , para todo .  b) é ponto de mínimo relativo ou local de se existir uma bola aberta tal que para todo .      Calha com Múltiplos Mínimos Locais   Analise o comportamento dos pontos de mínimo da função .    Para encontrar o valor mínimo dessa função, notamos que ela é a soma de duas parcelas não negativas. O menor valor possível será zero, que ocorre quando simultaneamente:    A equação possui infinitas soluções, dadas por , onde é um número inteiro ( ).  Dessa forma, a função apresenta infinitos pontos de mínimo (que são, neste caso, tanto locais quanto globais) posicionados nas coordenadas . O gráfico assemelha-se a uma série de ondulações (vales) ao longo do eixo y.        Exercícios Propostos   Encontre os pontos de máximo e de mínimo globais das seguintes funções (caso existam), justificando com base na análise dos termos não negativos:          (Dica: complete os quadrados perfeitos)             "
+},
+{
+  "id": "def-maximo-absoluto",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#def-maximo-absoluto",
+  "type": "Definição",
+  "number": "4.1.1",
+  "title": "Ponto de Máximo Absoluto.",
+  "body": " Ponto de Máximo Absoluto   Seja uma função de duas variáveis. Dizemos que o ponto é um ponto de máximo absoluto (ou global) de se, para todo e qualquer ponto , a condição for satisfeita. O valor é chamado de valor máximo absoluto da função.   "
+},
+{
+  "id": "ex-maximo-absoluto-novo",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#ex-maximo-absoluto-novo",
+  "type": "Exemplo",
+  "number": "4.1.2",
+  "title": "Máximo Absoluto Deslocado.",
+  "body": " Máximo Absoluto Deslocado   Determine o ponto de máximo absoluto e o valor máximo da função .    Sabemos que qualquer número real elevado ao quadrado resulta em um valor não negativo. Portanto, os termos e são sempre maiores ou iguais a zero.  Como esses termos estão sendo subtraídos de 10, o maior valor possível para a função ocorrerá exatamente quando as parcelas subtraídas forem iguais a zero. Isso acontece quando:    Logo, o ponto é o ponto de máximo absoluto de . O valor máximo da função é .    "
+},
+{
+  "id": "def-minimo-absoluto",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#def-minimo-absoluto",
+  "type": "Definição",
+  "number": "4.1.3",
+  "title": "Ponto de Mínimo Absoluto.",
+  "body": " Ponto de Mínimo Absoluto   De forma análoga, seja uma função de duas variáveis. Dizemos que é ponto de mínimo absoluto (ou global) de se, para todo , tivermos . O valor é chamado de valor mínimo absoluto da função.   "
+},
+{
+  "id": "ex-minimo-absoluto-novo",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#ex-minimo-absoluto-novo",
+  "type": "Exemplo",
+  "number": "4.1.4",
+  "title": "Mínimo Absoluto de um Paraboloide Elíptico.",
+  "body": " Mínimo Absoluto de um Paraboloide Elíptico   Encontre o mínimo absoluto da função .    Observando a estrutura da função, os termos quadrados e assumem sempre valores maiores ou iguais a zero. A soma desses valores com resultará no menor valor possível quando ambos os quadrados se anularem.  Isso ocorre quando e .  Portanto, o ponto é o ponto de mínimo absoluto. Avaliando a função nesse ponto, o valor mínimo absoluto obtido é .    "
+},
+{
+  "id": "def-extremos-locais",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#def-extremos-locais",
+  "type": "Definição",
+  "number": "4.1.5",
+  "title": "Pontos de Máximo e Mínimo Locais.",
+  "body": " Pontos de Máximo e Mínimo Locais   Em muitas situações, um ponto pode não ser o maior ou menor de todo o domínio, mas sim o extremo de uma pequena vizinhança. Seja uma função de duas variáveis. Dizemos que:   a) é ponto de máximo relativo ou local de se existir uma bola aberta (um disco) ao redor do ponto tal que , para todo .  b) é ponto de mínimo relativo ou local de se existir uma bola aberta tal que para todo .    "
+},
+{
+  "id": "ex-infinitos-minimos-novo",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#ex-infinitos-minimos-novo",
+  "type": "Exemplo",
+  "number": "4.1.6",
+  "title": "Calha com Múltiplos Mínimos Locais.",
+  "body": " Calha com Múltiplos Mínimos Locais   Analise o comportamento dos pontos de mínimo da função .    Para encontrar o valor mínimo dessa função, notamos que ela é a soma de duas parcelas não negativas. O menor valor possível será zero, que ocorre quando simultaneamente:    A equação possui infinitas soluções, dadas por , onde é um número inteiro ( ).  Dessa forma, a função apresenta infinitos pontos de mínimo (que são, neste caso, tanto locais quanto globais) posicionados nas coordenadas . O gráfico assemelha-se a uma série de ondulações (vales) ao longo do eixo y.     "
+},
+{
+  "id": "exercise-282",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#exercise-282",
+  "type": "Exercício",
+  "number": "4.1.3.1",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "exercise-283",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#exercise-283",
+  "type": "Exercício",
+  "number": "4.1.3.2",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "exercise-284",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#exercise-284",
+  "type": "Exercício",
+  "number": "4.1.3.3",
+  "title": "",
+  "body": " (Dica: complete os quadrados perfeitos)  "
+},
+{
+  "id": "exercise-285",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#exercise-285",
+  "type": "Exercício",
+  "number": "4.1.3.4",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "exercise-286",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#exercise-286",
+  "type": "Exercício",
+  "number": "4.1.3.5",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "exercise-287",
+  "level": "2",
+  "url": "sec-maximos-minimos-completa.html#exercise-287",
+  "type": "Exercício",
+  "number": "4.1.3.6",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "sec-extremos-geral",
+  "level": "1",
+  "url": "sec-extremos-geral.html",
+  "type": "Seção",
+  "number": "4.2",
+  "title": "Identificação e Classificação de Extremos",
+  "body": " Identificação e Classificação de Extremos    Pontos Críticos  O primeiro passo para encontrar os valores máximos ou mínimos de uma função diferenciável é localizar seus pontos candidatos, chamados de pontos críticos.    Seja definida em um conjunto aberto . Um ponto é chamado de ponto crítico de se:   , ou seja, e .  Ou se não é diferenciável em .      Geometricamente, nos pontos críticos onde o gradiente se anula, o plano tangente à superfície é horizontal. Já nos casos em que a função não é diferenciável, o gráfico pode apresentar um \"bico\" ou quina, não admitindo um plano tangente definido naquele ponto.   Ponto Crítico com Plano Tangente Horizontal   Verifique o ponto crítico da função .    Calculamos as derivadas parciais: .  Igualando ambas a zero para encontrar onde o gradiente se anula: .  Portanto, o ponto é um ponto crítico. Como o gráfico é um paraboloide voltado para cima, a superfície possui um plano tangente horizontal em , correspondendo a um mínimo global.     Ponto Crítico por Não Diferenciabilidade   Analise o ponto crítico da função .    Nesta função, as derivadas parciais não existem na origem. O gráfico representa uma superfície cônica com vértice em , apresentando uma quina onde a função não é diferenciável. Por essa razão, é classificado como um ponto crítico.     Ponto Crítico do Tipo Sela   Determine o ponto crítico de .    As derivadas parciais são dadas por: .  O único ponto onde o gradiente é nulo é . Embora o plano tangente seja horizontal, este ponto não é de máximo nem de mínimo, sendo conhecido como ponto de sela.      Classificação de Extremos Locais (O Teste da Segunda Derivada)  Nem todo ponto crítico é um máximo ou mínimo local; ele pode ser um ponto de sela. Para classificar um ponto crítico de uma função cujas derivadas parciais de primeira e segunda ordem são contínuas em um conjunto aberto, utilizamos o determinante da matriz Hessiana:   As regras de decisão para a classificação do ponto crítico são as seguintes:  Se e , então é um mínimo local .  Se e , então é um máximo local .  Se , então é um ponto de sela .  Se , o teste é inconclusivo e nada se pode afirmar.     Classificação em Função Polinomial   Classifique os pontos críticos da função .    As derivadas parciais de primeira ordem são e . Os pontos críticos encontrados ao resolver o sistema são e .  Calculamos as derivadas de segunda ordem: , e . Para o ponto , temos . Como , o ponto é um mínimo local . Para o ponto , . Como , o ponto é um máximo local . Para os pontos , , classificando-os como pontos de sela .     Ponto de Mínimo em Função com Termos Racionais   Verifique a natureza do ponto crítico para .    As derivadas de primeira ordem são e , que se anulam em . As segundas derivadas são , e . No ponto , o determinante hessiano é . Como , o ponto é um mínimo local .     Análise de Múltiplos Pontos Críticos   Analise os pontos críticos de .    As derivadas parciais são e , resultando nos pontos críticos e . O hessiano geral é . Para , e , logo é um mínimo local . Para , e , logo é um máximo local . Para e , , caracterizando pontos de sela .      Exercícios Propostos   Identificação e Classificação de Extremos Locais   Determine os pontos críticos das funções dadas e classifique-os (como máximo local, mínimo local ou ponto de sela), utilizando o critério da segunda derivada quando aplicável.    Determine e classifique os pontos críticos da função .    Encontre os pontos críticos de .    Seja . Verifique que os pontos críticos são , , e e classifique-os.    Encontre e classifique os pontos críticos de .    Classifique os pontos críticos da função polinomial .    Determine e classifique os pontos críticos de .    Analise a natureza dos pontos críticos da função .    Encontre os pontos críticos de e determine se são pontos de máximo, mínimo ou sela.    Classifique os pontos críticos de .    Encontre e classifique os pontos críticos da função racional .    Determine os extremos locais da função exponencial .    Verifique e classifique os pontos críticos de .     "
+},
+{
+  "id": "def-ponto-critico",
+  "level": "2",
+  "url": "sec-extremos-geral.html#def-ponto-critico",
+  "type": "Definição",
+  "number": "4.2.1",
+  "title": "",
+  "body": "  Seja definida em um conjunto aberto . Um ponto é chamado de ponto crítico de se:   , ou seja, e .  Ou se não é diferenciável em .     "
+},
+{
+  "id": "ex-ponto-critico-paraboloide",
+  "level": "2",
+  "url": "sec-extremos-geral.html#ex-ponto-critico-paraboloide",
+  "type": "Exemplo",
+  "number": "4.2.2",
+  "title": "Ponto Crítico com Plano Tangente Horizontal.",
+  "body": " Ponto Crítico com Plano Tangente Horizontal   Verifique o ponto crítico da função .    Calculamos as derivadas parciais: .  Igualando ambas a zero para encontrar onde o gradiente se anula: .  Portanto, o ponto é um ponto crítico. Como o gráfico é um paraboloide voltado para cima, a superfície possui um plano tangente horizontal em , correspondendo a um mínimo global.   "
+},
+{
+  "id": "ex-ponto-critico-cone",
+  "level": "2",
+  "url": "sec-extremos-geral.html#ex-ponto-critico-cone",
+  "type": "Exemplo",
+  "number": "4.2.3",
+  "title": "Ponto Crítico por Não Diferenciabilidade.",
+  "body": " Ponto Crítico por Não Diferenciabilidade   Analise o ponto crítico da função .    Nesta função, as derivadas parciais não existem na origem. O gráfico representa uma superfície cônica com vértice em , apresentando uma quina onde a função não é diferenciável. Por essa razão, é classificado como um ponto crítico.   "
+},
+{
+  "id": "ex-ponto-critico-sela",
+  "level": "2",
+  "url": "sec-extremos-geral.html#ex-ponto-critico-sela",
+  "type": "Exemplo",
+  "number": "4.2.4",
+  "title": "Ponto Crítico do Tipo Sela.",
+  "body": " Ponto Crítico do Tipo Sela   Determine o ponto crítico de .    As derivadas parciais são dadas por: .  O único ponto onde o gradiente é nulo é . Embora o plano tangente seja horizontal, este ponto não é de máximo nem de mínimo, sendo conhecido como ponto de sela.   "
+},
+{
+  "id": "p-1064",
+  "level": "2",
+  "url": "sec-extremos-geral.html#p-1064",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "mínimo local máximo local ponto de sela "
+},
+{
+  "id": "ex-classificacao-polinomio",
+  "level": "2",
+  "url": "sec-extremos-geral.html#ex-classificacao-polinomio",
+  "type": "Exemplo",
+  "number": "4.2.5",
+  "title": "Classificação em Função Polinomial.",
+  "body": " Classificação em Função Polinomial   Classifique os pontos críticos da função .    As derivadas parciais de primeira ordem são e . Os pontos críticos encontrados ao resolver o sistema são e .  Calculamos as derivadas de segunda ordem: , e . Para o ponto , temos . Como , o ponto é um mínimo local . Para o ponto , . Como , o ponto é um máximo local . Para os pontos , , classificando-os como pontos de sela .   "
+},
+{
+  "id": "ex-classificacao-racional",
+  "level": "2",
+  "url": "sec-extremos-geral.html#ex-classificacao-racional",
+  "type": "Exemplo",
+  "number": "4.2.6",
+  "title": "Ponto de Mínimo em Função com Termos Racionais.",
+  "body": " Ponto de Mínimo em Função com Termos Racionais   Verifique a natureza do ponto crítico para .    As derivadas de primeira ordem são e , que se anulam em . As segundas derivadas são , e . No ponto , o determinante hessiano é . Como , o ponto é um mínimo local .   "
+},
+{
+  "id": "ex-classificacao-simetrica",
+  "level": "2",
+  "url": "sec-extremos-geral.html#ex-classificacao-simetrica",
+  "type": "Exemplo",
+  "number": "4.2.7",
+  "title": "Análise de Múltiplos Pontos Críticos.",
+  "body": " Análise de Múltiplos Pontos Críticos   Analise os pontos críticos de .    As derivadas parciais são e , resultando nos pontos críticos e . O hessiano geral é . Para , e , logo é um mínimo local . Para , e , logo é um máximo local . Para e , , caracterizando pontos de sela .   "
+},
+{
+  "id": "exercise-288",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-288",
+  "type": "Exercício",
+  "number": "4.2.3.1",
+  "title": "",
+  "body": " Determine e classifique os pontos críticos da função .  "
+},
+{
+  "id": "exercise-289",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-289",
+  "type": "Exercício",
+  "number": "4.2.3.2",
+  "title": "",
+  "body": " Encontre os pontos críticos de .  "
+},
+{
+  "id": "exercise-290",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-290",
+  "type": "Exercício",
+  "number": "4.2.3.3",
+  "title": "",
+  "body": " Seja . Verifique que os pontos críticos são , , e e classifique-os.  "
+},
+{
+  "id": "exercise-291",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-291",
+  "type": "Exercício",
+  "number": "4.2.3.4",
+  "title": "",
+  "body": " Encontre e classifique os pontos críticos de .  "
+},
+{
+  "id": "exercise-292",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-292",
+  "type": "Exercício",
+  "number": "4.2.3.5",
+  "title": "",
+  "body": " Classifique os pontos críticos da função polinomial .  "
+},
+{
+  "id": "exercise-293",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-293",
+  "type": "Exercício",
+  "number": "4.2.3.6",
+  "title": "",
+  "body": " Determine e classifique os pontos críticos de .  "
+},
+{
+  "id": "exercise-294",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-294",
+  "type": "Exercício",
+  "number": "4.2.3.7",
+  "title": "",
+  "body": " Analise a natureza dos pontos críticos da função .  "
+},
+{
+  "id": "exercise-295",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-295",
+  "type": "Exercício",
+  "number": "4.2.3.8",
+  "title": "",
+  "body": " Encontre os pontos críticos de e determine se são pontos de máximo, mínimo ou sela.  "
+},
+{
+  "id": "exercise-296",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-296",
+  "type": "Exercício",
+  "number": "4.2.3.9",
+  "title": "",
+  "body": " Classifique os pontos críticos de .  "
+},
+{
+  "id": "exercise-297",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-297",
+  "type": "Exercício",
+  "number": "4.2.3.10",
+  "title": "",
+  "body": " Encontre e classifique os pontos críticos da função racional .  "
+},
+{
+  "id": "exercise-298",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-298",
+  "type": "Exercício",
+  "number": "4.2.3.11",
+  "title": "",
+  "body": " Determine os extremos locais da função exponencial .  "
+},
+{
+  "id": "exercise-299",
+  "level": "2",
+  "url": "sec-extremos-geral.html#exercise-299",
+  "type": "Exercício",
+  "number": "4.2.3.12",
+  "title": "",
+  "body": " Verifique e classifique os pontos críticos de .  "
+},
+{
+  "id": "subsec-conjuntos-compactos",
+  "level": "1",
+  "url": "subsec-conjuntos-compactos.html",
+  "type": "Seção",
+  "number": "4.3",
+  "title": "Extremos em Conjuntos Compactos",
+  "body": " Extremos em Conjuntos Compactos  Para funções de várias variáveis, a busca por máximos e mínimos absolutos em regiões que incluem a fronteira é fundamentada pelo seguinte teorema:   Teorema de Weierstrass   Seja uma função contínua no conjunto fechado e limitado (compacto) . Então existem pontos tais que para qualquer ponto .    Em termos práticos, o teorema garante que a função atingirá seu valor máximo e mínimo absoluto se o domínio for \"comportado\". O roteiro para determinação desses valores consiste em:  Localizar os pontos críticos no interior do conjunto e calcular o valor da função nesses pontos.  Determinar os valores extremantes de sobre a fronteira do conjunto .  Comparar todos os valores obtidos: o maior será o máximo absoluto e o menor será o mínimo absoluto no conjunto.     Extremos em uma Região Triangular   Determine o valor máximo e o valor mínimo de no conjunto delimitado pelo triângulo de vértices , e .     1. Análise do Interior: Calculamos as derivadas parciais e igualamos a zero:  O único ponto crítico no interior de é , onde .   2. Análise da Fronteira: A fronteira é composta por três segmentos:  No eixo x ( ): . O mínimo ocorre em com , e o máximo em com .  No eixo y ( ): Analogamente, o mínimo é e o máximo .  Na hipotenusa ( ): A análise revela um valor mínimo de .     3. Conclusão: Comparando os valores obtidos ( ), o valor máximo absoluto é e o valor mínimo absoluto é .     Extremos em um Disco Fechado   Encontre a temperatura máxima e mínima em um disco , onde a temperatura é dada por .     1. Interior:  e . No ponto crítico , temos .   2. Fronteira ( ): Substituindo na função, obtemos uma função de uma variável: para . O máximo dessa parábola ocorre em , resultando nos pontos com temperatura .   3. Conclusão: A temperatura máxima é e a mínima é .     Extremos em um Retângulo   Determine o máximo e o mínimo de na região retangular e .    Como as derivadas parciais são e , nunca se anulam, não há pontos críticos no interior.  Analisando a fronteira (os quatro lados do retângulo):  O valor máximo ocorre no vértice onde ambos e são máximos: .  O valor mínimo ocorre no vértice oposto: .         Determine os valores máximos e mínimos absolutos das funções dadas nas regiões restritas (fechadas e limitadas) indicadas.    Determine o máximo e o mínimo absolutos de na região triangular fechada com vértices , e .    A densidade de uma placa metálica quadrada é dada por . Onde a placa é mais densa e onde é menos densa?    Encontre o valor máximo e o valor mínimo absolutos de no retângulo de vértices , , e .    Encontre os extremos absolutos de no triângulo fechado de vértices , e .    Determine os valores máximo e mínimo absolutos de no disco fechado restrito por .    Encontre o máximo e mínimo absolutos de no domínio retangular definido por e .    Um disco tem a forma do círculo . Supondo que a temperatura nos pontos do disco seja dada por , determine as coordenadas dos pontos mais quentes e mais frios do disco.    Encontre os valores extremos da função na região do primeiro quadrante delimitada pelas inequações , e .    "
+},
+{
+  "id": "teo-weierstrass",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#teo-weierstrass",
+  "type": "Teorema",
+  "number": "4.3.1",
+  "title": "Teorema de Weierstrass.",
+  "body": " Teorema de Weierstrass   Seja uma função contínua no conjunto fechado e limitado (compacto) . Então existem pontos tais que para qualquer ponto .   "
+},
+{
+  "id": "ex-weierstrass-triangulo",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#ex-weierstrass-triangulo",
+  "type": "Exemplo",
+  "number": "4.3.2",
+  "title": "Extremos em uma Região Triangular.",
+  "body": " Extremos em uma Região Triangular   Determine o valor máximo e o valor mínimo de no conjunto delimitado pelo triângulo de vértices , e .     1. Análise do Interior: Calculamos as derivadas parciais e igualamos a zero:  O único ponto crítico no interior de é , onde .   2. Análise da Fronteira: A fronteira é composta por três segmentos:  No eixo x ( ): . O mínimo ocorre em com , e o máximo em com .  No eixo y ( ): Analogamente, o mínimo é e o máximo .  Na hipotenusa ( ): A análise revela um valor mínimo de .     3. Conclusão: Comparando os valores obtidos ( ), o valor máximo absoluto é e o valor mínimo absoluto é .   "
+},
+{
+  "id": "ex-weierstrass-disco",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#ex-weierstrass-disco",
+  "type": "Exemplo",
+  "number": "4.3.3",
+  "title": "Extremos em um Disco Fechado.",
+  "body": " Extremos em um Disco Fechado   Encontre a temperatura máxima e mínima em um disco , onde a temperatura é dada por .     1. Interior:  e . No ponto crítico , temos .   2. Fronteira ( ): Substituindo na função, obtemos uma função de uma variável: para . O máximo dessa parábola ocorre em , resultando nos pontos com temperatura .   3. Conclusão: A temperatura máxima é e a mínima é .   "
+},
+{
+  "id": "ex-weierstrass-retangulo",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#ex-weierstrass-retangulo",
+  "type": "Exemplo",
+  "number": "4.3.4",
+  "title": "Extremos em um Retângulo.",
+  "body": " Extremos em um Retângulo   Determine o máximo e o mínimo de na região retangular e .    Como as derivadas parciais são e , nunca se anulam, não há pontos críticos no interior.  Analisando a fronteira (os quatro lados do retângulo):  O valor máximo ocorre no vértice onde ambos e são máximos: .  O valor mínimo ocorre no vértice oposto: .     "
+},
+{
+  "id": "exercise-300",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-300",
+  "type": "Exercício",
+  "number": "4.3.1",
+  "title": "",
+  "body": " Determine o máximo e o mínimo absolutos de na região triangular fechada com vértices , e .  "
+},
+{
+  "id": "exercise-301",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-301",
+  "type": "Exercício",
+  "number": "4.3.2",
+  "title": "",
+  "body": " A densidade de uma placa metálica quadrada é dada por . Onde a placa é mais densa e onde é menos densa?  "
+},
+{
+  "id": "exercise-302",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-302",
+  "type": "Exercício",
+  "number": "4.3.3",
+  "title": "",
+  "body": " Encontre o valor máximo e o valor mínimo absolutos de no retângulo de vértices , , e .  "
+},
+{
+  "id": "exercise-303",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-303",
+  "type": "Exercício",
+  "number": "4.3.4",
+  "title": "",
+  "body": " Encontre os extremos absolutos de no triângulo fechado de vértices , e .  "
+},
+{
+  "id": "exercise-304",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-304",
+  "type": "Exercício",
+  "number": "4.3.5",
+  "title": "",
+  "body": " Determine os valores máximo e mínimo absolutos de no disco fechado restrito por .  "
+},
+{
+  "id": "exercise-305",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-305",
+  "type": "Exercício",
+  "number": "4.3.6",
+  "title": "",
+  "body": " Encontre o máximo e mínimo absolutos de no domínio retangular definido por e .  "
+},
+{
+  "id": "exercise-306",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-306",
+  "type": "Exercício",
+  "number": "4.3.7",
+  "title": "",
+  "body": " Um disco tem a forma do círculo . Supondo que a temperatura nos pontos do disco seja dada por , determine as coordenadas dos pontos mais quentes e mais frios do disco.  "
+},
+{
+  "id": "exercise-307",
+  "level": "2",
+  "url": "subsec-conjuntos-compactos.html#exercise-307",
+  "type": "Exercício",
+  "number": "4.3.8",
+  "title": "",
+  "body": " Encontre os valores extremos da função na região do primeiro quadrante delimitada pelas inequações , e .  "
+},
+{
+  "id": "sec-max-min-condicionados",
+  "level": "1",
+  "url": "sec-max-min-condicionados.html",
+  "type": "Seção",
+  "number": "4.4",
+  "title": "Otimização com Restrições: Multiplicadores de Lagrange",
+  "body": " Otimização com Restrições: Multiplicadores de Lagrange   Fundamentação Teórica e Geométrica  Diferentemente da otimização livre, onde procuramos extremos em todo o domínio de uma função, a otimização condicionada busca o maior ou menor valor de uma função sobre um subconjunto restrito por uma ou mais equações denominadas vínculos.  Geometricamente, para uma função de duas variáveis sujeita a uma restrição , o valor extremo ocorre no ponto onde a curva de nível da função objetivo é tangente à curva da restrição. Nesse ponto de tangência, os vetores gradientes e são paralelos.   Condição Necessária para Extremante Condicionado (Uma Restrição)   Seja uma função diferenciável e uma função com derivadas parciais contínuas tal que sobre a curva . Uma condição necessária para que seja um extremante local de sujeita a é que exista um número real tal que: .     Multiplicador de Lagrange e Função Lagrangeana   O número real é chamado de multiplicador de Lagrange . Para resolver o sistema de equações resultante, define-se a função lagrangeana : .     Condição Necessária para Extremante Condicionado (Duas Restrições)   Seja diferenciável e sujeita às restrições e , com gradientes e linearmente independentes. Se é um ponto extremante, então existem números reais e tais que: .      Procedimento de Cálculo  Para determinar os candidatos a pontos de máximo ou mínimo, seguimos os passos:  Escrever a restrição na forma .  Montar o sistema de equações lineares ou não-lineares a partir de .  Resolver o sistema para encontrar as coordenadas e os multiplicadores.  Avaliar a função em todos os pontos críticos encontrados para identificar os valores máximos e mínimos.      Exemplos de Aplicação   Área Máxima de um Galpão   Determine a área máxima de um galpão retangular cujas dimensões e estão restritas pela reta .    Objetivo: Max sujeito a . A lagrangeana é . O sistema gerado por é: . Substituindo, temos . Assim, e , resultando em uma área máxima de .     Ponto mais Próximo do Plano à Origem   Determine o ponto do plano que minimiza a distância à origem.    Minimizamos o quadrado da distância sujeito a . Resolvendo , obtemos o sistema: . Substituindo na equação do plano: . Logo, o ponto é .     Minimização com Duas Restrições Simultâneas   Determine o ponto da reta de intersecção dos planos e que esteja mais próximo da origem.    Minimizamos sujeita às duas restrições. A função lagrangeana é: . Derivando e igualando a zero, formamos um sistema linear de 5 equações. A solução do sistema nos fornece os multiplicadores e . O ponto correspondente à distância mínima é .     Distância de um Ponto a uma Curva   Determinar o ponto da curva , no primeiro quadrante, cuja distância até o ponto seja mínima.    Minimizamos o quadrado da distância com a restrição . A lagrangeana é . Igualando as derivadas a zero: . Da segunda equação, temos ou . Se , então , o que nos dá a distância ao quadrado igual a 16. Se , a primeira equação resulta em . Assim, . Para , a distância ao quadrado é 12. Como 12 < 16, a distância mínima ocorre no ponto .     Minimização de Custo de Material (Embalagem)   Um fabricante deve produzir caixas retangulares de volume . Determine as dimensões da caixa que minimizem a área superficial, garantindo o menor custo de material.    A área superficial é dada por , ou minimizando sua metade, podemos usar a função custo sujeita à restrição de volume . A função lagrangeana é . Igualando as derivadas a zero: . Multiplicando as equações apropriadamente e igualando-as, concluímos que . Substituindo na restrição de volume, obtemos . As dimensões ideais da embalagem são .     Problema Numérico de Otimização   Determinar três números positivos cujo produto seja 100 e cuja soma seja a menor possível.    Queremos minimizar sujeita a (com ). . Temos , , e . Isso implica que . Como , dividindo as equações deduzimos que . Substituindo na restrição: . Os três números procurados são idênticos e iguais à raiz cúbica de 100.      Exercícios Propostos   Otimização com uma Restrição (Duas Variáveis)  Determine os pontos de máximo e\/ou mínimo condicionados usando os multiplicadores de Lagrange.  Maximize e minimize sujeito a .  Encontre os extremos de sobre a circunferência .  Determine os valores extremos de sujeitos à restrição linear .  Encontre os máximos e mínimos de sujeito à elipse .  Determine os valores extremos de com a restrição .    Otimização com Múltiplas Variáveis ou Restrições  Determine os pontos que otimizam as funções abaixo dadas as restrições indicadas.  Encontre o mínimo da função no plano .  Determine o ponto do plano para o qual a função seja mínima.  Determine o ponto no plano cuja distância exata ao ponto seja a menor possível.  A reta é dada pela intersecção dos planos e . Determine o ponto de mais próximo da origem.  Determine três números positivos cuja soma seja 120 e cujo produto seja o máximo possível.    Aplicações Práticas e Modelagem Geométrica  Para os problemas abaixo, construa a função objetivo e as funções de restrição antes de aplicar o método de Lagrange.  Determinar a distância mínima absoluta entre o ponto e a parábola descrita por .  Uma firma de embalagem fabrica caixas retangulares com volume de . O material lateral custa a metade do material da tampa e do fundo. Determine as dimensões que minimizam este custo.  Calcule as dimensões analíticas de um retângulo de área máxima que pode ser inscrito em uma semicircunferência de raio .  Mostre matematicamente que o paralelepípedo retângulo de maior volume que pode ser inscrito perfeitamente dentro de uma esfera qualquer tem a forma de um cubo.  Determine as dimensões do paralelepípedo de maior volume que pode ser inscrito no tetraedro limitado pelos planos coordenados e pelo plano .    "
+},
+{
+  "id": "prop-lagrange-uma-restricao",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#prop-lagrange-uma-restricao",
+  "type": "Proposição",
+  "number": "4.4.1",
+  "title": "Condição Necessária para Extremante Condicionado (Uma Restrição).",
+  "body": " Condição Necessária para Extremante Condicionado (Uma Restrição)   Seja uma função diferenciável e uma função com derivadas parciais contínuas tal que sobre a curva . Uma condição necessária para que seja um extremante local de sujeita a é que exista um número real tal que: .   "
+},
+{
+  "id": "def-multiplicador-lagrange",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#def-multiplicador-lagrange",
+  "type": "Definição",
+  "number": "4.4.2",
+  "title": "Multiplicador de Lagrange e Função Lagrangeana.",
+  "body": " Multiplicador de Lagrange e Função Lagrangeana   O número real é chamado de multiplicador de Lagrange . Para resolver o sistema de equações resultante, define-se a função lagrangeana : .   "
+},
+{
+  "id": "prop-lagrange-duas-restricoes",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#prop-lagrange-duas-restricoes",
+  "type": "Proposição",
+  "number": "4.4.3",
+  "title": "Condição Necessária para Extremante Condicionado (Duas Restrições).",
+  "body": " Condição Necessária para Extremante Condicionado (Duas Restrições)   Seja diferenciável e sujeita às restrições e , com gradientes e linearmente independentes. Se é um ponto extremante, então existem números reais e tais que: .   "
+},
+{
+  "id": "ex-otimizacao-galpao",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#ex-otimizacao-galpao",
+  "type": "Exemplo",
+  "number": "4.4.4",
+  "title": "Área Máxima de um Galpão.",
+  "body": " Área Máxima de um Galpão   Determine a área máxima de um galpão retangular cujas dimensões e estão restritas pela reta .    Objetivo: Max sujeito a . A lagrangeana é . O sistema gerado por é: . Substituindo, temos . Assim, e , resultando em uma área máxima de .   "
+},
+{
+  "id": "ex-distancia-plano",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#ex-distancia-plano",
+  "type": "Exemplo",
+  "number": "4.4.5",
+  "title": "Ponto mais Próximo do Plano à Origem.",
+  "body": " Ponto mais Próximo do Plano à Origem   Determine o ponto do plano que minimiza a distância à origem.    Minimizamos o quadrado da distância sujeito a . Resolvendo , obtemos o sistema: . Substituindo na equação do plano: . Logo, o ponto é .   "
+},
+{
+  "id": "ex-interseccao-planos",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#ex-interseccao-planos",
+  "type": "Exemplo",
+  "number": "4.4.6",
+  "title": "Minimização com Duas Restrições Simultâneas.",
+  "body": " Minimização com Duas Restrições Simultâneas   Determine o ponto da reta de intersecção dos planos e que esteja mais próximo da origem.    Minimizamos sujeita às duas restrições. A função lagrangeana é: . Derivando e igualando a zero, formamos um sistema linear de 5 equações. A solução do sistema nos fornece os multiplicadores e . O ponto correspondente à distância mínima é .   "
+},
+{
+  "id": "ex-distancia-curva-ponto",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#ex-distancia-curva-ponto",
+  "type": "Exemplo",
+  "number": "4.4.7",
+  "title": "Distância de um Ponto a uma Curva.",
+  "body": " Distância de um Ponto a uma Curva   Determinar o ponto da curva , no primeiro quadrante, cuja distância até o ponto seja mínima.    Minimizamos o quadrado da distância com a restrição . A lagrangeana é . Igualando as derivadas a zero: . Da segunda equação, temos ou . Se , então , o que nos dá a distância ao quadrado igual a 16. Se , a primeira equação resulta em . Assim, . Para , a distância ao quadrado é 12. Como 12 < 16, a distância mínima ocorre no ponto .   "
+},
+{
+  "id": "ex-otimizacao-embalagens",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#ex-otimizacao-embalagens",
+  "type": "Exemplo",
+  "number": "4.4.8",
+  "title": "Minimização de Custo de Material (Embalagem).",
+  "body": " Minimização de Custo de Material (Embalagem)   Um fabricante deve produzir caixas retangulares de volume . Determine as dimensões da caixa que minimizem a área superficial, garantindo o menor custo de material.    A área superficial é dada por , ou minimizando sua metade, podemos usar a função custo sujeita à restrição de volume . A função lagrangeana é . Igualando as derivadas a zero: . Multiplicando as equações apropriadamente e igualando-as, concluímos que . Substituindo na restrição de volume, obtemos . As dimensões ideais da embalagem são .   "
+},
+{
+  "id": "ex-tres-numeros",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#ex-tres-numeros",
+  "type": "Exemplo",
+  "number": "4.4.9",
+  "title": "Problema Numérico de Otimização.",
+  "body": " Problema Numérico de Otimização   Determinar três números positivos cujo produto seja 100 e cuja soma seja a menor possível.    Queremos minimizar sujeita a (com ). . Temos , , e . Isso implica que . Como , dividindo as equações deduzimos que . Substituindo na restrição: . Os três números procurados são idênticos e iguais à raiz cúbica de 100.   "
+},
+{
+  "id": "exercise-308",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-308",
+  "type": "Exercício",
+  "number": "4.4.4.1",
+  "title": "",
+  "body": "Maximize e minimize sujeito a . "
+},
+{
+  "id": "exercise-309",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-309",
+  "type": "Exercício",
+  "number": "4.4.4.2",
+  "title": "",
+  "body": "Encontre os extremos de sobre a circunferência . "
+},
+{
+  "id": "exercise-310",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-310",
+  "type": "Exercício",
+  "number": "4.4.4.3",
+  "title": "",
+  "body": "Determine os valores extremos de sujeitos à restrição linear . "
+},
+{
+  "id": "exercise-311",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-311",
+  "type": "Exercício",
+  "number": "4.4.4.4",
+  "title": "",
+  "body": "Encontre os máximos e mínimos de sujeito à elipse . "
+},
+{
+  "id": "exercise-312",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-312",
+  "type": "Exercício",
+  "number": "4.4.4.5",
+  "title": "",
+  "body": "Determine os valores extremos de com a restrição . "
+},
+{
+  "id": "exercise-313",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-313",
+  "type": "Exercício",
+  "number": "4.4.4.6",
+  "title": "",
+  "body": "Encontre o mínimo da função no plano . "
+},
+{
+  "id": "exercise-314",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-314",
+  "type": "Exercício",
+  "number": "4.4.4.7",
+  "title": "",
+  "body": "Determine o ponto do plano para o qual a função seja mínima. "
+},
+{
+  "id": "exercise-315",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-315",
+  "type": "Exercício",
+  "number": "4.4.4.8",
+  "title": "",
+  "body": "Determine o ponto no plano cuja distância exata ao ponto seja a menor possível. "
+},
+{
+  "id": "exercise-316",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-316",
+  "type": "Exercício",
+  "number": "4.4.4.9",
+  "title": "",
+  "body": "A reta é dada pela intersecção dos planos e . Determine o ponto de mais próximo da origem. "
+},
+{
+  "id": "exercise-317",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-317",
+  "type": "Exercício",
+  "number": "4.4.4.10",
+  "title": "",
+  "body": "Determine três números positivos cuja soma seja 120 e cujo produto seja o máximo possível. "
+},
+{
+  "id": "exercise-318",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-318",
+  "type": "Exercício",
+  "number": "4.4.4.11",
+  "title": "",
+  "body": "Determinar a distância mínima absoluta entre o ponto e a parábola descrita por . "
+},
+{
+  "id": "exercise-319",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-319",
+  "type": "Exercício",
+  "number": "4.4.4.12",
+  "title": "",
+  "body": "Uma firma de embalagem fabrica caixas retangulares com volume de . O material lateral custa a metade do material da tampa e do fundo. Determine as dimensões que minimizam este custo. "
+},
+{
+  "id": "exercise-320",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-320",
+  "type": "Exercício",
+  "number": "4.4.4.13",
+  "title": "",
+  "body": "Calcule as dimensões analíticas de um retângulo de área máxima que pode ser inscrito em uma semicircunferência de raio . "
+},
+{
+  "id": "exercise-321",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-321",
+  "type": "Exercício",
+  "number": "4.4.4.14",
+  "title": "",
+  "body": "Mostre matematicamente que o paralelepípedo retângulo de maior volume que pode ser inscrito perfeitamente dentro de uma esfera qualquer tem a forma de um cubo. "
+},
+{
+  "id": "exercise-322",
+  "level": "2",
+  "url": "sec-max-min-condicionados.html#exercise-322",
+  "type": "Exercício",
+  "number": "4.4.4.15",
+  "title": "",
+  "body": "Determine as dimensões do paralelepípedo de maior volume que pode ser inscrito no tetraedro limitado pelos planos coordenados e pelo plano . "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
   "type": "Referêcias",
-  "number": "4",
+  "number": "5",
   "title": "Referências Bibliográficas",
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-1028",
+  "id": "p-1144",
   "level": "2",
-  "url": "referencias.html#p-1028",
+  "url": "referencias.html#p-1144",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1029",
+  "id": "p-1145",
   "level": "2",
-  "url": "referencias.html#p-1029",
+  "url": "referencias.html#p-1145",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
