@@ -9,15 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
 <div class="para logical">
-<div class="para">As derivadas parciais são dadas por:</div>
+<div class="para">Para encontrar o valor mínimo dessa função, notamos que ela é a soma de duas parcelas não negativas. O menor valor possível será zero, que ocorre quando simultaneamente:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial x} = 2x \quad \text{e} \quad \frac{\partial f}{\partial y} = -2y\text{.}
+(x-2)^2 = 0 \implies x = 2
 \end{equation*}
 </div>
-</div> <div class="para">O único ponto onde o gradiente é nulo é <span class="process-math">\((0,0)\text{.}\)</span> Embora o plano tangente seja horizontal, este ponto não é de máximo nem de mínimo, sendo conhecido como ponto de sela.</div>
-</div></body>
+<div class="displaymath process-math">
+\begin{equation*}
+\sin^2(y) = 0 \implies \sin(y) = 0
+\end{equation*}
+</div>
+</div> <div class="para">A equação <span class="process-math">\(\sin(y) = 0\)</span> possui infinitas soluções, dadas por <span class="process-math">\(y = k\pi\text{,}\)</span> onde <span class="process-math">\(k\)</span> é um número inteiro (<span class="process-math">\(k \in \mathbb{Z}\)</span>).</div> <div class="para">Dessa forma, a função apresenta infinitos pontos de mínimo (que são, neste caso, tanto locais quanto globais) posicionados nas coordenadas <span class="process-math">\((2, k\pi)\text{.}\)</span> O gráfico assemelha-se a uma série de ondulações (vales) ao longo do eixo y.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-13"><script type="text/x-sage">var('y')
+f = (x-2)^2 + sin(y)^2
+plot3d(f, (x,0,4), (y,-1,10), mesh=True)
+</script></pre> </div></body>
 </html>

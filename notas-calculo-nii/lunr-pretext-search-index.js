@@ -3463,7 +3463,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.5",
   "title": "Regra da Cadeia",
-  "body": " Regra da Cadeia   Casos Específicos de Função Composta  No estudo de funções de uma variável, usamos a regra da cadeia para derivar funções compostas. Para funções de várias variáveis, a ideia é semelhante, mas precisamos levar em conta todas as variáveis intermediárias envolvidas.   Caso I (Uma variável independente final): Seja uma função de duas variáveis e sejam e funções de uma variável . A função composta depende apenas de .   Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão usando o vetor gradiente: na qual e, consequentemente, .     Caso II (Duas ou mais variáveis independentes finais): Sejam e as variáveis intermediárias dadas por e . A função composta é .   Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações podem ser reescritas de forma compacta em uma forma matricial: .    Essas regras podem ser generalizadas naturalmente para qualquer número de variáveis intermediárias e finais, bastando somar os produtos das derivadas ao longo de todos os \"caminhos\" que ligam a variável dependente à variável independente em questão.    Exemplos Resolvidos   Aplicação do Caso I   Dada a função , com e , encontre a derivada para .    Usando a regra da cadeia do Caso I:   .  Calculando as derivadas:    e    Substituindo e :  .     Mudança para Coordenadas Polares (Caso II)   Dada , com e , encontre as derivadas parciais e .    Usando a regra da cadeia (Caso II):   .   .   .   .      Exercícios  Baseado nos conceitos da Regra da Cadeia, resolva os exercícios a seguir.   Derivadas de Funções de Uma Variável Independente (Caso I)   Determine usando a regra da cadeia:    , onde e .    , onde e .    , onde e .    , onde e .     Derivadas Parciais de Funções Compostas (Caso II e Generalizações)   Determine as derivadas parciais solicitadas usando a regra da cadeia:    Seja , com e . Calcule e .    Determine e para , com e .    Dada a função com e , encontre e .    Determine e para , com e .    Determine as derivadas parciais e para , onde , e .     Aplicações Teóricas   Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e calcule e . Depois substitua na equação fornecida.     "
+  "body": " Regra da Cadeia   Casos Específicos de Função Composta  No estudo de funções de uma variável, usamos a regra da cadeia para derivar funções compostas. Para funções de várias variáveis, a ideia é semelhante, mas precisamos levar em conta todas as variáveis intermediárias envolvidas.   Caso I (Uma variável independente final): Seja uma função de duas variáveis e sejam e funções de uma variável . A função composta depende apenas de .   Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão compactamente usando o produto do vetor gradiente de pelo vetor derivada de (ou em notação matricial): na qual .     Caso II (Duas ou mais variáveis independentes finais): Sejam e as variáveis intermediárias dadas por e . A função composta é .   Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações são essencialmente o produto da matriz Jacobiana da função externa pela matriz Jacobiana das funções internas: .    Essas regras matriciais generalizam-se para qualquer número de variáveis: a matriz Jacobiana da função composta é sempre o produto das matrizes Jacobianas das funções que a compõem.    Exemplos Resolvidos   Aplicação Vetorial (Caso I)   Dada a função , com e , encontre a derivada para utilizando notação matricial.    As derivadas parciais de formam o vetor (matriz ):   .  As derivadas de e formam o vetor coluna (matriz ):   .  Avaliando o vetor de em e :   .  Aplicando o produto matricial:    .     Mudança para Coordenadas Polares (Matricial)   Dada , com e , encontre as derivadas parciais e utilizando o produto da matriz Jacobiana.    A matriz das derivadas parciais de em relação a e é:   .  A matriz Jacobiana da transformação polar é:   .  A Regra da Cadeia nos dá:   .  Realizando a multiplicação matriz linha por matriz coluna, obtemos diretamente o par de equações:    .     Uma Variável Final, Três Intermediárias   Seja , onde , e . Calcule usando notação vetorial.    O vetor gradiente de é:   .  O vetor derivada das variáveis intermediárias em relação a é:   .  A derivada total é o produto matricial:   .  Substituindo em termos de :        Múltiplas Variáveis Independentes Finais   Considere , com as variáveis intermediárias e . Encontre as parciais e matricialmente.    Temos a relação matricial :   .  Calculando a matriz Jacobiana de em relação a :   .  Multiplicando:   .  Isso resulta no sistema:  .     Três Intermediárias e Duas Finais   Determine e para a função , sabendo que , e .    A formulação matricial é :   .  Calculando as derivadas:   .  Efetuando a multiplicação da matriz pela matriz :    .      Exercícios  Baseado nos conceitos da Regra da Cadeia e notação matricial, resolva os 20 exercícios a seguir.   Derivadas de Funções de Uma Variável Independente Final (Caso I)   Determine a derivada total ( ou ) usando a regra da cadeia:    , onde e .    , onde e .    , onde e .    , onde e .    , onde e .    , onde , e .     Derivadas Parciais de Funções Compostas (Múltiplas Variáveis Finais)   Determine as derivadas parciais solicitadas formando as matrizes Jacobianas:    Seja , com e . Calcule e .    Determine e para , com e .    Dada a função com e , encontre e .    Determine e para , com e .    Determine as derivadas parciais e para , onde , e .    Calcule e se , sendo e .    Determine e se , sabendo que e .    Seja , com , e . Encontre e .    Dada , onde e . Mostre usando matrizes que e .    Calcule e sabendo que , com , e .     Aplicações Teóricas e Demonstrações   Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e aplique a formulação em bloco matricial.    Seja , onde é diferenciável e são constantes. Prove que .    Se , demonstre que .    Suponha que . Fazendo as substituições , , , aplique a regra da cadeia para provar que .     "
 },
 {
   "id": "teo-regra-cadeia-caso1",
@@ -3472,7 +3472,7 @@ var ptx_lunr_docs = [
   "type": "Teorema",
   "number": "3.5.1",
   "title": "Regra da Cadeia - Caso I.",
-  "body": " Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão usando o vetor gradiente: na qual e, consequentemente, .   "
+  "body": " Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão compactamente usando o produto do vetor gradiente de pelo vetor derivada de (ou em notação matricial): na qual .   "
 },
 {
   "id": "teo-regra-cadeia-caso2",
@@ -3481,25 +3481,52 @@ var ptx_lunr_docs = [
   "type": "Teorema",
   "number": "3.5.2",
   "title": "Regra da Cadeia - Caso II.",
-  "body": " Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações podem ser reescritas de forma compacta em uma forma matricial: .   "
+  "body": " Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações são essencialmente o produto da matriz Jacobiana da função externa pela matriz Jacobiana das funções internas: .   "
 },
 {
-  "id": "ex-cadeia-caso1",
+  "id": "ex-cadeia-vetorial-1",
   "level": "2",
-  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-caso1",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-vetorial-1",
   "type": "Exemplo",
   "number": "3.5.3",
-  "title": "Aplicação do Caso I.",
-  "body": " Aplicação do Caso I   Dada a função , com e , encontre a derivada para .    Usando a regra da cadeia do Caso I:   .  Calculando as derivadas:    e    Substituindo e :  .   "
+  "title": "Aplicação Vetorial (Caso I).",
+  "body": " Aplicação Vetorial (Caso I)   Dada a função , com e , encontre a derivada para utilizando notação matricial.    As derivadas parciais de formam o vetor (matriz ):   .  As derivadas de e formam o vetor coluna (matriz ):   .  Avaliando o vetor de em e :   .  Aplicando o produto matricial:    .   "
 },
 {
-  "id": "ex-cadeia-polar",
+  "id": "ex-cadeia-polar-matriz",
   "level": "2",
-  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-polar",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-polar-matriz",
   "type": "Exemplo",
   "number": "3.5.4",
-  "title": "Mudança para Coordenadas Polares (Caso II).",
-  "body": " Mudança para Coordenadas Polares (Caso II)   Dada , com e , encontre as derivadas parciais e .    Usando a regra da cadeia (Caso II):   .   .   .   .   "
+  "title": "Mudança para Coordenadas Polares (Matricial).",
+  "body": " Mudança para Coordenadas Polares (Matricial)   Dada , com e , encontre as derivadas parciais e utilizando o produto da matriz Jacobiana.    A matriz das derivadas parciais de em relação a e é:   .  A matriz Jacobiana da transformação polar é:   .  A Regra da Cadeia nos dá:   .  Realizando a multiplicação matriz linha por matriz coluna, obtemos diretamente o par de equações:    .   "
+},
+{
+  "id": "ex-cadeia-3-intermediarias",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-3-intermediarias",
+  "type": "Exemplo",
+  "number": "3.5.5",
+  "title": "Uma Variável Final, Três Intermediárias.",
+  "body": " Uma Variável Final, Três Intermediárias   Seja , onde , e . Calcule usando notação vetorial.    O vetor gradiente de é:   .  O vetor derivada das variáveis intermediárias em relação a é:   .  A derivada total é o produto matricial:   .  Substituindo em termos de :      "
+},
+{
+  "id": "ex-cadeia-2-intermediarias-com-exp",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-2-intermediarias-com-exp",
+  "type": "Exemplo",
+  "number": "3.5.6",
+  "title": "Múltiplas Variáveis Independentes Finais.",
+  "body": " Múltiplas Variáveis Independentes Finais   Considere , com as variáveis intermediárias e . Encontre as parciais e matricialmente.    Temos a relação matricial :   .  Calculando a matriz Jacobiana de em relação a :   .  Multiplicando:   .  Isso resulta no sistema:  .   "
+},
+{
+  "id": "ex-cadeia-3x2",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-3x2",
+  "type": "Exemplo",
+  "number": "3.5.7",
+  "title": "Três Intermediárias e Duas Finais.",
+  "body": " Três Intermediárias e Duas Finais   Determine e para a função , sabendo que , e .    A formulação matricial é :   .  Calculando as derivadas:   .  Efetuando a multiplicação da matriz pela matriz :    .   "
 },
 {
   "id": "exercise-237",
@@ -3544,7 +3571,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.5.3.5",
   "title": "",
-  "body": " Seja , com e . Calcule e .  "
+  "body": " , onde e .  "
 },
 {
   "id": "exercise-242",
@@ -3553,7 +3580,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.5.3.6",
   "title": "",
-  "body": " Determine e para , com e .  "
+  "body": " , onde , e .  "
 },
 {
   "id": "exercise-243",
@@ -3562,7 +3589,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.5.3.7",
   "title": "",
-  "body": " Dada a função com e , encontre e .  "
+  "body": " Seja , com e . Calcule e .  "
 },
 {
   "id": "exercise-244",
@@ -3580,7 +3607,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.5.3.9",
   "title": "",
-  "body": " Determine as derivadas parciais e para , onde , e .  "
+  "body": " Dada a função com e , encontre e .  "
 },
 {
   "id": "exercise-246",
@@ -3589,7 +3616,97 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "3.5.3.10",
   "title": "",
-  "body": " Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e calcule e . Depois substitua na equação fornecida.  "
+  "body": " Determine e para , com e .  "
+},
+{
+  "id": "exercise-247",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-247",
+  "type": "Exercício",
+  "number": "3.5.3.11",
+  "title": "",
+  "body": " Determine as derivadas parciais e para , onde , e .  "
+},
+{
+  "id": "exercise-248",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-248",
+  "type": "Exercício",
+  "number": "3.5.3.12",
+  "title": "",
+  "body": " Calcule e se , sendo e .  "
+},
+{
+  "id": "exercise-249",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-249",
+  "type": "Exercício",
+  "number": "3.5.3.13",
+  "title": "",
+  "body": " Determine e se , sabendo que e .  "
+},
+{
+  "id": "exercise-250",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-250",
+  "type": "Exercício",
+  "number": "3.5.3.14",
+  "title": "",
+  "body": " Seja , com , e . Encontre e .  "
+},
+{
+  "id": "exercise-251",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-251",
+  "type": "Exercício",
+  "number": "3.5.3.15",
+  "title": "",
+  "body": " Dada , onde e . Mostre usando matrizes que e .  "
+},
+{
+  "id": "exercise-252",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-252",
+  "type": "Exercício",
+  "number": "3.5.3.16",
+  "title": "",
+  "body": " Calcule e sabendo que , com , e .  "
+},
+{
+  "id": "exercise-253",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-253",
+  "type": "Exercício",
+  "number": "3.5.3.17",
+  "title": "",
+  "body": " Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e aplique a formulação em bloco matricial.  "
+},
+{
+  "id": "exercise-254",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-254",
+  "type": "Exercício",
+  "number": "3.5.3.18",
+  "title": "",
+  "body": " Seja , onde é diferenciável e são constantes. Prove que .  "
+},
+{
+  "id": "exercise-255",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-255",
+  "type": "Exercício",
+  "number": "3.5.3.19",
+  "title": "",
+  "body": " Se , demonstre que .  "
+},
+{
+  "id": "exercise-256",
+  "level": "2",
+  "url": "sec-conteudo-regra-cadeia.html#exercise-256",
+  "type": "Exercício",
+  "number": "3.5.3.20",
+  "title": "",
+  "body": " Suponha que . Fazendo as substituições , , , aplique a regra da cadeia para provar que .  "
 },
 {
   "id": "sec-conteudo-derivada-direcional",
@@ -3691,135 +3808,135 @@ var ptx_lunr_docs = [
   "body": "   Dada a função , determine a taxa máxima de variação no ponto e a direção em que ela ocorre.     1. Calcular o gradiente:        2. Avaliar no ponto : Note que . Como , temos:    3. Taxa máxima de variação: É o módulo do gradiente neste ponto.    4. Direção: Ocorre na direção do vetor gradiente .   "
 },
 {
-  "id": "exercise-247",
+  "id": "exercise-257",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-247",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-257",
   "type": "Exercício",
   "number": "3.6.4.1",
   "title": "",
   "body": " Determine a derivada direcional de no ponto na direção do vetor .  "
 },
 {
-  "id": "exercise-248",
+  "id": "exercise-258",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-248",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-258",
   "type": "Exercício",
   "number": "3.6.4.2",
   "title": "",
   "body": " Calcule a derivada direcional de no ponto na direção que forma um ângulo de com o eixo positivo. (Dica: o vetor unitário é ) .  "
 },
 {
-  "id": "exercise-249",
+  "id": "exercise-259",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-249",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-259",
   "type": "Exercício",
   "number": "3.6.4.3",
   "title": "",
   "body": " Encontre a derivada direcional de no ponto na direção do vetor .  "
 },
 {
-  "id": "exercise-250",
+  "id": "exercise-260",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-250",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-260",
   "type": "Exercício",
   "number": "3.6.4.4",
   "title": "",
   "body": " Calcule a derivada direcional de no ponto na direção do vetor que aponta desse ponto para a origem .  "
 },
 {
-  "id": "exercise-251",
+  "id": "exercise-261",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-251",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-261",
   "type": "Exercício",
   "number": "3.6.4.5",
   "title": "",
   "body": " Encontre a derivada direcional de no ponto na direção do vetor .  "
 },
 {
-  "id": "exercise-252",
+  "id": "exercise-262",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-252",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-262",
   "type": "Exercício",
   "number": "3.6.4.6",
   "title": "",
   "body": " Determine a derivada direcional de no ponto na direção que forma um ângulo de com o eixo positivo.  "
 },
 {
-  "id": "exercise-253",
+  "id": "exercise-263",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-253",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-263",
   "type": "Exercício",
   "number": "3.6.4.7",
   "title": "",
   "body": " Dada a função , encontre a taxa máxima de variação no ponto e a direção em que ela ocorre.  "
 },
 {
-  "id": "exercise-254",
+  "id": "exercise-264",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-254",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-264",
   "type": "Exercício",
   "number": "3.6.4.8",
   "title": "",
   "body": " A temperatura num ponto de uma sala é dada por . Em qual direção a temperatura aumenta mais rapidamente a partir do ponto ? Qual é a taxa máxima de aumento?  "
 },
 {
-  "id": "exercise-255",
+  "id": "exercise-265",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-255",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-265",
   "type": "Exercício",
   "number": "3.6.4.9",
   "title": "",
   "body": " Para a função , determine a direção de maior crescimento no ponto e calcule o valor dessa taxa máxima.  "
 },
 {
-  "id": "exercise-256",
+  "id": "exercise-266",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-256",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-266",
   "type": "Exercício",
   "number": "3.6.4.10",
   "title": "",
   "body": " O relevo de uma montanha é modelado pela função . Se um alpinista está localizado no ponto , em que direção (dada por um vetor unitário) ele deve caminhar para subir o mais rapidamente possível?  "
 },
 {
-  "id": "exercise-257",
+  "id": "exercise-267",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-257",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-267",
   "type": "Exercício",
   "number": "3.6.4.11",
   "title": "",
   "body": " Considere . Encontre a taxa máxima de variação no ponto e a direção em que ela ocorre.  "
 },
 {
-  "id": "exercise-258",
+  "id": "exercise-268",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-258",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-268",
   "type": "Exercício",
   "number": "3.6.4.12",
   "title": "",
   "body": " Suponha que o vetor gradiente de uma função no ponto seja .   Existe alguma direção na qual a derivada direcional seja igual a 6? Justifique.  Determine uma direção (um vetor unitário) na qual a taxa de variação de seja zero.   "
 },
 {
-  "id": "exercise-259",
+  "id": "exercise-269",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-259",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-269",
   "type": "Exercício",
   "number": "3.6.4.13",
   "title": "",
   "body": " Se uma função tem sua taxa máxima de variação igual a 5 no ponto ocorrendo exatamente na direção do vetor , qual é o vetor gradiente ?  "
 },
 {
-  "id": "exercise-260",
+  "id": "exercise-270",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-260",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-270",
   "type": "Exercício",
   "number": "3.6.4.14",
   "title": "",
   "body": " Sabendo que a derivada direcional de no ponto na direção do vetor é e na direção do vetor é , determine o vetor gradiente .  "
 },
 {
-  "id": "exercise-261",
+  "id": "exercise-271",
   "level": "2",
-  "url": "sec-conteudo-derivada-direcional.html#exercise-261",
+  "url": "sec-conteudo-derivada-direcional.html#exercise-271",
   "type": "Exercício",
   "number": "3.6.4.15",
   "title": "",
@@ -3853,90 +3970,90 @@ var ptx_lunr_docs = [
   "body": " Superfície implícita   Determine e para a função definida por .    Definimos . As derivadas parciais de são:       Portanto, aplicando as fórmulas:  .   "
 },
 {
-  "id": "exercise-262",
+  "id": "exercise-272",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-262",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-272",
   "type": "Exercício",
   "number": "3.7.4.1",
   "title": "",
   "body": "   Defina .  e .  (para ).  "
 },
 {
-  "id": "exercise-263",
+  "id": "exercise-273",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-263",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-273",
   "type": "Exercício",
   "number": "3.7.4.2",
   "title": "",
   "body": "   Defina .  e .  .  "
 },
 {
-  "id": "exercise-264",
+  "id": "exercise-274",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-264",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-274",
   "type": "Exercício",
   "number": "3.7.4.3",
   "title": "",
   "body": "   Seja .  .  .  .  e .  "
 },
 {
-  "id": "exercise-265",
+  "id": "exercise-275",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-265",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-275",
   "type": "Exercício",
   "number": "3.7.4.4",
   "title": "",
   "body": "   Seja .  , , .  .  .  "
 },
 {
-  "id": "exercise-266",
+  "id": "exercise-276",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-266",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-276",
   "type": "Exercício",
   "number": "3.7.4.5",
   "title": "",
   "body": "   Seja .  , , .  e .  "
 },
 {
-  "id": "exercise-267",
+  "id": "exercise-277",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-267",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-277",
   "type": "Exercício",
   "number": "3.7.4.6",
   "title": "",
   "body": "   Seja .  .  .  .  .  .  "
 },
 {
-  "id": "exercise-268",
+  "id": "exercise-278",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-268",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-278",
   "type": "Exercício",
   "number": "3.7.4.7",
   "title": "",
   "body": "     Sejam e .  Calculamos os Jacobianos:  .  .  .  .  .  "
 },
 {
-  "id": "exercise-269",
+  "id": "exercise-279",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-269",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-279",
   "type": "Exercício",
   "number": "3.7.4.8",
   "title": "",
   "body": "     Sejam e .  .  .  .  .  .  "
 },
 {
-  "id": "exercise-270",
+  "id": "exercise-280",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-270",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-280",
   "type": "Exercício",
   "number": "3.7.4.9",
   "title": "",
   "body": "     Sejam e .  .  .  (se ).  (As outras derivadas seguem o mesmo padrão: , , ).  "
 },
 {
-  "id": "exercise-271",
+  "id": "exercise-281",
   "level": "2",
-  "url": "sec-conteudo-derivacao-implicita.html#exercise-271",
+  "url": "sec-conteudo-derivacao-implicita.html#exercise-281",
   "type": "Exercício",
   "number": "3.7.4.10",
   "title": "",
@@ -3979,90 +4096,90 @@ var ptx_lunr_docs = [
   "body": " Derivadas de 3ª ordem   Dada a função , calcule e .    Derivando em sucessivamente:   .  Para a derivada mista , derivamos a primeira parcial duas vezes em relação a :  .  Logo, .   "
 },
 {
-  "id": "exercise-272",
+  "id": "exercise-282",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-272",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-282",
   "type": "Exercício",
   "number": "3.8.4.1",
   "title": "",
   "body": "   e .      "
 },
 {
-  "id": "exercise-273",
+  "id": "exercise-283",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-273",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-283",
   "type": "Exercício",
   "number": "3.8.4.2",
   "title": "",
   "body": "   e .     "
 },
 {
-  "id": "exercise-274",
+  "id": "exercise-284",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-274",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-284",
   "type": "Exercício",
   "number": "3.8.4.3",
   "title": "",
   "body": "   e .     "
 },
 {
-  "id": "exercise-275",
+  "id": "exercise-285",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-275",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-285",
   "type": "Exercício",
   "number": "3.8.4.4",
   "title": "",
   "body": "   e .      "
 },
 {
-  "id": "exercise-276",
+  "id": "exercise-286",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-276",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-286",
   "type": "Exercício",
   "number": "3.8.4.5",
   "title": "",
   "body": " Dada a função , verifique que .   e .  Calculando a mista a partir de : .  Calculando a mista a partir de : .  Como os resultados são iguais, o Teorema de Schwartz é verificado.  "
 },
 {
-  "id": "exercise-277",
+  "id": "exercise-287",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-277",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-287",
   "type": "Exercício",
   "number": "3.8.4.6",
   "title": "",
   "body": " Verifique o Teorema de Schwartz para a função .   .  .  Derivando em relação a : .  Derivando em relação a : .  Os resultados coincidem.  "
 },
 {
-  "id": "exercise-278",
+  "id": "exercise-288",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-278",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-288",
   "type": "Exercício",
   "number": "3.8.4.7",
   "title": "",
   "body": " Verifique o Teorema de Schwartz para a função .   .  .  .  .  As derivadas mistas são iguais.  "
 },
 {
-  "id": "exercise-279",
+  "id": "exercise-289",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-279",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-289",
   "type": "Exercício",
   "number": "3.8.4.8",
   "title": "",
   "body": " Dada a função , determine a derivada parcial de 3ª ordem .   .  .  Agora, derivamos em relação a : .  Simplificando: .  "
 },
 {
-  "id": "exercise-280",
+  "id": "exercise-290",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-280",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-290",
   "type": "Exercício",
   "number": "3.8.4.9",
   "title": "",
   "body": " Dada a função , determine .   .  .  Simplificando: .  "
 },
 {
-  "id": "exercise-281",
+  "id": "exercise-291",
   "level": "2",
-  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-281",
+  "url": "sec-conteudo-derivadas-sucessivas.html#exercise-291",
   "type": "Exercício",
   "number": "3.8.4.10",
   "title": "",
@@ -4132,54 +4249,54 @@ var ptx_lunr_docs = [
   "body": " Calha com Múltiplos Mínimos Locais   Analise o comportamento dos pontos de mínimo da função .    Para encontrar o valor mínimo dessa função, notamos que ela é a soma de duas parcelas não negativas. O menor valor possível será zero, que ocorre quando simultaneamente:    A equação possui infinitas soluções, dadas por , onde é um número inteiro ( ).  Dessa forma, a função apresenta infinitos pontos de mínimo (que são, neste caso, tanto locais quanto globais) posicionados nas coordenadas . O gráfico assemelha-se a uma série de ondulações (vales) ao longo do eixo y.     "
 },
 {
-  "id": "exercise-282",
+  "id": "exercise-292",
   "level": "2",
-  "url": "sec-maximos-minimos-completa.html#exercise-282",
+  "url": "sec-maximos-minimos-completa.html#exercise-292",
   "type": "Exercício",
   "number": "4.1.3.1",
   "title": "",
   "body": "  "
 },
 {
-  "id": "exercise-283",
+  "id": "exercise-293",
   "level": "2",
-  "url": "sec-maximos-minimos-completa.html#exercise-283",
+  "url": "sec-maximos-minimos-completa.html#exercise-293",
   "type": "Exercício",
   "number": "4.1.3.2",
   "title": "",
   "body": "  "
 },
 {
-  "id": "exercise-284",
+  "id": "exercise-294",
   "level": "2",
-  "url": "sec-maximos-minimos-completa.html#exercise-284",
+  "url": "sec-maximos-minimos-completa.html#exercise-294",
   "type": "Exercício",
   "number": "4.1.3.3",
   "title": "",
   "body": " (Dica: complete os quadrados perfeitos)  "
 },
 {
-  "id": "exercise-285",
+  "id": "exercise-295",
   "level": "2",
-  "url": "sec-maximos-minimos-completa.html#exercise-285",
+  "url": "sec-maximos-minimos-completa.html#exercise-295",
   "type": "Exercício",
   "number": "4.1.3.4",
   "title": "",
   "body": "  "
 },
 {
-  "id": "exercise-286",
+  "id": "exercise-296",
   "level": "2",
-  "url": "sec-maximos-minimos-completa.html#exercise-286",
+  "url": "sec-maximos-minimos-completa.html#exercise-296",
   "type": "Exercício",
   "number": "4.1.3.5",
   "title": "",
   "body": "  "
 },
 {
-  "id": "exercise-287",
+  "id": "exercise-297",
   "level": "2",
-  "url": "sec-maximos-minimos-completa.html#exercise-287",
+  "url": "sec-maximos-minimos-completa.html#exercise-297",
   "type": "Exercício",
   "number": "4.1.3.6",
   "title": "",
@@ -4231,9 +4348,9 @@ var ptx_lunr_docs = [
   "body": " Ponto Crítico do Tipo Sela   Determine o ponto crítico de .    As derivadas parciais são dadas por: .  O único ponto onde o gradiente é nulo é . Embora o plano tangente seja horizontal, este ponto não é de máximo nem de mínimo, sendo conhecido como ponto de sela.   "
 },
 {
-  "id": "p-1064",
+  "id": "p-1105",
   "level": "2",
-  "url": "sec-extremos-geral.html#p-1064",
+  "url": "sec-extremos-geral.html#p-1105",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -4267,108 +4384,108 @@ var ptx_lunr_docs = [
   "body": " Análise de Múltiplos Pontos Críticos   Analise os pontos críticos de .    As derivadas parciais são e , resultando nos pontos críticos e . O hessiano geral é . Para , e , logo é um mínimo local . Para , e , logo é um máximo local . Para e , , caracterizando pontos de sela .   "
 },
 {
-  "id": "exercise-288",
+  "id": "exercise-298",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-288",
+  "url": "sec-extremos-geral.html#exercise-298",
   "type": "Exercício",
   "number": "4.2.3.1",
   "title": "",
   "body": " Determine e classifique os pontos críticos da função .  "
 },
 {
-  "id": "exercise-289",
+  "id": "exercise-299",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-289",
+  "url": "sec-extremos-geral.html#exercise-299",
   "type": "Exercício",
   "number": "4.2.3.2",
   "title": "",
   "body": " Encontre os pontos críticos de .  "
 },
 {
-  "id": "exercise-290",
+  "id": "exercise-300",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-290",
+  "url": "sec-extremos-geral.html#exercise-300",
   "type": "Exercício",
   "number": "4.2.3.3",
   "title": "",
   "body": " Seja . Verifique que os pontos críticos são , , e e classifique-os.  "
 },
 {
-  "id": "exercise-291",
+  "id": "exercise-301",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-291",
+  "url": "sec-extremos-geral.html#exercise-301",
   "type": "Exercício",
   "number": "4.2.3.4",
   "title": "",
   "body": " Encontre e classifique os pontos críticos de .  "
 },
 {
-  "id": "exercise-292",
+  "id": "exercise-302",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-292",
+  "url": "sec-extremos-geral.html#exercise-302",
   "type": "Exercício",
   "number": "4.2.3.5",
   "title": "",
   "body": " Classifique os pontos críticos da função polinomial .  "
 },
 {
-  "id": "exercise-293",
+  "id": "exercise-303",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-293",
+  "url": "sec-extremos-geral.html#exercise-303",
   "type": "Exercício",
   "number": "4.2.3.6",
   "title": "",
   "body": " Determine e classifique os pontos críticos de .  "
 },
 {
-  "id": "exercise-294",
+  "id": "exercise-304",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-294",
+  "url": "sec-extremos-geral.html#exercise-304",
   "type": "Exercício",
   "number": "4.2.3.7",
   "title": "",
   "body": " Analise a natureza dos pontos críticos da função .  "
 },
 {
-  "id": "exercise-295",
+  "id": "exercise-305",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-295",
+  "url": "sec-extremos-geral.html#exercise-305",
   "type": "Exercício",
   "number": "4.2.3.8",
   "title": "",
   "body": " Encontre os pontos críticos de e determine se são pontos de máximo, mínimo ou sela.  "
 },
 {
-  "id": "exercise-296",
+  "id": "exercise-306",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-296",
+  "url": "sec-extremos-geral.html#exercise-306",
   "type": "Exercício",
   "number": "4.2.3.9",
   "title": "",
   "body": " Classifique os pontos críticos de .  "
 },
 {
-  "id": "exercise-297",
+  "id": "exercise-307",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-297",
+  "url": "sec-extremos-geral.html#exercise-307",
   "type": "Exercício",
   "number": "4.2.3.10",
   "title": "",
   "body": " Encontre e classifique os pontos críticos da função racional .  "
 },
 {
-  "id": "exercise-298",
+  "id": "exercise-308",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-298",
+  "url": "sec-extremos-geral.html#exercise-308",
   "type": "Exercício",
   "number": "4.2.3.11",
   "title": "",
   "body": " Determine os extremos locais da função exponencial .  "
 },
 {
-  "id": "exercise-299",
+  "id": "exercise-309",
   "level": "2",
-  "url": "sec-extremos-geral.html#exercise-299",
+  "url": "sec-extremos-geral.html#exercise-309",
   "type": "Exercício",
   "number": "4.2.3.12",
   "title": "",
@@ -4420,72 +4537,72 @@ var ptx_lunr_docs = [
   "body": " Extremos em um Retângulo   Determine o máximo e o mínimo de na região retangular e .    Como as derivadas parciais são e , nunca se anulam, não há pontos críticos no interior.  Analisando a fronteira (os quatro lados do retângulo):  O valor máximo ocorre no vértice onde ambos e são máximos: .  O valor mínimo ocorre no vértice oposto: .     "
 },
 {
-  "id": "exercise-300",
+  "id": "exercise-310",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-300",
+  "url": "subsec-conjuntos-compactos.html#exercise-310",
   "type": "Exercício",
   "number": "4.3.1",
   "title": "",
   "body": " Determine o máximo e o mínimo absolutos de na região triangular fechada com vértices , e .  "
 },
 {
-  "id": "exercise-301",
+  "id": "exercise-311",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-301",
+  "url": "subsec-conjuntos-compactos.html#exercise-311",
   "type": "Exercício",
   "number": "4.3.2",
   "title": "",
   "body": " A densidade de uma placa metálica quadrada é dada por . Onde a placa é mais densa e onde é menos densa?  "
 },
 {
-  "id": "exercise-302",
+  "id": "exercise-312",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-302",
+  "url": "subsec-conjuntos-compactos.html#exercise-312",
   "type": "Exercício",
   "number": "4.3.3",
   "title": "",
   "body": " Encontre o valor máximo e o valor mínimo absolutos de no retângulo de vértices , , e .  "
 },
 {
-  "id": "exercise-303",
+  "id": "exercise-313",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-303",
+  "url": "subsec-conjuntos-compactos.html#exercise-313",
   "type": "Exercício",
   "number": "4.3.4",
   "title": "",
   "body": " Encontre os extremos absolutos de no triângulo fechado de vértices , e .  "
 },
 {
-  "id": "exercise-304",
+  "id": "exercise-314",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-304",
+  "url": "subsec-conjuntos-compactos.html#exercise-314",
   "type": "Exercício",
   "number": "4.3.5",
   "title": "",
   "body": " Determine os valores máximo e mínimo absolutos de no disco fechado restrito por .  "
 },
 {
-  "id": "exercise-305",
+  "id": "exercise-315",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-305",
+  "url": "subsec-conjuntos-compactos.html#exercise-315",
   "type": "Exercício",
   "number": "4.3.6",
   "title": "",
   "body": " Encontre o máximo e mínimo absolutos de no domínio retangular definido por e .  "
 },
 {
-  "id": "exercise-306",
+  "id": "exercise-316",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-306",
+  "url": "subsec-conjuntos-compactos.html#exercise-316",
   "type": "Exercício",
   "number": "4.3.7",
   "title": "",
   "body": " Um disco tem a forma do círculo . Supondo que a temperatura nos pontos do disco seja dada por , determine as coordenadas dos pontos mais quentes e mais frios do disco.  "
 },
 {
-  "id": "exercise-307",
+  "id": "exercise-317",
   "level": "2",
-  "url": "subsec-conjuntos-compactos.html#exercise-307",
+  "url": "subsec-conjuntos-compactos.html#exercise-317",
   "type": "Exercício",
   "number": "4.3.8",
   "title": "",
@@ -4582,135 +4699,135 @@ var ptx_lunr_docs = [
   "body": " Problema Numérico de Otimização   Determinar três números positivos cujo produto seja 100 e cuja soma seja a menor possível.    Queremos minimizar sujeita a (com ). . Temos , , e . Isso implica que . Como , dividindo as equações deduzimos que . Substituindo na restrição: . Os três números procurados são idênticos e iguais à raiz cúbica de 100.   "
 },
 {
-  "id": "exercise-308",
+  "id": "exercise-318",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-308",
+  "url": "sec-max-min-condicionados.html#exercise-318",
   "type": "Exercício",
   "number": "4.4.4.1",
   "title": "",
   "body": "Maximize e minimize sujeito a . "
 },
 {
-  "id": "exercise-309",
+  "id": "exercise-319",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-309",
+  "url": "sec-max-min-condicionados.html#exercise-319",
   "type": "Exercício",
   "number": "4.4.4.2",
   "title": "",
   "body": "Encontre os extremos de sobre a circunferência . "
 },
 {
-  "id": "exercise-310",
+  "id": "exercise-320",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-310",
+  "url": "sec-max-min-condicionados.html#exercise-320",
   "type": "Exercício",
   "number": "4.4.4.3",
   "title": "",
   "body": "Determine os valores extremos de sujeitos à restrição linear . "
 },
 {
-  "id": "exercise-311",
+  "id": "exercise-321",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-311",
+  "url": "sec-max-min-condicionados.html#exercise-321",
   "type": "Exercício",
   "number": "4.4.4.4",
   "title": "",
   "body": "Encontre os máximos e mínimos de sujeito à elipse . "
 },
 {
-  "id": "exercise-312",
+  "id": "exercise-322",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-312",
+  "url": "sec-max-min-condicionados.html#exercise-322",
   "type": "Exercício",
   "number": "4.4.4.5",
   "title": "",
   "body": "Determine os valores extremos de com a restrição . "
 },
 {
-  "id": "exercise-313",
+  "id": "exercise-323",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-313",
+  "url": "sec-max-min-condicionados.html#exercise-323",
   "type": "Exercício",
   "number": "4.4.4.6",
   "title": "",
   "body": "Encontre o mínimo da função no plano . "
 },
 {
-  "id": "exercise-314",
+  "id": "exercise-324",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-314",
+  "url": "sec-max-min-condicionados.html#exercise-324",
   "type": "Exercício",
   "number": "4.4.4.7",
   "title": "",
   "body": "Determine o ponto do plano para o qual a função seja mínima. "
 },
 {
-  "id": "exercise-315",
+  "id": "exercise-325",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-315",
+  "url": "sec-max-min-condicionados.html#exercise-325",
   "type": "Exercício",
   "number": "4.4.4.8",
   "title": "",
   "body": "Determine o ponto no plano cuja distância exata ao ponto seja a menor possível. "
 },
 {
-  "id": "exercise-316",
+  "id": "exercise-326",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-316",
+  "url": "sec-max-min-condicionados.html#exercise-326",
   "type": "Exercício",
   "number": "4.4.4.9",
   "title": "",
   "body": "A reta é dada pela intersecção dos planos e . Determine o ponto de mais próximo da origem. "
 },
 {
-  "id": "exercise-317",
+  "id": "exercise-327",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-317",
+  "url": "sec-max-min-condicionados.html#exercise-327",
   "type": "Exercício",
   "number": "4.4.4.10",
   "title": "",
   "body": "Determine três números positivos cuja soma seja 120 e cujo produto seja o máximo possível. "
 },
 {
-  "id": "exercise-318",
+  "id": "exercise-328",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-318",
+  "url": "sec-max-min-condicionados.html#exercise-328",
   "type": "Exercício",
   "number": "4.4.4.11",
   "title": "",
   "body": "Determinar a distância mínima absoluta entre o ponto e a parábola descrita por . "
 },
 {
-  "id": "exercise-319",
+  "id": "exercise-329",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-319",
+  "url": "sec-max-min-condicionados.html#exercise-329",
   "type": "Exercício",
   "number": "4.4.4.12",
   "title": "",
   "body": "Uma firma de embalagem fabrica caixas retangulares com volume de . O material lateral custa a metade do material da tampa e do fundo. Determine as dimensões que minimizam este custo. "
 },
 {
-  "id": "exercise-320",
+  "id": "exercise-330",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-320",
+  "url": "sec-max-min-condicionados.html#exercise-330",
   "type": "Exercício",
   "number": "4.4.4.13",
   "title": "",
   "body": "Calcule as dimensões analíticas de um retângulo de área máxima que pode ser inscrito em uma semicircunferência de raio . "
 },
 {
-  "id": "exercise-321",
+  "id": "exercise-331",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-321",
+  "url": "sec-max-min-condicionados.html#exercise-331",
   "type": "Exercício",
   "number": "4.4.4.14",
   "title": "",
   "body": "Mostre matematicamente que o paralelepípedo retângulo de maior volume que pode ser inscrito perfeitamente dentro de uma esfera qualquer tem a forma de um cubo. "
 },
 {
-  "id": "exercise-322",
+  "id": "exercise-332",
   "level": "2",
-  "url": "sec-max-min-condicionados.html#exercise-322",
+  "url": "sec-max-min-condicionados.html#exercise-332",
   "type": "Exercício",
   "number": "4.4.4.15",
   "title": "",
@@ -4726,18 +4843,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-1144",
+  "id": "p-1185",
   "level": "2",
-  "url": "referencias.html#p-1144",
+  "url": "referencias.html#p-1185",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1145",
+  "id": "p-1186",
   "level": "2",
-  "url": "referencias.html#p-1145",
+  "url": "referencias.html#p-1186",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

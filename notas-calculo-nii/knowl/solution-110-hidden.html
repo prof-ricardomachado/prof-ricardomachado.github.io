@@ -11,41 +11,34 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Como estamos trabalhando com três variáveis, o raciocínio é idêntico. Primeiro, precisamos normalizar o vetor <span class="process-math">\(\vec{v}\text{:}\)</span>
+<div class="para logical">
+<div class="para">1. Calcular o gradiente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f = \left( 2xy^3, 3x^2y^2 - 4 \right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">2. Avaliar o gradiente no ponto <span class="process-math">\((2,-1)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
-\begin{align*}
-||\vec{v}|| \amp = \sqrt{1^2 + 2^2 + (-2)^2} = \sqrt{1 + 4 + 4} = \sqrt{9} = 3\\
-\vec{u} \amp = \frac{\vec{v}}{||\vec{v}||} = \left(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3}\right)
-\end{align*}
+\begin{equation*}
+\nabla f(2,-1) = (2(2)(-1)^3, 3(2)^2(-1)^2 - 4) = (-4, 8)
+\end{equation*}
 </div>
-<div class="para">Agora, calculamos as derivadas parciais para encontrar o gradiente <span class="process-math">\(\nabla f(x,y,z)\text{:}\)</span>
+</div> <div class="para">3. Normalizar o vetor direção: O vetor <span class="process-math">\(\vec{v} = (2,5)\)</span> não é unitário. Seu módulo é <span class="process-math">\(\|\vec{v}\| = \sqrt{2^2 + 5^2} = \sqrt{29}\text{.}\)</span> O vetor unitário é <span class="process-math">\(\vec{u} = \left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">4. Calcular o produto escalar:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(2,-1) = \nabla f(2,-1) \cdot \vec{u} = (-4, 8) \cdot \left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)
+\end{equation*}
 </div>
 <div class="displaymath process-math">
-\begin{align*}
-f_x(x,y,z) \amp = y^2z^3\\
-f_y(x,y,z) \amp = 2xyz^3\\
-f_z(x,y,z) \amp = 3xy^2z^2
-\end{align*}
+\begin{equation*}
+D_{\vec{u}}f(2,-1) = \frac{-8}{\sqrt{29}} + \frac{40}{\sqrt{29}} = \frac{32}{\sqrt{29}}
+\end{equation*}
 </div>
-<div class="para">Avaliando essas derivadas no ponto <span class="process-math">\((1, -1, 2)\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{align*}
-f_x(1, -1, 2) \amp = (-1)^2(2)^3 = 8\\
-f_y(1, -1, 2) \amp = 2(1)(-1)(2)^3 = -16\\
-f_z(1, -1, 2) \amp = 3(1)(-1)^2(2)^2 = 12
-\end{align*}
-</div>
-<div class="para">O gradiente no ponto é <span class="process-math">\(\nabla f(1, -1, 2) = (8, -16, 12)\text{.}\)</span>
-</div> <div class="para">Finalmente, calculamos a derivada direcional efetuando o produto escalar:</div>
-<div class="displaymath process-math">
-\begin{align*}
-D_{\vec{u}}f(1, -1, 2) \amp = \nabla f(1, -1, 2) \cdot \vec{u}\\
-\amp = (8, -16, 12) \cdot \left(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3}\right)\\
-\amp = \frac{8}{3} - \frac{32}{3} - \frac{24}{3}\\
-\amp = -\frac{48}{3} = -16
-\end{align*}
 </div>
 </div></body>
 </html>

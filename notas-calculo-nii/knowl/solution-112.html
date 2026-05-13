@@ -13,33 +13,38 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.6.9.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.6.6.1</span><span class="period">.</span>
 </h4>
-<div class="para">A direção de aumento máximo da temperatura é dada pelo vetor gradiente <span class="process-math">\(\nabla T\)</span> avaliado no ponto <span class="process-math">\(P\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">Calculando o gradiente:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\nabla T(x,y,z) = \left( \frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z} \right) = (-2x, -2y, -4z)\text{.}
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Avaliando em <span class="process-math">\(P(1, -1, 2)\text{:}\)</span>
+<div class="para">Como destacado na nota essencial, o vetor direção deve ser unitário. Primeiro, calculamos o módulo de <span class="process-math">\(\vec{v}\)</span> e o normalizamos para encontrar <span class="process-math">\(\vec{u}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
-\begin{equation*}
-\nabla T(1, -1, 2) = (-2(1), -2(-1), -4(2)) = (-2, 2, -8)\text{.}
-\end{equation*}
+\begin{align*}
+||\vec{v}|| \amp = \sqrt{3^2 + 4^2} = \sqrt{25} = 5\\
+\vec{u} \amp = \frac{\vec{v}}{||\vec{v}||} = \left(\frac{3}{5}, \frac{4}{5}\right)
+\end{align*}
 </div>
-</div> <div class="para">Portanto, a temperatura aumenta mais rapidamente quando nos movemos a partir de <span class="process-math">\(P\)</span> na direção do vetor <span class="process-math">\(\vec{v} = (-2, 2, -8)\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">A taxa máxima de aumento é o módulo do gradiente nesse ponto:</div>
+<div class="para">Em seguida, calculamos o vetor gradiente de <span class="process-math">\(f\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\|\nabla T(1, -1, 2)\| = \sqrt{(-2)^2 + 2^2 + (-8)^2} = \sqrt{4 + 4 + 64} = \sqrt{72} = 6\sqrt{2}\text{.}
+\nabla f(x,y) = (e^x \sin(y), e^x \cos(y))
 \end{equation*}
 </div>
-</div> <div class="para">Isso significa que, na direção de maior aquecimento, a temperatura aumenta a uma taxa de <span class="process-math">\(6\sqrt{2}\)</span> graus por unidade de distância percorrida.</div>
+<div class="para">Avaliando o gradiente no ponto <span class="process-math">\((0, \frac{\pi}{4})\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f\left(0, \frac{\pi}{4}\right) = \left(e^0 \sin\left(\frac{\pi}{4}\right), e^0 \cos\left(\frac{\pi}{4}\right)\right) = \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)
+\end{equation*}
+</div>
+<div class="para">Por fim, calculamos a derivada direcional fazendo o produto escalar:</div>
+<div class="displaymath process-math">
+\begin{align*}
+D_{\vec{u}}f\left(0, \frac{\pi}{4}\right) =\amp \nabla f\left(0, \frac{\pi}{4}\right) \cdot \vec{u}\\
+=\amp \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) \cdot \left(\frac{3}{5}, \frac{4}{5}\right)\\
+=\amp \frac{3\sqrt{2}}{10} + \frac{4\sqrt{2}}{10} = \frac{7\sqrt{2}}{10}
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="sec-conteudo-derivada-direcional.html#solution-112" class="internal">em contexto</a></span>
 </body>

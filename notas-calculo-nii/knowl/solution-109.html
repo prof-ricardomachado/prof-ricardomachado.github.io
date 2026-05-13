@@ -13,37 +13,51 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.6.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.6.2.1</span><span class="period">.</span>
 </h4>
-<div class="para">Como destacado na nota essencial, o vetor direção deve ser unitário. Primeiro, calculamos o módulo de <span class="process-math">\(\vec{v}\)</span> e o normalizamos para encontrar <span class="process-math">\(\vec{u}\text{:}\)</span>
+<div class="para">De acordo com a Definição 3.6.1, a derivada direcional é calculada pelo limite:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(x_0, y_0) = \lim_{h \to 0} \frac{f(x_0 + ah, y_0 + bh) - f(x_0, y_0)}{h}
+\end{equation*}
+</div>
+<div class="para">Primeiro, identificamos os elementos do nosso problema de acordo com a fórmula:</div> <ul class="disc">
+<li><div class="para">Ponto inicial: <span class="process-math">\(x_0 = 1\)</span> e <span class="process-math">\(y_0 = 2\)</span>
+</div></li>
+<li><div class="para">Componentes do vetor unitário: <span class="process-math">\(a = \frac{3}{5}\)</span> e <span class="process-math">\(b = \frac{4}{5}\)</span>
+</div></li>
+<li><div class="para">Função avaliada no ponto inicial: <span class="process-math">\(f(1, 2) = (1)(2) = 2\)</span>
+</div></li>
+</ul> <div class="para">Agora, calculamos o valor da função no ponto deslocado <span class="process-math">\((x_0 + ah, y_0 + bh)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{align*}
-||\vec{v}|| \amp = \sqrt{3^2 + 4^2} = \sqrt{25} = 5\\
-\vec{u} \amp = \frac{\vec{v}}{||\vec{v}||} = \left(\frac{3}{5}, \frac{4}{5}\right)
+f\left(1 + \frac{3}{5}h, 2 + \frac{4}{5}h\right) \amp = \left(1 + \frac{3}{5}h\right)\left(2 + \frac{4}{5}h\right)\\
+\amp = 2 + \frac{4}{5}h + \frac{6}{5}h + \frac{12}{25}h^2\\
+\amp = 2 + \frac{10}{5}h + \frac{12}{25}h^2\\
+\amp = 2 + 2h + \frac{12}{25}h^2
 \end{align*}
 </div>
-<div class="para">Em seguida, calculamos o vetor gradiente de <span class="process-math">\(f\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\nabla f(x,y) = (e^x \sin(y), e^x \cos(y))
-\end{equation*}
-</div>
-<div class="para">Avaliando o gradiente no ponto <span class="process-math">\((0, \frac{\pi}{4})\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\nabla f\left(0, \frac{\pi}{4}\right) = \left(e^0 \sin\left(\frac{\pi}{4}\right), e^0 \cos\left(\frac{\pi}{4}\right)\right) = \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)
-\end{equation*}
-</div>
-<div class="para">Por fim, calculamos a derivada direcional fazendo o produto escalar:</div>
+<div class="para">Substituindo esses valores no limite:</div>
 <div class="displaymath process-math">
 \begin{align*}
-D_{\vec{u}}f\left(0, \frac{\pi}{4}\right) =\amp \nabla f\left(0, \frac{\pi}{4}\right) \cdot \vec{u}\\
-=\amp \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) \cdot \left(\frac{3}{5}, \frac{4}{5}\right)\\
-=\amp \frac{3\sqrt{2}}{10} + \frac{4\sqrt{2}}{10} = \frac{7\sqrt{2}}{10}
+D_{\vec{u}}f(1, 2) \amp = \lim_{h \to 0} \frac{\left(2 + 2h + \frac{12}{25}h^2\right) - 2}{h}\\
+\amp = \lim_{h \to 0} \frac{2h + \frac{12}{25}h^2}{h}\\
+\amp = \lim_{h \to 0} \frac{h\left(2 + \frac{12}{25}h\right)}{h}
 \end{align*}
+</div>
+<div class="para">Cancelando o <span class="process-math">\(h\)</span> do numerador e denominador (pois <span class="process-math">\(h \neq 0\)</span> no cálculo do limite), obtemos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(1, 2) = \lim_{h \to 0} \left(2 + \frac{12}{25}h\right)
+\end{equation*}
+</div>
+<div class="para">Quando <span class="process-math">\(h\)</span> tende a zero, o termo que contém <span class="process-math">\(h\)</span> desaparece, indicando a taxa de variação exata da função se avançarmos a partir do ponto inicial na direção de <span class="process-math">\(\vec{u}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D_{\vec{u}}f(1, 2) = 2
+\end{equation*}
 </div>
 </div>
 <span class="incontext"><a href="sec-conteudo-derivada-direcional.html#solution-109" class="internal">em contexto</a></span>

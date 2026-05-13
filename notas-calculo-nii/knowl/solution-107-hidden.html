@@ -11,32 +11,32 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">1. Calcular o gradiente:</div>
+<div class="para">Temos a relação matricial <span class="process-math">\(\begin{bmatrix} z_x \amp z_y \end{bmatrix} = \begin{bmatrix} z_u \amp z_v \end{bmatrix} J_{u,v}\text{:}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} z_x \amp z_y \end{bmatrix} = 
+\begin{bmatrix} e^u \cos v \amp -e^u \sin v \end{bmatrix}
+\begin{bmatrix} \frac{\partial u}{\partial x} \amp \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} \amp \frac{\partial v}{\partial y} \end{bmatrix}\text{.}
+\end{equation*}
+</div></div> <div class="para">Calculando a matriz Jacobiana de <span class="process-math">\((u,v)\)</span> em relação a <span class="process-math">\((x,y)\text{:}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+J_{u,v} = \begin{bmatrix} y \amp x \\ \frac{1}{y} \amp -\frac{x}{y^2} \end{bmatrix}\text{.}
+\end{equation*}
+</div></div> <div class="para">Multiplicando:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix} z_x \amp z_y \end{bmatrix} = \begin{bmatrix} e^u \cos v \amp -e^u \sin v \end{bmatrix} \begin{bmatrix} y \amp x \\ \frac{1}{y} \amp -\frac{x}{y^2} \end{bmatrix}\text{.}
+\end{equation*}
+</div></div> <div class="para logical">
+<div class="para">Isso resulta no sistema:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\nabla f = \left( 2xy^3, 3x^2y^2 - 4 \right)
+z_x = y e^u \cos v - \frac{1}{y} e^u \sin v
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">2. Avaliar o gradiente no ponto <span class="process-math">\((2,-1)\text{:}\)</span>
-</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\nabla f(2,-1) = (2(2)(-1)^3, 3(2)^2(-1)^2 - 4) = (-4, 8)
-\end{equation*}
-</div>
-</div> <div class="para">3. Normalizar o vetor direção: O vetor <span class="process-math">\(\vec{v} = (2,5)\)</span> não é unitário. Seu módulo é <span class="process-math">\(\|\vec{v}\| = \sqrt{2^2 + 5^2} = \sqrt{29}\text{.}\)</span> O vetor unitário é <span class="process-math">\(\vec{u} = \left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">4. Calcular o produto escalar:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-D_{\vec{u}}f(2,-1) = \nabla f(2,-1) \cdot \vec{u} = (-4, 8) \cdot \left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-D_{\vec{u}}f(2,-1) = \frac{-8}{\sqrt{29}} + \frac{40}{\sqrt{29}} = \frac{32}{\sqrt{29}}
+z_y = x e^u \cos v + \frac{x}{y^2} e^u \sin v\text{.}
 \end{equation*}
 </div>
 </div>

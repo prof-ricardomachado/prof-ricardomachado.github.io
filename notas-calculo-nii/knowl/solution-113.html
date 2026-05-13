@@ -13,45 +13,43 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.6.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.6.7.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">1. Calcular o gradiente:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{\partial f}{\partial x} = \ln(yz)
-\end{equation*}
+<div class="para">Como estamos trabalhando com três variáveis, o raciocínio é idêntico. Primeiro, precisamos normalizar o vetor <span class="process-math">\(\vec{v}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
-\begin{equation*}
-\frac{\partial f}{\partial y} = x \left( \frac{1}{yz} \right) z = \frac{x}{y}
-\end{equation*}
+\begin{align*}
+||\vec{v}|| \amp = \sqrt{1^2 + 2^2 + (-2)^2} = \sqrt{1 + 4 + 4} = \sqrt{9} = 3\\
+\vec{u} \amp = \frac{\vec{v}}{||\vec{v}||} = \left(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3}\right)
+\end{align*}
+</div>
+<div class="para">Agora, calculamos as derivadas parciais para encontrar o gradiente <span class="process-math">\(\nabla f(x,y,z)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
-\begin{equation*}
-\frac{\partial f}{\partial z} = x \left( \frac{1}{yz} \right) y = \frac{x}{z}
-\end{equation*}
+\begin{align*}
+f_x(x,y,z) \amp = y^2z^3\\
+f_y(x,y,z) \amp = 2xyz^3\\
+f_z(x,y,z) \amp = 3xy^2z^2
+\end{align*}
+</div>
+<div class="para">Avaliando essas derivadas no ponto <span class="process-math">\((1, -1, 2)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
-\begin{equation*}
-\nabla f = \left( \ln(yz), \frac{x}{y}, \frac{x}{z} \right)
-\end{equation*}
+\begin{align*}
+f_x(1, -1, 2) \amp = (-1)^2(2)^3 = 8\\
+f_y(1, -1, 2) \amp = 2(1)(-1)(2)^3 = -16\\
+f_z(1, -1, 2) \amp = 3(1)(-1)^2(2)^2 = 12
+\end{align*}
 </div>
-</div> <div class="para logical">
-<div class="para">2. Avaliar no ponto <span class="process-math">\((1, 2, 1/2)\text{:}\)</span> Note que <span class="process-math">\(yz = 2(1/2) = 1\text{.}\)</span> Como <span class="process-math">\(\ln(1) = 0\text{,}\)</span> temos:</div>
+<div class="para">O gradiente no ponto é <span class="process-math">\(\nabla f(1, -1, 2) = (8, -16, 12)\text{.}\)</span>
+</div> <div class="para">Finalmente, calculamos a derivada direcional efetuando o produto escalar:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\nabla f(1, 2, 1/2) = \left( 0, \frac{1}{2}, \frac{1}{1/2} \right) = \left( 0, \frac{1}{2}, 2 \right)
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">3. Taxa máxima de variação: É o módulo do gradiente neste ponto.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\|\nabla f\| = \sqrt{0^2 + (1/2)^2 + 2^2} = \sqrt{\frac{1}{4} + 4} = \sqrt{\frac{17}{4}} = \frac{\sqrt{17}}{2}
-\end{equation*}
-</div>
-</div> <div class="para">4. Direção: Ocorre na direção do vetor gradiente <span class="process-math">\(\left( 0, \frac{1}{2}, 2 \right)\text{.}\)</span>
+\begin{align*}
+D_{\vec{u}}f(1, -1, 2) \amp = \nabla f(1, -1, 2) \cdot \vec{u}\\
+\amp = (8, -16, 12) \cdot \left(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3}\right)\\
+\amp = \frac{8}{3} - \frac{32}{3} - \frac{24}{3}\\
+\amp = -\frac{48}{3} = -16
+\end{align*}
 </div>
 </div>
 <span class="incontext"><a href="sec-conteudo-derivada-direcional.html#solution-113" class="internal">em contexto</a></span>
