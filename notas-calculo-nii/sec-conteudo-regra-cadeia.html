@@ -484,32 +484,37 @@ window.MathJax = {
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Regra da Cadeia - Caso II.</span>
 </h4>
 <div class="para logical" id="p-777">
-<div class="para">Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta <span class="process-math">\(h(x,y)\)</span> são:</div>
+<div class="para">Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta <span class="process-math">\(h(x,y) = f(u(x,y), v(x,y))\)</span> num ponto <span class="process-math">\((x,y)\)</span> são:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial h}{\partial x} = \frac{\partial f}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial f}{\partial v} \cdot \frac{\partial v}{\partial x}
+\frac{\partial h}{\partial x}(x,y) = \frac{\partial f}{\partial u}(u(x,y), v(x,y)) \cdot \frac{\partial u}{\partial x}(x,y) + \frac{\partial f}{\partial v}(u(x,y), v(x,y)) \cdot \frac{\partial v}{\partial x}(x,y)
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial h}{\partial y} = \frac{\partial f}{\partial u} \cdot \frac{\partial u}{\partial y} + \frac{\partial f}{\partial v} \cdot \frac{\partial v}{\partial y}\text{.}
+\frac{\partial h}{\partial y}(x,y) = \frac{\partial f}{\partial u}(u(x,y), v(x,y)) \cdot \frac{\partial u}{\partial y}(x,y) + \frac{\partial f}{\partial v}(u(x,y), v(x,y)) \cdot \frac{\partial v}{\partial y}(x,y)\text{.}
 \end{equation*}
 </div>
 </div> <div class="para logical" id="p-778">
-<div class="para">Essas equações são essencialmente o produto da matriz Jacobiana da função externa pela matriz Jacobiana das funções internas:</div>
+<div class="para">Essas equações representam essencialmente o produto da matriz Jacobiana da função externa (avaliada no ponto imagem <span class="process-math">\((u(x,y), v(x,y))\)</span>) pela matriz Jacobiana das funções internas (avaliada no ponto <span class="process-math">\((x,y)\)</span>):</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
-\frac{\partial h}{\partial x} \amp \frac{\partial h}{\partial y}
+\frac{\partial h}{\partial x}(x,y) \amp \frac{\partial h}{\partial y}(x,y)
 \end{bmatrix}
+= \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
 =
 \begin{bmatrix}
-\frac{\partial f}{\partial u} \amp \frac{\partial f}{\partial v}
+\frac{\partial f}{\partial u}(u(x,y), v(x,y)) \amp \frac{\partial f}{\partial v}(u(x,y), v(x,y))
 \end{bmatrix}
 \begin{bmatrix}
-\frac{\partial u}{\partial x} \amp \frac{\partial u}{\partial y} \\
-\frac{\partial v}{\partial x} \amp \frac{\partial v}{\partial y}
-\end{bmatrix}\text{.}
+\frac{\partial u}{\partial x}(x,y) \amp \frac{\partial u}{\partial y}(x,y) \\
+\frac{\partial v}{\partial x}(x,y) \amp \frac{\partial v}{\partial y}(x,y)
+\end{bmatrix}.
 \end{equation*}
 </div>
 </div></article><div class="para" id="p-779">Essas regras matriciais generalizam-se para qualquer número de variáveis: a matriz Jacobiana da função composta é sempre o produto das matrizes Jacobianas das funções que a compõem.</div></section><section class="subsection" id="subsec-exemplos-resolvidos-cadeia"><h3 class="heading hide-type">
@@ -530,7 +535,7 @@ window.MathJax = {
 \begin{equation*}
 \begin{bmatrix} \frac{dx}{dt} \\ \frac{dy}{dt} \end{bmatrix} = \begin{bmatrix} 2t \\ 1 \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-785">Avaliando o vetor de <span class="process-math">\(f\)</span> em <span class="process-math">\(x = t^2\)</span> e <span class="process-math">\(y = t\text{:}\)</span>
+</div></div> <div class="para" id="p-785">Para obter o resultado apenas na variável independente <span class="process-math">\(t\text{,}\)</span> avaliamos o vetor gradiente de <span class="process-math">\(f\)</span> em <span class="process-math">\(x = t^2\)</span> e <span class="process-math">\(y = t\text{:}\)</span>
 </div> <div class="para logical" id="p-786"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} 2(t^2)(t) + \frac{1}{t^2} \amp (t^2)^2 + \frac{2}{t} \end{bmatrix} = 
@@ -551,90 +556,102 @@ window.MathJax = {
 </div>
 </div>
 </div></div>
-</div></article><article class="example example-like" id="ex-cadeia-polar-matriz"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-cadeia-polar-simples"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Mudança para Coordenadas Polares (Matricial).</span>
 </h4>
-<div class="para" id="p-789">Dada <span class="process-math">\(f(x,y) = x^2y - x^2 + y^2\text{,}\)</span> com <span class="process-math">\(x = r \cos \theta\)</span> e <span class="process-math">\(y = r \sin \theta\text{,}\)</span> encontre as derivadas parciais <span class="process-math">\(\frac{\partial f}{\partial r}\)</span> e <span class="process-math">\(\frac{\partial f}{\partial \theta}\)</span> utilizando o produto da matriz Jacobiana.</div>
+<div class="para" id="p-789">Dada a função <span class="process-math">\(f(x,y) = xy\text{,}\)</span> com <span class="process-math">\(x = r \cos \theta\)</span> e <span class="process-math">\(y = r \sin \theta\text{,}\)</span> encontre as derivadas parciais <span class="process-math">\(\frac{\partial f}{\partial r}\)</span> e <span class="process-math">\(\frac{\partial f}{\partial \theta}\)</span> utilizando o produto da matriz Jacobiana.</div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like">
-<div class="para" id="p-790">A matriz das derivadas parciais de <span class="process-math">\(f\)</span> em relação a <span class="process-math">\(x\)</span> e <span class="process-math">\(y\)</span> é:</div> <div class="para logical" id="p-791"><div class="displaymath process-math">
+<div class="para" id="p-790">A matriz das derivadas parciais de <span class="process-math">\(f\)</span> em relação a <span class="process-math">\(x\)</span> e <span class="process-math">\(y\)</span> é bem simples:</div> <div class="para logical" id="p-791"><div class="displaymath process-math">
 \begin{equation*}
-J_f = \begin{bmatrix} 2xy - 2x \amp x^2 + 2y \end{bmatrix}\text{.}
+J_f = \begin{bmatrix} \frac{\partial f}{\partial x} \amp \frac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} y \amp x \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-792">A matriz Jacobiana da transformação polar é:</div> <div class="para logical" id="p-793"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-792">A matriz Jacobiana da transformação para coordenadas polares é:</div> <div class="para logical" id="p-793"><div class="displaymath process-math">
 \begin{equation*}
 J_T = \begin{bmatrix} \frac{\partial x}{\partial r} \amp \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} \amp \frac{\partial y}{\partial \theta} \end{bmatrix} = \begin{bmatrix} \cos \theta \amp -r \sin \theta \\ \sin \theta \amp r \cos \theta \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-794">A Regra da Cadeia nos dá:</div> <div class="para logical" id="p-795"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-794">Pela Regra da Cadeia, <span class="process-math">\(J_{f(r,\theta)} = J_f \cdot J_T\text{:}\)</span>
+</div> <div class="para logical" id="p-795"><div class="displaymath process-math">
 \begin{equation*}
-\begin{bmatrix} \frac{\partial f}{\partial r} \amp \frac{\partial f}{\partial \theta} \end{bmatrix} = J_f \cdot J_T = 
-\begin{bmatrix} 2xy - 2x \amp x^2 + 2y \end{bmatrix}
+\begin{bmatrix} \frac{\partial f}{\partial r} \amp \frac{\partial f}{\partial \theta} \end{bmatrix} = 
+\begin{bmatrix} y \amp x \end{bmatrix}
 \begin{bmatrix} \cos \theta \amp -r \sin \theta \\ \sin \theta \amp r \cos \theta \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-796">Realizando a multiplicação matriz linha por matriz coluna, obtemos diretamente o par de equações:</div> <div class="para logical" id="p-797">
+</div></div> <div class="para" id="p-796">Realizando a multiplicação matriz linha por matriz coluna:</div> <div class="para logical" id="p-797">
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial r} = (2xy - 2x)\cos \theta + (x^2 + 2y)\sin \theta
+\frac{\partial f}{\partial r} = y\cos \theta + x\sin \theta
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial \theta} = (2xy - 2x)(-r\sin \theta) + (x^2 + 2y)(r\cos \theta)\text{.}
+\frac{\partial f}{\partial \theta} = -yr\sin \theta + xr\cos \theta\text{.}
 \end{equation*}
 </div>
-</div>
+</div> <div class="para" id="p-798">Para obter o resultado final nas variáveis <span class="process-math">\(r\)</span> e <span class="process-math">\(\theta\text{,}\)</span> substituímos <span class="process-math">\(x = r\cos\theta\)</span> e <span class="process-math">\(y = r\sin\theta\text{:}\)</span>
+</div> <div class="para logical" id="p-799"><div class="displaymath process-math" id="md-10">
+\begin{align*}
+\frac{\partial f}{\partial r} =\amp\, (r\sin\theta)\cos\theta + (r\cos\theta)\sin\theta\\
+=\amp\, 2r\sin\theta\cos\theta = r\sin(2\theta)\text{.}
+\end{align*}
+</div></div> <div class="para logical" id="p-800"><div class="displaymath process-math" id="md-11">
+\begin{align*}
+\frac{\partial f}{\partial \theta} =\amp\, -(r\sin\theta)r\sin\theta + (r\cos\theta)r\cos\theta\\
+=\amp\, r^2(\cos^2\theta - \sin^2\theta) = r^2\cos(2\theta)\text{.}
+\end{align*}
+</div></div>
 </div></div>
 </div></article><article class="example example-like" id="ex-cadeia-3-intermediarias"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Uma Variável Final, Três Intermediárias.</span>
 </h4>
-<div class="para" id="p-798">Seja <span class="process-math">\(w = x^2 + y^2 - z^2\text{,}\)</span> onde <span class="process-math">\(x = t\text{,}\)</span> <span class="process-math">\(y = \cos t\)</span> e <span class="process-math">\(z = \sin t\text{.}\)</span> Calcule <span class="process-math">\(\frac{dw}{dt}\)</span> usando notação vetorial.</div>
+<div class="para" id="p-801">Seja <span class="process-math">\(w = x^2 + y^2 - z^2\text{,}\)</span> onde <span class="process-math">\(x = t\text{,}\)</span> <span class="process-math">\(y = \cos t\)</span> e <span class="process-math">\(z = \sin t\text{.}\)</span> Calcule <span class="process-math">\(\frac{dw}{dt}\)</span> usando notação vetorial.</div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
-<div class="para" id="p-799">O vetor gradiente de <span class="process-math">\(w\)</span> é:</div> <div class="para logical" id="p-800"><div class="displaymath process-math">
+<div class="para" id="p-802">O vetor gradiente de <span class="process-math">\(w\)</span> é:</div> <div class="para logical" id="p-803"><div class="displaymath process-math">
 \begin{equation*}
 \nabla w = \begin{bmatrix} \frac{\partial w}{\partial x} \amp \frac{\partial w}{\partial y} \amp \frac{\partial w}{\partial z} \end{bmatrix} = \begin{bmatrix} 2x \amp 2y \amp -2z \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-801">O vetor derivada das variáveis intermediárias em relação a <span class="process-math">\(t\)</span> é:</div> <div class="para logical" id="p-802"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-804">O vetor derivada das variáveis intermediárias em relação a <span class="process-math">\(t\)</span> é:</div> <div class="para logical" id="p-805"><div class="displaymath process-math">
 \begin{equation*}
 \vec{r}'(t) = \begin{bmatrix} \frac{dx}{dt} \\ \frac{dy}{dt} \\ \frac{dz}{dt} \end{bmatrix} = \begin{bmatrix} 1 \\ -\sin t \\ \cos t \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-803">A derivada total é o produto matricial:</div> <div class="para logical" id="p-804"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-806">A derivada total é o produto matricial:</div> <div class="para logical" id="p-807"><div class="displaymath process-math">
 \begin{equation*}
 \frac{dw}{dt} = \begin{bmatrix} 2x \amp 2y \amp -2z \end{bmatrix} \begin{bmatrix} 1 \\ -\sin t \\ \cos t \end{bmatrix} = 2x(1) + 2y(-\sin t) - 2z(\cos t)\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-805">Substituindo <span class="process-math">\(x, y, z\)</span> em termos de <span class="process-math">\(t\text{:}\)</span>
-</div> <div class="para logical" id="p-806"><div class="displaymath process-math" id="md-10">
+</div></div> <div class="para" id="p-808">Substituindo <span class="process-math">\(x, y, z\)</span> em termos da variável independente <span class="process-math">\(t\)</span> para a resposta final:</div> <div class="para logical" id="p-809"><div class="displaymath process-math" id="md-12">
 \begin{align*}
-\frac{dw}{dt} =~\amp 2(t) - 2(\cos t)(\sin t) - 2(\sin t)(\cos t)\\
-=~\amp 2t - 4\sin t \cos t \\
-=~\amp  2t - 2\sin(2t).
+\frac{dw}{dt} = \amp 2(t) - 2(\cos t)(\sin t) - 2(\sin t)(\cos t)\\
+= \amp 2t - 4\sin t \cos t \\
+= \amp 2t - 2\sin(2t)\text{.}
 \end{align*}
 </div></div>
 </div></div>
 </div></article><article class="example example-like" id="ex-cadeia-2-intermediarias-com-exp"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Múltiplas Variáveis Independentes Finais.</span>
 </h4>
-<div class="para" id="p-807">Considere <span class="process-math">\(z = e^u \cos v\text{,}\)</span> com as variáveis intermediárias <span class="process-math">\(u = xy\)</span> e <span class="process-math">\(v = \frac{x}{y}\text{.}\)</span> Encontre as parciais <span class="process-math">\(z_x\)</span> e <span class="process-math">\(z_y\)</span> matricialmente.</div>
+<div class="para" id="p-810">Considere <span class="process-math">\(z = e^u \cos v\text{,}\)</span> com as variáveis intermediárias <span class="process-math">\(u = xy\)</span> e <span class="process-math">\(v = \frac{x}{y}\text{.}\)</span> Encontre as parciais <span class="process-math">\(z_x\)</span> e <span class="process-math">\(z_y\)</span> matricialmente, expressando-as em termos de <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{.}\)</span>
+</div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like">
-<div class="para" id="p-808">Temos a relação matricial <span class="process-math">\(\begin{bmatrix} z_x \amp z_y \end{bmatrix} = \begin{bmatrix} z_u \amp z_v \end{bmatrix} J_{u,v}\text{:}\)</span>
-</div> <div class="para logical" id="p-809"><div class="displaymath process-math">
+<div class="para" id="p-811">Temos a relação matricial <span class="process-math">\(\begin{bmatrix} z_x \amp z_y \end{bmatrix} = \begin{bmatrix} z_u \amp z_v \end{bmatrix} J_{u,v}\text{:}\)</span>
+</div> <div class="para logical" id="p-812"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} z_x \amp z_y \end{bmatrix} = 
 \begin{bmatrix} e^u \cos v \amp -e^u \sin v \end{bmatrix}
 \begin{bmatrix} \frac{\partial u}{\partial x} \amp \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} \amp \frac{\partial v}{\partial y} \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-810">Calculando a matriz Jacobiana de <span class="process-math">\((u,v)\)</span> em relação a <span class="process-math">\((x,y)\text{:}\)</span>
-</div> <div class="para logical" id="p-811"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-813">Calculando a matriz Jacobiana das funções internas em relação a <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{:}\)</span>
+</div> <div class="para logical" id="p-814"><div class="displaymath process-math">
 \begin{equation*}
 J_{u,v} = \begin{bmatrix} y \amp x \\ \frac{1}{y} \amp -\frac{x}{y^2} \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-812">Multiplicando:</div> <div class="para logical" id="p-813"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-815">Multiplicando as matrizes:</div> <div class="para logical" id="p-816"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} z_x \amp z_y \end{bmatrix} = \begin{bmatrix} e^u \cos v \amp -e^u \sin v \end{bmatrix} \begin{bmatrix} y \amp x \\ \frac{1}{y} \amp -\frac{x}{y^2} \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para logical" id="p-814">
-<div class="para">Isso resulta no sistema:</div>
+</div></div> <div class="para logical" id="p-817">
+<div class="para">Isso resulta no sistema parcial:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 z_x = y e^u \cos v - \frac{1}{y} e^u \sin v
@@ -645,30 +662,43 @@ z_x = y e^u \cos v - \frac{1}{y} e^u \sin v
 z_y = x e^u \cos v + \frac{x}{y^2} e^u \sin v\text{.}
 \end{equation*}
 </div>
+</div> <div class="para logical" id="p-818">
+<div class="para">Para finalizar, devemos substituir <span class="process-math">\(u\)</span> e <span class="process-math">\(v\)</span> para que a derivada dependa unicamente de <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z_x = e^{xy} \left( y \cos\left(\frac{x}{y}\right) - \frac{1}{y} \sin\left(\frac{x}{y}\right) \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z_y = e^{xy} \left( x \cos\left(\frac{x}{y}\right) + \frac{x}{y^2} \sin\left(\frac{x}{y}\right) \right)\text{.}
+\end{equation*}
+</div>
 </div>
 </div></div>
 </div></article><article class="example example-like" id="ex-cadeia-3x2"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Três Intermediárias e Duas Finais.</span>
 </h4>
-<div class="para" id="p-815">Determine <span class="process-math">\(w_u\)</span> e <span class="process-math">\(w_v\)</span> para a função <span class="process-math">\(w = xyz\text{,}\)</span> sabendo que <span class="process-math">\(x = u+v\text{,}\)</span> <span class="process-math">\(y = u-v\)</span> e <span class="process-math">\(z = uv\text{.}\)</span>
+<div class="para" id="p-819">Determine <span class="process-math">\(w_u\)</span> e <span class="process-math">\(w_v\)</span> em termos exclusivos de <span class="process-math">\(u\)</span> e <span class="process-math">\(v\)</span> para a função <span class="process-math">\(w = xyz\text{,}\)</span> sabendo que <span class="process-math">\(x = u+v\text{,}\)</span> <span class="process-math">\(y = u-v\)</span> e <span class="process-math">\(z = uv\text{.}\)</span>
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
-<div class="para" id="p-816">A formulação matricial é <span class="process-math">\(J_{w(u,v)} = J_{w(x,y,z)} \cdot J_{(x,y,z)(u,v)}\text{:}\)</span>
-</div> <div class="para logical" id="p-817"><div class="displaymath process-math">
+<div class="para" id="p-820">A formulação matricial é <span class="process-math">\(J_{w(u,v)} = J_{w(x,y,z)} \cdot J_{(x,y,z)(u,v)}\text{:}\)</span>
+</div> <div class="para logical" id="p-821"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} w_u \amp w_v \end{bmatrix} = 
 \begin{bmatrix} \frac{\partial w}{\partial x} \amp \frac{\partial w}{\partial y} \amp \frac{\partial w}{\partial z} \end{bmatrix}
 \begin{bmatrix} x_u \amp x_v \\ y_u \amp y_v \\ z_u \amp z_v \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-818">Calculando as derivadas:</div> <div class="para logical" id="p-819"><div class="displaymath process-math">
+</div></div> <div class="para" id="p-822">Calculando as derivadas:</div> <div class="para logical" id="p-823"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} w_u \amp w_v \end{bmatrix} = 
 \begin{bmatrix} yz \amp xz \amp xy \end{bmatrix}
 \begin{bmatrix} 1 \amp 1 \\ 1 \amp -1 \\ v \amp u \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para" id="p-820">Efetuando a multiplicação da matriz <span class="process-math">\(1 \times 3\)</span> pela matriz <span class="process-math">\(3 \times 2\text{:}\)</span>
-</div> <div class="para logical" id="p-821">
+</div></div> <div class="para" id="p-824">Efetuando a multiplicação da matriz <span class="process-math">\(1 \times 3\)</span> pela matriz <span class="process-math">\(3 \times 2\text{:}\)</span>
+</div> <div class="para logical" id="p-825">
 <div class="displaymath process-math">
 \begin{equation*}
 w_u = yz(1) + xz(1) + xy(v) = z(x+y) + xyv
@@ -679,61 +709,66 @@ w_u = yz(1) + xz(1) + xy(v) = z(x+y) + xyv
 w_v = yz(1) + xz(-1) + xy(u) = z(y-x) + xyu\text{.}
 \end{equation*}
 </div>
-</div>
+</div> <div class="para" id="p-826">Agora, procedemos com a substituição para eliminar <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> e <span class="process-math">\(z\text{.}\)</span> Observamos que: <span class="process-math">\(x+y = 2u\text{,}\)</span> <span class="process-math">\(y-x = -2v\text{,}\)</span> e <span class="process-math">\(xy = (u+v)(u-v) = u^2 - v^2\text{.}\)</span> Substituindo:</div> <div class="para logical" id="p-827"><div class="displaymath process-math" id="md-13">
+\begin{align*}
+w_u =\amp\, (uv)(2u) + (u^2-v^2)v = 2u^2v + u^2v - v^3 = 3u^2v - v^3\\
+w_v =\amp\, (uv)(-2v) + (u^2-v^2)u = -2uv^2 + u^3 - uv^2 = u^3 - 3uv^2\text{.}
+\end{align*}
+</div></div>
 </div></div>
 </div></article></section><section class="exercises" id="lista-exercicios-regra-cadeia"><h3 class="heading hide-type">
 <span class="type">Exercícios</span> <span class="codenumber">3.5.3</span> <span class="title">Exercícios</span>
 </h3>
-<div class="para" id="p-822">Baseado nos conceitos da Regra da Cadeia e notação matricial, resolva os 20 exercícios a seguir.</div>
+<div class="para" id="p-828">Baseado nos conceitos da Regra da Cadeia e notação matricial, resolva os 20 exercícios a seguir.</div>
 <div class="exercisegroup" id="exercisegroup-14">
 <h4 class="heading"><span class="title">Derivadas de Funções de Uma Variável Independente Final (Caso I).</span></h4>
-<div class="introduction" id="introduction-32"><div class="para" id="p-823">Determine a derivada total (<span class="process-math">\(\frac{dz}{dt}\)</span> ou <span class="process-math">\(\frac{dw}{dt}\)</span>) usando a regra da cadeia:</div></div>
+<div class="introduction" id="introduction-32"><div class="para" id="p-829">Determine a derivada total (<span class="process-math">\(\frac{dz}{dt}\)</span> ou <span class="process-math">\(\frac{dw}{dt}\)</span>) usando a regra da cadeia:</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-237"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
-<div class="para" id="p-824">
+<div class="para" id="p-830">
 <span class="process-math">\(z = \operatorname{tg}(x^2 + y)\text{,}\)</span> onde <span class="process-math">\(x = 2t\)</span> e <span class="process-math">\(y = t^2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-238"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
-<div class="para" id="p-825">
+<div class="para" id="p-831">
 <span class="process-math">\(z = x \cos y\text{,}\)</span> onde <span class="process-math">\(x = \sin t\)</span> e <span class="process-math">\(y = t\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-239"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
-<div class="para" id="p-826">
+<div class="para" id="p-832">
 <span class="process-math">\(z = e^x(\cos x + \cos y)\text{,}\)</span> onde <span class="process-math">\(x = t^3\)</span> e <span class="process-math">\(y = t^2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-240"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
-<div class="para" id="p-827">
+<div class="para" id="p-833">
 <span class="process-math">\(z = \frac{x}{y}\text{,}\)</span> onde <span class="process-math">\(x = e^{-t}\)</span> e <span class="process-math">\(y = \ln t\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-241"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
-<div class="para" id="p-828">
+<div class="para" id="p-834">
 <span class="process-math">\(z = \ln(x^2 + y^2 + 1)\text{,}\)</span> onde <span class="process-math">\(x = \cos t\)</span> e <span class="process-math">\(y = \sin t\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-242"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="p-829">
+<div class="para" id="p-835">
 <span class="process-math">\(w = x e^{yz}\text{,}\)</span> onde <span class="process-math">\(x = t\text{,}\)</span> <span class="process-math">\(y = t^2\)</span> e <span class="process-math">\(z = t^3\text{.}\)</span>
 </div></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-15">
 <h4 class="heading"><span class="title">Derivadas Parciais de Funções Compostas (Múltiplas Variáveis Finais).</span></h4>
-<div class="introduction" id="introduction-33"><div class="para" id="p-830">Determine as derivadas parciais solicitadas formando as matrizes Jacobianas:</div></div>
+<div class="introduction" id="introduction-33"><div class="para" id="p-836">Determine as derivadas parciais solicitadas formando as matrizes Jacobianas:</div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-243"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="p-831">Seja <span class="process-math">\(z = u^2 - v^2\text{,}\)</span> com <span class="process-math">\(u = x + y\)</span> e <span class="process-math">\(v = xy\text{.}\)</span> Calcule <span class="process-math">\(\frac{\partial z}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y}\text{.}\)</span>
+<div class="para" id="p-837">Seja <span class="process-math">\(z = u^2 - v^2\text{,}\)</span> com <span class="process-math">\(u = x + y\)</span> e <span class="process-math">\(v = xy\text{.}\)</span> Calcule <span class="process-math">\(\frac{\partial z}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y}\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-244"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
-<div class="para" id="p-832">Determine <span class="process-math">\(\frac{\partial z}{\partial u}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial v}\)</span> para <span class="process-math">\(z = x^2 - y^2\text{,}\)</span> com <span class="process-math">\(x = u - 3v\)</span> e <span class="process-math">\(y = u + 2v\text{.}\)</span>
+<div class="para" id="p-838">Determine <span class="process-math">\(\frac{\partial z}{\partial u}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial v}\)</span> para <span class="process-math">\(z = x^2 - y^2\text{,}\)</span> com <span class="process-math">\(x = u - 3v\)</span> e <span class="process-math">\(y = u + 2v\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-245"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
-<div class="para" id="p-833">Dada a função <span class="process-math">\(f(x,y) = \frac{x}{y} + x^2 + y^2\)</span> com <span class="process-math">\(x = r \cos \theta\)</span> e <span class="process-math">\(y = r \sin \theta\text{,}\)</span> encontre <span class="process-math">\(\frac{\partial f}{\partial r}\)</span> e <span class="process-math">\(\frac{\partial f}{\partial \theta}\text{.}\)</span>
+<div class="para" id="p-839">Dada a função <span class="process-math">\(f(x,y) = \frac{x}{y} + x^2 + y^2\)</span> com <span class="process-math">\(x = r \cos \theta\)</span> e <span class="process-math">\(y = r \sin \theta\text{,}\)</span> encontre <span class="process-math">\(\frac{\partial f}{\partial r}\)</span> e <span class="process-math">\(\frac{\partial f}{\partial \theta}\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-246"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para" id="p-834">Determine <span class="process-math">\(\frac{\partial z}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y}\)</span> para <span class="process-math">\(z = u^2 + v^2\text{,}\)</span> com <span class="process-math">\(u = x^2 - y^2\)</span> e <span class="process-math">\(v = e^{xy}\text{.}\)</span>
+<div class="para" id="p-840">Determine <span class="process-math">\(\frac{\partial z}{\partial x}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial y}\)</span> para <span class="process-math">\(z = u^2 + v^2\text{,}\)</span> com <span class="process-math">\(u = x^2 - y^2\)</span> e <span class="process-math">\(v = e^{xy}\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-247"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
-<div class="para" id="p-835">Determine as derivadas parciais <span class="process-math">\(\frac{\partial w}{\partial u}\)</span> e <span class="process-math">\(\frac{\partial w}{\partial v}\)</span> para <span class="process-math">\(w = x^2 + 2y^2 - z^2\text{,}\)</span> onde <span class="process-math">\(x = 2uv\text{,}\)</span> <span class="process-math">\(y = u+v\)</span> e <span class="process-math">\(z = (u-v)^2\text{.}\)</span>
+<div class="para" id="p-841">Determine as derivadas parciais <span class="process-math">\(\frac{\partial w}{\partial u}\)</span> e <span class="process-math">\(\frac{\partial w}{\partial v}\)</span> para <span class="process-math">\(w = x^2 + 2y^2 - z^2\text{,}\)</span> onde <span class="process-math">\(x = 2uv\text{,}\)</span> <span class="process-math">\(y = u+v\)</span> e <span class="process-math">\(z = (u-v)^2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-248"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
-<div class="para" id="p-836">Calcule <span class="process-math">\(z_x\)</span> e <span class="process-math">\(z_y\)</span> se <span class="process-math">\(z = \sin(u+v)\text{,}\)</span> sendo <span class="process-math">\(u = x^2y\)</span> e <span class="process-math">\(v = xy^2\text{.}\)</span>
+<div class="para" id="p-842">Calcule <span class="process-math">\(z_x\)</span> e <span class="process-math">\(z_y\)</span> se <span class="process-math">\(z = \sin(u+v)\text{,}\)</span> sendo <span class="process-math">\(u = x^2y\)</span> e <span class="process-math">\(v = xy^2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-249"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
-<div class="para" id="p-837">Determine <span class="process-math">\(\frac{\partial z}{\partial r}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial \theta}\)</span> se <span class="process-math">\(z = e^{x+y}\text{,}\)</span> sabendo que <span class="process-math">\(x = r^2\theta\)</span> e <span class="process-math">\(y = r\theta^2\text{.}\)</span>
+<div class="para" id="p-843">Determine <span class="process-math">\(\frac{\partial z}{\partial r}\)</span> e <span class="process-math">\(\frac{\partial z}{\partial \theta}\)</span> se <span class="process-math">\(z = e^{x+y}\text{,}\)</span> sabendo que <span class="process-math">\(x = r^2\theta\)</span> e <span class="process-math">\(y = r\theta^2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-250"><h5 class="heading"><span class="codenumber">14<span class="period">.</span></span></h5>
-<div class="para" id="p-838">Seja <span class="process-math">\(w = \ln(x^2+y^2+z^2)\text{,}\)</span> com <span class="process-math">\(x=u\cos v\text{,}\)</span> <span class="process-math">\(y=u\sin v\)</span> e <span class="process-math">\(z=u\text{.}\)</span> Encontre <span class="process-math">\(w_u\)</span> e <span class="process-math">\(w_v\text{.}\)</span>
+<div class="para" id="p-844">Seja <span class="process-math">\(w = \ln(x^2+y^2+z^2)\text{,}\)</span> com <span class="process-math">\(x=u\cos v\text{,}\)</span> <span class="process-math">\(y=u\sin v\)</span> e <span class="process-math">\(z=u\text{.}\)</span> Encontre <span class="process-math">\(w_u\)</span> e <span class="process-math">\(w_v\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-251"><h5 class="heading"><span class="codenumber">15<span class="period">.</span></span></h5>
-<div class="para" id="p-839">Dada <span class="process-math">\(z = x^2 + y^2\text{,}\)</span> onde <span class="process-math">\(x = u^2 - v^2\)</span> e <span class="process-math">\(y = 2uv\text{.}\)</span> Mostre usando matrizes que <span class="process-math">\(z_u = 4u(u^2+v^2)\)</span> e <span class="process-math">\(z_v = 4v(u^2+v^2)\text{.}\)</span>
+<div class="para" id="p-845">Dada <span class="process-math">\(z = x^2 + y^2\text{,}\)</span> onde <span class="process-math">\(x = u^2 - v^2\)</span> e <span class="process-math">\(y = 2uv\text{.}\)</span> Mostre usando matrizes que <span class="process-math">\(z_u = 4u(u^2+v^2)\)</span> e <span class="process-math">\(z_v = 4v(u^2+v^2)\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-252"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
-<div class="para" id="p-840">Calcule <span class="process-math">\(w_s\)</span> e <span class="process-math">\(w_t\)</span> sabendo que <span class="process-math">\(w = xyz\text{,}\)</span> com <span class="process-math">\(x = s+t\text{,}\)</span> <span class="process-math">\(y = s-t\)</span> e <span class="process-math">\(z = s^2+t^2\text{.}\)</span>
+<div class="para" id="p-846">Calcule <span class="process-math">\(w_s\)</span> e <span class="process-math">\(w_t\)</span> sabendo que <span class="process-math">\(w = xyz\text{,}\)</span> com <span class="process-math">\(x = s+t\text{,}\)</span> <span class="process-math">\(y = s-t\)</span> e <span class="process-math">\(z = s^2+t^2\text{.}\)</span>
 </div></article>
 </div>
 </div>
@@ -741,15 +776,15 @@ w_v = yz(1) + xz(-1) + xy(u) = z(y-x) + xyu\text{.}
 <h4 class="heading"><span class="title">Aplicações Teóricas e Demonstrações.</span></h4>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-253"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
-<div class="para" id="p-841">Dada <span class="process-math">\(z = f(x^2 + y^2)\text{,}\)</span> onde <span class="process-math">\(f\)</span> é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação <span class="process-math">\(y \frac{\partial z}{\partial x} - x \frac{\partial z}{\partial y} = 0\)</span> é satisfeita.</div>
+<div class="para" id="p-847">Dada <span class="process-math">\(z = f(x^2 + y^2)\text{,}\)</span> onde <span class="process-math">\(f\)</span> é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação <span class="process-math">\(y \frac{\partial z}{\partial x} - x \frac{\partial z}{\partial y} = 0\)</span> é satisfeita.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><div class="para" id="p-842">Chame a variável interna de <span class="process-math">\(u = x^2 + y^2\)</span> e aplique a formulação em bloco matricial.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><div class="para" id="p-848">Chame a variável interna de <span class="process-math">\(u = x^2 + y^2\)</span> e aplique a formulação em bloco matricial.</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-254"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
-<div class="para" id="p-843">Seja <span class="process-math">\(z = f(ax+by)\text{,}\)</span> onde <span class="process-math">\(f\)</span> é diferenciável e <span class="process-math">\(a,b\)</span> são constantes. Prove que <span class="process-math">\(b \frac{\partial z}{\partial x} - a \frac{\partial z}{\partial y} = 0\text{.}\)</span>
+<div class="para" id="p-849">Seja <span class="process-math">\(z = f(ax+by)\text{,}\)</span> onde <span class="process-math">\(f\)</span> é diferenciável e <span class="process-math">\(a,b\)</span> são constantes. Prove que <span class="process-math">\(b \frac{\partial z}{\partial x} - a \frac{\partial z}{\partial y} = 0\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-255"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
-<div class="para" id="p-844">Se <span class="process-math">\(z = f\left(\frac{x}{y}\right)\text{,}\)</span> demonstre que <span class="process-math">\(x \frac{\partial z}{\partial x} + y \frac{\partial z}{\partial y} = 0\text{.}\)</span>
+<div class="para" id="p-850">Se <span class="process-math">\(z = f\left(\frac{x}{y}\right)\text{,}\)</span> demonstre que <span class="process-math">\(x \frac{\partial z}{\partial x} + y \frac{\partial z}{\partial y} = 0\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exercise-256"><h5 class="heading"><span class="codenumber">20<span class="period">.</span></span></h5>
-<div class="para" id="p-845">Suponha que <span class="process-math">\(w = f(x-y, y-z, z-x)\text{.}\)</span> Fazendo as substituições <span class="process-math">\(u = x-y\text{,}\)</span> <span class="process-math">\(v = y-z\text{,}\)</span> <span class="process-math">\(t = z-x\text{,}\)</span> aplique a regra da cadeia para provar que <span class="process-math">\(\frac{\partial w}{\partial x} + \frac{\partial w}{\partial y} + \frac{\partial w}{\partial z} = 0\text{.}\)</span>
+<div class="para" id="p-851">Suponha que <span class="process-math">\(w = f(x-y, y-z, z-x)\text{.}\)</span> Fazendo as substituições <span class="process-math">\(u = x-y\text{,}\)</span> <span class="process-math">\(v = y-z\text{,}\)</span> <span class="process-math">\(t = z-x\text{,}\)</span> aplique a regra da cadeia para provar que <span class="process-math">\(\frac{\partial w}{\partial x} + \frac{\partial w}{\partial y} + \frac{\partial w}{\partial z} = 0\text{.}\)</span>
 </div></article>
 </div>
 </div></section></section></div>

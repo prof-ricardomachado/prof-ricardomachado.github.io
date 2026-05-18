@@ -22,17 +22,17 @@
 \begin{bmatrix} e^u \cos v \amp -e^u \sin v \end{bmatrix}
 \begin{bmatrix} \frac{\partial u}{\partial x} \amp \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} \amp \frac{\partial v}{\partial y} \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para">Calculando a matriz Jacobiana de <span class="process-math">\((u,v)\)</span> em relação a <span class="process-math">\((x,y)\text{:}\)</span>
+</div></div> <div class="para">Calculando a matriz Jacobiana das funções internas em relação a <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{:}\)</span>
 </div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 J_{u,v} = \begin{bmatrix} y \amp x \\ \frac{1}{y} \amp -\frac{x}{y^2} \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para">Multiplicando:</div> <div class="para logical"><div class="displaymath process-math">
+</div></div> <div class="para">Multiplicando as matrizes:</div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix} z_x \amp z_y \end{bmatrix} = \begin{bmatrix} e^u \cos v \amp -e^u \sin v \end{bmatrix} \begin{bmatrix} y \amp x \\ \frac{1}{y} \amp -\frac{x}{y^2} \end{bmatrix}\text{.}
 \end{equation*}
 </div></div> <div class="para logical">
-<div class="para">Isso resulta no sistema:</div>
+<div class="para">Isso resulta no sistema parcial:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 z_x = y e^u \cos v - \frac{1}{y} e^u \sin v
@@ -41,6 +41,19 @@ z_x = y e^u \cos v - \frac{1}{y} e^u \sin v
 <div class="displaymath process-math">
 \begin{equation*}
 z_y = x e^u \cos v + \frac{x}{y^2} e^u \sin v\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Para finalizar, devemos substituir <span class="process-math">\(u\)</span> e <span class="process-math">\(v\)</span> para que a derivada dependa unicamente de <span class="process-math">\(x\)</span> e <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z_x = e^{xy} \left( y \cos\left(\frac{x}{y}\right) - \frac{1}{y} \sin\left(\frac{x}{y}\right) \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z_y = e^{xy} \left( x \cos\left(\frac{x}{y}\right) + \frac{x}{y^2} \sin\left(\frac{x}{y}\right) \right)\text{.}
 \end{equation*}
 </div>
 </div>

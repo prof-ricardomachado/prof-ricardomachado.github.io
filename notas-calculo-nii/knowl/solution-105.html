@@ -15,32 +15,44 @@
 <h4 class="heading">
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.5.4.1</span><span class="period">.</span>
 </h4>
-<div class="para">A matriz das derivadas parciais de <span class="process-math">\(f\)</span> em relação a <span class="process-math">\(x\)</span> e <span class="process-math">\(y\)</span> é:</div> <div class="para logical"><div class="displaymath process-math">
+<div class="para">A matriz das derivadas parciais de <span class="process-math">\(f\)</span> em relação a <span class="process-math">\(x\)</span> e <span class="process-math">\(y\)</span> é bem simples:</div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-J_f = \begin{bmatrix} 2xy - 2x \amp x^2 + 2y \end{bmatrix}\text{.}
+J_f = \begin{bmatrix} \frac{\partial f}{\partial x} \amp \frac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} y \amp x \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para">A matriz Jacobiana da transformação polar é:</div> <div class="para logical"><div class="displaymath process-math">
+</div></div> <div class="para">A matriz Jacobiana da transformação para coordenadas polares é:</div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 J_T = \begin{bmatrix} \frac{\partial x}{\partial r} \amp \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} \amp \frac{\partial y}{\partial \theta} \end{bmatrix} = \begin{bmatrix} \cos \theta \amp -r \sin \theta \\ \sin \theta \amp r \cos \theta \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para">A Regra da Cadeia nos dá:</div> <div class="para logical"><div class="displaymath process-math">
+</div></div> <div class="para">Pela Regra da Cadeia, <span class="process-math">\(J_{f(r,\theta)} = J_f \cdot J_T\text{:}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-\begin{bmatrix} \frac{\partial f}{\partial r} \amp \frac{\partial f}{\partial \theta} \end{bmatrix} = J_f \cdot J_T = 
-\begin{bmatrix} 2xy - 2x \amp x^2 + 2y \end{bmatrix}
+\begin{bmatrix} \frac{\partial f}{\partial r} \amp \frac{\partial f}{\partial \theta} \end{bmatrix} = 
+\begin{bmatrix} y \amp x \end{bmatrix}
 \begin{bmatrix} \cos \theta \amp -r \sin \theta \\ \sin \theta \amp r \cos \theta \end{bmatrix}\text{.}
 \end{equation*}
-</div></div> <div class="para">Realizando a multiplicação matriz linha por matriz coluna, obtemos diretamente o par de equações:</div> <div class="para logical">
+</div></div> <div class="para">Realizando a multiplicação matriz linha por matriz coluna:</div> <div class="para logical">
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial r} = (2xy - 2x)\cos \theta + (x^2 + 2y)\sin \theta
+\frac{\partial f}{\partial r} = y\cos \theta + x\sin \theta
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial \theta} = (2xy - 2x)(-r\sin \theta) + (x^2 + 2y)(r\cos \theta)\text{.}
+\frac{\partial f}{\partial \theta} = -yr\sin \theta + xr\cos \theta\text{.}
 \end{equation*}
 </div>
-</div>
+</div> <div class="para">Para obter o resultado final nas variáveis <span class="process-math">\(r\)</span> e <span class="process-math">\(\theta\text{,}\)</span> substituímos <span class="process-math">\(x = r\cos\theta\)</span> e <span class="process-math">\(y = r\sin\theta\text{:}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\frac{\partial f}{\partial r} =\amp\, (r\sin\theta)\cos\theta + (r\cos\theta)\sin\theta\\
+=\amp\, 2r\sin\theta\cos\theta = r\sin(2\theta)\text{.}
+\end{align*}
+</div></div> <div class="para logical"><div class="displaymath process-math">
+\begin{align*}
+\frac{\partial f}{\partial \theta} =\amp\, -(r\sin\theta)r\sin\theta + (r\cos\theta)r\cos\theta\\
+=\amp\, r^2(\cos^2\theta - \sin^2\theta) = r^2\cos(2\theta)\text{.}
+\end{align*}
+</div></div>
 </div>
 <span class="incontext"><a href="sec-conteudo-regra-cadeia.html#solution-105" class="internal">em contexto</a></span>
 </body>

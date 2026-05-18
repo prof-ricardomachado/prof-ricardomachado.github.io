@@ -3463,7 +3463,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.5",
   "title": "Regra da Cadeia",
-  "body": " Regra da Cadeia   Casos Específicos de Função Composta  No estudo de funções de uma variável, usamos a regra da cadeia para derivar funções compostas. Para funções de várias variáveis, a ideia é semelhante, mas precisamos levar em conta todas as variáveis intermediárias envolvidas.   Caso I (Uma variável independente final): Seja uma função de duas variáveis e sejam e funções de uma variável . A função composta depende apenas de .   Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão compactamente usando o produto do vetor gradiente de pelo vetor derivada de (ou em notação matricial): na qual .     Caso II (Duas ou mais variáveis independentes finais): Sejam e as variáveis intermediárias dadas por e . A função composta é .   Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações são essencialmente o produto da matriz Jacobiana da função externa pela matriz Jacobiana das funções internas: .    Essas regras matriciais generalizam-se para qualquer número de variáveis: a matriz Jacobiana da função composta é sempre o produto das matrizes Jacobianas das funções que a compõem.    Exemplos Resolvidos   Aplicação Vetorial (Caso I)   Dada a função , com e , encontre a derivada para utilizando notação matricial.    As derivadas parciais de formam o vetor (matriz ):   .  As derivadas de e formam o vetor coluna (matriz ):   .  Avaliando o vetor de em e :   .  Aplicando o produto matricial:    .     Mudança para Coordenadas Polares (Matricial)   Dada , com e , encontre as derivadas parciais e utilizando o produto da matriz Jacobiana.    A matriz das derivadas parciais de em relação a e é:   .  A matriz Jacobiana da transformação polar é:   .  A Regra da Cadeia nos dá:   .  Realizando a multiplicação matriz linha por matriz coluna, obtemos diretamente o par de equações:    .     Uma Variável Final, Três Intermediárias   Seja , onde , e . Calcule usando notação vetorial.    O vetor gradiente de é:   .  O vetor derivada das variáveis intermediárias em relação a é:   .  A derivada total é o produto matricial:   .  Substituindo em termos de :        Múltiplas Variáveis Independentes Finais   Considere , com as variáveis intermediárias e . Encontre as parciais e matricialmente.    Temos a relação matricial :   .  Calculando a matriz Jacobiana de em relação a :   .  Multiplicando:   .  Isso resulta no sistema:  .     Três Intermediárias e Duas Finais   Determine e para a função , sabendo que , e .    A formulação matricial é :   .  Calculando as derivadas:   .  Efetuando a multiplicação da matriz pela matriz :    .      Exercícios  Baseado nos conceitos da Regra da Cadeia e notação matricial, resolva os 20 exercícios a seguir.   Derivadas de Funções de Uma Variável Independente Final (Caso I)   Determine a derivada total ( ou ) usando a regra da cadeia:    , onde e .    , onde e .    , onde e .    , onde e .    , onde e .    , onde , e .     Derivadas Parciais de Funções Compostas (Múltiplas Variáveis Finais)   Determine as derivadas parciais solicitadas formando as matrizes Jacobianas:    Seja , com e . Calcule e .    Determine e para , com e .    Dada a função com e , encontre e .    Determine e para , com e .    Determine as derivadas parciais e para , onde , e .    Calcule e se , sendo e .    Determine e se , sabendo que e .    Seja , com , e . Encontre e .    Dada , onde e . Mostre usando matrizes que e .    Calcule e sabendo que , com , e .     Aplicações Teóricas e Demonstrações   Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e aplique a formulação em bloco matricial.    Seja , onde é diferenciável e são constantes. Prove que .    Se , demonstre que .    Suponha que . Fazendo as substituições , , , aplique a regra da cadeia para provar que .     "
+  "body": " Regra da Cadeia   Casos Específicos de Função Composta  No estudo de funções de uma variável, usamos a regra da cadeia para derivar funções compostas. Para funções de várias variáveis, a ideia é semelhante, mas precisamos levar em conta todas as variáveis intermediárias envolvidas.   Caso I (Uma variável independente final): Seja uma função de duas variáveis e sejam e funções de uma variável . A função composta depende apenas de .   Regra da Cadeia - Caso I   Se tem derivadas parciais contínuas e , são diferenciáveis, então é diferenciável e sua derivada é dada por: .  Podemos reescrever essa expressão compactamente usando o produto do vetor gradiente de pelo vetor derivada de (ou em notação matricial): na qual .     Caso II (Duas ou mais variáveis independentes finais): Sejam e as variáveis intermediárias dadas por e . A função composta é .   Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta num ponto são:  .  Essas equações representam essencialmente o produto da matriz Jacobiana da função externa (avaliada no ponto imagem ) pela matriz Jacobiana das funções internas (avaliada no ponto ):      Essas regras matriciais generalizam-se para qualquer número de variáveis: a matriz Jacobiana da função composta é sempre o produto das matrizes Jacobianas das funções que a compõem.    Exemplos Resolvidos   Aplicação Vetorial (Caso I)   Dada a função , com e , encontre a derivada para utilizando notação matricial.    As derivadas parciais de formam o vetor (matriz ):   .  As derivadas de e formam o vetor coluna (matriz ):   .  Para obter o resultado apenas na variável independente , avaliamos o vetor gradiente de em e :   .  Aplicando o produto matricial:    .     Mudança para Coordenadas Polares (Matricial)   Dada a função , com e , encontre as derivadas parciais e utilizando o produto da matriz Jacobiana.    A matriz das derivadas parciais de em relação a e é bem simples:   .  A matriz Jacobiana da transformação para coordenadas polares é:   .  Pela Regra da Cadeia, :   .  Realizando a multiplicação matriz linha por matriz coluna:    .  Para obter o resultado final nas variáveis e , substituímos e :   .   .     Uma Variável Final, Três Intermediárias   Seja , onde , e . Calcule usando notação vetorial.    O vetor gradiente de é:   .  O vetor derivada das variáveis intermediárias em relação a é:   .  A derivada total é o produto matricial:   .  Substituindo em termos da variável independente para a resposta final:   .     Múltiplas Variáveis Independentes Finais   Considere , com as variáveis intermediárias e . Encontre as parciais e matricialmente, expressando-as em termos de e .    Temos a relação matricial :   .  Calculando a matriz Jacobiana das funções internas em relação a e :   .  Multiplicando as matrizes:   .  Isso resulta no sistema parcial:  .  Para finalizar, devemos substituir e para que a derivada dependa unicamente de e :  .     Três Intermediárias e Duas Finais   Determine e em termos exclusivos de e para a função , sabendo que , e .    A formulação matricial é :   .  Calculando as derivadas:   .  Efetuando a multiplicação da matriz pela matriz :    .  Agora, procedemos com a substituição para eliminar , e . Observamos que: , , e . Substituindo:   .      Exercícios  Baseado nos conceitos da Regra da Cadeia e notação matricial, resolva os 20 exercícios a seguir.   Derivadas de Funções de Uma Variável Independente Final (Caso I)   Determine a derivada total ( ou ) usando a regra da cadeia:    , onde e .    , onde e .    , onde e .    , onde e .    , onde e .    , onde , e .     Derivadas Parciais de Funções Compostas (Múltiplas Variáveis Finais)   Determine as derivadas parciais solicitadas formando as matrizes Jacobianas:    Seja , com e . Calcule e .    Determine e para , com e .    Dada a função com e , encontre e .    Determine e para , com e .    Determine as derivadas parciais e para , onde , e .    Calcule e se , sendo e .    Determine e se , sabendo que e .    Seja , com , e . Encontre e .    Dada , onde e . Mostre usando matrizes que e .    Calcule e sabendo que , com , e .     Aplicações Teóricas e Demonstrações   Dada , onde é uma função diferenciável arbitrária de uma variável, mostre usando a regra da cadeia que a equação é satisfeita.   Chame a variável interna de e aplique a formulação em bloco matricial.    Seja , onde é diferenciável e são constantes. Prove que .    Se , demonstre que .    Suponha que . Fazendo as substituições , , , aplique a regra da cadeia para provar que .     "
 },
 {
   "id": "teo-regra-cadeia-caso1",
@@ -3481,7 +3481,7 @@ var ptx_lunr_docs = [
   "type": "Teorema",
   "number": "3.5.2",
   "title": "Regra da Cadeia - Caso II.",
-  "body": " Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta são:  .  Essas equações são essencialmente o produto da matriz Jacobiana da função externa pela matriz Jacobiana das funções internas: .   "
+  "body": " Regra da Cadeia - Caso II   Sob as devidas condições de diferenciabilidade, as derivadas parciais da função composta num ponto são:  .  Essas equações representam essencialmente o produto da matriz Jacobiana da função externa (avaliada no ponto imagem ) pela matriz Jacobiana das funções internas (avaliada no ponto ):     "
 },
 {
   "id": "ex-cadeia-vetorial-1",
@@ -3490,16 +3490,16 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.5.3",
   "title": "Aplicação Vetorial (Caso I).",
-  "body": " Aplicação Vetorial (Caso I)   Dada a função , com e , encontre a derivada para utilizando notação matricial.    As derivadas parciais de formam o vetor (matriz ):   .  As derivadas de e formam o vetor coluna (matriz ):   .  Avaliando o vetor de em e :   .  Aplicando o produto matricial:    .   "
+  "body": " Aplicação Vetorial (Caso I)   Dada a função , com e , encontre a derivada para utilizando notação matricial.    As derivadas parciais de formam o vetor (matriz ):   .  As derivadas de e formam o vetor coluna (matriz ):   .  Para obter o resultado apenas na variável independente , avaliamos o vetor gradiente de em e :   .  Aplicando o produto matricial:    .   "
 },
 {
-  "id": "ex-cadeia-polar-matriz",
+  "id": "ex-cadeia-polar-simples",
   "level": "2",
-  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-polar-matriz",
+  "url": "sec-conteudo-regra-cadeia.html#ex-cadeia-polar-simples",
   "type": "Exemplo",
   "number": "3.5.4",
   "title": "Mudança para Coordenadas Polares (Matricial).",
-  "body": " Mudança para Coordenadas Polares (Matricial)   Dada , com e , encontre as derivadas parciais e utilizando o produto da matriz Jacobiana.    A matriz das derivadas parciais de em relação a e é:   .  A matriz Jacobiana da transformação polar é:   .  A Regra da Cadeia nos dá:   .  Realizando a multiplicação matriz linha por matriz coluna, obtemos diretamente o par de equações:    .   "
+  "body": " Mudança para Coordenadas Polares (Matricial)   Dada a função , com e , encontre as derivadas parciais e utilizando o produto da matriz Jacobiana.    A matriz das derivadas parciais de em relação a e é bem simples:   .  A matriz Jacobiana da transformação para coordenadas polares é:   .  Pela Regra da Cadeia, :   .  Realizando a multiplicação matriz linha por matriz coluna:    .  Para obter o resultado final nas variáveis e , substituímos e :   .   .   "
 },
 {
   "id": "ex-cadeia-3-intermediarias",
@@ -3508,7 +3508,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.5.5",
   "title": "Uma Variável Final, Três Intermediárias.",
-  "body": " Uma Variável Final, Três Intermediárias   Seja , onde , e . Calcule usando notação vetorial.    O vetor gradiente de é:   .  O vetor derivada das variáveis intermediárias em relação a é:   .  A derivada total é o produto matricial:   .  Substituindo em termos de :      "
+  "body": " Uma Variável Final, Três Intermediárias   Seja , onde , e . Calcule usando notação vetorial.    O vetor gradiente de é:   .  O vetor derivada das variáveis intermediárias em relação a é:   .  A derivada total é o produto matricial:   .  Substituindo em termos da variável independente para a resposta final:   .   "
 },
 {
   "id": "ex-cadeia-2-intermediarias-com-exp",
@@ -3517,7 +3517,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.5.6",
   "title": "Múltiplas Variáveis Independentes Finais.",
-  "body": " Múltiplas Variáveis Independentes Finais   Considere , com as variáveis intermediárias e . Encontre as parciais e matricialmente.    Temos a relação matricial :   .  Calculando a matriz Jacobiana de em relação a :   .  Multiplicando:   .  Isso resulta no sistema:  .   "
+  "body": " Múltiplas Variáveis Independentes Finais   Considere , com as variáveis intermediárias e . Encontre as parciais e matricialmente, expressando-as em termos de e .    Temos a relação matricial :   .  Calculando a matriz Jacobiana das funções internas em relação a e :   .  Multiplicando as matrizes:   .  Isso resulta no sistema parcial:  .  Para finalizar, devemos substituir e para que a derivada dependa unicamente de e :  .   "
 },
 {
   "id": "ex-cadeia-3x2",
@@ -3526,7 +3526,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "3.5.7",
   "title": "Três Intermediárias e Duas Finais.",
-  "body": " Três Intermediárias e Duas Finais   Determine e para a função , sabendo que , e .    A formulação matricial é :   .  Calculando as derivadas:   .  Efetuando a multiplicação da matriz pela matriz :    .   "
+  "body": " Três Intermediárias e Duas Finais   Determine e em termos exclusivos de e para a função , sabendo que , e .    A formulação matricial é :   .  Calculando as derivadas:   .  Efetuando a multiplicação da matriz pela matriz :    .  Agora, procedemos com a substituição para eliminar , e . Observamos que: , , e . Substituindo:   .   "
 },
 {
   "id": "exercise-237",
@@ -4348,9 +4348,9 @@ var ptx_lunr_docs = [
   "body": " Ponto Crítico do Tipo Sela   Determine o ponto crítico de .    As derivadas parciais são dadas por: .  O único ponto onde o gradiente é nulo é . Embora o plano tangente seja horizontal, este ponto não é de máximo nem de mínimo, sendo conhecido como ponto de sela.   "
 },
 {
-  "id": "p-1105",
+  "id": "p-1111",
   "level": "2",
-  "url": "sec-extremos-geral.html#p-1105",
+  "url": "sec-extremos-geral.html#p-1111",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
@@ -4843,18 +4843,18 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Guidorizzi, Hamilton Luiz, Cálculo , volume 1, LTC, 5ª edição, 2001.    Lima, Elon Lages, Análise Real , volume 1, Projeto Euclides, 2008.    LIMA, Elon Lages et al., A matemática do ensino médio , volume 3, Coleção do Professor de Matemática, SBM, 7ª ed, 2016.    WAGNER, Eduardo; MORGADO, Augusto Cesar de O.; CARMO, M., Trigonometria e números complexos , Coleção do Professor de Matemática, SBM, 1992.  Artigos  "
 },
 {
-  "id": "p-1185",
+  "id": "p-1191",
   "level": "2",
-  "url": "referencias.html#p-1185",
+  "url": "referencias.html#p-1191",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1186",
+  "id": "p-1192",
   "level": "2",
-  "url": "referencias.html#p-1186",
+  "url": "referencias.html#p-1192",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
