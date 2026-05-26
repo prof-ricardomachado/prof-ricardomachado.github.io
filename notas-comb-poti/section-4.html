@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Combinatória">
 <meta property="book:author" content="Ricardo Machado">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +26,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -177,7 +190,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="contagem.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><span class="next-button button disabled"><span class="name">Próximo</span><span class="icon">&gt;</span></span></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="contagem.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="pcp.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
@@ -224,6 +237,30 @@ window.MathJax = {
 <li><div class="toc-item"><a href="section-4.html#sec-separando-em-casos" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Separando em casos</span></a></div></li>
 <li><div class="toc-item"><a href="section-4.html#sec-contagens-multiplas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Contagens Múltiplas</span></a></div></li>
 <li><div class="toc-item"><a href="section-4.html#problemas-propostos" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pcp.html" class="internal"><span class="codenumber">2</span> <span class="title">O Pincípio da Casa dos Pombos</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">O Pincípio da Casa dos Pombos I</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html#introducao" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#passo-de-magica" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Passo de Mágica?</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exemplos-resolvidos" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#generalizacao" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Outra Versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exercises-3" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Problemas</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#problemas-adicionais" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Problemas Adicionais</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">2.2</span> <span class="title">O Pincípio da Casa dos Pombos II</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-8.html#introducao" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-resolvidos" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Problemas Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-propostos" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Problemas Propostos</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -348,7 +385,7 @@ m_1 a_1 t_1 e m_2 a_2 t_2 i c a_3
 <div class="para" id="p-106">Considere um torneio de xadrez com 10 participantes. Na primeira rodada cada participante joga somente uma vez, de modo que há 5 jogos realizados simultaneamente. De quantas maneiras esta primeira rodada pode ser realizada?</div></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
 <div class="para" id="p-107">Doze cavaleiros estão sentados em torno de uma mesa redonda. Cada um dos 12 cavaleiros considera seus dois vizinhos como rivais. Deseja-se formar um grupo de 5 cavaleiros para salvar uma princesa. Nesse grupo não poderá haver cavaleiros rivais. Determine de quantas maneiras é possível escolher esse grupo.</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Próximo</span><span class="icon">&gt;</span></span>
+<a class="previous-button button" href="section-1.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="pcp.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">

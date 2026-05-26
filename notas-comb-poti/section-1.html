@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Combinatória">
 <meta property="book:author" content="Ricardo Machado">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +26,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -224,6 +237,30 @@ window.MathJax = {
 <li><div class="toc-item"><a href="section-4.html#sec-separando-em-casos" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Separando em casos</span></a></div></li>
 <li><div class="toc-item"><a href="section-4.html#sec-contagens-multiplas" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Contagens Múltiplas</span></a></div></li>
 <li><div class="toc-item"><a href="section-4.html#problemas-propostos" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="pcp.html" class="internal"><span class="codenumber">2</span> <span class="title">O Pincípio da Casa dos Pombos</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">O Pincípio da Casa dos Pombos I</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html#introducao" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#passo-de-magica" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Passo de Mágica?</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exemplos-resolvidos" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#generalizacao" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Outra Versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exercises-3" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Problemas</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#problemas-adicionais" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Problemas Adicionais</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">2.2</span> <span class="title">O Pincípio da Casa dos Pombos II</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-8.html#introducao" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-resolvidos" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Problemas Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-propostos" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Problemas Propostos</span></a></div></li>
 </ul>
 </li>
 </ul>

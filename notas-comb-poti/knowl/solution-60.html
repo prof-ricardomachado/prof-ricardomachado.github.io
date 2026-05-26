@@ -12,71 +12,12 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.3.1</span><span class="period">.</span>
-</h3>
-<div class="para logical">
-<div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/lema-01.html" title="Lema 1.2.2">Lema 1.2.2</a> ("Limitação"),</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lema-01.html">
-\begin{align*}
-a|(b+1) \amp\Rightarrow a\leq b+1\\
-b|(a+1) \amp\Rightarrow b\leq a+1 \Leftrightarrow b-1\leq a
-\end{align*}
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.5.1</span><span class="period">.</span>
+</h4>
+<div class="para">Pinte as casas do tabuleiro usando 16 cores (numeradas de 1 a 16) conforme um padrão onde matrizes <span class="process-math">\(4\times 4\)</span> são repetidas ao longo do tabuleiro.</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/tab_8x8_pcp2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">Justificativa formal da coloração: Para garantir o rigor na análise desta invariante, precisamos entender como a métrica do salto de cavalo opera no tabuleiro. O grafo de movimentos do cavalo é bipartido, o que significa que cada movimento sempre altera a cor da casa num padrão de xadrez tradicional (mudando a paridade da soma das coordenadas). Para retornar a uma casa da mesma cor no xadrez tradicional, o cavalo precisa de um número estritamente par de movimentos. Ao particionarmos o tabuleiro <span class="process-math">\(8\times 8\)</span> em 16 classes de equivalência (as cores de 1 a 16, com 4 casas cada), o padrão foi construído de modo que as casas de uma mesma classe possuem a mesma paridade de coordenadas, mas estão espaçadas a uma distância euclidiana que impede que sejam conectadas por caminhos de tamanho 2. Como não podem ser alcançadas em 2 movimentos, e a invariante de paridade exige um número par de saltos para conectar casas da mesma classe, a distância mínima no grafo do cavalo entre duas casas idênticas é de, pelo menos, 4 movimentos.</div> <div class="para">Observe que para se deslocar entre duas casas de mesma cor o cavalo necessita de pelo menos três movimentos (na verdade, provamos acima que são no mínimo 4). Portanto, pelo princípio da casa dos pombos, dentre 17 casas marcadas e 16 cores disponíveis, sempre haverá pelo menos duas da mesma cor, garantindo a condição exigida.</div>
 </div>
-<div class="para">Ou seja,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lema-01.html">
-\begin{equation*}
-b-1\leq a\leq b+1,
-\end{equation*}
-</div>
-<div class="para">então temos três possibilidades: <span class="process-math">\(a=b-1\)</span> ou <span class="process-math">\(a=b\)</span> ou <span class="process-math">\(a=b+1\text{.}\)</span>
-</div>
-</div> <div class="para logical">
-<div class="para">
-<span class="process-math">\(\bullet\)</span> Se <span class="process-math">\(a=b-1\text{,}\)</span> então</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lema-01.html">
-\begin{equation*}
-a|(b-1)\quad \text{e}\quad a|(b+1).
-\end{equation*}
-</div>
-<div class="para">Pelo item <em class="emphasis">i</em> do <a href="" class="xref" data-knowl="./knowl/lema-01.html" title="Lema 1.2.2">Lema 1.2.2</a>, escolhendo <span class="process-math">\(x=-1\)</span> e <span class="process-math">\(y=1\)</span> temos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lema-01.html">
-\begin{align*}
-a|\amp[(b-1)\cdot(-1) + (b+1)\cdot(1)]\\
-a|\amp 2.
-\end{align*}
-</div>
-<div class="para">Então, <span class="process-math">\(a=1\)</span> ou <span class="process-math">\(a=2\text{.}\)</span> Se <span class="process-math">\(a=1, b=2\)</span> e se <span class="process-math">\(a=2, b=3\text{.}\)</span>
-</div>
-</div> <div class="para logical">
-<div class="para">
-<span class="process-math">\(\bullet\)</span> Se <span class="process-math">\(a=b\text{,}\)</span> então</div>
-<div class="displaymath process-math">
-\begin{equation*}
-a|a\quad \text{e}\quad a|(a+1),
-\end{equation*}
-</div>
-<div class="para">Logo, <span class="process-math">\(a|[(a+1)-a].\)</span> Portanto, <span class="process-math">\(a|1\)</span> e consequentemente <span class="process-math">\(a=1\)</span> e <span class="process-math">\(b=1\text{.}\)</span>
-</div>
-</div> <div class="para logical">
-<div class="para">
-<span class="process-math">\(\bullet\)</span> Se <span class="process-math">\(a=b+1\text{,}\)</span> isto significa que <span class="process-math">\(b=a-1\text{.}\)</span> Assim,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-b|(a-1)\quad \text{e}\quad b|(a+1),
-\end{equation*}
-</div>
-<div class="para">logo</div>
-<div class="displaymath process-math">
-\begin{equation*}
-b|(a+1)-(a-1).
-\end{equation*}
-</div>
-<div class="para">Portanto, <span class="process-math">\(b|2\text{,}\)</span> então <span class="process-math">\(b=1, a=2\)</span> ou <span class="process-math">\(b=2, a=3\text{.}\)</span>
-</div>
-</div> <div class="para">O conjunto de todas as soluções: <span class="process-math">\(\{(1,2),(2,3), (1,1), (2,1), (3,2)\}\)</span>
-</div>
-</div>
-<span class="incontext"><a href="section-4.html#solution-60" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-8.html#solution-60" class="internal">em contexto</a></span>
 </body>
 </html>

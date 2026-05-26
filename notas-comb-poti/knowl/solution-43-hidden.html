@@ -10,5 +10,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para">Pinte as casas do tabuleiro acima alternadamente de branco e preto (como no tabuleiro de xadrez). Note que, não importa como colocamos o dominó no tabuleiro, ele sempre cobre uma casa branca e outra preta. Desse modo, se fosse possível cobrir o tabuleiro usando apenas dominós, deveríamos ter o tabuleiro com a quantidade de casas pretas igual à quantidade de casas brancas. Mas no tabuleiro "quebrado" existem 18 casas brancas e 16 pretas. Logo, não é possível fazer tal cobertura.</div></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Considere as 1001 potências de 3:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3^1, 3^2, \dots, 3^{1001}\text{.}
+\end{equation*}
+</div>
+<div class="para">Existem 1000 restos possíveis na divisão por 1000 (de 0 a 999). Pelo PCP, existem duas potências com o mesmo resto, ou seja, <span class="process-math">\(3^i \equiv 3^j \pmod{1000}\)</span> com <span class="process-math">\(i &gt; j\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Portanto, <span class="process-math">\(3^i - 3^j \equiv 0 \pmod{1000}\text{,}\)</span> o que implica</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3^j(3^{i-j} - 1) \equiv 0 \pmod{1000}\text{.}
+\end{equation*}
+</div>
+<div class="para">Como o MDC de 3 e 1000 é 1, <span class="process-math">\(3^j\)</span> não é divisível por 1000, logo</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3^{i-j} - 1 \equiv 0 \pmod{1000}\text{,}
+\end{equation*}
+</div>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3^{i-j} \equiv 1 \pmod{1000}\text{.}
+\end{equation*}
+</div>
+<div class="para">Isso significa que essa potência termina em 001.</div>
+</div>
+</div></body>
 </html>

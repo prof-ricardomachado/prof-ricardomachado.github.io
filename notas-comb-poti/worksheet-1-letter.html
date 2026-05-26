@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Combinatória">
 <meta property="book:author" content="Ricardo Machado">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +26,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -177,7 +190,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-10.html#exemplos" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="section-10.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><span class="next-button button disabled"><span class="name">Próximo</span><span class="icon">&gt;</span></span></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-9.html#exemplos" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="section-9.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><span class="next-button button disabled"><span class="name">Próximo</span><span class="icon">&gt;</span></span></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
@@ -229,23 +242,36 @@ window.MathJax = {
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="jogos.html" class="internal"><span class="codenumber">2</span> <span class="title">Jogos</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Aula 6 - Jogos</span></a></div>
+<div class="toc-item"><a href="pcp.html" class="internal"><span class="codenumber">2</span> <span class="title">O Pincípio da Casa dos Pombos</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-7.html#section-8" class="internal"><span class="codenumber">2.1.1</span> <span class="title">1. Simetria</span></a></div></li>
-<li><div class="toc-item"><a href="section-7.html#section-9" class="internal"><span class="codenumber">2.1.2</span> <span class="title">2. Posições Vencedoras</span></a></div></li>
-<li><div class="toc-item"><a href="section-7.html#exercises-3" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">O Pincípio da Casa dos Pombos I</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html#introducao" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#passo-de-magica" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Passo de Mágica?</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exemplos-resolvidos" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#generalizacao" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Outra Versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exercises-3" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Problemas</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#problemas-adicionais" class="internal"><span class="codenumber">2.1.6</span> <span class="title">Problemas Adicionais</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">2.2</span> <span class="title">O Pincípio da Casa dos Pombos II</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-8.html#introducao" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-resolvidos" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Problemas Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-propostos" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <div class="toc-item"><a href="tabuleiros.html" class="internal"><span class="codenumber">3</span> <span class="title">Tabuleiros</span></a></div>
 <ul class="structural"><li>
-<div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Aula 9: Tabuleiros</span></a></div>
+<div class="toc-item"><a href="section-9.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Aula 9: Tabuleiros</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-10.html#exemplos" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="section-10.html#worksheet-1" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Problemas Propostos</span></a></div></li>
+<li><div class="toc-item"><a href="section-9.html#exemplos" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="section-9.html#worksheet-1" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Problemas Propostos</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -258,56 +284,56 @@ window.MathJax = {
 <article class="problem example-like" id="problem-7"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.20</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-183">
+<div class="para logical" id="p-252">
 <div class="para">Sobre uma das casas de um tabuleiro infinito, existe um cubo que cobre a casa perfeitamente. A face no topo do cubo é branca, enquanto as demais faces são pretas. A cada passo, podemos tombar o cubo para um dos lados. É possível que:</div>
 <ol class="lower-alpha">
-<li id="li-44"><div class="para" id="p-derived-li-44">Após 2004 passos o cubo volte ao mesmo quadrado com a face branca para baixo?</div></li>
-<li id="li-45"><div class="para" id="p-derived-li-45">Após 2005 passos?</div></li>
+<li id="li-41"><div class="para" id="p-derived-li-41">Após 2004 passos o cubo volte ao mesmo quadrado com a face branca para baixo?</div></li>
+<li id="li-42"><div class="para" id="p-derived-li-42">Após 2005 passos?</div></li>
 </ol>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-49" id="solution-49"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like"><ol class="lower-alpha">
-<li id="li-46">Sim. Vire o cubo duas vezes para a direita, uma para baixo, duas para a esquerda e uma para cima (figura 4). Após estes seis passos, a face branca estará virada para baixo. Sobram 1998 passos, basta tombar repetidamente o cudo para direira e para esquerda. <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros11.svg" role="img" class="contained"></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-73" id="solution-73"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-43">Sim. Vire o cubo duas vezes para a direita, uma para baixo, duas para a esquerda e uma para cima (figura 4). Após estes seis passos, a face branca estará virada para baixo. Sobram 1998 passos, basta tombar repetidamente o cudo para direira e para esquerda. <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros11.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </li>
-<li id="li-47"><div class="para" id="p-derived-li-47">Não. Pinte o tabuleiro na maneira usual. Note que, a cada movimento, o cubo muda de uma casa preta para uma casa branca e vice-versa. Logo, após um número ı́mpar de movimentos não poderá estar na casa inicial.</div></li>
+<li id="li-44"><div class="para" id="p-derived-li-44">Não. Pinte o tabuleiro na maneira usual. Note que, a cada movimento, o cubo muda de uma casa preta para uma casa branca e vice-versa. Logo, após um número ı́mpar de movimentos não poderá estar na casa inicial.</div></li>
 </ol></div></div>
 </div></article><article class="problem example-like" id="problem-8"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-184">É possível cobrir o tabuleiro a seguir usando apenas dominós?</div> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros10.svg" role="img" class="contained"></div>
+<div class="para" id="p-253">É possível cobrir o tabuleiro a seguir usando apenas dominós?</div> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros10.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.23<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="problem example-like" id="problem-9"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.24</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-185">(OBM/2012 – N2 – 2ª fase – Q1) João gosta de verificar propriedades do jogo de xadrez em um tabuleiro <span class="process-math">\(5 \times 5\text{.}\)</span> Num de seus experimentos, João coloca um cavalo na casa inferior esquerda do tabuleiro <span class="process-math">\(5 \times 5\text{.}\)</span> Qual o número mínimo de movimentos do cavalo para que ele possa chegar a qualquer casa do tabuleiro <span class="process-math">\(5 \times 5\text{?}\)</span>
-</div> <div class="para" id="p-186">Observação: O cavalo movimenta-se em L, isto é, anda duas casas em uma direção e, logo em seguida, uma casa na direção perpendicular, como ilustrado na figura.</div> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/Aula_09_-_Tabuleiros14.svg" role="img" class="contained"></div>
+<div class="para" id="p-254">(OBM/2012 – N2 – 2ª fase – Q1) João gosta de verificar propriedades do jogo de xadrez em um tabuleiro <span class="process-math">\(5 \times 5\text{.}\)</span> Num de seus experimentos, João coloca um cavalo na casa inferior esquerda do tabuleiro <span class="process-math">\(5 \times 5\text{.}\)</span> Qual o número mínimo de movimentos do cavalo para que ele possa chegar a qualquer casa do tabuleiro <span class="process-math">\(5 \times 5\text{?}\)</span>
+</div> <div class="para" id="p-255">Observação: O cavalo movimenta-se em L, isto é, anda duas casas em uma direção e, logo em seguida, uma casa na direção perpendicular, como ilustrado na figura.</div> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/Aula_09_-_Tabuleiros14.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.25<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-50" id="solution-50"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><div class="para" id="p-187">Vamos colorir cada casa do tabuleiro <span class="process-math">\(5 \times 5\)</span> com o número <span class="process-math">\(i\)</span> quando o cavalo precisar de no mínimo <span class="process-math">\(i\)</span> movimentos para chegar a tal casa do tabuleiro. Comecemos, então, pelo <span class="process-math">\(1\text{:}\)</span> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros15.svg" role="img" class="contained"></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-74" id="solution-74"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like"><div class="para" id="p-256">Vamos colorir cada casa do tabuleiro <span class="process-math">\(5 \times 5\)</span> com o número <span class="process-math">\(i\)</span> quando o cavalo precisar de no mínimo <span class="process-math">\(i\)</span> movimentos para chegar a tal casa do tabuleiro. Comecemos, então, pelo <span class="process-math">\(1\text{:}\)</span> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros15.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.26<span class="period">.</span></span><span class="space"> </span></figcaption></figure> Portanto, a resposta é <span class="process-math">\(4\text{.}\)</span>
 </div></div></div>
 </div></article><article class="problem example-like" id="problem-10"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.27</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-188">É possível cobrir um tabuleiro <span class="process-math">\(5 \times 10\)</span> usando apenas peças como abaixo? <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/Aula_09_-_Tabuleiros12.svg" role="img" class="contained"></div>
+<div class="para" id="p-257">É possível cobrir um tabuleiro <span class="process-math">\(5 \times 10\)</span> usando apenas peças como abaixo? <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/Aula_09_-_Tabuleiros12.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.28<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-51" id="solution-51"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like"><div class="para" id="p-189">Sim, é possível. <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros13.svg" role="img" class="contained"></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-75" id="solution-75"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like"><div class="para" id="p-258">Sim, é possível. <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros13.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.29<span class="period">.</span></span><span class="space"> </span></figcaption></figure> .</div></div></div>
 </div></article><article class="problem example-like" id="problem-11"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.30</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-190">(Rússia 1997) Podemos cobrir um tabuleiro <span class="process-math">\(75 \times 75\)</span> usando dominós e cruzes (peça de 5 quadrados)?</div>
+<div class="para" id="p-259">(Rússia 1997) Podemos cobrir um tabuleiro <span class="process-math">\(75 \times 75\)</span> usando dominós e cruzes (peça de 5 quadrados)?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
-<div class="para" id="p-191">A resposta é não. A impossibilidade pode ser demonstrada de forma elegante atribuindo-se valores numéricos às casas do tabuleiro, o que transforma o problema de cobertura em uma simples equação algébrica.</div> <div class="para" id="p-192">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
+<div class="para" id="p-260">A resposta é não. A impossibilidade pode ser demonstrada de forma elegante atribuindo-se valores numéricos às casas do tabuleiro, o que transforma o problema de cobertura em uma simples equação algébrica.</div> <div class="para" id="p-261">
 <dfn class="terminology">(Passo 1: Atribuição de Valores)</dfn> Definimos um valor para cada casa do tabuleiro com base em sua cor em um padrão de xadrez:</div> <ul class="disc">
-<li id="li-48"><div class="para" id="p-193">Uma casa <dfn class="terminology">branca</dfn> recebe o valor <span class="process-math">\(+1\text{.}\)</span>
+<li id="li-45"><div class="para" id="p-262">Uma casa <dfn class="terminology">branca</dfn> recebe o valor <span class="process-math">\(+1\text{.}\)</span>
 </div></li>
-<li id="li-49"><div class="para" id="p-194">Uma casa <dfn class="terminology">preta</dfn> recebe o valor <span class="process-math">\(-1\text{.}\)</span>
+<li id="li-46"><div class="para" id="p-263">Uma casa <dfn class="terminology">preta</dfn> recebe o valor <span class="process-math">\(-1\text{.}\)</span>
 </div></li>
-</ul> <div class="para" id="p-195">Com base nisso, calculamos o valor total do tabuleiro e o valor de cada peça individualmente.</div> <ol class="lower-alpha">
-<li id="li-50"><div class="para logical" id="p-196">
+</ul> <div class="para" id="p-264">Com base nisso, calculamos o valor total do tabuleiro e o valor de cada peça individualmente.</div> <ol class="lower-alpha">
+<li id="li-47"><div class="para logical" id="p-265">
 <div class="para">
 <dfn class="terminology">Valor Total do Tabuleiro:</dfn> Um tabuleiro 75 × 75 possui 2813 casas brancas e 2812 casas pretas. A soma total dos valores é:</div>
 <div class="displaymath process-math">
@@ -317,35 +343,35 @@ window.MathJax = {
 </div>
 <div class="para">Qualquer cobertura completa deve, portanto, ter uma soma de valores igual a 1.</div>
 </div></li>
-<li id="li-51"><div class="para logical" id="p-197">
+<li id="li-48"><div class="para logical" id="p-266">
 <div class="para">
 <dfn class="terminology">Valor de um Dominó:</dfn> Cobre uma casa branca (+1) e uma preta (-1). Seu valor é</div>
-<div class="displaymath process-math" id="md-1">
+<div class="displaymath process-math" id="md-2">
 \begin{gather*}
 (+1) + (-1) = 0\text{.}
 \end{gather*}
 </div>
 </div></li>
-<li id="li-52"><div class="para logical" id="p-198">
+<li id="li-49"><div class="para logical" id="p-267">
 <div class="para">
 <dfn class="terminology">Valor de uma Cruz com centro preto:</dfn> Cobre 4 casas brancas e 1 preta. Seu valor é</div>
-<div class="displaymath process-math" id="md-2">
+<div class="displaymath process-math" id="md-3">
 \begin{gather*}
 4 \times (+1) + 1 \times (-1) = 3\text{.}
 \end{gather*}
 </div>
 </div></li>
-<li id="li-53"><div class="para logical" id="p-199">
+<li id="li-50"><div class="para logical" id="p-268">
 <div class="para">
 <dfn class="terminology">Valor de uma Cruz com centro branco:</dfn> Cobre 1 casa branca e 4 pretas. Seu valor é</div>
-<div class="displaymath process-math" id="md-3">
+<div class="displaymath process-math" id="md-4">
 \begin{gather*}
 1 \times (+1) + 4 \times (-1) = -3\text{.}
 \end{gather*}
 </div>
 </div></li>
-</ol> <div class="para" id="p-200">
-<dfn class="terminology">(Passo 2: A Equação da Cobertura)</dfn> Seja <span class="process-math">\(d\)</span> o número de dominós, <span class="process-math">\(c_P\)</span> o número de cruzes com centro preto e <span class="process-math">\(c_B\)</span> o número de cruzes com centro branco. Para que a cobertura seja possível, a soma dos valores de todas as peças deve ser igual ao valor total do tabuleiro.</div> <div class="para logical" id="p-201">
+</ol> <div class="para" id="p-269">
+<dfn class="terminology">(Passo 2: A Equação da Cobertura)</dfn> Seja <span class="process-math">\(d\)</span> o número de dominós, <span class="process-math">\(c_P\)</span> o número de cruzes com centro preto e <span class="process-math">\(c_B\)</span> o número de cruzes com centro branco. Para que a cobertura seja possível, a soma dos valores de todas as peças deve ser igual ao valor total do tabuleiro.</div> <div class="para logical" id="p-270">
 <div class="para">Isso nos leva à equação:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -358,7 +384,7 @@ window.MathJax = {
 3c_P - 3c_B = 1
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-202">
+</div> <div class="para logical" id="p-271">
 <div class="para">
 <dfn class="terminology">(Passo 3: A Contradição)</dfn> A equação final revela a impossibilidade da tarefa. Fatorando o lado esquerdo, temos:</div>
 <div class="displaymath process-math">
@@ -367,73 +393,73 @@ window.MathJax = {
 \end{equation*}
 </div>
 <div class="para">Esta equação representa uma contradição matemática, pois <span class="process-math">\(c_P - c_B\)</span> é um valor inteiro, mas precisar ser igual a <span class="process-math">\(1/3\)</span> para existir a solução.</div>
-</div>  <div class="para" id="p-203">
+</div>  <div class="para" id="p-272">
 <dfn class="terminology">Conclusão:</dfn> Como a premissa de que o tabuleiro pode ser coberto leva a uma equação sem solução inteira, a premissa é falsa. Portanto, é impossível cobrir um tabuleiro 75 × 75 com as peças dadas.</div>
 </div></div>
 </div></article><article class="problem example-like" id="problem-12"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.31</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-204">(Maio/2005) Sobre o tabuleiro <span class="process-math">\(9\times 9\text{,}\)</span> aterrissou a nave inimiga que cobre exatamente 5 casas do tabuleiro, conforme mostrado na figura. A nave é invisível.</div> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/Aula_09_-_Tabuleiros16.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.32<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="p-205">Cada míssil defensivo cobre exatamente uma casa, e destrói a nave se bater numa das 5 casas que esta ocupa. Determine o número mínimo de mísseis que são necessários para destruir com certeza a nave inimiga.</div>
+<div class="para" id="p-273">(Maio/2005) Sobre o tabuleiro <span class="process-math">\(9\times 9\text{,}\)</span> aterrissou a nave inimiga que cobre exatamente 5 casas do tabuleiro, conforme mostrado na figura. A nave é invisível.</div> <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/Aula_09_-_Tabuleiros16.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.32<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para" id="p-274">Cada míssil defensivo cobre exatamente uma casa, e destrói a nave se bater numa das 5 casas que esta ocupa. Determine o número mínimo de mísseis que são necessários para destruir com certeza a nave inimiga.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-53" id="solution-53"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
-<div class="para logical" id="p-206">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-77" id="solution-77"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<div class="para logical" id="p-275">
 <div class="para">Para encontrar uma coloração adequada, usamos uma fórmula geral com coeficientes <span class="process-math">\(a\)</span> e <span class="process-math">\(b\text{,}\)</span> que podemos escolher posteriormente. A fórmula é definida como:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \text{Cor} = (a \times \text{linha} + b \times \text{coluna}) \pmod{5}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-207">
+</div> <div class="para logical" id="p-276">
 <div class="para">Vamos testar o comportamento desta fórmula em uma cruz centrada na casa <span class="process-math">\((r, c)\text{.}\)</span> Definimos <span class="process-math">\(C\)</span> como a cor da casa central:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C = (a \times r + b \times c) \pmod{5}
 \end{equation*}
 </div>
-</div> <div class="para" id="p-208">As cores das 5 casas da cruz em relação a <span class="process-math">\(C\)</span> são:</div> <ul class="disc">
-<li id="li-54"><div class="para" id="p-derived-li-54">Centro: <span class="process-math">\(C\)</span>
+</div> <div class="para" id="p-277">As cores das 5 casas da cruz em relação a <span class="process-math">\(C\)</span> são:</div> <ul class="disc">
+<li id="li-51"><div class="para" id="p-derived-li-51">Centro: <span class="process-math">\(C\)</span>
 </div></li>
-<li id="li-55"><div class="para" id="p-derived-li-55">Cima: <span class="process-math">\((r-1, c)\)</span><div class="displaymath process-math">
+<li id="li-52"><div class="para" id="p-derived-li-52">Cima: <span class="process-math">\((r-1, c)\)</span><div class="displaymath process-math">
 \begin{equation*}
 (a(r-1) + b \times c) \pmod{5} = (C - a) \pmod{5}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-56"><div class="para" id="p-derived-li-56">Baixo: <span class="process-math">\((r+1, c)\)</span><div class="displaymath process-math">
+<li id="li-53"><div class="para" id="p-derived-li-53">Baixo: <span class="process-math">\((r+1, c)\)</span><div class="displaymath process-math">
 \begin{equation*}
 (a(r+1) + b \times c) \pmod{5} = (C + a) \pmod{5}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-57"><div class="para" id="p-derived-li-57">Esquerda: <span class="process-math">\((r, c-1)\)</span><div class="displaymath process-math">
+<li id="li-54"><div class="para" id="p-derived-li-54">Esquerda: <span class="process-math">\((r, c-1)\)</span><div class="displaymath process-math">
 \begin{equation*}
 (a \times r + b(c-1)) \pmod{5} = (C - b) \pmod{5}
 \end{equation*}
 </div>
 </div></li>
-<li id="li-58"><div class="para" id="p-derived-li-58">Direita: <span class="process-math">\((r, c+1)\)</span><div class="displaymath process-math">
+<li id="li-55"><div class="para" id="p-derived-li-55">Direita: <span class="process-math">\((r, c+1)\)</span><div class="displaymath process-math">
 \begin{equation*}
 (a \times r + b(c+1)) \pmod{5} = (C + b) \pmod{5}
 \end{equation*}
 </div>
 </div></li>
-</ul> <div class="para logical" id="p-209">
+</ul> <div class="para logical" id="p-278">
 <div class="para">Portanto, o conjunto das 5 cores cobertas pela cruz é sempre <span class="process-math">\(\{C, C+a, C-a, C+b, C-b\}\text{,}\)</span> com todos os cálculos realizados módulo 5. Podemos utilizar <span class="process-math">\(a=1\)</span> e <span class="process-math">\(b=2\)</span> e ficamos com a seguinte fórmula para escolher a cor de cada casa do tabuleiro:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 Cor = (1 \times linha + 2 \times coluna) \pmod 5.
 \end{equation*}
 </div>
-</div> <div class="para" id="p-210">O tabuleiro fica com a seguinte coloração: <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros17.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.33<span class="period">.</span></span><span class="space"> </span></figcaption></figure> Dessa maneira, não importa onde a nave pouse no tabuleiro, as 5 casas que ela ocupa terão sempre uma casa de cada uma das 5 cores (uma casa de cor 0, uma de cor 1, uma de cor 2, uma de cor 3 e uma de cor 4).</div> <div class="para logical" id="p-211">
+</div> <div class="para" id="p-279">O tabuleiro fica com a seguinte coloração: <figure class="figure figure-like" id="aula_06_fig_01"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/Aula_09_-_Tabuleiros17.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.1.33<span class="period">.</span></span><span class="space"> </span></figcaption></figure> Dessa maneira, não importa onde a nave pouse no tabuleiro, as 5 casas que ela ocupa terão sempre uma casa de cada uma das 5 cores (uma casa de cor 0, uma de cor 1, uma de cor 2, uma de cor 3 e uma de cor 4).</div> <div class="para logical" id="p-280">
 <div class="para">As 4 casas de canto que podemnos remover têm as seguintes cores: Cor 1, Cor 2, Cor 3 e Cor 4. Portanto, o número de casas atingíveis para cada cor é:</div>
 <ul class="disc">
-<li id="li-59"><div class="para" id="p-derived-li-59">Cor 0: 17</div></li>
-<li id="li-60"><div class="para" id="p-derived-li-60">Cor 1: 16 - 1 = 15</div></li>
-<li id="li-61"><div class="para" id="p-derived-li-61">Cor 2: 16 - 1 = 15</div></li>
-<li id="li-62"><div class="para" id="p-derived-li-62">Cor 3: 16 - 1 = 15</div></li>
-<li id="li-63"><div class="para" id="p-derived-li-63">Cor 4: 16 - 1 = 15</div></li>
+<li id="li-56"><div class="para" id="p-derived-li-56">Cor 0: 17</div></li>
+<li id="li-57"><div class="para" id="p-derived-li-57">Cor 1: 16 - 1 = 15</div></li>
+<li id="li-58"><div class="para" id="p-derived-li-58">Cor 2: 16 - 1 = 15</div></li>
+<li id="li-59"><div class="para" id="p-derived-li-59">Cor 3: 16 - 1 = 15</div></li>
+<li id="li-60"><div class="para" id="p-derived-li-60">Cor 4: 16 - 1 = 15</div></li>
 </ul>
 <div class="para">Logo, no mínimo precisamos de 15 mísseis.</div>
 </div>
@@ -441,16 +467,16 @@ Cor = (1 \times linha + 2 \times coluna) \pmod 5.
 </div></article><article class="problem example-like" id="problem-13"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.34</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-212">(Rioplatense 1999) É possível cobrir um tabuleiro <span class="process-math">\(1999 \times 1999\)</span> com quadrados de lados inteiros maiores que 35 e menores que 1999? Os quadrados podem ser de tamanhos distintos.</div></article><article class="problem example-like" id="problem-14"><h4 class="heading">
+<div class="para" id="p-281">(Rioplatense 1999) É possível cobrir um tabuleiro <span class="process-math">\(1999 \times 1999\)</span> com quadrados de lados inteiros maiores que 35 e menores que 1999? Os quadrados podem ser de tamanhos distintos.</div></article><article class="problem example-like" id="problem-14"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.35</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-213">(Rússia 2007) As faces de um cubo <span class="process-math">\(9 \times 9 \times 9\)</span> são particionadas em quadradinhos da forma usual. Sua superfície é coberta por 243 tiras de papel <span class="process-math">\(2 \times 1\)</span> sem sobreposição. Uma tira é dita dobrada se está apenas sobre uma face. Prove que o número de tiras dobradas é ímpar.</div>
+<div class="para" id="p-282">(Rússia 2007) As faces de um cubo <span class="process-math">\(9 \times 9 \times 9\)</span> são particionadas em quadradinhos da forma usual. Sua superfície é coberta por 243 tiras de papel <span class="process-math">\(2 \times 1\)</span> sem sobreposição. Uma tira é dita dobrada se está apenas sobre uma face. Prove que o número de tiras dobradas é ímpar.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
-<div class="para" id="p-214">A prova é construída em duas etapas lógicas. Primeiro, estabelecemos uma propriedade sobre cada face individual do cubo (argumento local). Em seguida, usamos esse resultado para chegar a uma conclusão sobre o cubo inteiro (argumento global).</div> <div class="para" id="p-215"><dfn class="terminology">Etapa 1: A Paridade das Saídas de uma Única Face</dfn></div> <ol class="lower-alpha">
-<li id="li-64"><div class="para" id="p-216">Seja <span class="process-math">\(S\)</span> o número de tiras dobradas que “saem” de uma face específica (ou seja, que têm um quadrado nessa face e o outro em uma face adjacente).</div></li>
-<li id="li-65"><div class="para" id="p-217">A área de qualquer face do cubo 9x9x9 é <span class="process-math">\(9 \times 9 = 81\text{,}\)</span> um número <dfn class="terminology">ÍMPAR</dfn>.</div></li>
-<li id="li-66"><div class="para logical" id="p-218">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<div class="para" id="p-283">A prova é construída em duas etapas lógicas. Primeiro, estabelecemos uma propriedade sobre cada face individual do cubo (argumento local). Em seguida, usamos esse resultado para chegar a uma conclusão sobre o cubo inteiro (argumento global).</div> <div class="para" id="p-284"><dfn class="terminology">Etapa 1: A Paridade das Saídas de uma Única Face</dfn></div> <ol class="lower-alpha">
+<li id="li-61"><div class="para" id="p-285">Seja <span class="process-math">\(S\)</span> o número de tiras dobradas que “saem” de uma face específica (ou seja, que têm um quadrado nessa face e o outro em uma face adjacente).</div></li>
+<li id="li-62"><div class="para" id="p-286">A área de qualquer face do cubo 9x9x9 é <span class="process-math">\(9 \times 9 = 81\text{,}\)</span> um número <dfn class="terminology">ÍMPAR</dfn>.</div></li>
+<li id="li-63"><div class="para logical" id="p-287">
 <div class="para">Essa área de 81 quadrados é coberta por tiras inteiramente contidas na face (planas) e por tiras que saem da face (dobradas). Isso nos dá a equação:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -458,10 +484,10 @@ Cor = (1 \times linha + 2 \times coluna) \pmod 5.
 \end{equation*}
 </div>
 </div></li>
-<li id="li-67"><div class="para" id="p-219">Analisando a paridade da equação, temos <span class="process-math">\((\text{ÍMPAR}) = (\text{PAR}) + S\text{.}\)</span> A única forma de esta equação ser verdadeira é se <span class="process-math">\(S\text{,}\)</span> o número de tiras que saem de uma face, for <dfn class="terminology">ÍMPAR</dfn>. Este resultado é válido para cada uma das 6 faces do cubo.</div></li>
-</ol> <div class="para" id="p-220"><dfn class="terminology">Etapa 2: A Soma de Todas as Saídas e a Conclusão</dfn></div> <ol class="lower-alpha">
-<li id="li-68"><div class="para" id="p-221">Seja <span class="process-math">\(F_{\text{total}}\)</span> o número total de tiras dobradas em todo o cubo.</div></li>
-<li id="li-69"><div class="para logical" id="p-222">
+<li id="li-64"><div class="para" id="p-288">Analisando a paridade da equação, temos <span class="process-math">\((\text{ÍMPAR}) = (\text{PAR}) + S\text{.}\)</span> A única forma de esta equação ser verdadeira é se <span class="process-math">\(S\text{,}\)</span> o número de tiras que saem de uma face, for <dfn class="terminology">ÍMPAR</dfn>. Este resultado é válido para cada uma das 6 faces do cubo.</div></li>
+</ol> <div class="para" id="p-289"><dfn class="terminology">Etapa 2: A Soma de Todas as Saídas e a Conclusão</dfn></div> <ol class="lower-alpha">
+<li id="li-65"><div class="para" id="p-290">Seja <span class="process-math">\(F_{\text{total}}\)</span> o número total de tiras dobradas em todo o cubo.</div></li>
+<li id="li-66"><div class="para logical" id="p-291">
 <div class="para">Somamos o número de saídas de todas as 6 faces do cubo. Como sabemos da Etapa 1 que o número de saídas de cada face é ímpar, a soma total é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -469,8 +495,8 @@ Cor = (1 \times linha + 2 \times coluna) \pmod 5.
 \end{equation*}
 </div>
 </div></li>
-<li id="li-70"><div class="para" id="p-223">Cada tira dobrada, por definição, conecta duas faces. Portanto, ao somar as saídas de todas as faces, contamos cada tira dobrada exatamente duas vezes: uma vez para cada face que ela toca.</div></li>
-<li id="li-71"><div class="para logical" id="p-224">
+<li id="li-67"><div class="para" id="p-292">Cada tira dobrada, por definição, conecta duas faces. Portanto, ao somar as saídas de todas as faces, contamos cada tira dobrada exatamente duas vezes: uma vez para cada face que ela toca.</div></li>
+<li id="li-68"><div class="para logical" id="p-293">
 <div class="para">Assim, a “Soma Total das Saídas” é exatamente o dobro do número total de tiras dobradas:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -478,7 +504,7 @@ Cor = (1 \times linha + 2 \times coluna) \pmod 5.
 \end{equation*}
 </div>
 </div></li>
-<li id="li-72"><div class="para logical" id="p-225">
+<li id="li-69"><div class="para logical" id="p-294">
 <div class="para">Juntando os resultados, temos a equação final:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -486,7 +512,7 @@ Cor = (1 \times linha + 2 \times coluna) \pmod 5.
 \end{equation*}
 </div>
 </div></li>
-<li id="li-73"><div class="para logical" id="p-226">
+<li id="li-70"><div class="para logical" id="p-295">
 <div class="para">Resolvendo para <span class="process-math">\(F_{\text{total}}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -495,26 +521,26 @@ F_{\text{total}} = \frac{6 \times (\text{ÍMPAR})}{2} = 3 \times (\text{ÍMPAR})
 \end{equation*}
 </div>
 </div></li>
-</ol> <div class="para" id="p-227">O produto de dois números ímpares (3 e o número de saídas de uma face) é necessariamente <dfn class="terminology">ÍMPAR</dfn>. Assim, está provado que <span class="process-math">\(F_{\text{total}}\text{,}\)</span> o número total de tiras dobradas, é ímpar.</div>
+</ol> <div class="para" id="p-296">O produto de dois números ímpares (3 e o número de saídas de uma face) é necessariamente <dfn class="terminology">ÍMPAR</dfn>. Assim, está provado que <span class="process-math">\(F_{\text{total}}\text{,}\)</span> o número total de tiras dobradas, é ímpar.</div>
 </div></div>
 </div></article><article class="problem example-like" id="problem-15"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.36</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-228">(Romênia 2000) Determine todos os tabuleiros <span class="process-math">\(m \times n\)</span> que podem ser cobertos usando L-triminós.</div></article><article class="problem example-like" id="problem-16"><h4 class="heading">
+<div class="para" id="p-297">(Romênia 2000) Determine todos os tabuleiros <span class="process-math">\(m \times n\)</span> que podem ser cobertos usando L-triminós.</div></article><article class="problem example-like" id="problem-16"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.37</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-229">(Estônia 2004) Um tabuleiro <span class="process-math">\(5 \times 5\)</span> é coberto por oito L-triminós e um monominó. Determine todas as possíveis posições que o monominó pode ocupar.</div></article><article class="problem example-like" id="problem-17"><h4 class="heading">
+<div class="para" id="p-298">(Estônia 2004) Um tabuleiro <span class="process-math">\(5 \times 5\)</span> é coberto por oito L-triminós e um monominó. Determine todas as possíveis posições que o monominó pode ocupar.</div></article><article class="problem example-like" id="problem-17"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.38</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-230">(IMO 2004) Um gancho é uma figura de seis casas como na figura ou qualquer uma das figuras obtidas desta aplicando rotações ou reflexões. [cite_start]Determine todos os tabuleiros <span class="process-math">\(m \times n\)</span> que podem ser cobertos usando esses ganchos.</div></article><article class="problem example-like" id="problem-18"><h4 class="heading">
+<div class="para" id="p-299">(IMO 2004) Um gancho é uma figura de seis casas como na figura ou qualquer uma das figuras obtidas desta aplicando rotações ou reflexões. [cite_start]Determine todos os tabuleiros <span class="process-math">\(m \times n\)</span> que podem ser cobertos usando esses ganchos.</div></article><article class="problem example-like" id="problem-18"><h4 class="heading">
 <span class="type">Problema</span><span class="space"> </span><span class="codenumber">3.1.39</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-231">(Rússia 1996) Podemos cobrir um tabuleiro <span class="process-math">\(5 \times 7\)</span> com L-triminós de tal forma que cada casa do tabuleiro seja coberta por um mesmo número de peças?</div>
+<div class="para" id="p-300">(Rússia 1996) Podemos cobrir um tabuleiro <span class="process-math">\(5 \times 7\)</span> com L-triminós de tal forma que cada casa do tabuleiro seja coberta por um mesmo número de peças?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><div class="para" id="p-232">Pinte o tabuleiro usando -2's e 1's. A soma total das casas é -1, enquanto cada peça cobre uma soma de 3 ou 0. Como a soma total não é um múltiplo de 3, é impossível.</div></div></div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Dica</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><div class="para" id="p-301">Pinte o tabuleiro usando -2's e 1's. A soma total das casas é -1, enquanto cada peça cobre uma soma de 3 ou 0. Como a soma total não é um múltiplo de 3, é impossível.</div></div></div>
 </div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-10.html#exemplos" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Próximo</span><span class="icon">&gt;</span></span>
+<a class="previous-button button" href="section-9.html#exemplos" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Próximo</span><span class="icon">&gt;</span></span>
 </div></main>
 </div>
 <div class="ptx-page-footer">
