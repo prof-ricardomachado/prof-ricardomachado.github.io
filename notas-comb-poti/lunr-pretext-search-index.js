@@ -845,6 +845,285 @@ var ptx_lunr_docs = [
   "number": "2.2.3.16",
   "title": "",
   "body": "O plano é pintado usando três cores. Prove que podemos encontrar um triângulo retângulo isósceles com os três vértices da mesma cor. "
+},
+{
+  "id": "problemas-resolvidos",
+  "level": "1",
+  "url": "problemas-resolvidos.html",
+  "type": "Seção",
+  "number": "3.1",
+  "title": "Paridade",
+  "body": " Paridade  Todo número é par ou ímpar. Óbvio, não? Pois é com essa simples afirmação que vamos resolver os problemas deste capítulo.    Existe alguma solução inteira para a equação ?    Analise as quatro possibilidades de paridade do par (a, b).    Não. Se e tiverem paridades diferentes então um dos dois é par, de forma que par. Mas isso é uma contradição já que é ímpar. Agora, se e tiverem a mesma paridade então deve ser par e do mesmo modo chegamos a uma contradição. Logo, não há solução inteira.      (Leningrado 1990)   Paula comprou um caderno com 96 folhas, com páginas enumeradas de 1 a 192. Nicolas arrancou 25 folhas aleatórias e somou todos os 50 números escritos nestas folhas. É possível que esta soma seja 1990?    Observe que a soma dos números escritos em uma mesma folha sempre é ímpar. Dessa forma, se Nicolas arrancou 25 folhas, a soma de todos os números será ímpar. Pois é a soma de uma quantidade ímpar de números ímpares. Logo, esta soma não pode ser 1990.      Um gafanhoto vive na reta coordenada. Inicialmente, ele se encontra no ponto 1. Ele pode pular 1 ou 5 unidades, tanto para direita quanto para esquerda. Porém, a reta coordenada possui buracos em todos os pontos que são múltiplos de 4 (i.e. existem buracos nos pontos -4, 0, 4, 8 etc), então ele não pode pular para estes pontos. Pode o gafanhoto chegar ao ponto 3 após 2003 saltos?    Note que a cada salto, muda a paridade do ponto em que o gafanhoto se encontra. Logo, após 2003 saltos, ele estará em uma coordenada par. Portanto, não pode ser 3.      No reino da Frutilândia existe uma árvore mágica que possui 2005 maçãs e 2006 tomates. Todo dia um garoto sobe na árvore e come duas frutas. Quando ele come duas frutas iguais, nasce um tomate na árvore; quando ele come duas frutas diferentes, nasce uma maçã. Após alguns dias restará apenas uma fruta na árvore. Que fruta será?       Sempre que o garoto como dois tomates, o número de tomates diminui 1. Quando ele come duas maçãs, o número de tomates aumenta 1. E quando ele come uma fruta de cada tipo, o número de tomates diminui 1. Assim, a paridade do número de tomates sempre muda em cada etapa.  Quando o garoto pega duas frutas da árvore, o número de maçãs diminuirá de 2 ou permanecerá constante. Dessa forma a paridade do número de maçãs será sempre o mesmo. Como inicialmente tínhamos um número ímpar de maçãs, a quantidade delas continuará ímpar até o final. Logo, a última fruta deve ser uma maçã.      Um jogo consiste de 9 botões luminosos (de cor verde ou amarelo) dispostos da seguinte forma:      Apertando um botão do bordo do retângulo, trocam de cor ele e os seus vizinhos (do lado ou em diagonal). Apertando o botão do centro, trocam de cor todos os seus oito vizinhos, porém ele não. Inicialmente todos os botões estão verdes. É possível, apertando sucessivamente alguns botões, torná-los todos amarelos?    Note que ao apertar um dos botões 1, 3, 7 ou 9 trocamos de cor 4 botões. Apertando um dos botões 2, 4, 6 ou 8 trocamos a cor de 6 botões. Apertando o botão do centro trocamos a cor de 8 botões. Como 4, 6 e 8 são números pares a quantidade total de botões verdes é sempre um número ímpar e para ter os 9 botões amarelos, deveríamos ter zero botões verdes. Absurdo, já que 0 é um número par.     (Leningrado 1989)   Um grupo de K físicos e K químicos está sentado ao redor de uma mesa. Alguns deles sempre falam a verdade e outros sempre mentem. Sabe-se que o número de mentirosos entre os físicos e químicos é o mesmo. Quando foi perguntado: \"Qual é a profissão de seu vizinho da direita?\", todos responderam \"Químico.\" Mostre que K é par.     A única forma de alguém ter um Físico à sua direita é sendo um mentiroso. Como as pessoas estão sentadas em círculo, todo Físico tem exatamente uma pessoa sentada imediatamente à sua esquerda. Pela nossa regra, essa pessoa à esquerda precisa ser mentirosa.  Isso cria uma correspondência exata (uma bijeção): para cada Físico na roda, existe de forma única e exclusiva um mentiroso sentado à sua esquerda. Consequentemente, o número total de Físicos é igual ao número total de mentirosos na mesa. Como o problema define que existem Físicos no total, concluímos que:   Definindo os mentirosos físicos como e os mentirosos químicos como , temos a igualdade:   O total de mentirosos na mesa é   Então, é par.       Problemas Propostos   Os números estão escritos em sequência. É permitido permutar quaisquer dois elementos. É possível retornar à posição inicial após 2001 permutações?   Dizemos que uma sequência tem uma inversão quando um número maior vem antes de um número menor. O número de inversões de uma sequência é o número de pares com que podemos encontrar na sequência tais que aparece antes de . Por exemplo, o número de inversões da sequência é 2.  Note que ao permutarmos 2 números, a paridade do número de inversões muda.  No problema, a sequência inicial tem 0 inversões. Como são feitas 2001 permutações, temos 2001 mudanças de paridade do número de inversões. Dessa forma, o número de inversões final deve ser ímpar. Então não podemos ter, ao fim, a sequência inicial.    Um círculo está dividido em seis setores que estão marcados com os números no sentido horário. É permitido somar a dois setores vizinhos. É possível, repetindo esta operação várias vezes, fazer com que todos os números se tornem iguais?   Suponha que os números nos setores sejam e no sentido horário. Vamos chamar de o módulo do número . Note que ao somar 1 a dois setores vizinhos o valor de não se altera. Então . Desse modo, é impossível que todos os números sejam iguais pois teríamos .    É possível que as seis diferenças entre dois elementos de um conjunto de quatro números inteiros serem iguais a e ?   Se e são números inteiros, e possuem a mesma paridade.   Não. Imagine que o conjunto seja . Então podemos supor . Mas e e são diferenças de dois elementos do conjunto. Porém, todas as diferenças, com exceção de 3, são pares. Logo, é par. Isso é uma contradição já que esse valor é igual a 3 que é ímpar. Concluímos que não é possível que as diferenças sejam essas.    Raul falou que tinha dois anos a mais que Kátia. Kátia falou que tinha o dobro da idade de Pedro. Pedro falou que Raul tinha 17 anos. Mostre que um deles mentiu.   Suponha que ninguém mentiu. Então Raul tem 17 anos e portanto Kátia tem 15 anos. Mas Kátia tem o dobro da idade de Pedro e, portanto, sua idade deve ser par, contradição. Logo, alguém deve ter mentido.    (Torneio das Cidades 1987) Uma máquina dá cinco fichas vermelhas quando alguém insere uma ficha azul e dá cinco fichas azuis quando alguém insere uma ficha vermelha. Pedro possui apenas uma ficha azul e deseja obter a mesma quantidade de fichas azuis e vermelhas usando essa máquina. É possível fazer isto?   Não. Observe que quando Pedro insere uma ficha e recebe cinco seu número de fichas aumenta 4 unidades. Logo, a paridade do número de fichas não muda. Para ter a mesma quantidade de fichas azuis e vermelhas Pedro deve ter um número par de fichas, mas isso não é possível já que ele inicialmente só possui 1 ficha e 1 é ímpar.    (China 1986) Considere uma permutação dos números tal que entre dois números k existem k números. É ou não possível fazer isto?   Contados da esquerda para a direita, denotemos por e as posições do primeiro e segundo número , respectivamente. Note que . Como existem números entre dois números 's, devemos ter . Se é possível escrever os números em linha como no enunciado, obtemos: Somando as duas linhas, . Logo, a fração deve ser um inteiro par. Para , é ímpar e consequentemente não é possível dispormos esses números em linha.    (Rússia 2004) É possível colocarmos números inteiros positivos nas casas de um tabuleiro de modo que a soma dos números de cada linha e a soma dos números de cada coluna sejam primos? Justifique sua resposta.   Suponha que seja possível fazer tal construção. Sejam as somas dos números de cada uma das 9 linhas, e as somas dos números de cada uma das 2004 colunas. Como cada e são primos, estes devem ser números ímpares (já que são soma de pelo menos nove inteiros positivos e portanto são maiores que 2). Seja S a soma de todos os números do tabuleiro. Por um lado teríamos: donde concluímos que S é ímpar, pois é soma de 9 ímpares. Por outro lado: e daqui concluímos que S é par, pois é uma soma de uma quantidade par de ímpares, o que é um absurdo. Logo, tal construção não é possível.    O número A possui 17 dígitos. O número B possui os mesmos dígitos de A, porém em ordem inversa. É possível que todos os dígitos de sejam ímpares?   Não. Vamos mostrar que algum dos dígitos deve ser par. Considere a seguinte soma e se for par (teríamos ) então o problema acaba. Suponha então que isso não ocorre. A única possibilidade é a de que a soma anterior ficou maior do que ou igual a 10 e 1 foi adicionado a soma dos . Temos dois casos:   e a soma deles (acima de ) recebeu um 1 da soma anterior, isso implicaria que e o problema acabaria aqui;  o segundo caso é .   Vamos então supor que . Repare que se então . Se e tiverem paridades diferentes, um dos dois será par e então o problema acaba. Vamos supor que isso não ocorre. Para que isso não ocorra, a soma acima de também deve receber um 1 da soma anterior. Dessa forma, analogamente como fizermos com , podemos supor que . Usando o mesmo argumento de paridades diferentes entre e chegamos a suposição de que . Repetindo mais uma vez esse processo nós chegamos em . Com isso, nós concluímos que a soma acima de receberá um 1 da soma anterior que é a de . Isso quer dizer que . Porém, como não há soma antes de , devemos ter . Note que e têm paridades diferentes e então algum dos dois é par. Isso conclui a demonstração. Repare que esses argumentos valem para qualquer natural com um número ímpar de dígitos, basta que exista o dígito do meio nesse caso é o .    *Considere um tabuleiro pintado alternadamente de preto e branco da maneira usual. Em cada casa do tabuleiro, escrevemos 0 ou 1, de modo que a quantidade de 1's em cada linha e em cada coluna do tabuleiro é ímpar. Prove que a quantidade de 1's escritos nas casas brancas é par.   Seja o número escrito na casa da i-ésima linha e da j-ésima coluna, e . A casa (i, j) é branca se e somente se i e j possuem a mesma paridade. é a soma dos números nas 999 linhas de ordem ímpar. Como a soma dos números de cada linha é ímpar, L é ímpar. De maneira análoga, a soma dos números nas 1001 colunas de ordem par também é ímpar. Seja P o conjunto de todas as casas pretas que estão em colunas de ordem par, e a soma de todos os números escritos nas casas de P. Cada número escrito em uma casa de P aparece exatamente uma vez na soma L e exatamente uma vez na soma C. Ademais, cada número escrito em uma casa branca aparece exatamente uma vez na soma . Assim, a soma dos números escritos nas casas brancas é igual a que é par.    *(Ucrânia 1997) Considere um tabuleiro pintado de preto e branco da maneira usual e, em cada casa do tabuleiro, escreva um número inteiro, de modo que a soma dos números em cada coluna e em cada linha é par. Mostre que a soma dos números nas casas pretas é par.   A solução é análoga à do problema anterior. A casa é a casa da i-ésima linha e j-ésima coluna. A casa é preta se e somente se i e j têm paridades diferentes. Seja e a soma dos números nas k-ésima linha e coluna respectivamente. Então, é a soma das linhas de ordem ímpar e é a soma das colunas também de ordem ímpar. Como a soma dos números em cada coluna e em cada linha é par, e devem ser pares. Seja B o conjunto de todas as casas brancas em colunas de ordem ímpar, e a somas dos números escritos nas casas de B. Cada casa de B é contada uma vez em C e uma vez em L. Além disso, cada casa preta é contada exatamente uma vez na soma . Logo, a soma dos números nas casas pretas é que é par.    "
+},
+{
+  "id": "prob-06",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-06",
+  "type": "Exemplo",
+  "number": "3.1.1",
+  "title": "",
+  "body": "  Existe alguma solução inteira para a equação ?    Analise as quatro possibilidades de paridade do par (a, b).    Não. Se e tiverem paridades diferentes então um dos dois é par, de forma que par. Mas isso é uma contradição já que é ímpar. Agora, se e tiverem a mesma paridade então deve ser par e do mesmo modo chegamos a uma contradição. Logo, não há solução inteira.   "
+},
+{
+  "id": "prob-03",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-03",
+  "type": "Exemplo",
+  "number": "3.1.2",
+  "title": "(Leningrado 1990).",
+  "body": " (Leningrado 1990)   Paula comprou um caderno com 96 folhas, com páginas enumeradas de 1 a 192. Nicolas arrancou 25 folhas aleatórias e somou todos os 50 números escritos nestas folhas. É possível que esta soma seja 1990?    Observe que a soma dos números escritos em uma mesma folha sempre é ímpar. Dessa forma, se Nicolas arrancou 25 folhas, a soma de todos os números será ímpar. Pois é a soma de uma quantidade ímpar de números ímpares. Logo, esta soma não pode ser 1990.   "
+},
+{
+  "id": "prob-05",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-05",
+  "type": "Exemplo",
+  "number": "3.1.3",
+  "title": "",
+  "body": "  Um gafanhoto vive na reta coordenada. Inicialmente, ele se encontra no ponto 1. Ele pode pular 1 ou 5 unidades, tanto para direita quanto para esquerda. Porém, a reta coordenada possui buracos em todos os pontos que são múltiplos de 4 (i.e. existem buracos nos pontos -4, 0, 4, 8 etc), então ele não pode pular para estes pontos. Pode o gafanhoto chegar ao ponto 3 após 2003 saltos?    Note que a cada salto, muda a paridade do ponto em que o gafanhoto se encontra. Logo, após 2003 saltos, ele estará em uma coordenada par. Portanto, não pode ser 3.   "
+},
+{
+  "id": "prob-01",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-01",
+  "type": "Exemplo",
+  "number": "3.1.4",
+  "title": "",
+  "body": "  No reino da Frutilândia existe uma árvore mágica que possui 2005 maçãs e 2006 tomates. Todo dia um garoto sobe na árvore e come duas frutas. Quando ele come duas frutas iguais, nasce um tomate na árvore; quando ele come duas frutas diferentes, nasce uma maçã. Após alguns dias restará apenas uma fruta na árvore. Que fruta será?       Sempre que o garoto como dois tomates, o número de tomates diminui 1. Quando ele come duas maçãs, o número de tomates aumenta 1. E quando ele come uma fruta de cada tipo, o número de tomates diminui 1. Assim, a paridade do número de tomates sempre muda em cada etapa.  Quando o garoto pega duas frutas da árvore, o número de maçãs diminuirá de 2 ou permanecerá constante. Dessa forma a paridade do número de maçãs será sempre o mesmo. Como inicialmente tínhamos um número ímpar de maçãs, a quantidade delas continuará ímpar até o final. Logo, a última fruta deve ser uma maçã.   "
+},
+{
+  "id": "prob-02",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-02",
+  "type": "Exemplo",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  Um jogo consiste de 9 botões luminosos (de cor verde ou amarelo) dispostos da seguinte forma:      Apertando um botão do bordo do retângulo, trocam de cor ele e os seus vizinhos (do lado ou em diagonal). Apertando o botão do centro, trocam de cor todos os seus oito vizinhos, porém ele não. Inicialmente todos os botões estão verdes. É possível, apertando sucessivamente alguns botões, torná-los todos amarelos?    Note que ao apertar um dos botões 1, 3, 7 ou 9 trocamos de cor 4 botões. Apertando um dos botões 2, 4, 6 ou 8 trocamos a cor de 6 botões. Apertando o botão do centro trocamos a cor de 8 botões. Como 4, 6 e 8 são números pares a quantidade total de botões verdes é sempre um número ímpar e para ter os 9 botões amarelos, deveríamos ter zero botões verdes. Absurdo, já que 0 é um número par.   "
+},
+{
+  "id": "prob-04",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-04",
+  "type": "Exemplo",
+  "number": "3.1.8",
+  "title": "(Leningrado 1989).",
+  "body": " (Leningrado 1989)   Um grupo de K físicos e K químicos está sentado ao redor de uma mesa. Alguns deles sempre falam a verdade e outros sempre mentem. Sabe-se que o número de mentirosos entre os físicos e químicos é o mesmo. Quando foi perguntado: \"Qual é a profissão de seu vizinho da direita?\", todos responderam \"Químico.\" Mostre que K é par.     A única forma de alguém ter um Físico à sua direita é sendo um mentiroso. Como as pessoas estão sentadas em círculo, todo Físico tem exatamente uma pessoa sentada imediatamente à sua esquerda. Pela nossa regra, essa pessoa à esquerda precisa ser mentirosa.  Isso cria uma correspondência exata (uma bijeção): para cada Físico na roda, existe de forma única e exclusiva um mentiroso sentado à sua esquerda. Consequentemente, o número total de Físicos é igual ao número total de mentirosos na mesa. Como o problema define que existem Físicos no total, concluímos que:   Definindo os mentirosos físicos como e os mentirosos químicos como , temos a igualdade:   O total de mentirosos na mesa é   Então, é par.   "
+},
+{
+  "id": "prob-07",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-07",
+  "type": "Exercício",
+  "number": "3.1.1",
+  "title": "",
+  "body": " Os números estão escritos em sequência. É permitido permutar quaisquer dois elementos. É possível retornar à posição inicial após 2001 permutações?   Dizemos que uma sequência tem uma inversão quando um número maior vem antes de um número menor. O número de inversões de uma sequência é o número de pares com que podemos encontrar na sequência tais que aparece antes de . Por exemplo, o número de inversões da sequência é 2.  Note que ao permutarmos 2 números, a paridade do número de inversões muda.  No problema, a sequência inicial tem 0 inversões. Como são feitas 2001 permutações, temos 2001 mudanças de paridade do número de inversões. Dessa forma, o número de inversões final deve ser ímpar. Então não podemos ter, ao fim, a sequência inicial.  "
+},
+{
+  "id": "prob-08",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-08",
+  "type": "Exercício",
+  "number": "3.1.2",
+  "title": "",
+  "body": " Um círculo está dividido em seis setores que estão marcados com os números no sentido horário. É permitido somar a dois setores vizinhos. É possível, repetindo esta operação várias vezes, fazer com que todos os números se tornem iguais?   Suponha que os números nos setores sejam e no sentido horário. Vamos chamar de o módulo do número . Note que ao somar 1 a dois setores vizinhos o valor de não se altera. Então . Desse modo, é impossível que todos os números sejam iguais pois teríamos .  "
+},
+{
+  "id": "prob-09",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-09",
+  "type": "Exercício",
+  "number": "3.1.3",
+  "title": "",
+  "body": " É possível que as seis diferenças entre dois elementos de um conjunto de quatro números inteiros serem iguais a e ?   Se e são números inteiros, e possuem a mesma paridade.   Não. Imagine que o conjunto seja . Então podemos supor . Mas e e são diferenças de dois elementos do conjunto. Porém, todas as diferenças, com exceção de 3, são pares. Logo, é par. Isso é uma contradição já que esse valor é igual a 3 que é ímpar. Concluímos que não é possível que as diferenças sejam essas.  "
+},
+{
+  "id": "prob-10",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-10",
+  "type": "Exercício",
+  "number": "3.1.4",
+  "title": "",
+  "body": " Raul falou que tinha dois anos a mais que Kátia. Kátia falou que tinha o dobro da idade de Pedro. Pedro falou que Raul tinha 17 anos. Mostre que um deles mentiu.   Suponha que ninguém mentiu. Então Raul tem 17 anos e portanto Kátia tem 15 anos. Mas Kátia tem o dobro da idade de Pedro e, portanto, sua idade deve ser par, contradição. Logo, alguém deve ter mentido.  "
+},
+{
+  "id": "prob-11",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-11",
+  "type": "Exercício",
+  "number": "3.1.5",
+  "title": "",
+  "body": " (Torneio das Cidades 1987) Uma máquina dá cinco fichas vermelhas quando alguém insere uma ficha azul e dá cinco fichas azuis quando alguém insere uma ficha vermelha. Pedro possui apenas uma ficha azul e deseja obter a mesma quantidade de fichas azuis e vermelhas usando essa máquina. É possível fazer isto?   Não. Observe que quando Pedro insere uma ficha e recebe cinco seu número de fichas aumenta 4 unidades. Logo, a paridade do número de fichas não muda. Para ter a mesma quantidade de fichas azuis e vermelhas Pedro deve ter um número par de fichas, mas isso não é possível já que ele inicialmente só possui 1 ficha e 1 é ímpar.  "
+},
+{
+  "id": "prob-12",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-12",
+  "type": "Exercício",
+  "number": "3.1.6",
+  "title": "",
+  "body": " (China 1986) Considere uma permutação dos números tal que entre dois números k existem k números. É ou não possível fazer isto?   Contados da esquerda para a direita, denotemos por e as posições do primeiro e segundo número , respectivamente. Note que . Como existem números entre dois números 's, devemos ter . Se é possível escrever os números em linha como no enunciado, obtemos: Somando as duas linhas, . Logo, a fração deve ser um inteiro par. Para , é ímpar e consequentemente não é possível dispormos esses números em linha.  "
+},
+{
+  "id": "prob-13",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-13",
+  "type": "Exercício",
+  "number": "3.1.7",
+  "title": "",
+  "body": " (Rússia 2004) É possível colocarmos números inteiros positivos nas casas de um tabuleiro de modo que a soma dos números de cada linha e a soma dos números de cada coluna sejam primos? Justifique sua resposta.   Suponha que seja possível fazer tal construção. Sejam as somas dos números de cada uma das 9 linhas, e as somas dos números de cada uma das 2004 colunas. Como cada e são primos, estes devem ser números ímpares (já que são soma de pelo menos nove inteiros positivos e portanto são maiores que 2). Seja S a soma de todos os números do tabuleiro. Por um lado teríamos: donde concluímos que S é ímpar, pois é soma de 9 ímpares. Por outro lado: e daqui concluímos que S é par, pois é uma soma de uma quantidade par de ímpares, o que é um absurdo. Logo, tal construção não é possível.  "
+},
+{
+  "id": "prob-14",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-14",
+  "type": "Exercício",
+  "number": "3.1.8",
+  "title": "",
+  "body": " O número A possui 17 dígitos. O número B possui os mesmos dígitos de A, porém em ordem inversa. É possível que todos os dígitos de sejam ímpares?   Não. Vamos mostrar que algum dos dígitos deve ser par. Considere a seguinte soma e se for par (teríamos ) então o problema acaba. Suponha então que isso não ocorre. A única possibilidade é a de que a soma anterior ficou maior do que ou igual a 10 e 1 foi adicionado a soma dos . Temos dois casos:   e a soma deles (acima de ) recebeu um 1 da soma anterior, isso implicaria que e o problema acabaria aqui;  o segundo caso é .   Vamos então supor que . Repare que se então . Se e tiverem paridades diferentes, um dos dois será par e então o problema acaba. Vamos supor que isso não ocorre. Para que isso não ocorra, a soma acima de também deve receber um 1 da soma anterior. Dessa forma, analogamente como fizermos com , podemos supor que . Usando o mesmo argumento de paridades diferentes entre e chegamos a suposição de que . Repetindo mais uma vez esse processo nós chegamos em . Com isso, nós concluímos que a soma acima de receberá um 1 da soma anterior que é a de . Isso quer dizer que . Porém, como não há soma antes de , devemos ter . Note que e têm paridades diferentes e então algum dos dois é par. Isso conclui a demonstração. Repare que esses argumentos valem para qualquer natural com um número ímpar de dígitos, basta que exista o dígito do meio nesse caso é o .  "
+},
+{
+  "id": "prob-15",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-15",
+  "type": "Exercício",
+  "number": "3.1.9",
+  "title": "",
+  "body": " *Considere um tabuleiro pintado alternadamente de preto e branco da maneira usual. Em cada casa do tabuleiro, escrevemos 0 ou 1, de modo que a quantidade de 1's em cada linha e em cada coluna do tabuleiro é ímpar. Prove que a quantidade de 1's escritos nas casas brancas é par.   Seja o número escrito na casa da i-ésima linha e da j-ésima coluna, e . A casa (i, j) é branca se e somente se i e j possuem a mesma paridade. é a soma dos números nas 999 linhas de ordem ímpar. Como a soma dos números de cada linha é ímpar, L é ímpar. De maneira análoga, a soma dos números nas 1001 colunas de ordem par também é ímpar. Seja P o conjunto de todas as casas pretas que estão em colunas de ordem par, e a soma de todos os números escritos nas casas de P. Cada número escrito em uma casa de P aparece exatamente uma vez na soma L e exatamente uma vez na soma C. Ademais, cada número escrito em uma casa branca aparece exatamente uma vez na soma . Assim, a soma dos números escritos nas casas brancas é igual a que é par.  "
+},
+{
+  "id": "prob-16",
+  "level": "2",
+  "url": "problemas-resolvidos.html#prob-16",
+  "type": "Exercício",
+  "number": "3.1.10",
+  "title": "",
+  "body": " *(Ucrânia 1997) Considere um tabuleiro pintado de preto e branco da maneira usual e, em cada casa do tabuleiro, escreva um número inteiro, de modo que a soma dos números em cada coluna e em cada linha é par. Mostre que a soma dos números nas casas pretas é par.   A solução é análoga à do problema anterior. A casa é a casa da i-ésima linha e j-ésima coluna. A casa é preta se e somente se i e j têm paridades diferentes. Seja e a soma dos números nas k-ésima linha e coluna respectivamente. Então, é a soma das linhas de ordem ímpar e é a soma das colunas também de ordem ímpar. Como a soma dos números em cada coluna e em cada linha é par, e devem ser pares. Seja B o conjunto de todas as casas brancas em colunas de ordem ímpar, e a somas dos números escritos nas casas de B. Cada casa de B é contada uma vez em C e uma vez em L. Além disso, cada casa preta é contada exatamente uma vez na soma . Logo, a soma dos números nas casas pretas é que é par.  "
+},
+{
+  "id": "section-10",
+  "level": "1",
+  "url": "section-10.html",
+  "type": "Seção",
+  "number": "4.1",
+  "title": "Jogos",
+  "body": " Jogos    Quando falamos em jogos, pensamos em vários conhecidos como: xadrez, as damas e os jogos com baralho. Porém, não são desses jogos que iremos falar neste material. Imagine que exista algum tipo de jogo em que você pudesse ganhar sempre, independente de como seu adversário jogasse? Seria uma boa, não?! Pois esses jogos existem e são um dos assuntos mais abordados em provas de olimpíada. Nesta aula vamos mostrar vários destes jogos e as principais estratégias vencedoras: a simetria e o uso das posições vencedoras.    1. Simetria  Uma das estratégias mais simples é o uso de alguma simetria que pode ocorrer durante o jogo em vantagem de um dos jogadores, forçando sempre uma nova rodada para o jogador \"destinado à derrota\". Para entender melhor veja o seguinte exemplo:    Pedro e Mônica jogam em um tabuleiro . Cada um, em sua vez, pode pintar um dos quadrados (que não foram pintados anteriormente), ou dois quadrados consecutivos (se ambos estiverem brancos). Quem não puder mais jogar perde. Sabe-se que Pedro será o primeiro a jogar. Quem pode sempre garantir a vitória?    Pedro sempre poderá ganhar se seguir a seguinte estratégia:    Inicialmente, Pedro deve pintar o quadrado do meio.       Agora, depois que Mônica fizer sua jogada, Pedro deve jogar sempre simetricamente em relação ao centro do tabuleiro (i.e. sempre deixando o tabuleiro simétrico). Por exemplo, se Mônica jogar nas casas 9 e 10, Pedro deve jogar nas casas 2 e 3.       Assim, Mônica nunca poderá ganhar, pois na sua jogada ela \"quebra a simetria\" e a configuração final do jogo todas as casas estarão pintadas, ou seja, a configuração é simétrica.      O próximo exemplo é um dos problemas que apareceu na prova da OBM de 2004. Vamos apresentar uma solução diferente da solução proposta na Eureka! 22, usando simetria:    Arnaldo e Bernardo disputam um jogo em um tabuleiro :   As peças do jogo são dominós . Inicialmente Arnaldo coloca um dominó cobrindo exatamente duas casas do tabuleiro, na horizontal ou na vertical. Os jogadores se revezam colocando uma peça no tabuleiro, na horizontal ou na vertical, sempre cobrindo exatamente duas casas do tabuleiro. Não é permitido colocar uma peça sobre outra já colocada anteriormente. Quem não conseguir colocar uma peça no tabuleiro perde. Qual dos dois jogadores tem uma estratégia vencedora, ou seja, uma estratégia que o leva à vitória quaisquer que sejam as jogadas de seu adversário, para:    ?    ?      Quando o primeiro jogador garante a vitória. Ele pode fazer isto colocando um dominó na vertical no meio do tabuleiro e, em seguida, jogar simetricamente ao segundo jogador. Quando o tabuleiro possui um número par de colunas. Desse modo, o segundo ganha jogando simetricamente ao primeiro jogador.    Como você deve ter visto, usar a simetria é realmente uma técnica muito eficiente. Porém, às vezes, usar apenas a simetria não é suficiente para resolver o problema. Observe o próximo exemplo retirado da olímpiada da Bielorússia de 2000.    Tom e Jerry jogam o seguinte jogo. Eles colocam alternadamente pinos idênticos em casas vazias de um tabuleiro (um pino de cada vez). Tom é o primeiro a jogar. Vence quem, em sua jogada, formar um bloco de quatro pinos vizinhos. Dois pinos são vizinhos se estiverem em casas com um lado em comum. Determine quem possui a estratégia vencedora.    Observe que os pinos são idênticos, não há distinção entre os pinos. Jerry deve jogar simetricamente em relação ao centro do tabuleiro. Assim que Tom formar um bloco de três pinos vizinhos, Jerry deve abandonar a estratégia simétrica e completar o bloco de quatro pinos vizinhos, garantindo a vitória.      2. Posições Vencedoras  Alguns tipos de jogos possuem certas configurações que sempre levam um jogador à vitória. Essas configurações são chamadas de posições vencedoras. O próximo exemplo é um jogo bastante simples em que essa estratégia aparece facilmente.    Na primeira casa de um tabuleiro está uma moeda. Tiago e Maria movem a moeda alternadamente. Em cada turno é permitido avançar 1, 2, 3, 4 ou 5 casas. Quem colocar a moeda na última casa é o vencedor. Se Maria começar jogando, ela pode ter certeza da vitória?    Como em muitos problemas de olimpíada, vamos analisar alguns casos pequenos. Vamos supor que em vez de 13 casas o tabuleiro tivesse apenas quatro. Neste caso, fica fácil ver que quem começa ganha basta avançar três casas. O mesmo iria ocorrer se o tabuleiro tivesse 2, 3, 4, 5 ou 6 casas. Porém, em um tabuleiro o primeiro jogador perde. Veja que após a primeira jogada a moeda estará em uma das casas 2, 3, 4, 5 ou 6. E já sabemos que essas casas levam o jogador à vitória.     Desse modo, vamos dizer que 7 é uma posição perdedora e 6,5,4,3 e 2 são posições vencedoras. Assim, se um jogador estiver em uma das casas 8,9,10,11 ou 12, ele pode garantir a vitória movendo a moeda para a casa 7, deixando o seu adversário em uma posição perdedora. Com isso, podemos afirmar que as posições 8, 9, 10, 11 e 12 também são posições vencedoras. Resta analisar a casa. Observe que a partir desta casa podemos mover a moeda apenas para uma das casas 8, 9, 10, 11 ou 12 que são vencedoras. Daí, quem começar perde pelo simples fato de iniciar em uma posição perdedora.    A grande dificuldade para a maioria dos alunos é descobrir quais são as posições vencedoras de um jogo. Para evitar esse tipo de problema, tenha sempre em mente as seguintes definições:     Posição vencedora: A partir dela, podemos escolher um movimento e repassar uma posição perdedora para o adversário.  Posição perdedora: A partir dela, é impossível escolher um movimento e repassar uma posição perdedora para o adversário. Ou seja, não importa o movimento escolhido, o adversário irá receber uma posição vencedora.       Em um tabuleiro uma torre está na casa a1. Dois jogadores movem a torre com objetivo de colocar a torre na casa h8. Sabendo que a torre pode mover-se apenas para cima ou para direita (quantas casas o jogador desejar) e que não pode-se passar a vez, determine qual jogador tem a estratégia vencedora.    Primeiramente note que todas as casas da última linha e da última coluna (exceto a h8) são vencedoras pois, a partir delas podemos escolher um movimento que nos leve à vitória. Com isso, a casa g7 se torna perdedora pois, a partir dela qualquer movimento leva o outro jogador a uma posição vencedora (veja a figura 1).     Agora, como g7 é perdedora, as demais casas da sétima linha e da sétima coluna são vencedoras, pois basta levar a torre para a casa g7. Mais ainda, a casa f6 também deve ser perdedora (figura 2). Continuando de maneira análoga, obtemos que a casa a1 é perdedora (figura 3). Logo, quem começar, perde.      Problemas Propostos   Sobre uma mesa existem duas pilhas (uma com 15 e outra com 16 pedras). Em um jogo cada jogador pode, em sua vez, retirar qualquer quantidade de pedras de apenas uma pilha. Quem não puder mais jogar perde. Quem possui a estratégia vencedora?   O jogador 1 deve retirar uma pedra da pilha com 16. Em seguida, deve jogar simetricamente em relação ao jogador 2.    Dois jogadores colocam alternadamente bispos (da mesma cor) em um tabuleiro , de forma que nenhum bispo ataque outro. Quem não puder mais jogar perde.   Divida o tabuleiro em duas partes, uma formada pelas 4 linhas de cima e a outra parte com as 4 linhas de baixo. O jogador 2 deve jogar então simetricamente.    Dois jogadores colocam alternadamente reis (da mesma cor) em um tabuleiro , de forma que nenhum rei ataque outro. Quem não puder mais jogar perde.   O primeiro jogador deve colocar um rei no centro, e depois jogar simetricamente em relação ao centro do tabuleiro.    São dados um tabuleiro de xadrez ( ) e palitinhos do tamanho dos lados das casas do tabuleiro. Dois jogadores jogam alternadamente e, em cada rodada, um dos jogadores coloca um palitinho sobre um lado de uma das casas do tabuleiro, sendo proibido sobrepor os palitinhos. Vence o jogador que conseguir completar primeiro um quadrado de palitinhos. Supondo que nenhum dos jogadores cometa erros, qual dos dois tem a estratégia vencedora?    (Rússia 1997) Os números são escritos no quadro. Dois jogadores apagam alternadamente um dos números da lista até que só restem dois números. Se a soma desses números for divisível por , o primeiro jogador vence, caso contrário vence o segundo. Quem tem a estratégia vencedora?   Observe que a soma de dois elementos opostos sempre é 1001, que deixa resto 2 na divisão por 3.   O Jogador 2 tem a seguinte estratégia vencedora. Para cada número apagado pelo Jogador 1, o Jogador 2 apaga o número que falta para que a soma seja 1001. Assim, no final, os dois últimos número terão soma igual a 1001, garantindo a vitória para o Jogador 2.     Uma pilha de 500 pedras é dada. Dois jogadores jogam o seguinte jogo: Em cada turno, o jogador pode retirar (qualquer potência de 2) pedras da pilha. O jogador que não puder mais jogar perde.   Pense nos múltiplos de 3. Nenhuma potência de 2 é múltiplo de 3.   A estratégia do primeiro jogador é sempre deixar para o segundo jogador um número de pedras que seja múltiplo de 3.  Primeira Jogada: A pilha tem pedras . Para deixar um múltiplo de 3, o Jogador 1 deve subtrair um número com resto 2. Ele deve retirar 2 pedras. A pilha fica com 498 pedras (4+9+8=21, que é divisível por 3).  Jogadas Subsequentes: O Jogador 2 agora tem 498 pedras (uma Posição Perdedora). Qualquer jogada que ele faça (subtraindo 1, 2, 4, 8, etc.) deixará um número de pedras que não é mais divisível por 3.  O Jogador 1, em sua vez, receberá uma pilha que não é múltiplo de 3. Ele então retira 1 ou 2 pedras para novamente deixar um múltiplo de 3 para o Jogador 2.  Este ciclo continua até que a pilha chegue a 0. Como o Jogador 1 sempre deixa um múltiplo de 3 para o oponente, o Jogador 2 nunca poderá deixar 0 (que é um múltiplo de 3). Portanto, o Jogador 1 fará a jogada final.    Em uma caixa existem 300 bolinhas. Cada jogador pode retirar não mais do que a metade das bolinhas que estão na caixa. O jogador que não puder mais jogar perde.   Pense nas potências de 2.   O Jogador 1 deve retirar uma quantidade de modo que o que sobre seja a maior potencia de 2 menos 1. Assim, o Jogador 2 receberá as Posições Perderoras: . No final o Jogador 2 ficará com apenas uma bolinha, perdendo o jogo.  Vamos verificar algumas Posições e separar entre Perderoras e Vencedoras.  n = 1: O máximo de bolinhas que se pode retirar é n\/2 = 0.5. Como é preciso retirar pelo menos 1, não há movimentos possíveis. O jogador que enfrenta 1 bolinha perde. 1 é uma Posição Perdedora .  n = 2: Pode-se retirar no máximo 2\/2 = 1 bolinha. A única jogada é retirar 1, deixando 1. Como se pode mover para a Posição (1), 2 é uma Posição Vencedora .  n = 3: Pode-se retirar no máximo 3\/2 = 1.5, ou seja, 1 bolinha. A única jogada é deixar 2. A posição 2 é P. Como todos os movimentos levam a uma Posição P, 3 é uma Posição Perdedora .  n = 4: Pode-se retirar no máximo 4\/2 = 2 bolinhas. Pode-se retirar 1 (deixando 3) ou 2 (deixando 2). Como é possível mover para 3 (uma Posição L), 4 é uma Posição Vencedora .  n = 5: Pode-se retirar 1 ou 2. Deixando 4 ou 3. Como se pode mover para 3, 5 é uma Posição Vencedora .  n = 6: Pode-se retirar 1, 2 ou 3. Deixando 5, 4 ou 3. Como se pode mover para 3, 6 é uma Posição Vencedora   n = 7: Pode-se retirar 1, 2 ou 3. Deixando 6, 5 ou 4. Todos os movimentos levam a Posições Vencedoras. 7 é uma Posição Perdedora .  As Posições Perdedoras que encontramos são 1, 3, 7... O padrão é claro: as posições perdedoras são números da forma .     "
+},
+{
+  "id": "example-31",
+  "level": "2",
+  "url": "section-10.html#example-31",
+  "type": "Exemplo",
+  "number": "4.1.1",
+  "title": "",
+  "body": "  Pedro e Mônica jogam em um tabuleiro . Cada um, em sua vez, pode pintar um dos quadrados (que não foram pintados anteriormente), ou dois quadrados consecutivos (se ambos estiverem brancos). Quem não puder mais jogar perde. Sabe-se que Pedro será o primeiro a jogar. Quem pode sempre garantir a vitória?    Pedro sempre poderá ganhar se seguir a seguinte estratégia:    Inicialmente, Pedro deve pintar o quadrado do meio.       Agora, depois que Mônica fizer sua jogada, Pedro deve jogar sempre simetricamente em relação ao centro do tabuleiro (i.e. sempre deixando o tabuleiro simétrico). Por exemplo, se Mônica jogar nas casas 9 e 10, Pedro deve jogar nas casas 2 e 3.       Assim, Mônica nunca poderá ganhar, pois na sua jogada ela \"quebra a simetria\" e a configuração final do jogo todas as casas estarão pintadas, ou seja, a configuração é simétrica.     "
+},
+{
+  "id": "example-32",
+  "level": "2",
+  "url": "section-10.html#example-32",
+  "type": "Exemplo",
+  "number": "4.1.4",
+  "title": "",
+  "body": "  Arnaldo e Bernardo disputam um jogo em um tabuleiro :   As peças do jogo são dominós . Inicialmente Arnaldo coloca um dominó cobrindo exatamente duas casas do tabuleiro, na horizontal ou na vertical. Os jogadores se revezam colocando uma peça no tabuleiro, na horizontal ou na vertical, sempre cobrindo exatamente duas casas do tabuleiro. Não é permitido colocar uma peça sobre outra já colocada anteriormente. Quem não conseguir colocar uma peça no tabuleiro perde. Qual dos dois jogadores tem uma estratégia vencedora, ou seja, uma estratégia que o leva à vitória quaisquer que sejam as jogadas de seu adversário, para:    ?    ?      Quando o primeiro jogador garante a vitória. Ele pode fazer isto colocando um dominó na vertical no meio do tabuleiro e, em seguida, jogar simetricamente ao segundo jogador. Quando o tabuleiro possui um número par de colunas. Desse modo, o segundo ganha jogando simetricamente ao primeiro jogador.   "
+},
+{
+  "id": "example-33",
+  "level": "2",
+  "url": "section-10.html#example-33",
+  "type": "Exemplo",
+  "number": "4.1.6",
+  "title": "",
+  "body": "  Tom e Jerry jogam o seguinte jogo. Eles colocam alternadamente pinos idênticos em casas vazias de um tabuleiro (um pino de cada vez). Tom é o primeiro a jogar. Vence quem, em sua jogada, formar um bloco de quatro pinos vizinhos. Dois pinos são vizinhos se estiverem em casas com um lado em comum. Determine quem possui a estratégia vencedora.    Observe que os pinos são idênticos, não há distinção entre os pinos. Jerry deve jogar simetricamente em relação ao centro do tabuleiro. Assim que Tom formar um bloco de três pinos vizinhos, Jerry deve abandonar a estratégia simétrica e completar o bloco de quatro pinos vizinhos, garantindo a vitória.   "
+},
+{
+  "id": "example-34",
+  "level": "2",
+  "url": "section-10.html#example-34",
+  "type": "Exemplo",
+  "number": "4.1.1",
+  "title": "",
+  "body": "  Na primeira casa de um tabuleiro está uma moeda. Tiago e Maria movem a moeda alternadamente. Em cada turno é permitido avançar 1, 2, 3, 4 ou 5 casas. Quem colocar a moeda na última casa é o vencedor. Se Maria começar jogando, ela pode ter certeza da vitória?    Como em muitos problemas de olimpíada, vamos analisar alguns casos pequenos. Vamos supor que em vez de 13 casas o tabuleiro tivesse apenas quatro. Neste caso, fica fácil ver que quem começa ganha basta avançar três casas. O mesmo iria ocorrer se o tabuleiro tivesse 2, 3, 4, 5 ou 6 casas. Porém, em um tabuleiro o primeiro jogador perde. Veja que após a primeira jogada a moeda estará em uma das casas 2, 3, 4, 5 ou 6. E já sabemos que essas casas levam o jogador à vitória.     Desse modo, vamos dizer que 7 é uma posição perdedora e 6,5,4,3 e 2 são posições vencedoras. Assim, se um jogador estiver em uma das casas 8,9,10,11 ou 12, ele pode garantir a vitória movendo a moeda para a casa 7, deixando o seu adversário em uma posição perdedora. Com isso, podemos afirmar que as posições 8, 9, 10, 11 e 12 também são posições vencedoras. Resta analisar a casa. Observe que a partir desta casa podemos mover a moeda apenas para uma das casas 8, 9, 10, 11 ou 12 que são vencedoras. Daí, quem começar perde pelo simples fato de iniciar em uma posição perdedora.   "
+},
+{
+  "id": "definition-2",
+  "level": "2",
+  "url": "section-10.html#definition-2",
+  "type": "Definição",
+  "number": "4.1.3",
+  "title": "",
+  "body": "   Posição vencedora: A partir dela, podemos escolher um movimento e repassar uma posição perdedora para o adversário.  Posição perdedora: A partir dela, é impossível escolher um movimento e repassar uma posição perdedora para o adversário. Ou seja, não importa o movimento escolhido, o adversário irá receber uma posição vencedora.    "
+},
+{
+  "id": "example-35",
+  "level": "2",
+  "url": "section-10.html#example-35",
+  "type": "Exemplo",
+  "number": "4.1.4",
+  "title": "",
+  "body": "  Em um tabuleiro uma torre está na casa a1. Dois jogadores movem a torre com objetivo de colocar a torre na casa h8. Sabendo que a torre pode mover-se apenas para cima ou para direita (quantas casas o jogador desejar) e que não pode-se passar a vez, determine qual jogador tem a estratégia vencedora.    Primeiramente note que todas as casas da última linha e da última coluna (exceto a h8) são vencedoras pois, a partir delas podemos escolher um movimento que nos leve à vitória. Com isso, a casa g7 se torna perdedora pois, a partir dela qualquer movimento leva o outro jogador a uma posição vencedora (veja a figura 1).     Agora, como g7 é perdedora, as demais casas da sétima linha e da sétima coluna são vencedoras, pois basta levar a torre para a casa g7. Mais ainda, a casa f6 também deve ser perdedora (figura 2). Continuando de maneira análoga, obtemos que a casa a1 é perdedora (figura 3). Logo, quem começar, perde.   "
+},
+{
+  "id": "exercise-73",
+  "level": "2",
+  "url": "section-10.html#exercise-73",
+  "type": "Exercício",
+  "number": "4.1.3.1",
+  "title": "",
+  "body": " Sobre uma mesa existem duas pilhas (uma com 15 e outra com 16 pedras). Em um jogo cada jogador pode, em sua vez, retirar qualquer quantidade de pedras de apenas uma pilha. Quem não puder mais jogar perde. Quem possui a estratégia vencedora?   O jogador 1 deve retirar uma pedra da pilha com 16. Em seguida, deve jogar simetricamente em relação ao jogador 2.  "
+},
+{
+  "id": "exercise-74",
+  "level": "2",
+  "url": "section-10.html#exercise-74",
+  "type": "Exercício",
+  "number": "4.1.3.2",
+  "title": "",
+  "body": " Dois jogadores colocam alternadamente bispos (da mesma cor) em um tabuleiro , de forma que nenhum bispo ataque outro. Quem não puder mais jogar perde.   Divida o tabuleiro em duas partes, uma formada pelas 4 linhas de cima e a outra parte com as 4 linhas de baixo. O jogador 2 deve jogar então simetricamente.  "
+},
+{
+  "id": "exercise-75",
+  "level": "2",
+  "url": "section-10.html#exercise-75",
+  "type": "Exercício",
+  "number": "4.1.3.3",
+  "title": "",
+  "body": " Dois jogadores colocam alternadamente reis (da mesma cor) em um tabuleiro , de forma que nenhum rei ataque outro. Quem não puder mais jogar perde.   O primeiro jogador deve colocar um rei no centro, e depois jogar simetricamente em relação ao centro do tabuleiro.  "
+},
+{
+  "id": "exercise-76",
+  "level": "2",
+  "url": "section-10.html#exercise-76",
+  "type": "Exercício",
+  "number": "4.1.3.4",
+  "title": "",
+  "body": " São dados um tabuleiro de xadrez ( ) e palitinhos do tamanho dos lados das casas do tabuleiro. Dois jogadores jogam alternadamente e, em cada rodada, um dos jogadores coloca um palitinho sobre um lado de uma das casas do tabuleiro, sendo proibido sobrepor os palitinhos. Vence o jogador que conseguir completar primeiro um quadrado de palitinhos. Supondo que nenhum dos jogadores cometa erros, qual dos dois tem a estratégia vencedora?  "
+},
+{
+  "id": "exercise-77",
+  "level": "2",
+  "url": "section-10.html#exercise-77",
+  "type": "Exercício",
+  "number": "4.1.3.5",
+  "title": "",
+  "body": " (Rússia 1997) Os números são escritos no quadro. Dois jogadores apagam alternadamente um dos números da lista até que só restem dois números. Se a soma desses números for divisível por , o primeiro jogador vence, caso contrário vence o segundo. Quem tem a estratégia vencedora?   Observe que a soma de dois elementos opostos sempre é 1001, que deixa resto 2 na divisão por 3.   O Jogador 2 tem a seguinte estratégia vencedora. Para cada número apagado pelo Jogador 1, o Jogador 2 apaga o número que falta para que a soma seja 1001. Assim, no final, os dois últimos número terão soma igual a 1001, garantindo a vitória para o Jogador 2.  "
+},
+{
+  "id": "exercise-78",
+  "level": "2",
+  "url": "section-10.html#exercise-78",
+  "type": "Exercício",
+  "number": "4.1.3.6",
+  "title": "",
+  "body": " Uma pilha de 500 pedras é dada. Dois jogadores jogam o seguinte jogo: Em cada turno, o jogador pode retirar (qualquer potência de 2) pedras da pilha. O jogador que não puder mais jogar perde.   Pense nos múltiplos de 3. Nenhuma potência de 2 é múltiplo de 3.   A estratégia do primeiro jogador é sempre deixar para o segundo jogador um número de pedras que seja múltiplo de 3.  Primeira Jogada: A pilha tem pedras . Para deixar um múltiplo de 3, o Jogador 1 deve subtrair um número com resto 2. Ele deve retirar 2 pedras. A pilha fica com 498 pedras (4+9+8=21, que é divisível por 3).  Jogadas Subsequentes: O Jogador 2 agora tem 498 pedras (uma Posição Perdedora). Qualquer jogada que ele faça (subtraindo 1, 2, 4, 8, etc.) deixará um número de pedras que não é mais divisível por 3.  O Jogador 1, em sua vez, receberá uma pilha que não é múltiplo de 3. Ele então retira 1 ou 2 pedras para novamente deixar um múltiplo de 3 para o Jogador 2.  Este ciclo continua até que a pilha chegue a 0. Como o Jogador 1 sempre deixa um múltiplo de 3 para o oponente, o Jogador 2 nunca poderá deixar 0 (que é um múltiplo de 3). Portanto, o Jogador 1 fará a jogada final.  "
+},
+{
+  "id": "exercise-79",
+  "level": "2",
+  "url": "section-10.html#exercise-79",
+  "type": "Exercício",
+  "number": "4.1.3.7",
+  "title": "",
+  "body": " Em uma caixa existem 300 bolinhas. Cada jogador pode retirar não mais do que a metade das bolinhas que estão na caixa. O jogador que não puder mais jogar perde.   Pense nas potências de 2.   O Jogador 1 deve retirar uma quantidade de modo que o que sobre seja a maior potencia de 2 menos 1. Assim, o Jogador 2 receberá as Posições Perderoras: . No final o Jogador 2 ficará com apenas uma bolinha, perdendo o jogo.  Vamos verificar algumas Posições e separar entre Perderoras e Vencedoras.  n = 1: O máximo de bolinhas que se pode retirar é n\/2 = 0.5. Como é preciso retirar pelo menos 1, não há movimentos possíveis. O jogador que enfrenta 1 bolinha perde. 1 é uma Posição Perdedora .  n = 2: Pode-se retirar no máximo 2\/2 = 1 bolinha. A única jogada é retirar 1, deixando 1. Como se pode mover para a Posição (1), 2 é uma Posição Vencedora .  n = 3: Pode-se retirar no máximo 3\/2 = 1.5, ou seja, 1 bolinha. A única jogada é deixar 2. A posição 2 é P. Como todos os movimentos levam a uma Posição P, 3 é uma Posição Perdedora .  n = 4: Pode-se retirar no máximo 4\/2 = 2 bolinhas. Pode-se retirar 1 (deixando 3) ou 2 (deixando 2). Como é possível mover para 3 (uma Posição L), 4 é uma Posição Vencedora .  n = 5: Pode-se retirar 1 ou 2. Deixando 4 ou 3. Como se pode mover para 3, 5 é uma Posição Vencedora .  n = 6: Pode-se retirar 1, 2 ou 3. Deixando 5, 4 ou 3. Como se pode mover para 3, 6 é uma Posição Vencedora   n = 7: Pode-se retirar 1, 2 ou 3. Deixando 6, 5 ou 4. Todos os movimentos levam a Posições Vencedoras. 7 é uma Posição Perdedora .  As Posições Perdedoras que encontramos são 1, 3, 7... O padrão é claro: as posições perdedoras são números da forma .  "
 }
 ]
 

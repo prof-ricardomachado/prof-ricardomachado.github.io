@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Combinatória">
 <meta property="book:author" content="Ricardo Machado">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +26,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -177,7 +190,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-4.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="indice.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-7.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="problemas-resolvidos.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="indice.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="section-10.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
 \newcommand{\notdivide}{{\not{\mid}}}
@@ -228,34 +241,54 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="active">
-<div class="toc-item"><a href="jogos.html" class="internal"><span class="codenumber">2</span> <span class="title">Jogos</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Aula 6 - Jogos</span></a></div>
+<li>
+<div class="toc-item"><a href="pcp.html" class="internal"><span class="codenumber">2</span> <span class="title">O Pincípio da Casa dos Pombos</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-7.html#section-8" class="internal"><span class="codenumber">2.1.1</span> <span class="title">1. Simetria</span></a></div></li>
-<li><div class="toc-item"><a href="section-7.html#section-9" class="internal"><span class="codenumber">2.1.2</span> <span class="title">2. Posições Vencedoras</span></a></div></li>
-<li><div class="toc-item"><a href="section-7.html#exercises-3" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+<li>
+<div class="toc-item"><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">O Pincípio da Casa dos Pombos I</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-7.html#introducao" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#passo-de-magica" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Passo de Mágica?</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exemplos-resolvidos" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#generalizacao" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Outra Versão do Princípio da Casa dos Pombos</span></a></div></li>
+<li><div class="toc-item"><a href="section-7.html#exercises-3" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Problemas</span></a></div></li>
 </ul>
-</li></ul>
 </li>
 <li>
-<div class="toc-item"><a href="tabuleiros.html" class="internal"><span class="codenumber">3</span> <span class="title">Tabuleiros</span></a></div>
-<ul class="structural"><li>
-<div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Aula 9: Tabuleiros</span></a></div>
+<div class="toc-item"><a href="section-8.html" class="internal"><span class="codenumber">2.2</span> <span class="title">O Pincípio da Casa dos Pombos II</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-10.html#exemplos" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Exemplos Resolvidos</span></a></div></li>
-<li><div class="toc-item"><a href="section-10.html#worksheet-1" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Problemas Propostos</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#introducao" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Introdução</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-resolvidos" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Problemas Resolvidos</span></a></div></li>
+<li><div class="toc-item"><a href="section-8.html#problemas-propostos" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Problemas Propostos</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Paridade.html" class="internal"><span class="codenumber">3</span> <span class="title">Paridade</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="problemas-resolvidos.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Paridade</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="problemas-resolvidos.html#problemas-propostos" class="internal"><span class="codenumber">3.1</span> <span class="title">Problemas Propostos</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="jogos.html" class="internal"><span class="codenumber">4</span> <span class="title">Jogos</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="section-10.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Jogos</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-10.html#section-11" class="internal"><span class="codenumber">4.1.1</span> <span class="title">1. Simetria</span></a></div></li>
+<li><div class="toc-item"><a href="section-10.html#section-12" class="internal"><span class="codenumber">4.1.2</span> <span class="title">2. Posições Vencedoras</span></a></div></li>
+<li><div class="toc-item"><a href="section-10.html#exercises-6" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Problemas Propostos</span></a></div></li>
 </ul>
 </li></ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="jogos"><h2 class="heading">
-<span class="type">Capítulo</span> <span class="codenumber">2</span> <span class="title">Jogos</span>
+<span class="type">Capítulo</span> <span class="codenumber">4</span> <span class="title">Jogos</span>
 </h2>
-<section class="introduction" id="introduction-2">Nota de aula baseada na Aula 06 de Combinatória - Nível 2 (POTI).</section><nav class="summary-links"><ul><li><a href="section-7.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Aula 6 - Jogos</span></a></li></ul></nav></section></div>
+<section class="introduction" id="introduction-2">Nota de aula baseada na Aula 06 de Combinatória - Nível 2 (POTI).</section><nav class="summary-links"><ul><li><a href="section-10.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Jogos</span></a></li></ul></nav></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="section-4.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-7.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="problemas-resolvidos.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="section-10.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">
