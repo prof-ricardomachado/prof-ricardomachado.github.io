@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 440" width="100%" height="100%">
+  <style>
+    .axis { stroke: #374151; stroke-width: 2; marker-end: url(#arrow); }
+    .circle { stroke: #2563eb; stroke-width: 2.5; fill: none; }
+    .point { fill: #dc2626; }
+    .text { font-family: system-ui, sans-serif; font-size: 14px; fill: #111827; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; font-size: 15px; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+    </marker>
+    <!-- Cabeça de seta para indicar o sentido anti-horário na curva -->
+    <g id="ccw-head">
+      <path d="M -6 -4 L 4 0 L -6 4 L -3 0 z" fill="#2563eb" />
+    </g>
+  </defs>
+
+  <!-- Eixos Cartesionos -->
+  <line x1="40" y1="220" x2="500" y2="220" class="axis" />
+  <line x1="230" y1="400" x2="230" y2="40" class="axis" />
+  <text x="510" y="225" class="math">x</text>
+  <text x="225" y="30" class="math">y</text>
+
+  <!-- Circunferência de Raio 1 -->
+  <circle cx="230" cy="220" r="100" class="circle" />
+
+  <!-- Setas indicando o sentido anti-horário (nos 4 quadrantes) -->
+  <use href="#ccw-head" transform="translate(300.7, 149.3) rotate(-135)" />
+  <use href="#ccw-head" transform="translate(159.3, 149.3) rotate(-225)" />
+  <use href="#ccw-head" transform="translate(159.3, 290.7) rotate(-315)" />
+  <use href="#ccw-head" transform="translate(300.7, 290.7) rotate(-45)" />
+
+  <!-- Marcação do Raio 1 nos eixos -->
+  <text x="328" y="212" class="text">1</text>
+  <text x="216" y="125" class="text">1</text>
+
+  <!-- Ponto F(0) = (1,0) -->
+  <circle cx="330" cy="220" r="5" class="point" />
+  <text x="338" y="240" class="math" fill="#dc2626">F(0) = (cos(0), sen(0)) = (1,0)</text>
+
+  <!-- Ponto F(pi/2) = (0,1) -->
+  <circle cx="230" cy="120" r="5" class="point" />
+  <text x="238" y="112" class="math" fill="#dc2626">F(π/2) = (cos(π/2), sen(π/2)) = (0,1)</text>
+
+  <!-- Ponto F(pi) à esquerda -->
+  <circle cx="130" cy="220" r="5" class="point" />
+  <text x="85" y="212" class="math" fill="#dc2626">F(π)</text>
+
+  <!-- Ponto F(3pi/2) na parte inferior -->
+  <circle cx="230" cy="320" r="5" class="point" />
+  <text x="238" y="340" class="math" fill="#dc2626">F(3π/2)</text>
+</svg>
