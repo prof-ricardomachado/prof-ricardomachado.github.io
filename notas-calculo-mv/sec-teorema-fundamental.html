@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM O Teorema Fundamental para Integrais de Linha</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo M V">
+<meta property="book:author" content="Eberson Ferreira da Silva">
+<meta property="book:author" content="Ricardo Nunes Machado Junior">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo M V:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Eberson Ferreira da Silva, Ricardo Nunes Machado Junior</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-definicao-integral-campo.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="02_integral_de_linha.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01_Caminhos_Campos.html" class="internal"><span class="codenumber">1</span> <span class="title">Campos Vetoriais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Curvas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#sec-curvas-r2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Curvas em <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#sec-curvas-r3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Curvas em <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-calculo-funcoes-vetoriais.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Cálculo de Funções Vetoriais</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-campos-vetoriais.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Campos Vetoriais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-campos-vetoriais.html#sec-campos-vetoriais" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Campos Vetoriais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-campos-vetoriais.html#sec-campos-conservativos" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Campos Conservativos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-campos-vetoriais.html#exercises-1" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02_integral_de_linha.html" class="internal"><span class="codenumber">2</span> <span class="title">Integral de Linha</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-definicao-r2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integrais de Linha de Funções <span class="process-math">\(f: \mathbb{R}^n \rightarrow \mathbb{R}\)</span></span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-definicao-r2.html#subsection-5" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Exemplos</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-definicao-integral-campo.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Integrais de Linha de Campos Vetoriais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-definicao-integral-campo.html#sec-notacao-componentes" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Notação em Componentes (Forma Diferencial)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-definicao-integral-campo.html#sec-suave-por-partes" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Integral de Linha sobre uma Curva Suave por Partes</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-teorema-fundamental.html" class="internal"><span class="codenumber">2.3</span> <span class="title">O Teorema Fundamental para Integrais de Linha</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-independencia-caminho" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Independência do Caminho e Curvas Fechadas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-condicoes-campo-conservativo" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Critérios de Conservatividade em Domínios Abertos e Conexos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-teste-conservatividade" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Teste para Campos Conservativos em Regiões Simplesmente Conexas</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">3</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-teorema-fundamental"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">2.3</span> <span class="title">O Teorema Fundamental para Integrais de Linha</span>
+</h2>
+<div class="para" id="p-208">Inicialmente, lembre que um campo vetorial <span class="process-math">\(\vec{F}: \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> é dito <em class="emphasis">conservativo</em> quando existe um campo escalar <span class="process-math">\(\varphi: \mathbb{R}^n \rightarrow \mathbb{R}\)</span> tal que <span class="process-math">\(\nabla\varphi = \vec{F}\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="theo-fundamental-linha"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Teorema Fundamental das Integrais de Linha.</span>
+</h3>
+<div class="para" id="p-209">Se <span class="process-math">\(\vec{F}: D \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> é um campo vetorial contínuo, se <span class="process-math">\(\varphi: D \subseteq \mathbb{R}^n \rightarrow \mathbb{R}\)</span> é tal que <span class="process-math">\(\nabla\varphi = \vec{F}\)</span> e se <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^n\)</span> é uma curva de classe <span class="process-math">\(C^1\)</span> com <span class="process-math">\(\gamma(a) = A\)</span> e <span class="process-math">\(\gamma(b) = B\text{,}\)</span> então:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{\gamma} \nabla\varphi \cdot d\vec{r} = \varphi(B) - \varphi(A)
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para" id="p-210">Temos que <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \vec{F}(\gamma(t)) \cdot \gamma'(t) \, dt\text{.}\)</span>
+</div> <div class="para logical" id="p-211">
+<div class="para">Como <span class="process-math">\(\vec{F} = \nabla\varphi\text{,}\)</span> segue que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{F}(\gamma(t)) = \left( \frac{\partial\varphi}{\partial x_1}(\gamma(t)), \frac{\partial\varphi}{\partial x_2}(\gamma(t)), \dots, \frac{\partial\varphi}{\partial x_n}(\gamma(t)) \right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-212">
+<div class="para">Daí, efetuando o produto interno:</div>
+<div class="displaymath process-math" id="md-24">
+\begin{align*}
+\vec{F}(\gamma(t)) \cdot \gamma'(t) \amp = \frac{\partial\varphi}{\partial x_1}(\gamma(t))\frac{dx_1(t)}{dt} +  \dots + \frac{\partial\varphi}{\partial x_n}(\gamma(t))\frac{dx_n(t)}{dt}\\
+\amp = \frac{d}{dt}\big(\varphi(\gamma(t))\big) \quad \text{(pela Regra da Cadeia)}
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-213">
+<div class="para">Logo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \frac{d}{dt}\big(\varphi(\gamma(t))\big) \, dt = \varphi(\gamma(b)) - \varphi(\gamma(a)) = \varphi(B) - \varphi(A)
+\end{equation*}
+</div>
+</div></article></div>
+<article class="note remark-like" id="note-3"><h3 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-214">O teorema acima nos diz que a integral de linha de um campo conservativo sobre uma curva suave <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^n\)</span> depende apenas dos pontos extremos do intervalo, ou seja, de <span class="process-math">\(\gamma(a)\)</span> e <span class="process-math">\(\gamma(b)\text{.}\)</span>
+</div></article><article class="example example-like" id="exem-potencial-direto"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-215">Calcule <span class="process-math">\(\int_{\gamma} x \, dx + y \, dy\text{,}\)</span> onde <span class="process-math">\(\gamma(t) = (\arctan t, \text{sen}(t^3))\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
+<div class="para logical" id="p-216">
+<div class="para">Note que se calcularmos diretamente pela definição, faríamos:</div>
+<div class="displaymath process-math" id="md-25">
+\begin{align*}
+x = \arctan t \amp \implies dx = \frac{1}{1+t^2} \, dt\\
+y = \text{sen}(t^3) \amp \implies dy = 3t^2 \cos(t^3) \, dt
+\end{align*}
+</div>
+<div class="para">Obtendo <span class="process-math">\(\int_{0}^{1} \left( \frac{\arctan t}{1+t^2} + 3t^2 \text{sen}(t^3)\cos(t^3) \right) dt\text{.}\)</span> Embora essas integrais não sejam impossíveis, elas exigem bastante trabalho algebraico.</div>
+</div> <div class="para" id="p-217">Por outro lado, note que <span class="process-math">\(\varphi(x,y) = \frac{x^2+y^2}{2}\)</span> é tal que <span class="process-math">\(\frac{\partial\varphi}{\partial x} = x\)</span> e <span class="process-math">\(\frac{\partial\varphi}{\partial y} = y\text{,}\)</span> isto é, <span class="process-math">\(\varphi\)</span> é uma função potencial para o campo <span class="process-math">\(\vec{F} = x\vec{i} + y\vec{j}\text{.}\)</span>
+</div> <div class="para logical" id="p-218">
+<div class="para">Assim, usando o Teorema Fundamental das Integrais de Linha:</div>
+<div class="displaymath process-math" id="md-26">
+\begin{align*}
+\int_{\gamma} x \, dx + y \, dy \amp = \varphi(\gamma(1)) - \varphi(\gamma(0))\\
+\amp = \varphi(\arctan 1, \text{sen } 1) - \varphi(\arctan 0, \text{sen } 0)\\
+\amp = \varphi\left(\frac{\pi}{4}, \text{sen } 1\right) - \varphi(0,0)\\
+\amp = \frac{(\pi/4)^2 + \text{sen}^2 1}{2} - \frac{0^2+0^2}{2} = \frac{1}{2}\left(\frac{\pi^2}{16} + \text{sen}^2 1\right)
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><section class="subsection" id="sec-independencia-caminho"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.3.1</span> <span class="title">Independência do Caminho e Curvas Fechadas</span>
+</h3>
+<article class="definition definition-like" id="def-independencia-caminho"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-219">Diremos que a integral de linha <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\)</span> é <em class="emphasis">independente do caminho</em> quando <span class="process-math">\(\int_{C_1} \vec{F} \cdot d\vec{r} = \int_{C_2} \vec{F} \cdot d\vec{r}\)</span> para quaisquer dois caminhos <span class="process-math">\(C_1\)</span> e <span class="process-math">\(C_2\)</span> que tenham os mesmos pontos inicial e final.</div></article><div class="para" id="p-220">Nesta terminologia, pelo Teorema Fundamental, para calcular a integral de um campo conservativo precisamos apenas dos pontos extremos da curva. Logo, concluímos que a integral de linha de um campo conservativo é independente do caminho.</div>
+<article class="example example-like" id="exem-campo-conservativo-2d"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-221">Considere o campo conservativo <span class="process-math">\(\vec{F}(x,y) = (e^{-y} - 2x)\vec{i} + (-x e^{-y} - \text{sen } y)\vec{j}\text{.}\)</span> Calcule <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde <span class="process-math">\(C\)</span> é uma curva qualquer <span class="process-math">\(C^1\)</span> por partes ligando <span class="process-math">\(A = (\pi, 0)\)</span> até <span class="process-math">\(B = (0, \pi)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
+<div class="para" id="p-222">Basta encontrar uma função potencial <span class="process-math">\(\varphi: \mathbb{R}^2 \rightarrow \mathbb{R}\)</span> tal que <span class="process-math">\(\nabla\varphi = \vec{F}(x,y)\text{.}\)</span> Queremos:</div>
+<div class="displaymath process-math" id="md-27">
+\begin{align*}
+\frac{\partial\varphi}{\partial x} \amp = e^{-y} - 2x \quad \text{(1)}\\
+\frac{\partial\varphi}{\partial y} \amp = -x e^{-y} - \text{sen } y \quad \text{(2)}
+\end{align*}
+</div>
+<div class="para logical" id="p-223">
+<div class="para">Integrando a equação (1) em relação a <span class="process-math">\(x\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(x,y) = \int (e^{-y} - 2x) \, dx = x e^{-y} - x^2 + g(y) \quad \text{(3)}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-224">
+<div class="para">Derivando a equação (3) em relação a <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial\varphi}{\partial y}(x,y) = -x e^{-y} + g'(y) \quad \text{(4)}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-225">
+<div class="para">Comparando (4) com a equação (2):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-x e^{-y} + g'(y) = -x e^{-y} - \text{sen } y \implies g'(y) = -\text{sen } y
+\end{equation*}
+</div>
+<div class="para">Integrando em relação a <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(g(y) = \cos y + K\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-226">Daí, uma função potencial é <span class="process-math">\(\varphi(x,y) = x e^{-y} - x^2 + \cos y + K\text{.}\)</span>
+</div> <div class="para logical" id="p-227">
+<div class="para">Portanto:</div>
+<div class="displaymath process-math" id="md-28">
+\begin{align*}
+\int_{C} \vec{F} \cdot d\vec{r} \amp = \varphi(0, \pi) - \varphi(\pi, 0)\\
+\amp = \big(0 \cdot e^{-\pi} - 0^2 + \cos\pi + K\big) - \big(\pi e^{0} - \pi^2 + \cos 0 + K\big)\\
+\amp = (-1) - (\pi - \pi^2 + 1) = \pi^2 - \pi - 2
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><div class="para" id="p-228">Uma curva <span class="process-math">\(\gamma\)</span> é dita <em class="emphasis">fechada</em> quando seus pontos extremos coincidem, ou seja, <span class="process-math">\(\gamma(a) = \gamma(b)\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="theo-independencia-e-fechada"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-229">A integral de linha <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\)</span> é independente do caminho se, e somente se, <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = 0\)</span> para toda curva <span class="process-math">\(\gamma\)</span> fechada.</div></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-2"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><div class="para" id="p-230">(<span class="process-math">\(\implies\)</span>) Seja <span class="process-math">\(\vec{F}: D \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> um campo vetorial tal que <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\)</span> seja independente do caminho para quaisquer curvas ligando os pontos <span class="process-math">\(A\)</span> até <span class="process-math">\(B\text{.}\)</span>
+</div> <figure class="figure figure-like" id="fig-decomposicao-fechada"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/curva_fechada_decomposicao.svg" class="contained" alt="Curva fechada gamma contendo dois pontos A e B, dividida no caminho gamma_1 de A para B e gamma_2 de B para A."></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.7<span class="period">.</span></span><span class="space"> </span>Decomposição de uma curva fechada <span class="process-math">\(\gamma\)</span> em dois caminhos <span class="process-math">\(\gamma_1\)</span> e <span class="process-math">\(\gamma_2\)</span></figcaption></figure> <div class="para logical" id="p-231">
+<div class="para">Seja <span class="process-math">\(\gamma\)</span> uma curva qualquer <span class="process-math">\(C^1\)</span> fechada contendo os pontos <span class="process-math">\(A\)</span> e <span class="process-math">\(B\text{.}\)</span> Podemos ver <span class="process-math">\(\gamma\)</span> composta por dois caminhos: <span class="process-math">\(\gamma_1\)</span> de <span class="process-math">\(A\)</span> para <span class="process-math">\(B\text{,}\)</span> e <span class="process-math">\(\gamma_2\)</span> de <span class="process-math">\(B\)</span> para <span class="process-math">\(A\text{.}\)</span> Assim:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{\gamma_1} \vec{F} \cdot d\vec{r} + \int_{\gamma_2} \vec{F} \cdot d\vec{r}
+\end{equation*}
+</div>
+<div class="para">Note que <span class="process-math">\(\int_{\gamma_2} \vec{F} \cdot d\vec{r} = -\int_{-\gamma_2} \vec{F} \cdot d\vec{r}\text{,}\)</span> onde <span class="process-math">\(-\gamma_2\)</span> é a curva percorrida no sentido contrário (de <span class="process-math">\(A\)</span> para <span class="process-math">\(B\)</span>). Logo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{\gamma_1} \vec{F} \cdot d\vec{r} - \int_{-\gamma_2} \vec{F} \cdot d\vec{r} = 0
+\end{equation*}
+</div>
+<div class="para">pois <span class="process-math">\(\gamma_1\)</span> e <span class="process-math">\(-\gamma_2\)</span> têm os mesmos pontos inicial e final e a integral é independente do caminho.</div>
+</div> <div class="para" id="p-232">(<span class="process-math">\(\impliedby\)</span>) Agora, suponha que <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = 0\)</span> para toda curva fechada <span class="process-math">\(\gamma\text{.}\)</span> Sejam <span class="process-math">\(C_1\)</span> e <span class="process-math">\(C_2\)</span> duas curvas quaisquer ligando <span class="process-math">\(A\)</span> até <span class="process-math">\(B\text{.}\)</span>
+</div>  <div class="para logical" id="p-233">
+<div class="para">Note que a curva composta <span class="process-math">\(\gamma = C_1 \cup (-C_2)\)</span> é fechada. Logo:</div>
+<div class="displaymath process-math" id="md-29">
+\begin{align*}
+0 = \int_{\gamma} \vec{F} \cdot d\vec{r} \amp = \int_{C_1} \vec{F} \cdot d\vec{r} + \int_{-C_2} \vec{F} \cdot d\vec{r}\\
+0 \amp = \int_{C_1} \vec{F} \cdot d\vec{r} - \int_{C_2} \vec{F} \cdot d\vec{r} \implies \int_{C_1} \vec{F} \cdot d\vec{r} = \int_{C_2} \vec{F} \cdot d\vec{r}
+\end{align*}
+</div>
+</div></article></div></section><section class="subsection" id="sec-condicoes-campo-conservativo"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.3.2</span> <span class="title">Critérios de Conservatividade em Domínios Abertos e Conexos</span>
+</h3>
+<div class="para" id="p-234">Se o domínio do campo <span class="process-math">\(\vec{F}: \Omega \subset \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> for "bem comportado", a independência do caminho implica que <span class="process-math">\(\vec{F}\)</span> é conservativo.</div>
+<figure class="figure figure-like" id="fig-dominio-aberto-conexo"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/dominio_aberto_conexo.svg" class="contained" alt="Região hachurada representando um conjunto aberto e conexo por caminhos Omega com dois pontos A e B unidos por uma curva gamma."></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.8<span class="period">.</span></span><span class="space"> </span>Região aberta e conexa por caminhos <span class="process-math">\(\Omega\)</span></figcaption></figure><div class="para" id="p-235">Aqui, "bem comportado" significa que <span class="process-math">\(\Omega\)</span> é um conjunto:</div>
+<ul class="disc">
+<li id="li-33"><div class="para" id="p-236">Aberto: Todo ponto de <span class="process-math">\(\Omega\)</span> pode ser colocado no centro de uma bola totalmente contida em <span class="process-math">\(\Omega\)</span> (não contém pontos de fronteira).</div></li>
+<li id="li-34"><div class="para" id="p-237">Conexo por caminhos: Quaisquer dois pontos em <span class="process-math">\(\Omega\)</span> podem ser ligados por um caminho totalmente contido em <span class="process-math">\(\Omega\text{.}\)</span>
+</div></li>
+</ul>
+<article class="theorem theorem-like" id="theo-independencia-implica-conservativo"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-238">Se <span class="process-math">\(\vec{F}\)</span> for um campo vetorial contínuo em uma região aberta e conexa por caminhos <span class="process-math">\(\Omega \subseteq \mathbb{R}^n\text{,}\)</span> e se <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\)</span> for independente do caminho, então <span class="process-math">\(\vec{F}\)</span> é conservativo em <span class="process-math">\(\Omega\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h4 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><div class="para" id="p-239">Denote por <span class="process-math">\(\vec{e}_i = (0, \dots, 0, 1, 0, \dots, 0)\)</span> o vetor da base canônica com <span class="process-math">\(1\)</span> na <span class="process-math">\(i\)</span>-ésima posição. Assim, <span class="process-math">\(\vec{F}(x_1, \dots, x_n) = \sum_{i=1}^{n} f_i(x_1, \dots, x_n)\vec{e}_i\text{.}\)</span>
+</div> <div class="para logical" id="p-240">
+<div class="para">Seja <span class="process-math">\(A \in \Omega\)</span> fixado. Para cada ponto <span class="process-math">\(X = (x_1, \dots, x_n) \in \Omega\text{,}\)</span> defina a função candidato a potencial:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(X) = \int_{A}^{X} \vec{F} \cdot d\vec{r}
+\end{equation*}
+</div>
+<div class="para">A notação <span class="process-math">\(\int_A^X\)</span> é adequada pois a integral é independente do caminho escolhido ligando <span class="process-math">\(A\)</span> a <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-241">Vamos provar que <span class="process-math">\(\frac{\partial\varphi}{\partial x_i} = f_i\)</span> para todo <span class="process-math">\(i = 1, \dots, n\text{.}\)</span> Como <span class="process-math">\(\Omega\)</span> é aberto, para <span class="process-math">\(X \in \Omega\)</span> existe uma bola de centro <span class="process-math">\(X\)</span> contida em <span class="process-math">\(\Omega\text{.}\)</span> Considere <span class="process-math">\(h &gt; 0\)</span> suficientemente pequeno tal que o segmento ligando <span class="process-math">\(X\)</span> a <span class="process-math">\(X + h\vec{e}_i\)</span> esteja contido nessa bola.</div> <div class="para logical" id="p-242">
+<div class="para">Note que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\varphi(X + h\vec{e}_i) - \varphi(X)}{h} = \frac{\int_{A}^{X+h\vec{e}_i} \vec{F}\cdot d\vec{r} - \int_{A}^{X} \vec{F}\cdot d\vec{r}}{h} = \frac{\int_{X}^{X+h\vec{e}_i} \vec{F}\cdot d\vec{r}}{h}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-243">
+<div class="para">Uma parametrização do segmento de <span class="process-math">\(X\)</span> a <span class="process-math">\(X + h\vec{e}_i\)</span> é <span class="process-math">\(\gamma(t) = X + t\vec{e}_i\text{,}\)</span> <span class="process-math">\(t \in [0, h]\text{.}\)</span> Daí, <span class="process-math">\(\gamma'(t) = \vec{e}_i\text{,}\)</span> e:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{X}^{X+h\vec{e}_i} \vec{F} \cdot d\vec{r} = \int_{0}^{h} \vec{F}(\gamma(t)) \cdot \vec{e}_i \, dt = \int_{0}^{h} f_i(\gamma(t)) \, dt
+\end{equation*}
+</div>
+<div class="para">pois <span class="process-math">\(\vec{e}_i \cdot \vec{e}_i = 1\)</span> e <span class="process-math">\(\vec{e}_j \cdot \vec{e}_i = 0\)</span> para <span class="process-math">\(j \neq i\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-244">
+<div class="para">Aplicando o Teorema Fundamental do Cálculo (ou a Regra de L'Hôpital / Teorema do Valor Médio para Integrais):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{h \to 0^+} \frac{\int_{0}^{h} f_i(\gamma(t)) \, dt}{h} = \lim_{h \to 0^+} f_i(\gamma(h)) = \lim_{h \to 0^+} f_i(X + h\vec{e}_i) = f_i(X)
+\end{equation*}
+</div>
+</div> <div class="para" id="p-245">Analogamente, considerando a parametrização <span class="process-math">\(\beta(t) = X - t\vec{e}_i\)</span> para <span class="process-math">\(h \lt 0\text{,}\)</span> obtém-se o limite à esquerda <span class="process-math">\(f_i(X)\text{.}\)</span>
+</div> <div class="para logical" id="p-246">
+<div class="para">Portanto:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial\varphi}{\partial x_i}(X) = \lim_{h \to 0} \frac{\varphi(X + h\vec{e}_i) - \varphi(X)}{h} = f_i(X)
+\end{equation*}
+</div>
+<div class="para">Mostrando que <span class="process-math">\(\nabla\varphi(X) = \vec{F}(X)\)</span> para todo <span class="process-math">\(X \in \Omega\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="theorem theorem-like" id="theo-equivalencias-campo-conservativo"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Teorema de Equivalências.</span>
+</h4>
+<div class="para" id="p-247">Seja <span class="process-math">\(\vec{F}: \Omega \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> um campo vetorial contínuo no aberto conexo por caminhos <span class="process-math">\(\Omega\text{.}\)</span> São equivalentes as seguintes afirmações:</div> <ol class="decimal">
+<li id="li-35"><div class="para" id="p-248">
+<span class="process-math">\(\vec{F}\)</span> é conservativo em <span class="process-math">\(\Omega\text{.}\)</span>
+</div></li>
+<li id="li-36"><div class="para" id="p-249">
+<span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = 0\)</span> para toda curva <span class="process-math">\(\gamma\)</span> fechada, <span class="process-math">\(C^1\)</span> por partes em <span class="process-math">\(\Omega\text{.}\)</span>
+</div></li>
+<li id="li-37"><div class="para" id="p-250">
+<span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\)</span> é independente do caminho de integração em <span class="process-math">\(\Omega\text{.}\)</span>
+</div></li>
+</ol></article></section><section class="subsection" id="sec-teste-conservatividade"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.3.3</span> <span class="title">Teste para Campos Conservativos em Regiões Simplesmente Conexas</span>
+</h3>
+<div class="para" id="p-251">Se <span class="process-math">\(\vec{F}(x,y) = P(x,y)\vec{i} + Q(x,y)\vec{j}\)</span> é conservativo, existe <span class="process-math">\(\varphi: \mathbb{R}^2 \rightarrow \mathbb{R}\)</span> tal que <span class="process-math">\(\frac{\partial\varphi}{\partial x} = P\)</span> e <span class="process-math">\(\frac{\partial\varphi}{\partial y} = Q\text{.}\)</span>
+</div>
+<div class="para logical" id="p-252">
+<div class="para">Supondo <span class="process-math">\(\vec{F}\)</span> de classe <span class="process-math">\(C^1\text{,}\)</span> segue pelo Teorema das Derivadas Cruzadas (Clairaut-Schwarz) que <span class="process-math">\(\varphi\)</span> é de classe <span class="process-math">\(C^2\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial^2\varphi}{\partial y \partial x} = \frac{\partial P}{\partial y} \quad \text{e} \quad \frac{\partial^2\varphi}{\partial x \partial y} = \frac{\partial Q}{\partial x}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(\frac{\partial^2\varphi}{\partial y \partial x} = \frac{\partial^2\varphi}{\partial x \partial y}\text{,}\)</span> concluímos que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\end{equation*}
+</div>
+</div>
+<article class="note remark-like" id="note-4"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-253">Teste Necessário: Se <span class="process-math">\(\vec{F} = P\vec{i} + Q\vec{j}\)</span> é um campo de classe <span class="process-math">\(C^1\)</span> e <span class="process-math">\(\vec{F}\)</span> é conservativo, então obrigatoriamente <span class="process-math">\(\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\text{.}\)</span>
+</div> <div class="para" id="p-254">
+<em class="emphasis">Contrapositiva:</em> Se <span class="process-math">\(\frac{\partial P}{\partial y} \neq \frac{\partial Q}{\partial x}\text{,}\)</span> então o campo <span class="process-math">\(\vec{F}\)</span> não é conservativo.</div></article><article class="example example-like" id="exem-nao-conservativo"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-255">Considere <span class="process-math">\(\vec{F}(x,y) = -y\vec{i} + x\vec{j}\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<div class="para" id="p-256">Temos <span class="process-math">\(P(x,y) = -y\)</span> e <span class="process-math">\(Q(x,y) = x\text{.}\)</span>
+</div> <div class="para logical" id="p-257">
+<div class="para">Calculando as derivadas parciais:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial P}{\partial y} = -1 \quad \text{e} \quad \frac{\partial Q}{\partial x} = 1
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(\frac{\partial P}{\partial y} \neq \frac{\partial Q}{\partial x}\text{,}\)</span> logo <span class="process-math">\(\vec{F}\)</span> não é conservativo.</div>
+</div>
+</div></div>
+</div></article><div class="para" id="p-258">A recíproca vale? A condição <span class="process-math">\(\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\)</span> garante que <span class="process-math">\(\vec{F}\)</span> é conservativo apenas em domínios sem "furos".</div>
+<article class="definition definition-like" id="def-curva-simples-e-simplesmente-conexa"><h4 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-259">Uma curva <span class="process-math">\(\gamma(t)\text{,}\)</span> <span class="process-math">\(a \le t \le b\text{,}\)</span> é dita <em class="emphasis">fechada simples</em> quando <span class="process-math">\(\gamma(a) = \gamma(b)\)</span> e não existem auto-interseções no intervalo aberto <span class="process-math">\((a,b)\text{.}\)</span>
+</div> <div class="para" id="p-260">Uma região <span class="process-math">\(D \subseteq \mathbb{R}^2\)</span> aberta e conexa por caminhos é dita <em class="emphasis">simplesmente conexa</em> quando toda curva fechada simples em <span class="process-math">\(D\)</span> delimita uma região totalmente contida em <span class="process-math">\(D\text{.}\)</span>
+</div></article><figure class="figure figure-like" id="fig-simplesmente-conexo"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/simplesmente_conexo.svg" class="contained" alt="À esquerda, uma região D simplesmente conexa sem furos. À direita, uma região D não simplesmente conexa apresentando furos interiores."></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.14<span class="period">.</span></span><span class="space"> </span>Comparação entre região simplesmente conexa e região com furos interiores</figcaption></figure><article class="theorem theorem-like" id="theo-criterio-simplesmente-conexo"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-261">
+<div class="para">Seja <span class="process-math">\(\vec{F} = P\vec{i} + Q\vec{j}\)</span> um campo vetorial em uma região aberta simplesmente conexa <span class="process-math">\(D\text{.}\)</span> Suponha que <span class="process-math">\(P\)</span> e <span class="process-math">\(Q\)</span> tenham derivadas parciais de primeira ordem contínuas em todo <span class="process-math">\(D\)</span> e que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\end{equation*}
+</div>
+<div class="para">Então <span class="process-math">\(\vec{F}\)</span> é conservativo em <span class="process-math">\(D\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="exem-campo-simplesmente-conexo"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-262">Considere <span class="process-math">\(\vec{F}(x,y) = (3 + 2xy)\vec{i} + (x^2 - 3y^2)\vec{j}\text{.}\)</span>
+</div> <ol class="lower-alpha">
+<li id="li-38"><div class="para" id="p-263">O campo <span class="process-math">\(\vec{F}\)</span> é conservativo?</div></li>
+<li id="li-39"><div class="para" id="p-264">Calcule <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\text{,}\)</span> onde <span class="process-math">\(\gamma(t) = (e^t \text{sen } t, e^t \cos t)\text{,}\)</span> <span class="process-math">\(0 \le t \le \pi\text{.}\)</span>
+</div></li>
+</ol>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<div class="para logical" id="p-265">
+<div class="para">a) Verificação de conservatividade: O domínio de <span class="process-math">\(\vec{F}\)</span> é todo o plano <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> que é aberto e simplesmente conexo. Sendo <span class="process-math">\(P(x,y) = 3 + 2xy\)</span> e <span class="process-math">\(Q(x,y) = x^2 - 3y^2\text{,}\)</span> temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial P}{\partial y} = 2x \quad \text{e} \quad \frac{\partial Q}{\partial x} = 2x
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\)</span> em <span class="process-math">\(\mathbb{R}^2\text{,}\)</span> o teorema garante que <span class="process-math">\(\vec{F}\)</span> é conservativo.</div>
+</div> <div class="para logical" id="p-266">
+<div class="para">b) Cálculo da integral de linha: Sendo conservativo, existe <span class="process-math">\(f(x,y)\)</span> tal que <span class="process-math">\(\nabla f = \vec{F}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-30">
+\begin{align*}
+\frac{\partial f}{\partial x} \amp = 3 + 2xy \quad \text{(1)}\\
+\frac{\partial f}{\partial y} \amp = x^2 - 3y^2 \quad \text{(2)}
+\end{align*}
+</div>
+<div class="para">Integrando (1) em relação a <span class="process-math">\(x\text{:}\)</span> <span class="process-math">\(f(x,y) = 3x + x^2y + C(y)\text{.}\)</span> Derivando em relação a <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(\frac{\partial f}{\partial y} = x^2 + C'(y)\text{.}\)</span> Comparando com (2): <span class="process-math">\(C'(y) = -3y^2 \implies C(y) = -y^3 + K\text{.}\)</span> Logo, <span class="process-math">\(f(x,y) = 3x + x^2y - y^3 + K\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-267">
+<div class="para">Avaliando os pontos extremos da curva <span class="process-math">\(\gamma(t)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-31">
+\begin{align*}
+\gamma(0) \amp = (e^0 \text{sen } 0, e^0 \cos 0) = (0, 1)\\
+\gamma(\pi) \amp = (e^{\pi} \text{sen } \pi, e^{\pi} \cos \pi) = (0, -e^{\pi})
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-268">
+<div class="para">Pelo Teorema Fundamental:</div>
+<div class="displaymath process-math" id="md-32">
+\begin{align*}
+\int_{\gamma} \vec{F} \cdot d\vec{r} \amp = f(\gamma(\pi)) - f(\gamma(0)) = f(0, -e^{\pi}) - f(0, 1)\\
+\amp = \big(-(-e^{\pi})^3 + K\big) - (-1 + K) = e^{3\pi} + 1
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="example example-like" id="exem-metodos-integracao"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-269">Considere a curva <span class="process-math">\(C\)</span> parametrizada por <span class="process-math">\(\alpha(t) = \left( e^{t-1}, \text{sen}\left(\frac{\pi}{t}\right) \right)\text{,}\)</span> <span class="process-math">\(1 \le t \le 2\text{.}\)</span> Calcule <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde <span class="process-math">\(\vec{F}(x,y) = (2x\cos y, -x^2\text{sen } y)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-24" id="solution-24"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
+<div class="para logical" id="p-270">
+<div class="para">Note que <span class="process-math">\(\vec{F}\)</span> é de classe <span class="process-math">\(C^1\)</span> em <span class="process-math">\(\Omega = \mathbb{R}^2\text{.}\)</span> Além disso:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial P}{\partial y} = \frac{\partial}{\partial y}(2x\cos y) = -2x\text{sen } y \quad \text{e} \quad \frac{\partial Q}{\partial x} = \frac{\partial}{\partial x}(-x^2\text{sen } y) = -2x\text{sen } y
+\end{equation*}
+</div>
+<div class="para">Logo, <span class="process-math">\(\vec{F}\)</span> é conservativo.</div>
+</div> <div class="para" id="p-271">Método 1: Por Função Potencial</div> <div class="para" id="p-272">Integrando <span class="process-math">\(\frac{\partial\varphi}{\partial x} = 2x\cos y \implies \varphi(x,y) = x^2\cos y + g(y)\text{.}\)</span> Derivando em <span class="process-math">\(y\text{:}\)</span> <span class="process-math">\(\frac{\partial\varphi}{\partial y} = -x^2\text{sen } y + g'(y) = -x^2\text{sen } y \implies g'(y) = 0 \implies g(y) = K\text{.}\)</span> Logo, <span class="process-math">\(\varphi(x,y) = x^2\cos y + K\text{.}\)</span>
+</div> <div class="para logical" id="p-273">
+<div class="para">Avaliando os pontos extremos: <span class="process-math">\(\alpha(1) = (1, 0)\)</span> e <span class="process-math">\(\alpha(2) = (e, 1)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{C} \vec{F} \cdot d\vec{r} = \varphi(e, 1) - \varphi(1, 0) = e^2 \cos 1 - 1
+\end{equation*}
+</div>
+</div> <div class="para" id="p-274">Método 2: Por Troca de Caminho (Poligonal)</div> <div class="para" id="p-275">Como <span class="process-math">\(\vec{F}\)</span> é conservativo, a integral não depende do caminho entre <span class="process-math">\((1,0)\)</span> e <span class="process-math">\((e,1)\text{.}\)</span> Escolhemos a poligonal <span class="process-math">\(C_1 \cup C_2\)</span> unindo <span class="process-math">\((1,0)\)</span> a <span class="process-math">\((e,0)\)</span> e <span class="process-math">\((e,0)\)</span> a <span class="process-math">\((e,1)\text{:}\)</span>
+</div> <figure class="figure figure-like" id="fig-caminho-poligonal"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/caminho_poligonal.svg" class="contained" alt="Segmento horizontal C_1 de (1,0) a (e,0) seguido do segmento vertical C_2 de (e,0) a (e,1)."></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.3.18<span class="period">.</span></span><span class="space"> </span>Poligonal de integração unindo <span class="process-math">\((1,0)\)</span> a <span class="process-math">\((e,1)\)</span></figcaption></figure> <ul class="disc">
+<li id="li-40"><div class="para" id="p-276">
+<span class="process-math">\(C_1(t) = (t, 0)\text{,}\)</span> <span class="process-math">\(1 \le t \le e \implies C_1'(t) = (1, 0)\)</span>
+</div></li>
+<li id="li-41"><div class="para" id="p-277">
+<span class="process-math">\(C_2(t) = (e, t)\text{,}\)</span> <span class="process-math">\(0 \le t \le 1 \implies C_2'(t) = (0, 1)\)</span>
+</div></li>
+</ul> <div class="para logical" id="p-278">
+<div class="para">Calculando a integral sobre a poligonal:</div>
+<div class="displaymath process-math" id="md-33">
+\begin{align*}
+\int_C \vec{F} \cdot d\vec{r} \amp = \int_{C_1} \vec{F} \cdot d\vec{r} + \int_{C_2} \vec{F} \cdot d\vec{r}\\
+\amp = \int_{1}^{e} \vec{F}(t,0) \cdot (1,0) \, dt + \int_{0}^{1} \vec{F}(e,t) \cdot (0,1) \, dt\\
+\amp = \int_{1}^{e} (2t\cos 0) \, dt + \int_{0}^{1} (-e^2\text{sen } t) \, dt\\
+\amp = \int_{1}^{e} 2t \, dt - e^2 \int_{0}^{1} \text{sen } t \, dt\\
+\amp = \left. t^2 \right|_{1}^{e} + \left. e^2 \cos t \right|_{0}^{1} = (e^2 - 1) + (e^2 \cos 1 - e^2) = e^2 \cos 1 - 1
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-definicao-integral-campo.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
