@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 380" width="100%" height="100%">
+  <style>
+    .axis { stroke: #374151; stroke-width: 2; marker-end: url(#axis-arrow); }
+    .curve { stroke: #2563eb; stroke-width: 3; fill: none; stroke-linecap: round; }
+    .tick { stroke: #374151; stroke-width: 2; }
+    .point { fill: #dc2626; }
+    .text { font-family: system-ui, sans-serif; font-size: 14px; fill: #111827; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; font-size: 16px; }
+  </style>
+  <defs>
+    <!-- Seta para os eixos cartesianos -->
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+    </marker>
+    <!-- Seta de orientação ao longo do arco -->
+    <marker id="arc-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+    </marker>
+  </defs>
+
+  <!-- Eixos Cartesianos com Origem em (80, 300) -->
+  <line x1="40" y1="300" x2="380" y2="300" class="axis" />
+  <line x1="80" y1="340" x2="80" y2="30" class="axis" />
+  <text x="385" y="305" class="math">x</text>
+  <text x="75" y="20" class="math">y</text>
+
+  <!-- Origem (0,0) -->
+  <text x="65" y="320" class="math" fill="#4b5563">0</text>
+
+  <!-- Arco de Circunferência no 1º Quadrante (Raio R = 200px, de (280,300) a (80,100)) -->
+  <path d="M 280 300 A 200 200 0 0 0 80 100" class="curve" />
+
+  <!-- Setas indicando orientação anti-horária ao longo do arco -->
+  <path d="M 253.2 200 L 243.2 182.7" stroke="#2563eb" stroke-width="2" marker-end="url(#arc-arrow)" />
+  <path d="M 180 126.8 L 162.7 116.8" stroke="#2563eb" stroke-width="2" marker-end="url(#arc-arrow)" />
+
+  <!-- Pontos Notáveis e Ticks -->
+  <!-- Ponto (2,0) -->
+  <line x1="280" y1="295" x2="280" y2="305" class="tick" />
+  <circle cx="280" cy="300" r="4" class="point" />
+  <text x="276" y="325" class="math">2</text>
+
+  <!-- Ponto (0,2) -->
+  <line x1="75" y1="100" x2="85" y2="100" class="tick" />
+  <circle cx="80" cy="100" r="4" class="point" />
+  <text x="58" y="105" class="math">2</text>
+
+  <!-- Rótulo do Arco C -->
+  <text x="235" y="170" class="math" fill="#2563eb" font-size="20px" font-weight="bold">C</text>
+</svg>

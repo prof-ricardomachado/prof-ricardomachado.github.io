@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.7.1</span><span class="period">.</span>
+</h4>
+<div class="para">A curva <span class="process-math">\(C\)</span> pode ser parametrizada por <span class="process-math">\(C(t) = (t, t^2)\text{,}\)</span> onde <span class="process-math">\(-1 \le t \le 1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Daí, <span class="process-math">\(C'(t) = (1, 2t)\text{,}\)</span> e portanto <span class="process-math">\(||C'(t)|| = \sqrt{1^2 + (2t)^2} = \sqrt{1 + 4t^2}\text{.}\)</span> Logo:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_C f(x,y) \, ds \amp = \int_{-1}^{1} f(t, t^2) ||C'(t)|| \, dt\\
+\amp = \int_{-1}^{1} (t + t^2) \sqrt{1 + 4t^2} \, dt\\
+\amp = \underbrace{\int_{-1}^{1} t \sqrt{1 + 4t^2} \, dt}_{(1)} + \underbrace{\int_{-1}^{1} t^2 \sqrt{1 + 4t^2} \, dt}_{(2)}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Cálculo da Integral (1): Fazendo a substituição de variável <span class="process-math">\(u = 1 + 4t^2 \implies du = 8t \, dt \implies t \, dt = \frac{du}{8}\text{.}\)</span> Para <span class="process-math">\(t = -1 \implies u = 5\)</span> e para <span class="process-math">\(t = 1 \implies u = 5\text{.}\)</span> Logo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-1}^{1} t \sqrt{1 + 4t^2} \, dt = \int_{5}^{5} \sqrt{u} \, \frac{du}{8} = 0
+\end{equation*}
+</div>
+<div class="para">(Observação: a função <span class="process-math">\(g(t) = t\sqrt{1+4t^2}\)</span> é uma função ímpar em um intervalo simétrico <span class="process-math">\([-1,1]\)</span>).</div>
+</div> <div class="para logical">
+<div class="para">Cálculo da Integral (2): Utilizamos a substituição trigonométrica <span class="process-math">\(2t = \tan \theta \implies t = \frac{1}{2} \tan \theta\)</span> e <span class="process-math">\(dt = \frac{1}{2} \sec^2 \theta \, d\theta\text{.}\)</span> Temos <span class="process-math">\(t^2 = \frac{1}{4} \tan^2 \theta\)</span> e <span class="process-math">\(\sqrt{1+4t^2} = \sqrt{1+\tan^2 \theta} = \sec \theta\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int t^2 \sqrt{1 + 4t^2} \, dt \amp = \int \frac{1}{4} \tan^2 \theta \cdot \sec \theta \cdot \frac{1}{2} \sec^2 \theta \, d\theta\\
+\amp = \frac{1}{8} \int \tan^2 \theta \sec^3 \theta \, d\theta = \frac{1}{8} \int (\sec^2 \theta - 1) \sec^3 \theta \, d\theta\\
+\amp = \frac{1}{8} \left( \int \sec^5 \theta \, d\theta - \int \sec^3 \theta \, d\theta \right)
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Para resolver <span class="process-math">\(\int \sec^5 \theta \, d\theta\text{,}\)</span> integramos por partes: Escolhemos <span class="process-math">\(u = \sec^3 \theta \implies du = 3 \sec^3 \theta \tan \theta \, d\theta\)</span> e <span class="process-math">\(dv = \sec^2 \theta \, d\theta \implies v = \tan \theta\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int \sec^5 \theta \, d\theta \amp = \tan \theta \sec^3 \theta - 3 \int \tan^2 \theta \sec^3 \theta \, d\theta\\
+\amp = \tan \theta \sec^3 \theta - 3 \int (\sec^2 \theta - 1) \sec^3 \theta \, d\theta\\
+\amp = \tan \theta \sec^3 \theta - 3 \int \sec^5 \theta \, d\theta + 3 \int \sec^3 \theta \, d\theta
+\end{align*}
+</div>
+<div class="para">Isolando <span class="process-math">\(\int \sec^5 \theta \, d\theta\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+4 \int \sec^5 \theta \, d\theta =\amp~ \tan \theta \sec^3 \theta + 3 \int \sec^3 \theta \, d\theta\\
+\int \sec^5 \theta \, d\theta =\amp~ \frac{\tan \theta \sec^3 \theta}{4} + \frac{3}{4} \int \sec^3 \theta \, d\theta
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Substituindo de volta na expressão:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{1}{8}  \int \sec^5 \theta \, d\theta \amp -  \frac{1}{8}\int \sec^3 \theta \, d\theta  =\\
+\amp = \frac{1}{8} \left( \frac{\tan \theta \sec^3 \theta}{4} + \frac{3}{4} \int \sec^3 \theta \, d\theta - \int \sec^3 \theta \, d\theta \right)\\
+\amp = \frac{1}{8} \left( \frac{\tan \theta \sec^3 \theta}{4} - \frac{1}{4} \int \sec^3 \theta \, d\theta \right)
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(\int \sec^3 \theta \, d\theta = \frac{1}{2} (\sec \theta \tan \theta + \ln|\sec \theta + \tan \theta|)\text{,}\)</span> e sabendo que <span class="process-math">\(\tan \theta = 2t\)</span> e <span class="process-math">\(\sec \theta = \sqrt{1+4t^2}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int \amp t^2 \sqrt{1 + 4t^2} \, dt = \\
+\amp =\frac{1}{8} \left( \frac{2t(\sqrt{1+4t^2})^3}{4} - \frac{1}{2}(2t)\sqrt{1+4t^2} - \frac{1}{2} \ln|\sqrt{1+4t^2} + 2t| \right) + C
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Avaliando no intervalo <span class="process-math">\([-1, 1]\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_{-1}^{1} t^2 \sqrt{1 + 4t^2} \, dt  =\amp  \frac{1}{8} \left( \frac{2(\sqrt{5})^3}{4} - \frac{2\sqrt{5}}{2} - \frac{\ln(\sqrt{5}+2)}{2} \right)\\
+\amp - \frac{1}{8} \left( \frac{-2(\sqrt{5})^3}{4} + \frac{2\sqrt{5}}{2} - \frac{\ln(\sqrt{5}-2)}{2} \right)
+\end{align*}
+</div>
+<div class="para">Simplificando os termos, obtemos o valor final da integral.</div>
+</div>
+</div>
+<span class="incontext"><a href="sec-definicao-r2.html#solution-10" class="internal">em contexto</a></span>
+</body>
+</html>

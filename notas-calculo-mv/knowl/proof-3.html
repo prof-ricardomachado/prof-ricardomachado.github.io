@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Demonstração</span></h4>
+<div class="para">Denote por <span class="process-math">\(\vec{e}_i = (0, \dots, 0, 1, 0, \dots, 0)\)</span> o vetor da base canônica com <span class="process-math">\(1\)</span> na <span class="process-math">\(i\)</span>-ésima posição. Assim, <span class="process-math">\(\vec{F}(x_1, \dots, x_n) = \sum_{i=1}^{n} f_i(x_1, \dots, x_n)\vec{e}_i\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Seja <span class="process-math">\(A \in \Omega\)</span> fixado. Para cada ponto <span class="process-math">\(X = (x_1, \dots, x_n) \in \Omega\text{,}\)</span> defina a função candidato a potencial:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(X) = \int_{A}^{X} \vec{F} \cdot d\vec{r}
+\end{equation*}
+</div>
+<div class="para">A notação <span class="process-math">\(\int_A^X\)</span> é adequada pois a integral é independente do caminho escolhido ligando <span class="process-math">\(A\)</span> a <span class="process-math">\(X\text{.}\)</span>
+</div>
+</div> <div class="para">Vamos provar que <span class="process-math">\(\frac{\partial\varphi}{\partial x_i} = f_i\)</span> para todo <span class="process-math">\(i = 1, \dots, n\text{.}\)</span> Como <span class="process-math">\(\Omega\)</span> é aberto, para <span class="process-math">\(X \in \Omega\)</span> existe uma bola de centro <span class="process-math">\(X\)</span> contida em <span class="process-math">\(\Omega\text{.}\)</span> Considere <span class="process-math">\(h &gt; 0\)</span> suficientemente pequeno tal que o segmento ligando <span class="process-math">\(X\)</span> a <span class="process-math">\(X + h\vec{e}_i\)</span> esteja contido nessa bola.</div> <div class="para logical">
+<div class="para">Note que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\varphi(X + h\vec{e}_i) - \varphi(X)}{h} = \frac{\int_{A}^{X+h\vec{e}_i} \vec{F}\cdot d\vec{r} - \int_{A}^{X} \vec{F}\cdot d\vec{r}}{h} = \frac{\int_{X}^{X+h\vec{e}_i} \vec{F}\cdot d\vec{r}}{h}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Uma parametrização do segmento de <span class="process-math">\(X\)</span> a <span class="process-math">\(X + h\vec{e}_i\)</span> é <span class="process-math">\(\gamma(t) = X + t\vec{e}_i\text{,}\)</span> <span class="process-math">\(t \in [0, h]\text{.}\)</span> Daí, <span class="process-math">\(\gamma'(t) = \vec{e}_i\text{,}\)</span> e:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{X}^{X+h\vec{e}_i} \vec{F} \cdot d\vec{r} = \int_{0}^{h} \vec{F}(\gamma(t)) \cdot \vec{e}_i \, dt = \int_{0}^{h} f_i(\gamma(t)) \, dt
+\end{equation*}
+</div>
+<div class="para">pois <span class="process-math">\(\vec{e}_i \cdot \vec{e}_i = 1\)</span> e <span class="process-math">\(\vec{e}_j \cdot \vec{e}_i = 0\)</span> para <span class="process-math">\(j \neq i\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Aplicando o Teorema Fundamental do Cálculo (ou a Regra de L'Hôpital / Teorema do Valor Médio para Integrais):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{h \to 0^+} \frac{\int_{0}^{h} f_i(\gamma(t)) \, dt}{h} = \lim_{h \to 0^+} f_i(\gamma(h)) = \lim_{h \to 0^+} f_i(X + h\vec{e}_i) = f_i(X)
+\end{equation*}
+</div>
+</div> <div class="para">Analogamente, considerando a parametrização <span class="process-math">\(\beta(t) = X - t\vec{e}_i\)</span> para <span class="process-math">\(h \lt 0\text{,}\)</span> obtém-se o limite à esquerda <span class="process-math">\(f_i(X)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Portanto:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial\varphi}{\partial x_i}(X) = \lim_{h \to 0} \frac{\varphi(X + h\vec{e}_i) - \varphi(X)}{h} = f_i(X)
+\end{equation*}
+</div>
+<div class="para">Mostrando que <span class="process-math">\(\nabla\varphi(X) = \vec{F}(X)\)</span> para todo <span class="process-math">\(X \in \Omega\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="sec-teorema-fundamental.html#proof-3" class="internal">em contexto</a></span>
+</body>
+</html>

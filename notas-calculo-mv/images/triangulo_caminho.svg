@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 360" width="100%" height="100%">
+  <style>
+    .axis { stroke: #374151; stroke-width: 2; marker-end: url(#axis-arrow); }
+    .grid-line { stroke: #e5e7eb; stroke-width: 1.2; stroke-dasharray: 4,4; }
+    .path-segment { stroke: #2563eb; stroke-width: 2.5; stroke-linecap: round; }
+    .point { fill: #dc2626; }
+    .tick { stroke: #374151; stroke-width: 2; }
+    .text { font-family: system-ui, sans-serif; font-size: 13px; fill: #111827; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; font-size: 15px; }
+  </style>
+  <defs>
+    <!-- Seta dos eixos cartesianos -->
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+    </marker>
+    <!-- Seta dos segmentos da curva -->
+    <marker id="path-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+    </marker>
+  </defs>
+
+  <!-- Linhas guia tracejadas do ponto (1,1) -->
+  <line x1="300" y1="80" x2="300" y2="280" class="grid-line" />
+  <line x1="100" y1="80" x2="300" y2="80" class="grid-line" />
+
+  <!-- Eixos Cartesianos com Origem em (100, 280) -->
+  <line x1="50" y1="280" x2="380" y2="280" class="axis" />
+  <line x1="100" y1="320" x2="100" y2="30" class="axis" />
+  <text x="385" y="285" class="math">x</text>
+  <text x="95" y="20" class="math">y</text>
+
+  <!-- Ticks dos eixos cartesianos -->
+  <line x1="300" y1="275" x2="300" y2="285" class="tick" />
+  <text x="296" y="305" class="math">1</text>
+
+  <line x1="95" y1="80" x2="105" y2="80" class="tick" />
+  <text x="80" y="85" class="math">1</text>
+
+  <!-- SEGMENTO gamma_1: de (0,0) a (1,0) -->
+  <line x1="100" y1="280" x2="300" y2="280" class="path-segment" />
+  <path d="M 200 280 L 208 280" stroke="#2563eb" stroke-width="2" marker-end="url(#path-arrow)" />
+
+  <!-- SEGMENTO gamma_2: de (1,0) a (1,1) -->
+  <line x1="300" y1="280" x2="300" y2="80" class="path-segment" />
+  <path d="M 300 180 L 300 172" stroke="#2563eb" stroke-width="2" marker-end="url(#path-arrow)" />
+
+  <!-- SEGMENTO gamma_3: de (1,1) a (0,0) -->
+  <line x1="300" y1="80" x2="100" y2="280" class="path-segment" />
+  <path d="M 200 180 L 192 188" stroke="#2563eb" stroke-width="2" marker-end="url(#path-arrow)" />
+
+  <!-- Vértices do Triângulo -->
+  <circle cx="100" cy="280" r="4.5" class="point" />
+  <circle cx="300" cy="280" r="4.5" class="point" />
+  <circle cx="300" cy="80" r="4.5" class="point" />
+
+  <!-- Rótulos dos Vértices -->
+  <text x="60" y="300" class="math" fill="#dc2626">(0,0)</text>
+  <text x="310" y="298" class="math" fill="#dc2626">(1,0)</text>
+  <text x="310" y="75" class="math" fill="#dc2626">(1,1)</text>
+
+  <!-- Rótulos dos Trechos Orientados -->
+  <text x="195" y="305" class="math" fill="#2563eb" font-weight="bold">γ₁</text>
+  <text x="315" y="180" class="math" fill="#2563eb" font-weight="bold">γ₂</text>
+  <text x="175" y="170" class="math" fill="#2563eb" font-weight="bold">γ₃</text>
+</svg>

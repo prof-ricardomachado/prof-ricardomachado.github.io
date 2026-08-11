@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 340" width="100%" height="100%">
+  <style>
+    .axis { stroke: #374151; stroke-width: 2; marker-end: url(#axis-arrow); }
+    .grid-line { stroke: #e5e7eb; stroke-width: 1.5; stroke-dasharray: 4,4; }
+    .path-segment { stroke: #2563eb; stroke-width: 2.5; stroke-linecap: round; }
+    .point { fill: #dc2626; stroke: #ffffff; stroke-width: 1.5; }
+    .tick { stroke: #374151; stroke-width: 2; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; font-size: 16px; }
+  </style>
+  <defs>
+    <!-- Seta dos eixos cartesianos -->
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+    </marker>
+    <!-- Seta dos segmentos orientados -->
+    <marker id="path-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+    </marker>
+  </defs>
+
+  <!-- Eixos Cartesianos com Origem em (80, 260). Escala: 1 unidade = 80px -->
+  <line x1="50" y1="260" x2="380" y2="260" class="axis" />
+  <line x1="80" y1="290" x2="80" y2="60" class="axis" />
+  <text x="385" y="265" class="math">x</text>
+  <text x="75" y="50" class="math">y</text>
+
+  <!-- Linha de grade para y=1 -->
+  <line x1="80" y1="180" x2="297" y2="180" class="grid-line" />
+
+  <!-- Ticks e Rótulos dos Eixos -->
+  <line x1="160" y1="255" x2="160" y2="265" class="tick" />
+  <text x="155" y="285" class="math">1</text>
+  
+  <text x="292" y="285" class="math">e</text>
+  
+  <line x1="75" y1="180" x2="85" y2="180" class="tick" />
+  <text x="60" y="185" class="math">1</text>
+
+  <!-- TRECHO C_1: de (1,0) a (e,0) -->
+  <!-- x varia de 160 a 297 (pois e ~ 2.718 -> 80 + 80*2.718 = 297.4) -->
+  <line x1="160" y1="260" x2="297" y2="260" class="path-segment" />
+  <path d="M 224 260 L 232 260" stroke="#2563eb" stroke-width="2" marker-end="url(#path-arrow)" />
+  <text x="222" y="245" class="math" fill="#2563eb" font-weight="bold">C₁</text>
+
+  <!-- TRECHO C_2: de (e,0) a (e,1) -->
+  <line x1="297" y1="260" x2="297" y2="180" class="path-segment" />
+  <path d="M 297 224 L 297 216" stroke="#2563eb" stroke-width="2" marker-end="url(#path-arrow)" />
+  <text x="310" y="225" class="math" fill="#2563eb" font-weight="bold">C₂</text>
+
+  <!-- Pontos da Poligonal -->
+  <circle cx="160" cy="260" r="5" class="point" />
+  <circle cx="297" cy="260" r="5" class="point" />
+  <circle cx="297" cy="180" r="5" class="point" />
+
+  <!-- Coordenadas dos Vértices -->
+  <text x="145" y="305" class="math" fill="#dc2626">(1,0)</text>
+  <text x="280" y="305" class="math" fill="#dc2626">(e,0)</text>
+  <text x="310" y="175" class="math" fill="#dc2626">(e,1)</text>
+</svg>

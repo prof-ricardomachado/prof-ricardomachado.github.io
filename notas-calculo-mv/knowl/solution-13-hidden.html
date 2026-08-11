@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">A base da cerca nos primeiro e segundo quadrantes é a porção de <span class="process-math">\(C\)</span> dada por <span class="process-math">\(\sigma(t) = (30\cos^3 t, 30\text{sen}^3 t)\text{,}\)</span> <span class="process-math">\(0 \le t \le \pi\text{,}\)</span> e a altura da cerca em cada ponto <span class="process-math">\((x,y)\)</span> é <span class="process-math">\(f(x,y) = 1 + \frac{y}{3}\text{.}\)</span>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">var('u, t')
+# Parametrização da base (astroide) e da altura f(x,y)
+x(t) = 30 * cos(t)^3
+y(t) = 30 * sin(t)^3
+z_max(t) = 1 + y(t) / 3  # equivale a 1 + 10*sin(t)^3
+
+# Cortina/Muro (superfície 3D)
+muro = parametric_plot3d([x(t), y(t), u * z_max(t)], (t, 0, pi), (u, 0, 1), 
+                         color='mediumseagreen', opacity=0.6)
+
+# Destaque da curva base no plano xy (z = 0)
+curva_base = parametric_plot3d([x(t), y(t), 0], (t, 0, pi), 
+                               color='blue', thickness=4)
+
+# Destaque da borda superior f(C(t))
+curva_topo = parametric_plot3d([x(t), y(t), z_max(t)], (t, 0, pi), 
+                               color='purple', thickness=4)
+
+# Exibe a figura combinada
+grafico = muro + curva_base + curva_topo
+grafico.show(frame=True, axes=True)
+</script></pre> <div class="para logical">
+<div class="para">Derivando o vetor posição: <span class="process-math">\(\sigma'(t) = (-90\cos^2 t \text{sen } t, 90\text{sen}^2 t \cos t)\text{.}\)</span> Logo, <span class="process-math">\(\sigma\)</span> é de classe <span class="process-math">\(C^1\)</span> e:</div>
+<div class="displaymath process-math">
+\begin{align*}
+||\sigma'(t)|| \amp = \sqrt{(90)^2 \cos^4 t \text{sen}^2 t + (90)^2 \text{sen}^4 t \cos^2 t}\\
+\amp = \sqrt{(90)^2 \text{sen}^2 t \cos^2 t (\cos^2 t + \text{sen}^2 t)} = 90 |\text{sen } t \cos t|
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Calculando a integral de linha para um lado da porção superior:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_C \left(1 + \frac{y}{3}\right) ds = 90 \int_{0}^{\pi} (1 + 10\text{sen}^3 t) |\text{sen } t \cos t| \, dt
+\end{equation*}
+</div>
+<div class="para">Devido ao módulo em <span class="process-math">\(|\text{sen } t \cos t|\text{,}\)</span> dividimos a integração nos intervalos <span class="process-math">\([0, \pi/2]\)</span> (onde <span class="process-math">\(\cos t \ge 0\)</span>) e <span class="process-math">\([\pi/2, \pi]\)</span> (onde <span class="process-math">\(\cos t \le 0\)</span>):</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_C \left(1 + \frac{y}{3}\right) ds \amp = 90 \bigg[ \int_{0}^{\pi/2} (\text{sen } t + 10\text{sen}^4 t)\cos t \, dt\\
+\amp \quad \quad\quad\quad \quad\quad - \int_{\pi/2}^{\pi} (\text{sen } t + 10\text{sen}^4 t)\cos t \, dt \bigg]\\
+\amp = 180 \left.\left[ \frac{\text{sen}^2 t}{2} + 2\text{sen}^5 t \right]\right|_{0}^{\pi/2}\\
+\amp = 180 \left( \frac{1}{2} + 2 \right) = 450 \, \text{m}^2
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Como a cerca deve ser pintada de ambos os lados (frente e verso), a área total a ser pintada é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_{\text{total}} = 2 \times 450 \, \text{m}^2 = 900 \, \text{m}^2
+\end{equation*}
+</div>
+<div class="para">Portanto, o pintor cobrará <span class="process-math">\(900P\)</span> reais.</div>
+</div>
+</div></body>
+</html>

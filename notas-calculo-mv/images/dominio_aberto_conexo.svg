@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="100%" height="100%">
+  <style>
+    .domain-border { stroke: #475569; stroke-width: 2.5; stroke-dasharray: 6,5; fill: url(#hatch-pattern); }
+    .curve-gamma { stroke: #2563eb; stroke-width: 3; fill: none; stroke-linecap: round; }
+    .point { fill: #dc2626; stroke: #ffffff; stroke-width: 1.5; }
+    .text { font-family: system-ui, sans-serif; font-size: 14px; fill: #111827; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; font-size: 18px; }
+  </style>
+  <defs>
+    <!-- Padrão de Hachuras Diagonais -->
+    <pattern id="hatch-pattern" width="12" height="12" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#cbd5e1" stroke-width="1.5" />
+    </pattern>
+
+    <!-- Seta para a Curva gamma -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+    </marker>
+  </defs>
+
+  <!-- Região Aberta Ω (Borda tracejada + Hachura) -->
+  <path d="M 100 180 C 70 80, 200 30, 330 50 C 450 70, 470 190, 400 280 C 310 330, 140 300, 100 180 Z" class="domain-border" />
+
+  <!-- Curva gamma unindo os pontos A e B -->
+  <path d="M 160 210 C 210 130, 270 250, 360 120" class="curve-gamma" />
+  <path d="M 235 170 L 243 175" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)" />
+
+  <!-- Pontos A e B -->
+  <circle cx="160" cy="210" r="5" class="point" />
+  <circle cx="360" cy="120" r="5" class="point" />
+
+  <!-- Rótulos dos Pontos -->
+  <text x="138" y="222" class="math" fill="#dc2626" font-weight="bold">A</text>
+  <text x="372" y="120" class="math" fill="#dc2626" font-weight="bold">B</text>
+
+  <!-- Rótulo da Curva gamma -->
+  <text x="250" y="200" class="math" fill="#2563eb" font-weight="bold" font-size="20px">γ</text>
+
+  <!-- Rótulo do Domínio Omega -->
+  <text x="390" y="230" class="math" fill="#1e293b" font-size="26px" font-weight="bold">Ω</text>
+</svg>

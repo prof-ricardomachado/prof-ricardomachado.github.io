@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%">
+  <style>
+    .path-gamma1 { stroke: #2563eb; stroke-width: 2.5; fill: none; stroke-linecap: round; }
+    .path-gamma2 { stroke: #059669; stroke-width: 2.5; fill: none; stroke-linecap: round; }
+    .point { fill: #dc2626; }
+    .text { font-family: system-ui, sans-serif; font-size: 14px; fill: #111827; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; font-size: 16px; }
+  </style>
+  <defs>
+    <!-- Seta para gamma_1 (Azul) -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+    </marker>
+    <!-- Seta para gamma_2 (Verde) -->
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#059669" />
+    </marker>
+  </defs>
+
+  <!-- Caminho gamma_1: Arco Superior de A(120, 160) até B(380, 160) -->
+  <path d="M 120 160 C 180 60, 320 60, 380 160" class="path-gamma1" />
+  <path d="M 250 85 L 260 85" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)" />
+
+  <!-- Caminho gamma_2: Arco Inferior de B(380, 160) até A(120, 160) -->
+  <path d="M 380 160 C 320 260, 180 260, 120 160" class="path-gamma2" />
+  <path d="M 250 235 L 240 235" stroke="#059669" stroke-width="2" marker-end="url(#arrow-green)" />
+
+  <!-- Pontos A e B -->
+  <circle cx="120" cy="160" r="4.5" class="point" />
+  <circle cx="380" cy="160" r="4.5" class="point" />
+
+  <!-- Rótulos dos Pontos -->
+  <text x="95" y="165" class="math" fill="#dc2626" font-weight="bold">A</text>
+  <text x="395" y="165" class="math" fill="#dc2626" font-weight="bold">B</text>
+
+  <!-- Rótulos das Subcurvas -->
+  <text x="245" y="65" class="math" fill="#2563eb" font-weight="bold">γ₁</text>
+  <text x="245" y="260" class="math" fill="#059669" font-weight="bold">γ₂</text>
+
+  <!-- Rótulo da Curva Fechada Completa gamma -->
+  <text x="410" y="100" class="math" fill="#1e293b" font-size="20px" font-weight="bold">γ</text>
+</svg>
