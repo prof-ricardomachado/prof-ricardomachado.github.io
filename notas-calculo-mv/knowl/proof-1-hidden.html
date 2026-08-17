@@ -10,28 +10,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para">Temos que <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \vec{F}(\gamma(t)) \cdot \gamma'(t) \, dt\text{.}\)</span>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Sejam <span class="process-math">\(\mathbf{r}_1: [a,b] \to \mathbb{R}^n\)</span> e <span class="process-math">\(\mathbf{r}_2: [c,d] \to \mathbb{R}^n\)</span> duas parametrizações suaves do traço de <span class="process-math">\(C\text{.}\)</span> Então existe uma bijeção diferenciável <span class="process-math">\(g: [c,d] \to [a,b]\)</span> tal que <span class="process-math">\(\mathbf{r}_2(u) = \mathbf{r}_1(g(u))\text{.}\)</span>
+</div> <div class="para">Pela regra da cadeia, <span class="process-math">\(\mathbf{r}_2'(u) = \mathbf{r}_1'(g(u)) g'(u)\text{,}\)</span> donde <span class="process-math">\(\|\mathbf{r}_2'(u)\| = \|\mathbf{r}_1'(g(u))\| \cdot |g'(u)|\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">Como <span class="process-math">\(\vec{F} = \nabla\varphi\text{,}\)</span> segue que:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\vec{F}(\gamma(t)) = \left( \frac{\partial\varphi}{\partial x_1}(\gamma(t)), \frac{\partial\varphi}{\partial x_2}(\gamma(t)), \dots, \frac{\partial\varphi}{\partial x_n}(\gamma(t)) \right)
-\end{equation*}
+<div class="para">Se <span class="process-math">\(g'(u) &gt; 0\)</span> (mesma orientação), temos <span class="process-math">\(g(c) = a\text{,}\)</span> <span class="process-math">\(g(d) = b\)</span> e <span class="process-math">\(|g'(u)| = g'(u)\text{.}\)</span> Fazendo a mudança de variável <span class="process-math">\(t = g(u) \implies dt = g'(u)\,du\text{:}\)</span>
 </div>
-</div> <div class="para logical">
-<div class="para">Daí, efetuando o produto interno:</div>
 <div class="displaymath process-math">
 \begin{align*}
-\vec{F}(\gamma(t)) \cdot \gamma'(t) \amp = \frac{\partial\varphi}{\partial x_1}(\gamma(t))\frac{dx_1(t)}{dt} +  \dots + \frac{\partial\varphi}{\partial x_n}(\gamma(t))\frac{dx_n(t)}{dt}\\
-\amp = \frac{d}{dt}\big(\varphi(\gamma(t))\big) \quad \text{(pela Regra da Cadeia)}
+\int_c^d f(\mathbf{r}_2(u))\|\mathbf{r}_2'(u)\|\,du =\amp~ \int_c^d f(\mathbf{r}_1(g(u)))\|\mathbf{r}_1'(g(u))\|g'(u)\,du\\
+=\amp~ \int_a^b f(\mathbf{r}_1(t))\|\mathbf{r}_1'(t)\|\,dt
 \end{align*}
 </div>
 </div> <div class="para logical">
-<div class="para">Logo:</div>
+<div class="para">Se <span class="process-math">\(g'(u) &lt; 0\)</span> (orientação oposta), temos <span class="process-math">\(g(c) = b\text{,}\)</span> <span class="process-math">\(g(d) = a\)</span> e <span class="process-math">\(|g'(u)| = -g'(u)\text{.}\)</span> Logo:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \frac{d}{dt}\big(\varphi(\gamma(t))\big) \, dt = \varphi(\gamma(b)) - \varphi(\gamma(a)) = \varphi(B) - \varphi(A)
-\end{equation*}
+\begin{align*}
+\int_c^d f(\mathbf{r}_2(u))\|\mathbf{r}_2'(u)\|\,du =\amp~ \int_c^d f(\mathbf{r}_1(g(u)))\|\mathbf{r}_1'(g(u))\|(-g'(u))\,du\\
+=\amp~ -\int_b^a f(\mathbf{r}_1(t))\|\mathbf{r}_1'(t)\|\,dt\\
+=\amp~ \int_a^b f(\mathbf{r}_1(t))\|\mathbf{r}_1'(t)\|\,dt
+\end{align*}
 </div>
 </div></article></body>
 </html>

@@ -358,7 +358,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.1",
   "title": "Integrais de Linha de Funções <span class=\"process-math\">\\(f: \\mathbb{R}^n \\rightarrow \\mathbb{R}\\)<\/span>",
-  "body": " Integrais de Linha de Funções    Considere uma função dada por . Considere ainda uma curva tal que é parametrizada por: com para todo e sendo contínua em . Suponha ainda que o traço de esteja contido em .   Partição da Curva em subarcos   Plano cartesiano mostrando uma curva C parametrizada de C(a) até C(b) dividida em subintervalos por pontos C(t_0), C(t_1), ..., C(t_n). Em cada subarco S_i é escolhido um ponto amostral C(t_i^*).    Divida o intervalo em subintervalos iguais , , todos de comprimento . Note que cada subintervalo determina um subarco de comprimento na curva .  Escolha e considere . Como está em , podemos tomar para .  Note que para algum . É possível provar que existe o limite: Tal integral é chamada de integral de linha de sobre a curva e será denotada por:      Obs: O valor da integral de linha não depende da parametrização escolhida.  Note que se é o segmento que une e , então uma parametrization de é com . Assim:   Além disso, é o comprimento da curva .    A integral de linha é também conhecida como integral de linha com respeito ao comprimento de arco.  Caso seja uma função positiva sobre a curva , então representa a área da \"cerca\" (ou cortina) que tem como base a curva no plano e altura dada por :    Interpretação Geométrica da Área   Superfície z = f(x,y) no espaço R^3 acima da curva C no plano xy. A região vertical delimitada entre a curva C e o traço f(C(t)) na superfície forma uma cortina\/cerca de área A.      De forma semelhante, se tivermos uma curva dada por de classe com para todo e uma função tal que , então:     Exemplos     Calcule , onde e é o pedaço da parábola , com .    A curva pode ser parametrizada por , onde .  Daí, , e portanto . Logo:    Cálculo da Integral (1): Fazendo a substituição de variável . Para e para . Logo: (Observação: a função é uma função ímpar em um intervalo simétrico ).   Cálculo da Integral (2): Utilizamos a substituição trigonométrica e . Temos e .   Para resolver , integramos por partes: Escolhemos e . Isolando :   Substituindo de volta na expressão: Como , e sabendo que e :   Avaliando no intervalo : Simplificando os termos, obtemos o valor final da integral.       Calcule , onde é a hélice definida por , .    Derivando o vetor posição: .  O módulo da velocidade é .  Substituindo na integral de linha:        Calcule , onde é a metade superior do círculo unitário .    Uma parametrização de é e . Como queremos a metade superior do círculo, o parâmetro varia em .  O elemento de arco é .  Assim:        A base de uma cerca é uma curva no plano definida por , , , e a altura em cada ponto é dada por (em metros). Se para pintar cada um pintor cobra reais, quanto o pintor cobrará para pintar a cerca (ambos os lados)?    A base da cerca nos primeiro e segundo quadrantes é a porção de dada por , , e a altura da cerca em cada ponto é .   Derivando o vetor posição: . Logo, é de classe e:   Calculando a integral de linha para um lado da porção superior: Devido ao módulo em , dividimos a integração nos intervalos (onde ) e (onde ):   Como a cerca deve ser pintada de ambos os lados (frente e verso), a área total a ser pintada é: Portanto, o pintor cobrará reais.     "
+  "body": " Integrais de Linha de Funções    Considere uma função dada por . Considere ainda uma curva tal que é parametrizada por: com para todo e sendo contínua em . Suponha ainda que o traço de esteja contido em .   Partição da Curva em subarcos   Plano cartesiano mostrando uma curva C parametrizada de C(a) até C(b) dividida em subintervalos por pontos C(t_0), C(t_1), ..., C(t_n). Em cada subarco S_i é escolhido um ponto amostral C(t_i^*).    Divida o intervalo em subintervalos iguais , , todos de comprimento . Note que cada subintervalo determina um subarco de comprimento na curva .  Escolha e considere . Como está em , podemos tomar para .  Note que para algum . É possível provar que existe o limite: Tal integral é chamada de integral de linha de sobre a curva e será denotada por:       Note que se é o segmento que une e , então uma parametrização de é com . Assim:   Além disso, é o comprimento da curva .     Independência da Parametrização para Campos Escalares   O valor da integral de linha com respeito ao comprimento de arco independe da parametrização escolhida para a curva e independe da orientação do percurso.    Sejam e duas parametrizações suaves do traço de . Então existe uma bijeção diferenciável tal que .  Pela regra da cadeia, , donde .  Se (mesma orientação), temos , e . Fazendo a mudança de variável :   Se (orientação oposta), temos , e . Logo:      A integral de linha é também conhecida como integral de linha com respeito ao comprimento de arco.  Caso seja uma função positiva sobre a curva , então representa a área da \"cerca\" (ou cortina) que tem como base a curva no plano e altura dada por :    Interpretação Geométrica da Área   Superfície z = f(x,y) no espaço R^3 acima da curva C no plano xy. A região vertical delimitada entre a curva C e o traço f(C(t)) na superfície forma uma cortina\/cerca de área A.      De forma semelhante, se tivermos uma curva dada por de classe com para todo e uma função tal que , então:     Exemplos     Calcule , onde e é o pedaço da parábola , com .    A curva pode ser parametrizada por , onde .  Daí, , e portanto . Logo:    Cálculo da Integral (1): Fazendo a substituição de variável . Para e para . Logo: (Observação: a função é uma função ímpar em um intervalo simétrico ).   Cálculo da Integral (2): Utilizamos a substituição trigonométrica e . Temos e .   Para resolver , integramos por partes: Escolhemos e . Isolando :   Substituindo de volta na expressão: Como , e sabendo que e :   Avaliando no intervalo : Simplificando os termos, obtemos o valor final da integral.       Calcule , onde é a hélice definida por , .    Derivando o vetor posição: .  O módulo da velocidade é .  Substituindo na integral de linha:        Calcule , onde é a metade superior do círculo unitário .    Uma parametrização de é e . Como queremos a metade superior do círculo, o parâmetro varia em .  O elemento de arco é .  Assim:        A base de uma cerca é uma curva no plano definida por , , , e a altura em cada ponto é dada por (em metros). Se para pintar cada um pintor cobra reais, quanto o pintor cobrará para pintar a cerca (ambos os lados)?    A base da cerca nos primeiro e segundo quadrantes é a porção de dada por , , e a altura da cerca em cada ponto é .   Derivando o vetor posição: . Logo, é de classe e:   Calculando a integral de linha para um lado da porção superior: Devido ao módulo em , dividimos a integração nos intervalos (onde ) e (onde ):   Como a cerca deve ser pintada de ambos os lados (frente e verso), a área total a ser pintada é: Portanto, o pintor cobrará reais.         Exercícios Propostos: Integrais de Linha de Campos Escalares      Calcule , onde:     e é a fronteira do triângulo de vértices , e .     e é a circunferência .     e tem equações paramétricas , , com .     , onde é dada por , com .     e é a curva obtida como interseção do semiplano , , com o paraboloide , com .                             Deseja-se construir uma peça de zinco que tem a forma da superfície do cilindro , compreendida entre os planos e , com . Se o metro quadrado do zinco custa reais, calcule o preço total da peça.   Preço total: reais (área da peça: ).       Seja uma curva de classe e seja um campo escalar contínuo na imagem de . Seja dada por . Prove que e interprete geometricamente o resultado.   Demonstração via mudança de variável (com e inversão dos limites de integração). A integral de um campo escalar é invariante à orientação da curva: a área da cerca lateral ou a massa total de um arame delgado independe da extremidade por onde se inicia o percurso de medição.    "
 },
 {
   "id": "definition-8",
@@ -376,14 +376,23 @@ var ptx_lunr_docs = [
   "type": "Nota",
   "number": "2.1.3",
   "title": "",
-  "body": " Obs: O valor da integral de linha não depende da parametrização escolhida.  Note que se é o segmento que une e , então uma parametrization de é com . Assim:   Além disso, é o comprimento da curva .  "
+  "body": "  Note que se é o segmento que une e , então uma parametrização de é com . Assim:   Além disso, é o comprimento da curva .   "
+},
+{
+  "id": "theo-independencia-parametrizacao-escalar",
+  "level": "2",
+  "url": "sec-definicao-r2.html#theo-independencia-parametrizacao-escalar",
+  "type": "Teorema",
+  "number": "2.1.4",
+  "title": "Independência da Parametrização para Campos Escalares.",
+  "body": " Independência da Parametrização para Campos Escalares   O valor da integral de linha com respeito ao comprimento de arco independe da parametrização escolhida para a curva e independe da orientação do percurso.    Sejam e duas parametrizações suaves do traço de . Então existe uma bijeção diferenciável tal que .  Pela regra da cadeia, , donde .  Se (mesma orientação), temos , e . Fazendo a mudança de variável :   Se (orientação oposta), temos , e . Logo:    "
 },
 {
   "id": "remark-6",
   "level": "2",
   "url": "sec-definicao-r2.html#remark-6",
   "type": "Nota",
-  "number": "2.1.4",
+  "number": "2.1.5",
   "title": "",
   "body": " A integral de linha é também conhecida como integral de linha com respeito ao comprimento de arco.  Caso seja uma função positiva sobre a curva , então representa a área da \"cerca\" (ou cortina) que tem como base a curva no plano e altura dada por :    Interpretação Geométrica da Área   Superfície z = f(x,y) no espaço R^3 acima da curva C no plano xy. A região vertical delimitada entre a curva C e o traço f(C(t)) na superfície forma uma cortina\/cerca de área A.    "
 },
@@ -392,7 +401,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-definicao-r2.html#remark-7",
   "type": "Nota",
-  "number": "2.1.6",
+  "number": "2.1.7",
   "title": "",
   "body": " De forma semelhante, se tivermos uma curva dada por de classe com para todo e uma função tal que , então:   "
 },
@@ -401,7 +410,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-definicao-r2.html#exem-parabola",
   "type": "Exemplo",
-  "number": "2.1.7",
+  "number": "2.1.8",
   "title": "",
   "body": "  Calcule , onde e é o pedaço da parábola , com .    A curva pode ser parametrizada por , onde .  Daí, , e portanto . Logo:    Cálculo da Integral (1): Fazendo a substituição de variável . Para e para . Logo: (Observação: a função é uma função ímpar em um intervalo simétrico ).   Cálculo da Integral (2): Utilizamos a substituição trigonométrica e . Temos e .   Para resolver , integramos por partes: Escolhemos e . Isolando :   Substituindo de volta na expressão: Como , e sabendo que e :   Avaliando no intervalo : Simplificando os termos, obtemos o valor final da integral.   "
 },
@@ -410,7 +419,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-definicao-r2.html#exem-helice",
   "type": "Exemplo",
-  "number": "2.1.8",
+  "number": "2.1.9",
   "title": "",
   "body": "  Calcule , onde é a hélice definida por , .    Derivando o vetor posição: .  O módulo da velocidade é .  Substituindo na integral de linha:    "
 },
@@ -419,7 +428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-definicao-r2.html#exem-semicirculo",
   "type": "Exemplo",
-  "number": "2.1.9",
+  "number": "2.1.10",
   "title": "",
   "body": "  Calcule , onde é a metade superior do círculo unitário .    Uma parametrização de é e . Como queremos a metade superior do círculo, o parâmetro varia em .  O elemento de arco é .  Assim:    "
 },
@@ -428,9 +437,36 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-definicao-r2.html#exem-cerca-astroide",
   "type": "Exemplo",
-  "number": "2.1.10",
+  "number": "2.1.11",
   "title": "",
   "body": "  A base de uma cerca é uma curva no plano definida por , , , e a altura em cada ponto é dada por (em metros). Se para pintar cada um pintor cobra reais, quanto o pintor cobrará para pintar a cerca (ambos os lados)?    A base da cerca nos primeiro e segundo quadrantes é a porção de dada por , , e a altura da cerca em cada ponto é .   Derivando o vetor posição: . Logo, é de classe e:   Calculando a integral de linha para um lado da porção superior: Devido ao módulo em , dividimos a integração nos intervalos (onde ) e (onde ):   Como a cerca deve ser pintada de ambos os lados (frente e verso), a área total a ser pintada é: Portanto, o pintor cobrará reais.   "
+},
+{
+  "id": "exer-integral-linha-escalar-geral",
+  "level": "2",
+  "url": "sec-definicao-r2.html#exer-integral-linha-escalar-geral",
+  "type": "Exercício",
+  "number": "2.1.2.1",
+  "title": "",
+  "body": " Calcule , onde:     e é a fronteira do triângulo de vértices , e .     e é a circunferência .     e tem equações paramétricas , , com .     , onde é dada por , com .     e é a curva obtida como interseção do semiplano , , com o paraboloide , com .                        "
+},
+{
+  "id": "exer-peca-zinco-sec1",
+  "level": "2",
+  "url": "sec-definicao-r2.html#exer-peca-zinco-sec1",
+  "type": "Exercício",
+  "number": "2.1.2.2",
+  "title": "",
+  "body": " Deseja-se construir uma peça de zinco que tem a forma da superfície do cilindro , compreendida entre os planos e , com . Se o metro quadrado do zinco custa reais, calcule o preço total da peça.   Preço total: reais (área da peça: ).  "
+},
+{
+  "id": "exer-invariancia-parametrizacao-escalar-sec1",
+  "level": "2",
+  "url": "sec-definicao-r2.html#exer-invariancia-parametrizacao-escalar-sec1",
+  "type": "Exercício",
+  "number": "2.1.2.3",
+  "title": "",
+  "body": " Seja uma curva de classe e seja um campo escalar contínuo na imagem de . Seja dada por . Prove que e interprete geometricamente o resultado.   Demonstração via mudança de variável (com e inversão dos limites de integração). A integral de um campo escalar é invariante à orientação da curva: a área da cerca lateral ou a massa total de um arame delgado independe da extremidade por onde se inicia o percurso de medição.  "
 },
 {
   "id": "sec-definicao-integral-campo",
@@ -439,7 +475,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.2",
   "title": "Integrais de Linha de Campos Vetoriais",
-  "body": " Integrais de Linha de Campos Vetoriais  Considere um campo vetorial contínuo em e uma curva suave.   Caso Particular: Se for um segmento de reta e for um campo vetorial constante, definimos a integral de linha de sobre como o produto interno:    Caso Geral: Seja uma curva qualquer e um campo vetorial contínuo qualquer. Seja uma parametrization de e divida o intervalo em subintervalos , , todos de comprimento .   Aproximação da curva por segmentos de reta   Gráfico de uma curva gamma particionada por pontos gamma(t_0), gamma(t_i-1), gamma(t_i), gamma(t_n) ao longo do intervalo [a,b], mostrando os secantes conectando os pontos da curva.    Cada subintervalo determina um segmento de reta com extremidades e em . Ou seja, a curva pode ser aproximada pela união desses segmentos.  Assim, seria natural dizer que uma aproximação para a integral de linha de sobre é dada pela soma:   Aplicando o Teorema do Valor Médio, existe tal que: Assim, a aproximação pode ser reescrita como:   A aproximação de por segmentos melhora quando aumentamos a quantidade de segmentos (isto é, quando dividimos em mais subintervalos).    Definimos a integral de linha do campo sobre a curva por: desde que o limite exista. É possível provar que:       Observação sobre notação: É comum encontrarmos nos livros a notação , onde .      Considere e dada por . Encontre .    Temos , e .  Substituindo na expressão do campo:   Calculando o vetor tangente:   Efetuando o produto interno:   Assim:        Considere e a curva que é a parte da circunferência situada no primeiro quadrante, orientada no sentido anti-horário. Encontre .   Arco de circunferência no primeiro quadrante   Arco do círculo de raio 2 no primeiro quadrante de (2,0) a (0,2) orientado no sentido anti-horário.      Precisamos parametrizar . Uma parametrização possível é: Note que e satisfazem .  Substituindo no campo e calculando a derivada:   Daí:   Logo:         Notação em Componentes (Forma Diferencial)  Considere contínuo e uma curva suave parametrizada por . Temos:   Isso sugere uma nova notação em termos das formas diferenciais para : (pois ).  O mesmo vale para um campo em : indica a integral de linha do campo sobre a curva .     Calcule , onde , .    Temos , e . Logo:   Daí:        Calcule , onde é uma curva suave cuja imagem é a elipse , percorrida no sentido anti-horário.    Uma parametrização da elipse no sentido anti-horário é dada por .  Daí, e .  Logo:    E se considerássemos a mesma curva com orientação contrária? Seja , , que descreve a mesma elipse no sentido horário.  Temos e .  Calculando a integral sobre :   Notamos então que para :      Efeito da Orientação na Integral de Linha   De maneira geral, valem os seguintes resultados:    Se e são parametrizações da mesma curva, mas tem **orientação oposta** à de , então:     Se e são parametrizações de uma mesma curva e possuem a **mesma orientação**, então:            Integral de Linha sobre uma Curva Suave por Partes  Dizemos que uma curva ( ) é **suave por partes** (ou de classe por partes) quando podemos particionar em subintervalos , , tais que cada restrição é suave.   Curva suave por partes composta por subcurvas   Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices.    A integral de um campo contínuo sobre uma curva suave por partes é a soma das integrais sobre cada trecho suave:      Calcule , onde é uma curva cuja imagem é a fronteira do triângulo de vértices , e , orientada no sentido anti-horário.   Triângulo com vértices (0,0), (1,0) e (1,1) orientado no sentido anti-horário   Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3.      Precisamos parametrizar as três etapas do caminho (segmentos de reta):     (de a ): para  .     (de a ): para  .     (de a ): para  .    Assim, .   1. Sobre :     2. Sobre :     3. Sobre :    Daí:        Considere a fronteira do quadrado no plano de vértices , , e , orientada no sentido anti-horário. Calcule a integral de linha:    Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário   Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4.      A curva é decomposta em quatro segmentos de reta parametrizados como se segue:   , .  , .  , .  , .   Calculando a integral para cada trecho:   Logo:      "
+  "body": " Integrais de Linha de Campos Vetoriais  Considere um campo vetorial contínuo em e uma curva suave.   Caso Particular: Se for um segmento de reta e for um campo vetorial constante, definimos a integral de linha de sobre como o produto interno:    Caso Geral: Seja uma curva qualquer e um campo vetorial contínuo qualquer. Seja uma parametrization de e divida o intervalo em subintervalos , , todos de comprimento .   Aproximação da curva por segmentos de reta   Gráfico de uma curva gamma particionada por pontos gamma(t_0), gamma(t_i-1), gamma(t_i), gamma(t_n) ao longo do intervalo [a,b], mostrando os secantes conectando os pontos da curva.    Cada subintervalo determina um segmento de reta com extremidades e em . Ou seja, a curva pode ser aproximada pela união desses segmentos.  Assim, seria natural dizer que uma aproximação para a integral de linha de sobre é dada pela soma:   Aplicando o Teorema do Valor Médio, existe tal que: Assim, a aproximação pode ser reescrita como:   A aproximação de por segmentos melhora quando aumentamos a quantidade de segmentos (isto é, quando dividimos em mais subintervalos).    Definimos a integral de linha do campo sobre a curva por: desde que o limite exista. É possível provar que:       Observação sobre notação: É comum encontrarmos nos livros a notação , onde .      Considere e dada por . Encontre .    Temos , e .  Substituindo na expressão do campo:   Calculando o vetor tangente:   Efetuando o produto interno:   Assim:        Considere e a curva que é a parte da circunferência situada no primeiro quadrante, orientada no sentido anti-horário. Encontre .   Arco de circunferência no primeiro quadrante   Arco do círculo de raio 2 no primeiro quadrante de (2,0) a (0,2) orientado no sentido anti-horário.      Precisamos parametrizar . Uma parametrização possível é: Note que e satisfazem .  Substituindo no campo e calculando a derivada:   Daí:   Logo:         Notação em Componentes (Forma Diferencial)  Considere contínuo e uma curva suave parametrizada por . Temos:   Isso sugere uma nova notação em termos das formas diferenciais para : (pois ).  O mesmo vale para um campo em : indica a integral de linha do campo sobre a curva .     Calcule , onde , .    Temos , e . Logo:   Daí:        Calcule , onde é uma curva suave cuja imagem é a elipse , percorrida no sentido anti-horário.    Uma parametrização da elipse no sentido anti-horário é dada por .  Daí, e .  Logo:    E se considerássemos a mesma curva com orientação contrária? Seja , , que descreve a mesma elipse no sentido horário.  Temos e .  Calculando a integral sobre :   Notamos então que para :      Efeito da Orientação na Integral de Linha   De maneira geral, valem os seguintes resultados:    Se e são parametrizações da mesma curva, mas tem **orientação oposta** à de , então:     Se e são parametrizações de uma mesma curva e possuem a **mesma orientação**, então:            Integral de Linha sobre uma Curva Suave por Partes  Dizemos que uma curva ( ) é **suave por partes** (ou de classe por partes) quando podemos particionar em subintervalos , , tais que cada restrição é suave.   Curva suave por partes composta por subcurvas   Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices.    A integral de um campo contínuo sobre uma curva suave por partes é a soma das integrais sobre cada trecho suave:      Calcule , onde é uma curva cuja imagem é a fronteira do triângulo de vértices , e , orientada no sentido anti-horário.   Triângulo com vértices (0,0), (1,0) e (1,1) orientado no sentido anti-horário   Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3.      Precisamos parametrizar as três etapas do caminho (segmentos de reta):     (de a ): para  .     (de a ): para  .     (de a ): para  .    Assim, .   1. Sobre :     2. Sobre :     3. Sobre :    Daí:        Considere a fronteira do quadrado no plano de vértices , , e , orientada no sentido anti-horário. Calcule a integral de linha:    Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário   Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4.      A curva é decomposta em quatro segmentos de reta parametrizados como se segue:   , .  , .  , .  , .   Calculando a integral para cada trecho:   Logo:          Exercícios    Seja o campo vetorial mostrado na figura abaixo.      Se é o segmento vertical de a , determine se é positivo, negativo ou zero.    Se é o círculo de raio e centro na origem percorrido no sentido anti-horário, determine se é positivo, negativo ou zero.       Sejam e duas parametrizações suaves da mesma curva. Mostre que:    Se e têm a mesma orientação, então .    Se têm orientações opostas, então .       Calcule por parametrização direta:     e , .     na elipse no sentido anti-horário.     na fronteira do triângulo de vértices , e , percorrida nesta ordem.     na curva de interseção de ( ) com de a .      "
 },
 {
   "id": "fig-aproximacao-curva",
@@ -541,13 +577,40 @@ var ptx_lunr_docs = [
   "body": "  Considere a fronteira do quadrado no plano de vértices , , e , orientada no sentido anti-horário. Calcule a integral de linha:    Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário   Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4.      A curva é decomposta em quatro segmentos de reta parametrizados como se segue:   , .  , .  , .  , .   Calculando a integral para cada trecho:   Logo:    "
 },
 {
+  "id": "exer-analise-grafica-campo-sec2",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-analise-grafica-campo-sec2",
+  "type": "Exercício",
+  "number": "2.2.3.1",
+  "title": "",
+  "body": " Seja o campo vetorial mostrado na figura abaixo.      Se é o segmento vertical de a , determine se é positivo, negativo ou zero.    Se é o círculo de raio e centro na origem percorrido no sentido anti-horário, determine se é positivo, negativo ou zero.    "
+},
+{
+  "id": "exer-invariancia-mudanca-parametrizacao-sec2",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-invariancia-mudanca-parametrizacao-sec2",
+  "type": "Exercício",
+  "number": "2.2.3.2",
+  "title": "",
+  "body": " Sejam e duas parametrizações suaves da mesma curva. Mostre que:    Se e têm a mesma orientação, então .    Se têm orientações opostas, então .    "
+},
+{
+  "id": "exer-calculo-direto-integrais-linha-sec2",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-calculo-direto-integrais-linha-sec2",
+  "type": "Exercício",
+  "number": "2.2.3.3",
+  "title": "",
+  "body": " Calcule por parametrização direta:     e , .     na elipse no sentido anti-horário.     na fronteira do triângulo de vértices , e , percorrida nesta ordem.     na curva de interseção de ( ) com de a .    "
+},
+{
   "id": "sec-teorema-fundamental",
   "level": "1",
   "url": "sec-teorema-fundamental.html",
   "type": "Seção",
   "number": "2.3",
   "title": "O Teorema Fundamental para Integrais de Linha",
-  "body": " O Teorema Fundamental para Integrais de Linha  Inicialmente, lembre que um campo vetorial é dito conservativo quando existe um campo escalar tal que .   Teorema Fundamental das Integrais de Linha   Se é um campo vetorial contínuo, se é tal que e se é uma curva de classe com e , então:     Temos que .  Como , segue que:   Daí, efetuando o produto interno:   Logo:      O teorema acima nos diz que a integral de linha de um campo conservativo sobre uma curva suave depende apenas dos pontos extremos do intervalo, ou seja, de e .      Calcule , onde , .    Note que se calcularmos diretamente pela definição, faríamos: Obtendo . Embora essas integrais não sejam impossíveis, elas exigem bastante trabalho algebraico.  Por outro lado, note que é tal que e , isto é, é uma função potencial para o campo .  Assim, usando o Teorema Fundamental das Integrais de Linha:      Independência do Caminho e Curvas Fechadas    Diremos que a integral de linha é independente do caminho quando para quaisquer dois caminhos e que tenham os mesmos pontos inicial e final.    Nesta terminologia, pelo Teorema Fundamental, para calcular a integral de um campo conservativo precisamos apenas dos pontos extremos da curva. Logo, concluímos que a integral de linha de um campo conservativo é independente do caminho.     Considere o campo conservativo . Calcule , onde é uma curva qualquer por partes ligando até .    Basta encontrar uma função potencial tal que . Queremos:   Integrando a equação (1) em relação a :   Derivando a equação (3) em relação a :   Comparando (4) com a equação (2): Integrando em relação a : .  Daí, uma função potencial é .  Portanto:     Uma curva é dita fechada quando seus pontos extremos coincidem, ou seja, .    A integral de linha é independente do caminho se, e somente se, para toda curva fechada.    ( ) Seja um campo vetorial tal que seja independente do caminho para quaisquer curvas ligando os pontos até .   Decomposição de uma curva fechada em dois caminhos e   Curva fechada gamma contendo dois pontos A e B, dividida no caminho gamma_1 de A para B e gamma_2 de B para A.    Seja uma curva qualquer fechada contendo os pontos e . Podemos ver composta por dois caminhos: de para , e de para . Assim: Note que , onde é a curva percorrida no sentido contrário (de para ). Logo: pois e têm os mesmos pontos inicial e final e a integral é independente do caminho.  ( ) Agora, suponha que para toda curva fechada . Sejam e duas curvas quaisquer ligando até .   Note que a curva composta é fechada. Logo:       Critérios de Conservatividade em Domínios Abertos e Conexos  Se o domínio do campo for \"bem comportado\", a independência do caminho implica que é conservativo.   Região aberta e conexa por caminhos   Região hachurada representando um conjunto aberto e conexo por caminhos Omega com dois pontos A e B unidos por uma curva gamma.    Aqui, \"bem comportado\" significa que é um conjunto:     Aberto: Todo ponto de pode ser colocado no centro de uma bola totalmente contida em (não contém pontos de fronteira).     Conexo por caminhos: Quaisquer dois pontos em podem ser ligados por um caminho totalmente contido em .      Se for um campo vetorial contínuo em uma região aberta e conexa por caminhos , e se for independente do caminho, então é conservativo em .    Denote por o vetor da base canônica com na -ésima posição. Assim, .  Seja fixado. Para cada ponto , defina a função candidato a potencial: A notação é adequada pois a integral é independente do caminho escolhido ligando a .  Vamos provar que para todo . Como é aberto, para existe uma bola de centro contida em . Considere suficientemente pequeno tal que o segmento ligando a esteja contido nessa bola.  Note que:   Uma parametrização do segmento de a é , . Daí, , e: pois e para .  Aplicando o Teorema Fundamental do Cálculo (ou a Regra de L'Hôpital \/ Teorema do Valor Médio para Integrais):   Analogamente, considerando a parametrização para , obtém-se o limite à esquerda .  Portanto: Mostrando que para todo .     Teorema de Equivalências   Seja um campo vetorial contínuo no aberto conexo por caminhos . São equivalentes as seguintes afirmações:   é conservativo em .  para toda curva fechada, por partes em .  é independente do caminho de integração em .       Teste para Campos Conservativos em Regiões Simplesmente Conexas  Se é conservativo, existe tal que e .  Supondo de classe , segue pelo Teorema das Derivadas Cruzadas (Clairaut-Schwarz) que é de classe : Como , concluímos que:     Teste Necessário: Se é um campo de classe e é conservativo, então obrigatoriamente .   Contrapositiva: Se , então o campo  não é conservativo .      Considere .    Temos e .  Calculando as derivadas parciais: Como , logo não é conservativo.     A recíproca vale? A condição garante que é conservativo apenas em domínios sem \"furos\".    Uma curva , , é dita fechada simples quando e não existem auto-interseções no intervalo aberto .  Uma região aberta e conexa por caminhos é dita simplesmente conexa quando toda curva fechada simples em delimita uma região totalmente contida em .     Comparação entre região simplesmente conexa e região com furos interiores   À esquerda, uma região D simplesmente conexa sem furos. À direita, uma região D não simplesmente conexa apresentando furos interiores.      Seja um campo vetorial em uma região aberta simplesmente conexa . Suponha que e tenham derivadas parciais de primeira ordem contínuas em todo e que: Então é conservativo em .       Considere .   O campo é conservativo?  Calcule , onde , .      a) Verificação de conservatividade: O domínio de é todo o plano , que é aberto e simplesmente conexo. Sendo e , temos: Como em , o teorema garante que é conservativo.   b) Cálculo da integral de linha: Sendo conservativo, existe tal que . Integrando (1) em relação a : . Derivando em relação a : . Comparando com (2): . Logo, .  Avaliando os pontos extremos da curva :   Pelo Teorema Fundamental:        Considere a curva parametrizada por , . Calcule , onde .    Note que é de classe em . Além disso: Logo, é conservativo.  Método 1: Por Função Potencial  Integrando . Derivando em : . Logo, .  Avaliando os pontos extremos: e .   Método 2: Por Troca de Caminho (Poligonal)  Como é conservativo, a integral não depende do caminho entre e . Escolhemos a poligonal unindo a e a :   Poligonal de integração unindo a   Segmento horizontal C_1 de (1,0) a (e,0) seguido do segmento vertical C_2 de (e,0) a (e,1).     ,  ,   Calculando a integral sobre a poligonal:      "
+  "body": " O Teorema Fundamental para Integrais de Linha  Inicialmente, lembre que um campo vetorial é dito conservativo quando existe um campo escalar tal que .   Teorema Fundamental das Integrais de Linha   Se é um campo vetorial contínuo, se é tal que e se é uma curva de classe com e , então:     Temos que .  Como , segue que:   Daí, efetuando o produto interno:   Logo:      O teorema acima nos diz que a integral de linha de um campo conservativo sobre uma curva suave depende apenas dos pontos extremos do intervalo, ou seja, de e .      Calcule , onde , .    Note que se calcularmos diretamente pela definição, faríamos: Obtendo . Embora essas integrais não sejam impossíveis, elas exigem bastante trabalho algebraico.  Por outro lado, note que é tal que e , isto é, é uma função potencial para o campo .  Assim, usando o Teorema Fundamental das Integrais de Linha:      Independência do Caminho e Curvas Fechadas    Diremos que a integral de linha é independente do caminho quando para quaisquer dois caminhos e que tenham os mesmos pontos inicial e final.    Nesta terminologia, pelo Teorema Fundamental, para calcular a integral de um campo conservativo precisamos apenas dos pontos extremos da curva. Logo, concluímos que a integral de linha de um campo conservativo é independente do caminho.     Considere o campo conservativo . Calcule , onde é uma curva qualquer por partes ligando até .    Basta encontrar uma função potencial tal que . Queremos:   Integrando a equação (1) em relação a :   Derivando a equação (3) em relação a :   Comparando (4) com a equação (2): Integrando em relação a : .  Daí, uma função potencial é .  Portanto:     Uma curva é dita fechada quando seus pontos extremos coincidem, ou seja, .    A integral de linha é independente do caminho se, e somente se, para toda curva fechada.    ( ) Seja um campo vetorial tal que seja independente do caminho para quaisquer curvas ligando os pontos até .   Decomposição de uma curva fechada em dois caminhos e   Curva fechada gamma contendo dois pontos A e B, dividida no caminho gamma_1 de A para B e gamma_2 de B para A.    Seja uma curva qualquer fechada contendo os pontos e . Podemos ver composta por dois caminhos: de para , e de para . Assim: Note que , onde é a curva percorrida no sentido contrário (de para ). Logo: pois e têm os mesmos pontos inicial e final e a integral é independente do caminho.  ( ) Agora, suponha que para toda curva fechada . Sejam e duas curvas quaisquer ligando até .   Note que a curva composta é fechada. Logo:       Critérios de Conservatividade em Domínios Abertos e Conexos  Se o domínio do campo for \"bem comportado\", a independência do caminho implica que é conservativo.   Região aberta e conexa por caminhos   Região hachurada representando um conjunto aberto e conexo por caminhos Omega com dois pontos A e B unidos por uma curva gamma.    Aqui, \"bem comportado\" significa que é um conjunto:     Aberto: Todo ponto de pode ser colocado no centro de uma bola totalmente contida em (não contém pontos de fronteira).     Conexo por caminhos: Quaisquer dois pontos em podem ser ligados por um caminho totalmente contido em .      Se for um campo vetorial contínuo em uma região aberta e conexa por caminhos , e se for independente do caminho, então é conservativo em .    Denote por o vetor da base canônica com na -ésima posição. Assim, .  Seja fixado. Para cada ponto , defina a função candidato a potencial: A notação é adequada pois a integral é independente do caminho escolhido ligando a .  Vamos provar que para todo . Como é aberto, para existe uma bola de centro contida em . Considere suficientemente pequeno tal que o segmento ligando a esteja contido nessa bola.  Note que:   Uma parametrização do segmento de a é , . Daí, , e: pois e para .  Aplicando o Teorema Fundamental do Cálculo (ou a Regra de L'Hôpital \/ Teorema do Valor Médio para Integrais):   Analogamente, considerando a parametrização para , obtém-se o limite à esquerda .  Portanto: Mostrando que para todo .     Teorema de Equivalências   Seja um campo vetorial contínuo no aberto conexo por caminhos . São equivalentes as seguintes afirmações:   é conservativo em .  para toda curva fechada, por partes em .  é independente do caminho de integração em .       Teste para Campos Conservativos em Regiões Simplesmente Conexas  Se é conservativo, existe tal que e .  Supondo de classe , segue pelo Teorema das Derivadas Cruzadas (Clairaut-Schwarz) que é de classe : Como , concluímos que:     Teste Necessário: Se é um campo de classe e é conservativo, então obrigatoriamente .   Contrapositiva: Se , então o campo  não é conservativo .      Considere .    Temos e .  Calculando as derivadas parciais: Como , logo não é conservativo.     A recíproca vale? A condição garante que é conservativo apenas em domínios sem \"furos\".    Uma curva , , é dita fechada simples quando e não existem auto-interseções no intervalo aberto .  Uma região aberta e conexa por caminhos é dita simplesmente conexa quando toda curva fechada simples em delimita uma região totalmente contida em .     Comparação entre região simplesmente conexa e região com furos interiores   À esquerda, uma região D simplesmente conexa sem furos. À direita, uma região D não simplesmente conexa apresentando furos interiores.      Seja um campo vetorial em uma região aberta simplesmente conexa . Suponha que e tenham derivadas parciais de primeira ordem contínuas em todo e que: Então é conservativo em .       Considere .   O campo é conservativo?  Calcule , onde , .      a) Verificação de conservatividade: O domínio de é todo o plano , que é aberto e simplesmente conexo. Sendo e , temos: Como em , o teorema garante que é conservativo.   b) Cálculo da integral de linha: Sendo conservativo, existe tal que . Integrando (1) em relação a : . Derivando em relação a : . Comparando com (2): . Logo, .  Avaliando os pontos extremos da curva :   Pelo Teorema Fundamental:        Considere a curva parametrizada por , . Calcule , onde .    Note que é de classe em . Além disso: Logo, é conservativo.  Método 1: Por Função Potencial  Integrando . Derivando em : . Logo, .  Avaliando os pontos extremos: e .   Método 2: Por Troca de Caminho (Poligonal)  Como é conservativo, a integral não depende do caminho entre e . Escolhemos a poligonal unindo a e a :   Poligonal de integração unindo a   Segmento horizontal C_1 de (1,0) a (e,0) seguido do segmento vertical C_2 de (e,0) a (e,1).     ,  ,   Calculando a integral sobre a poligonal:          Exercícios    Determine uma função potencial tal que e use isso para calcular a integral de linha sobre a curva dada:     , onde é qualquer curva suave de a .     , com , .     , com , .       Mostre que a integral de linha é independente do caminho e calcule seu valor:     , de a .     , de a .       Seja contínua e considere o campo central . Prove que é conservativo em .     Mostre que se é conservativo e , então , e . Mostre ainda que a integral não é independente do caminho.     Seja o campo vetorial .    Mostre que em todo o seu domínio .    Calcule e , onde e são os semicírculos superior e inferior de de a . Existe contradição com o item (a)?      "
 },
 {
   "id": "theo-fundamental-linha",
@@ -694,6 +757,114 @@ var ptx_lunr_docs = [
   "body": "  Considere a curva parametrizada por , . Calcule , onde .    Note que é de classe em . Além disso: Logo, é conservativo.  Método 1: Por Função Potencial  Integrando . Derivando em : . Logo, .  Avaliando os pontos extremos: e .   Método 2: Por Troca de Caminho (Poligonal)  Como é conservativo, a integral não depende do caminho entre e . Escolhemos a poligonal unindo a e a :   Poligonal de integração unindo a   Segmento horizontal C_1 de (1,0) a (e,0) seguido do segmento vertical C_2 de (e,0) a (e,1).     ,  ,   Calculando a integral sobre a poligonal:    "
 },
 {
+  "id": "exer-encontrar-potencial-e-integrar-sec3",
+  "level": "2",
+  "url": "sec-teorema-fundamental.html#exer-encontrar-potencial-e-integrar-sec3",
+  "type": "Exercício",
+  "number": "2.3.4.1",
+  "title": "",
+  "body": " Determine uma função potencial tal que e use isso para calcular a integral de linha sobre a curva dada:     , onde é qualquer curva suave de a .     , com , .     , com , .    "
+},
+{
+  "id": "exer-independencia-caminho-calculo-sec3",
+  "level": "2",
+  "url": "sec-teorema-fundamental.html#exer-independencia-caminho-calculo-sec3",
+  "type": "Exercício",
+  "number": "2.3.4.2",
+  "title": "",
+  "body": " Mostre que a integral de linha é independente do caminho e calcule seu valor:     , de a .     , de a .    "
+},
+{
+  "id": "exer-campo-central-conservativo-sec3",
+  "level": "2",
+  "url": "sec-teorema-fundamental.html#exer-campo-central-conservativo-sec3",
+  "type": "Exercício",
+  "number": "2.3.4.3",
+  "title": "",
+  "body": " Seja contínua e considere o campo central . Prove que é conservativo em .  "
+},
+{
+  "id": "exer-condicoes-conservatividade-3d-sec3",
+  "level": "2",
+  "url": "sec-teorema-fundamental.html#exer-condicoes-conservatividade-3d-sec3",
+  "type": "Exercício",
+  "number": "2.3.4.4",
+  "title": "",
+  "body": " Mostre que se é conservativo e , então , e . Mostre ainda que a integral não é independente do caminho.  "
+},
+{
+  "id": "exer-campo-turbilhonar-furado-sec3",
+  "level": "2",
+  "url": "sec-teorema-fundamental.html#exer-campo-turbilhonar-furado-sec3",
+  "type": "Exercício",
+  "number": "2.3.4.5",
+  "title": "",
+  "body": " Seja o campo vetorial .    Mostre que em todo o seu domínio .    Calcule e , onde e são os semicírculos superior e inferior de de a . Existe contradição com o item (a)?    "
+},
+{
+  "id": "sec-teorema-de-green",
+  "level": "1",
+  "url": "sec-teorema-de-green.html",
+  "type": "Seção",
+  "number": "2.4",
+  "title": "O Teorema de Green",
+  "body": " O Teorema de Green   Exercícios Propostos: Teorema de Green e Aplicações    Calcule as seguintes integrais ao longo das curvas , orientadas positivamente :     ; é a fronteira do quadrado  .     ; é a fronteira do triângulo de vértices , e  .     ; é a elipse  .     ; delimita a região entre e  .     ; delimita a região entre e  .     ; é a circunferência  .     ; delimita o anel entre e  .     ; é a fronteira do pentágono de vértices , , , e  .       Seja uma curva fechada, orientada positivamente, limitando uma região de área  . Verifique que :        Mostre que  .    Use o item (a) para calcular a área da região limitada pelo eixo , pelas retas , , e pela curva  .       Determine , onde é a união de ( ), ( ) e ( ) orientada no sentido anti-horário .     Seja de classe em tal que  . Sabendo que na circunferência unitária , calcule a integral ao longo da elipse orientada no sentido anti-horário .     Seja em  . Calcule a integral de linha no sentido anti-horário ao longo de :   : circunferência  .  : fronteira do retângulo  .     "
+},
+{
+  "id": "exer-green-direto-todas-curvas",
+  "level": "2",
+  "url": "sec-teorema-de-green.html#exer-green-direto-todas-curvas",
+  "type": "Exercício",
+  "number": "2.4.1",
+  "title": "",
+  "body": " Calcule as seguintes integrais ao longo das curvas , orientadas positivamente :     ; é a fronteira do quadrado  .     ; é a fronteira do triângulo de vértices , e  .     ; é a elipse  .     ; delimita a região entre e  .     ; delimita a região entre e  .     ; é a circunferência  .     ; delimita o anel entre e  .     ; é a fronteira do pentágono de vértices , , , e  .    "
+},
+{
+  "id": "exer-forma-linear-area-green",
+  "level": "2",
+  "url": "sec-teorema-de-green.html#exer-forma-linear-area-green",
+  "type": "Exercício",
+  "number": "2.4.2",
+  "title": "",
+  "body": " Seja uma curva fechada, orientada positivamente, limitando uma região de área  . Verifique que :   "
+},
+{
+  "id": "exer-area-integral-linha-green",
+  "level": "2",
+  "url": "sec-teorema-de-green.html#exer-area-integral-linha-green",
+  "type": "Exercício",
+  "number": "2.4.3",
+  "title": "",
+  "body": "   Mostre que  .    Use o item (a) para calcular a área da região limitada pelo eixo , pelas retas , , e pela curva  .    "
+},
+{
+  "id": "exer-fronteira-composta-green",
+  "level": "2",
+  "url": "sec-teorema-de-green.html#exer-fronteira-composta-green",
+  "type": "Exercício",
+  "number": "2.4.4",
+  "title": "",
+  "body": " Determine , onde é a união de ( ), ( ) e ( ) orientada no sentido anti-horário .  "
+},
+{
+  "id": "exer-green-singularidade-anel-sec4",
+  "level": "2",
+  "url": "sec-teorema-de-green.html#exer-green-singularidade-anel-sec4",
+  "type": "Exercício",
+  "number": "2.4.5",
+  "title": "",
+  "body": " Seja de classe em tal que  . Sabendo que na circunferência unitária , calcule a integral ao longo da elipse orientada no sentido anti-horário .  "
+},
+{
+  "id": "exer-vortice-mais-rotacional-sec4",
+  "level": "2",
+  "url": "sec-teorema-de-green.html#exer-vortice-mais-rotacional-sec4",
+  "type": "Exercício",
+  "number": "2.4.6",
+  "title": "",
+  "body": " Seja em  . Calcule a integral de linha no sentido anti-horário ao longo de :   : circunferência  .  : fronteira do retângulo  .   "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
@@ -703,9 +874,9 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Stewart, James. Cálculo, volume 2. Cengage Learning, 2013.    Guidorizzi, Luiz H. Um Curso de Cálculo , Vol. 3. LTC, 5ª ed. 2016.    Pinto, Diomara; Morgado, Maria C.F. Cálculo Diferencial e Integral de Funções de Várias Variáveis . Editora UFRJ, 3ª ed. 2009.  "
 },
 {
-  "id": "p-279",
+  "id": "p-337",
   "level": "2",
-  "url": "referencias.html#p-279",
+  "url": "referencias.html#p-337",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

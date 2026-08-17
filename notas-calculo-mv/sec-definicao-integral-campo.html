@@ -58,7 +58,13 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -245,13 +251,17 @@ window.MathJax = {
 <ul class="structural">
 <li>
 <div class="toc-item"><a href="sec-definicao-r2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integrais de Linha de Funções <span class="process-math">\(f: \mathbb{R}^n \rightarrow \mathbb{R}\)</span></span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="sec-definicao-r2.html#subsection-5" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Exemplos</span></a></div></li></ul>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-definicao-r2.html#subsection-5" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-definicao-r2.html#exercicios-integrais-linha-escalares-sec1" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercícios Propostos: Integrais de Linha de Campos Escalares</span></a></div></li>
+</ul>
 </li>
 <li class="active">
 <div class="toc-item"><a href="sec-definicao-integral-campo.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Integrais de Linha de Campos Vetoriais</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-definicao-integral-campo.html#sec-notacao-componentes" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Notação em Componentes (Forma Diferencial)</span></a></div></li>
 <li><div class="toc-item"><a href="sec-definicao-integral-campo.html#sec-suave-por-partes" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Integral de Linha sobre uma Curva Suave por Partes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-definicao-integral-campo.html#exercicios-campos-integrais-linha-sec2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -260,7 +270,12 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-independencia-caminho" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Independência do Caminho e Curvas Fechadas</span></a></div></li>
 <li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-condicoes-campo-conservativo" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Critérios de Conservatividade em Domínios Abertos e Conexos</span></a></div></li>
 <li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-teste-conservatividade" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Teste para Campos Conservativos em Regiões Simplesmente Conexas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#exercicios-teorema-fundamental-sec3" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-de-green.html" class="internal"><span class="codenumber">2.4</span> <span class="title">O Teorema de Green</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-teorema-de-green.html#exercicios-teorema-de-green-sec4" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercícios Propostos: Teorema de Green e Aplicações</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -269,8 +284,8 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-definicao-integral-campo"><h2 class="heading hide-type">
 <span class="type">Seção</span> <span class="codenumber">2.2</span> <span class="title">Integrais de Linha de Campos Vetoriais</span>
 </h2>
-<div class="para" id="p-151">Considere <span class="process-math">\(\vec{F}\)</span> um campo vetorial contínuo em <span class="process-math">\(\mathbb{R}^3\)</span> e <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^3\)</span> uma curva suave.</div>
-<div class="para logical" id="p-152">
+<div class="para" id="p-169">Considere <span class="process-math">\(\vec{F}\)</span> um campo vetorial contínuo em <span class="process-math">\(\mathbb{R}^3\)</span> e <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^3\)</span> uma curva suave.</div>
+<div class="para logical" id="p-170">
 <div class="para">Caso Particular: Se <span class="process-math">\(\gamma\)</span> for um segmento de reta e <span class="process-math">\(\vec{F}\)</span> for um campo vetorial constante, definimos a integral de linha de <span class="process-math">\(\vec{F}\)</span> sobre <span class="process-math">\(\gamma\)</span> como o produto interno:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -278,11 +293,11 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div>
-<div class="para" id="p-153">Caso Geral: Seja <span class="process-math">\(\gamma\)</span> uma curva qualquer e <span class="process-math">\(\vec{F}\)</span> um campo vetorial contínuo qualquer. Seja <span class="process-math">\(\gamma(t)\)</span> uma parametrization de <span class="process-math">\(\gamma\)</span> e divida o intervalo <span class="process-math">\([a,b]\)</span> em <span class="process-math">\(n\)</span> subintervalos <span class="process-math">\([t_{i-1}, t_i]\text{,}\)</span> <span class="process-math">\(i = 1, \dots, n\text{,}\)</span> todos de comprimento <span class="process-math">\(\Delta t_i = t_i - t_{i-1} = \frac{b-a}{n}\text{.}\)</span>
+<div class="para" id="p-171">Caso Geral: Seja <span class="process-math">\(\gamma\)</span> uma curva qualquer e <span class="process-math">\(\vec{F}\)</span> um campo vetorial contínuo qualquer. Seja <span class="process-math">\(\gamma(t)\)</span> uma parametrization de <span class="process-math">\(\gamma\)</span> e divida o intervalo <span class="process-math">\([a,b]\)</span> em <span class="process-math">\(n\)</span> subintervalos <span class="process-math">\([t_{i-1}, t_i]\text{,}\)</span> <span class="process-math">\(i = 1, \dots, n\text{,}\)</span> todos de comprimento <span class="process-math">\(\Delta t_i = t_i - t_{i-1} = \frac{b-a}{n}\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-aproximacao-curva"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/aproximacao_curva.svg" class="contained" alt="Gráfico de uma curva gamma particionada por pontos gamma(t_0), gamma(t_i-1), gamma(t_i), gamma(t_n) ao longo do intervalo [a,b], mostrando os secantes conectando os pontos da curva."></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Aproximação da curva <span class="process-math">\(\gamma\)</span> por segmentos de reta</figcaption></figure><div class="para" id="p-154">Cada subintervalo <span class="process-math">\([t_{i-1}, t_i]\)</span> determina um segmento de reta com extremidades <span class="process-math">\(\gamma(t_{i-1})\)</span> e <span class="process-math">\(\gamma(t_i)\)</span> em <span class="process-math">\(\gamma\text{.}\)</span> Ou seja, a curva <span class="process-math">\(\gamma\)</span> pode ser aproximada pela união desses segmentos.</div>
-<div class="para logical" id="p-155">
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Aproximação da curva <span class="process-math">\(\gamma\)</span> por segmentos de reta</figcaption></figure><div class="para" id="p-172">Cada subintervalo <span class="process-math">\([t_{i-1}, t_i]\)</span> determina um segmento de reta com extremidades <span class="process-math">\(\gamma(t_{i-1})\)</span> e <span class="process-math">\(\gamma(t_i)\)</span> em <span class="process-math">\(\gamma\text{.}\)</span> Ou seja, a curva <span class="process-math">\(\gamma\)</span> pode ser aproximada pela união desses segmentos.</div>
+<div class="para logical" id="p-173">
 <div class="para">Assim, seria natural dizer que uma aproximação para a integral de linha de <span class="process-math">\(\vec{F}\)</span> sobre <span class="process-math">\(\gamma\)</span> é dada pela soma:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -290,7 +305,7 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="p-156">
+<div class="para logical" id="p-174">
 <div class="para">Aplicando o Teorema do Valor Médio, existe <span class="process-math">\(t_i^* \in [t_{i-1}, t_i]\)</span> tal que:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -304,11 +319,11 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div>
-<div class="para" id="p-157">A aproximação de <span class="process-math">\(\gamma\)</span> por segmentos melhora quando aumentamos a quantidade de segmentos (isto é, quando dividimos <span class="process-math">\([a,b]\)</span> em mais subintervalos).</div>
+<div class="para" id="p-175">A aproximação de <span class="process-math">\(\gamma\)</span> por segmentos melhora quando aumentamos a quantidade de segmentos (isto é, quando dividimos <span class="process-math">\([a,b]\)</span> em mais subintervalos).</div>
 <article class="definition definition-like" id="def-integral-linha-campo"><h3 class="heading">
 <span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="p-158">
+<div class="para logical" id="p-176">
 <div class="para">Definimos a <em class="emphasis">integral de linha do campo <span class="process-math">\(\vec{F}\)</span> sobre a curva <span class="process-math">\(\gamma\)</span></em> por:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -324,39 +339,39 @@ window.MathJax = {
 </div></article><article class="note remark-like" id="note-2"><h3 class="heading">
 <span class="type">Nota</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-159">Observação sobre notação: É comum encontrarmos nos livros a notação <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\text{,}\)</span> onde <span class="process-math">\(\vec{r}(t) = \gamma(t)\text{.}\)</span>
+<div class="para" id="p-177">Observação sobre notação: É comum encontrarmos nos livros a notação <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\text{,}\)</span> onde <span class="process-math">\(\vec{r}(t) = \gamma(t)\text{.}\)</span>
 </div></article><article class="example example-like" id="exem-campo-curva-3d"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-160">Considere <span class="process-math">\(\vec{F}(x,y,z) = x\vec{i} + y^2\vec{j} - xy\vec{k}\)</span> e <span class="process-math">\(\gamma: [0,1] \rightarrow \mathbb{R}^3\)</span> dada por <span class="process-math">\(\gamma(t) = (t, t^2, t^3)\text{.}\)</span> Encontre <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\text{.}\)</span>
+<div class="para" id="p-178">Considere <span class="process-math">\(\vec{F}(x,y,z) = x\vec{i} + y^2\vec{j} - xy\vec{k}\)</span> e <span class="process-math">\(\gamma: [0,1] \rightarrow \mathbb{R}^3\)</span> dada por <span class="process-math">\(\gamma(t) = (t, t^2, t^3)\text{.}\)</span> Encontre <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r}\text{.}\)</span>
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
-<div class="para" id="p-161">Temos <span class="process-math">\(\gamma(t) = (t, t^2, t^3) \implies x = t\text{,}\)</span> <span class="process-math">\(y = t^2\)</span> e <span class="process-math">\(z = t^3\text{.}\)</span>
-</div> <div class="para logical" id="p-162">
+<div class="para" id="p-179">Temos <span class="process-math">\(\gamma(t) = (t, t^2, t^3) \implies x = t\text{,}\)</span> <span class="process-math">\(y = t^2\)</span> e <span class="process-math">\(z = t^3\text{.}\)</span>
+</div> <div class="para logical" id="p-180">
 <div class="para">Substituindo na expressão do campo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \vec{F}(\gamma(t)) = t\vec{i} + (t^2)^2\vec{j} - t(t^2)\vec{k} = t\vec{i} + t^4\vec{j} - t^3\vec{k}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-163">
+</div> <div class="para logical" id="p-181">
 <div class="para">Calculando o vetor tangente:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \gamma'(t) = (1, 2t, 3t^2) = 1\vec{i} + 2t\vec{j} + 3t^2\vec{k}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-164">
+</div> <div class="para logical" id="p-182">
 <div class="para">Efetuando o produto interno:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \vec{F}(\gamma(t)) \cdot \gamma'(t) = t(1) + t^2(2t) + (-t^3)(3t^2) = t + 2t^3 - 3t^5
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-165">
+</div> <div class="para logical" id="p-183">
 <div class="para">Assim:</div>
-<div class="displaymath process-math" id="md-15">
+<div class="displaymath process-math" id="md-17">
 \begin{align*}
 \int_{\gamma} \vec{F} \cdot d\gamma \amp = \int_{0}^{1} (t + 2t^3 - 3t^5) \, dt\\
 \amp = \left.\left( \frac{t^2}{2} + 2 \frac{t^4}{4} - 3 \frac{t^6}{6} \right)\right|_{0}^{1} = \frac{1}{2} + \frac{1}{2} - \frac{1}{2} = \frac{1}{2}
@@ -367,11 +382,11 @@ window.MathJax = {
 </div></article><article class="example example-like" id="exem-campo-circunferencia"><h3 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-166">Considere <span class="process-math">\(\vec{F}(x,y) = (3y, 7x)\)</span> e <span class="process-math">\(C\)</span> a curva que é a parte da circunferência <span class="process-math">\(x^2 + y^2 = 4\)</span> situada no primeiro quadrante, orientada no sentido anti-horário. Encontre <span class="process-math">\(\int_{C} \vec{F} \cdot d\vec{r}\text{.}\)</span>
+<div class="para" id="p-184">Considere <span class="process-math">\(\vec{F}(x,y) = (3y, 7x)\)</span> e <span class="process-math">\(C\)</span> a curva que é a parte da circunferência <span class="process-math">\(x^2 + y^2 = 4\)</span> situada no primeiro quadrante, orientada no sentido anti-horário. Encontre <span class="process-math">\(\int_{C} \vec{F} \cdot d\vec{r}\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-circulo-quadrante"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/circulo_quadrante.svg" class="contained" alt="Arco do círculo de raio 2 no primeiro quadrante de (2,0) a (0,2) orientado no sentido anti-horário."></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.6<span class="period">.</span></span><span class="space"> </span>Arco de circunferência no primeiro quadrante</figcaption></figure><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
-<div class="para logical" id="p-167">
+<div class="para logical" id="p-185">
 <div class="para">Precisamos parametrizar <span class="process-math">\(C\text{.}\)</span> Uma parametrização possível é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -380,24 +395,24 @@ C(t) = (2\cos t, 2\text{sen } t), \quad 0 \le t \le \frac{\pi}{2}
 </div>
 <div class="para">Note que <span class="process-math">\(x(t) = 2\cos t\)</span> e <span class="process-math">\(y(t) = 2\text{sen } t\)</span> satisfazem <span class="process-math">\(x^2(t) + y^2(t) = 4\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-168">
+</div> <div class="para logical" id="p-186">
 <div class="para">Substituindo no campo e calculando a derivada:</div>
-<div class="displaymath process-math" id="md-16">
+<div class="displaymath process-math" id="md-18">
 \begin{align*}
 \vec{F}(C(t)) \amp = (3(2\text{sen } t), 7(2\cos t)) = (6\text{sen } t, 14\cos t)\\
 C'(t) \amp = (-2\text{sen } t, 2\cos t)
 \end{align*}
 </div>
-</div> <div class="para logical" id="p-169">
+</div> <div class="para logical" id="p-187">
 <div class="para">Daí:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \vec{F}(C(t)) \cdot C'(t) = -12\text{sen}^2 t + 28\cos^2 t
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-170">
+</div> <div class="para logical" id="p-188">
 <div class="para">Logo:</div>
-<div class="displaymath process-math" id="md-17">
+<div class="displaymath process-math" id="md-19">
 \begin{align*}
 \int_{C} \vec{F} \cdot d\vec{r} \amp = \int_{0}^{\frac{\pi}{2}} (-12\text{sen}^2 t + 28\cos^2 t) \, dt\\
 \amp = \int_{0}^{\frac{\pi}{2}} [12(\cos^2 t - \text{sen}^2 t) + 16\cos^2 t] \, dt\\
@@ -412,9 +427,9 @@ C'(t) \amp = (-2\text{sen } t, 2\cos t)
 </div></article><section class="subsection" id="sec-notacao-componentes"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">2.2.1</span> <span class="title">Notação em Componentes (Forma Diferencial)</span>
 </h3>
-<div class="para logical" id="p-171">
+<div class="para logical" id="p-189">
 <div class="para">Considere <span class="process-math">\(\vec{F}(x,y) = P(x,y)\vec{i} + Q(x,y)\vec{j}\)</span> contínuo e <span class="process-math">\(C: [a,b] \rightarrow \mathbb{R}^2\)</span> uma curva suave parametrizada por <span class="process-math">\(C(t) = (x(t), y(t))\text{.}\)</span> Temos:</div>
-<div class="displaymath process-math" id="md-18">
+<div class="displaymath process-math" id="md-20">
 \begin{align*}
 \int_C \vec{F} \cdot d\vec{r} \amp = \int_{a}^{b} \vec{F}(C(t)) \cdot C'(t) \, dt\\
 \amp = \int_{a}^{b} \vec{F}(x(t), y(t)) \cdot (x'(t), y'(t)) \, dt\\
@@ -423,7 +438,7 @@ C'(t) \amp = (-2\text{sen } t, 2\cos t)
 \end{align*}
 </div>
 </div>
-<div class="para logical" id="p-172">
+<div class="para logical" id="p-190">
 <div class="para">Isso sugere uma nova notação em termos das formas diferenciais para <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -433,7 +448,7 @@ C'(t) \amp = (-2\text{sen } t, 2\cos t)
 </div>
 <div class="para">(pois <span class="process-math">\(\frac{dx}{dt} = x'(t) \implies dx = x'(t) \, dt\)</span>).</div>
 </div>
-<div class="para logical" id="p-173">
+<div class="para logical" id="p-191">
 <div class="para">O mesmo vale para um campo em <span class="process-math">\(\mathbb{R}^3\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -447,20 +462,20 @@ C'(t) \amp = (-2\text{sen } t, 2\cos t)
 <article class="example example-like" id="exem-diferencial-3d"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-174">Calcule <span class="process-math">\(\int_C xy \, dx + yz \, dy + zx \, dz\text{,}\)</span> onde <span class="process-math">\(C(t) = (t, t^2, t^3)\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
+<div class="para" id="p-192">Calcule <span class="process-math">\(\int_C xy \, dx + yz \, dy + zx \, dz\text{,}\)</span> onde <span class="process-math">\(C(t) = (t, t^2, t^3)\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
-<div class="para logical" id="p-175">
+<div class="para logical" id="p-193">
 <div class="para">Temos <span class="process-math">\(x = t\text{,}\)</span> <span class="process-math">\(y = t^2\)</span> e <span class="process-math">\(z = t^3\text{.}\)</span> Logo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-176">
+</div> <div class="para logical" id="p-194">
 <div class="para">Daí:</div>
-<div class="displaymath process-math" id="md-19">
+<div class="displaymath process-math" id="md-21">
 \begin{align*}
 \int_C xy \, dx + yz \, dy + zx \, dz \amp = \int_{0}^{1} (t \cdot t^2 \cdot 1 \, dt + t^2 \cdot t^3 \cdot 2t \, dt + t^3 \cdot t \cdot 3t^2 \, dt)\\
 \amp = \int_{0}^{1} (t^3 + 2t^6 + 3t^6) \, dt = \int_{0}^{1} (t^3 + 5t^6) \, dt\\
@@ -472,31 +487,31 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 </div></article><article class="example example-like" id="exem-elipse-orientacao"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-177">Calcule <span class="process-math">\(\int_{\gamma} -y \, dx + x \, dy\text{,}\)</span> onde <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^2\)</span> é uma curva suave cuja imagem é a elipse <span class="process-math">\(\frac{x^2}{4} + \frac{y^2}{9} = 1\text{,}\)</span> percorrida no sentido anti-horário.</div>
+<div class="para" id="p-195">Calcule <span class="process-math">\(\int_{\gamma} -y \, dx + x \, dy\text{,}\)</span> onde <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^2\)</span> é uma curva suave cuja imagem é a elipse <span class="process-math">\(\frac{x^2}{4} + \frac{y^2}{9} = 1\text{,}\)</span> percorrida no sentido anti-horário.</div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like">
-<div class="para" id="p-178">Uma parametrização da elipse no sentido anti-horário é <span class="process-math">\(\gamma: [0, 2\pi] \rightarrow \mathbb{R}^2\)</span> dada por <span class="process-math">\(\gamma(t) = (2\cos t, 3\text{sen } t)\text{.}\)</span>
-</div> <div class="para" id="p-179">Daí, <span class="process-math">\(x = 2\cos t \implies dx = -2\text{sen } t \, dt\)</span> e <span class="process-math">\(y = 3\text{sen } t \implies dy = 3\cos t \, dt\text{.}\)</span>
-</div> <div class="para logical" id="p-180">
+<div class="para" id="p-196">Uma parametrização da elipse no sentido anti-horário é <span class="process-math">\(\gamma: [0, 2\pi] \rightarrow \mathbb{R}^2\)</span> dada por <span class="process-math">\(\gamma(t) = (2\cos t, 3\text{sen } t)\text{.}\)</span>
+</div> <div class="para" id="p-197">Daí, <span class="process-math">\(x = 2\cos t \implies dx = -2\text{sen } t \, dt\)</span> e <span class="process-math">\(y = 3\text{sen } t \implies dy = 3\cos t \, dt\text{.}\)</span>
+</div> <div class="para logical" id="p-198">
 <div class="para">Logo:</div>
-<div class="displaymath process-math" id="md-20">
+<div class="displaymath process-math" id="md-22">
 \begin{align*}
 \int_{\gamma} -y \, dx + x \, dy \amp = \int_{0}^{2\pi} [-3\text{sen } t (-2\text{sen } t \, dt) + 2\cos t (3\cos t \, dt)]\\
 \amp = \int_{0}^{2\pi} (6\text{sen}^2 t + 6\cos^2 t) \, dt = \int_{0}^{2\pi} 6(\text{sen}^2 t + \cos^2 t) \, dt\\
 \amp = \int_{0}^{2\pi} 6 \, dt = \left. 6t \right|_{0}^{2\pi} = 12\pi
 \end{align*}
 </div>
-</div> <div class="para" id="p-181">E se considerássemos a mesma curva com orientação contrária? Seja <span class="process-math">\(\beta(t) = (2\text{sen } t, 3\cos t)\text{,}\)</span> <span class="process-math">\(t \in [0, 2\pi]\text{,}\)</span> que descreve a mesma elipse no sentido horário.</div> <div class="para" id="p-182">Temos <span class="process-math">\(x = 2\text{sen } t \implies dx = 2\cos t \, dt\)</span> e <span class="process-math">\(y = 3\cos t \implies dy = -3\text{sen } t \, dt\text{.}\)</span>
-</div> <div class="para logical" id="p-183">
+</div> <div class="para" id="p-199">E se considerássemos a mesma curva com orientação contrária? Seja <span class="process-math">\(\beta(t) = (2\text{sen } t, 3\cos t)\text{,}\)</span> <span class="process-math">\(t \in [0, 2\pi]\text{,}\)</span> que descreve a mesma elipse no sentido horário.</div> <div class="para" id="p-200">Temos <span class="process-math">\(x = 2\text{sen } t \implies dx = 2\cos t \, dt\)</span> e <span class="process-math">\(y = 3\cos t \implies dy = -3\text{sen } t \, dt\text{.}\)</span>
+</div> <div class="para logical" id="p-201">
 <div class="para">Calculando a integral sobre <span class="process-math">\(\beta\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="md-21">
+<div class="displaymath process-math" id="md-23">
 \begin{align*}
 \int_{\beta} -y \, dx + x \, dy \amp = \int_{0}^{2\pi} [-3\cos t (2\cos t \, dt) + 2\text{sen } t (-3\text{sen } t \, dt)]\\
 \amp = \int_{0}^{2\pi} -6(\cos^2 t + \text{sen}^2 t) \, dt = -12\pi
 \end{align*}
 </div>
-</div> <div class="para logical" id="p-184">
+</div> <div class="para logical" id="p-202">
 <div class="para">Notamos então que para <span class="process-math">\(\vec{F} = -y\vec{i} + x\vec{j}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -509,8 +524,8 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 </div></article><article class="theorem theorem-like" id="theo-efeito-orientacao"><h4 class="heading">
 <span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Efeito da Orientação na Integral de Linha.</span>
 </h4>
-<div class="para" id="p-185">De maneira geral, valem os seguintes resultados:</div> <ul class="disc">
-<li id="li-24"><div class="para logical" id="p-186">
+<div class="para" id="p-203">De maneira geral, valem os seguintes resultados:</div> <ul class="disc">
+<li id="li-36"><div class="para logical" id="p-204">
 <div class="para">Se <span class="process-math">\(\gamma_1\)</span> e <span class="process-math">\(\gamma_2\)</span> são parametrizações da mesma curva, mas <span class="process-math">\(\gamma_2\)</span> tem **orientação oposta** à de <span class="process-math">\(\gamma_1\text{,}\)</span> então:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -518,7 +533,7 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 \end{equation*}
 </div>
 </div></li>
-<li id="li-25"><div class="para logical" id="p-187">
+<li id="li-37"><div class="para logical" id="p-205">
 <div class="para">Se <span class="process-math">\(\gamma_1\)</span> e <span class="process-math">\(\gamma_2\)</span> são parametrizações de uma mesma curva e possuem a **mesma orientação**, então:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -529,9 +544,9 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 </ul></article></section><section class="subsection" id="sec-suave-por-partes"><h3 class="heading hide-type">
 <span class="type">Subseção</span> <span class="codenumber">2.2.2</span> <span class="title">Integral de Linha sobre uma Curva Suave por Partes</span>
 </h3>
-<div class="para" id="p-188">Dizemos que uma curva <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^n\)</span> (<span class="process-math">\(n=2,3\)</span>) é **suave por partes** (ou de classe <span class="process-math">\(C^1\)</span> por partes) quando podemos particionar <span class="process-math">\([a,b]\)</span> em subintervalos <span class="process-math">\([t_{i-1}, t_i]\text{,}\)</span> <span class="process-math">\(i = 1, \dots, k\text{,}\)</span> tais que cada restrição <span class="process-math">\(\gamma_i: [t_{i-1}, t_i] \rightarrow \mathbb{R}^n\)</span> é suave.</div>
+<div class="para" id="p-206">Dizemos que uma curva <span class="process-math">\(\gamma: [a,b] \rightarrow \mathbb{R}^n\)</span> (<span class="process-math">\(n=2,3\)</span>) é **suave por partes** (ou de classe <span class="process-math">\(C^1\)</span> por partes) quando podemos particionar <span class="process-math">\([a,b]\)</span> em subintervalos <span class="process-math">\([t_{i-1}, t_i]\text{,}\)</span> <span class="process-math">\(i = 1, \dots, k\text{,}\)</span> tais que cada restrição <span class="process-math">\(\gamma_i: [t_{i-1}, t_i] \rightarrow \mathbb{R}^n\)</span> é suave.</div>
 <figure class="figure figure-like" id="fig-curva-por-partes"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/curva_por_partes.svg" class="contained" alt="Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices."></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.10<span class="period">.</span></span><span class="space"> </span>Curva suave por partes composta por subcurvas <span class="process-math">\(\gamma_1, \gamma_2, \gamma_3, \gamma_4\)</span></figcaption></figure><div class="para logical" id="p-189">
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.10<span class="period">.</span></span><span class="space"> </span>Curva suave por partes composta por subcurvas <span class="process-math">\(\gamma_1, \gamma_2, \gamma_3, \gamma_4\)</span></figcaption></figure><div class="para logical" id="p-207">
 <div class="para">A integral de um campo contínuo <span class="process-math">\(\vec{F}\)</span> sobre uma curva suave por partes <span class="process-math">\(\gamma = \gamma_1 \cup \gamma_2 \cup \dots \cup \gamma_k\)</span> é a soma das integrais sobre cada trecho suave:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -542,21 +557,21 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 <article class="example example-like" id="exem-triangulo"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-190">Calcule <span class="process-math">\(\int_{\gamma} -y \, dx + x \, dy\text{,}\)</span> onde <span class="process-math">\(\gamma\)</span> é uma curva cuja imagem é a fronteira do triângulo de vértices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((1,0)\)</span> e <span class="process-math">\((1,1)\text{,}\)</span> orientada no sentido anti-horário.</div> <figure class="figure figure-like" id="fig-triangulo-caminho"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/triangulo_caminho.svg" class="contained" alt="Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3."></div>
+<div class="para" id="p-208">Calcule <span class="process-math">\(\int_{\gamma} -y \, dx + x \, dy\text{,}\)</span> onde <span class="process-math">\(\gamma\)</span> é uma curva cuja imagem é a fronteira do triângulo de vértices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((1,0)\)</span> e <span class="process-math">\((1,1)\text{,}\)</span> orientada no sentido anti-horário.</div> <figure class="figure figure-like" id="fig-triangulo-caminho"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/triangulo_caminho.svg" class="contained" alt="Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3."></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.12<span class="period">.</span></span><span class="space"> </span>Triângulo com vértices (0,0), (1,0) e (1,1) orientado no sentido anti-horário</figcaption></figure><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
-<div class="para" id="p-191">Precisamos parametrizar as três etapas do caminho (segmentos de reta):</div> <ul class="disc">
-<li id="li-26"><div class="para" id="p-192">
+<div class="para" id="p-209">Precisamos parametrizar as três etapas do caminho (segmentos de reta):</div> <ul class="disc">
+<li id="li-38"><div class="para" id="p-210">
 <span class="process-math">\(\gamma_1\)</span> (de <span class="process-math">\((0,0)\)</span> a <span class="process-math">\((1,0)\)</span>): <span class="process-math">\(x = t, y = 0\)</span> para <span class="process-math">\(0 \le t \le 1\)</span> <span class="process-math">\(\implies dx = 1\,dt, dy = 0\,dt\text{.}\)</span>
 </div></li>
-<li id="li-27"><div class="para" id="p-193">
+<li id="li-39"><div class="para" id="p-211">
 <span class="process-math">\(\gamma_2\)</span> (de <span class="process-math">\((1,0)\)</span> a <span class="process-math">\((1,1)\)</span>): <span class="process-math">\(x = 1, y = t\)</span> para <span class="process-math">\(0 \le t \le 1\)</span> <span class="process-math">\(\implies dx = 0\,dt, dy = 1\,dt\text{.}\)</span>
 </div></li>
-<li id="li-28"><div class="para" id="p-194">
+<li id="li-40"><div class="para" id="p-212">
 <span class="process-math">\(\gamma_3\)</span> (de <span class="process-math">\((1,1)\)</span> a <span class="process-math">\((0,0)\)</span>): <span class="process-math">\(x = 1 - t, y = 1 - t\)</span> para <span class="process-math">\(0 \le t \le 1\)</span> <span class="process-math">\(\implies dx = -1\,dt, dy = -1\,dt\text{.}\)</span>
 </div></li>
-</ul> <div class="para" id="p-195">Assim, <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{\gamma_1} \vec{F} \cdot d\vec{r} + \int_{\gamma_2} \vec{F} \cdot d\vec{r} + \int_{\gamma_3} \vec{F} \cdot d\vec{r}\text{.}\)</span>
-</div> <div class="para logical" id="p-196">
+</ul> <div class="para" id="p-213">Assim, <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{\gamma_1} \vec{F} \cdot d\vec{r} + \int_{\gamma_2} \vec{F} \cdot d\vec{r} + \int_{\gamma_3} \vec{F} \cdot d\vec{r}\text{.}\)</span>
+</div> <div class="para logical" id="p-214">
 <div class="para">1. Sobre <span class="process-math">\(\gamma_1\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -564,7 +579,7 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 \int_{\gamma_1} \vec{F} \cdot d\vec{r} = \int_{0}^{1} [-0(1\,dt) + t(0\,dt)] = 0
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-197">
+</div> <div class="para logical" id="p-215">
 <div class="para">2. Sobre <span class="process-math">\(\gamma_2\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -572,17 +587,17 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 \int_{\gamma_2} \vec{F} \cdot d\vec{r} = \int_{0}^{1} [-t(0\,dt) + 1(1\,dt)] = \int_{0}^{1} 1 \, dt = 1
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-198">
+</div> <div class="para logical" id="p-216">
 <div class="para">3. Sobre <span class="process-math">\(\gamma_3\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="md-22">
+<div class="displaymath process-math" id="md-24">
 \begin{align*}
 \int_{\gamma_3} \vec{F} \cdot d\vec{r} =\amp \int_{0}^{1} [-(1-t)(-1\,dt) + (1-t)(-1\,dt)] \\
 =\amp \int_{0}^{1} [(1-t) - (1-t)] \, dt\\
 =\amp 0
 \end{align*}
 </div>
-</div> <div class="para logical" id="p-199">
+</div> <div class="para logical" id="p-217">
 <div class="para">Daí:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -594,7 +609,7 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 </div></article><article class="example example-like" id="exem-quadrado"><h4 class="heading">
 <span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.2.13</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-200">
+<div class="para logical" id="p-218">
 <div class="para">Considere <span class="process-math">\(C\)</span> a fronteira do quadrado no plano <span class="process-math">\(xy\)</span> de vértices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((1,0)\text{,}\)</span> <span class="process-math">\((1,1)\)</span> e <span class="process-math">\((0,1)\text{,}\)</span> orientada no sentido anti-horário. Calcule a integral de linha:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -604,21 +619,21 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 </div> <figure class="figure figure-like" id="fig-quadrado-caminho"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/quadrado_caminho.svg" class="contained" alt="Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4."></div>
 <figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2.14<span class="period">.</span></span><span class="space"> </span>Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário</figcaption></figure><div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
-<div class="para" id="p-201">A curva <span class="process-math">\(C\)</span> é decomposta em quatro segmentos de reta parametrizados como se segue:</div> <ul class="disc">
-<li id="li-29"><div class="para" id="p-202">
+<div class="para" id="p-219">A curva <span class="process-math">\(C\)</span> é decomposta em quatro segmentos de reta parametrizados como se segue:</div> <ul class="disc">
+<li id="li-41"><div class="para" id="p-220">
 <span class="process-math">\(C_1: \sigma_1(t) = (t, 0)\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
 </div></li>
-<li id="li-30"><div class="para" id="p-203">
+<li id="li-42"><div class="para" id="p-221">
 <span class="process-math">\(C_2: \sigma_2(t) = (1, t)\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
 </div></li>
-<li id="li-31"><div class="para" id="p-204">
+<li id="li-43"><div class="para" id="p-222">
 <span class="process-math">\(C_3: \sigma_3(t) = (-t, 1)\text{,}\)</span> <span class="process-math">\(-1 \le t \le 0\text{.}\)</span>
 </div></li>
-<li id="li-32"><div class="para" id="p-205">
+<li id="li-44"><div class="para" id="p-223">
 <span class="process-math">\(C_4: \sigma_4(t) = (0, -t)\text{,}\)</span> <span class="process-math">\(-1 \le t \le 0\text{.}\)</span>
 </div></li>
-</ul> <div class="para" id="p-206">Calculando a integral para cada trecho:</div>
-<div class="displaymath process-math" id="md-23">
+</ul> <div class="para" id="p-224">Calculando a integral para cada trecho:</div>
+<div class="displaymath process-math" id="md-25">
 \begin{align*}
 \int_{C_1} x^2 \, dx + xy \, dy \amp = \int_{0}^{1} t^2 \, dt = \left.\frac{t^3}{3}\right|_{0}^{1} = \frac{1}{3}\\
 \int_{C_2} x^2 \, dx + xy \, dy \amp = \int_{0}^{1} (1 \cdot t) \, dt = \left.\frac{t^2}{2}\right|_{0}^{1} = \frac{1}{2}\\
@@ -626,7 +641,7 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 \int_{C_4} x^2 \, dx + xy \, dy \amp = \int_{-1}^{0} 0 \, dt = 0
 \end{align*}
 </div>
-<div class="para logical" id="p-207">
+<div class="para logical" id="p-225">
 <div class="para">Logo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -635,7 +650,46 @@ dx = 1 \, dt, \quad dy = 2t \, dt, \quad dz = 3t^2 \, dt
 </div>
 </div>
 </div></div>
-</div></article></section></section></div>
+</div></article></section><section class="exercises" id="exercicios-campos-integrais-linha-sec2"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">2.2.3</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exer-analise-grafica-campo-sec2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-226">Seja <span class="process-math">\(\vec{F}\)</span> o campo vetorial mostrado na figura abaixo.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">var('x y')
+
+# Definição do campo vetorial (rotação horária)
+Fx = y
+Fy = -x
+
+# Gráfico do campo vetorial
+campo = plot_vector_field((Fx, Fy), (x, -3.2, 3.2), (y, -3.2, 3.2),
+                          plot_points=9,        # Quantidade de setas por eixo (grade 9x9)
+                          color='#0284c7',       # Cor azul
+                          aspect_ratio=1,        # Escala 1:1 nos eixos
+                          axes_labels=['$x$', '$y$'])
+
+campo.show(figsize=6)
+</script></pre>  <ol class="lower-alpha">
+<li id="li-45"><div class="para" id="p-227">Se <span class="process-math">\(C_1\)</span> é o segmento vertical de <span class="process-math">\((-3,-3)\)</span> a <span class="process-math">\((-3,3)\text{,}\)</span> determine se <span class="process-math">\(\int_{C_1}\vec{F}\cdot d\vec{r}\)</span> é positivo, negativo ou zero.</div></li>
+<li id="li-46"><div class="para" id="p-228">Se <span class="process-math">\(C_2\)</span> é o círculo de raio <span class="process-math">\(3\)</span> e centro na origem percorrido no sentido anti-horário, determine se <span class="process-math">\(\int_{C_2}\vec{F}\cdot d\vec{r}\)</span> é positivo, negativo ou zero.</div></li>
+</ol></article><article class="exercise exercise-like" id="exer-invariancia-mudanca-parametrizacao-sec2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-229">Sejam <span class="process-math">\(\lambda_1: [a,b] \to \Omega\)</span> e <span class="process-math">\(\lambda_2: [c,d] \to \Omega\)</span> duas parametrizações suaves da mesma curva. Mostre que:</div> <ol class="lower-alpha">
+<li id="li-47"><div class="para" id="p-230">Se <span class="process-math">\(\lambda_1\)</span> e <span class="process-math">\(\lambda_2\)</span> têm a mesma orientação, então <span class="process-math">\(\int_{\lambda_1}\vec{F}\cdot d\vec{r} = \int_{\lambda_2}\vec{F}\cdot d\vec{r}\text{.}\)</span>
+</div></li>
+<li id="li-48"><div class="para" id="p-231">Se têm orientações opostas, então <span class="process-math">\(\int_{\lambda_1}\vec{F}\cdot d\vec{r} = -\int_{\lambda_2}\vec{F}\cdot d\vec{r}\text{.}\)</span>
+</div></li>
+</ol></article><article class="exercise exercise-like" id="exer-calculo-direto-integrais-linha-sec2"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-232">Calcule <span class="process-math">\(\int_{C}\vec{F}\cdot d\vec{r}\)</span> por parametrização direta:</div> <ol class="lower-alpha">
+<li id="li-49"><div class="para" id="p-233">
+<span class="process-math">\(\vec{F}(x,y) = xy\vec{i} + 3y^2\vec{j}\)</span> e <span class="process-math">\(\vec{r}(t) = 11t^2\vec{i} + t^3\vec{j}\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
+</div></li>
+<li id="li-50"><div class="para" id="p-234">
+<span class="process-math">\(\vec{F}(x,y) = (y + 3x)\vec{i} + (2y - x)\vec{j}\)</span> na elipse <span class="process-math">\(4x^2 + y^2 = 4\)</span> no sentido anti-horário.</div></li>
+<li id="li-51"><div class="para" id="p-235">
+<span class="process-math">\(\vec{F}(x,y,z) = (yz, xz, x(y+1))\)</span> na fronteira do triângulo de vértices <span class="process-math">\((0,0,0)\text{,}\)</span> <span class="process-math">\((1,1,1)\)</span> e <span class="process-math">\((-1,1,-1)\text{,}\)</span> percorrida nesta ordem.</div></li>
+<li id="li-52"><div class="para" id="p-236">
+<span class="process-math">\(\vec{F}(x,y,z) = (xy, x^2+z, y^2-x)\)</span> na curva de interseção de <span class="process-math">\(x^2+y^2=z^2\)</span> (<span class="process-math">\(z \ge 0\)</span>) com <span class="process-math">\(x = y^2\)</span> de <span class="process-math">\((0,0,0)\)</span> a <span class="process-math">\((1,1,\sqrt{2})\text{.}\)</span>
+</div></li>
+</ol></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-definicao-r2.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-teorema-fundamental.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
 </div></main>
