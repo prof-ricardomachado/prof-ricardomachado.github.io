@@ -11,30 +11,36 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="hiddenproof"><h3 class="heading"><span class="type">Demonstração</span></h3>
-<div class="para">Temos que <span class="process-math">\(\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \vec{F}(\gamma(t)) \cdot \gamma'(t) \, dt\text{.}\)</span>
+<article class="hiddenproof"><h4 class="heading"><span class="type">Demonstração</span></h4>
+<div class="para">Sendo <span class="process-math">\(\gamma_1: [a,b] \to \mathbb{R}^n\)</span> e <span class="process-math">\(\gamma_2: [c,d] \to \mathbb{R}^n\)</span> parametrizações suaves do mesmo traço, existe uma mudança de parâmetro diferenciável <span class="process-math">\(g: [c,d] \to [a,b]\)</span> tal que <span class="process-math">\(\gamma_2(u) = \gamma_1(g(u))\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">Como <span class="process-math">\(\vec{F} = \nabla\varphi\text{,}\)</span> segue que:</div>
+<div class="para">Pela Regra da Cadeia, <span class="process-math">\(\gamma_2'(u) = \gamma_1'(g(u)) g'(u)\text{.}\)</span> Logo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vec{F}(\gamma(t)) = \left( \frac{\partial\varphi}{\partial x_1}(\gamma(t)), \frac{\partial\varphi}{\partial x_2}(\gamma(t)), \dots, \frac{\partial\varphi}{\partial x_n}(\gamma(t)) \right)
+\int_{\gamma_2} \vec{F} \cdot d\vec{r} = \int_{c}^{d} \vec{F}(\gamma_1(g(u))) \cdot \gamma_1'(g(u)) g'(u) \, du
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">Daí, efetuando o produto interno:</div>
+</div> <div class="para">Fazendo a substituição <span class="process-math">\(t = g(u) \implies dt = g'(u) \, du\text{:}\)</span>
+</div> <ul class="disc">
+<li><div class="para logical">
+<div class="para">Se <span class="process-math">\(g\)</span> preserva a orientação (<span class="process-math">\(g' &gt; 0\)</span>), temos <span class="process-math">\(g(c) = a\)</span> e <span class="process-math">\(g(d) = b\text{,}\)</span> donde:</div>
 <div class="displaymath process-math">
 \begin{align*}
-\vec{F}(\gamma(t)) \cdot \gamma'(t) \amp = \frac{\partial\varphi}{\partial x_1}(\gamma(t))\frac{dx_1(t)}{dt} +  \dots + \frac{\partial\varphi}{\partial x_n}(\gamma(t))\frac{dx_n(t)}{dt}\\
-\amp = \frac{d}{dt}\big(\varphi(\gamma(t))\big) \quad \text{(pela Regra da Cadeia)}
+\int_{\gamma_2} \vec{F} \cdot d\vec{r} =\amp~ \int_{a}^{b} \vec{F}(\gamma_1(t)) \cdot \gamma_1'(t) \, dt\\
+=\amp \int_{\gamma_1} \vec{F} \cdot d\vec{r}
 \end{align*}
 </div>
-</div> <div class="para logical">
-<div class="para">Logo:</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Se <span class="process-math">\(g\)</span> inverte a orientação (<span class="process-math">\(g' &lt; 0\)</span>), temos <span class="process-math">\(g(c) = b\)</span> e <span class="process-math">\(g(d) = a\text{,}\)</span> donde:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\int_{\gamma} \vec{F} \cdot d\vec{r} = \int_{a}^{b} \frac{d}{dt}\big(\varphi(\gamma(t))\big) \, dt = \varphi(\gamma(b)) - \varphi(\gamma(a)) = \varphi(B) - \varphi(A)
-\end{equation*}
+\begin{align*}
+\int_{\gamma_2} \vec{F} \cdot d\vec{r} =\amp~ \int_{b}^{a} \vec{F}(\gamma_1(t)) \cdot \gamma_1'(t) \, dt\\
+=\amp~ -\int_{a}^{b} \vec{F}(\gamma_1(t)) \cdot \gamma_1'(t) \, dt\\
+=\amp~ -\int_{\gamma_1} \vec{F} \cdot d\vec{r}
+\end{align*}
 </div>
-</div></article><span class="incontext"><a href="sec-teorema-fundamental.html#proof-2" class="internal">em contexto</a></span>
+</div></li>
+</ul></article><span class="incontext"><a href="sec-definicao-integral-campo.html#proof-2" class="internal">em contexto</a></span>
 </body>
 </html>

@@ -475,7 +475,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.2",
   "title": "Integrais de Linha de Campos Vetoriais",
-  "body": " Integrais de Linha de Campos Vetoriais  Considere um campo vetorial contínuo em e uma curva suave.   Caso Particular: Se for um segmento de reta e for um campo vetorial constante, definimos a integral de linha de sobre como o produto interno:    Caso Geral: Seja uma curva qualquer e um campo vetorial contínuo qualquer. Seja uma parametrization de e divida o intervalo em subintervalos , , todos de comprimento .   Aproximação da curva por segmentos de reta   Gráfico de uma curva gamma particionada por pontos gamma(t_0), gamma(t_i-1), gamma(t_i), gamma(t_n) ao longo do intervalo [a,b], mostrando os secantes conectando os pontos da curva.    Cada subintervalo determina um segmento de reta com extremidades e em . Ou seja, a curva pode ser aproximada pela união desses segmentos.  Assim, seria natural dizer que uma aproximação para a integral de linha de sobre é dada pela soma:   Aplicando o Teorema do Valor Médio, existe tal que: Assim, a aproximação pode ser reescrita como:   A aproximação de por segmentos melhora quando aumentamos a quantidade de segmentos (isto é, quando dividimos em mais subintervalos).    Definimos a integral de linha do campo sobre a curva por: desde que o limite exista. É possível provar que:       Observação sobre notação: É comum encontrarmos nos livros a notação , onde .      Considere e dada por . Encontre .    Temos , e .  Substituindo na expressão do campo:   Calculando o vetor tangente:   Efetuando o produto interno:   Assim:        Considere e a curva que é a parte da circunferência situada no primeiro quadrante, orientada no sentido anti-horário. Encontre .   Arco de circunferência no primeiro quadrante   Arco do círculo de raio 2 no primeiro quadrante de (2,0) a (0,2) orientado no sentido anti-horário.      Precisamos parametrizar . Uma parametrização possível é: Note que e satisfazem .  Substituindo no campo e calculando a derivada:   Daí:   Logo:         Notação em Componentes (Forma Diferencial)  Considere contínuo e uma curva suave parametrizada por . Temos:   Isso sugere uma nova notação em termos das formas diferenciais para : (pois ).  O mesmo vale para um campo em : indica a integral de linha do campo sobre a curva .     Calcule , onde , .    Temos , e . Logo:   Daí:        Calcule , onde é uma curva suave cuja imagem é a elipse , percorrida no sentido anti-horário.    Uma parametrização da elipse no sentido anti-horário é dada por .  Daí, e .  Logo:    E se considerássemos a mesma curva com orientação contrária? Seja , , que descreve a mesma elipse no sentido horário.  Temos e .  Calculando a integral sobre :   Notamos então que para :      Efeito da Orientação na Integral de Linha   De maneira geral, valem os seguintes resultados:    Se e são parametrizações da mesma curva, mas tem **orientação oposta** à de , então:     Se e são parametrizações de uma mesma curva e possuem a **mesma orientação**, então:            Integral de Linha sobre uma Curva Suave por Partes  Dizemos que uma curva ( ) é **suave por partes** (ou de classe por partes) quando podemos particionar em subintervalos , , tais que cada restrição é suave.   Curva suave por partes composta por subcurvas   Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices.    A integral de um campo contínuo sobre uma curva suave por partes é a soma das integrais sobre cada trecho suave:      Calcule , onde é uma curva cuja imagem é a fronteira do triângulo de vértices , e , orientada no sentido anti-horário.   Triângulo com vértices (0,0), (1,0) e (1,1) orientado no sentido anti-horário   Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3.      Precisamos parametrizar as três etapas do caminho (segmentos de reta):     (de a ): para  .     (de a ): para  .     (de a ): para  .    Assim, .   1. Sobre :     2. Sobre :     3. Sobre :    Daí:        Considere a fronteira do quadrado no plano de vértices , , e , orientada no sentido anti-horário. Calcule a integral de linha:    Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário   Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4.      A curva é decomposta em quatro segmentos de reta parametrizados como se segue:   , .  , .  , .  , .   Calculando a integral para cada trecho:   Logo:          Exercícios    Seja o campo vetorial mostrado na figura abaixo.      Se é o segmento vertical de a , determine se é positivo, negativo ou zero.    Se é o círculo de raio e centro na origem percorrido no sentido anti-horário, determine se é positivo, negativo ou zero.       Sejam e duas parametrizações suaves da mesma curva. Mostre que:    Se e têm a mesma orientação, então .    Se têm orientações opostas, então .       Calcule por parametrização direta:     e , .     na elipse no sentido anti-horário.     na fronteira do triângulo de vértices , e , percorrida nesta ordem.     na curva de interseção de ( ) com de a .      "
+  "body": " Integrais de Linha de Campos Vetoriais  Considere um campo vetorial contínuo em e uma curva suave.   Caso Particular: Se for um segmento de reta e for um campo vetorial constante, definimos a integral de linha de sobre como o produto interno:    Caso Geral: Seja uma curva qualquer e um campo vetorial contínuo qualquer. Seja uma parametrização de e divida o intervalo em subintervalos , , todos de comprimento .   Aproximação da curva por segmentos de reta   Gráfico de uma curva gamma particionada por pontos gamma(t_0), gamma(t_i-1), gamma(t_i), gamma(t_n) ao longo do intervalo [a,b], mostrando os secantes conectando os pontos da curva.    Cada subintervalo determina um segmento de reta com extremidades e em . Ou seja, a curva pode ser aproximada pela união desses segmentos.  Assim, seria natural dizer que uma aproximação para a integral de linha de sobre é dada pela soma:   Aplicando o Teorema do Valor Médio, existe tal que: Assim, a aproximação pode ser reescrita como:   A aproximação de por segmentos melhora quando aumentamos a quantidade de segmentos (isto é, quando dividimos em mais subintervalos).    Definimos a integral de linha do campo sobre a curva por: desde que o limite exista. É possível provar que:       Observação sobre notação: É comum encontrarmos nos livros a notação , onde .       Considere e dada por . Encontre .    Temos , e . Derivando o vetor posição:   Substituindo as variáveis no campo :   Calculando o produto interno:   Integrando no intervalo :        Considere e a curva que é a parte da circunferência situada no primeiro quadrante, orientada no sentido anti-horário. Encontre .   Arco de circunferência no primeiro quadrante   Arco do círculo de raio 2 no primeiro quadrante de (2,0) a (0,2) orientado no sentido anti-horário.      Precisamos parametrizar . Uma parametrização possível é: Note que e satisfazem .  Substituindo no campo e calculando a derivada:   Daí:   Logo:         Notação em Componentes (Forma Diferencial)  Considere contínuo e uma curva suave parametrizada por . Temos:   Isso sugere uma nova notação em termos das formas diferenciais para : (pois ).  O mesmo vale para um campo em : indica a integral de linha do campo sobre a curva .     Calcule , onde , .    Temos , e . Logo:   Daí:        Calcule , onde é uma curva suave cuja imagem é a elipse , percorrida no sentido anti-horário.    Uma parametrização da elipse no sentido anti-horário é dada por .  Daí, e .  Logo:    E se considerássemos a mesma curva com orientação contrária? Seja , , que descreve a mesma elipse no sentido horário.  Temos e .  Calculando a integral sobre :   Notamos então que para :       Efeito da Orientação na Integral de Linha   De maneira geral, valem os seguintes resultados:    Se e são parametrizações da mesma curva e possuem a mesma orientação , então:     Se e são parametrizações da mesma curva, mas com orientações opostas , então:       Sendo e parametrizações suaves do mesmo traço, existe uma mudança de parâmetro diferenciável tal que .  Pela Regra da Cadeia, . Logo:   Fazendo a substituição :    Se preserva a orientação ( ), temos e , donde:     Se inverte a orientação ( ), temos e , donde:            Integral de Linha sobre uma Curva Suave por Partes   Dizemos que uma curva ( ) é suave por partes (ou de classe por partes) quando podemos particionar em subintervalos , , tais que cada restrição é suave.   Curva suave por partes composta por subcurvas   Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices.    A integral de um campo contínuo sobre uma curva suave por partes é a soma das integrais sobre cada trecho suave:       Calcule , onde é uma curva cuja imagem é a fronteira do triângulo de vértices , e , orientada no sentido anti-horário.   Triângulo com vértices (0,0), (1,0) e (1,1) orientado no sentido anti-horário   Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3.      Precisamos parametrizar as três etapas do caminho (segmentos de reta):     (de a ): para  .     (de a ): para  .     (de a ): para  .    Assim, .   1. Sobre :     2. Sobre :     3. Sobre :    Daí:        Considere a fronteira do quadrado no plano de vértices , , e , orientada no sentido anti-horário. Calcule a integral de linha:    Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário   Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4.      A curva é decomposta em quatro segmentos de reta parametrizados como se segue:   , .  , .  , .  , .   Calculando a integral para cada trecho:   Logo:          Exercícios    Seja o campo vetorial mostrado na figura abaixo.   Campo vetorial no plano e curvas de integração   Campo vetorial com o segmento vertical C_1 de (-3,-3) a (-3,3) e a circunferência C_2 de raio 3 no sentido anti-horário.      Se é o segmento vertical de a , determine se é positivo, negativo ou zero.    Se é o círculo de raio e centro na origem percorrido no sentido anti-horário, determine se é positivo, negativo ou zero.        Negativo ( ).    Positivo ( ).        Sejam e duas parametrizações suaves da mesma curva. Mostre que:    Se e têm a mesma orientação, então .    Se têm orientações opostas, então .     Demonstração por mudança de variáveis com e aplicação da regra da cadeia . A orientação preservada ( ) mantém os limites de integração , enquanto a inversão de orientação ( ) inverte os limites para , introduzindo o sinal negativo na integral.     Calcule por parametrização direta:     e , .     na elipse no sentido anti-horário.     na fronteira do triângulo de vértices , e , percorrida nesta ordem.     na curva de interseção de ( ) com de a .                          Calcule a integral de linha , onde o campo vetorial é dado por: e é a fronteira do quadrado de vértices , , e , percorrida no sentido anti-horário.         Calcule a integral de linha , onde: e é a fronteira do triângulo de vértices , e , percorrida no sentido anti-horário.         Calcule , onde: e é o caminho poligonal que une sucessivamente os vértices .         Calcule a integral de linha , onde: e é a fronteira do retângulo de vértices , , e , percorrida no sentido anti-horário.         Calcule , onde o campo é definido no semiplano superior ( ) por: e é a trajetória poligonal composta pelo segmento horizontal de a , seguido pelo segmento vertical de a .      "
 },
 {
   "id": "fig-aproximacao-curva",
@@ -511,7 +511,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "2.2.4",
   "title": "",
-  "body": "  Considere e dada por . Encontre .    Temos , e .  Substituindo na expressão do campo:   Calculando o vetor tangente:   Efetuando o produto interno:   Assim:    "
+  "body": "  Considere e dada por . Encontre .    Temos , e . Derivando o vetor posição:   Substituindo as variáveis no campo :   Calculando o produto interno:   Integrando no intervalo :    "
 },
 {
   "id": "exem-campo-circunferencia",
@@ -547,23 +547,23 @@ var ptx_lunr_docs = [
   "type": "Teorema",
   "number": "2.2.9",
   "title": "Efeito da Orientação na Integral de Linha.",
-  "body": " Efeito da Orientação na Integral de Linha   De maneira geral, valem os seguintes resultados:    Se e são parametrizações da mesma curva, mas tem **orientação oposta** à de , então:     Se e são parametrizações de uma mesma curva e possuem a **mesma orientação**, então:      "
+  "body": " Efeito da Orientação na Integral de Linha   De maneira geral, valem os seguintes resultados:    Se e são parametrizações da mesma curva e possuem a mesma orientação , então:     Se e são parametrizações da mesma curva, mas com orientações opostas , então:       Sendo e parametrizações suaves do mesmo traço, existe uma mudança de parâmetro diferenciável tal que .  Pela Regra da Cadeia, . Logo:   Fazendo a substituição :    Se preserva a orientação ( ), temos e , donde:     Se inverte a orientação ( ), temos e , donde:      "
 },
 {
-  "id": "fig-curva-por-partes",
+  "id": "definition-10",
   "level": "2",
-  "url": "sec-definicao-integral-campo.html#fig-curva-por-partes",
-  "type": "Figura",
+  "url": "sec-definicao-integral-campo.html#definition-10",
+  "type": "Definição",
   "number": "2.2.10",
   "title": "",
-  "body": " Curva suave por partes composta por subcurvas   Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices.   "
+  "body": " Dizemos que uma curva ( ) é suave por partes (ou de classe por partes) quando podemos particionar em subintervalos , , tais que cada restrição é suave.   Curva suave por partes composta por subcurvas   Esboço de uma curva contínua composta por quatro arcos suaves contínuos unidos por vértices.    A integral de um campo contínuo sobre uma curva suave por partes é a soma das integrais sobre cada trecho suave:   "
 },
 {
   "id": "exem-triangulo",
   "level": "2",
   "url": "sec-definicao-integral-campo.html#exem-triangulo",
   "type": "Exemplo",
-  "number": "2.2.11",
+  "number": "2.2.12",
   "title": "",
   "body": "  Calcule , onde é uma curva cuja imagem é a fronteira do triângulo de vértices , e , orientada no sentido anti-horário.   Triângulo com vértices (0,0), (1,0) e (1,1) orientado no sentido anti-horário   Triângulo no plano cartesiano com caminho orientado de (0,0) a (1,0) como gamma_1, de (1,0) a (1,1) como gamma_2, e de (1,1) a (0,0) como gamma_3.      Precisamos parametrizar as três etapas do caminho (segmentos de reta):     (de a ): para  .     (de a ): para  .     (de a ): para  .    Assim, .   1. Sobre :     2. Sobre :     3. Sobre :    Daí:    "
 },
@@ -572,7 +572,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-definicao-integral-campo.html#exem-quadrado",
   "type": "Exemplo",
-  "number": "2.2.13",
+  "number": "2.2.14",
   "title": "",
   "body": "  Considere a fronteira do quadrado no plano de vértices , , e , orientada no sentido anti-horário. Calcule a integral de linha:    Quadrado unitário com vértices (0,0), (1,0), (1,1) e (0,1) orientado no sentido anti-horário   Quadrado no plano xy formado pelos quatro trechos orientados C_1, C_2, C_3 e C_4.      A curva é decomposta em quatro segmentos de reta parametrizados como se segue:   , .  , .  , .  , .   Calculando a integral para cada trecho:   Logo:    "
 },
@@ -583,7 +583,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.2.3.1",
   "title": "",
-  "body": " Seja o campo vetorial mostrado na figura abaixo.      Se é o segmento vertical de a , determine se é positivo, negativo ou zero.    Se é o círculo de raio e centro na origem percorrido no sentido anti-horário, determine se é positivo, negativo ou zero.    "
+  "body": " Seja o campo vetorial mostrado na figura abaixo.   Campo vetorial no plano e curvas de integração   Campo vetorial com o segmento vertical C_1 de (-3,-3) a (-3,3) e a circunferência C_2 de raio 3 no sentido anti-horário.      Se é o segmento vertical de a , determine se é positivo, negativo ou zero.    Se é o círculo de raio e centro na origem percorrido no sentido anti-horário, determine se é positivo, negativo ou zero.        Negativo ( ).    Positivo ( ).     "
 },
 {
   "id": "exer-invariancia-mudanca-parametrizacao-sec2",
@@ -592,7 +592,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.2.3.2",
   "title": "",
-  "body": " Sejam e duas parametrizações suaves da mesma curva. Mostre que:    Se e têm a mesma orientação, então .    Se têm orientações opostas, então .    "
+  "body": " Sejam e duas parametrizações suaves da mesma curva. Mostre que:    Se e têm a mesma orientação, então .    Se têm orientações opostas, então .     Demonstração por mudança de variáveis com e aplicação da regra da cadeia . A orientação preservada ( ) mantém os limites de integração , enquanto a inversão de orientação ( ) inverte os limites para , introduzindo o sinal negativo na integral.  "
 },
 {
   "id": "exer-calculo-direto-integrais-linha-sec2",
@@ -601,7 +601,52 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.2.3.3",
   "title": "",
-  "body": " Calcule por parametrização direta:     e , .     na elipse no sentido anti-horário.     na fronteira do triângulo de vértices , e , percorrida nesta ordem.     na curva de interseção de ( ) com de a .    "
+  "body": " Calcule por parametrização direta:     e , .     na elipse no sentido anti-horário.     na fronteira do triângulo de vértices , e , percorrida nesta ordem.     na curva de interseção de ( ) com de a .                     "
+},
+{
+  "id": "exer-campo-quadrado-conservativo",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-campo-quadrado-conservativo",
+  "type": "Exercício",
+  "number": "2.2.3.4",
+  "title": "",
+  "body": " Calcule a integral de linha , onde o campo vetorial é dado por: e é a fronteira do quadrado de vértices , , e , percorrida no sentido anti-horário.    "
+},
+{
+  "id": "exer-campo-triangulo-rotacional",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-campo-triangulo-rotacional",
+  "type": "Exercício",
+  "number": "2.2.3.5",
+  "title": "",
+  "body": " Calcule a integral de linha , onde: e é a fronteira do triângulo de vértices , e , percorrida no sentido anti-horário.    "
+},
+{
+  "id": "exer-campo-poligonal-potencial",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-campo-poligonal-potencial",
+  "type": "Exercício",
+  "number": "2.2.3.6",
+  "title": "",
+  "body": " Calcule , onde: e é o caminho poligonal que une sucessivamente os vértices .    "
+},
+{
+  "id": "exer-campo-retangulo-green",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-campo-retangulo-green",
+  "type": "Exercício",
+  "number": "2.2.3.7",
+  "title": "",
+  "body": " Calcule a integral de linha , onde: e é a fronteira do retângulo de vértices , , e , percorrida no sentido anti-horário.    "
+},
+{
+  "id": "exer-campo-logaritmo-potencial",
+  "level": "2",
+  "url": "sec-definicao-integral-campo.html#exer-campo-logaritmo-potencial",
+  "type": "Exercício",
+  "number": "2.2.3.8",
+  "title": "",
+  "body": " Calcule , onde o campo é definido no semiplano superior ( ) por: e é a trajetória poligonal composta pelo segmento horizontal de a , seguido pelo segmento vertical de a .    "
 },
 {
   "id": "sec-teorema-fundamental",
@@ -874,9 +919,9 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Stewart, James. Cálculo, volume 2. Cengage Learning, 2013.    Guidorizzi, Luiz H. Um Curso de Cálculo , Vol. 3. LTC, 5ª ed. 2016.    Pinto, Diomara; Morgado, Maria C.F. Cálculo Diferencial e Integral de Funções de Várias Variáveis . Editora UFRJ, 3ª ed. 2009.  "
 },
 {
-  "id": "p-337",
+  "id": "p-360",
   "level": "2",
-  "url": "referencias.html#p-337",
+  "url": "referencias.html#p-360",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
