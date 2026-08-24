@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Na definição acima, considere <span class="process-math">\(\gamma\)</span> de classe <span class="process-math">\(C^1\)</span> por partes e seja <span class="process-math">\(\vec{F}: \Omega \subseteq \mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span> de classe <span class="process-math">\(C^1\)</span> tal que <span class="process-math">\(D \subset \Omega\text{,}\)</span> sendo <span class="process-math">\(D\)</span> a região limitada por <span class="process-math">\(\gamma\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Considere ainda <span class="process-math">\(D\)</span> uma região simples, isto é, podemos escrever:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = \{(x,y) \in \mathbb{R}^2 : m \le x \le n \text{ e } g_1(x) \le y \le g_2(x)\}
+\end{equation*}
+</div>
+<div class="para">e também:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = \{(x,y) \in \mathbb{R}^2 : h_1(y) \le x \le h_2(y) \text{ e } c \le y \le d\}
+\end{equation*}
+</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/green_regioes_simples.svg" class="contained" alt="Dois gráficos no plano cartesiano ilustrando regiões simples limitadas por funções g_1(x) e g_2(x) no eixo x, e h_1(y) e h_2(y) no eixo y."></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4.4<span class="period">.</span></span><span class="space"> </span>Regiões simples do Tipo I e Tipo II</figcaption></figure> <div class="para">Suponha que <span class="process-math">\(\vec{F}(x,y) = P(x,y)\vec{i} + Q(x,y)\vec{j}\)</span> e vamos calcular <span class="process-math">\(\int_{\gamma} P(x,y) \, dx\)</span> observando a região <span class="process-math">\(D\)</span> dada por <span class="process-math">\(m \le x \le n\)</span> e <span class="process-math">\(g_1(x) \le y \le g_2(x)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Note que <span class="process-math">\(\gamma = \gamma_1 \cup \gamma_2\)</span> (os trechos verticais não contribuem, pois <span class="process-math">\(dx = 0\)</span>), em que:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\gamma_1(t) \amp = (t, g_1(t)), \quad m \le t \le n\\
+\gamma_2(t) \amp = (-t, g_2(-t)), \quad -n \le t \le -m
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Logo:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_{\gamma} P(x,y) \, dx \amp = \int_{\gamma_1} P(x,y) \, dx + \int_{\gamma_2} P(x,y) \, dx\\
+\amp = \int_{m}^{n} P(t, g_1(t)) \, dt + \int_{-n}^{-m} P(-t, g_2(-t))(-1) \, dt\\
+\amp = \int_{m}^{n} P(t, g_1(t)) \, dt - \int_{-n}^{-m} P(-t, g_2(-t)) \, dt
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Fazendo a substituição <span class="process-math">\(u = -t \implies du = -dt\)</span> na segunda integral (com <span class="process-math">\(t = -n \implies u = n\)</span> e <span class="process-math">\(t = -m \implies u = m\)</span>):</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_{\gamma} P(x,y) \, dx \amp = \int_{m}^{n} P(t, g_1(t)) \, dt - \int_{n}^{m} P(u, g_2(u))(-du)\\
+\amp = \int_{m}^{n} P(t, g_1(t)) \, dt - \int_{m}^{n} P(u, g_2(u)) \, du\\
+\amp = \int_{m}^{n} [P(x, g_1(x)) - P(x, g_2(x))] \, dx
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Usando o Teorema Fundamental do Cálculo, segue que:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_{m}^{n} [P(x, g_1(x)) - P(x, g_2(x))] \, dx \amp = \int_{m}^{n} \int_{g_2(x)}^{g_1(x)} \frac{\partial}{\partial y} P(x,y) \, dy \, dx\\
+\amp = \int_{m}^{n} \int_{g_1(x)}^{g_2(x)} -\frac{\partial}{\partial y} P(x,y) \, dy \, dx
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Ou seja, temos que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} P(x,y) \, dx = \iint_{D} -\frac{\partial}{\partial y} P(x,y) \, dA
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Com um pouco de empenho e força de vontade, considerando agora a região como <span class="process-math">\(D = \{(x,y) \in \mathbb{R}^2 : h_1(y) \le x \le h_2(y) \text{ e } c \le y \le d\}\text{,}\)</span> podemos mostrar com argumentos semelhantes que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} Q(x,y) \, dy = \iint_{D} \frac{\partial}{\partial x} Q(x,y) \, dA
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Como <span class="process-math">\(\int_{\gamma} \vec{F}(x,y) \cdot d\vec{r} = \int_{\gamma} P(x,y) \, dx + \int_{\gamma} Q(x,y) \, dy\text{,}\)</span> segue que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma} \vec{F}(x,y) \cdot d\vec{r} = \iint_{D} \left( \frac{\partial Q}{\partial x}(x,y) - \frac{\partial P}{\partial y}(x,y) \right) dA
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">O resultado vale para regiões simples como as de cima. Mas, como sei que você é um pensador dos mais habilidosos, você deve estar pensando: "E se <span class="process-math">\(D\)</span> não for simples?". Bem, meu caro, neste caso podemos, acredite em mim, decompor uma região <span class="process-math">\(D\)</span> como união finita de regiões simples:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = D_1 \cup D_2 \cup \dots \cup D_n
+\end{equation*}
+</div>
+<div class="para">em que cada <span class="process-math">\(D_j\)</span> é limitado por uma curva <span class="process-math">\(\gamma_j\)</span> de classe <span class="process-math">\(C^1\)</span> por partes orientada positivamente.</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/green_divisao.svg" class="contained" alt="Região D subdividida em D_1 e D_2. A curva da fronteira externa é gama_1 e gama_2. A fronteira interna (corte) é percorrida em sentidos opostos (C e -C), anulando-se."></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.4.5<span class="period">.</span></span><span class="space"> </span>Decomposição de uma região em regiões simples</figcaption></figure> <div class="para logical">
+<div class="para">De forma que a integral de um campo <span class="process-math">\(\vec{F}\)</span> sobre a curva <span class="process-math">\(\gamma\)</span> que limita uma região <span class="process-math">\(D = D_1 \cup D_2\)</span> é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{j=1}^{n} \iint_{D_j} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA = \sum_{j=1}^{n} \int_{\gamma_j} \vec{F} \cdot d\vec{r}_j = \int_{\gamma} \vec{F} \cdot d\vec{r}
+\end{equation*}
+</div>
+<div class="para">Note que nas fronteiras comuns tem-se <span class="process-math">\(\int_{C} \vec{F} \cdot d\vec{r} = -\int_{-C} \vec{F} \cdot d\vec{r}\text{.}\)</span>
+</div>
+</div></article></body>
+</html>

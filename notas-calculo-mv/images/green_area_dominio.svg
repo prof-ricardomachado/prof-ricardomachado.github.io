@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 330" width="100%" height="100%">
+  <style>
+    .axis { stroke: #374151; stroke-width: 2; }
+    .curve-border { stroke: #4338ca; stroke-width: 3.2; fill: url(#hatch-region); }
+    .arrow-path { stroke: #4338ca; stroke-width: 2.5; fill: none; }
+    .math { font-family: 'Times New Roman', serif; font-style: italic; }
+    .math-bold { font-family: 'Times New Roman', serif; font-style: italic; font-weight: bold; }
+  </style>
+
+  <defs>
+    <!-- Seta dos Eixos Cartesianos -->
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#374151" />
+    </marker>
+
+    <!-- Seta de Orientação da Fronteira -->
+    <marker id="curve-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" fill="#4338ca" />
+    </marker>
+
+    <!-- Padrão de Hachuras Verticais/Inclinadas -->
+    <pattern id="hatch-region" width="14" height="14" patternTransform="rotate(80 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#818cf8" stroke-width="1.6" />
+    </pattern>
+  </defs>
+
+  <!-- Eixos Cartesianos -->
+  <line x1="30" y1="260" x2="500" y2="260" class="axis" marker-end="url(#axis-arrow)" />
+  <line x1="95" y1="290" x2="95" y2="35" class="axis" marker-end="url(#axis-arrow)" />
+  <text x="505" y="265" class="math" font-size="19px">x</text>
+  <text x="88" y="25" class="math" font-size="19px">y</text>
+
+  <!-- Região Elíptica Inclinada D com Hachuras -->
+  <ellipse cx="300" cy="140" rx="140" ry="72" transform="rotate(-20 300 140)" class="curve-border" />
+
+  <!-- Setas de Orientação Anti-horária (Positiva) -->
+  <!-- Topo (movimento para esquerda/baixo) -->
+  <path d="M 255 76 L 235 88" class="arrow-path" marker-end="url(#curve-arrow)" />
+  
+  <!-- Base (movimento para direita/cima) -->
+  <path d="M 345 204 L 365 192" class="arrow-path" marker-end="url(#curve-arrow)" />
+
+  <!-- Rótulo D no interior -->
+  <text x="288" y="148" class="math-bold" font-size="32px" fill="#1e1b4b">D</text>
+</svg>
