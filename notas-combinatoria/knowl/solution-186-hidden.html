@@ -10,20 +10,48 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">O termo geral é dado por</div>
-<div class="displaymath process-math">
-\begin{align*}
-T(p,q)=\amp~C_{10}^p\cdot(x^2)^{10-p}\cdot3^p\cdot C_{11}^q\cdot(x^3)^{11-q}\cdot(-3)^q\\
-=\amp~C_{10}^p\cdot C_{11}^q\cdot x^{53-2p-3q}\cdot 3^p\cdot (-3)^q.
-\end{align*}
-</div>
-<div class="para">Portanto, queremos encontrar valores de <span class="process-math">\(p\)</span> e <span class="process-math">\(q\text{,}\)</span> tais que <span class="process-math">\(53-2p-3q = 50\text{,}\)</span> ou seja, <span class="process-math">\(2p+3q=3\text{,}\)</span> logo <span class="process-math">\(p=0\)</span> e <span class="process-math">\(q=1\text{.}\)</span> Então, precisamos obter o coeficiente de <span class="process-math">\(x^{50}\)</span> de <span class="process-math">\(T(0,1)\text{:}\)</span>
-</div>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-T(0,1)=C_{10}^0\cdot C_{11}^1\cdot x^{50}\cdot (3)^0\cdot(-3)^1 = -33\cdot x^{50}.
+T_{k} = C_{70}^{k-1}1^{k-1}\left(\frac{1}{4}\right)^{71-k} = C_{70}^{k-1}\cdot\frac{1}{4^{71-k}}\text{.}
 \end{equation*}
 </div>
-</div></div></body>
+<div class="para">
+<span class="process-math">\(T_{k+1}&gt; T_{k}\)</span> se</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_{70}^{k}\cdot\frac{1}{4^{70-k}} &gt; C_{70}^{k-1}\cdot\frac{1}{4^{71-k}} 
+\end{equation*}
+</div>
+<div class="para">Isto é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{70!}{k!(70-k)!}\cdot\frac{1}{4^{70-k}} &gt; \frac{70!}{(k-1)!(71-k)!}\cdot\frac{1}{4^{71-k}}, 
+\end{equation*}
+</div>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(71-k)!}{(70-k)!} &gt; \frac{k!}{(k-1)!}\cdot\frac{4^{70-k}}{4^{71-k}}, 
+\end{equation*}
+</div>
+<div class="para">e simplificando temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(71-k)}{1} &gt; \frac{k}{1}\cdot\frac{1}{4}. 
+\end{equation*}
+</div>
+<div class="para">Portanto, <span class="process-math">\(71-k &gt; k/4 \text{,}\)</span> logo <span class="process-math">\(k\lt 56, 8\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Assim, temos  <span class="process-math">\(T_{k} \lt  T_{k+1}\)</span> para <span class="process-math">\(k = 1, 2, \ldots, 56\)</span> e portanto o maior termo é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T_{57} = C_{70}^{56}\cdot\frac{1}{4^{14}} = \frac{24156719613645}{33554432}.
+\end{equation*}
+</div>
+</div>
+</div></body>
 </html>

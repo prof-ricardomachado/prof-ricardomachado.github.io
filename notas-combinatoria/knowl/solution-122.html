@@ -13,38 +13,30 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.8.1</span><span class="period">.</span>
 </h4>
-<div class="para">Note que, no total, exitem <span class="process-math">\(m^n\)</span> funções <span class="process-math">\(f:A\rightarrow B\text{,}\)</span> pois existem <span class="process-math">\(m\)</span> maneiras de escolher a imagem de cada um dos <span class="process-math">\(n\)</span> elementos de <span class="process-math">\(A\text{.}\)</span>
-</div> <div class="para">Sejam <span class="process-math">\(y_1, y_2, \ldots, y_m\)</span> os elementos do conjunto <span class="process-math">\(B\text{.}\)</span> Defina <span class="process-math">\(F_j\)</span> o conjunto das funções <span class="process-math">\(f_{j,l}:A\rightarrow B\text{,}\)</span> tais que <span class="process-math">\(y_j\)</span> não pertence a imagem de <span class="process-math">\(f_{j,l}\text{.}\)</span> Logo, <span class="process-math">\(j\in \{1, 2, \ldots, m\}\)</span> e <span class="process-math">\(l=(m-1)^n\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">As funções que não são sobrejetivas são as que pertencem a</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F_1\cup F_2\cup\cdots\cup F_m\text{.}
-\end{equation*}
-</div>
-<div class="para">Então, o número de funções sobrejetoras é dado por</div>
-<div class="displaymath process-math">
-\begin{equation*}
-m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)\text{.}
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos <span class="process-math">\(F_j\text{,}\)</span> a cardinalidade das interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos, com <span class="process-math">\(2\leq p \leq m\)</span> e a quantidade de interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos:</div>
-<ul class="disc">
-<li><div class="para">Para o caso de apenas um conjunto, já sabemos que <span class="process-math">\(\#F_j=(m-1)^n\)</span> e no total existem <span class="process-math">\(m\)</span> conjuntos;</div></li>
-<li><div class="para">Para o caso das interseções de dois conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\)</span> e no total existem <span class="process-math">\(C_m^2\)</span> dessas interseções;</div></li>
-<li><div class="para">Para o caso das interseções de <span class="process-math">\(p\)</span> conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\)</span> e no total existem <span class="process-math">\(C_m^p\)</span> dessas interseções.</div></li>
-</ul>
-<div class="para">Aplicando o Princípio da Inclusão-Exclusão, a resposta é</div>
+<div class="para logical">
+<div class="para">Sejam <span class="process-math">\(A_k\text{,}\)</span> <span class="process-math">\(k = 8, 12, 18\text{,}\)</span> os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular <span class="process-math">\(\#(A_8\cup A_{12}\cup A_{18})\text{.}\)</span> Pelo Princípio da Inclusão-Exclusão, temos</div>
 <div class="displaymath process-math">
 \begin{align*}
-m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
-=\amp~m^n - C_m^1(m-1)^n+C_m^2(m-2)^n-\cdots+(-1)^mC_m^m(m-m)^n\\
-=\amp~\sum_{k=0}^m (-1)^kC_m^k(m-k)^n.
+\#(A_8\cup A_{12}\cup A_{18}) =\amp~ \#A_8+\#A_{12}+\#A_{18} \\
+~~~~\amp~ - \#(A_8\cap A_{12}) - \#(A_{8}\cap A_{18})
+- \#(A_{12}\cap A_{18})\\
+~~~~\amp~+ \#(A_8\cap A_{12}\cap A_{18}).
 \end{align*}
 </div>
+<div class="para">Como <span class="process-math">\(\#A_k = k\text{,}\)</span> para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.</div>
+</div> <div class="para">Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.</div> <figure class="figure figure-like"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/poligonos_c.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.22<span class="period">.</span></span><span class="space"> </span>Polígonos encolhidos.</figcaption></figure> <div class="para logical">
+<div class="para">Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de <span class="process-math">\(A_k\)</span> e assim sucessivamente, de um vértice de <span class="process-math">\(A_k\)</span> até o seguinte. Desta forma cada conjunto <span class="process-math">\(A_k\)</span> define <span class="process-math">\(k\)</span> semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim,  <span class="process-math">\(\#(A_i\cap A_j) = \text{mdc}(i, j)\text{,}\)</span> para <span class="process-math">\(i, j \in \{8, 12, 18\}\text{,}\)</span> com <span class="process-math">\(i\neq j\)</span> e <span class="process-math">\(\#(A_8\cap A_{12} \cap A_{18}) = \text{mdc}(8, 12, 18)\text{.}\)</span> Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#(A_8\cup A_{12}\cup A_{18}) 
+= 8+12+18 - 4 - 2 - 6 + 2 = 28.
+\end{equation*}
+</div>
+</div> <div class="para">Na figura abaixo, podemos imaginar que os polígonos foram "cortados" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs. <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/mdc.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.23<span class="period">.</span></span><span class="space"> </span>Verificação das interseções.</figcaption></figure>
 </div>
 </div>
 <span class="incontext"><a href="section-inclusao-exclusao.html#solution-122" class="internal">em contexto</a></span>

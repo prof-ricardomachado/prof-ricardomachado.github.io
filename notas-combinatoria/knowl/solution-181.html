@@ -12,42 +12,39 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.5.1</span><span class="period">.</span>
-</h4>
-<div class="displaymath process-math">
-\begin{gather*}
-\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
-\end{gather*}
-</div>
-<div class="para">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
-<div class="displaymath process-math">
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.20.1</span><span class="period">.</span>
+</h3>Note que<div class="displaymath process-math">
 \begin{align*}
-S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
-=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
-=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
-=\amp~n\sum_{k=0}^pC_{n+k}^k\\
-=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
-=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
+S = \amp \sum_{k=1}^{n} k^2\cdot (k+1)  \\
+= \amp \sum_{k=1}^{n} k^3+k^2  
 \end{align*}
-</div>
-<div class="para logical">
-<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
-</div>
-<div class="displaymath process-math">
+</div> Vamos reescrever o polinômio <span class="process-math">\(k^3+k^2\)</span> como um polinômio de grau <span class="process-math">\(3\)</span> que envolve o produto de termos consecutivos, pois assim poderemos trocar o produto de termos consecutivos por alguma combinação da seguinte maneira:<div class="displaymath process-math">
+\begin{equation*}
+k\cdot(k+1)\cdot(k+2) = 3!\frac{(k+2)!}{3!(k-1)!} = 3!\cdot C_{k+2}^{3}.
+\end{equation*}
+</div>Então, vamos procurar valores para <span class="process-math">\(A, B, C\)</span> e <span class="process-math">\(D\text{,}\)</span> para os quais, vale a igualdade<div class="displaymath process-math">
 \begin{align*}
-S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
-=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
-=\amp~ C_{n+p+1}^{p+1}-1.
+k^3+k^2 = \amp ~ Ak(k+1)(k+2) + Bk(k+1) + Ck +D  \\
+= \amp ~ k^3(A) + k^2(3A+B) + k(2A+B+C) +D,  
 \end{align*}
-</div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
+</div>igualando os coeficientes, obtemos<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} 
+A = ~ 1 \\
+3A+B  = ~ 1 \\
+2A+B+C  = ~ 0 \\
+D = ~ 0 \\
+\end{cases}
+\end{equation*}
+</div>Portanto,  <span class="process-math">\(A= 1, B = -2, C=0\)</span> e <span class="process-math">\(D=0\text{.}\)</span> Agora, podemos terminar o cálculo da soma<div class="displaymath process-math">
 \begin{align*}
-\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
-=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
+S = \amp ~ \sum_{k=1}^{n} k^3+k^2  \\
+= \amp ~ \sum_{k=1}^{n} k(k+1)(k+2) - 2 \sum_{k=1}^{n} k(k+1)  \\
+= \amp ~ 3!\sum_{k=1}^{n} C_{k+2}^3 - 2\cdot 2! \sum_{k=1}^{n} C_{k+1}^2  \\
+= \amp ~ 6C_{n+3}^4 - 4C_{n+2}^3  \\
+= \amp ~ \frac{3n^4+10n^3+9n^2+2n}{12}.  
 \end{align*}
-</div>
 </div>
 </div>
 <span class="incontext"><a href="section-triangulo-pascal.html#solution-181" class="internal">em contexto</a></span>
