@@ -9,24 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">
-<dfn class="terminology">item a.</dfn> O total de anagramas da palavra OPERADOR é <span class="process-math">\(PR_8^{2,2}\text{,}\)</span> pois a palavra possui duas letras O, duas letras R, as outras são distintas. Para contar apenas os anagramas que têm as vogais em ordem alfabética, mesmo não estando juntas, precisamos dividir pelo número de maneiras de ordenar as vogais. Portanto a resposta é</div>
+<div class="para">Se o anagrama começa por vogal, temos as possibilidades, A ou E ou I.</div> <div class="para logical">
+<div class="para">Começando com A, temos um total de <span class="process-math">\(PR_9^{2, 2, 2}\)</span> anagramas, começando com E, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas e começando com I, temos um total de <span class="process-math">\(PR_9^{3, 2, 2}\)</span> anagramas. Portanto a resposta é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{PR_8^{2,2}}{PR_4^2} = 840.
+PR_9^{2, 2, 2} + 2\times PR_9^{3, 2, 2} = 75600. 
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b.</dfn> Note que são 4 vogais e 4 consoantes, portanto os anagramas podem começar por vogal ou consoante. Fixando as vogais e deixando um espaço após cada vogal (para colocar as consoantes depois), a partir a primeira vogal temos <span class="process-math">\(PR_4^2\)</span> maneiras de ordenar as 4 vogais e <span class="process-math">\(PR_4^2\)</span> maneiras de ordenar as 4 consoantes nos espaços deixados. Como também podemos começar por consoantes, a resposta é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-PR_4^2\cdot PR_4^2 \cdot 2 = 288.
-\end{equation*}
-</div>
-</div>
+<div class="para">Este cálculo pode ser efetuado no Sage da seguinte maneira:</div>
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-13"><script type="text/x-sage">def PR(*lista):
+    p = factorial(lista[0])
+    for i in lista[1:]:
+        p = p/factorial(i)
+    return p
+PR(9, 2, 2, 2) + 2*PR(9, 3, 2, 2)
+</script></pre>
 </div></body>
 </html>

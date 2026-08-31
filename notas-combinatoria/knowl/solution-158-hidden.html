@@ -9,7 +9,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para">Dividindo o quadrado de lado 2 em 4 quadrados de lado 1 ficamos com quatro regiões, nas quais, a maior distância possível entre dois pontos é determinado pelas diagonais, cujo comprimento mede <span class="process-math">\(\sqrt{2}\text{.}\)</span> Se os segmentos determinados pelos quatro primeiros pontos ainda não satisfazem a condição do enunciado, necessariamente, ao escolher o quinto ponto, ele ficará em um dos quatro quadrados que já possuem um ponto cada um. Portando dentre todos os segmentos determinados pelos cinco pontos, a menor distância será menor ou igual a <span class="process-math">\(\sqrt{2}\text{.}\)</span>
-</div></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">O atleta pode escolher treinar <span class="process-math">\(5, 6\)</span> ou <span class="process-math">\(7\)</span> vezes, pois <span class="process-math">\(gK(28, 8, 3)=0\text{.}\)</span> Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é</div>
+<div class="displaymath process-math">
+\begin{align*}
+{\small\sum_{k=5}^7 3^k\times gK(28, k, 3)=}\amp~{\small  3^5\times gK(28, 5, 3)+3^6\times gK(28, 6, 3)+3^7\times gK(28, 7, 3)}\\
+=\amp~ 3^5\times 4368+3^6\times 1716 + 3^7 \times 120\\
+=\amp~2574828.
+\end{align*}
+</div>
+</div> <div class="para">No Sage o cálculo pode ser feito da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-39"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+(3^5)*gK(28, 5, 3)+(3^6)*gK(28, 6, 3)+(3^7)*gK(28, 7, 3)
+</script></pre>
+</div></body>
 </html>

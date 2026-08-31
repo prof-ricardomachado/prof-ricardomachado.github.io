@@ -10,43 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="para">Vamos começar determinando o número total de disposições circulares possíveis dos representantes dos reinos.</div> <div class="para logical">
-<div class="para">Temos os seguintes elementos:</div>
-<ul class="disc">
-<li><div class="para">3 representantes do Reino da Chama (C);</div></li>
-<li><div class="para">3 representantes do Reino das Marés (M);</div></li>
-<li><div class="para">2 representantes do Reino das Rochas (R);</div></li>
-<li><div class="para">1 Rainha do Reino dos Ventos (Q).</div></li>
-</ul>
-</div> <div class="para logical">
-<div class="para">Como estamos lidando com uma disposição circular de 9 elementos, com repetições, utilizamos a fórmula de permutação circular com repetição:</div>
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">Temos um total de <span class="process-math">\(PCR_{6}^{2,2} = 30\)</span> maneiras de colocar as 6 cadeiras na mesa. Uma vez feito isto, temos 4 opções de cadeiras para a criança que não quer uma cadeira vermelha. Depois disto, temos <span class="process-math">\(5!\)</span> maneiras de ordenas as outras 5 crianças. No total são</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PCR_{9}^{3,3,2} = \frac{(9 - 1)!}{3! \cdot 3! \cdot 2!} = \frac{8!}{3! \cdot 3! \cdot 2!} = \frac{40320}{6 \cdot 6 \cdot 2} = \frac{40320}{72} = 560 
+PCR_6^{2,2}\times 4 \times 5! = 30\times 4\times 120 = 14400.
 \end{equation*}
 </div>
-</div> <div class="para">Agora, vamos contar as disposições em que a Rainha dos Ventos <dfn class="terminology">não</dfn> está sentada ao lado de algum representante do Reino da Chama ou do Reino das Rochas. Isso significa que ela deve estar entre dois representantes do Reino das Marés — ou seja, formando o bloco MQM.</div> <div class="para logical">
-<div class="para">Consideramos então o bloco MQM como uma única entidade. Com isso, temos 7 elementos restantes a organizar ao redor da mesa circular:</div>
-<ul class="disc">
-<li><div class="para">MQM (bloco fixo que inclui a Rainha);</div></li>
-<li><div class="para">3 representantes do Reino da Chama (C);</div></li>
-<li><div class="para">2 representantes do Reino das Rochas (R);</div></li>
-<li><div class="para">1 representante restante do Reino das Marés (M).</div></li>
-</ul>
-<div class="para">O total de maneiras de dispor esses 7 elementos em círculo, levando em conta as repetições, é dado por:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-PCR_{7}^{3,2} = \frac{(7 - 1)!}{3! \cdot 2!} = \frac{6!}{6 \cdot 2} = \frac{720}{12} = 60. 
-\end{equation*}
-</div>
-<div class="para">Finalmente, para obter o número de disposições em que a Rainha do Reino dos Ventos está ao lado de pelo menos um representante do Reino da Chama ou das Rochas, subtraímos da quantidade total o número de arranjos em que ela está isolada entre dois representantes das Marés:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-{PCR}_{9}^{3,3,2} - \text{PCR}_{7}^{3,2} = 560 - 60 = 500. 
-\end{equation*}
-</div>
-<div class="para">Portanto, existem 500 disposições distintas nas quais a Rainha do Reino dos Ventos está sentada ao lado de pelo menos um representante do Reino da Chama ou do Reino das Rochas.</div>
-</div>
-</div></body>
+</div></div></body>
 </html>

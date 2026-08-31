@@ -13,25 +13,25 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.6.9.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.6.5.1</span><span class="period">.</span>
 </h4>
-<div class="para">Podemos resolver este problema dividindo-o em duas etapas: primeiro posicionamos as taças vermelhas e azuis, e em seguida usamos os espaços gerados por elas para inserir as verdes separadas.</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Etapa 1:</dfn> Organizar as 4 taças vermelhas e 3 azuis em círculo. O multiconjunto é <span class="process-math">\(S = \{\{V,V,V,V,A,A,A\}\}\text{,}\)</span> com <span class="process-math">\(n = 7\text{.}\)</span> Como <span class="process-math">\(\text{mdc}(4, 3) = 1\text{,}\)</span> não há configurações com simetria de rotação. O número de maneiras de dispô-las é:</div>
+<div class="para">Observe que precisamos separar em dois casos.</div> <div class="para">
+<dfn class="terminology">1º Caso:</dfn> José, Cléber, Márcia e Luíza não participam do debate. Neste caso temos <span class="process-math">\(C_8^6\)</span> maneiras de escolher as pessoas que vão participar do debate e <span class="process-math">\(PC_6\)</span> maneiras de organizar as pessoas na mesa circular. No total não <span class="process-math">\(C_8^6\times PC_6 = 28\times 120=3360\)</span> maneiras.</div> <div class="para">
+<dfn class="terminology">2º Caso:</dfn> José, Cléber, Márcia e Luíza participam do debate. Neste caso, vamos contar sem a restrição de José e Cléber não sentarem juntos e subtrair dos casos em que eles sentam juntos. Em ambos os casos precisamos escolher 2 pessoas de 8 disponíveis para completar a mesa.</div> <div class="para">Sem a restrição de José e Cléber não sentarem juntos temos duas maneiras de colocar Márcia e Luíza juntas na mesa e temos mais 4 pessoas para colocar na mesa. Então, são <span class="process-math">\(2\times PC_5\)</span> maneiras de organizar essas 6 pessoas.</div> <div class="para logical">
+<div class="para">Contando os casos em que José e Cléber sentam juntos, temos duas maneiras de colocar Márcia e Luíza e duas maneiras de colocar José e Cléber juntos na mesa. Uma vez feita esssa escolhas, ficamos com o equivalente a 4 pessoas para serem organizadas numa mesa circular, ou seja, são <span class="process-math">\(2\times 2\times PC_4\)</span> maneiras. Assim, a quantidade de maneiras do 2º caso é dada por:</div>
+<div class="displaymath process-math">
+\begin{align*}
+C_8^2\times(2\times PC_5-2\times 2\times PC_4)=\amp~ 2\times C_8^2(P_4-2\times P_3)\\
+=\amp~2\times 28(24-2\times 6)\\
+=\amp~672.
+\end{align*}
+</div>
+<div class="para">Portanto, juntando os dois casos, o número total de maneiras é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PCR_7^{4,3} = \frac{1}{7} \cdot \frac{7!}{4! \, 3!} = \frac{35}{7} = 5.
+3360+672=4032.
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Etapa 2:</dfn> Inserir as taças verdes. Como o arranjo base das 7 taças não possui simetria, os 7 "espaços" (lacunas) entre elas são posições geometricamente distinguíveis. Para que as 2 taças verdes não fiquem juntas, basta escolhermos 2 dessas 7 lacunas para inseri-las. O número de maneiras de fazer essa escolha é:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-C_7^2 = \frac{7!}{2! \, 5!} = 21.
-\end{equation*}
-</div>
-</div> <div class="para">Pelo Princípio Multiplicativo, o total de disposições é <span class="process-math">\(5 \times 21 = 105\text{.}\)</span>
 </div>
 </div>
 <span class="incontext"><a href="section-permutacoes-circulares.html#solution-96" class="internal">em contexto</a></span>

@@ -10,20 +10,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">O termo geral é dado por</div>
+<body class="ignore-math"><div class="solution solution-like">
 <div class="displaymath process-math">
 \begin{align*}
-T(p,q)=\amp~C_{10}^p\cdot(x^2)^{10-p}\cdot3^p\cdot C_{11}^q\cdot(x^3)^{11-q}\cdot(-3)^q\\
-=\amp~C_{10}^p\cdot C_{11}^q\cdot x^{53-2p-3q}\cdot 3^p\cdot (-3)^q.
+S = \amp \sum_{k=10}^{98} k(k+1)  \\
+= \amp \sum_{k=1}^{98} k(k+1) - \sum_{k=1}^9 k(k+1). \quad \quad\quad \quad\quad 
 \end{align*}
 </div>
-<div class="para">Portanto, queremos encontrar valores de <span class="process-math">\(p\)</span> e <span class="process-math">\(q\text{,}\)</span> tais que <span class="process-math">\(53-2p-3q = 50\text{,}\)</span> ou seja, <span class="process-math">\(2p+3q=3\text{,}\)</span> logo <span class="process-math">\(p=0\)</span> e <span class="process-math">\(q=1\text{.}\)</span> Então, precisamos obter o coeficiente de <span class="process-math">\(x^{50}\)</span> de <span class="process-math">\(T(0,1)\text{:}\)</span>
-</div>
+<div class="para">Observe que <span class="process-math">\(C_{k+1}^2=\displaystyle\frac{(k+1)k(k-1)!}{2!(k-1)!}=\frac{(k+1)k}{2!}\text{,}\)</span> assim <span class="process-math">\(k(k+1)=2!C_{k+1}^2\text{.}\)</span> Portanto,</div>
 <div class="displaymath process-math">
-\begin{equation*}
-T(0,1)=C_{10}^0\cdot C_{11}^1\cdot x^{50}\cdot (3)^0\cdot(-3)^1 = -33\cdot x^{50}.
-\end{equation*}
+\begin{align*}
+S  = \amp \sum_{k=1}^{98} 2!C_{k+1}^2 - \sum_{k=1}^9 2!C_{k+1}^2  \\
+= \amp 2(C_2^2 + \cdots + C_{99}^2) - 2(C_2^2 + \cdots + C_{10}^2)  \\
+= \amp 2C_{100}^3 - 2C_{11}^3  \\
+= \amp  323400 - 330\\
+= \amp 323070  
+\end{align*}
 </div>
-</div></div></body>
+</div></body>
 </html>

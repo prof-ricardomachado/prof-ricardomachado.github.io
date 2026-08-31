@@ -11,49 +11,38 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-(x^3-x+5)^8   = \sum_{\alpha_1 + \alpha_2 + \alpha_3 = 8} \frac{8!}{\alpha_1!\alpha_2!\alpha_3!}(x^3)^{\alpha_1}(-x)^{\alpha_2}5^{\alpha_3}\\
-\end{equation*}
-</div></div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item a)</dfn> Para que o expoente de <span class="process-math">\(x\)</span> seja 2, devemos ter <span class="process-math">\(x^{3\alpha_1}x^{\alpha_2} = x^2\text{,}\)</span> juntando com a condição <span class="process-math">\(\alpha_1+\alpha_2+\alpha_3 = 8\text{,}\)</span> temos</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\begin{cases} 
-\alpha_1 + \alpha_2 +\alpha_3    =  8 \\
-~~~~ ~~~~ 3\alpha_1 + \alpha_2  =  2 \end{cases}
-\end{equation*}
+\begin{gather*}
+\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
+\end{gather*}
 </div>
-<div class="para">Assim, <span class="process-math">\(\alpha_1 = 0, \alpha_2 = 2\)</span> e <span class="process-math">\(\alpha_3 = 6.\)</span> E a soma dos termos que possuem <span class="process-math">\(x^2\)</span> é:</div>
+<div class="para">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\frac{8!}{0!\times 2! \times 6!} 5^6x^2 = 437500x^2.
-\end{equation*}
+\begin{align*}
+S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
+=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
+=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
+=\amp~n\sum_{k=0}^pC_{n+k}^k\\
+=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
+=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
+\end{align*}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn> Para que o expoente de <span class="process-math">\(x\)</span> seja 4, devemos ter <span class="process-math">\(x^{3\alpha_1}x^{\alpha_2} = x^4\text{,}\)</span> juntando com a condição <span class="process-math">\(\alpha_1+\alpha_2+\alpha_3 = 8\text{,}\)</span> temos</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{cases} 
-\alpha_1 + \alpha_2 +\alpha_3    =  8 \\
-~~~~ ~~~~ 3\alpha_1 + \alpha_2  =  4 \end{cases}
-\end{equation*}
+<div class="para logical">
+<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
 </div>
-<div class="para">Temos duas soluções:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\begin{cases} 
-\alpha_1 = 0, \alpha_2 = 4 \text{ e }\alpha_3 = 4 \\
-\alpha_1 = 1, \alpha_2 = 1 \text{ e } \alpha_3 = 6 \end{cases}
-\end{equation*}
+\begin{align*}
+S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
+=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
+=\amp~ C_{n+p+1}^{p+1}-1.
+\end{align*}
 </div>
-<div class="para">E a soma dos termos que possuem <span class="process-math">\(x^4\)</span> é:</div>
+<div class="para">Portanto,</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\frac{8!}{0!\times 4! \times 4!} 5^4x^4 - \frac{8!}{1!\times 1! \times 6!} 5^6x^4 = -831250x^4.
-\end{equation*}
+\begin{align*}
+\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
+=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
+\end{align*}
 </div>
 </div>
 </div></body>

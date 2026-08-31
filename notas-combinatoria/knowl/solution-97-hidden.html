@@ -12,24 +12,46 @@
 </head>
 <body class="ignore-math"><div class="solution solution-like">
 <div class="para logical">
-<div class="para">
-<dfn class="terminology">Etapa 1:</dfn> Contar os padrões de pintura da roleta. As cores formam o multiconjunto <span class="process-math">\(\{V^3, P^3, G^2\}\text{,}\)</span> com <span class="process-math">\(n=8\text{.}\)</span> Como <span class="process-math">\(\text{mdc}(3, 3, 2) = 1\text{,}\)</span> usamos a fórmula direta:</div>
+<div class="para">Vamos separar a contagem em três casos:</div>
+<ol class="decimal">
+<li><div class="para">Um dos quadrados pintados de amarelo é o quadrado central;</div></li>
+<li><div class="para">Os dois quadrados pintados de amarelo são simetricos;</div></li>
+<li><div class="para">Os dois quadrados pintados de amarelo não são semétricos (sem o central pintado de amarelo).</div></li>
+</ol>
+</div> <div class="para">Agora, vamos calcuar o total de maneiras de pintar os dois quadrados de amarelo em cada caso.</div> <div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">No primeiro caso, como o central é amarelo, o outro quadrado amarelo pode ocupar qualquer um dos 48 quadrados do tabuleiro. Como são quatro posições equivalentes por rotação, precisamos dividir por 4. Assim, o total de maneiras de pintar duas casas de amarelo é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PCR_8^{3,3,2} = \frac{1}{8} \cdot \frac{8!}{3! \, 3! \, 2!} = \frac{560}{8} = 70.
+\frac{48}{4} = 12.
 \end{equation*}
 </div>
-<div class="para">Existem 70 padrões distintos de roleta.</div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Etapa 2:</dfn> Distribuir as fichas. Ao fixar qualquer uma das 70 pinturas, a roleta deixa de ter simetria rotacional. Isso transforma cada um dos 8 setores em posições únicas no espaço relativo da roleta. Sabemos que há exatamente 2 setores verdes e 6 setores não-verdes (vermelhos e pretos). As 4 fichas "A" devem ser obrigatoriamente alocadas nos 6 setores não-verdes. O número de maneiras de escolher essas posições é:</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">No segundo caso, como os dois quadrados amarelos precisam ser simétricos, o quadrado central não pode ser pintado. O primeiro quadrado pode ser escolhido de 48 maneiras, uma vez feita essa escolha, o segundo já está determinado. Agora, precisamos "descontar" a ordem dos quadrados amarelos e a simetria do tabuleiro. São dois quadrados e neste caso as posições equivalentes por rotação são duas. Portanto, precisamos dividir por <span class="process-math">\(2!\cdot 2\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-C_6^4 = \frac{6!}{4! \, 2!} = 15.
+\frac{48}{2!\cdot 2} = 12
 \end{equation*}
 </div>
-<div class="para">Uma vez posicionadas as fichas "A", as 4 fichas "B" ocupam as 4 posições restantes de maneira única (pois são idênticas).</div>
-</div> <div class="para">Portanto, para cada uma das 70 roletas, há 15 formas de distribuir as fichas. O total de configurações é <span class="process-math">\(70 \times 15 = 1050\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">No terceiro caso, o primeiro quadrado amarelo pode ser escolhido de 48 maneiras e o segundo de 46 maneiras (nem pode ser o central, nem o simétrico ao primeiro). Como são dois quadrados e as posições equivalentes por rotação são 4, precisamos dividir por <span class="process-math">\(2!\cdot 4\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{48\cdot 46}{8} = 276
+\end{equation*}
+</div>
+</div></li>
+</ol></div> <div class="para logical">
+<div class="para">Como os três casos são excludentes e cobrem todas as posibilidades, a resposta é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+12+12+276 = 300.
+\end{equation*}
+</div>
 </div>
 </div></body>
 </html>

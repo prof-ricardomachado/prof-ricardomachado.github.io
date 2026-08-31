@@ -11,36 +11,11 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Note que, no total, exitem <span class="process-math">\(m^n\)</span> funções <span class="process-math">\(f:A\rightarrow B\text{,}\)</span> pois existem <span class="process-math">\(m\)</span> maneiras de escolher a imagem de cada um dos <span class="process-math">\(n\)</span> elementos de <span class="process-math">\(A\text{.}\)</span>
-</div> <div class="para">Sejam <span class="process-math">\(y_1, y_2, \ldots, y_m\)</span> os elementos do conjunto <span class="process-math">\(B\text{.}\)</span> Defina <span class="process-math">\(F_j\)</span> o conjunto das funções <span class="process-math">\(f_{j,l}:A\rightarrow B\text{,}\)</span> tais que <span class="process-math">\(y_j\)</span> não pertence a imagem de <span class="process-math">\(f_{j,l}\text{.}\)</span> Logo, <span class="process-math">\(j\in \{1, 2, \ldots, m\}\)</span> e <span class="process-math">\(l=(m-1)^n\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">As funções que não são sobrejetivas são as que pertencem a</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F_1\cup F_2\cup\cdots\cup F_m\text{.}
-\end{equation*}
-</div>
-<div class="para">Então, o número de funções sobrejetoras é dado por</div>
-<div class="displaymath process-math">
-\begin{equation*}
-m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)\text{.}
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos <span class="process-math">\(F_j\text{,}\)</span> a cardinalidade das interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos, com <span class="process-math">\(2\leq p \leq m\)</span> e a quantidade de interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos:</div>
-<ul class="disc">
-<li><div class="para">Para o caso de apenas um conjunto, já sabemos que <span class="process-math">\(\#F_j=(m-1)^n\)</span> e no total existem <span class="process-math">\(m\)</span> conjuntos;</div></li>
-<li><div class="para">Para o caso das interseções de dois conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\)</span> e no total existem <span class="process-math">\(C_m^2\)</span> dessas interseções;</div></li>
-<li><div class="para">Para o caso das interseções de <span class="process-math">\(p\)</span> conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\)</span> e no total existem <span class="process-math">\(C_m^p\)</span> dessas interseções.</div></li>
-</ul>
-<div class="para">Aplicando o Princípio da Inclusão-Exclusão, a resposta é</div>
-<div class="displaymath process-math">
-\begin{align*}
-m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
-=\amp~m^n - C_m^1(m-1)^n+C_m^2(m-2)^n-\cdots+(-1)^mC_m^m(m-m)^n\\
-=\amp~\sum_{k=0}^m (-1)^kC_m^k(m-k)^n.
-\end{align*}
-</div>
-</div>
+<div class="para">A diagonal corta cada um dos <span class="process-math">\(20+32\)</span> quadrados? A resposta é não. De fato, pode ocorrer de haver repetições na "mudança". Veja o seguinte exemplo bidimensional, num retângulo <span class="process-math">\(6 \times 9\text{.}\)</span> </div> <div class="para">Note que há três repetições. Opa! <span class="process-math">\(mdc(6, 9) = 3\)</span> e <span class="process-math">\((6, 9) = 3 \cdot (2, 3)\text{.}\)</span> O que acontece é que se <span class="process-math">\(mdc(a, b) = d\text{,}\)</span> ocorrem <span class="process-math">\(d\)</span> blocos de repetições. Logo, devemos subtrair <span class="process-math">\(mdc(a, b)\text{.}\)</span> A resposta é <span class="process-math">\(a + b - mdc(a, b)\text{.}\)</span>
+</div> <div class="para">No nosso caso, a resposta é <span class="process-math">\(20+32-mdc(20,32)=20+32-4 = 48.\)</span>
+</div> <article class="technology computation-like"><h5 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.1.23</span><span class="period">.</span>
+</h5>
+<div class="para">Escolha os valores dos campos, m (número de linhas) e n (número de colunas) para determinar quantos quadrados unitários a diagonal do retângulo passa.</div> <figure class="figure figure-like"><iframe id="interactive-inclusao-exclusao-001" width="600" height="480" src="interactive-inclusao-exclusao-001-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.1.24<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article>
 </div></body>
 </html>

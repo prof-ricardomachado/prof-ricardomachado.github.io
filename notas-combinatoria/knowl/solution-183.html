@@ -13,43 +13,51 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.6.4.3.2</span><span class="period">.</span>
 </h4>
-<div class="displaymath process-math">
-\begin{gather*}
-\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
-\end{gather*}
-</div>
-<div class="para">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
-<div class="displaymath process-math">
-\begin{align*}
-S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
-=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
-=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
-=\amp~n\sum_{k=0}^pC_{n+k}^k\\
-=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
-=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
-\end{align*}
-</div>
 <div class="para logical">
-<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
-</div>
+<div class="para">
+<dfn class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
 <div class="displaymath process-math">
-\begin{align*}
-S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
-=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
-=\amp~ C_{n+p+1}^{p+1}-1.
-\end{align*}
+\begin{equation*}
+PR_{n+k}^{n, k}=C_{n+k}^{n}.
+\end{equation*}
 </div>
-<div class="para">Portanto,</div>
+</div> <div class="para">
+<dfn class="terminology">Quantidade de caminhos bons:</dfn> Observe que a reflexão será em relação a reta <span class="process-math">\(y=x\text{,}\)</span> portanto a reflexão será <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{.}\)</span> Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao02.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.26<span class="period">.</span></span><span class="space"> </span>Um caminho bom, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao0.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.27<span class="period">.</span></span><span class="space"> </span>Um caminho ruim, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+</div></div> <div class="para logical">
+<div class="para">Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e chegam no ponto <span class="process-math">\(A(n,k)\text{,}\)</span> depois vamos contar todos os caminhos ruins que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e também chegam no ponto <span class="process-math">\(A(n,k)\text{.}\)</span> A diferença entre essas quantidades será o número de caminhos bons.</div>
+<ul class="disc">
+<li><div class="para">O número de caminhos de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{n-1, k} = C_{n+k-1}^{n-1}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">O número de caminhos ruins de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual ao número de caminhos de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{,}\)</span> ou seja,<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{k-1, n} = C_{n+k-1}^n.
+\end{equation*}
+</div>
+</div></li>
+</ul>
+<div class="para">Finalmente, o número de caminhos bons de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual a</div>
 <div class="displaymath process-math">
-\begin{align*}
-\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
-=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
-\end{align*}
+\begin{equation*}
+C_{n+k-1}^{n-1} - C_{n+k-1}^n = \frac{n-k}{k}\cdot C_{n+k-1}^n.
+\end{equation*}
 </div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Quantidade de caminhos ruins:</dfn> A quantidade de caminhos ruins de <span class="process-math">\(P(0,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual a quantidade total de caminhos, menos a quantidade de caminhos bons:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_{n+k}^n - \frac{n-k}{k}\cdot C_{n+k-1}^n = 2C_{n+k-1}^n.
+\end{equation*}
 </div>
-</div>
-<span class="incontext"><a href="section-triangulo-pascal.html#solution-183" class="internal">em contexto</a></span>
+</div> </div>
+<span class="incontext"><a href="section-13.html#solution-183" class="internal">em contexto</a></span>
 </body>
 </html>

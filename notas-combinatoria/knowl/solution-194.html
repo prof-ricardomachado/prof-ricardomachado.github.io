@@ -13,29 +13,51 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.8.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.2.6.1</span><span class="period">.</span>
 </h3>
-<div class="para">Primeiro, vamos calcular a probabilidade de que todos os chocolates sejam do tipo <em class="emphasis">ao leite</em>. Em seguida, vamos usar o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>) para chegar na resposta deste problema.</div> <div class="para logical">
-<div class="para">cardinalidade do espaço amostral é dada pelo número de maneiras de pegar 8 chocolates dentre 40 disponívies, portanto</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para logical">
+<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo é</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\#\Omega = C_{40}^{8}.
+T_{k} = C_{70}^{k-1}1^{k-1}\left(\frac{1}{4}\right)^{71-k} = C_{70}^{k-1}\cdot\frac{1}{4^{71-k}}\text{.}
 \end{equation*}
 </div>
-<div class="para">Agora queremos contar quantas são as formas de pegar 8 chocolates do tipo <em class="emphasis">ao leite</em>. Como existem 30 disponíveis a resposta é:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para">
+<span class="process-math">\(T_{k+1}&gt; T_{k}\)</span> se</div>
+<div class="displaymath process-math">
 \begin{equation*}
-C_{30}^{8}. 
+C_{70}^{k}\cdot\frac{1}{4^{70-k}} &gt; C_{70}^{k-1}\cdot\frac{1}{4^{71-k}} 
 \end{equation*}
 </div>
-<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que ao menos um seja do tipo <em class="emphasis">amargo</em> é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
+<div class="para">Isto é</div>
+<div class="displaymath process-math">
 \begin{equation*}
-1 - \frac{C_{30}^{8}}{C_{40}^{8}} \approx 0.923893778382943 \approx 92,4\% 
+\frac{70!}{k!(70-k)!}\cdot\frac{1}{4^{70-k}} &gt; \frac{70!}{(k-1)!(71-k)!}\cdot\frac{1}{4^{71-k}}, 
+\end{equation*}
+</div>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(71-k)!}{(70-k)!} &gt; \frac{k!}{(k-1)!}\cdot\frac{4^{70-k}}{4^{71-k}}, 
+\end{equation*}
+</div>
+<div class="para">e simplificando temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(71-k)}{1} &gt; \frac{k}{1}\cdot\frac{1}{4}. 
+\end{equation*}
+</div>
+<div class="para">Portanto, <span class="process-math">\(71-k &gt; k/4 \text{,}\)</span> logo <span class="process-math">\(k\lt 56, 8\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Assim, temos  <span class="process-math">\(T_{k} \lt  T_{k+1}\)</span> para <span class="process-math">\(k = 1, 2, \ldots, 56\)</span> e portanto o maior termo é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T_{57} = C_{70}^{56}\cdot\frac{1}{4^{14}} = \frac{24156719613645}{33554432}.
 \end{equation*}
 </div>
 </div>
 </div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-194" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-binomio-newton.html#solution-194" class="internal">em contexto</a></span>
 </body>
 </html>

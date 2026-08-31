@@ -12,49 +12,26 @@
 </head>
 <body class="ignore-math"><div class="solution solution-like">
 <div class="para logical">
-<div class="para">
-<dfn class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
+<div class="para">Existem nove primos menores ou iguais a <span class="process-math">\(23\text{:}\)</span> <span class="process-math">\(2, 3, 5, 7, 11, 13, 17, 19\)</span> e <span class="process-math">\(23\text{.}\)</span>  Considere uma lista, com <span class="process-math">\(9\)</span> entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_{n+k}^{n, k}=C_{n+k}^{n}.
+2128793535 = 2^0\times3^3\times5^1\times7^0\times11^2\times13^0\times 17^0\times19^4\times 23^0
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Quantidade de caminhos ruins:</dfn> Note que o ponto <span class="process-math">\(O(0,0)\)</span> pertence a reta <span class="process-math">\(y=x\text{.}\)</span> Logo, precisamos ajustar nosso conceito de caminho ruim. Vamos considerar que um caminho é ruim se ele toca na reta <span class="process-math">\(y=x\text{,}\)</span> mas o ponto de interseção é diferente do ponto <span class="process-math">\(O(0,0)\text{.}\)</span> Assim, podemos classificar os caminhos ruins em dois tipos.</div>
-<ul class="disc">
-<li><div class="para">1º Tipo: o caminho vai do ponto <span class="process-math">\(O(0,0)\)</span> até o ponto <span class="process-math">\(A(n,k)\)</span> com o primeiro passo para cima. Assim, para contar o número desses caminhos, basta contar o número de caminhos do ponto <span class="process-math">\(Q(0,1)\)</span> até o ponto <span class="process-math">\(A(n,k)\text{:}\)</span><div class="displaymath process-math">
-\begin{equation*}
-PR_{n+k-1}^{n,k-1}.
-\end{equation*}
-</div>
-</div></li>
-<li><div class="para">2º Tipo: o caminho vai do ponto <span class="process-math">\(O(0,0)\)</span> até o ponto <span class="process-math">\(R_0*A(n,k)=B(k,n)\)</span> com o primeiro passo para a direita. Para contar o número desses caminhos, basta contar o número de caminhos do ponto <span class="process-math">\(P(1,0)\)</span> até o ponto <span class="process-math">\(B(k,n)\text{:}\)</span><div class="displaymath process-math">
-\begin{equation*}
-PR_{n+k-1}^{k-1, n}.
-\end{equation*}
-</div>
-</div></li>
-</ul>
-<div class="para"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao_r1.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Um caminho ruim do 1º Tipo.</figcaption></figure></div>
-<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao_r2.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.25<span class="period">.</span></span><span class="space"> </span>Um caminho ruim do 2º Tipo.</figcaption></figure></div>
-</div></div></div>
-</div> <div class="para logical">
-<div class="para">Portanto, pelo Princípio Aditivo, o total de caminhos ruins é dado por</div>
+<div class="para">estiver entre os 1985 números, a lista dele será:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_{n+k-1}^{n,k-1}+PR_{n+k-1}^{k-1, n} = 2\cdot PR_{n+k-1}^{n,k-1}=2\cdot C_{n+k-1}^n.
+L_{2128793535}= 0, 3, 1, 0, 2, 0, 0, 4, 0.
 \end{equation*}
 </div>
+<div class="para">Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.</div>
 </div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Quantidade de caminhos bons:</dfn> Para contar o número de caminhos bons, basta calcular a diferença entre o número total de caminhos e o número total de caminhos ruins:</div>
+<div class="para">Para cada uma das 1985 listas <span class="process-math">\(L_n\text{,}\)</span> considere uma nova lista <span class="process-math">\(L_n^2\text{,}\)</span> na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_{n+k}^{n, k} - 2\cdot PR_{n+k-1}^{n,k-1} = \frac{n-k}{k}\cdot C_{n+k-1}^n.
+L_{2128793535}^2= 0, 1, 1, 0, 0, 0, 0, 0, 0.
 \end{equation*}
 </div>
-</div>
+</div> <div class="para">Assim, cada nova lista <span class="process-math">\(L_n^2\)</span> estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> haverão duas idênticas. Considere quaiquer 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.</div> <div class="para">Para cada um dos 737 pares, considere uma lista <span class="process-math">\(L_{n+m}^2\)</span> formada pela soma <span class="process-math">\(L_n^2+L_m^2\text{.}\)</span> Observe que cada entrada das 737 listas <span class="process-math">\(L_{n+m}^2\)</span> é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas <span class="process-math">\(L_{n+m}^2\)</span> serão idênticas. Digamos que  <span class="process-math">\(L_{n+m}^2\)</span> e <span class="process-math">\(L_{p+q}^2\text{,}\)</span> então o número <span class="process-math">\(n\times m\times p\times q\)</span> é a quarta potência de um inteiro.</div>
 </div></body>
 </html>

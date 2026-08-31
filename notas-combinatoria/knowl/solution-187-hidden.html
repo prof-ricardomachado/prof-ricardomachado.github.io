@@ -10,18 +10,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">Seja <span class="process-math">\(p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n\text{,}\)</span> a soma dos coeficientes de <span class="process-math">\(p(x)\)</span> é igual a</div>
-<div class="displaymath process-math">
-\begin{equation*}
-p(1) = a_0 + a_1(1) + a_2(1)^2 + \cdots + a_n(1)^n.
-\end{equation*}
-</div>
-<div class="para">Portanto, a soma dos coeficientes do desenvolvimento de <span class="process-math">\(q(x) = (5x^{11} - 6x^{4})^{25}\)</span> é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-q(1) = (5 - 6)^{25} = -1.
-\end{equation*}
-</div>
+<body class="ignore-math"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{align*}
+S = \amp \sum_{k=1}^n \frac{1}{k+1}C_n^k  \\
+= \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}  \\
+= \amp \sum_{k=1}^n \frac{1}{k+1}\cdot \frac{n!}{k!(n-k)!}\cdot \frac{n+1}{n+1}  \\
+= \amp \frac{1}{n+1}\sum_{k=1}^n \frac{(n+1)!}{(k+1)!(n-k)!}  \\
+= \amp \frac{1}{n+1}\sum_{k=1}^n C_{n+1}^{k+1}  \\
+= \amp \frac{1}{n+1}\left( -C_{n+1}^0 - C_{n+1}^1 +\underbrace{C_{n+1}^0 + C_{n+1}^1 + \cdots+C_{n+1}^{n+1}}_{=2^{n+1}} \right)  \\
+= \amp \frac{1}{n+1}\left( 2^{n+1} - n -2 \right).  
+\end{align*}
 </div></div></body>
 </html>
