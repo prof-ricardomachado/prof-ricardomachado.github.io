@@ -13,17 +13,55 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.6.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.20.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Temos um total de <span class="process-math">\(PCR_{6}^{2,2} = 30\)</span> maneiras de colocar as 6 cadeiras na mesa. Uma vez feito isto, temos 4 opções de cadeiras para a criança que não quer uma cadeira vermelha. Depois disto, temos <span class="process-math">\(5!\)</span> maneiras de ordenas as outras 5 crianças. No total são</div>
+<div class="para">Para contar o total de caminhos até um ponto <span class="process-math">\(C(m,n)\text{,}\)</span> vamos considerar o <span class="process-math">\(m\lt n\text{.}\)</span> Quando consideramos <span class="process-math">\(m\lt n\)</span> isso fará com que no máximo podemos fazer <span class="process-math">\(m\)</span> movimentos diagonias (para o caso <span class="process-math">\(m&gt;n\)</span> o número máximo de movimentos diagonais é <span class="process-math">\(n\)</span>). Assim, teremos um total de <span class="process-math">\(m+1\)</span> casos para analisarmos:</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Caso 1:</dfn> Contaremos todos os caminhos sem movimentos na direção nordeste, ou seja teremos que contar todas as permutações da palavra <span class="process-math">\(LLLL\ldots LNNNN\ldots N\text{,}\)</span> onde a letra <span class="process-math">\(L\)</span> aparece <span class="process-math">\(m\)</span> vezes e a letra <span class="process-math">\(N\)</span> aparece <span class="process-math">\(n\)</span> vezes, totalizando <span class="process-math">\(m+n\)</span> elementos. Assim obtemos,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PCR_6^{2,2}\times 4 \times 5! = 30\times 4\times 120 = 14400.
+PR^{m,n}_{m+n}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Caso 2:</dfn> Contaremos todos os caminhos onde faremos apenas um movimento na direção nordeste, assim, queremos contar as permutações da palavra <span class="process-math">\(DLL\ldots LNN\ldots N\text{,}\)</span> onde a letra <span class="process-math">\(L\)</span> aparece <span class="process-math">\(m-1\)</span> vezes, a letra <span class="process-math">\(N\)</span> aparece <span class="process-math">\(n-1\)</span> vezes, e a letra <span class="process-math">\(D\)</span> uma vez, totalizando <span class="process-math">\(m+n-1\)</span> elementos. Assim teremos,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m-1,n-1,1}_{m+n-1}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Caso 3:</dfn> Contaremos todos os caminhos onde faremos dois movimentos diagonais (ou na direção nordeste) e <span class="process-math">\(m-2\)</span> movimentos na direção leste e <span class="process-math">\(n-2\)</span> movimentos na direção norte. Assim contaremos o número de permutações da palavra <span class="process-math">\(DDLLL\ldots LNNN\ldots N\text{,}\)</span> onde a letra <span class="process-math">\(L\)</span> aparece <span class="process-math">\(m-2\)</span> vezes e a letra <span class="process-math">\(N\)</span> <span class="process-math">\(n-2\)</span> vezes. Teremos o total de,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m-2,n-2,2}_{m+n-2}.
+\end{equation*}
+</div>
+</div> <div class="para">Os casos seguirão, aumentando o número de movimentos diagonais, e assim chegaremos ao caso <span class="process-math">\(m+1\text{,}\)</span> então:</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Caso <span class="process-math">\(m+1\text{:}\)</span></dfn> Contaremos todos os caminhos onde fazemos <span class="process-math">\(m\)</span> movimentos diagonais. Teremos então que contar todas as permutações da palavra <span class="process-math">\(DDD\ldots DNN\ldots N\text{,}\)</span>  onde a letra <span class="process-math">\(D\)</span> aparece <span class="process-math">\(m\)</span> vezes e a letra <span class="process-math">\(N\)</span> aparece <span class="process-math">\(n-m\)</span> vezes, totalizando <span class="process-math">\(m+(n-m)\)</span> elementos. Obtendo assim,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{0,n-m,m}_{m+(n-m)}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Pelo princípio aditivo, devemos somar todos os casos para que o número total de caminhos possíveis seja encontrado. Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR^{m,n,0}_{m+n}+PR^{m-1,n-1,1}_{m+n-1}+\cdots+PR^{0,n-m,m}_{m+(m-n)}.
+\end{equation*}
+</div>
+<div class="para">Que pode ser reescrito como:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=0}^{m}PR^{m-k,n-k,k}_{m+n-k}.
 \end{equation*}
 </div>
 </div>
 </div>
-<span class="incontext"><a href="section-permutacoes-circulares.html#solution-98" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-permutacoes-com-repeticoes.html#solution-98" class="internal">em contexto</a></span>
 </body>
 </html>

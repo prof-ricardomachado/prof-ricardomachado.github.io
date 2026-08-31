@@ -10,12 +10,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">Basta contar o número de permutações com repetições dos algarismos, começando com 5 ou 7:</div>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Este é um problema clássico de distribuição de objetos idênticos. Para resolvê-lo, vamos aplicar o <em class="emphasis">Princípio da Bijeção</em>, transformando a ação de distribuir bombons em uma ação de formar anagramas.</div> <div class="para">Vamos representar cada bombom por uma bolinha (<span class="process-math">\(\bullet\)</span>) e usar barras verticais (<span class="process-math">\(|\)</span>) para separar a quantidade de bombons que vai para cada sobrinho. Como são 3 sobrinhos, precisamos de apenas 2 barras para dividir as bolinhas em 3 partes (o que fica à esquerda da primeira barra vai para o 1º sobrinho, o que fica entre as barras vai para o 2º, e o que fica à direita da segunda barra vai para o 3º).</div> <div class="para">Veja como essa bijeção funciona na prática. Cada distribuição corresponde a uma única sequência de símbolos e vice-versa:</div> <ul class="disc">
+<li><div class="para">A sequência <span class="process-math">\(\bullet \bullet \bullet ~|~ \bullet ~|~ \bullet \bullet \bullet \bullet\)</span> significa que o primeiro sobrinho recebeu 3 bombons, o segundo recebeu 1 e o terceiro recebeu 4.</div></li>
+<li><div class="para">A sequência <span class="process-math">\(|~ \bullet \bullet \bullet \bullet \bullet \bullet \bullet \bullet ~|\)</span> significa que o primeiro e o terceiro sobrinhos não receberam nada (0 bombons), e o segundo recebeu todos os 8.</div></li>
+</ul> <div class="para">Como estabelecemos uma correspondência um-para-um (bijeção) entre as distribuições possíveis e os anagramas formados por 8 bolinhas e 2 barras, basta contarmos a quantidade de anagramas. No total, são 10 símbolos com repetições. O número de maneiras é dado por:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_7^{3,2} + PR_7^{3,2} = 2\cdot PR_7^{3,2} = 2\cdot 420 = 840.
+PR_{10}^{8, 2} = \frac{10!}{8!2!} = 45.
 \end{equation*}
 </div>
-</div></div></body>
+</div></body>
 </html>

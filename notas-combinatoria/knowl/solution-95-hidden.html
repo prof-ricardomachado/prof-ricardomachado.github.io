@@ -11,20 +11,19 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">
-<dfn class="terminology">item a.</dfn> Cada banco da roda-gigante pode ser dividido em duas partes, totalizando 20 assentos numerados. Uma vez feito isso, para cada permutação possível das 20 pessoas, há apenas uma forma de distribuí-las nesses assentos. No entanto, como a roda-gigante é circular e possui 10 bancos dispostos em círculo, precisamos considerar as simetrias geradas pela rotação da roda. Assim, devemos dividir o total de permutações, dado por <span class="process-math">\(20!\text{,}\)</span> pelo número de posições equivalentes por rotação, que é 10. Portanto, o número de maneiras de colocar as 20 pessoas na roda-gigante é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{20!}{10} = 2\times 19!.
-\end{equation*}
-</div>
+<div class="para">A palavra tem 13 letras no total: A(3), R(2), L(2), O(2), P(1), E(1), G(1), M(1). Para começar e terminar com a mesma letra, essa letra precisa se repetir na palavra original pelo menos duas vezes. As únicas candidatas para as extremidades são A, R, L e O.</div> <div class="para">Calculamos os casos separadamente, isolando a letra escolhida nas pontas e permutando as 11 letras restantes no miolo do anagrama:</div> <div class="para">
+<dfn class="terminology">Começam e terminam com A:</dfn> Retirando dois A's, restam 11 letras com as repetições R(2), L(2), O(2) e A(1). Total: <span class="process-math">\(PR_{11}^{2,2,2} = 4989600\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Começam e terminam com R:</dfn> Retirando dois R's, restam 11 letras com as repetições A(3), L(2), O(2). Total: <span class="process-math">\(PR_{11}^{3,2,2} = 3326400\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Começam e terminam com L:</dfn> Retirando dois L's, restam 11 letras com as repetições A(3), R(2), O(2). Total: <span class="process-math">\(PR_{11}^{3,2,2} = 3326400\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Começam e terminam com O:</dfn> Retirando dois O's, restam 11 letras com as repetições A(3), R(2), L(2). Total: <span class="process-math">\(PR_{11}^{3,2,2} = 3326400\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b.</dfn> Se a ordem não é relevante, basta dividir por <span class="process-math">\(2! = 2\)</span> em cada lugar, obtendo</div>
+<div class="para">Pelo Princípio Aditivo, somamos tudo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{2\times 19!}{2^{10}} = \frac{19!}{2^9}.
+4989600 + 3326400 + 3326400 + 3326400 = 14968800.
 \end{equation*}
 </div>
 </div>

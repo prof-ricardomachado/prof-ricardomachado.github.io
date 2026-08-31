@@ -11,13 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Seja <span class="process-math">\(\mathcal{P}\)</span> o conjunto formado por todos os subconjuntos de <span class="process-math">\(A\)</span> que possuem um número par de elementos, e <span class="process-math">\(\mathcal{I}\)</span> o conjunto dos subconjuntos com um número ímpar de elementos. Queremos mostrar que <span class="process-math">\(\#\mathcal{P} = \#\mathcal{I}\text{.}\)</span>
-</div> <div class="para">Vamos estabelecer uma bijeção <span class="process-math">\(f: \mathcal{P} \to \mathcal{I}\text{.}\)</span> Fixe um elemento qualquer do conjunto base, por exemplo, o número 1. Para cada subconjunto par <span class="process-math">\(S \in \mathcal{P}\text{,}\)</span> aplicamos a seguinte regra:</div> <ul class="disc">
-<li><div class="para">Se <span class="process-math">\(1 \in S\text{,}\)</span> removemos o número 1, ou seja, <span class="process-math">\(f(S) = S \setminus \{1\}\text{.}\)</span>
+<div class="para">Seja <span class="process-math">\(A = \{a_1, a_2, \ldots, a_n\}\text{.}\)</span> Vamos construir uma bijeção entre os subconjuntos de <span class="process-math">\(A\)</span> e as sequências de zeros e uns de comprimento <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para">Dado um subconjunto <span class="process-math">\(S \subseteq A\text{,}\)</span> associamos a ele uma sequência <span class="process-math">\((x_1, x_2, \ldots, x_n)\)</span> usando a seguinte regra:</div> <ul class="disc">
+<li><div class="para">
+<span class="process-math">\(x_i = 1\text{,}\)</span> se o elemento <span class="process-math">\(a_i\)</span> pertence ao subconjunto <span class="process-math">\(S\text{;}\)</span>
 </div></li>
-<li><div class="para">Se <span class="process-math">\(1 \notin S\text{,}\)</span> adicionamos o número 1, ou seja, <span class="process-math">\(f(S) = S \cup \{1\}\text{.}\)</span>
+<li><div class="para">
+<span class="process-math">\(x_i = 0\text{,}\)</span> se o elemento <span class="process-math">\(a_i\)</span> não pertence ao subconjunto <span class="process-math">\(S\text{.}\)</span>
 </div></li>
-</ul> <div class="para">Em ambos os casos, a quantidade de elementos do subconjunto muda em exatamente 1 unidade (aumenta ou diminui). Isso significa que a paridade da cardinalidade do conjunto se altera de forma garantida: se era par, vira ímpar. Logo, a função mapeia elementos de <span class="process-math">\(\mathcal{P}\)</span> exclusivamente em elementos de <span class="process-math">\(\mathcal{I}\text{.}\)</span>
-</div> <div class="para">Como aplicar a mesma regra duas vezes seguidas restaura o subconjunto original (adicionar o 1 e depois removê-lo, ou vice-versa), a função desfaz a si mesma. Portanto, é uma bijeção, garantindo indiretamente que a quantidade de subconjuntos pares é exatamente igual à de subconjuntos ímpares (isto é, <span class="process-math">\(2^{n-1}\)</span> para cada lado).</div>
+</ul> <div class="para">Por exemplo, se <span class="process-math">\(A = \{a_1, a_2, a_3\}\)</span> e <span class="process-math">\(S = \{a_1, a_3\}\text{,}\)</span> a sequência correspondente é <span class="process-math">\((1, 0, 1)\text{.}\)</span> Essa associação é bijetiva, pois cada sequência de zeros e uns "dita" de forma única quais elementos entram e quais ficam de fora do subconjunto.</div> <div class="para logical">
+<div class="para">Como cada posição da sequência possui 2 opções (0 ou 1) e a sequência tem comprimento <span class="process-math">\(n\text{,}\)</span> o Princípio Multiplicativo nos diz que existem</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underbrace{2 \times 2 \times \cdots \times 2}_{n \text{ termos}} = 2^n
+\end{equation*}
+</div>
+<div class="para">sequências possíveis. Pelo Princípio da Bijeção, o conjunto <span class="process-math">\(A\)</span> possui exatamente <span class="process-math">\(2^n\)</span> subconjuntos.</div>
+</div>
 </div></body>
 </html>

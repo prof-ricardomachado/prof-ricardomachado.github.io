@@ -9,13 +9,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">O garçom poderia distribuir os pratos principais de <span class="process-math">\(3!\)</span> maneiras, os acompanhamentos também poderiam ser distribuídos de <span class="process-math">\(3!\text{,}\)</span> assim como as bebidas que também poderiam ser distribuídas de <span class="process-math">\(3!\)</span> maneiras. Portanto a resposta é</div>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Observe que para cada permutação existe exatamente outra que a soma delas é  <span class="process-math">\(111110\text{.}\)</span> Por exemplo:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-(3!)^3.
+1, 3, 5, 7, 9 ~~\text{ e }~~ 9, 7, 5, 3, 1. 
 \end{equation*}
 </div>
-</div></div></body>
+<div class="displaymath process-math">
+\begin{equation*}
+3, 9, 7, 1, 5 ~~\text{ e }~~ 7, 1 ,3, 9, 5. 
+\end{equation*}
+</div>
+<div class="para">Podemos organizar as <span class="process-math">\(5! = 120\)</span> permutações de duas em duas, de modo que a soma de cada par seja <span class="process-math">\(111110\text{.}\)</span> Portanto, o valor da soma de todas as permutações é <span class="process-math">\(60 \times 111110 = 6666600\text{.}\)</span> Somando os dígitos de <span class="process-math">\(S\text{,}\)</span> chegamos na resposta que é <span class="process-math">\(30\text{.}\)</span>
+</div>
+</div> <div class="para">Podemos usar o código abaixo para conferir esta resposta e verificar a resposta de deste mesmo problema, para outros dígitos.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-7"><script type="text/x-sage">def soma(lista):
+    l = lista
+    l2=[]
+    for k in Permutations(l):
+        list(k).reverse()
+        n=0
+        for i in range(len(k)):
+            n = n + k[i]*10^i
+        l2.append(n)
+    return sum(l2)
+soma([1,3,5,7,9])
+</script></pre>
+</div></body>
 </html>

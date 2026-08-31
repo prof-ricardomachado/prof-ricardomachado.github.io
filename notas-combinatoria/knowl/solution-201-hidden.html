@@ -11,42 +11,38 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">Para simplificar a notação, indicaremos 0 para cara e 1 para coroa. O espaço amostral é</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
+\end{gather*}
+</div>
+<div class="para">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
 <div class="displaymath process-math">
 \begin{align*}
-\Omega = \amp ~\{ [0, 0, 0, 0],[0, 0, 0, 1],[0, 0, 1, 0],[0, 0, 1, 1], \\
-\amp ~~~~[0, 1, 0, 0],[0, 1, 0, 1],[0, 1, 1, 0],[0, 1, 1, 1], \\
-\amp ~~~~[1, 0, 0, 0],[1, 0, 0, 1],[1, 0, 1, 0],[1, 0, 1, 1],  \\
-\amp ~~~~[1, 1, 0, 0],[1, 1, 0, 1],[1, 1, 1, 0],[1, 1, 1, 1]\}  
+S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
+=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
+=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
+=\amp~n\sum_{k=0}^pC_{n+k}^k\\
+=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
+=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
 \end{align*}
 </div>
-<div class="para">
-<dfn class="terminology">item a)</dfn> Observe que dentre as 16 possibilidades, o subconjunto abaixo:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\{  [1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1] \} 
-\end{equation*}
+<div class="para logical">
+<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
 </div>
-<div class="para">possui todos os casos favoráveis. Portanto a probabilidade de obter 3 caras é</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\frac{4}{16} = \frac{1}{4}. 
-\end{equation*}
+\begin{align*}
+S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
+=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
+=\amp~ C_{n+p+1}^{p+1}-1.
+\end{align*}
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn> Observe que dentre as 16 possibilidades, o subconjunto abaixo:</div>
+<div class="para">Portanto,</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\{ [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0] \} 
-\end{equation*}
-</div>
-<div class="para">possui todos os casos favoráveis. Portanto a probabilidade de obter pelo menos 3 caras é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{5}{16}. 
-\end{equation*}
+\begin{align*}
+\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
+=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
+\end{align*}
 </div>
 </div>
 </div></body>

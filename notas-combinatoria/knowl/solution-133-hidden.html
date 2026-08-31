@@ -11,8 +11,32 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Considere que as exposições do museu estão numeradas de <span class="process-math">\(1\)</span> até <span class="process-math">\(n\text{.}\)</span> Podemos representar cada maneira de visitar o museu com uma <span class="process-math">\(n\)</span>-úpla. Usando <span class="process-math">\(A, M\)</span> e <span class="process-math">\(N\)</span> como entradas da <span class="process-math">\(n\)</span>-úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a <span class="process-math">\(i\)</span>-ésima exposição.</div> <div class="para">Podemos formar um total de <span class="process-math">\(3^n\)</span> <span class="process-math">\(n\)</span>-úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo <span class="process-math">\(A\)</span> ou que não possuem o símbolo <span class="process-math">\(M\text{.}\)</span> Note que podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(M\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo A) e também podem ser formadas <span class="process-math">\(2^n\)</span> <span class="process-math">\(n\)</span>-úplas com apenas os símbolos <span class="process-math">\(A\)</span> e <span class="process-math">\(N\)</span> (sem o símbolo M). E pode ser formada somente 1 <span class="process-math">\(n\)</span>-úpla com apenas o símbolo <span class="process-math">\(N\text{.}\)</span>
-</div> <div class="para">Portanto, o número de maneiras de visitar o museu é <span class="process-math">\(3^n - 2^{n+1} + 1\text{.}\)</span>
+<div class="para">Vamos calcular o número de permutações de 4 elementos e subtrair o número de permutações em que pelo menos uma das condições acontece.</div> <div class="para logical"><ul class="disc">
+<li><div class="para">1 no 2º lugar: <span class="process-math">\(P_3=6\)</span>
+</div></li>
+<li><div class="para">2 no 4º lugar: <span class="process-math">\(P_3=6\)</span>
+</div></li>
+<li><div class="para">3 no 1º lugar: <span class="process-math">\(P_3=6\)</span>
+</div></li>
+<li><div class="para">3 no 4º lugar: <span class="process-math">\(P_3=6\)</span>
+</div></li>
+</ul></div> <div class="para logical"><ul class="disc">
+<li><div class="para">1 no 2º lugar e 2 no 4º lugar: <span class="process-math">\(P_2=2\)</span>
+</div></li>
+<li><div class="para">1 no 2º lugar e 3 no 1º lugar: <span class="process-math">\(P_2=2\)</span>
+</div></li>
+<li><div class="para">1 no 2º lugar e 3 no 4º lugar: <span class="process-math">\(P_2=2\)</span>
+</div></li>
+<li><div class="para">2 no 4º lugar e 3 no 1º lugar: <span class="process-math">\(P_2=2\)</span>
+</div></li>
+</ul></div> <div class="para logical"><ul class="disc"><li><div class="para">1 no 2º lugar e 2 no 4º lugar e 3 no 1º lugar: <span class="process-math">\(P_1=1\)</span>
+</div></li></ul></div> <div class="para logical">
+<div class="para">Resposta:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4! - 4\cdot 6 + 4\cdot 2 -1 = 24-24+8-1=7.
+\end{equation*}
+</div>
 </div>
 </div></body>
 </html>

@@ -12,23 +12,30 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.3.1</span><span class="period">.</span>
-</h4>
-<div class="para logical">
+<h3 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.10.1</span><span class="period">.</span>
+</h3>
+<div class="para">Para que o número seja ímpar, ele deve terminar obrigatoriamente com um algarismo ímpar. Dentre os algarismos disponíveis, o último dígito pode ser 1 ou 3. Precisamos dividir o problema nestes dois casos:</div> <div class="para logical">
 <div class="para">
-<dfn class="terminology">item a.</dfn> O total de anagramas da palavra OPERADOR é <span class="process-math">\(PR_8^{2,2}\text{,}\)</span> pois a palavra possui duas letras O, duas letras R, as outras são distintas. Para contar apenas os anagramas que têm as vogais em ordem alfabética, mesmo não estando juntas, precisamos dividir pelo número de maneiras de ordenar as vogais. Portanto a resposta é</div>
+<dfn class="terminology">1º Caso (termina em 1):</dfn> Fixando o 1 na última posição, restam os algarismos 2, 2, 3, 3, 3 para preencher as 5 primeiras posições. O número de maneiras de organizá-los é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{PR_8^{2,2}}{PR_4^2} = 840.
+PR_5^{2, 3} = \frac{5!}{2!3!} = 10.
 \end{equation*}
 </div>
 </div> <div class="para logical">
 <div class="para">
-<dfn class="terminology">item b.</dfn> Note que são 4 vogais e 4 consoantes, portanto os anagramas podem começar por vogal ou consoante. Fixando as vogais e deixando um espaço após cada vogal (para colocar as consoantes depois), a partir a primeira vogal temos <span class="process-math">\(PR_4^2\)</span> maneiras de ordenar as 4 vogais e <span class="process-math">\(PR_4^2\)</span> maneiras de ordenar as 4 consoantes nos espaços deixados. Como também podemos começar por consoantes, a resposta é</div>
+<dfn class="terminology">2º Caso (termina em 3):</dfn> Fixando um 3 na última posição, restam os algarismos 1, 2, 2, 3, 3 para as 5 primeiras posições. O número de maneiras de organizá-los é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_4^2\cdot PR_4^2 \cdot 2 = 288.
+PR_5^{2, 2} = \frac{5!}{2!2!1!} = 30.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Pelo Princípio Aditivo, somamos as possibilidades dos dois casos mutuamente exclusivos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+10 + 30 = 40.
 \end{equation*}
 </div>
 </div>

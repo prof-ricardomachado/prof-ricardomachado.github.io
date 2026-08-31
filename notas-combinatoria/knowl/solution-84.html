@@ -13,13 +13,19 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.5.6.1</span><span class="period">.</span>
 </h4>
-<div class="para">Pense em uma lista composta por 13 números 1, 13 números 2, 13 números 3 e 13 números 4. O número de permutações com repetições desta lista é o número de modos de distribuir as 52 duas cartas entre os 4 jogadores, com cada um recebendo 13 cartas.</div> <div class="para logical">
-<div class="para">A justificativa é a seguinte. Para cada elemento da lista permutada, use a posição do elemento para pegar a carta que deve estar em uma pilha ou ordenada, e use o número para indicar a pessoa, sendo o número 1 indicando a primeira pessoa e assim por diante. A resposta é:</div>
+<div class="para logical">
+<div class="para">Inicialmente, podemos calcular o número de maneiras de colocar em fila todas as letras A, B e D: <span class="process-math">\(PR_{16}^{6,6,4}\text{.}\)</span> Depois, podemos deixar essas letras separadas por um espaço, começando por um espaço antes da primeira letra e terminando com um espaço depois da última letra:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-PR_{52}^{13, 13, 13, 13} = 53644737765488792839237440000.
+\_A\_A\_\cdots \_D\_D\_.
+\end{equation*}
+</div>
+<div class="para">Agora, precisamos escolher 5 espaços, dentre os 17 disponíveis, para colocar as letras C. Isto pode ser feito de <span class="process-math">\(C_{17, 5}\)</span> maneiras. Portanto, a resposta é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+PR_{16}^{6,6,4} \cdot C_{17,5} = 10406235840.
 \end{equation*}
 </div>
 </div>
