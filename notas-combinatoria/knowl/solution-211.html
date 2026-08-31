@@ -12,48 +12,52 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.5.1</span><span class="period">.</span>
-</h3>
-<div class="para logical">
-<div class="para">Para simplificar a notação, indicaremos 0 para cara e 1 para coroa. O espaço amostral é</div>
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.2.1</span><span class="period">.</span>
+</h4>
+<ol class="lower-alpha">
+<li><div class="para"><div class="displaymath process-math">
+\begin{align*}
+\sum_{k=1}^nkC_n^k = \amp~\sum_{k=1}^n k\cdot \frac{n!}{k(k-1)!(n-k)!}\\
+=\amp~ \sum_{k=1}^n n\cdot \frac{(n-1)!}{(k-1)!(n-k)!}\\
+=\amp~ n\sum_{k=1}^nC_{n-1}^{k-1}\\
+=\amp~ n2^{n-1}
+\end{align*}
+</div></div></li>
+<li><div class="para">
 <div class="displaymath process-math">
 \begin{align*}
-\Omega = \amp ~\{ [0, 0, 0, 0],[0, 0, 0, 1],[0, 0, 1, 0],[0, 0, 1, 1], \\
-\amp ~~~~[0, 1, 0, 0],[0, 1, 0, 1],[0, 1, 1, 0],[0, 1, 1, 1], \\
-\amp ~~~~[1, 0, 0, 0],[1, 0, 0, 1],[1, 0, 1, 0],[1, 0, 1, 1],  \\
-\amp ~~~~[1, 1, 0, 0],[1, 1, 0, 1],[1, 1, 1, 0],[1, 1, 1, 1]\}  
+\sum_{k=1}^nk^2C_n^k = \amp~ \sum_{k=1}^n k^2\cdot \frac{n!}{k(k-1)!(n-k)!}\\
+=\amp~ n\sum_{k=1}^n kC_{n-1}^{k-1}. \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{align*}
+</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math">
+\begin{align*}
+\sum_{k=1}^nk^2C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)C_{n-1}^p\\
+=\amp~ n \sum_{p=0}^{n-1}pC_{n-1}^p + n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}} \\
+=\amp~ n\sum_{p=1}^{n-1} p\cdot \frac{(n-1)!}{p(p-1)!(n-p-1)!}+n2^{n-1}\\
+=\amp~ n(n-1)\sum_{p=1}^{n-1}C_{n-2}^{p-1}+ n2^{n-1}\\
+=\amp~ n(n-1)2^{n-2}+n2^{n-1}\\
+=\amp~ {\left(n^{2} + n\right)} 2^{n - 2}.
 \end{align*}
 </div>
-<div class="para">
-<dfn class="terminology">item a)</dfn> Observe que dentre as 16 possibilidades, o subconjunto abaixo:</div>
+</div></li>
+<li><div class="para">
 <div class="displaymath process-math">
-\begin{equation*}
-\{  [1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1] \} 
-\end{equation*}
+\begin{align*}
+\sum_{k=1}^n k^3C_n^k =\amp~ \sum_{k=1}^nk^2k\cdot \frac{n!}{k(k-1)!(n-k)!} \\
+=\amp~ n\sum_{k=1}^n k^2C_{n-1}^{k-1}.\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
+\end{align*}
+</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math">
+\begin{align*}
+\sum_{k=1}^nk^3C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)^2C_{n-1}^{k-1}\\
+=\amp~ n\sum_{p=0}^{n-1}(p^2+2p+1)C_{n-1}^p\\
+=\amp~ n\underbrace{\sum_{p=0}^{n-1}p^2C_{n-1}^p}_{=(n-1)n2^{n-3}} +2n\underbrace{\sum_{p=0}^{n-1}pC_{n-1}^p}_{=(n-1)2^{n-2}}+n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}}\\
+=\amp~(n^3+3n^2)2^{n-3}.
+\end{align*}
 </div>
-<div class="para">possui todos os casos favoráveis. Portanto a probabilidade de obter 3 caras é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{4}{16} = \frac{1}{4}. 
-\end{equation*}
+</div></li>
+</ol>
 </div>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">item b)</dfn> Observe que dentre as 16 possibilidades, o subconjunto abaixo:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\{ [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0] \} 
-\end{equation*}
-</div>
-<div class="para">possui todos os casos favoráveis. Portanto a probabilidade de obter pelo menos 3 caras é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{5}{16}. 
-\end{equation*}
-</div>
-</div>
-</div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-211" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-triangulo-pascal.html#solution-211" class="internal">em contexto</a></span>
 </body>
 </html>

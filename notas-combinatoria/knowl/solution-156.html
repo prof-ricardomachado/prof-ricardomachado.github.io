@@ -13,47 +13,63 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.2.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.15.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">Esse problema será resolvido criando uma forma alternativa de representar os subconjuntos onde marcaremos com o sinal <span class="process-math">\((+)\)</span> os elementos pertencente ao subconjunto e com o sinal <span class="process-math">\((-)\)</span> os elementos que não pertencentes ao subconjunto.</div>
+<div class="para">
+<dfn class="terminology">item a)</dfn> Como <span class="process-math">\(C\subset B\text{,}\)</span> temos <span class="process-math">\(B\cap C = C\text{,}\)</span> logo <span class="process-math">\(\#(B\cap C) = \#C\)</span> e <span class="process-math">\(\#(B\setminus C) = \#B - \#C\text{.}\)</span> Logo</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\{a,c,e,h\} \text{ será representado  por } +-+-+--+
+\#B - \#C = \overbrace{\#(B\setminus C) = 3\times \#(B\cap C)}^{\text{por hipótese}} = 3\times\#C. 
 \end{equation*}
 </div>
+<div class="para">Ou seja,</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\{b,d,f,h\} \text{ será representado  por } -+-+-+-+
-\end{equation*}
+\begin{equation}
+\#B = 4\times\#C.\tag{2.1.3}
+\end{equation}
 </div>
-<div class="displaymath process-math">
-\begin{equation*}
-\{b,e,g,h\} \text{ será representado  por } -+--+-++
-\end{equation*}
-</div>
-<div class="para">O terceiro caso não satisfaz as condições do enunciado, pois 2 <span class="process-math">\((+)\)</span> juntos significa que teremos letras consecutivas (do alfabeto).</div>
 </div> <div class="para logical">
-<div class="para">Assim, compreendendo o problema observa-se que para soluciona-lo devemos calcular o número de formas distintas de permutar 8 símbolos, onde <span class="process-math">\(4\)</span> são <span class="process-math">\((-)\)</span> e 4 são <span class="process-math">\((+)\)</span> de modo que não tenha 2 símbolos <span class="process-math">\((+)\)</span> juntos.</div>
+<div class="para">Usando que <span class="process-math">\((\#C, \#A, \#B)\)</span> é uma P.G., podemos escrever <span class="process-math">\(\#C=a_0r^0, \#A=a_0r^1\)</span> e <span class="process-math">\(\#B=a_0r^2\text{.}\)</span> Logo, </div>
 <div class="displaymath process-math">
+\begin{align*}
+(a_0r^1)^2 =\amp~ (a_0r^0)(a_0r^2)\\
+( \#A )^2 =\amp~ \#C\times \#B\\
+( \#A )^2 =\amp~\#C\times 4\times\#C. 
+\end{align*}
+</div>
+<div class="para"> Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation}
+\#A=2\times \#C\text{.}\tag{2.1.4}
+\end{equation}
+</div>
+</div> <div class="para logical">
+<div class="para">Por hipótese, <span class="process-math">\(3\times\#(B\cap C) = 6\times\#(A\cap B)\text{,}\)</span> mas <span class="process-math">\(\#(B\cap C) = \#C\text{,}\)</span> assim </div>
+<div class="displaymath process-math">
+\begin{equation}
+\#C = 2\#(A\cap B) \quad \Rightarrow \quad \#(A\cap B) = \frac{\#C}{2}.\tag{2.1.5}
+\end{equation}
+</div>
+</div> <div class="para logical">
+<div class="para">Finalmente, usando as igualdades <a href="" class="xref" data-knowl="./knowl/ita-ie01.html" title="Equação 2.1.3">(2.1.3)</a>, <a href="" class="xref" data-knowl="./knowl/ita-ie02.html" title="Equação 2.1.4">(2.1.4)</a>, <a href="" class="xref" data-knowl="./knowl/ita-ie03.html" title="Equação 2.1.5">(2.1.5)</a> e o Princípio da Inclusão-Exclusão (<a href="" class="xref" data-knowl="./knowl/teo-inclusao-exclusao-2.html" title="Teorema 2.1.2">Teorema 2.1.2</a>), obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ita-ie01.html ./knowl/ita-ie02.html ./knowl/ita-ie03.html ./knowl/teo-inclusao-exclusao-2.html">
 \begin{equation*}
-\LARGE \bigcirc-\bigcirc-\bigcirc-\bigcirc-\bigcirc
+\underbrace{\#(A\cup B)}_{22} = \underbrace{\#A}_{2\times \#C} + \underbrace{\#B}_{4\times \#C} -\underbrace{\#(A\cap B)}_{\#C/2}.
 \end{equation*}
 </div>
-<div class="para">Veja que de acordo com  o esquema, de círculos e traços, podem-se colocar 4 símbolos <span class="process-math">\((+)\)</span> em quaisquer dos cinco lugares, ou seja, é possível escolher 4 dos 5 lugares disponíveis (representados pelas circunferências) para por os símbolos <span class="process-math">\((+)\)</span> o que pode ser realizado de</div>
+<div class="para">Efetuando o cálculo, <span class="process-math">\(\#C = 4\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">item b)</dfn>  Como <span class="process-math">\(\#(B\setminus C) = 3\times \#C = 12\text{,}\)</span> temos</div>
 <div class="displaymath process-math">
 \begin{equation*}
-C_5^4=5 \text{ modos distintos}.
-\end{equation*}
-</div>
-<div class="para">Dessa forma 5 subconjuntos podem ser formados, os quais estão listados abaixo:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\{ a, c, e, g \}, \{ a, c, e, h \}, \{ a, c, f, h \}, \{ a, d, f, h \}, \{ b, d, f, h \} 
+\#\mathcal{P}(B\setminus C) = 2^{\#(B\setminus C)} = 2^{12} = 4096.
 \end{equation*}
 </div>
 </div>
 </div>
-<span class="incontext"><a href="section-lemas-kaplansky.html#solution-156" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-inclusao-exclusao.html#solution-156" class="internal">em contexto</a></span>
 </body>
 </html>

@@ -12,46 +12,46 @@
 </head>
 <body class="ignore-math"><div class="solution solution-like">
 <div class="para logical">
-<div class="para">O <span class="process-math">\(k\)</span>-ésimo termo é</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T_{k} = C_{70}^{k-1}1^{k-1}\left(\frac{1}{4}\right)^{71-k} = C_{70}^{k-1}\cdot\frac{1}{4^{71-k}}\text{.}
-\end{equation*}
-</div>
 <div class="para">
-<span class="process-math">\(T_{k+1}&gt; T_{k}\)</span> se</div>
+<dfn class="terminology">Quantidade total de caminhos:</dfn> A quantidade de caminhos da origem até o ponto <span class="process-math">\(A(n,k)\)</span> é</div>
 <div class="displaymath process-math">
 \begin{equation*}
-C_{70}^{k}\cdot\frac{1}{4^{70-k}} &gt; C_{70}^{k-1}\cdot\frac{1}{4^{71-k}} 
+PR_{n+k}^{n, k}=C_{n+k}^{n}.
 \end{equation*}
 </div>
-<div class="para">Isto é</div>
+</div> <div class="para">
+<dfn class="terminology">Quantidade de caminhos bons:</dfn> Observe que a reflexão será em relação a reta <span class="process-math">\(y=x\text{,}\)</span> portanto a reflexão será <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{.}\)</span> Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao02.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.26<span class="period">.</span></span><span class="space"> </span>Um caminho bom, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:44.4444444444444%;"><figure class="figure figure-like"><img src="images/reflexao0.svg" role="img" class="contained"><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6.27<span class="period">.</span></span><span class="space"> </span>Um caminho ruim, partindo do ponto <span class="process-math">\(P(1,0)\text{.}\)</span></figcaption></figure></div>
+</div></div> <div class="para logical">
+<div class="para">Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e chegam no ponto <span class="process-math">\(A(n,k)\text{,}\)</span> depois vamos contar todos os caminhos ruins que iniciam no ponto <span class="process-math">\(P(1,0)\)</span> e também chegam no ponto <span class="process-math">\(A(n,k)\text{.}\)</span> A diferença entre essas quantidades será o número de caminhos bons.</div>
+<ul class="disc">
+<li><div class="para">O número de caminhos de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{n-1, k} = C_{n+k-1}^{n-1}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">O número de caminhos ruins de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual ao número de caminhos de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(R_0*A(n,k)=B(k,n)\text{,}\)</span> ou seja,<div class="displaymath process-math">
+\begin{equation*}
+PR_{n+k-1}^{k-1, n} = C_{n+k-1}^n.
+\end{equation*}
+</div>
+</div></li>
+</ul>
+<div class="para">Finalmente, o número de caminhos bons de <span class="process-math">\(P(1,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual a</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{70!}{k!(70-k)!}\cdot\frac{1}{4^{70-k}} &gt; \frac{70!}{(k-1)!(71-k)!}\cdot\frac{1}{4^{71-k}}, 
+C_{n+k-1}^{n-1} - C_{n+k-1}^n = \frac{n-k}{k}\cdot C_{n+k-1}^n.
 \end{equation*}
-</div>
-<div class="para">ou seja,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{(71-k)!}{(70-k)!} &gt; \frac{k!}{(k-1)!}\cdot\frac{4^{70-k}}{4^{71-k}}, 
-\end{equation*}
-</div>
-<div class="para">e simplificando temos</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{(71-k)}{1} &gt; \frac{k}{1}\cdot\frac{1}{4}. 
-\end{equation*}
-</div>
-<div class="para">Portanto, <span class="process-math">\(71-k &gt; k/4 \text{,}\)</span> logo <span class="process-math">\(k\lt 56, 8\text{.}\)</span>
 </div>
 </div> <div class="para logical">
-<div class="para">Assim, temos  <span class="process-math">\(T_{k} \lt  T_{k+1}\)</span> para <span class="process-math">\(k = 1, 2, \ldots, 56\)</span> e portanto o maior termo é:</div>
+<div class="para">
+<dfn class="terminology">Quantidade de caminhos ruins:</dfn> A quantidade de caminhos ruins de <span class="process-math">\(P(0,0)\)</span> até <span class="process-math">\(A(n,k)\)</span> é igual a quantidade total de caminhos, menos a quantidade de caminhos bons:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-T_{57} = C_{70}^{56}\cdot\frac{1}{4^{14}} = \frac{24156719613645}{33554432}.
+C_{n+k}^n - \frac{n-k}{k}\cdot C_{n+k-1}^n = 2C_{n+k-1}^n.
 \end{equation*}
 </div>
-</div>
-</div></body>
+</div> </div></body>
 </html>

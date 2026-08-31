@@ -12,30 +12,44 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.8.1</span><span class="period">.</span>
-</h3>
-<div class="para">Primeiro, vamos calcular a probabilidade de que todos os chocolates sejam do tipo <em class="emphasis">ao leite</em>. Em seguida, vamos usar o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>) para chegar na resposta deste problema.</div> <div class="para logical">
-<div class="para">cardinalidade do espaço amostral é dada pelo número de maneiras de pegar 8 chocolates dentre 40 disponívies, portanto</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
-\begin{equation*}
-\#\Omega = C_{40}^{8}.
-\end{equation*}
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.5.1</span><span class="period">.</span>
+</h4>
+<div class="displaymath process-math">
+\begin{gather*}
+\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
+\end{gather*}
 </div>
-<div class="para">Agora queremos contar quantas são as formas de pegar 8 chocolates do tipo <em class="emphasis">ao leite</em>. Como existem 30 disponíveis a resposta é:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
-\begin{equation*}
-C_{30}^{8}. 
-\end{equation*}
+<div class="para">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
+<div class="displaymath process-math">
+\begin{align*}
+S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
+=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
+=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
+=\amp~n\sum_{k=0}^pC_{n+k}^k\\
+=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
+=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
+\end{align*}
 </div>
-<div class="para">Usando o item a) do (<a href="" class="xref" data-knowl="./knowl/teo-probabilidade.html" title="Teorema 4.1.7">Teorema 4.1.7</a>), a probabilidade de que ao menos um seja do tipo <em class="emphasis">amargo</em> é</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo-probabilidade.html">
-\begin{equation*}
-1 - \frac{C_{30}^{8}}{C_{40}^{8}} \approx 0.923893778382943 \approx 92,4\% 
-\end{equation*}
+<div class="para logical">
+<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
+=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
+=\amp~ C_{n+p+1}^{p+1}-1.
+\end{align*}
+</div>
+<div class="para">Portanto,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
+=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
+\end{align*}
 </div>
 </div>
 </div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-212" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-triangulo-pascal.html#solution-212" class="internal">em contexto</a></span>
 </body>
 </html>

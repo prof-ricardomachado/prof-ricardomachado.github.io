@@ -9,31 +9,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.8.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">O atleta pode escolher treinar <span class="process-math">\(5, 6\)</span> ou <span class="process-math">\(7\)</span> vezes, pois <span class="process-math">\(gK(28, 8, 3)=0\text{.}\)</span> Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é</div>
+<div class="para">São 3 questões de Matemática e 7 questões de outras áreas que serão denotadas por <span class="process-math">\(Q_1, Q_2,\cdots, Q_7\text{.}\)</span> Inicialmente, iremos dispor as questões que não sofrem restrições:</div>
 <div class="displaymath process-math">
-\begin{align*}
-{\small\sum_{k=5}^7 3^k\times gK(28, k, 3)=}\amp~{\small  3^5\times gK(28, 5, 3)+3^6\times gK(28, 6, 3)+3^7\times gK(28, 7, 3)}\\
-=\amp~ 3^5\times 4368+3^6\times 1716 + 3^7 \times 120\\
-=\amp~2574828.
-\end{align*}
+\begin{equation*}
+\large\bigcirc \ Q_1\ \bigcirc \ Q_2 \ \bigcirc \ Q_3 \ \bigcirc \ Q_4 \ \bigcirc \ Q_5 \ \bigcirc \ Q_6 \  \bigcirc \ Q_7 \ \bigcirc
+\end{equation*}
 </div>
-</div> <div class="para">No Sage o cálculo pode ser feito da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-39"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
-(3^5)*gK(28, 5, 3)+(3^6)*gK(28, 6, 3)+(3^7)*gK(28, 7, 3)
-</script></pre>
+</div> <div class="para logical">
+<div class="para">Temos 8 lugares <span class="process-math">\(\bigcirc\)</span> para colocar as 3 questões de Matemática e o número de formas de calcular isso, pode ser feito utilizando o 1º Lema de Kaplansky:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K(10,3) = C_8^3=56.
+\end{equation*}
+</div>
+<div class="para">Devemos, agora, contar o número de permutações das 3 questões de matemática e o número de permutações das 7 questões das outras áreas:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3! \times 7!=30240.
+\end{equation*}
+</div>
+<div class="para">Assim, o total de formas de programar a sequência dessas 10 questões, satisfazendo as condições do enunciado é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K(10, 3)\times 7! \times 3! = 56\times30240 = 1693440. 
+\end{equation*}
+</div>
+</div>
 </div>
 <span class="incontext"><a href="section-lemas-kaplansky.html#solution-168" class="internal">em contexto</a></span>
 </body>

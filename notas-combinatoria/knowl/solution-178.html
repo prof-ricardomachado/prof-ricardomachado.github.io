@@ -9,14 +9,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.4.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.6.1</span><span class="period">.</span>
 </h4>
-<div class="para">Observe que o valor mínimo possível é <span class="process-math">\(-3\)</span> e o máximo possível é <span class="process-math">\(3\text{.}\)</span> Todas as possibilidades são: <span class="process-math">\(-3, -2, -1, 0, 1, 2, 3\text{,}\)</span> ou seja, são 7 valores possíveis. Como são 8 somas, pelo PCP, pelo menos duas são iguais.</div>
+<div class="para">Irving pode escolher qualquer valor entre <span class="process-math">\(0\)</span> e <span class="process-math">\(7\)</span> inclusive, para ser a quantidade de vezes que ele vai jogar, pois <span class="process-math">\(gK(20, 8, 2)=0\)</span> e <span class="process-math">\(gK(20, 7, 2)\neq 0\text{.}\)</span>
+</div>  <div class="para">Assim, o número de formas de Irving jogar futebol sem ter dores musculares é</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sum_{i=0}^{7}gK(20, i, 2)=\amp~1+20+153+560+1001+792+210+8\\
+=\amp~ 2745.
+\end{align*}
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-38"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+gK(20,0,2) + gK(20,1,2) + gK(20,2,2) + gK(20,3,2) + gK(20,4,2) + gK(20,5,2) + gK(20,6,2) + gK(20,7,2)
+</script></pre>
 </div>
-<span class="incontext"><a href="section-casa-pombos.html#solution-178" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-lemas-kaplansky.html#solution-178" class="internal">em contexto</a></span>
 </body>
 </html>

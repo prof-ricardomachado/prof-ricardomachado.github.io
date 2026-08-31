@@ -13,55 +13,40 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.4.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.12.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Denote as <span class="process-math">\(n\)</span> pessoas por <span class="process-math">\(P_1, P_2, \ldots, P_n\text{.}\)</span> Sejam <span class="process-math">\(A_{ij}\text{,}\)</span> com <span class="process-math">\(1\leq i\lt j\leq n\text{,}\)</span> os conjuntos das permutações caóticas em que a pessoa <span class="process-math">\(P_i\)</span> tirou a pessoa <span class="process-math">\(P_j\)</span> e a pessoa <span class="process-math">\(P_j\)</span> tirou a pessoa <span class="process-math">\(P_i\text{.}\)</span> A resposta deste problema é dada por</div>
-<div class="displaymath process-math">
-\begin{equation}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right).\tag{2.2.1}
-\end{equation}
-</div>
-<div class="para">Para obter este valor, usaremos o Princípio da Inclusão-Exclusão.</div>
+<div class="para">Note que, no total, exitem <span class="process-math">\(m^n\)</span> funções <span class="process-math">\(f:A\rightarrow B\text{,}\)</span> pois existem <span class="process-math">\(m\)</span> maneiras de escolher a imagem de cada um dos <span class="process-math">\(n\)</span> elementos de <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para">Sejam <span class="process-math">\(y_1, y_2, \ldots, y_m\)</span> os elementos do conjunto <span class="process-math">\(B\text{.}\)</span> Defina <span class="process-math">\(F_j\)</span> o conjunto das funções <span class="process-math">\(f_{j,l}:A\rightarrow B\text{,}\)</span> tais que <span class="process-math">\(y_j\)</span> não pertence a imagem de <span class="process-math">\(f_{j,l}\text{.}\)</span> Logo, <span class="process-math">\(j\in \{1, 2, \ldots, m\}\)</span> e <span class="process-math">\(l=(m-1)^n\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">Observe que <span class="process-math">\(A_{ij}\)</span> possui a mesma cardinalidade, independetemente dos valores dos índices, assim como <span class="process-math">\(A_{ij}\cap A_{kl}\)</span> também possui a mesma cardinalidade, independentemente dos índices, e assim por diante. Então, para usar o Princípio da Inclusão-Exclusão, precisamos calcular essas cardinalidades e as quantidades dos conjuntos <span class="process-math">\(A_{ij}\text{,}\)</span> das interseções duas a duas, três a três e assim por diante. Sem perda de generalidade, vamos fixar os índices:</div>
+<div class="para">As funções que não são sobrejetivas são as que pertencem a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_1\cup F_2\cup\cdots\cup F_m\text{.}
+\end{equation*}
+</div>
+<div class="para">Então, o número de funções sobrejetoras é dado por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m^n-\#(F_1\cup F_2\cup\cdots\cup F_m)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos <span class="process-math">\(F_j\text{,}\)</span> a cardinalidade das interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos, com <span class="process-math">\(2\leq p \leq m\)</span> e a quantidade de interseções <span class="process-math">\(p\)</span> a <span class="process-math">\(p\)</span> desses conjuntos:</div>
 <ul class="disc">
-<li><div class="para">
-<span class="process-math">\(\#A_{12}=D_{n-2}\)</span> e no total são <span class="process-math">\(C_n^2\)</span> conjuntos deste tipo, pois para formar um conjunto <span class="process-math">\(A_{ij}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis.</div></li>
-<li><div class="para">
-<span class="process-math">\(\#(A_{12}\cap A_{34})=D_{n-4}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\)</span> conjuntos deste tipo, pois para formar uma interseção <span class="process-math">\(A_{ij}\cap A_{ls}\text{,}\)</span> precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis.</div></li>
-<li><div class="para">A cardinalidade da interseção de <span class="process-math">\(k\)</span> conjuntos é <span class="process-math">\(D_{n-2k}\)</span> e no total são <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\)</span> conjuntos deste tipo, pois para formar uma interseção de <span class="process-math">\(k\)</span> conjuntos, precisamos escolher duas pessoas de <span class="process-math">\(n\)</span> disponíveis e depois mais duas de <span class="process-math">\(n-2\)</span> disponíveis e assim por diante, até que precisamos escolher duas pessoas de <span class="process-math">\(n-2k\)</span> disponíveis.</div></li>
+<li><div class="para">Para o caso de apenas um conjunto, já sabemos que <span class="process-math">\(\#F_j=(m-1)^n\)</span> e no total existem <span class="process-math">\(m\)</span> conjuntos;</div></li>
+<li><div class="para">Para o caso das interseções de dois conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap F_{j_2})=(m-2)^n\)</span> e no total existem <span class="process-math">\(C_m^2\)</span> dessas interseções;</div></li>
+<li><div class="para">Para o caso das interseções de <span class="process-math">\(p\)</span> conjuntos, temos <span class="process-math">\(\#(F_{j_1}\cap\cdots\cap F_{j_p})=(m-p)^n\)</span> e no total existem <span class="process-math">\(C_m^p\)</span> dessas interseções.</div></li>
 </ul>
-<div class="para">Antes de escrever o resultado da Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 2.2.1">(2.2.1)</a> vamos obter uma expressão para <span class="process-math">\(C_n^2C_{n-2}^2\cdots C_{n-2k}^2\text{.}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
+<div class="para">Aplicando o Princípio da Inclusão-Exclusão, a resposta é</div>
+<div class="displaymath process-math">
 \begin{align*}
-C_n^2C_{n-2}^2\cdots C_{n-2k}^2 =\amp~ \frac{n!}{2!(n-2)!}\cdot \frac{(n-2)!}{2!(n-4)!}\cdots \frac{(n-2k)!}{2!(n-2(k+1))!}\\
-=\amp~\frac{n!}{(n-2(k+1))!2^{k+1}}.
+m^n-\amp\#(F_1\cup F_2\cup\cdots\cup F_m)=\\
+=\amp~m^n - C_m^1(m-1)^n+C_m^2(m-2)^n-\cdots+(-1)^mC_m^m(m-m)^n\\
+=\amp~\sum_{k=0}^m (-1)^kC_m^k(m-k)^n.
 \end{align*}
 </div>
-<div class="para">Utilizando essas informações na Expressão <a href="" class="xref" data-knowl="./knowl/que-cao-obm.html" title="Equação 2.2.1">(2.2.1)</a>, obtemos</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
-\begin{equation*}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)=\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
-\end{equation*}
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
-\begin{align*}
-\quad\quad=\amp~ D_n - C_n^2D_{n-2} +C_n^2C_{n-2}^2D_{n-4} - \cdots\\
-=\amp~ D_n - \frac{n!}{2!(n-2)!}\cdot D_{n-2} + \frac{n!}{2!(n-2)!}\cdot\frac{(n-2)!}{2!(n-4)!}\cdot D_{n-4}-\cdots\\
-=\amp~D_n +\sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} \frac{n!(-1)^{k+1}D_{n-2(k+1)}}{(n-2(k+1))!2^{k+1}}
-\end{align*}
-</div>
-<div class="para">Fazendo a mudança <span class="process-math">\(p=k+1\text{,}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/que-cao-obm.html ./knowl/que-cao-obm.html">
-\begin{equation*}
-D_n - \#\left( \bigcup_{1\leq i \lt j \leq n} A_{ij} \right)= D_n + \sum_{p=1}^{\lfloor \frac{n}{2} \rfloor} n!\cdot \left(-\frac{1}{2} \right)^p \cdot \frac{D_{n-2p}}{(n-2p)!}.
-\end{equation*}
 </div>
 </div>
-</div>
-<span class="incontext"><a href="section-permutacao-caotica.html#solution-153" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-inclusao-exclusao.html#solution-153" class="internal">em contexto</a></span>
 </body>
 </html>
