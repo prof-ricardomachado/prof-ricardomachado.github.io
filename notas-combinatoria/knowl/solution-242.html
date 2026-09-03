@@ -13,25 +13,32 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.15.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.18.1</span><span class="period">.</span>
 </h4>
-<div class="para">De acordo com o <a href="" class="xref" data-knowl="./knowl/quest-fuvest2018comb.html" title="Exercício 1.4.3.18">Exercício 1.4.3.18</a> o espaço amostral é dado por <span class="process-math">\(\dfrac{12!}{2^6\times 6!}\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">O número de maneiras de emparceirar as mulheres entre si é dado por</div>
+<div class="para">
+<dfn class="terminology">Item a)</dfn> Pelo 1º Lema de Kaplansky, sabemos que a quantidade de maneiras de escolher um subconjunto de tamanho <span class="process-math">\(p\)</span> com elementos não consecutivos dentre <span class="process-math">\(n\)</span> elementos alinhados é dada por <span class="process-math">\(C_{n-p+1}^p\text{.}\)</span>
+</div> <div class="para">Para encontrar o total absoluto de subconjuntos válidos, precisamos somar essa expressão para todos os tamanhos possíveis de <span class="process-math">\(p\)</span> (começando de <span class="process-math">\(p=0\)</span> até o limite onde não seja mais possível escolher elementos separados). Logo, a soma é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{C_6^2\times C_4^2\times C_2^2}{3!}\text{.}
+\sum_{p \geq 0} C_{n-p+1}^p
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">Como o número de maneiras de emparceirar os homens entre si é o mesmo de emparceirar as mulheres entre si, a probabilidade pedida é dada por</div>
+<div class="para">
+<dfn class="terminology">Item b)</dfn> Para <span class="process-math">\(n=4\text{,}\)</span> o conjunto é <span class="process-math">\(A = \{1, 2, 3, 4\}\text{.}\)</span> Os subconjuntos sem elementos consecutivos são:</div> <ul class="disc">
+<li><div class="para">Tamanho 0: <span class="process-math">\(\emptyset\)</span> (1 modo)</div></li>
+<li><div class="para">Tamanho 1: <span class="process-math">\(\{1\}, \{2\}, \{3\}, \{4\}\)</span> (4 modos)</div></li>
+<li><div class="para">Tamanho 2: <span class="process-math">\(\{1, 3\}, \{1, 4\}, \{2, 4\}\)</span> (3 modos)</div></li>
+</ul> <div class="para">O total de subconjuntos é <span class="process-math">\(1 + 4 + 3 = 8\text{.}\)</span>
+</div> <div class="para">Para provar a fórmula geral, tomamos a soma do item (a) e fazemos uma mudança de variável para facilitar a visualização no Triângulo de Pascal. Chamando <span class="process-math">\(m = n+1\text{,}\)</span> a expressão se torna:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\frac{C_6^2\times C_4^2\times C_2^2}{3!} \times \frac{C_6^2\times C_4^2\times C_2^2}{3!}}{\frac{12!}{2^6\times 6!}} = \frac{5}{231}.
+\sum_{p \geq 0} C_{m-p}^p
 \end{equation*}
 </div>
+<div class="para">Observe que, a cada incremento de <span class="process-math">\(p\text{,}\)</span> o índice inferior (<span class="process-math">\(m-p\)</span>) diminui e o índice superior (<span class="process-math">\(p\)</span>) aumenta. Essa é a exata definição da soma de uma diagonal rasa partindo da linha <span class="process-math">\(m\text{.}\)</span> Pelo Teorema de Fibonacci no Triângulo de Pascal, sabemos que essa soma resulta no número de Fibonacci <span class="process-math">\(F_{m+1}\text{.}\)</span>
+</div> <div class="para">Retornando à variável original (<span class="process-math">\(m = n+1\)</span>), concluímos que o número total de subconjuntos é <span class="process-math">\(F_{(n+1)+1} = F_{n+2}\text{.}\)</span>
+</div> <div class="para">Note que para o nosso teste manual com <span class="process-math">\(n=4\text{,}\)</span> a fórmula nos dá <span class="process-math">\(F_{4+2} = F_6\text{.}\)</span> Como a sequência de Fibonacci é (1, 1, 2, 3, 5, 8...), temos <span class="process-math">\(F_6 = 8\text{,}\)</span> confirmando perfeitamente a nossa listagem.</div>
 </div>
-</div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-242" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-triangulo-pascal.html#solution-242" class="internal">em contexto</a></span>
 </body>
 </html>

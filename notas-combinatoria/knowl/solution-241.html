@@ -13,18 +13,27 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">4.1.14.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.17.1</span><span class="period">.</span>
 </h4>
-<div class="para">De acordo com o <a href="" class="xref" data-knowl="./knowl/quest-fuvest2020comb.html" title="Exercício 1.4.3.17">Exercício 1.4.3.17</a> o espaço amostral é dado por <span class="process-math">\(C_{16}^8\text{.}\)</span>
-</div> <div class="para">Precisamos calcular o número de maneiras de distribuir as 8 peças para cada jogador, de forma que exatamente duas delas sejam amarelas. Vamos calcular o número de maneiras de distribuir as peças para o primeiro jogador, as peças que sobram ficam para o segundo jogador.</div> <div class="para logical">
-<div class="para">Como são 4 peças amarelas distintas duas a duas, temos <span class="process-math">\(C_4^2\)</span> maneiras de separar duas peças amarelas. Agora precisamos separar 6 peças com cores diferentes de amarelo. Temos um total de <span class="process-math">\(C_{12}^6\)</span> maneiras de fazer isto, pois existem exatamente 12 peças com cores diferentes de amarelo. Portanto a probabilidade é</div>
+<div class="para">
+<dfn class="terminology">Item a)</dfn> Se a palavra de tamanho <span class="process-math">\(n\)</span> tem <span class="process-math">\(k\)</span> letras "A", então ela possui <span class="process-math">\(n - k\)</span> letras "B".</div> <div class="para">Para garantir que nenhum "A" fique junto de outro, começamos enfileirando todas as letras "B". Ao colocar <span class="process-math">\(n - k\)</span> letras "B" lado a lado, elas criam espaços vazios (entre elas e nas extremidades) onde podemos inserir os "A"s. O número de espaços vazios disponíveis é a quantidade de letras B mais um, ou seja, <span class="process-math">\((n - k) + 1 = n - k + 1\)</span> espaços.</div> <div class="para">Precisamos escolher <span class="process-math">\(k\)</span> desses espaços para colocar as nossas letras "A" (no máximo uma por espaço). O número de formas de fazer isso é a combinação de <span class="process-math">\(n - k + 1\)</span> espaços tomados <span class="process-math">\(k\)</span> a <span class="process-math">\(k\text{,}\)</span> que é <span class="process-math">\(C_{n-k+1}^k\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Item b)</dfn> O total de palavras sem letras "A" adjacentes é a soma do resultado anterior para todos os valores possíveis de <span class="process-math">\(k\)</span> (desde <span class="process-math">\(k=0\)</span> até o máximo que os espaços permitem):</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{C_4^2\times C_{12}^6}{C_{16}^8} = \frac{28}{65}.
+\text{Total} = \sum_{k \geq 0} C_{n-k+1}^k
 \end{equation*}
 </div>
+<div class="para">Para facilitar a visualização da fórmula, vamos fazer uma mudança de variável, chamando <span class="process-math">\(m = n + 1\text{.}\)</span> Substituindo <span class="process-math">\(n+1\)</span> por <span class="process-math">\(m\)</span> na expressão acima, temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Total} = \sum_{k \geq 0} C_{m-k}^k
+\end{equation*}
+</div>
+<div class="para">Esta é perfeitamente a fórmula da soma da diagonal rasa para o número <span class="process-math">\(m\text{.}\)</span> Pelo teorema recém-estudado, essa soma é igual a <span class="process-math">\(F_{m+1}\text{.}\)</span>
+</div> <div class="para">Voltando para a nossa variável original (<span class="process-math">\(m = n+1\)</span>), concluímos que o total de anagramas válidos é <span class="process-math">\(F_{(n+1)+1} = F_{n+2}\text{.}\)</span>
 </div>
 </div>
-<span class="incontext"><a href="section-espacos-probabilidade.html#solution-241" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-triangulo-pascal.html#solution-241" class="internal">em contexto</a></span>
 </body>
 </html>

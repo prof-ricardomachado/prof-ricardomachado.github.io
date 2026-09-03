@@ -13,31 +13,29 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.9.1</span><span class="period">.</span>
 </h4>
+<div class="para">Se as mulheres já estão em seus lugares, cada cadeira vazia está cercada por duas mulheres. Cada marido possui exatamente dois lugares "proibidos": a cadeira à esquerda e a cadeira à direita da sua respectiva esposa.</div> <div class="para">Isso configura uma permutação restrita que pode ser modelada utilizando o Princípio da Inclusão-Exclusão e Polinômios de Torre ou a fórmula geral dos números de Ménage (que decorre dos Lemas de Kaplansky). O número de maneiras para alocar apenas os maridos, conhecido como Número de Ménage <span class="process-math">\(M_n\text{,}\)</span> obedece à fórmula deduzida por Touchard:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M_n = \sum_{k=0}^n (-1)^k \frac{2n}{2n-k} C_{2n-k}^k (n-k)! 
+\end{equation*}
+</div>
 <div class="para logical">
-<div class="para">Existem nove primos menores ou iguais a <span class="process-math">\(23\text{:}\)</span> <span class="process-math">\(2, 3, 5, 7, 11, 13, 17, 19\)</span> e <span class="process-math">\(23\text{.}\)</span>  Considere uma lista, com <span class="process-math">\(9\)</span> entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número</div>
+<div class="para">Para <span class="process-math">\(n=5\text{,}\)</span> a fórmula nos fornece a soma exata das configurações restritas. Calculando para os valores da soma:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-2128793535 = 2^0\times3^3\times5^1\times7^0\times11^2\times13^0\times 17^0\times19^4\times 23^0
-\end{equation*}
+\begin{align*}
+k=0: \amp \quad (+1) \cdot \frac{10}{10} C_{10}^0 \cdot 5! = 120 \\
+k=1: \amp \quad (-1) \cdot \frac{10}{9} C_{9}^1 \cdot 4! = -240 \\
+k=2: \amp \quad (+1) \cdot \frac{10}{8} C_{8}^2 \cdot 3! = 210 \\
+k=3: \amp \quad (-1) \cdot \frac{10}{7} C_{7}^3 \cdot 2! = -100 \\
+k=4: \amp \quad (+1) \cdot \frac{10}{6} C_{6}^4 \cdot 1! = 25 \\
+k=5: \amp \quad (-1) \cdot \frac{10}{5} C_{5}^5 \cdot 0! = -2 
+\end{align*}
 </div>
-<div class="para">estiver entre os 1985 números, a lista dele será:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{2128793535}= 0, 3, 1, 0, 2, 0, 0, 4, 0.
-\end{equation*}
+</div> <div class="para">Somando os termos: <span class="process-math">\(120 - 240 + 210 - 100 + 25 - 2 = 13\text{.}\)</span>
+</div> <div class="para">Portanto, os 5 maridos podem ser sentados de 13 maneiras válidas. (Curiosidade: Se o problema perguntasse de quantas formas sentar as mulheres E os homens, multiplicaríamos 13 por <span class="process-math">\(2 \times 4!\)</span>).</div>
 </div>
-<div class="para">Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.</div>
-</div> <div class="para logical">
-<div class="para">Para cada uma das 1985 listas <span class="process-math">\(L_n\text{,}\)</span> considere uma nova lista <span class="process-math">\(L_n^2\text{,}\)</span> na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{2128793535}^2= 0, 1, 1, 0, 0, 0, 0, 0, 0.
-\end{equation*}
-</div>
-</div> <div class="para">Assim, cada nova lista <span class="process-math">\(L_n^2\)</span> estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> haverão duas idênticas. Considere quaiquer 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.</div> <div class="para">Para cada um dos 737 pares, considere uma lista <span class="process-math">\(L_{n+m}^2\)</span> formada pela soma <span class="process-math">\(L_n^2+L_m^2\text{.}\)</span> Observe que cada entrada das 737 listas <span class="process-math">\(L_{n+m}^2\)</span> é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas <span class="process-math">\(L_{n+m}^2\)</span> serão idênticas. Digamos que  <span class="process-math">\(L_{n+m}^2\)</span> e <span class="process-math">\(L_{p+q}^2\text{,}\)</span> então o número <span class="process-math">\(n\times m\times p\times q\)</span> é a quarta potência de um inteiro.</div>
-</div>
-<span class="incontext"><a href="section-casa-pombos.html#solution-195" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-lemas-kaplansky.html#solution-195" class="internal">em contexto</a></span>
 </body>
 </html>

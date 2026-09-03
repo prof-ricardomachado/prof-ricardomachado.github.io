@@ -13,43 +13,31 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.5.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.12.1</span><span class="period">.</span>
 </h4>
-<div class="displaymath process-math">
-\begin{gather*}
-\sum_{k=0}^p kC_{n+k}^{k+1} = \underbrace{\sum_{k=0}^p (k+1)C_{n+k}^{k+1}}_{S_1}-\underbrace{\sum_{k=0}^pC_{n+k}^{k+1}}_{S_2}.
-\end{gather*}
-</div>
-<div class="para">Vamos calcular <span class="process-math">\(S_1\)</span> e <span class="process-math">\(S_2\)</span> separadamente.</div>
-<div class="displaymath process-math">
-\begin{align*}
-S_1 = \amp~\sum_{k=0}^p(k+1)\cdot\frac{(n+k)!}{(k+1)!(n-1)!}\\
-=\amp~ \sum_{k=0}^p \frac{(n+k)!}{k!(n-1)!}\cdot \frac{n}{n}\\
-=\amp~n\sum_{k=0}^p \frac{(n+k)!}{k!n!}\\
-=\amp~n\sum_{k=0}^pC_{n+k}^k\\
-=\amp~n(C_n^0+\cdots+C_{n+p}^p)\\
-=\amp~nC_{n+p+1}^p~~(\text{Pelo Teo. das Diagonais}).
-\end{align*}
-</div>
 <div class="para logical">
-<div class="para">Para usar o Teorema das Diagonais no cálculo de <span class="process-math">\(S_2\text{,}\)</span> precisamos somar e subtrair <span class="process-math">\(C_{n-1}^0\text{.}\)</span>
-</div>
+<div class="para">Existem nove primos menores ou iguais a <span class="process-math">\(23\text{:}\)</span> <span class="process-math">\(2, 3, 5, 7, 11, 13, 17, 19\)</span> e <span class="process-math">\(23\text{.}\)</span>  Considere uma lista, com <span class="process-math">\(9\)</span> entradas, para cada um dos 1985 números, de modo que cada entrada seja a potência do respectivo primo que aparece na fatoração do número. Por exemplo, se o número</div>
 <div class="displaymath process-math">
-\begin{align*}
-S_2=\amp~(C_n^1+C_{n+1}^2+\cdots+C_{n+p}^{p+1})\\
-=\amp~(C_{n-1}^0+C_n^1+\cdots+C_{n+p}^{p+1})-C_{n-1}^0\\
-=\amp~ C_{n+p+1}^{p+1}-1.
-\end{align*}
+\begin{equation*}
+2128793535 = 2^0\times3^3\times5^1\times7^0\times11^2\times13^0\times 17^0\times19^4\times 23^0
+\end{equation*}
 </div>
-<div class="para">Portanto,</div>
+<div class="para">estiver entre os 1985 números, a lista dele será:</div>
 <div class="displaymath process-math">
-\begin{align*}
-\sum_{k=0}^p kC_{n+k}^{k+1} =\amp~nC_{n+p+1}^p-C_{n+p+1}^{p+1}+1.\\
-=\amp~\frac{(np-1)}{n+1}\cdot C_{n+p+1}^{p+1}+1.
-\end{align*}
+\begin{equation*}
+L_{2128793535}= 0, 3, 1, 0, 2, 0, 0, 4, 0.
+\end{equation*}
 </div>
+<div class="para">Para que existam 4 interios, cujo produto seja a quarta potência de um inteiro, é suficiente mostrar que é possível encontrar 4 listas, tais que, se forem somadas entrada a entrada, cada uma dessas novas entradas será divisível por 4.</div>
+</div> <div class="para logical">
+<div class="para">Para cada uma das 1985 listas <span class="process-math">\(L_n\text{,}\)</span> considere uma nova lista <span class="process-math">\(L_n^2\text{,}\)</span> na qual, cada entrada será o resto da divisão por 2, da entrada da lista original (ou seja, módulo 2). Por exemplo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_{2128793535}^2= 0, 1, 1, 0, 0, 0, 0, 0, 0.
+\end{equation*}
 </div>
+</div> <div class="para">Assim, cada nova lista <span class="process-math">\(L_n^2\)</span> estará entre as 512 possíveis listas distintas. Dessa forma, pelo Princípio da Casa dos Pombos, para cada 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> haverão duas idênticas. Considere quaiquer 513 listas <span class="process-math">\(L_n^2\text{,}\)</span> separe o par idêntico e repita esse processo até sobrarem 511 listas. No final desse processo, foram separadas 737 pares de listas.</div> <div class="para">Para cada um dos 737 pares, considere uma lista <span class="process-math">\(L_{n+m}^2\)</span> formada pela soma <span class="process-math">\(L_n^2+L_m^2\text{.}\)</span> Observe que cada entrada das 737 listas <span class="process-math">\(L_{n+m}^2\)</span> é igual a zero ou a dois. Como só existem 512 listas diferentes, com entradas 0 ou 2, pelo Princípio da Casa dos Pombos, pelo menos duas das listas <span class="process-math">\(L_{n+m}^2\)</span> serão idênticas. Digamos que  <span class="process-math">\(L_{n+m}^2\)</span> e <span class="process-math">\(L_{p+q}^2\text{,}\)</span> então o número <span class="process-math">\(n\times m\times p\times q\)</span> é a quarta potência de um inteiro.</div>
 </div>
-<span class="incontext"><a href="section-triangulo-pascal.html#solution-212" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-casa-pombos.html#solution-212" class="internal">em contexto</a></span>
 </body>
 </html>

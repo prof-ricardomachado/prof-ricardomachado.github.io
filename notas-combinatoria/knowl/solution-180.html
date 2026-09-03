@@ -9,22 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.8.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.3.3.6.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Primeiro, contamos o número de maneiras de escolher as 6 cadeiras que serão usadas, dentre as 20 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 6 pessoas que irão sentar nas cadeiras. Isto pode ser feito de</div>
+<div class="para">Pelo teorema das permutações caóticas com repetição, a quantidade de deranjos é dada pelo valor absoluto da integral de <span class="process-math">\(0\)</span> a <span class="process-math">\(\infty\)</span> do produto dos polinômios de Laguerre associados às frequências de cada elemento, multiplicados por <span class="process-math">\(e^{-x}\text{.}\)</span>
+</div> <div class="para">As frequências das letras na palavra CORREDOR são <span class="process-math">\(r_1=3\)</span> (letra R), <span class="process-math">\(r_2=2\)</span> (letra O), e para as letras restantes <span class="process-math">\(r_3=1\)</span> (C), <span class="process-math">\(r_4=1\)</span> (E) e <span class="process-math">\(r_5=1\)</span> (D). A expressão integral procurada é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-gKC(20, 6, 2)\times P_6 = 50400
+DR_8^{3,2,1,1,1} = \left| \int_0^\infty e^{-x} L_3(x) L_2(x) (L_1(x))^3 \, dx \right| 
 \end{equation*}
 </div>
-<div class="para">maneiras.</div>
+<div class="para">No SageMath, podemos calcular esse valor exato utilizando a função <code class="code-inline tex2jax_ignore">laguerre</code> e o método <code class="code-inline tex2jax_ignore">integral</code>:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage">abs(integral(exp(-x) * laguerre(3,x) * laguerre(2,x) * laguerre(1,x)^3, (x, 0, +oo)))
+</script></pre> <div class="para">O cálculo confirma que existem exatamente 315 anagramas caóticos para a palavra CORREDOR.</div>
 </div>
-</div>
-<span class="incontext"><a href="section-lemas-kaplansky.html#solution-180" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#solution-180" class="internal">em contexto</a></span>
 </body>
 </html>

@@ -11,11 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">No total os livros podem ser organizados de <span class="process-math">\(11!\)</span> maneiras. Para que os livros de mesmo assunto fiquem juntos, temos <span class="process-math">\((5!\times 4!\times 2!)\times 3!\)</span> maneiras. Portanto a probabilidade é dada por</div>
+<div class="para">
+<dfn class="terminology">Item a)</dfn> Se o sapo dá <span class="process-math">\(k\)</span> pulos duplos, ele cobre <span class="process-math">\(2k\)</span> degraus. Faltam <span class="process-math">\(n - 2k\)</span> degraus, que obrigatoriamente devem ser subidos com pulos simples (de 1 degrau).</div> <div class="para logical">
+<div class="para">O número total de pulos (movimentos) que o sapo dará é a soma da quantidade de pulos duplos e simples:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P = \frac{(5!\times 4!\times 2!)\times 3!}{11!} = \frac{1}{1155}. 
+k + (n - 2k) = n - k \text{ pulos no total}.
 \end{equation*}
 </div>
+</div> <div class="para">Para determinar uma sequência de pulos, basta escolher, dentre os <span class="process-math">\(n - k\)</span> pulos totais, em quais <span class="process-math">\(k\)</span> momentos ele dará os pulos duplos. O número de maneiras de fazer essa escolha é simplesmente a combinação <span class="process-math">\(C_{n-k}^k\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Item b)</dfn> O número total de maneiras de subir a escada é a soma de todas as possibilidades variando a quantidade de pulos duplos (<span class="process-math">\(k\)</span>) desde 0 até o máximo possível (que é a metade inteira dos degraus, <span class="process-math">\(\lfloor n/2 \rfloor\)</span>).</div> <div class="para logical">
+<div class="para">Pelo item anterior, somamos as combinações para cada <span class="process-math">\(k\)</span> possível:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Total} = \sum_{k=0}^{\lfloor n/2 \rfloor} C_{n-k}^k
+\end{equation*}
+</div>
+</div> <div class="para">Pelo Teorema de Fibonacci no Triângulo de Pascal, sabemos que essa soma exata resulta em <span class="process-math">\(F_{n+1}\text{.}\)</span> Essa é uma belíssima prova combinatória de que a quantidade de formas de subir a escada gera a sequência de Fibonacci!</div>
 </div></body>
 </html>

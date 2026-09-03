@@ -9,32 +9,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.3.3.5.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">O atleta pode escolher treinar <span class="process-math">\(5, 6\)</span> ou <span class="process-math">\(7\)</span> vezes, pois <span class="process-math">\(gK(28, 8, 3)=0\text{.}\)</span> Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é</div>
+<div class="para">Temos 3 grupos de 2 elementos idênticos. O tabuleiro de posições proibidas é formado por três blocos disjuntos de <span class="process-math">\(2 \times 2\text{.}\)</span> O polinômio de torre de um único bloco <span class="process-math">\(2 \times 2\)</span> é <span class="process-math">\(2x^2 + 4x + 1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">O polinômio de torre total é:</div>
 <div class="displaymath process-math">
 \begin{align*}
-{\small\sum_{k=5}^7 3^k\times gK(28, k, 3)=}\amp~{\small  3^5\times gK(28, 5, 3)+3^6\times gK(28, 6, 3)+3^7\times gK(28, 7, 3)}\\
-=\amp~ 3^5\times 4368+3^6\times 1716 + 3^7 \times 120\\
-=\amp~2574828.
+R(x, T) \amp = (2x^2 + 4x + 1)^3 \\
+\amp = 8x^6 + 48x^5 + 108x^4 + 116x^3 + 66x^2 + 12x + 1 
 \end{align*}
 </div>
-</div> <div class="para">No Sage o cálculo pode ser feito da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-39"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
-(3^5)*gK(28, 5, 3)+(3^6)*gK(28, 6, 3)+(3^7)*gK(28, 7, 3)
-</script></pre>
+</div> <div class="para logical">
+<div class="para">Substituindo <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k (6-k)!\text{,}\)</span> o número de maneiras de realocar os carros, se fossem todos distintos, seria:</div>
+<div class="displaymath process-math">
+\begin{align*}
+N_{\text{dist}} \amp = 720 - 12(120) + 66(24) - 116(6) + 108(2) - 48(1) + 8(1) \\
+\amp = 720 - 1440 + 1584 - 696 + 216 - 48 + 8 = 344 
+\end{align*}
 </div>
-<span class="incontext"><a href="section-lemas-kaplansky.html#solution-179" class="internal">em contexto</a></span>
+</div> <div class="para logical">
+<div class="para">Como os carros da mesma cor são idênticos, devemos dividir o resultado pelo fatorial das repetições de cada cor:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+DR_6^{2,2,2} = \frac{344}{2! \times 2! \times 2!} = \frac{344}{8} = 43 \text{ maneiras}. 
+\end{equation*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#solution-179" class="internal">em contexto</a></span>
 </body>
 </html>

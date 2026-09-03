@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.3.8.1</span><span class="period">.</span>
+</h4>
+<div class="para">Poderíamos calcular a integral diretamente pela parametrização da elipse espacial <span class="process-math">\(C\text{,}\)</span> mas o Teorema de Stokes simplifica o processo ao transformar a integral de linha em um fluxo sobre a superfície plana delimitada por <span class="process-math">\(C\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Tomamos como superfície <span class="process-math">\(S\)</span> a porção do plano <span class="process-math">\(z = 1 - x - y\)</span> cuja projeção no plano <span class="process-math">\(xy\)</span> é o disco unitário <span class="process-math">\(D = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 \le 1\}\text{.}\)</span> Parametrizando <span class="process-math">\(S\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(x,y) = (x, y, 1 - x - y), \quad (x,y) \in D
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">O vetor normal associado é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial \varphi}{\partial x} \times \frac{\partial \varphi}{\partial y} = (1, 0, -1) \times (0, 1, -1) = (1, 1, 1)
+\end{equation*}
+</div>
+<div class="para">que aponta para cima, concordando com o sentido anti-horário de <span class="process-math">\(C\text{.}\)</span> O vetor unitário é <span class="process-math">\(\vec{N} = \frac{1}{\sqrt{3}}(1,1,1)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Calculando o rotacional de <span class="process-math">\(\vec{F}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = 
+\begin{vmatrix}
+\vec{i} &amp; \vec{j} &amp; \vec{k} \\
+\frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\
+yz + x^3 &amp; xyz + 3y^2 &amp; xy + 4
+\end{vmatrix}
+= (x - xy)\vec{i} + (y - y)\vec{j} + (yz - z)\vec{k}
+\end{equation*}
+</div>
+<div class="para">Logo, <span class="process-math">\(\text{rot}\,\vec{F} = (x - xy, 0, z(y - 1))\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Substituindo <span class="process-math">\(z = 1 - x - y\)</span> e calculando o produto escalar com <span class="process-math">\((1,1,1)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\text{rot}\,\vec{F} \cdot (1,1,1) \amp = (x - xy) + 0 + (1 - x - y)(y - 1)\\
+\amp = x - xy + (y - 1 - xy + x - y^2 + y)\\
+\amp = 2x + 2y - 2xy - y^2 - 1
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Convertendo para coordenadas polares (<span class="process-math">\(x = r\cos\theta\text{,}\)</span> <span class="process-math">\(y = r\sin\theta\text{,}\)</span> <span class="process-math">\(0 \le r \le 1\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\)</span>):</div>
+<div class="displaymath process-math">
+\begin{align*}
+\oint_{C} \vec{F} \cdot d\vec{r} \amp = \iint_{D} (2x + 2y - 2xy - y^2 - 1) \, dA\\
+\amp = \int_{0}^{2\pi} \int_{0}^{1} (2r\cos\theta + 2r\sin\theta - 2r^2\sin\theta\cos\theta - r^2\sin^2\theta - 1) r \, dr \, d\theta
+\end{align*}
+</div>
+<div class="para">Integrando em <span class="process-math">\(\theta\)</span> de <span class="process-math">\(0\)</span> a <span class="process-math">\(2\pi\text{,}\)</span> os termos com potências ímpares de seno e cosseno anulam-se (<span class="process-math">\(\int_0^{2\pi}\cos\theta\,d\theta = 0\text{,}\)</span> <span class="process-math">\(\int_0^{2\pi}\sin\theta\,d\theta = 0\text{,}\)</span> <span class="process-math">\(\int_0^{2\pi}\sin 2\theta\,d\theta = 0\)</span>). Restam apenas:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_{0}^{2\pi} \left[ -\frac{\sin^2\theta}{4} - \frac{1}{2} \right] d\theta \amp = -\frac{1}{4}\pi - \pi = -\frac{5\pi}{4}
+\end{align*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="sec-teorema-de-stokes.html#solution-49" class="internal">em contexto</a></span>
+</body>
+</html>

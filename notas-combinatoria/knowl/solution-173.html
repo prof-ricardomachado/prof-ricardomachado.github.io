@@ -13,17 +13,23 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.1.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.4.12.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">As vagas que serão ocupadas podem ser escolhidas de <span class="process-math">\(K(10,3)\)</span> maneiras, e a ordem dos carros pode ser escolhida de <span class="process-math">\(P_3\)</span> maneiras. Logo, o número de soluções é</div>
+<div class="para">Considere o conjunto de todas as permutações possíveis de <span class="process-math">\(n\)</span> elementos. Sabemos que a quantidade total dessas permutações é, inegavelmente, <span class="process-math">\(n!\)</span> (o lado direito da equação).</div> <div class="para">Toda permutação possui uma quantidade exata de "pontos fixos" (elementos que permaneceram em suas posições originais). Essa quantidade, chamemos de <span class="process-math">\(k\text{,}\)</span> pode variar de <span class="process-math">\(0\)</span> (nenhum elemento no lugar) até <span class="process-math">\(n\)</span> (todos os elementos no lugar).</div> <div class="para logical">
+<div class="para">Se quisermos construir uma permutação que tenha <em class="emphasis">exatamente</em> <span class="process-math">\(k\)</span> pontos fixos, precisamos realizar duas tarefas:</div>
+<ul class="disc">
+<li><div class="para">Tarefa 1: Escolher quais serão os <span class="process-math">\(k\)</span> elementos privilegiados que não mudarão de lugar. Isso pode ser feito de <span class="process-math">\(C_n^k\)</span> maneiras.</div></li>
+<li><div class="para">Tarefa 2: Pegar os <span class="process-math">\(n-k\)</span> elementos que sobraram e rearranjá-los de modo que <em class="emphasis">nenhum</em> deles caia em sua posição original. Por definição, isso é uma permutação caótica, que pode ser feita de <span class="process-math">\(D_{n-k}\)</span> maneiras.</div></li>
+</ul>
+</div> <div class="para">Pelo Princípio Multiplicativo, existem exatamente <span class="process-math">\(C_n^k \times D_{n-k}\)</span> permutações contendo exatamente <span class="process-math">\(k\)</span> pontos fixos.</div> <div class="para logical">
+<div class="para">Como os cenários variando o valor de <span class="process-math">\(k\)</span> (de 0 até <span class="process-math">\(n\)</span>) formam casos mutuamente exclusivos e cobrem absolutamente todas as permutações possíveis, o Princípio Aditivo garante que a soma de todos os casos deve resultar no total incondicional de permutações:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-K(10,3)\times P_3=C_8^3\times P_3=336.
+\sum_{k=0}^n C_n^k D_{n-k} = n! 
 \end{equation*}
 </div>
 </div>
 </div>
-<span class="incontext"><a href="section-lemas-kaplansky.html#solution-173" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-permutacao-caotica.html#solution-173" class="internal">em contexto</a></span>
 </body>
 </html>

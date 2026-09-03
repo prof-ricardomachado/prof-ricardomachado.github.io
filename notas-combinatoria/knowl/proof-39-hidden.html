@@ -10,20 +10,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para">Observe que para <span class="process-math">\(\alpha \in \mathbb{N}\text{,}\)</span> esta expressão coincide com a que já conhecíamos (<a href="" class="xref" data-knowl="./knowl/teo-binomio-newton.html" title="Teorema 3.2.1">Teorema 3.2.1</a>), pois todos os termos depois do <span class="process-math">\(\alpha\)</span>-ésimo serão iguais a zero. O que vamos mostrar é que o lado direito converge quando <span class="process-math">\(|x|\lt1\text{.}\)</span> Então o lado direito será o significado da expressão do lado esquerdo.</div> <div class="para logical">
-<div class="para">Vamos aplicar o Teste de d'Alembert (<a href="" class="xref" data-knowl="./knowl/dalembert.html" title="Teorema 3.3.10">Teorema 3.3.10</a>). Considere termos consecutivos da série:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dalembert.html ./knowl/convergente.html">
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Faremos a demonstração por meio de um argumento combinatório.</div> <div class="para">Imagine um grupo composto por <span class="process-math">\(m+n\)</span> pessoas, sendo <span class="process-math">\(m\)</span> mulheres e <span class="process-math">\(n\)</span> homens. O nosso objetivo é determinar o número de maneiras de formar uma comissão com exatamente <span class="process-math">\(p\)</span> pessoas a partir desse grupo.</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Modo 1 (Contagem direta):</dfn> Como há <span class="process-math">\(m+n\)</span> pessoas no total e queremos selecionar <span class="process-math">\(p\text{,}\)</span> o número total de maneiras de formar essa comissão é, de forma direta:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-T_k = \binom{\alpha}{k}x^k ~~~\text{ e }~~~ T_{k+1} = \binom{\alpha}{k+1}x^{k+1}.
+C_{m+n}^p
 \end{equation*}
 </div>
-<div class="para">Vamos analisar o que acontece com o valor absoluto da razão, quando <span class="process-math">\(k\rightarrow \infty.\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/dalembert.html ./knowl/convergente.html">
+</div> <div class="para">
+<dfn class="terminology">Modo 2 (Dividindo em casos):</dfn> Podemos classificar todas as possíveis comissões baseando-nos na quantidade de mulheres que farão parte dela. Seja <span class="process-math">\(k\)</span> o número de mulheres na comissão. A quantidade <span class="process-math">\(k\)</span> pode variar de <span class="process-math">\(0\)</span> até <span class="process-math">\(p\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Para um número fixo <span class="process-math">\(k\)</span> de mulheres, precisamos realizar duas tarefas sucessivas:</div>
+<ul class="disc">
+<li><div class="para">Escolher <span class="process-math">\(k\)</span> mulheres dentre as <span class="process-math">\(m\)</span> disponíveis: isso pode ser feito de <span class="process-math">\(C_m^k\)</span> maneiras.</div></li>
+<li><div class="para">Preencher as restantes <span class="process-math">\(p-k\)</span> vagas da comissão exclusivamente com homens, escolhidos dentre os <span class="process-math">\(n\)</span> disponíveis: isso pode ser feito de <span class="process-math">\(C_n^{p-k}\)</span> maneiras.</div></li>
+</ul>
+</div> <div class="para">Pelo Princípio Multiplicativo, para um valor fixo de <span class="process-math">\(k\text{,}\)</span> existem <span class="process-math">\(C_m^k \cdot C_n^{p-k}\)</span> modos de formar a comissão.</div> <div class="para logical">
+<div class="para">Como a comissão terá 0 mulheres, OU 1 mulher, OU 2 mulheres, e assim sucessivamente, os casos são exaustivos e mutuamente exclusivos. Aplicando o Princípio Aditivo, somamos todos os cenários possíveis (de <span class="process-math">\(k=0\)</span> até <span class="process-math">\(p\)</span>):</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\left| \frac{T_{k+1}}{T_k} \right| = \left| \frac{\binom{\alpha}{k+1}x^{k+1}}{\binom{\alpha}{k}x^k} \right| = \left| \frac{\alpha-k}{k+1}\cdot x \right|,
+\sum_{k=0}^p C_m^k \cdot C_n^{p-k} 
 \end{equation*}
 </div>
-<div class="para">observe que <span class="process-math">\(\frac{\alpha-k}{k+1}\rightarrow -1\text{,}\)</span> quando <span class="process-math">\(k\rightarrow \infty\text{.}\)</span> Como <span class="process-math">\(|x|\lt1\text{,}\)</span> <span class="process-math">\(\left| \frac{\alpha-k}{k+1}\cdot x \right| \rightarrow |x|\lt 1\text{,}\)</span> quando <span class="process-math">\(k\rightarrow \infty\text{.}\)</span> Portanto, pelo Teste de d'Alembert, a série é absolutamente convergente. Logo, pelo <a href="" class="xref" data-knowl="./knowl/convergente.html" title="Teorema 3.3.9">Teorema 3.3.9</a> a série é convergente.</div>
+</div> <div class="para logical">
+<div class="para">Como as duas formas de contagem determinam o número de comissões possíveis para a mesma situação, os resultados devem ser idênticos. Logo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=0}^p C_m^k \cdot C_n^{p-k} = C_{m+n}^p 
+\end{equation*}
+</div>
 </div></article></body>
 </html>

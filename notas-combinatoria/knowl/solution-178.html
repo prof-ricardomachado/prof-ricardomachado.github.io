@@ -9,30 +9,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.3.3.4.1</span><span class="period">.</span>
 </h4>
-<div class="para">Irving pode escolher qualquer valor entre <span class="process-math">\(0\)</span> e <span class="process-math">\(7\)</span> inclusive, para ser a quantidade de vezes que ele vai jogar, pois <span class="process-math">\(gK(20, 8, 2)=0\)</span> e <span class="process-math">\(gK(20, 7, 2)\neq 0\text{.}\)</span>
-</div>  <div class="para">Assim, o número de formas de Irving jogar futebol sem ter dores musculares é</div>
+<div class="para">A palavra OURO tem 4 letras: O (2 vezes), U (1 vez) e R (1 vez). O tabuleiro de posições proibidas <span class="process-math">\(T\)</span> é formado por um bloco <span class="process-math">\(2 \times 2\)</span> para a letra O, e dois blocos <span class="process-math">\(1 \times 1\)</span> para as letras U e R. Os polinômios de torre individuais são:</div> <ul class="disc">
+<li><div class="para">Letra O (Bloco <span class="process-math">\(2 \times 2\)</span>): <span class="process-math">\(R(x, T_O) = 1 + 4x + 2x^2\)</span>
+</div></li>
+<li><div class="para">Letra U (Bloco <span class="process-math">\(1 \times 1\)</span>): <span class="process-math">\(R(x, T_U) = 1 + x\)</span>
+</div></li>
+<li><div class="para">Letra R (Bloco <span class="process-math">\(1 \times 1\)</span>): <span class="process-math">\(R(x, T_R) = 1 + x\)</span>
+</div></li>
+</ul> <div class="para logical">
+<div class="para">O polinômio de torre total <span class="process-math">\(R(x, T)\)</span> é o produto deles:</div>
 <div class="displaymath process-math">
 \begin{align*}
-\sum_{i=0}^{7}gK(20, i, 2)=\amp~1+20+153+560+1001+792+210+8\\
-=\amp~ 2745.
+R(x, T) \amp = (1+4x+2x^2)(1+x)^2 \\
+\amp = 2x^4 + 8x^3 + 11x^2 + 6x + 1 
 \end{align*}
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-38"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
-gK(20,0,2) + gK(20,1,2) + gK(20,2,2) + gK(20,3,2) + gK(20,4,2) + gK(20,5,2) + gK(20,6,2) + gK(20,7,2)
-</script></pre>
 </div>
-<span class="incontext"><a href="section-lemas-kaplansky.html#solution-178" class="internal">em contexto</a></span>
+</div> <div class="para logical">
+<div class="para">Aplicamos o Princípio da Inclusão-Exclusão trocando <span class="process-math">\(x^k\)</span> por <span class="process-math">\((-1)^k (4-k)!\)</span> para encontrar o total de arranjos considerando os elementos temporariamente distintos (<span class="process-math">\(N_{\text{dist}}\)</span>):</div>
+<div class="displaymath process-math">
+\begin{align*}
+N_{\text{dist}} \amp = 24 - 6(6) + 11(2) - 8(1) + 2(1) \\
+\amp = 24 - 36 + 22 - 8 + 2 = 4 
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Como a letra O se repete duas vezes, dividimos o total pelas permutações dos elementos idênticos (<span class="process-math">\(2!\)</span>):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{4}{2!} = 2 \text{ anagramas caóticos (UOOR e ROOU)}. 
+\end{equation*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#solution-178" class="internal">em contexto</a></span>
 </body>
 </html>

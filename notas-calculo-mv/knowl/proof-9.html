@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Demonstração</span></h4>
+<div class="para logical">
+<div class="para">Parametrizamos a superfície por <span class="process-math">\(\varphi(u,v) = (x(u,v), y(u,v), z(u,v))\)</span> com vetor normal fundamental:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial \varphi}{\partial u} \times \frac{\partial \varphi}{\partial v} = \left(\frac{\partial y}{\partial u}\frac{\partial z}{\partial v} - \frac{\partial z}{\partial u}\frac{\partial y}{\partial v}\right)\vec{i} + \left(\frac{\partial z}{\partial u}\frac{\partial x}{\partial v} - \frac{\partial x}{\partial u}\frac{\partial z}{\partial v}\right)\vec{j} + \left(\frac{\partial x}{\partial u}\frac{\partial y}{\partial v} - \frac{\partial y}{\partial u}\frac{\partial x}{\partial v}\right)\vec{k}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Lembrando que o rotacional é dado por:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\vec{i} + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\vec{j} + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\vec{k}
+\end{equation*}
+</div>
+<div class="para">a integral de superfície é expressa sobre o domínio <span class="process-math">\(D\)</span> por:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\iint_{S} (\text{rot}\,\vec{F} \cdot \vec{N}) \, dS \amp = \iint_{D} \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\left(\frac{\partial y}{\partial u}\frac{\partial z}{\partial v} - \frac{\partial z}{\partial u}\frac{\partial y}{\partial v}\right) dA\\
+\amp \quad + \iint_{D} \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\left(\frac{\partial z}{\partial u}\frac{\partial x}{\partial v} - \frac{\partial x}{\partial u}\frac{\partial z}{\partial v}\right) dA\\
+\amp \quad + \iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\left(\frac{\partial x}{\partial u}\frac{\partial y}{\partial v} - \frac{\partial y}{\partial u}\frac{\partial x}{\partial v}\right) dA
+\end{align*}
+</div>
+</div> <div class="para">Por outro lado, a integral de linha sobre o bordo pode ser decomposta em <span class="process-math">\(\oint_{\partial S} \vec{F} \cdot d\vec{r} = \oint_{\partial S} P\,dx + Q\,dy + R\,dz\text{.}\)</span> Analisemos a primeira componente <span class="process-math">\(\oint_{\partial S} P\,dx\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Seja <span class="process-math">\(C(t) = (u(t), v(t))\text{,}\)</span> com <span class="process-math">\(a \le t \le b\text{,}\)</span> uma parametrização da fronteira orientada positivamente de <span class="process-math">\(D\text{,}\)</span> de modo que <span class="process-math">\(\partial S = \varphi(C(t))\text{.}\)</span> Pela Regra da Cadeia:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\oint_{\partial S} P \, dx \amp = \int_{a}^{b} P(\varphi(C(t))) \frac{d}{dt}(x(u(t),v(t))) \, dt\\
+\amp = \int_{a}^{b} P(\varphi(C(t))) \left(\frac{\partial x}{\partial u}\frac{du}{dt} + \frac{\partial x}{\partial v}\frac{dv}{dt}\right) dt\\
+\amp = \oint_{C} P(\varphi(u,v))\frac{\partial x}{\partial u} \, du + P(\varphi(u,v))\frac{\partial x}{\partial v} \, dv
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Aplicando o Teorema de Green no plano sobre o domínio <span class="process-math">\(D\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\oint_{\partial S} P \, dx \amp = \iint_{D} \left[ \frac{\partial}{\partial u}\left(P \frac{\partial x}{\partial v}\right) - \frac{\partial}{\partial v}\left(P \frac{\partial x}{\partial u}\right) \right] dA\\
+\amp = \iint_{D} \left( \frac{\partial P}{\partial u}\frac{\partial x}{\partial v} + P\frac{\partial^2 x}{\partial u \partial v} - \frac{\partial P}{\partial v}\frac{\partial x}{\partial u} - P\frac{\partial^2 x}{\partial v \partial u} \right) dA
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(\varphi\)</span> é de classe <span class="process-math">\(C^2\text{,}\)</span> pelo Teorema de Clairaut-Schwarz as derivadas mistas se cancelam (<span class="process-math">\(\frac{\partial^2 x}{\partial u \partial v} = \frac{\partial^2 x}{\partial v \partial u}\)</span>):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\oint_{\partial S} P \, dx = \iint_{D} \left( \frac{\partial P}{\partial u}\frac{\partial x}{\partial v} - \frac{\partial P}{\partial v}\frac{\partial x}{\partial u} \right) dA
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Expandindo <span class="process-math">\(\frac{\partial P}{\partial u}\)</span> e <span class="process-math">\(\frac{\partial P}{\partial v}\)</span> via Regra da Cadeia em três variáveis:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{\partial P}{\partial u} \amp = \frac{\partial P}{\partial x}\frac{\partial x}{\partial u} + \frac{\partial P}{\partial y}\frac{\partial y}{\partial u} + \frac{\partial P}{\partial z}\frac{\partial z}{\partial u}\\
+\frac{\partial P}{\partial v} \amp = \frac{\partial P}{\partial x}\frac{\partial x}{\partial v} + \frac{\partial P}{\partial y}\frac{\partial y}{\partial v} + \frac{\partial P}{\partial z}\frac{\partial z}{\partial v}
+\end{align*}
+</div>
+<div class="para">Substituindo e simplificando (os termos em <span class="process-math">\(\frac{\partial P}{\partial x}\)</span> anulam-se identicamente):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\oint_{\partial S} P \, dx = \iint_{D} \left[ -\frac{\partial P}{\partial y}\left(\frac{\partial x}{\partial u}\frac{\partial y}{\partial v} - \frac{\partial y}{\partial u}\frac{\partial x}{\partial v}\right) + \frac{\partial P}{\partial z}\left(\frac{\partial z}{\partial u}\frac{\partial x}{\partial v} - \frac{\partial x}{\partial u}\frac{\partial z}{\partial v}\right) \right] dA
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">De maneira inteiramente análoga, obtêm-se as expressões para <span class="process-math">\(\oint_{\partial S} Q \, dy\)</span> e <span class="process-math">\(\oint_{\partial S} R \, dz\text{.}\)</span> Somando as três identidades, reagrupam-se exatamente os termos correspondentes às componentes de <span class="process-math">\(\text{rot}\,\vec{F} \cdot (\varphi_u \times \varphi_v)\text{,}\)</span> demonstrando a igualdade fundamental:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\oint_{\partial S} \vec{F} \cdot d\vec{r} = \iint_{S} (\text{rot}\,\vec{F} \cdot \vec{N}) \, dS
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="sec-teorema-de-stokes.html#proof-9" class="internal">em contexto</a></span>
+</body>
+</html>

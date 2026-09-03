@@ -12,24 +12,38 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h3 class="heading"><span class="type">Demonstração</span></h3>
-<div class="para logical">
+<div class="para">Faremos a prova por indução matemática sobre <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para">
+<dfn class="terminology">Casos base:</dfn> Para <span class="process-math">\(n=0\text{,}\)</span> a soma tem apenas o termo <span class="process-math">\(C_0^0 = 1\text{,}\)</span> e sabemos que <span class="process-math">\(F_1 = 1\text{.}\)</span> Para <span class="process-math">\(n=1\text{,}\)</span> a soma tem apenas o termo <span class="process-math">\(C_1^0 = 1\text{,}\)</span> e sabemos que <span class="process-math">\(F_2 = 1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">Passo indutivo:</dfn> Suponha que a fórmula seja válida para todos os valores menores ou iguais a um certo <span class="process-math">\(n\text{.}\)</span> Queremos mostrar que ela vale para <span class="process-math">\(n+1\text{.}\)</span> A soma para <span class="process-math">\(n+1\)</span> é:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-T_{k+1} = C_n^kx^ka^{n-k} = \frac{n-k+1}{k}C_n^{k-1}x^ka^{n-k} 
+S_{n+1} = \sum_{k=0}^{\lfloor \frac{n+1}{2} \rfloor} C_{n+1-k}^k 
 \end{equation*}
 </div>
-<div class="para">e</div>
+<div class="para">Separando o primeiro termo (<span class="process-math">\(k=0\)</span>) e aplicando a Relação de Stifel (<span class="process-math">\(C_{n+1-k}^k = C_{n-k}^k + C_{n-k}^{k-1}\)</span>) nos demais termos, temos:</div>
+<div class="displaymath process-math">
+\begin{align*}
+S_{n+1} = \amp ~ C_{n+1}^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} \left( C_{n-k}^k + C_{n-k}^{k-1} \right) \\
+= \amp ~ C_n^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^k + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^{k-1} \quad (\text{pois } C_{n+1}^0 = C_n^0 = 1) 
+\end{align*}
+</div>
+<div class="para">Juntando o termo <span class="process-math">\(C_n^0\)</span> ao primeiro somatório, obtemos exatamente a soma correspondente a <span class="process-math">\(n\text{.}\)</span> No segundo somatório, fazemos uma mudança de índice <span class="process-math">\(j = k-1\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+S_{n+1} = \amp ~ \left( \sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} C_{n-k}^k \right) + \left( \sum_{j=0}^{\lfloor \frac{n-1}{2} \rfloor} C_{n-1-j}^j \right) 
+\end{align*}
+</div>
+<div class="para">Pela nossa hipótese de indução, o primeiro parêntese vale <span class="process-math">\(F_{n+1}\)</span> e o segundo vale <span class="process-math">\(F_n\text{.}\)</span> Portanto:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-T_{k} = C_n^{k-1}x^{k-1}a^{n-k+1}. 
+S_{n+1} = F_{n+1} + F_n = F_{n+2} 
 \end{equation*}
 </div>
-<div class="para">Portanto,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-T_{k+1} = \frac{n-k+1}{k}\cdot\frac{x}{a}\cdot T_k.
-\end{equation*}
-</div>
-</div></article><span class="incontext"><a href="section-binomio-newton.html#proof-38" class="internal">em contexto</a></span>
+<div class="para">O que conclui a demonstração.</div>
+</div></article><span class="incontext"><a href="section-triangulo-pascal.html#proof-38" class="internal">em contexto</a></span>
 </body>
 </html>

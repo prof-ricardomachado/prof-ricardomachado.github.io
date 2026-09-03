@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 380" width="100%" height="100%">
+  <style>
+    .math { font-family: 'Times New Roman', serif; font-style: italic; }
+    .math-bold { font-family: 'Times New Roman', serif; font-style: italic; font-weight: bold; }
+
+    /* Superfície */
+    .surf-base { fill: #f5f3ff; stroke: #4338ca; stroke-width: 2.5; stroke-linejoin: round; }
+    .surf-rib { stroke: #374151; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+
+    /* Bordo dS (Roxo) */
+    .boundary-front { stroke: #7e22ce; stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .boundary-back { stroke: #7e22ce; stroke-width: 3.2; stroke-dasharray: 7,5; fill: none; stroke-linecap: round; }
+
+    /* Vetores Normais */
+    .normal-vec { stroke: #111827; stroke-width: 2.8; fill: none; }
+    .normal-foot { stroke: #111827; stroke-width: 2; fill: none; }
+
+    /* Setas na fronteira */
+    .arrow-path { stroke: #7e22ce; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <defs>
+    <!-- Seta do Vetor Normal (Preta) -->
+    <marker id="arr-norm" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" fill="#111827" />
+    </marker>
+
+    <!-- Seta do Bordo dS (Roxa) -->
+    <marker id="arr-bound" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" fill="#7e22ce" />
+    </marker>
+  </defs>
+
+  <!-- ================================================================= -->
+  <!-- 1. CORPO DA SUPERFÍCIE CURVA (S)                                  -->
+  <!-- ================================================================= -->
+  <path d="M 75 275 
+           C 115 195, 140 145, 175 110 
+           C 290 60, 440 85, 545 155 
+           C 495 225, 455 270, 420 295 
+           C 290 220, 180 235, 75 275 Z" class="surf-base" />
+
+  <!-- Linhas Estruturais / Estrias Transversais na Superfície -->
+  <path d="M 225 96 C 210 140, 185 195, 138 258" class="surf-rib" />
+  <path d="M 285 84 C 270 135, 250 190, 205 252" class="surf-rib" />
+  <path d="M 345 83 C 335 135, 318 190, 275 254" class="surf-rib" />
+  <path d="M 405 92 C 398 140, 385 195, 345 264" class="surf-rib" />
+  <path d="M 465 110 C 458 155, 445 205, 410 280" class="surf-rib" />
+
+  <!-- ================================================================= -->
+  <!-- 2. BORDO dS (CONTORNO COM ORIENTAÇÃO INDUZIDA)                    -->
+  <!-- ================================================================= -->
+
+  <!-- Parte de Trás do Bordo (Tracejada) -->
+  <path d="M 175 110 C 290 60, 440 85, 545 155" class="boundary-back" />
+
+  <!-- Partes Visíveis da Frente do Bordo (Sólidas) -->
+  <!-- Lado direito descendo -->
+  <path d="M 545 155 C 495 225, 455 270, 420 295" class="boundary-front" />
+  <!-- Bordo frontal inferior -->
+  <path d="M 420 295 C 290 220, 180 235, 75 275" class="boundary-front" />
+  <!-- Lado esquerdo subindo para trás -->
+  <path d="M 75 275 C 115 195, 140 145, 175 110" class="boundary-front" />
+
+  <!-- ================================================================= -->
+  <!-- 3. SETAS DE ORIENTAÇÃO POSITIVA (REGRA DA MÃO DIREITA)            -->
+  <!-- ================================================================= -->
+
+  <!-- 1. Bordo frontal inferior (indo para a direita/frente) -->
+  <path d="M 220 241 L 245 244" class="arrow-path" marker-end="url(#arr-bound)" />
+  <path d="M 340 263 L 365 273" class="arrow-path" marker-end="url(#arr-bound)" />
+
+  <!-- 2. Lado direito (subindo para o fundo) -->
+  <path d="M 465 240 L 485 210" class="arrow-path" marker-end="url(#arr-bound)" />
+
+  <!-- 3. Bordo posterior tracejado (indo para a esquerda) -->
+  <path d="M 375 80 L 350 78" class="arrow-path" marker-end="url(#arr-bound)" />
+  <path d="M 260 88 L 235 96" class="arrow-path" marker-end="url(#arr-bound)" />
+
+  <!-- 4. Lado esquerdo (descendo para a frente) -->
+  <path d="M 140 160 L 125 190" class="arrow-path" marker-end="url(#arr-bound)" />
+
+  <!-- ================================================================= -->
+  <!-- 4. VETORES NORMAIS UNITÁRIOS (N)                                  -->
+  <!-- ================================================================= -->
+
+  <!-- Vetor Normal Esquerdo -->
+  <line x1="140" y1="175" x2="115" y2="85" class="normal-vec" marker-end="url(#arr-norm)" />
+  <line x1="131" y1="172" x2="147" y2="178" class="normal-foot" />
+  <text x="122" y="80" class="math-bold" font-size="24px" fill="#111827">N⃗</text>
+
+  <!-- Vetor Normal Central/Superior -->
+  <line x1="375" y1="135" x2="375" y2="40" class="normal-vec" marker-end="url(#arr-norm)" />
+  <line x1="365" y1="135" x2="385" y2="135" class="normal-foot" />
+  <text x="388" y="55" class="math-bold" font-size="24px" fill="#111827">N⃗</text>
+
+  <!-- ================================================================= -->
+  <!-- 5. RÓTULOS DE TEXTO                                               -->
+  <!-- ================================================================= -->
+  <text x="265" y="175" class="math-bold" font-size="34px" fill="#1e1b4b">S</text>
+  <text x="460" y="325" class="math-bold" font-size="30px" fill="#7e22ce">∂S</text>
+</svg>

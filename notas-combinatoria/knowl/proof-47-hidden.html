@@ -10,13 +10,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
-<div class="para">Para que o sucesso seja obtido exatamente na <span class="process-math">\(n\)</span>-ésima tentativa é necessário e suficiente que as <span class="process-math">\(p-1\)</span> tentativas seja fracassos e que a <span class="process-math">\(n\)</span>-ésima seja um sucesso. Assim, obtemos a Equação <a href="" class="xref" data-knowl="./knowl/var_geo.html" title="Equação 4.3.1">(4.3.1)</a>. Como</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/var_geo.html">
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Para dois conjuntos a fórmula é verdadeira, pois coincide com a definição de probabilidade condicional. Vamos usar o Princípio de Indução para mostrar que o resultado é verdadeiro. Suponha o resultado válido para <span class="process-math">\(n-1\)</span> eventos.</div> <div class="para logical">
+<div class="para">Defina <span class="process-math">\(B = A_1\cap A_2\cap \cdots \cap A_{n-1}\text{,}\)</span> queremos a probabilidade <span class="process-math">\(P(B\cap A_n)\text{.}\)</span> Pela definição de probabilidade condicional, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
 \begin{equation*}
-\sum_{n=1}^\infty (1-p)^{n-1}p = p\sum_{n=1}^\infty (1-p)^{n-1} = \frac{p}{1-(1-p)}=1,
+P(B\cap A_n) =  P(B)\cdot P(A_n|B),
 \end{equation*}
 </div>
-<div class="para">um sucesso acabará ocorrendo, com probabilidade 1.</div>
+<div class="para">ou seja,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
+\begin{equation}
+P(A_1\cap \cdots \cap A_{n}) =  P(A_1\cap \cdots \cap A_{n-1})\cdot P(A_n|A_1\cap \cdots \cap A_{n-1})\tag{4.2.2}
+\end{equation}
+</div>
+<div class="para">Pela hipótese de indução, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
+\begin{align*}
+P(A_1\cap \cdots \cap A_{n-1}) = \amp ~  P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
+\amp ~~~~ ~ \cdots P(A_{n-1}|(A_1\cap A_2\cap \cdots \cap A_{n-2})). 
+\end{align*}
+</div>
+<div class="para">Substituindo a igualdade dada pela hipótese de indução em <a href="" class="xref" data-knowl="./knowl/eq-prod-probab.html" title="Equação 4.2.2">(4.2.2)</a>, chegamos no resultado:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-prod-probab.html">
+\begin{align*}
+P(A_1\cap A_2\cap \cdots \cap A_n) = \amp ~ P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|(A_1\cap A_2))\cdots \\
+\amp ~~~~ \cdots P(A_n|(A_1\cap A_2\cap \cdots \cap A_{n-1})). 
+\end{align*}
+</div>
 </div></article></body>
 </html>

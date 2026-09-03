@@ -9,26 +9,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
-                       linked: true,
-                       languages: ['sage'],
-                       evalButtonText: 'Executar (Sage)'});
-</script>
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.6.4.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.7.1</span><span class="period">.</span>
 </h4>
-<div class="para">No <a href="" class="xref" data-knowl="./knowl/ex-dyckway.html" title="Exemplo 2.6.20">Exemplo 2.6.20</a>, mostramos que o número de caminhos de Dyck, de comprimento <span class="process-math">\(2n\text{,}\)</span> é dado por <span class="process-math">\(C_n\text{.}\)</span> É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo <span class="process-math">\(n\)</span> pares de parenteses que estão corretamente emparelhados.</div> <div class="para">Para cada caminho de Dyck, cada vez que o passo for de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n+1)\text{,}\)</span> abra um parêntese e cada vez que o passo for de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n-1)\)</span> feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo <span class="process-math">\(x\text{,}\)</span> em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de <span class="process-math">\(2n\)</span> passos e estão no eixo <span class="process-math">\(x\text{,}\)</span> portanto a expressão correspondente conterá <span class="process-math">\(n\)</span> pares de parênteses corretamente emparelhados.</div> <div class="para">Reciprocamente, para cada expressão corretamente emparelhada contendo <span class="process-math">\(n\)</span> pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n+1)\text{,}\)</span> sempre que houver um parêntese abrindo, e dê um passo de <span class="process-math">\((m,n)\)</span> para <span class="process-math">\((m+1, n-1)\text{,}\)</span> sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo <span class="process-math">\(x\text{.}\)</span> O primeiro parêntese será do tipo "(", garantindo que o primeiro passo seja de <span class="process-math">\((0,0)\)</span> para <span class="process-math">\((1,1)\text{.}\)</span> Como as expressões estão corretamente emparelhadas e contêm <span class="process-math">\(n\)</span> pares de parênteses, o último parêntese será do tipo ")" e o caminho correspondente chegará no ponto <span class="process-math">\((2n,0)\text{.}\)</span>
-</div> <div class="para">
-<dfn class="terminology">Observação:</dfn> No Sage, a lista contendo todas as expressões de <span class="process-math">\(n\)</span> pares de parênteses corretamente emparelhados pode ser gerada com o método <span class="process-math">\(\verb|DyckWords|\text{.}\)</span> Para exibir a representação em parênteses, basta usar o método <span class="process-math">\(\verb|print|\text{:}\)</span>
-</div> <pre class="ptx-sagecell sagecell-sage" id="sage-43"><script type="text/x-sage">for dw in DyckWords(3):
-    print(dw)
-</script></pre>
+<div class="para">Todo número inteiro positivo <span class="process-math">\(x\)</span> pode ser fatorado de forma única na forma <span class="process-math">\(x = 2^k \cdot m\text{,}\)</span> onde <span class="process-math">\(k\)</span> é um inteiro não negativo e <span class="process-math">\(m\)</span> é um número ímpar.</div> <div class="para">No conjunto <span class="process-math">\(\{1, 2, \ldots, 2n\}\text{,}\)</span> os possíveis "partes ímpares" (<span class="process-math">\(m\)</span>) só podem ser os números ímpares desse próprio conjunto, que são: <span class="process-math">\(1, 3, 5, \ldots, 2n-1\text{.}\)</span> Observe que existem exatamente <span class="process-math">\(n\)</span> números ímpares nesse intervalo.</div> <div class="para">Vamos usar essas "partes ímpares" como sendo as nossas "casas" (existem <span class="process-math">\(n\)</span> casas). Como selecionamos <span class="process-math">\(n+1\)</span> números (os pombos) para formar o conjunto <span class="process-math">\(A\text{,}\)</span> pelo Princípio da Casa dos Pombos, pelo menos dois números selecionados devem possuir a mesma "parte ímpar" <span class="process-math">\(m\text{.}\)</span>
+</div> <div class="para">Sejam esses dois números <span class="process-math">\(x = 2^a \cdot m\)</span> e <span class="process-math">\(y = 2^b \cdot m\text{.}\)</span> Como eles são distintos, os expoentes devem ser diferentes. Se <span class="process-math">\(a \lt b\text{,}\)</span> então <span class="process-math">\(x\)</span> divide <span class="process-math">\(y\text{.}\)</span> Se <span class="process-math">\(b \lt a\text{,}\)</span> então <span class="process-math">\(y\)</span> divide <span class="process-math">\(x\text{.}\)</span> Em ambos os casos, garantimos que um divide o outro.</div>
 </div>
-<span class="incontext"><a href="section-13.html#solution-207" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-casa-pombos.html#solution-207" class="internal">em contexto</a></span>
 </body>
 </html>

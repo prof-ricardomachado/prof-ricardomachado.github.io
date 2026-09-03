@@ -11,27 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para logical">
-<div class="para">Considere os eventos:</div>
-<div class="displaymath process-math">
-\begin{align*}
-A_1: \amp ~ \text{ a primeira bola é branca;} \\
-A_2: \amp ~ \text{ a segunda bola é branca;} \\
-A_3: \amp ~ \text{ a terceira bola é branca;} 
-\end{align*}
-</div>
-<div class="para">Queremos calcular a probabilidade <span class="process-math">\(P(A_1\cap A_2\cap A_3)\text{.}\)</span>
-</div>
-</div> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/pcondicional1.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">4.2.7<span class="period">.</span></span><span class="space"> </span>Árvore de Probabilidades.</figcaption></figure> <div class="para logical">
-<div class="para">A probabilidade de que a primeira bola seja branca é <span class="process-math">\(\frac{6}{14}\text{.}\)</span> Dado que aconteceu <span class="process-math">\(A_1\text{,}\)</span> a probabilidade de que a segunda bola seja branca é <span class="process-math">\(\frac{5}{13}\text{.}\)</span> Dado que aconteceram <span class="process-math">\(A_1\)</span> e <span class="process-math">\(A_2\text{,}\)</span> a probabilidade de que a terceira bola seja branca é <span class="process-math">\(\frac{4}{12}\text{.}\)</span> Portanto</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/prop-produto-probabilidade.html">
-\begin{equation*}
-P(A_1\cap A_2\cap A_3) = \frac{6}{14}\cdot\frac{5}{13}\cdot\frac{4}{12} = \frac{5}{91} \approx 0.0549 \approx 5,5\% 
-\end{equation*}
-</div>
-<div class="para">Na solução deste problema, usamos a <a href="" class="xref" data-knowl="./knowl/prop-produto-probabilidade.html" title="Proposição 4.2.8">Proposição 4.2.8</a>
-</div>
+<div class="para">Qualquer caminho de <span class="process-math">\((0,0)\)</span> até <span class="process-math">\((n,n)\)</span> exige exatamente <span class="process-math">\(2n\)</span> passos (<span class="process-math">\(n\)</span> para a direita e <span class="process-math">\(n\)</span> para cima). O número total de caminhos é a escolha de quais <span class="process-math">\(n\)</span> passos serão para a direita dentre os <span class="process-math">\(2n\)</span> passos totais, ou seja, <span class="process-math">\(C_{2n}^n\text{.}\)</span>
+</div> <div class="para">Por outro lado, imagine a linha diagonal (secundária) que liga os pontos <span class="process-math">\((0,n)\)</span> a <span class="process-math">\((n,0)\text{.}\)</span> Todo caminho contínuo de <span class="process-math">\((0,0)\)</span> até <span class="process-math">\((n,n)\)</span> precisa interceptar essa diagonal em <em class="emphasis">exatamente um ponto</em>. Os pontos dessa diagonal têm coordenadas da forma <span class="process-math">\((k, n-k)\text{,}\)</span> onde <span class="process-math">\(k\)</span> varia de <span class="process-math">\(0\)</span> a <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para">Para um ponto de travessia específico <span class="process-math">\((k, n-k)\text{:}\)</span>
+</div> <ul class="disc">
+<li><div class="para">O número de caminhos de <span class="process-math">\((0,0)\)</span> até <span class="process-math">\((k, n-k)\)</span> é <span class="process-math">\(C_{k + (n-k)}^k = C_n^k\text{.}\)</span>
+</div></li>
+<li><div class="para">O número de caminhos de <span class="process-math">\((k, n-k)\)</span> até <span class="process-math">\((n,n)\)</span> exige <span class="process-math">\(n-k\)</span> passos para a direita e <span class="process-math">\(k\)</span> para cima. O total é <span class="process-math">\(C_{(n-k) + k}^{n-k} = C_n^{n-k}\text{.}\)</span> Pela relação complementar, isso também é igual a <span class="process-math">\(C_n^k\text{.}\)</span>
+</div></li>
+</ul> <div class="para">Pelo Princípio Multiplicativo, o número de caminhos que passam pelo ponto específico <span class="process-math">\((k, n-k)\)</span> é <span class="process-math">\(C_n^k \cdot C_n^k = (C_n^k)^2\text{.}\)</span>
+</div> <div class="para">Como os caminhos devem passar por exatamente um desses pontos da diagonal (são cenários mutuamente exclusivos), somamos as possibilidades de todos os valores de <span class="process-math">\(k\)</span> para obter o total de caminhos: <span class="process-math">\(\sum_{k=0}^n (C_n^k)^2\text{.}\)</span>
+</div> <div class="para">Como as duas contagens representam o total de caminhos de <span class="process-math">\((0,0)\)</span> a <span class="process-math">\((n,n)\text{,}\)</span> as expressões são iguais: <span class="process-math">\(\sum_{k=0}^n (C_n^k)^2 = C_{2n}^n\text{.}\)</span>
 </div>
 </div></body>
 </html>

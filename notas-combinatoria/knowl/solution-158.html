@@ -13,21 +13,35 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.10.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.17.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:</div>
+<div class="para">O problema consiste em encontrar o número de permutações circulares sem sucessões. Vamos numerar as pessoas de 1 a 6, na ordem em que sentaram no primeiro dia. Queremos evitar as 6 sucessões: <span class="process-math">\((1,2), (2,3), (3,4), (4,5), (5,6)\)</span> e <span class="process-math">\((6,1)\text{.}\)</span>
+</div> <div class="para">O total de permutações circulares sem restrições é <span class="process-math">\(P C_6 = (6-1)! = 5! = 120\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Seja <span class="process-math">\(A_i\)</span> o conjunto das permutações em que a sucessão <span class="process-math">\(i\)</span> ocorre. Pelo Princípio da Inclusão-Exclusão, a quantidade de arranjos onde nenhuma sucessão ocorre é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+5! - S_1 + S_2 - S_3 + S_4 - S_5 + S_6 
+\end{equation*}
+</div>
+<div class="para">onde <span class="process-math">\(S_k\)</span> é a soma das cardinalidades das interseções de <span class="process-math">\(k\)</span> conjuntos.</div>
+</div> <div class="para">Para calcular <span class="process-math">\(S_k\text{,}\)</span> escolhemos <span class="process-math">\(k\)</span> sucessões dentre as 6 possíveis, o que pode ser feito de <span class="process-math">\(C_6^k\)</span> maneiras. Ao obrigar que <span class="process-math">\(k\)</span> sucessões ocorram, aglutinamos os 6 elementos em <span class="process-math">\(6-k\)</span> blocos indivisíveis. A permutação circular desses <span class="process-math">\(6-k\)</span> blocos é calculada por <span class="process-math">\((6-k-1)! = (5-k)!\text{.}\)</span> Logo, <span class="process-math">\(S_k = C_6^k \times (5-k)!\text{.}\)</span>
+</div> <div class="para">Calculando termo a termo:</div> <ul class="disc">
+<li><div class="para"><span class="process-math">\(\displaystyle S_1 = C_6^1 \times 4! = 6 \times 24 = 144\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle S_2 = C_6^2 \times 3! = 15 \times 6 = 90\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle S_3 = C_6^3 \times 2! = 20 \times 2 = 40\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle S_4 = C_6^4 \times 1! = 15 \times 1 = 15\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle S_5 = C_6^5 \times 0! = 6 \times 1 = 6\)</span></div></li>
+<li><div class="para">
+<span class="process-math">\(S_6 = 1\)</span> (se todas as 6 sucessões são mantidas, a mesa inteira está fixa, resultando apenas na formação original).</div></li>
+</ul> <div class="para">Substituindo os valores na fórmula da Inclusão-Exclusão:</div>
 <div class="displaymath process-math">
 \begin{align*}
-D_5 \amp = ~5!\cdot\left(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}\right) \\
-\amp =  ~5!-5! + \frac{5!}{2!} -\frac{5!}{3!} + \frac{5!}{4!}-\frac{5!}{5!} \\
-\amp =  ~5\cdot 4 \cdot 3 -5\cdot 4 + 5 - 1 \\
-\amp = ~60-20+5-1 \\
-\amp =  ~44 
+\text{Total} \amp = 120 - 144 + 90 - 40 + 15 - 6 + 1 \\
+\amp = 36. 
 \end{align*}
 </div>
 </div>
-</div>
-<span class="incontext"><a href="section-permutacao-caotica.html#solution-158" class="internal">em contexto</a></span>
+<span class="incontext"><a href="section-inclusao-exclusao.html#solution-158" class="internal">em contexto</a></span>
 </body>
 </html>

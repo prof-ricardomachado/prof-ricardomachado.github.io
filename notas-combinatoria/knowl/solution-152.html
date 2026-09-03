@@ -16,33 +16,61 @@
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.1.4.11.1</span><span class="period">.</span>
 </h4>
 <div class="para">
-<dfn class="terminology">item a)</dfn> Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o <span class="process-math">\(n\)</span>-ésimo dígito que também temos 3 opções. Portanto a resposta é <span class="process-math">\(\underbrace{3\times \cdots \times 3}_{n\text{ parcelas}} = 3^n\text{.}\)</span>
-</div> <div class="para logical">
+<dfn class="terminology">item a)</dfn> A fatoração é <span class="process-math">\(300 = 2^2 \times 3 \times 5^2\text{.}\)</span> Os divisores primos de 300 são 2, 3 e 5.</div> <div class="para logical">
 <div class="para">
-<dfn class="terminology">item b)</dfn> Agora precisamos subtrair de <span class="process-math">\(3^n\)</span> a quantidade de números de <span class="process-math">\(n\)</span> dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina <span class="process-math">\(A_1\)</span> como o subconjunto dos números de <span class="process-math">\(n\)</span> dígitos formados pelos dígitos <span class="process-math">\(1, 2\)</span> e <span class="process-math">\(3\)</span> tal que o dígito <span class="process-math">\(1\)</span> não aparece. De maneira análoga defina os subconjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\text{.}\)</span> Desta forma, queremos calcular</div>
-<div class="displaymath process-math">
-\begin{equation*}
-3^n - \#(A_1\cup A_2 \cup A_3)\text{.}
-\end{equation*}
-</div>
-<div class="para">Pelo Princípio da Inclusão-Exclusão, sabemos que</div>
+<dfn class="terminology">item b)</dfn> Para que um número seja coprimo com 300, ele não pode ser múltiplo de 2, nem de 3, nem de 5. Seja <span class="process-math">\(\Omega = \{1, 2, \ldots, 300\}\text{.}\)</span> Definimos:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(A_2\text{:}\)</span> múltiplos de 2 em <span class="process-math">\(\Omega\)</span> (<span class="process-math">\(300/2 = 150\)</span>)</div></li>
+<li><div class="para">
+<span class="process-math">\(A_3\text{:}\)</span> múltiplos de 3 em <span class="process-math">\(\Omega\)</span> (<span class="process-math">\(300/3 = 100\)</span>)</div></li>
+<li><div class="para">
+<span class="process-math">\(A_5\text{:}\)</span> múltiplos de 5 em <span class="process-math">\(\Omega\)</span> (<span class="process-math">\(300/5 = 60\)</span>)</div></li>
+</ul>
+</div> <div class="para logical">
+<div class="para">As interseções são calculadas pelos produtos dos primos:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(\#(A_2 \cap A_3)\)</span> = múltiplos de 6 = <span class="process-math">\(300/6 = 50\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\#(A_2 \cap A_5)\)</span> = múltiplos de 10 = <span class="process-math">\(300/10 = 30\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\#(A_3 \cap A_5)\)</span> = múltiplos de 15 = <span class="process-math">\(300/15 = 20\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\#(A_2 \cap A_3 \cap A_5)\)</span> = múltiplos de 30 = <span class="process-math">\(300/30 = 10\)</span>
+</div></li>
+</ul>
+</div> <div class="para logical">
+<div class="para">O número de coprimos é a cardinalidade do conjunto complementar da união:</div>
 <div class="displaymath process-math">
 \begin{align*}
-\#(A_1\cup A_2\cup A_3) = \amp ~\#A_1+\#A_2+\#A_3 \\
-\amp ~ -\#(A_1\cap A_2)-\#(A_1\cap A_3)-\#(A_2\cap A_3) \\
-\amp ~ +\#(A_1\cap A_2\cap A_3). 
+\phi(300) =\amp~ 300 - \#(A_2 \cup A_3 \cup A_5) \\
+=\amp~ 300 - (150 + 100 + 60 - 50 - 30 - 20 + 10) \\
+=\amp~ 300 - 220 = 80. 
 \end{align*}
 </div>
-<div class="para">
-<span class="process-math">\(A_1\)</span> possui <span class="process-math">\(2^n\)</span> elementos, pois o dígito <span class="process-math">\(1\)</span> não pode figurar no número de <span class="process-math">\(n\)</span> dígitos, sobrando apenas os dígitos <span class="process-math">\(2\)</span> e <span class="process-math">\(3\text{.}\)</span> Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos <span class="process-math">\(A_2\)</span> e <span class="process-math">\(A_3\)</span> possuem a mesma quantidade de elementos.</div>
 </div> <div class="para">
-<span class="process-math">\(A_1\cap A_2\)</span> possui apenas <span class="process-math">\(1\)</span> elemento, pois os dígitos <span class="process-math">\(1\)</span> e <span class="process-math">\(2\)</span> não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que <span class="process-math">\(A_1\cap A_2\)</span> e <span class="process-math">\(A_2\cap A_3\)</span> também possuem apenas um elemento.</div> <div class="para logical">
-<div class="para">Finalmente, <span class="process-math">\(A_1\cap A_2\cap A_3\)</span>  não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é</div>
+<dfn class="terminology">item c)</dfn> Seja <span class="process-math">\(\Omega = \{1, 2, \ldots, n\}\text{.}\)</span> Para cada divisor primo <span class="process-math">\(p_i\)</span> de <span class="process-math">\(n\text{,}\)</span> defina <span class="process-math">\(A_i\)</span> como o conjunto dos múltiplos de <span class="process-math">\(p_i\)</span> em <span class="process-math">\(\Omega\text{.}\)</span> A cardinalidade de cada conjunto individual é <span class="process-math">\(\#A_i = \frac{n}{p_i}\text{.}\)</span>
+</div> <div class="para">A interseção de dois conjuntos <span class="process-math">\(A_i \cap A_j\)</span> contém os múltiplos de <span class="process-math">\(p_i p_j\text{,}\)</span> logo sua cardinalidade é <span class="process-math">\(\#(A_i \cap A_j) = \frac{n}{p_i p_j}\text{.}\)</span> A lógica segue idêntica para interseções maiores.</div> <div class="para">Aplicando o Princípio da Inclusão-Exclusão para calcular a quantidade de elementos que não pertencem a nenhum <span class="process-math">\(A_i\)</span> (ou seja, os números coprimos com <span class="process-math">\(n\)</span>), temos:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\phi(n) =\amp~ n - \sum_{i} \frac{n}{p_i} + \sum_{i \lt j} \frac{n}{p_i p_j} - \cdots + (-1)^k \frac{n}{p_1 p_2 \cdots p_k} 
+\end{align*}
+</div>
+<div class="para">Colocando o fator comum <span class="process-math">\(n\)</span> em evidência:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\phi(n) =\amp~ n \left( 1 - \sum_{i} \frac{1}{p_i} + \sum_{i \lt j} \frac{1}{p_i p_j} - \cdots + (-1)^k \frac{1}{p_1 p_2 \cdots p_k} \right) 
+\end{align*}
+</div>
+<div class="para">Perceba que a longa expressão dentro dos parênteses grandes é exatamente o resultado do desenvolvimento do produto de binômios da forma <span class="process-math">\(\left(1 - \frac{1}{p_i}\right)\text{.}\)</span> Portanto, a expressão pode ser fatorada na fórmula geral de Euler:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-3^n - 2^n - 2^n - 2^n + 1 + 1+ 1 -0 = 3^n - 3\times 2^n + 3.
+\phi(n) = n \left(1 - \frac{1}{p_1}\right) \left(1 - \frac{1}{p_2}\right) \cdots \left(1 - \frac{1}{p_k}\right). 
 \end{equation*}
-</div>
 </div>
 </div>
 <span class="incontext"><a href="section-inclusao-exclusao.html#solution-152" class="internal">em contexto</a></span>

@@ -19,52 +19,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 </head>
 <body class="ignore-math">
 <article class="technology computation-like"><h3 class="heading">
-<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span>
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
 </h3>
-<div class="para">Usando o Binômio de Newton Generalizado e a observação anterior para calcular a raiz quadrada de 3. Troque os valores de "a" e "termos" para obter a raiz quadada de outro número, com a aproximação desejada.</div> <figure class="figure figure-like"><iframe id="interactive-raiz" width="600" height="420" src="interactive-raiz-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">Abaixo, temos o código em SageMath para a função realiza o mesmo cálculo que o SageInteract acima.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-49"><script type="text/x-sage">def aproximacao_raiz_quadrada(a, termos=5, expansao=True):
-    """
-    Aproxima a raiz quadrada de 'a' usando a expansão binomial da forma generalizada.
-    
-    :param 'a': O número para o qual queremos encontrar a raiz quadrada.
-    :param 'termos': O número de termos na série para usar na aproximação.
-    """
-    
-    i = copy(a)
-    while not sqrt(i).n() in ZZ:
-        i+=1
-
-    b = copy(i)
-    res_text=''
-    # Calcule x
-    x = (a - b) / b
-    
-    res_text = res_text + f'{sqrt(b)}*('
-    
-    for k in range(termos):
-        bi=''
-        j=0
-        for j in range(k):
-            bi = bi + f'(1/2-{j})*'
-        if k==0:
-            bi = bi +'1+'
-        else:
-            bi=bi[:-1]
-            bi = bi+f'/factorial({j+1})*({(a-b)/b})**{j+1}+'
-        res_text = res_text + f'{bi}'
-        
-    res_text = res_text[:-1]+')'
-    
-    print(f'({a})^(1/2) = {sqrt(b)}*({1}+{x})^{1/2}=')
-    if expansao == True:
-        print('')
-        print(res_text)
-    print('')
-    print('Realizando o cálculo, obtemos:')
-    print(eval(res_text))
-    
-# Teste a função com a raiz quadrada de 10, usando 9 como b e 5 termos na série
-
-aproximacao_raiz_quadrada(3, termos=3, expansao=True)
-</script></pre></article><span class="incontext"><a href="section-binomio-newton-real.html#technology-50" class="internal">em contexto</a></span>
+<div class="para">No Sage, podemos obter a expansão do polinômio da seguinte forma:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-50"><script type="text/x-sage">((x^3-x+5)^8).expand()
+</script></pre> <div class="para">Os coeficientes do polinômio, podem ser obtidos da seguinte forma:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-51"><script type="text/x-sage">((x^3-x+5)^8).coefficients()
+</script></pre></article><span class="incontext"><a href="section-polinomio-leibniz.html#technology-50" class="internal">em contexto</a></span>
 </body>
 </html>
