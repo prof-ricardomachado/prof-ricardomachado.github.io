@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="technology computation-like"><h3 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Escolha os valores <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> e <span class="process-math">\(c\)</span> para obter algumas soluções inteiras no plano, da Equação Diofantina:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ax+by=c.
+\end{equation*}
+</div>
+</div> <figure class="figure figure-like"><iframe id="interactive-reta" width="600" height="720" src="interactive-reta-if.html"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">Abaixo, temos o código em SageMath para a função que calcula algumas soluções e faz o gráfico das Equações Diofantinas Lineares em duas variáveis.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-8"><script type="text/x-sage">def graf_diof_lin(a,b,c,n_sols=6):
+    x,y,t_0=var('x,y,t_0')
+    if c%gcd(a, b)!=0:   #verifica se o mdc(a,b) não divide c
+        print('O mcd(%d, %d) não divide %d' %(a, b, c))  #caso divida, mens. de erro
+    else:   #caso mdc(a,b)|c, o código continua na linha 6
+        l=[]   #cria a lista vazia l, onde guardaremos as soluções inteiras
+        sd = solve_diophantine(a*x+b*y==c)  #obtendo a solução geral da eq. diof.  
+        t0 = solve(sd[0]==0, t_0)  #obtendo o valor de t_0 que a reta cruza o eixo y
+        t0 = ceil(t0[0].rhs())     #arredondando t0 para um valor inteiro 
+        for i in range(t0, t0+ceil(n_sols/2)):  
+            #guarda soluções inteiras depois de t0
+            l.append((sd[0].subs(t_0=(i)), sd[1].subs(t_0=(i))))
+        for i in range(t0-1, t0-ceil(n_sols/2)-1, -1): 
+            #guarda soluções inteiras antes de t0
+            l.append((sd[0].subs(t_0=(i)), sd[1].subs(t_0=(i))))
+        l.sort()   #ordena l
+        ps = l[0]  #guarda em ps a primeira solução da lista l           
+        us = l[-1] #guarda em us a última solução da lista l           
+        p2=line((ps, us))  #gráfico da reta que liga ps até us
+        p1=list_plot(l, size=30, color='red') #gráfico com as soluções inteiras
+        (p2+p1).show(figsize=4) #exibe os gráficos guardados em p2 e p1 sobrepostos
+        print('As soluções destacadas de %dx + %dy = %d são:' %(a, b, c))
+        for i in l:
+            print(i)  #exibe as soluções inteiras
+graf_diof_lin(3, 8, 13)
+</script></pre></article><span class="incontext"><a href="section-2.html#technology-10" class="internal">em contexto</a></span>
+</body>
+</html>

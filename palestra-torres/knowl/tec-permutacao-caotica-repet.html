@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="technology computation-like"><h4 class="heading">
+<span class="type">Tecnologia</span><span class="space"> </span><span class="codenumber">3.29</span><span class="period">.</span>
+</h4>
+<div class="para">A implementação da função <dfn class="terminology">DR</dfn> (derangement with repetition) usando o <a href="" class="xref" data-knowl="./knowl/teo-permutacao-caotica-repet.html" title="Teorema 3.27">Teorema 3.27</a>. Os parâmetros são as quantidades que cada elemento figura na lista. Por exemplo, para a palavra MATEMATICA usamos a entrada 3, 2, 2, 1, 1, 1, pois são 3 letras A, 2 letras T, 2 letras M, 1 letras E, 1 letra I e 1 letra C.</div> <pre class="ptx-sagecell sagecell-sage" id="sage-10"><script type="text/x-sage">def DR(*lista):
+    n = sum(lista)
+    p = exp(-x)
+    for i in lista:
+        p = p*laguerre(i, x)
+    return abs(integral(p, (x, 0, +oo)))
+DR(3, 2, 2, 1, 1, 1)
+</script></pre></article><span class="incontext"><a href="sec-aplicacoes.html#tec-permutacao-caotica-repet" class="internal">em contexto</a></span>
+</body>
+</html>

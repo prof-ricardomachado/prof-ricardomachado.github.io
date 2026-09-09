@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+    inputLocation: ".sage-interact",
+    autoeval: 'true',
+    hide: ["editor", "evalButton", "permalink"]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="pretext ignore-math" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
+def _(n_min=input_box(100, width=25,  label="Vmin:"), n_max=input_box(1000, width=25,  label="Vmax:"), l_m=input_box([6,15,21] , width=25, label="lista:"),auto_update=False ):
+          
+  def numeros_de_multiplos2(lista, ini, fim):
+      cardinalidade_omega = fim-ini+1
+
+      #combinacoes = {}
+      lista_combinacoes=[]
+      for i in range(len(lista)):
+          lista_combinacoes.append(Combinations(lista, i+1).list())
+      
+      #MMC
+      lista_mmc=[]
+      for i in lista_combinacoes:
+          temp=[]
+          for j in range(len(i)):
+              temp.append(lcm(i[j]))
+          lista_mmc.append(temp)
+      
+      #soma por interseções (Si)
+      lSi=[]
+      card_Ai_inter=[]
+      for j in lista_mmc:
+          temp=[]
+          for i in j:
+              temp.append(len([x for x in [ini..fim] if x%i == 0]))
+          card_Ai_inter.append(temp)
+          lSi.append(sum(temp))
+      
+      # aplicando o princípio da inclusão-exclusão
+      soma = 0
+      for i in range(len(lSi)):
+          soma = soma +(-1)^i*lSi[i]
+      
+      k=0
+      for c in lista_combinacoes:
+          for i in range(len(c)):
+              s=''
+              for j in c[i]:
+                  s = s+'A'+str(j)+'∩'
+              s=s[:-1]
+              print(f'#{s} = {card_Ai_inter[k][i]}')
+          k=k+1
+       
+      s2 = ''
+      for i in lista:
+          s2 = s2+'A'+str(i)+'∪'
+      s2=s2[:-1]
+      print(f'\n#{s2} = {soma}')
+  
+  numeros_de_multiplos2(l_m, n_min, n_max)
+</script></pre></div></body>
+</html>

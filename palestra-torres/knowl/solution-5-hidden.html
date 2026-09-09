@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Executar (Sage)'});
+</script>
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Como este problema envolve permutações, a ideia é usar a bijeção exibida na <a href="" class="xref" data-knowl="./knowl/af-bijecaopermuttab.html" title="Afirmação 3.1">Afirmação 3.1</a>. Porém, precisamos adicionar no tabuleiro as restrições impostas pelo problema. Como o elemento 1 não pode ocupar o segundo lugar, vamos deixar proibida a posição <span class="process-math">\((1,2)\)</span> e assim sucessivamente, até obtermos o tabuleiro <span class="process-math">\(T\text{,}\)</span> o mais à esquerda da <a href="" class="xref" data-knowl="./knowl/exestack03.html" title="Figura 3.4">Figura 3.4</a>. Assim, a resposta deste problema é dado pelo coeficiente líder do polinômio de torre deste tabuleiro. Pelo <a href="" class="xref" data-knowl="./knowl/teo-permutacao.html" title="Teorema 2.12">Teorema 2.12</a>, o polinômio de torre de <span class="process-math">\(T\)</span> é igual ao polinômio de torre de todos os tabuleiros da <a href="" class="xref" data-knowl="./knowl/exestack03.html" title="Figura 3.4">Figura 3.4</a>.</div> <figure class="figure figure-like"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/exestack03.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.4<span class="period">.</span></span><span class="space"> </span>Tabuleiro <span class="process-math">\(T\)</span> e permutações até o tabuleiro <span class="process-math">\(S\text{.}\)</span></figcaption></figure> <div class="para logical">
+<div class="para">Pelos resultados apresentados anteriormente, é mais fácil calcular o polinômio de torre do tabuleiro <span class="process-math">\(S\text{,}\)</span> o mais à direita da <a href="" class="xref" data-knowl="./knowl/exestack03.html" title="Figura 3.4">Figura 3.4</a>. De fato, usando o <a href="" class="xref" data-knowl="./knowl/teocomplemetar.html" title="Teorema 2.18">Teorema 2.18</a>, o coeficiente líder do polinômio de torre deste tabuleiro é dado por</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exestack03.html ./knowl/teocomplemetar.html">
+\begin{equation}
+r_4(S) = \sum_{k=0}^4 (-1)^k\cdot(4-k)!\cdot r_k(S^c).\tag{3.1}
+\end{equation}
+</div>
+<div class="para">Falta calcular os coeficientes do polinômio de torre de <span class="process-math">\(S^c\text{.}\)</span>
+</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/exestack04.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.5<span class="period">.</span></span><span class="space"> </span>Tabuleiro <span class="process-math">\(S^c\text{.}\)</span></figcaption></figure> <div class="para logical">
+<div class="para">Pelo <a href="" class="xref" data-knowl="./knowl/teoproddossubsdisjuntos.html" title="Teorema 2.9">Teorema 2.9</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teoproddossubsdisjuntos.html ./knowl/eq-coefs.html ./knowl/eq-pol-torre.html">
+\begin{equation}
+R(x,S^c) = (x+1)(x^2+3x+1) = x^3+4x^2+4x+1.\tag{3.2}
+\end{equation}
+</div>
+<div class="para">Substituindo os coeficientes de <a href="" class="xref" data-knowl="./knowl/eq-coefs.html" title="Equação 3.2">(3.2)</a> em <a href="" class="xref" data-knowl="./knowl/eq-pol-torre.html" title="Equação 3.1">(3.1)</a> obtemos a solução:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teoproddossubsdisjuntos.html ./knowl/eq-coefs.html ./knowl/eq-pol-torre.html">
+\begin{align*}
+r_4(S) \amp = \small (-1)^0(4-0)! 1 + (-1)^1(4-1)! 4 + (-1)^2(4-2)! 4 + (-1)^3(4-3)! 1\\
+\amp = 7.
+\end{align*}
+</div>
+</div> <div class="para">Usando o SageMath, com o bloco de códigos a seguir, obtemos o polinômio de torre do tabuleiro <span class="process-math">\(T\text{,}\)</span> cujo coeficiente líder é a resposta do problema:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">B = matrix([[1,0,1,1],[1,1,1,0],[0,1,1,0], [1,1,1,1]])
+v = B.rook_vector()
+R = PolynomialRing(ZZ, 'x')
+show(R(v))
+</script></pre> <div class="para">Com o polinômio obtido, além de descobrirmos que 7 é o número de maneiras de colocar 4 torres no tabuleiro <span class="process-math">\(T\text{,}\)</span> o polinômio também informa que 39, 40, 12 e 1 são os números de maneiras de colocar 3, 2, 1 e 0 torres no tabuleiro <span class="process-math">\(T\text{.}\)</span>
+</div>
+</div></body>
+</html>

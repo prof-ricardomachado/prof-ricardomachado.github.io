@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>sagecell.makeSagecell({
+    inputLocation: ".sage-interact",
+    autoeval: 'true',
+    hide: ["editor", "evalButton", "permalink"]
+});
+</script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+</head>
+<body class="pretext ignore-math" id="pretext-SA"><div style="width:600px; height:480px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">@interact
+def _(l=input_box(6, width=25,  label="m:"), c=input_box(9, width=25,  label="n:"),auto_update=False ):
+    
+    
+    def visualizar_diagonal_retangulo_completo(m, n):
+    # Cálculo exato
+        num_quadrados = m + n - gcd(m,n)
+        slope = QQ(n) / QQ(m)
+    
+        # Lista para armazenar as formas (mais rápido que somar p += ...)
+        elementos = []
+    
+        # 1. Desenhar TODOS os quadrados do retângulo (Grid completo)
+        for i in range(m):
+            for j in range(n):
+                # Lógica de interseção: a diagonal entra no interior do quadrado?
+                y_inicio = i * slope
+                y_fim = (i + 1) * slope
+            
+                # Condição matemática para passar por dentro do quadrado (i, j)
+                if j + 1 > y_inicio  and y_fim > j:
+                    cor = '#FF8C00' # Laranja escuro
+                else:
+                    cor = 'white'
+                
+                elementos.append(polygon([(i, j), (i+1, j), (i+1, j+1), (i, j+1)], 
+                                     color=cor, edgecolor='gray', thickness=0.5))
+    
+        # 2. Desenhar a diagonal principal
+        elementos.append(line([(0, 0), (m, n)], color='red', thickness=1, figsize=5))
+    
+        # Criar o gráfico final
+        grafico = sum(elementos)
+        grafico.set_aspect_ratio(1)
+    
+        print(f"Dimensões: {n}x{m}")
+        print(f"Quadrados que a diagonal atravessa: {num_quadrados}")
+    
+        return grafico.show(frame=False, axes=False)
+
+    # Teste com dimensões menores para ver o grid completo
+    visualizar_diagonal_retangulo_completo(c,l)
+</script></pre></div></body>
+</html>

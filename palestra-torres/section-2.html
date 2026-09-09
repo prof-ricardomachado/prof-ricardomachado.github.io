@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Polinômios de Torre</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="pretext-SA" class="pretext article ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="palestra_torres.html"><span class="title">Contando com Torres no Tabuleiro</span></a></h1>
+<p class="byline">Ricardo Nunes Machado Junior</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec_introducao.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="palestra_torres.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="sec-aplicacoes.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_introducao.html" class="internal"><span class="codenumber">1</span> <span class="title">Motivação</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec_introducao.html#subsection-1" class="internal"><span class="codenumber">1.1</span> <span class="title">Aplicação: Permutações Caóticas</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-2.html" class="internal"><span class="codenumber">2</span> <span class="title">Polinômios de Torre</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="section-2.html#subsection-2" class="internal"><span class="codenumber">2.1</span> <span class="title">Resultados Principais</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-aplicacoes.html" class="internal"><span class="codenumber">3</span> <span class="title">Aplicações</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-aplicacoes.html#subsec-permutacoes-polinomios-torre" class="internal"><span class="codenumber">3.1</span> <span class="title">Permutações e Polinômios de Torre</span></a></div></li>
+<li><div class="toc-item"><a href="sec-aplicacoes.html#subsec-permutacoes-caoticas" class="internal"><span class="codenumber">3.2</span> <span class="title">Permutações Caóticas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-aplicacoes.html#subsec-permutacoes-k-posicionadas" class="internal"><span class="codenumber">3.3</span> <span class="title">Permutações <span class="process-math">\(k\)</span>-Posicionadas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-aplicacoes.html#subsec-permutacoes-caoticas-repetidos" class="internal"><span class="codenumber">3.4</span> <span class="title">Permutações Caóticas com Elementos Repetidos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-aplicacoes.html#subsec-permutacoes-discordantes" class="internal"><span class="codenumber">3.5</span> <span class="title">Permutações Discordantes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-aplicacoes.html#subsec-problema-encontros" class="internal"><span class="codenumber">3.6</span> <span class="title">O Problema dos Encontros</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-referencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Referências</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-2"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">2</span> <span class="title">Polinômios de Torre</span>
+</h2>
+<article class="definition definition-like" id="definition-3"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
+</h3>Um polinômio de torre é um polinômio gerador do número de maneiras de colocar <em class="emphasis">torres não atacantes</em> em um tabuleiro, ou seja, quaisquer duas torres não podem estar na mesma linha ou coluna.</article><div class="para" id="p-20">Na Figura <a href="" class="xref" data-knowl="./knowl/fig-tab01.html" title="Figura 2.2">Figura 2.2</a>, temos um tabuleiro <span class="process-math">\(3\times 3\)</span> com algumas posições proibidas e todas as formas de distribuir de zero a três torres não atacantes no tabuleiro.</div>
+<figure class="figure figure-like" id="fig-tab01"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="images/tab01.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.2<span class="period">.</span></span><span class="space"> </span>Tabuleiro <span class="process-math">\(T\)</span> e todas as formas de colocar torres não atacantes.</figcaption></figure><article class="definition definition-like" id="def-polinomio-torre"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-21">
+<div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro <span class="process-math">\(m\times n\text{,}\)</span> o <em class="emphasis">polinômio de torre</em> de <span class="process-math">\(T\)</span> é definido como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(x, T) = \sum_{k=0}^{\min\{m, n\}} r_k(T)x^k,
+\end{equation*}
+</div>
+<div class="para">no qual, <span class="process-math">\(r_k(T)\)</span> é o número de maneiras de colocar <span class="process-math">\(k\)</span> torres não atacantes em <span class="process-math">\(T\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-polinomio-tab01"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-22">Determine o polinômio de torre do tabuleiro <span class="process-math">\(T\text{,}\)</span> da <a href="" class="xref" data-knowl="./knowl/fig-tab01.html" title="Figura 2.2">Figura 2.2</a>.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para logical" id="p-23">
+<div class="para">Para estabelecer o polinômio de torre de <span class="process-math">\(T\)</span> vamos obter os coeficientes <span class="process-math">\(r_i(T)\text{,}\)</span> com <span class="process-math">\(i\in \{0,1,2,3\}\text{.}\)</span> Note que não é possível colocar mais que 3 torres não atacantes em <span class="process-math">\(T\text{.}\)</span> De acordo com a <a href="" class="xref" data-knowl="./knowl/fig-tab01.html" title="Figura 2.2">Figura 2.2</a>, <span class="process-math">\(r_0(T) = 1\text{,}\)</span> <span class="process-math">\(r_1(T) = 4\text{,}\)</span> <span class="process-math">\(r_2(T) = 4\)</span> e <span class="process-math">\(r_3(T) = 1\text{.}\)</span> Logo,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-tab01.html">
+\begin{equation*}
+R(x, T) = 1 + 4x + 4x^2 + x^3.
+\end{equation*}
+</div>
+</div></div></div>
+</div></article><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">2.1</span> <span class="title">Resultados Principais</span>
+</h3></section><div class="para" id="p-24">Esta seção possui definições e resultados que facilitam o cálculo de polinômios de torre, bem como, exemplos da aplicação destes resultados. Por fim, apresentamos o <a href="" class="xref" data-knowl="./knowl/teocomplemetar.html" title="Teorema 2.18">Teorema 2.18</a>, que é essencial na aplicação dessa teoria para resolução de problemas de permutações com restrições, o que é abordado na próxima seção.</div>
+<article class="theorem theorem-like" id="corolario-quadrado"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-25">
+<div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro <span class="process-math">\(m\times n\text{,}\)</span> sem restrições. O polinômio de torre de <span class="process-math">\(T\)</span> é dado por:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(x, T) = \sum_{k=0}^{\min\{m,n\}} \binom{m}{k} \cdot \binom{n}{k} \cdot k! \cdot x^k.
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><div class="para logical" id="p-26">
+<div class="para">Para determinar os coeficientes dos termos <span class="process-math">\(x^k\)</span> de <span class="process-math">\(R(x,T)\text{,}\)</span> começamos contando o número de maneiras de selecionar <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(k\)</span> colunas em <span class="process-math">\(T\text{.}\)</span> Temos <span class="process-math">\(\binom{m}{k}\)</span> maneiras de escolher <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(\binom{n}{k}\)</span> maneiras de escolher <span class="process-math">\(k\)</span> colunas. Para cada escolha das <span class="process-math">\(k\)</span> linhas e <span class="process-math">\(k\)</span> colunas, temos uma equivalência com um tabuleiro <span class="process-math">\(k\times k\text{,}\)</span> no qual, vamos contar o número de maneiras de colocar as <span class="process-math">\(k\)</span> torres não atacantes. Temos <span class="process-math">\(k!\)</span> maneiras de fazer isto, e portanto, o polinômio de torre de <span class="process-math">\(T\)</span> é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(x, T) = \sum_{k=0}^{\min\{m,n\}} \binom{m}{k}\cdot \binom{n}{k} \cdot k! \cdot x^k.
+\end{equation*}
+</div>
+</div></article></div>
+<article class="definition definition-like" id="def-subtabuleiros"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-27">
+<div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro.</div>
+<ol class="lower-alpha">
+<li id="li-31"><div class="para" id="p-28">Um <em class="emphasis">subtabuleiro</em> de <span class="process-math">\(T\)</span> é qualquer subconjunto retangular de quadrados de <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+<li id="li-32"><div class="para" id="p-29">Os subtabuleiros <span class="process-math">\(T_1, T_2, \ldots, T_k\text{,}\)</span> de <span class="process-math">\(T\text{,}\)</span> são <em class="emphasis">disjuntos</em>, se nenhum quadrado de <span class="process-math">\(T_i\)</span> está na mesma linha ou coluna que os quadrados de <span class="process-math">\(T_j\text{,}\)</span> para <span class="process-math">\(1\leq i, j\leq k\text{,}\)</span> com <span class="process-math">\(i\neq j\text{.}\)</span>
+</div></li>
+<li id="li-33"><div class="para" id="p-30">O tabuleiro <span class="process-math">\(T\)</span> pode ser <em class="emphasis">dividido em subtabuleiros disjuntos</em> <span class="process-math">\(T_1, T_2, \ldots, T_k\text{,}\)</span> se os subtabuleiros <span class="process-math">\(T_1, T_2, \ldots, T_k\)</span> são disjuntos e se todos os quadrados de <span class="process-math">\(T\)</span> que não estão nos subtabuleiros <span class="process-math">\(T_i\text{,}\)</span> com <span class="process-math">\(i=1, 2, \ldots, k\text{,}\)</span> são quadrados proibidos.</div></li>
+</ol>
+</div></article><article class="example example-like" id="ex-t1t2t3"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-31">Na <a href="" class="xref" data-knowl="./knowl/fig-tab02.html" title="Figura 2.8">Figura 2.8</a> temos um tabuleiro <span class="process-math">\(T\)</span> e uma subdivisão em subtabuleiros disjuntos <span class="process-math">\(T_1, T_2\)</span> e <span class="process-math">\(T_3\text{.}\)</span> Note que todos os quadrados de <span class="process-math">\(T\)</span> que não estão em <span class="process-math">\(T_1, T_2\)</span> ou <span class="process-math">\(T_3\)</span> são quadrados proibidos.</div> <figure class="figure figure-like" id="fig-tab02"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/tab02.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.8<span class="period">.</span></span><span class="space"> </span>Tabuleiro <span class="process-math">\(T\)</span> e divisão de <span class="process-math">\(T\)</span> nos subtabuleiros disjuntos <span class="process-math">\(T_1, T_2\)</span> e <span class="process-math">\(T_3\text{.}\)</span></figcaption></figure></article><article class="theorem theorem-like" id="teoproddossubsdisjuntos"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.9</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-32">
+<div class="para">O polinômio de torre de um tabuleiro <span class="process-math">\(T\text{,}\)</span> dividido nos subtabuleiros disjuntos <span class="process-math">\(T_1, T_2, \ldots, T_k\text{,}\)</span> é dado pelo produto dos polinômios de torre dos subtabuleiros <span class="process-math">\(T_1, T_2, \ldots, T_k\text{,}\)</span> ou seja:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(x, T) = R(x, T_1)\cdot R(x, T_2)\cdots R(x, T_k).
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><div class="para" id="p-33">Vamos mostrar o caso <span class="process-math">\(k=2\text{,}\)</span> os demais casos podem ser obtidos tomando indução em <span class="process-math">\(k\text{.}\)</span>
+</div> <div class="para logical" id="p-34">
+<div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro dividido nos subtabuleiros disjuntos <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\text{.}\)</span> Para colocar <span class="process-math">\(k\)</span> torres não atacantes em <span class="process-math">\(T\text{,}\)</span> podemos colocar <span class="process-math">\(r_{k-i}(T_1)\text{,}\)</span> com <span class="process-math">\(i=0, 1, \ldots, k\text{,}\)</span> torres não atacantes em <span class="process-math">\(T_1\)</span> e <span class="process-math">\(r_{i}(T_2)\)</span> torres não atacantes em <span class="process-math">\(T_2\text{.}\)</span> Isto posto, dados duas torres quaisquer em <span class="process-math">\(T\text{,}\)</span> uma não pode atacar a outra. Portanto, o número de maneiras de colocar <span class="process-math">\(k\)</span> torres não atacantes em <span class="process-math">\(T\)</span> é dado por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r_k(T) = \sum_{i=0}^k r_{k-i}(T_1)r_i(T_2).
+\end{equation*}
+</div>
+<div class="para">Logo,</div>
+<div class="displaymath process-math" id="md-7">
+\begin{align*}
+R(x, T) \amp = \sum_{k=0}^n r_k(T)x^k\\
+\amp = \sum_{k=0}^n \sum_{i=0}^k r_{k-i}(T_1)r_i(T_2)x^k\\
+\amp = \left( \sum_{s=0}^p r_s(T_1)x^s \right)\left( \sum_{t=0}^q r_t(T_2)x^t \right)\\
+\amp = R(x, T_1)\cdot R(x, T_2).
+\end{align*}
+</div>
+</div></article></div>
+<article class="example example-like" id="ex-poliexant"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-35">Determine o polinômio de torre do tabuleiro <span class="process-math">\(T\text{,}\)</span> do <a href="" class="xref" data-knowl="./knowl/ex-t1t2t3.html" title="Exemplo 2.7">Exemplo 2.7</a>.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-3" id="solution-3"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
+<div class="para logical" id="p-36">
+<div class="para">Para encontrar o polinômio de torre de <span class="process-math">\(T\text{,}\)</span> obtemos individualmente os polinômios de torre dos tabuleiros <span class="process-math">\(T_1, T_2\)</span> e <span class="process-math">\(T_3\)</span> e depois usamos o <a href="" class="xref" data-knowl="./knowl/teoproddossubsdisjuntos.html" title="Teorema 2.9">Teorema 2.9</a>. Pelo <a href="" class="xref" data-knowl="./knowl/corolario-quadrado.html" title="Teorema 2.5">Teorema 2.5</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teoproddossubsdisjuntos.html ./knowl/corolario-quadrado.html">
+\begin{equation*}
+R(x, T_1) = \sum_{k=0}^{2}\binom{2}{k}^2\cdot k!\cdot x^k = 1+4x+2x^2.
+\end{equation*}
+</div>
+<div class="para">O coeficiente de <span class="process-math">\(x^2\)</span> do tabuleiro <span class="process-math">\(T_2\)</span> é 4, pois, colocando uma torre na posição <span class="process-math">\((2,1)\text{,}\)</span> temos duas maneiras de colocar uma torre na primeira linha (posições <span class="process-math">\((1,2)\)</span> e <span class="process-math">\((1,3)\)</span>). Colocando uma torre na posição <span class="process-math">\((2,3)\text{,}\)</span> também temos duas maneiras de colocar uma torre na primeira linha (posições <span class="process-math">\((1,1)\)</span> e <span class="process-math">\((1,2)\)</span>). Assim, no total são 4 possibilidades.</div>
+</div> <figure class="figure figure-like" id="fig-tabT2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/tabT2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.11<span class="period">.</span></span><span class="space"> </span>Tabuleiro <span class="process-math">\(T_2\)</span> e as indicações das 4 possibilidades de colocar duas torres.</figcaption></figure> <div class="para logical" id="p-37">
+<div class="para">O coeficiente de <span class="process-math">\(x\)</span> é claramente 5, pois existem cinco quadrados permitidos e consequentemente 5 formas de colocar uma torre neste tabuleiro. Por fim, o coeficiente de <span class="process-math">\(x^0\)</span> é 1, pois existe uma única maneira de deixar o tabuleiro vazio. Logo,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teoproddossubsdisjuntos.html">
+\begin{equation*}
+R(x, T_2) = 1+5x+4x^2.
+\end{equation*}
+</div>
+<div class="para">O polinômio de torre de <span class="process-math">\(T_3\)</span> é claramente</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teoproddossubsdisjuntos.html">
+\begin{equation*}
+R(x, T_3) = 1+x.
+\end{equation*}
+</div>
+<div class="para">Portanto, pelo <a href="" class="xref" data-knowl="./knowl/teoproddossubsdisjuntos.html" title="Teorema 2.9">Teorema 2.9</a>, temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teoproddossubsdisjuntos.html" id="md-8">
+\begin{align*}
+R(x, T) \amp = R(x, T_1)\cdot R(x, T_2)\cdot R(x, T_3)\\
+\amp = (1+4x+2x^2)(1+5x+4x^2)(x+1)\\
+\amp = 8x^5 + 34x^4 + 52x^3 + 35x^2 + 10x + 1.
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="theorem theorem-like" id="teo-permutacao"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-38">Sejam <span class="process-math">\(T\)</span> e <span class="process-math">\(T'\)</span> tabuleiros <span class="process-math">\(m \times n\text{,}\)</span> tais que um pode ser obtido do outro permutando linhas ou colunas. Então <span class="process-math">\(T\)</span> e <span class="process-math">\(T'\)</span> possuem o mesmo polinômio de torre.</div></article><article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><div class="para" id="p-39">Permutando linhas e colunas, dados dois quadrados que estão inicialmente em linhas e colunas diferentes, eles ficarão em linhas e colunas diferentes e vice-versa. Portanto, existe uma bijeção entre as maneiras de colocar um determinado número de torres não atacantes no tabuleiro inicial e as formas de colocá-las no tabuleiro final. Logo, ambos tabuleiros têm os mesmos polinômios de torre.</div></article></div>
+<article class="example example-like" id="ex-t_linha"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">2.13</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-40">Determine o polinômio de torre do tabuleiro <span class="process-math">\(B\text{,}\)</span> definido pela <a href="" class="xref" data-knowl="./knowl/fig-tabuleiro_permut00.html" title="Figura 2.14">Figura 2.14</a>.</div> <figure class="figure figure-like" id="fig-tabuleiro_permut00"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/tabuleiro_permut00.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.14<span class="period">.</span></span><span class="space"> </span>Tabuleiro B.</figcaption></figure><div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original has-image" data-refid="hk-solution-4" id="solution-4"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<div class="para" id="p-41">Pelo <a href="" class="xref" data-knowl="./knowl/teo-permutacao.html" title="Teorema 2.12">Teorema 2.12</a>, os polinômios de torre de todos os tabuleiros da <a href="" class="xref" data-knowl="./knowl/fig-tabuleiro_permut.html" title="Figura 2.15">Figura 2.15</a> são iguais, pois, um pode ser obtido do outro permutando linhas ou colunas.</div> <figure class="figure figure-like" id="fig-tabuleiro_permut"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/tabuleiro_permut.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">2.15<span class="period">.</span></span><span class="space"> </span>Do tabuleiro <span class="process-math">\(B\)</span> ao tabuleiro <span class="process-math">\(T\)</span> da <a href="" class="xref" data-knowl="./knowl/fig-tab02.html" title="Figura 2.8">Figura 2.8</a>.</figcaption></figure> <div class="para logical" id="p-42">
+<div class="para">No entanto, o polinômio de torre do tabuleiro <span class="process-math">\(T\text{,}\)</span> o mais à direita da <a href="" class="xref" data-knowl="./knowl/fig-tabuleiro_permut.html" title="Figura 2.15">Figura 2.15</a> já foi calculado no <a href="" class="xref" data-knowl="./knowl/ex-poliexant.html" title="Exemplo 2.10">Exemplo 2.10</a>. Portanto,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-tabuleiro_permut.html ./knowl/ex-poliexant.html">
+\begin{equation*}
+R(x, B) = R(x, T) = 8x^5 + 34x^4 + 52x^3 + 35x^2 + 10x + 1.
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="theorem theorem-like" id="teoquadradors"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.16</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-43">
+<div class="para">Sejam <span class="process-math">\(T\)</span> um tabuleiro e <span class="process-math">\(q_{ij}\)</span> um quadrado permitido de <span class="process-math">\(T\text{.}\)</span>
+</div>
+<ul class="disc">
+<li id="li-34"><div class="para" id="p-44">Considere <span class="process-math">\(T_1\text{,}\)</span> obtido por mudar a cor do quadrado <span class="process-math">\(q_{ij}\)</span> no tabuleiro <span class="process-math">\(T\text{;}\)</span>
+</div></li>
+<li id="li-35"><div class="para" id="p-45">Considere <span class="process-math">\(T_2\text{,}\)</span> obtido por deletar a linha e a coluna do quadrado <span class="process-math">\(q_{ij}\)</span> no tabuleiro <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">Então,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(x,T) = R(x,T_1) + xR(x,T_2).
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-6"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><div class="para" id="p-46">Precisamos mostrar que para qualquer <span class="process-math">\(k\text{,}\)</span> o coeficiente de <span class="process-math">\(x^k\)</span> é igual para os dois lados da igualdade.</div> <div class="para logical" id="p-47">
+<div class="para">O coeficiente de <span class="process-math">\(x^k\)</span> em <span class="process-math">\(R(x,T)\)</span> é igual ao número de maneiras de colocar <span class="process-math">\(k\)</span> torres não atacantes em <span class="process-math">\(T\text{,}\)</span> sem usar o quadrado <span class="process-math">\(q_{ij}\text{,}\)</span> mais o número de maneiras de colocar <span class="process-math">\(k\)</span> torres não atacantes em <span class="process-math">\(T\text{,}\)</span> usando <span class="process-math">\(q_{ij}\)</span> todas as vezes. Como o quadrado <span class="process-math">\(q_{ij}\)</span> será usado todas as vezes, essa parte é igual ao número de maneiras de colocar <span class="process-math">\(k-1\)</span> torres não atacantes em <span class="process-math">\(T_2\text{.}\)</span> Portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r_k(T) = r_k(T_1) + x\cdot r_{k-1}(T_2).
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(k\)</span> foi arbitrário, obtivemos o resultado.</div>
+</div></article></div>
+<article class="definition definition-like" id="def-tabuleiro-complementar"><h3 class="heading">
+<span class="type">Definição</span><span class="space"> </span><span class="codenumber">2.17</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-48">Seja <span class="process-math">\(T\)</span> um tabuleiro <span class="process-math">\(m \times n\)</span> com posições proibidas <span class="process-math">\(\mathcal{F}\text{,}\)</span> definimos o tabuleiro complementar de <span class="process-math">\(T\text{,}\)</span> como o tabuleiro que tem as posições permitidas <span class="process-math">\(\mathcal{F}\text{.}\)</span> Isto é, o que era permitido será proibido e vice-versa. De outra forma, os quadrados vermelhos ficarão azuis e os que são azuis ficarão vermelhos. Denotaremos o tabuleiro complementar de <span class="process-math">\(T\)</span> por <span class="process-math">\(T^c\text{.}\)</span> Observe que <span class="process-math">\((T^c)^c=T\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="teocomplemetar"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">2.18</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-49">
+<div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro <span class="process-math">\(n\times n\text{,}\)</span> então, o número de maneiras de colocar <span class="process-math">\(n\)</span> torres não atacantes em <span class="process-math">\(T\)</span> é dado por:</div>
+<div class="displaymath process-math" id="eq-princ-inc-exc">
+\begin{equation}
+r_n(T) = \sum_{k=0}^n (-1)^k\cdot(n-k)!\cdot r_k(T^c).\tag{2.1}
+\end{equation}
+</div>
+</div></article><article class="hiddenproof" id="proof-7"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><div class="para logical" id="p-50">
+<div class="para">Considere <span class="process-math">\(L_k\text{,}\)</span> com <span class="process-math">\(k=1, 2, \ldots, n\text{,}\)</span> o conjunto das distribuições de <span class="process-math">\(n\)</span> torres não atacantes em <span class="process-math">\(T\text{,}\)</span> na qual, a torre da linha <span class="process-math">\(k\)</span> está em uma posição proibida. Observe que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r_n(T) = \# \left(\bigcup_{k=1}^n L_k\right)^c,
+\end{equation*}
+</div>
+<div class="para">pois <span class="process-math">\(\#\left(\cup_{k=1}^n L_k\right)\)</span> é o número de maneiras de colocar <span class="process-math">\(n\)</span> torres não atacantes em <span class="process-math">\(T\)</span> de modo que pelo menos uma torre ocupe uma posição proibida. Então, o valor do conjunto complementar é o número que procuramos, <span class="process-math">\(r_n(T)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-51">
+<div class="para">A cardinalidade do conjunto <span class="process-math">\(\left(\cup_{k=1}^n L_k\right)^c\)</span> é igual ao número total de maneiras de colocar <span class="process-math">\(n\)</span> torres não atacantes em <span class="process-math">\(T\text{,}\)</span> ignorando as posições proibidas, menos <span class="process-math">\(\#\left(\bigcup_{k=1}^n L_k\right)\text{,}\)</span> ou seja,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-princ-inc-exc2.html">
+\begin{equation*}
+\# \left(\bigcup_{k=1}^n L_k\right)^c = n! - \#\left(\bigcup_{k=1}^n L_k\right).
+\end{equation*}
+</div>
+<div class="para">Pelo Princípio da Inclusão-Exclusão</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-princ-inc-exc2.html" id="eq-princ-inc-exc2">
+\begin{equation}
+\small r_n(T) = n! - \sum_{k=1}^n \#L_k + \sum_{0\lt k_1\lt k_2\leq n} \#(L_{k_1}\cap L_{k_2}) +\cdots +(-1)^n\#(L_1\cap \cdots\cap L_n).\tag{2.2}
+\end{equation}
+</div>
+<div class="para">Precisamos calcular as cardinalidades dos conjuntos acima. A quantidade de elementos de <span class="process-math">\(L_k\)</span> é o número de maneiras de colocar uma torre em uma posição proibida na linha <span class="process-math">\(k\)</span> vezes <span class="process-math">\((n-1)!\text{.}\)</span> O total de maneiras de colocar uma torre em uma posição proibida em <span class="process-math">\(T^c\)</span> é <span class="process-math">\(r_1(T^c)\text{,}\)</span> logo</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-princ-inc-exc2.html">
+\begin{equation*}
+\sum_{k=1}^n \#L_k = (n-1)!\cdot r_1(T^c).
+\end{equation*}
+</div>
+<div class="para">Analogamente, na interseção de <span class="process-math">\(i\)</span> conjuntos, <span class="process-math">\(L_{k_1}\cap \cdots \cap L_{k_i}\text{,}\)</span> ficamos com <span class="process-math">\((n-i)!\)</span> vezes <span class="process-math">\(r_i(T^c)\text{.}\)</span> Portanto,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-princ-inc-exc2.html" id="md-9">
+\begin{align*}
+\sum_{0\lt k_1\lt k_2\leq n} \#(L_{k_1}\cap L_{k_2}) \amp = (n-2)!\cdot r_2(T^c)\\
+\vdots \qquad \amp = \qquad \vdots\\
+\sum_{0\lt k_1\lt\cdots\lt k_i\leq n} \#(L_{k_1}\cap \cdots \cap L_{k_i}) \amp = (n-i)!\cdot r_i(T^c)\\
+\vdots \qquad \amp = \qquad \vdots\\
+\#(L_1\cap \cdots\cap L_n) \amp = r_n(T^c).
+\end{align*}
+</div>
+<div class="para">Fazendo as substituições na <a href="" class="xref" data-knowl="./knowl/eq-princ-inc-exc2.html" title="Equação 2.2">(2.2)</a>, como <span class="process-math">\(r_0(T^c) = 1\text{,}\)</span> concluímos a demonstração.</div>
+</div></article></div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec_introducao.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-aplicacoes.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="feedback-link" href="not-implemented.html" target="_blank">Comentários</a><a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

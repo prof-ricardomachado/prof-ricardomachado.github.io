@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Para <span class="process-math">\(k=n+1\text{,}\)</span> podemos ver que <span class="process-math">\(R_{n,k}=D_n\text{.}\)</span> Para <span class="process-math">\(k\leq n\text{,}\)</span> o tabuleiro <span class="process-math">\(T\text{,}\)</span> relacionado ao problema, será <span class="process-math">\(n\times n\text{.}\)</span> Pela definição de permutação <span class="process-math">\(k\)</span>-posicionada, as posições <span class="process-math">\((i,i)\text{,}\)</span> com <span class="process-math">\(i\in \{1, 2, \ldots, k-1\}\)</span> são proibidas e a posição <span class="process-math">\((k,k)\)</span> deve conter uma torre. Portanto, <span class="process-math">\(R_{n,k}\)</span> é o número de maneiras de colocar <span class="process-math">\(n\)</span> torres não atacantes no tabuleiro <span class="process-math">\(T\text{,}\)</span> localizado no lado esquerdo da <a href="" class="xref" data-knowl="./knowl/fig-dp.html" title="Figura 3.19">Figura 3.19</a>, com uma torre na posição <span class="process-math">\((k,k)\text{.}\)</span> Seja <span class="process-math">\(S\)</span> o tabuleiro localizado no lado direito da <a href="" class="xref" data-knowl="./knowl/fig-dp.html" title="Figura 3.19">Figura 3.19</a>, obtido por deletar a linha <span class="process-math">\(k\)</span> e a coluna <span class="process-math">\(k\)</span> do tabuleiro <span class="process-math">\(T\text{.}\)</span>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/rnk.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.19<span class="period">.</span></span><span class="space"> </span>Tabuleiros <span class="process-math">\(T\)</span> e <span class="process-math">\(S\text{.}\)</span></figcaption></figure> <div class="para logical">
+<div class="para">Pela construção de <span class="process-math">\(S\text{,}\)</span> <span class="process-math">\(R_{n,k}\)</span> também pode ser calculado como o número de maneiras de colocar <span class="process-math">\(n-1\)</span> torres não atacantes no tabuleiro <span class="process-math">\(S\text{.}\)</span> Usando o <a href="" class="xref" data-knowl="./knowl/teocomplemetar.html" title="Teorema 2.18">Teorema 2.18</a>, isto pode ser calculado da seguinte maneira:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teocomplemetar.html ./knowl/eq-pt-tc.html ./knowl/eq-dp.html">
+\begin{equation}
+r_{n-1}(S) = \sum_{i=0}^{n-1} (-1)^i\cdot(n-1-i)!\cdot r_k(S^{c}).\tag{3.3}
+\end{equation}
+</div>
+<div class="para">O polinômio de torre de <span class="process-math">\(S^{c}\)</span> é dado por:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teocomplemetar.html ./knowl/eq-pt-tc.html ./knowl/eq-dp.html">
+\begin{equation}
+R(x, S^{c}) = (1+x)^{k-1} = \sum_{i=0}^{k-1} \binom{k-1}{i}x^i.\tag{3.4}
+\end{equation}
+</div>
+<div class="para">Como os coeficientes de <span class="process-math">\(R(x, S^{c})\)</span> são iguais a zero para <span class="process-math">\(x^i\text{,}\)</span> com <span class="process-math">\(i\gt k-1\text{,}\)</span> substituindo os coeficientes da <a href="" class="xref" data-knowl="./knowl/eq-pt-tc.html" title="Equação 3.4">(3.4)</a> na <a href="" class="xref" data-knowl="./knowl/eq-dp.html" title="Equação 3.3">(3.3)</a> obtemos:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teocomplemetar.html ./knowl/eq-pt-tc.html ./knowl/eq-dp.html">
+\begin{equation*}
+r_{n-1}(S) = \sum_{i=0}^{k-1} (-1)^i\cdot(n-1-i)!\cdot \binom{k-1}{i}.
+\end{equation*}
+</div>
+<div class="para">Como queríamos.</div>
+</div></article></body>
+</html>
