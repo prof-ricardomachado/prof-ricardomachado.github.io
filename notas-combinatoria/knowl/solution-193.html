@@ -20,19 +20,17 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.7.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.6.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">O atleta pode escolher treinar <span class="process-math">\(5, 6\)</span> ou <span class="process-math">\(7\)</span> vezes, pois <span class="process-math">\(gK(28, 8, 3)=0\text{.}\)</span> Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é</div>
+<div class="para">Irving pode escolher qualquer valor entre <span class="process-math">\(0\)</span> e <span class="process-math">\(7\)</span> inclusive, para ser a quantidade de vezes que ele vai jogar, pois <span class="process-math">\(gK(20, 8, 2)=0\)</span> e <span class="process-math">\(gK(20, 7, 2)\neq 0\text{.}\)</span>
+</div>  <div class="para">Assim, o número de formas de Irving jogar futebol sem ter dores musculares é</div>
 <div class="displaymath process-math">
 \begin{align*}
-{\small\sum_{k=5}^7 3^k\times gK(28, k, 3)=}\amp~{\small  3^5\times gK(28, 5, 3)+3^6\times gK(28, 6, 3)+3^7\times gK(28, 7, 3)}\\
-=\amp~ 3^5\times 4368+3^6\times 1716 + 3^7 \times 120\\
-=\amp~2574828.
+\sum_{i=0}^{7}gK(20, i, 2)=\amp~1+20+153+560+1001+792+210+8\\
+=\amp~ 2745.
 \end{align*}
-</div>
-</div> <div class="para">No Sage o cálculo pode ser feito da seguinte maneira:</div> <pre class="ptx-sagecell sagecell-sage" id="sage-39"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
-(3^5)*gK(28, 5, 3)+(3^6)*gK(28, 6, 3)+(3^7)*gK(28, 7, 3)
+</div> <pre class="ptx-sagecell sagecell-sage" id="sage-38"><script type="text/x-sage">gK(n, p, r) = binomial(n-(p-1)*r, p) 
+gK(20,0,2) + gK(20,1,2) + gK(20,2,2) + gK(20,3,2) + gK(20,4,2) + gK(20,5,2) + gK(20,6,2) + gK(20,7,2)
 </script></pre>
 </div>
 <span class="incontext"><a href="section-lemas-kaplansky.html#solution-193" class="internal">em contexto</a></span>

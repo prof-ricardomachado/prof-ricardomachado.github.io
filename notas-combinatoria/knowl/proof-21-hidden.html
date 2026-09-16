@@ -10,53 +10,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
-<div class="para">Sabemos que o polinômio de torre de um tabuleiro quadrado <span class="process-math">\(n \times n\)</span> sem restrições é dado por:</div>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Seja <span class="process-math">\(T\)</span> um tabuleiro obtido pela união disjunta de dois tabuleiros <span class="process-math">\(T_1\)</span> e <span class="process-math">\(T_2\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Para colocar <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\text{,}\)</span> de forma que uma torre não possa atacar a outra, podemos colocar <span class="process-math">\(r_{k-i}(T_1)\text{,}\)</span> <span class="process-math">\(0\leq i \leq k\text{,}\)</span> torres em <span class="process-math">\(T_1\text{,}\)</span> de forma que uma não possa atacar a outra, e <span class="process-math">\(r_{i}(T_2)\)</span> torres em <span class="process-math">\(T_2\text{,}\)</span> de forma que uma não possa atacar a outra. Dessa forma, dados duas torres quaisquer em <span class="process-math">\(T\text{,}\)</span> na configuração obtida anteriormente, uma não pode atacar a outra. Portanto, o número de maneiras de colocarmos <span class="process-math">\(k\)</span> torres em <span class="process-math">\(T\)</span> é dado por</div>
 <div class="displaymath process-math">
 \begin{equation*}
-R(x, T_n) = \sum_{j=0}^n \left(C_n^j\right)^2 j! \, x^j.
+r_k(T) = \sum_{i=0}^k r_{k-i}(T_1)r_i(T_2).
 \end{equation*}
 </div>
-</div> <div class="para logical">
-<div class="para">Substituindo <span class="process-math">\(x\)</span> por <span class="process-math">\(-x^{-1}\)</span> e multiplicando por <span class="process-math">\(x^n\text{,}\)</span> obtemos:</div>
+<div class="para">Logo,</div>
 <div class="displaymath process-math">
 \begin{align*}
-x^n R(-x^{-1}, T_n) \amp = x^n \sum_{j=0}^n \left(C_n^j\right)^2 j! \, (-x^{-1})^j \\
-\amp = \sum_{j=0}^n \left(C_n^j\right)^2 j! \, (-1)^j x^{n-j}. 
+R(x, T) = \amp ~ \sum_{k=0}^nr_k(T)x^k  \\
+= \amp ~ \sum_{k=0}^n\sum_{i=0}^kr_{k-i}(T_1)r_i(T_2)x^k  \\
+= \amp ~ \left( \sum_{s=0}^pr_s(T_1)x^s \right)\left( \sum_{t=0}^qr_t(T_2)x^t \right) \\
+= \amp ~ R(x, T_1)\cdot R(x, T_2).
 \end{align*}
 </div>
-</div> <div class="para logical">
-<div class="para">Fazendo a mudança de variável <span class="process-math">\(k = n - j\)</span> (de modo que <span class="process-math">\(j = n - k\)</span>), os limites do somatório continuam variando de <span class="process-math">\(0\)</span> a <span class="process-math">\(n\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{k=0}^n \left(C_n^{n-k}\right)^2 (n-k)! \, (-1)^{n-k} x^k. 
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Podemos reescrever os coeficientes fatoriais utilizando a definição de combinação:</div>
-<div class="displaymath process-math">
-\begin{align*}
-\left(C_n^{n-k}\right)^2 (n-k)! \amp = \left( \frac{n!}{k!(n-k)!} \right)^2 (n-k)! \\
-\amp = \frac{(n!)^2}{(k!)^2 (n-k)!} \\
-\amp = n! \cdot \left( \frac{n!}{k!(n-k)!} \right) \cdot \frac{1}{k!} \\
-\amp = n! \cdot C_n^k \frac{1}{k!}. 
-\end{align*}
-</div>
-</div> <div class="para logical">
-<div class="para">Além disso, o termo de sinal pode ser fatorado como <span class="process-math">\((-1)^{n-k} = (-1)^n (-1)^k\text{.}\)</span> Substituindo essas simplificações de volta no somatório:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-polinomio-laguerre.html">
-\begin{align*}
-x^n R(-x^{-1}, T_n) \amp = \sum_{k=0}^n n! \cdot C_n^k \frac{1}{k!} (-1)^n (-1)^k x^k \\
-\amp = n! (-1)^n \sum_{k=0}^n C_n^k \frac{(-1)^k}{k!} x^k. 
-\end{align*}
-</div>
-<div class="para">Pela <a href="" class="xref" data-knowl="./knowl/def-polinomio-laguerre.html" title="Definição 2.3.19">Definição 2.3.19</a>, o somatório restante é precisamente <span class="process-math">\(L_n(x)\text{.}\)</span> Logo:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-polinomio-laguerre.html">
-\begin{equation*}
-x^n R(-x^{-1}, T_n) = n! (-1)^n L_n(x), 
-\end{equation*}
-</div>
-<div class="para">o que conclui a demonstração.</div>
 </div></article></body>
 </html>

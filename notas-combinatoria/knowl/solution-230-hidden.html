@@ -10,46 +10,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><ol class="lower-alpha">
-<li><div class="para"><div class="displaymath process-math">
-\begin{align*}
-\sum_{k=1}^nkC_n^k = \amp~\sum_{k=1}^n k\cdot \frac{n!}{k(k-1)!(n-k)!}\\
-=\amp~ \sum_{k=1}^n n\cdot \frac{(n-1)!}{(k-1)!(n-k)!}\\
-=\amp~ n\sum_{k=1}^nC_{n-1}^{k-1}\\
-=\amp~ n2^{n-1}
-\end{align*}
-</div></div></li>
-<li><div class="para">
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">A quantidade de presentes dados no <span class="process-math">\(k\)</span>-ésimo dia é a soma de uma progressão aritmética: <span class="process-math">\(1+2+\cdots+k = \frac{k(k+1)}{2}\text{.}\)</span> Note que isso é exatamente a fórmula da combinação <span class="process-math">\(C_{k+1}^2\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">O total de presentes ao longo de 12 dias é a soma:</div>
 <div class="displaymath process-math">
-\begin{align*}
-\sum_{k=1}^nk^2C_n^k = \amp~ \sum_{k=1}^n k^2\cdot \frac{n!}{k(k-1)!(n-k)!}\\
-=\amp~ n\sum_{k=1}^n kC_{n-1}^{k-1}. \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
-\end{align*}
-</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math">
-\begin{align*}
-\sum_{k=1}^nk^2C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)C_{n-1}^p\\
-=\amp~ n \sum_{p=0}^{n-1}pC_{n-1}^p + n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}} \\
-=\amp~ n\sum_{p=1}^{n-1} p\cdot \frac{(n-1)!}{p(p-1)!(n-p-1)!}+n2^{n-1}\\
-=\amp~ n(n-1)\sum_{p=1}^{n-1}C_{n-2}^{p-1}+ n2^{n-1}\\
-=\amp~ n(n-1)2^{n-2}+n2^{n-1}\\
-=\amp~ {\left(n^{2} + n\right)} 2^{n - 2}.
-\end{align*}
+\begin{equation*}
+\sum_{k=1}^{12} C_{k+1}^2 = C_2^2 + C_3^2 + C_4^2 + \cdots + C_{13}^2 
+\end{equation*}
 </div>
-</div></li>
-<li><div class="para">
+</div> <div class="para logical">
+<div class="para">Aplicando o Teorema das Colunas (que diz que a soma da coluna <span class="process-math">\(p\)</span> até a linha <span class="process-math">\(n\)</span> desce e vira à direita na posição <span class="process-math">\(C_{n+1}^{p+1}\)</span>), temos:</div>
 <div class="displaymath process-math">
-\begin{align*}
-\sum_{k=1}^n k^3C_n^k =\amp~ \sum_{k=1}^nk^2k\cdot \frac{n!}{k(k-1)!(n-k)!} \\
-=\amp~ n\sum_{k=1}^n k^2C_{n-1}^{k-1}.\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad
-\end{align*}
-</div>Definindo <span class="process-math">\(k=p+1\text{,}\)</span> obtemos<div class="displaymath process-math">
-\begin{align*}
-\sum_{k=1}^nk^3C_n^k = \amp~ n\sum_{p=0}^{n-1}(p+1)^2C_{n-1}^{k-1}\\
-=\amp~ n\sum_{p=0}^{n-1}(p^2+2p+1)C_{n-1}^p\\
-=\amp~ n\underbrace{\sum_{p=0}^{n-1}p^2C_{n-1}^p}_{=(n-1)n2^{n-3}} +2n\underbrace{\sum_{p=0}^{n-1}pC_{n-1}^p}_{=(n-1)2^{n-2}}+n\underbrace{\sum_{p=0}^{n-1}C_{n-1}^p}_{=2^{n-1}}\\
-=\amp~(n^3+3n^2)2^{n-3}.
-\end{align*}
+\begin{equation*}
+C_2^2 + C_3^2 + \cdots + C_{13}^2 = C_{14}^3 
+\end{equation*}
 </div>
-</div></li>
-</ol></div></body>
+</div> <div class="para">Calculando: <span class="process-math">\(C_{14}^3 = \frac{14 \times 13 \times 12}{3 \times 2 \times 1} = 364\text{.}\)</span>
+</div>
+</div></body>
 </html>

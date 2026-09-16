@@ -12,14 +12,26 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Parágrafo</span></h5>
-<div class="para logical">
-<div class="para">Escolha os valores dos campos, Vmin ,Vmax, lista e p, para determinar os valores de <span class="process-math">\(S_i\text{,}\)</span> <span class="process-math">\(a_p\text{,}\)</span> <span class="process-math">\(b_p\)</span> e a cardinalidade do conjunto <span class="process-math">\(C\text{,}\)</span> definido abaixo:</div>
-<div class="displaymath process-math">
+<div class="para logical"><ul class="disc">
+<li><div class="para">\textbf{Se <span class="process-math">\(m \lt p\text{:}\)</span>} Para todo <span class="process-math">\(k \ge 0\text{,}\)</span> teremos <span class="process-math">\(p+k &gt; m\text{,}\)</span> o que implica que <span class="process-math">\(C_m^{p+k} = 0\text{.}\)</span> Logo, <span class="process-math">\(T_a = 0\text{.}\)</span>
+</div></li>
+<li><div class="para">\textbf{Se <span class="process-math">\(m = p\text{:}\)</span>} O único termo não nulo ocorre quando <span class="process-math">\(k = 0\)</span> (pois para <span class="process-math">\(k \ge 1\text{,}\)</span> temos <span class="process-math">\(p+k &gt; p\)</span>). Assim, <span class="process-math">\(T_a = (-1)^0 C_p^0 C_p^p = 1 \times 1 \times 1 = 1\text{.}\)</span>
+</div></li>
+<li><div class="para">\textbf{Se <span class="process-math">\(m &gt; p\text{:}\)</span>} Usaremos uma identidade envolvendo o produto de binomiais:<div class="displaymath process-math">
 \begin{equation*}
-C = \{n\in \mathbb{N}~|~ n \text{ é múltiplo de } n_1, \text{ ou } n_2, \text{ ou } \ldots n_k \text{ e } Vmin \leq n\leq Vmax \}.
+C_{p+k}^k C_m^{p+k} = \frac{(p+k)!}{k!p!} \frac{m!}{(p+k)!(m-p-k)!} = \frac{m!}{k!p!(m-p-k)!}.
 \end{equation*}
-</div>
-</div>
+</div>Multiplicando e dividindo a expressão por <span class="process-math">\((m-p)!\text{,}\)</span> obtemos:<div class="displaymath process-math">
+\begin{equation*}
+\frac{m!}{p!(m-p)!} \frac{(m-p)!}{k!(m-p-k)!} = C_m^p C_{m-p}^k.
+\end{equation*}
+</div>Substituindo essa identidade na soma, temos:<div class="displaymath process-math">
+\begin{equation*}
+T_a = \sum_{k=0}^{m-p} (-1)^k C_m^p C_{m-p}^k = C_m^p \sum_{k=0}^{m-p} C_{m-p}^k (-1)^k (1)^{(m-p)-k}.
+\end{equation*}
+</div>Pelo Teorema do Binômio de Newton, o somatório equivale a <span class="process-math">\((1 - 1)^{m-p}\text{.}\)</span> Como <span class="process-math">\(m &gt; p\text{,}\)</span> essa potência resulta em <span class="process-math">\(0\text{.}\)</span> Logo, <span class="process-math">\(T_a = C_m^p \times 0 = 0\text{.}\)</span>
+</div></li>
+</ul></div>
 <span class="incontext"><a href="section-inclusao-exclusao.html#p-759" class="internal">em contexto</a></span>
 </body>
 </html>

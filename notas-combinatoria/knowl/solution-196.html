@@ -13,10 +13,29 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.5.4.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.4.5.9.1</span><span class="period">.</span>
 </h4>
-<div class="para">Chame de <span class="process-math">\(\mathcal{P}\)</span> o conjunto das pessoas e <span class="process-math">\(\mathcal{C}\)</span> o conjunto dos dias do ano. Desta forma como temos mais elementos em <span class="process-math">\(\mathcal{P}\)</span> do que em <span class="process-math">\(\mathcal{C}\text{,}\)</span> pelo princípio da casa dos pombos, pelo menos duas pessoas fazem aniversário no mesmo dia.</div>
+<div class="para">Se as mulheres já estão em seus lugares, cada cadeira vazia está cercada por duas mulheres. Cada marido possui exatamente dois lugares "proibidos": a cadeira à esquerda e a cadeira à direita da sua respectiva esposa.</div> <div class="para">Isso configura uma permutação restrita que pode ser modelada utilizando o Princípio da Inclusão-Exclusão e Polinômios de Torre ou a fórmula geral dos números de Ménage (que decorre dos Lemas de Kaplansky). O número de maneiras para alocar apenas os maridos, conhecido como Número de Ménage <span class="process-math">\(M_n\text{,}\)</span> obedece à fórmula deduzida por Touchard:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M_n = \sum_{k=0}^n (-1)^k \frac{2n}{2n-k} C_{2n-k}^k (n-k)! 
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-casa-pombos.html#solution-196" class="internal">em contexto</a></span>
+<div class="para logical">
+<div class="para">Para <span class="process-math">\(n=5\text{,}\)</span> a fórmula nos fornece a soma exata das configurações restritas. Calculando para os valores da soma:</div>
+<div class="displaymath process-math">
+\begin{align*}
+k=0: \amp \quad (+1) \cdot \frac{10}{10} C_{10}^0 \cdot 5! = 120 \\
+k=1: \amp \quad (-1) \cdot \frac{10}{9} C_{9}^1 \cdot 4! = -240 \\
+k=2: \amp \quad (+1) \cdot \frac{10}{8} C_{8}^2 \cdot 3! = 210 \\
+k=3: \amp \quad (-1) \cdot \frac{10}{7} C_{7}^3 \cdot 2! = -100 \\
+k=4: \amp \quad (+1) \cdot \frac{10}{6} C_{6}^4 \cdot 1! = 25 \\
+k=5: \amp \quad (-1) \cdot \frac{10}{5} C_{5}^5 \cdot 0! = -2 
+\end{align*}
+</div>
+</div> <div class="para">Somando os termos: <span class="process-math">\(120 - 240 + 210 - 100 + 25 - 2 = 13\text{.}\)</span>
+</div> <div class="para">Portanto, os 5 maridos podem ser sentados de 13 maneiras válidas. (Curiosidade: Se o problema perguntasse de quantas formas sentar as mulheres E os homens, multiplicaríamos 13 por <span class="process-math">\(2 \times 4!\)</span>).</div>
+</div>
+<span class="incontext"><a href="section-lemas-kaplansky.html#solution-196" class="internal">em contexto</a></span>
 </body>
 </html>

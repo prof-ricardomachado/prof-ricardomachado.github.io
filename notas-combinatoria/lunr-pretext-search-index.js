@@ -1780,7 +1780,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.1",
   "title": "Princípio da Inclusão-Exclusão",
-  "body": " Princípio da Inclusão-Exclusão    O Princípio da Inclusão-Exclusão é uma ferramenta fundamental da Combinatória, utilizada para realizar a contagem precisa de elementos pertencentes a vários conjuntos. Apresentamos esse princípio combinando teoria e exemplos, com atenção especial à integração de recursos tecnológicos desenvolvidos com o auxílio do SageMath .     Usaremos o símbolo para representar o número de elementos do conjunto , isto é, a cardinalidade de .  Dizemos que dois conjuntos e são disjuntos quando .     O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos    Sejam e conjuntos finitos, então   Diagrama de Venn para .    Ou seja, a cardinalidade de é igual a cardinalidade de mais a cardinalidade de menos a cardinalidade de .    Sejam e conjuntos finitos, a tarefa de selecionar um elemento de e a tarefa de selecionar um elemento de .  Existem maneiras de realizar e maneiras de realizar . O número de maneiras de executar ou é a soma do número de maneiras de executar com o número de maneiras de executar menos o número de maneiras de executar ambos e , pois esta quantidade já foi contada duas vezes.  Como existem maneiras de realizar ou e maneiras de realizar e , temos:       Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens responderam sim a pelo menos uma pergunta?    Defina como o conjunto dos alunos entrevistados que gostam de exatas e defina como o conjunto dos alunos entrevistados que gostam de humanas, assim Dessa forma, calculando o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja      Sejam e conjuntos finitos, então    Diagrama de Venn para .     Considere como um conjunto, usando o ( ) temos: Usando a igualdade: temos Aplicando o ( ) na união , concluímos a demonstração:       O Princípio da Inclusão-Exclusão para conjuntos   Sejam conjuntos finitos. A cardinalidade de é dada por:      Suponha que o elemento pertence a exatamente ( ) dos conjuntos . Será mostrado que é contado exatamente uma vez pelo lado direito da Expressão .  No somatório: observa-se que é contado vezes, pois pertence a exatamente dos conjuntos. No somatório nota-se que é contado vezes, pois, em cada termo do somatório, para que seja contado, precisa pertencer aos dois conjuntos. Se separarmos os conjuntos que contém , existem interseções contendo . No caso geral, será contado vezes, pelo somatório envolvendo dos conjuntos .   Desta forma, o elemento será contado exatamente vezes pelo lado direito de . Usando a Expansão do Binômio de Newton (veja ), temos Portanto, Isto mostra que o elemento é contado exatamente uma vez pelo lado direito de .  Como o elemento é arbitrário e a quantidade , também é arbitrária, esse argumento serve para cada um dos elementos de , o que prova o teorema.      Determine o número de elementos dos conjuntos:         item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:       Escolha os valores dos campos, Vmin ,Vmax e lista, para determinar a cardinalidade do conjunto abaixo:          Quantos são os anagramas da palavra COMPLEXA que tem C em 1º lugar, ou O em 2º lugar, ou M em 3º lugar ou P em 4º lugar?   Sejam  Assim, para .  Observe que é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P nas posições fixas, logo Pelo Princípio da Inclusão-Exclusão ( ), Organizando, temos Substituindo, temos      Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.       (POTI Nível 3)  No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham um novo vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?   Considere o conjunto das permutações do conjunto e seja o conjunto destas permutações, na qual, o par é uma sucessão, . O número de fotos possíveis é dado por . Vamos precisar do PIE para calcular .   Observe que , para qualquer . Pois, olhamos para o par como um elemento e ficamos com um conjunto de elementos para contar o número de permutações.   O caso de , vamos separar em duas situações.   ( e não são consecutivos) Neste caso, Olhamos para o par como apenas um elemento e o par como um elemento também, ficamos com elementos para contar o número de permutações.  ( e são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e também ficamos com elementos para contar o número de permutações.   Nos dois casos o número de permutações é . E o número de interseções 2 a 2 é    O caso de , vamos separar em três situações.   ( , e não são consecutivos) Neste caso, Olhamos para os pares como apenas um elemento, ficamos com elementos para contar o número de permutações.  ( , e apenas dois são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e um par como um elementos. Também ficamos com elementos para contar o número de permutações.  ( , e os três são consecutivos) Neste caso olhamos para a tripla como apenas um elemento. Também ficamos com elementos para contar o número de permutações.   Nos três casos o número de permutações é . E o número de interseções 2 a 2 é    Seguindo com essa ideia, obtemos   Calcule o número de permutações sem sucessores.       Generalização do Princípio da Inclusão-Exclusão   Sejam um conjunto, subconjuntos de . Definimos os números da seguinte maneira:     Sejam subconjuntos de um conjunto .  O número de elementos de que pertencem a exatamente desses subconjuntos é dado por:    O número de elementos de que pertencem a pelo menos desses subconjuntos é dado por:         Determine quantos inteiros estão compreendidos entre e inclusive, e são múltiplos de  exatamente dois dos números: e ;  pelo menos dois dos números: e .      Pelo item b. do , sabemos que    item a)     item b)       Escolha os valores dos campos, Vmin ,Vmax, lista e p, para determinar os valores de , , e a cardinalidade do conjunto , definido abaixo:          Sejam e os conjuntos dos anagramas da palavra COMPLEXA que possuem a letra C em primeiro lugar, a letra O em segundo lugar, a letra M em terceiro lugar e a letra P em quarto lugar, respectivamente.  Quantos são os anagramas de COMPLEXA que estão em exatamente dois dos conjuntos e ?  Quantos são os anagramas de COMPLEXA que estão em pelo menos dois dos conjuntos e ?      De acordo com a , a resposta do item a) é o valor de e o do item b) é o valor de . Note que o número total de anagramas da palavra COMPLEXA é , que o valor de . Usando as informações da solução do , podemos completar os valores de e :       Aplicando a , obtemos as respostas dos itens a) e b)       Escolha os valores dos campos, Palavra, Posições fixas e p, para determinar os valores de , e . De acordo com o enunciado do exemplo anterior.         Exercícios  (Veja ) Qual o número de permutações de , na qual, o número não pode ocupar o segundo lugar, o número não pode ocupar o quarto lugar e o número não pode ocupar nem o primeiro nem o quarto lugar?    Vamos calcular o número de permutações de 4 elementos e subtrair o número de permutações em que pelo menos uma das condições acontece.    1 no 2º lugar:  2 no 4º lugar:  3 no 1º lugar:  3 no 4º lugar:      1 no 2º lugar e 2 no 4º lugar:  1 no 2º lugar e 3 no 1º lugar:  1 no 2º lugar e 3 no 4º lugar:  2 no 4º lugar e 3 no 1º lugar:      1 no 2º lugar e 2 no 4º lugar e 3 no 1º lugar:    Resposta:     Considere os conjuntos e Os conjuntos e possuem a mesma cardinalidade?   e . Portanto, a resposta é não.   (POTI Nível 3 - modificado)  Um retângulo é feito de quadrados unitários. Por quantos quadrados unitários a diagonal do retângulo passa?     A diagonal corta cada um dos quadrados? A resposta é não. De fato, pode ocorrer de haver repetições na \"mudança\". Veja o seguinte exemplo bidimensional, num retângulo .   Note que há três repetições. Opa! e . O que acontece é que se , ocorrem blocos de repetições. Logo, devemos subtrair . A resposta é .  No nosso caso, a resposta é    Escolha os valores dos campos, m (número de linhas) e n (número de colunas) para determinar quantos quadrados unitários a diagonal do retângulo passa.         Quantos são os anagramas da palavra PETELECOS que possuem a letra P na 1ª posição, ou a letra E na 2ª posição, ou a letra T na 3ª posição?     Sejam Queremos calcular . Note que , pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para , e com a letra T na terceira posição, para . Note também que .  Agora, vamos calcular as cardinalidades das interseções , com .  , pois P e E ficam fixados;  , pois P e T ficam fixados;  , pois E e T ficam fixados.  Finalmente, . Aplicando o Princípio da Inclusão-Exclusão:     Quantos inteiros entre 1 e 10000 inclusive:  são divisíveis por pelo menos dois dos números ?  não são divisíveis por nenhum dos números ?  são divisíveis por exatamente um dos números ?  são divisíveis por pelo menos um dos números ?             Sejam e os conjuntos dos anagramas da palavra PRINCIPIO que possuem a letra P em primeiro lugar, a letra R em segundo lugar e a letra I em terceiro lugar, respectivamente.  Quantos são os anagramas de PRINCIPIO que estão em exatamente um dos conjuntos e ?  Quantos são os anagramas de PRINCIPIO que estão em pelo menos um dos conjuntos e ?          De acordo com a , a resposta do item a) é o valor de e o do item b) é o valor de . Note que o número total de anagramas da palavra PRINCIPIO é , que o valor de . Para calcular os valores de e , precisamos dos seguintes valores:         Portanto,      Aplicando a , obtemos as respostas dos itens a) e b) e     Determine o número de permutações de nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?           Calculando os valores de e :       Queremos o número de permutações na qual, os valores 2, 3 e 4 não estão em suas posições originais. Então, precisamos calcular o valor de :     Quantos são os anagramas das palavras abaixo, na qual, nenhuma letra está em sua posição original?  TERMO;  SAGAZ.           Item b. Vamos contar o total de permutações e subtrair o número de permutações que possuem alguma letra na posição original. O total de permutações é A resposta será dada por Na qual, o conjunto é o conjunto das permutações com a letra na posição original.  Neste caso, vamos contar separadamente o número de permutações que tem alguma letra na posição original. Primeiro vamos contar 1 a 1, ou seja, fixamos a letra na posição original e calculamos o número de permutações das outras letras:  S:  A:  G:  A:  Z:  Assim,   Interseções 2 a 2, fixamos as letras nas posições originais e calculamos o número de permutações das outras letras:  SA:  SG:  SA:  SZ:  AG:  AA:  AZ:  GA:  GZ:  AZ:  Logo,   Interseções 3 a 3:  SAG:  SAA:  SAZ:  SGA:  SGZ:  SAZ:  AGA:  AGZ:  AAZ:  GAZ:  Logo,   Interseções 4 a 4:  AGAZ:  SGAZ:  SAAZ:  SAGZ:  SAGA:  Logo,   No caso 5 a 5, só temos uma maneira.   A resposta é         Quantas são as permutações de que têm exatamente 3 elementos no seu lugar primitivo?                    (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28   Sejam , , os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular . Pelo Princípio da Inclusão-Exclusão, temos Como , para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.  Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.   Polígonos encolhidos.    Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de e assim sucessivamente, de um vértice de até o seguinte. Desta forma cada conjunto define semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim, , para , com e . Logo,   Na figura abaixo, podemos imaginar que os polígonos foram \"cortados\" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs.  Verificação das interseções.       A Função Totiente de Euler, denotada por , conta a quantidade de números inteiros positivos menores ou iguais a que são coprimos com (ou seja, cujo único divisor comum com é 1). Considere o número .   Escreva a fatoração em primos de 300.  Utilizando o Princípio da Inclusão-Exclusão, calcule .  Generalize o raciocínio do item anterior para deduzir a fórmula algébrica de , sabendo que a fatoração em primos de um número natural é dada por .    b) 80  c)   item a) A fatoração é . Os divisores primos de 300 são 2, 3 e 5.  item b) Para que um número seja coprimo com 300, ele não pode ser múltiplo de 2, nem de 3, nem de 5. Seja . Definimos:  : múltiplos de 2 em ( )  : múltiplos de 3 em ( )  : múltiplos de 5 em ( )   As interseções são calculadas pelos produtos dos primos:  = múltiplos de 6 =  = múltiplos de 10 =  = múltiplos de 15 =  = múltiplos de 30 =   O número de coprimos é a cardinalidade do conjunto complementar da união:  item c) Seja . Para cada divisor primo de , defina como o conjunto dos múltiplos de em . A cardinalidade de cada conjunto individual é .  A interseção de dois conjuntos contém os múltiplos de , logo sua cardinalidade é . A lógica segue idêntica para interseções maiores.  Aplicando o Princípio da Inclusão-Exclusão para calcular a quantidade de elementos que não pertencem a nenhum (ou seja, os números coprimos com ), temos:   Colocando o fator comum em evidência:   Perceba que a longa expressão dentro dos parênteses grandes é exatamente o resultado do desenvolvimento do produto de binômios da forma . Portanto, a expressão pode ser fatorada na fórmula geral de Euler:     Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Princípio da Inclusão-Exclusão, sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é      Se e ( ), quantas são as funções sobrejetoras?      Note que, no total, exitem funções , pois existem maneiras de escolher a imagem de cada um dos elementos de .  Sejam os elementos do conjunto . Defina o conjunto das funções , tais que não pertence a imagem de . Logo, e .  As funções que não são sobrejetivas são as que pertencem a . Então, o número de funções sobrejetoras é dado por .  Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos , a cardinalidade das interseções a desses conjuntos, com e a quantidade de interseções a desses conjuntos:  Para o caso de apenas um conjunto, já sabemos que e no total existem conjuntos;  Para o caso das interseções de dois conjuntos, temos e no total existem dessas interseções;  Para o caso das interseções de conjuntos, temos e no total existem dessas interseções.  Aplicando o Princípio da Inclusão-Exclusão, a resposta é     (OMU 2024 - Prova Individual - Item b) Andrês decidiu visitar um museu com exposições. Andrês e Marcelo são rivais. De quantas maneiras Andrês e Marcelo podem visitar exposições, de modo que eles nunca visitem uma mesma exposição, mas cada um visite pelo menos uma?   .   Considere que as exposições do museu estão numeradas de até . Podemos representar cada maneira de visitar o museu com uma -úpla. Usando e como entradas da -úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a -ésima exposição.  Podemos formar um total de  -úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo ou que não possuem o símbolo . Note que podem ser formadas  -úplas com apenas os símbolos e (sem o símbolo A) e também podem ser formadas  -úplas com apenas os símbolos e (sem o símbolo M). E pode ser formada somente 1 -úpla com apenas o símbolo .  Portanto, o número de maneiras de visitar o museu é .    (IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.   2088960   Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada . Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos formas distintas de organizarmos esses carros.  Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.  Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos formas de escolhermos essas 2 equipes e podemos colocá-las de maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado e das demais equipes .  Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos     (ITA 2010) Sejam e conjuntos tais que  ,  ,   e é uma progressão geométrica de razão .   Determine  Determine    a) b) .   item a) Como , temos , logo e . Logo Ou seja,   Usando que é uma P.G., podemos escrever e . Logo,   Portanto, .  Por hipótese, , mas , assim    Finalmente, usando as igualdades , , e o Princípio da Inclusão-Exclusão ( ), obtemos Efetuando o cálculo, .  item b) Como , temos     Seis representantes estão participando de uma conferência em mesa redonda. No primeiro dia, eles se sentam em uma determinada ordem. De quantas maneiras diferentes eles podem se sentar no segundo dia de modo que ninguém tenha à sua direita a mesma pessoa que estava à sua direita no primeiro dia?     O problema consiste em encontrar o número de permutações circulares sem sucessões. Vamos numerar as pessoas de 1 a 6, na ordem em que sentaram no primeiro dia. Queremos evitar as 6 sucessões: e .  O total de permutações circulares sem restrições é .  Seja o conjunto das permutações em que a sucessão ocorre. Pelo Princípio da Inclusão-Exclusão, a quantidade de arranjos onde nenhuma sucessão ocorre é: onde é a soma das cardinalidades das interseções de conjuntos.  Para calcular , escolhemos sucessões dentre as 6 possíveis, o que pode ser feito de maneiras. Ao obrigar que sucessões ocorram, aglutinamos os 6 elementos em blocos indivisíveis. A permutação circular desses blocos é calculada por . Logo, .  Calculando termo a termo:        (se todas as 6 sucessões são mantidas, a mesa inteira está fixa, resultando apenas na formação original).   Substituindo os valores na fórmula da Inclusão-Exclusão:      "
+  "body": " Princípio da Inclusão-Exclusão    O Princípio da Inclusão-Exclusão é uma ferramenta fundamental da Combinatória, utilizada para realizar a contagem precisa de elementos pertencentes a vários conjuntos. Apresentamos esse princípio combinando teoria e exemplos, com atenção especial à integração de recursos tecnológicos desenvolvidos com o auxílio do SageMath .     Usaremos o símbolo para representar o número de elementos do conjunto , isto é, a cardinalidade de .  Dizemos que dois conjuntos e são disjuntos quando .     O Princípio da Inclusão-Exclusão para 2 e 3 conjuntos    Sejam e conjuntos finitos, então   Diagrama de Venn para .    Ou seja, a cardinalidade de é igual a cardinalidade de mais a cardinalidade de menos a cardinalidade de .    Sejam e conjuntos finitos, a tarefa de selecionar um elemento de e a tarefa de selecionar um elemento de .  Existem maneiras de realizar e maneiras de realizar . O número de maneiras de executar ou é a soma do número de maneiras de executar com o número de maneiras de executar menos o número de maneiras de executar ambos e , pois esta quantidade já foi contada duas vezes.  Como existem maneiras de realizar ou e maneiras de realizar e , temos:       Numa pesquisa com jovens foram feitas as seguintes perguntas para que respondessem sim ou não. Gosta de exatas? Gosta de humanas? Responderam sim a primeira pergunta 80 jovens, 60 reponderam sim a segunda e 15 responderam sim a ambas. Quantos jovens responderam sim a pelo menos uma pergunta?    Defina como o conjunto dos alunos entrevistados que gostam de exatas e defina como o conjunto dos alunos entrevistados que gostam de humanas, assim Dessa forma, calculando o número de alunos que gostam de ambas as áreas é contado duas vezes. Portanto, para determinar o número de alunos entrevistados, retira-se o número de alunos que foi contado duas vezes, ou seja      Sejam e conjuntos finitos, então    Diagrama de Venn para .     Considere como um conjunto, usando o ( ) temos: Usando a igualdade: temos Aplicando o ( ) na união , concluímos a demonstração:       O Princípio da Inclusão-Exclusão para conjuntos   Sejam conjuntos finitos. A cardinalidade de é dada por:      Suponha que o elemento pertence a exatamente ( ) dos conjuntos . Será mostrado que é contado exatamente uma vez pelo lado direito da Expressão .  No somatório: observa-se que é contado vezes, pois pertence a exatamente dos conjuntos. No somatório nota-se que é contado vezes, pois, em cada termo do somatório, para que seja contado, precisa pertencer aos dois conjuntos. Se separarmos os conjuntos que contém , existem interseções contendo . No caso geral, será contado vezes, pelo somatório envolvendo dos conjuntos .   Desta forma, o elemento será contado exatamente vezes pelo lado direito de . Usando a Expansão do Binômio de Newton (veja ), temos Portanto, Isto mostra que o elemento é contado exatamente uma vez pelo lado direito de .  Como o elemento é arbitrário e a quantidade , também é arbitrária, esse argumento serve para cada um dos elementos de , o que prova o teorema.      Determine o número de elementos dos conjuntos:         item a) Sejam  A resposta do item a) é a cardinalidade do conjunto: Pelo Princípio da Inclusão-Exclusão ( ): Para obter a cardinalidade de cada um dos conjuntos , vamos dividir 10000 por , pois se obtermos , na divisão Euclideana, significa que são todos múltiplos de e são menores que 10000. Fazendo as divisões obtemos: Para obter a cardinalidade de cada uma das interseções , vamos dividir 10000 por : Para obter a cardinalidade de , vamos dividir 10000 por : Portanto, pelo Princípio Inclusão-Exclusão temos:   item b) Usando a ideia do item a), queremos calcular a cardinalidade do conjunto: Vamos começar calculando a cardinalidade de cada conjunto: Calculando a cardinalidade de cada uma das interseções : Para obter a cardinalidade de , dividimos pelo , logo: Portanto, pelo Princípio da Inclusão-Exclusão:       Escolha os valores dos campos, Vmin ,Vmax e lista, para determinar a cardinalidade do conjunto abaixo:          Quantos são os anagramas da palavra COMPLEXA que tem C em 1º lugar, ou O em 2º lugar, ou M em 3º lugar ou P em 4º lugar?   Sejam  Assim, para .  Observe que é o número de anagramas da palavra COMPLEXA que estão em dois dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que estão em três dos conjuntos , logo  Observe que é o número de anagramas da palavra COMPLEXA que tem as letras C, O, M e P nas posições fixas, logo Pelo Princípio da Inclusão-Exclusão ( ), Organizando, temos Substituindo, temos      Escolha uma palavra e uma lista de posições para obter o número de anagramas da palavra, na qual pelo menos uma das letras das posições escolhidas estará na posição original.       (POTI Nível 3)  No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham um novo vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?   Considere o conjunto das permutações do conjunto e seja o conjunto destas permutações, na qual, o par é uma sucessão, . O número de fotos possíveis é dado por . Vamos precisar do PIE para calcular .   Observe que , para qualquer . Pois, olhamos para o par como um elemento e ficamos com um conjunto de elementos para contar o número de permutações.   O caso de , vamos separar em duas situações.   ( e não são consecutivos) Neste caso, Olhamos para o par como apenas um elemento e o par como um elemento também, ficamos com elementos para contar o número de permutações.  ( e são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e também ficamos com elementos para contar o número de permutações.   Nos dois casos o número de permutações é . E o número de interseções 2 a 2 é    O caso de , vamos separar em três situações.   ( , e não são consecutivos) Neste caso, Olhamos para os pares como apenas um elemento, ficamos com elementos para contar o número de permutações.  ( , e apenas dois são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e um par como um elemento. Também ficamos com elementos para contar o número de permutações.  ( , e os três são consecutivos) Neste caso olhamos para a tripla como apenas um elemento. Também ficamos com elementos para contar o número de permutações.   Nos três casos o número de permutações é . E o número de interseções 3 a 3 é    Seguindo com essa ideia, obtemos   Calcule o número de permutações sem sucessores.       Generalização do Princípio da Inclusão-Exclusão   Sejam um conjunto, subconjuntos de . Definimos os números da seguinte maneira:     (Princípio da Inclusão-Exclusão Generalizado: Fórmulas de Charles Jordan)  Sejam subconjuntos de um conjunto .  O número de elementos de que pertencem a exatamente desses subconjuntos é dado por:    O número de elementos de que pertencem a pelo menos desses subconjuntos é dado por:       A estratégia de demonstração para ambas as fórmulas baseia-se em acompanhar um elemento arbitrário que pertença a exatamente dos subconjuntos. Devemos calcular quantas vezes esse elemento é contado pela expressão do lado direito da igualdade.  Lembre-se que é a soma das cardinalidades de todas as interseções possíveis de conjuntos. Como o elemento pertence a exatamente subconjuntos, ele estará presente em exatamente interseções de tamanho (convencionando que caso ). Portanto, a contribuição de para a parcela é igual a .  Demonstração do item a)  Substituindo por , a contribuição total do elemento para a fórmula de é: Vamos analisar os três casos possíveis para :    \\textbf{Se :} Para todo , teremos , o que implica que . Logo, .  \\textbf{Se :} O único termo não nulo ocorre quando (pois para , temos ). Assim, .  \\textbf{Se :} Usaremos uma identidade envolvendo o produto de binomiais: Multiplicando e dividindo a expressão por , obtemos: Substituindo essa identidade na soma, temos: Pelo Teorema do Binômio de Newton, o somatório equivale a . Como , essa potência resulta em . Logo, .    Como a contribuição de é apenas se , e nos demais casos, a fórmula contabiliza exatamente os elementos que pertencem a conjuntos.  Demonstração do item b)  Para o cálculo de , a contribuição do elemento é dada por:     \\textbf{Se :} Novamente, para todo . Assim, .  \\textbf{Se :} Utilizaremos a identidade de extensão dos binomiais para coeficientes negativos: . Substituindo na soma, o fator . Logo: Usando a propriedade das combinações complementares, sabemos que . A soma passa a ser: Aplicando a identidade da Convolução de Vandermonde ( ), onde , e , obtemos:     Portanto, a fórmula soma exatamente vez todo elemento que pertença a conjuntos ou mais, finalizando a demonstração.       Considere um grupo onde as pessoas podem falar três idiomas: Inglês ( ), Espanhol ( ) e Francês ( ). Para compreender intuitivamente como atuam os coeficientes das fórmulas do Princípio da Inclusão-Exclusão Generalizado, considere três pessoas representativas:   Ana : fala apenas Inglês (pertence a exatamente conjunto).  Beto : fala Inglês e Espanhol (pertence a exatamente conjuntos).  Carlos : fala Inglês, Espanhol e Francês (pertence a exatamente conjuntos).   Mostre como as fórmulas a seguir atribuem a contagem correta para cada um desses indivíduos:   A fórmula para contar quem fala exatamente um idioma.  A fórmula para contar quem fala pelo menos um idioma.     Antes de aplicar as fórmulas, analisamos quantas vezes cada indivíduo é computado nas somas parciais :    : Ana aparece vez; Beto aparece vezes; Carlos aparece vezes.   : Ana aparece vezes; Beto aparece vez; Carlos aparece nas interseções ( vezes).   : Ana aparece vezes; Beto aparece vezes; Carlos aparece vez.    Parte (a): Exatamente 1 idioma ( )   Aplicando a fórmula para e :   Os coeficientes binomiais geram os pesos multiplicadores e . Avaliando a contribuição individual de cada pessoa:    Ana (deve valer ):    Beto (deve valer ):    Carlos (deve valer ):    O peso em anula perfeitamente quem está em dois conjuntos, e a combinação dos pesos cancela quem está em três.   Parte (b): Pelo menos 1 idioma ( )   Aplicando a segunda fórmula com (subtraindo na parte inferior do número binomial):   Agora os pesos são e . Avaliando a contribuição individual de cada pessoa (todos devem ser computados exatamente vez):    Ana (está em pelo menos um idioma):    Beto (está em pelo menos um idioma):    Carlos (está em pelo menos um idioma):    Dessa forma, o ajuste nos coeficientes faz com que qualquer elemento presente em ou conjuntos contribua exatamente com o valor final , recuperando o formato clássico da união de conjuntos.       Determine quantos inteiros estão compreendidos entre e inclusive, e são múltiplos de  exatamente dois dos números: e ;  pelo menos dois dos números: e .      Pelo item b. do , sabemos que    item a)     item b)       Escolha os valores dos campos, Vmin ,Vmax, lista e p, para determinar os valores de , , e a cardinalidade do conjunto , definido abaixo:          Sejam e os conjuntos dos anagramas da palavra COMPLEXA que possuem a letra C em primeiro lugar, a letra O em segundo lugar, a letra M em terceiro lugar e a letra P em quarto lugar, respectivamente.  Quantos são os anagramas de COMPLEXA que estão em exatamente dois dos conjuntos e ?  Quantos são os anagramas de COMPLEXA que estão em pelo menos dois dos conjuntos e ?      De acordo com a , a resposta do item a) é o valor de e o do item b) é o valor de . Note que o número total de anagramas da palavra COMPLEXA é , que o valor de . Usando as informações da solução do , podemos completar os valores de e :       Aplicando a , obtemos as respostas dos itens a) e b)       Escolha os valores dos campos, Palavra, Posições fixas e p, para determinar os valores de , e . De acordo com o enunciado do exemplo anterior.         Exercícios  (Veja ) Qual o número de permutações de , na qual, o número não pode ocupar o segundo lugar, o número não pode ocupar o quarto lugar e o número não pode ocupar nem o primeiro nem o quarto lugar?    Vamos calcular o número de permutações de 4 elementos e subtrair o número de permutações em que pelo menos uma das condições acontece.    1 no 2º lugar:  2 no 4º lugar:  3 no 1º lugar:  3 no 4º lugar:      1 no 2º lugar e 2 no 4º lugar:  1 no 2º lugar e 3 no 1º lugar:  1 no 2º lugar e 3 no 4º lugar:  2 no 4º lugar e 3 no 1º lugar:      1 no 2º lugar e 2 no 4º lugar e 3 no 1º lugar:    Resposta:     Considere os conjuntos e Os conjuntos e possuem a mesma cardinalidade?   e . Portanto, a resposta é não.   (POTI Nível 3 - modificado)  Um retângulo é feito de quadrados unitários. Por quantos quadrados unitários a diagonal do retângulo passa?     A diagonal corta cada um dos quadrados? A resposta é não. De fato, pode ocorrer de haver repetições na \"mudança\". Veja o seguinte exemplo bidimensional, num retângulo .   Note que há três repetições. Opa! e . O que acontece é que se , ocorrem blocos de repetições. Logo, devemos subtrair . A resposta é .  No nosso caso, a resposta é    Escolha os valores dos campos, m (número de linhas) e n (número de colunas) para determinar quantos quadrados unitários a diagonal do retângulo passa.         Quantos são os anagramas da palavra PETELECOS que possuem a letra P na 1ª posição, ou a letra E na 2ª posição, ou a letra T na 3ª posição?     Sejam Queremos calcular . Note que , pois são as quantidades de anagramas da palavra PETELECOS com a letra P na primeira posição, para , e com a letra T na terceira posição, para . Note também que .  Agora, vamos calcular as cardinalidades das interseções , com .  , pois P e E ficam fixados;  , pois P e T ficam fixados;  , pois E e T ficam fixados.  Finalmente, . Aplicando o Princípio da Inclusão-Exclusão:     Quantos inteiros entre 1 e 10000 inclusive:  são divisíveis por pelo menos dois dos números ?  não são divisíveis por nenhum dos números ?  são divisíveis por exatamente um dos números ?  são divisíveis por pelo menos um dos números ?             Sejam e os conjuntos dos anagramas da palavra PRINCIPIO que possuem a letra P em primeiro lugar, a letra R em segundo lugar e a letra I em terceiro lugar, respectivamente.  Quantos são os anagramas de PRINCIPIO que estão em exatamente um dos conjuntos e ?  Quantos são os anagramas de PRINCIPIO que estão em pelo menos um dos conjuntos e ?          De acordo com a , a resposta do item a) é o valor de e o do item b) é o valor de . Note que o número total de anagramas da palavra PRINCIPIO é , que o valor de . Para calcular os valores de e , precisamos dos seguintes valores:         Portanto,      Aplicando a , obtemos as respostas dos itens a) e b) e     Determine o número de permutações de nas quais nem o 2 ocupa o 2ª lugar nem o 3 ocupa o 3º lugar nem o 4 ocupa o 4º lugar?           Calculando os valores de e :       Queremos o número de permutações na qual, os valores 2, 3 e 4 não estão em suas posições originais. Então, precisamos calcular o valor de :     Quantos são os anagramas das palavras abaixo, na qual, nenhuma letra está em sua posição original?  TERMO;  SAGAZ.           Item b. Vamos contar o total de permutações e subtrair o número de permutações que possuem alguma letra na posição original. O total de permutações é A resposta será dada por Na qual, o conjunto é o conjunto das permutações com a letra na posição original.  Neste caso, vamos contar separadamente o número de permutações que tem alguma letra na posição original. Primeiro vamos contar 1 a 1, ou seja, fixamos a letra na posição original e calculamos o número de permutações das outras letras:  S:  A:  G:  A:  Z:  Assim,   Interseções 2 a 2, fixamos as letras nas posições originais e calculamos o número de permutações das outras letras:  SA:  SG:  SA:  SZ:  AG:  AA:  AZ:  GA:  GZ:  AZ:  Logo,   Interseções 3 a 3:  SAG:  SAA:  SAZ:  SGA:  SGZ:  SAZ:  AGA:  AGZ:  AAZ:  GAZ:  Logo,   Interseções 4 a 4:  AGAZ:  SGAZ:  SAAZ:  SAGZ:  SAGA:  Logo,   No caso 5 a 5, só temos uma maneira.   A resposta é         Quantas são as permutações de que têm exatamente 3 elementos no seu lugar primitivo?                    (OBM 2011 - 1ª fase do nível 3) Três polı́gonos regulares, de 8, 12 e 18 lados respectivamente, estão inscritos em uma mesma circunferência e têm um vértice em comum. Os vértices dos três polı́gonos são marcados na circunferência. Quantos vértices distintos foram marcados?   Sendo a quantidade de pontos do polı́gono de vértices, queremos calcular . Note que .   28   Sejam , , os conjuntos dos vértices dos polígonos com 8, 12 e 18 lados, respectivamente. Queremos calcular . Pelo Princípio da Inclusão-Exclusão, temos Como , para concluir o cálculo, precisamos descobrir a cardinalidade de cada interseção.  Usando a figura abaixo como referência, se expandirmos os polígonos até a circunferência, estaremos de acordo com o enunciado. O vértice em comum aos três polígonos foi desenhado no ponto extremo superior, sem perda de generalidade, pois independente de onde ele esteja, os polígonos podem ser girados para ficarem desta forma.   Polígonos encolhidos.    Considere os semicírculos que partem do extremo superior no sentido horário, até o vértice seguinte de e assim sucessivamente, de um vértice de até o seguinte. Desta forma cada conjunto define semicírculos. Teremos a interseção de dois ou três vértices quando a respectiva quantidade de extremidades dos semicírculos coincidirem. Portanto, usaremos o máximo divisor comum para calcular a quantidade de interseções dos vértices. Assim, , para , com e . Logo,   Na figura abaixo, podemos imaginar que os polígonos foram \"cortados\" e esticados para podermos visualizar as interseções dos vértices de acordo com os valores dos mdcs.  Verificação das interseções.       A Função Totiente de Euler, denotada por , conta a quantidade de números inteiros positivos menores ou iguais a que são coprimos com (ou seja, cujo único divisor comum com é 1). Considere o número .   Escreva a fatoração em primos de 300.  Utilizando o Princípio da Inclusão-Exclusão, calcule .  Generalize o raciocínio do item anterior para deduzir a fórmula algébrica de , sabendo que a fatoração em primos de um número natural é dada por .    b) 80  c)   item a) A fatoração é . Os divisores primos de 300 são 2, 3 e 5.  item b) Para que um número seja coprimo com 300, ele não pode ser múltiplo de 2, nem de 3, nem de 5. Seja . Definimos:  : múltiplos de 2 em ( )  : múltiplos de 3 em ( )  : múltiplos de 5 em ( )   As interseções são calculadas pelos produtos dos primos:  = múltiplos de 6 =  = múltiplos de 10 =  = múltiplos de 15 =  = múltiplos de 30 =   O número de coprimos é a cardinalidade do conjunto complementar da união:  item c) Seja . Para cada divisor primo de , defina como o conjunto dos múltiplos de em . A cardinalidade de cada conjunto individual é .  A interseção de dois conjuntos contém os múltiplos de , logo sua cardinalidade é . A lógica segue idêntica para interseções maiores.  Aplicando o Princípio da Inclusão-Exclusão para calcular a quantidade de elementos que não pertencem a nenhum (ou seja, os números coprimos com ), temos:   Colocando o fator comum em evidência:   Perceba que a longa expressão dentro dos parênteses grandes é exatamente o resultado do desenvolvimento do produto de binômios da forma . Portanto, a expressão pode ser fatorada na fórmula geral de Euler:     Quantos são os inteiros de dígitos, que têm todos os dígitos pertencentes ao conjunto ? Em quantos deles os inteiros e figuram todos?   a) , b) .   item a) Temos 3 opções para o primeiro dígito, 3 opções para o segundo dígito e assim sucessivamente, até o -ésimo dígito que também temos 3 opções. Portanto a resposta é .  item b) Agora precisamos subtrair de a quantidade de números de dígitos, na qual, nem todos os três dígitos disponíveis aparecem. Defina como o subconjunto dos números de dígitos formados pelos dígitos e tal que o dígito não aparece. De maneira análoga defina os subconjuntos e . Desta forma, queremos calcular . Pelo Princípio da Inclusão-Exclusão, sabemos que  possui elementos, pois o dígito não pode figurar no número de dígitos, sobrando apenas os dígitos e . Desta forma, temos duas opções para o primeiro dígito, 2 opções para o segundo dígito e assim sucessivamente. Observe que os conjuntos e possuem a mesma quantidade de elementos.  possui apenas elemento, pois os dígitos e não podem figurar, sobrando apenas o dígito 3. Desta forma temos apenas uma opções para o primeiro dígito, uma opção para o segundo dígito e assim sucessivamente. De maneira análoga observamos que e também possuem apenas um elemento.  Finalmente, não possui elementos, pois nenhum dos três dígitos podem figurar. Portanto a resposta é      Se e ( ), quantas são as funções sobrejetoras?      Note que, no total, exitem funções , pois existem maneiras de escolher a imagem de cada um dos elementos de .  Sejam os elementos do conjunto . Defina o conjunto das funções , tais que não pertence a imagem de . Logo, e .  As funções que não são sobrejetivas são as que pertencem a . Então, o número de funções sobrejetoras é dado por .  Para usar o Princípio da Inclusão-Exclusão, precisamos calcular a cardinalidade dos conjuntos , a cardinalidade das interseções a desses conjuntos, com e a quantidade de interseções a desses conjuntos:  Para o caso de apenas um conjunto, já sabemos que e no total existem conjuntos;  Para o caso das interseções de dois conjuntos, temos e no total existem dessas interseções;  Para o caso das interseções de conjuntos, temos e no total existem dessas interseções.  Aplicando o Princípio da Inclusão-Exclusão, a resposta é     (OMU 2024 - Prova Individual - Item b) Andrês decidiu visitar um museu com exposições. Andrês e Marcelo são rivais. De quantas maneiras Andrês e Marcelo podem visitar exposições, de modo que eles nunca visitem uma mesma exposição, mas cada um visite pelo menos uma?   .   Considere que as exposições do museu estão numeradas de até . Podemos representar cada maneira de visitar o museu com uma -úpla. Usando e como entradas da -úpla, para indicar que Andrês, Marcelo e Nenhum deles, respectivamente, visitou a -ésima exposição.  Podemos formar um total de  -úplas dessa maneira. Depois, precisamos excluir as que não possuem o símbolo ou que não possuem o símbolo . Note que podem ser formadas  -úplas com apenas os símbolos e (sem o símbolo A) e também podem ser formadas  -úplas com apenas os símbolos e (sem o símbolo M). E pode ser formada somente 1 -úpla com apenas o símbolo .  Portanto, o número de maneiras de visitar o museu é .    (IME) Cinco equipes concorrem numa competição automobilı́stica, em que cada equipe possui dois carros. Para a largada são formadas duas colunas de carros lado a lado, de tal forma que cada carro da coluna da direita tenha ao seu lado, na coluna da esquerda, um carro de outra equipe. Determine o número de formações possı́veis para a largada.   2088960   Inicialmente, temos 10! possibilidades de colocarmos esses 10 veículos na posição de largada. Dessas permutações, vamos excluir aquelas que possuem uma equipe com dois carros lado a lado. Para isso, existem maneiras de escolhermos essa equipe que poderá ser colocada em uma das 5 filas na largada . Devemos, ainda, permutar os carros de uma mesma equipe 2! e os demais 8 carros podem ser organizados de 8!. Assim, temos formas distintas de organizarmos esses carros.  Algumas dessas maneiras de organizar os carros apresentam mais de uma equipe com seus carros emparelhados.  Agora, calcularemos em quantos casos teremos ao menos 2 equipes com seus carros emparelhados. Primeiramente, temos formas de escolhermos essas 2 equipes e podemos colocá-las de maneiras diferentes nas 5 filas da largada (a primeira equipe pode entrar em qualquer uma das 5 filas e a segunda em uma das outras 4 que restaram). Mas, ainda, devemos permutar os carros das duas equipes lado a lado e das demais equipes .  Seguindo essa linha de raciocínio, pelo Princípio da Inclusão-Exclusão temos     (ITA 2010) Sejam e conjuntos tais que  ,  ,   e é uma progressão geométrica de razão .   Determine  Determine    a) b) .   item a) Como , temos , logo e . Logo Ou seja,   Usando que é uma P.G., podemos escrever e . Logo,   Portanto, .  Por hipótese, , mas , assim    Finalmente, usando as igualdades , , e o Princípio da Inclusão-Exclusão ( ), obtemos Efetuando o cálculo, .  item b) Como , temos     Seis representantes estão participando de uma conferência em mesa redonda. No primeiro dia, eles se sentam em uma determinada ordem. De quantas maneiras diferentes eles podem se sentar no segundo dia de modo que ninguém tenha à sua direita a mesma pessoa que estava à sua direita no primeiro dia?     O problema consiste em encontrar o número de permutações circulares sem sucessões. Vamos numerar as pessoas de 1 a 6, na ordem em que sentaram no primeiro dia. Queremos evitar as 6 sucessões: e .  O total de permutações circulares sem restrições é .  Seja o conjunto das permutações em que a sucessão ocorre. Pelo Princípio da Inclusão-Exclusão, a quantidade de arranjos onde nenhuma sucessão ocorre é: onde é a soma das cardinalidades das interseções de conjuntos.  Para calcular , escolhemos sucessões dentre as 6 possíveis, o que pode ser feito de maneiras. Ao obrigar que sucessões ocorram, aglutinamos os 6 elementos em blocos indivisíveis. A permutação circular desses blocos é calculada por . Logo, .  Calculando termo a termo:        (se todas as 6 sucessões são mantidas, a mesa inteira está fixa, resultando apenas na formação original).   Substituindo os valores na fórmula da Inclusão-Exclusão:      "
 },
 {
   "id": "remark-5",
@@ -1870,7 +1870,7 @@ var ptx_lunr_docs = [
   "type": "Exemplo",
   "number": "2.1.14",
   "title": "(POTI Nível 3).",
-  "body": "(POTI Nível 3)  No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham um novo vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?   Considere o conjunto das permutações do conjunto e seja o conjunto destas permutações, na qual, o par é uma sucessão, . O número de fotos possíveis é dado por . Vamos precisar do PIE para calcular .   Observe que , para qualquer . Pois, olhamos para o par como um elemento e ficamos com um conjunto de elementos para contar o número de permutações.   O caso de , vamos separar em duas situações.   ( e não são consecutivos) Neste caso, Olhamos para o par como apenas um elemento e o par como um elemento também, ficamos com elementos para contar o número de permutações.  ( e são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e também ficamos com elementos para contar o número de permutações.   Nos dois casos o número de permutações é . E o número de interseções 2 a 2 é    O caso de , vamos separar em três situações.   ( , e não são consecutivos) Neste caso, Olhamos para os pares como apenas um elemento, ficamos com elementos para contar o número de permutações.  ( , e apenas dois são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e um par como um elementos. Também ficamos com elementos para contar o número de permutações.  ( , e os três são consecutivos) Neste caso olhamos para a tripla como apenas um elemento. Também ficamos com elementos para contar o número de permutações.   Nos três casos o número de permutações é . E o número de interseções 2 a 2 é    Seguindo com essa ideia, obtemos   Calcule o número de permutações sem sucessores.    "
+  "body": "(POTI Nível 3)  No primeiro dia de uma competição matemática, vinte pessoas tiraram uma foto em grupo, em fila. No último dia, tiraram outra foto, de modo que todos tinham um novo vizinho à sua direita. De quantas maneiras eles poderiam fazer isso?   Considere o conjunto das permutações do conjunto e seja o conjunto destas permutações, na qual, o par é uma sucessão, . O número de fotos possíveis é dado por . Vamos precisar do PIE para calcular .   Observe que , para qualquer . Pois, olhamos para o par como um elemento e ficamos com um conjunto de elementos para contar o número de permutações.   O caso de , vamos separar em duas situações.   ( e não são consecutivos) Neste caso, Olhamos para o par como apenas um elemento e o par como um elemento também, ficamos com elementos para contar o número de permutações.  ( e são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e também ficamos com elementos para contar o número de permutações.   Nos dois casos o número de permutações é . E o número de interseções 2 a 2 é    O caso de , vamos separar em três situações.   ( , e não são consecutivos) Neste caso, Olhamos para os pares como apenas um elemento, ficamos com elementos para contar o número de permutações.  ( , e apenas dois são consecutivos) Neste caso olhamos para a tripla como apenas um elemento e um par como um elemento. Também ficamos com elementos para contar o número de permutações.  ( , e os três são consecutivos) Neste caso olhamos para a tripla como apenas um elemento. Também ficamos com elementos para contar o número de permutações.   Nos três casos o número de permutações é . E o número de interseções 3 a 3 é    Seguindo com essa ideia, obtemos   Calcule o número de permutações sem sucessores.    "
 },
 {
   "id": "definition-15",
@@ -1887,15 +1887,24 @@ var ptx_lunr_docs = [
   "url": "section-inclusao-exclusao.html#apbp",
   "type": "Proposição",
   "number": "2.1.16",
-  "title": "",
-  "body": " Sejam subconjuntos de um conjunto .  O número de elementos de que pertencem a exatamente desses subconjuntos é dado por:    O número de elementos de que pertencem a pelo menos desses subconjuntos é dado por:      "
+  "title": "(Princípio da Inclusão-Exclusão Generalizado: Fórmulas de Charles Jordan).",
+  "body": " (Princípio da Inclusão-Exclusão Generalizado: Fórmulas de Charles Jordan)  Sejam subconjuntos de um conjunto .  O número de elementos de que pertencem a exatamente desses subconjuntos é dado por:    O número de elementos de que pertencem a pelo menos desses subconjuntos é dado por:       A estratégia de demonstração para ambas as fórmulas baseia-se em acompanhar um elemento arbitrário que pertença a exatamente dos subconjuntos. Devemos calcular quantas vezes esse elemento é contado pela expressão do lado direito da igualdade.  Lembre-se que é a soma das cardinalidades de todas as interseções possíveis de conjuntos. Como o elemento pertence a exatamente subconjuntos, ele estará presente em exatamente interseções de tamanho (convencionando que caso ). Portanto, a contribuição de para a parcela é igual a .  Demonstração do item a)  Substituindo por , a contribuição total do elemento para a fórmula de é: Vamos analisar os três casos possíveis para :    \\textbf{Se :} Para todo , teremos , o que implica que . Logo, .  \\textbf{Se :} O único termo não nulo ocorre quando (pois para , temos ). Assim, .  \\textbf{Se :} Usaremos uma identidade envolvendo o produto de binomiais: Multiplicando e dividindo a expressão por , obtemos: Substituindo essa identidade na soma, temos: Pelo Teorema do Binômio de Newton, o somatório equivale a . Como , essa potência resulta em . Logo, .    Como a contribuição de é apenas se , e nos demais casos, a fórmula contabiliza exatamente os elementos que pertencem a conjuntos.  Demonstração do item b)  Para o cálculo de , a contribuição do elemento é dada por:     \\textbf{Se :} Novamente, para todo . Assim, .  \\textbf{Se :} Utilizaremos a identidade de extensão dos binomiais para coeficientes negativos: . Substituindo na soma, o fator . Logo: Usando a propriedade das combinações complementares, sabemos que . A soma passa a ser: Aplicando a identidade da Convolução de Vandermonde ( ), onde , e , obtemos:     Portanto, a fórmula soma exatamente vez todo elemento que pertença a conjuntos ou mais, finalizando a demonstração.   "
 },
 {
-  "id": "example-39",
+  "id": "ex-justificativa-jordan",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#example-39",
+  "url": "section-inclusao-exclusao.html#ex-justificativa-jordan",
   "type": "Exemplo",
   "number": "2.1.17",
+  "title": "",
+  "body": "   Considere um grupo onde as pessoas podem falar três idiomas: Inglês ( ), Espanhol ( ) e Francês ( ). Para compreender intuitivamente como atuam os coeficientes das fórmulas do Princípio da Inclusão-Exclusão Generalizado, considere três pessoas representativas:   Ana : fala apenas Inglês (pertence a exatamente conjunto).  Beto : fala Inglês e Espanhol (pertence a exatamente conjuntos).  Carlos : fala Inglês, Espanhol e Francês (pertence a exatamente conjuntos).   Mostre como as fórmulas a seguir atribuem a contagem correta para cada um desses indivíduos:   A fórmula para contar quem fala exatamente um idioma.  A fórmula para contar quem fala pelo menos um idioma.     Antes de aplicar as fórmulas, analisamos quantas vezes cada indivíduo é computado nas somas parciais :    : Ana aparece vez; Beto aparece vezes; Carlos aparece vezes.   : Ana aparece vezes; Beto aparece vez; Carlos aparece nas interseções ( vezes).   : Ana aparece vezes; Beto aparece vezes; Carlos aparece vez.    Parte (a): Exatamente 1 idioma ( )   Aplicando a fórmula para e :   Os coeficientes binomiais geram os pesos multiplicadores e . Avaliando a contribuição individual de cada pessoa:    Ana (deve valer ):    Beto (deve valer ):    Carlos (deve valer ):    O peso em anula perfeitamente quem está em dois conjuntos, e a combinação dos pesos cancela quem está em três.   Parte (b): Pelo menos 1 idioma ( )   Aplicando a segunda fórmula com (subtraindo na parte inferior do número binomial):   Agora os pesos são e . Avaliando a contribuição individual de cada pessoa (todos devem ser computados exatamente vez):    Ana (está em pelo menos um idioma):    Beto (está em pelo menos um idioma):    Carlos (está em pelo menos um idioma):    Dessa forma, o ajuste nos coeficientes faz com que qualquer elemento presente em ou conjuntos contribua exatamente com o valor final , recuperando o formato clássico da união de conjuntos.   "
+},
+{
+  "id": "example-40",
+  "level": "2",
+  "url": "section-inclusao-exclusao.html#example-40",
+  "type": "Exemplo",
+  "number": "2.1.18",
   "title": "",
   "body": "  Determine quantos inteiros estão compreendidos entre e inclusive, e são múltiplos de  exatamente dois dos números: e ;  pelo menos dois dos números: e .      Pelo item b. do , sabemos que    item a)     item b)     "
 },
@@ -1904,16 +1913,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-inclusao-exclusao.html#technology-16",
   "type": "Tecnologia",
-  "number": "2.1.18",
+  "number": "2.1.19",
   "title": "",
   "body": " Escolha os valores dos campos, Vmin ,Vmax, lista e p, para determinar os valores de , , e a cardinalidade do conjunto , definido abaixo:       "
 },
 {
-  "id": "example-40",
+  "id": "example-41",
   "level": "2",
-  "url": "section-inclusao-exclusao.html#example-40",
+  "url": "section-inclusao-exclusao.html#example-41",
   "type": "Exemplo",
-  "number": "2.1.20",
+  "number": "2.1.21",
   "title": "",
   "body": "  Sejam e os conjuntos dos anagramas da palavra COMPLEXA que possuem a letra C em primeiro lugar, a letra O em segundo lugar, a letra M em terceiro lugar e a letra P em quarto lugar, respectivamente.  Quantos são os anagramas de COMPLEXA que estão em exatamente dois dos conjuntos e ?  Quantos são os anagramas de COMPLEXA que estão em pelo menos dois dos conjuntos e ?      De acordo com a , a resposta do item a) é o valor de e o do item b) é o valor de . Note que o número total de anagramas da palavra COMPLEXA é , que o valor de . Usando as informações da solução do , podemos completar os valores de e :       Aplicando a , obtemos as respostas dos itens a) e b)     "
 },
@@ -1922,7 +1931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-inclusao-exclusao.html#technology-17",
   "type": "Tecnologia",
-  "number": "2.1.21",
+  "number": "2.1.22",
   "title": "",
   "body": " Escolha os valores dos campos, Palavra, Posições fixas e p, para determinar os valores de , e . De acordo com o enunciado do exemplo anterior.      "
 },
@@ -2161,18 +2170,18 @@ var ptx_lunr_docs = [
   "body": " Escolha um intervalo de variação, para obter uma lista com as permutações caóticas para cada valor do intervalo.     "
 },
 {
-  "id": "example-42",
+  "id": "example-43",
   "level": "2",
-  "url": "section-permutacao-caotica.html#example-42",
+  "url": "section-permutacao-caotica.html#example-43",
   "type": "Exemplo",
   "number": "2.2.10",
   "title": "",
   "body": " Luiz, Cláudia, Paulo, Rodrigo e Ana brincam entre si de amigo-secreto (ou amigo-oculto). O nome de cada um é escrito em um pedaço de papel, que é colocado em uma urna. Em seguida, cada participante da brincadeira retira da urna um dos pedaços de papel, ao acaso. De quantas formas pode ocorrer a distribuição dos papéis de modo que nenhum dos participantes retire seu próprio nome?   Uma clássica questão de permutação caótica, visto que durante a distribuição dos papéis nenhum dos participantes poderá retirar seu próprio nome. Assim o número de maneiras de ocorrer tal evento, é dado por:    "
 },
 {
-  "id": "example-43",
+  "id": "example-44",
   "level": "2",
-  "url": "section-permutacao-caotica.html#example-43",
+  "url": "section-permutacao-caotica.html#example-44",
   "type": "Exemplo",
   "number": "2.2.11",
   "title": "",
@@ -2413,9 +2422,9 @@ var ptx_lunr_docs = [
   "body": " Seja um tabuleiro , sem subtabuleiros proibidos. O polinômio de torre de é dado por:   Precisamos escolher linhas e colunas no tabuleiro , , para colocar as torres, de modo que uma torre não possa atacar a outra, isto pode ser feito de maneiras. Agora precisamos escolher a posição da linha 1 na qual será colocada a primeira torre, isso pode ser feito de maneiras, em seguida, precisamos escolher a posição da linha 2 na qual será colocada a segunda torre, o que pode ser feito de maneiras, e assim por diante, até ficarmos com uma maneira de escolher a -ésima torre.  Assim, pelo princípio multiplicativo, o número de maneiras de colocar torres em , de modo que uma torre não possa atacar a outra é    "
 },
 {
-  "id": "example-45",
+  "id": "example-46",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#example-45",
+  "url": "section-permutacao-caotica-repeticoes.html#example-46",
   "type": "Exemplo",
   "number": "2.3.8",
   "title": "",
@@ -2440,9 +2449,9 @@ var ptx_lunr_docs = [
   "body": " Dizemos que a união de dois tabuleiros e é uma união disjunta, quando nenhum quadrado de está na mesma linha ou mesma coluna de .  "
 },
 {
-  "id": "example-46",
+  "id": "example-47",
   "level": "2",
-  "url": "section-permutacao-caotica-repeticoes.html#example-46",
+  "url": "section-permutacao-caotica-repeticoes.html#example-47",
   "type": "Exemplo",
   "number": "2.3.11",
   "title": "",
@@ -2647,9 +2656,9 @@ var ptx_lunr_docs = [
   "body": " Escolha uma lista de letras ou números e para obter os subconjuntos da lista com elementos, nos quais não há elementos, da lista, consecutivos.   Todos os subconjuntos com elementos.    "
 },
 {
-  "id": "example-49",
+  "id": "example-50",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#example-49",
+  "url": "section-lemas-kaplansky.html#example-50",
   "type": "Exemplo",
   "number": "2.4.8",
   "title": "",
@@ -2665,18 +2674,18 @@ var ptx_lunr_docs = [
   "body": " (2º Lema de Kaplansky) O número de subconjuntos com elementos de nos quais não há números consecutivos e, 1 e são consecutivos, é :    O problema será dividido em dois casos:  1º caso: O elemento 1 pertencendo ao subconjunto composto por elementos. Neste caso, será feito a análise de quantos formas poderá serão escolhidos os outros elementos do conjunto , pois os elementos 1 e não podem pertencer ao conjunto. Dessa forma, utilizando o 1º lema de Kaplansky, o número de maneiras que isso pode ocorrer é:  2º caso: O elemento 1 não pertencendo ao subconjunto composto por elementos. Nesse caso a escolha de elementos será realizado entre os elementos do conjunto . No entanto pelo primeiro lema de Kaplansky a escolha será determinada por  Pelo Princípio Aditivo, somando os resultados do 1º e do 2º caso, a solução do problema será dado por: Finalmente,   "
 },
 {
-  "id": "example-50",
+  "id": "example-51",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#example-50",
+  "url": "section-lemas-kaplansky.html#example-51",
   "type": "Exemplo",
   "number": "2.4.10",
   "title": "",
   "body": " Débora deseja correr 3 vezes por semana durante esse bimestre. De quantas formas ela poderá escolher os dias da corrida, se Débora não deseja correr em dias consecutivos?   Nesta questão observa-se que a disposição dos dias da semana geram um sistema cíclico, ou seja, o início de uma semana dá continuação ao fim da semana anterior a ela e assim sucessivamente, como pode ser verificado na figura abaixo:   Dias da semana.    Desta forma, Débora deve escolher 3 dias entre: domingo, segunda, terça, quarta, quinta, sexta e sábado de maneira que não apareçam dois dias consecutivos. O número de maneiras que Débora pode escolher os 3 dias é:    "
 },
 {
-  "id": "example-51",
+  "id": "example-52",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#example-51",
+  "url": "section-lemas-kaplansky.html#example-52",
   "type": "Exemplo",
   "number": "2.4.12",
   "title": "",
@@ -2719,9 +2728,9 @@ var ptx_lunr_docs = [
   "body": " Calculando no Sage:   "
 },
 {
-  "id": "example-52",
+  "id": "example-53",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#example-52",
+  "url": "section-lemas-kaplansky.html#example-53",
   "type": "Exemplo",
   "number": "2.4.19",
   "title": "",
@@ -2746,9 +2755,9 @@ var ptx_lunr_docs = [
   "body": " Calculando no Sage:   "
 },
 {
-  "id": "example-53",
+  "id": "example-54",
   "level": "2",
-  "url": "section-lemas-kaplansky.html#example-53",
+  "url": "section-lemas-kaplansky.html#example-54",
   "type": "Exemplo",
   "number": "2.4.22",
   "title": "",
@@ -2872,27 +2881,27 @@ var ptx_lunr_docs = [
   "body": " Podemos interpretar o princípio usando funções da seguinte forma: Sejam e , dois conjuntos. Se o número de elementos de for maior que o números de elementos de , então não existe uma função injetiva de para , ou seja, pelo menos dois elementos do domínio terão a mesma imagem, independente da função entre e .  Essencialmente, para usar este princípio, precisamos identificar dois conjuntos, que chamaremos sugestivamente de e para representarem o conjunto dos pombos e o conjunto das casas, respectivamente. Em seguida comparamos o número de elementos entre eles.  "
 },
 {
-  "id": "example-54",
+  "id": "example-55",
   "level": "2",
-  "url": "section-casa-pombos.html#example-54",
+  "url": "section-casa-pombos.html#example-55",
   "type": "Exemplo",
   "number": "2.5.4",
   "title": "",
   "body": " Mostre que, em um grupo de 367 pessoas, pelo menos duas fazem o aniversário no mesmo dia.   Chame de o conjunto das pessoas e o conjunto dos dias do ano. Desta forma como temos mais elementos em do que em , pelo princípio da casa dos pombos, pelo menos duas pessoas fazem aniversário no mesmo dia.   "
 },
 {
-  "id": "example-55",
+  "id": "example-56",
   "level": "2",
-  "url": "section-casa-pombos.html#example-55",
+  "url": "section-casa-pombos.html#example-56",
   "type": "Exemplo",
   "number": "2.5.5",
   "title": "",
   "body": " Mostre que entre nove números que não possuem divisores primos maiores que cinco, existem dois cujo produto é um quadrado.   Inicialmente observe que, qualquer número inteiro que não possui divisor primo maior que cinco, se escreve na forma , com e inteiros não negativos.  Defina um conjunto com 9 números arbitrários que satisfaçam as hipóteses do enunciado: Como os expoentes e só podem ser pares ou ímpares, seja um conjunto que represente todas as paridades possíveis para os expoentes de 2, 3 e 5 em . Este conjunto possui 8 elementos, pois temos duas possibilidades para a paridade de cada um dos 3 expoentes.  Como o conjunto é formado por nove elementos, pelo princípio da casa dos pombos, teremos dois elementos em , cujos expoentes possuem a mesma paridade, digamos que e .  O produto entre eles é da forma , com , que é um quadrado, pois pode ser escrito na forma .   "
 },
 {
-  "id": "example-56",
+  "id": "example-57",
   "level": "2",
-  "url": "section-casa-pombos.html#example-56",
+  "url": "section-casa-pombos.html#example-57",
   "type": "Exemplo",
   "number": "2.5.6",
   "title": "",
@@ -2908,9 +2917,9 @@ var ptx_lunr_docs = [
   "body": "Para uma versão mais geral do princípio da casa dos pombos, vamos usar a função teto: dada por ou seja, é o menor inteiro que é maior ou igual a . Observe que , para qualquer .  "
 },
 {
-  "id": "example-57",
+  "id": "example-58",
   "level": "2",
-  "url": "section-casa-pombos.html#example-57",
+  "url": "section-casa-pombos.html#example-58",
   "type": "Exemplo",
   "number": "2.5.8",
   "title": "",
@@ -2926,9 +2935,9 @@ var ptx_lunr_docs = [
   "body": " Se pombos forem colocados em casas, então existe pelo menos uma casa contendo pelo menos pombos.   Suponha que nenhuma das caixas contém mais que pombos. Então, o número total de pombos é no máximo na qual, a desigualdade foi usada. Esta é uma contradição, pois existem um total de pombos.   "
 },
 {
-  "id": "example-58",
+  "id": "example-59",
   "level": "2",
-  "url": "section-casa-pombos.html#example-58",
+  "url": "section-casa-pombos.html#example-59",
   "type": "Exemplo",
   "number": "2.5.10",
   "title": "",
@@ -3142,9 +3151,9 @@ var ptx_lunr_docs = [
   "body": " A quantidade de caminhos ruins de até é igual ao número total de caminhos de até .  "
 },
 {
-  "id": "proof-29",
+  "id": "proof-30",
   "level": "2",
-  "url": "section-13.html#proof-29",
+  "url": "section-13.html#proof-30",
   "type": "Demonstração",
   "number": "2.6.2.1",
   "title": "",
@@ -3763,9 +3772,9 @@ var ptx_lunr_docs = [
   "body": " Destacamos o termo geral e o fato de que o desenvolvimento do Binômio de Newton pode ser desenvolvido na ordem inversa:  1) O -ésimo termo do desenvolvimento é dado por: 2) Observe também que: Portanto   "
 },
 {
-  "id": "example-66",
+  "id": "example-67",
   "level": "2",
-  "url": "section-binomio-newton.html#example-66",
+  "url": "section-binomio-newton.html#example-67",
   "type": "Exemplo",
   "number": "3.2.3",
   "title": "",
@@ -3781,9 +3790,9 @@ var ptx_lunr_docs = [
   "body": "No Sage, podemos obter a expansão do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:   "
 },
 {
-  "id": "example-67",
+  "id": "example-68",
   "level": "2",
-  "url": "section-binomio-newton.html#example-67",
+  "url": "section-binomio-newton.html#example-68",
   "type": "Exemplo",
   "number": "3.2.5",
   "title": "",
@@ -3808,9 +3817,9 @@ var ptx_lunr_docs = [
   "body": " O termo máximo do desenvolvimento de Troque os valores de , e , para obter o termo máximo e o termo mínimo do desenvolvimento de   Os termos máximo e mínimo.    "
 },
 {
-  "id": "example-69",
+  "id": "example-70",
   "level": "2",
-  "url": "section-binomio-newton.html#example-69",
+  "url": "section-binomio-newton.html#example-70",
   "type": "Exemplo",
   "number": "3.2.9",
   "title": "",
@@ -3907,9 +3916,9 @@ var ptx_lunr_docs = [
   "body": " O número binomial é definido pela expressão na qual, é um número real e um número inteiro positivo.  "
 },
 {
-  "id": "example-70",
+  "id": "example-71",
   "level": "2",
-  "url": "section-binomio-newton-real.html#example-70",
+  "url": "section-binomio-newton-real.html#example-71",
   "type": "Exemplo",
   "number": "3.3.2",
   "title": "",
@@ -3925,9 +3934,9 @@ var ptx_lunr_docs = [
   "body": " Sejam e números reais, com , então:    Observe que para , esta expressão coincide com a que já conhecíamos ( ), pois todos os termos depois do -ésimo serão iguais a zero. O que vamos mostrar é que o lado direito converge quando . Então o lado direito será o significado da expressão do lado esquerdo.  Vamos aplicar o Teste de d'Alembert ( ). Considere termos consecutivos da série: Vamos analisar o que acontece com o valor absoluto da razão, quando  observe que , quando . Como , , quando . Portanto, pelo Teste de d'Alembert, a série é absolutamente convergente. Logo, pelo a série é convergente.   "
 },
 {
-  "id": "example-71",
+  "id": "example-72",
   "level": "2",
-  "url": "section-binomio-newton-real.html#example-71",
+  "url": "section-binomio-newton-real.html#example-72",
   "type": "Exemplo",
   "number": "3.3.4",
   "title": "",
@@ -4015,9 +4024,9 @@ var ptx_lunr_docs = [
   "body": "  Na qual, para cada , , ou seja é um inteiro não negativo.   Temos Um termo genérico do produto é obtido escolhendo um em cada parênteses e multiplicando os escolhidos. Se em dos parênteses escolhermos , em dos parênteses escolhermos , , obteremos Agora falta responder quantas vezes o termo aparece no desenvolvimento.  O termo aparece tantas vezes, quantas são as formas de escolher, nos parênteses, deles para escolher o , deles para escolher o , . Isto pode ser feito de maneiras, o que mostra o resultado.   "
 },
 {
-  "id": "example-72",
+  "id": "example-73",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#example-72",
+  "url": "section-polinomio-leibniz.html#example-73",
   "type": "Exemplo",
   "number": "3.4.2",
   "title": "",
@@ -4096,27 +4105,27 @@ var ptx_lunr_docs = [
   "body": " Seja um espaço amostral. Uma probabilidade sobre é uma função que associa a cada evento um número de forma que:  Para todo evento , ;  ;  Se então .    "
 },
 {
-  "id": "example-73",
+  "id": "example-74",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-73",
+  "url": "section-espacos-probabilidade.html#example-74",
   "type": "Exemplo",
   "number": "4.1.3",
   "title": "",
   "body": " Ao lançar uma moeda observe a face que cai voltada para cima.  O espaço amostral é os eventos são a) Vamos definir uma probabilidade para , que chamaremos de : b) Vamos definir outra probabilidade para , que chamaremos de : Observe que e satisfazem a definição de probabilidade.  "
 },
 {
-  "id": "example-74",
+  "id": "example-75",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-74",
+  "url": "section-espacos-probabilidade.html#example-75",
   "type": "Exemplo",
   "number": "4.1.4",
   "title": "",
   "body": "Um modelo de probabilidade muito utilizado é o equiprobabilístico, que é o caso de do exemplo anterior.  O caso geral deste modelo, ou seja para , atribuímos a cada evento unitário a probabilidade Pois, se e . Pelo item c) da , temos Portanto,   "
 },
 {
-  "id": "example-75",
+  "id": "example-76",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-75",
+  "url": "section-espacos-probabilidade.html#example-76",
   "type": "Exemplo",
   "number": "4.1.5",
   "title": "",
@@ -4141,9 +4150,9 @@ var ptx_lunr_docs = [
   "body": " Sejam e eventos, então:  ;  ;  ;  ;  Se então .      item a)    item b) Como , temos . Portanto   item c) Escrevendo como a união disjunta: temos   item d) Escrevendo como a união disjunta: temos   item e) Pelo item c) temos se , ficamos com pois .   "
 },
 {
-  "id": "example-76",
+  "id": "example-77",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-76",
+  "url": "section-espacos-probabilidade.html#example-77",
   "type": "Exemplo",
   "number": "4.1.8",
   "title": "",
@@ -4168,18 +4177,18 @@ var ptx_lunr_docs = [
   "body": "  Escolha um intervalo, referente a variação de pessoas, para obter uma tabela com a quantidade e a respectiva probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o .     Escolha um intervalo, referente a variação de pessoas, para obter o gráfico do tipo: quantidade versus probabilidade de que pelo menos duas pessoas façam aniversário no mesmo dia, conforme o .     "
 },
 {
-  "id": "example-78",
+  "id": "example-79",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-78",
+  "url": "section-espacos-probabilidade.html#example-79",
   "type": "Exemplo",
   "number": "4.1.13",
   "title": "",
   "body": " Vinte três pessoas foram fazer uma prova e precisaram deixar seus celulares com o fiscal. No horário previsto de entrega, houve uma emergência e todos precisaram entregar suas provas e pegar seus celulares com pressa, de modo que os celulares foram entregues ao acaso. Qual a probabilidade de que todos os participantes tenha recebido os celulares errados?   O espaço amostral é constituido por todas as formas de ordenar os 23 celulares. Os casos favoráveis é constituído por todas as permutações caóticas com os 23 celulares. Portanto a resposta é    "
 },
 {
-  "id": "example-79",
+  "id": "example-80",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-79",
+  "url": "section-espacos-probabilidade.html#example-80",
   "type": "Exemplo",
   "number": "4.1.14",
   "title": "",
@@ -4240,9 +4249,9 @@ var ptx_lunr_docs = [
   "body": "O jogo mais simples da LOTOFÁCIL consiste basicamente na escolha de números de um total de disponíveis, os números vão de à . Outras possibilidades de jogos consistem na escolha de ou números. Feitas as apostas, o jogador é dito premiado se após o sorteio dos números o mesmo tenha acertado ou destes.  Qual a probabilidade do jogador marcar números e acertar números?  Qual a probabilidade do jogador marcar números e acertar números?  Qual a probabilidade do jogador marcar números e acertar números?  Qual a probabilidade do jogador marcar números e acertar números?  Qual a probabilidade do jogador marcar números e acertar pelo menos números?  Qual a probabilidade do jogador marcar números e acertar números? (Supondo e ).            "
 },
 {
-  "id": "example-80",
+  "id": "example-81",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#example-80",
+  "url": "section-espacos-probabilidade.html#example-81",
   "type": "Exemplo",
   "number": "4.1.15",
   "title": "(OBM).",
@@ -4375,9 +4384,9 @@ var ptx_lunr_docs = [
   "body": "Note que só está definido quando . A igualdade pode ser reescrita das seguintes formas: e, caso :  "
 },
 {
-  "id": "example-82",
+  "id": "example-83",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-82",
+  "url": "section-probabilidade-condicional.html#example-83",
   "type": "Exemplo",
   "number": "4.2.4",
   "title": "",
@@ -4393,9 +4402,9 @@ var ptx_lunr_docs = [
   "body": " Seja tal que . Então a probabilidade condicional é outra probabilidade sobre o espaço amostral , ou seja, valem as seguintes propriedades:  ;  ;  Se então .       a) Como temos  b)  e  c)     "
 },
 {
-  "id": "example-83",
+  "id": "example-84",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-83",
+  "url": "section-probabilidade-condicional.html#example-84",
   "type": "Exemplo",
   "number": "4.2.6",
   "title": "",
@@ -4411,9 +4420,9 @@ var ptx_lunr_docs = [
   "body": " (Regra do Produto de Probabilidades)  Sejam eventos de um espaço amostral e uma probabilidade em . Se então    Para dois conjuntos a fórmula é verdadeira, pois coincide com a definição de probabilidade condicional. Vamos usar o Princípio de Indução para mostrar que o resultado é verdadeiro. Suponha o resultado válido para eventos.  Defina , queremos a probabilidade . Pela definição de probabilidade condicional, temos ou seja, Pela hipótese de indução, temos Substituindo a igualdade dada pela hipótese de indução em , chegamos no resultado:    "
 },
 {
-  "id": "example-84",
+  "id": "example-85",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-84",
+  "url": "section-probabilidade-condicional.html#example-85",
   "type": "Exemplo",
   "number": "4.2.9",
   "title": "",
@@ -4438,9 +4447,9 @@ var ptx_lunr_docs = [
   "body": "(Teorema de Bayes)  Sejam e é um eventos tais que e então    Aplicando a definição de probabilidade condicional, temos Usando o e substituindo em , obtemos    "
 },
 {
-  "id": "example-85",
+  "id": "example-86",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-85",
+  "url": "section-probabilidade-condicional.html#example-86",
   "type": "Exemplo",
   "number": "4.2.13",
   "title": "",
@@ -4456,9 +4465,9 @@ var ptx_lunr_docs = [
   "body": " Sejam e eventos. e são independentes se,   Da , temos   "
 },
 {
-  "id": "example-86",
+  "id": "example-87",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-86",
+  "url": "section-probabilidade-condicional.html#example-87",
   "type": "Exemplo",
   "number": "4.2.17",
   "title": "",
@@ -4474,18 +4483,18 @@ var ptx_lunr_docs = [
   "body": " Sejam eventos. são independentes se, para todo , e para quaisquer , tem-se  Consequentemente,    "
 },
 {
-  "id": "example-87",
+  "id": "example-88",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-87",
+  "url": "section-probabilidade-condicional.html#example-88",
   "type": "Exemplo",
   "number": "4.2.19",
   "title": "",
   "body": " Em um experimento aleatório é retirado sucessivamente, com reposição, três bolas de uma caixa que comtém 8 bolas pretas e 6 bolas brancas. Qual a probabilidade de que sejam três bolas brancas?   Considere os eventos: Observe que os eventos são independentes, portanto a probabilidade é    "
 },
 {
-  "id": "example-88",
+  "id": "example-89",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#example-88",
+  "url": "section-probabilidade-condicional.html#example-89",
   "type": "Exemplo",
   "number": "4.2.20",
   "title": "",
@@ -4573,9 +4582,9 @@ var ptx_lunr_docs = [
   "body": " Distribuição Binomial    Distribuição Binomial   Jogando uma moeda não viciada 15 vezes. Qual é a probabilidade de obtermos exatamente 7 caras?   Os eventos são independentes e a probabilidade de obter cara no lançamento da moeda é .  Queremos achar a probabilidade de obtermos 7 caras em 15 lançamentos. Vamos, inicialmente, fixar que queremos os 7 primeiros resultados iguais a cara, assim estamos impondo que os 8 resultados seguintes serão coroa. Desta forma, a probabilidade de que os 7 primeiros resultados sejam cara e de que os 8 resultados seguintes sejam coroa é  mas a pergunta do problema não foi esta, pois a ordem em que apareceram as caras e as coroas não importa.  Observe que o número de formas de ordenar 7 caras e 8 coroas coincide com o número formas de escolher 7 lugares, para colocar as caras, dentre 15 disponíveis, e colocar as coroas nos lugares que sobraram. Isto pode ser feito de maneiras.  Portanto a resposta para nosso problema é     Considere um experimento com apenas dois resultados possíveis, chamados de sucesso e fracasso . Denotaremos por a probabilidade de sucesso.   A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é       Um dodecaedro (regular, com peso uniforme, ou seja, não viciado) tem 3 faces verdes e 4 faces vermelhas e 5 faces azuis.   Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor verde?  Qual é a probabilidade de em 8 lançamentos desse dodecaedro, obtermos 3 vezes a cor azul?    item a) Vamos considerar os eventos:  S: saiu uma face verde  F: não saiu uma face verde  Pelo a probabilidade é   item b) Vamos considerar os eventos:  S: saiu uma face azul  F: não saiu uma face azul  Pelo a probabilidade é        Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que o primeiro sucesso seja obtido. A probabilidade de que o sucesso seja obtido na -ésima tentativa é igual a     Para que o sucesso seja obtido exatamente na -ésima tentativa é necessário e suficiente que as tentativas seja fracassos e que a -ésima seja um sucesso. Assim, obtemos a Equação . Como um sucesso acabará ocorrendo, com probabilidade 1.      Uma urna contém 5 bolas brancas e 7 bolas pretas. A bolas são selecionadas aleatoriamente, uma de cada vez, até que saia uma bola preta. Se supormos que cada bola selecionada seja substituída por outra de mesma cor, antes que a próxima bola seja retirada, qual é a probabilidade de que  sejam necessárias exatamente 4 retiradas?  sejam necessárias pelo menos 4 retiradas?     item a) Aplicando o , com . A probabilidade é   item b)       Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que se acumule um total de sucessos. A probabilidade de que o -ésimo sucesso seja obtido na -ésima tentativa é igual a      Para que o -ésimo sucesso ocorra na -ésima tentativa, devem ocorrer sucessos nas primeiras tentativas e a -ésima tentativa deve ser um sucesso. A probabilidade do primeiro evento é e a probabilidade do segundo evento é , assim, pela independência dos eventos, obtemos a Equação . Ainda precisamos verificar que um total de sucessos acaba sendo acumulado, ou seja, precisamos verificar que O número de tentativas necessárias para que se obtenham sucessos pode ser representado como , na qual, é o número de tentativas necessárias para o primeiro sucesso, , é o número de tentativas adicionais feitas até que ocorra o segundo sucesso e assim por diante. Tem-se que satisfazem o Teorema . Portanto, cada uma delas é finita com probabilidade 1, e então também deve ser finita, o que estabelece a Equação .      Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes. A probabilidade de que sucessos ocorram antes de fracassos é     Note que ocorrem sucessos antes de fracassos se e somente se o -ésimo sucesso ocorrer até a -ésima tentativa. Tem-se esse resultado porque, se o -ésimo sucesso tiver ocorrido antes ou na -ésima tentativa, então ele deve ter ocorrido antes do -ésimo fracasso, e vice-versa. Portanto, da Equação , a probabilidade desejada é dada pela Equação .     Joga-se uma moeda não viciada. Qual é a probabilidade de serem obtidas  3 caras antes de 2 coroas?  5 caras antes de 3 coroas?     item a) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é   item b) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é       Exercícios    Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .    (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:       (ITA 2010) Um palco possui refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de a probabilidade de ser aceso. Então, a probabilidade de que, este instante, ou refletores sejam acesos simultaneamente, é igual a  a) b) c) d) e)    a)   Aplicando o temos    Dois adversários A e B disputam uma série de partidas. O primeiro que obtiver vitórias ganha a série. No momento o resultado é a favor de A. Qual é a probabilidade de A ganhar a série sabendo que em cada partida as probabilidades de A e B vencerem são respectivamente 0,3 e 0,7?  Basta aplicar o , na qual, A deve obter 3 vitórias antes que 6 derrotas. Logo, a resposta é     "
 },
 {
-  "id": "example-89",
+  "id": "example-90",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#example-89",
+  "url": "section-distribuicao-binomial.html#example-90",
   "type": "Exemplo",
   "number": "4.3.1",
   "title": "",
@@ -4591,9 +4600,9 @@ var ptx_lunr_docs = [
   "body": " A probabilidade de ocorrerem exatamente sucessos em uma sequência de provas independentes, na qual a probabilidade de sucesso em cada etapa é , é igual a    A probabilidade de nessas provas obtermos sucessos, e consequentemente, fracassos em uma ordem fixada é pois as provas são independentes. É claro que em outra ordem, a probabilidade seria a mesma, pois apenas a ordem dos fatores se altera. Como o número de formas de alterar esta ordem é , a probabilidade de obtermos sucessos, em provas é    "
 },
 {
-  "id": "example-90",
+  "id": "example-91",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#example-90",
+  "url": "section-distribuicao-binomial.html#example-91",
   "type": "Exemplo",
   "number": "4.3.3",
   "title": "",
@@ -4609,9 +4618,9 @@ var ptx_lunr_docs = [
   "body": " Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes, será repetido até que o primeiro sucesso seja obtido. A probabilidade de que o sucesso seja obtido na -ésima tentativa é igual a     Para que o sucesso seja obtido exatamente na -ésima tentativa é necessário e suficiente que as tentativas seja fracassos e que a -ésima seja um sucesso. Assim, obtemos a Equação . Como um sucesso acabará ocorrendo, com probabilidade 1.   "
 },
 {
-  "id": "example-91",
+  "id": "example-92",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#example-91",
+  "url": "section-distribuicao-binomial.html#example-92",
   "type": "Exemplo",
   "number": "4.3.5",
   "title": "",
@@ -4636,9 +4645,9 @@ var ptx_lunr_docs = [
   "body": " Um experimento aleatório na qual a probabilidade de sucesso em cada etapa é igual a e quaisquer duas etapas são independentes. A probabilidade de que sucessos ocorram antes de fracassos é     Note que ocorrem sucessos antes de fracassos se e somente se o -ésimo sucesso ocorrer até a -ésima tentativa. Tem-se esse resultado porque, se o -ésimo sucesso tiver ocorrido antes ou na -ésima tentativa, então ele deve ter ocorrido antes do -ésimo fracasso, e vice-versa. Portanto, da Equação , a probabilidade desejada é dada pela Equação .   "
 },
 {
-  "id": "example-92",
+  "id": "example-93",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#example-92",
+  "url": "section-distribuicao-binomial.html#example-93",
   "type": "Exemplo",
   "number": "4.3.8",
   "title": "",
@@ -4690,18 +4699,18 @@ var ptx_lunr_docs = [
   "body": " Espaço Amostral Infinito  Até este momento, somente consideramos situações em que o espaço amostral do experimento aleatório de interesse fosse finito. Mas o ferramental desenvolvido pode ser aplicado também a situações em que o espaço amostral é infinito e, mesmo, não enumerável. O exemplo a seguir é um interessante exemplo de probabilidade geométrica. Quando selecionamos um ponto ao acaso em uma parte do plano é razoável supor que a probabilidade do ponto selecionado permanecer a uma certa região seja proporcional à área dessa região.   Selecionam-se ao acaso dois pontos em um segmento de tamanho 1, dividindo-o em três partes. Determine a probabilidade de que se possa formar um triângulo com essas três partes.   Sejam e os pontos escolhidos, .   Escolhendo dois pontos em um segmento.    Escolher e pertencentes a , com , equivale a escolher um ponto no triângulo da figura abaixo.   Como escolher os pontos e .    Para que exista um triângulo de lados e devemos ter e e , o que dá e e . Em suma, o triângulo existirá se, e somente se, o ponto for selecionado na parte laranja do triângulo .  Sendo o evento \"as três partes formam um triângulo\" e sendo o evento certo, temos que é proporcional a área da parte sombreada e é proporcional à área de . Logo,      A e B lançam sucessivamente um par de dados até que um deles obtenha soma de pontos 7, caso em que a disputa termina e o vencedor é o jogador que obteve soma 7. Se A é o primeiro a jogal, qual é a probabilidade de A ser o vencedor?   A probabilidade de obter 7 é e a de não ser soma 7 é   Para ganhar, ou ganha na primeira mão, ou na segunda, ou na terceira, etc. A probabilidade de ganhar na primeira mão é . Para ganhar na segunda mão, não pode obter soma 7 na primeira mão e não pode obter soma 7 na primeira mão e deve obter soma 7 na segunda mão, o que ocorre com probabilidade   Para ganhar na terceira mão, não pode obter soma 7 nas duas primeiras mãos e não pode obter soma 7 nas duas primeiras mãos e deve obter soma 7 na terceira mão, o que ocorre com probabilidade   Portanto, a probabilidade de ganhar é     Uma solução mais elegante pode ser obtida ignorando as mãos sem vencedores. A probabilidade de ganhar uma mão é de ; de ganhar uma mão é de pois, para ganhar, não pode obter soma 7 e deve obter soma 7; a de ninguem ganhar é de pois, para que ninguém ganhe, não pode obter soma 7 e não pode obter soma 7.  A probabilidade de ganhar é a probabilidade de ganhar em uma mão em que houve vencedor, isto é     "
 },
 {
-  "id": "example-93",
+  "id": "example-94",
   "level": "2",
-  "url": "section-espaco-infinito.html#example-93",
+  "url": "section-espaco-infinito.html#example-94",
   "type": "Exemplo",
   "number": "4.4.1",
   "title": "",
   "body": " Selecionam-se ao acaso dois pontos em um segmento de tamanho 1, dividindo-o em três partes. Determine a probabilidade de que se possa formar um triângulo com essas três partes.   Sejam e os pontos escolhidos, .   Escolhendo dois pontos em um segmento.    Escolher e pertencentes a , com , equivale a escolher um ponto no triângulo da figura abaixo.   Como escolher os pontos e .    Para que exista um triângulo de lados e devemos ter e e , o que dá e e . Em suma, o triângulo existirá se, e somente se, o ponto for selecionado na parte laranja do triângulo .  Sendo o evento \"as três partes formam um triângulo\" e sendo o evento certo, temos que é proporcional a área da parte sombreada e é proporcional à área de . Logo,    "
 },
 {
-  "id": "example-94",
+  "id": "example-95",
   "level": "2",
-  "url": "section-espaco-infinito.html#example-94",
+  "url": "section-espaco-infinito.html#example-95",
   "type": "Exemplo",
   "number": "4.4.4",
   "title": "",
@@ -4744,27 +4753,27 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Rosen, Kenneth H., Handbook of discrete and combinatorial mathematics , CRC press, 1999.    Lima, E. L., Análise Real , IMPA, 2004, Volume 1.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.    Engel, A., Problem-Solving Strategies. , Springer, 1998.    Ross, S., Probabilidade: Um Curso Moderno com Aplicações. , Bookman, 2010.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    Euler, L., De Serie Lambertina plurimisque eius insignibus proprietaribus , Acta Academiae Scientiarum Imperialis Petropolitanae, 1783.    Nunes Machado Junior, R., Araujo Guedes, G. (2023). POLINÔMIOS DE TORRE E APLICAÇÕES COM IMPLEMENTAÇÕES NO SAGEMATH. Revista Sergipana De Matemática E Educação Matemática, 8(1), 1–36.     GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle. Discrete mathematics, 280(1-3), 233-236, 2004.    Leonhard Euler, Calcul de la probabilité dans le jeu de rencontre. Mémoires de l’académie des sciences de Berlin, pages 255–270, 1753.    Issac Todhunter, A History of the Mathematical Theory of Probability: From the Time of Pascal to that of Laplace. BoD–Books on Demand, 2022.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Barbosa Junior C. M., A Porta dos Desesperados: Uma Proposta Didática para a Aprendizagem de Probabilidade no Ensino Médio , Monografia Lic. Mat da UFRPE.   "
 },
 {
-  "id": "p-1762",
+  "id": "p-1783",
   "level": "2",
-  "url": "referencias.html#p-1762",
+  "url": "referencias.html#p-1783",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1763",
+  "id": "p-1784",
   "level": "2",
-  "url": "referencias.html#p-1763",
+  "url": "referencias.html#p-1784",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1764",
+  "id": "p-1785",
   "level": "2",
-  "url": "referencias.html#p-1764",
+  "url": "referencias.html#p-1785",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

@@ -13,26 +13,18 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.16.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.15.1</span><span class="period">.</span>
 </h4>
-<div class="para">
-<dfn class="terminology">Item a)</dfn> Se o sapo dá <span class="process-math">\(k\)</span> pulos duplos, ele cobre <span class="process-math">\(2k\)</span> degraus. Faltam <span class="process-math">\(n - 2k\)</span> degraus, que obrigatoriamente devem ser subidos com pulos simples (de 1 degrau).</div> <div class="para logical">
-<div class="para">O número total de pulos (movimentos) que o sapo dará é a soma da quantidade de pulos duplos e simples:</div>
+<div class="para">A soma solicitada corresponde aos elementos de uma diagonal rasa do Triângulo de Pascal. Observe o padrão dos índices da soma dada: <span class="process-math">\(C_{n-1}^1 + C_{n-2}^2 + \dots\)</span>
+</div> <div class="para">Isso nos indica que a diagonal pertence ao caso <span class="process-math">\(n=13\text{.}\)</span> Pela fórmula do teorema, a soma completa da diagonal rasa para <span class="process-math">\(n=13\)</span> seria:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-k + (n - 2k) = n - k \text{ pulos no total}.
+\sum_{k=0}^{6} C_{13-k}^k = C_{13}^0 + C_{12}^1 + C_{11}^2 + C_{10}^3 + C_9^4 + C_8^5 + C_7^6 = F_{13+1} = F_{14}
 \end{equation*}
 </div>
-</div> <div class="para">Para determinar uma sequência de pulos, basta escolher, dentre os <span class="process-math">\(n - k\)</span> pulos totais, em quais <span class="process-math">\(k\)</span> momentos ele dará os pulos duplos. O número de maneiras de fazer essa escolha é simplesmente a combinação <span class="process-math">\(C_{n-k}^k\text{.}\)</span>
-</div> <div class="para">
-<dfn class="terminology">Item b)</dfn> O número total de maneiras de subir a escada é a soma de todas as possibilidades variando a quantidade de pulos duplos (<span class="process-math">\(k\)</span>) desde 0 até o máximo possível (que é a metade inteira dos degraus, <span class="process-math">\(\lfloor n/2 \rfloor\)</span>).</div> <div class="para logical">
-<div class="para">Pelo item anterior, somamos as combinações para cada <span class="process-math">\(k\)</span> possível:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{Total} = \sum_{k=0}^{\lfloor n/2 \rfloor} C_{n-k}^k
-\end{equation*}
+<div class="para">A soma <span class="process-math">\(S\)</span> do enunciado é quase a diagonal inteira, exceto pelo primeiro termo, que é <span class="process-math">\(C_{13}^0 = 1\text{.}\)</span> Portanto, <span class="process-math">\(S = F_{14} - 1\text{.}\)</span>
+</div> <div class="para">Calculando os números de Fibonacci até <span class="process-math">\(F_{14}\text{:}\)</span> 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377.</div> <div class="para">Logo, <span class="process-math">\(F_{14} = 377\text{,}\)</span> o que nos dá <span class="process-math">\(S = 377 - 1 = 376\text{.}\)</span>
 </div>
-</div> <div class="para">Pelo Teorema de Fibonacci no Triângulo de Pascal, sabemos que essa soma exata resulta em <span class="process-math">\(F_{n+1}\text{.}\)</span> Essa é uma belíssima prova combinatória de que a quantidade de formas de subir a escada gera a sequência de Fibonacci!</div>
 </div>
 <span class="incontext"><a href="section-triangulo-pascal.html#solution-240" class="internal">em contexto</a></span>
 </body>

@@ -12,60 +12,54 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Demonstração</span></h4>
-<div class="para">Inicialmente, vamos considerar que todos os <span class="process-math">\(n\)</span> objetos são distintos (por exemplo, adicionando índices a eles). Após encontrar o total de permutações restritas válidas (<span class="process-math">\(N_{\text{dist}}\)</span>), dividiremos o resultado por <span class="process-math">\(\alpha_1! \alpha_2! \cdots \alpha_k!\text{,}\)</span> visto que a troca de posições entre elementos idênticos não gera novos anagramas.</div> <div class="para">Considerando os elementos como distintos, a proibição de que nenhum deles ocupe sua posição original (ou a posição de um elemento idêntico) equivale a colocar <span class="process-math">\(n\)</span> torres que não se atacam em um tabuleiro <span class="process-math">\(n \times n\text{,}\)</span> evitando um subtabuleiro proibido <span class="process-math">\(T\text{.}\)</span> Esse tabuleiro <span class="process-math">\(T\)</span> é exatamente a união disjunta dos <span class="process-math">\(k\)</span> blocos quadrados <span class="process-math">\(T_{\alpha_i}\)</span> de dimensões <span class="process-math">\(\alpha_i \times \alpha_i\text{.}\)</span>
-</div>  <div class="para logical">
-<div class="para">Seja <span class="process-math">\(r_j\)</span> o coeficiente de <span class="process-math">\(x^j\)</span> no polinômio de torre total <span class="process-math">\(R(x, T)\text{.}\)</span> Pelo Princípio da Inclusão-Exclusão (a demonstração formal que relaciona os coeficientes de torre à fórmula de permutações restritas pode ser encontrada em <a href="" class="xref" data-knowl="./knowl/ric01.html" title="Referência bibliográfica 6.22">[6.22]</a>), o número de permutações válidas para os elementos distintos é:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ric01.html">
+<div class="para logical">
+<div class="para">Sabemos que o polinômio de torre de um tabuleiro quadrado <span class="process-math">\(n \times n\)</span> sem restrições é dado por:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-N_{\text{dist}} = \sum_{j=0}^n (-1)^j r_j (n-j)! 
+R(x, T_n) = \sum_{j=0}^n \left(C_n^j\right)^2 j! \, x^j.
 \end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">Utilizamos a identidade da função Gama, que afirma que <span class="process-math">\((n-j)! = \int_0^\infty e^{-x} x^{n-j} \, dx\text{,}\)</span> e substituímos no somatório:</div>
+<div class="para">Substituindo <span class="process-math">\(x\)</span> por <span class="process-math">\(-x^{-1}\)</span> e multiplicando por <span class="process-math">\(x^n\text{,}\)</span> obtemos:</div>
 <div class="displaymath process-math">
 \begin{align*}
-N_{\text{dist}} \amp = \sum_{j=0}^n (-1)^j r_j \left( \int_0^\infty e^{-x} x^{n-j} \, dx \right) \\
-\amp = \int_0^\infty e^{-x} \left( \sum_{j=0}^n r_j (-1)^j x^{n-j} \right) \, dx 
+x^n R(-x^{-1}, T_n) \amp = x^n \sum_{j=0}^n \left(C_n^j\right)^2 j! \, (-x^{-1})^j \\
+\amp = \sum_{j=0}^n \left(C_n^j\right)^2 j! \, (-1)^j x^{n-j}. 
 \end{align*}
 </div>
 </div> <div class="para logical">
-<div class="para">A expressão algébrica dentro dos parênteses pode ser reescrita colocando <span class="process-math">\(x^n\)</span> em evidência e invertendo a variável do polinômio de torre:</div>
+<div class="para">Fazendo a mudança de variável <span class="process-math">\(k = n - j\)</span> (de modo que <span class="process-math">\(j = n - k\)</span>), os limites do somatório continuam variando de <span class="process-math">\(0\)</span> a <span class="process-math">\(n\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\sum_{j=0}^n r_j (-1)^j x^{n-j} = x^n \sum_{j=0}^n r_j (-x^{-1})^j = x^n R(-x^{-1}, T) 
+\sum_{k=0}^n \left(C_n^{n-k}\right)^2 (n-k)! \, (-1)^{n-k} x^k. 
 \end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">Isso demonstra a primeira fórmula do teorema. Para chegar à forma de Laguerre, lembramos que o polinômio <span class="process-math">\(R(x, T)\)</span> é o produto dos polinômios dos blocos disjuntos. Como <span class="process-math">\(\sum \alpha_i = n\text{,}\)</span> podemos distribuir o fator <span class="process-math">\(x^n\)</span> para cada bloco:</div>
+<div class="para">Podemos reescrever os coeficientes fatoriais utilizando a definição de combinação:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-x^n R(-x^{-1}, T) = \prod_{i=1}^k \left[ x^{\alpha_i} R(-x^{-1}, T_{\alpha_i}) \right] 
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Aplicando a <a href="" class="xref" data-knowl="./knowl/prop-torre-laguerre.html" title="Proposição 2.3.20">Proposição 2.3.20</a> em cada um dos fatores, sabemos que <span class="process-math">\(x^{\alpha_i} R(-x^{-1}, T_{\alpha_i}) = \alpha_i! (-1)^{\alpha_i} L_{\alpha_i}(x)\text{.}\)</span> Substituindo no produto:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/prop-torre-laguerre.html">
 \begin{align*}
-x^n R(-x^{-1}, T) \amp = \prod_{i=1}^k \left[ \alpha_i! (-1)^{\alpha_i} L_{\alpha_i}(x) \right] \\
-\amp = (-1)^n (\alpha_1! \alpha_2! \cdots \alpha_k!) L_{\alpha_1}(x) L_{\alpha_2}(x) \cdots L_{\alpha_k}(x) 
+\left(C_n^{n-k}\right)^2 (n-k)! \amp = \left( \frac{n!}{k!(n-k)!} \right)^2 (n-k)! \\
+\amp = \frac{(n!)^2}{(k!)^2 (n-k)!} \\
+\amp = n! \cdot \left( \frac{n!}{k!(n-k)!} \right) \cdot \frac{1}{k!} \\
+\amp = n! \cdot C_n^k \frac{1}{k!}. 
 \end{align*}
 </div>
 </div> <div class="para logical">
-<div class="para">Retornando à integral que calcula <span class="process-math">\(N_{\text{dist}}\text{:}\)</span>
+<div class="para">Além disso, o termo de sinal pode ser fatorado como <span class="process-math">\((-1)^{n-k} = (-1)^n (-1)^k\text{.}\)</span> Substituindo essas simplificações de volta no somatório:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-polinomio-laguerre.html">
+\begin{align*}
+x^n R(-x^{-1}, T_n) \amp = \sum_{k=0}^n n! \cdot C_n^k \frac{1}{k!} (-1)^n (-1)^k x^k \\
+\amp = n! (-1)^n \sum_{k=0}^n C_n^k \frac{(-1)^k}{k!} x^k. 
+\end{align*}
 </div>
-<div class="displaymath process-math">
+<div class="para">Pela <a href="" class="xref" data-knowl="./knowl/def-polinomio-laguerre.html" title="Definição 2.3.19">Definição 2.3.19</a>, o somatório restante é precisamente <span class="process-math">\(L_n(x)\text{.}\)</span> Logo:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-polinomio-laguerre.html">
 \begin{equation*}
-N_{\text{dist}} = (-1)^n (\alpha_1! \alpha_2! \cdots \alpha_k!) \int_0^\infty e^{-x} L_{\alpha_1}(x) L_{\alpha_2}(x) \cdots L_{\alpha_k}(x) \, dx 
+x^n R(-x^{-1}, T_n) = n! (-1)^n L_n(x), 
 \end{equation*}
 </div>
-</div> <div class="para">Para obtermos o número final de permutações caóticas com repetição (<span class="process-math">\(DR_n\)</span>), dividimos <span class="process-math">\(N_{\text{dist}}\)</span> por <span class="process-math">\(\alpha_1! \alpha_2! \cdots \alpha_k!\text{.}\)</span> Os fatoriais do produto cancelam-se perfeitamente com os fatoriais da divisão!</div> <div class="para logical">
-<div class="para">Como a contagem deve ser estritamente positiva, aplicamos o valor absoluto para absorver a constante de sinal <span class="process-math">\((-1)^n\text{,}\)</span> resultando na belíssima fórmula final:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-DR_n^{\alpha_1, \ldots, \alpha_k} = \left|\int_0^\infty e^{-x} L_{\alpha_1}(x)L_{\alpha_2}(x)\cdots L_{\alpha_k}(x) \, dx \right|
-\end{equation*}
-</div>
-<div class="para">O que conclui a demonstração.</div>
+<div class="para">o que conclui a demonstração.</div>
 </div></article><span class="incontext"><a href="section-permutacao-caotica-repeticoes.html#proof-22" class="internal">em contexto</a></span>
 </body>
 </html>

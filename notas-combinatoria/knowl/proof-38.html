@@ -12,38 +12,34 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h3 class="heading"><span class="type">Demonstração</span></h3>
-<div class="para">Faremos a prova por indução matemática sobre <span class="process-math">\(n\text{.}\)</span>
-</div> <div class="para">
-<dfn class="terminology">Casos base:</dfn> Para <span class="process-math">\(n=0\text{,}\)</span> a soma tem apenas o termo <span class="process-math">\(C_0^0 = 1\text{,}\)</span> e sabemos que <span class="process-math">\(F_1 = 1\text{.}\)</span> Para <span class="process-math">\(n=1\text{,}\)</span> a soma tem apenas o termo <span class="process-math">\(C_1^0 = 1\text{,}\)</span> e sabemos que <span class="process-math">\(F_2 = 1\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">
-<dfn class="terminology">Passo indutivo:</dfn> Suponha que a fórmula seja válida para todos os valores menores ou iguais a um certo <span class="process-math">\(n\text{.}\)</span> Queremos mostrar que ela vale para <span class="process-math">\(n+1\text{.}\)</span> A soma para <span class="process-math">\(n+1\)</span> é:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-S_{n+1} = \sum_{k=0}^{\lfloor \frac{n+1}{2} \rfloor} C_{n+1-k}^k 
-\end{equation*}
-</div>
-<div class="para">Separando o primeiro termo (<span class="process-math">\(k=0\)</span>) e aplicando a Relação de Stifel (<span class="process-math">\(C_{n+1-k}^k = C_{n-k}^k + C_{n-k}^{k-1}\)</span>) nos demais termos, temos:</div>
-<div class="displaymath process-math">
-\begin{align*}
-S_{n+1} = \amp ~ C_{n+1}^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} \left( C_{n-k}^k + C_{n-k}^{k-1} \right) \\
-= \amp ~ C_n^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^k + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^{k-1} \quad (\text{pois } C_{n+1}^0 = C_n^0 = 1) 
-\end{align*}
-</div>
-<div class="para">Juntando o termo <span class="process-math">\(C_n^0\)</span> ao primeiro somatório, obtemos exatamente a soma correspondente a <span class="process-math">\(n\text{.}\)</span> No segundo somatório, fazemos uma mudança de índice <span class="process-math">\(j = k-1\text{:}\)</span>
+<div class="para logical">
+<div class="para">Vamos analisar a diferença <span class="process-math">\(C_n^{p+1}-C_n^p\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{align*}
-S_{n+1} = \amp ~ \left( \sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} C_{n-k}^k \right) + \left( \sum_{j=0}^{\lfloor \frac{n-1}{2} \rfloor} C_{n-1-j}^j \right) 
+C_n^{p+1}-C_n^p = \amp ~ \frac{n!}{(p+1)!(n-p-1)!} - \frac{n!}{p!(n-p)!}  \\
+= \amp ~ \frac{n!}{(p+1) p!(n-p-1)!} - \frac{n!}{p!(n-p)(n-p-1)!}  \\
+= \amp ~ \frac{n!(n-p) - n!(p+1)}{(p+1)!(n-p)!}  \\
+= \amp ~ \frac{n!(n-2p-1)}{(p+1)! (n-p)!}  
 \end{align*}
 </div>
-<div class="para">Pela nossa hipótese de indução, o primeiro parêntese vale <span class="process-math">\(F_{n+1}\)</span> e o segundo vale <span class="process-math">\(F_n\text{.}\)</span> Portanto:</div>
+<div class="para">Oberve que <span class="process-math">\(n!, (p+1)!\)</span> e <span class="process-math">\((n-p)!\)</span> são positivos, portanto o sinal de <span class="process-math">\(C_n^{p+1}-C_n^p\text{,}\)</span> será determinado pelo sinal de</div>
 <div class="displaymath process-math">
 \begin{equation*}
-S_{n+1} = F_{n+1} + F_n = F_{n+2} 
+n-2p-1.
 \end{equation*}
 </div>
-<div class="para">O que conclui a demonstração.</div>
+<div class="para">Logo,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Se } n-2p-1&gt;0, \text{ então } p\lt\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}&gt;0 \Rightarrow C_n^{p}\lt C_n^{p+1}. 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Se } n-2p-1\lt 0, \text{ então } p&gt;\frac{n-1}{2} \Rightarrow C_n^{p+1}-C_n^{p}\lt 0 \Rightarrow C_n^{p}&gt;C_n^{p+1}.   
+\end{equation*}
+</div>
 </div></article><span class="incontext"><a href="section-triangulo-pascal.html#proof-38" class="internal">em contexto</a></span>
 </body>
 </html>
