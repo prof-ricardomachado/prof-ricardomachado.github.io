@@ -2608,7 +2608,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.4",
   "title": "Os Lemas de Kaplansky",
-  "body": " Os Lemas de Kaplansky    Nota Histórica  Irving Kaplansky, matemático americano, nasceu em 22 de março de 1917 em Toronto e faleceu em 25 de junho de 2006. O talentoso matemático publicou o artigo \"Solution of the problème des ménages\" no Boletim da Sociedade Americana de Matemática em 1943, com uma solução para o afamado Problema de Lucas.  Kaplansky foi para a Universidade de Harvard e recebeu seu Ph.D. lá em 1941, trabalhando com Saunders MacLane. Ele foi instrutor de Benjamin Peirce em Harvard de 1941 a 1944 e, em seguida, ingressou no Grupo de Matemática Aplicada fazendo trabalhos de guerra na Universidade de Columbia de 1944 a 1945.  Seu trabalho foi bastante extenso na matemática, incluindo desde áreas da álgebra até grandes contribuições na Teoria dos Anéis, Teoria dos Grupos e Teoria dos Corpos. Publicou muitos artigos e trabalhou com diversos coautores.   Irving Kaplansky, fonte: www.ams.org      O 1º Lema de Kaplansky   Para mostrar os benefícios dos Lemas de Kaplansky, iniciaremos a seção com o exemplo a seguir:    De quantos maneiras podemos formar um subconjunto com 4 elementos, do conjunto de modo que não possuam duas letras que ocupem posições consecutivas no alfabeto?   Esse problema será resolvido criando uma forma alternativa de representar os subconjuntos onde marcaremos com o sinal os elementos pertencente ao subconjunto e com o sinal os elementos que não pertencentes ao subconjunto.   O terceiro caso não satisfaz as condições do enunciado, pois 2 juntos significa que teremos letras consecutivas (do alfabeto).  Assim, compreendendo o problema observa-se que para soluciona-lo devemos calcular o número de formas distintas de permutar 8 símbolos, onde são e 4 são de modo que não tenha 2 símbolos juntos. Veja que de acordo com o esquema, de círculos e traços, podem-se colocar 4 símbolos em quaisquer dos cinco lugares, ou seja, é possível escolher 4 dos 5 lugares disponíveis (representados pelas circunferências) para por os símbolos o que pode ser realizado de Dessa forma 5 subconjuntos podem ser formados, os quais estão listados abaixo:      (1º Lema de Kaplansky) O número de subconjuntos com elementos de nos quais não há números consecutivos é:    Deseja-se formar subconjuntos formados por elementos não consecutivos de . Da mesma forma que o , os elementos de que figuram nos subconjuntos serão representados com o símbolo e os elementos de que não figuram nos subconjuntos são representados com o símbolo . Desta forma teremos elementos que serão representados com o símbolo . Entre os símbolos existirão espaços vazios disponíveis, pois o espaço antes do primeiro símbolo , assim como o espaço depois do último símbolo estão disponíveis, veja a   Distribuição de símbolos e espaços para os símbolos .    Desta forma, resta escolher entre os espaços vazios aqueles que serão ocupados pelos símbolos . Logo,     Calculando no Sage:      Escolha uma lista de letras ou números e para obter os subconjuntos da lista com elementos, nos quais não há elementos, da lista, consecutivos.   Todos os subconjuntos com elementos.      Um exame vestibular se constitui de 10 questões distintas, 3 das quais da área de Matemática. Determine de quantas formas é possível programar a sequência das 10 questões, de maneira que duas questões da área de Matemática não se sucedam.   São 3 questões de Matemática e 7 questões de outras áreas que serão denotadas por . Inicialmente, iremos dispor as questões que não sofrem restrições:  Temos 8 lugares para colocar as 3 questões de Matemática e o número de formas de calcular isso, pode ser feito utilizando o 1º Lema de Kaplansky: Devemos, agora, contar o número de permutações das 3 questões de matemática e o número de permutações das 7 questões das outras áreas: Assim, o total de formas de programar a sequência dessas 10 questões, satisfazendo as condições do enunciado é:      O 2º Lema de Kaplansky   (2º Lema de Kaplansky) O número de subconjuntos com elementos de nos quais não há números consecutivos e, 1 e são consecutivos, é :    O problema será dividido em dois casos:  1º caso: O elemento 1 pertencendo ao subconjunto composto por elementos. Neste caso, será feito a análise de quantos formas poderá serão escolhidos os outros elementos do conjunto , pois os elementos 1 e não podem pertencer ao conjunto. Dessa forma, utilizando o 1º lema de Kaplansky, o número de maneiras que isso pode ocorrer é:  2º caso: O elemento 1 não pertencendo ao subconjunto composto por elementos. Nesse caso a escolha de elementos será realizado entre os elementos do conjunto . No entanto pelo primeiro lema de Kaplansky a escolha será determinada por  Pelo Princípio Aditivo, somando os resultados do 1º e do 2º caso, a solução do problema será dado por: Finalmente,     Débora deseja correr 3 vezes por semana durante esse bimestre. De quantas formas ela poderá escolher os dias da corrida, se Débora não deseja correr em dias consecutivos?   Nesta questão observa-se que a disposição dos dias da semana geram um sistema cíclico, ou seja, o início de uma semana dá continuação ao fim da semana anterior a ela e assim sucessivamente, como pode ser verificado na figura abaixo:   Dias da semana.    Desta forma, Débora deve escolher 3 dias entre: domingo, segunda, terça, quarta, quinta, sexta e sábado de maneira que não apareçam dois dias consecutivos. O número de maneiras que Débora pode escolher os 3 dias é:      Dado um decágono, quantos são os triângulos cujos vértices são vértices não consecutivos do decágono?   O resultado esperado corresponde a escolha de 3 elementos não consecutivos de um conjunto de 10 elementos (vértices), como eles estão organizados de forma circular, tem-se:      Calculando no Sage:      Faça você mesmo   Todos os subconjuntos com elementos.  Escolha uma lista de letras ou números e para obter os subconjuntos da lista com elementos, nos quais não há elementos, da lista, consecutivos, considerando o primeiro e o último consecutivos.       Generalizações dos Lemas de Kaplansky   Os Lemas de Kaplansky podem ser generalizado, de modo que entre dois elementos escolhidos para o subconjunto, haja pelo menos elementos do conjunto não escolhidos. No caso do 1º e do 2º Lemas de Kaplansky o valor de é exatamente 1.    (Generalização do 1º Lema de Kaplansky) O número de subconjuntos com elementos de de modo que entre cada dois elementos escolhidos para o subconjunto haja, no conjunto, pelo menos elementos não escolhidos para o subconjunto é:    Representamos com o símbolo os elementos que figuram nos subconjuntos e com o símbolo os elementos que não figuram. Os símbolos e serão organizados de forma que entre dois símbolos haja pelo menos símbolos e antes do primeiro símbolo , assim como depois do último símbolo , podem figurar qualquer quantidade de símbolos . Formando uma fila com os símbolos ficamos com espaços para colocar os símbolos , veja a .   Distribuição de símbolos e espaços para os símbolos .     Observando que a quantidade de símbolos disponíveis é , o número de soluções desse problema é exatamente o número de soluções (em números inteiros) da equação:    Definindo e substituindo na equação anterior, ficamos com Ou seja, O número de soluções dessa equação, com cada variável inteira e não negativa é      Calculando no Sage:     Um estudante precisa realizar quatro provas referentes à recuperação final em 4 disciplinas. A escola deu um prazo 20 dias (incluindo sábados e domingos) para a realização de tais provas. Sabendo que o aluno pode escolher as datas que irá realizar cada prova e que ele deseja fazer uma prova por dia com um intervalo de três dias entre uma prova e outra (ou seja, 3 dias sem fazer provas), para poder estudar, responda: de quantas formas esse aluno pode escolher os dias para a realização das quatro provas?   Utilizando a Generalização do 1º Lema de Kaplansky, onde e , o número de maneiras de escolher os quatro dias para a realização das provas será dado por       (Generalização do 2º Lema de Kaplansky) O número de subconjuntos com elementos de onde e são \"adjacentes\" e de modo que entre cada dois elementos escolhidos para o subconjunto haja, no conjunto, pelo menos elementos não escolhidos para o subconjunto é:    Vamos separar em dois casos. Observe que um subconjunto satisfazendo as condições do enunciado vai possuir ou não algum dos elementos: .  1º caso: O número de subconjuntos que não possui quais quer dos elementos supracitados é pois, restam elementos, tais que, o primeiro e o último não são adjacentes e os subconjuntos serão formados por elementos satisfazendo as mesmas condição da Generalização do 1º Lema de Kaplansky.  2º caso: O número de subconjuntos que possui um dos elementos supracitados é para justificar este caso, considere o elemento , no subconjunto. O seguinte procedimento deve ser feito:  Como o elemento já está no subconjunto, então elementos antes do e elementos depois do não podem figurar. Portanto, do total de elementos, elementos precisam ser subtraidos, restando . Agora, elementos precisam ser escolhidos, satisfazendo as mesmas condição da Generalização do 1º Lema de Kaplansky, ou seja, no total são maneiras para cada fixado. Como são opções para o valor de , ficamos com vezes este valor.   Ainda precisamos calcular o valor da seguinte soma: Assim,      Calculando no Sage:     Lucas recebeu uma proposta para trabalhar em uma multinacional na China. A empresa lhe prometeu duas férias por ano, sempre nos mesmos meses, com passagem paga pela empresa, para ela poder visitar seus familiares no Brasil. A única restrição que a empresa fez foi que houvesse um intervalo de pelo menos 4 meses entre as duas férias. Quantas são as formas de Lucas escolher os meses das suas férias?   Como a escolha dos meses será mantida pelos anos seguintes, aplicando a Generalização do 2º Lema de Kaplansky obtemos:       Exercícios   Um estacionamento tem 10 vagas, uma ao lado da outra, inicialmente todas livres. Um carro preto, um carro rosa e um carro branco chegam a esse estacionamento. De quantas maneiras diferentes esses carros podem ocupar três vagas de forma que haja pelo menos uma vaga livre entre eles?   336   As vagas que serão ocupadas podem ser escolhidas de maneiras, e a ordem dos carros pode ser escolhida de maneiras. Logo, o número de soluções é     De quantos modos podemos formar uma sequência de 9 elementos iguais a 1 e 6 elementos iguais a 0 se dois elementos iguais a 0 não podem ser adjacentes?   210   No total temos elementos e seis deles não podem ficar lado a lado. Portanto, o número de soluções é     (ITA) 12 cavaleiros estão sentados em torno de uma mesa redonda. Cada um dos 12 cavaleiros considera seus dois vizinhos como rivais. Deseja-se formar um grupo de 5 cavaleiros para libertar uma princesa. Nesse grupo não poderá haver cavaleiros rivais. Determine de quantas maneiras é possível escolher esse grupo.   36   Vamos usar o 2º Lema de Kaplansky. De 12 pessoas em disposição circular, precisamos contar o número de maneiras de escolher 5 dessas pessoas, sem selecionar duas adjacentes. Logo, o número de soluções é     8 pessoas devem se sentar em 25 cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se não deve haver ocupação simultânea de duas cadeiras adjacentes?   1441440000   Primeiro, contamos o número de maneiras de escolher as 8 cadeiras que serão usadas, dentre as 25 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 8 pessoas que irão sentar nas cadeiras. Isto pode ser feito de maneiras   (OBM 2010 - 2ª fase do nível 3) Diamantino gosta de jogar futebol, mas se jogar dois dias seguidos ele fica com dores musculares. De quantas maneiras Diamantino pode escolher em quais de dez dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   144   Diamantino pode escolher qualquer valor entre e inclusive, para ser a quantidade de vezes que ele vai jogar, pois e .  O número de maneiras de Diamantino escolher os dias que quer jogar futebol, sem ter dores musculares é      Irving gosta de jogar futebol, mas precisa ficar dois dias consecutivos sem jogar para evitar dores musculares. De quantas maneiras Irving pode escolher em quais de 20 dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   2745   Irving pode escolher qualquer valor entre e inclusive, para ser a quantidade de vezes que ele vai jogar, pois e .   Assim, o número de formas de Irving jogar futebol sem ter dores musculares é       Um determinado atleta quer fazer treinos HIIT para se preparar fisicamente para um campeonato. Sabendo que faltam 28 dias para o campeonato, que ele quer pelo menos 3 dias de intervalo entre dois treinos HIIT e que ele pode escolher 3 tipos desses treinos. De quantas maneiras esse atleta pode escolher fazer os treinos HIIT, se ele quer treinar pelo menos 5 vezes?     O atleta pode escolher treinar ou vezes, pois . Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é    No Sage o cálculo pode ser feito da seguinte maneira:     Seis pessoas devem se sentar em vinte cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se para cada cadeira ocupada devemos ter duas cadeiras livres de cada lado?     Primeiro, contamos o número de maneiras de escolher as 6 cadeiras que serão usadas, dentre as 20 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 6 pessoas que irão sentar nas cadeiras. Isto pode ser feito de maneiras.    O famoso \"Problema dos Casais\" (Problème des Ménages), proposto por Édouard Lucas em 1891, pergunta de quantas maneiras casais podem ser acomodados ao redor de uma mesa circular, alternando homens e mulheres, de modo que nenhum marido sente ao lado de sua própria esposa. Considere o caso mais simples (embora nada trivial) onde as mulheres já estão sentadas e fixadas na mesa, alternando cadeiras vazias. De quantas maneiras podemos alocar os maridos nas cadeiras vazias satisfazendo a regra para ?   13   Se as mulheres já estão em seus lugares, cada cadeira vazia está cercada por duas mulheres. Cada marido possui exatamente dois lugares \"proibidos\": a cadeira à esquerda e a cadeira à direita da sua respectiva esposa.  Isso configura uma permutação restrita que pode ser modelada utilizando o Princípio da Inclusão-Exclusão e Polinômios de Torre ou a fórmula geral dos números de Ménage (que decorre dos Lemas de Kaplansky). O número de maneiras para alocar apenas os maridos, conhecido como Número de Ménage , obedece à fórmula deduzida por Touchard:   Para , a fórmula nos fornece a soma exata das configurações restritas. Calculando para os valores da soma:  Somando os termos: .  Portanto, os 5 maridos podem ser sentados de 13 maneiras válidas. (Curiosidade: Se o problema perguntasse de quantas formas sentar as mulheres E os homens, multiplicaríamos 13 por ).    "
+  "body": " Os Lemas de Kaplansky    Nota Histórica  Irving Kaplansky, matemático americano, nasceu em 22 de março de 1917 em Toronto e faleceu em 25 de junho de 2006. O talentoso matemático publicou o artigo \"Solution of the problème des ménages\" no Boletim da Sociedade Americana de Matemática em 1943, com uma solução para o afamado Problema de Lucas.  Kaplansky foi para a Universidade de Harvard e recebeu seu Ph.D. lá em 1941, trabalhando com Saunders MacLane. Ele foi instrutor de Benjamin Peirce em Harvard de 1941 a 1944 e, em seguida, ingressou no Grupo de Matemática Aplicada fazendo trabalhos de guerra na Universidade de Columbia de 1944 a 1945.  Seu trabalho foi bastante extenso na matemática, incluindo desde áreas da álgebra até grandes contribuições na Teoria dos Anéis, Teoria dos Grupos e Teoria dos Corpos. Publicou muitos artigos e trabalhou com diversos coautores.   Irving Kaplansky, fonte: www.ams.org      O 1º Lema de Kaplansky   Para mostrar os benefícios dos Lemas de Kaplansky, iniciaremos a seção com o exemplo a seguir:    De quantos maneiras podemos formar um subconjunto com 4 elementos, do conjunto de modo que não possuam duas letras que ocupem posições consecutivas no alfabeto?   Esse problema será resolvido criando uma forma alternativa de representar os subconjuntos onde marcaremos com o sinal os elementos pertencente ao subconjunto e com o sinal os elementos que não pertencentes ao subconjunto.   O terceiro caso não satisfaz as condições do enunciado, pois 2 juntos significa que teremos letras consecutivas (do alfabeto).  Assim, compreendendo o problema observa-se que para soluciona-lo devemos calcular o número de formas distintas de permutar 8 símbolos, onde são e 4 são de modo que não tenha 2 símbolos juntos. Veja que de acordo com o esquema, de círculos e traços, podem-se colocar 4 símbolos em quaisquer dos cinco lugares, ou seja, é possível escolher 4 dos 5 lugares disponíveis (representados pelas circunferências) para por os símbolos o que pode ser realizado de Dessa forma 5 subconjuntos podem ser formados, os quais estão listados abaixo:      (1º Lema de Kaplansky) O número de subconjuntos com elementos de nos quais não há números consecutivos é:    Deseja-se formar subconjuntos formados por elementos não consecutivos de . Da mesma forma que o , os elementos de que figuram nos subconjuntos serão representados com o símbolo e os elementos de que não figuram nos subconjuntos são representados com o símbolo . Desta forma teremos elementos que serão representados com o símbolo . Entre os símbolos existirão espaços vazios disponíveis, pois o espaço antes do primeiro símbolo , assim como o espaço depois do último símbolo estão disponíveis, veja a   Distribuição de símbolos e espaços para os símbolos .    Desta forma, resta escolher entre os espaços vazios aqueles que serão ocupados pelos símbolos . Logo,     Calculando no Sage:      Escolha uma lista de letras ou números e para obter os subconjuntos da lista com elementos, nos quais não há elementos, da lista, consecutivos.   Todos os subconjuntos com elementos.      Um exame vestibular se constitui de 10 questões distintas, 3 das quais da área de Matemática. Determine de quantas formas é possível programar a sequência das 10 questões, de maneira que duas questões da área de Matemática não se sucedam.   São 3 questões de Matemática e 7 questões de outras áreas que serão denotadas por . Inicialmente, iremos dispor as questões que não sofrem restrições:  Temos 8 lugares para colocar as 3 questões de Matemática e o número de formas de calcular isso, pode ser feito utilizando o 1º Lema de Kaplansky: Devemos, agora, contar o número de permutações das 3 questões de matemática e o número de permutações das 7 questões das outras áreas: Assim, o total de formas de programar a sequência dessas 10 questões, satisfazendo as condições do enunciado é:      O 2º Lema de Kaplansky   (2º Lema de Kaplansky) O número de subconjuntos com elementos de nos quais não há números consecutivos e, 1 e são consecutivos, é :    O problema será dividido em dois casos:  1º caso: O elemento 1 pertencendo ao subconjunto composto por elementos. Neste caso, será feito a análise de quantos formas poderá serão escolhidos os outros elementos do conjunto , pois os elementos 1 e não podem pertencer ao conjunto. Dessa forma, utilizando o 1º lema de Kaplansky, o número de maneiras que isso pode ocorrer é:  2º caso: O elemento 1 não pertencendo ao subconjunto composto por elementos. Nesse caso a escolha de elementos será realizado entre os elementos do conjunto . No entanto pelo primeiro lema de Kaplansky a escolha será determinada por  Pelo Princípio Aditivo, somando os resultados do 1º e do 2º caso, a solução do problema será dado por: Finalmente,     Débora deseja correr 3 vezes por semana durante esse bimestre. De quantas formas ela poderá escolher os dias da corrida, se Débora não deseja correr em dias consecutivos?   Nesta questão observa-se que a disposição dos dias da semana geram um sistema cíclico, ou seja, o início de uma semana dá continuação ao fim da semana anterior a ela e assim sucessivamente, como pode ser verificado na figura abaixo:   Dias da semana.    Desta forma, Débora deve escolher 3 dias entre: domingo, segunda, terça, quarta, quinta, sexta e sábado de maneira que não apareçam dois dias consecutivos. O número de maneiras que Débora pode escolher os 3 dias é:      Dado um decágono, quantos são os triângulos cujos vértices são vértices não consecutivos do decágono?   O resultado esperado corresponde a escolha de 3 elementos não consecutivos de um conjunto de 10 elementos (vértices), como eles estão organizados de forma circular, tem-se:      Calculando no Sage:      Faça você mesmo   Todos os subconjuntos com elementos.  Escolha uma lista de letras ou números e para obter os subconjuntos da lista com elementos, nos quais não há elementos, da lista, consecutivos, considerando o primeiro e o último consecutivos.       Generalizações dos Lemas de Kaplansky   Os Lemas de Kaplansky podem ser generalizado, de modo que entre dois elementos escolhidos para o subconjunto, haja pelo menos elementos do conjunto não escolhidos. No caso do 1º e do 2º Lemas de Kaplansky o valor de é exatamente 1.    (Generalização do 1º Lema de Kaplansky) O número de subconjuntos com elementos de de modo que entre cada dois elementos escolhidos para o subconjunto haja, no conjunto, pelo menos elementos não escolhidos para o subconjunto é:    Representamos com o símbolo os elementos que figuram nos subconjuntos e com o símbolo os elementos que não figuram. Os símbolos e serão organizados de forma que entre dois símbolos haja pelo menos símbolos e antes do primeiro símbolo , assim como depois do último símbolo , podem figurar qualquer quantidade de símbolos . Formando uma fila com os símbolos ficamos com espaços para colocar os símbolos , veja a .   Distribuição de símbolos e espaços para os símbolos .     Observando que a quantidade de símbolos disponíveis é , o número de soluções desse problema é exatamente o número de soluções (em números inteiros) da equação:    Definindo e substituindo na equação anterior, ficamos com Ou seja, O número de soluções dessa equação, com cada variável inteira e não negativa é      Calculando no Sage:     Um estudante precisa realizar quatro provas referentes à recuperação final em 4 disciplinas. A escola deu um prazo 20 dias (incluindo sábados e domingos) para a realização de tais provas. Sabendo que o aluno pode escolher as datas que irá realizar cada prova e que ele deseja fazer uma prova por dia com um intervalo de três dias entre uma prova e outra (ou seja, 3 dias sem fazer provas), para poder estudar, responda: de quantas formas esse aluno pode escolher os dias para a realização das quatro provas?   Utilizando a Generalização do 1º Lema de Kaplansky, onde e , o número de maneiras de escolher os quatro dias para a realização das provas será dado por       (Generalização do 2º Lema de Kaplansky) O número de subconjuntos com elementos de onde e são \"adjacentes\" e de modo que entre cada dois elementos escolhidos para o subconjunto haja, no conjunto, pelo menos elementos não escolhidos para o subconjunto é:    Vamos separar em dois casos. Observe que um subconjunto satisfazendo as condições do enunciado vai possuir ou não algum dos elementos: .  1º caso: O número de subconjuntos que não possui quais quer dos elementos supracitados é pois, restam elementos, tais que, o primeiro e o último não são adjacentes e os subconjuntos serão formados por elementos satisfazendo as mesmas condição da Generalização do 1º Lema de Kaplansky.  2º caso: O número de subconjuntos que possui um dos elementos supracitados é para justificar este caso, considere o elemento , no subconjunto. O seguinte procedimento deve ser feito:  Como o elemento já está no subconjunto, então elementos antes do e elementos depois do não podem figurar. Portanto, do total de elementos, elementos precisam ser subtraidos, restando . Agora, elementos precisam ser escolhidos, satisfazendo as mesmas condição da Generalização do 1º Lema de Kaplansky, ou seja, no total são maneiras para cada fixado. Como são opções para o valor de , ficamos com vezes este valor.   Ainda precisamos calcular o valor da seguinte soma: Assim,      Calculando no Sage:     Lucas recebeu uma proposta para trabalhar em uma multinacional na China. A empresa lhe prometeu duas férias por ano, sempre nos mesmos meses, com passagem paga pela empresa, para ela poder visitar seus familiares no Brasil. A única restrição que a empresa fez foi que houvesse um intervalo de pelo menos 4 meses entre as duas férias. Quantas são as formas de Lucas escolher os meses das suas férias?   Como a escolha dos meses será mantida pelos anos seguintes, aplicando a Generalização do 2º Lema de Kaplansky obtemos:       Exercícios   Um estacionamento tem 10 vagas, uma ao lado da outra, inicialmente todas livres. Um carro preto, um carro rosa e um carro branco chegam a esse estacionamento. De quantas maneiras diferentes esses carros podem ocupar três vagas de forma que haja pelo menos uma vaga livre entre eles?   336   As vagas que serão ocupadas podem ser escolhidas de maneiras, e a ordem dos carros pode ser escolhida de maneiras. Logo, o número de soluções é     De quantos modos podemos formar uma sequência de 9 elementos iguais a 1 e 6 elementos iguais a 0 se dois elementos iguais a 0 não podem ser adjacentes?   210   No total temos elementos e seis deles não podem ficar lado a lado. Portanto, o número de soluções é     (ITA) 12 cavaleiros estão sentados em torno de uma mesa redonda. Cada um dos 12 cavaleiros considera seus dois vizinhos como rivais. Deseja-se formar um grupo de 5 cavaleiros para libertar uma princesa. Nesse grupo não poderá haver cavaleiros rivais. Determine de quantas maneiras é possível escolher esse grupo.   36   Vamos usar o 2º Lema de Kaplansky. De 12 pessoas em disposição circular, precisamos contar o número de maneiras de escolher 5 dessas pessoas, sem selecionar duas adjacentes. Logo, o número de soluções é     8 pessoas devem se sentar em 25 cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se não deve haver ocupação simultânea de duas cadeiras adjacentes?   1441440000   Primeiro, contamos o número de maneiras de escolher as 8 cadeiras que serão usadas, dentre as 25 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 8 pessoas que irão sentar nas cadeiras. Isto pode ser feito de maneiras   (OBM 2010 - 2ª fase do nível 3) Diamantino gosta de jogar futebol, mas se jogar dois dias seguidos ele fica com dores musculares. De quantas maneiras Diamantino pode escolher em quais de dez dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   144   Diamantino pode escolher qualquer valor entre e inclusive, para ser a quantidade de vezes que ele vai jogar, pois e .  O número de maneiras de Diamantino escolher os dias que quer jogar futebol, sem ter dores musculares é      Irving gosta de jogar futebol, mas precisa ficar dois dias consecutivos sem jogar para evitar dores musculares. De quantas maneiras Irving pode escolher em quais de 20 dias seguidos ele vai jogar bola sem ter dores musculares? Uma maneira é não jogar futebol em nenhum dos dias.   2745   Irving pode escolher qualquer valor entre e inclusive, para ser a quantidade de vezes que ele vai jogar, pois e .   Assim, o número de formas de Irving jogar futebol sem ter dores musculares é       Um determinado atleta quer fazer treinos HIIT para se preparar fisicamente para um campeonato. Sabendo que faltam 28 dias para o campeonato, que ele quer pelo menos 3 dias de intervalo entre dois treinos HIIT e que ele pode escolher 3 tipos desses treinos. De quantas maneiras esse atleta pode escolher fazer os treinos HIIT, se ele quer treinar pelo menos 5 vezes?     O atleta pode escolher treinar ou vezes, pois . Em cada dia que ele resolve treinar, ele têm três opções. Portanto a resposta é    No Sage o cálculo pode ser feito da seguinte maneira:     Seis pessoas devem se sentar em vinte cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se para cada cadeira ocupada devemos ter duas cadeiras livres de cada lado?     Primeiro, contamos o número de maneiras de escolher as 6 cadeiras que serão usadas, dentre as 20 disponíveis em disposição circular. Depois, contanos a quantidade de maneiras de ordenas as 6 pessoas que irão sentar nas cadeiras. Isto pode ser feito de maneiras.    O famoso \"Problema dos Casais\" (Problème des Ménages), proposto por Édouard Lucas em 1891, pergunta de quantas maneiras casais podem ser acomodados ao redor de uma mesa circular, alternando homens e mulheres, de modo que nenhum marido sente ao lado de sua própria esposa.  Considere o caso onde as mulheres já estão sentadas e fixadas na mesa, alternando com cadeiras vazias. Use o Princípio da Inclusão-Exclusão e o 2º Lema de Kaplansky para deduzir a expressão que calcula o número de maneiras de alocar os maridos nas cadeiras vazias, e resolva para .   13   Se as mulheres já estão em seus lugares, restam cadeiras vazias. O total de maneiras de distribuir os maridos sem qualquer restrição é .  No entanto, para cada um dos maridos, existem exatamente duas cadeiras proibidas (a da esquerda e a da direita de sua respectiva esposa). Isso gera um total de opções de assentos proibidos (vistos como pares \"marido-cadeira\").  Para calcular o número de configurações válidas onde nenhuma regra é violada, utilizamos o Princípio da Inclusão-Exclusão. A fórmula nos orienta a calcular os termos , que representam o número de maneiras de forçar a ocorrência simultânea de exatamente violações, permitindo que os demais maridos sentem-se livremente.  A grande sacada combinatória é entender como escolher violações que possam acontecer fisicamente ao mesmo tempo . Duas violações são incompatíveis (ou seja, a interseção é vazia) se tentarem colocar o mesmo marido em duas cadeiras diferentes, ou dois maridos na mesma cadeira. Se listarmos as proibições em uma sequência circular intercalando maridos e cadeiras, perceberemos que proibições incompatíveis são sempre vizinhas (consecutivas) nesse círculo.  Portanto, forçar violações simultâneas e compatíveis é matematicamente idêntico a escolher posições não consecutivas em um círculo de elementos. Pelo 2º Lema de Kaplansky, o número de maneiras de fazer essa escolha é:   Uma vez que esses maridos escolhidos estão fixados nas suas cadeiras proibidas, restam maridos para ocupar as cadeiras restantes de forma irrestrita, o que pode ser feito de maneiras. Logo, cada termo do Inclusão-Exclusão é dado por:   Substituindo os termos na fórmula do Princípio da Inclusão-Exclusão ( ), deduzimos a famosa fórmula geral do Número de Ménage ( ), originalmente encontrada por Jacques Touchard:   Para o caso de casais, o somatório é:  Somando todos os termos: .  Portanto, os 5 maridos podem ser acomodados de 13 maneiras válidas.    "
 },
 {
   "id": "figura-kaplansky",
@@ -2842,7 +2842,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.4.5.9",
   "title": "",
-  "body": " O famoso \"Problema dos Casais\" (Problème des Ménages), proposto por Édouard Lucas em 1891, pergunta de quantas maneiras casais podem ser acomodados ao redor de uma mesa circular, alternando homens e mulheres, de modo que nenhum marido sente ao lado de sua própria esposa. Considere o caso mais simples (embora nada trivial) onde as mulheres já estão sentadas e fixadas na mesa, alternando cadeiras vazias. De quantas maneiras podemos alocar os maridos nas cadeiras vazias satisfazendo a regra para ?   13   Se as mulheres já estão em seus lugares, cada cadeira vazia está cercada por duas mulheres. Cada marido possui exatamente dois lugares \"proibidos\": a cadeira à esquerda e a cadeira à direita da sua respectiva esposa.  Isso configura uma permutação restrita que pode ser modelada utilizando o Princípio da Inclusão-Exclusão e Polinômios de Torre ou a fórmula geral dos números de Ménage (que decorre dos Lemas de Kaplansky). O número de maneiras para alocar apenas os maridos, conhecido como Número de Ménage , obedece à fórmula deduzida por Touchard:   Para , a fórmula nos fornece a soma exata das configurações restritas. Calculando para os valores da soma:  Somando os termos: .  Portanto, os 5 maridos podem ser sentados de 13 maneiras válidas. (Curiosidade: Se o problema perguntasse de quantas formas sentar as mulheres E os homens, multiplicaríamos 13 por ).  "
+  "body": " O famoso \"Problema dos Casais\" (Problème des Ménages), proposto por Édouard Lucas em 1891, pergunta de quantas maneiras casais podem ser acomodados ao redor de uma mesa circular, alternando homens e mulheres, de modo que nenhum marido sente ao lado de sua própria esposa.  Considere o caso onde as mulheres já estão sentadas e fixadas na mesa, alternando com cadeiras vazias. Use o Princípio da Inclusão-Exclusão e o 2º Lema de Kaplansky para deduzir a expressão que calcula o número de maneiras de alocar os maridos nas cadeiras vazias, e resolva para .   13   Se as mulheres já estão em seus lugares, restam cadeiras vazias. O total de maneiras de distribuir os maridos sem qualquer restrição é .  No entanto, para cada um dos maridos, existem exatamente duas cadeiras proibidas (a da esquerda e a da direita de sua respectiva esposa). Isso gera um total de opções de assentos proibidos (vistos como pares \"marido-cadeira\").  Para calcular o número de configurações válidas onde nenhuma regra é violada, utilizamos o Princípio da Inclusão-Exclusão. A fórmula nos orienta a calcular os termos , que representam o número de maneiras de forçar a ocorrência simultânea de exatamente violações, permitindo que os demais maridos sentem-se livremente.  A grande sacada combinatória é entender como escolher violações que possam acontecer fisicamente ao mesmo tempo . Duas violações são incompatíveis (ou seja, a interseção é vazia) se tentarem colocar o mesmo marido em duas cadeiras diferentes, ou dois maridos na mesma cadeira. Se listarmos as proibições em uma sequência circular intercalando maridos e cadeiras, perceberemos que proibições incompatíveis são sempre vizinhas (consecutivas) nesse círculo.  Portanto, forçar violações simultâneas e compatíveis é matematicamente idêntico a escolher posições não consecutivas em um círculo de elementos. Pelo 2º Lema de Kaplansky, o número de maneiras de fazer essa escolha é:   Uma vez que esses maridos escolhidos estão fixados nas suas cadeiras proibidas, restam maridos para ocupar as cadeiras restantes de forma irrestrita, o que pode ser feito de maneiras. Logo, cada termo do Inclusão-Exclusão é dado por:   Substituindo os termos na fórmula do Princípio da Inclusão-Exclusão ( ), deduzimos a famosa fórmula geral do Número de Ménage ( ), originalmente encontrada por Jacques Touchard:   Para o caso de casais, o somatório é:  Somando todos os termos: .  Portanto, os 5 maridos podem ser acomodados de 13 maneiras válidas.  "
 },
 {
   "id": "section-casa-pombos",
@@ -3094,7 +3094,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.6",
   "title": "O Princípio da Reflexão",
-  "body": " O Princípio da Reflexão   Passeios Sobre o Reticulado  Chamaremos o plano de coordenadas inteiras de reticulado.  Um reticulado.     Existe uma classe de problemas em análise combinatória que consiste em determinar a quantidade de caminhos de um ponto até , em um reticulado, sob algumas condições. Como por exemplo:   Uma partícula está sobre o reticulado. Ela só pode fazer dois tipos de movimentos:  Estando sobre o ponto se move para o ponto ;  Estando sobre o ponto se move para o ponto .  Determine o número de caminhos da origem até o ponto .   Chamamos o primeiro tipo de movimento de \"para o Norte\" e o denotaremos com uma letra , e o segundo de \"para o Leste\" e o denotaremos por uma letra . Com esta notação, temos uma bijeção entre os caminhos dessa partícula no reticulado e os anagramas formados por letras e por letras , por meio da seguinte associação: Toda vez que a partícula faz o movimento , escrevemos e toda vez que a partícula faz o movimento , escrevemos .  Vamos ilustrar a ideia na figura abaixo:   Todos os caminhos de até e seus respectivos anagramas.    Pelo princípio da bijeção, calcular a quantidade de caminhos no reticulado do ponto até o ponto é o mesmo que calcular o número de anagramas com letras repetidas e letras repetidas, o que é obtido calculando .      O Princípio da Reflexão  O princípio da reflexão é uma ideia geométrica aplicada na contagem de caminhos no reticulado com a restrição de não poder ultrapassar uma determinada reta. Dentre as variadas aplicações deste princípio, temos o problema do troco na fila de cinema ( ) e o problema da eleição de André ( ). Outra aplicação notável, é a dedução dos Números de Catalan, por meio de um caso particular deste princípio.    O princípio da reflexão consiste em determinar o número de caminhos da origem até o ponto , de modo que os caminhos fiquem sempre abaixo da diagonal , isto é, eles podem tocar, mas não podem cruzar.    Chamamos de caminho bom no reticulado, se o caminho não cruza a diagonal, e de caminho ruim se o caminho cruza a diagonal. Veja um exemplo de cada tipo na , na e na .   Um exemplo de caminho bom.       Seja a reflexão dos pontos de um reticulado em relação à reta , observe que . Na , veja que a reflexão leva a seta que liga à na seta que liga à .   Exemplo da reflexão .      A quantidade de caminhos ruins de até é igual ao número total de caminhos de até .    Seja o conjunto dos caminhos ruins de até e o conjunto dos caminhos de até . Primeiramente, observe que se , o ponto A estaria acima da diagonal , então não haveria caminhos bons, só os ruins. Logo, vamos supor que .  Seja um caminho ruim de até , isto é, , como ele é um caminho ruim, por definição, esse caminho cruza a reta pelo menos uma vez. Aplicando a reflexão aos pontos de , após o primeiro cruzamento, obtemos um caminho de até . Como é um caminho arbitrário, concluímos que cada caminho de é levado, dessa maneira, em um caminho de , logo .  Veja um exemplo na e na abaixo.   Exemplos de caminhos.    Exemplo de caminho ruim.     Caminho ruim em laranja e sua respectiva reflexão em verde.      Reciprocamente, tomando um caminho de até , isto é , ele necessariamente toca na diagonal , uma vez que a ordenada de é maior que a abscissa. Aplicando a reflexão , a partir do primeiro cruzamento em relação à reta , obtemos um caminho que termina em A. Ou seja, verificamos que todo caminho de é levado em um caminho de . Portanto, .  Da propriedade da tricotomia dos números reais, se e , concluímos que .    A quantidade de caminhos ruins de até é    Pela , o número de caminhos ruins de até é igual à quantidade de caminhos de até , sem restrições, ou seja, é o número de anagramas com os L's repetidos vezes e os N's repetidos vezes, que pode ser calculado por como queríamos demonstrar.     (Princípio da Reflexão)  Sejam com . A quantidade de caminhos da origem até o ponto que ficam abaixo da reta é dada por    Queremos calcular a quantidade de caminhos bons da origem até o ponto . Para tanto, vamos calcular o total e subtrair o número de caminhos ruins. O total de caminhos é dado por . E pela , sabemos que o número de caminhos ruins é dado por . Assim,      Abaixo, definimos uma função, que calcula o número de caminhos bons do ponto até o ponto .      Digite uma posição no reticulado e clique no botão \"Update\" para gerar um reticulado, um caminho aleatório e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta , a partir do primeiro ponto que toca nessa reta.   Reticulado, caminho aleatório e respectiva reflexão.       Números de Catalan  Os Números de Catalan, que foram nosso fio condutor até aqui, são muitos profícuos em análise combinatória, modelando uma gama enorme de problemas, por exemplo, a referência apresenta 214 tipos diferentes de configurações combinatórias que podem ser contados usando Números de Catalan. Destacamos também, não só a variedade de problemas que são modelados por estes números, mais a versatilidade de temas que podem ser apresentados com eles, como por exemplo as funções geradoras, relações de recorrências, semi-ordem e muito mais. Para o leitor interessado, recomendamos as referências , e .   No (Princípio da Reflexão), o caso particular em que é conhecido como números de Catalan, ou seja, os números são conhecidos como números de Catalan (ou Catalão).    O Sage possui um método específico para calcular os números de Catalan. Basta escolher o valor de e usar o método conforme o código a seguir.     Anteriormente, no , vimos a bijeção entre os caminhos da origem até o ponto , com os anagramas formados por letras e letras . Neste momento, é natural perguntar: Qual é a relação entre estes anagramas e os números de Catalan?   Apresentamos os números de Catalan como a quantidade de caminhos da origem até o ponto de maneira que cada um desses caminhos nunca ultrapasse a diagonal , ou seja, a cada momento a quantidade de movimentos \"para o norte\" deve ser sempre menor ou igual que a quantidade de movimentos \"para o leste\". Assim, por meio da bijeção já apresentada no , concluímos que um caminho que é solução do problema de Catalan para o reticulado está associado aos anagramas com letras e letras de modo que ao lermos da esquerda para a direita a cada momento, a quantidade de letras será maior ou igual a quantidade de letras . Vejamos que para , o anagrama é uma palavra válida para o problema de Catalan, enquanto não é válida.     Um caminho de Dyck é um caminho de comprimento , no plano cartesiano, do ponto ao ponto . No qual, em cada passo, saímos do ponto para ou , com a condição adicional de que o caminho nunca fica abaixo do eixo . Quantos são os caminhos de Dyck?  Observe que se a cada passo de para associarmos uma letra \"L\" e a cada passo de para associarmos uma letra \"N\", temos uma associação dos caminhos de Dyck com os anagramas do que acabamos de ver. O qual tem sua cardinalidade determinada pelos números de Catalan.    Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.      Existem valores de e tais que a quantidade de caminhos bons é igual ao número de caminhos ruins?  Sim, .   Basta igualar o número de caminhos bons com o número de caminhos ruins e encontrar em função de . Então,    Seja a reflexão dos pontos de um reticulado em relação à reta . Determine a refexão e justifique.  .   Para encontrar a reflexão , podemos encontrar a projeção de um ponto arbitrário na reta , em seguida aplicamos uma translação, na vertical ou na horizontal. O sentido do deslocamento dependerá do caso e o total transladado será igual a distância entre o ponto original e a projeção do ponto na reta.    Reflexão com .     Reflexão com .      Caso Fazemos a interseção da reta com a reta e obtemos . Agora, transladamos o ponto verticalmente no total de unidades para cima. A reflexão é dada por .   Caso Fazemos a interseção da reta com a reta e obtemos . Agora, transladamos o ponto horizontalmente no total de unidades para direita. A reflexão é dada por .  Caso Basta observar que , ou seja, os pontos da reta são pontos fixos.  Ligando os pontos , obtemos um triângulo isósceles na qual, a reta contém a bissetriz do ângulo . Portanto, é de fato a reflexão procurada.   Refaça o princípio da reflexão no caso em que os caminhos não possam nem tocar a diagonal .  Quantidade total de caminhos: A quantidade de caminhos da origem até o ponto é    Quantidade de caminhos ruins: Note que o ponto pertence a reta . Logo, precisamos ajustar nosso conceito de caminho ruim. Vamos considerar que um caminho é ruim se ele toca na reta , mas o ponto de interseção é diferente do ponto . Assim, podemos classificar os caminhos ruins em dois tipos.  1º Tipo: o caminho vai do ponto até o ponto com o primeiro passo para cima. Assim, para contar o número desses caminhos, basta contar o número de caminhos do ponto até o ponto :   2º Tipo: o caminho vai do ponto até o ponto com o primeiro passo para a direita. Para contar o número desses caminhos, basta contar o número de caminhos do ponto até o ponto :      Um caminho ruim do 1º Tipo.     Um caminho ruim do 2º Tipo.      Portanto, pelo Princípio Aditivo, o total de caminhos ruins é dado por    Quantidade de caminhos bons: Para contar o número de caminhos bons, basta calcular a diferença entre o número total de caminhos e o número total de caminhos ruins:    Quantidade total de caminhos: A quantidade de caminhos da origem até o ponto é    Quantidade de caminhos bons: Observe que a reflexão será em relação a reta , portanto a reflexão será . Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.    Um caminho bom, partindo do ponto .     Um caminho ruim, partindo do ponto .     Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto e chegam no ponto , depois vamos contar todos os caminhos ruins que iniciam no ponto e também chegam no ponto . A diferença entre essas quantidades será o número de caminhos bons.  O número de caminhos de até é  O número de caminhos ruins de até é igual ao número de caminhos de até , ou seja,  Finalmente, o número de caminhos bons de até é igual a    Quantidade de caminhos ruins: A quantidade de caminhos ruins de até é igual a quantidade total de caminhos, menos a quantidade de caminhos bons:     Numa fila de cinema, pessoas têm notas de e pessoas têm notas de , com . A entrada custa .  Quais são as filas possíveis?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar sem troco?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar com duas notas de ?              O número de filas possíveis é o número de maneiras de ordenar pessoas, ou seja, é .  Considere um reticulado, na qual o eixo é referente as pessoas notas de e o eixo é referente as pessoas com notas de . Pela , o número de maneiras escolher as posições das pessoas com notas de e de é . Uma vez feita essa escolha, podemos ordenar as pessoas de maneiras. Logo, no total, o número de filas que terão problemas de troco é .  Basta aplicar a mesma ideia do item anterior, mas com a reflexão , deduzida do . Utilizando a mesma ideia da , vamos contar o número de caminhos da origem até o ponto . Este número é Agora, basta multiplicar o número anterior pelo número de maneiras de ordenar as pessoas. Portanto, a resposta é       O princípio da reflexão, também é conhecido como \"O princípio da reflexão de André\" (Andre's reflection principle), devido a sua utilização na solução do Problema da Eleição (\"The Ballot Problem\"). O qual enunciamos abaixo. Esse princípio possui várias generalizações e ainda pesquisado atualmente, o que pode ser visto em e .   Em uma eleição há dois candidatos A e B. Se o candidato teve votos e o candidato teve votos com Quantas são as marchas de apuração:  Possíveis?  Nas quais o candidato permanece sempre em vantagem ou empatado com o candidato ?  Nas quais o candidato permanece sempre em vantagem em relação ao candidato ?              O número de marchas possíveis é dado por .  O número de marchas, na qual o cadidato permanece sempre em vantagem ou empatado com o candidato é dado pelo número de caminhos bons da origem até o ponto , ou seja, é   Usando a ideia do , o número de marchas, na qual o cadidato permanece sempre em vantagem em relação o candidato é dado pelo número de caminhos bons do ponto até o ponto , sem que o caminho toque na reta . Pelo , a resposta é       Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :     Uma reunião corporativa de alto escalão reúne executivos ao redor de uma mesa redonda. Para um exercício de quebra-gelo, todos devem apertar as mãos simultaneamente, formando exatamente pares. Para evitar bagunça, estipulou-se a regra de que os braços de nenhum par cruzam os braços de outro par sobre a mesa. Mostre que o número de maneiras de realizar esse aperto de mãos simultâneo é (o -ésimo número de Catalan).   Considere uma das pessoas da mesa, digamos a pessoa 1. Para que os braços não se cruzem, o parceiro escolhido pela pessoa 1 deve dividir o restante da mesa em dois grupos com um número par de cadeiras de cada lado (pois as pessoas isoladas dentro de uma subdivisão só podem apertar as mãos umas das outras).  Se a pessoa 1 aperta a mão da pessoa , sobram pessoas de um lado e pessoas do outro. Esse comportamento de divisões de tamanho par é a exata definição da relação de recorrência dos números de Catalan:   Alternativamente, por bijeção, podemos transformar isso na caminhada de Dyck ou nos parênteses balanceados: lendo o círculo em sentido horário a partir da pessoa 1, se uma pessoa estende a mão adiante no círculo, associamos um parêntese abrindo \"(\". Se ela recebe a mão de alguém anterior, associamos um \")\". O não-cruzamento garante que os parênteses ficarão perfeitamente balanceados, totalizando configurações válidas.     "
+  "body": " O Princípio da Reflexão   Passeios Sobre o Reticulado  Chamaremos o plano de coordenadas inteiras de reticulado.  Um reticulado.     Existe uma classe de problemas em análise combinatória que consiste em determinar a quantidade de caminhos de um ponto até , em um reticulado, sob algumas condições. Como por exemplo:   Uma partícula está sobre o reticulado. Ela só pode fazer dois tipos de movimentos:  Estando sobre o ponto se move para o ponto ;  Estando sobre o ponto se move para o ponto .  Determine o número de caminhos da origem até o ponto .   Chamamos o primeiro tipo de movimento de \"para o Norte\" e o denotaremos com uma letra , e o segundo de \"para o Leste\" e o denotaremos por uma letra . Com esta notação, temos uma bijeção entre os caminhos dessa partícula no reticulado e os anagramas formados por letras e por letras , por meio da seguinte associação: Toda vez que a partícula faz o movimento , escrevemos e toda vez que a partícula faz o movimento , escrevemos .  Vamos ilustrar a ideia na figura abaixo:   Todos os caminhos de até e seus respectivos anagramas.    Pelo princípio da bijeção, calcular a quantidade de caminhos no reticulado do ponto até o ponto é o mesmo que calcular o número de anagramas com letras repetidas e letras repetidas, o que é obtido calculando .      O Princípio da Reflexão  O princípio da reflexão é uma ideia geométrica aplicada na contagem de caminhos no reticulado com a restrição de não poder ultrapassar uma determinada reta. Dentre as variadas aplicações deste princípio, temos o problema do troco na fila de cinema ( ) e o problema da eleição de André ( ). Outra aplicação notável, é a dedução dos Números de Catalan, por meio de um caso particular deste princípio.    O princípio da reflexão consiste em determinar o número de caminhos da origem até o ponto , de modo que os caminhos fiquem sempre abaixo da diagonal , isto é, eles podem tocar, mas não podem cruzar.    Chamamos de caminho bom no reticulado, se o caminho não cruza a diagonal, e de caminho ruim se o caminho cruza a diagonal. Veja um exemplo de cada tipo na , na e na .   Um exemplo de caminho bom.       Seja a reflexão dos pontos de um reticulado em relação à reta , observe que . Na , veja que a reflexão leva a seta que liga à na seta que liga à .   Exemplo da reflexão .      A quantidade de caminhos ruins de até é igual ao número total de caminhos de até .    Seja o conjunto dos caminhos ruins de até e o conjunto dos caminhos de até . Primeiramente, observe que se , o ponto A estaria acima da diagonal , então não haveria caminhos bons, só os ruins. Logo, vamos supor que .  Seja um caminho ruim de até , isto é, , como ele é um caminho ruim, por definição, esse caminho cruza a reta pelo menos uma vez. Aplicando a reflexão aos pontos de , após o primeiro cruzamento, obtemos um caminho de até . Como é um caminho arbitrário, concluímos que cada caminho de é levado, dessa maneira, em um caminho de , logo .  Veja um exemplo na e na abaixo.   Exemplos de caminhos.    Exemplo de caminho ruim.     Caminho ruim em laranja e sua respectiva reflexão em verde.      Reciprocamente, tomando um caminho de até , isto é , ele necessariamente toca na diagonal , uma vez que a ordenada de é maior que a abscissa. Aplicando a reflexão , a partir do primeiro cruzamento em relação à reta , obtemos um caminho que termina em A. Ou seja, verificamos que todo caminho de é levado em um caminho de . Portanto, .  Da propriedade da tricotomia dos números reais, se e , concluímos que .    A quantidade de caminhos ruins de até é    Pela , o número de caminhos ruins de até é igual à quantidade de caminhos de até , sem restrições, ou seja, é o número de anagramas com os L's repetidos vezes e os N's repetidos vezes, que pode ser calculado por como queríamos demonstrar.     (Princípio da Reflexão)  Sejam com . A quantidade de caminhos da origem até o ponto que ficam abaixo da reta é dada por    Queremos calcular a quantidade de caminhos bons da origem até o ponto . Para tanto, vamos calcular o total e subtrair o número de caminhos ruins. O total de caminhos é dado por . E pela , sabemos que o número de caminhos ruins é dado por . Assim,      Abaixo, definimos uma função, que calcula o número de caminhos bons do ponto até o ponto .      Digite uma posição no reticulado e clique no botão \"Update\" para gerar um reticulado, um caminho aleatório e caso esse caminho seja ruim, obtenha também a reflexão deste caminho em relação a reta , a partir do primeiro ponto que toca nessa reta.   Reticulado, caminho aleatório e respectiva reflexão.       Números de Catalan  Os Números de Catalan, que foram nosso fio condutor até aqui, são muitos profícuos em análise combinatória, modelando uma gama enorme de problemas, por exemplo, a referência apresenta 214 tipos diferentes de configurações combinatórias que podem ser contados usando Números de Catalan. Destacamos também, não só a variedade de problemas que são modelados por estes números, mais a versatilidade de temas que podem ser apresentados com eles, como por exemplo as funções geradoras, relações de recorrências, semi-ordem e muito mais. Para o leitor interessado, recomendamos as referências , e .   No (Princípio da Reflexão), o caso particular em que é conhecido como números de Catalan, ou seja, os números são conhecidos como números de Catalan (ou Catalão).    O Sage possui um método específico para calcular os números de Catalan. Basta escolher o valor de e usar o método conforme o código a seguir.     Anteriormente, no , vimos a bijeção entre os caminhos da origem até o ponto , com os anagramas formados por letras e letras . Neste momento, é natural perguntar: Qual é a relação entre estes anagramas e os números de Catalan?   Apresentamos os números de Catalan como a quantidade de caminhos da origem até o ponto de maneira que cada um desses caminhos nunca ultrapasse a diagonal , ou seja, a cada momento a quantidade de movimentos \"para o norte\" deve ser sempre menor ou igual que a quantidade de movimentos \"para o leste\". Assim, por meio da bijeção já apresentada no , concluímos que um caminho que é solução do problema de Catalan para o reticulado está associado aos anagramas com letras e letras de modo que ao lermos da esquerda para a direita a cada momento, a quantidade de letras será maior ou igual a quantidade de letras . Vejamos que para , o anagrama é uma palavra válida para o problema de Catalan, enquanto não é válida.     Um caminho de Dyck é um caminho de comprimento , no plano cartesiano, do ponto ao ponto . No qual, em cada passo, saímos do ponto para ou , com a condição adicional de que o caminho nunca fica abaixo do eixo . Quantos são os caminhos de Dyck?  Observe que se a cada passo de para associarmos uma letra \"L\" e a cada passo de para associarmos uma letra \"N\", temos uma associação dos caminhos de Dyck com os anagramas do que acabamos de ver. O qual tem sua cardinalidade determinada pelos números de Catalan.    Os caminhos de Dyck podem ser plotados no Sage, basta usar o método DyckWord , tendo como entrada uma lista de zeros e uns, na qual cada 1 representa um passo de para e cada 0 representa um passo de para . Além disso, é necessário adicionar o comando .plot() para que o Sage retorne o respectivo caminho de Dyck. No exemplo a seguir o parâmetro aspect_ratio=1 foi adicionado apenas para que os eixos fiquem com a mesma proporção.      Existem valores de e tais que a quantidade de caminhos bons é igual ao número de caminhos ruins?  Sim, .   Basta igualar o número de caminhos bons com o número de caminhos ruins e encontrar em função de . Então,    Seja a reflexão dos pontos de um reticulado em relação à reta . Determine a refexão e justifique.  .   Para encontrar a reflexão , podemos encontrar a projeção de um ponto arbitrário na reta , em seguida aplicamos uma translação, na vertical ou na horizontal. O sentido do deslocamento dependerá do caso e o total transladado será igual a distância entre o ponto original e a projeção do ponto na reta.    Reflexão com .     Reflexão com .      Caso Fazemos a interseção da reta com a reta e obtemos . Agora, transladamos o ponto verticalmente no total de unidades para cima. A reflexão é dada por .   Caso Fazemos a interseção da reta com a reta e obtemos . Agora, transladamos o ponto horizontalmente no total de unidades para direita. A reflexão é dada por .  Caso Basta observar que , ou seja, os pontos da reta são pontos fixos.  Ligando os pontos , obtemos um triângulo isósceles na qual, a reta contém a bissetriz do ângulo . Portanto, é de fato a reflexão procurada.   Refaça o princípio da reflexão no caso em que os caminhos não possam nem tocar a diagonal .  Quantidade total de caminhos: A quantidade de caminhos da origem até o ponto é    Quantidade de caminhos ruins: Note que o ponto pertence a reta . Logo, precisamos ajustar nosso conceito de caminho ruim. Vamos considerar que um caminho é ruim se ele toca na reta , mas o ponto de interseção é diferente do ponto . Assim, podemos classificar os caminhos ruins em dois tipos.  1º Tipo: o caminho vai do ponto até o ponto com o primeiro passo para cima. Assim, para contar o número desses caminhos, basta contar o número de caminhos do ponto até o ponto :   2º Tipo: o caminho vai do ponto até o ponto com o primeiro passo para a direita. Para contar o número desses caminhos, basta contar o número de caminhos do ponto até o ponto :      Um caminho ruim do 1º Tipo.     Um caminho ruim do 2º Tipo.      Portanto, pelo Princípio Aditivo, o total de caminhos ruins é dado por    Quantidade de caminhos bons: Para contar o número de caminhos bons, basta calcular a diferença entre o número total de caminhos e o número total de caminhos ruins:    Quantidade total de caminhos: A quantidade de caminhos da origem até o ponto é    Quantidade de caminhos bons: Observe que a reflexão será em relação a reta , portanto a reflexão será . Assim, para um caminho ser bom, ele precisa dar o primeiro passo para a direita, mas nem todo caminho que dá o primeiro passo para a direita é um caminho bom.    Um caminho bom, partindo do ponto .     Um caminho ruim, partindo do ponto .     Para contar os caminhos bons, vamos contar todos os caminhos que iniciam no ponto e chegam no ponto , depois vamos contar todos os caminhos ruins que iniciam no ponto e também chegam no ponto . A diferença entre essas quantidades será o número de caminhos bons.  O número de caminhos de até é  O número de caminhos ruins de até é igual ao número de caminhos de até , ou seja,  Finalmente, o número de caminhos bons de até é igual a    Quantidade de caminhos ruins: A quantidade de caminhos ruins de até é igual a quantidade total de caminhos, menos a quantidade de caminhos bons:     Numa fila de cinema, pessoas têm notas de e pessoas têm notas de , com . A entrada custa .  Quais são as filas possíveis?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar sem troco?  Quantas são as filas que terão problemas de troco se a bilheteria começar a trabalhar com duas notas de ?              O número de filas possíveis é o número de maneiras de ordenar pessoas, ou seja, é .  Considere um reticulado, na qual o eixo é referente as pessoas notas de e o eixo é referente as pessoas com notas de . Pela , o número de maneiras escolher as posições das pessoas com notas de e de é . Uma vez feita essa escolha, podemos ordenar as pessoas de maneiras. Logo, no total, o número de filas que terão problemas de troco é .  Basta aplicar a mesma ideia do item anterior, mas com a reflexão , deduzida do . Utilizando a mesma ideia da , vamos contar o número de caminhos da origem até o ponto . Este número é Agora, basta multiplicar o número anterior pelo número de maneiras de ordenar as pessoas. Portanto, a resposta é       O princípio da reflexão, também é conhecido como \"O princípio da reflexão de André\" (Andre's reflection principle), devido a sua utilização na solução do Problema da Eleição (\"The Ballot Problem\"). O qual enunciamos abaixo. Esse princípio possui várias generalizações e ainda pesquisado atualmente, o que pode ser visto em e .   Em uma eleição há dois candidatos A e B. Se o candidato teve votos e o candidato teve votos com Quantas são as marchas de apuração:  Possíveis?  Nas quais o candidato permanece sempre em vantagem ou empatado com o candidato ?  Nas quais o candidato permanece sempre em vantagem em relação ao candidato ?              O número de marchas possíveis é dado por .  O número de marchas, na qual o cadidato permanece sempre em vantagem ou empatado com o candidato é dado pelo número de caminhos bons da origem até o ponto , ou seja, é   Usando a ideia do , o número de marchas, na qual o cadidato permanece sempre em vantagem em relação o candidato é dado pelo número de caminhos bons do ponto até o ponto , sem que o caminho toque na reta . Pelo , a resposta é       Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :        "
 },
 {
   "id": "definition-21",
@@ -3302,15 +3302,6 @@ var ptx_lunr_docs = [
   "number": "2.6.4.6",
   "title": "",
   "body": "Mostre que o número de Catalan, , conta o número de expressões contendo pares de parenteses que estão corretamente emparelhados. Por exemplo, para ,  No , mostramos que o número de caminhos de Dyck, de comprimento , é dado por . É suficiente exibir uma correspondência biunívoca entre os caminhos de Dyck e as expressões contendo pares de parenteses que estão corretamente emparelhados.  Para cada caminho de Dyck, cada vez que o passo for de para , abra um parêntese e cada vez que o passo for de para feche um parêntese. Dessa maneira, como os caminhos de Dyck não cruzam o eixo , em cada expressão correspondente, a quantidade de parênteses abrindo será maior ou igual que a quantidade de parênteses fechando. Além disso, o ponto inicial e o ponto final dos caminhos de Dyck estão separados por de passos e estão no eixo , portanto a expressão correspondente conterá pares de parênteses corretamente emparelhados.  Reciprocamente, para cada expressão corretamente emparelhada contendo pares de parênteses, fazendo a leitura da esquerda para a direita da expressão dada, construa o caminho de Dyck correspondente da seguinte maneira: Dê um passo de para , sempre que houver um parêntese abrindo, e dê um passo de para , sempre que houver um parêntese fechando. Assim, como a quantidade de parênteses abrindo é sempre maior ou igual que a quantidade de parênteses fechando, o caminho construído sempre ficará acima do eixo . O primeiro parêntese será do tipo \"(\", garantindo que o primeiro passo seja de para . Como as expressões estão corretamente emparelhadas e contêm pares de parênteses, o último parêntese será do tipo \")\" e o caminho correspondente chegará no ponto .  Observação: No Sage, a lista contendo todas as expressões de pares de parênteses corretamente emparelhados pode ser gerada com o método . Para exibir a representação em parênteses, basta usar o método :   "
-},
-{
-  "id": "exercise-170",
-  "level": "2",
-  "url": "section-13.html#exercise-170",
-  "type": "Exercício",
-  "number": "2.6.4.7",
-  "title": "",
-  "body": " Uma reunião corporativa de alto escalão reúne executivos ao redor de uma mesa redonda. Para um exercício de quebra-gelo, todos devem apertar as mãos simultaneamente, formando exatamente pares. Para evitar bagunça, estipulou-se a regra de que os braços de nenhum par cruzam os braços de outro par sobre a mesa. Mostre que o número de maneiras de realizar esse aperto de mãos simultâneo é (o -ésimo número de Catalan).   Considere uma das pessoas da mesa, digamos a pessoa 1. Para que os braços não se cruzem, o parceiro escolhido pela pessoa 1 deve dividir o restante da mesa em dois grupos com um número par de cadeiras de cada lado (pois as pessoas isoladas dentro de uma subdivisão só podem apertar as mãos umas das outras).  Se a pessoa 1 aperta a mão da pessoa , sobram pessoas de um lado e pessoas do outro. Esse comportamento de divisões de tamanho par é a exata definição da relação de recorrência dos números de Catalan:   Alternativamente, por bijeção, podemos transformar isso na caminhada de Dyck ou nos parênteses balanceados: lendo o círculo em sentido horário a partir da pessoa 1, se uma pessoa estende a mão adiante no círculo, associamos um parêntese abrindo \"(\". Se ela recebe a mão de alguém anterior, associamos um \")\". O não-cruzamento garante que os parênteses ficarão perfeitamente balanceados, totalizando configurações válidas.  "
 },
 {
   "id": "section-triangulo-pascal",
@@ -3556,189 +3547,189 @@ var ptx_lunr_docs = [
   "body": "  Para qualquer inteiro não negativo , a soma dos quadrados dos elementos da -ésima linha do Triângulo de Pascal é dada por:     Na Identidade de Vandermonde, faça e . O lado direito da igualdade torna-se . O lado esquerdo torna-se:   Pelas Relações Complementares ( ), sabemos que . Substituindo no somatório, obtemos: O que conclui a demonstração.   "
 },
 {
-  "id": "exercise-171",
+  "id": "exercise-170",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-171",
+  "url": "section-triangulo-pascal.html#exercise-170",
   "type": "Exercício",
   "number": "3.1.1",
   "title": "",
   "body": " Tem-se comprimidos de substâncias distintas, solúveis em água e incapazes de reagir entre si. Quantas soluções distintas podem ser obtidas dissolven-se um ou mais desses comprimidos em um copo com água?    "
 },
 {
-  "id": "exercise-172",
+  "id": "exercise-171",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-172",
+  "url": "section-triangulo-pascal.html#exercise-171",
   "type": "Exercício",
   "number": "3.1.2",
   "title": "",
   "body": " Em uma festa de Natal, uma família decide seguir a tradição da música \"Os 12 dias de Natal\". No 1º dia, dá-se 1 presente. No 2º dia, dão-se 3 presentes ( ). No 3º dia, dão-se 6 presentes ( ). Em geral, no -ésimo dia, dão-se presentes. Utilizando o Triângulo de Pascal, quantos presentes são dados no total após os 12 dias?   364 presentes   A quantidade de presentes dados no -ésimo dia é a soma de uma progressão aritmética: . Note que isso é exatamente a fórmula da combinação .  O total de presentes ao longo de 12 dias é a soma:  Aplicando o Teorema das Colunas (que diz que a soma da coluna até a linha desce e vira à direita na posição ), temos:  Calculando: .  "
 },
 {
-  "id": "exercise-173",
+  "id": "exercise-172",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-173",
+  "url": "section-triangulo-pascal.html#exercise-172",
   "type": "Exercício",
   "number": "3.1.3",
   "title": "",
   "body": "Calcule o valor de       .  .  .         Definindo , obtemos    Definindo , obtemos    "
 },
 {
-  "id": "exercise-174",
+  "id": "exercise-173",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-174",
+  "url": "section-triangulo-pascal.html#exercise-173",
   "type": "Exercício",
   "number": "3.1.4",
   "title": "",
   "body": " Calcule o valor da soma    746660  "
 },
 {
-  "id": "exercise-175",
+  "id": "exercise-174",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-175",
+  "url": "section-triangulo-pascal.html#exercise-174",
   "type": "Exercício",
   "number": "3.1.5",
   "title": "",
   "body": " Calcule o valor de     "
 },
 {
-  "id": "exercise-176",
+  "id": "exercise-175",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-176",
+  "url": "section-triangulo-pascal.html#exercise-175",
   "type": "Exercício",
   "number": "3.1.6",
   "title": "",
   "body": "Calcule o valor de      Vamos calcular e separadamente.   Para usar o Teorema das Diagonais no cálculo de , precisamos somar e subtrair . Portanto,   "
 },
 {
-  "id": "exercise-177",
+  "id": "exercise-176",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-177",
+  "url": "section-triangulo-pascal.html#exercise-176",
   "type": "Exercício",
   "number": "3.1.7",
   "title": "",
   "body": " Calcule       "
 },
 {
-  "id": "exercise-178",
+  "id": "exercise-177",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-178",
+  "url": "section-triangulo-pascal.html#exercise-177",
   "type": "Exercício",
   "number": "3.1.8",
   "title": "",
   "body": " Usando a Relação de Stifel, demonstre que a soma com sinais alternados de qualquer linha do Triângulo de Pascal (para ) é sempre igual a zero. Ou seja, mostre que:    Substituindo cada termo (exceto o primeiro e o último) pela Relação de Stifel, , e lembrando que e , temos uma soma telescópica:   Ao remover os parênteses, todos os termos se cancelam perfeitamente em pares: o positivo corta com o negativo, o negativo corta com o positivo do termo seguinte, e assim por diante, restando exatamente 0.  "
 },
 {
-  "id": "exercise-179",
+  "id": "exercise-178",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-179",
+  "url": "section-triangulo-pascal.html#exercise-178",
   "type": "Exercício",
   "number": "3.1.9",
   "title": "",
   "body": " Determine a soma dos elementos de ordem par da -ésima linha do Triângulo de Pascal. Em outras palavras, calcule o valor de:      Seja a soma dos elementos de posições pares (índices 0, 2, 4...) e a soma dos elementos de posições ímpares (índices 1, 3, 5...).  Pelo Teorema das Linhas, sabemos que .  Pelo exercício anterior, a soma alternada é zero, o que significa que .  Como as duas metades são iguais e somam , cada uma delas deve valer exatamente a metade de . Logo: .  "
 },
 {
-  "id": "exercise-180",
+  "id": "exercise-179",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-180",
+  "url": "section-triangulo-pascal.html#exercise-179",
   "type": "Exercício",
   "number": "3.1.10",
   "title": "",
   "body": " Encontre os valores inteiros de e que satisfazem a equação: .   e ( ou )   Pela Relação de Stifel, a soma de dois binomiais consecutivos na mesma linha é igual ao elemento logo abaixo deles: .  Igualando à equação dada, temos .  Comparando os denominadores (as linhas), temos .  Para a coluna , temos duas possibilidades: ou , ou, pelas Relações Complementares ( ), .  "
 },
 {
-  "id": "exercise-181",
+  "id": "exercise-180",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-181",
+  "url": "section-triangulo-pascal.html#exercise-180",
   "type": "Exercício",
   "number": "3.1.11",
   "title": "",
   "body": " Mostre algebricamente ou por meio de um argumento combinatório que .   Argumento Combinatório: Imagine que queremos escolher 2 pessoas de um grupo com pessoas. O número total de modos é . Podemos dividir esse grupo isolando uma pessoa específica (digamos, o João). As duplas formadas podem ser de dois tipos:   O João NÃO faz parte da dupla: precisamos escolher 2 pessoas entre as restantes. Isso dá modos.  O João FAZ parte da dupla: precisamos escolher apenas 1 companheiro para ele entre as pessoas restantes. Isso dá modos.   Pelo Princípio Aditivo, .  Argumento Algébrico: Basta observar que . Logo, a equação se torna , que é exatamente a Relação de Stifel!  "
 },
 {
-  "id": "exercise-182",
+  "id": "exercise-181",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-182",
+  "url": "section-triangulo-pascal.html#exercise-181",
   "type": "Exercício",
   "number": "3.1.12",
   "title": "",
   "body": " Calcule o valor da soma: .   21   Esta soma representa exatamente uma \"diagonal rasa\" do Triângulo de Pascal, partindo da linha e coluna . Pelo Teorema de Fibonacci no Triângulo de Pascal, a soma é igual ao número de Fibonacci .  Como aqui começamos com , temos . Logo, a soma é igual a .  Calculando a sequência de Fibonacci (1, 1, 2, 3, 5, 8, 13, 21), obtemos .  "
 },
 {
-  "id": "exercise-183",
+  "id": "exercise-182",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-183",
+  "url": "section-triangulo-pascal.html#exercise-182",
   "type": "Exercício",
   "number": "3.1.13",
   "title": "",
   "body": " Qual é o maior elemento da 100ª linha do Triângulo de Pascal?     Utilizando o Teorema que avalia o crescimento dos termos de uma linha ( se ), temos .  A condição de crescimento se mantém enquanto . Como é inteiro, a sequência cresce até . Ou seja, .  Para , a sequência começa a decrescer ( ).  Portanto, o elemento máximo ocorre no centro exato da linha par, que é .  "
 },
 {
-  "id": "exercise-184",
+  "id": "exercise-183",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-184",
+  "url": "section-triangulo-pascal.html#exercise-183",
   "type": "Exercício",
   "number": "3.1.14",
   "title": "",
   "body": " Se , qual é o valor de ?     Sabemos que numa mesma linha do triângulo de Pascal, dois elementos só podem ser iguais em duas situações:   Eles ocupam a mesma coluna (ou seja, são o mesmo elemento): , o que resulta num absurdo ( ).  Eles são equidistantes dos extremos (Relação Complementar): . Portanto, a soma de suas colunas deve resultar na respectiva linha.   Aplicando o segundo caso: .  "
 },
 {
-  "id": "exercise-185",
+  "id": "exercise-184",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-185",
+  "url": "section-triangulo-pascal.html#exercise-184",
   "type": "Exercício",
   "number": "3.1.15",
   "title": "",
   "body": " Usando o Teorema de Fibonacci no Triângulo de Pascal, calcule o valor da seguinte soma:   Dica: Lembre-se que os primeiros termos da sequência de Fibonacci são   376   A soma solicitada corresponde aos elementos de uma diagonal rasa do Triângulo de Pascal. Observe o padrão dos índices da soma dada:  Isso nos indica que a diagonal pertence ao caso . Pela fórmula do teorema, a soma completa da diagonal rasa para seria:   A soma do enunciado é quase a diagonal inteira, exceto pelo primeiro termo, que é . Portanto, .  Calculando os números de Fibonacci até : 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377.  Logo, , o que nos dá .  "
 },
 {
-  "id": "exercise-186",
+  "id": "exercise-185",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-186",
+  "url": "section-triangulo-pascal.html#exercise-185",
   "type": "Exercício",
   "number": "3.1.16",
   "title": "",
   "body": " Um sapo está na base de uma escada de degraus. A cada pulo, ele pode subir 1 degrau ou 2 degraus de uma vez.   Mostre que, se o sapo decidir dar exatamente pulos duplos (de 2 degraus) durante o trajeto, o número de maneiras que ele tem para chegar ao topo da escada é .  Conclua, por meio do Teorema de Fibonacci no Triângulo de Pascal, que o número total de maneiras de subir a escada é .    Item a) Se o sapo dá pulos duplos, ele cobre degraus. Faltam degraus, que obrigatoriamente devem ser subidos com pulos simples (de 1 degrau).  O número total de pulos (movimentos) que o sapo dará é a soma da quantidade de pulos duplos e simples:  Para determinar uma sequência de pulos, basta escolher, dentre os pulos totais, em quais momentos ele dará os pulos duplos. O número de maneiras de fazer essa escolha é simplesmente a combinação .  Item b) O número total de maneiras de subir a escada é a soma de todas as possibilidades variando a quantidade de pulos duplos ( ) desde 0 até o máximo possível (que é a metade inteira dos degraus, ).  Pelo item anterior, somamos as combinações para cada possível:  Pelo Teorema de Fibonacci no Triângulo de Pascal, sabemos que essa soma exata resulta em . Essa é uma belíssima prova combinatória de que a quantidade de formas de subir a escada gera a sequência de Fibonacci!  "
 },
 {
-  "id": "exercise-187",
+  "id": "exercise-186",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-187",
+  "url": "section-triangulo-pascal.html#exercise-186",
   "type": "Exercício",
   "number": "3.1.17",
   "title": "",
   "body": " Considere o conjunto de todas as palavras (com ou sem sentido) de tamanho formadas apenas pelas letras \"A\" e \"B\". Queremos contar quantas dessas palavras não possuem duas letras \"A\" consecutivas .   Suponha que a palavra contenha exatamente letras \"A\". Quantas letras \"B\" existem? Se usarmos as letras \"B\" como separadores, mostre que o número de formas de encaixar as letras \"A\" sem que fiquem juntas é .  Utilize o Teorema de Fibonacci no Triângulo de Pascal para provar que o total de palavras válidas de tamanho é o número de Fibonacci .    Item a) Se a palavra de tamanho tem letras \"A\", então ela possui letras \"B\".  Para garantir que nenhum \"A\" fique junto de outro, começamos enfileirando todas as letras \"B\". Ao colocar letras \"B\" lado a lado, elas criam espaços vazios (entre elas e nas extremidades) onde podemos inserir os \"A\"s. O número de espaços vazios disponíveis é a quantidade de letras B mais um, ou seja, espaços.  Precisamos escolher desses espaços para colocar as nossas letras \"A\" (no máximo uma por espaço). O número de formas de fazer isso é a combinação de espaços tomados a , que é .  Item b) O total de palavras sem letras \"A\" adjacentes é a soma do resultado anterior para todos os valores possíveis de (desde até o máximo que os espaços permitem):   Para facilitar a visualização da fórmula, vamos fazer uma mudança de variável, chamando . Substituindo por na expressão acima, temos:   Esta é perfeitamente a fórmula da soma da diagonal rasa para o número . Pelo teorema recém-estudado, essa soma é igual a .  Voltando para a nossa variável original ( ), concluímos que o total de anagramas válidos é .  "
 },
 {
-  "id": "exercise-188",
+  "id": "exercise-187",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-188",
+  "url": "section-triangulo-pascal.html#exercise-187",
   "type": "Exercício",
   "number": "3.1.18",
   "title": "",
   "body": " Considere o conjunto ordenado . Desejamos determinar o número total de subconjuntos de que não possuem elementos consecutivos (incluindo o conjunto vazio e os subconjuntos unitários, que satisfazem a regra naturalmente).   Utilizando o 1º Lema de Kaplansky, escreva o somatório que representa o total absoluto de subconjuntos válidos (variando o tamanho do subconjunto).  Liste todos os subconjuntos válidos para para verificar a consistência da contagem. Em seguida, utilize o Teorema de Fibonacci no Triângulo de Pascal para provar que, para qualquer , o total de subconjuntos válidos é sempre igual a .    Item a) Pelo 1º Lema de Kaplansky, sabemos que a quantidade de maneiras de escolher um subconjunto de tamanho com elementos não consecutivos dentre elementos alinhados é dada por .  Para encontrar o total absoluto de subconjuntos válidos, precisamos somar essa expressão para todos os tamanhos possíveis de (começando de até o limite onde não seja mais possível escolher elementos separados). Logo, a soma é:   Item b) Para , o conjunto é . Os subconjuntos sem elementos consecutivos são:   Tamanho 0: (1 modo)  Tamanho 1: (4 modos)  Tamanho 2: (3 modos)   O total de subconjuntos é .  Para provar a fórmula geral, tomamos a soma do item (a) e fazemos uma mudança de variável para facilitar a visualização no Triângulo de Pascal. Chamando , a expressão se torna:   Observe que, a cada incremento de , o índice inferior ( ) diminui e o índice superior ( ) aumenta. Essa é a exata definição da soma de uma diagonal rasa partindo da linha . Pelo Teorema de Fibonacci no Triângulo de Pascal, sabemos que essa soma resulta no número de Fibonacci .  Retornando à variável original ( ), concluímos que o número total de subconjuntos é .  Note que para o nosso teste manual com , a fórmula nos dá . Como a sequência de Fibonacci é (1, 1, 2, 3, 5, 8...), temos , confirmando perfeitamente a nossa listagem.  "
 },
 {
-  "id": "exercise-189",
+  "id": "exercise-188",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-189",
+  "url": "section-triangulo-pascal.html#exercise-188",
   "type": "Exercício",
   "number": "3.1.19",
   "title": "",
   "body": " Utilizando a Identidade de Vandermonde, calcule o valor numérico da seguinte soma:      A soma tem exatamente a estrutura da Identidade de Vandermonde: .  Comparando os termos, identificamos que , e (pois a soma dos índices superiores em cada parcela é sempre constante e igual a ).  Pela Identidade de Vandermonde, essa soma resulta em . Portanto:   "
 },
 {
-  "id": "exercise-190",
+  "id": "exercise-189",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-190",
+  "url": "section-triangulo-pascal.html#exercise-189",
   "type": "Exercício",
   "number": "3.1.20",
   "title": "",
   "body": " Demonstre que .  Dica: Utilize a relação de absorção no somatório e, em seguida, aplique a Identidade de Vandermonde e a Relação Complementar.   Podemos reescrever o termo geral do somatório quebrando o quadrado:   Aplicando a relação de absorção na primeira parte, temos . Substituindo isso de volta e usando a relação complementar ( ) na segunda parte do produto, ficamos com:   Agora, inserimos essa expressão no somatório. Como é uma constante em relação ao índice , ele pode ser fatorado para fora:   Fazendo uma mudança de índice , os limites passam de até , e o expoente vira :   Esse somatório é exatamente a Identidade de Vandermonde para escolher elementos de dois grupos de tamanhos e . O resultado da soma é .  Logo, a soma total é .  "
 },
 {
-  "id": "exercise-191",
+  "id": "exercise-190",
   "level": "2",
-  "url": "section-triangulo-pascal.html#exercise-191",
+  "url": "section-triangulo-pascal.html#exercise-190",
   "type": "Exercício",
   "number": "3.1.21",
   "title": "",
@@ -3835,63 +3826,63 @@ var ptx_lunr_docs = [
   "body": "      e Portanto,    "
 },
 {
-  "id": "exercise-192",
+  "id": "exercise-191",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-192",
+  "url": "section-binomio-newton.html#exercise-191",
   "type": "Exercício",
   "number": "3.2.1",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    6435  "
 },
 {
-  "id": "exercise-193",
+  "id": "exercise-192",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-193",
+  "url": "section-binomio-newton.html#exercise-192",
   "type": "Exercício",
   "number": "3.2.2",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    -33   O termo geral é dado por Portanto, queremos encontrar valores de e , tais que , ou seja, , logo e . Então, precisamos obter o coeficiente de de :   "
 },
 {
-  "id": "exercise-194",
+  "id": "exercise-193",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-194",
+  "url": "section-binomio-newton.html#exercise-193",
   "type": "Exercício",
   "number": "3.2.3",
   "title": "",
   "body": " Calcule o termo máximo do desenvolvimento de     "
 },
 {
-  "id": "exercise-195",
+  "id": "exercise-194",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-195",
+  "url": "section-binomio-newton.html#exercise-194",
   "type": "Exercício",
   "number": "3.2.4",
   "title": "",
   "body": " Qual é o maior dos números    a         Portanto, Como mostramos que , logo .  "
 },
 {
-  "id": "exercise-196",
+  "id": "exercise-195",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-196",
+  "url": "section-binomio-newton.html#exercise-195",
   "type": "Exercício",
   "number": "3.2.5",
   "title": "",
   "body": " (UFPE - UFRPE 2000) Analise as afirmações seguintes acerca da expansão binomial de    Existem exatamente dois termos com coeficientes que não são divisíveis por 13.  A soma dos coeficientes é   O maior coeficiente é  O menor coeficiente é  A soma dos coeficientes das potências de com expoentes ímpares é .    item a) Na expansão de apenas o primeiro e o último termo possuem coeficientes que não são divisíveis por 13.  item b) Seja . A soma dos coeficientes de é exatamente o valor de .  item c) O maior coeficiente de é exatamente o maior termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o termo máximo é  item d) O menor coeficiente de é exatamente o menor termo no desenvolvimento de . Efetuando esse cálculo segundo o chegamos que o menor termo é  item e) Observe que Então, os termos de com expoentes ímpares são os termos de índices pares: . Note que e  Portanto, Então, basta calcular .   a) V, b) V, c) V, d) V, e) V  "
 },
 {
-  "id": "exercise-197",
+  "id": "exercise-196",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-197",
+  "url": "section-binomio-newton.html#exercise-196",
   "type": "Exercício",
   "number": "3.2.6",
   "title": "",
   "body": " Determine o termo independente de (ou seja, o termo em que o expoente de é zero) no desenvolvimento de   210   O -ésimo termo do desenvolvimento é dado por:   Para que o termo seja independente de , o expoente deve ser zero. Logo:  Substituindo na expressão do coeficiente, obtemos:  "
 },
 {
-  "id": "exercise-198",
+  "id": "exercise-197",
   "level": "2",
-  "url": "section-binomio-newton.html#exercise-198",
+  "url": "section-binomio-newton.html#exercise-197",
   "type": "Exercício",
   "number": "3.2.7",
   "title": "",
@@ -3988,18 +3979,18 @@ var ptx_lunr_docs = [
   "body": "(Teste de d'Alembert)   Seja para todo . Se existir uma constante tal que para todo suficientemente grande (em particular, se ) então a série será absolutamente convergente.  "
 },
 {
-  "id": "exercise-199",
+  "id": "exercise-198",
   "level": "2",
-  "url": "section-binomio-newton-real.html#exercise-199",
+  "url": "section-binomio-newton-real.html#exercise-198",
   "type": "Exercício",
   "number": "3.3.2.1",
   "title": "",
   "body": " Utilizando o Binômio de Newton Generalizado, determine os quatro primeiros termos do desenvolvimento em série de .     Podemos reescrever a função como um binômio com expoente real:  Aqui, e o segundo termo do binômio é . Aplicando a fórmula do teorema:   Portanto, a expansão inicia-se com:  "
 },
 {
-  "id": "exercise-200",
+  "id": "exercise-199",
   "level": "2",
-  "url": "section-binomio-newton-real.html#exercise-200",
+  "url": "section-binomio-newton-real.html#exercise-199",
   "type": "Exercício",
   "number": "3.3.2.2",
   "title": "",
@@ -4042,36 +4033,36 @@ var ptx_lunr_docs = [
   "body": "No Sage, podemos obter a expansão do polinômio da seguinte forma:   Os coeficientes do polinômio, podem ser obtidos da seguinte forma:   "
 },
 {
-  "id": "exercise-201",
+  "id": "exercise-200",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#exercise-201",
+  "url": "section-polinomio-leibniz.html#exercise-200",
   "type": "Exercício",
   "number": "3.4.1",
   "title": "",
   "body": " Determine o coeficiente de no desenvolvimento de    352   Pelo , temos Queremos , tais que Ou seja, O sistema admite duas soluções: Do somatório , a soma dos termos relacionados à é Logo, o coeficiente de é   "
 },
 {
-  "id": "exercise-202",
+  "id": "exercise-201",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#exercise-202",
+  "url": "section-polinomio-leibniz.html#exercise-201",
   "type": "Exercício",
   "number": "3.4.2",
   "title": "",
   "body": " Determine diretamente o coeficiente de no desenvolvimento do multinômio .   60   Pela fórmula do Polinômio de Leibniz, o coeficiente do termo é dado por .  Para o termo desejado, temos , , e . Note que a soma dos expoentes é de fato .  Calculando o coeficiente:  "
 },
 {
-  "id": "exercise-203",
+  "id": "exercise-202",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#exercise-203",
+  "url": "section-polinomio-leibniz.html#exercise-202",
   "type": "Exercício",
   "number": "3.4.3",
   "title": "",
   "body": " Qual é a soma de todos os coeficientes do desenvolvimento de ?   256   De forma análoga ao que fazemos no Binômio de Newton, a soma de todos os coeficientes de um polinômio de múltiplas variáveis é obtida substituindo-se todas as variáveis por 1.  Seja . A soma dos coeficientes é :   "
 },
 {
-  "id": "exercise-204",
+  "id": "exercise-203",
   "level": "2",
-  "url": "section-polinomio-leibniz.html#exercise-204",
+  "url": "section-polinomio-leibniz.html#exercise-203",
   "type": "Exercício",
   "number": "3.4.4",
   "title": "",
@@ -4195,54 +4186,54 @@ var ptx_lunr_docs = [
   "body": " 8 bolas de ping-pong são colocadas aleatóriamente em 8 caixas. Qual a probabilidade de que exatamente uma caixa fique vazia?   A cardinalidade do espaço amostral é dado pelo número de formas de colocar as 8 bolas de ping-pong nas 8 caixas pois, temos 8 possibilidades para a primeira bola, 8 para a segunda, etc.  Agora vamos calcular o número de casos favoráveis. Para que, exatamente uma caixa fique vazia, exatamente uma ficará com duas bolas. Logo, precisamos escolher qual caixa fica vazia e qual caixa recebe duas bolas. O número de formas de escolher qual deve ficar vazia é 8. O número de formas de escolher qual caixa recebe duas bolas é 7.  A quantidade de maneiras de escolher duas bolas para a caixa que recebe as duas bolas é . A quantidade de formas de arrumar o restante das bolas é .  Portanto o número de casos favoráveis é . A resposta do problema é    "
 },
 {
-  "id": "exercise-205",
+  "id": "exercise-204",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-205",
+  "url": "section-espacos-probabilidade.html#exercise-204",
   "type": "Exercício",
   "number": "4.1.1",
   "title": "",
   "body": " Um número é escolhido ao acaso no conjunto . Determine a probabilidade do número escolhido ser:  múltiplo de 3;  múltiplo de 5;  múltiplo de 3 e múltiplo de 5;  múltiplo de 3 ou múltiplo de 5.     a) , b) , c) , d) .   item a)    item b)    item c)    item d) Pelo princípio da Inclusão-Exclusão:   "
 },
 {
-  "id": "exercise-206",
+  "id": "exercise-205",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-206",
+  "url": "section-espacos-probabilidade.html#exercise-205",
   "type": "Exercício",
   "number": "4.1.2",
   "title": "",
   "body": " Em uma caixa existem 6 bolinhas numeradas de 1 a 6. Uma a uma elas são extraı́das, sem reposição. Qual a probabilidade de que a sequência de números observada seja crescente ou seja decrescente?   .   O espaço amostral tem cardinalidade , que é o número de maneiras de ordenar as bolinhas. Como só existe uma sequência seja crescente e uma que seja decrescente, a probabilidade é   "
 },
 {
-  "id": "exercise-207",
+  "id": "exercise-206",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-207",
+  "url": "section-espacos-probabilidade.html#exercise-206",
   "type": "Exercício",
   "number": "4.1.3",
   "title": "",
   "body": " Doze pessoas são divididas em três grupos de 4. Qual é a probabilidade de duas determinadas dessas pessoas fiquem no mesmo grupo?      Para a cardinalidade do espaço amostral, a segunda pessoa pode ficar em qualquer lugar de 11 disponíveis. Os casos favoráveis são 3, pois a primeira pessoa vai estar em algum grupo e a segunda pessoa tem 3 opções de lugares para escolher um, no grupo que se encontra a primeira pessoa. Portanto, a probabilidade é    Vamos levar em consideração que a ordem dos grupos importa. A cardinalidade do espaço amostral é igual ao número total de divisões de 12 pessoas em 3 grupos de 4, isto é igual a .  Agora vamos contar o número de casos favoráveis. Observe que existem 3 opções de escolhermos em qual grupo as duas determinadas pessoas vão ficar. Uma vez feita esta escolha, temos 10 pessoas para escolher 2 que vão completar o grupo. Depois disto temos maneiras de dividir as outras 8 pessoas em dois grupos de 4 pessoas cada. Portanto, a probabilidade é   "
 },
 {
-  "id": "exercise-208",
+  "id": "exercise-207",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-208",
+  "url": "section-espacos-probabilidade.html#exercise-207",
   "type": "Exercício",
   "number": "4.1.4",
   "title": "",
   "body": " Um armário contém 6 pares de sapatos. Escolhem-se 4 pés de sapatos. Qual é a probabilidade de se formar exatamente um par de sapatos?       A cardinalidade do espaço amostral é , pois essa é a quantidade de maneiras distintas de retirar 4 pés de sapatos, de 12 disponíveis.  Agora, vamos contar o número de casos favoráveis. Temos maneiras de retirar 1 par de sapatos, de 6 pares disponíveis. Depois disso, temos maneiras de escolher dois representantes de 5 tipos de sapatos disponíveis. Em seguida, precisamos decidir se será retirado o pé esquerdo ou o pé direito de cada um desses dois sapatos. Isto pode ser feito de maneiras. Portanto, a probabilidade é   "
 },
 {
-  "id": "exercise-209",
+  "id": "exercise-208",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-209",
+  "url": "section-espacos-probabilidade.html#exercise-208",
   "type": "Exercício",
   "number": "4.1.5",
   "title": "",
   "body": " Oito carros estão estacionados em doze vagas em fila. Determine a probabilidade:  das vagas vazias serem consecutivas;  de não haver duas vagas vazias adjacentes.    a) , b) .   item a) Para que as vagas vazias fiquem juntas, juntamos 4 vagas em uma, ficamos com 9 vagas para escolher uma, que será quádrupla. Isto pode ser feito de 9 maneiras. A cardinalidade do espaço amostral é o número de maneiras de escolher 4 lugares para ficarem fazios, dentre 12 disponíveis. Logo, a probabilidade é   item b) Já sabemos que o espaço amostral tem cardinalidade . Para que não haja duas vagas vazias adjacentes, podemos escolher as 4 vagas que ficarão vazias de maneiras. Assim, a probabilidade é   "
 },
 {
-  "id": "exercise-210",
+  "id": "exercise-209",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-210",
+  "url": "section-espacos-probabilidade.html#exercise-209",
   "type": "Exercício",
   "number": "4.1.6",
   "title": "",
@@ -4267,81 +4258,81 @@ var ptx_lunr_docs = [
   "body": "(Plínio , 2007, p. 181) Um palhaço está na ponta do trampolim de uma piscina, carregando uma caixa que contém bolas vermelhas e bolas azuis. Aleatoriamente ele vai retirando bolas da caixa, descartando-as em seguida. Cada vez que ele seleciona uma bola azul, ele dá um passo para trás, e cada vez que ele retira uma bola vermelha ele dá um passo para frente. Encontre a probabilidade de que o palhaço permaneça seco após a retirada das bolas da caixa.    Observe que uma sequência de retiradas na qual o palhaço permanece seco até o fim, quer dizer que, a cada retirada, a quantidade de bolas azuis tem que ser maior ou igual à quantidade de bolas vermelhas.  A cada vez que o palhaço retira uma bola, anotamos um se ela foi azul e um se ela foi vermelha. Com isto, construímos uma sequência formada por  e  . O palhaço ficará seco, se na sequência correspondente às retiradas, a cada momento o número dos é maior ou igual que o dos .  Perceba que se trocarmos por e por esse é o problema do deslocamento de uma partícula de até , sem que ela ultrapasse a reta , ou seja, é o número de Catalan: .  A quantidade de maneiras distintas para retirar as bolas é dada pela permutação com repetição: Assim, como esses eventos são equiprováveis, a probabilidade do palhaço permanecer seco é Concluímos que quanto maior a quantidade de bolas, menor a chance dele ficar seco.  "
 },
 {
-  "id": "exercise-212",
+  "id": "exercise-211",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-212",
+  "url": "section-espacos-probabilidade.html#exercise-211",
   "type": "Exercício",
   "number": "4.1.8",
   "title": "",
   "body": "(OPEMAT 2021 - nível 3) Pensando em sua segurança, a mãe de Dafne a proibiu de entrar na cozinha. Certo dia, sua mãe a encontra a um passo de entrar na cozinha. Lembrando que Dafne adora brinquedos, sua mãe pega uma sacola que contém de seus brinquedos favoritos e brinquedos dos quais não se interessa muito. A cada passo que Dafne está prestes a dar, sua mãe pega aleatoriamente um brinquedo na sacola, mostra a Dafne e depois deixa o brinquedo no chão. Se o brinquedo em questão for um dos que ela não se interessa muito, Dafne dá um passo em direção a cozinha, e se for um de seus favoritos, ela dá um passo na direção oposta. Qual a probabilidade de que Dafne entre na cozinha?    Observe que este exercício é equivalente ao exercício anterior ( ). Porém, neste caso ele pergunta pela probabilidade complementar. Portanto,   "
 },
 {
-  "id": "exercise-213",
+  "id": "exercise-212",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-213",
+  "url": "section-espacos-probabilidade.html#exercise-212",
   "type": "Exercício",
   "number": "4.1.9",
   "title": "",
   "body": " (ITA 2004) Uma caixa branca contém 5 bolas verdes e 3 azuis, e uma caixa preta contém 3 bolas verdes e 2 azuis. Pretende-se retirar uma bola de uma das caixas. Para tanto, 2 dados são atirados. Se a soma resultante dos dois dados for menor que 4, retira-se uma bola da caixa branca. Nos demais casos, retira-se uma bola da caixa preta. Qual é a probabilidade de se retirar uma bola verde?     No lançamento de dois dados, são possíveis 36 (pares) resultados diferentes, sendo que em apenas 3 deles a soma resultante é menor que 4. São eles: (1;1), (1;2), (2;1). A probabilidade de que uma bola verde seja retirada da urna branca é e da urna preta é . Assim, a probabilidade de se retirar uma bola verde é   "
 },
 {
-  "id": "exercise-214",
+  "id": "exercise-213",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-214",
+  "url": "section-espacos-probabilidade.html#exercise-213",
   "type": "Exercício",
   "number": "4.1.10",
   "title": "",
   "body": " (ITA 2005) São dados dois cartões, sendo que um deles tem ambos os lados na cor vermelha, enquanto o outro tem um lado na cor vermelha e o outro na cor azul. Um dos cartões é escolhido ao acaso e colocado sobre uma mesa. Se a cor exposta é vermelha, calcule a probabilidade de o cartão escolhido ter a outra cor também vermelha      O total de faces nos dois cartões é 4, sendo 3 faces vermelhas e 1 azul. Como a cor exposta é vermelha, temos duas chances do verso ser vermelho e uma chance do verso ser azul. Portanto a probabilidade de o cartão escolhido ter a outra cor também vermelha é   "
 },
 {
-  "id": "exercise-215",
+  "id": "exercise-214",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-215",
+  "url": "section-espacos-probabilidade.html#exercise-214",
   "type": "Exercício",
   "number": "4.1.11",
   "title": "",
   "body": " (ITA 2008) Considere o conjunto e formado por todos os subconjuntos de com elementos. Escolhendo ao acaso um elemento , a probabilidade de a soma de seus elementos ser 183 é igual a  a) b) c) d) e)   a)   De acordo com o enunciado . O conjunto dos elementos , cuja soma deve ser é   Logo . Então, escolhendo ao acaso um elemento a probabilidade de que a soma dos elementos de seja 183 é   "
 },
 {
-  "id": "exercise-216",
+  "id": "exercise-215",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-216",
+  "url": "section-espacos-probabilidade.html#exercise-215",
   "type": "Exercício",
   "number": "4.1.12",
   "title": "",
   "body": " (ITA 2010) Uma urna de sorteio contém bolas numeradas de a , sendo que a retirada de uma bola é equiprovável à retirada de cada uma das demais.   Retira-se aleatoriamente uma das bolas desta urna. Calcule a probabilidade de o número desta bola ser um múltiplo de ou .  Retira-se aleatoriamente uma das bolas desta urna e, sem repôla, retira-se uma segunda bola. Calcule a probabilidade de o número da segunda bola retirada não ser múltiplo de .    a) b)   a) Usaremos o Princípio da Inclusão-Exclusão para calcular o número de bolas com números múltiplos de 5 ou 6.    Note que e que é o conjunto dos múltiplos de entre e , incluindo o . Observe que , e . Portanto a probabilidade é   b) Para que o número da segunda bola retirada não seja múltiplo de 6, temos dois casos. 1º caso: primeira bola é um múltiplo de 6 e a segunda não. Essa probabilidade é dada por: . 2º caso: primeira bola não é um múltiplo de 6 e a segunda também não é. Essa probabilidade é dada por: . Logo a probabilidade de o número da segunda bola retirada não ser múltiplo de é   "
 },
 {
-  "id": "exercise-217",
+  "id": "exercise-216",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-217",
+  "url": "section-espacos-probabilidade.html#exercise-216",
   "type": "Exercício",
   "number": "4.1.13",
   "title": "",
   "body": " (ITA 2011) Sobre uma mesa estão dispostos livros de história, de biologia e de espanhol. Determine a probabilidade de os livros serem empilhados sobre a mesa de tal forma que aqueles que tratam do mesmo assunto estejam juntos.   .   No total os livros podem ser organizados de maneiras. Para que os livros de mesmo assunto fiquem juntos, temos maneiras. Portanto a probabilidade é dada por   "
 },
 {
-  "id": "exercise-218",
+  "id": "exercise-217",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-218",
+  "url": "section-espacos-probabilidade.html#exercise-217",
   "type": "Exercício",
   "number": "4.1.14",
   "title": "",
   "body": " (FUVEST 2020 - 2ª fase) Um jogo educativo possui 16 peças nos formatos: círculo, triângulo, quadrado e estrela, e cada formato é apresentado em 4 cores: amarelo, branco, laranja e verde. Dois jogadores distribuem entre si quantidades iguais dessas peças, de forma aleatória. O conjunto de 8 peças que cada jogador recebe é chamado de coleção.  a) Qual é a probabilidade de que os dois jogadores recebam a mesma quantidade de peças amarelas?   a)   De acordo com o o espaço amostral é dado por .  Precisamos calcular o número de maneiras de distribuir as 8 peças para cada jogador, de forma que exatamente duas delas sejam amarelas. Vamos calcular o número de maneiras de distribuir as peças para o primeiro jogador, as peças que sobram ficam para o segundo jogador.  Como são 4 peças amarelas distintas duas a duas, temos maneiras de separar duas peças amarelas. Agora precisamos separar 6 peças com cores diferentes de amarelo. Temos um total de maneiras de fazer isto, pois existem exatamente 12 peças com cores diferentes de amarelo. Portanto a probabilidade é  "
 },
 {
-  "id": "exercise-219",
+  "id": "exercise-218",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-219",
+  "url": "section-espacos-probabilidade.html#exercise-218",
   "type": "Exercício",
   "number": "4.1.15",
   "title": "",
   "body": " (FUVEST 2018 - 2ª fase) Em um torneio de xadrez, há 2n participantes. Suponha que 12 jogadores participem do torneio, dos quais 6 sejam homens e 6 sejam mulheres. Qual é a probabilidade de que, na primeira rodada, só haja confrontos entre jogadores do mesmo sexo?     De acordo com o o espaço amostral é dado por .  O número de maneiras de emparceirar as mulheres entre si é dado por .  Como o número de maneiras de emparceirar os homens entre si é o mesmo de emparceirar as mulheres entre si, a probabilidade pedida é dada por  "
 },
 {
-  "id": "exercise-220",
+  "id": "exercise-219",
   "level": "2",
-  "url": "section-espacos-probabilidade.html#exercise-220",
+  "url": "section-espacos-probabilidade.html#exercise-219",
   "type": "Exercício",
   "number": "4.1.16",
   "title": "",
@@ -4501,72 +4492,72 @@ var ptx_lunr_docs = [
   "body": " Um dado (não viciado) é lançado 5 vezes. Qual é a probabilidade de obtermos os resultados , exatamente nessa ordem?   Seja o evento: saiu o valor da posição da lista , no -ésimo lançamento, .  Como os eventos são independentes, temos    "
 },
 {
-  "id": "exercise-221",
+  "id": "exercise-220",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-221",
+  "url": "section-probabilidade-condicional.html#exercise-220",
   "type": "Exercício",
   "number": "4.2.2.1",
   "title": "",
   "body": " Dois dados e são lançados e os resultados nas faces de cima anotados.  Qual a probabilidade da soma dos pontos ser 6, se a face observada em foi 2?  Qual a probabilidade de ter saı́do 2 em , se a soma dos pontos foi 6?  Qual a probablidade da soma dos pontos ser menor do que 7, sabendo que o número 2 saiu pelo menos uma vez?  Qual a probabilidade da soma dos pontos ser menor do que ou igual a 6, se o maior dos números obtidos é menor do que 5?  Qual a probabilidade do maior dos números obtidos ser menor do que 5, sabendo que a soma dos pontos foi menor do que ou igual a 6?     a) , b) , c) , d) , e) .  "
 },
 {
-  "id": "exercise-222",
+  "id": "exercise-221",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-222",
+  "url": "section-probabilidade-condicional.html#exercise-221",
   "type": "Exercício",
   "number": "4.2.2.2",
   "title": "",
   "body": " Três caixas I, II e III contém respectivamente 1 bola branca e 2 pretas; 2 brancas e 1 preta; 3 brancas e 2 pretas. Uma caixa é escolhida ao acaso e dela é retirada uma bola. Determine a probabilidade:   da bola retirada ser branca, sabendo que a caixa escolhida foi a I;  da caixa escolhida ter sido a I e a bola retirada ser branca.    a) , b) .  "
 },
 {
-  "id": "exercise-223",
+  "id": "exercise-222",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-223",
+  "url": "section-probabilidade-condicional.html#exercise-222",
   "type": "Exercício",
   "number": "4.2.2.3",
   "title": "",
   "body": " Uma caixa contém 30 bolas pretas, 20 brancas e 10 vermelhas. Três bolas são retiradas da caixa, uma após a outra, sem reposição. Qual a pobabilidade da terceira bola retirada ser preta?            "
 },
 {
-  "id": "exercise-224",
+  "id": "exercise-223",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-224",
+  "url": "section-probabilidade-condicional.html#exercise-223",
   "type": "Exercício",
   "number": "4.2.2.4",
   "title": "",
   "body": " (ITA 2008) Considere uma população de igual número de homens e mulheres, em que sejam daltônicos dos homens e das mulheres. Indique a probabilidade de que seja mulher uma pessoa daltônica selecionada ao acaso nessa população.  a) b) c) d) e)   a)  "
 },
 {
-  "id": "exercise-225",
+  "id": "exercise-224",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-225",
+  "url": "section-probabilidade-condicional.html#exercise-224",
   "type": "Exercício",
   "number": "4.2.2.5",
   "title": "",
   "body": " (ITA 2009) Uma amostra de estrangeiros, em que 18% são proficientes em inglês, realizou um exame para classificar a sua proficiência nesta língua. Dos estrangeiros que são proficientes em inglês, 75% foram classificados como proficientes. Entre os não proficientes em inglês, 7% foram classificados como proficientes. Um estrangeiro desta amostra, escolhido ao acaso, foi classificado como proficiente em inglês. A probabilidade deste estrangeiro ser efetivamente proficiente nesta língua é de aproximadamente  a) b) c) d) e)   b)   Dos de estrangeiros proficientes em inglês, foram classificados como proficientes: Dos de estrangeiros não-proficientes em inglês, foram classificados como proficientes: A probabilidade do estrangeiro ser efetivamente proficiente em inglês é   "
 },
 {
-  "id": "exercise-226",
+  "id": "exercise-225",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-226",
+  "url": "section-probabilidade-condicional.html#exercise-225",
   "type": "Exercício",
   "number": "4.2.2.6",
   "title": "",
   "body": " (ITA 2008) Em um espaço amostral com uma probabilidade , são dados os eventos e tais que: , com e independentes, , e sabe-se que . Calcule as probabilidades condicionais e .      . Precisamos calcular e .  Para calcular , usaremos a igualdade . Logo Portanto .  Para calcular , usaremos a igualdade . Logo Resta agora calcular .  Pelo item d) do temos   Logo, E   Substituindo os valores obtidos   "
 },
 {
-  "id": "exercise-227",
+  "id": "exercise-226",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-227",
+  "url": "section-probabilidade-condicional.html#exercise-226",
   "type": "Exercício",
   "number": "4.2.2.7",
   "title": "",
   "body": "(ESAF 2004\/MPU – Técnico Administrativo) Luís é prisioneiro do temível imperador Ivan. Ivan coloca Luís à frente de três portas e lhe diz: Atrás de uma destas portas encontra-se uma barra de ouro, atrás de cada uma das outras, um tigre feroz. Eu sei onde cada um deles está. Podes escolher uma porta qualquer. Feita tua escolha, abrirei uma das portas, entre as que não escolheste, atrás da qual sei que se encontra um dos tigres, para que tu mesmo vejas uma das feras. Aí, se quiseres, poderás mudar a tua escolha.  Luís, então, escolhe uma porta e o imperador abre uma das portas não-escolhidas por Luís e lhe mostra um tigre. Luís, após ver a fera, e aproveitando-se do que dissera o imperador, muda sua escolha e diz: Temível imperador, não quero mais a porta que escolhi; quero, entre as duas portas que eu não havia escolhido, aquela que não abriste.  A probabilidade de que, agora, nessa nova escolha, Luís tenha escolhido a porta que conduz à barra de ouro é igual a a) b) c) d) e)  c)  "
 },
 {
-  "id": "exercise-228",
+  "id": "exercise-227",
   "level": "2",
-  "url": "section-probabilidade-condicional.html#exercise-228",
+  "url": "section-probabilidade-condicional.html#exercise-227",
   "type": "Exercício",
   "number": "4.2.2.8",
   "title": "",
@@ -4654,36 +4645,36 @@ var ptx_lunr_docs = [
   "body": " Joga-se uma moeda não viciada. Qual é a probabilidade de serem obtidas  3 caras antes de 2 coroas?  5 caras antes de 3 coroas?     item a) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é   item b) Pelo , basta aplicar a Fórmula com e . Portanto, a resposta é    "
 },
 {
-  "id": "exercise-229",
+  "id": "exercise-228",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-229",
+  "url": "section-distribuicao-binomial.html#exercise-228",
   "type": "Exercício",
   "number": "4.3.2.1",
   "title": "",
   "body": " Uma caixa contém 9 bolas brancas, 6 pretas e 5 vermelhas. Retiram-se, sucessivamente e com reposição, 4 bolas dessa caixa. Determine a probabilidade:  das 4 bolas retiradas serem vermelhas;  de somente 2 bolas retiradas serem vermelhas;  de pelo menos 2 bolas serem vermelhas.     a) , b) , c) .  "
 },
 {
-  "id": "exercise-230",
+  "id": "exercise-229",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-230",
+  "url": "section-distribuicao-binomial.html#exercise-229",
   "type": "Exercício",
   "number": "4.3.2.2",
   "title": "",
   "body": " (ITA 2009) Um determinado concurso é realizado em duas etapas. Ao longo dos últimos anos, 20% dos candidatos do concurso têm conseguido na primeira etapa nota superior ou igual à nota mínima necessária para poder participar da segunda etapa. Se tomarmos 6 candidatos dentre os muitos inscritos, qual é a probabilidade de no mínimo 4 deles conseguirem nota para participar da segunda etapa?   .   Temos três casos que pelo menos 4 candidatos, dentre 6, conseguem a nota mínima:   Aplicando o temos que a probabilidade pedida é dada por:     "
 },
 {
-  "id": "exercise-231",
+  "id": "exercise-230",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-231",
+  "url": "section-distribuicao-binomial.html#exercise-230",
   "type": "Exercício",
   "number": "4.3.2.3",
   "title": "",
   "body": " (ITA 2010) Um palco possui refletores de iluminação. Num certo instante de um espetáculo moderno os refletores são acionados aleatoriamente de modo que, para cada um dos refletores, seja de a probabilidade de ser aceso. Então, a probabilidade de que, este instante, ou refletores sejam acesos simultaneamente, é igual a  a) b) c) d) e)    a)   Aplicando o temos   "
 },
 {
-  "id": "exercise-232",
+  "id": "exercise-231",
   "level": "2",
-  "url": "section-distribuicao-binomial.html#exercise-232",
+  "url": "section-distribuicao-binomial.html#exercise-231",
   "type": "Exercício",
   "number": "4.3.2.4",
   "title": "",
@@ -4753,27 +4744,27 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Halmos, P. R., Teoria Ingénua dos Conjuntos, Ciência Moderna , 1ª ed.    Morgado, A. C. O., et al, Análise Combinatória e Probabilidade , SBM. 6ª ed.    Rosen, Kenneth H., Handbook of discrete and combinatorial mathematics , CRC press, 1999.    Lima, E. L., Análise Real , IMPA, 2004, Volume 1.    Niven, I., Mathematics of Choice: How to Count Without Counting , The Mathematical Associations of America.    Rosen, K. H., Discrete Mathematics and Its Applications , McGraw-Hill.    Silva, L. D. ; Santos, M. P. ; Machado J. R. N., Elementos de Computação Matemática com SageMath , SBM, 1ª ed.    Bezerra, N., Análise Combinatória e Probabilidade , editAedi.    Morgado, A. C. ; Carvalho, P. C. P., Matemática Discreta , SBM: coleção PROFMAT, 2ª ed.    Lovász, L. ; Pelikán, J. ; Vesztergombi, K., Discrete Mathematics: Elementary and Beyond , Springer.    Holton, D., A Second Step to Mathematical Olympiad Problems , Vol. 7, World Scientific.    Koshy, T., Catalan Numbers With Applications. , Oxford University Press, 2008.    Roman, S., An Introduction to Catalan Numbers. , Birkhäuser, 2010.    Stanley, R.P., Catalan numbers. , Cambridge University Press, 2015.    Plínio, J., et all, Problemas Resolvidos de Combinatória. , Ciência Moderna, 2007.    Engel, A., Problem-Solving Strategies. , Springer, 1998.    Ross, S., Probabilidade: Um Curso Moderno com Aplicações. , Bookman, 2010.  Artigos    Machado, J. R. N., Caos, Repetições e Tabuleiros , Jornal de Matemática Olímpica UFRPE, 2021.    Machado, J. R. N., O Princípio da Casa dos Pombos , Jornal de Matemática Olímpica UFRPE, 2018.    Guedes, A. G., Machado, J. R. N., Princípios Combinatórios: Bijeção, Reflexão e os Números de Catalan , Professor de Matemática Online, 2023.    Euler, L., De Serie Lambertina plurimisque eius insignibus proprietaribus , Acta Academiae Scientiarum Imperialis Petropolitanae, 1783.    Nunes Machado Junior, R., Araujo Guedes, G. (2023). POLINÔMIOS DE TORRE E APLICAÇÕES COM IMPLEMENTAÇÕES NO SAGEMATH. Revista Sergipana De Matemática E Educação Matemática, 8(1), 1–36.     GOULDEN, I. P., SERRANO, L. G., Maintaining the spirit of the reflection principle when the boundary has arbitrary integer slope. , Journal of Combinatorial Theory, Series A, 104(2), 317-326, 2003.    LOEHR, N. A., Note on André's reflection principle. Discrete mathematics, 280(1-3), 233-236, 2004.    Leonhard Euler, Calcul de la probabilité dans le jeu de rencontre. Mémoires de l’académie des sciences de Berlin, pages 255–270, 1753.    Issac Todhunter, A History of the Mathematical Theory of Probability: From the Time of Pascal to that of Laplace. BoD–Books on Demand, 2022.  Dissertações    Santana Neto, L. M., Análise Combinatória: Lemas de Kaplansky, Permutações Caóticas, O Princípio da Casa Dos Pombos e suas Aplicações na Matemática do Ensino Médio , Dissertação do ProfMat.    Barbosa Junior C. M., A Porta dos Desesperados: Uma Proposta Didática para a Aprendizagem de Probabilidade no Ensino Médio , Monografia Lic. Mat da UFRPE.   "
 },
 {
-  "id": "p-1783",
+  "id": "p-1785",
   "level": "2",
-  "url": "referencias.html#p-1783",
+  "url": "referencias.html#p-1785",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Livros "
 },
 {
-  "id": "p-1784",
+  "id": "p-1786",
   "level": "2",
-  "url": "referencias.html#p-1784",
+  "url": "referencias.html#p-1786",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Artigos "
 },
 {
-  "id": "p-1785",
+  "id": "p-1787",
   "level": "2",
-  "url": "referencias.html#p-1785",
+  "url": "referencias.html#p-1787",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

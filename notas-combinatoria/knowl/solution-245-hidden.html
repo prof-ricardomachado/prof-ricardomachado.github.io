@@ -11,33 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Podemos reescrever o termo geral do somatório quebrando o quadrado:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-k (C_n^k)^2 = k \cdot C_n^k \cdot C_n^k
-\end{equation*}
-</div>
-<div class="para">Aplicando a relação de absorção na primeira parte, temos <span class="process-math">\(k \cdot C_n^k = n \cdot C_{n-1}^{k-1}\text{.}\)</span> Substituindo isso de volta e usando a relação complementar (<span class="process-math">\(C_n^k = C_n^{n-k}\)</span>) na segunda parte do produto, ficamos com:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-n \cdot C_{n-1}^{k-1} \cdot C_n^{n-k}
-\end{equation*}
-</div>
-<div class="para">Agora, inserimos essa expressão no somatório. Como <span class="process-math">\(n\)</span> é uma constante em relação ao índice <span class="process-math">\(k\text{,}\)</span> ele pode ser fatorado para fora:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{k=1}^n n \cdot C_{n-1}^{k-1} \cdot C_n^{n-k} = n \sum_{k=1}^n C_{n-1}^{k-1} \cdot C_n^{n-k}
-\end{equation*}
-</div>
-<div class="para">Fazendo uma mudança de índice <span class="process-math">\(j = k-1\text{,}\)</span> os limites passam de <span class="process-math">\(j=0\)</span> até <span class="process-math">\(n-1\text{,}\)</span> e o expoente <span class="process-math">\(n-k\)</span> vira <span class="process-math">\(n - (j+1) = n - 1 - j\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-n \sum_{j=0}^{n-1} C_{n-1}^j \cdot C_n^{n-1-j}
-\end{equation*}
-</div>
-<div class="para">Esse somatório é exatamente a Identidade de Vandermonde para escolher <span class="process-math">\(p = n-1\)</span> elementos de dois grupos de tamanhos <span class="process-math">\(m = n-1\)</span> e <span class="process-math">\(n = n\text{.}\)</span> O resultado da soma é <span class="process-math">\(C_{(n-1)+n}^{n-1} = C_{2n-1}^{n-1}\text{.}\)</span>
-</div> <div class="para">Logo, a soma total é <span class="process-math">\(n C_{2n-1}^{n-1}\text{.}\)</span>
+<div class="para">Qualquer caminho de <span class="process-math">\((0,0)\)</span> até <span class="process-math">\((n,n)\)</span> exige exatamente <span class="process-math">\(2n\)</span> passos (<span class="process-math">\(n\)</span> para a direita e <span class="process-math">\(n\)</span> para cima). O número total de caminhos é a escolha de quais <span class="process-math">\(n\)</span> passos serão para a direita dentre os <span class="process-math">\(2n\)</span> passos totais, ou seja, <span class="process-math">\(C_{2n}^n\text{.}\)</span>
+</div> <div class="para">Por outro lado, imagine a linha diagonal (secundária) que liga os pontos <span class="process-math">\((0,n)\)</span> a <span class="process-math">\((n,0)\text{.}\)</span> Todo caminho contínuo de <span class="process-math">\((0,0)\)</span> até <span class="process-math">\((n,n)\)</span> precisa interceptar essa diagonal em <em class="emphasis">exatamente um ponto</em>. Os pontos dessa diagonal têm coordenadas da forma <span class="process-math">\((k, n-k)\text{,}\)</span> onde <span class="process-math">\(k\)</span> varia de <span class="process-math">\(0\)</span> a <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para">Para um ponto de travessia específico <span class="process-math">\((k, n-k)\text{:}\)</span>
+</div> <ul class="disc">
+<li><div class="para">O número de caminhos de <span class="process-math">\((0,0)\)</span> até <span class="process-math">\((k, n-k)\)</span> é <span class="process-math">\(C_{k + (n-k)}^k = C_n^k\text{.}\)</span>
+</div></li>
+<li><div class="para">O número de caminhos de <span class="process-math">\((k, n-k)\)</span> até <span class="process-math">\((n,n)\)</span> exige <span class="process-math">\(n-k\)</span> passos para a direita e <span class="process-math">\(k\)</span> para cima. O total é <span class="process-math">\(C_{(n-k) + k}^{n-k} = C_n^{n-k}\text{.}\)</span> Pela relação complementar, isso também é igual a <span class="process-math">\(C_n^k\text{.}\)</span>
+</div></li>
+</ul> <div class="para">Pelo Princípio Multiplicativo, o número de caminhos que passam pelo ponto específico <span class="process-math">\((k, n-k)\)</span> é <span class="process-math">\(C_n^k \cdot C_n^k = (C_n^k)^2\text{.}\)</span>
+</div> <div class="para">Como os caminhos devem passar por exatamente um desses pontos da diagonal (são cenários mutuamente exclusivos), somamos as possibilidades de todos os valores de <span class="process-math">\(k\)</span> para obter o total de caminhos: <span class="process-math">\(\sum_{k=0}^n (C_n^k)^2\text{.}\)</span>
+</div> <div class="para">Como as duas contagens representam o total de caminhos de <span class="process-math">\((0,0)\)</span> a <span class="process-math">\((n,n)\text{,}\)</span> as expressões são iguais: <span class="process-math">\(\sum_{k=0}^n (C_n^k)^2 = C_{2n}^n\text{.}\)</span>
 </div>
 </div></body>
 </html>

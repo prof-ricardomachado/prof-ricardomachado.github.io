@@ -11,14 +11,27 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">Se as mulheres já estão em seus lugares, cada cadeira vazia está cercada por duas mulheres. Cada marido possui exatamente dois lugares "proibidos": a cadeira à esquerda e a cadeira à direita da sua respectiva esposa.</div> <div class="para">Isso configura uma permutação restrita que pode ser modelada utilizando o Princípio da Inclusão-Exclusão e Polinômios de Torre ou a fórmula geral dos números de Ménage (que decorre dos Lemas de Kaplansky). O número de maneiras para alocar apenas os maridos, conhecido como Número de Ménage <span class="process-math">\(M_n\text{,}\)</span> obedece à fórmula deduzida por Touchard:</div>
+<div class="para">Se as mulheres já estão em seus lugares, restam <span class="process-math">\(n\)</span> cadeiras vazias. O total de maneiras de distribuir os maridos sem qualquer restrição é <span class="process-math">\(n!\text{.}\)</span>
+</div> <div class="para">No entanto, para cada um dos <span class="process-math">\(n\)</span> maridos, existem exatamente duas cadeiras proibidas (a da esquerda e a da direita de sua respectiva esposa). Isso gera um total de <span class="process-math">\(2n\)</span> opções de assentos proibidos (vistos como pares "marido-cadeira").</div> <div class="para">Para calcular o número de configurações válidas onde <em class="emphasis">nenhuma</em> regra é violada, utilizamos o Princípio da Inclusão-Exclusão. A fórmula nos orienta a calcular os termos <span class="process-math">\(S_k\text{,}\)</span> que representam o número de maneiras de forçar a ocorrência simultânea de exatamente <span class="process-math">\(k\)</span> violações, permitindo que os demais maridos sentem-se livremente.</div> <div class="para">A grande sacada combinatória é entender como escolher <span class="process-math">\(k\)</span> violações que possam acontecer <em class="emphasis">fisicamente ao mesmo tempo</em>. Duas violações são incompatíveis (ou seja, a interseção é vazia) se tentarem colocar o mesmo marido em duas cadeiras diferentes, ou dois maridos na mesma cadeira. Se listarmos as <span class="process-math">\(2n\)</span> proibições em uma sequência circular intercalando maridos e cadeiras, perceberemos que proibições incompatíveis são sempre vizinhas (consecutivas) nesse círculo.</div> <div class="para">Portanto, forçar <span class="process-math">\(k\)</span> violações simultâneas e compatíveis é matematicamente idêntico a escolher <span class="process-math">\(k\)</span> posições não consecutivas em um círculo de <span class="process-math">\(2n\)</span> elementos. Pelo 2º Lema de Kaplansky, o número de maneiras de fazer essa escolha é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+KC(2n, k) = \frac{2n}{2n-k} C_{2n-k}^k \text{ maneiras.} 
+\end{equation*}
+</div>
+<div class="para">Uma vez que esses <span class="process-math">\(k\)</span> maridos escolhidos estão fixados nas suas cadeiras proibidas, restam <span class="process-math">\(n-k\)</span> maridos para ocupar as <span class="process-math">\(n-k\)</span> cadeiras restantes de forma irrestrita, o que pode ser feito de <span class="process-math">\((n-k)!\)</span> maneiras. Logo, cada termo do Inclusão-Exclusão é dado por:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_k = \left( \frac{2n}{2n-k} C_{2n-k}^k \right) (n-k)! 
+\end{equation*}
+</div>
+<div class="para">Substituindo os termos <span class="process-math">\(S_k\)</span> na fórmula do Princípio da Inclusão-Exclusão (<span class="process-math">\(\text{Total} = S_0 - S_1 + S_2 - S_3 + \cdots\)</span>), deduzimos a famosa fórmula geral do Número de Ménage (<span class="process-math">\(M_n\)</span>), originalmente encontrada por Jacques Touchard:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 M_n = \sum_{k=0}^n (-1)^k \frac{2n}{2n-k} C_{2n-k}^k (n-k)! 
 \end{equation*}
 </div>
 <div class="para logical">
-<div class="para">Para <span class="process-math">\(n=5\text{,}\)</span> a fórmula nos fornece a soma exata das configurações restritas. Calculando para os valores da soma:</div>
+<div class="para">Para o caso de <span class="process-math">\(n=5\)</span> casais, o somatório é:</div>
 <div class="displaymath process-math">
 \begin{align*}
 k=0: \amp \quad (+1) \cdot \frac{10}{10} C_{10}^0 \cdot 5! = 120 \\
@@ -29,7 +42,7 @@ k=4: \amp \quad (+1) \cdot \frac{10}{6} C_{6}^4 \cdot 1! = 25 \\
 k=5: \amp \quad (-1) \cdot \frac{10}{5} C_{5}^5 \cdot 0! = -2 
 \end{align*}
 </div>
-</div> <div class="para">Somando os termos: <span class="process-math">\(120 - 240 + 210 - 100 + 25 - 2 = 13\text{.}\)</span>
-</div> <div class="para">Portanto, os 5 maridos podem ser sentados de 13 maneiras válidas. (Curiosidade: Se o problema perguntasse de quantas formas sentar as mulheres E os homens, multiplicaríamos 13 por <span class="process-math">\(2 \times 4!\)</span>).</div>
+</div> <div class="para">Somando todos os termos: <span class="process-math">\(120 - 240 + 210 - 100 + 25 - 2 = 13\text{.}\)</span>
+</div> <div class="para">Portanto, os 5 maridos podem ser acomodados de 13 maneiras válidas.</div>
 </div></body>
 </html>

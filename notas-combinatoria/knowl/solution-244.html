@@ -13,14 +13,35 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.19.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.20.1</span><span class="period">.</span>
 </h4>
-<div class="para">A soma <span class="process-math">\(S\)</span> tem exatamente a estrutura da Identidade de Vandermonde: <span class="process-math">\(\sum_{k=0}^p C_m^k \cdot C_n^{p-k}\text{.}\)</span>
-</div> <div class="para">Comparando os termos, identificamos que <span class="process-math">\(m = 10\text{,}\)</span> <span class="process-math">\(n = 15\)</span> e <span class="process-math">\(p = 5\)</span> (pois a soma dos índices superiores em cada parcela é sempre constante e igual a <span class="process-math">\(k + (5-k) = 5\)</span>).</div> <div class="para">Pela Identidade de Vandermonde, essa soma resulta em <span class="process-math">\(C_{m+n}^p\text{.}\)</span> Portanto:</div>
+<div class="para">Podemos reescrever o termo geral do somatório quebrando o quadrado:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-S = C_{10+15}^5 = C_{25}^5 = \frac{25 \times 24 \times 23 \times 22 \times 21}{5 \times 4 \times 3 \times 2 \times 1} = 53130.
+k (C_n^k)^2 = k \cdot C_n^k \cdot C_n^k
 \end{equation*}
+</div>
+<div class="para">Aplicando a relação de absorção na primeira parte, temos <span class="process-math">\(k \cdot C_n^k = n \cdot C_{n-1}^{k-1}\text{.}\)</span> Substituindo isso de volta e usando a relação complementar (<span class="process-math">\(C_n^k = C_n^{n-k}\)</span>) na segunda parte do produto, ficamos com:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n \cdot C_{n-1}^{k-1} \cdot C_n^{n-k}
+\end{equation*}
+</div>
+<div class="para">Agora, inserimos essa expressão no somatório. Como <span class="process-math">\(n\)</span> é uma constante em relação ao índice <span class="process-math">\(k\text{,}\)</span> ele pode ser fatorado para fora:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^n n \cdot C_{n-1}^{k-1} \cdot C_n^{n-k} = n \sum_{k=1}^n C_{n-1}^{k-1} \cdot C_n^{n-k}
+\end{equation*}
+</div>
+<div class="para">Fazendo uma mudança de índice <span class="process-math">\(j = k-1\text{,}\)</span> os limites passam de <span class="process-math">\(j=0\)</span> até <span class="process-math">\(n-1\text{,}\)</span> e o expoente <span class="process-math">\(n-k\)</span> vira <span class="process-math">\(n - (j+1) = n - 1 - j\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n \sum_{j=0}^{n-1} C_{n-1}^j \cdot C_n^{n-1-j}
+\end{equation*}
+</div>
+<div class="para">Esse somatório é exatamente a Identidade de Vandermonde para escolher <span class="process-math">\(p = n-1\)</span> elementos de dois grupos de tamanhos <span class="process-math">\(m = n-1\)</span> e <span class="process-math">\(n = n\text{.}\)</span> O resultado da soma é <span class="process-math">\(C_{(n-1)+n}^{n-1} = C_{2n-1}^{n-1}\text{.}\)</span>
+</div> <div class="para">Logo, a soma total é <span class="process-math">\(n C_{2n-1}^{n-1}\text{.}\)</span>
 </div>
 </div>
 <span class="incontext"><a href="section-triangulo-pascal.html#solution-244" class="internal">em contexto</a></span>
