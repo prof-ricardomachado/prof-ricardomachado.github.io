@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 280" width="100%" height="100%">
+  <defs>
+    <style>
+      .base { fill: #4a5568; }
+      .bar { stroke: #2d3748; stroke-width: 6; stroke-linecap: round; }
+      .plate { fill: #e2e8f0; stroke: #4a5568; stroke-width: 3; }
+      .cord { stroke: #718096; stroke-width: 2; }
+      .weight-box { fill: #e53e3e; stroke: #9b2c2c; stroke-width: 2; rx: 4; }
+      .txt { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #2d3748; text-anchor: middle; }
+      .txt-w { font-family: 'Arial', sans-serif; font-size: 15px; font-weight: bold; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    </style>
+    <!-- Círculo Azul -->
+    <g id="circ">
+      <circle cx="0" cy="0" r="13" fill="#4299e1" stroke="#2b6cb0" stroke-width="2"/>
+    </g>
+    <!-- Triângulo Verde -->
+    <g id="tri">
+      <polygon points="0,-15 14,13 -14,13" fill="#48bb78" stroke="#276749" stroke-width="2"/>
+    </g>
+    <!-- Quadrado Roxo -->
+    <g id="sqr">
+      <rect x="-12" y="-12" width="24" height="24" fill="#9f7aea" stroke="#6b46c1" stroke-width="2" rx="3"/>
+    </g>
+  </defs>
+
+  <!-- BALANÇA 1 (3 círculos = 2 triângulos) -->
+  <g transform="translate(30, 40)">
+    <text x="130" y="215" class="txt">Balança 1</text>
+    <polygon points="122,175 138,175 133,90 127,90" class="base"/>
+    <line x1="30" y1="90" x2="230" y2="90" class="bar"/>
+    <!-- Prato Esquerdo: 3 Círculos -->
+    <line x1="30" y1="90" x2="10" y2="140" class="cord"/><line x1="30" y1="90" x2="70" y2="140" class="cord"/>
+    <ellipse cx="40" cy="142" rx="42" ry="7" class="plate"/>
+    <use href="#circ" x="20" y="125"/><use href="#circ" x="40" y="125"/><use href="#circ" x="60" y="125"/>
+    <!-- Prato Direito: 2 Triângulos -->
+    <line x1="230" y1="90" x2="210" y2="140" class="cord"/><line x1="230" y1="90" x2="270" y2="140" class="cord"/>
+    <ellipse cx="240" cy="142" rx="42" ry="7" class="plate"/>
+    <use href="#tri" x="225" y="127"/><use href="#tri" x="255" y="127"/>
+  </g>
+
+  <!-- BALANÇA 2 (1 quadrado = 3 círculos) -->
+  <g transform="translate(340, 40)">
+    <text x="130" y="215" class="txt">Balança 2</text>
+    <polygon points="122,175 138,175 133,90 127,90" class="base"/>
+    <line x1="30" y1="90" x2="230" y2="90" class="bar"/>
+    <!-- Prato Esquerdo: 1 Quadrado -->
+    <line x1="30" y1="90" x2="10" y2="140" class="cord"/><line x1="30" y1="90" x2="70" y2="140" class="cord"/>
+    <ellipse cx="40" cy="142" rx="42" ry="7" class="plate"/>
+    <use href="#sqr" x="40" y="126"/>
+    <!-- Prato Direito: 3 Círculos -->
+    <line x1="230" y1="90" x2="210" y2="140" class="cord"/><line x1="230" y1="90" x2="270" y2="140" class="cord"/>
+    <ellipse cx="240" cy="142" rx="42" ry="7" class="plate"/>
+    <use href="#circ" x="220" y="125"/><use href="#circ" x="240" y="125"/><use href="#circ" x="260" y="125"/>
+  </g>
+
+  <!-- BALANÇA 3 (1 triângulo + 1 quadrado = 210g) -->
+  <g transform="translate(650, 40)">
+    <text x="130" y="215" class="txt">Balança 3</text>
+    <polygon points="122,175 138,175 133,90 127,90" class="base"/>
+    <line x1="30" y1="90" x2="230" y2="90" class="bar"/>
+    <!-- Prato Esquerdo: 1 Triângulo + 1 Quadrado -->
+    <line x1="30" y1="90" x2="10" y2="140" class="cord"/><line x1="30" y1="90" x2="70" y2="140" class="cord"/>
+    <ellipse cx="40" cy="142" rx="42" ry="7" class="plate"/>
+    <use href="#tri" x="25" y="127"/><use href="#sqr" x="55" y="126"/>
+    <!-- Prato Direito: 210 g -->
+    <line x1="230" y1="90" x2="210" y2="140" class="cord"/><line x1="230" y1="90" x2="270" y2="140" class="cord"/>
+    <ellipse cx="240" cy="142" rx="42" ry="7" class="plate"/>
+    <rect x="210" y="112" width="60" height="28" class="weight-box"/>
+    <text x="240" y="126" class="txt-w">210 g</text>
+  </g>
+</svg>
