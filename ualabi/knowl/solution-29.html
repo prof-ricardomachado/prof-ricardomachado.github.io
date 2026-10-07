@@ -13,15 +13,24 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h3 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.1.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.45.1</span><span class="period">.</span>
 </h3>
-<div class="para">Resolução Detalhada:</div> <div class="para">Para que o azulejo fique completo sem girar nenhuma peça, a continuidade geométrica das retas na linha divisória deve ser perfeita:</div> <ul class="disc">
-<li><div class="para">A peça (A) possui faixas inclinadas em direção perpendicular à original;</div></li>
-<li><div class="para">A peça (C) exigiria uma rotação, o que é proibido pelo enunciado;</div></li>
-<li><div class="para">A peça (D) tem faixas com espessuras divergentes;</div></li>
-<li><div class="para">A peça (E) inverte o esquema de cores.</div></li>
-</ul> <div class="para">Portanto, a única peça que mantém a inclinação e a espessura das faixas sem sofrer rotação é a Peça B.</div>
+<div class="para">1. Modelagem em Álgebra Booleana / Espaço Vetorial <span class="process-math">\(\mathbb{F}_2^4\text{:}\)</span>
+</div> <div class="para logical">
+<div class="para">Associamos Círculo a <span class="process-math">\(0\)</span> e Triângulo a <span class="process-math">\(1\text{.}\)</span> O estado inicial é o vetor:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v_0 = (1, 0, 1, 0)^T.
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-caderno-simulado-01.html#solution-29" class="internal">em contexto</a></span>
+<div class="para">Queremos alcançar o vetor nulo <span class="process-math">\(v_f = (0, 0, 0, 0)^T\)</span> aplicando combinações lineares dos vetores de transição de cada botão:</div>
+</div> <ul class="disc">
+<li><div class="para">Apertar Botão 1: alterna posições 1 e 2 $\implies e_1 = (1, 1, 0, 0)^T$.</div></li>
+<li><div class="para">Apertar Botão 2: alterna posições 1, 2 e 3 $\implies e_2 = (1, 1, 1, 0)^T$.</div></li>
+<li><div class="para">Apertar Botão 3: alterna posições 2, 3 e 4 $\implies e_3 = (0, 1, 1, 1)^T$.</div></li>
+<li><div class="para">Apertar Botão 4: alterna posições 3 e 4 $\implies e_4 = (0, 0, 1, 1)^T$.</div></li>
+</ul> <div class="para">2. Busca do Mínimo de Movimentos:</div> <div class="para">Como a operação é comutativa e <span class="process-math">\(x \oplus x = 0\text{,}\)</span> cada botão é apertado no máximo 1 vez.</div> <div class="para">Avaliando o sistema linear sobre <span class="process-math">\(\mathbb{F}_2\text{,}\)</span> exatamente 2 toques são necessários e suficientes para neutralizar as alternâncias e transformar todos os botões em círculos.</div>
+</div>
+<span class="incontext"><a href="sec-simulado-geral-01.html#solution-29" class="internal">em contexto</a></span>
 </body>
 </html>

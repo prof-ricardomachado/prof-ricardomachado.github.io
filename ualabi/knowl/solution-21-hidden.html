@@ -11,22 +11,45 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">1. Análise da Primeira Casa com Interrogação (Linha 1, Coluna 3):</div> <div class="para">Cada linha e coluna deve conter o multiconjunto <span class="process-math">\(\{0, 2, 2, 6\}\text{:}\)</span>
-</div> <ul class="disc">
-<li><div class="para">Na <em class="emphasis">Linha 1</em>, já temos os dígitos <span class="process-math">\(2\)</span> (coluna 1) e <span class="process-math">\(0\)</span> (coluna 2). Portanto, as colunas 3 e 4 devem receber os dígitos restantes: um <span class="process-math">\(2\)</span> e um <span class="process-math">\(6\text{.}\)</span>
+<div class="para">1. Critério de Visibilidade por Coluna (do Sul para o Norte):</div> <div class="para">Em cada coluna, lemos as alturas da frente para o fundo (linha 4 $\to$ linha 3 $\to$ linha 2 $\to$ linha 1). Uma torre é visível se, e somente se, sua altura for estritamente maior que o recorde de altura observado até aquele ponto:</div> <ul class="disc">
+<li><div class="para">Coluna 1 (alturas: 2, 6, 2, 4):<ul class="circle">
+<li><div class="para">Linha 4: altura 2 (visível, recorde = 2).</div></li>
+<li><div class="para">Linha 3: altura 6 (visível, recorde = 6).</div></li>
+<li><div class="para">Linha 2: altura 2 (encoberta por 6).</div></li>
+<li><div class="para">Linha 1: altura 4 (encoberta por 6).</div></li>
+<li><div class="para">
+<em class="emphasis">Total visível na coluna 1:</em> 2 torres.</div></li>
+</ul>
 </div></li>
-<li><div class="para">Agora olhe para a <em class="emphasis">Coluna 3</em>: a Linha 3 dessa mesma coluna já possui o dígito <span class="process-math">\(6\)</span> fixado!</div></li>
-<li><div class="para">Como cada coluna pode ter no máximo um único 6, a casa (Linha 1, Coluna 3) não pode ser 6. Logo, ela é obrigatoriamente 2.</div></li>
-</ul> <div class="para">2. Análise da Segunda Casa com Interrogação (Linha 3, Coluna 2):</div> <ul class="disc">
-<li><div class="para">Na <em class="emphasis">Coluna 2</em>, a Linha 1 já tem <span class="process-math">\(0\)</span> e a Linha 2 já tem <span class="process-math">\(2\text{.}\)</span> Faltam um <span class="process-math">\(2\)</span> e um <span class="process-math">\(6\text{.}\)</span>
+<li><div class="para">Coluna 2 (alturas: 2, 4, 6, 8):<ul class="circle">
+<li><div class="para">As alturas são estritamente crescentes (<span class="process-math">\(2 &lt; 4 &lt; 6 &lt; 8\)</span>). Nenhuma torre fica escondida!</div></li>
+<li><div class="para">
+<em class="emphasis">Total visível na coluna 2:</em> 4 torres.</div></li>
+</ul>
 </div></li>
-<li><div class="para">Na <em class="emphasis">Linha 3</em>, já temos o dígito <span class="process-math">\(6\)</span> na Coluna 3! Logo, a Linha 3 não pode receber outro 6.</div></li>
-<li><div class="para">Assim, a casa (Linha 3, Coluna 2) também deve ser obrigatoriamente 2.</div></li>
+<li><div class="para">Coluna 3 (alturas: 4, 2, 6, 8):<ul class="circle">
+<li><div class="para">Linha 4: altura 4 (visível, recorde = 4).</div></li>
+<li><div class="para">Linha 3: altura 2 (encoberta por 4).</div></li>
+<li><div class="para">Linha 2: altura 6 (visível, recorde = 6).</div></li>
+<li><div class="para">Linha 1: altura 8 (visível, recorde = 8).</div></li>
+<li><div class="para">
+<em class="emphasis">Total visível na coluna 3:</em> 3 torres.</div></li>
+</ul>
+</div></li>
+<li><div class="para">Coluna 4 (alturas: 6, 4, 8, 6):<ul class="circle">
+<li><div class="para">Linha 4: altura 6 (visível, recorde = 6).</div></li>
+<li><div class="para">Linha 3: altura 4 (encoberta por 6).</div></li>
+<li><div class="para">Linha 2: altura 8 (visível, recorde = 8).</div></li>
+<li><div class="para">Linha 1: altura 6 (encoberta por 8).</div></li>
+<li><div class="para">
+<em class="emphasis">Total visível na coluna 4:</em> 2 torres.</div></li>
+</ul>
+</div></li>
 </ul> <div class="para logical">
-<div class="para">3. Soma Final:</div>
+<div class="para">2. Soma Total:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-?_1 + ?_2 = 2 + 2 = 4.
+2 + 4 + 3 + 2 = 11\text{ torres visíveis}.
 \end{equation*}
 </div>
 </div>
