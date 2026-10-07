@@ -15,10 +15,23 @@
 <h3 class="heading">
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">2.2.7.1</span><span class="period">.</span>
 </h3>
-<div class="para">1. Análise de Graus de Entrada (Teoria dos Grafos):</div> <div class="para">O tabuleiro pode ser modelado como um digrafo orientado onde cada casa possui exatamente 1 aresta de saída (o sentido da seta). Para existir um <em class="emphasis">Caminho Hamiltoniano</em> (que visita todos os 12 vértices exatamente uma vez sem repetir):</div> <ul class="disc">
-<li><div class="para">Todo vértice visitado após o início precisa ter grau de entrada pelo menos 1 (deve haver uma seta apontando para ele).</div></li>
-<li><div class="para">Se um vértice tiver grau de entrada 0 (nenhuma seta apontando para ele), é impossível chegar a ele vindo de qualquer outra casa.</div></li>
-</ul> <div class="para">Examinando o tabuleiro, a casa A1 tem seta apontando para B1, mas nenhuma outra casa aponta para A1. Logo, se o percurso começasse em qualquer outra casa, A1 jamais seria visitada. Portanto, o percurso deve obrigatoriamente começar em A1.</div>
+<div class="para">1. Identificação do Ponto Terminal:</div> <div class="para">A casa C1 possui uma seta a apontar para cima (para fora da grelha). Logo, C1 é o fim do trajeto. O percurso é uma linha aberta orientada, não um ciclo fechado.</div> <div class="para">2. Ponto de Partida Obrigatório:</div> <div class="para">Para percorrer todas as 12 casas sem repetir nenhuma, o início tem de ser a casa que possui grau de entrada zero (nenhuma seta aponta para ela):</div> <ul class="disc">
+<li><div class="para">Para A1 aponta B1;</div></li>
+<li><div class="para">Para A2 aponta A1;</div></li>
+<li><div class="para">Para A3 aponta A2;</div></li>
+<li><div class="para">Para B3 aponta A3;</div></li>
+<li><div class="para">Para B2 aponta B3;</div></li>
+<li><div class="para">Para C2 aponta B2;</div></li>
+<li><div class="para">Para C3 aponta C2;</div></li>
+<li><div class="para">Para D3 aponta C3;</div></li>
+<li><div class="para">Para D2 aponta D3;</div></li>
+<li><div class="para">Para D1 aponta D2;</div></li>
+<li><div class="para">Para C1 aponta D1.</div></li>
+</ul> <div class="para">Nenhuma seta em todo o tabuleiro aponta para a casa B1. Logo, B1 tem de ser obrigatoriamente a casa inicial.</div> <div class="para">3. Verificação do Percurso Completo (12 casas):</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\text{B1} \to \text{A1} \to \text{A2} \to \text{A3} \to \text{B3} \to \text{B2} \to \text{C2} \to \text{C3} \to \text{D3} \to \text{D2} \to \text{D1} \to \text{C1} \to \text{(Fim)}.
+\end{equation*}
+</div></div> <div class="para">Portanto, a resposta correta é a Casa B1.</div>
 </div>
 <span class="incontext"><a href="sec-problemas-4-pontos.html#solution-16" class="internal">em contexto</a></span>
 </body>
