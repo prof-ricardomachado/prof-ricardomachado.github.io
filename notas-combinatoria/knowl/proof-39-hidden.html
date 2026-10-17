@@ -10,37 +10,92 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="hiddenproof"><div class="para">Faremos a prova por indução matemática sobre <span class="process-math">\(n\text{.}\)</span>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Faremos a demonstração por indução matemática sobre <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para"><dfn class="terminology">Casos base:</dfn></div>
+<ul class="disc">
+<li><div class="para">Para <span class="process-math">\(n=0\text{:}\)</span> a soma tem apenas o termo <span class="process-math">\(k=0\text{,}\)</span> logo <span class="process-math">\(S_0 = C_0^0 = 1 = F_1\text{.}\)</span>
+</div></li>
+<li><div class="para">Para <span class="process-math">\(n=1\text{:}\)</span> a soma também possui apenas <span class="process-math">\(k=0\text{,}\)</span> logo <span class="process-math">\(S_1 = C_1^0 = 1 = F_2\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">A relação é, portanto, válida para <span class="process-math">\(n=0\)</span> e <span class="process-math">\(n=1\text{.}\)</span>
+</div>
 </div> <div class="para">
-<dfn class="terminology">Casos base:</dfn> Para <span class="process-math">\(n=0\text{,}\)</span> a soma tem apenas o termo <span class="process-math">\(C_0^0 = 1\text{,}\)</span> e sabemos que <span class="process-math">\(F_1 = 1\text{.}\)</span> Para <span class="process-math">\(n=1\text{,}\)</span> a soma tem apenas o termo <span class="process-math">\(C_1^0 = 1\text{,}\)</span> e sabemos que <span class="process-math">\(F_2 = 1\text{.}\)</span>
+<dfn class="terminology">Passo indutivo:</dfn> Fixado <span class="process-math">\(n \ge 1\text{,}\)</span> assumimos como hipótese de indução que a fórmula seja válida para todos os inteiros não negativos menores ou iguais a <span class="process-math">\(n\)</span> (em particular, para <span class="process-math">\(S_n = F_{n+1}\)</span> e <span class="process-math">\(S_{n-1} = F_n\)</span>). Queremos mostrar que ela é válida para <span class="process-math">\(n+1\text{,}\)</span> isto é, que <span class="process-math">\(S_{n+1} = F_{n+2}\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Pela definição da soma para o índice <span class="process-math">\(n+1\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{n+1} = \sum_{k=0}^{\lfloor \frac{n+1}{2} \rfloor} C_{n+1-k}^k. 
+\end{equation*}
+</div>
+<div class="para">Separando o termo <span class="process-math">\(k=0\)</span> e aplicando a Relação de Stifel (<span class="process-math">\(C_{n+1-k}^k = C_{n-k}^k + C_{n-k}^{k-1}\)</span>) nas parcelas com <span class="process-math">\(k \ge 1\text{,}\)</span> obtemos:</div>
+<div class="displaymath process-math">
+\begin{align*}
+S_{n+1} \amp = C_{n+1}^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} \left( C_{n-k}^k + C_{n-k}^{k-1} \right) \\
+\amp = C_{n+1}^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^k + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^{k-1}. 
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(C_{n+1}^0 = C_n^0 = 1\text{,}\)</span> incorporamos esse termo inicial ao primeiro somatório:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{n+1} = \sum_{k=0}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^k + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^{k-1}. 
+\end{equation*}
+</div>
+</div> <div class="para">Analisamos agora individualmente cada um dos dois somatórios:</div> <div class="para logical">
+<div class="para">
+<dfn class="terminology">1. Primeiro somatório:</dfn> Examinamos o limite superior <span class="process-math">\(\lfloor \frac{n+1}{2} \rfloor\)</span> de acordo com a paridade de <span class="process-math">\(n\text{:}\)</span>
+</div>
+<ul class="disc">
+<li><div class="para">Se <span class="process-math">\(n\)</span> for par (<span class="process-math">\(n = 2m\)</span>): temos <span class="process-math">\(\lfloor \frac{n+1}{2} \rfloor = \lfloor \frac{2m+1}{2} \rfloor = m\)</span> e <span class="process-math">\(\lfloor \frac{n}{2} \rfloor = m\text{.}\)</span> Logo, os limites superiores coincidem.</div></li>
+<li><div class="para">Se <span class="process-math">\(n\)</span> for ímpar (<span class="process-math">\(n = 2m+1\)</span>): temos <span class="process-math">\(\lfloor \frac{n+1}{2} \rfloor = m+1\text{,}\)</span> ao passo que <span class="process-math">\(\lfloor \frac{n}{2} \rfloor = m\text{.}\)</span> Para o termo extra correspondente a <span class="process-math">\(k = m+1\text{,}\)</span> o coeficiente binomial resultante é:<div class="displaymath process-math">
+\begin{equation*}
+C_{n-k}^k = C_{(2m+1)-(m+1)}^{m+1} = C_m^{m+1} = 0,
+\end{equation*}
+</div>uma vez que o numerador é estritamente menor que o denominador.</div></li>
+</ul>
+<div class="para">Portanto, em ambos os casos, a parcela com <span class="process-math">\(k = \lfloor \frac{n+1}{2} \rfloor\)</span> é nula ou já está contida em <span class="process-math">\(\lfloor \frac{n}{2} \rfloor\text{,}\)</span> o que nos permite reescrever o primeiro somatório exatamente como <span class="process-math">\(S_n\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=0}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^k = \sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} C_{n-k}^k = S_n. 
+\end{equation*}
+</div>
 </div> <div class="para logical">
 <div class="para">
-<dfn class="terminology">Passo indutivo:</dfn> Suponha que a fórmula seja válida para todos os valores menores ou iguais a um certo <span class="process-math">\(n\text{.}\)</span> Queremos mostrar que ela vale para <span class="process-math">\(n+1\text{.}\)</span> A soma para <span class="process-math">\(n+1\)</span> é:</div>
+<dfn class="terminology">2. Segundo somatório:</dfn> Efetuamos a mudança de variável <span class="process-math">\(j = k - 1\)</span> (de modo que <span class="process-math">\(k = j + 1\)</span>). Quando <span class="process-math">\(k = 1\text{,}\)</span> temos <span class="process-math">\(j = 0\text{.}\)</span> Para o limite superior:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-S_{n+1} = \sum_{k=0}^{\lfloor \frac{n+1}{2} \rfloor} C_{n+1-k}^k 
+j_{\text{máx}} = \left\lfloor \frac{n+1}{2} \right\rfloor - 1 = \left\lfloor \frac{n+1 - 2}{2} \right\rfloor = \left\lfloor \frac{n-1}{2} \right\rfloor. 
 \end{equation*}
 </div>
-<div class="para">Separando o primeiro termo (<span class="process-math">\(k=0\)</span>) e aplicando a Relação de Stifel (<span class="process-math">\(C_{n+1-k}^k = C_{n-k}^k + C_{n-k}^{k-1}\)</span>) nos demais termos, temos:</div>
-<div class="displaymath process-math">
-\begin{align*}
-S_{n+1} = \amp ~ C_{n+1}^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} \left( C_{n-k}^k + C_{n-k}^{k-1} \right) \\
-= \amp ~ C_n^0 + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^k + \sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^{k-1} \quad (\text{pois } C_{n+1}^0 = C_n^0 = 1) 
-\end{align*}
-</div>
-<div class="para">Juntando o termo <span class="process-math">\(C_n^0\)</span> ao primeiro somatório, obtemos exatamente a soma correspondente a <span class="process-math">\(n\text{.}\)</span> No segundo somatório, fazemos uma mudança de índice <span class="process-math">\(j = k-1\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{align*}
-S_{n+1} = \amp ~ \left( \sum_{k=0}^{\lfloor \frac{n}{2} \rfloor} C_{n-k}^k \right) + \left( \sum_{j=0}^{\lfloor \frac{n-1}{2} \rfloor} C_{n-1-j}^j \right) 
-\end{align*}
-</div>
-<div class="para">Pela nossa hipótese de indução, o primeiro parêntese vale <span class="process-math">\(F_{n+1}\)</span> e o segundo vale <span class="process-math">\(F_n\text{.}\)</span> Portanto:</div>
+<div class="para">Substituindo <span class="process-math">\(k = j+1\)</span> no coeficiente binomial:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-S_{n+1} = F_{n+1} + F_n = F_{n+2} 
+C_{n-k}^{k-1} = C_{n-(j+1)}^j = C_{(n-1)-j}^j. 
 \end{equation*}
 </div>
-<div class="para">O que conclui a demonstração.</div>
+<div class="para">Logo, esse somatório torna-se:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^{\lfloor \frac{n+1}{2} \rfloor} C_{n-k}^{k-1} = \sum_{j=0}^{\lfloor \frac{n-1}{2} \rfloor} C_{(n-1)-j}^j = S_{n-1}. 
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Reunindo os dois resultados e aplicando a hipótese de indução:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{n+1} = S_n + S_{n-1} = F_{n+1} + F_n. 
+\end{equation*}
+</div>
+<div class="para">Pela relação de recorrência fundamental da sequência de Fibonacci (<span class="process-math">\(F_{n+2} = F_{n+1} + F_n\)</span>), concluímos que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{n+1} = F_{n+2}, 
+\end{equation*}
+</div>
+<div class="para">o que completa o passo indutivo e encerra a demonstração.</div>
 </div></article></body>
 </html>
