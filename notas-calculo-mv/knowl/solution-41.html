@@ -13,41 +13,45 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.2.11.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.4.6.1</span><span class="period">.</span>
 </h4>
-<div class="para">Parametrização: <span class="process-math">\(\alpha(\varphi, \theta) = (R\sin\varphi\cos\theta, R\sin\varphi\sin\theta, R\cos\varphi)\text{,}\)</span> com <span class="process-math">\(0 \le \varphi \le \pi\)</span> e <span class="process-math">\(0 \le \theta \le 2\pi\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">Derivadas parciais:</div>
-<div class="displaymath process-math">
-\begin{align*}
-\frac{\partial \alpha}{\partial \varphi} \amp = (R\cos\varphi\cos\theta, R\cos\varphi\sin\theta, -R\sin\varphi)\\
-\frac{\partial \alpha}{\partial \theta} \amp = (-R\sin\varphi\sin\theta, R\sin\varphi\cos\theta, 0)
-\end{align*}
+<div class="para logical">
+<div class="para">Primeiro, verificamos se <span class="process-math">\(\text{rot}\,\vec{F} = \vec{0}\text{:}\)</span>
 </div>
-<div class="para">O produto vetorial resulta em:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\vec{i}\text{-comp: } \frac{\partial}{\partial y}(3xy^2z^2) - \frac{\partial}{\partial z}(2xyz^3) = 6xyz^2 - 6xyz^2 = 0\\
+\vec{j}\text{-comp: } \frac{\partial}{\partial z}(y^2z^3) - \frac{\partial}{\partial x}(3xy^2z^2) = 3y^2z^2 - 3y^2z^2 = 0\\
+\vec{k}\text{-comp: } \frac{\partial}{\partial x}(2xyz^3) - \frac{\partial}{\partial y}(y^2z^3) = 2yz^3 - 2yz^3 = 0
+\end{gather*}
+</div>
+</div> <div class="para logical">
+<div class="para">O campo é conservativo. Para encontrar <span class="process-math">\(f\text{,}\)</span> igualamos <span class="process-math">\(\nabla f = \vec{F}\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial \alpha}{\partial \varphi} \times \frac{\partial \alpha}{\partial \theta} = R^2\sin^2\varphi\cos\theta\vec{i} + R^2\sin^2\varphi\sin\theta\vec{j} + R^2\sin\varphi\cos\varphi\vec{k}
+\frac{\partial f}{\partial x} = y^2z^3 \implies f(x,y,z) = xy^2z^3 + g(y,z)
 \end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">Calculando a norma (lembrando que <span class="process-math">\(\sin\varphi \ge 0\)</span> para <span class="process-math">\(0 \le \varphi \le \pi\)</span>):</div>
+<div class="para">Derivando em relação a <span class="process-math">\(y\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
-\begin{align*}
-\left\|\frac{\partial \alpha}{\partial \varphi} \times \frac{\partial \alpha}{\partial \theta}\right\| \amp = \sqrt{R^4\sin^4\varphi(\cos^2\theta + \sin^2\theta) + R^4\sin^2\varphi\cos^2\varphi}\\
-\amp = \sqrt{R^4\sin^2\varphi(\sin^2\varphi + \cos^2\varphi)} = R^2\sin\varphi
-\end{align*}
+\begin{equation*}
+\frac{\partial f}{\partial y} = 2xyz^3 + \frac{\partial g}{\partial y} = 2xyz^3 \implies \frac{\partial g}{\partial y} = 0 \implies g(y,z) = h(z)
+\end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">Integrando sobre o domínio:</div>
+<div class="para">Derivando em relação a <span class="process-math">\(z\text{:}\)</span>
+</div>
 <div class="displaymath process-math">
-\begin{align*}
-A(S) \amp = \int_{0}^{2\pi} \int_{0}^{\pi} R^2\sin\varphi \, d\varphi \, d\theta = R^2 \left(\int_{0}^{2\pi} d\theta\right) \left(\int_{0}^{\pi} \sin\varphi \, d\varphi\right)\\
-\amp = R^2 (2\pi) \left[-\cos\varphi\right]_{0}^{\pi} = 2\pi R^2 (1 - (-1)) = 4\pi R^2
-\end{align*}
+\begin{equation*}
+\frac{\partial f}{\partial z} = 3xy^2z^2 + h'(z) = 3xy^2z^2 \implies h'(z) = 0 \implies h(z) = C
+\end{equation*}
+</div>
+</div> <div class="para">Logo, a função potencial é <span class="process-math">\(f(x,y,z) = xy^2z^3 + C\text{.}\)</span>
 </div>
 </div>
-</div>
-<span class="incontext"><a href="sec-superficies-integrais.html#solution-41" class="internal">em contexto</a></span>
+<span class="incontext"><a href="sec-rotacional-divergente.html#solution-41" class="internal">em contexto</a></span>
 </body>
 </html>

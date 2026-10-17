@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UFRPE-DM O Teorema do Divergente (Teorema de Gauss)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Cálculo M V">
+<meta property="book:author" content="Eberson Ferreira da Silva">
+<meta property="book:author" content="Ricardo Nunes Machado Junior">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="indice.html"><span class="title">Cálculo M V:</span> <span class="subtitle">notas de aula</span></a></h1>
+<p class="byline">Eberson Ferreira da Silva, Ricardo Nunes Machado Junior</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>[search-results-heading]: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>[no-search-results].</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Sumário</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-teorema-de-stokes.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="up-button button" href="03_rotacional_divergente.html" title="Acima"><span class="icon">^</span><span class="name">Acima</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="prof-ricardo-machado.html" class="internal"><span class="title">Sobre Ricardo Machado</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="01_Caminhos_Campos.html" class="internal"><span class="codenumber">1</span> <span class="title">Campos Vetoriais</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Curvas</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html#sec-curvas-r2" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Curvas em <span class="process-math">\(\mathbb{R}^2\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="section-1.html#sec-curvas-r3" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Curvas em <span class="process-math">\(\mathbb{R}^3\)</span></span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-calculo-funcoes-vetoriais.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Cálculo de Funções Vetoriais</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-campos-vetoriais.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Campos Vetoriais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-campos-vetoriais.html#sec-campos-vetoriais" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Campos Vetoriais</span></a></div></li>
+<li><div class="toc-item"><a href="sec-campos-vetoriais.html#sec-campos-conservativos" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Campos Conservativos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-campos-vetoriais.html#exercises-1" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="02_integral_de_linha.html" class="internal"><span class="codenumber">2</span> <span class="title">Integral de Linha</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-definicao-r2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Integrais de Linha de Funções <span class="process-math">\(f: \mathbb{R}^n \rightarrow \mathbb{R}\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-definicao-r2.html#subsection-5" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Exemplos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-definicao-r2.html#exercicios-integrais-linha-escalares-sec1" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercícios Propostos: Integrais de Linha de Campos Escalares</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-definicao-integral-campo.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Integrais de Linha de Campos Vetoriais</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-definicao-integral-campo.html#sec-notacao-componentes" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Notação em Componentes (Forma Diferencial)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-definicao-integral-campo.html#sec-suave-por-partes" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Integral de Linha sobre uma Curva Suave por Partes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-definicao-integral-campo.html#exercicios-campos-integrais-linha-sec2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-fundamental.html" class="internal"><span class="codenumber">2.3</span> <span class="title">O Teorema Fundamental para Integrais de Linha</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-independencia-caminho" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Independência do Caminho e Curvas Fechadas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-condicoes-campo-conservativo" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Critérios de Conservatividade em Domínios Abertos e Conexos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#sec-teste-conservatividade" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Teste para Campos Conservativos em Regiões Simplesmente Conexas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-fundamental.html#exercicios-teorema-fundamental-sec3" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-de-green-teoria.html" class="internal"><span class="codenumber">2.4</span> <span class="title">O Teorema de Green</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-de-green-teoria.html#subsec-enunciado-teorema-green" class="internal"><span class="codenumber">2.4.1</span> <span class="title">O Teorema de Green</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-de-green-teoria.html#subsec-green-regioes-furos" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Regiões com Furos (Multiplamente Conexas)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-de-green-teoria.html#subsec-green-calculo-areas" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Cálculo de Áreas com o Teorema de Green</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-de-green-teoria.html#exercicios-teorema-de-green-sec4" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="03_rotacional_divergente.html" class="internal"><span class="codenumber">3</span> <span class="title">Superfícies e Integral de Superfícies</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-rotacional-divergente.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Rotacional e Divergente</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-rotacional-divergente.html#subsec-rotacional" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Rotacional</span></a></div></li>
+<li><div class="toc-item"><a href="sec-rotacional-divergente.html#subsec-divergente" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Divergente</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-rotacional-divergente.html#subsec-formas-vetoriais-green" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Formas Vetoriais do Teorema de Green</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-rotacional-divergente.html#subsubsec-green-forma-rotacional" class="internal"><span class="codenumber">3.1.3.1</span> <span class="title">1. Forma Rotacional (Circulação)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-rotacional-divergente.html#subsubsec-green-forma-divergente" class="internal"><span class="codenumber">3.1.3.2</span> <span class="title">2. Forma Divergente (Teorema da Divergência no Plano / Fluxo)</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-rotacional-divergente.html#exercicios-rotacional-divergente" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-superficies-integrais.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Superfícies Parametrizadas e Integrais de Superfície</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-superficies-integrais.html#subsec-superficies-parametrizadas" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Superfícies Parametrizadas</span></a></div></li>
+<li><div class="toc-item"><a href="sec-superficies-integrais.html#subsec-plano-tangente" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Plano Tangente</span></a></div></li>
+<li><div class="toc-item"><a href="sec-superficies-integrais.html#subsec-area-superficie" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Área de Superfície</span></a></div></li>
+<li><div class="toc-item"><a href="sec-superficies-integrais.html#subsec-integral-superficie-escalar" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Integral de Superfície de Campos Escalares</span></a></div></li>
+<li><div class="toc-item"><a href="sec-superficies-integrais.html#subsec-integral-superficie-vetorial" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Integral de Superfície de Campos Vetoriais (Fluxo)</span></a></div></li>
+<li><div class="toc-item"><a href="sec-superficies-integrais.html#exercicios-superficies-integrais" class="internal"><span class="codenumber">3.2.6</span> <span class="title">Exercícios: Superfícies e Integrais de Superfície</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-teorema-de-stokes.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Teorema de Stokes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-de-stokes.html#subsec-orientacao-superficie-bordo" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Orientação de Superfícies e de seus Bordos</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-de-stokes.html#subsec-teorema-de-stokes-enunciado-prova" class="internal"><span class="codenumber">3.3.2</span> <span class="title">O Teorema de Stokes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-de-stokes.html#subsec-exemplos-teorema-stokes" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Exemplos de Aplicação</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-de-stokes.html#exercicios-teorema-de-stokes" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-teorema-divergente.html" class="internal"><span class="codenumber">3.4</span> <span class="title">O Teorema do Divergente (Teorema de Gauss)</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-teorema-divergente.html#subsec-enunciado-teorema-divergente" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Enunciado e Interpretação</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-divergente.html#subsec-exemplos-teorema-divergente" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Exemplos de Aplicação</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-divergente.html#exercicios-teorema-de-stokes" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Exercícios</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="referencias.html" class="internal"><span class="codenumber">4</span> <span class="title">Referências Bibliográficas</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-teorema-divergente"><h2 class="heading hide-type">
+<span class="type">Seção</span> <span class="codenumber">3.4</span> <span class="title">O Teorema do Divergente (Teorema de Gauss)</span>
+</h2>
+<section class="subsection" id="subsec-enunciado-teorema-divergente"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.4.1</span> <span class="title">Enunciado e Interpretação</span>
+</h3>
+<div class="para" id="p-727">O Teorema de Green relaciona a integral de linha ao longo de uma curva fechada no plano com uma integral dupla sobre a região delimitada por essa curva. O Teorema de Stokes estende essa ideia para superfícies no espaço. O <dfn class="terminology">Teorema do Divergente</dfn> (também conhecido como Teorema de Gauss) estabelece uma relação análoga, mas conectando a integral de superfície (fluxo) sobre uma superfície fechada com a integral tripla sobre o sólido delimitado por ela.</div>
+<article class="theorem theorem-like" id="theo-divergente"><h4 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Teorema do Divergente (Teorema de Gauss).</span>
+</h4>
+<div class="para logical" id="p-728">
+<div class="para">Seja <span class="process-math">\(E\)</span> uma região sólida simples no espaço e seja <span class="process-math">\(S\)</span> a superfície fronteira de <span class="process-math">\(E\text{,}\)</span> dada com orientação positiva (vetor normal apontando para fora de <span class="process-math">\(E\)</span>). Seja <span class="process-math">\(\vec{F}\)</span> um campo vetorial cujas funções componentes têm derivadas parciais contínuas em uma região aberta que contém <span class="process-math">\(E\text{.}\)</span> Então:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_{S} \vec{F} \cdot d\vec{S} = \iiint_{E} \text{div}\,\vec{F} \, dV
+\end{equation*}
+</div>
+</div></article><article class="note remark-like" id="note-12"><h4 class="heading">
+<span class="type">Nota</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-729">O Teorema do Divergente afirma que o fluxo total de um campo vetorial através de uma superfície fechada é igual à integral da divergência do campo sobre a região delimitada pela superfície. Se a divergência for positiva (o sólido atua como uma "fonte"), o fluxo líquido é para fora. Se for negativa (o sólido atua como um "sumidouro"), o fluxo líquido é para dentro.</div></article></section><section class="subsection" id="subsec-exemplos-teorema-divergente"><h3 class="heading hide-type">
+<span class="type">Subseção</span> <span class="codenumber">3.4.2</span> <span class="title">Exemplos de Aplicação</span>
+</h3>
+<article class="example example-like" id="exem-divergente-esfera-simples"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-730">Utilize o Teorema do Divergente para calcular o fluxo do campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = z\vec{i} + y\vec{j} + x\vec{k}\)</span> através da esfera unitária <span class="process-math">\(S\)</span> de equação <span class="process-math">\(x^2 + y^2 + z^2 = 1\text{,}\)</span> orientada para fora.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like">
+<div class="para logical" id="p-731">
+<div class="para">A superfície <span class="process-math">\(S\)</span> é fechada e delimita o sólido <span class="process-math">\(E = \{(x,y,z) \in \mathbb{R}^3 : x^2 + y^2 + z^2 \le 1\}\text{.}\)</span> Calculamos primeiro a divergência do campo <span class="process-math">\(\vec{F}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-108">
+\begin{align*}
+\text{div}\,\vec{F} \amp = \frac{\partial}{\partial x}(z) + \frac{\partial}{\partial y}(y) + \frac{\partial}{\partial z}(x)\\
+\amp = 0 + 1 + 0 = 1
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-732">
+<div class="para">Pelo Teorema do Divergente, o fluxo é:</div>
+<div class="displaymath process-math" id="md-109">
+\begin{align*}
+\iint_{S} \vec{F} \cdot d\vec{S} \amp = \iiint_{E} \text{div}\,\vec{F} \, dV = \iiint_{E} 1 \, dV
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-733">
+<div class="para">A integral tripla de 1 sobre <span class="process-math">\(E\)</span> é simplesmente o volume da esfera unitária. Sabendo que o volume de uma esfera de raio <span class="process-math">\(R\)</span> é <span class="process-math">\(\frac{4}{3}\pi R^3\text{,}\)</span> temos:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iiint_{E} 1 \, dV = \frac{4}{3}\pi(1)^3 = \frac{4\pi}{3}
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="example example-like" id="exem-divergente-esfera-campo-nao-linear"><h4 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-734">Calcule <span class="process-math">\(\iint_{S} \vec{F} \cdot d\vec{S}\text{,}\)</span> onde <span class="process-math">\(\vec{F}(x,y,z) = x^3\vec{i} + y^3\vec{j} + z^3\vec{k}\)</span> e <span class="process-math">\(S\)</span> é a superfície da esfera <span class="process-math">\(x^2 + y^2 + z^2 = 1\)</span> com orientação positiva.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
+<div class="para logical" id="p-735">
+<div class="para">O cálculo direto dessa integral de superfície seria longo. Usando o Teorema do Divergente, primeiro calculamos a divergência:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(x^3) + \frac{\partial}{\partial y}(y^3) + \frac{\partial}{\partial z}(z^3) = 3x^2 + 3y^2 + 3z^2 = 3(x^2 + y^2 + z^2)
+\end{equation*}
+</div>
+</div> <div class="para" id="p-736">O sólido <span class="process-math">\(E\)</span> é a bola <span class="process-math">\(x^2 + y^2 + z^2 \le 1\text{.}\)</span> Em coordenadas esféricas, temos <span class="process-math">\(x^2 + y^2 + z^2 = \rho^2\text{,}\)</span> o elemento de volume é <span class="process-math">\(dV = \rho^2 \sin\varphi \, d\rho \, d\varphi \, d\theta\text{,}\)</span> e os limites de integração são <span class="process-math">\(0 \le \rho \le 1\text{,}\)</span> <span class="process-math">\(0 \le \varphi \le \pi\)</span> e <span class="process-math">\(0 \le \theta \le 2\pi\text{.}\)</span>
+</div> <div class="para logical" id="p-737">
+<div class="para">Aplicando o teorema:</div>
+<div class="displaymath process-math" id="md-110">
+\begin{align*}
+\iint_{S} \vec{F} \cdot d\vec{S} \amp = \iiint_{E} 3(x^2 + y^2 + z^2) \, dV\\
+\amp = \int_{0}^{2\pi} \int_{0}^{\pi} \int_{0}^{1} 3\rho^2 (\rho^2 \sin\varphi) \, d\rho \, d\varphi \, d\theta\\
+\amp = 3 \left( \int_{0}^{2\pi} d\theta \right) \left( \int_{0}^{\pi} \sin\varphi \, d\varphi \right) \left( \int_{0}^{1} \rho^4 \, d\rho \right)\\
+\amp = 3 (2\pi) \left[ -\cos\varphi \right]_{0}^{\pi} \left[ \frac{\rho^5}{5} \right]_{0}^{1}\\
+\amp = 3 (2\pi) (2) \left(\frac{1}{5}\right) = \frac{12\pi}{5}
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article></section><section class="exercises" id="exercicios-teorema-de-stokes"><h3 class="heading hide-type">
+<span class="type">Exercícios</span> <span class="codenumber">3.4.3</span> <span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="exer-verificacao-stokes"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-738">Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = -y\vec{i} + x\vec{j} + z\vec{k}\text{,}\)</span> onde <span class="process-math">\(S\)</span> é a porção do paraboloide <span class="process-math">\(z = 1 - x^2 - y^2\)</span> que está acima do plano <span class="process-math">\(xy\)</span> (<span class="process-math">\(z \ge 0\)</span>), orientada com o vetor normal apontando para cima.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><div class="para" id="p-739">Ambas as integrais resultam em <span class="process-math">\(2\pi\text{.}\)</span>
+</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like">
+<div class="para logical" id="p-740">
+<div class="para">Cálculo pela Integral de Linha: O bordo <span class="process-math">\(\partial S\)</span> é a circunferência <span class="process-math">\(x^2 + y^2 = 1\)</span> no plano <span class="process-math">\(z = 0\text{.}\)</span> Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: <span class="process-math">\(\vec{r}(t) = (\cos t, \text{sen } t, 0)\)</span> com <span class="process-math">\(t \in [0, 2\pi]\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-111">
+\begin{align*}
+\vec{r}'(t) \amp = (-\text{sen } t, \cos t, 0)\\
+\vec{F}(\vec{r}(t)) \amp = (-\text{sen } t, \cos t, 0)\\
+\oint_{\partial S} \vec{F} \cdot d\vec{r} \amp = \int_0^{2\pi} (\sin^2 t + \cos^2 t) \, dt = \int_0^{2\pi} 1 \, dt = 2\pi
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-741">
+<div class="para">Cálculo pela Integral de Superfície: O rotacional de <span class="process-math">\(\vec{F}\)</span> é <span class="process-math">\(\text{rot}\,\vec{F} = (0, 0, 2)\text{.}\)</span> A normal à superfície <span class="process-math">\(z = g(x,y) = 1 - x^2 - y^2\)</span> apontando para cima é <span class="process-math">\(\vec{N}\,dA = (-\frac{\partial z}{\partial x}, -\frac{\partial z}{\partial y}, 1)dx\,dy = (2x, 2y, 1)dx\,dy\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-112">
+\begin{align*}
+\iint_S \text{rot}\,\vec{F} \cdot d\vec{S} \amp = \iint_D (0, 0, 2) \cdot (2x, 2y, 1) \, dA = \iint_D 2 \, dA = 2A(D)
+\end{align*}
+</div>
+<div class="para">Como <span class="process-math">\(D\)</span> é o disco unitário de área <span class="process-math">\(\pi\text{,}\)</span> o resultado é <span class="process-math">\(2\pi\text{.}\)</span> A igualdade verifica o Teorema de Stokes.</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-stokes-cilindro-plano"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-742">Utilize o Teorema de Stokes para calcular a integral de linha <span class="process-math">\(\oint_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde o campo é <span class="process-math">\(\vec{F}(x,y,z) = z\vec{i} + x\vec{j} + y\vec{k}\)</span> e <span class="process-math">\(C\)</span> é a curva de interseção do cilindro <span class="process-math">\(x^2 + y^2 = 4\)</span> com o plano <span class="process-math">\(z = y + 3\text{,}\)</span> orientada no sentido anti-horário quando vista de cima.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><div class="para" id="p-743"><span class="process-math">\(0\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
+<div class="para logical" id="p-744">
+<div class="para">O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre <span class="process-math">\(S\text{,}\)</span> a porção do plano <span class="process-math">\(z = y + 3\)</span> delimitada pelo cilindro. Calculamos o rotacional:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(y) - \frac{\partial}{\partial z}(x)\right)\vec{i} + \left(\frac{\partial}{\partial z}(z) - \frac{\partial}{\partial x}(y)\right)\vec{j} + \left(\frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(z)\right)\vec{k} = \vec{i} + \vec{j} + \vec{k} = (1,1,1)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-745">
+<div class="para">A superfície plana tem equação <span class="process-math">\(z = f(x,y) = y + 3\text{.}\)</span> O vetor normal (para cima, compatível com a orientação anti-horária de <span class="process-math">\(C\)</span>) é <span class="process-math">\(\vec{N}\,dA = (0, -1, 1)dA\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-113">
+\begin{align*}
+\oint_C \vec{F} \cdot d\vec{r} \amp = \iint_S \text{rot}\,\vec{F} \cdot d\vec{S} = \iint_D (1,1,1) \cdot (0,-1,1) \, dA = \iint_D (0 - 1 + 1) \, dA = 0
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-troca-superficie"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-746">Calcule o fluxo do rotacional <span class="process-math">\(\iint_S \text{rot}\,\vec{F} \cdot d\vec{S}\)</span> para o campo <span class="process-math">\(\vec{F}(x,y,z) = (e^{x^2+y^2}, x, z)\text{,}\)</span> sendo <span class="process-math">\(S\)</span> a hemisfera superior <span class="process-math">\(x^2+y^2+z^2 = 9\)</span> com <span class="process-math">\(z \ge 0\text{,}\)</span> orientada com o vetor normal apontando para cima (para fora da esfera).</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-65" id="answer-65"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-65"><div class="answer solution-like"><div class="para" id="p-747"><span class="process-math">\(9\pi\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<div class="para" id="p-748">Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo <span class="process-math">\(\partial S\text{.}\)</span> O bordo da hemisfera é a circunferência <span class="process-math">\(x^2+y^2=9\)</span> no plano <span class="process-math">\(z=0\text{,}\)</span> orientada no sentido anti-horário.</div> <div class="para logical" id="p-749">
+<div class="para">Podemos trocar <span class="process-math">\(S\)</span> por uma superfície mais simples que possua o mesmo bordo: o disco plano <span class="process-math">\(D\)</span> no plano <span class="process-math">\(xy\)</span> dado por <span class="process-math">\(x^2+y^2 \le 9\text{,}\)</span> <span class="process-math">\(z=0\text{,}\)</span> orientado para cima (<span class="process-math">\(\vec{N} = \vec{k}\)</span>). Calculando o rotacional de <span class="process-math">\(\vec{F}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = (0, 0, 1 - 2y e^{x^2+y^2})
+\end{equation*}
+</div>
+<div class="para">Integrando sobre o disco <span class="process-math">\(D\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-114">
+\begin{align*}
+\iint_S \text{rot}\,\vec{F} \cdot d\vec{S} \amp = \iint_D (0, 0, 1 - 2y e^{x^2+y^2}) \cdot (0, 0, 1) \, dA = \iint_D (1 - 2y e^{x^2+y^2}) \, dA
+\end{align*}
+</div>
+<div class="para">Por simetria, a integral da componente ímpar em <span class="process-math">\(y\)</span> sobre o disco centrado na origem é zero (<span class="process-math">\(\iint_D -2y e^{x^2+y^2} dA = 0\)</span>). Resta apenas:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_D 1 \, dA = \text{Área}(D) = \pi(3)^2 = 9\pi
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-trabalho-stokes"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-750">Calcule o trabalho realizado pelo campo de forças <span class="process-math">\(\vec{F}(x,y,z) = (e^x - y^3)\vec{i} + (e^y + x^3)\vec{j} + e^z\vec{k}\)</span> ao mover uma partícula ao longo da curva <span class="process-math">\(C\)</span> de interseção do cilindro <span class="process-math">\(x^2 + y^2 = 4\)</span> com o plano <span class="process-math">\(z = 2\text{,}\)</span> orientada no sentido anti-horário quando vista de cima.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-66" id="answer-66"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-66"><div class="answer solution-like"><div class="para" id="p-751"><span class="process-math">\(24\pi\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<div class="para logical" id="p-752">
+<div class="para">O trabalho é dado pela integral de linha <span class="process-math">\(\oint_C \vec{F} \cdot d\vec{r}\text{.}\)</span> Utilizaremos o Teorema de Stokes. O rotacional do campo é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = (0 - 0)\vec{i} - (0 - 0)\vec{j} + \left( \frac{\partial}{\partial x}(e^y + x^3) - \frac{\partial}{\partial y}(e^x - y^3) \right)\vec{k} = (0, 0, 3x^2 + 3y^2)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-753">
+<div class="para">A curva delimita um disco <span class="process-math">\(S\)</span> plano em <span class="process-math">\(z = 2\text{,}\)</span> de raio <span class="process-math">\(2\text{,}\)</span> com orientação correspondente ao vetor normal <span class="process-math">\(\vec{N} = \vec{k}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="md-115">
+\begin{align*}
+\oint_C \vec{F} \cdot d\vec{r} \amp = \iint_S \text{rot}\,\vec{F} \cdot \vec{N} \, dS = \iint_S (0, 0, 3(x^2+y^2)) \cdot (0, 0, 1) \, dx\,dy\\
+\amp = 3 \iint_S (x^2+y^2) \, dx\,dy
+\end{align*}
+</div>
+<div class="para">Convertendo para coordenadas polares (<span class="process-math">\(0 \le r \le 2\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\)</span>):</div>
+<div class="displaymath process-math" id="md-116">
+\begin{align*}
+\int_0^{2\pi} \int_0^2 3r^2 (r \, dr \, d\theta) \amp = 6\pi \int_0^2 r^3 \, dr = 6\pi \left[ \frac{r^4}{4} \right]_0^2 = 6\pi \left(\frac{16}{4}\right) = 24\pi
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-stokes-curva-aberta"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-754">Calcule a integral de linha <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde o campo é <span class="process-math">\(\vec{F}(x,y,z) = (0, 0, y)\)</span> e <span class="process-math">\(C\)</span> é a curva de interseção do cilindro <span class="process-math">\(x^2 + y^2 = 1\)</span> com o plano <span class="process-math">\(z = x\text{,}\)</span> percorrida do ponto <span class="process-math">\((1, 0, 1)\)</span> ao ponto <span class="process-math">\((-1, 0, -1)\)</span> através do semi-espaço <span class="process-math">\(y \ge 0\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-67" id="answer-67"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-67"><div class="answer solution-like"><div class="para" id="p-755"><span class="process-math">\(-\frac{\pi}{2}\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
+<div class="para" id="p-756">Como <span class="process-math">\(C\)</span> não é fechada, adicionamos um segmento retilíneo <span class="process-math">\(C_1\)</span> de <span class="process-math">\((-1,0,-1)\)</span> até <span class="process-math">\((1,0,1)\)</span> ao longo do plano <span class="process-math">\(z=x\)</span> e <span class="process-math">\(y=0\)</span> para formar uma curva fechada <span class="process-math">\(\gamma = C \cup C_1\text{.}\)</span>
+</div> <div class="para logical" id="p-757">
+<div class="para">A curva $\gamma$ limita uma semi-elipse <span class="process-math">\(S\)</span> sobre o plano <span class="process-math">\(z=x\)</span> orientada com normal <span class="process-math">\(\vec{N}\,dA = (-1, 0, 1)dx\,dy\)</span> (apontando "para cima e esquerda", coerente com a regra da mão direita para o sentido de <span class="process-math">\(\gamma\)</span>). Calculando o rotacional: <span class="process-math">\(\text{rot}\,\vec{F} = (1, 0, 0)\text{.}\)</span> Aplicando o Teorema de Stokes:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\oint_\gamma \vec{F} \cdot d\vec{r} = \iint_S (1, 0, 0) \cdot (-1, 0, 1) \, dA = \iint_{D_{xy}} -1 \, dx\,dy = - \text{Área}(D_{xy})
+\end{equation*}
+</div>
+<div class="para">onde <span class="process-math">\(D_{xy}\)</span> é o semicírculo <span class="process-math">\(x^2+y^2 \le 1, y \ge 0\text{,}\)</span> cuja área é <span class="process-math">\(\pi/2\text{.}\)</span> Logo, <span class="process-math">\(\oint_\gamma \vec{F} \cdot d\vec{r} = -\pi/2\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-758">
+<div class="para">Agora, calculamos a integral sobre o trecho retilíneo <span class="process-math">\(C_1\)</span> parametrizado por <span class="process-math">\(\vec{r}(t) = (t, 0, t)\)</span> de <span class="process-math">\(t=-1\)</span> a <span class="process-math">\(1\text{.}\)</span> Como <span class="process-math">\(y=0\)</span> ao longo de <span class="process-math">\(C_1\text{,}\)</span> o campo <span class="process-math">\(\vec{F} = (0,0,0)\text{.}\)</span> Portanto, <span class="process-math">\(\int_{C_1} \vec{F} \cdot d\vec{r} = 0\text{.}\)</span> Finalmente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_C \vec{F} \cdot d\vec{r} = \oint_\gamma \vec{F} \cdot d\vec{r} - \int_{C_1} \vec{F} \cdot d\vec{r} = -\frac{\pi}{2} - 0 = -\frac{\pi}{2}
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-triangulo-espaco-stokes"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-759">Use o Teorema de Stokes para avaliar <span class="process-math">\(\oint_C (y \, dx + z \, dy + x \, dz)\text{,}\)</span> onde <span class="process-math">\(C\)</span> é o triângulo com vértices <span class="process-math">\((a,0,0)\text{,}\)</span> <span class="process-math">\((0,a,0)\)</span> e <span class="process-math">\((0,0,a)\text{,}\)</span> com <span class="process-math">\(a &gt; 0\text{,}\)</span> orientado no sentido anti-horário quando visto de uma posição muito alta no eixo <span class="process-math">\(z\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-68" id="answer-68"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><div class="para" id="p-760"><span class="process-math">\(-\frac{3a^2}{2}\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
+<div class="para logical" id="p-761">
+<div class="para">O campo é <span class="process-math">\(\vec{F} = (y, z, x)\text{.}\)</span> Seu rotacional é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(x) - \frac{\partial}{\partial z}(z), \dots \right) = (-1, -1, -1)
+\end{equation*}
+</div>
+</div> <div class="para" id="p-762">O triângulo <span class="process-math">\(C\)</span> está no plano que passa pelos três eixos, cuja equação é <span class="process-math">\(x + y + z = a\)</span> (ou <span class="process-math">\(z = a - x - y\)</span>). A superfície <span class="process-math">\(S\)</span> projetada no plano <span class="process-math">\(xy\)</span> é o triângulo bidimensional <span class="process-math">\(D\)</span> de vértices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((a,0)\)</span> e <span class="process-math">\((0,a)\text{.}\)</span> A normal unitária vezes <span class="process-math">\(dS\)</span> é <span class="process-math">\(\vec{N}\,dA = (1, 1, 1)dx\,dy\text{.}\)</span>
+</div> <div class="para logical" id="p-763">
+<div class="para">Pelo Teorema de Stokes:</div>
+<div class="displaymath process-math" id="md-117">
+\begin{align*}
+\oint_C \vec{F} \cdot d\vec{r} \amp = \iint_S (-1, -1, -1) \cdot (1, 1, 1) \, dx\,dy = \iint_D -3 \, dx\,dy = -3 \, \text{Área}(D)
+\end{align*}
+</div>
+<div class="para">A área de <span class="process-math">\(D\)</span> é a área de um triângulo retângulo de base <span class="process-math">\(a\)</span> e altura <span class="process-math">\(a\text{,}\)</span> ou seja, <span class="process-math">\(a^2/2\text{.}\)</span> Portanto, a integral é <span class="process-math">\(-3 \frac{a^2}{2} = -\frac{3a^2}{2}\text{.}\)</span>
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-fluxo-rotacional-superficie-fechada"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-764">Calcule o fluxo do rotacional <span class="process-math">\(\iint_S (\text{rot}\,\vec{F}) \cdot \vec{N} \, dS\)</span> para o campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = (x^2y, y^2z, z^2x)\text{,}\)</span> onde <span class="process-math">\(S\)</span> é a superfície fechada do elipsoide <span class="process-math">\(\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1\)</span> orientada com a normal exterior.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-69" id="answer-69"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><div class="para" id="p-765"><span class="process-math">\(0\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
+<div class="para" id="p-766">Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície <span class="process-math">\(S\)</span> é igual à integral de linha do campo ao longo de seu bordo <span class="process-math">\(\partial S\text{.}\)</span>
+</div> <div class="para logical" id="p-767">
+<div class="para">Como o elipsoide é uma superfície fechada (não possui "furos" ou "bordas" abertas), o seu bordo é vazio (<span class="process-math">\(\partial S = \emptyset\)</span>). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_S (\text{rot}\,\vec{F}) \cdot d\vec{S} = \oint_{\partial S} \vec{F} \cdot d\vec{r} = 0
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-superficie-composta-stokes"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-768">Calcule a integral de superfície <span class="process-math">\(\iint_S (\text{rot}\,\vec{F}) \cdot \vec{N} \, dS\text{,}\)</span> onde o campo vetorial é <span class="process-math">\(\vec{F}(x,y,z) = (-y, x, xyz)\)</span> e <span class="process-math">\(S\)</span> é constituída pelas <span class="process-math">\(5\)</span> faces superiores do cubo <span class="process-math">\([0,1] \times [0,1] \times [0,1]\)</span> (ou seja, todas as faces exceto a face que repousa no plano <span class="process-math">\(z=0\)</span>), orientadas com o vetor normal apontando para fora da caixa.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-70" id="answer-70"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><div class="para" id="p-769"><span class="process-math">\(2\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
+<div class="para" id="p-770">A superfície <span class="process-math">\(S\)</span> possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre <span class="process-math">\(S\)</span> é igual à integral de linha ao longo do seu bordo <span class="process-math">\(\partial S\text{.}\)</span> O bordo é a fronteira quadrada da face ausente (no plano <span class="process-math">\(z=0\)</span>).</div> <div class="para" id="p-771">Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em <span class="process-math">\(\partial S\)</span> (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano <span class="process-math">\(z=0\)</span> é anti-horário.</div> <div class="para" id="p-772">Para simplificar o cálculo, podemos utilizar qualquer outra superfície <span class="process-math">\(S'\)</span> que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, <span class="process-math">\(D = [0,1] \times [0,1]\)</span> no plano <span class="process-math">\(z=0\text{.}\)</span> Para manter a compatibilidade do bordo anti-horário, a normal em <span class="process-math">\(D\)</span> deve ser <span class="process-math">\(\vec{k}\)</span> (apontando "para cima", adentrando a caixa).</div> <div class="para logical" id="p-773">
+<div class="para">O rotacional é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{rot}\,\vec{F} = \left(\dots, \dots, \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y)\right) = (xz, -yz, 2)
+\end{equation*}
+</div>
+<div class="para">O fluxo através da face inferior plana orientada por <span class="process-math">\(\vec{k}\)</span> é:</div>
+<div class="displaymath process-math" id="md-118">
+\begin{align*}
+\iint_D \text{rot}\,\vec{F} \cdot \vec{k} \, dx\,dy \amp = \int_0^1 \int_0^1 2 \, dx\,dy = 2 \cdot \text{Área}(D) = 2 \cdot 1 = 2
+\end{align*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-campo-irrotacional-stokes"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-774">Avalie <span class="process-math">\(\oint_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde o campo vetorial é <span class="process-math">\(\vec{F}(x,y,z) = (2xyz^3, x^2z^3, 3x^2yz^2)\)</span> e <span class="process-math">\(C\)</span> é a curva complexa e fechada descrita pela função vetorial <span class="process-math">\(\vec{r}(t) = (\cos t, \text{sen } t, \text{sen}(2t))\text{,}\)</span> com <span class="process-math">\(0 \le t \le 2\pi\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-71" id="answer-71"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-71"><div class="answer solution-like"><div class="para" id="p-775"><span class="process-math">\(0\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
+<div class="para logical" id="p-776">
+<div class="para">Podemos calcular o rotacional de <span class="process-math">\(\vec{F}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-119">
+\begin{gather*}
+\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(3x^2yz^2) - \frac{\partial}{\partial z}(x^2z^3)\right)\vec{i} - \left(\frac{\partial}{\partial x}(3x^2yz^2) - \frac{\partial}{\partial z}(2xyz^3)\right)\vec{j} + \left(\frac{\partial}{\partial x}(x^2z^3) - \frac{\partial}{\partial y}(2xyz^3)\right)\vec{k}\\
+= (3x^2z^2 - 3x^2z^2)\vec{i} - (6xyz^2 - 6xyz^2)\vec{j} + (2xz^3 - 2xz^3)\vec{k} = \vec{0}
+\end{gather*}
+</div>
+</div> <div class="para logical" id="p-777">
+<div class="para">Como o rotacional de <span class="process-math">\(\vec{F}\)</span> é o vetor nulo (e o domínio do campo é todo o $\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como <span class="process-math">\(C\)</span> é uma curva fechada, a integral de linha de um campo irrotacional é zero:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\oint_C \vec{F} \cdot d\vec{r} = \iint_S \vec{0} \cdot d\vec{S} = 0
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-moebius-stokes"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-778">Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-72" id="answer-72"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-72"><div class="answer solution-like"><div class="para" id="p-779">A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários <span class="process-math">\(\vec{N}\)</span> exigido pelo teorema.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like">
+<div class="para" id="p-780">O Teorema de Stokes exige que a superfície <span class="process-math">\(S\)</span> seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários <span class="process-math">\(\vec{N}\)</span> em toda a superfície para estabelecer a orientação positiva do bordo <span class="process-math">\(\partial S\)</span> através da regra da mão direita.</div> <div class="para" id="p-781">Como ilustrado na seção, a Faixa de Möbius possui apenas um "lado". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto (<span class="process-math">\(\vec{N} \to -\vec{N}\)</span>). Essa impossibilidade de determinar consistentemente qual é o lado "de fora" ou "de dentro" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.</div>
+</div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-teorema-de-stokes.html" title="Anterior"><span class="icon">&lt;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="referencias.html" title="Próximo"><span class="name">Próximo</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Feito com PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>

@@ -13,72 +13,23 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.6.1</span><span class="period">.</span>
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.1.3.1</span><span class="period">.</span>
 </h4>
 <div class="para logical">
-<div class="para">Item a) O domínio de <span class="process-math">\(\vec{F}\)</span> é todo o <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> que é simplesmente conexo. Vamos calcular <span class="process-math">\(\text{rot}\,\vec{F}\text{:}\)</span>
-</div>
+<div class="para">Identificando as funções componentes:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P = e^x\text{sen}(yz), \quad Q = ze^x\cos(yz), \quad R = ye^x\cos(yz)
+P(x,y,z) = xyz, \quad Q(x,y,z) = x^2, \quad R(x,y,z) = 1
 \end{equation*}
 </div>
 </div> <div class="para logical">
-<div class="para">Calculando cada derivada parcial:</div>
-<div class="displaymath process-math">
-\begin{align*}
-\frac{\partial R}{\partial y} \amp = e^x\cos(yz) - yze^x\text{sen}(yz)\\
-\frac{\partial Q}{\partial z} \amp = e^x\cos(yz) - zye^x\text{sen}(yz) \implies \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} = 0\\
-\frac{\partial P}{\partial z} \amp = ye^x\cos(yz)\\
-\frac{\partial R}{\partial x} \amp = ye^x\cos(yz) \implies \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} = 0\\
-\frac{\partial Q}{\partial x} \amp = ze^x\cos(yz)\\
-\frac{\partial P}{\partial y} \amp = ze^x\cos(yz) \implies \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0
-\end{align*}
-</div>
-<div class="para">Logo, <span class="process-math">\(\text{rot}\,\vec{F} = \vec{0}\text{,}\)</span> o que garante que <span class="process-math">\(\vec{F}\)</span> é conservativo.</div>
-</div> <div class="para logical">
-<div class="para">Item b) Buscamos <span class="process-math">\(\varphi(x,y,z)\)</span> satisfazendo o sistema:</div>
+<div class="para">Aplicando a definição:</div>
 <div class="displaymath process-math">
 \begin{align*}
-\frac{\partial\varphi}{\partial x} \amp = e^x\text{sen}(yz) \\
-\frac{\partial\varphi}{\partial y} \amp = ze^x\cos(yz) \\
-\frac{\partial\varphi}{\partial z} \amp = ye^x\cos(yz) 
+\text{rot}\,\vec{F} \amp = \left(\frac{\partial}{\partial y}(1) - \frac{\partial}{\partial z}(x^2)\right)\vec{i} + \left(\frac{\partial}{\partial z}(xyz) - \frac{\partial}{\partial x}(1)\right)\vec{j} + \left(\frac{\partial}{\partial x}(x^2) - \frac{\partial}{\partial y}(xyz)\right)\vec{k}\\
+\amp = (0 - 0)\vec{i} + (xy - 0)\vec{j} + (2x - xz)\vec{k}\\
+\amp = xy\vec{j} + x(2-z)\vec{k}
 \end{align*}
-</div>
-</div> <div class="para logical">
-<div class="para">Integrando a equação <a href="" class="xref" data-knowl="./knowl/eq-pot-1.html" title="Equação">()</a> em relação a <span class="process-math">\(x\text{:}\)</span>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-pot-1.html">
-\begin{equation*}
-\varphi(x,y,z) = \int e^x\text{sen}(yz)\,dx = e^x\text{sen}(yz) + C(y,z)
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Derivando em relação a <span class="process-math">\(y\)</span> e comparando com <a href="" class="xref" data-knowl="./knowl/eq-pot-2.html" title="Equação">()</a>:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-pot-2.html">
-\begin{equation*}
-\frac{\partial\varphi}{\partial y} = ze^x\cos(yz) + \frac{\partial C}{\partial y}(y,z) = ze^x\cos(yz) \implies \frac{\partial C}{\partial y}(y,z) = 0
-\end{equation*}
-</div>
-<div class="para">Logo, a constante de integração depende apenas de <span class="process-math">\(z\text{:}\)</span> <span class="process-math">\(C(y,z) = C(z)\text{.}\)</span> Assim:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-pot-2.html">
-\begin{equation*}
-\varphi(x,y,z) = e^x\text{sen}(yz) + C(z)
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Derivando em relação a <span class="process-math">\(z\)</span> e comparando com <a href="" class="xref" data-knowl="./knowl/eq-pot-3.html" title="Equação">()</a>:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eq-pot-3.html">
-\begin{equation*}
-\frac{\partial\varphi}{\partial z} = ye^x\cos(yz) + C'(z) = ye^x\cos(yz) \implies C'(z) = 0 \implies C(z) = K
-\end{equation*}
-</div>
-</div> <div class="para logical">
-<div class="para">Tomando <span class="process-math">\(K = 0\text{,}\)</span> obtemos a função potencial:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\varphi(x,y,z) = e^x\text{sen}(yz)
-\end{equation*}
 </div>
 </div>
 </div>

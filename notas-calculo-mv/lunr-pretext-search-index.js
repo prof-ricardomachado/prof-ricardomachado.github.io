@@ -853,7 +853,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "2.4",
   "title": "O Teorema de Green",
-  "body": " O Teorema de Green     Seja uma curva fechada simples. Diremos que tem orientação positiva quando a região limitada por fica à esquerda quando é percorrida de para .     Curva com orientação positiva   Curva gama fechada orientada no sentido anti-horário, com a região D em seu interior, mostrando que a região fica à esquerda do sentido de percurso.      O Teorema de Green   Teorema de Green   Seja uma curva fechada e simples, de classe por partes, orientada positivamente, limitando a região . Se é um campo de classe sobre uma região que contém , então vale:     Na definição acima, considere de classe por partes e seja de classe tal que , sendo a região limitada por .  Considere ainda uma região simples, isto é, podemos escrever: e também:    Regiões simples do Tipo I e Tipo II   Dois gráficos no plano cartesiano ilustrando regiões simples limitadas por funções g_1(x) e g_2(x) no eixo x, e h_1(y) e h_2(y) no eixo y.    Suponha que e vamos calcular observando a região dada por e .  Note que (os trechos verticais não contribuem, pois ), em que:   Logo:   Fazendo a substituição na segunda integral (com e ):   Usando o Teorema Fundamental do Cálculo, segue que:   Ou seja, temos que:   Com um pouco de empenho e força de vontade, considerando agora a região como , podemos mostrar com argumentos semelhantes que:   Como , segue que:   O resultado vale para regiões simples como as de cima. Mas, como sei que você é um pensador dos mais habilidosos, você deve estar pensando: \"E se não for simples?\". Bem, meu caro, neste caso podemos, acredite em mim, decompor uma região como união finita de regiões simples: em que cada é limitado por uma curva de classe por partes orientada positivamente.   Decomposição de uma região em regiões simples   Região D subdividida em D_1 e D_2. A curva da fronteira externa é gama_1 e gama_2. A fronteira interna (corte) é percorrida em sentidos opostos (C e -C), anulando-se.    De forma que a integral de um campo sobre a curva que limita uma região é: Note que nas fronteiras comuns tem-se .      Observação: É comum escrever para indicar que é fechada, simples e com orientação positiva.      Calcule em que é o triângulo composto pelos segmentos de reta de até , de a e de a .    Note que está orientada positivamente e é . Vamos usar o Teorema de Green. Temos:   Assim:   A região é . Daí:        Calcule , onde é o círculo .    Aqui, e . Daí, e .  Aplicando o Teorema de Green:        Calcule , onde é o arco do círculo , orientado no sentido anti-horário e no 1º quadrante.    Podemos usar o Teorema de Green na região delimitada por , e , onde é o segmento vertical e o segmento horizontal.   Região delimitada pelo arco e pelos segmentos e   Região D no primeiro quadrante delimitada pelo arco de circunferência C percorrido no sentido anti-horário, pelo segmento vertical gama_1 orientado para baixo e pelo segmento horizontal gama_2 orientado para a direita.    Aqui, . .  Pelo Teorema de Green, .   Como com , segue que e:   Como com , segue que e:   Portanto, sabendo que a área de um quarto de círculo unitário é :        Calcule , onde é a curva orientada no sentido anti-horário e que limita uma região entre as retas e e entre os círculos e no primeiro quadrante.   Região delimitada pelas retas , e pelas circunferências e   Setor anular D no primeiro quadrante limitado entre as retas y = raiz(3)\/3 x e y = raiz(3) x e os círculos de raios 1 e 2, com a fronteira C percorrida no sentido anti-horário.      Temos:   Assim:   A região em coordenadas polares é . Daí:   Avaliando a expressão final:       Regiões com Furos (Multiplamente Conexas)  O teorema de Green pode ser aplicado em regiões com furos para o campo com finitos pontos de descontinuidades. Considere uma região com um buraco interno.   Região com furo dividida em sub-regiões   Região com fronteira externa C1 no sentido anti-horário e fronteira interna C2 no sentido horário, dividida por duas curvas secantes gama_3 e gama_4.    Podemos ver que uma curva para limitar e ser orientada positivamente será , em que é percorrida no sentido anti-horário e é percorrida no sentido horário (desta forma a região estará sempre à esquerda).  Agora, dividimos em regiões sem buracos e limitadas por curvas orientadas positivamente.  Subdivisão da região com furo em sub-regiões e com cancelamento nos cortes e   Região elíptica com furo circular subdividida horizontalmente em D_1 (superior) e D_2 (inferior). As curvas secantes gama_3 e gama_4 são percorridas em sentidos opostos nas duas regiões, cancelando suas integrais de linha.   Teremos: Note acima que as integrais sobre as curvas internas se cancelam: e . Portanto ainda vale:      Calcule a integral de linha do Campo Vetorial ao longo da curva de equação , orientada no sentido anti-horário.    Note que o Teorema de Green não pode ser aplicado diretamente, pois não é na origem. Mas considere um círculo de raio e orientado no sentido horário. Assim, limitam positivamente uma região .   Região entre a elipse e o círculo em torno da descontinuidade na origem   Elipse externa C com interceptos em mais ou menos 2 e 3 orientada no sentido anti-horário, e círculo interno C_2 de raio epsilon centrado na origem orientado no sentido horário contornando a singularidade do campo vetorial.    Pelo Teorema de Green nesta região e pelo que vimos acima:   Calculando as derivadas parciais: Segue que a diferença é exatamente , logo:   A área de é a área da elipse retirando a área do círculo : .    A curva (sentido horário) pode ser parametrizada por:   Avaliando o campo sobre :   Calculando o produto interno com :   Portanto, igualando os dois lados do Teorema de Green (lembrando do fator 2 que multiplicava a área):   Como pode ser arbitrariamente pequeno (isto é, ), podemos concluir que a circulação ao longo da elipse é perfeitamente contornável pelo limite.      Cálculo de Áreas com o Teorema de Green  O Teorema de Green nos ajuda ainda a calcular áreas. Note que se , então:    Região no plano cartesiano com fronteira percorrida no sentido positivo   Região elíptica inclinada D no primeiro quadrante com hachuras internas e fronteira orientada no sentido anti-horário.    Temos algumas opções para obter :  e  e  De forma que . Ou seja: (Aqui, e ).     Encontre a área da elipse .    Uma parametrização para a elipse com orientação positiva é:   Daí, e .  Aplicando a fórmula:       Exercícios      Calcule as seguintes integrais ao longo das curvas , orientadas positivamente:     ; é a fronteira do quadrado .     ; é a fronteira do triângulo de vértices , e .     ; é a elipse .     ; delimita a região entre e .     ; delimita a região entre e .     ; é a circunferência .     ; delimita o anel entre e .     ; é a fronteira do pentágono de vértices , , , e .                                      Seja uma curva fechada, orientada positivamente, limitando uma região de área . Verifique que:    Demonstração via Teorema de Green: sendo e , temos . Assim:          Mostre que .    Use o item (a) para calcular a área da região limitada pelo eixo , pelas retas , , e pela curva .        Escolhendo e , temos . Pelo Teorema de Green, .               Determine , onde é a união de ( ), ( ) e ( ) orientada no sentido anti-horário.           Seja de classe em tal que . Sabendo que na circunferência unitária , calcule a integral ao longo da elipse orientada no sentido anti-horário.           Seja em . Calcule a integral de linha no sentido anti-horário ao longo de:   : circunferência .  : fronteira do retângulo .                "
+  "body": " O Teorema de Green     Seja uma curva fechada simples. Diremos que tem orientação positiva quando a região limitada por fica à esquerda quando é percorrida de para .     Curva com orientação positiva   Curva gama fechada orientada no sentido anti-horário, com a região D em seu interior, mostrando que a região fica à esquerda do sentido de percurso.      O Teorema de Green   Teorema de Green   Seja uma curva fechada e simples, de classe por partes, orientada positivamente, limitando a região . Se é um campo de classe sobre uma região que contém , então vale:     Na definição acima, considere de classe por partes e seja de classe tal que , sendo a região limitada por .  Considere ainda uma região simples, isto é, podemos escrever: e também:    Regiões simples do Tipo I e Tipo II   Dois gráficos no plano cartesiano ilustrando regiões simples limitadas por funções g_1(x) e g_2(x) no eixo x, e h_1(y) e h_2(y) no eixo y.    Suponha que e vamos calcular observando a região dada por e .  Note que (os trechos verticais não contribuem, pois ), em que:   Logo:   Fazendo a substituição na segunda integral (com e ):   Usando o Teorema Fundamental do Cálculo, segue que:   Ou seja, temos que:   Com um pouco de empenho e força de vontade, considerando agora a região como , podemos mostrar com argumentos semelhantes que:   Como , segue que:   O resultado vale para regiões simples como as de cima. Mas, como sei que você é um pensador dos mais habilidosos, você deve estar pensando: \"E se não for simples?\". Bem, meu caro, neste caso podemos, acredite em mim, decompor uma região como união finita de regiões simples: em que cada é limitado por uma curva de classe por partes orientada positivamente.   Decomposição de uma região em regiões simples   Região D subdividida em D_1 e D_2. A curva da fronteira externa é gama_1 e gama_2. A fronteira interna (corte) é percorrida em sentidos opostos (C e -C), anulando-se.    De forma que a integral de um campo sobre a curva que limita uma região é: Note que nas fronteiras comuns tem-se .      Observação: É comum escrever para indicar que é fechada, simples e com orientação positiva.      Calcule em que é o triângulo composto pelos segmentos de reta de até , de a e de a .    Note que está orientada positivamente e é . Vamos usar o Teorema de Green. Temos:   Assim:   A região é . Daí:        Calcule , onde é o círculo .    Aqui, e . Daí, e .  Aplicando o Teorema de Green:        Calcule , onde é o arco do círculo , orientado no sentido anti-horário e no 1º quadrante.    Podemos usar o Teorema de Green na região delimitada por , e , onde é o segmento vertical e o segmento horizontal.   Região delimitada pelo arco e pelos segmentos e   Região D no primeiro quadrante delimitada pelo arco de circunferência C percorrido no sentido anti-horário, pelo segmento vertical gama_1 orientado para baixo e pelo segmento horizontal gama_2 orientado para a direita.    Aqui, . .  Pelo Teorema de Green, .   Como com , segue que e:   Como com , segue que e:   Portanto, sabendo que a área de um quarto de círculo unitário é :        Calcule , onde é a curva orientada no sentido anti-horário e que limita uma região entre as retas e e entre os círculos e no primeiro quadrante.   Região delimitada pelas retas , e pelas circunferências e   Setor anular D no primeiro quadrante limitado entre as retas y = raiz(3)\/3 x e y = raiz(3) x e os círculos de raios 1 e 2, com a fronteira C percorrida no sentido anti-horário.      Temos:   Assim:   A região em coordenadas polares é . Daí:   Avaliando a expressão final:       Regiões com Furos (Multiplamente Conexas)  O teorema de Green pode ser aplicado em regiões com furos para o campo com finitos pontos de descontinuidades. Considere uma região com um buraco interno.   Região com furo dividida em sub-regiões   Região com fronteira externa C1 no sentido anti-horário e fronteira interna C2 no sentido horário, dividida por duas curvas secantes gama_3 e gama_4.    Podemos ver que uma curva para limitar e ser orientada positivamente será , em que é percorrida no sentido anti-horário e é percorrida no sentido horário (desta forma a região estará sempre à esquerda).  Agora, dividimos em regiões sem buracos e limitadas por curvas orientadas positivamente.  Subdivisão da região com furo em sub-regiões e com cancelamento nos cortes e   Região elíptica com furo circular subdividida horizontalmente em D_1 (superior) e D_2 (inferior). As curvas secantes gama_3 e gama_4 são percorridas em sentidos opostos nas duas regiões, cancelando suas integrais de linha.   Teremos: Note acima que as integrais sobre as curvas internas se cancelam: e . Portanto ainda vale:      Calcule a integral de linha do Campo Vetorial ao longo da curva de equação , orientada no sentido anti-horário.    Note que o Teorema de Green não pode ser aplicado diretamente, pois não é na origem. Mas considere um círculo de raio e orientado no sentido horário. Assim, limitam positivamente uma região .   Região entre a elipse e o círculo em torno da descontinuidade na origem   Elipse externa C com interceptos em mais ou menos 2 e 3 orientada no sentido anti-horário, e círculo interno C_2 de raio epsilon centrado na origem orientado no sentido horário contornando a singularidade do campo vetorial.    Pelo Teorema de Green nesta região e pelo que vimos acima:   Calculando as derivadas parciais: Segue que a diferença é exatamente , logo:   A área de é a área da elipse retirando a área do círculo : .    A curva (sentido horário) pode ser parametrizada por:   Avaliando o campo sobre :   Calculando o produto interno com :   Portanto, igualando os dois lados do Teorema de Green (lembrando do fator 2 que multiplicava a área):   Como pode ser arbitrariamente pequeno (isto é, ), podemos concluir que a circulação ao longo da elipse é perfeitamente contornável pelo limite.      Cálculo de Áreas com o Teorema de Green  O Teorema de Green nos ajuda ainda a calcular áreas. Note que se , então:    Região no plano cartesiano com fronteira percorrida no sentido positivo   Região elíptica inclinada D no primeiro quadrante com hachuras internas e fronteira orientada no sentido anti-horário.    Temos algumas opções para obter :  e  e  De forma que . Ou seja: (Aqui, e ).     Encontre a área da elipse .    Uma parametrização para a elipse com orientação positiva é:   Daí, e .  Aplicando a fórmula:       Exercícios      Calcule as seguintes integrais ao longo das curvas , orientadas positivamente:     ; é a fronteira do quadrado .     ; é a fronteira do triângulo de vértices , e .     ; é a elipse .     ; delimita a região entre e .     ; delimita a região entre e .     ; é a circunferência .     ; delimita o anel entre e .     ; é a fronteira do pentágono de vértices , , , e .                                      Seja uma curva fechada, orientada positivamente, limitando uma região de área . Verifique que:    Demonstração via Teorema de Green: sendo e , temos . Assim:          Mostre que .    Use o item (a) para calcular a área da região limitada pelo eixo , pelas retas , , e pela curva .        Escolhendo e , temos . Pelo Teorema de Green, .               Determine , onde é a união de ( ), ( ) e ( ) orientada no sentido anti-horário.           Seja de classe em tal que . Sabendo que na circunferência unitária , calcule a integral ao longo da elipse orientada no sentido anti-horário.       Aplicando o Teorema de Green na região anular entre a elipse externa e o círculo interno  : Sendo e  :        Seja em . Calcule a integral de linha no sentido anti-horário ao longo de:   : circunferência .  : fronteira do retângulo .                "
 },
 {
   "id": "def-orientacao-positiva",
@@ -1015,7 +1015,7 @@ var ptx_lunr_docs = [
   "type": "Exercício",
   "number": "2.4.4.5",
   "title": "",
-  "body": " Seja de classe em tal que . Sabendo que na circunferência unitária , calcule a integral ao longo da elipse orientada no sentido anti-horário.      "
+  "body": " Seja de classe em tal que . Sabendo que na circunferência unitária , calcule a integral ao longo da elipse orientada no sentido anti-horário.       Aplicando o Teorema de Green na região anular entre a elipse externa e o círculo interno  : Sendo e  :   "
 },
 {
   "id": "exer-vortice-mais-rotacional-sec4",
@@ -1033,7 +1033,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.1",
   "title": "Rotacional e Divergente",
-  "body": " Rotacional e Divergente      Rotacional  Considere o operador diferencial (del ou nabla) que a cada função escalar diferenciavel associa o seu vetor gradiente:     Seja um campo vetorial em tal que as derivadas parciais de primeira ordem de , e existam. Definimos o rotacional de , denotado por ou , formalmente como o produto vetorial:   Desenvolvendo o determinante formal, obtemos:      O rotacional de um campo vetorial em é também um campo vetorial .      Calcule o rotacional do campo vetorial .    Identificando as funções componentes:   Aplicando a definição:     Caso seja um campo vetorial bidimensional , podemos estendê-lo ao fazendo . O rotacional torna-se:     Rotacional de um Campo Gradiente   Seja uma função de três variáveis que possui derivadas parciais de segunda ordem contínuas. Então:     Como , calculamos:   Pelo Teorema de Clairaut-Schwarz, as derivadas parciais mistas de uma função coincidem: Portanto:     O teorema acima estabelece que o rotacional de qualquer campo gradiente é identicamente nulo. Como todo campo conservativo admite uma função potencial com , concluímos imediatamente que:     Critério do Rotacional para Campos Conservativos   Seja um campo vetorial de classe definido em todo o (ou em um domínio simplesmente conexo). Então é conservativo se, e somente se:        Considere o campo vetorial:    é conservativo?  Se sim, determine uma função potencial tal que .      Item a) O domínio de é todo o , que é simplesmente conexo. Vamos calcular :   Calculando cada derivada parcial: Logo, , o que garante que é conservativo .   Item b) Buscamos satisfazendo o sistema:   Integrando a equação em relação a :   Derivando em relação a e comparando com : Logo, a constante de integração depende apenas de : . Assim:   Derivando em relação a e comparando com :   Tomando , obtemos a função potencial:          Divergente    Considerando o operador e um campo vetorial cujas derivadas parciais de primeira ordem existam, definimos o divergente de por meio do produto escalar formal:      Enquanto o rotacional produz um campo vetorial, o divergente de um campo vetorial resulta em um campo escalar .      Calcule o divergente do campo .    Temos , e . Logo:       Divergente do Rotacional   Se é um campo vetorial em cujas componentes possuem derivadas parciais de segunda ordem contínuas, então:     Usando as definições de divergente e rotacional: pois todos os termos se cancelam aos pares pelo Teorema de Clairaut-Schwarz.       Mostre que o campo vetorial não pode ser escrito como o rotacional de outro campo vetorial (isto é, ).    Calculando o divergente de :   Note que para pontos onde e . Caso existisse um campo tal que , pelo teríamos: para todo , o que é uma contradição. Logo, não é o rotacional de nenhum campo.         Formas Vetoriais do Teorema de Green   1. Forma Rotacional (Circulação)  Seja um campo vetorial plano. Vimos que seu rotacional pode ser visto como um vetor perpendicular ao plano:   Projetando este vetor sobre a direção normal :   Portanto, se é uma curva fechada simples orientada positivamente contornando uma região , o Teorema de Green assume a forma elegante de circulação:     2. Forma Divergente (Teorema da Divergência no Plano \/ Fluxo)  Seja uma curva parametrizada por , com . O vetor tangente unitário é dado por:   O vetor normal unitário exterior à curva (girado no sentido horário em relação ao vetor tangente) é:   Calculamos a integral de fluxo de através de :   Aplicando o Teorema de Green tradicional a este novo campo :   Como o integrando é exatamente a definição de divergente plano , obtemos a forma divergente do Teorema de Green :     "
+  "body": " Rotacional e Divergente      Rotacional  Considere o operador diferencial (del ou nabla) que a cada função escalar diferenciavel associa o seu vetor gradiente:     Seja um campo vetorial em tal que as derivadas parciais de primeira ordem de , e existam. Definimos o rotacional de , denotado por ou , formalmente como o produto vetorial:   Desenvolvendo o determinante formal, obtemos:      O rotacional de um campo vetorial em é também um campo vetorial .      Calcule o rotacional do campo vetorial .    Identificando as funções componentes:   Aplicando a definição:     Caso seja um campo vetorial bidimensional , podemos estendê-lo ao fazendo . O rotacional torna-se:     Rotacional de um Campo Gradiente   Seja uma função de três variáveis que possui derivadas parciais de segunda ordem contínuas. Então:     Como , calculamos:   Pelo Teorema de Clairaut-Schwarz, as derivadas parciais mistas de uma função coincidem: Portanto:     O teorema acima estabelece que o rotacional de qualquer campo gradiente é identicamente nulo. Como todo campo conservativo admite uma função potencial com , concluímos imediatamente que:     Critério do Rotacional para Campos Conservativos   Seja um campo vetorial de classe definido em todo o (ou em um domínio simplesmente conexo). Então é conservativo se, e somente se:        Considere o campo vetorial:    é conservativo?  Se sim, determine uma função potencial tal que .      Item a) O domínio de é todo o , que é simplesmente conexo. Vamos calcular :   Calculando cada derivada parcial: Logo, , o que garante que é conservativo .   Item b) Buscamos satisfazendo o sistema:   Integrando a equação em relação a :   Derivando em relação a e comparando com : Logo, a constante de integração depende apenas de : . Assim:   Derivando em relação a e comparando com :   Tomando , obtemos a função potencial:          Divergente    Considerando o operador e um campo vetorial cujas derivadas parciais de primeira ordem existam, definimos o divergente de por meio do produto escalar formal:      Enquanto o rotacional produz um campo vetorial, o divergente de um campo vetorial resulta em um campo escalar .      Calcule o divergente do campo .    Temos , e . Logo:       Divergente do Rotacional   Se é um campo vetorial em cujas componentes possuem derivadas parciais de segunda ordem contínuas, então:     Usando as definições de divergente e rotacional: pois todos os termos se cancelam aos pares pelo Teorema de Clairaut-Schwarz.       Mostre que o campo vetorial não pode ser escrito como o rotacional de outro campo vetorial (isto é, ).    Calculando o divergente de :   Note que para pontos onde e . Caso existisse um campo tal que , pelo teríamos: para todo , o que é uma contradição. Logo, não é o rotacional de nenhum campo.         Formas Vetoriais do Teorema de Green   1. Forma Rotacional (Circulação)  Seja um campo vetorial plano. Vimos que seu rotacional pode ser visto como um vetor perpendicular ao plano:   Projetando este vetor sobre a direção normal :   Portanto, se é uma curva fechada simples orientada positivamente contornando uma região , o Teorema de Green assume a forma elegante de circulação:     2. Forma Divergente (Teorema da Divergência no Plano \/ Fluxo)  Seja uma curva parametrizada por , com . O vetor tangente unitário é dado por:   O vetor normal unitário exterior à curva (girado no sentido horário em relação ao vetor tangente) é:   Calculamos a integral de fluxo de através de :   Aplicando o Teorema de Green tradicional a este novo campo :   Como o integrando é exatamente a definição de divergente plano , obtemos a forma divergente do Teorema de Green :      Exercícios    Calcule o rotacional do campo vetorial .     Identificamos as funções componentes: , e .  Aplicando a definição de rotacional:      Determine o divergente do campo vetorial .     O divergente é calculado pela soma das derivadas parciais:   Calculando cada termo:   Somando os resultados, obtemos .     Seja o campo vetorial bidimensional . Calcule .     Para um campo bidimensional, o rotacional tem apenas a componente na direção :   Temos e . Derivando:   Logo, .     Use o critério do rotacional para verificar se o campo vetorial é conservativo em .   O campo é conservativo, pois em .   Calculamos o rotacional de :   Como e o domínio é todo o (simplesmente conexo), o campo é conservativo.     Mostre que o campo vetorial não pode ser escrito como o rotacional de nenhum outro campo vetorial .   Não pode, pois .   Pelo teorema, sabemos que a divergência do rotacional de qualquer campo vetorial suave deve ser zero, isto é, .  Calculando o divergente de :   Como (exceto no plano ), não pode ser o rotacional de um campo .     Verifique se é conservativo. Em caso afirmativo, encontre uma função potencial .   É conservativo. Função potencial: .   Primeiro, verificamos se :   O campo é conservativo. Para encontrar , igualamos :   Derivando em relação a :   Derivando em relação a :   Logo, a função potencial é .     Sem calcular derivadas parciais extensas, determine sabendo que .     O campo é, por definição, o gradiente de uma função escalar .  Pelo teorema estudado na seção, o rotacional de qualquer campo gradiente de uma função de classe é identicamente nulo.  Portanto, .     Dado o campo , determine e .   e   Para o divergente:   Para o rotacional:      Utilize a Forma Divergente (fluxo) do Teorema de Green para calcular a integral , onde e é a circunferência unitária orientada positivamente.     A forma divergente do Teorema de Green estabelece que .  Calculamos o divergente do campo plano:   Convertendo a integral dupla para coordenadas polares no disco unitário ( , ):      Utilize a Forma Rotacional (circulação) do Teorema de Green para avaliar a integral , sabendo que e que é a fronteira do quadrado percorrida no sentido anti-horário.     A forma rotacional do Teorema de Green garante que .  Calculamos a componente do rotacional bidimensional:   Integrando sobre o quadrado :     "
 },
 {
   "id": "def-rotacional",
@@ -1135,13 +1135,103 @@ var ptx_lunr_docs = [
   "body": "  Mostre que o campo vetorial não pode ser escrito como o rotacional de outro campo vetorial (isto é, ).    Calculando o divergente de :   Note que para pontos onde e . Caso existisse um campo tal que , pelo teríamos: para todo , o que é uma contradição. Logo, não é o rotacional de nenhum campo.   "
 },
 {
+  "id": "exer-calc-rotacional",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-calc-rotacional",
+  "type": "Exercício",
+  "number": "3.1.4.1",
+  "title": "",
+  "body": " Calcule o rotacional do campo vetorial .     Identificamos as funções componentes: , e .  Aplicando a definição de rotacional:   "
+},
+{
+  "id": "exer-calc-divergente",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-calc-divergente",
+  "type": "Exercício",
+  "number": "3.1.4.2",
+  "title": "",
+  "body": " Determine o divergente do campo vetorial .     O divergente é calculado pela soma das derivadas parciais:   Calculando cada termo:   Somando os resultados, obtemos .  "
+},
+{
+  "id": "exer-rotacional-2d",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-rotacional-2d",
+  "type": "Exercício",
+  "number": "3.1.4.3",
+  "title": "",
+  "body": " Seja o campo vetorial bidimensional . Calcule .     Para um campo bidimensional, o rotacional tem apenas a componente na direção :   Temos e . Derivando:   Logo, .  "
+},
+{
+  "id": "exer-verificacao-conservativo",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-verificacao-conservativo",
+  "type": "Exercício",
+  "number": "3.1.4.4",
+  "title": "",
+  "body": " Use o critério do rotacional para verificar se o campo vetorial é conservativo em .   O campo é conservativo, pois em .   Calculamos o rotacional de :   Como e o domínio é todo o (simplesmente conexo), o campo é conservativo.  "
+},
+{
+  "id": "exer-div-rot-zero",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-div-rot-zero",
+  "type": "Exercício",
+  "number": "3.1.4.5",
+  "title": "",
+  "body": " Mostre que o campo vetorial não pode ser escrito como o rotacional de nenhum outro campo vetorial .   Não pode, pois .   Pelo teorema, sabemos que a divergência do rotacional de qualquer campo vetorial suave deve ser zero, isto é, .  Calculando o divergente de :   Como (exceto no plano ), não pode ser o rotacional de um campo .  "
+},
+{
+  "id": "exer-achar-potencial",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-achar-potencial",
+  "type": "Exercício",
+  "number": "3.1.4.6",
+  "title": "",
+  "body": " Verifique se é conservativo. Em caso afirmativo, encontre uma função potencial .   É conservativo. Função potencial: .   Primeiro, verificamos se :   O campo é conservativo. Para encontrar , igualamos :   Derivando em relação a :   Derivando em relação a :   Logo, a função potencial é .  "
+},
+{
+  "id": "exer-rot-grad-zero",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-rot-grad-zero",
+  "type": "Exercício",
+  "number": "3.1.4.7",
+  "title": "",
+  "body": " Sem calcular derivadas parciais extensas, determine sabendo que .     O campo é, por definição, o gradiente de uma função escalar .  Pelo teorema estudado na seção, o rotacional de qualquer campo gradiente de uma função de classe é identicamente nulo.  Portanto, .  "
+},
+{
+  "id": "exer-calc-misto-div-rot",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-calc-misto-div-rot",
+  "type": "Exercício",
+  "number": "3.1.4.8",
+  "title": "",
+  "body": " Dado o campo , determine e .   e   Para o divergente:   Para o rotacional:   "
+},
+{
+  "id": "exer-forma-divergente-green",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-forma-divergente-green",
+  "type": "Exercício",
+  "number": "3.1.4.9",
+  "title": "",
+  "body": " Utilize a Forma Divergente (fluxo) do Teorema de Green para calcular a integral , onde e é a circunferência unitária orientada positivamente.     A forma divergente do Teorema de Green estabelece que .  Calculamos o divergente do campo plano:   Convertendo a integral dupla para coordenadas polares no disco unitário ( , ):   "
+},
+{
+  "id": "exer-forma-rotacional-green",
+  "level": "2",
+  "url": "sec-rotacional-divergente.html#exer-forma-rotacional-green",
+  "type": "Exercício",
+  "number": "3.1.4.10",
+  "title": "",
+  "body": " Utilize a Forma Rotacional (circulação) do Teorema de Green para avaliar a integral , sabendo que e que é a fronteira do quadrado percorrida no sentido anti-horário.     A forma rotacional do Teorema de Green garante que .  Calculamos a componente do rotacional bidimensional:   Integrando sobre o quadrado :   "
+},
+{
   "id": "sec-superficies-integrais",
   "level": "1",
   "url": "sec-superficies-integrais.html",
   "type": "Seção",
   "number": "3.2",
   "title": "Superfícies Parametrizadas e Integrais de Superfície",
-  "body": " Superfícies Parametrizadas e Integrais de Superfície      Superfícies Parametrizadas    Considere uma função dada por: O conjunto imagem é denominado uma superfície parametrizada .  As equações escalares: são chamadas de equações paramétricas da superfície. Podemos também representá-la pela equação vetorial :      Mapeamento do domínio plano na superfície   Mapeamento de um domínio bidimensional com coordenadas u e v para uma superfície curva tridimensional no espaço xyz.       Identifique a superfície dada por , com .    As equações paramétricas são: Esta parametrização representa um plano que passa pelo ponto e é paralelo aos vetores direcionais e .  Eliminando os parâmetros e : Substituindo em : Obtendo a equação cartesiana: .       Descreva a superfície dada por , com .    Para qualquer altura fixada , as coordenadas no plano satisfazem: Logo, em qualquer altura temos uma circunferência de raio 2 paralela ao plano . Trata-se de um cilindro circular reto de raio 2 ao longo do eixo .       Encontre uma parametrização para a esfera de raio centrada na origem.    Utilizando coordenadas esféricas com raio fixo : com e .  Alternativamente, como a equação cartesiana é , isolando obtemos a semiesfera superior parametrizada diretamente pelas variáveis cartesianas:        Encontre uma parametrização para a superfície correspondente ao gráfico do paraboloide .    Para o gráfico de qualquer função , adotamos e como parâmetros naturais:          Plano Tangente  Seja uma superfície parametrizada suave e considere um ponto .   Fixando , a função define uma curva coordenada na superfície com vetor tangente .  Fixando , a função define outra curva coordenada com vetor tangente .    Vetores tangentes coordenados e plano tangente   Superfície no espaço mostrando duas curvas coordenadas se cruzando em um ponto, com os vetores tangentes parciais definindo o plano tangente.    Supondo que o produto vetorial não seja nulo: o vetor é normal à superfície em . O plano tangente é definido pelas seguintes equações:    Forma Vetorial       Forma Cartesiana  Sendo e :        Determine o plano tangente à superfície com equações paramétricas , , no ponto .    Sendo , derivamos em relação aos parâmetros:   O vetor normal é dado pelo produto vetorial:   O ponto corresponde a e . O vetor normal no ponto é:   Portanto, a equação do plano tangente é:        Encontre a equação do plano tangente à semiesfera no ponto .    Parametrizando por :   No ponto : Calculando o vetor normal:   Assim, a equação cartesiana do plano tangente é:          Área de Superfície    Seja uma superfície parametrizada suave dada por , com . Se é percorrida uma única vez quando varia em , a área da superfície é dada por: onde e .       Calcule a área da superfície de uma esfera de raio .    Parametrização: , com e .  Derivadas parciais: O produto vetorial resulta em:   Calculando a norma (lembrando que para ):   Integrando sobre o domínio:        Encontre a área da parte do cone que se encontra entre o plano e o cilindro parabólico .    A projeção da região sobre o plano é dada por .  Parametrizando o cone por : Sua norma é constante:   A área da superfície é:          Integral de Superfície de Campos Escalares    Seja uma superfície parametrizada suave e injetiva com imagem , e seja uma função contínua definida sobre . A integral de superfície de sobre é dada por:      Quando , temos (a área de ).      Calcule , onde é a esfera unitária .    Usando a parametrização esférica com , temos e :   Calculando cada integral: Portanto:        Calcule , onde é a porção do cone situada abaixo do paraboloide .    Determinamos a interseção entre o cone e o paraboloide : A projeção de sobre o plano é o anel circular delimitado por e .  Parametrizando por , temos . Em coordenadas polares, a região é descrita por e :      Se é uma superfície suave por partes formada pela união , interceptando-se apenas em suas fronteiras, a integral é dada por:      Calcule , onde é a superfície fechada composta pelo cilindro lateral , pelo fundo em , e pelo topo no plano .    Calculamos a integral em cada uma das três superfícies:     Superfície lateral : com parâmetros e , , , , onde e . O elemento de área é .      Fundo : sobre o plano , temos , logo:      Topo : faz parte do plano sobre o disco unitário . O elemento de área é . Em coordenadas polares:     Somando as três contribuições:          Integral de Superfície de Campos Vetoriais (Fluxo)  Seja uma superfície suave. Um campo vetorial unitário normal contínuo é definido por: A escolha de ou determina uma orientação para a superfície .   Para uma superfície fechada , adotamos convencionalmente como orientação positiva aquela em que o vetor normal aponta para o exterior (para fora da região sólida envolvida).     Seja um campo vetorial contínuo sobre uma superfície orientada com vetor normal unitário . A integral de superfície de sobre , denominada fluxo de através de , é dada por:   Em termos da parametrização , como , a norma do produto vetorial se cancela, resultando diretamente em:        Calcule o fluxo de através da superfície parametrizada por , com e .    Calculamos o vetor normal fundamental:   Avaliando o campo na parametrização e efetuando o produto interno:   Integrando no quadrado :        Calcule , onde é a fronteira do cubo unitário , , e é a normal exterior.    A integral é calculada pela soma do fluxo nas 6 faces:   Face superior ( , ): .  Face direita ( , ): .  Face inferior ( , ): .  Face esquerda ( , ): .  Face posterior ( , ): .  Face frontal ( , ): .   Somando os fluxos parciais:        Considere o sólido com fronteira orientada para fora , e o campo . Verifique que:      1. Cálculo pelo fluxo direto na superfície: A fronteira é formada pela face inclinada e por três faces sobre os planos coordenados.    Na face ( ), parametrização com normal :     Nas faces dos planos coordenados ( , , ), temos respectivamente , e . Logo, o fluxo nessas faces é nulo.    Assim, o fluxo total é .   2. Cálculo pela integral tripla do divergente:  Integrando sobre o sólido : Verificando a igualdade.     "
+  "body": " Superfícies Parametrizadas e Integrais de Superfície      Superfícies Parametrizadas    Considere uma função dada por: O conjunto imagem é denominado uma superfície parametrizada .  As equações escalares: são chamadas de equações paramétricas da superfície. Podemos também representá-la pela equação vetorial :      Mapeamento do domínio plano na superfície   Mapeamento de um domínio bidimensional com coordenadas u e v para uma superfície curva tridimensional no espaço xyz.       Identifique a superfície dada por , com .    As equações paramétricas são: Esta parametrização representa um plano que passa pelo ponto e é paralelo aos vetores direcionais e .  Eliminando os parâmetros e : Substituindo em : Obtendo a equação cartesiana: .       Descreva a superfície dada por , com .    Para qualquer altura fixada , as coordenadas no plano satisfazem: Logo, em qualquer altura temos uma circunferência de raio 2 paralela ao plano . Trata-se de um cilindro circular reto de raio 2 ao longo do eixo .       Encontre uma parametrização para a esfera de raio centrada na origem.    Utilizando coordenadas esféricas com raio fixo : com e .  Alternativamente, como a equação cartesiana é , isolando obtemos a semiesfera superior parametrizada diretamente pelas variáveis cartesianas:        Encontre uma parametrização para a superfície correspondente ao gráfico do paraboloide .    Para o gráfico de qualquer função , adotamos e como parâmetros naturais:          Plano Tangente  Seja uma superfície parametrizada suave e considere um ponto .   Fixando , a função define uma curva coordenada na superfície com vetor tangente .  Fixando , a função define outra curva coordenada com vetor tangente .    Vetores tangentes coordenados e plano tangente   Superfície no espaço mostrando duas curvas coordenadas se cruzando em um ponto, com os vetores tangentes parciais definindo o plano tangente.    Supondo que o produto vetorial não seja nulo: o vetor é normal à superfície em . O plano tangente é definido pelas seguintes equações:    Forma Vetorial       Forma Cartesiana  Sendo e :        Determine o plano tangente à superfície com equações paramétricas , , no ponto .    Sendo , derivamos em relação aos parâmetros:   O vetor normal é dado pelo produto vetorial:   O ponto corresponde a e . O vetor normal no ponto é:   Portanto, a equação do plano tangente é:        Encontre a equação do plano tangente à semiesfera no ponto .    Parametrizando por :   No ponto : Calculando o vetor normal:   Assim, a equação cartesiana do plano tangente é:          Área de Superfície    Seja uma superfície parametrizada suave dada por , com . Se é percorrida uma única vez quando varia em , a área da superfície é dada por: onde e .       Calcule a área da superfície de uma esfera de raio .    Parametrização: , com e .  Derivadas parciais: O produto vetorial resulta em:   Calculando a norma (lembrando que para ):   Integrando sobre o domínio:        Encontre a área da parte do cone que se encontra entre o plano e o cilindro parabólico .    A projeção da região sobre o plano é dada por .  Parametrizando o cone por : Sua norma é constante:   A área da superfície é:          Integral de Superfície de Campos Escalares    Seja uma superfície parametrizada suave e injetiva com imagem , e seja uma função contínua definida sobre . A integral de superfície de sobre é dada por:      Quando , temos (a área de ).      Calcule , onde é a esfera unitária .    Usando a parametrização esférica com , temos e :   Calculando cada integral: Portanto:        Calcule , onde é a porção do cone situada abaixo do paraboloide .    Determinamos a interseção entre o cone e o paraboloide : A projeção de sobre o plano é o anel circular delimitado por e .  Parametrizando por , temos . Em coordenadas polares, a região é descrita por e :      Se é uma superfície suave por partes formada pela união , interceptando-se apenas em suas fronteiras, a integral é dada por:      Calcule , onde é a superfície fechada composta pelo cilindro lateral , pelo fundo em , e pelo topo no plano .    Calculamos a integral em cada uma das três superfícies:     Superfície lateral : com parâmetros e , , , , onde e . O elemento de área é .      Fundo : sobre o plano , temos , logo:      Topo : faz parte do plano sobre o disco unitário . O elemento de área é . Em coordenadas polares:     Somando as três contribuições:          Integral de Superfície de Campos Vetoriais (Fluxo)  Seja uma superfície suave. Um campo vetorial unitário normal contínuo é definido por: A escolha de ou determina uma orientação para a superfície .   Para uma superfície fechada , adotamos convencionalmente como orientação positiva aquela em que o vetor normal aponta para o exterior (para fora da região sólida envolvida).     Seja um campo vetorial contínuo sobre uma superfície orientada com vetor normal unitário . A integral de superfície de sobre , denominada fluxo de através de , é dada por:   Em termos da parametrização , como , a norma do produto vetorial se cancela, resultando diretamente em:        Calcule o fluxo de através da superfície parametrizada por , com e .    Calculamos o vetor normal fundamental:   Avaliando o campo na parametrização e efetuando o produto interno:   Integrando no quadrado :        Calcule , onde é a fronteira do cubo unitário , , e é a normal exterior.    A integral é calculada pela soma do fluxo nas 6 faces:   Face superior ( , ): .  Face direita ( , ): .  Face inferior ( , ): .  Face esquerda ( , ): .  Face posterior ( , ): .  Face frontal ( , ): .   Somando os fluxos parciais:        Considere o sólido com fronteira orientada para fora , e o campo . Verifique que:      1. Cálculo pelo fluxo direto na superfície: A fronteira é formada pela face inclinada e por três faces sobre os planos coordenados.    Na face ( ), parametrização com normal :     Nas faces dos planos coordenados ( , , ), temos respectivamente , e . Logo, o fluxo nessas faces é nulo.    Assim, o fluxo total é .   2. Cálculo pela integral tripla do divergente:  Integrando sobre o sólido : Verificando a igualdade.      Exercícios: Superfícies e Integrais de Superfície      Identifique e descreva a superfície parametrizada por , com e .   Trata-se de um cone circular reto centrado no eixo , correspondente à equação cartesiana .    Determine uma parametrização vetorial para o plano que passa pelos pontos , e .   Uma possível parametrização é , com .    Encontre as equações paramétricas para a parte do cilindro que está situada entre os planos e .   , , , com e .    Determine a equação cartesiana do plano tangente à superfície parametrizada por no ponto correspondente a .      Encontre o vetor normal fundamental e a equação do plano tangente à superfície esférica no ponto onde e .   Vetor normal: . Plano tangente: .    Determine o plano tangente à superfície dada pelo gráfico de no ponto .         Calcule a área da parte do plano que está situada no primeiro octante ( ).      Determine a área da porção do paraboloide que se encontra abaixo do plano .      Calcule a área da superfície helicoidal parametrizada por , com e .      Encontre a área da superfície cilíndrica delimitada pelos planos e no primeiro octante.      Calcule a área da parte da esfera que está localizada dentro do cone .         Calcule , onde é o triângulo com vértices em , e .      Avalie , sendo a hemisfera superior .      Calcule a integral de superfície , onde é a porção do plano acima do retângulo e .      Determine a massa de uma lâmina com a forma do cone compreendida entre os planos e , cuja densidade de massa em cada ponto é proporcional à sua distância ao plano , ou seja, .         Calcule o fluxo do campo vetorial através da esfera , orientada com a normal apontando para fora.      Determine o fluxo do campo vetorial através da porção do paraboloide que está acima do plano ( ), orientada com a normal apontando para cima.      Avalie o fluxo , onde o campo é e a superfície é a parte lateral do cilindro no primeiro octante entre e , orientada para longe do eixo .      Calcule o fluxo do campo através da parte do plano restrita ao primeiro octante, orientada com vetor normal apontando \"para cima\" (componente z positiva).      Considere o campo . Calcule o fluxo deste campo através da superfície parametrizada por , com e , orientada de modo que a componente do vetor normal seja positiva.      "
 },
 {
   "id": "def-superficie-parametrizada",
@@ -1342,13 +1432,193 @@ var ptx_lunr_docs = [
   "body": "  Considere o sólido com fronteira orientada para fora , e o campo . Verifique que:      1. Cálculo pelo fluxo direto na superfície: A fronteira é formada pela face inclinada e por três faces sobre os planos coordenados.    Na face ( ), parametrização com normal :     Nas faces dos planos coordenados ( , , ), temos respectivamente , e . Logo, o fluxo nessas faces é nulo.    Assim, o fluxo total é .   2. Cálculo pela integral tripla do divergente:  Integrando sobre o sólido : Verificando a igualdade.   "
 },
 {
+  "id": "exer-identificar-superficie-cone",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-identificar-superficie-cone",
+  "type": "Exercício",
+  "number": "3.2.6.1",
+  "title": "",
+  "body": " Identifique e descreva a superfície parametrizada por , com e .   Trata-se de um cone circular reto centrado no eixo , correspondente à equação cartesiana .  "
+},
+{
+  "id": "exer-parametrizar-plano",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-parametrizar-plano",
+  "type": "Exercício",
+  "number": "3.2.6.2",
+  "title": "",
+  "body": " Determine uma parametrização vetorial para o plano que passa pelos pontos , e .   Uma possível parametrização é , com .  "
+},
+{
+  "id": "exer-parametrizar-cilindro",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-parametrizar-cilindro",
+  "type": "Exercício",
+  "number": "3.2.6.3",
+  "title": "",
+  "body": " Encontre as equações paramétricas para a parte do cilindro que está situada entre os planos e .   , , , com e .  "
+},
+{
+  "id": "exer-plano-tangente-paraboloide",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-plano-tangente-paraboloide",
+  "type": "Exercício",
+  "number": "3.2.6.4",
+  "title": "",
+  "body": " Determine a equação cartesiana do plano tangente à superfície parametrizada por no ponto correspondente a .    "
+},
+{
+  "id": "exer-plano-tangente-esfera",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-plano-tangente-esfera",
+  "type": "Exercício",
+  "number": "3.2.6.5",
+  "title": "",
+  "body": " Encontre o vetor normal fundamental e a equação do plano tangente à superfície esférica no ponto onde e .   Vetor normal: . Plano tangente: .  "
+},
+{
+  "id": "exer-plano-tangente-grafico",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-plano-tangente-grafico",
+  "type": "Exercício",
+  "number": "3.2.6.6",
+  "title": "",
+  "body": " Determine o plano tangente à superfície dada pelo gráfico de no ponto .    "
+},
+{
+  "id": "exer-area-plano",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-area-plano",
+  "type": "Exercício",
+  "number": "3.2.6.7",
+  "title": "",
+  "body": " Calcule a área da parte do plano que está situada no primeiro octante ( ).    "
+},
+{
+  "id": "exer-area-paraboloide",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-area-paraboloide",
+  "type": "Exercício",
+  "number": "3.2.6.8",
+  "title": "",
+  "body": " Determine a área da porção do paraboloide que se encontra abaixo do plano .    "
+},
+{
+  "id": "exer-area-helicoidal",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-area-helicoidal",
+  "type": "Exercício",
+  "number": "3.2.6.9",
+  "title": "",
+  "body": " Calcule a área da superfície helicoidal parametrizada por , com e .    "
+},
+{
+  "id": "exer-area-cilindro-cortado",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-area-cilindro-cortado",
+  "type": "Exercício",
+  "number": "3.2.6.10",
+  "title": "",
+  "body": " Encontre a área da superfície cilíndrica delimitada pelos planos e no primeiro octante.    "
+},
+{
+  "id": "exer-area-esfera-cone",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-area-esfera-cone",
+  "type": "Exercício",
+  "number": "3.2.6.11",
+  "title": "",
+  "body": " Calcule a área da parte da esfera que está localizada dentro do cone .    "
+},
+{
+  "id": "exer-int-escalar-triangulo",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-int-escalar-triangulo",
+  "type": "Exercício",
+  "number": "3.2.6.12",
+  "title": "",
+  "body": " Calcule , onde é o triângulo com vértices em , e .    "
+},
+{
+  "id": "exer-int-escalar-hemisfera",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-int-escalar-hemisfera",
+  "type": "Exercício",
+  "number": "3.2.6.13",
+  "title": "",
+  "body": " Avalie , sendo a hemisfera superior .    "
+},
+{
+  "id": "exer-int-escalar-grafico",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-int-escalar-grafico",
+  "type": "Exercício",
+  "number": "3.2.6.14",
+  "title": "",
+  "body": " Calcule a integral de superfície , onde é a porção do plano acima do retângulo e .    "
+},
+{
+  "id": "exer-massa-cone",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-massa-cone",
+  "type": "Exercício",
+  "number": "3.2.6.15",
+  "title": "",
+  "body": " Determine a massa de uma lâmina com a forma do cone compreendida entre os planos e , cuja densidade de massa em cada ponto é proporcional à sua distância ao plano , ou seja, .    "
+},
+{
+  "id": "exer-fluxo-esfera-radial",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-fluxo-esfera-radial",
+  "type": "Exercício",
+  "number": "3.2.6.16",
+  "title": "",
+  "body": " Calcule o fluxo do campo vetorial através da esfera , orientada com a normal apontando para fora.    "
+},
+{
+  "id": "exer-fluxo-paraboloide-fechado",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-fluxo-paraboloide-fechado",
+  "type": "Exercício",
+  "number": "3.2.6.17",
+  "title": "",
+  "body": " Determine o fluxo do campo vetorial através da porção do paraboloide que está acima do plano ( ), orientada com a normal apontando para cima.    "
+},
+{
+  "id": "exer-fluxo-cilindro-lateral",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-fluxo-cilindro-lateral",
+  "type": "Exercício",
+  "number": "3.2.6.18",
+  "title": "",
+  "body": " Avalie o fluxo , onde o campo é e a superfície é a parte lateral do cilindro no primeiro octante entre e , orientada para longe do eixo .    "
+},
+{
+  "id": "exer-fluxo-plano-octante",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-fluxo-plano-octante",
+  "type": "Exercício",
+  "number": "3.2.6.19",
+  "title": "",
+  "body": " Calcule o fluxo do campo através da parte do plano restrita ao primeiro octante, orientada com vetor normal apontando \"para cima\" (componente z positiva).    "
+},
+{
+  "id": "exer-fluxo-superficie-sela",
+  "level": "2",
+  "url": "sec-superficies-integrais.html#exer-fluxo-superficie-sela",
+  "type": "Exercício",
+  "number": "3.2.6.20",
+  "title": "",
+  "body": " Considere o campo . Calcule o fluxo deste campo através da superfície parametrizada por , com e , orientada de modo que a componente do vetor normal seja positiva.    "
+},
+{
   "id": "sec-teorema-de-stokes",
   "level": "1",
   "url": "sec-teorema-de-stokes.html",
   "type": "Seção",
   "number": "3.3",
   "title": "Teorema de Stokes",
-  "body": " Teorema de Stokes      Orientação de Superfícies e de seus Bordos    Considere uma superfície orientada por um campo contínuo de vetores normais unitários . O bordo  de é a curva espacial correspondente, por uma parametrização suave , à fronteira do domínio plano .  Diremos que o bordo possui orientação positiva (ou induzida) se a superfície permanece à esquerda de um observador que caminha ao longo de com a cabeça apontando no sentido do vetor normal (regra da mão direita).     Orientação compatível entre a superfície e seu bordo   Superfície curva orientada com vetor normal unitário N para cima e contorno fechado dS percorrido com orientação induzida positiva pela regra da mão direita.     O bordo é uma curva fechada suave por partes em .   Se for formada pela união finita de superfícies suaves coladas por bordos comuns ( ), dizemos que está orientada quando é possível orientar cada componente de tal modo que as curvas de fronteira compartilhadas sejam percorridas em sentidos opostos, anulando-se mutuamente.   Superfície composta com cancelamento nos bordos internos   União de três superfícies suaves cujos bordos internos possuem orientações opostas que se cancelam, restando apenas o bordo exterior total.    Nem toda superfície é orientável. O exemplo clássico mais célebre de superfície não orientável é a Faixa de Möbius , na qual um vetor normal contínuo, ao dar uma volta completa, retorna apontando no sentido oposto ao inicial.   Faixa de Möbius: superfície não orientável com apenas um lado   Faixa de Möbius ilustrando a impossibilidade de definir um campo contínuo e global de vetores normais consistentes.         O Teorema de Stokes   Teorema de Stokes   Seja uma superfície orientada suave por partes, parametrizada por , onde é uma região limitada por uma curva simples e fechada de classe por partes, com de classe . Se é um campo vetorial de classe em um aberto contendo , e o bordo possui orientação positiva induzida, então:     Parametrizamos a superfície por com vetor normal fundamental:   Lembrando que o rotacional é dado por: a integral de superfície é expressa sobre o domínio por:   Por outro lado, a integral de linha sobre o bordo pode ser decomposta em . Analisemos a primeira componente .  Seja , com , uma parametrização da fronteira orientada positivamente de , de modo que . Pela Regra da Cadeia:   Aplicando o Teorema de Green no plano sobre o domínio : Como é de classe , pelo Teorema de Clairaut-Schwarz as derivadas mistas se cancelam ( ):   Expandindo e via Regra da Cadeia em três variáveis: Substituindo e simplificando (os termos em anulam-se identicamente):   De maneira inteiramente análoga, obtêm-se as expressões para e . Somando as três identidades, reagrupam-se exatamente os termos correspondentes às componentes de , demonstrando a igualdade fundamental:      Teorema de Green como caso particular  Quando a superfície é uma região plana contida no plano , o vetor normal unitário é . Assim: e o Teorema de Stokes se reduz imediatamente a: que é a fórmula clássica do Teorema de Green.        Exemplos de Aplicação     Calcule , onde o campo é dado por: e é a curva obtida pela interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.    Poderíamos calcular a integral diretamente pela parametrização da elipse espacial , mas o Teorema de Stokes simplifica o processo ao transformar a integral de linha em um fluxo sobre a superfície plana delimitada por .  Tomamos como superfície a porção do plano cuja projeção no plano é o disco unitário . Parametrizando :   O vetor normal associado é: que aponta para cima, concordando com o sentido anti-horário de . O vetor unitário é .  Calculando o rotacional de : Logo, .  Substituindo e calculando o produto escalar com :   Convertendo para coordenadas polares ( , , , ): Integrando em de a , os termos com potências ímpares de seno e cosseno anulam-se ( , , ). Restam apenas:        Calcule , onde o campo é dado por e é a parte da esfera situada no semi-espaço superior ( ) e no interior do cilindro , orientada com normal para cima.    Pelo Teorema de Stokes, o fluxo do rotacional sobre a calota esférica é igual à circulação de ao longo de seu bordo :   O bordo é a interseção da esfera com o cilindro: Trata-se de uma circunferência de raio contida no plano horizontal , percorrida no sentido anti-horário.  Parametrizando a curva : com vetor tangente:   Avaliando o campo sobre : Calculando o produto escalar: Portanto:        Calcule a integral de linha , onde e é a curva obtida pela interseção do cilindro parabólico ( ) com o plano , orientada no sentido anti-horário quando vista de cima.    A curva não é fechada: ela inicia e termina no plano de apoio , onde e . Para aplicar o Teorema de Stokes, consideramos o segmento retilíneo de fechamento contido no plano : de tal forma que a curva composta delimita uma superfície plana contida no plano .  A projeção de no plano é a região delimitada pelas equações: com e .  Calculando o rotacional do campo:   Parametrizando a superfície por , o vetor normal apontando para cima é:   Pelo Teorema de Stokes aplicado à curva fechada :   A integral sobre o segmento (onde e , com constante e ) resulta em: Logo, , permitindo obter o valor diretamente pela área plana.     "
+  "body": " Teorema de Stokes      Orientação de Superfícies e de seus Bordos    Considere uma superfície orientada por um campo contínuo de vetores normais unitários . O bordo  de é a curva espacial correspondente, por uma parametrização suave , à fronteira do domínio plano .  Diremos que o bordo possui orientação positiva (ou induzida) se a superfície permanece à esquerda de um observador que caminha ao longo de com a cabeça apontando no sentido do vetor normal (regra da mão direita).     Orientação compatível entre a superfície e seu bordo   Superfície curva orientada com vetor normal unitário N para cima e contorno fechado dS percorrido com orientação induzida positiva pela regra da mão direita.     O bordo é uma curva fechada suave por partes em .   Se for formada pela união finita de superfícies suaves coladas por bordos comuns ( ), dizemos que está orientada quando é possível orientar cada componente de tal modo que as curvas de fronteira compartilhadas sejam percorridas em sentidos opostos, anulando-se mutuamente.   Superfície composta com cancelamento nos bordos internos   União de três superfícies suaves cujos bordos internos possuem orientações opostas que se cancelam, restando apenas o bordo exterior total.    Nem toda superfície é orientável. O exemplo clássico mais célebre de superfície não orientável é a Faixa de Möbius , na qual um vetor normal contínuo, ao dar uma volta completa, retorna apontando no sentido oposto ao inicial.   Faixa de Möbius: superfície não orientável com apenas um lado   Faixa de Möbius ilustrando a impossibilidade de definir um campo contínuo e global de vetores normais consistentes.         O Teorema de Stokes   Teorema de Stokes   Seja uma superfície orientada suave por partes, parametrizada por , onde é uma região limitada por uma curva simples e fechada de classe por partes, com de classe . Se é um campo vetorial de classe em um aberto contendo , e o bordo possui orientação positiva induzida, então:     Parametrizamos a superfície por com vetor normal fundamental:   Lembrando que o rotacional é dado por: a integral de superfície é expressa sobre o domínio por:   Por outro lado, a integral de linha sobre o bordo pode ser decomposta em . Analisemos a primeira componente .  Seja , com , uma parametrização da fronteira orientada positivamente de , de modo que . Pela Regra da Cadeia:   Aplicando o Teorema de Green no plano sobre o domínio : Como é de classe , pelo Teorema de Clairaut-Schwarz as derivadas mistas se cancelam ( ):   Expandindo e via Regra da Cadeia em três variáveis: Substituindo e simplificando (os termos em anulam-se identicamente):   De maneira inteiramente análoga, obtêm-se as expressões para e . Somando as três identidades, reagrupam-se exatamente os termos correspondentes às componentes de , demonstrando a igualdade fundamental:      Teorema de Green como caso particular  Quando a superfície é uma região plana contida no plano , o vetor normal unitário é . Assim: e o Teorema de Stokes se reduz imediatamente a: que é a fórmula clássica do Teorema de Green.        Exemplos de Aplicação     Calcule , onde o campo é dado por: e é a curva obtida pela interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.    Poderíamos calcular a integral diretamente pela parametrização da elipse espacial , mas o Teorema de Stokes simplifica o processo ao transformar a integral de linha em um fluxo sobre a superfície plana delimitada por .  Tomamos como superfície a porção do plano cuja projeção no plano é o disco unitário . Parametrizando :   O vetor normal associado é: que aponta para cima, concordando com o sentido anti-horário de . O vetor unitário é .  Calculando o rotacional de : Logo, .  Substituindo e calculando o produto escalar com :   Convertendo para coordenadas polares ( , , , ): Integrando em de a , os termos com potências ímpares de seno e cosseno anulam-se ( , , ). Restam apenas:        Calcule , onde o campo é dado por e é a parte da esfera situada no semi-espaço superior ( ) e no interior do cilindro , orientada com normal para cima.    Pelo Teorema de Stokes, o fluxo do rotacional sobre a calota esférica é igual à circulação de ao longo de seu bordo :   O bordo é a interseção da esfera com o cilindro: Trata-se de uma circunferência de raio contida no plano horizontal , percorrida no sentido anti-horário.  Parametrizando a curva : com vetor tangente:   Avaliando o campo sobre : Calculando o produto escalar: Portanto:        Calcule a integral de linha , onde e é a curva obtida pela interseção do cilindro parabólico ( ) com o plano , orientada no sentido anti-horário quando vista de cima.    A curva não é fechada: ela inicia e termina no plano de apoio , onde e . Para aplicar o Teorema de Stokes, consideramos o segmento retilíneo de fechamento contido no plano : de tal forma que a curva composta delimita uma superfície plana contida no plano .  A projeção de no plano é a região delimitada pelas equações: com e .  Calculando o rotacional do campo:   Parametrizando a superfície por , o vetor normal apontando para cima é:   Pelo Teorema de Stokes aplicado à curva fechada :   A integral sobre o segmento (onde e , com constante e ) resulta em: Logo, , permitindo obter o valor diretamente pela área plana.      Exercícios    Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial , onde é a porção do paraboloide que está acima do plano ( ), orientada com o vetor normal apontando para cima.   Ambas as integrais resultam em .    Cálculo pela Integral de Linha: O bordo é a circunferência no plano . Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: com .    Cálculo pela Integral de Superfície: O rotacional de é . A normal à superfície apontando para cima é . Como é o disco unitário de área , o resultado é . A igualdade verifica o Teorema de Stokes.     Utilize o Teorema de Stokes para calcular a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre , a porção do plano delimitada pelo cilindro. Calculamos o rotacional:   A superfície plana tem equação . O vetor normal (para cima, compatível com a orientação anti-horária de ) é .      Calcule o fluxo do rotacional para o campo , sendo a hemisfera superior com , orientada com o vetor normal apontando para cima (para fora da esfera).     Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo . O bordo da hemisfera é a circunferência no plano , orientada no sentido anti-horário.  Podemos trocar por uma superfície mais simples que possua o mesmo bordo: o disco plano no plano dado por , , orientado para cima ( ). Calculando o rotacional de : Integrando sobre o disco : Por simetria, a integral da componente ímpar em sobre o disco centrado na origem é zero ( ). Resta apenas:      Calcule a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , percorrida do ponto ao ponto através do semi-espaço .     Como não é fechada, adicionamos um segmento retilíneo de até ao longo do plano e para formar uma curva fechada .  A curva $\\gamma$ limita uma semi-elipse sobre o plano orientada com normal (apontando \"para cima e esquerda\", coerente com a regra da mão direita para o sentido de ). Calculando o rotacional: . Aplicando o Teorema de Stokes: onde é o semicírculo , cuja área é . Logo, .  Agora, calculamos a integral sobre o trecho retilíneo parametrizado por de a . Como ao longo de , o campo . Portanto, . Finalmente:      Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.   A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários exigido pelo teorema.   O Teorema de Stokes exige que a superfície seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários em toda a superfície para estabelecer a orientação positiva do bordo através da regra da mão direita.  Como ilustrado na seção, a Faixa de Möbius possui apenas um \"lado\". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto ( ). Essa impossibilidade de determinar consistentemente qual é o lado \"de fora\" ou \"de dentro\" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.     Calcule o fluxo do rotacional para o campo vetorial , onde é a superfície fechada do elipsoide orientada com a normal exterior.     Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície é igual à integral de linha do campo ao longo de seu bordo .  Como o elipsoide é uma superfície fechada (não possui \"furos\" ou \"bordas\" abertas), o seu bordo é vazio ( ). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.      Calcule o trabalho realizado pelo campo de forças ao mover uma partícula ao longo da curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O trabalho é dado pela integral de linha . Utilizaremos o Teorema de Stokes. O rotacional do campo é:   A curva delimita um disco plano em , de raio , com orientação correspondente ao vetor normal . Convertendo para coordenadas polares ( , ):      Use o Teorema de Stokes para avaliar , onde é o triângulo com vértices , e , com , orientado no sentido anti-horário quando visto de uma posição muito alta no eixo .     O campo é . Seu rotacional é:   O triângulo está no plano que passa pelos três eixos, cuja equação é (ou ). A superfície projetada no plano é o triângulo bidimensional de vértices , e . A normal unitária vezes é .  Pelo Teorema de Stokes: A área de é a área de um triângulo retângulo de base e altura , ou seja, . Portanto, a integral é .     Avalie , onde o campo vetorial é e é a curva complexa e fechada descrita pela função vetorial , com .     Podemos calcular o rotacional de :   Como o rotacional de é o vetor nulo (e o domínio do campo é todo o $\\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como é uma curva fechada, a integral de linha de um campo irrotacional é zero:      Calcule a integral de superfície , onde o campo vetorial é e é constituída pelas faces superiores do cubo (ou seja, todas as faces exceto a face que repousa no plano ), orientadas com o vetor normal apontando para fora da caixa.     A superfície possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre é igual à integral de linha ao longo do seu bordo . O bordo é a fronteira quadrada da face ausente (no plano ).  Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano é anti-horário.  Para simplificar o cálculo, podemos utilizar qualquer outra superfície que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, no plano . Para manter a compatibilidade do bordo anti-horário, a normal em deve ser (apontando \"para cima\", adentrando a caixa).  O rotacional é: O fluxo através da face inferior plana orientada por é:     "
 },
 {
   "id": "def-bordo-orientacao-positiva",
@@ -1441,6 +1711,240 @@ var ptx_lunr_docs = [
   "body": "  Calcule a integral de linha , onde e é a curva obtida pela interseção do cilindro parabólico ( ) com o plano , orientada no sentido anti-horário quando vista de cima.    A curva não é fechada: ela inicia e termina no plano de apoio , onde e . Para aplicar o Teorema de Stokes, consideramos o segmento retilíneo de fechamento contido no plano : de tal forma que a curva composta delimita uma superfície plana contida no plano .  A projeção de no plano é a região delimitada pelas equações: com e .  Calculando o rotacional do campo:   Parametrizando a superfície por , o vetor normal apontando para cima é:   Pelo Teorema de Stokes aplicado à curva fechada :   A integral sobre o segmento (onde e , com constante e ) resulta em: Logo, , permitindo obter o valor diretamente pela área plana.   "
 },
 {
+  "id": "exer-verificacao-stokes",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-verificacao-stokes",
+  "type": "Exercício",
+  "number": "3.3.4.1",
+  "title": "",
+  "body": " Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial , onde é a porção do paraboloide que está acima do plano ( ), orientada com o vetor normal apontando para cima.   Ambas as integrais resultam em .    Cálculo pela Integral de Linha: O bordo é a circunferência no plano . Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: com .    Cálculo pela Integral de Superfície: O rotacional de é . A normal à superfície apontando para cima é . Como é o disco unitário de área , o resultado é . A igualdade verifica o Teorema de Stokes.  "
+},
+{
+  "id": "exer-stokes-cilindro-plano-2",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-stokes-cilindro-plano-2",
+  "type": "Exercício",
+  "number": "3.3.4.2",
+  "title": "",
+  "body": " Utilize o Teorema de Stokes para calcular a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre , a porção do plano delimitada pelo cilindro. Calculamos o rotacional:   A superfície plana tem equação . O vetor normal (para cima, compatível com a orientação anti-horária de ) é .   "
+},
+{
+  "id": "exer-troca-superficie",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-troca-superficie",
+  "type": "Exercício",
+  "number": "3.3.4.3",
+  "title": "",
+  "body": " Calcule o fluxo do rotacional para o campo , sendo a hemisfera superior com , orientada com o vetor normal apontando para cima (para fora da esfera).     Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo . O bordo da hemisfera é a circunferência no plano , orientada no sentido anti-horário.  Podemos trocar por uma superfície mais simples que possua o mesmo bordo: o disco plano no plano dado por , , orientado para cima ( ). Calculando o rotacional de : Integrando sobre o disco : Por simetria, a integral da componente ímpar em sobre o disco centrado na origem é zero ( ). Resta apenas:   "
+},
+{
+  "id": "exer-stokes-curva-aberta",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-stokes-curva-aberta",
+  "type": "Exercício",
+  "number": "3.3.4.4",
+  "title": "",
+  "body": " Calcule a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , percorrida do ponto ao ponto através do semi-espaço .     Como não é fechada, adicionamos um segmento retilíneo de até ao longo do plano e para formar uma curva fechada .  A curva $\\gamma$ limita uma semi-elipse sobre o plano orientada com normal (apontando \"para cima e esquerda\", coerente com a regra da mão direita para o sentido de ). Calculando o rotacional: . Aplicando o Teorema de Stokes: onde é o semicírculo , cuja área é . Logo, .  Agora, calculamos a integral sobre o trecho retilíneo parametrizado por de a . Como ao longo de , o campo . Portanto, . Finalmente:   "
+},
+{
+  "id": "exer-moebius-stokes",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-moebius-stokes",
+  "type": "Exercício",
+  "number": "3.3.4.5",
+  "title": "",
+  "body": " Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.   A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários exigido pelo teorema.   O Teorema de Stokes exige que a superfície seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários em toda a superfície para estabelecer a orientação positiva do bordo através da regra da mão direita.  Como ilustrado na seção, a Faixa de Möbius possui apenas um \"lado\". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto ( ). Essa impossibilidade de determinar consistentemente qual é o lado \"de fora\" ou \"de dentro\" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.  "
+},
+{
+  "id": "exer-fluxo-rotacional-superficie-fechada",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-fluxo-rotacional-superficie-fechada",
+  "type": "Exercício",
+  "number": "3.3.4.6",
+  "title": "",
+  "body": " Calcule o fluxo do rotacional para o campo vetorial , onde é a superfície fechada do elipsoide orientada com a normal exterior.     Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície é igual à integral de linha do campo ao longo de seu bordo .  Como o elipsoide é uma superfície fechada (não possui \"furos\" ou \"bordas\" abertas), o seu bordo é vazio ( ). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.   "
+},
+{
+  "id": "exer-trabalho-stokes",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-trabalho-stokes",
+  "type": "Exercício",
+  "number": "3.3.4.7",
+  "title": "",
+  "body": " Calcule o trabalho realizado pelo campo de forças ao mover uma partícula ao longo da curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O trabalho é dado pela integral de linha . Utilizaremos o Teorema de Stokes. O rotacional do campo é:   A curva delimita um disco plano em , de raio , com orientação correspondente ao vetor normal . Convertendo para coordenadas polares ( , ):   "
+},
+{
+  "id": "exer-triangulo-espaco-stokes",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-triangulo-espaco-stokes",
+  "type": "Exercício",
+  "number": "3.3.4.8",
+  "title": "",
+  "body": " Use o Teorema de Stokes para avaliar , onde é o triângulo com vértices , e , com , orientado no sentido anti-horário quando visto de uma posição muito alta no eixo .     O campo é . Seu rotacional é:   O triângulo está no plano que passa pelos três eixos, cuja equação é (ou ). A superfície projetada no plano é o triângulo bidimensional de vértices , e . A normal unitária vezes é .  Pelo Teorema de Stokes: A área de é a área de um triângulo retângulo de base e altura , ou seja, . Portanto, a integral é .  "
+},
+{
+  "id": "exer-campo-irrotacional-stokes",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-campo-irrotacional-stokes",
+  "type": "Exercício",
+  "number": "3.3.4.9",
+  "title": "",
+  "body": " Avalie , onde o campo vetorial é e é a curva complexa e fechada descrita pela função vetorial , com .     Podemos calcular o rotacional de :   Como o rotacional de é o vetor nulo (e o domínio do campo é todo o $\\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como é uma curva fechada, a integral de linha de um campo irrotacional é zero:   "
+},
+{
+  "id": "exer-superficie-composta-stokes",
+  "level": "2",
+  "url": "sec-teorema-de-stokes.html#exer-superficie-composta-stokes",
+  "type": "Exercício",
+  "number": "3.3.4.10",
+  "title": "",
+  "body": " Calcule a integral de superfície , onde o campo vetorial é e é constituída pelas faces superiores do cubo (ou seja, todas as faces exceto a face que repousa no plano ), orientadas com o vetor normal apontando para fora da caixa.     A superfície possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre é igual à integral de linha ao longo do seu bordo . O bordo é a fronteira quadrada da face ausente (no plano ).  Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano é anti-horário.  Para simplificar o cálculo, podemos utilizar qualquer outra superfície que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, no plano . Para manter a compatibilidade do bordo anti-horário, a normal em deve ser (apontando \"para cima\", adentrando a caixa).  O rotacional é: O fluxo através da face inferior plana orientada por é:   "
+},
+{
+  "id": "sec-teorema-divergente",
+  "level": "1",
+  "url": "sec-teorema-divergente.html",
+  "type": "Seção",
+  "number": "3.4",
+  "title": "O Teorema do Divergente (Teorema de Gauss)",
+  "body": " O Teorema do Divergente (Teorema de Gauss)      Enunciado e Interpretação  O Teorema de Green relaciona a integral de linha ao longo de uma curva fechada no plano com uma integral dupla sobre a região delimitada por essa curva. O Teorema de Stokes estende essa ideia para superfícies no espaço. O Teorema do Divergente (também conhecido como Teorema de Gauss) estabelece uma relação análoga, mas conectando a integral de superfície (fluxo) sobre uma superfície fechada com a integral tripla sobre o sólido delimitado por ela.   Teorema do Divergente (Teorema de Gauss)   Seja uma região sólida simples no espaço e seja a superfície fronteira de , dada com orientação positiva (vetor normal apontando para fora de ). Seja um campo vetorial cujas funções componentes têm derivadas parciais contínuas em uma região aberta que contém . Então:      O Teorema do Divergente afirma que o fluxo total de um campo vetorial através de uma superfície fechada é igual à integral da divergência do campo sobre a região delimitada pela superfície. Se a divergência for positiva (o sólido atua como uma \"fonte\"), o fluxo líquido é para fora. Se for negativa (o sólido atua como um \"sumidouro\"), o fluxo líquido é para dentro.        Exemplos de Aplicação    Utilize o Teorema do Divergente para calcular o fluxo do campo vetorial através da esfera unitária de equação , orientada para fora.    A superfície é fechada e delimita o sólido . Calculamos primeiro a divergência do campo :   Pelo Teorema do Divergente, o fluxo é:   A integral tripla de 1 sobre é simplesmente o volume da esfera unitária. Sabendo que o volume de uma esfera de raio é , temos:       Calcule , onde e é a superfície da esfera com orientação positiva.    O cálculo direto dessa integral de superfície seria longo. Usando o Teorema do Divergente, primeiro calculamos a divergência:   O sólido é a bola . Em coordenadas esféricas, temos , o elemento de volume é , e os limites de integração são , e .  Aplicando o teorema:          Exercícios    Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial , onde é a porção do paraboloide que está acima do plano ( ), orientada com o vetor normal apontando para cima.   Ambas as integrais resultam em .    Cálculo pela Integral de Linha: O bordo é a circunferência no plano . Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: com .    Cálculo pela Integral de Superfície: O rotacional de é . A normal à superfície apontando para cima é . Como é o disco unitário de área , o resultado é . A igualdade verifica o Teorema de Stokes.     Utilize o Teorema de Stokes para calcular a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre , a porção do plano delimitada pelo cilindro. Calculamos o rotacional:   A superfície plana tem equação . O vetor normal (para cima, compatível com a orientação anti-horária de ) é .      Calcule o fluxo do rotacional para o campo , sendo a hemisfera superior com , orientada com o vetor normal apontando para cima (para fora da esfera).     Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo . O bordo da hemisfera é a circunferência no plano , orientada no sentido anti-horário.  Podemos trocar por uma superfície mais simples que possua o mesmo bordo: o disco plano no plano dado por , , orientado para cima ( ). Calculando o rotacional de : Integrando sobre o disco : Por simetria, a integral da componente ímpar em sobre o disco centrado na origem é zero ( ). Resta apenas:      Calcule o trabalho realizado pelo campo de forças ao mover uma partícula ao longo da curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O trabalho é dado pela integral de linha . Utilizaremos o Teorema de Stokes. O rotacional do campo é:   A curva delimita um disco plano em , de raio , com orientação correspondente ao vetor normal . Convertendo para coordenadas polares ( , ):      Calcule a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , percorrida do ponto ao ponto através do semi-espaço .     Como não é fechada, adicionamos um segmento retilíneo de até ao longo do plano e para formar uma curva fechada .  A curva $\\gamma$ limita uma semi-elipse sobre o plano orientada com normal (apontando \"para cima e esquerda\", coerente com a regra da mão direita para o sentido de ). Calculando o rotacional: . Aplicando o Teorema de Stokes: onde é o semicírculo , cuja área é . Logo, .  Agora, calculamos a integral sobre o trecho retilíneo parametrizado por de a . Como ao longo de , o campo . Portanto, . Finalmente:      Use o Teorema de Stokes para avaliar , onde é o triângulo com vértices , e , com , orientado no sentido anti-horário quando visto de uma posição muito alta no eixo .     O campo é . Seu rotacional é:   O triângulo está no plano que passa pelos três eixos, cuja equação é (ou ). A superfície projetada no plano é o triângulo bidimensional de vértices , e . A normal unitária vezes é .  Pelo Teorema de Stokes: A área de é a área de um triângulo retângulo de base e altura , ou seja, . Portanto, a integral é .     Calcule o fluxo do rotacional para o campo vetorial , onde é a superfície fechada do elipsoide orientada com a normal exterior.     Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície é igual à integral de linha do campo ao longo de seu bordo .  Como o elipsoide é uma superfície fechada (não possui \"furos\" ou \"bordas\" abertas), o seu bordo é vazio ( ). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.      Calcule a integral de superfície , onde o campo vetorial é e é constituída pelas faces superiores do cubo (ou seja, todas as faces exceto a face que repousa no plano ), orientadas com o vetor normal apontando para fora da caixa.     A superfície possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre é igual à integral de linha ao longo do seu bordo . O bordo é a fronteira quadrada da face ausente (no plano ).  Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano é anti-horário.  Para simplificar o cálculo, podemos utilizar qualquer outra superfície que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, no plano . Para manter a compatibilidade do bordo anti-horário, a normal em deve ser (apontando \"para cima\", adentrando a caixa).  O rotacional é: O fluxo através da face inferior plana orientada por é:      Avalie , onde o campo vetorial é e é a curva complexa e fechada descrita pela função vetorial , com .     Podemos calcular o rotacional de :   Como o rotacional de é o vetor nulo (e o domínio do campo é todo o $\\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como é uma curva fechada, a integral de linha de um campo irrotacional é zero:      Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.   A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários exigido pelo teorema.   O Teorema de Stokes exige que a superfície seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários em toda a superfície para estabelecer a orientação positiva do bordo através da regra da mão direita.  Como ilustrado na seção, a Faixa de Möbius possui apenas um \"lado\". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto ( ). Essa impossibilidade de determinar consistentemente qual é o lado \"de fora\" ou \"de dentro\" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.    "
+},
+{
+  "id": "p-727",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#p-727",
+  "type": "Parágrafo (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Teorema do Divergente "
+},
+{
+  "id": "theo-divergente",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#theo-divergente",
+  "type": "Teorema",
+  "number": "3.4.1",
+  "title": "Teorema do Divergente (Teorema de Gauss).",
+  "body": " Teorema do Divergente (Teorema de Gauss)   Seja uma região sólida simples no espaço e seja a superfície fronteira de , dada com orientação positiva (vetor normal apontando para fora de ). Seja um campo vetorial cujas funções componentes têm derivadas parciais contínuas em uma região aberta que contém . Então:    "
+},
+{
+  "id": "note-12",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#note-12",
+  "type": "Nota",
+  "number": "3.4.2",
+  "title": "",
+  "body": " O Teorema do Divergente afirma que o fluxo total de um campo vetorial através de uma superfície fechada é igual à integral da divergência do campo sobre a região delimitada pela superfície. Se a divergência for positiva (o sólido atua como uma \"fonte\"), o fluxo líquido é para fora. Se for negativa (o sólido atua como um \"sumidouro\"), o fluxo líquido é para dentro.  "
+},
+{
+  "id": "exem-divergente-esfera-simples",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exem-divergente-esfera-simples",
+  "type": "Exemplo",
+  "number": "3.4.3",
+  "title": "",
+  "body": "  Utilize o Teorema do Divergente para calcular o fluxo do campo vetorial através da esfera unitária de equação , orientada para fora.    A superfície é fechada e delimita o sólido . Calculamos primeiro a divergência do campo :   Pelo Teorema do Divergente, o fluxo é:   A integral tripla de 1 sobre é simplesmente o volume da esfera unitária. Sabendo que o volume de uma esfera de raio é , temos:    "
+},
+{
+  "id": "exem-divergente-esfera-campo-nao-linear",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exem-divergente-esfera-campo-nao-linear",
+  "type": "Exemplo",
+  "number": "3.4.4",
+  "title": "",
+  "body": "  Calcule , onde e é a superfície da esfera com orientação positiva.    O cálculo direto dessa integral de superfície seria longo. Usando o Teorema do Divergente, primeiro calculamos a divergência:   O sólido é a bola . Em coordenadas esféricas, temos , o elemento de volume é , e os limites de integração são , e .  Aplicando o teorema:    "
+},
+{
+  "id": "exer-verificacao-stokes",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-verificacao-stokes",
+  "type": "Exercício",
+  "number": "3.4.3.1",
+  "title": "",
+  "body": " Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial , onde é a porção do paraboloide que está acima do plano ( ), orientada com o vetor normal apontando para cima.   Ambas as integrais resultam em .    Cálculo pela Integral de Linha: O bordo é a circunferência no plano . Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: com .    Cálculo pela Integral de Superfície: O rotacional de é . A normal à superfície apontando para cima é . Como é o disco unitário de área , o resultado é . A igualdade verifica o Teorema de Stokes.  "
+},
+{
+  "id": "exer-stokes-cilindro-plano",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-stokes-cilindro-plano",
+  "type": "Exercício",
+  "number": "3.4.3.2",
+  "title": "",
+  "body": " Utilize o Teorema de Stokes para calcular a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre , a porção do plano delimitada pelo cilindro. Calculamos o rotacional:   A superfície plana tem equação . O vetor normal (para cima, compatível com a orientação anti-horária de ) é .   "
+},
+{
+  "id": "exer-troca-superficie",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-troca-superficie",
+  "type": "Exercício",
+  "number": "3.4.3.3",
+  "title": "",
+  "body": " Calcule o fluxo do rotacional para o campo , sendo a hemisfera superior com , orientada com o vetor normal apontando para cima (para fora da esfera).     Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo . O bordo da hemisfera é a circunferência no plano , orientada no sentido anti-horário.  Podemos trocar por uma superfície mais simples que possua o mesmo bordo: o disco plano no plano dado por , , orientado para cima ( ). Calculando o rotacional de : Integrando sobre o disco : Por simetria, a integral da componente ímpar em sobre o disco centrado na origem é zero ( ). Resta apenas:   "
+},
+{
+  "id": "exer-trabalho-stokes",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-trabalho-stokes",
+  "type": "Exercício",
+  "number": "3.4.3.4",
+  "title": "",
+  "body": " Calcule o trabalho realizado pelo campo de forças ao mover uma partícula ao longo da curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O trabalho é dado pela integral de linha . Utilizaremos o Teorema de Stokes. O rotacional do campo é:   A curva delimita um disco plano em , de raio , com orientação correspondente ao vetor normal . Convertendo para coordenadas polares ( , ):   "
+},
+{
+  "id": "exer-stokes-curva-aberta",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-stokes-curva-aberta",
+  "type": "Exercício",
+  "number": "3.4.3.5",
+  "title": "",
+  "body": " Calcule a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , percorrida do ponto ao ponto através do semi-espaço .     Como não é fechada, adicionamos um segmento retilíneo de até ao longo do plano e para formar uma curva fechada .  A curva $\\gamma$ limita uma semi-elipse sobre o plano orientada com normal (apontando \"para cima e esquerda\", coerente com a regra da mão direita para o sentido de ). Calculando o rotacional: . Aplicando o Teorema de Stokes: onde é o semicírculo , cuja área é . Logo, .  Agora, calculamos a integral sobre o trecho retilíneo parametrizado por de a . Como ao longo de , o campo . Portanto, . Finalmente:   "
+},
+{
+  "id": "exer-triangulo-espaco-stokes",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-triangulo-espaco-stokes",
+  "type": "Exercício",
+  "number": "3.4.3.6",
+  "title": "",
+  "body": " Use o Teorema de Stokes para avaliar , onde é o triângulo com vértices , e , com , orientado no sentido anti-horário quando visto de uma posição muito alta no eixo .     O campo é . Seu rotacional é:   O triângulo está no plano que passa pelos três eixos, cuja equação é (ou ). A superfície projetada no plano é o triângulo bidimensional de vértices , e . A normal unitária vezes é .  Pelo Teorema de Stokes: A área de é a área de um triângulo retângulo de base e altura , ou seja, . Portanto, a integral é .  "
+},
+{
+  "id": "exer-fluxo-rotacional-superficie-fechada",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-fluxo-rotacional-superficie-fechada",
+  "type": "Exercício",
+  "number": "3.4.3.7",
+  "title": "",
+  "body": " Calcule o fluxo do rotacional para o campo vetorial , onde é a superfície fechada do elipsoide orientada com a normal exterior.     Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície é igual à integral de linha do campo ao longo de seu bordo .  Como o elipsoide é uma superfície fechada (não possui \"furos\" ou \"bordas\" abertas), o seu bordo é vazio ( ). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.   "
+},
+{
+  "id": "exer-superficie-composta-stokes",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-superficie-composta-stokes",
+  "type": "Exercício",
+  "number": "3.4.3.8",
+  "title": "",
+  "body": " Calcule a integral de superfície , onde o campo vetorial é e é constituída pelas faces superiores do cubo (ou seja, todas as faces exceto a face que repousa no plano ), orientadas com o vetor normal apontando para fora da caixa.     A superfície possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre é igual à integral de linha ao longo do seu bordo . O bordo é a fronteira quadrada da face ausente (no plano ).  Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano é anti-horário.  Para simplificar o cálculo, podemos utilizar qualquer outra superfície que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, no plano . Para manter a compatibilidade do bordo anti-horário, a normal em deve ser (apontando \"para cima\", adentrando a caixa).  O rotacional é: O fluxo através da face inferior plana orientada por é:   "
+},
+{
+  "id": "exer-campo-irrotacional-stokes",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-campo-irrotacional-stokes",
+  "type": "Exercício",
+  "number": "3.4.3.9",
+  "title": "",
+  "body": " Avalie , onde o campo vetorial é e é a curva complexa e fechada descrita pela função vetorial , com .     Podemos calcular o rotacional de :   Como o rotacional de é o vetor nulo (e o domínio do campo é todo o $\\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como é uma curva fechada, a integral de linha de um campo irrotacional é zero:   "
+},
+{
+  "id": "exer-moebius-stokes",
+  "level": "2",
+  "url": "sec-teorema-divergente.html#exer-moebius-stokes",
+  "type": "Exercício",
+  "number": "3.4.3.10",
+  "title": "",
+  "body": " Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.   A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários exigido pelo teorema.   O Teorema de Stokes exige que a superfície seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários em toda a superfície para estabelecer a orientação positiva do bordo através da regra da mão direita.  Como ilustrado na seção, a Faixa de Möbius possui apenas um \"lado\". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto ( ). Essa impossibilidade de determinar consistentemente qual é o lado \"de fora\" ou \"de dentro\" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.  "
+},
+{
   "id": "referencias",
   "level": "1",
   "url": "referencias.html",
@@ -1450,9 +1954,9 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Stewart, James. Cálculo, volume 2. Cengage Learning, 2013.    Guidorizzi, Luiz H. Um Curso de Cálculo , Vol. 3. LTC, 5ª ed. 2016.    Pinto, Diomara; Morgado, Maria C.F. Cálculo Diferencial e Integral de Funções de Várias Variáveis . Editora UFRJ, 3ª ed. 2009.  "
 },
 {
-  "id": "p-593",
+  "id": "p-782",
   "level": "2",
-  "url": "referencias.html#p-593",
+  "url": "referencias.html#p-782",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",
