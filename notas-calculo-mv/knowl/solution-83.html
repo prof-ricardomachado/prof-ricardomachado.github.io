@@ -15,20 +15,27 @@
 <h4 class="heading">
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.4.3.9.1</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">Podemos calcular o rotacional de <span class="process-math">\(\vec{F}\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{gather*}
-\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(3x^2yz^2) - \frac{\partial}{\partial z}(x^2z^3)\right)\vec{i} - \left(\frac{\partial}{\partial x}(3x^2yz^2) - \frac{\partial}{\partial z}(2xyz^3)\right)\vec{j} + \left(\frac{\partial}{\partial x}(x^2z^3) - \frac{\partial}{\partial y}(2xyz^3)\right)\vec{k}\\
-= (3x^2z^2 - 3x^2z^2)\vec{i} - (6xyz^2 - 6xyz^2)\vec{j} + (2xz^3 - 2xz^3)\vec{k} = \vec{0}
-\end{gather*}
-</div>
+<div class="para">Como <span class="process-math">\(S\)</span> é uma superfície aberta, não podemos aplicar diretamente o Teorema do Divergente. Fechamos a superfície adicionando o disco inferior <span class="process-math">\(S_1: x^2 + y^2 \le 4\)</span> no plano <span class="process-math">\(z = 0\text{,}\)</span> orientado com a normal exterior apontando para baixo (<span class="process-math">\(\vec{n}_1 = -\vec{k}\)</span>). Assim, <span class="process-math">\(S \cup S_1\)</span> delimita a semiesfera sólida <span class="process-math">\(E\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">Como o rotacional de <span class="process-math">\(\vec{F}\)</span> é o vetor nulo (e o domínio do campo é todo o $\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como <span class="process-math">\(C\)</span> é uma curva fechada, a integral de linha de um campo irrotacional é zero:</div>
+<div class="para">O divergente é <span class="process-math">\(\text{div}\,\vec{F} = 1 + 1 + 2 = 4\text{.}\)</span> Pelo Teorema do Divergente:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\oint_C \vec{F} \cdot d\vec{r} = \iint_S \vec{0} \cdot d\vec{S} = 0
+\iint_S \vec{F} \cdot d\vec{S} + \iint_{S_1} \vec{F} \cdot d\vec{S} = \iiint_E 4 \, dV = 4 \cdot \text{Vol}(E) = 4 \cdot \left(\frac{1}{2} \cdot \frac{4}{3}\pi (2)^3\right) = \frac{64\pi}{3}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Calculamos agora o fluxo através do disco <span class="process-math">\(S_1\)</span> (<span class="process-math">\(z = 0\text{,}\)</span> <span class="process-math">\(\vec{n}_1 = (0,0,-1)\)</span>):</div>
+<div class="displaymath process-math">
+\begin{align*}
+\iint_{S_1} \vec{F} \cdot d\vec{S} \amp = \iint_{x^2+y^2 \le 4} (x + y^2, y, x^2) \cdot (0, 0, -1) \, dA = -\iint_{x^2+y^2 \le 4} x^2 \, dA\\
+\amp = -\int_0^{2\pi} \int_0^2 (r^2 \cos^2\theta) r \, dr \, d\theta = -\left(\int_0^{2\pi} \cos^2\theta \, d\theta\right) \left(\int_0^2 r^3 \, dr\right) = -\pi(4) = -4\pi
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Substituindo na equação anterior:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_S \vec{F} \cdot d\vec{S} - 4\pi = \frac{64\pi}{3} \implies \iint_S \vec{F} \cdot d\vec{S} = \frac{64\pi}{3} + 4\pi = \frac{76\pi}{3}
 \end{equation*}
 </div>
 </div>

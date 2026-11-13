@@ -11,17 +11,25 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<div class="para">A superfície <span class="process-math">\(S\)</span> possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre <span class="process-math">\(S\)</span> é igual à integral de linha ao longo do seu bordo <span class="process-math">\(\partial S\text{.}\)</span> O bordo é a fronteira quadrada da face ausente (no plano <span class="process-math">\(z=0\)</span>).</div> <div class="para">Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em <span class="process-math">\(\partial S\)</span> (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano <span class="process-math">\(z=0\)</span> é anti-horário.</div> <div class="para">Para simplificar o cálculo, podemos utilizar qualquer outra superfície <span class="process-math">\(S'\)</span> que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, <span class="process-math">\(D = [0,1] \times [0,1]\)</span> no plano <span class="process-math">\(z=0\text{.}\)</span> Para manter a compatibilidade do bordo anti-horário, a normal em <span class="process-math">\(D\)</span> deve ser <span class="process-math">\(\vec{k}\)</span> (apontando "para cima", adentrando a caixa).</div> <div class="para logical">
-<div class="para">O rotacional é:</div>
+<div class="para logical">
+<div class="para">Como <span class="process-math">\(E\)</span> não contém a origem, <span class="process-math">\(\vec{F}\)</span> possui derivadas parciais contínuas em todo o sólido <span class="process-math">\(E\text{.}\)</span> Fazendo <span class="process-math">\(\rho = \sqrt{x^2 + y^2 + z^2}\text{,}\)</span> calculamos:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{rot}\,\vec{F} = \left(\dots, \dots, \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y)\right) = (xz, -yz, 2)
+\frac{\partial}{\partial x}\left(\frac{x}{\rho}\right) = \frac{\rho - x \cdot \frac{x}{\rho}}{\rho^2} = \frac{1}{\rho} - \frac{x^2}{\rho^3}
 \end{equation*}
 </div>
-<div class="para">O fluxo através da face inferior plana orientada por <span class="process-math">\(\vec{k}\)</span> é:</div>
+<div class="para">De modo análogo para <span class="process-math">\(y\)</span> e <span class="process-math">\(z\text{,}\)</span> somamos para obter o divergente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{div}\,\vec{F} = \frac{3}{\rho} - \frac{x^2 + y^2 + z^2}{\rho^3} = \frac{3}{\rho} - \frac{\rho^2}{\rho^3} = \frac{2}{\rho}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Aplicando o Teorema do Divergente em coordenadas esféricas (<span class="process-math">\(1 \le \rho \le 2\text{,}\)</span> <span class="process-math">\(0 \le \varphi \le \pi\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\)</span>):</div>
 <div class="displaymath process-math">
 \begin{align*}
-\iint_D \text{rot}\,\vec{F} \cdot \vec{k} \, dx\,dy \amp = \int_0^1 \int_0^1 2 \, dx\,dy = 2 \cdot \text{Área}(D) = 2 \cdot 1 = 2
+\iint_S \vec{F} \cdot d\vec{S} \amp = \int_0^{2\pi} \int_0^{\pi} \int_1^2 \left(\frac{2}{\rho}\right) \rho^2 \text{sen}\,\varphi \, d\rho \, d\varphi \, d\theta\\
+\amp = 2 (2\pi) (2) \left[ \frac{\rho^2}{2} \right]_1^2 = 8\pi \left(2 - \frac{1}{2}\right) = 12\pi
 \end{align*}
 </div>
 </div>

@@ -1807,7 +1807,7 @@ var ptx_lunr_docs = [
   "type": "Seção",
   "number": "3.4",
   "title": "O Teorema do Divergente (Teorema de Gauss)",
-  "body": " O Teorema do Divergente (Teorema de Gauss)      Enunciado e Interpretação  O Teorema de Green relaciona a integral de linha ao longo de uma curva fechada no plano com uma integral dupla sobre a região delimitada por essa curva. O Teorema de Stokes estende essa ideia para superfícies no espaço. O Teorema do Divergente (também conhecido como Teorema de Gauss) estabelece uma relação análoga, mas conectando a integral de superfície (fluxo) sobre uma superfície fechada com a integral tripla sobre o sólido delimitado por ela.   Teorema do Divergente (Teorema de Gauss)   Seja uma região sólida simples no espaço e seja a superfície fronteira de , dada com orientação positiva (vetor normal apontando para fora de ). Seja um campo vetorial cujas funções componentes têm derivadas parciais contínuas em uma região aberta que contém . Então:      O Teorema do Divergente afirma que o fluxo total de um campo vetorial através de uma superfície fechada é igual à integral da divergência do campo sobre a região delimitada pela superfície. Se a divergência for positiva (o sólido atua como uma \"fonte\"), o fluxo líquido é para fora. Se for negativa (o sólido atua como um \"sumidouro\"), o fluxo líquido é para dentro.        Exemplos de Aplicação    Utilize o Teorema do Divergente para calcular o fluxo do campo vetorial através da esfera unitária de equação , orientada para fora.    A superfície é fechada e delimita o sólido . Calculamos primeiro a divergência do campo :   Pelo Teorema do Divergente, o fluxo é:   A integral tripla de 1 sobre é simplesmente o volume da esfera unitária. Sabendo que o volume de uma esfera de raio é , temos:       Calcule , onde e é a superfície da esfera com orientação positiva.    O cálculo direto dessa integral de superfície seria longo. Usando o Teorema do Divergente, primeiro calculamos a divergência:   O sólido é a bola . Em coordenadas esféricas, temos , o elemento de volume é , e os limites de integração são , e .  Aplicando o teorema:          Exercícios    Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial , onde é a porção do paraboloide que está acima do plano ( ), orientada com o vetor normal apontando para cima.   Ambas as integrais resultam em .    Cálculo pela Integral de Linha: O bordo é a circunferência no plano . Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: com .    Cálculo pela Integral de Superfície: O rotacional de é . A normal à superfície apontando para cima é . Como é o disco unitário de área , o resultado é . A igualdade verifica o Teorema de Stokes.     Utilize o Teorema de Stokes para calcular a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre , a porção do plano delimitada pelo cilindro. Calculamos o rotacional:   A superfície plana tem equação . O vetor normal (para cima, compatível com a orientação anti-horária de ) é .      Calcule o fluxo do rotacional para o campo , sendo a hemisfera superior com , orientada com o vetor normal apontando para cima (para fora da esfera).     Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo . O bordo da hemisfera é a circunferência no plano , orientada no sentido anti-horário.  Podemos trocar por uma superfície mais simples que possua o mesmo bordo: o disco plano no plano dado por , , orientado para cima ( ). Calculando o rotacional de : Integrando sobre o disco : Por simetria, a integral da componente ímpar em sobre o disco centrado na origem é zero ( ). Resta apenas:      Calcule o trabalho realizado pelo campo de forças ao mover uma partícula ao longo da curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O trabalho é dado pela integral de linha . Utilizaremos o Teorema de Stokes. O rotacional do campo é:   A curva delimita um disco plano em , de raio , com orientação correspondente ao vetor normal . Convertendo para coordenadas polares ( , ):      Calcule a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , percorrida do ponto ao ponto através do semi-espaço .     Como não é fechada, adicionamos um segmento retilíneo de até ao longo do plano e para formar uma curva fechada .  A curva $\\gamma$ limita uma semi-elipse sobre o plano orientada com normal (apontando \"para cima e esquerda\", coerente com a regra da mão direita para o sentido de ). Calculando o rotacional: . Aplicando o Teorema de Stokes: onde é o semicírculo , cuja área é . Logo, .  Agora, calculamos a integral sobre o trecho retilíneo parametrizado por de a . Como ao longo de , o campo . Portanto, . Finalmente:      Use o Teorema de Stokes para avaliar , onde é o triângulo com vértices , e , com , orientado no sentido anti-horário quando visto de uma posição muito alta no eixo .     O campo é . Seu rotacional é:   O triângulo está no plano que passa pelos três eixos, cuja equação é (ou ). A superfície projetada no plano é o triângulo bidimensional de vértices , e . A normal unitária vezes é .  Pelo Teorema de Stokes: A área de é a área de um triângulo retângulo de base e altura , ou seja, . Portanto, a integral é .     Calcule o fluxo do rotacional para o campo vetorial , onde é a superfície fechada do elipsoide orientada com a normal exterior.     Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície é igual à integral de linha do campo ao longo de seu bordo .  Como o elipsoide é uma superfície fechada (não possui \"furos\" ou \"bordas\" abertas), o seu bordo é vazio ( ). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.      Calcule a integral de superfície , onde o campo vetorial é e é constituída pelas faces superiores do cubo (ou seja, todas as faces exceto a face que repousa no plano ), orientadas com o vetor normal apontando para fora da caixa.     A superfície possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre é igual à integral de linha ao longo do seu bordo . O bordo é a fronteira quadrada da face ausente (no plano ).  Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano é anti-horário.  Para simplificar o cálculo, podemos utilizar qualquer outra superfície que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, no plano . Para manter a compatibilidade do bordo anti-horário, a normal em deve ser (apontando \"para cima\", adentrando a caixa).  O rotacional é: O fluxo através da face inferior plana orientada por é:      Avalie , onde o campo vetorial é e é a curva complexa e fechada descrita pela função vetorial , com .     Podemos calcular o rotacional de :   Como o rotacional de é o vetor nulo (e o domínio do campo é todo o $\\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como é uma curva fechada, a integral de linha de um campo irrotacional é zero:      Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.   A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários exigido pelo teorema.   O Teorema de Stokes exige que a superfície seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários em toda a superfície para estabelecer a orientação positiva do bordo através da regra da mão direita.  Como ilustrado na seção, a Faixa de Möbius possui apenas um \"lado\". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto ( ). Essa impossibilidade de determinar consistentemente qual é o lado \"de fora\" ou \"de dentro\" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.    "
+  "body": " O Teorema do Divergente (Teorema de Gauss)      Enunciado e Interpretação  O Teorema de Green relaciona a integral de linha ao longo de uma curva fechada no plano com uma integral dupla sobre a região delimitada por essa curva. O Teorema de Stokes estende essa ideia para superfícies no espaço. O Teorema do Divergente (também conhecido como Teorema de Gauss) estabelece uma relação análoga, mas conectando a integral de superfície (fluxo) sobre uma superfície fechada com a integral tripla sobre o sólido delimitado por ela.   Teorema do Divergente (Teorema de Gauss)   Seja uma região sólida simples no espaço e seja a superfície fronteira de , dada com orientação positiva (vetor normal apontando para fora de ). Seja um campo vetorial cujas funções componentes têm derivadas parciais contínuas em uma região aberta que contém . Então:      O Teorema do Divergente afirma que o fluxo total de um campo vetorial através de uma superfície fechada é igual à integral da divergência do campo sobre a região delimitada pela superfície. Se a divergência for positiva (o sólido atua como uma \"fonte\"), o fluxo líquido é para fora. Se for negativa (o sólido atua como um \"sumidouro\"), o fluxo líquido é para dentro.        Exemplos de Aplicação    Utilize o Teorema do Divergente para calcular o fluxo do campo vetorial através da esfera unitária de equação , orientada para fora.    A superfície é fechada e delimita o sólido . Calculamos primeiro a divergência do campo :   Pelo Teorema do Divergente, o fluxo é:   A integral tripla de 1 sobre é simplesmente o volume da esfera unitária. Sabendo que o volume de uma esfera de raio é , temos:       Calcule , onde e é a superfície da esfera com orientação positiva.    O cálculo direto dessa integral de superfície seria longo. Usando o Teorema do Divergente, primeiro calculamos a divergência:   O sólido é a bola . Em coordenadas esféricas, temos , o elemento de volume é , e os limites de integração são , e .  Aplicando o teorema:          Exercícios    Verifique a validade do Teorema do Divergente calculando tanto a integral de superfície quanto a integral tripla para o campo vetorial , onde é o cubo unitário e é sua fronteira orientada para fora.   Ambas as integrais resultam em .    1. Cálculo pela Integral Tripla: Calculamos o divergente do campo: Integrando sobre o cubo unitário (cujo volume é ):    2. Cálculo pelo Fluxo nas 6 Faces: Somamos o fluxo através de cada face com sua normal exterior:  Face ( ): ; face ( ): .  Face ( ): ; face ( ): .  Face ( ): ; face ( ): .  O fluxo total é , confirmando o teorema.     Use o Teorema do Divergente para calcular o fluxo do campo vetorial através da superfície da esfera , orientada positivamente.     Calculamos o divergente de :   Pelo Teorema do Divergente, o fluxo através da esfera de raio é:      Calcule utilizando o Teorema do Divergente, onde e é a superfície fronteira da caixa retangular , orientada para fora.     O divergente do campo vetorial é:   Aplicando o Teorema do Divergente sobre a caixa :      Determine o fluxo do campo vetorial através da superfície fechada delimitada pelo cilindro e pelos planos e , orientada com a normal exterior.     Calculamos o divergente do campo:   Em coordenadas cilíndricas, o sólido é descrito por , e . Pelo Teorema do Divergente:      Seja . Calcule o fluxo de através da superfície fechada delimitada pelo paraboloide e pelo plano , orientada para fora.     O divergente do campo simplifica-se para uma constante:   Pelo Teorema do Divergente, . A interseção do paraboloide com o plano é a circunferência . Usando coordenadas cilíndricas ( , , ):      Calcule o fluxo do campo vetorial através da superfície fronteira do tetraedro situado no primeiro octante e delimitado pelo plano e pelos planos coordenados, orientada para fora.     Calculamos o divergente de :   Descrevendo o tetraedro como , e :      Utilize o Teorema do Divergente para calcular , onde e é a superfície fechada que delimita o sólido situado acima do cone e no interior da esfera , orientada para fora.     Calculando o divergente do campo :   Em coordenadas esféricas, o sólido é dado por , e , com :      Considere o campo vetorial , definido em . Calcule o fluxo total através da fronteira da casca esférica , orientada para fora de (isto é, apontando para fora na esfera externa e para a origem na esfera interna).     Como não contém a origem, possui derivadas parciais contínuas em todo o sólido . Fazendo , calculamos: De modo análogo para e , somamos para obter o divergente:   Aplicando o Teorema do Divergente em coordenadas esféricas ( , , ):      Calcule o fluxo do campo vetorial através da hemisfera superior aberta , , orientada com a normal apontando para cima.     Como é uma superfície aberta, não podemos aplicar diretamente o Teorema do Divergente. Fechamos a superfície adicionando o disco inferior no plano , orientado com a normal exterior apontando para baixo ( ). Assim, delimita a semiesfera sólida .  O divergente é . Pelo Teorema do Divergente:   Calculamos agora o fluxo através do disco ( , ):   Substituindo na equação anterior:      Determine o fluxo do campo vetorial através da superfície fechada do elipsoide , orientada com a normal exterior.     Calculamos o divergente do campo :   Como o campo possui divergência identicamente nula em todo o e é uma superfície fechada delimitando o sólido elipsoidal , o Teorema do Divergente garante diretamente que:     "
 },
 {
   "id": "p-727",
@@ -1855,94 +1855,94 @@ var ptx_lunr_docs = [
   "body": "  Calcule , onde e é a superfície da esfera com orientação positiva.    O cálculo direto dessa integral de superfície seria longo. Usando o Teorema do Divergente, primeiro calculamos a divergência:   O sólido é a bola . Em coordenadas esféricas, temos , o elemento de volume é , e os limites de integração são , e .  Aplicando o teorema:    "
 },
 {
-  "id": "exer-verificacao-stokes",
+  "id": "exer-div-verificacao-cubo",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-verificacao-stokes",
+  "url": "sec-teorema-divergente.html#exer-div-verificacao-cubo",
   "type": "Exercício",
   "number": "3.4.3.1",
   "title": "",
-  "body": " Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial , onde é a porção do paraboloide que está acima do plano ( ), orientada com o vetor normal apontando para cima.   Ambas as integrais resultam em .    Cálculo pela Integral de Linha: O bordo é a circunferência no plano . Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: com .    Cálculo pela Integral de Superfície: O rotacional de é . A normal à superfície apontando para cima é . Como é o disco unitário de área , o resultado é . A igualdade verifica o Teorema de Stokes.  "
+  "body": " Verifique a validade do Teorema do Divergente calculando tanto a integral de superfície quanto a integral tripla para o campo vetorial , onde é o cubo unitário e é sua fronteira orientada para fora.   Ambas as integrais resultam em .    1. Cálculo pela Integral Tripla: Calculamos o divergente do campo: Integrando sobre o cubo unitário (cujo volume é ):    2. Cálculo pelo Fluxo nas 6 Faces: Somamos o fluxo através de cada face com sua normal exterior:  Face ( ): ; face ( ): .  Face ( ): ; face ( ): .  Face ( ): ; face ( ): .  O fluxo total é , confirmando o teorema.  "
 },
 {
-  "id": "exer-stokes-cilindro-plano",
+  "id": "exer-div-esfera-constante",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-stokes-cilindro-plano",
+  "url": "sec-teorema-divergente.html#exer-div-esfera-constante",
   "type": "Exercício",
   "number": "3.4.3.2",
   "title": "",
-  "body": " Utilize o Teorema de Stokes para calcular a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre , a porção do plano delimitada pelo cilindro. Calculamos o rotacional:   A superfície plana tem equação . O vetor normal (para cima, compatível com a orientação anti-horária de ) é .   "
+  "body": " Use o Teorema do Divergente para calcular o fluxo do campo vetorial através da superfície da esfera , orientada positivamente.     Calculamos o divergente de :   Pelo Teorema do Divergente, o fluxo através da esfera de raio é:   "
 },
 {
-  "id": "exer-troca-superficie",
+  "id": "exer-div-caixa-retangular",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-troca-superficie",
+  "url": "sec-teorema-divergente.html#exer-div-caixa-retangular",
   "type": "Exercício",
   "number": "3.4.3.3",
   "title": "",
-  "body": " Calcule o fluxo do rotacional para o campo , sendo a hemisfera superior com , orientada com o vetor normal apontando para cima (para fora da esfera).     Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo . O bordo da hemisfera é a circunferência no plano , orientada no sentido anti-horário.  Podemos trocar por uma superfície mais simples que possua o mesmo bordo: o disco plano no plano dado por , , orientado para cima ( ). Calculando o rotacional de : Integrando sobre o disco : Por simetria, a integral da componente ímpar em sobre o disco centrado na origem é zero ( ). Resta apenas:   "
+  "body": " Calcule utilizando o Teorema do Divergente, onde e é a superfície fronteira da caixa retangular , orientada para fora.     O divergente do campo vetorial é:   Aplicando o Teorema do Divergente sobre a caixa :   "
 },
 {
-  "id": "exer-trabalho-stokes",
+  "id": "exer-div-cilindro",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-trabalho-stokes",
+  "url": "sec-teorema-divergente.html#exer-div-cilindro",
   "type": "Exercício",
   "number": "3.4.3.4",
   "title": "",
-  "body": " Calcule o trabalho realizado pelo campo de forças ao mover uma partícula ao longo da curva de interseção do cilindro com o plano , orientada no sentido anti-horário quando vista de cima.     O trabalho é dado pela integral de linha . Utilizaremos o Teorema de Stokes. O rotacional do campo é:   A curva delimita um disco plano em , de raio , com orientação correspondente ao vetor normal . Convertendo para coordenadas polares ( , ):   "
+  "body": " Determine o fluxo do campo vetorial através da superfície fechada delimitada pelo cilindro e pelos planos e , orientada com a normal exterior.     Calculamos o divergente do campo:   Em coordenadas cilíndricas, o sólido é descrito por , e . Pelo Teorema do Divergente:   "
 },
 {
-  "id": "exer-stokes-curva-aberta",
+  "id": "exer-div-paraboloide",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-stokes-curva-aberta",
+  "url": "sec-teorema-divergente.html#exer-div-paraboloide",
   "type": "Exercício",
   "number": "3.4.3.5",
   "title": "",
-  "body": " Calcule a integral de linha , onde o campo é e é a curva de interseção do cilindro com o plano , percorrida do ponto ao ponto através do semi-espaço .     Como não é fechada, adicionamos um segmento retilíneo de até ao longo do plano e para formar uma curva fechada .  A curva $\\gamma$ limita uma semi-elipse sobre o plano orientada com normal (apontando \"para cima e esquerda\", coerente com a regra da mão direita para o sentido de ). Calculando o rotacional: . Aplicando o Teorema de Stokes: onde é o semicírculo , cuja área é . Logo, .  Agora, calculamos a integral sobre o trecho retilíneo parametrizado por de a . Como ao longo de , o campo . Portanto, . Finalmente:   "
+  "body": " Seja . Calcule o fluxo de através da superfície fechada delimitada pelo paraboloide e pelo plano , orientada para fora.     O divergente do campo simplifica-se para uma constante:   Pelo Teorema do Divergente, . A interseção do paraboloide com o plano é a circunferência . Usando coordenadas cilíndricas ( , , ):   "
 },
 {
-  "id": "exer-triangulo-espaco-stokes",
+  "id": "exer-div-tetraedro",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-triangulo-espaco-stokes",
+  "url": "sec-teorema-divergente.html#exer-div-tetraedro",
   "type": "Exercício",
   "number": "3.4.3.6",
   "title": "",
-  "body": " Use o Teorema de Stokes para avaliar , onde é o triângulo com vértices , e , com , orientado no sentido anti-horário quando visto de uma posição muito alta no eixo .     O campo é . Seu rotacional é:   O triângulo está no plano que passa pelos três eixos, cuja equação é (ou ). A superfície projetada no plano é o triângulo bidimensional de vértices , e . A normal unitária vezes é .  Pelo Teorema de Stokes: A área de é a área de um triângulo retângulo de base e altura , ou seja, . Portanto, a integral é .  "
+  "body": " Calcule o fluxo do campo vetorial através da superfície fronteira do tetraedro situado no primeiro octante e delimitado pelo plano e pelos planos coordenados, orientada para fora.     Calculamos o divergente de :   Descrevendo o tetraedro como , e :   "
 },
 {
-  "id": "exer-fluxo-rotacional-superficie-fechada",
+  "id": "exer-div-cone-esfera",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-fluxo-rotacional-superficie-fechada",
+  "url": "sec-teorema-divergente.html#exer-div-cone-esfera",
   "type": "Exercício",
   "number": "3.4.3.7",
   "title": "",
-  "body": " Calcule o fluxo do rotacional para o campo vetorial , onde é a superfície fechada do elipsoide orientada com a normal exterior.     Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície é igual à integral de linha do campo ao longo de seu bordo .  Como o elipsoide é uma superfície fechada (não possui \"furos\" ou \"bordas\" abertas), o seu bordo é vazio ( ). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.   "
+  "body": " Utilize o Teorema do Divergente para calcular , onde e é a superfície fechada que delimita o sólido situado acima do cone e no interior da esfera , orientada para fora.     Calculando o divergente do campo :   Em coordenadas esféricas, o sólido é dado por , e , com :   "
 },
 {
-  "id": "exer-superficie-composta-stokes",
+  "id": "exer-div-casca-esferica",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-superficie-composta-stokes",
+  "url": "sec-teorema-divergente.html#exer-div-casca-esferica",
   "type": "Exercício",
   "number": "3.4.3.8",
   "title": "",
-  "body": " Calcule a integral de superfície , onde o campo vetorial é e é constituída pelas faces superiores do cubo (ou seja, todas as faces exceto a face que repousa no plano ), orientadas com o vetor normal apontando para fora da caixa.     A superfície possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre é igual à integral de linha ao longo do seu bordo . O bordo é a fronteira quadrada da face ausente (no plano ).  Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano é anti-horário.  Para simplificar o cálculo, podemos utilizar qualquer outra superfície que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, no plano . Para manter a compatibilidade do bordo anti-horário, a normal em deve ser (apontando \"para cima\", adentrando a caixa).  O rotacional é: O fluxo através da face inferior plana orientada por é:   "
+  "body": " Considere o campo vetorial , definido em . Calcule o fluxo total através da fronteira da casca esférica , orientada para fora de (isto é, apontando para fora na esfera externa e para a origem na esfera interna).     Como não contém a origem, possui derivadas parciais contínuas em todo o sólido . Fazendo , calculamos: De modo análogo para e , somamos para obter o divergente:   Aplicando o Teorema do Divergente em coordenadas esféricas ( , , ):   "
 },
 {
-  "id": "exer-campo-irrotacional-stokes",
+  "id": "exer-div-superficie-aberta",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-campo-irrotacional-stokes",
+  "url": "sec-teorema-divergente.html#exer-div-superficie-aberta",
   "type": "Exercício",
   "number": "3.4.3.9",
   "title": "",
-  "body": " Avalie , onde o campo vetorial é e é a curva complexa e fechada descrita pela função vetorial , com .     Podemos calcular o rotacional de :   Como o rotacional de é o vetor nulo (e o domínio do campo é todo o $\\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como é uma curva fechada, a integral de linha de um campo irrotacional é zero:   "
+  "body": " Calcule o fluxo do campo vetorial através da hemisfera superior aberta , , orientada com a normal apontando para cima.     Como é uma superfície aberta, não podemos aplicar diretamente o Teorema do Divergente. Fechamos a superfície adicionando o disco inferior no plano , orientado com a normal exterior apontando para baixo ( ). Assim, delimita a semiesfera sólida .  O divergente é . Pelo Teorema do Divergente:   Calculamos agora o fluxo através do disco ( , ):   Substituindo na equação anterior:   "
 },
 {
-  "id": "exer-moebius-stokes",
+  "id": "exer-div-campo-solenoidal",
   "level": "2",
-  "url": "sec-teorema-divergente.html#exer-moebius-stokes",
+  "url": "sec-teorema-divergente.html#exer-div-campo-solenoidal",
   "type": "Exercício",
   "number": "3.4.3.10",
   "title": "",
-  "body": " Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.   A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários exigido pelo teorema.   O Teorema de Stokes exige que a superfície seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários em toda a superfície para estabelecer a orientação positiva do bordo através da regra da mão direita.  Como ilustrado na seção, a Faixa de Möbius possui apenas um \"lado\". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto ( ). Essa impossibilidade de determinar consistentemente qual é o lado \"de fora\" ou \"de dentro\" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.  "
+  "body": " Determine o fluxo do campo vetorial através da superfície fechada do elipsoide , orientada com a normal exterior.     Calculamos o divergente do campo :   Como o campo possui divergência identicamente nula em todo o e é uma superfície fechada delimitando o sólido elipsoidal , o Teorema do Divergente garante diretamente que:   "
 },
 {
   "id": "referencias",
@@ -1954,9 +1954,9 @@ var ptx_lunr_docs = [
   "body": "    Referências Bibliográficas   Livros    Stewart, James. Cálculo, volume 2. Cengage Learning, 2013.    Guidorizzi, Luiz H. Um Curso de Cálculo , Vol. 3. LTC, 5ª ed. 2016.    Pinto, Diomara; Morgado, Maria C.F. Cálculo Diferencial e Integral de Funções de Várias Variáveis . Editora UFRJ, 3ª ed. 2009.  "
 },
 {
-  "id": "p-782",
+  "id": "p-783",
   "level": "2",
-  "url": "referencias.html#p-782",
+  "url": "referencias.html#p-783",
   "type": "Parágrafo (with a defined term)",
   "number": "",
   "title": "",

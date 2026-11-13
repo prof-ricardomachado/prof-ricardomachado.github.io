@@ -321,7 +321,7 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-teorema-divergente.html#subsec-enunciado-teorema-divergente" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Enunciado e Interpretação</span></a></div></li>
 <li><div class="toc-item"><a href="sec-teorema-divergente.html#subsec-exemplos-teorema-divergente" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Exemplos de Aplicação</span></a></div></li>
-<li><div class="toc-item"><a href="sec-teorema-divergente.html#exercicios-teorema-de-stokes" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Exercícios</span></a></div></li>
+<li><div class="toc-item"><a href="sec-teorema-divergente.html#exercicios-teorema-divergente" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Exercícios</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -409,230 +409,266 @@ window.MathJax = {
 </div>
 </div>
 </div></div>
-</div></article></section><section class="exercises" id="exercicios-teorema-de-stokes"><h3 class="heading hide-type">
+</div></article></section><section class="exercises" id="exercicios-teorema-divergente"><h3 class="heading hide-type">
 <span class="type">Exercícios</span> <span class="codenumber">3.4.3</span> <span class="title">Exercícios</span>
 </h3>
-<article class="exercise exercise-like" id="exer-verificacao-stokes"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-738">Verifique a validade do Teorema de Stokes calculando tanto a integral de superfície quanto a integral de linha para o campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = -y\vec{i} + x\vec{j} + z\vec{k}\text{,}\)</span> onde <span class="process-math">\(S\)</span> é a porção do paraboloide <span class="process-math">\(z = 1 - x^2 - y^2\)</span> que está acima do plano <span class="process-math">\(xy\)</span> (<span class="process-math">\(z \ge 0\)</span>), orientada com o vetor normal apontando para cima.</div>
+<article class="exercise exercise-like" id="exer-div-verificacao-cubo"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-738">Verifique a validade do Teorema do Divergente calculando tanto a integral de superfície <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S}\)</span> quanto a integral tripla <span class="process-math">\(\iiint_E \text{div}\,\vec{F} \, dV\)</span> para o campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = 2x\vec{i} + 3y\vec{j} + 4z\vec{k}\text{,}\)</span> onde <span class="process-math">\(E = [0,1] \times [0,1] \times [0,1]\)</span> é o cubo unitário e <span class="process-math">\(S\)</span> é sua fronteira orientada para fora.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><div class="para" id="p-739">Ambas as integrais resultam em <span class="process-math">\(2\pi\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><div class="para" id="p-739">Ambas as integrais resultam em <span class="process-math">\(9\text{.}\)</span>
 </div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like">
 <div class="para logical" id="p-740">
-<div class="para">Cálculo pela Integral de Linha: O bordo <span class="process-math">\(\partial S\)</span> é a circunferência <span class="process-math">\(x^2 + y^2 = 1\)</span> no plano <span class="process-math">\(z = 0\text{.}\)</span> Pela regra da mão direita, a orientação induzida é no sentido anti-horário. Parametrizando o bordo: <span class="process-math">\(\vec{r}(t) = (\cos t, \text{sen } t, 0)\)</span> com <span class="process-math">\(t \in [0, 2\pi]\text{.}\)</span>
+<div class="para">1. Cálculo pela Integral Tripla: Calculamos o divergente do campo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(2x) + \frac{\partial}{\partial y}(3y) + \frac{\partial}{\partial z}(4z) = 2 + 3 + 4 = 9
+\end{equation*}
+</div>
+<div class="para">Integrando sobre o cubo unitário <span class="process-math">\(E\)</span> (cujo volume é <span class="process-math">\(1\)</span>):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iiint_E \text{div}\,\vec{F} \, dV = \iiint_E 9 \, dV = 9 \cdot \text{Vol}(E) = 9
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-741">
+<div class="para">2. Cálculo pelo Fluxo nas 6 Faces: Somamos o fluxo através de cada face com sua normal exterior:</div>
+<ul class="disc">
+<li id="li-127"><div class="para" id="p-742">Face <span class="process-math">\(x = 1\)</span> (<span class="process-math">\(\vec{n} = \vec{i}\)</span>): <span class="process-math">\(\iint_{[0,1]^2} 2(1) \, dy \, dz = 2\text{;}\)</span> face <span class="process-math">\(x = 0\)</span> (<span class="process-math">\(\vec{n} = -\vec{i}\)</span>): <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+<li id="li-128"><div class="para" id="p-743">Face <span class="process-math">\(y = 1\)</span> (<span class="process-math">\(\vec{n} = \vec{j}\)</span>): <span class="process-math">\(\iint_{[0,1]^2} 3(1) \, dx \, dz = 3\text{;}\)</span> face <span class="process-math">\(y = 0\)</span> (<span class="process-math">\(\vec{n} = -\vec{j}\)</span>): <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+<li id="li-129"><div class="para" id="p-744">Face <span class="process-math">\(z = 1\)</span> (<span class="process-math">\(\vec{n} = \vec{k}\)</span>): <span class="process-math">\(\iint_{[0,1]^2} 4(1) \, dx \, dy = 4\text{;}\)</span> face <span class="process-math">\(z = 0\)</span> (<span class="process-math">\(\vec{n} = -\vec{k}\)</span>): <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">O fluxo total é <span class="process-math">\(2 + 0 + 3 + 0 + 4 + 0 = 9\text{,}\)</span> confirmando o teorema.</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-div-esfera-constante"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-745">Use o Teorema do Divergente para calcular o fluxo do campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = (2x + y^3)\vec{i} + (3y - z^2)\vec{j} + (z + x^5)\vec{k}\)</span> através da superfície da esfera <span class="process-math">\(x^2 + y^2 + z^2 = 4\text{,}\)</span> orientada positivamente.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><div class="para" id="p-746"><span class="process-math">\(64\pi\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
+<div class="para logical" id="p-747">
+<div class="para">Calculamos o divergente de <span class="process-math">\(\vec{F}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(2x + y^3) + \frac{\partial}{\partial y}(3y - z^2) + \frac{\partial}{\partial z}(z + x^5) = 2 + 3 + 1 = 6
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-748">
+<div class="para">Pelo Teorema do Divergente, o fluxo através da esfera de raio <span class="process-math">\(R = 2\)</span> é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_S \vec{F} \cdot d\vec{S} = \iiint_E 6 \, dV = 6 \cdot \text{Vol}(E) = 6 \cdot \left(\frac{4}{3}\pi (2)^3\right) = 6 \cdot \frac{32\pi}{3} = 64\pi
+\end{equation*}
+</div>
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-div-caixa-retangular"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="p-749">Calcule <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S}\)</span> utilizando o Teorema do Divergente, onde <span class="process-math">\(\vec{F}(x,y,z) = x^2y\vec{i} + xy^2\vec{j} + 2xyz\vec{k}\)</span> e <span class="process-math">\(S\)</span> é a superfície fronteira da caixa retangular <span class="process-math">\(E = [0,1] \times [0,2] \times [0,3]\text{,}\)</span> orientada para fora.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-65" id="answer-65"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-65"><div class="answer solution-like"><div class="para" id="p-750"><span class="process-math">\(18\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<div class="para logical" id="p-751">
+<div class="para">O divergente do campo vetorial é:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(x^2y) + \frac{\partial}{\partial y}(xy^2) + \frac{\partial}{\partial z}(2xyz) = 2xy + 2xy + 2xy = 6xy
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-752">
+<div class="para">Aplicando o Teorema do Divergente sobre a caixa <span class="process-math">\(E\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="md-111">
 \begin{align*}
-\vec{r}'(t) \amp = (-\text{sen } t, \cos t, 0)\\
-\vec{F}(\vec{r}(t)) \amp = (-\text{sen } t, \cos t, 0)\\
-\oint_{\partial S} \vec{F} \cdot d\vec{r} \amp = \int_0^{2\pi} (\sin^2 t + \cos^2 t) \, dt = \int_0^{2\pi} 1 \, dt = 2\pi
+\iint_S \vec{F} \cdot d\vec{S} \amp = \int_0^3 \int_0^2 \int_0^1 6xy \, dx \, dy \, dz\\
+\amp = 6 \left(\int_0^1 x \, dx\right) \left(\int_0^2 y \, dy\right) \left(\int_0^3 dz\right)\\
+\amp = 6 \left(\frac{1}{2}\right) (2) (3) = 18
 \end{align*}
 </div>
-</div> <div class="para logical" id="p-741">
-<div class="para">Cálculo pela Integral de Superfície: O rotacional de <span class="process-math">\(\vec{F}\)</span> é <span class="process-math">\(\text{rot}\,\vec{F} = (0, 0, 2)\text{.}\)</span> A normal à superfície <span class="process-math">\(z = g(x,y) = 1 - x^2 - y^2\)</span> apontando para cima é <span class="process-math">\(\vec{N}\,dA = (-\frac{\partial z}{\partial x}, -\frac{\partial z}{\partial y}, 1)dx\,dy = (2x, 2y, 1)dx\,dy\text{.}\)</span>
 </div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exer-div-cilindro"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-753">Determine o fluxo do campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = x^3\vec{i} + y^3\vec{j} + z^2\vec{k}\)</span> através da superfície fechada <span class="process-math">\(S\)</span> delimitada pelo cilindro <span class="process-math">\(x^2 + y^2 = 9\)</span> e pelos planos <span class="process-math">\(z = 0\)</span> e <span class="process-math">\(z = 2\text{,}\)</span> orientada com a normal exterior.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-66" id="answer-66"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-66"><div class="answer solution-like"><div class="para" id="p-754"><span class="process-math">\(279\pi\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<div class="para logical" id="p-755">
+<div class="para">Calculamos o divergente do campo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(x^3) + \frac{\partial}{\partial y}(y^3) + \frac{\partial}{\partial z}(z^2) = 3x^2 + 3y^2 + 2z = 3(x^2 + y^2) + 2z
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-756">
+<div class="para">Em coordenadas cilíndricas, o sólido <span class="process-math">\(E\)</span> é descrito por <span class="process-math">\(0 \le r \le 3\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\)</span> e <span class="process-math">\(0 \le z \le 2\text{.}\)</span> Pelo Teorema do Divergente:</div>
 <div class="displaymath process-math" id="md-112">
 \begin{align*}
-\iint_S \text{rot}\,\vec{F} \cdot d\vec{S} \amp = \iint_D (0, 0, 2) \cdot (2x, 2y, 1) \, dA = \iint_D 2 \, dA = 2A(D)
+\iint_S \vec{F} \cdot d\vec{S} \amp = \int_0^{2\pi} \int_0^3 \int_0^2 (3r^2 + 2z) r \, dz \, dr \, d\theta\\
+\amp = 2\pi \int_0^3 \left[ 3r^3 z + r z^2 \right]_{z=0}^{z=2} dr\\
+\amp = 2\pi \int_0^3 (6r^3 + 4r) \, dr = 2\pi \left[ \frac{3r^4}{2} + 2r^2 \right]_0^3\\
+\amp = 2\pi \left( \frac{243}{2} + 18 \right) = 243\pi + 36\pi = 279\pi
 \end{align*}
 </div>
-<div class="para">Como <span class="process-math">\(D\)</span> é o disco unitário de área <span class="process-math">\(\pi\text{,}\)</span> o resultado é <span class="process-math">\(2\pi\text{.}\)</span> A igualdade verifica o Teorema de Stokes.</div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exer-stokes-cilindro-plano"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-742">Utilize o Teorema de Stokes para calcular a integral de linha <span class="process-math">\(\oint_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde o campo é <span class="process-math">\(\vec{F}(x,y,z) = z\vec{i} + x\vec{j} + y\vec{k}\)</span> e <span class="process-math">\(C\)</span> é a curva de interseção do cilindro <span class="process-math">\(x^2 + y^2 = 4\)</span> com o plano <span class="process-math">\(z = y + 3\text{,}\)</span> orientada no sentido anti-horário quando vista de cima.</div>
+</div></article><article class="exercise exercise-like" id="exer-div-paraboloide"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="p-757">Seja <span class="process-math">\(\vec{F}(x,y,z) = (x + \text{sen}\,y)\vec{i} + (y + \text{sen}\,z)\vec{j} + (z + \text{sen}\,x)\vec{k}\text{.}\)</span> Calcule o fluxo de <span class="process-math">\(\vec{F}\)</span> através da superfície fechada <span class="process-math">\(S\)</span> delimitada pelo paraboloide <span class="process-math">\(z = 4 - x^2 - y^2\)</span> e pelo plano <span class="process-math">\(z = 0\text{,}\)</span> orientada para fora.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><div class="para" id="p-743"><span class="process-math">\(0\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
-<div class="para logical" id="p-744">
-<div class="para">O Teorema de Stokes nos permite trocar a integral de linha por uma integral de superfície sobre <span class="process-math">\(S\text{,}\)</span> a porção do plano <span class="process-math">\(z = y + 3\)</span> delimitada pelo cilindro. Calculamos o rotacional:</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-67" id="answer-67"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-67"><div class="answer solution-like"><div class="para" id="p-758"><span class="process-math">\(24\pi\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
+<div class="para logical" id="p-759">
+<div class="para">O divergente do campo simplifica-se para uma constante:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(y) - \frac{\partial}{\partial z}(x)\right)\vec{i} + \left(\frac{\partial}{\partial z}(z) - \frac{\partial}{\partial x}(y)\right)\vec{j} + \left(\frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(z)\right)\vec{k} = \vec{i} + \vec{j} + \vec{k} = (1,1,1)
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(x + \text{sen}\,y) + \frac{\partial}{\partial y}(y + \text{sen}\,z) + \frac{\partial}{\partial z}(z + \text{sen}\,x) = 1 + 1 + 1 = 3
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-745">
-<div class="para">A superfície plana tem equação <span class="process-math">\(z = f(x,y) = y + 3\text{.}\)</span> O vetor normal (para cima, compatível com a orientação anti-horária de <span class="process-math">\(C\)</span>) é <span class="process-math">\(\vec{N}\,dA = (0, -1, 1)dA\text{.}\)</span>
-</div>
+</div> <div class="para logical" id="p-760">
+<div class="para">Pelo Teorema do Divergente, <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S} = \iiint_E 3 \, dV\text{.}\)</span> A interseção do paraboloide com o plano <span class="process-math">\(z = 0\)</span> é a circunferência <span class="process-math">\(x^2 + y^2 = 4\text{.}\)</span> Usando coordenadas cilíndricas (<span class="process-math">\(0 \le r \le 2\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\text{,}\)</span> <span class="process-math">\(0 \le z \le 4 - r^2\)</span>):</div>
 <div class="displaymath process-math" id="md-113">
 \begin{align*}
-\oint_C \vec{F} \cdot d\vec{r} \amp = \iint_S \text{rot}\,\vec{F} \cdot d\vec{S} = \iint_D (1,1,1) \cdot (0,-1,1) \, dA = \iint_D (0 - 1 + 1) \, dA = 0
+\iint_S \vec{F} \cdot d\vec{S} \amp = 3 \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} r \, dz \, dr \, d\theta = 6\pi \int_0^2 r(4 - r^2) \, dr\\
+\amp = 6\pi \left[ 2r^2 - \frac{r^4}{4} \right]_0^2 = 6\pi (8 - 4) = 24\pi
 \end{align*}
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exer-troca-superficie"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-746">Calcule o fluxo do rotacional <span class="process-math">\(\iint_S \text{rot}\,\vec{F} \cdot d\vec{S}\)</span> para o campo <span class="process-math">\(\vec{F}(x,y,z) = (e^{x^2+y^2}, x, z)\text{,}\)</span> sendo <span class="process-math">\(S\)</span> a hemisfera superior <span class="process-math">\(x^2+y^2+z^2 = 9\)</span> com <span class="process-math">\(z \ge 0\text{,}\)</span> orientada com o vetor normal apontando para cima (para fora da esfera).</div>
+</div></article><article class="exercise exercise-like" id="exer-div-tetraedro"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="p-761">Calcule o fluxo do campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = x^2\vec{i} + y\vec{j} + z\vec{k}\)</span> através da superfície fronteira <span class="process-math">\(S\)</span> do tetraedro <span class="process-math">\(E\)</span> situado no primeiro octante e delimitado pelo plano <span class="process-math">\(x + y + z = 2\)</span> e pelos planos coordenados, orientada para fora.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-65" id="answer-65"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-65"><div class="answer solution-like"><div class="para" id="p-747"><span class="process-math">\(9\pi\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
-<div class="para" id="p-748">Pelo Teorema de Stokes, a integral de superfície de um rotacional depende apenas do bordo <span class="process-math">\(\partial S\text{.}\)</span> O bordo da hemisfera é a circunferência <span class="process-math">\(x^2+y^2=9\)</span> no plano <span class="process-math">\(z=0\text{,}\)</span> orientada no sentido anti-horário.</div> <div class="para logical" id="p-749">
-<div class="para">Podemos trocar <span class="process-math">\(S\)</span> por uma superfície mais simples que possua o mesmo bordo: o disco plano <span class="process-math">\(D\)</span> no plano <span class="process-math">\(xy\)</span> dado por <span class="process-math">\(x^2+y^2 \le 9\text{,}\)</span> <span class="process-math">\(z=0\text{,}\)</span> orientado para cima (<span class="process-math">\(\vec{N} = \vec{k}\)</span>). Calculando o rotacional de <span class="process-math">\(\vec{F}\text{:}\)</span>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-68" id="answer-68"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><div class="para" id="p-762"><span class="process-math">\(4\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
+<div class="para logical" id="p-763">
+<div class="para">Calculamos o divergente de <span class="process-math">\(\vec{F}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{rot}\,\vec{F} = (0, 0, 1 - 2y e^{x^2+y^2})
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(x^2) + \frac{\partial}{\partial y}(y) + \frac{\partial}{\partial z}(z) = 2x + 1 + 1 = 2x + 2
 \end{equation*}
 </div>
-<div class="para">Integrando sobre o disco <span class="process-math">\(D\text{:}\)</span>
+</div> <div class="para logical" id="p-764">
+<div class="para">Descrevendo o tetraedro <span class="process-math">\(E\)</span> como <span class="process-math">\(0 \le x \le 2\text{,}\)</span> <span class="process-math">\(0 \le y \le 2 - x\)</span> e <span class="process-math">\(0 \le z \le 2 - x - y\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="md-114">
 \begin{align*}
-\iint_S \text{rot}\,\vec{F} \cdot d\vec{S} \amp = \iint_D (0, 0, 1 - 2y e^{x^2+y^2}) \cdot (0, 0, 1) \, dA = \iint_D (1 - 2y e^{x^2+y^2}) \, dA
+\iint_S \vec{F} \cdot d\vec{S} \amp = \int_0^2 \int_0^{2-x} \int_0^{2-x-y} (2x + 2) \, dz \, dy \, dx\\
+\amp = \int_0^2 \int_0^{2-x} 2(x + 1)(2 - x - y) \, dy \, dx\\
+\amp = \int_0^2 2(x + 1) \left[ (2 - x)y - \frac{y^2}{2} \right]_{y=0}^{y=2-x} dx\\
+\amp = \int_0^2 (x + 1)(2 - x)^2 \, dx = \int_0^2 (x^3 - 3x^2 + 4) \, dx\\
+\amp = \left[ \frac{x^4}{4} - x^3 + 4x \right]_0^2 = 4 - 8 + 8 = 4
 \end{align*}
-</div>
-<div class="para">Por simetria, a integral da componente ímpar em <span class="process-math">\(y\)</span> sobre o disco centrado na origem é zero (<span class="process-math">\(\iint_D -2y e^{x^2+y^2} dA = 0\)</span>). Resta apenas:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\iint_D 1 \, dA = \text{Área}(D) = \pi(3)^2 = 9\pi
-\end{equation*}
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exer-trabalho-stokes"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div class="para" id="p-750">Calcule o trabalho realizado pelo campo de forças <span class="process-math">\(\vec{F}(x,y,z) = (e^x - y^3)\vec{i} + (e^y + x^3)\vec{j} + e^z\vec{k}\)</span> ao mover uma partícula ao longo da curva <span class="process-math">\(C\)</span> de interseção do cilindro <span class="process-math">\(x^2 + y^2 = 4\)</span> com o plano <span class="process-math">\(z = 2\text{,}\)</span> orientada no sentido anti-horário quando vista de cima.</div>
+</div></article><article class="exercise exercise-like" id="exer-div-cone-esfera"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-765">Utilize o Teorema do Divergente para calcular <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S}\text{,}\)</span> onde <span class="process-math">\(\vec{F}(x,y,z) = (x^2+y^2+z^2)(x\vec{i} + y\vec{j} + z\vec{k})\)</span> e <span class="process-math">\(S\)</span> é a superfície fechada que delimita o sólido <span class="process-math">\(E\)</span> situado acima do cone <span class="process-math">\(z = \sqrt{x^2 + y^2}\)</span> e no interior da esfera <span class="process-math">\(x^2 + y^2 + z^2 = 1\text{,}\)</span> orientada para fora.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-66" id="answer-66"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-66"><div class="answer solution-like"><div class="para" id="p-751"><span class="process-math">\(24\pi\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
-<div class="para logical" id="p-752">
-<div class="para">O trabalho é dado pela integral de linha <span class="process-math">\(\oint_C \vec{F} \cdot d\vec{r}\text{.}\)</span> Utilizaremos o Teorema de Stokes. O rotacional do campo é:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{rot}\,\vec{F} = (0 - 0)\vec{i} - (0 - 0)\vec{j} + \left( \frac{\partial}{\partial x}(e^y + x^3) - \frac{\partial}{\partial y}(e^x - y^3) \right)\vec{k} = (0, 0, 3x^2 + 3y^2)
-\end{equation*}
-</div>
-</div> <div class="para logical" id="p-753">
-<div class="para">A curva delimita um disco <span class="process-math">\(S\)</span> plano em <span class="process-math">\(z = 2\text{,}\)</span> de raio <span class="process-math">\(2\text{,}\)</span> com orientação correspondente ao vetor normal <span class="process-math">\(\vec{N} = \vec{k}\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-69" id="answer-69"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><div class="para" id="p-766"><span class="process-math">\(\pi(2 - \sqrt{2})\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
+<div class="para logical" id="p-767">
+<div class="para">Calculando o divergente do campo <span class="process-math">\(\vec{F} = x(x^2+y^2+z^2)\vec{i} + y(x^2+y^2+z^2)\vec{j} + z(x^2+y^2+z^2)\vec{k}\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="md-115">
 \begin{align*}
-\oint_C \vec{F} \cdot d\vec{r} \amp = \iint_S \text{rot}\,\vec{F} \cdot \vec{N} \, dS = \iint_S (0, 0, 3(x^2+y^2)) \cdot (0, 0, 1) \, dx\,dy\\
-\amp = 3 \iint_S (x^2+y^2) \, dx\,dy
+\text{div}\,\vec{F} \amp = \big[(x^2+y^2+z^2) + 2x^2\big] + \big[(x^2+y^2+z^2) + 2y^2\big] + \big[(x^2+y^2+z^2) + 2z^2\big]\\
+\amp = 5(x^2 + y^2 + z^2)
 \end{align*}
 </div>
-<div class="para">Convertendo para coordenadas polares (<span class="process-math">\(0 \le r \le 2\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\)</span>):</div>
+</div> <div class="para logical" id="p-768">
+<div class="para">Em coordenadas esféricas, o sólido <span class="process-math">\(E\)</span> é dado por <span class="process-math">\(0 \le \rho \le 1\text{,}\)</span> <span class="process-math">\(0 \le \varphi \le \frac{\pi}{4}\)</span> e <span class="process-math">\(0 \le \theta \le 2\pi\text{,}\)</span> com <span class="process-math">\(\text{div}\,\vec{F} = 5\rho^2\text{:}\)</span>
+</div>
 <div class="displaymath process-math" id="md-116">
 \begin{align*}
-\int_0^{2\pi} \int_0^2 3r^2 (r \, dr \, d\theta) \amp = 6\pi \int_0^2 r^3 \, dr = 6\pi \left[ \frac{r^4}{4} \right]_0^2 = 6\pi \left(\frac{16}{4}\right) = 24\pi
+\iint_S \vec{F} \cdot d\vec{S} \amp = \int_0^{2\pi} \int_0^{\pi/4} \int_0^1 (5\rho^2) \rho^2 \text{sen}\,\varphi \, d\rho \, d\varphi \, d\theta\\
+\amp = 5 (2\pi) \left[ -\cos\varphi \right]_0^{\pi/4} \left[ \frac{\rho^5}{5} \right]_0^1\\
+\amp = 10\pi \left(1 - \frac{\sqrt{2}}{2}\right) \left(\frac{1}{5}\right) = \pi(2 - \sqrt{2})
 \end{align*}
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exer-stokes-curva-aberta"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div class="para" id="p-754">Calcule a integral de linha <span class="process-math">\(\int_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde o campo é <span class="process-math">\(\vec{F}(x,y,z) = (0, 0, y)\)</span> e <span class="process-math">\(C\)</span> é a curva de interseção do cilindro <span class="process-math">\(x^2 + y^2 = 1\)</span> com o plano <span class="process-math">\(z = x\text{,}\)</span> percorrida do ponto <span class="process-math">\((1, 0, 1)\)</span> ao ponto <span class="process-math">\((-1, 0, -1)\)</span> através do semi-espaço <span class="process-math">\(y \ge 0\text{.}\)</span>
-</div>
+</div></article><article class="exercise exercise-like" id="exer-div-casca-esferica"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="p-769">Considere o campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = \frac{x\vec{i} + y\vec{j} + z\vec{k}}{\sqrt{x^2 + y^2 + z^2}}\text{,}\)</span> definido em <span class="process-math">\(\mathbb{R}^3 \setminus \{(0,0,0)\}\text{.}\)</span> Calcule o fluxo total <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S}\)</span> através da fronteira <span class="process-math">\(S\)</span> da casca esférica <span class="process-math">\(E = \{(x,y,z) \in \mathbb{R}^3 : 1 \le x^2 + y^2 + z^2 \le 4\}\text{,}\)</span> orientada para fora de <span class="process-math">\(E\)</span> (isto é, apontando para fora na esfera externa e para a origem na esfera interna).</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-67" id="answer-67"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-67"><div class="answer solution-like"><div class="para" id="p-755"><span class="process-math">\(-\frac{\pi}{2}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
-<div class="para" id="p-756">Como <span class="process-math">\(C\)</span> não é fechada, adicionamos um segmento retilíneo <span class="process-math">\(C_1\)</span> de <span class="process-math">\((-1,0,-1)\)</span> até <span class="process-math">\((1,0,1)\)</span> ao longo do plano <span class="process-math">\(z=x\)</span> e <span class="process-math">\(y=0\)</span> para formar uma curva fechada <span class="process-math">\(\gamma = C \cup C_1\text{.}\)</span>
-</div> <div class="para logical" id="p-757">
-<div class="para">A curva $\gamma$ limita uma semi-elipse <span class="process-math">\(S\)</span> sobre o plano <span class="process-math">\(z=x\)</span> orientada com normal <span class="process-math">\(\vec{N}\,dA = (-1, 0, 1)dx\,dy\)</span> (apontando "para cima e esquerda", coerente com a regra da mão direita para o sentido de <span class="process-math">\(\gamma\)</span>). Calculando o rotacional: <span class="process-math">\(\text{rot}\,\vec{F} = (1, 0, 0)\text{.}\)</span> Aplicando o Teorema de Stokes:</div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-70" id="answer-70"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><div class="para" id="p-770"><span class="process-math">\(12\pi\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
+<div class="para logical" id="p-771">
+<div class="para">Como <span class="process-math">\(E\)</span> não contém a origem, <span class="process-math">\(\vec{F}\)</span> possui derivadas parciais contínuas em todo o sólido <span class="process-math">\(E\text{.}\)</span> Fazendo <span class="process-math">\(\rho = \sqrt{x^2 + y^2 + z^2}\text{,}\)</span> calculamos:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\oint_\gamma \vec{F} \cdot d\vec{r} = \iint_S (1, 0, 0) \cdot (-1, 0, 1) \, dA = \iint_{D_{xy}} -1 \, dx\,dy = - \text{Área}(D_{xy})
+\frac{\partial}{\partial x}\left(\frac{x}{\rho}\right) = \frac{\rho - x \cdot \frac{x}{\rho}}{\rho^2} = \frac{1}{\rho} - \frac{x^2}{\rho^3}
 \end{equation*}
 </div>
-<div class="para">onde <span class="process-math">\(D_{xy}\)</span> é o semicírculo <span class="process-math">\(x^2+y^2 \le 1, y \ge 0\text{,}\)</span> cuja área é <span class="process-math">\(\pi/2\text{.}\)</span> Logo, <span class="process-math">\(\oint_\gamma \vec{F} \cdot d\vec{r} = -\pi/2\text{.}\)</span>
-</div>
-</div> <div class="para logical" id="p-758">
-<div class="para">Agora, calculamos a integral sobre o trecho retilíneo <span class="process-math">\(C_1\)</span> parametrizado por <span class="process-math">\(\vec{r}(t) = (t, 0, t)\)</span> de <span class="process-math">\(t=-1\)</span> a <span class="process-math">\(1\text{.}\)</span> Como <span class="process-math">\(y=0\)</span> ao longo de <span class="process-math">\(C_1\text{,}\)</span> o campo <span class="process-math">\(\vec{F} = (0,0,0)\text{.}\)</span> Portanto, <span class="process-math">\(\int_{C_1} \vec{F} \cdot d\vec{r} = 0\text{.}\)</span> Finalmente:</div>
+<div class="para">De modo análogo para <span class="process-math">\(y\)</span> e <span class="process-math">\(z\text{,}\)</span> somamos para obter o divergente:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int_C \vec{F} \cdot d\vec{r} = \oint_\gamma \vec{F} \cdot d\vec{r} - \int_{C_1} \vec{F} \cdot d\vec{r} = -\frac{\pi}{2} - 0 = -\frac{\pi}{2}
+\text{div}\,\vec{F} = \frac{3}{\rho} - \frac{x^2 + y^2 + z^2}{\rho^3} = \frac{3}{\rho} - \frac{\rho^2}{\rho^3} = \frac{2}{\rho}
 \end{equation*}
 </div>
-</div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exer-triangulo-espaco-stokes"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="p-759">Use o Teorema de Stokes para avaliar <span class="process-math">\(\oint_C (y \, dx + z \, dy + x \, dz)\text{,}\)</span> onde <span class="process-math">\(C\)</span> é o triângulo com vértices <span class="process-math">\((a,0,0)\text{,}\)</span> <span class="process-math">\((0,a,0)\)</span> e <span class="process-math">\((0,0,a)\text{,}\)</span> com <span class="process-math">\(a &gt; 0\text{,}\)</span> orientado no sentido anti-horário quando visto de uma posição muito alta no eixo <span class="process-math">\(z\text{.}\)</span>
-</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-68" id="answer-68"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><div class="para" id="p-760"><span class="process-math">\(-\frac{3a^2}{2}\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
-<div class="para logical" id="p-761">
-<div class="para">O campo é <span class="process-math">\(\vec{F} = (y, z, x)\text{.}\)</span> Seu rotacional é:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(x) - \frac{\partial}{\partial z}(z), \dots \right) = (-1, -1, -1)
-\end{equation*}
-</div>
-</div> <div class="para" id="p-762">O triângulo <span class="process-math">\(C\)</span> está no plano que passa pelos três eixos, cuja equação é <span class="process-math">\(x + y + z = a\)</span> (ou <span class="process-math">\(z = a - x - y\)</span>). A superfície <span class="process-math">\(S\)</span> projetada no plano <span class="process-math">\(xy\)</span> é o triângulo bidimensional <span class="process-math">\(D\)</span> de vértices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((a,0)\)</span> e <span class="process-math">\((0,a)\text{.}\)</span> A normal unitária vezes <span class="process-math">\(dS\)</span> é <span class="process-math">\(\vec{N}\,dA = (1, 1, 1)dx\,dy\text{.}\)</span>
-</div> <div class="para logical" id="p-763">
-<div class="para">Pelo Teorema de Stokes:</div>
+</div> <div class="para logical" id="p-772">
+<div class="para">Aplicando o Teorema do Divergente em coordenadas esféricas (<span class="process-math">\(1 \le \rho \le 2\text{,}\)</span> <span class="process-math">\(0 \le \varphi \le \pi\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\)</span>):</div>
 <div class="displaymath process-math" id="md-117">
 \begin{align*}
-\oint_C \vec{F} \cdot d\vec{r} \amp = \iint_S (-1, -1, -1) \cdot (1, 1, 1) \, dx\,dy = \iint_D -3 \, dx\,dy = -3 \, \text{Área}(D)
-\end{align*}
-</div>
-<div class="para">A área de <span class="process-math">\(D\)</span> é a área de um triângulo retângulo de base <span class="process-math">\(a\)</span> e altura <span class="process-math">\(a\text{,}\)</span> ou seja, <span class="process-math">\(a^2/2\text{.}\)</span> Portanto, a integral é <span class="process-math">\(-3 \frac{a^2}{2} = -\frac{3a^2}{2}\text{.}\)</span>
-</div>
-</div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exer-fluxo-rotacional-superficie-fechada"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="p-764">Calcule o fluxo do rotacional <span class="process-math">\(\iint_S (\text{rot}\,\vec{F}) \cdot \vec{N} \, dS\)</span> para o campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = (x^2y, y^2z, z^2x)\text{,}\)</span> onde <span class="process-math">\(S\)</span> é a superfície fechada do elipsoide <span class="process-math">\(\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1\)</span> orientada com a normal exterior.</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-69" id="answer-69"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><div class="para" id="p-765"><span class="process-math">\(0\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
-<div class="para" id="p-766">Pelo Teorema de Stokes, o fluxo do rotacional de um campo suave sobre uma superfície <span class="process-math">\(S\)</span> é igual à integral de linha do campo ao longo de seu bordo <span class="process-math">\(\partial S\text{.}\)</span>
-</div> <div class="para logical" id="p-767">
-<div class="para">Como o elipsoide é uma superfície fechada (não possui "furos" ou "bordas" abertas), o seu bordo é vazio (<span class="process-math">\(\partial S = \emptyset\)</span>). Consequentemente, a integral de linha sobre um bordo inexistente é trivialmente zero.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\iint_S (\text{rot}\,\vec{F}) \cdot d\vec{S} = \oint_{\partial S} \vec{F} \cdot d\vec{r} = 0
-\end{equation*}
-</div>
-</div>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exer-superficie-composta-stokes"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="p-768">Calcule a integral de superfície <span class="process-math">\(\iint_S (\text{rot}\,\vec{F}) \cdot \vec{N} \, dS\text{,}\)</span> onde o campo vetorial é <span class="process-math">\(\vec{F}(x,y,z) = (-y, x, xyz)\)</span> e <span class="process-math">\(S\)</span> é constituída pelas <span class="process-math">\(5\)</span> faces superiores do cubo <span class="process-math">\([0,1] \times [0,1] \times [0,1]\)</span> (ou seja, todas as faces exceto a face que repousa no plano <span class="process-math">\(z=0\)</span>), orientadas com o vetor normal apontando para fora da caixa.</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-70" id="answer-70"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><div class="para" id="p-769"><span class="process-math">\(2\)</span></div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
-<div class="para" id="p-770">A superfície <span class="process-math">\(S\)</span> possui 5 partes. Em vez de calcular a integral de superfície em cada face, aplicamos o Teorema de Stokes. A integral do rotacional sobre <span class="process-math">\(S\)</span> é igual à integral de linha ao longo do seu bordo <span class="process-math">\(\partial S\text{.}\)</span> O bordo é a fronteira quadrada da face ausente (no plano <span class="process-math">\(z=0\)</span>).</div> <div class="para" id="p-771">Pela regra da mão direita adaptada à normal exterior das 5 faces, o percurso em <span class="process-math">\(\partial S\)</span> (visto de cima) deve ter o interior do cubo à esquerda. Logo, o sentido no plano <span class="process-math">\(z=0\)</span> é anti-horário.</div> <div class="para" id="p-772">Para simplificar o cálculo, podemos utilizar qualquer outra superfície <span class="process-math">\(S'\)</span> que tenha o mesmo bordo e a mesma orientação induzida. Escolhemos a própria face inferior plana do cubo, <span class="process-math">\(D = [0,1] \times [0,1]\)</span> no plano <span class="process-math">\(z=0\text{.}\)</span> Para manter a compatibilidade do bordo anti-horário, a normal em <span class="process-math">\(D\)</span> deve ser <span class="process-math">\(\vec{k}\)</span> (apontando "para cima", adentrando a caixa).</div> <div class="para logical" id="p-773">
-<div class="para">O rotacional é:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\text{rot}\,\vec{F} = \left(\dots, \dots, \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y)\right) = (xz, -yz, 2)
-\end{equation*}
-</div>
-<div class="para">O fluxo através da face inferior plana orientada por <span class="process-math">\(\vec{k}\)</span> é:</div>
-<div class="displaymath process-math" id="md-118">
-\begin{align*}
-\iint_D \text{rot}\,\vec{F} \cdot \vec{k} \, dx\,dy \amp = \int_0^1 \int_0^1 2 \, dx\,dy = 2 \cdot \text{Área}(D) = 2 \cdot 1 = 2
+\iint_S \vec{F} \cdot d\vec{S} \amp = \int_0^{2\pi} \int_0^{\pi} \int_1^2 \left(\frac{2}{\rho}\right) \rho^2 \text{sen}\,\varphi \, d\rho \, d\varphi \, d\theta\\
+\amp = 2 (2\pi) (2) \left[ \frac{\rho^2}{2} \right]_1^2 = 8\pi \left(2 - \frac{1}{2}\right) = 12\pi
 \end{align*}
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exer-campo-irrotacional-stokes"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div class="para" id="p-774">Avalie <span class="process-math">\(\oint_C \vec{F} \cdot d\vec{r}\text{,}\)</span> onde o campo vetorial é <span class="process-math">\(\vec{F}(x,y,z) = (2xyz^3, x^2z^3, 3x^2yz^2)\)</span> e <span class="process-math">\(C\)</span> é a curva complexa e fechada descrita pela função vetorial <span class="process-math">\(\vec{r}(t) = (\cos t, \text{sen } t, \text{sen}(2t))\text{,}\)</span> com <span class="process-math">\(0 \le t \le 2\pi\text{.}\)</span>
-</div>
+</div></article><article class="exercise exercise-like" id="exer-div-superficie-aberta"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="p-773">Calcule o fluxo <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S}\)</span> do campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = (x + y^2)\vec{i} + (y - z^2)\vec{j} + (2z + x^2)\vec{k}\)</span> através da hemisfera superior aberta <span class="process-math">\(S: x^2 + y^2 + z^2 = 4\text{,}\)</span> <span class="process-math">\(z \ge 0\text{,}\)</span> orientada com a normal apontando para cima.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-71" id="answer-71"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-71"><div class="answer solution-like"><div class="para" id="p-775"><span class="process-math">\(0\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-71" id="answer-71"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-71"><div class="answer solution-like"><div class="para" id="p-774"><span class="process-math">\(\frac{76\pi}{3}\)</span></div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
-<div class="para logical" id="p-776">
-<div class="para">Podemos calcular o rotacional de <span class="process-math">\(\vec{F}\text{:}\)</span>
-</div>
-<div class="displaymath process-math" id="md-119">
-\begin{gather*}
-\text{rot}\,\vec{F} = \left(\frac{\partial}{\partial y}(3x^2yz^2) - \frac{\partial}{\partial z}(x^2z^3)\right)\vec{i} - \left(\frac{\partial}{\partial x}(3x^2yz^2) - \frac{\partial}{\partial z}(2xyz^3)\right)\vec{j} + \left(\frac{\partial}{\partial x}(x^2z^3) - \frac{\partial}{\partial y}(2xyz^3)\right)\vec{k}\\
-= (3x^2z^2 - 3x^2z^2)\vec{i} - (6xyz^2 - 6xyz^2)\vec{j} + (2xz^3 - 2xz^3)\vec{k} = \vec{0}
-\end{gather*}
+<div class="para" id="p-775">Como <span class="process-math">\(S\)</span> é uma superfície aberta, não podemos aplicar diretamente o Teorema do Divergente. Fechamos a superfície adicionando o disco inferior <span class="process-math">\(S_1: x^2 + y^2 \le 4\)</span> no plano <span class="process-math">\(z = 0\text{,}\)</span> orientado com a normal exterior apontando para baixo (<span class="process-math">\(\vec{n}_1 = -\vec{k}\)</span>). Assim, <span class="process-math">\(S \cup S_1\)</span> delimita a semiesfera sólida <span class="process-math">\(E\text{.}\)</span>
+</div> <div class="para logical" id="p-776">
+<div class="para">O divergente é <span class="process-math">\(\text{div}\,\vec{F} = 1 + 1 + 2 = 4\text{.}\)</span> Pelo Teorema do Divergente:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_S \vec{F} \cdot d\vec{S} + \iint_{S_1} \vec{F} \cdot d\vec{S} = \iiint_E 4 \, dV = 4 \cdot \text{Vol}(E) = 4 \cdot \left(\frac{1}{2} \cdot \frac{4}{3}\pi (2)^3\right) = \frac{64\pi}{3}
+\end{equation*}
 </div>
 </div> <div class="para logical" id="p-777">
-<div class="para">Como o rotacional de <span class="process-math">\(\vec{F}\)</span> é o vetor nulo (e o domínio do campo é todo o $\mathbb{R}^3$), o campo é conservativo. Pelo Teorema de Stokes, como <span class="process-math">\(C\)</span> é uma curva fechada, a integral de linha de um campo irrotacional é zero:</div>
+<div class="para">Calculamos agora o fluxo através do disco <span class="process-math">\(S_1\)</span> (<span class="process-math">\(z = 0\text{,}\)</span> <span class="process-math">\(\vec{n}_1 = (0,0,-1)\)</span>):</div>
+<div class="displaymath process-math" id="md-118">
+\begin{align*}
+\iint_{S_1} \vec{F} \cdot d\vec{S} \amp = \iint_{x^2+y^2 \le 4} (x + y^2, y, x^2) \cdot (0, 0, -1) \, dA = -\iint_{x^2+y^2 \le 4} x^2 \, dA\\
+\amp = -\int_0^{2\pi} \int_0^2 (r^2 \cos^2\theta) r \, dr \, d\theta = -\left(\int_0^{2\pi} \cos^2\theta \, d\theta\right) \left(\int_0^2 r^3 \, dr\right) = -\pi(4) = -4\pi
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-778">
+<div class="para">Substituindo na equação anterior:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\oint_C \vec{F} \cdot d\vec{r} = \iint_S \vec{0} \cdot d\vec{S} = 0
+\iint_S \vec{F} \cdot d\vec{S} - 4\pi = \frac{64\pi}{3} \implies \iint_S \vec{F} \cdot d\vec{S} = \frac{64\pi}{3} + 4\pi = \frac{76\pi}{3}
 \end{equation*}
 </div>
 </div>
 </div></div>
-</div></article><article class="exercise exercise-like" id="exer-moebius-stokes"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="p-778">Explique matematicamente por que o Teorema de Stokes não pode ser aplicado para relacionar uma integral de linha a uma integral de superfície caso a superfície envolvida seja uma Faixa de Möbius.</div>
+</div></article><article class="exercise exercise-like" id="exer-div-campo-solenoidal"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="p-779">Determine o fluxo do campo vetorial <span class="process-math">\(\vec{F}(x,y,z) = \big(y^2 z + \text{sen}(yz)\big)\vec{i} + \big(x^3 z + \cos(xz)\big)\vec{j} + \big(x^2 y + e^{xy}\big)\vec{k}\)</span> através da superfície fechada do elipsoide <span class="process-math">\(S: \frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1\text{,}\)</span> orientada com a normal exterior.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-72" id="answer-72"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-72"><div class="answer solution-like"><div class="para" id="p-779">A Faixa de Möbius é uma superfície não orientável, o que inviabiliza a definição de um campo contínuo de vetores normais unitários <span class="process-math">\(\vec{N}\)</span> exigido pelo teorema.</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-72" id="answer-72"><span class="type">Resposta</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-72"><div class="answer solution-like"><div class="para" id="p-780"><span class="process-math">\(0\)</span></div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solução</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like">
-<div class="para" id="p-780">O Teorema de Stokes exige que a superfície <span class="process-math">\(S\)</span> seja orientada. Isso significa que deve ser possível escolher um campo contínuo de vetores normais unitários <span class="process-math">\(\vec{N}\)</span> em toda a superfície para estabelecer a orientação positiva do bordo <span class="process-math">\(\partial S\)</span> através da regra da mão direita.</div> <div class="para" id="p-781">Como ilustrado na seção, a Faixa de Möbius possui apenas um "lado". Se transportarmos um vetor normal de forma contínua ao longo da linha central da faixa, ao completar uma volta inteira, o vetor apontará no sentido oposto (<span class="process-math">\(\vec{N} \to -\vec{N}\)</span>). Essa impossibilidade de determinar consistentemente qual é o lado "de fora" ou "de dentro" (superfície não orientável) quebra as hipóteses fundamentais para a aplicação do Teorema de Stokes.</div>
+<div class="para logical" id="p-781">
+<div class="para">Calculamos o divergente do campo <span class="process-math">\(\vec{F}\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-119">
+\begin{align*}
+\text{div}\,\vec{F} \amp = \frac{\partial}{\partial x}\big(y^2 z + \text{sen}(yz)\big) + \frac{\partial}{\partial y}\big(x^3 z + \cos(xz)\big) + \frac{\partial}{\partial z}\big(x^2 y + e^{xy}\big)\\
+\amp = 0 + 0 + 0 = 0
+\end{align*}
+</div>
+</div> <div class="para logical" id="p-782">
+<div class="para">Como o campo possui divergência identicamente nula em todo o <span class="process-math">\(\mathbb{R}^3\)</span> e <span class="process-math">\(S\)</span> é uma superfície fechada delimitando o sólido elipsoidal <span class="process-math">\(E\text{,}\)</span> o Teorema do Divergente garante diretamente que:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iint_S \vec{F} \cdot d\vec{S} = \iiint_E 0 \, dV = 0
+\end{equation*}
+</div>
+</div>
 </div></div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">

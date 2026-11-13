@@ -15,22 +15,20 @@
 <h4 class="heading">
 <span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.4.3.5.1</span><span class="period">.</span>
 </h4>
-<div class="para">Como <span class="process-math">\(C\)</span> não é fechada, adicionamos um segmento retilíneo <span class="process-math">\(C_1\)</span> de <span class="process-math">\((-1,0,-1)\)</span> até <span class="process-math">\((1,0,1)\)</span> ao longo do plano <span class="process-math">\(z=x\)</span> e <span class="process-math">\(y=0\)</span> para formar uma curva fechada <span class="process-math">\(\gamma = C \cup C_1\text{.}\)</span>
-</div> <div class="para logical">
-<div class="para">A curva $\gamma$ limita uma semi-elipse <span class="process-math">\(S\)</span> sobre o plano <span class="process-math">\(z=x\)</span> orientada com normal <span class="process-math">\(\vec{N}\,dA = (-1, 0, 1)dx\,dy\)</span> (apontando "para cima e esquerda", coerente com a regra da mão direita para o sentido de <span class="process-math">\(\gamma\)</span>). Calculando o rotacional: <span class="process-math">\(\text{rot}\,\vec{F} = (1, 0, 0)\text{.}\)</span> Aplicando o Teorema de Stokes:</div>
+<div class="para logical">
+<div class="para">O divergente do campo simplifica-se para uma constante:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\oint_\gamma \vec{F} \cdot d\vec{r} = \iint_S (1, 0, 0) \cdot (-1, 0, 1) \, dA = \iint_{D_{xy}} -1 \, dx\,dy = - \text{Área}(D_{xy})
+\text{div}\,\vec{F} = \frac{\partial}{\partial x}(x + \text{sen}\,y) + \frac{\partial}{\partial y}(y + \text{sen}\,z) + \frac{\partial}{\partial z}(z + \text{sen}\,x) = 1 + 1 + 1 = 3
 \end{equation*}
-</div>
-<div class="para">onde <span class="process-math">\(D_{xy}\)</span> é o semicírculo <span class="process-math">\(x^2+y^2 \le 1, y \ge 0\text{,}\)</span> cuja área é <span class="process-math">\(\pi/2\text{.}\)</span> Logo, <span class="process-math">\(\oint_\gamma \vec{F} \cdot d\vec{r} = -\pi/2\text{.}\)</span>
 </div>
 </div> <div class="para logical">
-<div class="para">Agora, calculamos a integral sobre o trecho retilíneo <span class="process-math">\(C_1\)</span> parametrizado por <span class="process-math">\(\vec{r}(t) = (t, 0, t)\)</span> de <span class="process-math">\(t=-1\)</span> a <span class="process-math">\(1\text{.}\)</span> Como <span class="process-math">\(y=0\)</span> ao longo de <span class="process-math">\(C_1\text{,}\)</span> o campo <span class="process-math">\(\vec{F} = (0,0,0)\text{.}\)</span> Portanto, <span class="process-math">\(\int_{C_1} \vec{F} \cdot d\vec{r} = 0\text{.}\)</span> Finalmente:</div>
+<div class="para">Pelo Teorema do Divergente, <span class="process-math">\(\iint_S \vec{F} \cdot d\vec{S} = \iiint_E 3 \, dV\text{.}\)</span> A interseção do paraboloide com o plano <span class="process-math">\(z = 0\)</span> é a circunferência <span class="process-math">\(x^2 + y^2 = 4\text{.}\)</span> Usando coordenadas cilíndricas (<span class="process-math">\(0 \le r \le 2\text{,}\)</span> <span class="process-math">\(0 \le \theta \le 2\pi\text{,}\)</span> <span class="process-math">\(0 \le z \le 4 - r^2\)</span>):</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\int_C \vec{F} \cdot d\vec{r} = \oint_\gamma \vec{F} \cdot d\vec{r} - \int_{C_1} \vec{F} \cdot d\vec{r} = -\frac{\pi}{2} - 0 = -\frac{\pi}{2}
-\end{equation*}
+\begin{align*}
+\iint_S \vec{F} \cdot d\vec{S} \amp = 3 \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} r \, dz \, dr \, d\theta = 6\pi \int_0^2 r(4 - r^2) \, dr\\
+\amp = 6\pi \left[ 2r^2 - \frac{r^4}{4} \right]_0^2 = 6\pi (8 - 4) = 24\pi
+\end{align*}
 </div>
 </div>
 </div>
