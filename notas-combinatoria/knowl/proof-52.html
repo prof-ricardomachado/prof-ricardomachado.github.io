@@ -12,14 +12,30 @@
 </head>
 <body class="ignore-math">
 <article class="hiddenproof"><h4 class="heading"><span class="type">Demonstração</span></h4>
-<div class="para logical">
-<div class="para">Para que o sucesso seja obtido exatamente na <span class="process-math">\(n\)</span>-ésima tentativa é necessário e suficiente que as <span class="process-math">\(p-1\)</span> tentativas seja fracassos e que a <span class="process-math">\(n\)</span>-ésima seja um sucesso. Assim, obtemos a Equação <a href="" class="xref" data-knowl="./knowl/var_geo.html" title="Equação 4.3.1">(4.3.1)</a>. Como</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/var_geo.html">
+<div class="para">Suponha que o experimento seja realizado continuamente até que o total de provas atinja o número fixo <span class="process-math">\(N = k + m - 1\text{,}\)</span> mesmo que a meta de <span class="process-math">\(k\)</span> sucessos ou de <span class="process-math">\(m\)</span> fracassos já tenha sido alcançada em uma etapa anterior. Como as provas são independentes, prolongar o experimento após a definição do resultado não altera a probabilidade dos eventos ocorridos nas etapas iniciais.</div> <div class="para">Denotemos por <span class="process-math">\(S\)</span> o número total de sucessos e por <span class="process-math">\(F\)</span> o número total de fracassos obtidos exatamente ao final das <span class="process-math">\(N = k + m - 1\)</span> primeiras provas, de modo que <span class="process-math">\(S + F = k + m - 1\text{.}\)</span>
+</div> <div class="para">Vamos demonstrar a equivalência lógica entre o evento <span class="process-math">\(E_1\)</span> (“ocorrem <span class="process-math">\(k\)</span> sucessos antes de <span class="process-math">\(m\)</span> fracassos”) e o evento <span class="process-math">\(E_2\)</span> (“<span class="process-math">\(S \ge k\)</span> nas primeiras <span class="process-math">\(k + m - 1\)</span> provas”):</div> <ul class="disc">
+<li><div class="para">
+<dfn class="terminology">(<span class="process-math">\(E_1 \implies E_2\)</span>):</dfn> Se ocorrem <span class="process-math">\(k\)</span> sucessos antes que ocorram <span class="process-math">\(m\)</span> fracassos, então no exato instante em que o <span class="process-math">\(k\)</span>-ésimo sucesso é obtido, a quantidade acumulada de fracassos é no máximo <span class="process-math">\(m - 1\text{.}\)</span> Logo, esse <span class="process-math">\(k\)</span>-ésimo sucesso ocorre na etapa de índice no máximo <span class="process-math">\(k + (m - 1) = N\text{.}\)</span> Como a contagem de sucessos nunca decresce, ao término das <span class="process-math">\(N\)</span> provas teremos necessariamente <span class="process-math">\(S \ge k\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">
+<dfn class="terminology">(<span class="process-math">\(E_2 \implies E_1\)</span>):</dfn> Reciprocamente, suponha que ao final das <span class="process-math">\(N = k + m - 1\)</span> primeiras provas tenhamos <span class="process-math">\(S \ge k\text{.}\)</span> Como <span class="process-math">\(S + F = k + m - 1\text{,}\)</span> segue que a quantidade total de fracassos nessas <span class="process-math">\(N\)</span> provas satisfaz:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\sum_{n=1}^\infty (1-p)^{n-1}p = p\sum_{n=1}^\infty (1-p)^{n-1} = \frac{p}{1-(1-p)}=1,
+F = (k + m - 1) - S \le (k + m - 1) - k = m - 1 \lt m. 
 \end{equation*}
 </div>
-<div class="para">um sucesso acabará ocorrendo, com probabilidade 1.</div>
+<div class="para">Portanto, ao longo de todas as <span class="process-math">\(N\)</span> primeiras etapas, o número de fracassos jamais atingiu <span class="process-math">\(m\text{,}\)</span> enquanto o número de sucessos atingiu ou superou <span class="process-math">\(k\text{.}\)</span> Isso garante que os <span class="process-math">\(k\)</span> primeiros sucessos ocorreram antes do <span class="process-math">\(m\)</span>-ésimo fracasso.</div>
+</div></li>
+</ul> <div class="para logical">
+<div class="para">Como os eventos <span class="process-math">\(E_1\)</span> e <span class="process-math">\(E_2\)</span> são equivalentes, possuem a mesma probabilidade. Por fim, como a variável aleatória <span class="process-math">\(S\)</span> segue uma distribuição binomial com parâmetros <span class="process-math">\(N = k + m - 1\)</span> e <span class="process-math">\(p\text{,}\)</span> a probabilidade de <span class="process-math">\(S \ge k\)</span> é dada pela soma das probabilidades pontuais para <span class="process-math">\(j = k, k+1, \dots, k+m-1\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(E_1) = P(S \ge k) = \sum_{j=k}^{k+m-1} C_{k+m-1}^j \, p^j (1-p)^{k+m-1-j}, 
+\end{equation*}
+</div>
+<div class="para">o que conclui a demonstração.</div>
 </div></article><span class="incontext"><a href="section-distribuicao-binomial.html#proof-52" class="internal">em contexto</a></span>
 </body>
 </html>
